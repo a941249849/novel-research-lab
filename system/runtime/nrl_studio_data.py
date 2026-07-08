@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import Any
 
+from nrl_creation_assets import load_creation_asset_registry
 from nrl_system_status import build_system_status
 
 
@@ -14,6 +15,7 @@ DASHBOARD_SECTION_KEYS = (
     "runtime_status",
     "next_safe_action",
     "owner_gate",
+    "creation_asset_registry",
 )
 
 
@@ -41,6 +43,19 @@ def _artifact_status(state: dict[str, Any], name: str) -> str:
     return "not_registered"
 
 
+def _coverage_items_from_registry(registry: dict[str, Any]) -> list[dict[str, Any]]:
+    return [
+        {
+            "asset": family["label"],
+            "status": family["status"],
+            "gap": family["why_not_complete"],
+            "asset_id": family["asset_id"],
+            "readiness_score": family["readiness_score"],
+        }
+        for family in registry["asset_families"]
+    ]
+
+
 def build_studio_data(
     state: dict[str, Any],
     registry: list[dict[str, Any]],
@@ -52,6 +67,10 @@ def build_studio_data(
     current_agent = str(state.get("allowed_next_agents", ["codex"])[0]).lower()
     expected_outputs = latest_mission.get("output_artifacts") or []
     active_attempts = latest_mission.get("handoff_attempts") or []
+    creation_asset_registry = load_creation_asset_registry(
+        str(state.get("selected_project", "UNKNOWN_PROJECT")),
+        str(system_status["operating_mode"]),
+    )
 
     return {
         "system_identity": {
@@ -140,18 +159,9 @@ def build_studio_data(
         },
         "creation_coverage_matrix": {
             "assessment": "Long-form asset coverage is not complete; Studio v0.1 exposes the gaps instead of hiding them.",
-            "items": [
-                {"asset": "Characters", "status": "partial", "gap": "core roles exist; full character engine is not complete"},
-                {"asset": "NPCs", "status": "missing", "gap": "witnesses, rivals, minor officials, and reversible roles need a system"},
-                {"asset": "Factions", "status": "partial", "gap": "major institutions exist; faction internals and cracks are sparse"},
-                {"asset": "Artifacts", "status": "seed", "gap": "motifs exist; item lifecycle and upgrade paths are not modeled"},
-                {"asset": "Techniques", "status": "missing", "gap": "ability tree, move names, costs, counters, and upgrades are missing"},
-                {"asset": "Naming", "status": "missing", "gap": "no naming grammar for people, powers, places, artifacts, or realms"},
-                {"asset": "Emotional Bonds", "status": "partial", "gap": "mother bond is strong; wider bond network is not complete"},
-                {"asset": "Foreshadowing", "status": "partial", "gap": "ledger idea exists; retrieval and payoff lifecycle are not productized"},
-                {"asset": "State Ledger", "status": "seed", "gap": "state concept exists; chapter-by-chapter operating ledger is not complete"},
-            ],
+            "items": _coverage_items_from_registry(creation_asset_registry),
         },
+        "creation_asset_registry": creation_asset_registry,
         "runtime_status": {
             "health_commands": [
                 "python3 system/runtime/nrl.py doctor",

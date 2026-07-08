@@ -404,6 +404,19 @@ class RuntimeFixture(unittest.TestCase):
         self.assertEqual(data["coverage_summary"]["by_status"], status_counts)
         self.assertIn("No family is complete in v0.1", data["guardrails"])
 
+    def test_studio_data_includes_creation_asset_registry_drilldown(self):
+        result = self.run_cli("studio-data")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        data = json.loads(result.stdout)
+        registry = data["creation_asset_registry"]
+        self.assertEqual(registry["registry_name"], "Creation Asset Registry")
+        self.assertEqual(registry["coverage_summary"]["total"], 9)
+        labels = {item["label"] for item in registry["asset_families"]}
+        self.assertIn("Characters", labels)
+        self.assertIn("NPCs", labels)
+        self.assertIn("Techniques", labels)
+        self.assertIn("Naming", labels)
+
     def test_ingest_rejects_without_matching_attempt(self):
         output = self.root / "handoff/antigravity/outputs/phase2D_antigravity_outline_tree_review.md"
         output.parent.mkdir(parents=True, exist_ok=True)

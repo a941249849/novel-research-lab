@@ -344,6 +344,7 @@ class RuntimeFixture(unittest.TestCase):
                 "agent_panel",
                 "artifact_map",
                 "creation_coverage_matrix",
+                "creation_asset_registry",
                 "runtime_status",
                 "next_safe_action",
                 "owner_gate",
@@ -534,6 +535,7 @@ class RuntimeFixture(unittest.TestCase):
         self.assertIn("owner-gate", readme)
         self.assertIn("studio-build", readme)
         self.assertIn("studio-data", readme)
+        self.assertIn("creation-assets", readme)
         self.assertIn("open system/runtime/studio/index.html", readme)
         self.assertIn("system-status", readme)
         self.assertIn("SYSTEM_HARDENING", readme)

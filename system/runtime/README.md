@@ -105,6 +105,18 @@ Emit the read-only data contract used by Studio:
 python3 system/runtime/nrl.py studio-data
 ```
 
+Emit the read-only Creation Asset Registry:
+
+```bash
+python3 system/runtime/nrl.py creation-assets
+```
+
+This reports long-form asset family readiness for characters, NPCs, factions,
+artifacts, techniques, naming, emotional bonds, foreshadowing, and state
+ledger. It is system metadata, not creative generation. It must not create
+final character cards, NPC sheets, faction dossiers, technique trees, naming
+dictionaries, item catalogs, prose, or chapter plans.
+
 ## Future Hermes CLI/API Adapter
 
 A future Hermes adapter can extend `agent_adapters.json` with:
@@ -267,6 +279,7 @@ Exact commands:
 ```bash
 python3 system/runtime/nrl.py system-status
 python3 system/runtime/nrl.py studio-data
+python3 system/runtime/nrl.py creation-assets
 python3 system/runtime/nrl.py studio-build
 open system/runtime/studio/index.html
 ```
@@ -278,6 +291,7 @@ The dashboard renders:
 - Agent Panel
 - Artifact Map
 - Creation Coverage Matrix
+- Creation Asset Registry drill-down
 - Runtime Status
 - Next Safe Action
 - Owner Gate

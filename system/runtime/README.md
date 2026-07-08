@@ -193,6 +193,18 @@ python3 system/runtime/nrl.py advance
 - If the expected output file exists, it ingests it through the existing ingest contract.
 - If Owner Gate is required, it stops and reports that a manual owner decision is required.
 
+For Antigravity, the handoff input is consolidated into one file:
+
+```text
+handoff/antigravity/current_packet.md
+```
+
+Use that packet as the single Antigravity prompt/input surface. The only expected output remains:
+
+```text
+handoff/antigravity/outputs/phase2D_antigravity_outline_tree_review.md
+```
+
 It reports:
 
 - local Git repository status and remotes

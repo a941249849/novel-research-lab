@@ -91,6 +91,18 @@ def record_handoff_attempt(mission: dict[str, Any], adapter_mode: str, now: str)
     registry = load_registry()
     item = next(m for m in registry if m.get("mission_id") == mission["mission_id"])
     attempts = item.setdefault("handoff_attempts", [])
+    expected_output_path = mission["expected_outputs"][0]
+    for attempt in reversed(attempts):
+        if attempt.get("expected_output_path") == expected_output_path and attempt.get("status") == "awaiting_external_output":
+            attempt["adapter_mode"] = adapter_mode
+            attempt["input_artifact_hashes"] = input_hashes(mission["required_inputs"])
+            attempt["ingest_command"] = (
+                f"python3 system/runtime/nrl.py ingest --agent {mission['responsible_agent']} --file {expected_output_path}"
+            )
+            attempt["updated_at"] = now
+            item["updated_at"] = now
+            save_registry(registry)
+            return attempt
     attempt_id = f"{mission['mission_id']}_attempt_{len(attempts) + 1:03d}"
     attempt = {
         "handoff_attempt_id": attempt_id,
@@ -98,10 +110,10 @@ def record_handoff_attempt(mission: dict[str, Any], adapter_mode: str, now: str)
         "target_agent": mission["responsible_agent"],
         "adapter_mode": adapter_mode,
         "input_artifact_hashes": input_hashes(mission["required_inputs"]),
-        "expected_output_path": mission["expected_outputs"][0],
+        "expected_output_path": expected_output_path,
         "created_at": now,
         "stale_after": "",
-        "ingest_command": f"python3 system/runtime/nrl.py ingest --agent {mission['responsible_agent']} --file {mission['expected_outputs'][0]}",
+        "ingest_command": f"python3 system/runtime/nrl.py ingest --agent {mission['responsible_agent']} --file {expected_output_path}",
         "validation_contract": "Codex validation or Owner Gate required by mission contract",
         "status": "awaiting_external_output",
     }

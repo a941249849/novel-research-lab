@@ -32,6 +32,14 @@
 
 - handoff/antigravity/outputs/phase2D_antigravity_outline_tree_review.md
 
+## Single Input Packet
+
+Use this packet as the single Antigravity input surface:
+
+```text
+handoff/antigravity/current_packet.md
+```
+
 ## Blocked Actions
 
 - write novel prose
@@ -47,5 +55,5 @@
 This handoff is for manual external-agent execution. The runtime has not called the agent. Place the completed external output in the expected output directory, then run:
 
 ```text
-python3 system/runtime/nrl.py ingest --agent antigravity --file <path>
+python3 system/runtime/nrl.py advance
 ```

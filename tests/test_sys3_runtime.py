@@ -82,6 +82,7 @@ class RuntimeFixture(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         data = json.loads(result.stdout)
         self.assertIn("handoff_attempt_id", data)
+        self.assertEqual(data["handoff_packet_path"], "handoff/antigravity/current_packet.md")
         registry_path = self.root / "system/runtime/mission_registry.json"
         registry = json.loads(registry_path.read_text(encoding="utf-8"))
         self.assertEqual(len(registry), 1)
@@ -90,6 +91,22 @@ class RuntimeFixture(unittest.TestCase):
             registry[0]["handoff_attempts"][0]["expected_output_path"],
             "handoff/antigravity/outputs/phase2D_antigravity_outline_tree_review.md",
         )
+        packet = (self.root / "handoff/antigravity/current_packet.md").read_text(encoding="utf-8")
+        self.assertIn("# Novel Research Lab Antigravity Review Packet", packet)
+        self.assertIn("## Mission Contract", packet)
+        self.assertIn("## Source Artifacts", packet)
+        self.assertNotIn("novel_training_set/", packet)
+
+    def test_prepare_handoff_is_idempotent_while_waiting_for_output(self):
+        first = self.run_cli("prepare-handoff", "--agent", "antigravity")
+        self.assertEqual(first.returncode, 0, first.stderr)
+        second = self.run_cli("prepare-handoff", "--agent", "antigravity")
+        self.assertEqual(second.returncode, 0, second.stderr)
+        first_data = json.loads(first.stdout)
+        second_data = json.loads(second.stdout)
+        self.assertEqual(first_data["handoff_attempt_id"], second_data["handoff_attempt_id"])
+        registry = json.loads((self.root / "system/runtime/mission_registry.json").read_text(encoding="utf-8"))
+        self.assertEqual(len(registry[0]["handoff_attempts"]), 1)
 
     def test_advance_prepares_handoff_when_no_attempt_exists(self):
         result = self.run_cli("advance")
@@ -101,6 +118,7 @@ class RuntimeFixture(unittest.TestCase):
         self.assertEqual(data["responsible_agent"], "antigravity")
         self.assertIn("handoff_attempt_id", data)
         self.assertTrue((self.root / "handoff/antigravity/current_task.md").exists())
+        self.assertTrue((self.root / "handoff/antigravity/current_packet.md").exists())
 
     def test_advance_waits_without_duplicate_attempt_when_output_missing(self):
         prepared = self.run_cli("prepare-handoff", "--agent", "antigravity")

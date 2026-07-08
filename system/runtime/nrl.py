@@ -17,6 +17,7 @@ from typing import Any
 
 from nrl_compiler import compile_packet
 from nrl_doctor import run_doctor
+from nrl_handoff_packet import write_antigravity_packet
 from nrl_paths import ROOT, runtime_path
 from nrl_owner_gate import load_decisions, record_owner_decision
 from nrl_registry import (
@@ -256,6 +257,14 @@ def make_handoff_markdown(mission: dict[str, Any], adapter: dict[str, Any]) -> s
 
 {expected_outputs}
 
+## Single Input Packet
+
+Use this packet as the single Antigravity input surface:
+
+```text
+handoff/{mission["responsible_agent"]}/current_packet.md
+```
+
 ## Blocked Actions
 
 {blocked_actions}
@@ -265,7 +274,7 @@ def make_handoff_markdown(mission: dict[str, Any], adapter: dict[str, Any]) -> s
 This handoff is for manual external-agent execution. The runtime has not called the agent. Place the completed external output in the expected output directory, then run:
 
 ```text
-python3 system/runtime/nrl.py ingest --agent {mission["responsible_agent"]} --file <path>
+python3 system/runtime/nrl.py advance
 ```
 """
 
@@ -283,12 +292,16 @@ def prepare_handoff(agent: str) -> dict[str, Any]:
     output_dir.mkdir(parents=True, exist_ok=True)
     handoff_path = handoff_dir / "current_task.md"
     handoff_path.write_text(make_handoff_markdown(mission, adapter), encoding="utf-8")
+    packet_path = write_antigravity_packet(mission, handoff_dir) if agent == "antigravity" else None
     attempt = record_handoff_attempt(mission, str(adapter.get("mode")), now_iso())
-    return {
+    result = {
         "handoff_path": str(handoff_path.relative_to(ROOT)),
         "status": "awaiting_external_output",
         "handoff_attempt_id": attempt["handoff_attempt_id"],
     }
+    if packet_path is not None:
+        result["handoff_packet_path"] = str(packet_path.relative_to(ROOT))
+    return result
 
 
 def cmd_prepare_handoff(args: argparse.Namespace) -> int:

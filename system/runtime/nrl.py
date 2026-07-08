@@ -20,7 +20,13 @@ from nrl_doctor import run_doctor
 from nrl_handoff_packet import write_antigravity_packet
 from nrl_paths import ROOT, runtime_path
 from nrl_owner_gate import load_decisions, record_owner_decision
-from nrl_phase2e import latest_phase2e_acceptance, prepare_phase2e_entry, prepare_phase2e_planning_package
+from nrl_phase2e import (
+    latest_phase2e_acceptance,
+    prepare_phase2e_controlled_planning_output,
+    prepare_phase2e_controlled_planning_validation,
+    prepare_phase2e_entry,
+    prepare_phase2e_planning_package,
+)
 from nrl_registry import (
     find_active_attempt,
     load_registry,
@@ -110,11 +116,14 @@ def required_inputs_for(state: dict[str, Any]) -> list[str]:
 
 
 def expected_outputs_for(agent: str, mission_name: str) -> list[str]:
+    mission_id = mission_id_for(mission_name)
     if agent == "antigravity":
-        return ["handoff/antigravity/outputs/phase2D_antigravity_outline_tree_review.md"]
+        if mission_id == "phase2d_antigravity_outline_tree_review":
+            return ["handoff/antigravity/outputs/phase2D_antigravity_outline_tree_review.md"]
+        return [f"handoff/antigravity/outputs/{mission_id}.md"]
     if agent == "hermes":
         return ["handoff/hermes/outputs/external_hermes_output.md"]
-    return [f"system/runtime/{mission_id_for(mission_name)}_codex_output.md"]
+    return [f"system/runtime/{mission_id}_codex_output.md"]
 
 
 def current_mission(state: dict[str, Any], agent: str | None = None) -> dict[str, Any]:
@@ -373,15 +382,34 @@ def cmd_advance(_: argparse.Namespace) -> int:
 
     if (
         state.get("current_phase") == "Phase 2E"
-        and state.get("phase_status") == "PHASE2E_PLANNING_PACKAGE_READY"
+        and state.get("phase_status") == "PHASE2E_CONTROLLED_PLANNING_OUTPUT_READY"
     ):
+        result = prepare_phase2e_controlled_planning_validation(state, now_iso())
+        write_json(STATE_PATH, state)
         print_json(
             {
-                "action": "phase2e_planning_package_ready",
-                "status": "ready_for_controlled_chapter_planning",
+                "action": "phase2e_controlled_planning_validated",
+                "status": "ready_for_antigravity_controlled_planning_review",
                 "mission_id": mission_id,
                 "responsible_agent": agent,
-                "control_pack_path": "phase2E/01_planning_package/phase2E_chapter_plan_control_pack.md",
+                **result,
+            }
+        )
+        return 0
+
+    if (
+        state.get("current_phase") == "Phase 2E"
+        and state.get("phase_status") == "PHASE2E_PLANNING_PACKAGE_READY"
+    ):
+        result = prepare_phase2e_controlled_planning_output(state, now_iso())
+        write_json(STATE_PATH, state)
+        print_json(
+            {
+                "action": "phase2e_controlled_planning_output_prepared",
+                "status": "phase2e_controlled_planning_output_ready",
+                "mission_id": mission_id,
+                "responsible_agent": agent,
+                **result,
             }
         )
         return 0

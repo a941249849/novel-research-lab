@@ -1,16 +1,16 @@
 {
   "project_name": "Novel Research Lab",
   "current_phase": "Phase 2E",
-  "current_subphase": "Chapter Plan Control Package",
+  "current_subphase": "Controlled Planning Validation",
   "previous_story_phase": "Phase 2D",
   "selected_project": "《借天改命账》",
-  "phase_status": "PHASE2E_PLANNING_PACKAGE_READY",
-  "last_completed_mission": "Phase 2D Antigravity Outline Tree Review",
-  "next_recommended_mission": "Phase 2E Controlled Chapter Planning",
+  "phase_status": "PHASE2E_CONTROLLED_PLANNING_VALIDATED",
+  "last_completed_mission": "Phase 2E Controlled Planning Validation",
+  "next_recommended_mission": "Phase 2E Antigravity Controlled Planning Review",
   "owner_gate_required": false,
   "owner_gate_status": "ACCEPTED_WITH_WARNINGS_FOR_PHASE2E_ENTRY",
   "allowed_next_agents": [
-    "Codex"
+    "Antigravity"
   ],
   "blocked_actions": [
     "write novel prose",
@@ -97,10 +97,20 @@
       "name": "Phase 2E Chapter Plan Control Pack",
       "path": "phase2E/01_planning_package/phase2E_chapter_plan_control_pack.md",
       "status": "prepared"
+    },
+    {
+      "name": "Phase 2E Controlled Chapter Planning Output",
+      "path": "system/runtime/phase2e_controlled_chapter_planning_codex_output.md",
+      "status": "prepared"
+    },
+    {
+      "name": "Phase 2E Controlled Planning Validation",
+      "path": "system/runtime/phase2e_controlled_planning_validation_codex_output.md",
+      "status": "PASS"
     }
   ],
-  "validation_status": "PENDING_PHASE2E_CONTROLLED_PLANNING",
-  "review_status": "ANTIGRAVITY_WARNINGS_INTEGRATED_IN_CONTROL_PACK",
+  "validation_status": "PASS",
+  "review_status": "READY_FOR_ANTIGRAVITY_CONTROLLED_PLANNING_REVIEW",
   "drive_sync_status": "synced_to_drive",
   "notes": [
     "Phase 2C Hermes Bible completed.",
@@ -118,7 +128,9 @@
     "system_status: runtime_mvp_available",
     "Runtime ingest: antigravity external output registered at handoff/antigravity/outputs/phase2D_antigravity_outline_tree_review.md.",
     "Owner Gate accepted Antigravity review with warnings via owner_gate_phase2d_antigravity_review_accept_with_warnings_001.",
-    "Phase 2E chapter planning control pack prepared; prose remains blocked."
+    "Phase 2E chapter planning control pack prepared; prose remains blocked.",
+    "Phase 2E controlled planning output prepared; validation remains required before any chapter-facing plan.",
+    "Phase 2E controlled planning validation passed; Antigravity review is the next manual gate."
   ],
-  "updated_at": "2026-07-09T01:54:01+08:00"
+  "updated_at": "2026-07-09T02:01:21+08:00"
 }

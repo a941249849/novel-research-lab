@@ -36,6 +36,7 @@ from nrl_registry import (
     upsert_registry_mission,
 )
 from nrl_studio import render_studio
+from nrl_studio_data import build_studio_data
 from nrl_system_status import build_system_status
 
 STATE_PATH = runtime_path("system/mission_controller/current_phase_state.json")
@@ -209,6 +210,14 @@ def cmd_system_status(_: argparse.Namespace) -> int:
     state = load_state()
     adapters = load_adapters()
     print_json(build_system_status(state, adapters))
+    return 0
+
+
+def cmd_studio_data(_: argparse.Namespace) -> int:
+    state = load_state()
+    adapters = load_adapters()
+    registry = load_registry()
+    print_json(build_studio_data(state, registry, adapters))
     return 0
 
 
@@ -551,6 +560,7 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("check-inputs").set_defaults(func=cmd_check_inputs)
     sub.add_parser("gate-status").set_defaults(func=cmd_gate_status)
     sub.add_parser("system-status").set_defaults(func=cmd_system_status)
+    sub.add_parser("studio-data").set_defaults(func=cmd_studio_data)
     sub.add_parser("doctor").set_defaults(func=cmd_doctor)
     sub.add_parser("advance").set_defaults(func=cmd_advance)
     owner = sub.add_parser("owner-gate")

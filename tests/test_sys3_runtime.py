@@ -332,6 +332,42 @@ class RuntimeFixture(unittest.TestCase):
         self.assertIn("do not advance story phase", data["hard_rules"])
         self.assertEqual(data["hermes_role"], "later_writer_or_literary_enrichment")
 
+    def test_studio_data_returns_required_dashboard_sections(self):
+        result = self.run_cli("studio-data")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        data = json.loads(result.stdout)
+        self.assertEqual(
+            set(data),
+            {
+                "system_identity",
+                "current_project",
+                "agent_panel",
+                "artifact_map",
+                "creation_coverage_matrix",
+                "runtime_status",
+                "next_safe_action",
+                "owner_gate",
+            },
+        )
+        self.assertEqual(data["system_identity"]["name"], "Novel Research Lab")
+        self.assertIn("Corpus-to-Creation", data["system_identity"]["positioning"])
+
+    def test_studio_data_marks_long_form_assets_honestly(self):
+        result = self.run_cli("studio-data")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        data = json.loads(result.stdout)
+        matrix = {row["asset"]: row["status"] for row in data["creation_coverage_matrix"]["items"]}
+        self.assertEqual(matrix["Characters"], "partial")
+        self.assertEqual(matrix["NPCs"], "missing")
+        self.assertEqual(matrix["Factions"], "partial")
+        self.assertEqual(matrix["Artifacts"], "seed")
+        self.assertEqual(matrix["Techniques"], "missing")
+        self.assertEqual(matrix["Naming"], "missing")
+        self.assertEqual(matrix["Emotional Bonds"], "partial")
+        self.assertEqual(matrix["Foreshadowing"], "partial")
+        self.assertEqual(matrix["State Ledger"], "seed")
+        self.assertNotIn("complete", set(matrix.values()))
+
     def test_ingest_rejects_without_matching_attempt(self):
         output = self.root / "handoff/antigravity/outputs/phase2D_antigravity_outline_tree_review.md"
         output.parent.mkdir(parents=True, exist_ok=True)

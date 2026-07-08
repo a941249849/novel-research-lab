@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://nrl.local/schemas/state_ledger.schema.json",
+  "title": "State Ledger Asset",
+  "allOf": [
+    {"$ref": "https://nrl.local/schemas/common.schema.json"},
+    {
+      "properties": {
+        "family": {"const": "state_ledger"},
+        "state_ledger": {
+          "type": "object",
+          "properties": {
+            "state_key": {"type": "string"},
+            "value_type": {"type": "string"}
+          },
+          "additionalProperties": false
+        }
+      }
+    }
+  ]
+}

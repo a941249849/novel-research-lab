@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://nrl.local/schemas/techniques.schema.json",
+  "title": "Technique Asset",
+  "allOf": [
+    {"$ref": "https://nrl.local/schemas/common.schema.json"},
+    {
+      "properties": {
+        "family": {"const": "techniques"},
+        "technique": {
+          "type": "object",
+          "properties": {
+            "cost": {"type": "string"},
+            "counter_ids": {
+              "type": "array",
+              "items": {"type": "string"}
+            }
+          },
+          "additionalProperties": false
+        }
+      }
+    }
+  ]
+}

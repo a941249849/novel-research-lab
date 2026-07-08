@@ -2,7 +2,10 @@ from __future__ import annotations
 
 from typing import Any
 
+from nrl_capabilities import build_hardening_status
 from nrl_creation_assets import load_creation_asset_registry
+from nrl_creation_schemas import build_creation_schema_registry
+from nrl_research_assets import build_research_asset_catalog
 from nrl_system_status import build_system_status
 
 
@@ -71,8 +74,38 @@ def build_studio_data(
         str(state.get("selected_project", "UNKNOWN_PROJECT")),
         str(system_status["operating_mode"]),
     )
+    hardening_status = build_hardening_status(state, adapters)
+    research_assets = build_research_asset_catalog()
+    creation_schemas = build_creation_schema_registry()
 
     return {
+        "control_plane": {
+            "version": "0.2",
+            "locale": "zh-CN",
+            "mode": system_status["operating_mode"],
+            "content_progression": system_status["content_progression"],
+            "live_server_command": "python3 system/runtime/nrl.py studio-serve --port 4173",
+        },
+        "capability_roadmap": hardening_status,
+        "research_asset_catalog": research_assets,
+        "creation_schema_registry": creation_schemas,
+        "safe_action_catalog": {
+            "actions": [
+                {
+                    "action_id": "system-check",
+                    "label_zh": "运行系统体检",
+                    "method": "POST",
+                    "path": "/api/actions/system-check",
+                },
+                {
+                    "action_id": "validate-state",
+                    "label_zh": "验证运行状态",
+                    "method": "POST",
+                    "path": "/api/actions/validate-state",
+                },
+            ],
+            "forbidden_actions": ["advance", "execute-hermes", "execute-antigravity"],
+        },
         "system_identity": {
             "name": "Novel Research Lab",
             "positioning": "Corpus-to-Creation engine for Chinese long-form web novel creation.",

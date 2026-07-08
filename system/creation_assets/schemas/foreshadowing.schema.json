@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://nrl.local/schemas/foreshadowing.schema.json",
+  "title": "Foreshadowing Asset",
+  "allOf": [
+    {"$ref": "https://nrl.local/schemas/common.schema.json"},
+    {
+      "properties": {
+        "family": {"const": "foreshadowing"},
+        "foreshadowing": {
+          "type": "object",
+          "properties": {
+            "surface_explanation": {"type": "string"},
+            "payoff_stage": {"type": "string"}
+          },
+          "additionalProperties": false
+        }
+      }
+    }
+  ]
+}

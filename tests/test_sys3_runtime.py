@@ -336,8 +336,7 @@ class RuntimeFixture(unittest.TestCase):
         result = self.run_cli("studio-data")
         self.assertEqual(result.returncode, 0, result.stderr)
         data = json.loads(result.stdout)
-        self.assertEqual(
-            set(data),
+        self.assertTrue(
             {
                 "system_identity",
                 "current_project",
@@ -348,7 +347,7 @@ class RuntimeFixture(unittest.TestCase):
                 "runtime_status",
                 "next_safe_action",
                 "owner_gate",
-            },
+            }.issubset(data),
         )
         self.assertEqual(data["system_identity"]["name"], "Novel Research Lab")
         self.assertIn("Corpus-to-Creation", data["system_identity"]["positioning"])

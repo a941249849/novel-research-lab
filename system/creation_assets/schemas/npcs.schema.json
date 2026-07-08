@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://nrl.local/schemas/npcs.schema.json",
+  "title": "NPC Asset",
+  "allOf": [
+    {"$ref": "https://nrl.local/schemas/common.schema.json"},
+    {
+      "properties": {
+        "family": {"const": "npcs"},
+        "npc": {
+          "type": "object",
+          "properties": {
+            "role_class": {"type": "string"},
+            "recurrence_policy": {"type": "string"}
+          },
+          "additionalProperties": false
+        }
+      }
+    }
+  ]
+}

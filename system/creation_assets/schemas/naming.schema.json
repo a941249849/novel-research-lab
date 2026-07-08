@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://nrl.local/schemas/naming.schema.json",
+  "title": "Naming Rule Asset",
+  "allOf": [
+    {"$ref": "https://nrl.local/schemas/common.schema.json"},
+    {
+      "properties": {
+        "family": {"const": "naming"},
+        "naming": {
+          "type": "object",
+          "properties": {
+            "semantic_field": {"type": "string"},
+            "forbidden_collisions": {
+              "type": "array",
+              "items": {"type": "string"}
+            }
+          },
+          "additionalProperties": false
+        }
+      }
+    }
+  ]
+}

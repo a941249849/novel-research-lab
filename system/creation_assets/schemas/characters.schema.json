@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://nrl.local/schemas/characters.schema.json",
+  "title": "Character Asset",
+  "allOf": [
+    {"$ref": "https://nrl.local/schemas/common.schema.json"},
+    {
+      "properties": {
+        "family": {"const": "characters"},
+        "character": {
+          "type": "object",
+          "properties": {
+            "role": {"type": "string"},
+            "growth_stage": {"type": "string"}
+          },
+          "additionalProperties": false
+        }
+      }
+    }
+  ]
+}

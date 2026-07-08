@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://nrl.local/schemas/emotional_bonds.schema.json",
+  "title": "Emotional Bond Asset",
+  "allOf": [
+    {"$ref": "https://nrl.local/schemas/common.schema.json"},
+    {
+      "properties": {
+        "family": {"const": "emotional_bonds"},
+        "emotional_bond": {
+          "type": "object",
+          "properties": {
+            "bond_type": {"type": "string"},
+            "trust_state": {"type": "string"}
+          },
+          "additionalProperties": false
+        }
+      }
+    }
+  ]
+}

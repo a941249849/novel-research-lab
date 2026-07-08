@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://nrl.local/schemas/factions.schema.json",
+  "title": "Faction Asset",
+  "allOf": [
+    {"$ref": "https://nrl.local/schemas/common.schema.json"},
+    {
+      "properties": {
+        "family": {"const": "factions"},
+        "faction": {
+          "type": "object",
+          "properties": {
+            "interest": {"type": "string"},
+            "pressure_level": {"type": "integer", "minimum": 0}
+          },
+          "additionalProperties": false
+        }
+      }
+    }
+  ]
+}

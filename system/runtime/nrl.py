@@ -16,7 +16,12 @@ from pathlib import Path
 from typing import Any
 
 from nrl_compiler import compile_packet
+from nrl_capabilities import build_hardening_status
 from nrl_creation_assets import load_creation_asset_registry
+from nrl_creation_schemas import (
+    build_creation_schema_registry,
+    validate_creation_asset_store,
+)
 from nrl_doctor import run_doctor
 from nrl_handoff_packet import write_antigravity_packet
 from nrl_paths import ROOT, runtime_path
@@ -36,6 +41,7 @@ from nrl_registry import (
     save_registry,
     upsert_registry_mission,
 )
+from nrl_research_assets import build_research_asset_catalog
 from nrl_studio import render_studio
 from nrl_studio_data import build_studio_data
 from nrl_system_status import build_system_status
@@ -232,6 +238,36 @@ def cmd_creation_assets(_: argparse.Namespace) -> int:
         )
     )
     return 0
+
+
+def cmd_hardening_status(_: argparse.Namespace) -> int:
+    print_json(build_hardening_status(load_state(), load_adapters()))
+    return 0
+
+
+def cmd_research_assets(args: argparse.Namespace) -> int:
+    print_json(
+        build_research_asset_catalog(
+            {
+                "title": args.title,
+                "asset_type": args.asset_type,
+                "category": args.category,
+                "review_state": args.review_state,
+            }
+        )
+    )
+    return 0
+
+
+def cmd_creation_schemas(_: argparse.Namespace) -> int:
+    print_json(build_creation_schema_registry())
+    return 0
+
+
+def cmd_validate_creation_assets(_: argparse.Namespace) -> int:
+    result = validate_creation_asset_store()
+    print_json(result)
+    return 0 if result["valid"] else 1
 
 
 def cmd_owner_gate_record(args: argparse.Namespace) -> int:
@@ -575,6 +611,17 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("system-status").set_defaults(func=cmd_system_status)
     sub.add_parser("studio-data").set_defaults(func=cmd_studio_data)
     sub.add_parser("creation-assets").set_defaults(func=cmd_creation_assets)
+    sub.add_parser("hardening-status").set_defaults(func=cmd_hardening_status)
+    research = sub.add_parser("research-assets")
+    research.add_argument("--title")
+    research.add_argument("--asset-type")
+    research.add_argument("--category")
+    research.add_argument("--review-state")
+    research.set_defaults(func=cmd_research_assets)
+    sub.add_parser("creation-schemas").set_defaults(func=cmd_creation_schemas)
+    sub.add_parser("validate-creation-assets").set_defaults(
+        func=cmd_validate_creation_assets
+    )
     sub.add_parser("doctor").set_defaults(func=cmd_doctor)
     sub.add_parser("advance").set_defaults(func=cmd_advance)
     owner = sub.add_parser("owner-gate")

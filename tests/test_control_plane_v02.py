@@ -1,7 +1,10 @@
 import json
 import subprocess
 import sys
+import threading
 import unittest
+import urllib.error
+import urllib.request
 from pathlib import Path
 
 
@@ -88,6 +91,25 @@ class ControlPlaneCliTests(unittest.TestCase):
         ):
             self.assertIn(key, data)
 
+    def test_system_check_is_read_only_and_reports_all_contracts(self):
+        state_path = REPO_ROOT / "system/mission_controller/current_phase_state.json"
+        before = state_path.read_text(encoding="utf-8")
+        result = self.run_cli("system-check")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        data = json.loads(result.stdout)
+        self.assertTrue(data["passed"])
+        self.assertEqual(
+            {check["check_id"] for check in data["checks"]},
+            {
+                "runtime_state",
+                "capability_roadmap",
+                "research_asset_catalog",
+                "creation_schemas",
+                "creation_asset_store",
+            },
+        )
+        self.assertEqual(state_path.read_text(encoding="utf-8"), before)
+
 
 class CreationAssetValidationTests(unittest.TestCase):
     def setUp(self):
@@ -164,6 +186,65 @@ class CreationAssetValidationTests(unittest.TestCase):
         result = self.validate({"version": "0.2", "project": "test", "assets": [asset]})
         self.assertFalse(result["valid"])
         self.assertIn("schema_validation", {error["code"] for error in result["errors"]})
+
+
+class StudioServerTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        from nrl_studio_server import create_studio_server
+
+        cls.server = create_studio_server("127.0.0.1", 0)
+        cls.thread = threading.Thread(target=cls.server.serve_forever, daemon=True)
+        cls.thread.start()
+        cls.base_url = f"http://127.0.0.1:{cls.server.server_port}"
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.server.shutdown()
+        cls.server.server_close()
+        cls.thread.join(timeout=2)
+
+    def request_json(self, path, method="GET", payload=None):
+        data = None if payload is None else json.dumps(payload).encode("utf-8")
+        request = urllib.request.Request(
+            self.base_url + path,
+            data=data,
+            method=method,
+            headers={"Content-Type": "application/json"},
+        )
+        with urllib.request.urlopen(request, timeout=5) as response:
+            return response.status, json.loads(response.read().decode("utf-8"))
+
+    def test_get_routes_return_control_plane_data(self):
+        for path, expected_key in (
+            ("/api/studio-data", "control_plane"),
+            ("/api/research-assets", "catalog_name"),
+            ("/api/creation-schemas", "registry_name"),
+        ):
+            status, data = self.request_json(path)
+            self.assertEqual(status, 200)
+            self.assertIn(expected_key, data)
+
+    def test_allowlisted_post_actions_run_without_arbitrary_command_input(self):
+        status, data = self.request_json(
+            "/api/actions/system-check", method="POST", payload={}
+        )
+        self.assertEqual(status, 200)
+        self.assertTrue(data["passed"])
+
+        with self.assertRaises(urllib.error.HTTPError) as raised:
+            self.request_json(
+                "/api/actions/system-check",
+                method="POST",
+                payload={"command": "rm -rf /"},
+            )
+        self.assertEqual(raised.exception.code, 400)
+
+    def test_server_rejects_advance_and_unknown_actions(self):
+        for path in ("/api/actions/advance", "/api/actions/not-real"):
+            with self.assertRaises(urllib.error.HTTPError) as raised:
+                self.request_json(path, method="POST", payload={})
+            self.assertEqual(raised.exception.code, 404)
 
 
 if __name__ == "__main__":

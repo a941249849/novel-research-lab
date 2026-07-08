@@ -44,6 +44,8 @@ from nrl_registry import (
 from nrl_research_assets import build_research_asset_catalog
 from nrl_studio import render_studio
 from nrl_studio_data import build_studio_data
+from nrl_studio_server import create_studio_server
+from nrl_system_check import run_system_check
 from nrl_system_status import build_system_status
 
 STATE_PATH = runtime_path("system/mission_controller/current_phase_state.json")
@@ -268,6 +270,30 @@ def cmd_validate_creation_assets(_: argparse.Namespace) -> int:
     result = validate_creation_asset_store()
     print_json(result)
     return 0 if result["valid"] else 1
+
+
+def cmd_system_check(_: argparse.Namespace) -> int:
+    result = run_system_check()
+    print_json(result)
+    return 0 if result["passed"] else 1
+
+
+def cmd_studio_serve(args: argparse.Namespace) -> int:
+    server = create_studio_server(args.host, args.port)
+    print_json(
+        {
+            "studio_url": f"http://{args.host}:{server.server_port}",
+            "mode": "live_control_plane",
+        }
+    )
+    sys.stdout.flush()
+    try:
+        server.serve_forever()
+    except KeyboardInterrupt:
+        pass
+    finally:
+        server.server_close()
+    return 0
 
 
 def cmd_owner_gate_record(args: argparse.Namespace) -> int:
@@ -622,6 +648,7 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("validate-creation-assets").set_defaults(
         func=cmd_validate_creation_assets
     )
+    sub.add_parser("system-check").set_defaults(func=cmd_system_check)
     sub.add_parser("doctor").set_defaults(func=cmd_doctor)
     sub.add_parser("advance").set_defaults(func=cmd_advance)
     owner = sub.add_parser("owner-gate")
@@ -643,6 +670,10 @@ def build_parser() -> argparse.ArgumentParser:
     compile_context.add_argument("--agent", required=True, choices=["hermes", "antigravity"])
     compile_context.set_defaults(func=cmd_compile_context)
     sub.add_parser("studio-build").set_defaults(func=cmd_studio_build)
+    studio_serve = sub.add_parser("studio-serve")
+    studio_serve.add_argument("--host", default="127.0.0.1")
+    studio_serve.add_argument("--port", type=int, default=4173)
+    studio_serve.set_defaults(func=cmd_studio_serve)
     prepare = sub.add_parser("prepare-handoff")
     prepare.add_argument("--agent", required=True, choices=["hermes", "antigravity"])
     prepare.set_defaults(func=cmd_prepare_handoff)

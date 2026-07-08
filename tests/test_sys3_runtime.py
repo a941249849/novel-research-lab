@@ -214,11 +214,22 @@ class RuntimeFixture(unittest.TestCase):
         self.assertIn("ACCEPT_WITH_WARNINGS", manifest)
         self.assertIn("vary pacing loops", manifest)
         self.assertIn("Do not write novel prose", manifest)
+        package = self.run_cli("advance")
+        self.assertEqual(package.returncode, 0, package.stderr)
+        package_data = json.loads(package.stdout)
+        self.assertEqual(package_data["action"], "phase2e_planning_package_prepared")
+        self.assertEqual(package_data["status"], "phase2e_planning_package_ready")
+        package_path = self.root / "phase2E/01_planning_package/phase2E_chapter_plan_control_pack.md"
+        package_text = package_path.read_text(encoding="utf-8")
+        self.assertIn("Phase 2E Chapter Plan Control Pack", package_text)
+        self.assertIn("Vary pacing loops", package_text)
+        self.assertIn("Do not write novel prose", package_text)
+        self.assertNotIn("Chapter 1 prose", package_text)
         ready = self.run_cli("advance")
         self.assertEqual(ready.returncode, 0, ready.stderr)
         ready_data = json.loads(ready.stdout)
-        self.assertEqual(ready_data["action"], "phase2e_entry_ready")
-        self.assertEqual(ready_data["status"], "ready_for_phase2e_planning")
+        self.assertEqual(ready_data["action"], "phase2e_planning_package_ready")
+        self.assertEqual(ready_data["status"], "ready_for_controlled_chapter_planning")
 
     def test_ingest_rejects_without_matching_attempt(self):
         output = self.root / "handoff/antigravity/outputs/phase2D_antigravity_outline_tree_review.md"

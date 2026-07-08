@@ -1,12 +1,12 @@
 {
   "project_name": "Novel Research Lab",
   "current_phase": "Phase 2E",
-  "current_subphase": "Chapter Plan Entry Preparation",
+  "current_subphase": "Chapter Plan Control Package",
   "previous_story_phase": "Phase 2D",
   "selected_project": "《借天改命账》",
-  "phase_status": "PHASE2E_ENTRY_PREPARATION_AUTHORIZED",
+  "phase_status": "PHASE2E_PLANNING_PACKAGE_READY",
   "last_completed_mission": "Phase 2D Antigravity Outline Tree Review",
-  "next_recommended_mission": "Phase 2E Chapter Plan Entry Preparation",
+  "next_recommended_mission": "Phase 2E Controlled Chapter Planning",
   "owner_gate_required": false,
   "owner_gate_status": "ACCEPTED_WITH_WARNINGS_FOR_PHASE2E_ENTRY",
   "allowed_next_agents": [
@@ -92,10 +92,15 @@
       "name": "Phase 2E Entry Manifest",
       "path": "phase2E/00_entry/phase2E_entry_manifest.md",
       "status": "prepared"
+    },
+    {
+      "name": "Phase 2E Chapter Plan Control Pack",
+      "path": "phase2E/01_planning_package/phase2E_chapter_plan_control_pack.md",
+      "status": "prepared"
     }
   ],
-  "validation_status": "PENDING_PHASE2E_ENTRY_PREPARATION",
-  "review_status": "ANTIGRAVITY_REVIEW_ACCEPTED_WITH_WARNINGS",
+  "validation_status": "PENDING_PHASE2E_CONTROLLED_PLANNING",
+  "review_status": "ANTIGRAVITY_WARNINGS_INTEGRATED_IN_CONTROL_PACK",
   "drive_sync_status": "synced_to_drive",
   "notes": [
     "Phase 2C Hermes Bible completed.",
@@ -112,7 +117,8 @@
     "Runtime adapter status: Antigravity adapter manual_handoff.",
     "system_status: runtime_mvp_available",
     "Runtime ingest: antigravity external output registered at handoff/antigravity/outputs/phase2D_antigravity_outline_tree_review.md.",
-    "Owner Gate accepted Antigravity review with warnings via owner_gate_phase2d_antigravity_review_accept_with_warnings_001."
+    "Owner Gate accepted Antigravity review with warnings via owner_gate_phase2d_antigravity_review_accept_with_warnings_001.",
+    "Phase 2E chapter planning control pack prepared; prose remains blocked."
   ],
-  "updated_at": "2026-07-09T01:49:45+08:00"
+  "updated_at": "2026-07-09T01:54:01+08:00"
 }

@@ -20,7 +20,7 @@ from nrl_doctor import run_doctor
 from nrl_handoff_packet import write_antigravity_packet
 from nrl_paths import ROOT, runtime_path
 from nrl_owner_gate import load_decisions, record_owner_decision
-from nrl_phase2e import latest_phase2e_acceptance, prepare_phase2e_entry
+from nrl_phase2e import latest_phase2e_acceptance, prepare_phase2e_entry, prepare_phase2e_planning_package
 from nrl_registry import (
     find_active_attempt,
     load_registry,
@@ -373,15 +373,32 @@ def cmd_advance(_: argparse.Namespace) -> int:
 
     if (
         state.get("current_phase") == "Phase 2E"
-        and state.get("phase_status") == "PHASE2E_ENTRY_PREPARATION_AUTHORIZED"
+        and state.get("phase_status") == "PHASE2E_PLANNING_PACKAGE_READY"
     ):
         print_json(
             {
-                "action": "phase2e_entry_ready",
-                "status": "ready_for_phase2e_planning",
+                "action": "phase2e_planning_package_ready",
+                "status": "ready_for_controlled_chapter_planning",
                 "mission_id": mission_id,
                 "responsible_agent": agent,
-                "manifest_path": "phase2E/00_entry/phase2E_entry_manifest.md",
+                "control_pack_path": "phase2E/01_planning_package/phase2E_chapter_plan_control_pack.md",
+            }
+        )
+        return 0
+
+    if (
+        state.get("current_phase") == "Phase 2E"
+        and state.get("phase_status") == "PHASE2E_ENTRY_PREPARATION_AUTHORIZED"
+    ):
+        result = prepare_phase2e_planning_package(state, now_iso())
+        write_json(STATE_PATH, state)
+        print_json(
+            {
+                "action": "phase2e_planning_package_prepared",
+                "status": "phase2e_planning_package_ready",
+                "mission_id": mission_id,
+                "responsible_agent": agent,
+                **result,
             }
         )
         return 0

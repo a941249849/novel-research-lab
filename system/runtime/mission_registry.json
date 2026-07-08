@@ -4,7 +4,7 @@
     "mission_name": "Phase 2D Antigravity Outline Tree Review",
     "phase": "Phase 2D",
     "responsible_agent": "antigravity",
-    "status": "awaiting_external_output",
+    "status": "output_detected",
     "input_artifacts": [
       "phase2C/01_prompt/phase2C_bible_output_contract.md",
       "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md",
@@ -26,12 +26,13 @@
       "handoff/antigravity/outputs/phase2D_antigravity_outline_tree_review.md"
     ],
     "created_at": "2026-07-08T21:45:00+08:00",
-    "updated_at": "2026-07-09T01:32:20+08:00",
+    "updated_at": "2026-07-09T01:46:35+08:00",
     "gate_status": "owner_gate_not_required",
     "notes": [
       "Antigravity is manual_handoff; this registry does not imply automatic review execution.",
       "Initial runtime MVP registry seed for the current next mission.",
       "adapter_mode=manual_handoff",
+      "antigravity output ingested from handoff/antigravity/outputs/phase2D_antigravity_outline_tree_review.md",
       "handoff prepared at handoff/antigravity/current_task.md"
     ],
     "handoff_attempts": [
@@ -62,8 +63,8 @@
         "stale_after": "",
         "ingest_command": "python3 system/runtime/nrl.py ingest --agent antigravity --file handoff/antigravity/outputs/phase2D_antigravity_outline_tree_review.md",
         "validation_contract": "Codex validation or Owner Gate required by mission contract",
-        "status": "awaiting_external_output",
-        "updated_at": "2026-07-09T01:32:20+08:00"
+        "status": "output_detected",
+        "updated_at": "2026-07-09T01:46:35+08:00"
       }
     ]
   }

@@ -4,11 +4,11 @@
   "current_subphase": "Outline Tree Production",
   "previous_story_phase": "Phase 2C",
   "selected_project": "《借天改命账》",
-  "phase_status": "OUTLINE_TREE_VALIDATED_PENDING_ANTIGRAVITY_REVIEW",
+  "phase_status": "review_received_pending_owner_gate",
   "last_completed_mission": "Phase 2D Outline Tree Production Mission",
   "next_recommended_mission": "Phase 2D Antigravity Outline Tree Review",
-  "owner_gate_required": false,
-  "owner_gate_status": "ACCEPTED_FOR_PHASE2D_ENTRY_PREPARATION",
+  "owner_gate_required": true,
+  "owner_gate_status": "REQUIRED_PENDING_ACKNOWLEDGEMENT",
   "allowed_next_agents": [
     "Antigravity"
   ],
@@ -86,7 +86,7 @@
     }
   ],
   "validation_status": "PASS_WITH_WARNINGS",
-  "review_status": "PENDING_ANTIGRAVITY_OUTLINE_TREE_REVIEW",
+  "review_status": "REVIEW_RECEIVED_PENDING_OWNER_GATE",
   "drive_sync_status": "synced_to_drive",
   "notes": [
     "Phase 2C Hermes Bible completed.",
@@ -101,7 +101,8 @@
     "Runtime adapter status: Codex adapter local.",
     "Runtime adapter status: Hermes adapter manual_handoff.",
     "Runtime adapter status: Antigravity adapter manual_handoff.",
-    "system_status: runtime_mvp_available"
+    "system_status: runtime_mvp_available",
+    "Runtime ingest: antigravity external output registered at handoff/antigravity/outputs/phase2D_antigravity_outline_tree_review.md."
   ],
-  "updated_at": "2026-07-08T21:45:00+08:00"
+  "updated_at": "2026-07-09T01:46:35+08:00"
 }

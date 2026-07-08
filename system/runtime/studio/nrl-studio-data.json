@@ -1,4 +1,1400 @@
 {
+  "control_plane": {
+    "version": "0.2",
+    "locale": "zh-CN",
+    "mode": "SYSTEM_HARDENING",
+    "content_progression": "FROZEN_AT_OWNER_GATE",
+    "live_server_command": "python3 system/runtime/nrl.py studio-serve --port 4173"
+  },
+  "capability_roadmap": {
+    "version": "0.2",
+    "mode": "SYSTEM_HARDENING",
+    "content_progression": "FROZEN_AT_OWNER_GATE",
+    "capabilities": [
+      {
+        "capability_id": "corpus_engineering",
+        "label_zh": "语料工程",
+        "status": "data_ready",
+        "dependencies": [],
+        "evidence": [
+          {
+            "path": "phase0A/00_manifest/novel_manifest.csv",
+            "exists": true
+          }
+        ],
+        "next_action": "保持原文隔离，仅消费结构化衍生资产。",
+        "evidence_complete": true,
+        "is_next_safe_action": false
+      },
+      {
+        "capability_id": "single_book_decomposition",
+        "label_zh": "单书拆解",
+        "status": "data_ready",
+        "dependencies": [
+          "corpus_engineering"
+        ],
+        "evidence": [
+          {
+            "path": "phase1/02_book_dna",
+            "exists": true
+          },
+          {
+            "path": "phase1/02_narrative_dna",
+            "exists": true
+          },
+          {
+            "path": "phase1/02_state_ledgers",
+            "exists": true
+          }
+        ],
+        "next_action": "通过研究资产目录检索已审核拆解结果。",
+        "evidence_complete": true,
+        "is_next_safe_action": false
+      },
+      {
+        "capability_id": "cross_book_mechanism_distillation",
+        "label_zh": "跨书机制蒸馏",
+        "status": "data_ready",
+        "dependencies": [
+          "single_book_decomposition"
+        ],
+        "evidence": [
+          {
+            "path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+            "exists": true
+          }
+        ],
+        "next_action": "保持机制来源与原创性红线可追溯。",
+        "evidence_complete": true,
+        "is_next_safe_action": false
+      },
+      {
+        "capability_id": "research_asset_retrieval",
+        "label_zh": "研究资产检索",
+        "status": "runnable",
+        "dependencies": [
+          "cross_book_mechanism_distillation"
+        ],
+        "evidence": [
+          {
+            "path": "phase1/05_review/phase1C_asset_manifest.json",
+            "exists": true
+          },
+          {
+            "path": "system/runtime/nrl_research_assets.py",
+            "exists": true
+          }
+        ],
+        "next_action": "使用 research-assets 查询结构化研究资产。",
+        "evidence_complete": true,
+        "is_next_safe_action": false
+      },
+      {
+        "capability_id": "creation_asset_contracts",
+        "label_zh": "创作资产契约",
+        "status": "contract_ready",
+        "dependencies": [
+          "research_asset_retrieval"
+        ],
+        "evidence": [
+          {
+            "path": "system/creation_assets/schemas",
+            "exists": true
+          },
+          {
+            "path": "system/creation_assets/project_assets.v0.2.json",
+            "exists": true
+          }
+        ],
+        "next_action": "验证空项目资产库并准备 Corpus-to-Creation 接口。",
+        "evidence_complete": true,
+        "is_next_safe_action": true
+      },
+      {
+        "capability_id": "consistency_validation",
+        "label_zh": "一致性检查",
+        "status": "runnable",
+        "dependencies": [
+          "creation_asset_contracts"
+        ],
+        "evidence": [
+          {
+            "path": "system/runtime/nrl_creation_schemas.py",
+            "exists": true
+          }
+        ],
+        "next_action": "运行 validate-creation-assets。",
+        "evidence_complete": true,
+        "is_next_safe_action": false
+      },
+      {
+        "capability_id": "agent_orchestration",
+        "label_zh": "Agent 编排",
+        "status": "contract_ready",
+        "dependencies": [
+          "consistency_validation"
+        ],
+        "evidence": [
+          {
+            "path": "system/runtime/agent_adapters.json",
+            "exists": true
+          },
+          {
+            "path": "system/runtime/mission_registry.json",
+            "exists": true
+          }
+        ],
+        "next_action": "继续使用真实 manual_handoff，等待 Owner 授权适配器升级。",
+        "evidence_complete": true,
+        "is_next_safe_action": false
+      },
+      {
+        "capability_id": "prose_production",
+        "label_zh": "正文生产",
+        "status": "blocked",
+        "dependencies": [
+          "agent_orchestration"
+        ],
+        "evidence": [
+          {
+            "path": "system/mission_controller/current_phase_state.json",
+            "exists": true
+          }
+        ],
+        "next_action": "Owner Gate 未解除前禁止正文生产。",
+        "evidence_complete": true,
+        "is_next_safe_action": false
+      }
+    ],
+    "next_safe_action": {
+      "capability_id": "creation_asset_contracts",
+      "label_zh": "创作资产契约",
+      "action": "验证空项目资产库并准备 Corpus-to-Creation 接口。"
+    }
+  },
+  "research_asset_catalog": {
+    "catalog_name": "NRL Research Asset Catalog",
+    "version": "0.2",
+    "source_of_truth": [
+      "phase1/05_review/phase1C_asset_manifest.json",
+      "phase1/04_mechanism_library/category_manifest.json"
+    ],
+    "filters": {},
+    "items": [
+      {
+        "asset_id": "mechanism-dpcq-m1",
+        "title": "斗破苍穹",
+        "asset_type": "mechanism",
+        "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [
+          "压迫与释放机制"
+        ],
+        "mechanism_id": "DPCQ-M1",
+        "mechanism_name": "公开测评羞辱",
+        "exists": true
+      },
+      {
+        "asset_id": "mechanism-dpcq-m2",
+        "title": "斗破苍穹",
+        "asset_type": "mechanism",
+        "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [
+          "压迫与释放机制"
+        ],
+        "mechanism_id": "DPCQ-M2",
+        "mechanism_name": "期限承诺驱动",
+        "exists": true
+      },
+      {
+        "asset_id": "mechanism-dpcq-m3",
+        "title": "斗破苍穹",
+        "asset_type": "mechanism",
+        "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [
+          "资源与资产机制"
+        ],
+        "mechanism_id": "DPCQ-M3",
+        "mechanism_name": "亏损型导师外挂",
+        "exists": true
+      },
+      {
+        "asset_id": "mechanism-dpcq-m4",
+        "title": "斗破苍穹",
+        "asset_type": "mechanism",
+        "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [
+          "升级与境界机制"
+        ],
+        "mechanism_id": "DPCQ-M4",
+        "mechanism_name": "职业身份抬升",
+        "exists": true
+      },
+      {
+        "asset_id": "mechanism-dpcq-m5",
+        "title": "斗破苍穹",
+        "asset_type": "mechanism",
+        "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [
+          "升级与境界机制"
+        ],
+        "mechanism_id": "DPCQ-M5",
+        "mechanism_name": "破位面续航",
+        "exists": true
+      },
+      {
+        "asset_id": "mechanism-frxxz-m1",
+        "title": "凡人修仙传",
+        "asset_type": "mechanism",
+        "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [
+          "避战与风险控制机制"
+        ],
+        "mechanism_id": "FRXXZ-M1",
+        "mechanism_name": "贫寒风险敏感",
+        "exists": true
+      },
+      {
+        "asset_id": "mechanism-frxxz-m2",
+        "title": "凡人修仙传",
+        "asset_type": "mechanism",
+        "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [
+          "资源与资产机制"
+        ],
+        "mechanism_id": "FRXXZ-M2",
+        "mechanism_name": "隐秘资产长期复利",
+        "exists": true
+      },
+      {
+        "asset_id": "mechanism-frxxz-m3",
+        "title": "凡人修仙传",
+        "asset_type": "mechanism",
+        "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [
+          "避战与风险控制机制"
+        ],
+        "mechanism_id": "FRXXZ-M3",
+        "mechanism_name": "威慑优先于杀戮",
+        "exists": true
+      },
+      {
+        "asset_id": "mechanism-frxxz-m4",
+        "title": "凡人修仙传",
+        "asset_type": "mechanism",
+        "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [
+          "避战与风险控制机制"
+        ],
+        "mechanism_id": "FRXXZ-M4",
+        "mechanism_name": "高危节点避战",
+        "exists": true
+      },
+      {
+        "asset_id": "mechanism-frxxz-m5",
+        "title": "凡人修仙传",
+        "asset_type": "mechanism",
+        "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [
+          "升级与境界机制"
+        ],
+        "mechanism_id": "FRXXZ-M5",
+        "mechanism_name": "飞升后秩序重评估",
+        "exists": true
+      },
+      {
+        "asset_id": "mechanism-gmzz-m1",
+        "title": "诡秘之主",
+        "asset_type": "mechanism",
+        "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [
+          "探索/谜团/知识机制"
+        ],
+        "mechanism_id": "GMZZ-M1",
+        "mechanism_name": "案发现场苏醒",
+        "exists": true
+      },
+      {
+        "asset_id": "mechanism-gmzz-m2",
+        "title": "诡秘之主",
+        "asset_type": "mechanism",
+        "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [
+          "升级与境界机制"
+        ],
+        "mechanism_id": "GMZZ-M2",
+        "mechanism_name": "日常与恐怖并置",
+        "exists": true
+      },
+      {
+        "asset_id": "mechanism-gmzz-m3",
+        "title": "诡秘之主",
+        "asset_type": "mechanism",
+        "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [
+          "升级与境界机制"
+        ],
+        "mechanism_id": "GMZZ-M3",
+        "mechanism_name": "规则污染升级",
+        "exists": true
+      },
+      {
+        "asset_id": "mechanism-gmzz-m4",
+        "title": "诡秘之主",
+        "asset_type": "mechanism",
+        "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [
+          "隐藏实力与信息差机制"
+        ],
+        "mechanism_id": "GMZZ-M4",
+        "mechanism_name": "马甲身份隔离",
+        "exists": true
+      },
+      {
+        "asset_id": "mechanism-gmzz-m5",
+        "title": "诡秘之主",
+        "asset_type": "mechanism",
+        "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [
+          "探索/谜团/知识机制"
+        ],
+        "mechanism_id": "GMZZ-M5",
+        "mechanism_name": "冰山普通人视角",
+        "exists": true
+      },
+      {
+        "asset_id": "mechanism-gzr-m1",
+        "title": "蛊真人",
+        "asset_type": "mechanism",
+        "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [
+          "隐藏实力与信息差机制"
+        ],
+        "mechanism_id": "GZR-M1",
+        "mechanism_name": "失败终局回切先手",
+        "exists": true
+      },
+      {
+        "asset_id": "mechanism-gzr-m2",
+        "title": "蛊真人",
+        "asset_type": "mechanism",
+        "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [
+          "隐藏实力与信息差机制"
+        ],
+        "mechanism_id": "GZR-M2",
+        "mechanism_name": "制度漏洞套利",
+        "exists": true
+      },
+      {
+        "asset_id": "mechanism-gzr-m3",
+        "title": "蛊真人",
+        "asset_type": "mechanism",
+        "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [
+          "宿命/情绪/哲学机制"
+        ],
+        "mechanism_id": "GZR-M3",
+        "mechanism_name": "道德叙事反包装",
+        "exists": true
+      },
+      {
+        "asset_id": "mechanism-gzr-m4",
+        "title": "蛊真人",
+        "asset_type": "mechanism",
+        "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [
+          "反噬/代价/污染机制"
+        ],
+        "mechanism_id": "GZR-M4",
+        "mechanism_name": "运势反噬压力",
+        "exists": true
+      },
+      {
+        "asset_id": "mechanism-gzr-m5",
+        "title": "蛊真人",
+        "asset_type": "mechanism",
+        "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [
+          "探索/谜团/知识机制"
+        ],
+        "mechanism_id": "GZR-M5",
+        "mechanism_name": "底层规则所有权",
+        "exists": true
+      },
+      {
+        "asset_id": "mechanism-qm-m1",
+        "title": "求魔",
+        "asset_type": "mechanism",
+        "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [
+          "压迫与释放机制"
+        ],
+        "mechanism_id": "QM-M1",
+        "mechanism_name": "绝望序章压顶",
+        "exists": true
+      },
+      {
+        "asset_id": "mechanism-qm-m2",
+        "title": "求魔",
+        "asset_type": "mechanism",
+        "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [
+          "反噬/代价/污染机制"
+        ],
+        "mechanism_id": "QM-M2",
+        "mechanism_name": "资格缺失内伤",
+        "exists": true
+      },
+      {
+        "asset_id": "mechanism-qm-m3",
+        "title": "求魔",
+        "asset_type": "mechanism",
+        "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [
+          "资源与资产机制"
+        ],
+        "mechanism_id": "QM-M3",
+        "mechanism_name": "异物触发真相",
+        "exists": true
+      },
+      {
+        "asset_id": "mechanism-qm-m4",
+        "title": "求魔",
+        "asset_type": "mechanism",
+        "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [
+          "组织/阵营/声望机制"
+        ],
+        "mechanism_id": "QM-M4",
+        "mechanism_name": "反常师门庇护",
+        "exists": true
+      },
+      {
+        "asset_id": "mechanism-qm-m5",
+        "title": "求魔",
+        "asset_type": "mechanism",
+        "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [
+          "宿命/情绪/哲学机制"
+        ],
+        "mechanism_id": "QM-M5",
+        "mechanism_name": "自我缺席式圆满",
+        "exists": true
+      },
+      {
+        "asset_id": "mechanism-rdzz-m1",
+        "title": "人道至尊",
+        "asset_type": "mechanism",
+        "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [
+          "压迫与释放机制"
+        ],
+        "mechanism_id": "RDZZ-M1",
+        "mechanism_name": "弱族叙事前置",
+        "exists": true
+      },
+      {
+        "asset_id": "mechanism-rdzz-m2",
+        "title": "人道至尊",
+        "asset_type": "mechanism",
+        "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [
+          "资源与资产机制"
+        ],
+        "mechanism_id": "RDZZ-M2",
+        "mechanism_name": "传承火种解封",
+        "exists": true
+      },
+      {
+        "asset_id": "mechanism-rdzz-m3",
+        "title": "人道至尊",
+        "asset_type": "mechanism",
+        "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [
+          "升级与境界机制"
+        ],
+        "mechanism_id": "RDZZ-M3",
+        "mechanism_name": "个人升级族群化",
+        "exists": true
+      },
+      {
+        "asset_id": "mechanism-rdzz-m4",
+        "title": "人道至尊",
+        "asset_type": "mechanism",
+        "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [
+          "组织/阵营/声望机制"
+        ],
+        "mechanism_id": "RDZZ-M4",
+        "mechanism_name": "留根后开战",
+        "exists": true
+      },
+      {
+        "asset_id": "mechanism-rdzz-m5",
+        "title": "人道至尊",
+        "asset_type": "mechanism",
+        "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [
+          "宿命/情绪/哲学机制"
+        ],
+        "mechanism_id": "RDZZ-M5",
+        "mechanism_name": "古今祖地闭环",
+        "exists": true
+      },
+      {
+        "asset_id": "mechanism-zt-m1",
+        "title": "遮天",
+        "asset_type": "mechanism",
+        "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [
+          "探索/谜团/知识机制"
+        ],
+        "mechanism_id": "ZT-M1",
+        "mechanism_name": "现实认知断裂入口",
+        "exists": true
+      },
+      {
+        "asset_id": "mechanism-zt-m2",
+        "title": "遮天",
+        "asset_type": "mechanism",
+        "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [
+          "资源与资产机制"
+        ],
+        "mechanism_id": "ZT-M2",
+        "mechanism_name": "旧时代资源坟场",
+        "exists": true
+      },
+      {
+        "asset_id": "mechanism-zt-m3",
+        "title": "遮天",
+        "asset_type": "mechanism",
+        "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [
+          "压迫与释放机制"
+        ],
+        "mechanism_id": "ZT-M3",
+        "mechanism_name": "被围猎者反向组局",
+        "exists": true
+      },
+      {
+        "asset_id": "mechanism-zt-m4",
+        "title": "遮天",
+        "asset_type": "mechanism",
+        "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [
+          "升级与境界机制"
+        ],
+        "mechanism_id": "ZT-M4",
+        "mechanism_name": "星空淘汰赛地图",
+        "exists": true
+      },
+      {
+        "asset_id": "mechanism-zt-m5",
+        "title": "遮天",
+        "asset_type": "mechanism",
+        "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [
+          "宿命/情绪/哲学机制"
+        ],
+        "mechanism_id": "ZT-M5",
+        "mechanism_name": "故人回流终局",
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-book_dna-001",
+        "title": "遮天",
+        "asset_type": "book_dna",
+        "source_path": "phase1/02_book_dna/遮天_dna.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-book_dna-005",
+        "title": "蛊真人",
+        "asset_type": "book_dna",
+        "source_path": "phase1/02_book_dna/蛊真人_dna.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-book_dna-009",
+        "title": "人道至尊",
+        "asset_type": "book_dna",
+        "source_path": "phase1/02_book_dna/人道至尊_dna.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-book_dna-013",
+        "title": "凡人修仙传",
+        "asset_type": "book_dna",
+        "source_path": "phase1/02_book_dna/凡人修仙传_dna.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-book_dna-017",
+        "title": "斗破苍穹",
+        "asset_type": "book_dna",
+        "source_path": "phase1/02_book_dna/斗破苍穹_dna.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-book_dna-021",
+        "title": "诡秘之主",
+        "asset_type": "book_dna",
+        "source_path": "phase1/02_book_dna/诡秘之主_dna.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-book_dna-025",
+        "title": "求魔",
+        "asset_type": "book_dna",
+        "source_path": "phase1/02_book_dna/求魔_dna.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-book_dna-036",
+        "title": "一念永恒",
+        "asset_type": "book_dna",
+        "source_path": "phase1/02_book_dna/一念永恒_dna.json",
+        "review_state": "stub",
+        "provenance": "stub",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-book_dna-039",
+        "title": "不死不灭",
+        "asset_type": "book_dna",
+        "source_path": "phase1/02_book_dna/不死不灭_dna.json",
+        "review_state": "stub",
+        "provenance": "stub",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-book_dna-042",
+        "title": "仙逆",
+        "asset_type": "book_dna",
+        "source_path": "phase1/02_book_dna/仙逆_dna.json",
+        "review_state": "stub",
+        "provenance": "stub",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-book_dna-045",
+        "title": "圣墟",
+        "asset_type": "book_dna",
+        "source_path": "phase1/02_book_dna/圣墟_dna.json",
+        "review_state": "stub",
+        "provenance": "stub",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-book_dna-048",
+        "title": "大主宰",
+        "asset_type": "book_dna",
+        "source_path": "phase1/02_book_dna/大主宰_dna.json",
+        "review_state": "stub",
+        "provenance": "stub",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-book_dna-051",
+        "title": "完美世界",
+        "asset_type": "book_dna",
+        "source_path": "phase1/02_book_dna/完美世界_dna.json",
+        "review_state": "stub",
+        "provenance": "stub",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-book_dna-054",
+        "title": "将夜",
+        "asset_type": "book_dna",
+        "source_path": "phase1/02_book_dna/将夜_dna.json",
+        "review_state": "stub",
+        "provenance": "stub",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-book_dna-057",
+        "title": "武动乾坤",
+        "asset_type": "book_dna",
+        "source_path": "phase1/02_book_dna/武动乾坤_dna.json",
+        "review_state": "stub",
+        "provenance": "stub",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-book_dna-060",
+        "title": "永生",
+        "asset_type": "book_dna",
+        "source_path": "phase1/02_book_dna/永生_dna.json",
+        "review_state": "stub",
+        "provenance": "stub",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-book_dna-063",
+        "title": "牧神记",
+        "asset_type": "book_dna",
+        "source_path": "phase1/02_book_dna/牧神记_dna.json",
+        "review_state": "stub",
+        "provenance": "stub",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-book_dna-066",
+        "title": "雪中悍刀行",
+        "asset_type": "book_dna",
+        "source_path": "phase1/02_book_dna/雪中悍刀行_dna.json",
+        "review_state": "stub",
+        "provenance": "stub",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-mechanism_notes-004",
+        "title": "遮天",
+        "asset_type": "mechanism_notes",
+        "source_path": "phase1/04_mechanism_library/core7_notes/遮天_mechanism_notes.md",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-mechanism_notes-008",
+        "title": "蛊真人",
+        "asset_type": "mechanism_notes",
+        "source_path": "phase1/04_mechanism_library/core7_notes/蛊真人_mechanism_notes.md",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-mechanism_notes-012",
+        "title": "人道至尊",
+        "asset_type": "mechanism_notes",
+        "source_path": "phase1/04_mechanism_library/core7_notes/人道至尊_mechanism_notes.md",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-mechanism_notes-016",
+        "title": "凡人修仙传",
+        "asset_type": "mechanism_notes",
+        "source_path": "phase1/04_mechanism_library/core7_notes/凡人修仙传_mechanism_notes.md",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-mechanism_notes-020",
+        "title": "斗破苍穹",
+        "asset_type": "mechanism_notes",
+        "source_path": "phase1/04_mechanism_library/core7_notes/斗破苍穹_mechanism_notes.md",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-mechanism_notes-024",
+        "title": "诡秘之主",
+        "asset_type": "mechanism_notes",
+        "source_path": "phase1/04_mechanism_library/core7_notes/诡秘之主_mechanism_notes.md",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-mechanism_notes-028",
+        "title": "求魔",
+        "asset_type": "mechanism_notes",
+        "source_path": "phase1/04_mechanism_library/core7_notes/求魔_mechanism_notes.md",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-narrative_dna-002",
+        "title": "遮天",
+        "asset_type": "narrative_dna",
+        "source_path": "phase1/02_narrative_dna/遮天_narrative.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-narrative_dna-006",
+        "title": "蛊真人",
+        "asset_type": "narrative_dna",
+        "source_path": "phase1/02_narrative_dna/蛊真人_narrative.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-narrative_dna-010",
+        "title": "人道至尊",
+        "asset_type": "narrative_dna",
+        "source_path": "phase1/02_narrative_dna/人道至尊_narrative.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-narrative_dna-014",
+        "title": "凡人修仙传",
+        "asset_type": "narrative_dna",
+        "source_path": "phase1/02_narrative_dna/凡人修仙传_narrative.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-narrative_dna-018",
+        "title": "斗破苍穹",
+        "asset_type": "narrative_dna",
+        "source_path": "phase1/02_narrative_dna/斗破苍穹_narrative.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-narrative_dna-022",
+        "title": "诡秘之主",
+        "asset_type": "narrative_dna",
+        "source_path": "phase1/02_narrative_dna/诡秘之主_narrative.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-narrative_dna-026",
+        "title": "求魔",
+        "asset_type": "narrative_dna",
+        "source_path": "phase1/02_narrative_dna/求魔_narrative.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-narrative_dna-037",
+        "title": "一念永恒",
+        "asset_type": "narrative_dna",
+        "source_path": "phase1/02_narrative_dna/一念永恒_narrative.json",
+        "review_state": "stub",
+        "provenance": "stub",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-narrative_dna-040",
+        "title": "不死不灭",
+        "asset_type": "narrative_dna",
+        "source_path": "phase1/02_narrative_dna/不死不灭_narrative.json",
+        "review_state": "stub",
+        "provenance": "stub",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-narrative_dna-043",
+        "title": "仙逆",
+        "asset_type": "narrative_dna",
+        "source_path": "phase1/02_narrative_dna/仙逆_narrative.json",
+        "review_state": "stub",
+        "provenance": "stub",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-narrative_dna-046",
+        "title": "圣墟",
+        "asset_type": "narrative_dna",
+        "source_path": "phase1/02_narrative_dna/圣墟_narrative.json",
+        "review_state": "stub",
+        "provenance": "stub",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-narrative_dna-049",
+        "title": "大主宰",
+        "asset_type": "narrative_dna",
+        "source_path": "phase1/02_narrative_dna/大主宰_narrative.json",
+        "review_state": "stub",
+        "provenance": "stub",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-narrative_dna-052",
+        "title": "完美世界",
+        "asset_type": "narrative_dna",
+        "source_path": "phase1/02_narrative_dna/完美世界_narrative.json",
+        "review_state": "stub",
+        "provenance": "stub",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-narrative_dna-055",
+        "title": "将夜",
+        "asset_type": "narrative_dna",
+        "source_path": "phase1/02_narrative_dna/将夜_narrative.json",
+        "review_state": "stub",
+        "provenance": "stub",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-narrative_dna-058",
+        "title": "武动乾坤",
+        "asset_type": "narrative_dna",
+        "source_path": "phase1/02_narrative_dna/武动乾坤_narrative.json",
+        "review_state": "stub",
+        "provenance": "stub",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-narrative_dna-061",
+        "title": "永生",
+        "asset_type": "narrative_dna",
+        "source_path": "phase1/02_narrative_dna/永生_narrative.json",
+        "review_state": "stub",
+        "provenance": "stub",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-narrative_dna-064",
+        "title": "牧神记",
+        "asset_type": "narrative_dna",
+        "source_path": "phase1/02_narrative_dna/牧神记_narrative.json",
+        "review_state": "stub",
+        "provenance": "stub",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-narrative_dna-067",
+        "title": "雪中悍刀行",
+        "asset_type": "narrative_dna",
+        "source_path": "phase1/02_narrative_dna/雪中悍刀行_narrative.json",
+        "review_state": "stub",
+        "provenance": "stub",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-state_ledger-003",
+        "title": "遮天",
+        "asset_type": "state_ledger",
+        "source_path": "phase1/02_state_ledgers/遮天_ledger.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-state_ledger-007",
+        "title": "蛊真人",
+        "asset_type": "state_ledger",
+        "source_path": "phase1/02_state_ledgers/蛊真人_ledger.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-state_ledger-011",
+        "title": "人道至尊",
+        "asset_type": "state_ledger",
+        "source_path": "phase1/02_state_ledgers/人道至尊_ledger.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-state_ledger-015",
+        "title": "凡人修仙传",
+        "asset_type": "state_ledger",
+        "source_path": "phase1/02_state_ledgers/凡人修仙传_ledger.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-state_ledger-019",
+        "title": "斗破苍穹",
+        "asset_type": "state_ledger",
+        "source_path": "phase1/02_state_ledgers/斗破苍穹_ledger.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-state_ledger-023",
+        "title": "诡秘之主",
+        "asset_type": "state_ledger",
+        "source_path": "phase1/02_state_ledgers/诡秘之主_ledger.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-state_ledger-027",
+        "title": "求魔",
+        "asset_type": "state_ledger",
+        "source_path": "phase1/02_state_ledgers/求魔_ledger.json",
+        "review_state": "formal",
+        "provenance": "promoted",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-state_ledger-038",
+        "title": "一念永恒",
+        "asset_type": "state_ledger",
+        "source_path": "phase1/02_state_ledgers/一念永恒_ledger.json",
+        "review_state": "stub",
+        "provenance": "stub",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-state_ledger-041",
+        "title": "不死不灭",
+        "asset_type": "state_ledger",
+        "source_path": "phase1/02_state_ledgers/不死不灭_ledger.json",
+        "review_state": "stub",
+        "provenance": "stub",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-state_ledger-044",
+        "title": "仙逆",
+        "asset_type": "state_ledger",
+        "source_path": "phase1/02_state_ledgers/仙逆_ledger.json",
+        "review_state": "stub",
+        "provenance": "stub",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-state_ledger-047",
+        "title": "圣墟",
+        "asset_type": "state_ledger",
+        "source_path": "phase1/02_state_ledgers/圣墟_ledger.json",
+        "review_state": "stub",
+        "provenance": "stub",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-state_ledger-050",
+        "title": "大主宰",
+        "asset_type": "state_ledger",
+        "source_path": "phase1/02_state_ledgers/大主宰_ledger.json",
+        "review_state": "stub",
+        "provenance": "stub",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-state_ledger-053",
+        "title": "完美世界",
+        "asset_type": "state_ledger",
+        "source_path": "phase1/02_state_ledgers/完美世界_ledger.json",
+        "review_state": "stub",
+        "provenance": "stub",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-state_ledger-056",
+        "title": "将夜",
+        "asset_type": "state_ledger",
+        "source_path": "phase1/02_state_ledgers/将夜_ledger.json",
+        "review_state": "stub",
+        "provenance": "stub",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-state_ledger-059",
+        "title": "武动乾坤",
+        "asset_type": "state_ledger",
+        "source_path": "phase1/02_state_ledgers/武动乾坤_ledger.json",
+        "review_state": "stub",
+        "provenance": "stub",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-state_ledger-062",
+        "title": "永生",
+        "asset_type": "state_ledger",
+        "source_path": "phase1/02_state_ledgers/永生_ledger.json",
+        "review_state": "stub",
+        "provenance": "stub",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-state_ledger-065",
+        "title": "牧神记",
+        "asset_type": "state_ledger",
+        "source_path": "phase1/02_state_ledgers/牧神记_ledger.json",
+        "review_state": "stub",
+        "provenance": "stub",
+        "categories": [],
+        "exists": true
+      },
+      {
+        "asset_id": "phase1-state_ledger-068",
+        "title": "雪中悍刀行",
+        "asset_type": "state_ledger",
+        "source_path": "phase1/02_state_ledgers/雪中悍刀行_ledger.json",
+        "review_state": "stub",
+        "provenance": "stub",
+        "categories": [],
+        "exists": true
+      }
+    ],
+    "summary": {
+      "total_indexed": 96,
+      "returned": 96,
+      "by_type": {
+        "book_dna": 18,
+        "mechanism": 35,
+        "mechanism_notes": 7,
+        "narrative_dna": 18,
+        "state_ledger": 18
+      }
+    },
+    "guardrails": [
+      "Structured Phase 1 derivatives only",
+      "No raw corpus reads",
+      "Every item retains source provenance"
+    ]
+  },
+  "creation_schema_registry": {
+    "registry_name": "NRL Creation Schema Registry",
+    "version": "0.2",
+    "draft": "http://json-schema.org/draft-07/schema#",
+    "common_schema": "system/creation_assets/schemas/common.schema.json",
+    "families": [
+      {
+        "family": "characters",
+        "title": "Character Asset",
+        "path": "system/creation_assets/schemas/characters.schema.json",
+        "valid": true,
+        "payload_key": "character"
+      },
+      {
+        "family": "npcs",
+        "title": "NPC Asset",
+        "path": "system/creation_assets/schemas/npcs.schema.json",
+        "valid": true,
+        "payload_key": "npc"
+      },
+      {
+        "family": "factions",
+        "title": "Faction Asset",
+        "path": "system/creation_assets/schemas/factions.schema.json",
+        "valid": true,
+        "payload_key": "faction"
+      },
+      {
+        "family": "artifacts",
+        "title": "Artifact Asset",
+        "path": "system/creation_assets/schemas/artifacts.schema.json",
+        "valid": true,
+        "payload_key": "artifact"
+      },
+      {
+        "family": "techniques",
+        "title": "Technique Asset",
+        "path": "system/creation_assets/schemas/techniques.schema.json",
+        "valid": true,
+        "payload_key": "technique"
+      },
+      {
+        "family": "naming",
+        "title": "Naming Rule Asset",
+        "path": "system/creation_assets/schemas/naming.schema.json",
+        "valid": true,
+        "payload_key": "naming"
+      },
+      {
+        "family": "emotional_bonds",
+        "title": "Emotional Bond Asset",
+        "path": "system/creation_assets/schemas/emotional_bonds.schema.json",
+        "valid": true,
+        "payload_key": "emotional_bond"
+      },
+      {
+        "family": "foreshadowing",
+        "title": "Foreshadowing Asset",
+        "path": "system/creation_assets/schemas/foreshadowing.schema.json",
+        "valid": true,
+        "payload_key": "foreshadowing"
+      },
+      {
+        "family": "state_ledger",
+        "title": "State Ledger Asset",
+        "path": "system/creation_assets/schemas/state_ledger.schema.json",
+        "valid": true,
+        "payload_key": "state_ledger"
+      }
+    ],
+    "summary": {
+      "family_count": 9,
+      "all_schemas_valid": true
+    }
+  },
+  "safe_action_catalog": {
+    "actions": [
+      {
+        "action_id": "system-check",
+        "label_zh": "运行系统体检",
+        "method": "POST",
+        "path": "/api/actions/system-check"
+      },
+      {
+        "action_id": "validate-state",
+        "label_zh": "验证运行状态",
+        "method": "POST",
+        "path": "/api/actions/validate-state"
+      }
+    ],
+    "forbidden_actions": [
+      "advance",
+      "execute-hermes",
+      "execute-antigravity"
+    ]
+  },
   "system_identity": {
     "name": "Novel Research Lab",
     "positioning": "Corpus-to-Creation engine for Chinese long-form web novel creation.",
@@ -459,8 +1855,11 @@
       "python3 system/runtime/nrl.py doctor",
       "python3 system/runtime/nrl.py system-status",
       "python3 system/runtime/nrl.py studio-data",
-      "python3 system/runtime/nrl.py advance",
-      "python3 system/runtime/nrl.py check-inputs",
+      "python3 system/runtime/nrl.py hardening-status",
+      "python3 system/runtime/nrl.py research-assets",
+      "python3 system/runtime/nrl.py creation-schemas",
+      "python3 system/runtime/nrl.py validate-creation-assets",
+      "python3 system/runtime/nrl.py system-check",
       "python3 system/runtime/nrl.py validate-state"
     ],
     "state_validity_command": "python3 system/runtime/nrl.py validate-state",

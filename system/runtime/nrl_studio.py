@@ -13,6 +13,14 @@ from nrl_system_status import build_system_status
 APP_ROOT = Path(__file__).resolve().parents[2] / "apps/studio"
 SECTION_LABELS = [
     "read-only",
+    "系统总览",
+    "研究资产",
+    "创作资产",
+    "Agent 与任务",
+    "运行状态与 Owner Gate",
+    "系统能力路线图",
+    "下一安全动作",
+    "内容推进保持冻结",
     "System Identity",
     "Current Project",
     "Agent Panel",
@@ -111,7 +119,7 @@ def _fallback_studio(out_dir: Path, data: dict, state: dict, adapters: dict) -> 
         for item in data["creation_coverage_matrix"]["items"]
     )
     content = f"""<!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <title>Novel Research Lab Studio</title>
@@ -122,8 +130,8 @@ def _fallback_studio(out_dir: Path, data: dict, state: dict, adapters: dict) -> 
   </style>
 </head>
 <body>
-  <h1>Novel Research Lab Studio</h1>
-  <p><strong>read-only Studio v0.1.</strong> Corpus-to-Creation product shell.</p>
+  <h1>Novel Research Lab 控制台</h1>
+  <p><strong>离线静态快照。</strong> Corpus-to-Creation 系统控制面。</p>
   <section>
     <h2>Runtime Health</h2>
     <ul>{runtime_commands}</ul>

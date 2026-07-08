@@ -1,16 +1,30 @@
-import {useEffect, useState} from 'react';
+import {useEffect, useMemo, useState} from 'react';
 import {Theme} from '@astryxdesign/core';
 import {AppShell} from '@astryxdesign/core/AppShell';
-import {Badge} from '@astryxdesign/core/Badge';
+import {Banner} from '@astryxdesign/core/Banner';
+import {Button} from '@astryxdesign/core/Button';
 import {Card} from '@astryxdesign/core/Card';
 import {Grid} from '@astryxdesign/core/Grid';
 import {Heading} from '@astryxdesign/core/Heading';
+import {
+  Layout,
+  LayoutContent,
+  LayoutHeader,
+} from '@astryxdesign/core/Layout';
 import {List, ListItem} from '@astryxdesign/core/List';
 import {MetadataList, MetadataListItem} from '@astryxdesign/core/MetadataList';
 import {Section} from '@astryxdesign/core/Section';
+import {
+  SideNav,
+  SideNavHeading,
+  SideNavItem,
+  SideNavSection,
+} from '@astryxdesign/core/SideNav';
 import {HStack, VStack} from '@astryxdesign/core/Stack';
 import {StatusDot} from '@astryxdesign/core/StatusDot';
+import {Table, pixel, proportional} from '@astryxdesign/core/Table';
 import {Text} from '@astryxdesign/core/Text';
+import {TextInput} from '@astryxdesign/core/TextInput';
 import {Token} from '@astryxdesign/core/Token';
 import {neutralTheme} from '@astryxdesign/theme-neutral/built';
 import type {StudioData} from './types';
@@ -21,26 +35,55 @@ declare global {
   }
 }
 
-const fallbackData: StudioData = {
-  system_identity: {
-    name: 'Novel Research Lab',
-    positioning: 'Corpus-to-Creation engine for Chinese long-form web novel creation.',
-    not_a: ['generic AI writing app', 'InkOS clone', 'document pipeline'],
-    core_chain: ['corpus reading', 'mechanism distillation', 'original project synthesis', 'review', 'state ledger'],
+type ViewID = 'overview' | 'research' | 'creation' | 'agents' | 'runtime';
+type TableRow = Record<string, unknown> & {id: string};
+
+const EMPTY_DATA = {
+  control_plane: {
+    version: '0.2',
+    locale: 'zh-CN',
+    mode: 'UNKNOWN_MODE',
+    content_progression: 'UNKNOWN',
+    live_server_command: 'python3 system/runtime/nrl.py studio-serve --port 4173',
   },
+  capability_roadmap: {
+    version: '0.2',
+    mode: 'UNKNOWN_MODE',
+    content_progression: 'UNKNOWN',
+    capabilities: [],
+    next_safe_action: {capability_id: 'unknown', label_zh: '等待数据', action: '运行 studio-build。'},
+  },
+  research_asset_catalog: {
+    catalog_name: 'NRL Research Asset Catalog',
+    version: '0.2',
+    source_of_truth: [],
+    items: [],
+    summary: {total_indexed: 0, returned: 0, by_type: {}},
+    guardrails: [],
+  },
+  creation_schema_registry: {
+    registry_name: 'NRL Creation Schema Registry',
+    version: '0.2',
+    draft: 'Draft-07',
+    common_schema: '',
+    families: [],
+    summary: {family_count: 0, all_schemas_valid: false},
+  },
+  safe_action_catalog: {actions: [], forbidden_actions: []},
+  system_identity: {name: 'Novel Research Lab', positioning: 'Corpus-to-Creation', not_a: [], core_chain: []},
   current_project: {
     project_name: 'Novel Research Lab',
     selected_project: 'UNKNOWN_PROJECT',
     current_phase: 'UNKNOWN_PHASE',
-    current_subphase: 'UNKNOWN_SUBPHASE',
-    phase_status: 'UNKNOWN_STATUS',
+    current_subphase: '',
+    phase_status: 'UNKNOWN',
     system_mode: 'UNKNOWN_MODE',
-    content_progression: 'UNKNOWN_PROGRESSION',
+    content_progression: 'UNKNOWN',
     last_completed_mission: '',
   },
   agent_panel: {items: []},
   artifact_map: {items: []},
-  creation_coverage_matrix: {assessment: 'Coverage unavailable.', items: []},
+  creation_coverage_matrix: {assessment: '', items: []},
   creation_asset_registry: {
     registry_name: 'Creation Asset Registry',
     version: '0.1',
@@ -48,397 +91,561 @@ const fallbackData: StudioData = {
     mode: 'UNKNOWN_MODE',
     source_of_truth: [],
     asset_families: [],
-    coverage_summary: {
-      total: 0,
-      by_status: {},
-      complete: 0,
-      lowest_readiness: 0,
-      highest_readiness: 0,
-    },
-    guardrails: ['No family is complete in v0.1'],
-    next_safe_action: 'Build creation asset registry data before inspecting this shell.',
+    coverage_summary: {total: 0, by_status: {}, complete: 0, lowest_readiness: 0, highest_readiness: 0},
+    guardrails: [],
+    next_safe_action: '',
   },
   runtime_status: {
-    health_commands: [
-      'python3 system/runtime/nrl.py doctor',
-      'python3 system/runtime/nrl.py system-status',
-      'python3 system/runtime/nrl.py studio-data',
-      'python3 system/runtime/nrl.py advance',
-      'python3 system/runtime/nrl.py check-inputs',
-      'python3 system/runtime/nrl.py validate-state',
-    ],
-    state_validity_command: 'python3 system/runtime/nrl.py validate-state',
-    status_command: 'python3 system/runtime/nrl.py system-status',
-    studio_data_command: 'python3 system/runtime/nrl.py studio-data',
-    current_mission: 'UNKNOWN_MISSION',
-    responsible_agent: 'unknown',
-    registry_status: 'unknown',
+    health_commands: [],
+    state_validity_command: '',
+    status_command: '',
+    studio_data_command: '',
+    current_mission: '',
+    responsible_agent: '',
+    registry_status: '',
     adapter_modes: {},
     handoff_attempts: [],
     expected_outputs: [],
     blocked_actions: [],
   },
-  next_safe_action: {
-    recommended: 'Build Studio data before inspecting this shell.',
-    runtime_command: 'python3 system/runtime/nrl.py studio-data',
-    blocked_next_action: 'No content action available from fallback data.',
-    safe_commands: [],
-  },
+  next_safe_action: {recommended: '', runtime_command: '', blocked_next_action: '', safe_commands: []},
   owner_gate: {
     required: false,
     status: 'UNKNOWN',
     review_status: 'UNKNOWN',
     authorization_scope: [],
     forbidden_scope: [],
-    decision_boundary: 'Unknown',
-    expires_after_mission: 'Unknown',
+    decision_boundary: '',
+    expires_after_mission: '',
   },
+} satisfies StudioData;
+
+const viewLabels: Record<ViewID, {label: string; subtitle: string; icon: 'info' | 'search' | 'viewColumns' | 'wrench' | 'warning'}> = {
+  overview: {label: '系统总览', subtitle: '能力、状态与下一动作', icon: 'info'},
+  research: {label: '研究资产', subtitle: 'Phase 1 结构化研究目录', icon: 'search'},
+  creation: {label: '创作资产', subtitle: '九类资产覆盖与契约', icon: 'viewColumns'},
+  agents: {label: 'Agent 与任务', subtitle: '角色、适配器与任务边界', icon: 'wrench'},
+  runtime: {label: '运行状态与 Owner Gate', subtitle: '体检、门禁与阻塞动作', icon: 'warning'},
 };
 
-function statusToken(status: string) {
-  const normalized = status.toLowerCase();
-  if (normalized.includes('missing') || normalized.includes('blocked') || normalized.includes('required')) {
-    return 'red';
-  }
-  if (normalized.includes('partial') || normalized.includes('pending') || normalized.includes('warning')) {
-    return 'orange';
-  }
-  if (normalized.includes('seed') || normalized.includes('prepared')) {
-    return 'yellow';
-  }
-  if (normalized.includes('pass') || normalized.includes('complete') || normalized.includes('local')) {
-    return 'green';
-  }
+const statusNames: Record<string, string> = {
+  missing: '缺失',
+  contract_ready: '契约就绪',
+  data_ready: '数据就绪',
+  runnable: '可运行',
+  blocked: '已阻塞',
+  partial: '部分覆盖',
+  seed: '种子状态',
+  formal: '已审核',
+  stub: '占位资产',
+  candidate_retained: '候选保留',
+  promoted: '已提升',
+  candidate: '候选',
+  local: '本地执行',
+  manual_handoff: '人工交接',
+  review_received_pending_owner_gate: '等待 Owner Gate',
+  asset_layer_present: '资产层已存在',
+  partial_engine: '引擎部分可用',
+  research_asset: '研究资产',
+  completed: '已完成',
+  prepared: '已准备',
+};
+
+function statusColor(status: string) {
+  if (status.includes('blocked') || status.includes('missing') || status.includes('REQUIRED')) return 'red';
+  if (status.includes('partial') || status.includes('pending') || status.includes('manual')) return 'orange';
+  if (status.includes('seed') || status.includes('contract')) return 'yellow';
+  if (status.includes('runnable') || status.includes('ready') || status.includes('PASS') || status === 'formal') return 'green';
   return 'gray';
 }
 
-function SectionTitle({title, subtitle}: {title: string; subtitle?: string}) {
-  return (
-    <VStack gap={1}>
-      <Heading level={2}>{title}</Heading>
-      {subtitle ? (
-        <Text type="supporting" display="block">
-          {subtitle}
-        </Text>
-      ) : null}
-    </VStack>
-  );
+function StatusToken({status}: {status: string}) {
+  return <Token label={statusNames[status] || status} color={statusColor(status)} size="sm" />;
 }
 
-function TokenRow({items}: {items: string[]}) {
+function PageHeader({view}: {view: ViewID}) {
   return (
-    <HStack gap={1} wrap="wrap">
-      {items.map((item) => (
-        <Token key={item} label={item} color={statusToken(item)} size="sm" />
-      ))}
-    </HStack>
-  );
-}
-
-function CurrentProject({data}: {data: StudioData}) {
-  const project = data.current_project;
-  return (
-    <Section padding={5} dividers={['bottom']}>
-      <VStack gap={4}>
-        <SectionTitle title="Current Project" subtitle="The active project remains frozen at the current Owner Gate sample state." />
-        <Grid columns={{minWidth: 220, max: 4, repeat: 'fit'}} gap={3}>
-          <Card padding={4}>
-            <Text type="supporting" display="block">Project</Text>
-            <Heading level={3}>{project.selected_project}</Heading>
-          </Card>
-          <Card padding={4}>
-            <Text type="supporting" display="block">Phase</Text>
-            <Heading level={3}>{project.current_phase}</Heading>
-            <Text type="supporting" display="block">{project.current_subphase}</Text>
-          </Card>
-          <Card padding={4}>
-            <Text type="supporting" display="block">System Mode</Text>
-            <Heading level={3}>{project.system_mode}</Heading>
-          </Card>
-          <Card padding={4}>
-            <Text type="supporting" display="block">Content Progression</Text>
-            <Heading level={3}>{project.content_progression}</Heading>
-          </Card>
-        </Grid>
-        <MetadataList columns="multi">
-          <MetadataListItem label="Phase status">{project.phase_status}</MetadataListItem>
-          <MetadataListItem label="Last completed mission">{project.last_completed_mission || 'No completed mission recorded'}</MetadataListItem>
-        </MetadataList>
-      </VStack>
-    </Section>
-  );
-}
-
-function SystemIdentity({data}: {data: StudioData}) {
-  return (
-    <Section padding={5} variant="muted" dividers={['bottom']}>
-      <VStack gap={4}>
-        <HStack gap={4} wrap="wrap" vAlign="center">
-          <VStack gap={1}>
-            <Heading level={1}>{data.system_identity.name}</Heading>
-            <Text type="large" display="block">{data.system_identity.positioning}</Text>
-          </VStack>
-          <Badge variant="info" label="Read-only Studio v0.1" />
-        </HStack>
-        <Grid columns={{minWidth: 260, max: 2, repeat: 'fit'}} gap={4}>
-          <List header={<Heading level={3}>Not This</Heading>} density="compact" hasDividers>
-            {data.system_identity.not_a.map((item) => (
-              <ListItem key={item} label={item} endContent={<Token label="not_a" color="gray" size="sm" />} />
-            ))}
-          </List>
-          <List header={<Heading level={3}>Corpus-to-Creation Chain</Heading>} density="compact" hasDividers>
-            {data.system_identity.core_chain.map((item, index) => (
-              <ListItem key={item} label={item} endContent={<Token label={`step ${index + 1}`} color="blue" size="sm" />} />
-            ))}
-          </List>
-        </Grid>
-      </VStack>
-    </Section>
-  );
-}
-
-function AgentPanel({data}: {data: StudioData}) {
-  return (
-    <Section padding={5} dividers={['bottom']}>
-      <VStack gap={4}>
-        <SectionTitle title="Agent Panel" subtitle="Roles are explicit. Studio does not call Hermes or Antigravity." />
-        <Grid columns={{minWidth: 260, max: 5, repeat: 'fit'}} gap={3}>
-          {data.agent_panel.items.map((item) => (
-            <Card key={item.agent} padding={4}>
-              <VStack gap={2}>
-                <HStack gap={2} vAlign="center">
-                  <StatusDot variant={item.can_execute ? 'success' : 'warning'} label={`${item.agent} execution status`} />
-                  <Heading level={3}>{item.agent}</Heading>
-                </HStack>
-                <Token label={item.display_status || item.status} color={statusToken(item.status)} size="sm" />
-                <Text type="supporting" display="block">{item.mode}</Text>
-                <Text display="block">{item.role}</Text>
-              </VStack>
-            </Card>
-          ))}
-        </Grid>
-      </VStack>
-    </Section>
-  );
-}
-
-function ArtifactMap({data}: {data: StudioData}) {
-  return (
-    <Section padding={5} dividers={['bottom']}>
-      <VStack gap={4}>
-        <SectionTitle title="Artifact Map" subtitle="The map shows product-relevant assets, not raw corpus access." />
-        <List density="compact" hasDividers>
-          {data.artifact_map.items.map((item) => (
-            <ListItem
-              key={item.area}
-              label={item.area}
-              description={item.note}
-              endContent={<Token label={item.status} color={statusToken(item.status)} size="sm" />}
-            />
-          ))}
-        </List>
-      </VStack>
-    </Section>
-  );
-}
-
-function CreationCoverageMatrix({data}: {data: StudioData}) {
-  const registry = data.creation_asset_registry;
-  const summaryItems = Object.entries(registry.coverage_summary.by_status).map(([status, count]) => `${status}: ${count}`);
-  return (
-    <Section padding={5} dividers={['bottom']}>
-      <VStack gap={4}>
-        <SectionTitle title="Creation Coverage Matrix" subtitle={data.creation_coverage_matrix.assessment} />
-        <MetadataList columns="multi">
-          <MetadataListItem label="Creation Asset Registry">{`${registry.registry_name} v${registry.version}`}</MetadataListItem>
-          <MetadataListItem label="Project">{registry.project}</MetadataListItem>
-          <MetadataListItem label="Mode">{registry.mode}</MetadataListItem>
-          <MetadataListItem label="Total Families">{String(registry.coverage_summary.total)}</MetadataListItem>
-          <MetadataListItem label="Readiness Range">{`${registry.coverage_summary.lowest_readiness}-${registry.coverage_summary.highest_readiness}`}</MetadataListItem>
-          <MetadataListItem label="Complete Families">{String(registry.coverage_summary.complete)}</MetadataListItem>
-        </MetadataList>
-        <VStack gap={2}>
-          <Heading level={3}>Coverage Summary</Heading>
-          <TokenRow items={summaryItems.length ? summaryItems : ['no status counts']} />
+    <LayoutHeader hasDivider height={72}>
+      <Section padding={4}>
+        <VStack gap={0.5}>
+          <Heading level={2}>{viewLabels[view].label}</Heading>
+          <Text type="supporting">{viewLabels[view].subtitle}</Text>
         </VStack>
-        <Grid columns={{minWidth: 280, max: 3, repeat: 'fit'}} gap={3}>
-          {data.creation_coverage_matrix.items.map((item) => (
-            <Card key={item.asset} padding={4} variant="muted">
-              <VStack gap={2}>
-                <HStack gap={2} vAlign="center">
-                  <Heading level={3}>{item.asset}</Heading>
-                  <Token label={item.status} color={statusToken(item.status)} size="sm" />
-                </HStack>
-                {typeof item.readiness_score === 'number' ? (
-                  <Text type="supporting" display="block">{`Readiness Score: ${item.readiness_score}`}</Text>
-                ) : null}
-                <Text type="supporting" display="block">{item.gap}</Text>
-              </VStack>
-            </Card>
-          ))}
-        </Grid>
-        <SectionTitle title="Creation Asset Registry" subtitle={registry.next_safe_action} />
-        <Grid columns={{minWidth: 320, max: 2, repeat: 'fit'}} gap={3}>
-          {registry.asset_families.map((family) => (
-            <Card key={family.asset_id} padding={4}>
-              <VStack gap={3}>
-                <HStack gap={2} vAlign="center">
-                  <Heading level={3}>{family.label}</Heading>
-                  <Token label={family.status} color={statusToken(family.status)} size="sm" />
-                  <Token label={`Readiness Score: ${family.readiness_score}`} color="blue" size="sm" />
-                </HStack>
-                <Text type="supporting" display="block">{family.why_not_complete}</Text>
-                <List header={<Heading level={4}>Known Support</Heading>} density="compact" hasDividers>
-                  {family.known_support.map((item) => (
-                    <ListItem key={item} label={item} />
-                  ))}
-                </List>
-                <List header={<Heading level={4}>Missing Capabilities</Heading>} density="compact" hasDividers>
-                  {family.missing_capabilities.map((item) => (
-                    <ListItem key={item} label={item} endContent={<Token label="gap" color="orange" size="sm" />} />
-                  ))}
-                </List>
-                <List header={<Heading level={4}>Source Artifacts</Heading>} density="compact" hasDividers>
-                  {family.source_artifacts.map((item) => (
-                    <ListItem key={item} label={item} endContent={<Token label="source" color="teal" size="sm" />} />
-                  ))}
-                </List>
-                <Text display="block">{family.next_safe_action}</Text>
-                <VStack gap={2}>
-                  <Heading level={4}>Blocked Actions</Heading>
-                  <TokenRow items={family.blocked_actions} />
-                </VStack>
-              </VStack>
-            </Card>
-          ))}
-        </Grid>
-        <VStack gap={2}>
-          <Heading level={3}>Guardrails</Heading>
-          <TokenRow items={registry.guardrails} />
-        </VStack>
-      </VStack>
-    </Section>
+      </Section>
+    </LayoutHeader>
   );
 }
 
-function RuntimeStatus({data}: {data: StudioData}) {
-  const adapterRows = Object.entries(data.runtime_status.adapter_modes).map(([agent, adapter]) => ({
-    agent,
-    mode: adapter.mode,
-    canExecute: String(adapter.can_execute),
+function SummaryCard({label, value, status}: {label: string; value: string; status?: string}) {
+  return (
+    <Card padding={3}>
+      <VStack gap={1}>
+        <Text type="supporting" display="block">{label}</Text>
+        <Heading level={3}>{value}</Heading>
+        {status ? <StatusToken status={status} /> : null}
+      </VStack>
+    </Card>
+  );
+}
+
+const artifactNotes: Record<string, string> = {
+  Corpus: '语料层已建立，Studio 不直接访问原始小说文本。',
+  Mechanisms: '跨书机制库已形成并可通过研究资产目录查询。',
+  'Grand Synthesis': '综合研究资产用于支撑 Corpus-to-Creation。',
+  'Story Bible': '当前原创项目的故事圣经。',
+  'Outline Tree': 'Phase 2D 大纲树资产。',
+  'Planning Pack': 'Phase 2E 受控规划资产。',
+  'Validation Reports': 'Codex 工程与一致性验证结果。',
+  'Review Reports': 'Antigravity 人工文学审查结果。',
+  'State Ledger': '已有基础 Schema，尚未形成完整长篇状态账本。',
+};
+
+function OverviewView({data, compact}: {data: StudioData; compact: boolean}) {
+  const capabilityRows: TableRow[] = data.capability_roadmap.capabilities.map((item) => ({
+    id: item.capability_id,
+    capability: item.label_zh,
+    status: statusNames[item.status] || item.status,
+    evidence: `${item.evidence.filter((entry) => entry.exists).length}/${item.evidence.length}`,
+    next: item.next_action,
   }));
   return (
-    <Section padding={5} dividers={['bottom']}>
-      <VStack gap={4}>
-        <SectionTitle title="Runtime Status" subtitle="Runtime reads are allowed; mutations still go through explicit commands and gates." />
-        <Grid columns={{minWidth: 300, max: 2, repeat: 'fit'}} gap={4}>
-          <MetadataList columns="single">
-            <MetadataListItem label="Current mission">{data.runtime_status.current_mission}</MetadataListItem>
-            <MetadataListItem label="Responsible agent">{data.runtime_status.responsible_agent}</MetadataListItem>
-            <MetadataListItem label="Registry status">{data.runtime_status.registry_status}</MetadataListItem>
-            <MetadataListItem label="State command">{data.runtime_status.state_validity_command}</MetadataListItem>
-            <MetadataListItem label="Studio data command">{data.runtime_status.studio_data_command}</MetadataListItem>
-          </MetadataList>
-          <List header={<Heading level={3}>Adapter Modes</Heading>} density="compact" hasDividers>
-            {adapterRows.map((row) => (
+    <Section padding={5}>
+      <VStack gap={5}>
+        <Grid columns={{minWidth: 220, max: 4, repeat: 'fit'}} gap={3}>
+          <SummaryCard label="当前项目" value={data.current_project.selected_project} />
+          <SummaryCard label="当前阶段" value={data.current_project.current_phase} status={data.current_project.phase_status} />
+          <SummaryCard label="系统模式" value={data.control_plane.mode} />
+          <SummaryCard label="内容推进" value="Owner Gate 冻结" status="blocked" />
+        </Grid>
+        <Banner
+          status="info"
+          title={`下一安全动作：${data.capability_roadmap.next_safe_action.label_zh}`}
+          description={data.capability_roadmap.next_safe_action.action}
+        />
+        <VStack gap={2}>
+          <HStack gap={2} vAlign="center">
+            <Heading level={3}>系统能力路线图</Heading>
+            <Token label={`${capabilityRows.length} 项能力`} color="blue" size="sm" />
+          </HStack>
+          {compact ? (
+            <List density="compact" hasDividers>
+              {data.capability_roadmap.capabilities.map((item) => (
+                <ListItem
+                  key={item.capability_id}
+                  label={item.label_zh}
+                  description={item.next_action}
+                  endContent={<StatusToken status={item.status} />}
+                />
+              ))}
+            </List>
+          ) : (
+            <Table
+              data={capabilityRows}
+              idKey="id"
+              density="compact"
+              dividers="rows"
+              hasHover
+              textOverflow="wrap"
+              columns={[
+                {key: 'capability', header: '能力', width: proportional(1)},
+                {key: 'status', header: '状态', width: pixel(120)},
+                {key: 'evidence', header: '证据', width: pixel(80)},
+                {key: 'next', header: '系统动作', width: proportional(2)},
+              ]}
+            />
+          )}
+        </VStack>
+        <VStack gap={2}>
+          <Heading level={3}>产物地图</Heading>
+          <List density="compact" hasDividers>
+            {data.artifact_map.items.map((item) => (
               <ListItem
-                key={row.agent}
-                label={row.agent}
-                description={row.mode}
-                endContent={<Token label={row.canExecute === 'true' ? 'can_execute' : 'manual'} color={row.canExecute === 'true' ? 'green' : 'orange'} size="sm" />}
+                key={item.area}
+                label={item.area}
+                description={artifactNotes[item.area] || item.note}
+                endContent={<StatusToken status={item.status} />}
               />
             ))}
           </List>
-        </Grid>
-        <List header={<Heading level={3}>Runtime Health</Heading>} density="compact" hasDividers>
-          {data.runtime_status.health_commands.map((command) => (
-            <ListItem key={command} label={command} endContent={<Token label="command" color="blue" size="sm" />} />
-          ))}
-        </List>
-        <VStack gap={2}>
-          <Heading level={3}>Blocked Actions</Heading>
-          <TokenRow items={data.runtime_status.blocked_actions} />
-        </VStack>
-        <VStack gap={2}>
-          <Heading level={3}>Expected Outputs</Heading>
-          <TokenRow items={data.runtime_status.expected_outputs.length ? data.runtime_status.expected_outputs : ['no expected output registered']} />
         </VStack>
       </VStack>
     </Section>
   );
 }
 
-function NextSafeAction({data}: {data: StudioData}) {
-  return (
-    <Section padding={5} variant="muted" dividers={['bottom']}>
-      <VStack gap={4}>
-        <SectionTitle title="Next Safe Action" subtitle={data.next_safe_action.recommended} />
-        <Badge variant="warning" label={data.next_safe_action.blocked_next_action} />
-        <List header={<Heading level={3}>Safe Commands</Heading>} density="compact" hasDividers>
-          {data.next_safe_action.safe_commands.map((command) => (
-            <ListItem key={command} label={command} endContent={<Token label="read-only" color="teal" size="sm" />} />
-          ))}
-        </List>
-      </VStack>
-    </Section>
+function ResearchView({data, compact}: {data: StudioData; compact: boolean}) {
+  const [query, setQuery] = useState('');
+  const filtered = useMemo(
+    () => data.research_asset_catalog.items.filter((item) =>
+      `${item.title} ${item.asset_type} ${item.mechanism_name || ''} ${item.categories.join(' ')}`
+        .toLowerCase()
+        .includes(query.toLowerCase()),
+    ),
+    [data.research_asset_catalog.items, query],
   );
-}
-
-function OwnerGate({data}: {data: StudioData}) {
+  const rows: TableRow[] = filtered.map((item) => ({
+    id: item.asset_id,
+    title: item.title,
+    type: item.asset_type,
+    state: statusNames[item.review_state] || item.review_state,
+    provenance: statusNames[item.provenance] || item.provenance,
+    source: item.source_path,
+  }));
   return (
     <Section padding={5}>
       <VStack gap={4}>
-        <SectionTitle title="Owner Gate" subtitle="The Owner remains the authority for any content or capability transition." />
-        <Grid columns={{minWidth: 280, max: 2, repeat: 'fit'}} gap={4}>
+        <HStack gap={3} wrap="wrap" vAlign="end">
+          <TextInput
+            label="筛选研究资产"
+            value={query}
+            onChange={setQuery}
+            placeholder="小说、资产类型、机制名称或分类"
+            hasClear
+            size="sm"
+          />
+          <Token label={`已索引 ${data.research_asset_catalog.summary.total_indexed}`} color="blue" />
+          <Token label={`当前 ${rows.length}`} color="teal" />
+        </HStack>
+        {compact ? (
+          <List density="compact" hasDividers>
+            {filtered.map((item) => (
+              <ListItem
+                key={item.asset_id}
+                label={`${item.title} · ${item.mechanism_name || item.asset_type}`}
+                description={item.source_path}
+                endContent={<StatusToken status={item.review_state} />}
+              />
+            ))}
+          </List>
+        ) : (
+          <Table
+            data={rows}
+            idKey="id"
+            density="compact"
+            dividers="rows"
+            isStriped
+            hasHover
+            textOverflow="truncate"
+            columns={[
+              {key: 'title', header: '来源作品', width: pixel(140)},
+              {key: 'type', header: '资产类型', width: pixel(150)},
+              {key: 'state', header: '审核状态', width: pixel(110)},
+              {key: 'provenance', header: '资产层级', width: pixel(110)},
+              {key: 'source', header: '来源路径', width: proportional(2)},
+            ]}
+          />
+        )}
+        <Banner
+          status="info"
+          title="研究目录只消费结构化衍生资产"
+          description="原始小说语料不会通过 Studio 或 research-assets 暴露。"
+        />
+      </VStack>
+    </Section>
+  );
+}
+
+function CreationView({data, compact}: {data: StudioData; compact: boolean}) {
+  const coverageRows: TableRow[] = data.creation_coverage_matrix.items.map((item) => ({
+    id: item.asset_id || item.asset,
+    family: item.asset,
+    status: statusNames[item.status] || item.status,
+    readiness: item.readiness_score ?? 0,
+    gap: item.gap,
+  }));
+  const schemaRows: TableRow[] = data.creation_schema_registry.families.map((item) => ({
+    id: item.family,
+    family: item.family,
+    title: item.title,
+    payload: item.payload_key,
+    valid: item.valid ? '通过' : '失败',
+    path: item.path,
+  }));
+  return (
+    <Section padding={5}>
+      <VStack gap={5}>
+        <VStack gap={2}>
+          <HStack gap={2} vAlign="center">
+            <Heading level={3}>创作覆盖矩阵</Heading>
+            <StatusToken status={data.creation_asset_registry.coverage_summary.complete ? 'complete' : 'partial'} />
+          </HStack>
+          {compact ? (
+            <List density="compact" hasDividers>
+              {data.creation_coverage_matrix.items.map((item) => (
+                <ListItem
+                  key={item.asset_id || item.asset}
+                  label={`${item.asset} · 就绪度 ${item.readiness_score ?? 0}`}
+                  description={item.gap}
+                  endContent={<StatusToken status={item.status} />}
+                />
+              ))}
+            </List>
+          ) : (
+            <Table
+              data={coverageRows}
+              idKey="id"
+              density="compact"
+              dividers="rows"
+              hasHover
+              textOverflow="wrap"
+              columns={[
+                {key: 'family', header: '资产家族', width: pixel(150)},
+                {key: 'status', header: '覆盖状态', width: pixel(110)},
+                {key: 'readiness', header: '就绪度', width: pixel(80)},
+                {key: 'gap', header: '当前缺口', width: proportional(3)},
+              ]}
+            />
+          )}
+        </VStack>
+        <VStack gap={2}>
+          <HStack gap={2} vAlign="center">
+            <Heading level={3}>Draft-07 Schema 契约</Heading>
+            <StatusToken status={data.creation_schema_registry.summary.all_schemas_valid ? 'runnable' : 'blocked'} />
+          </HStack>
+          {compact ? (
+            <List density="compact" hasDividers>
+              {data.creation_schema_registry.families.map((item) => (
+                <ListItem
+                  key={item.family}
+                  label={item.title}
+                  description={item.path}
+                  endContent={<StatusToken status={item.valid ? 'runnable' : 'blocked'} />}
+                />
+              ))}
+            </List>
+          ) : (
+            <Table
+              data={schemaRows}
+              idKey="id"
+              density="compact"
+              dividers="rows"
+              isStriped
+              textOverflow="truncate"
+              columns={[
+                {key: 'family', header: 'Family ID', width: pixel(150)},
+                {key: 'title', header: '契约', width: proportional(1)},
+                {key: 'payload', header: 'Payload', width: pixel(150)},
+                {key: 'valid', header: '验证', width: pixel(80)},
+                {key: 'path', header: 'Schema 路径', width: proportional(2)},
+              ]}
+            />
+          )}
+        </VStack>
+        <Banner
+          status="warning"
+          title="契约就绪不等于内容完成"
+          description="当前项目资产库保持为空；禁止自动生成完整人物卡、NPC、势力、招式、命名词典和正文。"
+        />
+      </VStack>
+    </Section>
+  );
+}
+
+const roleNames: Record<string, string> = {
+  Codex: '本地运行时、工程实现、验证与编排',
+  Antigravity: '人工外部文学审查',
+  Hermes: '暂停但未移除；授权后承担写作与文学增强',
+  'Web GPT': '架构审查，不负责派发任务',
+  Owner: '阶段和能力变更的最终门禁',
+};
+
+function AgentsView({data}: {data: StudioData}) {
+  return (
+    <Section padding={5}>
+      <VStack gap={4}>
+        <List density="compact" hasDividers>
+          {data.agent_panel.items.map((item) => (
+            <ListItem
+              key={item.agent}
+              label={item.agent}
+              description={roleNames[item.agent] || item.role}
+              startContent={<StatusDot variant={item.can_execute ? 'success' : 'warning'} label={`${item.agent} 状态`} />}
+              endContent={<HStack gap={1}><StatusToken status={item.mode} /><StatusToken status={item.display_status || item.status} /></HStack>}
+            />
+          ))}
+        </List>
+        <MetadataList columns="multi">
+          <MetadataListItem label="当前任务">{data.runtime_status.current_mission}</MetadataListItem>
+          <MetadataListItem label="责任 Agent">{data.runtime_status.responsible_agent}</MetadataListItem>
+          <MetadataListItem label="任务注册状态">{data.runtime_status.registry_status}</MetadataListItem>
+          <MetadataListItem label="预期产物">{data.runtime_status.expected_outputs.join(', ') || '无'}</MetadataListItem>
+        </MetadataList>
+        <Banner
+          status="info"
+          title="客户端协作边界"
+          description="Studio 不直接调用 Hermes 或 Antigravity；没有真实适配器时继续使用 manual_handoff。"
+        />
+      </VStack>
+    </Section>
+  );
+}
+
+function RuntimeView({data, live}: {data: StudioData; live: boolean}) {
+  const [actionResult, setActionResult] = useState<{ok: boolean; message: string} | null>(null);
+  async function runAction(path: string) {
+    try {
+      const response = await fetch(path, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: '{}',
+      });
+      const payload = await response.json();
+      setActionResult({
+        ok: response.ok && (payload.passed ?? payload.valid ?? true),
+        message: response.ok ? JSON.stringify(payload) : payload.error || '操作失败',
+      });
+    } catch {
+      setActionResult({ok: false, message: '动态服务不可用，请使用 studio-serve 启动。'});
+    }
+  }
+  return (
+    <Section padding={5}>
+      <VStack gap={5}>
+        <HStack gap={2} wrap="wrap">
+          {data.safe_action_catalog.actions.map((action) => (
+            <Button
+              key={action.action_id}
+              label={action.label_zh}
+              variant={action.action_id === 'system-check' ? 'primary' : 'secondary'}
+              size="sm"
+              isDisabled={!live}
+              tooltip={!live ? '请通过 studio-serve 启动动态控制台' : undefined}
+              clickAction={() => runAction(action.path)}
+            />
+          ))}
+          <StatusToken status={live ? 'runnable' : 'blocked'} />
+        </HStack>
+        {actionResult ? (
+          <Banner
+            status={actionResult.ok ? 'success' : 'error'}
+            title={actionResult.ok ? '系统检查通过' : '系统检查失败'}
+            description={actionResult.message}
+          />
+        ) : null}
+        <Grid columns={{minWidth: 320, max: 2, repeat: 'fit'}} gap={4}>
           <MetadataList columns="single">
-            <MetadataListItem label="Required">{String(data.owner_gate.required)}</MetadataListItem>
-            <MetadataListItem label="Status">{data.owner_gate.status}</MetadataListItem>
-            <MetadataListItem label="Review status">{data.owner_gate.review_status}</MetadataListItem>
-            <MetadataListItem label="Decision boundary">{data.owner_gate.decision_boundary}</MetadataListItem>
-            <MetadataListItem label="Expires">{data.owner_gate.expires_after_mission}</MetadataListItem>
+            <MetadataListItem label="Owner Gate 必需">{String(data.owner_gate.required)}</MetadataListItem>
+            <MetadataListItem label="Owner Gate 状态">{data.owner_gate.status}</MetadataListItem>
+            <MetadataListItem label="审查状态">{data.owner_gate.review_status}</MetadataListItem>
+            <MetadataListItem label="决策边界">{data.owner_gate.decision_boundary}</MetadataListItem>
+            <MetadataListItem label="授权有效期">{data.owner_gate.expires_after_mission}</MetadataListItem>
           </MetadataList>
           <VStack gap={3}>
-            <VStack gap={2}>
-              <Heading level={3}>Authorization Scope</Heading>
-              <TokenRow items={data.owner_gate.authorization_scope} />
-            </VStack>
-            <VStack gap={2}>
-              <Heading level={3}>Forbidden Scope</Heading>
-              <TokenRow items={data.owner_gate.forbidden_scope} />
-            </VStack>
+            <Heading level={3}>阻塞动作</Heading>
+            <List density="compact" hasDividers>
+              {data.runtime_status.blocked_actions.map((item) => (
+                <ListItem key={item} label={item} endContent={<StatusToken status="blocked" />} />
+              ))}
+            </List>
           </VStack>
         </Grid>
+        <VStack gap={2}>
+          <Heading level={3}>运行命令</Heading>
+          <List density="compact" hasDividers>
+            {data.runtime_status.health_commands.map((command) => (
+              <ListItem key={command} label={command} endContent={<Token label="只读/验证" color="teal" size="sm" />} />
+            ))}
+          </List>
+        </VStack>
       </VStack>
     </Section>
   );
 }
 
 function App() {
-  const [data, setData] = useState<StudioData>(() => window.__NRL_STUDIO_DATA__ || fallbackData);
+  const [data, setData] = useState<StudioData>(() => window.__NRL_STUDIO_DATA__ || EMPTY_DATA);
+  const [view, setView] = useState<ViewID>('overview');
+  const [live, setLive] = useState(false);
+  const [compact, setCompact] = useState(() => window.matchMedia('(max-width: 720px)').matches);
 
   useEffect(() => {
-    if (window.__NRL_STUDIO_DATA__) {
-      return;
-    }
-    fetch('/nrl-studio-data.json')
-      .then((response) => (response.ok ? response.json() : fallbackData))
-      .then((nextData: StudioData) => setData(nextData))
-      .catch(() => setData(fallbackData));
+    fetch('/api/studio-data')
+      .then((response) => {
+        if (!response.ok) throw new Error('live API unavailable');
+        return response.json();
+      })
+      .then((nextData: StudioData) => {
+        setData(nextData);
+        setLive(true);
+      })
+      .catch(() => setLive(false));
   }, []);
+
+  useEffect(() => {
+    const media = window.matchMedia('(max-width: 720px)');
+    const update = () => setCompact(media.matches);
+    media.addEventListener('change', update);
+    return () => media.removeEventListener('change', update);
+  }, []);
+
+  const sideNav = (
+    <SideNav
+      header={
+        <SideNavHeading
+          superheading="NRL Control Plane"
+          heading="Novel Research Lab"
+          subheading={`v${data.control_plane.version} · 中文`}
+          headerEndContent={<StatusDot variant={live ? 'success' : 'warning'} label={live ? '动态服务' : '静态快照'} />}
+        />
+      }
+      collapsible={{defaultIsCollapsed: false, buttonLabel: '收起导航'}}
+      footer={
+        <SideNavSection title="系统边界">
+          <SideNavItem label="Owner Gate 生效" icon="warning" isDisabled />
+          <SideNavItem label="Hermes 已暂停" icon="stop" isDisabled />
+        </SideNavSection>
+      }
+    >
+      <SideNavSection title="控制台">
+        {(Object.keys(viewLabels) as ViewID[]).map((item) => (
+          <SideNavItem
+            key={item}
+            label={viewLabels[item].label}
+            icon={viewLabels[item].icon}
+            isSelected={view === item}
+            href={`#${item}`}
+            onClick={(event) => {
+              event.preventDefault();
+              setView(item);
+            }}
+          />
+        ))}
+      </SideNavSection>
+    </SideNav>
+  );
+
+  const content = view === 'overview'
+    ? <OverviewView data={data} compact={compact} />
+    : view === 'research'
+      ? <ResearchView data={data} compact={compact} />
+      : view === 'creation'
+        ? <CreationView data={data} compact={compact} />
+        : view === 'agents'
+          ? <AgentsView data={data} />
+          : <RuntimeView data={data} live={live} />;
 
   return (
     <Theme theme={neutralTheme}>
-      <AppShell contentPadding={0} height="auto" variant="surface">
-        <VStack gap={0}>
-          <SystemIdentity data={data} />
-          <CurrentProject data={data} />
-          <AgentPanel data={data} />
-          <ArtifactMap data={data} />
-          <CreationCoverageMatrix data={data} />
-          <RuntimeStatus data={data} />
-          <NextSafeAction data={data} />
-          <OwnerGate data={data} />
-        </VStack>
+      <AppShell
+        sideNav={sideNav}
+        banner={
+          <Banner
+            status="warning"
+            container="section"
+            title="Phase 2E Owner Gate 等待确认"
+            description="内容推进保持冻结；当前只允许系统硬化、状态读取和验证。"
+            endContent={<Token label="内容冻结" color="red" size="sm" />}
+          />
+        }
+        contentPadding={0}
+        height="fill"
+        variant="section"
+      >
+        <Layout
+          height="fill"
+          header={<PageHeader view={view} />}
+          content={<LayoutContent label={viewLabels[view].label}>{content}</LayoutContent>}
+        />
       </AppShell>
     </Theme>
   );

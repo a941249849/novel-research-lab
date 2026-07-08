@@ -90,6 +90,10 @@ class ControlPlaneCliTests(unittest.TestCase):
             "safe_action_catalog",
         ):
             self.assertIn(key, data)
+        self.assertNotIn(
+            "python3 system/runtime/nrl.py advance",
+            data["runtime_status"]["health_commands"],
+        )
 
     def test_system_check_is_read_only_and_reports_all_contracts(self):
         state_path = REPO_ROOT / "system/mission_controller/current_phase_state.json"

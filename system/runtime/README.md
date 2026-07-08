@@ -300,4 +300,39 @@ The Studio build generates current runtime data, builds the React/Astryx app fro
 
 Studio v0.1 intentionally keeps the current Phase 2E Owner Gate pending state visible as a system-state sample. It must not progress Phase 2F, produce chapter content, call Hermes, call Antigravity, or convert manual handoff into automatic execution.
 
+## NRL Control Plane v0.2
+
+Control Plane v0.2 is the normal local system surface. It keeps the portable
+`studio-build` snapshot, but day-to-day inspection should use the live Chinese
+console:
+
+```bash
+python3 system/runtime/nrl.py studio-build
+python3 system/runtime/nrl.py studio-serve --port 4173
+```
+
+Open `http://127.0.0.1:4173`.
+
+The live console exposes only fixed local routes for Studio data, research
+assets, creation schemas, `system-check`, and `validate-state`. It does not
+accept arbitrary commands and does not expose `advance`, Hermes execution, or
+Antigravity execution.
+
+Control-plane commands:
+
+```bash
+python3 system/runtime/nrl.py hardening-status
+python3 system/runtime/nrl.py research-assets
+python3 system/runtime/nrl.py research-assets --title 遮天
+python3 system/runtime/nrl.py research-assets --category 升级与境界机制
+python3 system/runtime/nrl.py creation-schemas
+python3 system/runtime/nrl.py validate-creation-assets
+python3 system/runtime/nrl.py system-check
+```
+
+`research-assets` indexes structured Phase 1 derivatives and preserves
+provenance. It does not read raw corpus files. `creation-schemas` reports the
+nine Draft-07 creation asset contracts. The production project asset store is
+intentionally empty until a later Owner-authorized content workflow.
+
 GitHub binding is intentionally outside the runtime. Bind the workspace to a confirmed repository first; then `doctor` will report repository root, branch, and remotes. Do not bind this workspace to an unrelated repository.

@@ -511,7 +511,8 @@ class RuntimeFixture(unittest.TestCase):
         self.assertIn("python3 system/runtime/nrl.py doctor", html)
         self.assertIn("python3 system/runtime/nrl.py system-status", html)
         self.assertIn("python3 system/runtime/nrl.py studio-data", html)
-        self.assertIn("python3 system/runtime/nrl.py advance", html)
+        self.assertIn("python3 system/runtime/nrl.py system-check", html)
+        self.assertNotIn("python3 system/runtime/nrl.py advance", html)
 
     def test_studio_build_shows_system_hardening_mode(self):
         state_path = self.root / "system/mission_controller/current_phase_state.json"

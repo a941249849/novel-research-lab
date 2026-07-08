@@ -1,4 +1,84 @@
+export type Capability = {
+  capability_id: string;
+  label_zh: string;
+  status: string;
+  dependencies: string[];
+  evidence: Array<{path: string; exists: boolean}>;
+  evidence_complete: boolean;
+  next_action: string;
+  is_next_safe_action: boolean;
+};
+
+export type ResearchAsset = {
+  asset_id: string;
+  title: string;
+  asset_type: string;
+  source_path: string;
+  review_state: string;
+  provenance: string;
+  categories: string[];
+  mechanism_id?: string;
+  mechanism_name?: string;
+  exists: boolean;
+};
+
 export type StudioData = {
+  control_plane: {
+    version: string;
+    locale: string;
+    mode: string;
+    content_progression: string;
+    live_server_command: string;
+  };
+  capability_roadmap: {
+    version: string;
+    mode: string;
+    content_progression: string;
+    capabilities: Capability[];
+    next_safe_action: {
+      capability_id: string;
+      label_zh: string;
+      action: string;
+    };
+  };
+  research_asset_catalog: {
+    catalog_name: string;
+    version: string;
+    source_of_truth: string[];
+    items: ResearchAsset[];
+    summary: {
+      total_indexed: number;
+      returned: number;
+      by_type: Record<string, number>;
+    };
+    guardrails: string[];
+  };
+  creation_schema_registry: {
+    registry_name: string;
+    version: string;
+    draft: string;
+    common_schema: string;
+    families: Array<{
+      family: string;
+      title: string;
+      path: string;
+      valid: boolean;
+      payload_key: string;
+    }>;
+    summary: {
+      family_count: number;
+      all_schemas_valid: boolean;
+    };
+  };
+  safe_action_catalog: {
+    actions: Array<{
+      action_id: string;
+      label_zh: string;
+      method: string;
+      path: string;
+    }>;
+    forbidden_actions: string[];
+  };
   system_identity: {
     name: string;
     positioning: string;
@@ -26,11 +106,7 @@ export type StudioData = {
     }>;
   };
   artifact_map: {
-    items: Array<{
-      area: string;
-      status: string;
-      note: string;
-    }>;
+    items: Array<{area: string; status: string; note: string}>;
   };
   creation_coverage_matrix: {
     assessment: string;

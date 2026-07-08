@@ -16,6 +16,7 @@ from pathlib import Path
 from typing import Any
 
 from nrl_compiler import compile_packet
+from nrl_creation_assets import load_creation_asset_registry
 from nrl_doctor import run_doctor
 from nrl_handoff_packet import write_antigravity_packet
 from nrl_paths import ROOT, runtime_path
@@ -218,6 +219,18 @@ def cmd_studio_data(_: argparse.Namespace) -> int:
     adapters = load_adapters()
     registry = load_registry()
     print_json(build_studio_data(state, registry, adapters))
+    return 0
+
+
+def cmd_creation_assets(_: argparse.Namespace) -> int:
+    state = load_state()
+    system_status = build_system_status(state, load_adapters())
+    print_json(
+        load_creation_asset_registry(
+            str(state.get("selected_project", "UNKNOWN_PROJECT")),
+            str(system_status.get("operating_mode", "UNKNOWN_MODE")),
+        )
+    )
     return 0
 
 
@@ -561,6 +574,7 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("gate-status").set_defaults(func=cmd_gate_status)
     sub.add_parser("system-status").set_defaults(func=cmd_system_status)
     sub.add_parser("studio-data").set_defaults(func=cmd_studio_data)
+    sub.add_parser("creation-assets").set_defaults(func=cmd_creation_assets)
     sub.add_parser("doctor").set_defaults(func=cmd_doctor)
     sub.add_parser("advance").set_defaults(func=cmd_advance)
     owner = sub.add_parser("owner-gate")

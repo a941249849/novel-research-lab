@@ -368,6 +368,42 @@ class RuntimeFixture(unittest.TestCase):
         self.assertEqual(matrix["State Ledger"], "seed")
         self.assertNotIn("complete", set(matrix.values()))
 
+    def test_creation_assets_returns_all_asset_families_without_complete_status(self):
+        result = self.run_cli("creation-assets")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        data = json.loads(result.stdout)
+        self.assertEqual(data["registry_name"], "Creation Asset Registry")
+        self.assertEqual(data["version"], "0.1")
+        families = {item["asset_id"]: item for item in data["asset_families"]}
+        self.assertEqual(
+            set(families),
+            {
+                "characters",
+                "npcs",
+                "factions",
+                "artifacts",
+                "techniques",
+                "naming",
+                "emotional_bonds",
+                "foreshadowing",
+                "state_ledger",
+            },
+        )
+        self.assertNotIn("complete", {item["status"] for item in families.values()})
+        self.assertEqual(families["techniques"]["status"], "missing")
+        self.assertEqual(families["naming"]["status"], "missing")
+
+    def test_creation_assets_summary_matches_status_counts(self):
+        result = self.run_cli("creation-assets")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        data = json.loads(result.stdout)
+        status_counts = {}
+        for item in data["asset_families"]:
+            status_counts[item["status"]] = status_counts.get(item["status"], 0) + 1
+        self.assertEqual(data["coverage_summary"]["total"], 9)
+        self.assertEqual(data["coverage_summary"]["by_status"], status_counts)
+        self.assertIn("No family is complete in v0.1", data["guardrails"])
+
     def test_ingest_rejects_without_matching_attempt(self):
         output = self.root / "handoff/antigravity/outputs/phase2D_antigravity_outline_tree_review.md"
         output.parent.mkdir(parents=True, exist_ok=True)

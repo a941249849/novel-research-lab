@@ -161,6 +161,65 @@ class RuntimeFixture(unittest.TestCase):
         self.assertEqual(data["action"], "owner_gate_required")
         self.assertEqual(data["status"], "manual_owner_decision_required")
 
+    def test_advance_applies_owner_gate_acceptance_to_phase2e_entry(self):
+        prepared = self.run_cli("prepare-handoff", "--agent", "antigravity")
+        self.assertEqual(prepared.returncode, 0, prepared.stderr)
+        output = self.root / "handoff/antigravity/outputs/phase2D_antigravity_outline_tree_review.md"
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output.write_text(
+            "# Antigravity Review\n\n"
+            "Verdict: pass_with_warnings\n\n"
+            "Required fixes before prose: vary pacing loops; sensory evidence; visible backlash.\n",
+            encoding="utf-8",
+        )
+        ingested = self.run_cli(
+            "ingest",
+            "--agent",
+            "antigravity",
+            "--file",
+            "handoff/antigravity/outputs/phase2D_antigravity_outline_tree_review.md",
+        )
+        self.assertEqual(ingested.returncode, 0, ingested.stderr)
+        decision = self.run_cli(
+            "owner-gate",
+            "record",
+            "--decision-id",
+            "owner_gate_phase2d_antigravity_review_accept_with_warnings_001",
+            "--decision-type",
+            "accept_review",
+            "--authorized-scope",
+            "prepare_phase2e_entry",
+            "--authorized-scope",
+            "incorporate_antigravity_required_fixes",
+            "--forbidden-scope",
+            "write_novel_prose",
+            "--forbidden-scope",
+            "write_first_chapter",
+            "--expires-after-mission",
+            "phase2e_entry_preparation",
+            "--owner-note",
+            "批准 Phase 2E，接受 Antigravity 的 ACCEPT_WITH_WARNINGS 条件",
+        )
+        self.assertEqual(decision.returncode, 0, decision.stderr)
+        result = self.run_cli("advance")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        data = json.loads(result.stdout)
+        self.assertEqual(data["action"], "phase2e_entry_prepared")
+        self.assertEqual(data["status"], "ready_for_phase2e_planning")
+        state = json.loads((self.root / "system/mission_controller/current_phase_state.json").read_text(encoding="utf-8"))
+        self.assertEqual(state["current_phase"], "Phase 2E")
+        self.assertEqual(state["owner_gate_required"], False)
+        self.assertEqual(state["next_recommended_mission"], "Phase 2E Chapter Plan Entry Preparation")
+        manifest = (self.root / "phase2E/00_entry/phase2E_entry_manifest.md").read_text(encoding="utf-8")
+        self.assertIn("ACCEPT_WITH_WARNINGS", manifest)
+        self.assertIn("vary pacing loops", manifest)
+        self.assertIn("Do not write novel prose", manifest)
+        ready = self.run_cli("advance")
+        self.assertEqual(ready.returncode, 0, ready.stderr)
+        ready_data = json.loads(ready.stdout)
+        self.assertEqual(ready_data["action"], "phase2e_entry_ready")
+        self.assertEqual(ready_data["status"], "ready_for_phase2e_planning")
+
     def test_ingest_rejects_without_matching_attempt(self):
         output = self.root / "handoff/antigravity/outputs/phase2D_antigravity_outline_tree_review.md"
         output.parent.mkdir(parents=True, exist_ok=True)

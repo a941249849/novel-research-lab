@@ -1,0 +1,18 @@
+[
+  {
+    "decision_id": "owner_gate_phase2d_antigravity_review_accept_with_warnings_001",
+    "decision_type": "accept_review",
+    "authorized_scope": [
+      "prepare_phase2e_entry",
+      "incorporate_antigravity_required_fixes"
+    ],
+    "forbidden_scope": [
+      "write_novel_prose",
+      "write_first_chapter",
+      "bypass_phase2e_planning_constraints"
+    ],
+    "expires_after_mission": "phase2e_entry_preparation",
+    "owner_note": "批准 Phase 2E，接受 Antigravity 的 ACCEPT_WITH_WARNINGS 条件",
+    "created_at": "2026-07-09T01:47:59+08:00"
+  }
+]

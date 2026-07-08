@@ -251,6 +251,19 @@ class RuntimeFixture(unittest.TestCase):
         self.assertIn("No Hermes call was made", validation_text)
         self.assertIn("No novel prose detected", validation_text)
         self.assertNotIn("FAIL", validation_text)
+        handoff = self.run_cli("advance")
+        self.assertEqual(handoff.returncode, 0, handoff.stderr)
+        handoff_data = json.loads(handoff.stdout)
+        self.assertEqual(handoff_data["action"], "prepared_handoff")
+        self.assertEqual(handoff_data["mission_id"], "phase2e_antigravity_controlled_planning_review")
+        self.assertEqual(
+            handoff_data["handoff_packet_path"],
+            "handoff/antigravity/current_packet.md",
+        )
+        packet_text = (self.root / "handoff/antigravity/current_packet.md").read_text(encoding="utf-8")
+        self.assertIn("Review the current mission artifacts", packet_text)
+        self.assertIn("Phase 2E Antigravity Controlled Planning Review", packet_text)
+        self.assertNotIn("Review the Phase 2D outline tree", packet_text)
 
     def test_ingest_rejects_without_matching_attempt(self):
         output = self.root / "handoff/antigravity/outputs/phase2D_antigravity_outline_tree_review.md"

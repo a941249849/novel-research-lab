@@ -21,7 +21,7 @@ def _sanitize_for_packet(text: str) -> str:
     sanitized = text
     for marker in FORBIDDEN_SOURCE_MARKERS:
         sanitized = sanitized.replace(marker, "[raw source corpus]/")
-    return sanitized
+    return "\n".join(line.rstrip() for line in sanitized.splitlines())
 
 
 def _assert_safe_artifact_path(relative_path: str) -> None:
@@ -59,9 +59,10 @@ def render_antigravity_packet(mission: dict[str, Any]) -> str:
 
 ## Review Task
 
-Review the Phase 2D outline tree as an external heterogeneous literary reviewer.
-Focus on structural soundness, originality risk, pacing risk, contradiction risk,
-and whether the current plan is ready for Owner Gate. Do not write novel prose.
+Review the current mission artifacts for {mission["mission_name"]} as an external
+heterogeneous literary reviewer. Focus on structural soundness, originality risk,
+pacing risk, contradiction risk, warning integration, and whether the current
+plan is ready for Owner Gate. Do not write novel prose.
 
 ## Expected Output
 

@@ -67,5 +67,80 @@
         "updated_at": "2026-07-09T01:46:35+08:00"
       }
     ]
+  },
+  {
+    "mission_id": "phase2e_antigravity_controlled_planning_review",
+    "mission_name": "Phase 2E Antigravity Controlled Planning Review",
+    "phase": "Phase 2E",
+    "responsible_agent": "antigravity",
+    "status": "awaiting_external_output",
+    "input_artifacts": [
+      "handoff/antigravity/outputs/phase2D_antigravity_outline_tree_review.md",
+      "phase2C/01_prompt/phase2C_bible_output_contract.md",
+      "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md",
+      "phase2C/03_codex_validation/phase2C_antigravity_bible_review_report.md",
+      "phase2C/03_codex_validation/phase2C_bible_validation_report.md",
+      "phase2D/00_entry/phase2D_entry_manifest.md",
+      "phase2D/00_entry/phase2D_input_manifest.md",
+      "phase2D/00_entry/phase2D_launch_readiness_report.md",
+      "phase2D/00_entry/phase2D_outline_tree_requirements.md",
+      "phase2D/00_entry/phase2D_output_contract.md",
+      "phase2D/00_owner_gate/phase2D_owner_gate_acknowledgement.md",
+      "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md",
+      "phase2D/02_codex_validation/phase2D_outline_tree_validation_report.md",
+      "phase2E/00_entry/phase2E_entry_manifest.md",
+      "phase2E/01_planning_package/phase2E_chapter_plan_control_pack.md",
+      "system/mission_controller/agent_task_contract.md",
+      "system/mission_controller/current_phase_state.json",
+      "system/mission_controller/next_mission_rules.md",
+      "system/runtime/phase2e_controlled_chapter_planning_codex_output.md",
+      "system/runtime/phase2e_controlled_planning_validation_codex_output.md"
+    ],
+    "output_artifacts": [
+      "handoff/antigravity/outputs/phase2e_antigravity_controlled_planning_review.md"
+    ],
+    "created_at": "2026-07-09T02:02:14+08:00",
+    "updated_at": "2026-07-09T02:03:25+08:00",
+    "gate_status": "owner_gate_not_required",
+    "notes": [
+      "adapter_mode=manual_handoff"
+    ],
+    "handoff_attempts": [
+      {
+        "handoff_attempt_id": "phase2e_antigravity_controlled_planning_review_attempt_001",
+        "mission_id": "phase2e_antigravity_controlled_planning_review",
+        "target_agent": "antigravity",
+        "adapter_mode": "manual_handoff",
+        "input_artifact_hashes": {
+          "handoff/antigravity/outputs/phase2D_antigravity_outline_tree_review.md": "d45353957ee0f89324b412b0b52828bd76ffceb0b49ff8785b5495a34d81bbcf",
+          "phase2C/01_prompt/phase2C_bible_output_contract.md": "c888d6b98612a2454daa69e2f9944d43444added93036e18a7aec1d9ae8b7dc7",
+          "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md": "5cab7816be272af5c6a3794092c6387c9b09af521c245c2ce9a3f22f1c02c383",
+          "phase2C/03_codex_validation/phase2C_antigravity_bible_review_report.md": "973ff1cc9321abd4389cca9c44f7d07901dc483b8f8cc649d062c13016fcbda6",
+          "phase2C/03_codex_validation/phase2C_bible_validation_report.md": "6364907b602d1d876bfbd6eb102bf381dcd7336ccc0645626d6bb7c99116b2cc",
+          "phase2D/00_entry/phase2D_entry_manifest.md": "bde80d2a68426256c3bace3e5e06897cccece2e7a07132fd2763edb7c0978ee2",
+          "phase2D/00_entry/phase2D_input_manifest.md": "a7b8b29510e1f3b683b6a31894e878fd9411c67b937e3cb3ee3fa2a2600a22b1",
+          "phase2D/00_entry/phase2D_launch_readiness_report.md": "a601100a09c536e0ca5015857b65e9690247da7088a638a93725ac0f3944fc76",
+          "phase2D/00_entry/phase2D_outline_tree_requirements.md": "4aa06adefd4759f324be2ced42e6a2bc170f9f7d113a3a056d3be0c728afb398",
+          "phase2D/00_entry/phase2D_output_contract.md": "56d37f77a3013382828eb4a547d6e020031aa0dacc28c0a7b2c0b4bd9e99d5dc",
+          "phase2D/00_owner_gate/phase2D_owner_gate_acknowledgement.md": "976d3568dbc83694ec1a3ff9ae45f74b814ecb7f7be3e168d103d0b2fb9f287d",
+          "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md": "511b0ab58a48f2f553874075e5fa84be25a815bbf4578ad8a3ccf99a8ae1f48b",
+          "phase2D/02_codex_validation/phase2D_outline_tree_validation_report.md": "4dd8d888954a5d6c4e962cf3884058c0eb89a7d332ca0e83f08d1f4b9a9c4fc9",
+          "phase2E/00_entry/phase2E_entry_manifest.md": "e21c9b175d0a058526e1d1acdfc897cac4e9847e82fb1b1ce22002dfdaf04999",
+          "phase2E/01_planning_package/phase2E_chapter_plan_control_pack.md": "2e472e167e5bc07740c441b6b9a4cab0855f25b7977f9f83b20a5d448dc86165",
+          "system/mission_controller/agent_task_contract.md": "c302f9d5f5638a03457f23704c853627d27461ce425404f99140120aa0dcddce",
+          "system/mission_controller/current_phase_state.json": "e3f32e5091697c4e2f1c17f5169342a0c639310b25f8779133d09908487728ff",
+          "system/mission_controller/next_mission_rules.md": "42850a2be3a03f30c872d29b928a2627664ba5ee2cf432f80dc0a1c87b805f66",
+          "system/runtime/phase2e_controlled_chapter_planning_codex_output.md": "1b0bba94608959fa8238da50f9123077e5d6a9ec9e3cff1474c119faf1eec455",
+          "system/runtime/phase2e_controlled_planning_validation_codex_output.md": "3c8ff399a2c4d37402a5031a5e415bb56444fc4cafeafdd94ec9a0878c1dc48c"
+        },
+        "expected_output_path": "handoff/antigravity/outputs/phase2e_antigravity_controlled_planning_review.md",
+        "created_at": "2026-07-09T02:02:14+08:00",
+        "stale_after": "",
+        "ingest_command": "python3 system/runtime/nrl.py ingest --agent antigravity --file handoff/antigravity/outputs/phase2e_antigravity_controlled_planning_review.md",
+        "validation_contract": "Codex validation or Owner Gate required by mission contract",
+        "status": "awaiting_external_output",
+        "updated_at": "2026-07-09T02:03:25+08:00"
+      }
+    ]
   }
 ]

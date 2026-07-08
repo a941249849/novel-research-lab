@@ -51,6 +51,7 @@ def render_studio() -> Path:
     <h2>Runtime Health</h2>
     <ul>
       <li><code>python3 system/runtime/nrl.py doctor</code></li>
+      <li><code>python3 system/runtime/nrl.py advance</code></li>
       <li><code>python3 system/runtime/nrl.py check-inputs</code></li>
       <li><code>python3 system/runtime/nrl.py validate-state</code></li>
       <li><code>python3 system/runtime/nrl.py prepare-handoff --agent antigravity</code></li>

@@ -45,6 +45,12 @@ Run the runtime health check:
 python3 system/runtime/nrl.py doctor
 ```
 
+Advance the current mission through the next safe runtime step:
+
+```bash
+python3 system/runtime/nrl.py advance
+```
+
 Show the next mission package:
 
 ```bash
@@ -174,6 +180,19 @@ Use `doctor` as the first local check before moving a mission forward:
 python3 system/runtime/nrl.py doctor
 ```
 
+Use `advance` as the normal single entrypoint for progression:
+
+```bash
+python3 system/runtime/nrl.py advance
+```
+
+`advance` is intentionally conservative:
+
+- If no handoff attempt exists, it prepares one.
+- If a handoff attempt exists but the expected output file is missing, it waits and reports the exact missing file.
+- If the expected output file exists, it ingests it through the existing ingest contract.
+- If Owner Gate is required, it stops and reports that a manual owner decision is required.
+
 It reports:
 
 - local Git repository status and remotes
@@ -189,5 +208,6 @@ The smoke-test path is covered by `tests/test_sys3_runtime.py` and verifies:
 1. Antigravity handoff preparation records a handoff attempt.
 2. A manually produced expected output can be ingested.
 3. Ingest moves the mission to Owner Gate instead of bypassing review.
+4. `advance` does not duplicate handoff attempts or bypass Owner Gate.
 
 GitHub binding is intentionally outside the runtime. Bind the workspace to a confirmed repository first; then `doctor` will report repository root, branch, and remotes. Do not bind this workspace to an unrelated repository.

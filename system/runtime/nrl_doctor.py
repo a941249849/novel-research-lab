@@ -89,10 +89,6 @@ def latest_registry_status(mission_id: str) -> dict[str, Any] | None:
 def run_doctor(state: dict[str, Any], adapters: dict[str, Any], mission: dict[str, Any]) -> dict[str, Any]:
     mission_id = mission["mission_id"]
     registry_status = latest_registry_status(mission_id)
-    next_command = f"python3 system/runtime/nrl.py prepare-handoff --agent {mission['responsible_agent']}"
-    if registry_status and registry_status.get("latest_attempt_status") == "awaiting_external_output":
-        expected = mission["expected_outputs"][0]
-        next_command = f"python3 system/runtime/nrl.py ingest --agent {mission['responsible_agent']} --file {expected}"
 
     return {
         "runtime": "Novel Research Lab",
@@ -115,5 +111,5 @@ def run_doctor(state: dict[str, Any], adapters: dict[str, Any], mission: dict[st
         },
         "handoff": handoff_summary(mission),
         "blocked_actions": state.get("blocked_actions", []),
-        "recommended_next_command": next_command,
+        "recommended_next_command": "python3 system/runtime/nrl.py advance",
     }

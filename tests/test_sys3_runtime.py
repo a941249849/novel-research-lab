@@ -73,6 +73,7 @@ class RuntimeFixture(unittest.TestCase):
         self.assertEqual(data["git"]["is_repo"], False)
         self.assertEqual(data["adapters"]["antigravity"]["mode"], "manual_handoff")
         self.assertEqual(data["gates"]["review_status"], "PENDING")
+        self.assertEqual(data["recommended_next_command"], "python3 system/runtime/nrl.py advance")
         after = state_path.read_text(encoding="utf-8")
         self.assertEqual(after, before)
 
@@ -89,6 +90,58 @@ class RuntimeFixture(unittest.TestCase):
             registry[0]["handoff_attempts"][0]["expected_output_path"],
             "handoff/antigravity/outputs/phase2D_antigravity_outline_tree_review.md",
         )
+
+    def test_advance_prepares_handoff_when_no_attempt_exists(self):
+        result = self.run_cli("advance")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        data = json.loads(result.stdout)
+        self.assertEqual(data["action"], "prepared_handoff")
+        self.assertEqual(data["status"], "awaiting_external_output")
+        self.assertEqual(data["mission_id"], "phase2d_antigravity_outline_tree_review")
+        self.assertEqual(data["responsible_agent"], "antigravity")
+        self.assertIn("handoff_attempt_id", data)
+        self.assertTrue((self.root / "handoff/antigravity/current_task.md").exists())
+
+    def test_advance_waits_without_duplicate_attempt_when_output_missing(self):
+        prepared = self.run_cli("prepare-handoff", "--agent", "antigravity")
+        self.assertEqual(prepared.returncode, 0, prepared.stderr)
+        result = self.run_cli("advance")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        data = json.loads(result.stdout)
+        self.assertEqual(data["action"], "awaiting_external_output")
+        self.assertEqual(data["status"], "blocked_on_external_agent")
+        registry = json.loads((self.root / "system/runtime/mission_registry.json").read_text(encoding="utf-8"))
+        self.assertEqual(len(registry[0]["handoff_attempts"]), 1)
+
+    def test_advance_ingests_expected_output_and_reaches_owner_gate(self):
+        prepared = self.run_cli("prepare-handoff", "--agent", "antigravity")
+        self.assertEqual(prepared.returncode, 0, prepared.stderr)
+        output = self.root / "handoff/antigravity/outputs/phase2D_antigravity_outline_tree_review.md"
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output.write_text("# Antigravity Review\n\nrecommendation: owner_gate\n", encoding="utf-8")
+        result = self.run_cli("advance")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        data = json.loads(result.stdout)
+        self.assertEqual(data["action"], "ingested_external_output")
+        self.assertEqual(data["status"], "owner_gate_required")
+        gate = self.run_cli("gate-status")
+        self.assertEqual(gate.returncode, 0, gate.stderr)
+        gate_data = json.loads(gate.stdout)
+        self.assertEqual(gate_data["owner_gate_required"], True)
+
+    def test_advance_stops_when_owner_gate_required(self):
+        prepared = self.run_cli("prepare-handoff", "--agent", "antigravity")
+        self.assertEqual(prepared.returncode, 0, prepared.stderr)
+        output = self.root / "handoff/antigravity/outputs/phase2D_antigravity_outline_tree_review.md"
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output.write_text("# Antigravity Review\n\nrecommendation: owner_gate\n", encoding="utf-8")
+        ingested = self.run_cli("ingest", "--agent", "antigravity", "--file", "handoff/antigravity/outputs/phase2D_antigravity_outline_tree_review.md")
+        self.assertEqual(ingested.returncode, 0, ingested.stderr)
+        result = self.run_cli("advance")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        data = json.loads(result.stdout)
+        self.assertEqual(data["action"], "owner_gate_required")
+        self.assertEqual(data["status"], "manual_owner_decision_required")
 
     def test_ingest_rejects_without_matching_attempt(self):
         output = self.root / "handoff/antigravity/outputs/phase2D_antigravity_outline_tree_review.md"
@@ -169,6 +222,7 @@ class RuntimeFixture(unittest.TestCase):
         html = (self.root / "system/runtime/studio/index.html").read_text(encoding="utf-8")
         self.assertIn("Runtime Health", html)
         self.assertIn("python3 system/runtime/nrl.py doctor", html)
+        self.assertIn("python3 system/runtime/nrl.py advance", html)
 
     def test_readme_documents_sys3_commands(self):
         readme = (REPO_ROOT / "system/runtime/README.md").read_text(encoding="utf-8")

@@ -5,7 +5,7 @@
   "selected_project": "《借天改命账》",
   "next_recommended_mission": "Phase 2D Antigravity Outline Tree Review",
   "allowed_next_agents": ["Antigravity"],
-  "owner_gate_required": true,
+  "owner_gate_required": false,
   "owner_gate_status": "PENDING_ANTIGRAVITY_REVIEW",
   "validation_status": "PASS_WITH_WARNINGS",
   "review_status": "PENDING",

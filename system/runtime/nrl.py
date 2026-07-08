@@ -270,8 +270,7 @@ python3 system/runtime/nrl.py ingest --agent {mission["responsible_agent"]} --fi
 """
 
 
-def cmd_prepare_handoff(args: argparse.Namespace) -> int:
-    agent = args.agent.lower()
+def prepare_handoff(agent: str) -> dict[str, Any]:
     state = load_state()
     adapters = load_adapters()
     if agent not in adapters:
@@ -285,13 +284,15 @@ def cmd_prepare_handoff(args: argparse.Namespace) -> int:
     handoff_path = handoff_dir / "current_task.md"
     handoff_path.write_text(make_handoff_markdown(mission, adapter), encoding="utf-8")
     attempt = record_handoff_attempt(mission, str(adapter.get("mode")), now_iso())
-    print_json(
-        {
-            "handoff_path": str(handoff_path.relative_to(ROOT)),
-            "status": "awaiting_external_output",
-            "handoff_attempt_id": attempt["handoff_attempt_id"],
-        }
-    )
+    return {
+        "handoff_path": str(handoff_path.relative_to(ROOT)),
+        "status": "awaiting_external_output",
+        "handoff_attempt_id": attempt["handoff_attempt_id"],
+    }
+
+
+def cmd_prepare_handoff(args: argparse.Namespace) -> int:
+    print_json(prepare_handoff(args.agent.lower()))
     return 0
 
 
@@ -313,11 +314,10 @@ def update_state_for_ingest(agent: str, output_path: str) -> None:
     write_json(STATE_PATH, state)
 
 
-def cmd_ingest(args: argparse.Namespace) -> int:
-    agent = args.agent.lower()
+def ingest_file(agent: str, file_arg: str) -> dict[str, Any]:
     if agent not in {"hermes", "antigravity"}:
         raise RuntimeError("ingest supports only hermes or antigravity")
-    file_path = Path(args.file)
+    file_path = Path(file_arg)
     if not file_path.is_absolute():
         file_path = (ROOT / file_path).resolve()
     else:
@@ -343,7 +343,84 @@ def cmd_ingest(args: argparse.Namespace) -> int:
             item["updated_at"] = now_iso()
     save_registry(registry)
     update_state_for_ingest(agent, rel_file)
-    print_json({"ingested": rel_file, "agent": agent, "registry_status": status})
+    return {"ingested": rel_file, "agent": agent, "registry_status": status}
+
+
+def cmd_ingest(args: argparse.Namespace) -> int:
+    print_json(ingest_file(args.agent.lower(), args.file))
+    return 0
+
+
+def cmd_advance(_: argparse.Namespace) -> int:
+    state = load_state()
+    mission = current_mission(state)
+    agent = mission["responsible_agent"]
+    mission_id = mission["mission_id"]
+
+    if state.get("owner_gate_required", False):
+        print_json(
+            {
+                "action": "owner_gate_required",
+                "status": "manual_owner_decision_required",
+                "mission_id": mission_id,
+                "responsible_agent": agent,
+                "owner_gate_status": state.get("owner_gate_status"),
+            }
+        )
+        return 0
+
+    if agent not in {"hermes", "antigravity"}:
+        print_json(
+            {
+                "action": "unsupported_local_advance",
+                "status": "manual_runtime_decision_required",
+                "mission_id": mission_id,
+                "responsible_agent": agent,
+            }
+        )
+        return 0
+
+    expected_output = mission["expected_outputs"][0]
+    active_attempt = find_active_attempt(mission_id, expected_output)
+    expected_path = ROOT / expected_output
+
+    if active_attempt is None:
+        result = prepare_handoff(agent)
+        print_json(
+            {
+                "action": "prepared_handoff",
+                "mission_id": mission_id,
+                "responsible_agent": agent,
+                **result,
+            }
+        )
+        return 0
+
+    if not expected_path.exists():
+        print_json(
+            {
+                "action": "awaiting_external_output",
+                "status": "blocked_on_external_agent",
+                "mission_id": mission_id,
+                "responsible_agent": agent,
+                "handoff_attempt_id": active_attempt["handoff_attempt_id"],
+                "expected_output": expected_output,
+                "next_required_external_step": f"Produce {expected_output} with {agent}.",
+            }
+        )
+        return 0
+
+    result = ingest_file(agent, expected_output)
+    next_status = "owner_gate_required" if agent == "antigravity" else "validation_required"
+    print_json(
+        {
+            "action": "ingested_external_output",
+            "status": next_status,
+            "mission_id": mission_id,
+            "responsible_agent": agent,
+            **result,
+        }
+    )
     return 0
 
 
@@ -373,6 +450,7 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("check-inputs").set_defaults(func=cmd_check_inputs)
     sub.add_parser("gate-status").set_defaults(func=cmd_gate_status)
     sub.add_parser("doctor").set_defaults(func=cmd_doctor)
+    sub.add_parser("advance").set_defaults(func=cmd_advance)
     owner = sub.add_parser("owner-gate")
     owner_sub = owner.add_subparsers(dest="owner_gate_command", required=True)
     owner_record = owner_sub.add_parser("record")

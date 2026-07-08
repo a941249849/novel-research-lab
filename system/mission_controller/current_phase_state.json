@@ -4,11 +4,11 @@
   "current_subphase": "Controlled Planning Validation",
   "previous_story_phase": "Phase 2D",
   "selected_project": "《借天改命账》",
-  "phase_status": "PHASE2E_CONTROLLED_PLANNING_VALIDATED",
+  "phase_status": "review_received_pending_owner_gate",
   "last_completed_mission": "Phase 2E Controlled Planning Validation",
   "next_recommended_mission": "Phase 2E Antigravity Controlled Planning Review",
-  "owner_gate_required": false,
-  "owner_gate_status": "ACCEPTED_WITH_WARNINGS_FOR_PHASE2E_ENTRY",
+  "owner_gate_required": true,
+  "owner_gate_status": "REQUIRED_PENDING_ACKNOWLEDGEMENT",
   "allowed_next_agents": [
     "Antigravity"
   ],
@@ -110,7 +110,7 @@
     }
   ],
   "validation_status": "PASS",
-  "review_status": "READY_FOR_ANTIGRAVITY_CONTROLLED_PLANNING_REVIEW",
+  "review_status": "REVIEW_RECEIVED_PENDING_OWNER_GATE",
   "drive_sync_status": "synced_to_drive",
   "notes": [
     "Phase 2C Hermes Bible completed.",
@@ -130,7 +130,8 @@
     "Owner Gate accepted Antigravity review with warnings via owner_gate_phase2d_antigravity_review_accept_with_warnings_001.",
     "Phase 2E chapter planning control pack prepared; prose remains blocked.",
     "Phase 2E controlled planning output prepared; validation remains required before any chapter-facing plan.",
-    "Phase 2E controlled planning validation passed; Antigravity review is the next manual gate."
+    "Phase 2E controlled planning validation passed; Antigravity review is the next manual gate.",
+    "Runtime ingest: antigravity external output registered at handoff/antigravity/outputs/phase2e_antigravity_controlled_planning_review.md."
   ],
-  "updated_at": "2026-07-09T02:01:21+08:00"
+  "updated_at": "2026-07-09T02:12:15+08:00"
 }

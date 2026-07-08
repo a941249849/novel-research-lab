@@ -73,7 +73,7 @@
     "mission_name": "Phase 2E Antigravity Controlled Planning Review",
     "phase": "Phase 2E",
     "responsible_agent": "antigravity",
-    "status": "awaiting_external_output",
+    "status": "output_detected",
     "input_artifacts": [
       "handoff/antigravity/outputs/phase2D_antigravity_outline_tree_review.md",
       "phase2C/01_prompt/phase2C_bible_output_contract.md",
@@ -100,10 +100,11 @@
       "handoff/antigravity/outputs/phase2e_antigravity_controlled_planning_review.md"
     ],
     "created_at": "2026-07-09T02:02:14+08:00",
-    "updated_at": "2026-07-09T02:03:25+08:00",
+    "updated_at": "2026-07-09T02:12:15+08:00",
     "gate_status": "owner_gate_not_required",
     "notes": [
-      "adapter_mode=manual_handoff"
+      "adapter_mode=manual_handoff",
+      "antigravity output ingested from handoff/antigravity/outputs/phase2e_antigravity_controlled_planning_review.md"
     ],
     "handoff_attempts": [
       {
@@ -138,8 +139,8 @@
         "stale_after": "",
         "ingest_command": "python3 system/runtime/nrl.py ingest --agent antigravity --file handoff/antigravity/outputs/phase2e_antigravity_controlled_planning_review.md",
         "validation_contract": "Codex validation or Owner Gate required by mission contract",
-        "status": "awaiting_external_output",
-        "updated_at": "2026-07-09T02:03:25+08:00"
+        "status": "output_detected",
+        "updated_at": "2026-07-09T02:12:15+08:00"
       }
     ]
   }

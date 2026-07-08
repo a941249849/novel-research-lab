@@ -11,6 +11,11 @@ novel_training_set/
 .ruff_cache/
 *.zip
 
+# Frontend dependencies and build outputs.
+apps/*/node_modules/
+apps/*/dist/
+apps/*/*.tsbuildinfo
+
 # Local editor and OS metadata.
 .vscode/
 .idea/

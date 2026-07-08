@@ -41,6 +41,23 @@ const fallbackData: StudioData = {
   agent_panel: {items: []},
   artifact_map: {items: []},
   creation_coverage_matrix: {assessment: 'Coverage unavailable.', items: []},
+  creation_asset_registry: {
+    registry_name: 'Creation Asset Registry',
+    version: '0.1',
+    project: 'UNKNOWN_PROJECT',
+    mode: 'UNKNOWN_MODE',
+    source_of_truth: [],
+    asset_families: [],
+    coverage_summary: {
+      total: 0,
+      by_status: {},
+      complete: 0,
+      lowest_readiness: 0,
+      highest_readiness: 0,
+    },
+    guardrails: ['No family is complete in v0.1'],
+    next_safe_action: 'Build creation asset registry data before inspecting this shell.',
+  },
   runtime_status: {
     health_commands: [
       'python3 system/runtime/nrl.py doctor',
@@ -226,10 +243,24 @@ function ArtifactMap({data}: {data: StudioData}) {
 }
 
 function CreationCoverageMatrix({data}: {data: StudioData}) {
+  const registry = data.creation_asset_registry;
+  const summaryItems = Object.entries(registry.coverage_summary.by_status).map(([status, count]) => `${status}: ${count}`);
   return (
     <Section padding={5} dividers={['bottom']}>
       <VStack gap={4}>
         <SectionTitle title="Creation Coverage Matrix" subtitle={data.creation_coverage_matrix.assessment} />
+        <MetadataList columns="multi">
+          <MetadataListItem label="Creation Asset Registry">{`${registry.registry_name} v${registry.version}`}</MetadataListItem>
+          <MetadataListItem label="Project">{registry.project}</MetadataListItem>
+          <MetadataListItem label="Mode">{registry.mode}</MetadataListItem>
+          <MetadataListItem label="Total Families">{String(registry.coverage_summary.total)}</MetadataListItem>
+          <MetadataListItem label="Readiness Range">{`${registry.coverage_summary.lowest_readiness}-${registry.coverage_summary.highest_readiness}`}</MetadataListItem>
+          <MetadataListItem label="Complete Families">{String(registry.coverage_summary.complete)}</MetadataListItem>
+        </MetadataList>
+        <VStack gap={2}>
+          <Heading level={3}>Coverage Summary</Heading>
+          <TokenRow items={summaryItems.length ? summaryItems : ['no status counts']} />
+        </VStack>
         <Grid columns={{minWidth: 280, max: 3, repeat: 'fit'}} gap={3}>
           {data.creation_coverage_matrix.items.map((item) => (
             <Card key={item.asset} padding={4} variant="muted">
@@ -238,11 +269,53 @@ function CreationCoverageMatrix({data}: {data: StudioData}) {
                   <Heading level={3}>{item.asset}</Heading>
                   <Token label={item.status} color={statusToken(item.status)} size="sm" />
                 </HStack>
+                {typeof item.readiness_score === 'number' ? (
+                  <Text type="supporting" display="block">{`Readiness Score: ${item.readiness_score}`}</Text>
+                ) : null}
                 <Text type="supporting" display="block">{item.gap}</Text>
               </VStack>
             </Card>
           ))}
         </Grid>
+        <SectionTitle title="Creation Asset Registry" subtitle={registry.next_safe_action} />
+        <Grid columns={{minWidth: 320, max: 2, repeat: 'fit'}} gap={3}>
+          {registry.asset_families.map((family) => (
+            <Card key={family.asset_id} padding={4}>
+              <VStack gap={3}>
+                <HStack gap={2} vAlign="center">
+                  <Heading level={3}>{family.label}</Heading>
+                  <Token label={family.status} color={statusToken(family.status)} size="sm" />
+                  <Token label={`Readiness Score: ${family.readiness_score}`} color="blue" size="sm" />
+                </HStack>
+                <Text type="supporting" display="block">{family.why_not_complete}</Text>
+                <List header={<Heading level={4}>Known Support</Heading>} density="compact" hasDividers>
+                  {family.known_support.map((item) => (
+                    <ListItem key={item} label={item} />
+                  ))}
+                </List>
+                <List header={<Heading level={4}>Missing Capabilities</Heading>} density="compact" hasDividers>
+                  {family.missing_capabilities.map((item) => (
+                    <ListItem key={item} label={item} endContent={<Token label="gap" color="orange" size="sm" />} />
+                  ))}
+                </List>
+                <List header={<Heading level={4}>Source Artifacts</Heading>} density="compact" hasDividers>
+                  {family.source_artifacts.map((item) => (
+                    <ListItem key={item} label={item} endContent={<Token label="source" color="teal" size="sm" />} />
+                  ))}
+                </List>
+                <Text display="block">{family.next_safe_action}</Text>
+                <VStack gap={2}>
+                  <Heading level={4}>Blocked Actions</Heading>
+                  <TokenRow items={family.blocked_actions} />
+                </VStack>
+              </VStack>
+            </Card>
+          ))}
+        </Grid>
+        <VStack gap={2}>
+          <Heading level={3}>Guardrails</Heading>
+          <TokenRow items={registry.guardrails} />
+        </VStack>
       </VStack>
     </Section>
   );

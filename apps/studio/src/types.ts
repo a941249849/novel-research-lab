@@ -38,7 +38,37 @@ export type StudioData = {
       asset: string;
       status: string;
       gap: string;
+      asset_id?: string;
+      readiness_score?: number;
     }>;
+  };
+  creation_asset_registry: {
+    registry_name: string;
+    version: string;
+    project: string;
+    mode: string;
+    source_of_truth: string[];
+    asset_families: Array<{
+      asset_id: string;
+      label: string;
+      status: string;
+      readiness_score: number;
+      why_not_complete: string;
+      known_support: string[];
+      missing_capabilities: string[];
+      source_artifacts: string[];
+      next_safe_action: string;
+      blocked_actions: string[];
+    }>;
+    coverage_summary: {
+      total: number;
+      by_status: Record<string, number>;
+      complete: number;
+      lowest_readiness: number;
+      highest_readiness: number;
+    };
+    guardrails: string[];
+    next_safe_action: string;
   };
   runtime_status: {
     health_commands: string[];

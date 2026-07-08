@@ -1,0 +1,44 @@
+{
+  "book_title": "凡人修仙传",
+  "author": "忘语",
+  "genre": "凡人流修仙/谨慎生存",
+  "level_system": {
+    "level_stages": [
+      "山村凡人层",
+      "江湖门派误入层",
+      "低阶修仙生存层",
+      "结丹/元婴区域强者层",
+      "跨界迁移层",
+      "大族大战旁观/参与层",
+      "飞升新秩序层"
+    ],
+    "description": "低资质个体依靠隐秘资产、谨慎交易、逃避高危冲突和长期积累跨越境界。"
+  },
+  "zero_sum_constraints": [
+    {
+      "asset_name": "隐秘增殖资产",
+      "max_global_slots": 1,
+      "description": "能稳定放大稀缺资源的核心资产必须长期保密。"
+    },
+    {
+      "asset_name": "境界瓶颈资源",
+      "max_global_slots": 8,
+      "description": "每次突破依赖丹药、材料、机缘，资源不足即停滞。"
+    }
+  ],
+  "world_lore": {
+    "core_description": "修仙界是高度风险市场，信息、资源、境界、门派背景共同决定生存概率。",
+    "public_vocabulary": [
+      "低资质逆积累",
+      "怀璧风险",
+      "避战优先",
+      "边界试探",
+      "交易换法",
+      "跨界重置"
+    ]
+  },
+  "candidate_scope": "Phase 1B-Core7 skeleton-only extraction; not final asset.",
+  "schema_mapping_notes": {
+    "mechanism_candidates": "world_lore.public_vocabulary / zero_sum_constraints / level_system.description"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "plot_checkpoints": [
+    {
+      "node_id": "N1",
+      "title": "公开测评制造尊严低谷",
+      "description": "用众人嘲讽和等级石碑把压迫外显化。",
+      "tension": 8,
+      "is_combat_skippable": false,
+      "evasion_path": "TBD"
+    },
+    {
+      "node_id": "N2",
+      "title": "退婚事件转化为长期目标",
+      "description": "外部羞辱绑定明确期限，形成持续追读动力。",
+      "tension": 9,
+      "is_combat_skippable": false,
+      "evasion_path": "TBD"
+    },
+    {
+      "node_id": "N3",
+      "title": "导师解释亏损并提供成长路线",
+      "description": "外挂先造成损失，再以教学/资源补偿合理化。",
+      "tension": 8,
+      "is_combat_skippable": true,
+      "evasion_path": "隐藏导师存在，逐步兑换能力"
+    },
+    {
+      "node_id": "N4",
+      "title": "职业身份与战力双线升级",
+      "description": "炼药身份带来人脉、资源、地位，补足纯战斗升级单调。",
+      "tension": 7,
+      "is_combat_skippable": true,
+      "evasion_path": "以马甲参加考核/交易"
+    },
+    {
+      "node_id": "N5",
+      "title": "最高战力打开新位面",
+      "description": "完结点保留更大世界入口，让成长感继续延伸。",
+      "tension": 8,
+      "is_combat_skippable": false,
+      "evasion_path": "TBD"
+    }
+  ],
+  "pacing_metrics": {
+    "target_suppression_to_release_ratio": "1:4",
+    "description": "短压迫、快释放、强等级回报，周期性用打脸、夺宝、晋级形成商业节奏。"
+  },
+  "book_title": "斗破苍穹",
+  "candidate_scope": "Phase 1B-Core7 skeleton-only extraction"
+}

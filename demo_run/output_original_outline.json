@@ -1,0 +1,30 @@
+{
+  "plot_checkpoints": [
+    {
+      "node_id": "cp_001",
+      "title": "废弃庇护所开荒与资源冲突",
+      "description": "主角林寻在开荒废弃避难所时遭遇野荒猎人小队的贪婪围攻。为了不引人注目，林寻以极低浓度纳米反应示人，并被对方百般嘲讽，积累情绪压迫。",
+      "tension": -5,
+      "is_combat_skippable": false
+    },
+    {
+      "node_id": "cp_002",
+      "title": "遭遇高阶巡检机器人",
+      "description": "林寻在逃往核心区的路上，突然遭遇被污染的高阶巡检机器人（具有级Ⅲ型战力，远超当前境界）。主角绝不正面逞强，当机立断执行避战跑路，潜伏至阴影中布置诱饵引开敌人。",
+      "tension": -8,
+      "is_combat_skippable": true,
+      "evasion_path": "释放强干扰烟幕，利用废旧管道实行声东击西，撤退至安全安全中转站。"
+    },
+    {
+      "node_id": "cp_003",
+      "title": "反超载湮灭反杀与危机渡过",
+      "description": "猎人小队尾随而至并将林寻逼入死角。面临退无可退的局势，林寻当机立断动用随身隐藏的底牌级核心法宝——『熵能过载阀』。主角支付20%神经元深度电击的惨烈代价，强行越级超频，一击融接湮灭敌人领头者，并掠夺其活性纳米催化液（资源以战养战），成功脱离险境。",
+      "tension": 9,
+      "is_combat_skippable": false
+    }
+  ],
+  "pacing_metrics": {
+    "target_suppression_to_release_ratio": "1:3",
+    "description": "前置极高压避险（Tension -8）后，通过超频代价支付实现瞬间爆发清债（Tension +9）。"
+  }
+}

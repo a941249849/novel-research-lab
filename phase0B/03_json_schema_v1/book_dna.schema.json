@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BookDNA",
+  "description": "Schema for defining the world rules, level system, and resource limits of a novel.",
+  "type": "object",
+  "properties": {
+    "book_title": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "genre": {
+      "type": "string"
+    },
+    "level_system": {
+      "type": "object",
+      "properties": {
+        "level_stages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "required": ["level_stages"]
+    },
+    "zero_sum_constraints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "asset_name": {
+            "type": "string"
+          },
+          "max_global_slots": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "required": ["asset_name", "max_global_slots"]
+      }
+    },
+    "world_lore": {
+      "type": "object",
+      "properties": {
+        "core_description": {
+          "type": "string"
+        },
+        "public_vocabulary": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": ["core_description"]
+    }
+  },
+  "required": ["book_title", "author", "level_system", "world_lore"]
+}

@@ -1,0 +1,40 @@
+{
+  "true_profile": {
+    "actor_id": "actor_lin_xun_001",
+    "name": "林寻",
+    "level": "级Ⅱ型融接",
+    "combat_power": 920,
+    "moral_threshold": 25,
+    "utility_priority": 0.85,
+    "symbiotic_entities": [
+      {
+        "name": "灰鸦AI",
+        "description": "寄居在林寻脑部生物芯片中的废弃AI意识，能辅助逻辑计算、分析电磁环境并提供古文明知识。"
+      }
+    ]
+  },
+  "public_mask": {
+    "is_mask_active": true,
+    "masked_name": "零号流浪者",
+    "masked_level": "级Ⅰ型受体",
+    "masked_combat_power": 120
+  },
+  "inventory": [
+    {
+      "item_name": "熵能过载阀",
+      "item_type": "high_overload_valve",
+      "description": "能强行抽干当前装配反应仓中的纳米微粒，瞬间爆发出越级热寂能级脉冲。",
+      "backlash_description": "使用后会引发脑细胞强烈的电离放电，扣减大脑神经细胞活性，产生强烈麻痹与神经元深度电击痛苦。",
+      "trigger_condition": "过载功率设定超过 200%"
+    },
+    {
+      "item_name": "低级活性稀释液",
+      "item_type": "healing_catalyst",
+      "description": "中和体内的重金属异化硬化，保护身体细胞不发生热寂熔毁。"
+    }
+  ],
+  "faction_reputation": {
+    "野荒猎人联盟": -45,
+    "九号钢铁城守卫军": 15
+  }
+}

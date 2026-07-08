@@ -1,0 +1,112 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Novel Research Lab Mission Controller Phase State",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "project_name",
+    "current_phase",
+    "current_subphase",
+    "selected_project",
+    "phase_status",
+    "last_completed_mission",
+    "next_recommended_mission",
+    "owner_gate_required",
+    "owner_gate_status",
+    "allowed_next_agents",
+    "blocked_actions",
+    "key_artifacts",
+    "validation_status",
+    "review_status",
+    "drive_sync_status",
+    "updated_at"
+  ],
+  "properties": {
+    "project_name": {
+      "type": "string"
+    },
+    "current_phase": {
+      "type": "string"
+    },
+    "current_subphase": {
+      "type": "string"
+    },
+    "previous_story_phase": {
+      "type": "string"
+    },
+    "selected_project": {
+      "type": "string"
+    },
+    "phase_status": {
+      "type": "string"
+    },
+    "last_completed_mission": {
+      "type": "string"
+    },
+    "next_recommended_mission": {
+      "type": "string"
+    },
+    "owner_gate_required": {
+      "type": "boolean"
+    },
+    "owner_gate_status": {
+      "type": "string"
+    },
+    "allowed_next_agents": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "blocked_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "key_artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "path",
+          "status"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "validation_status": {
+      "type": "string"
+    },
+    "review_status": {
+      "type": "string"
+    },
+    "drive_sync_status": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "codex": {
+    "mode": "local",
+    "supported_modes": [
+      "local"
+    ],
+    "can_execute": true
+  },
+  "hermes": {
+    "mode": "manual_handoff",
+    "supported_modes": [
+      "manual_handoff",
+      "client_handoff",
+      "api",
+      "cli"
+    ],
+    "can_execute": false,
+    "handoff_dir": "handoff/hermes",
+    "expected_output_dir": "handoff/hermes/outputs"
+  },
+  "antigravity": {
+    "mode": "manual_handoff",
+    "supported_modes": [
+      "manual_handoff",
+      "client_handoff",
+      "api",
+      "cli"
+    ],
+    "can_execute": false,
+    "handoff_dir": "handoff/antigravity",
+    "expected_output_dir": "handoff/antigravity/outputs"
+  }
+}

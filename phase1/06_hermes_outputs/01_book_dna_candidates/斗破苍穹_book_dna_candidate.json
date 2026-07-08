@@ -1,0 +1,44 @@
+{
+  "book_title": "斗破苍穹",
+  "author": "天蚕土豆",
+  "genre": "升级爽文/废柴逆袭",
+  "level_system": {
+    "level_stages": [
+      "退阶羞辱层",
+      "重新凝聚基础层",
+      "家族/学院竞争层",
+      "地域宗门冲突层",
+      "中州强者网络层",
+      "远古血脉势力层",
+      "斗帝/破位面层"
+    ],
+    "description": "标准阶梯等级与功法、斗技、炼药、异火共同构成高频升级反馈。"
+  },
+  "zero_sum_constraints": [
+    {
+      "asset_name": "高阶火种与炼药资源",
+      "max_global_slots": 23,
+      "description": "稀有火种既是战力源，也是功法进化与炼药身份的核心。"
+    },
+    {
+      "asset_name": "尊严承诺期限",
+      "max_global_slots": 3,
+      "description": "三年/约定/婚约等期限把羞辱转化为可计时目标。"
+    }
+  ],
+  "world_lore": {
+    "core_description": "斗气等级、功法等级、炼药身份、异火吞噬和远古血脉组成清晰商业升级生态。",
+    "public_vocabulary": [
+      "退阶羞辱",
+      "期限复仇",
+      "导师补偿",
+      "职业身份抬升",
+      "火种吞噬",
+      "破位面续航"
+    ]
+  },
+  "candidate_scope": "Phase 1B-Core7 skeleton-only extraction; not final asset.",
+  "schema_mapping_notes": {
+    "mechanism_candidates": "world_lore.public_vocabulary / zero_sum_constraints / level_system.description"
+  }
+}

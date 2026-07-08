@@ -1,0 +1,16 @@
+{
+  "book_title": "大主宰",
+  "author": "TBD",
+  "genre": "",
+  "level_system": {
+    "level_stages": [
+      "TBD"
+    ],
+    "description": ""
+  },
+  "zero_sum_constraints": [],
+  "world_lore": {
+    "core_description": "TBD",
+    "public_vocabulary": []
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "book_title": "雪中悍刀行",
+  "author": "TBD",
+  "genre": "",
+  "level_system": {
+    "level_stages": [
+      "TBD"
+    ],
+    "description": ""
+  },
+  "zero_sum_constraints": [],
+  "world_lore": {
+    "core_description": "TBD",
+    "public_vocabulary": []
+  }
+}

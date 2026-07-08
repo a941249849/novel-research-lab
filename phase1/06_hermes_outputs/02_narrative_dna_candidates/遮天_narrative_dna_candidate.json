@@ -1,0 +1,50 @@
+{
+  "plot_checkpoints": [
+    {
+      "node_id": "N1",
+      "title": "现实入口被超常物撕开",
+      "description": "熟悉现实场景被宏大神秘物打断，完成题材跃迁。",
+      "tension": 8,
+      "is_combat_skippable": false,
+      "evasion_path": "TBD"
+    },
+    {
+      "node_id": "N2",
+      "title": "资源与身份被既有大势力压迫",
+      "description": "主角从弱势身份进入圣地/世家/秘境资源争夺。",
+      "tension": 7,
+      "is_combat_skippable": true,
+      "evasion_path": "借空间移动、伪装、临时结盟绕开必死追杀"
+    },
+    {
+      "node_id": "N3",
+      "title": "以反围猎制造名望跃迁",
+      "description": "被追杀者转为主动设局，俘获或击败上层代理人。",
+      "tension": 8,
+      "is_combat_skippable": false,
+      "evasion_path": "TBD"
+    },
+    {
+      "node_id": "N4",
+      "title": "星空古路式多地图淘汰",
+      "description": "离开单一大陆，以连续竞技地图筛选同代极限。",
+      "tension": 9,
+      "is_combat_skippable": true,
+      "evasion_path": "战术撤退、隐藏实力、换域修整"
+    },
+    {
+      "node_id": "N5",
+      "title": "终局汇合旧人与古史因果",
+      "description": "终点不是单人飞升，而是带旧部、故人、旧承诺冲击更高世界。",
+      "tension": 10,
+      "is_combat_skippable": false,
+      "evasion_path": "TBD"
+    }
+  ],
+  "pacing_metrics": {
+    "target_suppression_to_release_ratio": "2:5",
+    "description": "宏大压迫较长，靠名场面爆发、群像回归和地图升级释放。"
+  },
+  "book_title": "遮天",
+  "candidate_scope": "Phase 1B-Core7 skeleton-only extraction"
+}

@@ -1,0 +1,45 @@
+{
+  "true_profile": {
+    "actor_id": "core_actor_求魔",
+    "name": "执念献祭型追求者",
+    "level": "苍茫轮回层",
+    "combat_power": 89,
+    "moral_threshold": 50,
+    "utility_priority": 0.65,
+    "symbiotic_entities": [
+      {
+        "name": "TBD/抽象导师或外置规则源",
+        "description": "仅在 skeleton 可见时记录功能，不复用原著专名。"
+      }
+    ]
+  },
+  "public_mask": {
+    "is_mask_active": true,
+    "masked_name": "低估身份/马甲/普通人表层",
+    "masked_level": "部落无资格层",
+    "masked_combat_power": 10
+  },
+  "inventory": [
+    {
+      "item_name": "核心隐秘资产",
+      "item_type": "hidden_asset",
+      "description": "来自 skeleton 的抽象化关键资产；在原创转化中必须重新归因、改名、改规则。",
+      "backlash_description": "暴露后引发追杀、污染、夺取或身份危机。",
+      "trigger_condition": "遇到突破、逃生、交易或真相揭露节点。"
+    },
+    {
+      "item_name": "身份/名望债务",
+      "item_type": "social_debt",
+      "description": "公开评价、承诺、组织关系或族群责任形成的状态债务。",
+      "backlash_description": "若不处理会造成信誉坍塌、亲友受胁或阵营敌对。",
+      "trigger_condition": "公开挑战、救援、审判、族群危机。"
+    }
+  ],
+  "faction_reputation": {
+    "初始共同体": 20,
+    "压迫性大势力": -60,
+    "临时盟友": 25
+  },
+  "book_title": "求魔",
+  "candidate_scope": "Phase 1B-Core7 skeleton-only extraction"
+}

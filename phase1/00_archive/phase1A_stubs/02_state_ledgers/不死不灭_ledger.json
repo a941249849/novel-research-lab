@@ -1,0 +1,20 @@
+{
+  "true_profile": {
+    "actor_id": "protagonist",
+    "name": "TBD",
+    "level": "TBD",
+    "combat_power": 0,
+    "moral_threshold": 50,
+    "utility_priority": 0.5,
+    "symbiotic_entities": []
+  },
+  "public_mask": {
+    "is_mask_active": false,
+    "masked_name": "",
+    "masked_level": "",
+    "masked_combat_power": 0
+  },
+  "inventory": [],
+  "faction_reputation": {},
+  "source_book": "不死不灭"
+}

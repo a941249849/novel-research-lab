@@ -1,0 +1,44 @@
+{
+  "book_title": "人道至尊",
+  "author": "宅猪",
+  "genre": "神话玄幻/人族史诗",
+  "level_system": {
+    "level_stages": [
+      "部落外门层",
+      "图腾/灵魂觉醒层",
+      "神族血脉识别层",
+      "祖星封印层",
+      "宇宙战争层",
+      "天帝治理层",
+      "道界/祖星回环层"
+    ],
+    "description": "个人修行绑定血脉、图腾、神话纪元、族群正统与宇宙政治。"
+  },
+  "zero_sum_constraints": [
+    {
+      "asset_name": "族群血脉封印",
+      "max_global_slots": 1,
+      "description": "人族/神族身份被历史封印重写，主角成长即解封和再归因。"
+    },
+    {
+      "asset_name": "正统叙事席位",
+      "max_global_slots": 1,
+      "description": "谁解释历史、继承天帝权柄，谁拥有族群未来。"
+    }
+  ],
+  "world_lore": {
+    "core_description": "蛮荒神话、图腾修炼、血脉封印、纪元兴亡与现代祖星互相嵌套。",
+    "public_vocabulary": [
+      "族群蒙尘",
+      "血脉再识别",
+      "传承火种",
+      "正统争夺",
+      "祖星封印",
+      "禅让与大公"
+    ]
+  },
+  "candidate_scope": "Phase 1B-Core7 skeleton-only extraction; not final asset.",
+  "schema_mapping_notes": {
+    "mechanism_candidates": "world_lore.public_vocabulary / zero_sum_constraints / level_system.description"
+  }
+}

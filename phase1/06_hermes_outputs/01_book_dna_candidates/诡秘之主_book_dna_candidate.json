@@ -1,0 +1,44 @@
+{
+  "book_title": "诡秘之主",
+  "author": "爱潜水的乌贼",
+  "genre": "克苏鲁蒸汽/规则神秘",
+  "level_system": {
+    "level_stages": [
+      "异常苏醒层",
+      "低序列调查层",
+      "组织会议层",
+      "马甲行动层",
+      "半神仪式层",
+      "天使/旧日博弈层",
+      "普通人视角余波层"
+    ],
+    "description": "力量来自序列魔药、扮演规则、仪式、封印物和隐秘组织网络。"
+  },
+  "zero_sum_constraints": [
+    {
+      "asset_name": "魔药消化规则",
+      "max_global_slots": 1,
+      "description": "能力提升必须遵守扮演与仪式，不是单纯堆资源。"
+    },
+    {
+      "asset_name": "神秘污染阈值",
+      "max_global_slots": 1,
+      "description": "知识、物品、视线和称名都可能带来不可逆风险。"
+    }
+  ],
+  "world_lore": {
+    "core_description": "蒸汽现代性与神秘规则并存，社会制度、教会、隐秘组织和旧日污染构成多层现实。",
+    "public_vocabulary": [
+      "异常复活",
+      "规则污染",
+      "身份马甲",
+      "会议网络",
+      "仪式成本",
+      "普通人冰山视角"
+    ]
+  },
+  "candidate_scope": "Phase 1B-Core7 skeleton-only extraction; not final asset.",
+  "schema_mapping_notes": {
+    "mechanism_candidates": "world_lore.public_vocabulary / zero_sum_constraints / level_system.description"
+  }
+}

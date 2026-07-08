@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OriginalityTransformer",
+  "description": "Schema for defining functional originality mapping and worldview re-attribution rules.",
+  "type": "object",
+  "properties": {
+    "worldview_reattribution": {
+      "type": "string",
+      "description": "Text describing how the core magic system is attributed to a completely different cause (e.g. ancient ruins instead of gods)."
+    },
+    "function_transform_rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "source_feature_type": {
+            "type": "string",
+            "description": "The category of the source feature being converted (e.g., weapon, skill, resource, plot-node)."
+          },
+          "deep_function": {
+            "type": "string",
+            "description": "The narrative purpose served by this feature (e.g., limiting combat escalation, acting as a shield, providing a deadline)."
+          },
+          "mechanism_category": {
+            "type": "string",
+            "description": "The abstract genre archetype of this mechanism (e.g., evolutionary-skill, time-accelerated-inventory, external-mentor)."
+          },
+          "required_transformation": {
+            "type": "string",
+            "description": "Detailed guidelines on how to morph the mechanics of this feature."
+          },
+          "new_worldview_attribution": {
+            "type": "string",
+            "description": "How the morphed feature is attributed within the new world logic."
+          },
+          "naming_constraints": {
+            "type": "object",
+            "properties": {
+              "banned_terms": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "naming_style_guidelines": {
+                "type": "string"
+              }
+            },
+            "required": ["banned_terms"]
+          },
+          "forbidden_similarity_patterns": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Specific structural setups that look too similar to the original and are forbidden."
+          }
+        },
+        "required": [
+          "source_feature_type",
+          "deep_function",
+          "mechanism_category",
+          "required_transformation",
+          "new_worldview_attribution",
+          "naming_constraints",
+          "forbidden_similarity_patterns"
+        ]
+      }
+    }
+  },
+  "required": ["worldview_reattribution", "function_transform_rules"]
+}

@@ -1,0 +1,1458 @@
+{
+  "generated_at": "2026-07-08T06:47:08",
+  "phase": "Phase 1C",
+  "scope": "Owner acceptance asset manifest",
+  "core7_books": [
+    "遮天",
+    "蛊真人",
+    "人道至尊",
+    "凡人修仙传",
+    "斗破苍穹",
+    "诡秘之主",
+    "求魔"
+  ],
+  "stub_books_remaining": [
+    "一念永恒",
+    "不死不灭",
+    "仙逆",
+    "圣墟",
+    "大主宰",
+    "完美世界",
+    "将夜",
+    "武动乾坤",
+    "永生",
+    "牧神记",
+    "雪中悍刀行"
+  ],
+  "status_counts": {
+    "formal": 40,
+    "stub": 33,
+    "archive": 54,
+    "candidate_retained": 31
+  },
+  "asset_count": 158,
+  "assets": [
+    {
+      "path": "phase1/02_book_dna/遮天_dna.json",
+      "asset_type": "book_dna",
+      "status": "formal",
+      "book": "遮天",
+      "exists": true,
+      "size_bytes": 1441,
+      "note": ""
+    },
+    {
+      "path": "phase1/02_narrative_dna/遮天_narrative.json",
+      "asset_type": "narrative_dna",
+      "status": "formal",
+      "book": "遮天",
+      "exists": true,
+      "size_bytes": 1713,
+      "note": ""
+    },
+    {
+      "path": "phase1/02_state_ledgers/遮天_ledger.json",
+      "asset_type": "state_ledger",
+      "status": "formal",
+      "book": "遮天",
+      "exists": true,
+      "size_bytes": 1573,
+      "note": ""
+    },
+    {
+      "path": "phase1/04_mechanism_library/core7_notes/遮天_mechanism_notes.md",
+      "asset_type": "mechanism_notes",
+      "status": "formal",
+      "book": "遮天",
+      "exists": true,
+      "size_bytes": 3540,
+      "note": ""
+    },
+    {
+      "path": "phase1/02_book_dna/蛊真人_dna.json",
+      "asset_type": "book_dna",
+      "status": "formal",
+      "book": "蛊真人",
+      "exists": true,
+      "size_bytes": 1453,
+      "note": ""
+    },
+    {
+      "path": "phase1/02_narrative_dna/蛊真人_narrative.json",
+      "asset_type": "narrative_dna",
+      "status": "formal",
+      "book": "蛊真人",
+      "exists": true,
+      "size_bytes": 1718,
+      "note": ""
+    },
+    {
+      "path": "phase1/02_state_ledgers/蛊真人_ledger.json",
+      "asset_type": "state_ledger",
+      "status": "formal",
+      "book": "蛊真人",
+      "exists": true,
+      "size_bytes": 1580,
+      "note": ""
+    },
+    {
+      "path": "phase1/04_mechanism_library/core7_notes/蛊真人_mechanism_notes.md",
+      "asset_type": "mechanism_notes",
+      "status": "formal",
+      "book": "蛊真人",
+      "exists": true,
+      "size_bytes": 3532,
+      "note": ""
+    },
+    {
+      "path": "phase1/02_book_dna/人道至尊_dna.json",
+      "asset_type": "book_dna",
+      "status": "formal",
+      "book": "人道至尊",
+      "exists": true,
+      "size_bytes": 1370,
+      "note": ""
+    },
+    {
+      "path": "phase1/02_narrative_dna/人道至尊_narrative.json",
+      "asset_type": "narrative_dna",
+      "status": "formal",
+      "book": "人道至尊",
+      "exists": true,
+      "size_bytes": 1703,
+      "note": ""
+    },
+    {
+      "path": "phase1/02_state_ledgers/人道至尊_ledger.json",
+      "asset_type": "state_ledger",
+      "status": "formal",
+      "book": "人道至尊",
+      "exists": true,
+      "size_bytes": 1582,
+      "note": ""
+    },
+    {
+      "path": "phase1/04_mechanism_library/core7_notes/人道至尊_mechanism_notes.md",
+      "asset_type": "mechanism_notes",
+      "status": "formal",
+      "book": "人道至尊",
+      "exists": true,
+      "size_bytes": 3515,
+      "note": ""
+    },
+    {
+      "path": "phase1/02_book_dna/凡人修仙传_dna.json",
+      "asset_type": "book_dna",
+      "status": "formal",
+      "book": "凡人修仙传",
+      "exists": true,
+      "size_bytes": 1417,
+      "note": ""
+    },
+    {
+      "path": "phase1/02_narrative_dna/凡人修仙传_narrative.json",
+      "asset_type": "narrative_dna",
+      "status": "formal",
+      "book": "凡人修仙传",
+      "exists": true,
+      "size_bytes": 1787,
+      "note": ""
+    },
+    {
+      "path": "phase1/02_state_ledgers/凡人修仙传_ledger.json",
+      "asset_type": "state_ledger",
+      "status": "formal",
+      "book": "凡人修仙传",
+      "exists": true,
+      "size_bytes": 1600,
+      "note": ""
+    },
+    {
+      "path": "phase1/04_mechanism_library/core7_notes/凡人修仙传_mechanism_notes.md",
+      "asset_type": "mechanism_notes",
+      "status": "formal",
+      "book": "凡人修仙传",
+      "exists": true,
+      "size_bytes": 3581,
+      "note": ""
+    },
+    {
+      "path": "phase1/02_book_dna/斗破苍穹_dna.json",
+      "asset_type": "book_dna",
+      "status": "formal",
+      "book": "斗破苍穹",
+      "exists": true,
+      "size_bytes": 1426,
+      "note": ""
+    },
+    {
+      "path": "phase1/02_narrative_dna/斗破苍穹_narrative.json",
+      "asset_type": "narrative_dna",
+      "status": "formal",
+      "book": "斗破苍穹",
+      "exists": true,
+      "size_bytes": 1676,
+      "note": ""
+    },
+    {
+      "path": "phase1/02_state_ledgers/斗破苍穹_ledger.json",
+      "asset_type": "state_ledger",
+      "status": "formal",
+      "book": "斗破苍穹",
+      "exists": true,
+      "size_bytes": 1591,
+      "note": ""
+    },
+    {
+      "path": "phase1/04_mechanism_library/core7_notes/斗破苍穹_mechanism_notes.md",
+      "asset_type": "mechanism_notes",
+      "status": "formal",
+      "book": "斗破苍穹",
+      "exists": true,
+      "size_bytes": 3509,
+      "note": ""
+    },
+    {
+      "path": "phase1/02_book_dna/诡秘之主_dna.json",
+      "asset_type": "book_dna",
+      "status": "formal",
+      "book": "诡秘之主",
+      "exists": true,
+      "size_bytes": 1404,
+      "note": ""
+    },
+    {
+      "path": "phase1/02_narrative_dna/诡秘之主_narrative.json",
+      "asset_type": "narrative_dna",
+      "status": "formal",
+      "book": "诡秘之主",
+      "exists": true,
+      "size_bytes": 1789,
+      "note": ""
+    },
+    {
+      "path": "phase1/02_state_ledgers/诡秘之主_ledger.json",
+      "asset_type": "state_ledger",
+      "status": "formal",
+      "book": "诡秘之主",
+      "exists": true,
+      "size_bytes": 1589,
+      "note": ""
+    },
+    {
+      "path": "phase1/04_mechanism_library/core7_notes/诡秘之主_mechanism_notes.md",
+      "asset_type": "mechanism_notes",
+      "status": "formal",
+      "book": "诡秘之主",
+      "exists": true,
+      "size_bytes": 3535,
+      "note": ""
+    },
+    {
+      "path": "phase1/02_book_dna/求魔_dna.json",
+      "asset_type": "book_dna",
+      "status": "formal",
+      "book": "求魔",
+      "exists": true,
+      "size_bytes": 1366,
+      "note": ""
+    },
+    {
+      "path": "phase1/02_narrative_dna/求魔_narrative.json",
+      "asset_type": "narrative_dna",
+      "status": "formal",
+      "book": "求魔",
+      "exists": true,
+      "size_bytes": 1660,
+      "note": ""
+    },
+    {
+      "path": "phase1/02_state_ledgers/求魔_ledger.json",
+      "asset_type": "state_ledger",
+      "status": "formal",
+      "book": "求魔",
+      "exists": true,
+      "size_bytes": 1576,
+      "note": ""
+    },
+    {
+      "path": "phase1/04_mechanism_library/core7_notes/求魔_mechanism_notes.md",
+      "asset_type": "mechanism_notes",
+      "status": "formal",
+      "book": "求魔",
+      "exists": true,
+      "size_bytes": 3499,
+      "note": ""
+    },
+    {
+      "path": "phase1/03_features/cross_book_feature_notes.md",
+      "asset_type": "cross_book_feature_notes",
+      "status": "formal",
+      "book": null,
+      "exists": true,
+      "size_bytes": 2377,
+      "note": ""
+    },
+    {
+      "path": "phase1/04_mechanism_library/core7_mechanism_inventory.md",
+      "asset_type": "mechanism_inventory_md",
+      "status": "formal",
+      "book": null,
+      "exists": true,
+      "size_bytes": 20185,
+      "note": ""
+    },
+    {
+      "path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "asset_type": "mechanism_inventory_json",
+      "status": "formal",
+      "book": null,
+      "exists": true,
+      "size_bytes": 31056,
+      "note": ""
+    },
+    {
+      "path": "phase1/04_mechanism_library/category_manifest.md",
+      "asset_type": "category_manifest_md",
+      "status": "formal",
+      "book": null,
+      "exists": true,
+      "size_bytes": 5372,
+      "note": ""
+    },
+    {
+      "path": "phase1/04_mechanism_library/category_manifest.json",
+      "asset_type": "category_manifest_json",
+      "status": "formal",
+      "book": null,
+      "exists": true,
+      "size_bytes": 9608,
+      "note": ""
+    },
+    {
+      "path": "phase1/05_review/phase1C_owner_acceptance_package.md",
+      "asset_type": "owner_acceptance_package",
+      "status": "formal",
+      "book": null,
+      "exists": true,
+      "size_bytes": 6580,
+      "note": ""
+    },
+    {
+      "path": "phase1/05_review/phase1C_owner_acceptance_checklist.md",
+      "asset_type": "owner_acceptance_checklist",
+      "status": "formal",
+      "book": null,
+      "exists": true,
+      "size_bytes": 996,
+      "note": ""
+    },
+    {
+      "path": "phase1/02_book_dna/一念永恒_dna.json",
+      "asset_type": "book_dna",
+      "status": "stub",
+      "book": "一念永恒",
+      "exists": true,
+      "size_bytes": 269,
+      "note": "Phase 1A placeholder remains; not Core7-promoted"
+    },
+    {
+      "path": "phase1/02_narrative_dna/一念永恒_narrative.json",
+      "asset_type": "narrative_dna",
+      "status": "stub",
+      "book": "一念永恒",
+      "exists": true,
+      "size_bytes": 182,
+      "note": "Phase 1A placeholder remains; not Core7-promoted"
+    },
+    {
+      "path": "phase1/02_state_ledgers/一念永恒_ledger.json",
+      "asset_type": "state_ledger",
+      "status": "stub",
+      "book": "一念永恒",
+      "exists": true,
+      "size_bytes": 415,
+      "note": "Phase 1A placeholder remains; not Core7-promoted"
+    },
+    {
+      "path": "phase1/02_book_dna/不死不灭_dna.json",
+      "asset_type": "book_dna",
+      "status": "stub",
+      "book": "不死不灭",
+      "exists": true,
+      "size_bytes": 269,
+      "note": "Phase 1A placeholder remains; not Core7-promoted"
+    },
+    {
+      "path": "phase1/02_narrative_dna/不死不灭_narrative.json",
+      "asset_type": "narrative_dna",
+      "status": "stub",
+      "book": "不死不灭",
+      "exists": true,
+      "size_bytes": 182,
+      "note": "Phase 1A placeholder remains; not Core7-promoted"
+    },
+    {
+      "path": "phase1/02_state_ledgers/不死不灭_ledger.json",
+      "asset_type": "state_ledger",
+      "status": "stub",
+      "book": "不死不灭",
+      "exists": true,
+      "size_bytes": 415,
+      "note": "Phase 1A placeholder remains; not Core7-promoted"
+    },
+    {
+      "path": "phase1/02_book_dna/仙逆_dna.json",
+      "asset_type": "book_dna",
+      "status": "stub",
+      "book": "仙逆",
+      "exists": true,
+      "size_bytes": 263,
+      "note": "Phase 1A placeholder remains; not Core7-promoted"
+    },
+    {
+      "path": "phase1/02_narrative_dna/仙逆_narrative.json",
+      "asset_type": "narrative_dna",
+      "status": "stub",
+      "book": "仙逆",
+      "exists": true,
+      "size_bytes": 176,
+      "note": "Phase 1A placeholder remains; not Core7-promoted"
+    },
+    {
+      "path": "phase1/02_state_ledgers/仙逆_ledger.json",
+      "asset_type": "state_ledger",
+      "status": "stub",
+      "book": "仙逆",
+      "exists": true,
+      "size_bytes": 409,
+      "note": "Phase 1A placeholder remains; not Core7-promoted"
+    },
+    {
+      "path": "phase1/02_book_dna/圣墟_dna.json",
+      "asset_type": "book_dna",
+      "status": "stub",
+      "book": "圣墟",
+      "exists": true,
+      "size_bytes": 263,
+      "note": "Phase 1A placeholder remains; not Core7-promoted"
+    },
+    {
+      "path": "phase1/02_narrative_dna/圣墟_narrative.json",
+      "asset_type": "narrative_dna",
+      "status": "stub",
+      "book": "圣墟",
+      "exists": true,
+      "size_bytes": 176,
+      "note": "Phase 1A placeholder remains; not Core7-promoted"
+    },
+    {
+      "path": "phase1/02_state_ledgers/圣墟_ledger.json",
+      "asset_type": "state_ledger",
+      "status": "stub",
+      "book": "圣墟",
+      "exists": true,
+      "size_bytes": 409,
+      "note": "Phase 1A placeholder remains; not Core7-promoted"
+    },
+    {
+      "path": "phase1/02_book_dna/大主宰_dna.json",
+      "asset_type": "book_dna",
+      "status": "stub",
+      "book": "大主宰",
+      "exists": true,
+      "size_bytes": 266,
+      "note": "Phase 1A placeholder remains; not Core7-promoted"
+    },
+    {
+      "path": "phase1/02_narrative_dna/大主宰_narrative.json",
+      "asset_type": "narrative_dna",
+      "status": "stub",
+      "book": "大主宰",
+      "exists": true,
+      "size_bytes": 179,
+      "note": "Phase 1A placeholder remains; not Core7-promoted"
+    },
+    {
+      "path": "phase1/02_state_ledgers/大主宰_ledger.json",
+      "asset_type": "state_ledger",
+      "status": "stub",
+      "book": "大主宰",
+      "exists": true,
+      "size_bytes": 412,
+      "note": "Phase 1A placeholder remains; not Core7-promoted"
+    },
+    {
+      "path": "phase1/02_book_dna/完美世界_dna.json",
+      "asset_type": "book_dna",
+      "status": "stub",
+      "book": "完美世界",
+      "exists": true,
+      "size_bytes": 269,
+      "note": "Phase 1A placeholder remains; not Core7-promoted"
+    },
+    {
+      "path": "phase1/02_narrative_dna/完美世界_narrative.json",
+      "asset_type": "narrative_dna",
+      "status": "stub",
+      "book": "完美世界",
+      "exists": true,
+      "size_bytes": 182,
+      "note": "Phase 1A placeholder remains; not Core7-promoted"
+    },
+    {
+      "path": "phase1/02_state_ledgers/完美世界_ledger.json",
+      "asset_type": "state_ledger",
+      "status": "stub",
+      "book": "完美世界",
+      "exists": true,
+      "size_bytes": 415,
+      "note": "Phase 1A placeholder remains; not Core7-promoted"
+    },
+    {
+      "path": "phase1/02_book_dna/将夜_dna.json",
+      "asset_type": "book_dna",
+      "status": "stub",
+      "book": "将夜",
+      "exists": true,
+      "size_bytes": 263,
+      "note": "Phase 1A placeholder remains; not Core7-promoted"
+    },
+    {
+      "path": "phase1/02_narrative_dna/将夜_narrative.json",
+      "asset_type": "narrative_dna",
+      "status": "stub",
+      "book": "将夜",
+      "exists": true,
+      "size_bytes": 176,
+      "note": "Phase 1A placeholder remains; not Core7-promoted"
+    },
+    {
+      "path": "phase1/02_state_ledgers/将夜_ledger.json",
+      "asset_type": "state_ledger",
+      "status": "stub",
+      "book": "将夜",
+      "exists": true,
+      "size_bytes": 409,
+      "note": "Phase 1A placeholder remains; not Core7-promoted"
+    },
+    {
+      "path": "phase1/02_book_dna/武动乾坤_dna.json",
+      "asset_type": "book_dna",
+      "status": "stub",
+      "book": "武动乾坤",
+      "exists": true,
+      "size_bytes": 269,
+      "note": "Phase 1A placeholder remains; not Core7-promoted"
+    },
+    {
+      "path": "phase1/02_narrative_dna/武动乾坤_narrative.json",
+      "asset_type": "narrative_dna",
+      "status": "stub",
+      "book": "武动乾坤",
+      "exists": true,
+      "size_bytes": 182,
+      "note": "Phase 1A placeholder remains; not Core7-promoted"
+    },
+    {
+      "path": "phase1/02_state_ledgers/武动乾坤_ledger.json",
+      "asset_type": "state_ledger",
+      "status": "stub",
+      "book": "武动乾坤",
+      "exists": true,
+      "size_bytes": 415,
+      "note": "Phase 1A placeholder remains; not Core7-promoted"
+    },
+    {
+      "path": "phase1/02_book_dna/永生_dna.json",
+      "asset_type": "book_dna",
+      "status": "stub",
+      "book": "永生",
+      "exists": true,
+      "size_bytes": 263,
+      "note": "Phase 1A placeholder remains; not Core7-promoted"
+    },
+    {
+      "path": "phase1/02_narrative_dna/永生_narrative.json",
+      "asset_type": "narrative_dna",
+      "status": "stub",
+      "book": "永生",
+      "exists": true,
+      "size_bytes": 176,
+      "note": "Phase 1A placeholder remains; not Core7-promoted"
+    },
+    {
+      "path": "phase1/02_state_ledgers/永生_ledger.json",
+      "asset_type": "state_ledger",
+      "status": "stub",
+      "book": "永生",
+      "exists": true,
+      "size_bytes": 409,
+      "note": "Phase 1A placeholder remains; not Core7-promoted"
+    },
+    {
+      "path": "phase1/02_book_dna/牧神记_dna.json",
+      "asset_type": "book_dna",
+      "status": "stub",
+      "book": "牧神记",
+      "exists": true,
+      "size_bytes": 266,
+      "note": "Phase 1A placeholder remains; not Core7-promoted"
+    },
+    {
+      "path": "phase1/02_narrative_dna/牧神记_narrative.json",
+      "asset_type": "narrative_dna",
+      "status": "stub",
+      "book": "牧神记",
+      "exists": true,
+      "size_bytes": 179,
+      "note": "Phase 1A placeholder remains; not Core7-promoted"
+    },
+    {
+      "path": "phase1/02_state_ledgers/牧神记_ledger.json",
+      "asset_type": "state_ledger",
+      "status": "stub",
+      "book": "牧神记",
+      "exists": true,
+      "size_bytes": 412,
+      "note": "Phase 1A placeholder remains; not Core7-promoted"
+    },
+    {
+      "path": "phase1/02_book_dna/雪中悍刀行_dna.json",
+      "asset_type": "book_dna",
+      "status": "stub",
+      "book": "雪中悍刀行",
+      "exists": true,
+      "size_bytes": 272,
+      "note": "Phase 1A placeholder remains; not Core7-promoted"
+    },
+    {
+      "path": "phase1/02_narrative_dna/雪中悍刀行_narrative.json",
+      "asset_type": "narrative_dna",
+      "status": "stub",
+      "book": "雪中悍刀行",
+      "exists": true,
+      "size_bytes": 185,
+      "note": "Phase 1A placeholder remains; not Core7-promoted"
+    },
+    {
+      "path": "phase1/02_state_ledgers/雪中悍刀行_ledger.json",
+      "asset_type": "state_ledger",
+      "status": "stub",
+      "book": "雪中悍刀行",
+      "exists": true,
+      "size_bytes": 418,
+      "note": "Phase 1A placeholder remains; not Core7-promoted"
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_book_dna/一念永恒_dna.json",
+      "asset_type": "archived_book_dna_stub",
+      "status": "archive",
+      "book": "一念永恒",
+      "exists": true,
+      "size_bytes": 269,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_book_dna/不死不灭_dna.json",
+      "asset_type": "archived_book_dna_stub",
+      "status": "archive",
+      "book": "不死不灭",
+      "exists": true,
+      "size_bytes": 269,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_book_dna/人道至尊_dna.json",
+      "asset_type": "archived_book_dna_stub",
+      "status": "archive",
+      "book": "人道至尊",
+      "exists": true,
+      "size_bytes": 269,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_book_dna/仙逆_dna.json",
+      "asset_type": "archived_book_dna_stub",
+      "status": "archive",
+      "book": "仙逆",
+      "exists": true,
+      "size_bytes": 263,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_book_dna/凡人修仙传_dna.json",
+      "asset_type": "archived_book_dna_stub",
+      "status": "archive",
+      "book": "凡人修仙传",
+      "exists": true,
+      "size_bytes": 272,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_book_dna/圣墟_dna.json",
+      "asset_type": "archived_book_dna_stub",
+      "status": "archive",
+      "book": "圣墟",
+      "exists": true,
+      "size_bytes": 263,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_book_dna/大主宰_dna.json",
+      "asset_type": "archived_book_dna_stub",
+      "status": "archive",
+      "book": "大主宰",
+      "exists": true,
+      "size_bytes": 266,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_book_dna/完美世界_dna.json",
+      "asset_type": "archived_book_dna_stub",
+      "status": "archive",
+      "book": "完美世界",
+      "exists": true,
+      "size_bytes": 269,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_book_dna/将夜_dna.json",
+      "asset_type": "archived_book_dna_stub",
+      "status": "archive",
+      "book": "将夜",
+      "exists": true,
+      "size_bytes": 263,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_book_dna/斗破苍穹_dna.json",
+      "asset_type": "archived_book_dna_stub",
+      "status": "archive",
+      "book": "斗破苍穹",
+      "exists": true,
+      "size_bytes": 269,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_book_dna/武动乾坤_dna.json",
+      "asset_type": "archived_book_dna_stub",
+      "status": "archive",
+      "book": "武动乾坤",
+      "exists": true,
+      "size_bytes": 269,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_book_dna/永生_dna.json",
+      "asset_type": "archived_book_dna_stub",
+      "status": "archive",
+      "book": "永生",
+      "exists": true,
+      "size_bytes": 263,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_book_dna/求魔_dna.json",
+      "asset_type": "archived_book_dna_stub",
+      "status": "archive",
+      "book": "求魔",
+      "exists": true,
+      "size_bytes": 263,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_book_dna/牧神记_dna.json",
+      "asset_type": "archived_book_dna_stub",
+      "status": "archive",
+      "book": "牧神记",
+      "exists": true,
+      "size_bytes": 266,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_book_dna/蛊真人_dna.json",
+      "asset_type": "archived_book_dna_stub",
+      "status": "archive",
+      "book": "蛊真人",
+      "exists": true,
+      "size_bytes": 266,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_book_dna/诡秘之主_dna.json",
+      "asset_type": "archived_book_dna_stub",
+      "status": "archive",
+      "book": "诡秘之主",
+      "exists": true,
+      "size_bytes": 269,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_book_dna/遮天_dna.json",
+      "asset_type": "archived_book_dna_stub",
+      "status": "archive",
+      "book": "遮天",
+      "exists": true,
+      "size_bytes": 263,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_book_dna/雪中悍刀行_dna.json",
+      "asset_type": "archived_book_dna_stub",
+      "status": "archive",
+      "book": "雪中悍刀行",
+      "exists": true,
+      "size_bytes": 272,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_narrative_dna/一念永恒_narrative.json",
+      "asset_type": "archived_narrative_dna_stub",
+      "status": "archive",
+      "book": "一念永恒",
+      "exists": true,
+      "size_bytes": 182,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_narrative_dna/不死不灭_narrative.json",
+      "asset_type": "archived_narrative_dna_stub",
+      "status": "archive",
+      "book": "不死不灭",
+      "exists": true,
+      "size_bytes": 182,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_narrative_dna/人道至尊_narrative.json",
+      "asset_type": "archived_narrative_dna_stub",
+      "status": "archive",
+      "book": "人道至尊",
+      "exists": true,
+      "size_bytes": 182,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_narrative_dna/仙逆_narrative.json",
+      "asset_type": "archived_narrative_dna_stub",
+      "status": "archive",
+      "book": "仙逆",
+      "exists": true,
+      "size_bytes": 176,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_narrative_dna/凡人修仙传_narrative.json",
+      "asset_type": "archived_narrative_dna_stub",
+      "status": "archive",
+      "book": "凡人修仙传",
+      "exists": true,
+      "size_bytes": 185,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_narrative_dna/圣墟_narrative.json",
+      "asset_type": "archived_narrative_dna_stub",
+      "status": "archive",
+      "book": "圣墟",
+      "exists": true,
+      "size_bytes": 176,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_narrative_dna/大主宰_narrative.json",
+      "asset_type": "archived_narrative_dna_stub",
+      "status": "archive",
+      "book": "大主宰",
+      "exists": true,
+      "size_bytes": 179,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_narrative_dna/完美世界_narrative.json",
+      "asset_type": "archived_narrative_dna_stub",
+      "status": "archive",
+      "book": "完美世界",
+      "exists": true,
+      "size_bytes": 182,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_narrative_dna/将夜_narrative.json",
+      "asset_type": "archived_narrative_dna_stub",
+      "status": "archive",
+      "book": "将夜",
+      "exists": true,
+      "size_bytes": 176,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_narrative_dna/斗破苍穹_narrative.json",
+      "asset_type": "archived_narrative_dna_stub",
+      "status": "archive",
+      "book": "斗破苍穹",
+      "exists": true,
+      "size_bytes": 182,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_narrative_dna/武动乾坤_narrative.json",
+      "asset_type": "archived_narrative_dna_stub",
+      "status": "archive",
+      "book": "武动乾坤",
+      "exists": true,
+      "size_bytes": 182,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_narrative_dna/永生_narrative.json",
+      "asset_type": "archived_narrative_dna_stub",
+      "status": "archive",
+      "book": "永生",
+      "exists": true,
+      "size_bytes": 176,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_narrative_dna/求魔_narrative.json",
+      "asset_type": "archived_narrative_dna_stub",
+      "status": "archive",
+      "book": "求魔",
+      "exists": true,
+      "size_bytes": 176,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_narrative_dna/牧神记_narrative.json",
+      "asset_type": "archived_narrative_dna_stub",
+      "status": "archive",
+      "book": "牧神记",
+      "exists": true,
+      "size_bytes": 179,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_narrative_dna/蛊真人_narrative.json",
+      "asset_type": "archived_narrative_dna_stub",
+      "status": "archive",
+      "book": "蛊真人",
+      "exists": true,
+      "size_bytes": 179,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_narrative_dna/诡秘之主_narrative.json",
+      "asset_type": "archived_narrative_dna_stub",
+      "status": "archive",
+      "book": "诡秘之主",
+      "exists": true,
+      "size_bytes": 182,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_narrative_dna/遮天_narrative.json",
+      "asset_type": "archived_narrative_dna_stub",
+      "status": "archive",
+      "book": "遮天",
+      "exists": true,
+      "size_bytes": 176,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_narrative_dna/雪中悍刀行_narrative.json",
+      "asset_type": "archived_narrative_dna_stub",
+      "status": "archive",
+      "book": "雪中悍刀行",
+      "exists": true,
+      "size_bytes": 185,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_state_ledgers/一念永恒_ledger.json",
+      "asset_type": "archived_state_ledger_stub",
+      "status": "archive",
+      "book": "一念永恒",
+      "exists": true,
+      "size_bytes": 415,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_state_ledgers/不死不灭_ledger.json",
+      "asset_type": "archived_state_ledger_stub",
+      "status": "archive",
+      "book": "不死不灭",
+      "exists": true,
+      "size_bytes": 415,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_state_ledgers/人道至尊_ledger.json",
+      "asset_type": "archived_state_ledger_stub",
+      "status": "archive",
+      "book": "人道至尊",
+      "exists": true,
+      "size_bytes": 415,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_state_ledgers/仙逆_ledger.json",
+      "asset_type": "archived_state_ledger_stub",
+      "status": "archive",
+      "book": "仙逆",
+      "exists": true,
+      "size_bytes": 409,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_state_ledgers/凡人修仙传_ledger.json",
+      "asset_type": "archived_state_ledger_stub",
+      "status": "archive",
+      "book": "凡人修仙传",
+      "exists": true,
+      "size_bytes": 418,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_state_ledgers/圣墟_ledger.json",
+      "asset_type": "archived_state_ledger_stub",
+      "status": "archive",
+      "book": "圣墟",
+      "exists": true,
+      "size_bytes": 409,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_state_ledgers/大主宰_ledger.json",
+      "asset_type": "archived_state_ledger_stub",
+      "status": "archive",
+      "book": "大主宰",
+      "exists": true,
+      "size_bytes": 412,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_state_ledgers/完美世界_ledger.json",
+      "asset_type": "archived_state_ledger_stub",
+      "status": "archive",
+      "book": "完美世界",
+      "exists": true,
+      "size_bytes": 415,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_state_ledgers/将夜_ledger.json",
+      "asset_type": "archived_state_ledger_stub",
+      "status": "archive",
+      "book": "将夜",
+      "exists": true,
+      "size_bytes": 409,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_state_ledgers/斗破苍穹_ledger.json",
+      "asset_type": "archived_state_ledger_stub",
+      "status": "archive",
+      "book": "斗破苍穹",
+      "exists": true,
+      "size_bytes": 415,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_state_ledgers/武动乾坤_ledger.json",
+      "asset_type": "archived_state_ledger_stub",
+      "status": "archive",
+      "book": "武动乾坤",
+      "exists": true,
+      "size_bytes": 415,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_state_ledgers/永生_ledger.json",
+      "asset_type": "archived_state_ledger_stub",
+      "status": "archive",
+      "book": "永生",
+      "exists": true,
+      "size_bytes": 409,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_state_ledgers/求魔_ledger.json",
+      "asset_type": "archived_state_ledger_stub",
+      "status": "archive",
+      "book": "求魔",
+      "exists": true,
+      "size_bytes": 409,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_state_ledgers/牧神记_ledger.json",
+      "asset_type": "archived_state_ledger_stub",
+      "status": "archive",
+      "book": "牧神记",
+      "exists": true,
+      "size_bytes": 412,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_state_ledgers/蛊真人_ledger.json",
+      "asset_type": "archived_state_ledger_stub",
+      "status": "archive",
+      "book": "蛊真人",
+      "exists": true,
+      "size_bytes": 412,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_state_ledgers/诡秘之主_ledger.json",
+      "asset_type": "archived_state_ledger_stub",
+      "status": "archive",
+      "book": "诡秘之主",
+      "exists": true,
+      "size_bytes": 415,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_state_ledgers/遮天_ledger.json",
+      "asset_type": "archived_state_ledger_stub",
+      "status": "archive",
+      "book": "遮天",
+      "exists": true,
+      "size_bytes": 409,
+      "note": ""
+    },
+    {
+      "path": "phase1/00_archive/phase1A_stubs/02_state_ledgers/雪中悍刀行_ledger.json",
+      "asset_type": "archived_state_ledger_stub",
+      "status": "archive",
+      "book": "雪中悍刀行",
+      "exists": true,
+      "size_bytes": 418,
+      "note": ""
+    },
+    {
+      "path": "phase1/06_hermes_outputs/01_book_dna_candidates/人道至尊_book_dna_candidate.json",
+      "asset_type": "hermes_candidate_or_review",
+      "status": "candidate_retained",
+      "book": null,
+      "exists": true,
+      "size_bytes": 1370,
+      "note": ""
+    },
+    {
+      "path": "phase1/06_hermes_outputs/01_book_dna_candidates/凡人修仙传_book_dna_candidate.json",
+      "asset_type": "hermes_candidate_or_review",
+      "status": "candidate_retained",
+      "book": null,
+      "exists": true,
+      "size_bytes": 1417,
+      "note": ""
+    },
+    {
+      "path": "phase1/06_hermes_outputs/01_book_dna_candidates/斗破苍穹_book_dna_candidate.json",
+      "asset_type": "hermes_candidate_or_review",
+      "status": "candidate_retained",
+      "book": null,
+      "exists": true,
+      "size_bytes": 1426,
+      "note": ""
+    },
+    {
+      "path": "phase1/06_hermes_outputs/01_book_dna_candidates/求魔_book_dna_candidate.json",
+      "asset_type": "hermes_candidate_or_review",
+      "status": "candidate_retained",
+      "book": null,
+      "exists": true,
+      "size_bytes": 1366,
+      "note": ""
+    },
+    {
+      "path": "phase1/06_hermes_outputs/01_book_dna_candidates/蛊真人_book_dna_candidate.json",
+      "asset_type": "hermes_candidate_or_review",
+      "status": "candidate_retained",
+      "book": null,
+      "exists": true,
+      "size_bytes": 1453,
+      "note": ""
+    },
+    {
+      "path": "phase1/06_hermes_outputs/01_book_dna_candidates/诡秘之主_book_dna_candidate.json",
+      "asset_type": "hermes_candidate_or_review",
+      "status": "candidate_retained",
+      "book": null,
+      "exists": true,
+      "size_bytes": 1404,
+      "note": ""
+    },
+    {
+      "path": "phase1/06_hermes_outputs/01_book_dna_candidates/遮天_book_dna_candidate.json",
+      "asset_type": "hermes_candidate_or_review",
+      "status": "candidate_retained",
+      "book": null,
+      "exists": true,
+      "size_bytes": 1441,
+      "note": ""
+    },
+    {
+      "path": "phase1/06_hermes_outputs/02_narrative_dna_candidates/人道至尊_narrative_dna_candidate.json",
+      "asset_type": "hermes_candidate_or_review",
+      "status": "candidate_retained",
+      "book": null,
+      "exists": true,
+      "size_bytes": 1703,
+      "note": ""
+    },
+    {
+      "path": "phase1/06_hermes_outputs/02_narrative_dna_candidates/凡人修仙传_narrative_dna_candidate.json",
+      "asset_type": "hermes_candidate_or_review",
+      "status": "candidate_retained",
+      "book": null,
+      "exists": true,
+      "size_bytes": 1787,
+      "note": ""
+    },
+    {
+      "path": "phase1/06_hermes_outputs/02_narrative_dna_candidates/斗破苍穹_narrative_dna_candidate.json",
+      "asset_type": "hermes_candidate_or_review",
+      "status": "candidate_retained",
+      "book": null,
+      "exists": true,
+      "size_bytes": 1676,
+      "note": ""
+    },
+    {
+      "path": "phase1/06_hermes_outputs/02_narrative_dna_candidates/求魔_narrative_dna_candidate.json",
+      "asset_type": "hermes_candidate_or_review",
+      "status": "candidate_retained",
+      "book": null,
+      "exists": true,
+      "size_bytes": 1660,
+      "note": ""
+    },
+    {
+      "path": "phase1/06_hermes_outputs/02_narrative_dna_candidates/蛊真人_narrative_dna_candidate.json",
+      "asset_type": "hermes_candidate_or_review",
+      "status": "candidate_retained",
+      "book": null,
+      "exists": true,
+      "size_bytes": 1718,
+      "note": ""
+    },
+    {
+      "path": "phase1/06_hermes_outputs/02_narrative_dna_candidates/诡秘之主_narrative_dna_candidate.json",
+      "asset_type": "hermes_candidate_or_review",
+      "status": "candidate_retained",
+      "book": null,
+      "exists": true,
+      "size_bytes": 1789,
+      "note": ""
+    },
+    {
+      "path": "phase1/06_hermes_outputs/02_narrative_dna_candidates/遮天_narrative_dna_candidate.json",
+      "asset_type": "hermes_candidate_or_review",
+      "status": "candidate_retained",
+      "book": null,
+      "exists": true,
+      "size_bytes": 1713,
+      "note": ""
+    },
+    {
+      "path": "phase1/06_hermes_outputs/03_state_ledger_candidates/人道至尊_state_ledger_candidate.json",
+      "asset_type": "hermes_candidate_or_review",
+      "status": "candidate_retained",
+      "book": null,
+      "exists": true,
+      "size_bytes": 1582,
+      "note": ""
+    },
+    {
+      "path": "phase1/06_hermes_outputs/03_state_ledger_candidates/凡人修仙传_state_ledger_candidate.json",
+      "asset_type": "hermes_candidate_or_review",
+      "status": "candidate_retained",
+      "book": null,
+      "exists": true,
+      "size_bytes": 1600,
+      "note": ""
+    },
+    {
+      "path": "phase1/06_hermes_outputs/03_state_ledger_candidates/斗破苍穹_state_ledger_candidate.json",
+      "asset_type": "hermes_candidate_or_review",
+      "status": "candidate_retained",
+      "book": null,
+      "exists": true,
+      "size_bytes": 1591,
+      "note": ""
+    },
+    {
+      "path": "phase1/06_hermes_outputs/03_state_ledger_candidates/求魔_state_ledger_candidate.json",
+      "asset_type": "hermes_candidate_or_review",
+      "status": "candidate_retained",
+      "book": null,
+      "exists": true,
+      "size_bytes": 1576,
+      "note": ""
+    },
+    {
+      "path": "phase1/06_hermes_outputs/03_state_ledger_candidates/蛊真人_state_ledger_candidate.json",
+      "asset_type": "hermes_candidate_or_review",
+      "status": "candidate_retained",
+      "book": null,
+      "exists": true,
+      "size_bytes": 1580,
+      "note": ""
+    },
+    {
+      "path": "phase1/06_hermes_outputs/03_state_ledger_candidates/诡秘之主_state_ledger_candidate.json",
+      "asset_type": "hermes_candidate_or_review",
+      "status": "candidate_retained",
+      "book": null,
+      "exists": true,
+      "size_bytes": 1589,
+      "note": ""
+    },
+    {
+      "path": "phase1/06_hermes_outputs/03_state_ledger_candidates/遮天_state_ledger_candidate.json",
+      "asset_type": "hermes_candidate_or_review",
+      "status": "candidate_retained",
+      "book": null,
+      "exists": true,
+      "size_bytes": 1573,
+      "note": ""
+    },
+    {
+      "path": "phase1/06_hermes_outputs/04_mechanism_candidates/人道至尊_mechanism_notes.md",
+      "asset_type": "hermes_candidate_or_review",
+      "status": "candidate_retained",
+      "book": null,
+      "exists": true,
+      "size_bytes": 3515,
+      "note": ""
+    },
+    {
+      "path": "phase1/06_hermes_outputs/04_mechanism_candidates/凡人修仙传_mechanism_notes.md",
+      "asset_type": "hermes_candidate_or_review",
+      "status": "candidate_retained",
+      "book": null,
+      "exists": true,
+      "size_bytes": 3581,
+      "note": ""
+    },
+    {
+      "path": "phase1/06_hermes_outputs/04_mechanism_candidates/斗破苍穹_mechanism_notes.md",
+      "asset_type": "hermes_candidate_or_review",
+      "status": "candidate_retained",
+      "book": null,
+      "exists": true,
+      "size_bytes": 3509,
+      "note": ""
+    },
+    {
+      "path": "phase1/06_hermes_outputs/04_mechanism_candidates/求魔_mechanism_notes.md",
+      "asset_type": "hermes_candidate_or_review",
+      "status": "candidate_retained",
+      "book": null,
+      "exists": true,
+      "size_bytes": 3499,
+      "note": ""
+    },
+    {
+      "path": "phase1/06_hermes_outputs/04_mechanism_candidates/蛊真人_mechanism_notes.md",
+      "asset_type": "hermes_candidate_or_review",
+      "status": "candidate_retained",
+      "book": null,
+      "exists": true,
+      "size_bytes": 3532,
+      "note": ""
+    },
+    {
+      "path": "phase1/06_hermes_outputs/04_mechanism_candidates/诡秘之主_mechanism_notes.md",
+      "asset_type": "hermes_candidate_or_review",
+      "status": "candidate_retained",
+      "book": null,
+      "exists": true,
+      "size_bytes": 3535,
+      "note": ""
+    },
+    {
+      "path": "phase1/06_hermes_outputs/04_mechanism_candidates/遮天_mechanism_notes.md",
+      "asset_type": "hermes_candidate_or_review",
+      "status": "candidate_retained",
+      "book": null,
+      "exists": true,
+      "size_bytes": 3540,
+      "note": ""
+    },
+    {
+      "path": "phase1/06_hermes_outputs/05_cross_book_notes/cross_book_feature_notes.md",
+      "asset_type": "hermes_candidate_or_review",
+      "status": "candidate_retained",
+      "book": null,
+      "exists": true,
+      "size_bytes": 2377,
+      "note": ""
+    },
+    {
+      "path": "phase1/06_hermes_outputs/06_review/phase1B_core7_codex_validation_report.md",
+      "asset_type": "hermes_candidate_or_review",
+      "status": "candidate_retained",
+      "book": null,
+      "exists": true,
+      "size_bytes": 5358,
+      "note": ""
+    },
+    {
+      "path": "phase1/06_hermes_outputs/06_review/phase1B_core7_extraction_report.md",
+      "asset_type": "hermes_candidate_or_review",
+      "status": "candidate_retained",
+      "book": null,
+      "exists": true,
+      "size_bytes": 5829,
+      "note": ""
+    },
+    {
+      "path": "phase1/05_review/phase1A_engineering_handoff_report.md",
+      "asset_type": "review_report",
+      "status": "formal",
+      "book": null,
+      "exists": true,
+      "size_bytes": 10051,
+      "note": ""
+    },
+    {
+      "path": "phase1/05_review/phase1B_core7_candidate_promotion_report.md",
+      "asset_type": "review_report",
+      "status": "formal",
+      "book": null,
+      "exists": true,
+      "size_bytes": 6994,
+      "note": ""
+    },
+    {
+      "path": "phase1/05_review/phase1B_core7_promotion_schema_validation_report.md",
+      "asset_type": "review_report",
+      "status": "formal",
+      "book": null,
+      "exists": true,
+      "size_bytes": 7517,
+      "note": ""
+    },
+    {
+      "path": "phase1/05_review/phase1B_core7_closeout_report.md",
+      "asset_type": "review_report",
+      "status": "formal",
+      "book": null,
+      "exists": true,
+      "size_bytes": 6732,
+      "note": ""
+    },
+    {
+      "path": "phase1/05_review/phase1B_5_antigravity_mechanism_library_review.md",
+      "asset_type": "review_report",
+      "status": "formal",
+      "book": null,
+      "exists": true,
+      "size_bytes": 4787,
+      "note": ""
+    }
+  ]
+}

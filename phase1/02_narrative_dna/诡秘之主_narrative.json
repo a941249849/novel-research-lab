@@ -1,0 +1,50 @@
+{
+  "plot_checkpoints": [
+    {
+      "node_id": "N1",
+      "title": "死亡现场即开局谜题",
+      "description": "主角在案发现场醒来，生存、身份、回家三线并发。",
+      "tension": 9,
+      "is_combat_skippable": true,
+      "evasion_path": "先清理现场，降低暴露风险"
+    },
+    {
+      "node_id": "N2",
+      "title": "日常贫困与神秘危险并置",
+      "description": "生活账本、买菜、面试与邪异线索同场出现。",
+      "tension": 6,
+      "is_combat_skippable": true,
+      "evasion_path": "用普通逻辑处理超常事"
+    },
+    {
+      "node_id": "N3",
+      "title": "非凡规则以代价约束升级",
+      "description": "每次能力获得都附带消化、污染、仪式或注视风险。",
+      "tension": 8,
+      "is_combat_skippable": true,
+      "evasion_path": "先占卜/试探，再接触"
+    },
+    {
+      "node_id": "N4",
+      "title": "马甲网络降低直接暴露",
+      "description": "多身份、多组织、多远程仪式形成信息差护城河。",
+      "tension": 8,
+      "is_combat_skippable": true,
+      "evasion_path": "借身份隔离与灰色渠道转移风险"
+    },
+    {
+      "node_id": "N5",
+      "title": "普通人番外呈现冰山结构",
+      "description": "以普通人的有限视角展示神秘世界不可全知。",
+      "tension": 7,
+      "is_combat_skippable": true,
+      "evasion_path": "知道停止深究才是生存策略"
+    }
+  ],
+  "pacing_metrics": {
+    "target_suppression_to_release_ratio": "3:3",
+    "description": "谜题压迫持续存在，释放来自破案、仪式成功和身份差胜利，但始终保留未知恐惧。"
+  },
+  "book_title": "诡秘之主",
+  "candidate_scope": "Phase 1B-Core7 skeleton-only extraction"
+}

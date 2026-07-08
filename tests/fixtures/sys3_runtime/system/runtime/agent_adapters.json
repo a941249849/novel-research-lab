@@ -1,0 +1,18 @@
+{
+  "codex": {
+    "mode": "local",
+    "can_execute": true
+  },
+  "hermes": {
+    "mode": "manual_handoff",
+    "can_execute": false,
+    "handoff_dir": "handoff/hermes",
+    "expected_output_dir": "handoff/hermes/outputs"
+  },
+  "antigravity": {
+    "mode": "manual_handoff",
+    "can_execute": false,
+    "handoff_dir": "handoff/antigravity",
+    "expected_output_dir": "handoff/antigravity/outputs"
+  }
+}

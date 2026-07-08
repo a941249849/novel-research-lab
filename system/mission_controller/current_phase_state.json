@@ -1,0 +1,107 @@
+{
+  "project_name": "Novel Research Lab",
+  "current_phase": "Phase 2D",
+  "current_subphase": "Outline Tree Production",
+  "previous_story_phase": "Phase 2C",
+  "selected_project": "《借天改命账》",
+  "phase_status": "OUTLINE_TREE_VALIDATED_PENDING_ANTIGRAVITY_REVIEW",
+  "last_completed_mission": "Phase 2D Outline Tree Production Mission",
+  "next_recommended_mission": "Phase 2D Antigravity Outline Tree Review",
+  "owner_gate_required": false,
+  "owner_gate_status": "ACCEPTED_FOR_PHASE2D_ENTRY_PREPARATION",
+  "allowed_next_agents": [
+    "Antigravity"
+  ],
+  "blocked_actions": [
+    "write novel prose",
+    "write first chapter",
+    "generate full character cards",
+    "bypass Codex validation",
+    "bypass Antigravity review",
+    "freely read novel_training_set",
+    "generate detailed chapter-by-chapter prose outline"
+  ],
+  "key_artifacts": [
+    {
+      "name": "Phase 2C Hermes Bible",
+      "path": "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md",
+      "status": "completed",
+      "notes": "Treat as completed artifact; do not modify during SYS-1."
+    },
+    {
+      "name": "Phase 2C Codex Bible Validation",
+      "path": "phase2C/03_codex_validation/phase2C_bible_validation_report.md",
+      "status": "PASS_WITH_WARNINGS"
+    },
+    {
+      "name": "Phase 2C Antigravity Bible Review",
+      "path": "phase2C/03_codex_validation/phase2C_antigravity_bible_review_report.md",
+      "status": "ACCEPT_BIBLE_FOR_NEXT_PHASE",
+      "notes": "Actual local path. User-mentioned possible path phase2C/04_antigravity_review/phase2C_bible_review_report.md was not present; mirror exists at phase2/05_review/phase2C_bible_review_report.md."
+    },
+    {
+      "name": "Phase 2C Bible Output Contract",
+      "path": "phase2C/01_prompt/phase2C_bible_output_contract.md",
+      "status": "completed"
+    },
+    {
+      "name": "Phase 2D Owner Gate Acknowledgement",
+      "path": "phase2D/00_owner_gate/phase2D_owner_gate_acknowledgement.md",
+      "status": "ACCEPTED_FOR_PHASE2D_ENTRY_PREPARATION"
+    },
+    {
+      "name": "Phase 2D Entry Manifest",
+      "path": "phase2D/00_entry/phase2D_entry_manifest.md",
+      "status": "completed"
+    },
+    {
+      "name": "Phase 2D Input Manifest",
+      "path": "phase2D/00_entry/phase2D_input_manifest.md",
+      "status": "locked"
+    },
+    {
+      "name": "Phase 2D Outline Tree Requirements",
+      "path": "phase2D/00_entry/phase2D_outline_tree_requirements.md",
+      "status": "completed"
+    },
+    {
+      "name": "Phase 2D Output Contract",
+      "path": "phase2D/00_entry/phase2D_output_contract.md",
+      "status": "completed"
+    },
+    {
+      "name": "Phase 2D Launch Readiness Report",
+      "path": "phase2D/00_entry/phase2D_launch_readiness_report.md",
+      "status": "READY_FOR_PHASE2D_PROMPT_PREPARATION"
+    },
+    {
+      "name": "Phase 2D Volume 1 Outline Tree",
+      "path": "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md",
+      "status": "completed"
+    },
+    {
+      "name": "Phase 2D Codex Outline Tree Validation",
+      "path": "phase2D/02_codex_validation/phase2D_outline_tree_validation_report.md",
+      "status": "PASS_WITH_WARNINGS"
+    }
+  ],
+  "validation_status": "PASS_WITH_WARNINGS",
+  "review_status": "PENDING_ANTIGRAVITY_OUTLINE_TREE_REVIEW",
+  "drive_sync_status": "synced_to_drive",
+  "notes": [
+    "Phase 2C Hermes Bible completed.",
+    "Codex Validation: PASS_WITH_WARNINGS.",
+    "Antigravity Bible Review: ACCEPT_BIBLE_FOR_NEXT_PHASE.",
+    "Owner Gate acknowledged in current conversation with '继续'.",
+    "Phase 2D Entry Preparation completed without generating Outline Tree, prose, first chapter, detailed chapter outline, or complete character cards.",
+    "Phase 2D Outline Tree produced directly under Mission-level authorization.",
+    "Codex Outline Tree Validation completed: PASS_WITH_WARNINGS.",
+    "Next mission should be Phase 2D Antigravity Outline Tree Review.",
+    "Mission Controller v0 has entered runtime MVP implementation.",
+    "Runtime adapter status: Codex adapter local.",
+    "Runtime adapter status: Hermes adapter manual_handoff.",
+    "Runtime adapter status: Antigravity adapter manual_handoff.",
+    "system_status: runtime_mvp_available"
+  ],
+  "updated_at": "2026-07-08T21:45:00+08:00"
+}

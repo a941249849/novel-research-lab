@@ -1,0 +1,50 @@
+{
+  "plot_checkpoints": [
+    {
+      "node_id": "N1",
+      "title": "终局败亡反切开局",
+      "description": "先展示终局围杀与价值观，再回到低阶起点建立信息差。",
+      "tension": 9,
+      "is_combat_skippable": false,
+      "evasion_path": "TBD"
+    },
+    {
+      "node_id": "N2",
+      "title": "以未来知识压榨新手村制度",
+      "description": "主角利用经验识别作弊、派系、资源漏洞。",
+      "tension": 7,
+      "is_combat_skippable": true,
+      "evasion_path": "不争虚名，优先低风险套利"
+    },
+    {
+      "node_id": "N3",
+      "title": "临时联盟的双重叙事",
+      "description": "正邪双方都用道德叙事包装利益合作。",
+      "tension": 8,
+      "is_combat_skippable": true,
+      "evasion_path": "借对方叙事达成目的后脱身"
+    },
+    {
+      "node_id": "N4",
+      "title": "大势与个人计划互相校正",
+      "description": "主角计划常被运势、天意、强者布局打断，形成多层棋局。",
+      "tension": 9,
+      "is_combat_skippable": true,
+      "evasion_path": "保留替身、后手、可牺牲资产"
+    },
+    {
+      "node_id": "N5",
+      "title": "终局指向规则所有权",
+      "description": "最终冲突不是谁更强，而是谁掌握世界底层规则。",
+      "tension": 10,
+      "is_combat_skippable": false,
+      "evasion_path": "TBD"
+    }
+  ],
+  "pacing_metrics": {
+    "target_suppression_to_release_ratio": "4:2",
+    "description": "冷处理情绪释放，压迫来自资源/制度/命运，释放来自精密反杀与套利成功。"
+  },
+  "book_title": "蛊真人",
+  "candidate_scope": "Phase 1B-Core7 skeleton-only extraction"
+}

@@ -1,0 +1,32 @@
+{
+  "current_phase": "Phase 2D",
+  "current_subphase": "Outline Tree Production",
+  "phase_status": "OUTLINE_TREE_VALIDATED_PENDING_ANTIGRAVITY_REVIEW",
+  "selected_project": "《借天改命账》",
+  "next_recommended_mission": "Phase 2D Antigravity Outline Tree Review",
+  "allowed_next_agents": ["Antigravity"],
+  "owner_gate_required": true,
+  "owner_gate_status": "PENDING_ANTIGRAVITY_REVIEW",
+  "validation_status": "PASS_WITH_WARNINGS",
+  "review_status": "PENDING",
+  "blocked_actions": [
+    "write novel prose",
+    "write first chapter",
+    "generate full character cards",
+    "bypass Antigravity review"
+  ],
+  "key_artifacts": [
+    {
+      "name": "Phase 2D Outline Tree",
+      "path": "phase2D/01_outline_tree/phase2D_outline_tree.md",
+      "status": "completed"
+    },
+    {
+      "name": "Phase 2D Codex Validation",
+      "path": "phase2D/02_codex_validation/phase2D_outline_tree_validation_report.md",
+      "status": "PASS_WITH_WARNINGS"
+    }
+  ],
+  "updated_at": "2026-07-09T00:00:00+08:00",
+  "notes": []
+}

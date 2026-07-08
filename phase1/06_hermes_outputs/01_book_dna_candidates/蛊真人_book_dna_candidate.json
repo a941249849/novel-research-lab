@@ -1,0 +1,44 @@
+{
+  "book_title": "蛊真人",
+  "author": "蛊真人",
+  "genre": "黑暗理性修真/制度博弈",
+  "level_system": {
+    "level_stages": [
+      "凡体开局层",
+      "低阶能力单元层",
+      "区域势力博弈层",
+      "仙级资产经营层",
+      "跨域联盟/背叛层",
+      "命运规则对抗层",
+      "终局规则重写层"
+    ],
+    "description": "力量体系以可交易、可组合、可牺牲的能力单元为核心，修行即资产配置与规则套利。"
+  },
+  "zero_sum_constraints": [
+    {
+      "asset_name": "能力单元供需",
+      "max_global_slots": 9,
+      "description": "能力、资源、寿元、地盘均可被交易或掠夺，稀缺性驱动黑暗博弈。"
+    },
+    {
+      "asset_name": "命运/运势约束",
+      "max_global_slots": 1,
+      "description": "宏观规则对个人选择施加隐形压迫，反规则即终极目标。"
+    }
+  ],
+  "world_lore": {
+    "core_description": "世界以能力单元、资源、气运、组织制度和历史大势构成高压零和场。",
+    "public_vocabulary": [
+      "重生先手",
+      "效用最大化",
+      "制度套利",
+      "正魔话术",
+      "运势反噬",
+      "规则夺权"
+    ]
+  },
+  "candidate_scope": "Phase 1B-Core7 skeleton-only extraction; not final asset.",
+  "schema_mapping_notes": {
+    "mechanism_candidates": "world_lore.public_vocabulary / zero_sum_constraints / level_system.description"
+  }
+}

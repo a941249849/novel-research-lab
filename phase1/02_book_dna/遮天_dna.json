@@ -1,0 +1,44 @@
+{
+  "book_title": "遮天",
+  "author": "辰东",
+  "genre": "史诗玄幻/仙侠",
+  "level_system": {
+    "level_stages": [
+      "凡俗认知层",
+      "初入修行层",
+      "宗门/圣地竞争层",
+      "星域远征层",
+      "帝路资格层",
+      "禁区与万古因果层",
+      "红尘长生/破界层"
+    ],
+    "description": "从凡人误入超凡场域，经身体潜能、古法资源、星空远征、帝路竞争、红尘长生逐层抬升。"
+  },
+  "zero_sum_constraints": [
+    {
+      "asset_name": "稀缺长生资源",
+      "max_global_slots": 7,
+      "description": "延寿、证道、修补上界入口等关键资产有限，迫使强者跨时代争夺。"
+    },
+    {
+      "asset_name": "时代证道席位",
+      "max_global_slots": 1,
+      "description": "同一时代顶点资格近似单槽，形成年轻至尊淘汰赛。"
+    }
+  ],
+  "world_lore": {
+    "core_description": "现代认知被古老宇宙神话击穿，地图从地表神秘遗迹扩展到星空、禁区、残缺上界。",
+    "public_vocabulary": [
+      "现代认知崩塌",
+      "星空迁徙",
+      "古史断层",
+      "禁区压迫",
+      "时代证道",
+      "红尘长生"
+    ]
+  },
+  "candidate_scope": "Phase 1B-Core7 skeleton-only extraction; not final asset.",
+  "schema_mapping_notes": {
+    "mechanism_candidates": "world_lore.public_vocabulary / zero_sum_constraints / level_system.description"
+  }
+}

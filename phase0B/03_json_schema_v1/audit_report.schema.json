@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AuditReport",
+  "description": "Schema for validating compliance, originality index, and logical consistency of generated novel assets.",
+  "type": "object",
+  "properties": {
+    "audit_timestamp": {
+      "type": "string"
+    },
+    "originality_metrics": {
+      "type": "object",
+      "properties": {
+        "originality_score": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0,
+          "description": "Weighted score indicating uniqueness from source text (higher is better)."
+        },
+        "similarity_detected_percentage": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "disclaimer_applied": {
+          "type": "boolean",
+          "description": "Must be true, indicating that this audit does not constitute a legal copyright guarantee."
+        }
+      },
+      "required": ["originality_score", "similarity_detected_percentage", "disclaimer_applied"]
+    },
+    "compliance_status": {
+      "type": "string",
+      "enum": ["passed", "warnings", "failed"]
+    },
+    "violation_flags": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "severity": {
+            "type": "string",
+            "enum": ["low", "medium", "critical"]
+          },
+          "rule_violated": {
+            "type": "string"
+          },
+          "detected_pattern": {
+            "type": "string"
+          },
+          "suggested_fix": {
+            "type": "string"
+          }
+        },
+        "required": ["severity", "rule_violated", "detected_pattern"]
+      }
+    },
+    "consistency_status": {
+      "type": "object",
+      "properties": {
+        "level_consistency": {
+          "type": "boolean"
+        },
+        "inventory_backlash_enforced": {
+          "type": "boolean"
+        },
+        "reputation_conflict_detected": {
+          "type": "boolean"
+        },
+        "details": {
+          "type": "string"
+        }
+      },
+      "required": ["level_consistency", "inventory_backlash_enforced", "reputation_conflict_detected"]
+    }
+  },
+  "required": [
+    "audit_timestamp",
+    "originality_metrics",
+    "compliance_status",
+    "violation_flags",
+    "consistency_status"
+  ]
+}

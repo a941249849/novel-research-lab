@@ -1,0 +1,50 @@
+{
+  "plot_checkpoints": [
+    {
+      "node_id": "N1",
+      "title": "弱族处境先于个人野心",
+      "description": "开篇把个人贫弱放在族群被压迫大背景中。",
+      "tension": 8,
+      "is_combat_skippable": false,
+      "evasion_path": "TBD"
+    },
+    {
+      "node_id": "N2",
+      "title": "外置传承唤醒被遮蔽身份",
+      "description": "导师/火种不是单纯外挂，而是历史真相入口。",
+      "tension": 8,
+      "is_combat_skippable": true,
+      "evasion_path": "隐藏修法，避免被既有势力识别"
+    },
+    {
+      "node_id": "N3",
+      "title": "个人突破转化为族群工程",
+      "description": "每次升级都伴随解封、迁徙、留根、救族或改写制度。",
+      "tension": 9,
+      "is_combat_skippable": false,
+      "evasion_path": "TBD"
+    },
+    {
+      "node_id": "N4",
+      "title": "敌我冲突升格为种族大是大非",
+      "description": "对手未必是私仇，而是各自族群存续逻辑的正面碰撞。",
+      "tension": 9,
+      "is_combat_skippable": true,
+      "evasion_path": "先留根再开战，区分灭族与封印"
+    },
+    {
+      "node_id": "N5",
+      "title": "终局回到起点完成历史闭环",
+      "description": "古代神话与现代祖星互证，世界观闭合。",
+      "tension": 10,
+      "is_combat_skippable": false,
+      "evasion_path": "TBD"
+    }
+  ],
+  "pacing_metrics": {
+    "target_suppression_to_release_ratio": "3:4",
+    "description": "以神话信息揭露和族群危机推动，释放常表现为历史正统被重新夺回。"
+  },
+  "book_title": "人道至尊",
+  "candidate_scope": "Phase 1B-Core7 skeleton-only extraction"
+}

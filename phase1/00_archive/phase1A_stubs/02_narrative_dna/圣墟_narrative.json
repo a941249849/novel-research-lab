@@ -1,0 +1,7 @@
+{
+  "plot_checkpoints": [],
+  "pacing_metrics": {
+    "target_suppression_to_release_ratio": "1:3",
+    "description": "Placeholder narrative pacing metrics for 圣墟."
+  }
+}

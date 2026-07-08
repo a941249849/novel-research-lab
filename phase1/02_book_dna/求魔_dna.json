@@ -1,0 +1,44 @@
+{
+  "book_title": "求魔",
+  "author": "耳根",
+  "genre": "悲情仙侠/身份执念",
+  "level_system": {
+    "level_stages": [
+      "部落无资格层",
+      "传承异变层",
+      "师门疯癫庇护层",
+      "宿敌追索层",
+      "分身/本我争夺层",
+      "苍茫轮回层",
+      "以自我生机开世界层"
+    ],
+    "description": "修行层级服务于身份迷雾、宿命对抗、分身/夺舍和最终道的选择。"
+  },
+  "zero_sum_constraints": [
+    {
+      "asset_name": "身份真实性",
+      "max_global_slots": 1,
+      "description": "主角是否为自己反复被推翻，身份确认成为核心资源。"
+    },
+    {
+      "asset_name": "执念代价",
+      "max_global_slots": 1,
+      "description": "想保留过去就必须牺牲未来或自我存在。"
+    }
+  ],
+  "world_lore": {
+    "core_description": "蛮族起点、宿命操控、分身夺舍、苍茫轮回共同构成悲剧性的求道世界。",
+    "public_vocabulary": [
+      "无资格渴望",
+      "身份否定",
+      "疯癫庇护",
+      "宿命追杀",
+      "分身反算",
+      "斩未来留过去"
+    ]
+  },
+  "candidate_scope": "Phase 1B-Core7 skeleton-only extraction; not final asset.",
+  "schema_mapping_notes": {
+    "mechanism_candidates": "world_lore.public_vocabulary / zero_sum_constraints / level_system.description"
+  }
+}

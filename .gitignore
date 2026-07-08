@@ -1,0 +1,16 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+
+# Source corpus and raw training material must stay local.
+novel_training_set/
+
+# Local generated caches and review bundles.
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.zip
+
+# Local editor and OS metadata.
+.vscode/
+.idea/

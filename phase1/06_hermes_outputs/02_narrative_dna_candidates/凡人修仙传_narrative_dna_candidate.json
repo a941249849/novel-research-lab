@@ -1,0 +1,50 @@
+{
+  "plot_checkpoints": [
+    {
+      "node_id": "N1",
+      "title": "贫寒现实建立风险厌恶",
+      "description": "开篇贫困与门派测试塑造主角对资源和安全的敏感。",
+      "tension": 6,
+      "is_combat_skippable": true,
+      "evasion_path": "接受低位路径，先保留机会"
+    },
+    {
+      "node_id": "N2",
+      "title": "师徒关系转为夺舍/控制风险",
+      "description": "看似庇护者隐藏剥削目的，训练读者警惕。",
+      "tension": 8,
+      "is_combat_skippable": true,
+      "evasion_path": "隐瞒真实进度，预留反制"
+    },
+    {
+      "node_id": "N3",
+      "title": "宝物现世引发围观风险",
+      "description": "不主动炫耀，先用威慑与阵法驱退低阶觊觎者。",
+      "tension": 7,
+      "is_combat_skippable": true,
+      "evasion_path": "能吓退就不杀，避免扩大因果"
+    },
+    {
+      "node_id": "N4",
+      "title": "大型危机中拒绝英雄义务",
+      "description": "世界级灾难面前优先自保，只在必要收益/责任处出手。",
+      "tension": 7,
+      "is_combat_skippable": true,
+      "evasion_path": "护身、观察、逃遁、借势"
+    },
+    {
+      "node_id": "N5",
+      "title": "飞升后再度归零",
+      "description": "终局不是绝对无敌，而是进入更高秩序重新评估风险。",
+      "tension": 8,
+      "is_combat_skippable": true,
+      "evasion_path": "先依附势力获取情报和稳定期"
+    }
+  ],
+  "pacing_metrics": {
+    "target_suppression_to_release_ratio": "5:2",
+    "description": "低释放、高累积，爽点来自谨慎计划成功、风险规避和长期收益兑现。"
+  },
+  "book_title": "凡人修仙传",
+  "candidate_scope": "Phase 1B-Core7 skeleton-only extraction"
+}

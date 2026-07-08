@@ -1,0 +1,50 @@
+{
+  "plot_checkpoints": [
+    {
+      "node_id": "N1",
+      "title": "宏大绝望序章压住部落日常",
+      "description": "先给出时代级无希望，再切入少年小愿望。",
+      "tension": 8,
+      "is_combat_skippable": false,
+      "evasion_path": "TBD"
+    },
+    {
+      "node_id": "N2",
+      "title": "资格缺失制造内在伤口",
+      "description": "主角最大压迫不是外敌，而是不能成为本族认可的强者。",
+      "tension": 7,
+      "is_combat_skippable": true,
+      "evasion_path": "采药、医术、灵活性补偿"
+    },
+    {
+      "node_id": "N3",
+      "title": "异物唤醒隐藏真相",
+      "description": "看似普通碎片触发蛮像崩溃和古老记忆。",
+      "tension": 8,
+      "is_combat_skippable": true,
+      "evasion_path": "先隐瞒异常，慢慢验证"
+    },
+    {
+      "node_id": "N4",
+      "title": "疯癫师门提供反常保护",
+      "description": "导师群像用不稳定人格制造安全与不安全的混合感。",
+      "tension": 7,
+      "is_combat_skippable": false,
+      "evasion_path": "TBD"
+    },
+    {
+      "node_id": "N5",
+      "title": "终局以自我消失换众人归来",
+      "description": "最高释放不是称霸，而是让所爱与故人复生，自己缺席。",
+      "tension": 10,
+      "is_combat_skippable": false,
+      "evasion_path": "TBD"
+    }
+  ],
+  "pacing_metrics": {
+    "target_suppression_to_release_ratio": "5:1",
+    "description": "长期悲情压抑，少量爆发，多以真相揭露和情感回收释放。"
+  },
+  "book_title": "求魔",
+  "candidate_scope": "Phase 1B-Core7 skeleton-only extraction"
+}

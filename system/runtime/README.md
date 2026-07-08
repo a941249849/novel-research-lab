@@ -99,6 +99,12 @@ Validate current Mission Controller state:
 python3 system/runtime/nrl.py validate-state
 ```
 
+Emit the read-only data contract used by Studio:
+
+```bash
+python3 system/runtime/nrl.py studio-data
+```
+
 ## Future Hermes CLI/API Adapter
 
 A future Hermes adapter can extend `agent_adapters.json` with:
@@ -165,10 +171,12 @@ python3 system/runtime/nrl.py owner-gate list
 Studio build:
 
 ```bash
+python3 system/runtime/nrl.py studio-data
 python3 system/runtime/nrl.py studio-build
+open system/runtime/studio/index.html
 ```
 
-Studio is a read-only cockpit plus command launcher. It must not maintain independent project state.
+Studio is a read-only cockpit plus command launcher. It must not maintain independent project state. It reads `current_phase_state.json`, `mission_registry.json`, and `agent_adapters.json`; it does not call Hermes, does not call Antigravity, does not generate novel prose, and does not read `novel_training_set/`.
 
 `client_handoff` is a staging mode, not API execution. If a client cannot be automated, the runtime falls back to manual handoff while preserving task packet, expected output path, and ingest command.
 
@@ -249,5 +257,33 @@ The smoke-test path is covered by `tests/test_sys3_runtime.py` and verifies:
 4. `advance` does not duplicate handoff attempts or bypass Owner Gate.
 5. `advance` does not reuse stale Owner Gate decisions across gates.
 6. `system-status` exposes SYSTEM_HARDENING and FROZEN_AT_OWNER_GATE.
+
+## NRL Studio v0.1
+
+`Novel Research Lab Studio v0.1` is the first visible product shell for the runtime. It is a local dashboard, not a content phase.
+
+Exact commands:
+
+```bash
+python3 system/runtime/nrl.py system-status
+python3 system/runtime/nrl.py studio-data
+python3 system/runtime/nrl.py studio-build
+open system/runtime/studio/index.html
+```
+
+The dashboard renders:
+
+- System Identity
+- Current Project
+- Agent Panel
+- Artifact Map
+- Creation Coverage Matrix
+- Runtime Status
+- Next Safe Action
+- Owner Gate
+
+The Studio build generates current runtime data, builds the React/Astryx app from `apps/studio/`, copies the static output to `system/runtime/studio/`, and injects the current data into `index.html` for offline inspection.
+
+Studio v0.1 intentionally keeps the current Phase 2E Owner Gate pending state visible as a system-state sample. It must not progress Phase 2F, produce chapter content, call Hermes, call Antigravity, or convert manual handoff into automatic execution.
 
 GitHub binding is intentionally outside the runtime. Bind the workspace to a confirmed repository first; then `doctor` will report repository root, branch, and remotes. Do not bind this workspace to an unrelated repository.

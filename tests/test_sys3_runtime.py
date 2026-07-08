@@ -436,10 +436,14 @@ class RuntimeFixture(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         data = json.loads(result.stdout)
         html = (self.root / data["studio_path"]).read_text(encoding="utf-8")
+        self.assertIn("Novel Research Lab", html)
+        self.assertIn("Corpus-to-Creation", html)
         self.assertIn("Phase 2D", html)
         self.assertIn("Phase 2D Antigravity Outline Tree Review", html)
+        self.assertIn("Creation Coverage Matrix", html)
+        self.assertIn("Owner Gate", html)
         self.assertIn("write novel prose", html)
-        self.assertIn("Read-only cockpit", html)
+        self.assertIn("read-only", html)
 
     def test_studio_build_includes_doctor_command(self):
         result = self.run_cli("studio-build")
@@ -448,6 +452,7 @@ class RuntimeFixture(unittest.TestCase):
         self.assertIn("Runtime Health", html)
         self.assertIn("python3 system/runtime/nrl.py doctor", html)
         self.assertIn("python3 system/runtime/nrl.py system-status", html)
+        self.assertIn("python3 system/runtime/nrl.py studio-data", html)
         self.assertIn("python3 system/runtime/nrl.py advance", html)
 
     def test_studio_build_shows_system_hardening_mode(self):
@@ -460,7 +465,7 @@ class RuntimeFixture(unittest.TestCase):
         result = self.run_cli("studio-build")
         self.assertEqual(result.returncode, 0, result.stderr)
         html = (self.root / "system/runtime/studio/index.html").read_text(encoding="utf-8")
-        self.assertIn("System Mode", html)
+        self.assertIn("Current Project", html)
         self.assertIn("SYSTEM_HARDENING", html)
         self.assertIn("FROZEN_AT_OWNER_GATE", html)
         self.assertIn("Hermes: paused_not_removed", html)
@@ -470,6 +475,8 @@ class RuntimeFixture(unittest.TestCase):
         self.assertIn("compile-context", readme)
         self.assertIn("owner-gate", readme)
         self.assertIn("studio-build", readme)
+        self.assertIn("studio-data", readme)
+        self.assertIn("open system/runtime/studio/index.html", readme)
         self.assertIn("system-status", readme)
         self.assertIn("SYSTEM_HARDENING", readme)
         self.assertIn("Hermes is paused, not removed", readme)

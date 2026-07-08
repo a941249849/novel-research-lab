@@ -153,6 +153,14 @@ def build_studio_data(
             ],
         },
         "runtime_status": {
+            "health_commands": [
+                "python3 system/runtime/nrl.py doctor",
+                "python3 system/runtime/nrl.py system-status",
+                "python3 system/runtime/nrl.py studio-data",
+                "python3 system/runtime/nrl.py advance",
+                "python3 system/runtime/nrl.py check-inputs",
+                "python3 system/runtime/nrl.py validate-state",
+            ],
             "state_validity_command": "python3 system/runtime/nrl.py validate-state",
             "status_command": "python3 system/runtime/nrl.py system-status",
             "studio_data_command": "python3 system/runtime/nrl.py studio-data",

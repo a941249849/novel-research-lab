@@ -41,6 +41,7 @@ export type StudioData = {
     }>;
   };
   runtime_status: {
+    health_commands: string[];
     state_validity_command: string;
     status_command: string;
     studio_data_command: string;

@@ -180,6 +180,29 @@ Use `doctor` as the first local check before moving a mission forward:
 python3 system/runtime/nrl.py doctor
 ```
 
+Use `system-status` to check whether the runtime is in system hardening mode
+or content progression mode:
+
+```bash
+python3 system/runtime/nrl.py system-status
+```
+
+When Owner Gate is pending, `system-status` reports:
+
+```text
+operating_mode: SYSTEM_HARDENING
+content_progression: FROZEN_AT_OWNER_GATE
+```
+
+This means the current review output is a system-state sample. Do not advance
+the story phase, do not write novel prose, do not write the first chapter, and
+do not generate full character cards.
+
+Hermes is paused, not removed. Its durable role is later writer or literary
+enrichment after explicit authorization. While paused, system hardening and
+production-chain work continue through Codex local runtime work and
+Antigravity manual review packages.
+
 Use `advance` as the normal single entrypoint for progression:
 
 ```bash
@@ -192,6 +215,7 @@ python3 system/runtime/nrl.py advance
 - If a handoff attempt exists but the expected output file is missing, it waits and reports the exact missing file.
 - If the expected output file exists, it ingests it through the existing ingest contract.
 - If Owner Gate is required, it stops and reports that a manual owner decision is required.
+- It must not reuse an old Owner Gate decision for a later gate.
 
 For Antigravity, the handoff input is consolidated into one file:
 
@@ -199,10 +223,12 @@ For Antigravity, the handoff input is consolidated into one file:
 handoff/antigravity/current_packet.md
 ```
 
-Use that packet as the single Antigravity prompt/input surface. The only expected output remains:
+Use that packet as the single Antigravity prompt/input surface. The expected
+output path is mission-specific and appears in `doctor`, `next`, and the
+handoff packet. For the current Phase 2E planning review it is:
 
 ```text
-handoff/antigravity/outputs/phase2D_antigravity_outline_tree_review.md
+handoff/antigravity/outputs/phase2e_antigravity_controlled_planning_review.md
 ```
 
 It reports:
@@ -221,5 +247,7 @@ The smoke-test path is covered by `tests/test_sys3_runtime.py` and verifies:
 2. A manually produced expected output can be ingested.
 3. Ingest moves the mission to Owner Gate instead of bypassing review.
 4. `advance` does not duplicate handoff attempts or bypass Owner Gate.
+5. `advance` does not reuse stale Owner Gate decisions across gates.
+6. `system-status` exposes SYSTEM_HARDENING and FROZEN_AT_OWNER_GATE.
 
 GitHub binding is intentionally outside the runtime. Bind the workspace to a confirmed repository first; then `doctor` will report repository root, branch, and remotes. Do not bind this workspace to an unrelated repository.

@@ -36,6 +36,7 @@ from nrl_registry import (
     upsert_registry_mission,
 )
 from nrl_studio import render_studio
+from nrl_system_status import build_system_status
 
 STATE_PATH = runtime_path("system/mission_controller/current_phase_state.json")
 SCHEMA_PATH = runtime_path("system/mission_controller/phase_state.schema.json")
@@ -201,6 +202,13 @@ def cmd_doctor(_: argparse.Namespace) -> int:
     adapters = load_adapters()
     mission = current_mission(state)
     print_json(run_doctor(state, adapters, mission))
+    return 0
+
+
+def cmd_system_status(_: argparse.Namespace) -> int:
+    state = load_state()
+    adapters = load_adapters()
+    print_json(build_system_status(state, adapters))
     return 0
 
 
@@ -433,7 +441,12 @@ def cmd_advance(_: argparse.Namespace) -> int:
 
     if state.get("owner_gate_required", False):
         decision = latest_phase2e_acceptance(load_decisions())
-        if decision is not None:
+        can_apply_phase2e_entry_acceptance = (
+            state.get("current_phase") == "Phase 2D"
+            and mission_id == "phase2d_antigravity_outline_tree_review"
+            and decision is not None
+        )
+        if can_apply_phase2e_entry_acceptance:
             result = prepare_phase2e_entry(state, decision, now_iso())
             write_json(STATE_PATH, state)
             print_json(
@@ -537,6 +550,7 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("missions").set_defaults(func=cmd_missions)
     sub.add_parser("check-inputs").set_defaults(func=cmd_check_inputs)
     sub.add_parser("gate-status").set_defaults(func=cmd_gate_status)
+    sub.add_parser("system-status").set_defaults(func=cmd_system_status)
     sub.add_parser("doctor").set_defaults(func=cmd_doctor)
     sub.add_parser("advance").set_defaults(func=cmd_advance)
     owner = sub.add_parser("owner-gate")

@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 
 from nrl_paths import runtime_path
+from nrl_system_status import build_system_status
 
 
 def load_json(relative: str):
@@ -23,6 +24,8 @@ def render_list(items) -> str:
 
 def render_studio() -> Path:
     state = load_json("system/mission_controller/current_phase_state.json")
+    adapters = load_json("system/runtime/agent_adapters.json")
+    system_status = build_system_status(state, adapters)
     registry = load_json("system/runtime/mission_registry.json")
     out_dir = runtime_path("system/runtime/studio")
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -51,10 +54,19 @@ def render_studio() -> Path:
     <h2>Runtime Health</h2>
     <ul>
       <li><code>python3 system/runtime/nrl.py doctor</code></li>
+      <li><code>python3 system/runtime/nrl.py system-status</code></li>
       <li><code>python3 system/runtime/nrl.py advance</code></li>
       <li><code>python3 system/runtime/nrl.py check-inputs</code></li>
       <li><code>python3 system/runtime/nrl.py validate-state</code></li>
       <li><code>python3 system/runtime/nrl.py prepare-handoff --agent antigravity</code></li>
+    </ul>
+  </section>
+  <section>
+    <h2>System Mode</h2>
+    <ul>
+      <li>Operating Mode: <code>{html.escape(str(system_status.get("operating_mode", "unknown")))}</code></li>
+      <li>Content Progression: <code>{html.escape(str(system_status.get("content_progression", "unknown")))}</code></li>
+      <li>Hermes: {html.escape(str(system_status.get("hermes_execution_status", "unknown")))}</li>
     </ul>
   </section>
   <section>

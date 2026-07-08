@@ -265,6 +265,73 @@ class RuntimeFixture(unittest.TestCase):
         self.assertIn("Phase 2E Antigravity Controlled Planning Review", packet_text)
         self.assertNotIn("Review the Phase 2D outline tree", packet_text)
 
+    def test_advance_does_not_reuse_stale_owner_gate_decision_for_later_gate(self):
+        prepared = self.run_cli("prepare-handoff", "--agent", "antigravity")
+        self.assertEqual(prepared.returncode, 0, prepared.stderr)
+        output = self.root / "handoff/antigravity/outputs/phase2D_antigravity_outline_tree_review.md"
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output.write_text(
+            "# Antigravity Review\n\nVerdict: pass_with_warnings\n\nRequired fixes before prose.\n",
+            encoding="utf-8",
+        )
+        ingested = self.run_cli("ingest", "--agent", "antigravity", "--file", "handoff/antigravity/outputs/phase2D_antigravity_outline_tree_review.md")
+        self.assertEqual(ingested.returncode, 0, ingested.stderr)
+        decision = self.run_cli(
+            "owner-gate",
+            "record",
+            "--decision-id",
+            "owner_gate_phase2d_antigravity_review_accept_with_warnings_001",
+            "--decision-type",
+            "accept_review",
+            "--authorized-scope",
+            "prepare_phase2e_entry",
+            "--authorized-scope",
+            "incorporate_antigravity_required_fixes",
+            "--forbidden-scope",
+            "write_novel_prose",
+            "--forbidden-scope",
+            "write_first_chapter",
+            "--expires-after-mission",
+            "phase2e_entry_preparation",
+            "--owner-note",
+            "批准 Phase 2E",
+        )
+        self.assertEqual(decision.returncode, 0, decision.stderr)
+        for _ in range(5):
+            advanced = self.run_cli("advance")
+            self.assertEqual(advanced.returncode, 0, advanced.stderr)
+        phase2e_output = self.root / "handoff/antigravity/outputs/phase2e_antigravity_controlled_planning_review.md"
+        phase2e_output.parent.mkdir(parents=True, exist_ok=True)
+        phase2e_output.write_text("# Phase 2E Review\n\nVerdict: pass\n", encoding="utf-8")
+        phase2e_ingest = self.run_cli("advance")
+        self.assertEqual(phase2e_ingest.returncode, 0, phase2e_ingest.stderr)
+        phase2e_ingest_data = json.loads(phase2e_ingest.stdout)
+        self.assertEqual(phase2e_ingest_data["action"], "ingested_external_output")
+        blocked = self.run_cli("advance")
+        self.assertEqual(blocked.returncode, 0, blocked.stderr)
+        blocked_data = json.loads(blocked.stdout)
+        self.assertEqual(blocked_data["action"], "owner_gate_required")
+        self.assertEqual(blocked_data["status"], "manual_owner_decision_required")
+        state = json.loads((self.root / "system/mission_controller/current_phase_state.json").read_text(encoding="utf-8"))
+        self.assertEqual(state["phase_status"], "review_received_pending_owner_gate")
+        self.assertEqual(state["owner_gate_status"], "REQUIRED_PENDING_ACKNOWLEDGEMENT")
+
+    def test_system_status_reports_content_freeze_when_owner_gate_pending(self):
+        state_path = self.root / "system/mission_controller/current_phase_state.json"
+        state = json.loads(state_path.read_text(encoding="utf-8"))
+        state["phase_status"] = "review_received_pending_owner_gate"
+        state["owner_gate_required"] = True
+        state["owner_gate_status"] = "REQUIRED_PENDING_ACKNOWLEDGEMENT"
+        state["review_status"] = "REVIEW_RECEIVED_PENDING_OWNER_GATE"
+        state_path.write_text(json.dumps(state, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        result = self.run_cli("system-status")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        data = json.loads(result.stdout)
+        self.assertEqual(data["operating_mode"], "SYSTEM_HARDENING")
+        self.assertEqual(data["content_progression"], "FROZEN_AT_OWNER_GATE")
+        self.assertIn("do not advance story phase", data["hard_rules"])
+        self.assertEqual(data["hermes_role"], "later_writer_or_literary_enrichment")
+
     def test_ingest_rejects_without_matching_attempt(self):
         output = self.root / "handoff/antigravity/outputs/phase2D_antigravity_outline_tree_review.md"
         output.parent.mkdir(parents=True, exist_ok=True)
@@ -344,13 +411,32 @@ class RuntimeFixture(unittest.TestCase):
         html = (self.root / "system/runtime/studio/index.html").read_text(encoding="utf-8")
         self.assertIn("Runtime Health", html)
         self.assertIn("python3 system/runtime/nrl.py doctor", html)
+        self.assertIn("python3 system/runtime/nrl.py system-status", html)
         self.assertIn("python3 system/runtime/nrl.py advance", html)
+
+    def test_studio_build_shows_system_hardening_mode(self):
+        state_path = self.root / "system/mission_controller/current_phase_state.json"
+        state = json.loads(state_path.read_text(encoding="utf-8"))
+        state["owner_gate_required"] = True
+        state["owner_gate_status"] = "REQUIRED_PENDING_ACKNOWLEDGEMENT"
+        state["phase_status"] = "review_received_pending_owner_gate"
+        state_path.write_text(json.dumps(state, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        result = self.run_cli("studio-build")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        html = (self.root / "system/runtime/studio/index.html").read_text(encoding="utf-8")
+        self.assertIn("System Mode", html)
+        self.assertIn("SYSTEM_HARDENING", html)
+        self.assertIn("FROZEN_AT_OWNER_GATE", html)
+        self.assertIn("Hermes: paused_not_removed", html)
 
     def test_readme_documents_sys3_commands(self):
         readme = (REPO_ROOT / "system/runtime/README.md").read_text(encoding="utf-8")
         self.assertIn("compile-context", readme)
         self.assertIn("owner-gate", readme)
         self.assertIn("studio-build", readme)
+        self.assertIn("system-status", readme)
+        self.assertIn("SYSTEM_HARDENING", readme)
+        self.assertIn("Hermes is paused, not removed", readme)
         self.assertIn("client_handoff", readme)
 
 

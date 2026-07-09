@@ -75,6 +75,15 @@ printf 'FAKE_ANTIGRAVITY_RESPONSE:%s\\n' "$prompt"
         self.assertEqual(data["binary_path"], str(self.fake_agy))
         self.assertIn("fake-agy 1.0", data["version_output"])
 
+    def test_system_status_exposes_bridge_without_changing_adapter_boundary(self):
+        result = self.run_cli("system-status")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        data = json.loads(result.stdout)
+        self.assertTrue(data["antigravity_bridge"]["available"])
+        self.assertEqual(data["antigravity_bridge"]["mode"], "cli")
+        self.assertEqual(data["adapter_modes"]["antigravity"]["mode"], "manual_handoff")
+        self.assertFalse(data["adapter_modes"]["antigravity"]["can_execute"])
+
     def test_bridge_ask_runs_agy_and_writes_response(self):
         request_path = self.root / ".agent-handoff/antigravity/requests/ping.md"
         response_path = self.root / ".agent-handoff/antigravity/responses/ping.md"

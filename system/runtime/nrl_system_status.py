@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from typing import Any
 
+from nrl_antigravity_bridge import build_antigravity_bridge_status
+
 
 def content_progression_for(state: dict[str, Any]) -> str:
     if state.get("owner_gate_required", False):
@@ -39,6 +41,7 @@ def build_system_status(state: dict[str, Any], adapters: dict[str, Any]) -> dict
             }
             for name, adapter in adapters.items()
         },
+        "antigravity_bridge": build_antigravity_bridge_status(),
         "hard_rules": [
             "do not advance story phase",
             "do not advance story phase while owner gate is pending",

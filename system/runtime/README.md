@@ -14,7 +14,8 @@
 ## What This Runtime Does Not Do
 
 - It does not call Hermes.
-- It does not call Antigravity.
+- It does not call Antigravity through the generic mission adapter or GUI.
+- It can call Antigravity CLI only through explicit allowlisted bridge commands.
 - It does not generate novel prose.
 - It does not generate first chapters.
 - It does not generate Outline Trees by itself unless Codex is explicitly tasked outside this runtime.
@@ -23,13 +24,17 @@
 
 ## Why Hermes And Antigravity Use Manual Handoff
 
-No Hermes or Antigravity CLI/API adapter is currently configured. The runtime therefore uses:
+No Hermes CLI/API adapter is currently configured, and the generic Antigravity
+mission adapter remains manual. The runtime therefore uses:
 
 - Hermes adapter: `manual_handoff`
 - Antigravity adapter: `manual_handoff`
 - Codex adapter: `local`
 
 Manual handoff means the runtime writes a task file, waits for an external human-run or tool-run agent output, then ingests that output path.
+
+Antigravity also has a separate CLI bridge for bounded review/proof tasks. This
+does not change the generic Antigravity adapter to `can_execute: true`.
 
 ## Commands
 
@@ -226,6 +231,53 @@ The bridge should be used for bounded review, proof-gated reading tasks, and
 second-opinion architecture critique. It should not be used for prose
 generation, Owner Gate bypass, or unrestricted full-corpus claims without a
 separate proof-of-work validator.
+
+## Full Corpus Proof Gate v0.8
+
+v0.7 structural validation is not enough to prove full-corpus reading. v0.8
+adds a separate proof gate that requires one machine-verifiable reading receipt
+per corpus file. Receipts contain file paths, byte sizes, SHA-256 hashes, and
+early/middle/late/ending byte-range chunk hashes. They must not contain raw
+novel prose.
+
+Check proof-gate status and corpus inventory:
+
+```bash
+python3 system/runtime/nrl.py full-corpus-proof-status
+```
+
+Generate one bounded Antigravity request packet per corpus book:
+
+```bash
+python3 system/runtime/nrl.py full-corpus-proof-pack --all
+```
+
+Send an individual proof packet through the bridge:
+
+```bash
+python3 system/runtime/nrl.py antigravity-bridge-ask \
+  --request-file system/agent_ops/packets/full_corpus_proof_v0.8/02-7624374abf2e.md \
+  --output-file system/agent_ops/inbox/full_corpus_proof_v0.8/02-7624374abf2e_response.md \
+  --print-timeout 15m0s
+```
+
+Merge per-book Antigravity responses into a master manifest:
+
+```bash
+python3 system/runtime/nrl.py full-corpus-proof-merge \
+  --input-dir system/agent_ops/inbox/full_corpus_proof_v0.8 \
+  --output-file system/agent_ops/inbox/full_corpus_proof_v0.8/master.md
+```
+
+Validate proof before any research-asset promotion:
+
+```bash
+python3 system/runtime/nrl.py full-corpus-proof-validate \
+  --file system/agent_ops/inbox/full_corpus_proof_v0.8/master.md
+```
+
+If a report lacks `reading_receipts`, the validator returns
+`schema_valid_but_depth_unverified` and `promotion_allowed: false`.
 
 ## Owner Gate Rules
 

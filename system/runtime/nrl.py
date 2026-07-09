@@ -42,6 +42,12 @@ from nrl_full_corpus_handoff import (
     validate_full_corpus_output,
     write_full_corpus_packet,
 )
+from nrl_full_corpus_proof import (
+    build_proof_status,
+    merge_proof_receipts,
+    validate_proof_file,
+    write_proof_packets,
+)
 from nrl_handoff_packet import write_antigravity_packet
 from nrl_paths import ROOT, runtime_path
 from nrl_owner_gate import load_decisions, record_owner_decision
@@ -401,6 +407,27 @@ def cmd_antigravity_full_corpus_validate(_: argparse.Namespace) -> int:
     result = validate_full_corpus_output()
     print_json(result)
     return 0 if result["valid"] else 1
+
+
+def cmd_full_corpus_proof_status(_: argparse.Namespace) -> int:
+    print_json(build_proof_status())
+    return 0
+
+
+def cmd_full_corpus_proof_pack(args: argparse.Namespace) -> int:
+    print_json(write_proof_packets(all_books=args.all, book_title=args.book_title))
+    return 0
+
+
+def cmd_full_corpus_proof_validate(args: argparse.Namespace) -> int:
+    result = validate_proof_file(args.file)
+    print_json(result)
+    return 0 if result["valid"] else 1
+
+
+def cmd_full_corpus_proof_merge(args: argparse.Namespace) -> int:
+    print_json(merge_proof_receipts(args.input_dir, args.output_file))
+    return 0
 
 
 def cmd_antigravity_bridge_status(_: argparse.Namespace) -> int:
@@ -833,6 +860,21 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("antigravity-full-corpus-validate").set_defaults(
         func=cmd_antigravity_full_corpus_validate
     )
+    sub.add_parser("full-corpus-proof-status").set_defaults(
+        func=cmd_full_corpus_proof_status
+    )
+    full_corpus_proof_pack = sub.add_parser("full-corpus-proof-pack")
+    full_corpus_proof_target = full_corpus_proof_pack.add_mutually_exclusive_group(required=True)
+    full_corpus_proof_target.add_argument("--all", action="store_true")
+    full_corpus_proof_target.add_argument("--book-title")
+    full_corpus_proof_pack.set_defaults(func=cmd_full_corpus_proof_pack)
+    full_corpus_proof_validate = sub.add_parser("full-corpus-proof-validate")
+    full_corpus_proof_validate.add_argument("--file", required=True)
+    full_corpus_proof_validate.set_defaults(func=cmd_full_corpus_proof_validate)
+    full_corpus_proof_merge = sub.add_parser("full-corpus-proof-merge")
+    full_corpus_proof_merge.add_argument("--input-dir", required=True)
+    full_corpus_proof_merge.add_argument("--output-file", required=True)
+    full_corpus_proof_merge.set_defaults(func=cmd_full_corpus_proof_merge)
     sub.add_parser("antigravity-bridge-status").set_defaults(
         func=cmd_antigravity_bridge_status
     )

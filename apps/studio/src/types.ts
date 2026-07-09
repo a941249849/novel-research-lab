@@ -22,6 +22,45 @@ export type ResearchAsset = {
   exists: boolean;
 };
 
+export type FullCorpusProof = {
+  version: string;
+  job_id: string;
+  status: string;
+  corpus_inventory: {
+    file_count: number;
+    total_size_bytes: number;
+    files: Array<{
+      source_file: string;
+      file_name: string;
+      size_bytes: number;
+    }>;
+  };
+  required_receipts: number;
+  required_phases: string[];
+  latest_validation: {
+    status: string;
+    valid: boolean;
+    verified_receipts: number;
+    required_receipts: number;
+    promotion_allowed: boolean;
+    validated_at?: string;
+  } | null;
+  promotion_readiness: {
+    status: string;
+    proof_verified: boolean;
+    verified_receipts: number;
+    required_receipts: number;
+    promotion_allowed: boolean;
+    next_required_action: string;
+    forbidden_actions: string[];
+  };
+  promotion_allowed: boolean;
+  commands: {
+    pack: string;
+    validate: string;
+  };
+};
+
 export type PipelineFamily = {
   family: string;
   label: string;
@@ -177,6 +216,7 @@ export type StudioData = {
     };
     guardrails: string[];
   };
+  full_corpus_proof: FullCorpusProof;
   creation_schema_registry: {
     registry_name: string;
     version: string;

@@ -61,6 +61,29 @@ const EMPTY_DATA = {
     summary: {total_indexed: 0, returned: 0, by_type: {}},
     guardrails: [],
   },
+  full_corpus_proof: {
+    version: '0.8',
+    job_id: 'job-v08-full-corpus-proof-review',
+    status: 'blocked_on_proof_verification',
+    corpus_inventory: {file_count: 0, total_size_bytes: 0, files: []},
+    required_receipts: 0,
+    required_phases: [],
+    latest_validation: null,
+    promotion_readiness: {
+      status: 'blocked_on_proof_verification',
+      proof_verified: false,
+      verified_receipts: 0,
+      required_receipts: 0,
+      promotion_allowed: false,
+      next_required_action: '',
+      forbidden_actions: [],
+    },
+    promotion_allowed: false,
+    commands: {
+      pack: 'python3 system/runtime/nrl.py full-corpus-proof-pack --all',
+      validate: 'python3 system/runtime/nrl.py full-corpus-proof-validate --file <path>',
+    },
+  },
   creation_schema_registry: {
     registry_name: 'NRL Creation Schema Registry',
     version: '0.2',
@@ -234,13 +257,18 @@ const statusNames: Record<string, string> = {
   naming_collision: '命名冲突',
   lifecycle_transition: '生命周期',
   owner_gate: 'Owner Gate',
+  proof_gate_ready: '证明门已就绪',
+  proof_verified: '证明已验证',
+  verified_not_promoted: '已验证未提升',
+  blocked_on_owner_gate: 'Owner Gate 阻塞',
+  blocked_on_proof_verification: '等待证明验证',
 };
 
 function statusColor(status: string) {
   if (status.includes('blocked') || status.includes('missing') || status.includes('REQUIRED')) return 'red';
   if (status.includes('partial') || status.includes('pending') || status.includes('manual')) return 'orange';
   if (status.includes('seed') || status.includes('contract')) return 'yellow';
-  if (status.includes('runnable') || status.includes('ready') || status.includes('PASS') || status === 'formal') return 'green';
+  if (status.includes('runnable') || status.includes('ready') || status.includes('verified') || status.includes('PASS') || status === 'formal') return 'green';
   return 'gray';
 }
 
@@ -302,6 +330,33 @@ function OverviewView({data, compact}: {data: StudioData; compact: boolean}) {
           <SummaryCard label="系统模式" value={data.control_plane.mode} />
           <SummaryCard label="内容推进" value="Owner Gate 冻结" status="blocked" />
         </Grid>
+        <Grid columns={{minWidth: 220, max: 4, repeat: 'fit'}} gap={3}>
+          <SummaryCard
+            label="全量语料"
+            value={`${data.full_corpus_proof.corpus_inventory.file_count} 本`}
+            status={data.full_corpus_proof.status}
+          />
+          <SummaryCard
+            label="阅读证明"
+            value={`${data.full_corpus_proof.promotion_readiness.verified_receipts}/${data.full_corpus_proof.promotion_readiness.required_receipts}`}
+            status={data.full_corpus_proof.latest_validation?.status || data.full_corpus_proof.promotion_readiness.status}
+          />
+          <SummaryCard
+            label="提升状态"
+            value={data.full_corpus_proof.promotion_readiness.promotion_allowed ? '允许提升' : '未提升'}
+            status={data.full_corpus_proof.promotion_readiness.status}
+          />
+          <SummaryCard
+            label="正文生产"
+            value="禁止"
+            status="blocked"
+          />
+        </Grid>
+        <Banner
+          status={data.full_corpus_proof.promotion_readiness.proof_verified ? 'success' : 'warning'}
+          title="全量小说集阅读证明"
+          description={`${data.full_corpus_proof.promotion_readiness.verified_receipts}/${data.full_corpus_proof.promotion_readiness.required_receipts} 条证明已验证；${data.full_corpus_proof.promotion_readiness.next_required_action}`}
+        />
         <Banner
           status="info"
           title={`下一安全动作：${data.capability_roadmap.next_safe_action.label_zh}`}
@@ -513,6 +568,12 @@ function ResearchView({data, compact}: {data: StudioData; compact: boolean}) {
   return (
     <Section padding={5}>
       <VStack gap={4}>
+        <Banner
+          status={data.full_corpus_proof.promotion_readiness.proof_verified ? 'success' : 'warning'}
+          title="全量小说集阅读证明已进入研究资产目录"
+          description={`${data.full_corpus_proof.corpus_inventory.file_count} 本语料，${data.full_corpus_proof.promotion_readiness.verified_receipts}/${data.full_corpus_proof.promotion_readiness.required_receipts} 条证明；状态为 ${statusNames[data.full_corpus_proof.promotion_readiness.status] || data.full_corpus_proof.promotion_readiness.status}。`}
+          endContent={<StatusToken status={data.full_corpus_proof.latest_validation?.status || data.full_corpus_proof.promotion_readiness.status} />}
+        />
         <HStack gap={3} wrap="wrap" vAlign="end">
           <TextInput
             label="筛选研究资产"

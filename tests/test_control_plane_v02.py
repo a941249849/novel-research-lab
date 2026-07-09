@@ -114,12 +114,25 @@ class ControlPlaneCliTests(unittest.TestCase):
             "research_asset_catalog",
             "creation_schema_registry",
             "safe_action_catalog",
+            "full_corpus_proof",
         ):
             self.assertIn(key, data)
         self.assertNotIn(
             "python3 system/runtime/nrl.py advance",
             data["runtime_status"]["health_commands"],
         )
+
+    def test_studio_data_surfaces_full_corpus_proof_gate(self):
+        result = self.run_cli("studio-data")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        proof = json.loads(result.stdout)["full_corpus_proof"]
+        self.assertEqual(proof["status"], "proof_gate_ready")
+        self.assertEqual(proof["corpus_inventory"]["file_count"], 18)
+        self.assertEqual(proof["latest_validation"]["status"], "proof_verified")
+        self.assertEqual(proof["promotion_readiness"]["status"], "blocked_on_owner_gate")
+        self.assertEqual(proof["promotion_readiness"]["verified_receipts"], 18)
+        self.assertEqual(proof["promotion_readiness"]["required_receipts"], 18)
+        self.assertFalse(proof["promotion_readiness"]["promotion_allowed"])
 
     def test_system_check_is_read_only_and_reports_all_contracts(self):
         state_path = REPO_ROOT / "system/mission_controller/current_phase_state.json"

@@ -20,6 +20,14 @@
           {
             "path": "phase0A/00_manifest/novel_manifest.csv",
             "exists": true
+          },
+          {
+            "path": "system/agent_ops/inbox/full_corpus_proof_v0.8/master.md",
+            "exists": true
+          },
+          {
+            "path": "system/agent_ops/validation/full_corpus_proof_v0.8.json",
+            "exists": true
           }
         ],
         "next_action": "保持原文隔离，仅消费结构化衍生资产。",
@@ -193,10 +201,29 @@
     "version": "0.2",
     "source_of_truth": [
       "phase1/05_review/phase1C_asset_manifest.json",
-      "phase1/04_mechanism_library/category_manifest.json"
+      "phase1/04_mechanism_library/category_manifest.json",
+      "system/agent_ops/inbox/full_corpus_proof_v0.8/master.md",
+      "system/agent_ops/validation/full_corpus_proof_v0.8.json"
     ],
     "filters": {},
     "items": [
+      {
+        "asset_id": "full-corpus-proof-v08",
+        "title": "全量小说集阅读证明",
+        "asset_type": "corpus_proof",
+        "source_path": "system/agent_ops/inbox/full_corpus_proof_v0.8/master.md",
+        "validation_path": "system/agent_ops/validation/full_corpus_proof_v0.8.json",
+        "review_state": "proof_verified",
+        "provenance": "verified_not_promoted",
+        "categories": [
+          "全文深读证明",
+          "语料工程"
+        ],
+        "exists": true,
+        "verified_receipts": 18,
+        "required_receipts": 18,
+        "promotion_allowed": false
+      },
       {
         "asset_id": "mechanism-dpcq-m1",
         "title": "斗破苍穹",
@@ -1299,10 +1326,11 @@
       }
     ],
     "summary": {
-      "total_indexed": 96,
-      "returned": 96,
+      "total_indexed": 97,
+      "returned": 97,
       "by_type": {
         "book_dna": 18,
+        "corpus_proof": 1,
         "mechanism": 35,
         "mechanism_notes": 7,
         "narrative_dna": 18,
@@ -1314,6 +1342,144 @@
       "No raw corpus reads",
       "Every item retains source provenance"
     ]
+  },
+  "full_corpus_proof": {
+    "version": "0.8",
+    "job_id": "job-v08-full-corpus-proof-review",
+    "status": "proof_gate_ready",
+    "corpus_inventory": {
+      "file_count": 18,
+      "total_size_bytes": 197294465,
+      "files": [
+        {
+          "source_file": "novel_training_set/《一念永恒》（校对版全本）作者：耳根.txt",
+          "file_name": "《一念永恒》（校对版全本）作者：耳根.txt",
+          "size_bytes": 7706698
+        },
+        {
+          "source_file": "novel_training_set/《不死不灭》（校对版全本）作者：辰东.txt",
+          "file_name": "《不死不灭》（校对版全本）作者：辰东.txt",
+          "size_bytes": 1554409
+        },
+        {
+          "source_file": "novel_training_set/《人道至尊》（校对版全本）作者：宅猪.txt",
+          "file_name": "《人道至尊》（校对版全本）作者：宅猪.txt",
+          "size_bytes": 10240355
+        },
+        {
+          "source_file": "novel_training_set/《仙逆》（校对版全本）作者：耳根.txt",
+          "file_name": "《仙逆》（校对版全本）作者：耳根.txt",
+          "size_bytes": 13547557
+        },
+        {
+          "source_file": "novel_training_set/《凡人修仙传》（校对版全本+番外）作者：忘语.txt",
+          "file_name": "《凡人修仙传》（校对版全本+番外）作者：忘语.txt",
+          "size_bytes": 15072456
+        },
+        {
+          "source_file": "novel_training_set/《圣墟》（校对版全本+番外）作者：辰东.txt",
+          "file_name": "《圣墟》（校对版全本+番外）作者：辰东.txt",
+          "size_bytes": 13122872
+        },
+        {
+          "source_file": "novel_training_set/《大主宰》（校对版全本）作者：天蚕土豆.txt",
+          "file_name": "《大主宰》（校对版全本）作者：天蚕土豆.txt",
+          "size_bytes": 10409665
+        },
+        {
+          "source_file": "novel_training_set/《完美世界》（校对版全本）作者：辰东.txt",
+          "file_name": "《完美世界》（校对版全本）作者：辰东.txt",
+          "size_bytes": 14053175
+        },
+        {
+          "source_file": "novel_training_set/《将夜》（校对版全本）作者：猫腻.txt",
+          "file_name": "《将夜》（校对版全本）作者：猫腻.txt",
+          "size_bytes": 7904060
+        },
+        {
+          "source_file": "novel_training_set/《斗破苍穹》（校对版全本）作者：天蚕土豆.txt",
+          "file_name": "《斗破苍穹》（校对版全本）作者：天蚕土豆.txt",
+          "size_bytes": 10714520
+        },
+        {
+          "source_file": "novel_training_set/《武动乾坤》（精校版全本）作者：天蚕土豆.txt",
+          "file_name": "《武动乾坤》（精校版全本）作者：天蚕土豆.txt",
+          "size_bytes": 8166699
+        },
+        {
+          "source_file": "novel_training_set/《永生》（校对版全本）作者：梦入神机.txt",
+          "file_name": "《永生》（校对版全本）作者：梦入神机.txt",
+          "size_bytes": 10572030
+        },
+        {
+          "source_file": "novel_training_set/《求魔》（校对版全本）作者：耳根.txt",
+          "file_name": "《求魔》（校对版全本）作者：耳根.txt",
+          "size_bytes": 9437806
+        },
+        {
+          "source_file": "novel_training_set/《牧神记》（校对版全本）作者：宅猪.txt",
+          "file_name": "《牧神记》（校对版全本）作者：宅猪.txt",
+          "size_bytes": 12330785
+        },
+        {
+          "source_file": "novel_training_set/《诡秘之主》（精校版全本）作者：爱潜水的乌贼.txt",
+          "file_name": "《诡秘之主》（精校版全本）作者：爱潜水的乌贼.txt",
+          "size_bytes": 9468472
+        },
+        {
+          "source_file": "novel_training_set/《遮天》（精校版全本）作者：辰东.txt",
+          "file_name": "《遮天》（精校版全本）作者：辰东.txt",
+          "size_bytes": 13455412
+        },
+        {
+          "source_file": "novel_training_set/《雪中悍刀行》（校对版全本）作者：烽火戏诸侯.txt",
+          "file_name": "《雪中悍刀行》（校对版全本）作者：烽火戏诸侯.txt",
+          "size_bytes": 9638898
+        },
+        {
+          "source_file": "novel_training_set/蛊真人.txt",
+          "file_name": "蛊真人.txt",
+          "size_bytes": 19898596
+        }
+      ]
+    },
+    "required_receipts": 18,
+    "required_phases": [
+      "early",
+      "middle",
+      "late",
+      "ending"
+    ],
+    "latest_validation": {
+      "version": "0.8",
+      "job_id": "job-v08-full-corpus-proof-review",
+      "file": "system/agent_ops/inbox/full_corpus_proof_v0.8/master.md",
+      "status": "proof_verified",
+      "valid": true,
+      "errors": [],
+      "verified_receipts": 18,
+      "required_receipts": 18,
+      "promotion_allowed": false,
+      "validated_at": "2026-07-09T22:24:32+08:00"
+    },
+    "promotion_readiness": {
+      "status": "blocked_on_owner_gate",
+      "proof_verified": true,
+      "verified_receipts": 18,
+      "required_receipts": 18,
+      "promotion_allowed": false,
+      "next_required_action": "Owner must explicitly authorize research-asset promotion.",
+      "forbidden_actions": [
+        "auto_promote_research_assets",
+        "generate_novel_prose",
+        "execute_hermes"
+      ]
+    },
+    "promotion_allowed": false,
+    "commands": {
+      "pack": "python3 system/runtime/nrl.py full-corpus-proof-pack --all",
+      "validate": "python3 system/runtime/nrl.py full-corpus-proof-validate --file <path>"
+    }
   },
   "creation_schema_registry": {
     "registry_name": "NRL Creation Schema Registry",
@@ -2222,13 +2388,15 @@
       }
     },
     "current_packets": [
-      "system/agent_ops/packets/job-v05-techniques-antigravity-review.md"
+      "system/agent_ops/packets/job-v05-techniques-antigravity-review.md",
+      "system/agent_ops/packets/job-v07-full-corpus-antigravity-review-command.md",
+      "system/agent_ops/packets/job-v07-full-corpus-antigravity-review.md"
     ],
     "agent_io": {
       "inbox_dir": "system/agent_ops/inbox",
       "outbox_dir": "system/agent_ops/outbox",
-      "inbox_count": 1,
-      "outbox_count": 1
+      "inbox_count": 2,
+      "outbox_count": 2
     },
     "antigravity": {
       "mode": "manual_handoff",

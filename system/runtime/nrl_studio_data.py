@@ -9,6 +9,7 @@ from nrl_capabilities import build_hardening_status
 from nrl_creation_assets import load_creation_asset_registry
 from nrl_creation_schemas import build_creation_schema_registry
 from nrl_corpus_pipeline import build_pipeline_plan, build_pipeline_status
+from nrl_full_corpus_proof import build_proof_status
 from nrl_research_assets import build_research_asset_catalog
 from nrl_system_status import build_system_status
 
@@ -80,6 +81,7 @@ def build_studio_data(
     )
     hardening_status = build_hardening_status(state, adapters)
     research_assets = build_research_asset_catalog()
+    full_corpus_proof = build_proof_status()
     creation_schemas = build_creation_schema_registry()
     corpus_pipeline = build_pipeline_status(state, adapters)
     corpus_pipeline["next_plan"] = build_pipeline_plan(
@@ -105,6 +107,7 @@ def build_studio_data(
         },
         "capability_roadmap": hardening_status,
         "research_asset_catalog": research_assets,
+        "full_corpus_proof": full_corpus_proof,
         "creation_schema_registry": creation_schemas,
         "safe_action_catalog": {
             "actions": [

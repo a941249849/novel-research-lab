@@ -22,6 +22,66 @@ export type ResearchAsset = {
   exists: boolean;
 };
 
+export type PipelineFamily = {
+  family: string;
+  label: string;
+  status: string;
+  readiness_score: number;
+  gap: string;
+  next_safe_action: string;
+  blocked_actions: string[];
+  priority: number;
+  is_next: boolean;
+};
+
+export type PipelineStage = {
+  stage_id: string;
+  label_zh: string;
+  status: string;
+  description: string;
+};
+
+export type PipelinePlan = {
+  version: string;
+  pipeline_id: string;
+  project: string;
+  mode: string;
+  content_progression: string;
+  target_family: PipelineFamily;
+  stage_statuses: PipelineStage[];
+  research_query: {
+    asset_types: string[];
+    categories: string[];
+    review_state: string;
+  };
+  evidence_requirements: {
+    minimum_items: number;
+    structured_only: boolean;
+    raw_corpus_allowed: boolean;
+  };
+  research_evidence: ResearchAsset[];
+  schema_contract: {
+    family: string;
+    draft: string;
+    path: string;
+    payload_key: string;
+    valid: boolean;
+  };
+  validation_gates: Array<{gate_id: string; description: string}>;
+  agent_review_policy: {
+    codex: string;
+    antigravity: string;
+    hermes: string;
+    web_gpt: string;
+  };
+  owner_gate: {
+    required: boolean;
+    status: string;
+  };
+  forbidden_actions: string[];
+  content_generation_allowed: boolean;
+};
+
 export type StudioData = {
   control_plane: {
     version: string;
@@ -78,6 +138,18 @@ export type StudioData = {
       path: string;
     }>;
     forbidden_actions: string[];
+  };
+  corpus_pipeline: {
+    version: string;
+    pipeline_id: string;
+    mode: string;
+    content_progression: string;
+    project: string;
+    stages: PipelineStage[];
+    families: PipelineFamily[];
+    next_family: PipelineFamily;
+    forbidden_actions: string[];
+    next_plan: PipelinePlan;
   };
   system_identity: {
     name: string;

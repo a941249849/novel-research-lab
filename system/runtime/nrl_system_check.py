@@ -10,6 +10,7 @@ from nrl_creation_schemas import (
     build_creation_schema_registry,
     validate_creation_asset_store,
 )
+from nrl_corpus_pipeline import build_pipeline_status
 from nrl_paths import runtime_path
 from nrl_research_assets import build_research_asset_catalog
 
@@ -43,6 +44,7 @@ def run_system_check() -> dict[str, Any]:
     research = build_research_asset_catalog()
     schemas = build_creation_schema_registry()
     store = validate_creation_asset_store()
+    pipeline = build_pipeline_status(state, adapters)
 
     checks = [
         {
@@ -72,6 +74,18 @@ def run_system_check() -> dict[str, Any]:
             "check_id": "creation_asset_store",
             "passed": store["valid"],
             "detail": store["summary"],
+        },
+        {
+            "check_id": "corpus_pipeline",
+            "passed": (
+                pipeline["next_family"]["family"]
+                in {family["family"] for family in pipeline["families"]}
+            ),
+            "detail": {
+                "pipeline_id": pipeline["pipeline_id"],
+                "next_family": pipeline["next_family"]["family"],
+                "stage_count": len(pipeline["stages"]),
+            },
         },
     ]
     return {

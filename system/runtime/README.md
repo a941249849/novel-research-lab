@@ -335,4 +335,40 @@ provenance. It does not read raw corpus files. `creation-schemas` reports the
 nine Draft-07 creation asset contracts. The production project asset store is
 intentionally empty until a later Owner-authorized content workflow.
 
+## Corpus-to-Creation v0.3
+
+Corpus-to-Creation v0.3 is the first executable pipeline layer. It does not
+generate story content. It produces deterministic plans that connect reviewed
+research assets to the nine creation asset contracts.
+
+Pipeline commands:
+
+```bash
+python3 system/runtime/nrl.py pipeline-status
+python3 system/runtime/nrl.py pipeline-plan --next
+python3 system/runtime/nrl.py pipeline-plan --family characters
+python3 system/runtime/nrl.py pipeline-plan --family techniques
+```
+
+`pipeline-status` reports the stage graph, the next recommended creation asset
+family, and blocked production actions. `pipeline-plan` emits a schema-bound
+plan for a target family, including structured research evidence, evidence
+requirements, schema path, validation gates, agent review policy, and Owner
+Gate status.
+
+The current expected next family is derived from the creation coverage matrix
+by readiness score and stable family priority. At the current Phase 2E Owner
+Gate state, the next family is `techniques`, because technique coverage is
+missing and has the lowest readiness score.
+
+v0.3 remains read-only and infrastructure-only:
+
+- no prose
+- no chapter plan progression
+- no final character cards
+- no final NPC, faction, artifact, technique, naming, emotional bond,
+  foreshadowing, or state ledger content
+- no raw `novel_training_set/` reads
+- no Hermes or Antigravity execution
+
 GitHub binding is intentionally outside the runtime. Bind the workspace to a confirmed repository first; then `doctor` will report repository root, branch, and remotes. Do not bind this workspace to an unrelated repository.

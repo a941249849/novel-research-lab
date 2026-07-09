@@ -22,6 +22,7 @@ from nrl_creation_schemas import (
     build_creation_schema_registry,
     validate_creation_asset_store,
 )
+from nrl_corpus_pipeline import build_pipeline_plan, build_pipeline_status
 from nrl_doctor import run_doctor
 from nrl_handoff_packet import write_antigravity_packet
 from nrl_paths import ROOT, runtime_path
@@ -276,6 +277,23 @@ def cmd_system_check(_: argparse.Namespace) -> int:
     result = run_system_check()
     print_json(result)
     return 0 if result["passed"] else 1
+
+
+def cmd_pipeline_status(_: argparse.Namespace) -> int:
+    print_json(build_pipeline_status(load_state(), load_adapters()))
+    return 0
+
+
+def cmd_pipeline_plan(args: argparse.Namespace) -> int:
+    print_json(
+        build_pipeline_plan(
+            load_state(),
+            load_adapters(),
+            family=args.family,
+            next_only=args.next,
+        )
+    )
+    return 0
 
 
 def cmd_studio_serve(args: argparse.Namespace) -> int:
@@ -649,6 +667,12 @@ def build_parser() -> argparse.ArgumentParser:
         func=cmd_validate_creation_assets
     )
     sub.add_parser("system-check").set_defaults(func=cmd_system_check)
+    sub.add_parser("pipeline-status").set_defaults(func=cmd_pipeline_status)
+    pipeline_plan = sub.add_parser("pipeline-plan")
+    pipeline_target = pipeline_plan.add_mutually_exclusive_group(required=True)
+    pipeline_target.add_argument("--family")
+    pipeline_target.add_argument("--next", action="store_true")
+    pipeline_plan.set_defaults(func=cmd_pipeline_plan)
     sub.add_parser("doctor").set_defaults(func=cmd_doctor)
     sub.add_parser("advance").set_defaults(func=cmd_advance)
     owner = sub.add_parser("owner-gate")

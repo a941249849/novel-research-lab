@@ -1411,6 +1411,564 @@
       "execute-antigravity"
     ]
   },
+  "corpus_pipeline": {
+    "version": "0.3",
+    "pipeline_id": "corpus-to-creation",
+    "mode": "SYSTEM_HARDENING",
+    "content_progression": "FROZEN_AT_OWNER_GATE",
+    "project": "《借天改命账》",
+    "stages": [
+      {
+        "stage_id": "research_asset_retrieval",
+        "label_zh": "研究资产检索",
+        "status": "runnable",
+        "description": "从结构化 Phase 1 资产中筛选证据，不读取原文语料。"
+      },
+      {
+        "stage_id": "evidence_pack_assembly",
+        "label_zh": "证据包装配",
+        "status": "runnable",
+        "description": "按目标资产家族组合来源、机制分类和审核状态。"
+      },
+      {
+        "stage_id": "creation_asset_contract_planning",
+        "label_zh": "创作资产契约计划",
+        "status": "runnable",
+        "description": "输出 schema-bound plan，而不是最终创作资产。"
+      },
+      {
+        "stage_id": "consistency_validation",
+        "label_zh": "一致性校验",
+        "status": "runnable",
+        "description": "检查 schema、引用、命名、生命周期和来源证据。"
+      },
+      {
+        "stage_id": "agent_review_policy",
+        "label_zh": "Agent 审查策略",
+        "status": "contract_ready",
+        "description": "Codex 本地验证；Antigravity/Hermes 保持人工或暂停边界。"
+      },
+      {
+        "stage_id": "owner_gate",
+        "label_zh": "Owner Gate",
+        "status": "blocked",
+        "description": "Owner Gate 未解除前禁止内容推进。"
+      },
+      {
+        "stage_id": "prose_generation",
+        "label_zh": "正文生产",
+        "status": "blocked",
+        "description": "v0.3 不生成正文、章节或最终创作资产。"
+      }
+    ],
+    "families": [
+      {
+        "family": "techniques",
+        "label": "Techniques",
+        "status": "missing",
+        "readiness_score": 5,
+        "gap": "Ability tree, move names, costs, counters, visual effects, and realm binding are not registered.",
+        "next_safe_action": "Define technique registry fields and constraints without generating final technique trees.",
+        "blocked_actions": [
+          "generate final technique tree",
+          "write combat scenes"
+        ],
+        "priority": 4,
+        "is_next": true
+      },
+      {
+        "family": "naming",
+        "label": "Naming",
+        "status": "missing",
+        "readiness_score": 5,
+        "gap": "There is no naming grammar for people, places, factions, artifacts, techniques, realms, or forbidden collisions.",
+        "next_safe_action": "Define naming system schema and validation needs without generating final dictionaries.",
+        "blocked_actions": [
+          "generate final naming dictionary",
+          "rename existing content artifacts"
+        ],
+        "priority": 5,
+        "is_next": false
+      },
+      {
+        "family": "npcs",
+        "label": "NPCs",
+        "status": "missing",
+        "readiness_score": 10,
+        "gap": "Witnesses, minor officials, rivals, debtors, and reversible crowd roles are not registered as an operating asset family.",
+        "next_safe_action": "Define NPC role taxonomy and required fields without naming or writing final NPCs.",
+        "blocked_actions": [
+          "generate final NPC sheets",
+          "write NPC dialogue scenes"
+        ],
+        "priority": 1,
+        "is_next": false
+      },
+      {
+        "family": "artifacts",
+        "label": "Artifacts",
+        "status": "seed",
+        "readiness_score": 20,
+        "gap": "Important motifs exist, but lifecycle, limitations, costs, first appearance, reuse, and upgrade paths are not modeled.",
+        "next_safe_action": "Define artifact registry schema and lifecycle states without creating final item catalogs.",
+        "blocked_actions": [
+          "generate final item catalog",
+          "write artifact reveal scenes"
+        ],
+        "priority": 3,
+        "is_next": false
+      },
+      {
+        "family": "state_ledger",
+        "label": "State Ledger",
+        "status": "seed",
+        "readiness_score": 25,
+        "gap": "State ledger schema exists, but chapter-by-chapter operating state for life, debt, backlash, reputation, artifacts, relationships, and map unlocks is not complete.",
+        "next_safe_action": "Define project state ledger extension points without tracking unreleased chapter events.",
+        "blocked_actions": [
+          "invent chapter-by-chapter events",
+          "advance content state"
+        ],
+        "priority": 8,
+        "is_next": false
+      },
+      {
+        "family": "emotional_bonds",
+        "label": "Emotional Bonds",
+        "status": "partial",
+        "readiness_score": 30,
+        "gap": "The mother bond is a strong anchor, but the wider network of allies, betrayals, sacrifices, and reciprocal bonds is not complete.",
+        "next_safe_action": "Define emotional bond registry contract without generating relationship scenes.",
+        "blocked_actions": [
+          "write emotional prose",
+          "generate full relationship arcs"
+        ],
+        "priority": 6,
+        "is_next": false
+      },
+      {
+        "family": "foreshadowing",
+        "label": "Foreshadowing",
+        "status": "partial",
+        "readiness_score": 30,
+        "gap": "Foreshadowing ledger ideas exist, but setup, misdirection, reveal, and payoff lifecycle are not an operating registry.",
+        "next_safe_action": "Define foreshadowing ledger schema without creating new plot promises.",
+        "blocked_actions": [
+          "add new plot hooks",
+          "write reveal scenes"
+        ],
+        "priority": 7,
+        "is_next": false
+      },
+      {
+        "family": "characters",
+        "label": "Characters",
+        "status": "partial",
+        "readiness_score": 35,
+        "gap": "Core roles and protagonist anchors exist, but a reusable character engine is not complete.",
+        "next_safe_action": "Define character registry schema and state fields without creating full character cards.",
+        "blocked_actions": [
+          "generate full character cards",
+          "write character-driven prose scenes"
+        ],
+        "priority": 0,
+        "is_next": false
+      },
+      {
+        "family": "factions",
+        "label": "Factions",
+        "status": "partial",
+        "readiness_score": 35,
+        "gap": "Major institutions exist as world structure, but faction internals, interests, fears, and exploitable cracks are not productized.",
+        "next_safe_action": "Define faction registry fields and status lifecycle without generating full faction dossiers.",
+        "blocked_actions": [
+          "generate final faction dossiers",
+          "advance faction plotlines"
+        ],
+        "priority": 2,
+        "is_next": false
+      }
+    ],
+    "next_family": {
+      "family": "techniques",
+      "label": "Techniques",
+      "status": "missing",
+      "readiness_score": 5,
+      "gap": "Ability tree, move names, costs, counters, visual effects, and realm binding are not registered.",
+      "next_safe_action": "Define technique registry fields and constraints without generating final technique trees.",
+      "blocked_actions": [
+        "generate final technique tree",
+        "write combat scenes"
+      ],
+      "priority": 4,
+      "is_next": true
+    },
+    "forbidden_actions": [
+      "bypass Phase 2E planning constraints",
+      "execute-antigravity",
+      "execute-hermes",
+      "freely read novel_training_set",
+      "generate final creative assets",
+      "generate full character cards",
+      "ignore Antigravity required fixes",
+      "write first chapter",
+      "write novel prose"
+    ],
+    "next_plan": {
+      "version": "0.3",
+      "pipeline_id": "corpus-to-creation-techniques",
+      "project": "《借天改命账》",
+      "mode": "SYSTEM_HARDENING",
+      "content_progression": "FROZEN_AT_OWNER_GATE",
+      "target_family": {
+        "family": "techniques",
+        "label": "Techniques",
+        "status": "missing",
+        "readiness_score": 5,
+        "gap": "Ability tree, move names, costs, counters, visual effects, and realm binding are not registered.",
+        "next_safe_action": "Define technique registry fields and constraints without generating final technique trees.",
+        "blocked_actions": [
+          "generate final technique tree",
+          "write combat scenes"
+        ],
+        "priority": 4,
+        "is_next": true
+      },
+      "stage_statuses": [
+        {
+          "stage_id": "research_asset_retrieval",
+          "label_zh": "研究资产检索",
+          "status": "runnable",
+          "description": "从结构化 Phase 1 资产中筛选证据，不读取原文语料。"
+        },
+        {
+          "stage_id": "evidence_pack_assembly",
+          "label_zh": "证据包装配",
+          "status": "runnable",
+          "description": "按目标资产家族组合来源、机制分类和审核状态。"
+        },
+        {
+          "stage_id": "creation_asset_contract_planning",
+          "label_zh": "创作资产契约计划",
+          "status": "runnable",
+          "description": "输出 schema-bound plan，而不是最终创作资产。"
+        },
+        {
+          "stage_id": "consistency_validation",
+          "label_zh": "一致性校验",
+          "status": "runnable",
+          "description": "检查 schema、引用、命名、生命周期和来源证据。"
+        },
+        {
+          "stage_id": "agent_review_policy",
+          "label_zh": "Agent 审查策略",
+          "status": "contract_ready",
+          "description": "Codex 本地验证；Antigravity/Hermes 保持人工或暂停边界。"
+        },
+        {
+          "stage_id": "owner_gate",
+          "label_zh": "Owner Gate",
+          "status": "blocked",
+          "description": "Owner Gate 未解除前禁止内容推进。"
+        },
+        {
+          "stage_id": "prose_generation",
+          "label_zh": "正文生产",
+          "status": "blocked",
+          "description": "v0.3 不生成正文、章节或最终创作资产。"
+        }
+      ],
+      "research_query": {
+        "asset_types": [
+          "state_ledger"
+        ],
+        "categories": [
+          "升级与境界机制",
+          "反噬/代价/污染机制"
+        ],
+        "review_state": "formal_or_reviewed"
+      },
+      "evidence_requirements": {
+        "minimum_items": 3,
+        "structured_only": true,
+        "raw_corpus_allowed": false,
+        "evidence_status": "ready"
+      },
+      "research_evidence": [
+        {
+          "asset_id": "mechanism-dpcq-m4",
+          "title": "斗破苍穹",
+          "asset_type": "mechanism",
+          "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+          "review_state": "formal",
+          "provenance": "promoted",
+          "categories": [
+            "升级与境界机制"
+          ],
+          "mechanism_id": "DPCQ-M4",
+          "mechanism_name": "职业身份抬升",
+          "exists": true
+        },
+        {
+          "asset_id": "mechanism-dpcq-m5",
+          "title": "斗破苍穹",
+          "asset_type": "mechanism",
+          "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+          "review_state": "formal",
+          "provenance": "promoted",
+          "categories": [
+            "升级与境界机制"
+          ],
+          "mechanism_id": "DPCQ-M5",
+          "mechanism_name": "破位面续航",
+          "exists": true
+        },
+        {
+          "asset_id": "mechanism-frxxz-m5",
+          "title": "凡人修仙传",
+          "asset_type": "mechanism",
+          "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+          "review_state": "formal",
+          "provenance": "promoted",
+          "categories": [
+            "升级与境界机制"
+          ],
+          "mechanism_id": "FRXXZ-M5",
+          "mechanism_name": "飞升后秩序重评估",
+          "exists": true
+        },
+        {
+          "asset_id": "mechanism-gmzz-m2",
+          "title": "诡秘之主",
+          "asset_type": "mechanism",
+          "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+          "review_state": "formal",
+          "provenance": "promoted",
+          "categories": [
+            "升级与境界机制"
+          ],
+          "mechanism_id": "GMZZ-M2",
+          "mechanism_name": "日常与恐怖并置",
+          "exists": true
+        },
+        {
+          "asset_id": "mechanism-gmzz-m3",
+          "title": "诡秘之主",
+          "asset_type": "mechanism",
+          "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+          "review_state": "formal",
+          "provenance": "promoted",
+          "categories": [
+            "升级与境界机制"
+          ],
+          "mechanism_id": "GMZZ-M3",
+          "mechanism_name": "规则污染升级",
+          "exists": true
+        },
+        {
+          "asset_id": "mechanism-gzr-m4",
+          "title": "蛊真人",
+          "asset_type": "mechanism",
+          "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+          "review_state": "formal",
+          "provenance": "promoted",
+          "categories": [
+            "反噬/代价/污染机制"
+          ],
+          "mechanism_id": "GZR-M4",
+          "mechanism_name": "运势反噬压力",
+          "exists": true
+        },
+        {
+          "asset_id": "mechanism-qm-m2",
+          "title": "求魔",
+          "asset_type": "mechanism",
+          "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+          "review_state": "formal",
+          "provenance": "promoted",
+          "categories": [
+            "反噬/代价/污染机制"
+          ],
+          "mechanism_id": "QM-M2",
+          "mechanism_name": "资格缺失内伤",
+          "exists": true
+        },
+        {
+          "asset_id": "mechanism-rdzz-m3",
+          "title": "人道至尊",
+          "asset_type": "mechanism",
+          "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+          "review_state": "formal",
+          "provenance": "promoted",
+          "categories": [
+            "升级与境界机制"
+          ],
+          "mechanism_id": "RDZZ-M3",
+          "mechanism_name": "个人升级族群化",
+          "exists": true
+        },
+        {
+          "asset_id": "mechanism-zt-m4",
+          "title": "遮天",
+          "asset_type": "mechanism",
+          "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+          "review_state": "formal",
+          "provenance": "promoted",
+          "categories": [
+            "升级与境界机制"
+          ],
+          "mechanism_id": "ZT-M4",
+          "mechanism_name": "星空淘汰赛地图",
+          "exists": true
+        },
+        {
+          "asset_id": "phase1-state_ledger-003",
+          "title": "遮天",
+          "asset_type": "state_ledger",
+          "source_path": "phase1/02_state_ledgers/遮天_ledger.json",
+          "review_state": "formal",
+          "provenance": "promoted",
+          "categories": [],
+          "exists": true
+        },
+        {
+          "asset_id": "phase1-state_ledger-007",
+          "title": "蛊真人",
+          "asset_type": "state_ledger",
+          "source_path": "phase1/02_state_ledgers/蛊真人_ledger.json",
+          "review_state": "formal",
+          "provenance": "promoted",
+          "categories": [],
+          "exists": true
+        },
+        {
+          "asset_id": "phase1-state_ledger-011",
+          "title": "人道至尊",
+          "asset_type": "state_ledger",
+          "source_path": "phase1/02_state_ledgers/人道至尊_ledger.json",
+          "review_state": "formal",
+          "provenance": "promoted",
+          "categories": [],
+          "exists": true
+        },
+        {
+          "asset_id": "phase1-state_ledger-015",
+          "title": "凡人修仙传",
+          "asset_type": "state_ledger",
+          "source_path": "phase1/02_state_ledgers/凡人修仙传_ledger.json",
+          "review_state": "formal",
+          "provenance": "promoted",
+          "categories": [],
+          "exists": true
+        },
+        {
+          "asset_id": "phase1-state_ledger-019",
+          "title": "斗破苍穹",
+          "asset_type": "state_ledger",
+          "source_path": "phase1/02_state_ledgers/斗破苍穹_ledger.json",
+          "review_state": "formal",
+          "provenance": "promoted",
+          "categories": [],
+          "exists": true
+        },
+        {
+          "asset_id": "phase1-state_ledger-023",
+          "title": "诡秘之主",
+          "asset_type": "state_ledger",
+          "source_path": "phase1/02_state_ledgers/诡秘之主_ledger.json",
+          "review_state": "formal",
+          "provenance": "promoted",
+          "categories": [],
+          "exists": true
+        },
+        {
+          "asset_id": "phase1-state_ledger-027",
+          "title": "求魔",
+          "asset_type": "state_ledger",
+          "source_path": "phase1/02_state_ledgers/求魔_ledger.json",
+          "review_state": "formal",
+          "provenance": "promoted",
+          "categories": [],
+          "exists": true
+        },
+        {
+          "asset_id": "phase1-state_ledger-038",
+          "title": "一念永恒",
+          "asset_type": "state_ledger",
+          "source_path": "phase1/02_state_ledgers/一念永恒_ledger.json",
+          "review_state": "stub",
+          "provenance": "stub",
+          "categories": [],
+          "exists": true
+        },
+        {
+          "asset_id": "phase1-state_ledger-041",
+          "title": "不死不灭",
+          "asset_type": "state_ledger",
+          "source_path": "phase1/02_state_ledgers/不死不灭_ledger.json",
+          "review_state": "stub",
+          "provenance": "stub",
+          "categories": [],
+          "exists": true
+        }
+      ],
+      "schema_contract": {
+        "family": "techniques",
+        "draft": "http://json-schema.org/draft-07/schema#",
+        "path": "system/creation_assets/schemas/techniques.schema.json",
+        "payload_key": "technique",
+        "valid": true
+      },
+      "validation_gates": [
+        {
+          "gate_id": "schema_validation",
+          "description": "Draft-07 family schema must validate the asset envelope and payload."
+        },
+        {
+          "gate_id": "source_evidence",
+          "description": "Plan must retain structured research evidence and source paths."
+        },
+        {
+          "gate_id": "reference_integrity",
+          "description": "Cross-asset references must resolve before any asset can be promoted."
+        },
+        {
+          "gate_id": "naming_collision",
+          "description": "Normalized names must not collide across the project asset store."
+        },
+        {
+          "gate_id": "lifecycle_transition",
+          "description": "Lifecycle transitions must follow the creation asset contract."
+        },
+        {
+          "gate_id": "owner_gate",
+          "description": "Owner Gate must remain active before prose or final asset generation."
+        }
+      ],
+      "agent_review_policy": {
+        "codex": "local_validation_orchestration",
+        "antigravity": "manual_handoff",
+        "hermes": "paused_not_removed",
+        "web_gpt": "architecture_review_only"
+      },
+      "owner_gate": {
+        "required": true,
+        "status": "REQUIRED_PENDING_ACKNOWLEDGEMENT"
+      },
+      "forbidden_actions": [
+        "bypass Phase 2E planning constraints",
+        "execute-antigravity",
+        "execute-hermes",
+        "freely read novel_training_set",
+        "generate final creative assets",
+        "generate full character cards",
+        "ignore Antigravity required fixes",
+        "write first chapter",
+        "write novel prose"
+      ],
+      "content_generation_allowed": false
+    }
+  },
   "system_identity": {
     "name": "Novel Research Lab",
     "positioning": "Corpus-to-Creation engine for Chinese long-form web novel creation.",
@@ -1875,6 +2433,8 @@
       "python3 system/runtime/nrl.py research-assets",
       "python3 system/runtime/nrl.py creation-schemas",
       "python3 system/runtime/nrl.py validate-creation-assets",
+      "python3 system/runtime/nrl.py pipeline-status",
+      "python3 system/runtime/nrl.py pipeline-plan --next",
       "python3 system/runtime/nrl.py system-check",
       "python3 system/runtime/nrl.py validate-state"
     ],
@@ -1955,6 +2515,8 @@
       "python3 system/runtime/nrl.py system-status",
       "python3 system/runtime/nrl.py studio-data",
       "python3 system/runtime/nrl.py studio-build",
+      "python3 system/runtime/nrl.py pipeline-status",
+      "python3 system/runtime/nrl.py pipeline-plan --next",
       "python3 system/runtime/nrl.py validate-state"
     ]
   },

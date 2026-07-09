@@ -35,7 +35,7 @@ declare global {
   }
 }
 
-type ViewID = 'overview' | 'research' | 'creation' | 'agents' | 'runtime';
+type ViewID = 'overview' | 'research' | 'creation' | 'pipeline' | 'agents' | 'runtime';
 type TableRow = Record<string, unknown> & {id: string};
 
 const EMPTY_DATA = {
@@ -70,6 +70,35 @@ const EMPTY_DATA = {
     summary: {family_count: 0, all_schemas_valid: false},
   },
   safe_action_catalog: {actions: [], forbidden_actions: []},
+  corpus_pipeline: {
+    version: '0.3',
+    pipeline_id: 'corpus-to-creation',
+    mode: 'UNKNOWN_MODE',
+    content_progression: 'UNKNOWN',
+    project: 'UNKNOWN_PROJECT',
+    stages: [],
+    families: [],
+    next_family: {family: 'unknown', label: 'Unknown', status: 'missing', readiness_score: 0, gap: '', next_safe_action: '', blocked_actions: [], priority: 0, is_next: true},
+    forbidden_actions: [],
+    next_plan: {
+      version: '0.3',
+      pipeline_id: 'corpus-to-creation-unknown',
+      project: 'UNKNOWN_PROJECT',
+      mode: 'UNKNOWN_MODE',
+      content_progression: 'UNKNOWN',
+      target_family: {family: 'unknown', label: 'Unknown', status: 'missing', readiness_score: 0, gap: '', next_safe_action: '', blocked_actions: [], priority: 0, is_next: true},
+      stage_statuses: [],
+      research_query: {asset_types: [], categories: [], review_state: ''},
+      evidence_requirements: {minimum_items: 0, structured_only: true, raw_corpus_allowed: false},
+      research_evidence: [],
+      schema_contract: {family: 'unknown', draft: '', path: '', payload_key: '', valid: false},
+      validation_gates: [],
+      agent_review_policy: {codex: '', antigravity: '', hermes: '', web_gpt: ''},
+      owner_gate: {required: true, status: 'UNKNOWN'},
+      forbidden_actions: [],
+      content_generation_allowed: false,
+    },
+  },
   system_identity: {name: 'Novel Research Lab', positioning: 'Corpus-to-Creation', not_a: [], core_chain: []},
   current_project: {
     project_name: 'Novel Research Lab',
@@ -124,6 +153,7 @@ const viewLabels: Record<ViewID, {label: string; subtitle: string; icon: 'info' 
   overview: {label: '系统总览', subtitle: '能力、状态与下一动作', icon: 'info'},
   research: {label: '研究资产', subtitle: 'Phase 1 结构化研究目录', icon: 'search'},
   creation: {label: '创作资产', subtitle: '九类资产覆盖与契约', icon: 'viewColumns'},
+  pipeline: {label: '生成管线', subtitle: 'Corpus-to-Creation Pipeline', icon: 'wrench'},
   agents: {label: 'Agent 与任务', subtitle: '角色、适配器与任务边界', icon: 'wrench'},
   runtime: {label: '运行状态与 Owner Gate', subtitle: '体检、门禁与阻塞动作', icon: 'warning'},
 };
@@ -149,6 +179,12 @@ const statusNames: Record<string, string> = {
   research_asset: '研究资产',
   completed: '已完成',
   prepared: '已准备',
+  schema_validation: 'Schema 校验',
+  source_evidence: '来源证据',
+  reference_integrity: '引用完整性',
+  naming_collision: '命名冲突',
+  lifecycle_transition: '生命周期',
+  owner_gate: 'Owner Gate',
 };
 
 function statusColor(status: string) {
@@ -441,6 +477,155 @@ function CreationView({data, compact}: {data: StudioData; compact: boolean}) {
   );
 }
 
+function PipelineView({data, compact}: {data: StudioData; compact: boolean}) {
+  const stageRows: TableRow[] = data.corpus_pipeline.stages.map((item) => ({
+    id: item.stage_id,
+    stage: item.label_zh,
+    status: statusNames[item.status] || item.status,
+    description: item.description,
+  }));
+  const familyRows: TableRow[] = data.corpus_pipeline.families.map((item) => ({
+    id: item.family,
+    family: item.label,
+    status: statusNames[item.status] || item.status,
+    readiness: item.readiness_score,
+    next: item.next_safe_action,
+  }));
+  const plan = data.corpus_pipeline.next_plan;
+  const gateRows: TableRow[] = plan.validation_gates.map((item) => ({
+    id: item.gate_id,
+    gate: statusNames[item.gate_id] || item.gate_id,
+    description: item.description,
+  }));
+  return (
+    <Section padding={5}>
+      <VStack gap={5}>
+        <Banner
+          status="info"
+          title={`Corpus-to-Creation Pipeline：下一资产家族 ${data.corpus_pipeline.next_family.label}`}
+          description={data.corpus_pipeline.next_family.next_safe_action}
+          endContent={<StatusToken status={data.corpus_pipeline.next_family.status} />}
+        />
+        <Grid columns={{minWidth: 220, max: 4, repeat: 'fit'}} gap={3}>
+          <SummaryCard label="目标 Family" value={plan.target_family.family} status={plan.target_family.status} />
+          <SummaryCard label="就绪度" value={String(plan.target_family.readiness_score)} />
+          <SummaryCard label="Schema" value={plan.schema_contract.payload_key} status={plan.schema_contract.valid ? 'runnable' : 'blocked'} />
+          <SummaryCard label="内容生成" value={plan.content_generation_allowed ? '允许' : '禁止'} status={plan.content_generation_allowed ? 'runnable' : 'blocked'} />
+        </Grid>
+        <VStack gap={2}>
+          <HStack gap={2} vAlign="center" wrap="wrap">
+            <Heading level={3}>管线阶段</Heading>
+            <Token label={data.corpus_pipeline.pipeline_id} color="blue" size="sm" />
+          </HStack>
+          {compact ? (
+            <List density="compact" hasDividers>
+              {data.corpus_pipeline.stages.map((item) => (
+                <ListItem
+                  key={item.stage_id}
+                  label={item.label_zh}
+                  description={<Text type="supporting" display="block" textWrap="wrap" wordBreak="break-word">{item.description}</Text>}
+                  endContent={<StatusToken status={item.status} />}
+                />
+              ))}
+            </List>
+          ) : (
+            <Table
+              data={stageRows}
+              idKey="id"
+              density="compact"
+              dividers="rows"
+              hasHover
+              textOverflow="wrap"
+              columns={[
+                {key: 'stage', header: '阶段', width: pixel(170)},
+                {key: 'status', header: '状态', width: pixel(110)},
+                {key: 'description', header: '说明', width: proportional(3)},
+              ]}
+            />
+          )}
+        </VStack>
+        <VStack gap={2}>
+          <Heading level={3}>资产构建顺序</Heading>
+          {compact ? (
+            <List density="compact" hasDividers>
+              {data.corpus_pipeline.families.map((item) => (
+                <ListItem
+                  key={item.family}
+                  label={`${item.label} · ${item.readiness_score}`}
+                  description={<Text type="supporting" display="block" textWrap="wrap" wordBreak="break-word">{item.next_safe_action}</Text>}
+                  endContent={<StatusToken status={item.status} />}
+                />
+              ))}
+            </List>
+          ) : (
+            <Table
+              data={familyRows}
+              idKey="id"
+              density="compact"
+              dividers="rows"
+              isStriped
+              hasHover
+              textOverflow="wrap"
+              columns={[
+                {key: 'family', header: 'Family', width: pixel(150)},
+                {key: 'status', header: '状态', width: pixel(110)},
+                {key: 'readiness', header: '就绪度', width: pixel(80)},
+                {key: 'next', header: '下一动作', width: proportional(3)},
+              ]}
+            />
+          )}
+        </VStack>
+        <Grid columns={{minWidth: 300, max: 2, repeat: 'fit'}} gap={4}>
+          <VStack gap={2}>
+            <Heading level={3}>证据需求</Heading>
+            <MetadataList columns="single">
+              <MetadataListItem label="Asset Types">{plan.research_query.asset_types.join(', ')}</MetadataListItem>
+              <MetadataListItem label="Mechanism Categories">{plan.research_query.categories.join(', ')}</MetadataListItem>
+              <MetadataListItem label="Schema Path">{plan.schema_contract.path}</MetadataListItem>
+              <MetadataListItem label="Research Evidence">{String(plan.research_evidence.length)}</MetadataListItem>
+            </MetadataList>
+          </VStack>
+          <VStack gap={2}>
+            <Heading level={3}>禁止动作</Heading>
+            <List density="compact" hasDividers>
+              {plan.forbidden_actions.map((item) => (
+                <ListItem key={item} label={item} endContent={<StatusToken status="blocked" />} />
+              ))}
+            </List>
+          </VStack>
+        </Grid>
+        <VStack gap={2}>
+          <Heading level={3}>校验门禁</Heading>
+          {compact ? (
+            <List density="compact" hasDividers>
+              {plan.validation_gates.map((item) => (
+                <ListItem
+                  key={item.gate_id}
+                  label={statusNames[item.gate_id] || item.gate_id}
+                  description={<Text type="supporting" display="block" textWrap="wrap" wordBreak="break-word">{item.description}</Text>}
+                  endContent={<StatusToken status="runnable" />}
+                />
+              ))}
+            </List>
+          ) : (
+            <Table
+              data={gateRows}
+              idKey="id"
+              density="compact"
+              dividers="rows"
+              textOverflow="wrap"
+              columns={[
+                {key: 'gate', header: 'Gate', width: pixel(160)},
+                {key: 'description', header: '约束', width: proportional(3)},
+              ]}
+            />
+          )}
+        </VStack>
+      </VStack>
+    </Section>
+  );
+}
+
 const roleNames: Record<string, string> = {
   Codex: '本地运行时、工程实现、验证与编排',
   Antigravity: '人工外部文学审查',
@@ -625,9 +810,11 @@ function App() {
       ? <ResearchView data={data} compact={compact} />
       : view === 'creation'
         ? <CreationView data={data} compact={compact} />
-        : view === 'agents'
-          ? <AgentsView data={data} />
-          : <RuntimeView data={data} live={live} />;
+        : view === 'pipeline'
+          ? <PipelineView data={data} compact={compact} />
+          : view === 'agents'
+            ? <AgentsView data={data} />
+            : <RuntimeView data={data} live={live} />;
 
   return (
     <Theme theme={neutralTheme}>

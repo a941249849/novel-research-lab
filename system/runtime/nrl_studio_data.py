@@ -5,6 +5,7 @@ from typing import Any
 from nrl_capabilities import build_hardening_status
 from nrl_creation_assets import load_creation_asset_registry
 from nrl_creation_schemas import build_creation_schema_registry
+from nrl_corpus_pipeline import build_pipeline_plan, build_pipeline_status
 from nrl_research_assets import build_research_asset_catalog
 from nrl_system_status import build_system_status
 
@@ -77,6 +78,12 @@ def build_studio_data(
     hardening_status = build_hardening_status(state, adapters)
     research_assets = build_research_asset_catalog()
     creation_schemas = build_creation_schema_registry()
+    corpus_pipeline = build_pipeline_status(state, adapters)
+    corpus_pipeline["next_plan"] = build_pipeline_plan(
+        state,
+        adapters,
+        next_only=True,
+    )
 
     return {
         "control_plane": {
@@ -106,6 +113,7 @@ def build_studio_data(
             ],
             "forbidden_actions": ["advance", "execute-hermes", "execute-antigravity"],
         },
+        "corpus_pipeline": corpus_pipeline,
         "system_identity": {
             "name": "Novel Research Lab",
             "positioning": "Corpus-to-Creation engine for Chinese long-form web novel creation.",
@@ -204,6 +212,8 @@ def build_studio_data(
                 "python3 system/runtime/nrl.py research-assets",
                 "python3 system/runtime/nrl.py creation-schemas",
                 "python3 system/runtime/nrl.py validate-creation-assets",
+                "python3 system/runtime/nrl.py pipeline-status",
+                "python3 system/runtime/nrl.py pipeline-plan --next",
                 "python3 system/runtime/nrl.py system-check",
                 "python3 system/runtime/nrl.py validate-state",
             ],
@@ -226,6 +236,8 @@ def build_studio_data(
                 "python3 system/runtime/nrl.py system-status",
                 "python3 system/runtime/nrl.py studio-data",
                 "python3 system/runtime/nrl.py studio-build",
+                "python3 system/runtime/nrl.py pipeline-status",
+                "python3 system/runtime/nrl.py pipeline-plan --next",
                 "python3 system/runtime/nrl.py validate-state",
             ],
         },

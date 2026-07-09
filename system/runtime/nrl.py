@@ -44,6 +44,7 @@ from nrl_registry import (
     save_registry,
     upsert_registry_mission,
 )
+from nrl_rag_index import load_or_build_rag_index, write_rag_index
 from nrl_research_assets import build_research_asset_catalog
 from nrl_studio import render_studio
 from nrl_studio_data import build_studio_data
@@ -310,6 +311,16 @@ def cmd_dna_registry_build(_: argparse.Namespace) -> int:
 
 def cmd_dna_registry(_: argparse.Namespace) -> int:
     print_json(load_or_build_dna_registry(load_state()))
+    return 0
+
+
+def cmd_rag_index_build(_: argparse.Namespace) -> int:
+    print_json(write_rag_index(load_state()))
+    return 0
+
+
+def cmd_rag_index(_: argparse.Namespace) -> int:
+    print_json(load_or_build_rag_index(load_state()))
     return 0
 
 
@@ -693,6 +704,8 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("architecture-status").set_defaults(func=cmd_architecture_status)
     sub.add_parser("dna-registry-build").set_defaults(func=cmd_dna_registry_build)
     sub.add_parser("dna-registry").set_defaults(func=cmd_dna_registry)
+    sub.add_parser("rag-index-build").set_defaults(func=cmd_rag_index_build)
+    sub.add_parser("rag-index").set_defaults(func=cmd_rag_index)
     sub.add_parser("doctor").set_defaults(func=cmd_doctor)
     sub.add_parser("advance").set_defaults(func=cmd_advance)
     owner = sub.add_parser("owner-gate")

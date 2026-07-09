@@ -44,5 +44,19 @@ class DnaRegistryCliTests(RuntimeCliCase):
         self.assertIn("project_dna", data["summary"]["by_family"])
 
 
+class RagIndexCliTests(RuntimeCliCase):
+    def test_rag_index_builds_structured_items_without_raw_prose(self):
+        self.run_cli("dna-registry-build")
+        result = self.run_cli("rag-index-build")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        data = json.loads(result.stdout)
+        self.assertEqual(data["version"], "0.5")
+        self.assertGreater(data["summary"]["total_items"], 0)
+        item = data["items"][0]
+        self.assertIn("retrieval_text", item)
+        self.assertIn("evidence_weight", item)
+        self.assertNotIn("novel_training_set/", json.dumps(data, ensure_ascii=False))
+
+
 if __name__ == "__main__":
     unittest.main()

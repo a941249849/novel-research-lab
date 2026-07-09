@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any
 
 import jsonschema
+from referencing import Registry, Resource
 
 from nrl_paths import runtime_path
 
@@ -110,9 +111,19 @@ def validate_creation_asset_store(
             "summary": {"asset_count": 0, "family_counts": {}},
         }
 
-    common_validator = jsonschema.Draft7Validator(
-        _load_json(SCHEMA_DIR / "common.schema.json")
+    common_schema = _load_json(SCHEMA_DIR / "common.schema.json")
+    common_validator = jsonschema.Draft7Validator(common_schema)
+    schema_registry = Registry().with_resource(
+        str(common_schema["$id"]),
+        Resource.from_contents(common_schema),
     )
+    family_validators = {
+        family: jsonschema.Draft7Validator(
+            _load_json(SCHEMA_DIR / f"{family}.schema.json"),
+            registry=schema_registry,
+        )
+        for family in FAMILIES
+    }
     ids: set[str] = set()
     names: dict[str, str] = {}
 
@@ -161,6 +172,17 @@ def validate_creation_asset_store(
                     "message": f"payload does not match family: {family}",
                 }
             )
+        family_validator = family_validators.get(family)
+        if family_validator is not None:
+            for error in family_validator.iter_errors(asset):
+                errors.append(
+                    {
+                        "code": "schema_validation",
+                        "asset_id": asset_id,
+                        "asset_index": index,
+                        "message": error.message,
+                    }
+                )
 
         previous = asset.get("previous_lifecycle_state")
         current = asset.get("lifecycle_state")

@@ -191,6 +191,53 @@ class CreationAssetValidationTests(unittest.TestCase):
         self.assertFalse(result["valid"])
         self.assertIn("schema_validation", {error["code"] for error in result["errors"]})
 
+    def test_rejects_invalid_family_payload_shape(self):
+        asset = self.asset(
+            "tech-1",
+            "techniques",
+            "试招",
+            technique={"counter_ids": [1]},
+        )
+        result = self.validate({"version": "0.2", "project": "test", "assets": [asset]})
+        self.assertFalse(result["valid"])
+        self.assertIn("schema_validation", {error["code"] for error in result["errors"]})
+
+
+class CapabilityDerivationTests(unittest.TestCase):
+    def test_missing_evidence_downgrades_capability_and_blocks_dependents(self):
+        from nrl_capabilities import build_hardening_status
+
+        roadmap = {
+            "version": "test",
+            "capabilities": [
+                {
+                    "capability_id": "first",
+                    "label_zh": "第一项",
+                    "status": "runnable",
+                    "dependencies": [],
+                    "evidence": ["missing.file"],
+                    "next_action": "补齐证据",
+                },
+                {
+                    "capability_id": "second",
+                    "label_zh": "第二项",
+                    "status": "runnable",
+                    "dependencies": ["first"],
+                    "evidence": [],
+                    "next_action": "等待依赖",
+                },
+            ],
+        }
+        result = build_hardening_status(
+            {"owner_gate_required": True},
+            {},
+            roadmap=roadmap,
+            evidence_root=REPO_ROOT,
+        )
+        self.assertEqual(result["capabilities"][0]["status"], "missing")
+        self.assertEqual(result["capabilities"][1]["status"], "blocked")
+        self.assertEqual(result["next_safe_action"]["capability_id"], "first")
+
 
 class StudioServerTests(unittest.TestCase):
     @classmethod

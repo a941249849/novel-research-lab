@@ -233,7 +233,7 @@ function OverviewView({data, compact}: {data: StudioData; compact: boolean}) {
                 <ListItem
                   key={item.capability_id}
                   label={item.label_zh}
-                  description={item.next_action}
+                  description={<Text type="supporting" display="block" textWrap="wrap" wordBreak="break-word">{item.next_action}</Text>}
                   endContent={<StatusToken status={item.status} />}
                 />
               ))}
@@ -262,7 +262,7 @@ function OverviewView({data, compact}: {data: StudioData; compact: boolean}) {
               <ListItem
                 key={item.area}
                 label={item.area}
-                description={artifactNotes[item.area] || item.note}
+                description={<Text type="supporting" display="block" textWrap="wrap" wordBreak="break-word">{artifactNotes[item.area] || item.note}</Text>}
                 endContent={<StatusToken status={item.status} />}
               />
             ))}
@@ -312,7 +312,7 @@ function ResearchView({data, compact}: {data: StudioData; compact: boolean}) {
               <ListItem
                 key={item.asset_id}
                 label={`${item.title} · ${item.mechanism_name || item.asset_type}`}
-                description={item.source_path}
+                description={<Text type="supporting" display="block" textWrap="wrap" wordBreak="break-word">{item.source_path}</Text>}
                 endContent={<StatusToken status={item.review_state} />}
               />
             ))}
@@ -365,8 +365,8 @@ function CreationView({data, compact}: {data: StudioData; compact: boolean}) {
     <Section padding={5}>
       <VStack gap={5}>
         <VStack gap={2}>
-          <HStack gap={2} vAlign="center">
-            <Heading level={3}>创作覆盖矩阵</Heading>
+          <HStack gap={2} vAlign="center" wrap="wrap">
+            <Heading level={3}>创作覆盖矩阵 / Creation Coverage Matrix</Heading>
             <StatusToken status={data.creation_asset_registry.coverage_summary.complete ? 'complete' : 'partial'} />
           </HStack>
           {compact ? (
@@ -375,7 +375,7 @@ function CreationView({data, compact}: {data: StudioData; compact: boolean}) {
                 <ListItem
                   key={item.asset_id || item.asset}
                   label={`${item.asset} · 就绪度 ${item.readiness_score ?? 0}`}
-                  description={item.gap}
+                  description={<Text type="supporting" display="block" textWrap="wrap" wordBreak="break-word">{item.gap}</Text>}
                   endContent={<StatusToken status={item.status} />}
                 />
               ))}
@@ -398,7 +398,7 @@ function CreationView({data, compact}: {data: StudioData; compact: boolean}) {
           )}
         </VStack>
         <VStack gap={2}>
-          <HStack gap={2} vAlign="center">
+          <HStack gap={2} vAlign="center" wrap="wrap">
             <Heading level={3}>Draft-07 Schema 契约</Heading>
             <StatusToken status={data.creation_schema_registry.summary.all_schemas_valid ? 'runnable' : 'blocked'} />
           </HStack>
@@ -408,7 +408,7 @@ function CreationView({data, compact}: {data: StudioData; compact: boolean}) {
                 <ListItem
                   key={item.family}
                   label={item.title}
-                  description={item.path}
+                  description={<Text type="supporting" display="block" textWrap="wrap" wordBreak="break-word">{item.path}</Text>}
                   endContent={<StatusToken status={item.valid ? 'runnable' : 'blocked'} />}
                 />
               ))}
@@ -458,7 +458,7 @@ function AgentsView({data}: {data: StudioData}) {
             <ListItem
               key={item.agent}
               label={item.agent}
-              description={roleNames[item.agent] || item.role}
+              description={<Text type="supporting" display="block" textWrap="wrap" wordBreak="break-word">{roleNames[item.agent] || item.role}</Text>}
               startContent={<StatusDot variant={item.can_execute ? 'success' : 'warning'} label={`${item.agent} 状态`} />}
               endContent={<HStack gap={1}><StatusToken status={item.mode} /><StatusToken status={item.display_status || item.status} /></HStack>}
             />
@@ -543,7 +543,12 @@ function RuntimeView({data, live}: {data: StudioData; live: boolean}) {
           <Heading level={3}>运行命令</Heading>
           <List density="compact" hasDividers>
             {data.runtime_status.health_commands.map((command) => (
-              <ListItem key={command} label={command} endContent={<Token label="只读/验证" color="teal" size="sm" />} />
+              <ListItem
+                key={command}
+                label="运行命令"
+                description={<Text type="code" display="block" textWrap="wrap" wordBreak="break-word">{command}</Text>}
+                endContent={<Token label="只读/验证" color="teal" size="sm" />}
+              />
             ))}
           </List>
         </VStack>

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+from copy import deepcopy
 from pathlib import Path
 from typing import Any
 
@@ -15,6 +16,7 @@ PACKAGE_ROADMAP_PATH = (
 )
 ALLOWED_STATES = {"missing", "contract_ready", "data_ready", "runnable", "blocked"}
 ACTIONABLE_STATES = {"missing", "contract_ready"}
+DEPENDENCY_READY_STATES = {"contract_ready", "data_ready", "runnable"}
 
 
 def _load_roadmap(path: Path = ROADMAP_PATH) -> dict[str, Any]:
@@ -27,40 +29,67 @@ def _load_roadmap(path: Path = ROADMAP_PATH) -> dict[str, Any]:
 def build_hardening_status(
     state: dict[str, Any],
     adapters: dict[str, Any],
+    *,
+    roadmap: dict[str, Any] | None = None,
+    evidence_root: Path | None = None,
 ) -> dict[str, Any]:
-    roadmap = _load_roadmap()
+    roadmap = deepcopy(roadmap) if roadmap is not None else _load_roadmap()
     capabilities = roadmap.get("capabilities", [])
     seen: set[str] = set()
+    dependency_ready: set[str] = set()
     next_id: str | None = None
 
     for capability in capabilities:
         capability_id = str(capability["capability_id"])
-        status = str(capability["status"])
-        if status not in ALLOWED_STATES:
-            raise RuntimeError(f"invalid capability status: {capability_id}={status}")
-        missing_dependencies = [
+        declared_status = str(capability["status"])
+        if declared_status not in ALLOWED_STATES:
+            raise RuntimeError(
+                f"invalid capability status: {capability_id}={declared_status}"
+            )
+        unordered_dependencies = [
             dependency
             for dependency in capability.get("dependencies", [])
             if dependency not in seen
         ]
-        if missing_dependencies:
+        if unordered_dependencies:
             raise RuntimeError(
-                f"capability dependency order invalid for {capability_id}: {missing_dependencies}"
+                f"capability dependency order invalid for {capability_id}: {unordered_dependencies}"
             )
+        blocked_dependencies = [
+            dependency
+            for dependency in capability.get("dependencies", [])
+            if dependency not in dependency_ready
+        ]
         evidence = []
         for relative_path in capability.get("evidence", []):
+            evidence_path = (
+                (evidence_root / relative_path)
+                if evidence_root is not None
+                else runtime_path(relative_path)
+            )
             evidence.append(
                 {
                     "path": relative_path,
-                    "exists": runtime_path(relative_path).exists(),
+                    "exists": evidence_path.exists(),
                 }
             )
         capability["evidence"] = evidence
         capability["evidence_complete"] = all(item["exists"] for item in evidence)
+        if blocked_dependencies:
+            status = "blocked"
+        elif declared_status != "blocked" and evidence and not capability["evidence_complete"]:
+            status = "missing"
+        else:
+            status = declared_status
+        capability["declared_status"] = declared_status
+        capability["status"] = status
+        capability["blocked_dependencies"] = blocked_dependencies
         capability["is_next_safe_action"] = False
         if next_id is None and status in ACTIONABLE_STATES:
             next_id = capability_id
         seen.add(capability_id)
+        if status in DEPENDENCY_READY_STATES:
+            dependency_ready.add(capability_id)
 
     if next_id is None:
         next_id = "prose_production"

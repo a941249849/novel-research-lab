@@ -24,6 +24,8 @@
         ],
         "next_action": "保持原文隔离，仅消费结构化衍生资产。",
         "evidence_complete": true,
+        "declared_status": "data_ready",
+        "blocked_dependencies": [],
         "is_next_safe_action": false
       },
       {
@@ -49,6 +51,8 @@
         ],
         "next_action": "通过研究资产目录检索已审核拆解结果。",
         "evidence_complete": true,
+        "declared_status": "data_ready",
+        "blocked_dependencies": [],
         "is_next_safe_action": false
       },
       {
@@ -66,6 +70,8 @@
         ],
         "next_action": "保持机制来源与原创性红线可追溯。",
         "evidence_complete": true,
+        "declared_status": "data_ready",
+        "blocked_dependencies": [],
         "is_next_safe_action": false
       },
       {
@@ -87,6 +93,8 @@
         ],
         "next_action": "使用 research-assets 查询结构化研究资产。",
         "evidence_complete": true,
+        "declared_status": "runnable",
+        "blocked_dependencies": [],
         "is_next_safe_action": false
       },
       {
@@ -108,6 +116,8 @@
         ],
         "next_action": "验证空项目资产库并准备 Corpus-to-Creation 接口。",
         "evidence_complete": true,
+        "declared_status": "contract_ready",
+        "blocked_dependencies": [],
         "is_next_safe_action": true
       },
       {
@@ -125,6 +135,8 @@
         ],
         "next_action": "运行 validate-creation-assets。",
         "evidence_complete": true,
+        "declared_status": "runnable",
+        "blocked_dependencies": [],
         "is_next_safe_action": false
       },
       {
@@ -146,6 +158,8 @@
         ],
         "next_action": "继续使用真实 manual_handoff，等待 Owner 授权适配器升级。",
         "evidence_complete": true,
+        "declared_status": "contract_ready",
+        "blocked_dependencies": [],
         "is_next_safe_action": false
       },
       {
@@ -163,6 +177,8 @@
         ],
         "next_action": "Owner Gate 未解除前禁止正文生产。",
         "evidence_complete": true,
+        "declared_status": "blocked",
+        "blocked_dependencies": [],
         "is_next_safe_action": false
       }
     ],

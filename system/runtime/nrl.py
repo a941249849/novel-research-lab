@@ -25,6 +25,7 @@ from nrl_agent_ops import (
     validate_agent_job,
     write_agent_packet,
 )
+from nrl_asset_producers import build_producer_status
 from nrl_capabilities import build_hardening_status
 from nrl_creation_assets import load_creation_asset_registry
 from nrl_creation_schemas import (
@@ -360,6 +361,11 @@ def cmd_agent_validate(args: argparse.Namespace) -> int:
 
 def cmd_production_runtime_status(_: argparse.Namespace) -> int:
     print_json(build_production_runtime_status(load_state(), load_adapters()))
+    return 0
+
+
+def cmd_producer_status(_: argparse.Namespace) -> int:
+    print_json(build_producer_status(load_state(), load_adapters()))
     return 0
 
 
@@ -762,6 +768,7 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("production-runtime-status").set_defaults(
         func=cmd_production_runtime_status
     )
+    sub.add_parser("producer-status").set_defaults(func=cmd_producer_status)
     sub.add_parser("doctor").set_defaults(func=cmd_doctor)
     sub.add_parser("advance").set_defaults(func=cmd_advance)
     owner = sub.add_parser("owner-gate")

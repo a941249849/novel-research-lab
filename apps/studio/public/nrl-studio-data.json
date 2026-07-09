@@ -2341,6 +2341,350 @@
         "write novel prose"
       ],
       "content_generation_allowed": false
+    },
+    "next_evidence_pack": {
+      "version": "0.10",
+      "evidence_pack_id": "evidence-pack-naming-v0.10",
+      "pipeline_id": "corpus-to-creation-naming",
+      "project": "《借天改命账》",
+      "mode": "SYSTEM_HARDENING",
+      "content_progression": "FROZEN_AT_OWNER_GATE",
+      "family": "naming",
+      "label": "Naming",
+      "status": "ready_for_contract_planning",
+      "output_path": "system/research_assets/evidence_packs/naming.v0.10.json",
+      "schema_contract": {
+        "family": "naming",
+        "draft": "http://json-schema.org/draft-07/schema#",
+        "path": "system/creation_assets/schemas/naming.schema.json",
+        "payload_key": "naming",
+        "valid": true
+      },
+      "research_query": {
+        "asset_types": [
+          "book_dna",
+          "narrative_dna"
+        ],
+        "categories": [
+          "升级与境界机制",
+          "宿命/情绪/哲学机制"
+        ],
+        "review_state": "formal_or_reviewed"
+      },
+      "evidence_requirements": {
+        "minimum_items": 3,
+        "structured_only": true,
+        "raw_corpus_allowed": false,
+        "evidence_status": "ready"
+      },
+      "evidence_summary": {
+        "item_count": 18,
+        "source_paths": [
+          "phase1/02_book_dna/人道至尊_dna.json",
+          "phase1/02_book_dna/凡人修仙传_dna.json",
+          "phase1/02_book_dna/斗破苍穹_dna.json",
+          "phase1/02_book_dna/求魔_dna.json",
+          "phase1/02_book_dna/蛊真人_dna.json",
+          "phase1/02_book_dna/诡秘之主_dna.json",
+          "phase1/02_book_dna/遮天_dna.json",
+          "phase1/04_mechanism_library/core7_mechanism_inventory.json"
+        ],
+        "structured_only": true,
+        "raw_corpus_allowed": false
+      },
+      "research_evidence": [
+        {
+          "asset_id": "mechanism-dpcq-m4",
+          "title": "斗破苍穹",
+          "asset_type": "mechanism",
+          "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+          "review_state": "formal",
+          "provenance": "promoted",
+          "categories": [
+            "升级与境界机制"
+          ],
+          "mechanism_id": "DPCQ-M4",
+          "mechanism_name": "职业身份抬升",
+          "exists": true
+        },
+        {
+          "asset_id": "mechanism-dpcq-m5",
+          "title": "斗破苍穹",
+          "asset_type": "mechanism",
+          "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+          "review_state": "formal",
+          "provenance": "promoted",
+          "categories": [
+            "升级与境界机制"
+          ],
+          "mechanism_id": "DPCQ-M5",
+          "mechanism_name": "破位面续航",
+          "exists": true
+        },
+        {
+          "asset_id": "mechanism-frxxz-m5",
+          "title": "凡人修仙传",
+          "asset_type": "mechanism",
+          "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+          "review_state": "formal",
+          "provenance": "promoted",
+          "categories": [
+            "升级与境界机制"
+          ],
+          "mechanism_id": "FRXXZ-M5",
+          "mechanism_name": "飞升后秩序重评估",
+          "exists": true
+        },
+        {
+          "asset_id": "mechanism-gmzz-m2",
+          "title": "诡秘之主",
+          "asset_type": "mechanism",
+          "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+          "review_state": "formal",
+          "provenance": "promoted",
+          "categories": [
+            "升级与境界机制"
+          ],
+          "mechanism_id": "GMZZ-M2",
+          "mechanism_name": "日常与恐怖并置",
+          "exists": true
+        },
+        {
+          "asset_id": "mechanism-gmzz-m3",
+          "title": "诡秘之主",
+          "asset_type": "mechanism",
+          "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+          "review_state": "formal",
+          "provenance": "promoted",
+          "categories": [
+            "升级与境界机制"
+          ],
+          "mechanism_id": "GMZZ-M3",
+          "mechanism_name": "规则污染升级",
+          "exists": true
+        },
+        {
+          "asset_id": "mechanism-gzr-m3",
+          "title": "蛊真人",
+          "asset_type": "mechanism",
+          "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+          "review_state": "formal",
+          "provenance": "promoted",
+          "categories": [
+            "宿命/情绪/哲学机制"
+          ],
+          "mechanism_id": "GZR-M3",
+          "mechanism_name": "道德叙事反包装",
+          "exists": true
+        },
+        {
+          "asset_id": "mechanism-qm-m5",
+          "title": "求魔",
+          "asset_type": "mechanism",
+          "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+          "review_state": "formal",
+          "provenance": "promoted",
+          "categories": [
+            "宿命/情绪/哲学机制"
+          ],
+          "mechanism_id": "QM-M5",
+          "mechanism_name": "自我缺席式圆满",
+          "exists": true
+        },
+        {
+          "asset_id": "mechanism-rdzz-m3",
+          "title": "人道至尊",
+          "asset_type": "mechanism",
+          "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+          "review_state": "formal",
+          "provenance": "promoted",
+          "categories": [
+            "升级与境界机制"
+          ],
+          "mechanism_id": "RDZZ-M3",
+          "mechanism_name": "个人升级族群化",
+          "exists": true
+        },
+        {
+          "asset_id": "mechanism-rdzz-m5",
+          "title": "人道至尊",
+          "asset_type": "mechanism",
+          "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+          "review_state": "formal",
+          "provenance": "promoted",
+          "categories": [
+            "宿命/情绪/哲学机制"
+          ],
+          "mechanism_id": "RDZZ-M5",
+          "mechanism_name": "古今祖地闭环",
+          "exists": true
+        },
+        {
+          "asset_id": "mechanism-zt-m4",
+          "title": "遮天",
+          "asset_type": "mechanism",
+          "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+          "review_state": "formal",
+          "provenance": "promoted",
+          "categories": [
+            "升级与境界机制"
+          ],
+          "mechanism_id": "ZT-M4",
+          "mechanism_name": "星空淘汰赛地图",
+          "exists": true
+        },
+        {
+          "asset_id": "mechanism-zt-m5",
+          "title": "遮天",
+          "asset_type": "mechanism",
+          "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+          "review_state": "formal",
+          "provenance": "promoted",
+          "categories": [
+            "宿命/情绪/哲学机制"
+          ],
+          "mechanism_id": "ZT-M5",
+          "mechanism_name": "故人回流终局",
+          "exists": true
+        },
+        {
+          "asset_id": "phase1-book_dna-001",
+          "title": "遮天",
+          "asset_type": "book_dna",
+          "source_path": "phase1/02_book_dna/遮天_dna.json",
+          "review_state": "formal",
+          "provenance": "promoted",
+          "categories": [],
+          "exists": true
+        },
+        {
+          "asset_id": "phase1-book_dna-005",
+          "title": "蛊真人",
+          "asset_type": "book_dna",
+          "source_path": "phase1/02_book_dna/蛊真人_dna.json",
+          "review_state": "formal",
+          "provenance": "promoted",
+          "categories": [],
+          "exists": true
+        },
+        {
+          "asset_id": "phase1-book_dna-009",
+          "title": "人道至尊",
+          "asset_type": "book_dna",
+          "source_path": "phase1/02_book_dna/人道至尊_dna.json",
+          "review_state": "formal",
+          "provenance": "promoted",
+          "categories": [],
+          "exists": true
+        },
+        {
+          "asset_id": "phase1-book_dna-013",
+          "title": "凡人修仙传",
+          "asset_type": "book_dna",
+          "source_path": "phase1/02_book_dna/凡人修仙传_dna.json",
+          "review_state": "formal",
+          "provenance": "promoted",
+          "categories": [],
+          "exists": true
+        },
+        {
+          "asset_id": "phase1-book_dna-017",
+          "title": "斗破苍穹",
+          "asset_type": "book_dna",
+          "source_path": "phase1/02_book_dna/斗破苍穹_dna.json",
+          "review_state": "formal",
+          "provenance": "promoted",
+          "categories": [],
+          "exists": true
+        },
+        {
+          "asset_id": "phase1-book_dna-021",
+          "title": "诡秘之主",
+          "asset_type": "book_dna",
+          "source_path": "phase1/02_book_dna/诡秘之主_dna.json",
+          "review_state": "formal",
+          "provenance": "promoted",
+          "categories": [],
+          "exists": true
+        },
+        {
+          "asset_id": "phase1-book_dna-025",
+          "title": "求魔",
+          "asset_type": "book_dna",
+          "source_path": "phase1/02_book_dna/求魔_dna.json",
+          "review_state": "formal",
+          "provenance": "promoted",
+          "categories": [],
+          "exists": true
+        }
+      ],
+      "validation_gates": [
+        {
+          "gate_id": "schema_validation",
+          "description": "Draft-07 family schema must validate the asset envelope and payload."
+        },
+        {
+          "gate_id": "source_evidence",
+          "description": "Plan must retain structured research evidence and source paths."
+        },
+        {
+          "gate_id": "reference_integrity",
+          "description": "Cross-asset references must resolve before any asset can be promoted."
+        },
+        {
+          "gate_id": "naming_collision",
+          "description": "Normalized names must not collide across the project asset store."
+        },
+        {
+          "gate_id": "lifecycle_transition",
+          "description": "Lifecycle transitions must follow the creation asset contract."
+        },
+        {
+          "gate_id": "owner_gate",
+          "description": "Owner Gate must remain active before prose or final asset generation."
+        }
+      ],
+      "promotion_dependencies": {
+        "full_corpus_proof": {
+          "job_id": "job-v08-full-corpus-proof-review",
+          "status": "blocked_on_owner_gate",
+          "proof_verified": true,
+          "verified_receipts": 18,
+          "required_receipts": 18,
+          "promotion_allowed": false,
+          "next_required_action": "Owner must explicitly authorize research-asset promotion."
+        }
+      },
+      "agent_review_policy": {
+        "codex": "local_validation_orchestration",
+        "antigravity": "manual_handoff",
+        "hermes": "paused_not_removed",
+        "web_gpt": "architecture_review_only"
+      },
+      "owner_gate": {
+        "required": true,
+        "status": "REQUIRED_PENDING_ACKNOWLEDGEMENT"
+      },
+      "blocked_actions": [
+        "bypass Phase 2E planning constraints",
+        "execute-antigravity",
+        "execute-hermes",
+        "execute_antigravity",
+        "execute_hermes",
+        "freely read novel_training_set",
+        "generate final creative assets",
+        "generate final naming dictionary",
+        "generate full character cards",
+        "generate_final_creation_assets",
+        "generate_novel_prose",
+        "ignore Antigravity required fixes",
+        "read_raw_novel_training_set",
+        "rename existing content artifacts",
+        "write first chapter",
+        "write novel prose"
+      ],
+      "content_generation_allowed": false,
+      "external_agent_execution_allowed": false
     }
   },
   "dna_production_runtime": {
@@ -2925,6 +3269,8 @@
       "python3 system/runtime/nrl.py validate-creation-assets",
       "python3 system/runtime/nrl.py pipeline-status",
       "python3 system/runtime/nrl.py pipeline-plan --next",
+      "python3 system/runtime/nrl.py evidence-pack --next",
+      "python3 system/runtime/nrl.py evidence-pack-validate --next",
       "python3 system/runtime/nrl.py system-check",
       "python3 system/runtime/nrl.py validate-state"
     ],
@@ -3007,6 +3353,8 @@
       "python3 system/runtime/nrl.py studio-build",
       "python3 system/runtime/nrl.py pipeline-status",
       "python3 system/runtime/nrl.py pipeline-plan --next",
+      "python3 system/runtime/nrl.py evidence-pack --next",
+      "python3 system/runtime/nrl.py evidence-pack-validate --next",
       "python3 system/runtime/nrl.py validate-state"
     ]
   },

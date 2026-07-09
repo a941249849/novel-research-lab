@@ -604,18 +604,28 @@ python3 system/runtime/nrl.py pipeline-status
 python3 system/runtime/nrl.py pipeline-plan --next
 python3 system/runtime/nrl.py pipeline-plan --family characters
 python3 system/runtime/nrl.py pipeline-plan --family techniques
+python3 system/runtime/nrl.py evidence-pack --next
+python3 system/runtime/nrl.py evidence-pack --next --write
+python3 system/runtime/nrl.py evidence-pack-validate --next
+python3 system/runtime/nrl.py evidence-pack-validate --file system/research_assets/evidence_packs/naming.v0.10.json
 ```
 
 `pipeline-status` reports the stage graph, the next recommended creation asset
 family, and blocked production actions. `pipeline-plan` emits a schema-bound
 plan for a target family, including structured research evidence, evidence
 requirements, schema path, validation gates, agent review policy, and Owner
-Gate status.
+Gate status. `evidence-pack` turns that plan into a guarded, reusable research
+evidence package for the target creation asset family. With `--write`, it writes
+the package under `system/research_assets/evidence_packs/` without copying raw
+corpus text or generating final creative assets. `evidence-pack-validate`
+actively enforces schema validity, source evidence existence, raw corpus
+boundaries, current creation asset store consistency, Owner Gate, and external
+agent execution boundaries before a pack can be treated as usable downstream.
 
 The current expected next family is derived from the creation coverage matrix
 by readiness score and stable family priority. At the current Phase 2E Owner
-Gate state, the next family is `techniques`, because technique coverage is
-missing and has the lowest readiness score.
+Gate state, the next family is `naming`, because naming coverage is missing and
+has the lowest readiness score under the current stable ordering.
 
 v0.3 remains read-only and infrastructure-only:
 

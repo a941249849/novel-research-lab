@@ -10,7 +10,11 @@ from urllib.parse import parse_qs, urlparse
 from nrl_agent_ops import build_production_runtime_status, load_job_queue
 from nrl_asset_producers import build_producer_status
 from nrl_creation_schemas import build_creation_schema_registry
-from nrl_corpus_pipeline import build_pipeline_plan, build_pipeline_status
+from nrl_corpus_pipeline import (
+    build_evidence_pack,
+    build_pipeline_plan,
+    build_pipeline_status,
+)
 from nrl_dna_registry import load_or_build_dna_registry
 from nrl_paths import runtime_path
 from nrl_rag_index import load_or_build_rag_index
@@ -73,6 +77,21 @@ def _pipeline_plan(query: str) -> dict[str, Any]:
     )
 
 
+def _evidence_pack(query: str) -> dict[str, Any]:
+    params = parse_qs(query)
+    next_only = params.get("next", ["false"])[0].lower() == "true"
+    family_values = params.get("family", [])
+    family = family_values[0] if family_values else None
+    if not next_only and not family:
+        raise ValueError("evidence pack requires family=<asset_family> or next=true")
+    return build_evidence_pack(
+        _load_json(STATE_PATH),
+        _load_json(ADAPTERS_PATH),
+        family=family,
+        next_only=next_only,
+    )
+
+
 GET_ROUTES: dict[str, Callable[[], dict[str, Any]]] = {
     "/api/studio-data": _studio_data,
     "/api/research-assets": build_research_asset_catalog,
@@ -105,6 +124,16 @@ class StudioRequestHandler(SimpleHTTPRequestHandler):
         if parsed.path == "/api/pipeline-plan":
             try:
                 self._send_json(200, _pipeline_plan(parsed.query))
+            except ValueError as error:
+                self._send_json(400, {"error": str(error)})
+            except RuntimeError as error:
+                self._send_json(400, {"error": str(error)})
+            except Exception as error:
+                self._send_json(500, {"error": str(error)})
+            return
+        if parsed.path == "/api/evidence-pack":
+            try:
+                self._send_json(200, _evidence_pack(parsed.query))
             except ValueError as error:
                 self._send_json(400, {"error": str(error)})
             except RuntimeError as error:

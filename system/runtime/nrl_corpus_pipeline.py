@@ -1,14 +1,23 @@
 from __future__ import annotations
 
+import json
+from pathlib import Path
 from typing import Any
 
 from nrl_creation_assets import load_creation_asset_registry
-from nrl_creation_schemas import build_creation_schema_registry
+from nrl_creation_schemas import (
+    build_creation_schema_registry,
+    validate_creation_asset_store,
+)
+from nrl_full_corpus_proof import build_proof_status
+from nrl_paths import ROOT, runtime_path
 from nrl_research_assets import build_research_asset_catalog
 from nrl_system_status import build_system_status
 
 
 VERSION = "0.3"
+EVIDENCE_PACK_VERSION = "0.10"
+EVIDENCE_PACK_DIR = runtime_path("system/research_assets/evidence_packs")
 FAMILY_PRIORITY = (
     "characters",
     "npcs",
@@ -161,6 +170,14 @@ def _validation_gates() -> list[dict[str, str]]:
     return [{"gate_id": gate_id, "description": description} for gate_id, description in VALIDATION_GATES]
 
 
+def _relative_to_root(path: Any) -> str:
+    resolved = path if hasattr(path, "relative_to") else runtime_path(str(path))
+    try:
+        return str(resolved.relative_to(ROOT))
+    except ValueError:
+        return str(resolved)
+
+
 def _evidence_for_family(family: str) -> tuple[dict[str, Any], list[dict[str, Any]]]:
     needs = FAMILY_RESEARCH_NEEDS[family]
     catalog = build_research_asset_catalog()
@@ -252,4 +269,258 @@ def build_pipeline_plan(
         },
         "forbidden_actions": status["forbidden_actions"],
         "content_generation_allowed": False,
+    }
+
+
+def _pack_path(family: str) -> Path:
+    return EVIDENCE_PACK_DIR / f"{family}.v{EVIDENCE_PACK_VERSION}.json"
+
+
+def build_evidence_pack(
+    state: dict[str, Any],
+    adapters: dict[str, Any],
+    *,
+    family: str | None = None,
+    next_only: bool = False,
+) -> dict[str, Any]:
+    plan = build_pipeline_plan(
+        state,
+        adapters,
+        family=family,
+        next_only=next_only,
+    )
+    target_family = str(plan["target_family"]["family"])
+    proof_status = build_proof_status()
+    proof_readiness = proof_status["promotion_readiness"]
+    evidence = list(plan["research_evidence"])
+    blocked_actions = sorted(
+        {
+            *[str(item) for item in plan["forbidden_actions"]],
+            *[str(item) for item in plan["target_family"]["blocked_actions"]],
+            "execute_hermes",
+            "execute_antigravity",
+            "read_raw_novel_training_set",
+            "generate_final_creation_assets",
+            "generate_novel_prose",
+        }
+    )
+    source_paths = sorted({str(item["source_path"]) for item in evidence})
+    output_path = _pack_path(target_family)
+    return {
+        "version": EVIDENCE_PACK_VERSION,
+        "evidence_pack_id": f"evidence-pack-{target_family}-v{EVIDENCE_PACK_VERSION}",
+        "pipeline_id": plan["pipeline_id"],
+        "project": plan["project"],
+        "mode": plan["mode"],
+        "content_progression": plan["content_progression"],
+        "family": target_family,
+        "label": plan["target_family"]["label"],
+        "status": "ready_for_contract_planning"
+        if plan["evidence_requirements"]["evidence_status"] == "ready"
+        else "blocked_on_research_evidence",
+        "output_path": _relative_to_root(output_path),
+        "schema_contract": plan["schema_contract"],
+        "research_query": plan["research_query"],
+        "evidence_requirements": plan["evidence_requirements"],
+        "evidence_summary": {
+            "item_count": len(evidence),
+            "source_paths": source_paths,
+            "structured_only": True,
+            "raw_corpus_allowed": False,
+        },
+        "research_evidence": evidence,
+        "validation_gates": plan["validation_gates"],
+        "promotion_dependencies": {
+            "full_corpus_proof": {
+                "job_id": proof_status["job_id"],
+                "status": proof_readiness["status"],
+                "proof_verified": proof_readiness["proof_verified"],
+                "verified_receipts": proof_readiness["verified_receipts"],
+                "required_receipts": proof_readiness["required_receipts"],
+                "promotion_allowed": proof_readiness["promotion_allowed"],
+                "next_required_action": proof_readiness["next_required_action"],
+            }
+        },
+        "agent_review_policy": plan["agent_review_policy"],
+        "owner_gate": plan["owner_gate"],
+        "blocked_actions": blocked_actions,
+        "content_generation_allowed": False,
+        "external_agent_execution_allowed": False,
+    }
+
+
+def write_evidence_pack(pack: dict[str, Any]) -> dict[str, Any]:
+    output_path = runtime_path(str(pack["output_path"]))
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    output_path.write_text(
+        json.dumps(pack, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    return pack
+
+
+def load_evidence_pack(file_arg: str) -> dict[str, Any]:
+    path = Path(file_arg)
+    if not path.is_absolute():
+        path = ROOT / path
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _check_result(gate_id: str, passed: bool, detail: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "gate_id": gate_id,
+        "passed": passed,
+        "detail": detail,
+    }
+
+
+def validate_evidence_pack(pack: dict[str, Any]) -> dict[str, Any]:
+    checks: list[dict[str, Any]] = []
+
+    schema_contract = pack.get("schema_contract", {})
+    schema_path = runtime_path(str(schema_contract.get("path", "")))
+    schema_valid = False
+    schema_error = None
+    if schema_path.exists():
+        try:
+            import jsonschema  # type: ignore
+
+            schema = json.loads(schema_path.read_text(encoding="utf-8"))
+            jsonschema.Draft7Validator.check_schema(schema)
+            schema_valid = bool(schema_contract.get("valid", False))
+        except Exception as error:  # pragma: no cover - defensive detail path
+            schema_error = str(error)
+    checks.append(
+        _check_result(
+            "schema_validation",
+            schema_valid,
+            {
+                "schema_path": str(schema_contract.get("path", "")),
+                "schema_valid": schema_valid,
+                "error": schema_error,
+            },
+        )
+    )
+
+    evidence = pack.get("research_evidence", [])
+    requirements = pack.get("evidence_requirements", {})
+    minimum_items = int(requirements.get("minimum_items", 0))
+    missing_paths = []
+    raw_paths = []
+    source_paths = []
+    if isinstance(evidence, list):
+        for item in evidence:
+            if not isinstance(item, dict):
+                continue
+            source_path = str(item.get("source_path", ""))
+            source_paths.append(source_path)
+            if "novel_training_set/" in source_path:
+                raw_paths.append(source_path)
+            if source_path and not runtime_path(source_path).exists():
+                missing_paths.append(source_path)
+    enough_evidence = isinstance(evidence, list) and len(evidence) >= minimum_items
+    checks.append(
+        _check_result(
+            "source_evidence",
+            enough_evidence and not missing_paths,
+            {
+                "item_count": len(evidence) if isinstance(evidence, list) else 0,
+                "minimum_items": minimum_items,
+                "missing_path_count": len(missing_paths),
+            },
+        )
+    )
+
+    summary_paths = pack.get("evidence_summary", {}).get("source_paths", [])
+    if isinstance(summary_paths, list):
+        raw_paths.extend(path for path in summary_paths if "novel_training_set/" in str(path))
+    raw_boundary_passed = (
+        not raw_paths
+        and requirements.get("raw_corpus_allowed") is False
+        and pack.get("evidence_summary", {}).get("raw_corpus_allowed") is False
+    )
+    checks.append(
+        _check_result(
+            "raw_corpus_boundary",
+            raw_boundary_passed,
+            {
+                "raw_corpus_allowed": requirements.get("raw_corpus_allowed"),
+                "raw_path_count": len(raw_paths),
+            },
+        )
+    )
+
+    asset_store_validation = validate_creation_asset_store()
+    checks.append(
+        _check_result(
+            "creation_asset_store",
+            bool(asset_store_validation["valid"]),
+            {
+                "asset_count": asset_store_validation["summary"]["asset_count"],
+                "error_count": len(asset_store_validation["errors"]),
+                "store_path": asset_store_validation["store_path"],
+            },
+        )
+    )
+
+    owner_gate = pack.get("owner_gate", {})
+    proof = pack.get("promotion_dependencies", {}).get("full_corpus_proof", {})
+    owner_gate_passed = (
+        owner_gate.get("required") is True
+        and str(owner_gate.get("status", ""))
+        and pack.get("content_generation_allowed") is False
+        and proof.get("promotion_allowed") is False
+    )
+    checks.append(
+        _check_result(
+            "owner_gate",
+            owner_gate_passed,
+            {
+                "owner_gate_required": owner_gate.get("required"),
+                "owner_gate_status": owner_gate.get("status"),
+                "full_corpus_promotion_allowed": proof.get("promotion_allowed"),
+            },
+        )
+    )
+
+    blocked_actions = set(str(item) for item in pack.get("blocked_actions", []))
+    required_blocked = {
+        "execute_hermes",
+        "execute_antigravity",
+        "generate_novel_prose",
+        "read_raw_novel_training_set",
+    }
+    execution_boundary_passed = (
+        pack.get("content_generation_allowed") is False
+        and pack.get("external_agent_execution_allowed") is False
+        and required_blocked <= blocked_actions
+    )
+    checks.append(
+        _check_result(
+            "agent_execution_boundary",
+            execution_boundary_passed,
+            {
+                "content_generation_allowed": pack.get("content_generation_allowed"),
+                "external_agent_execution_allowed": pack.get("external_agent_execution_allowed"),
+                "missing_blocked_actions": sorted(required_blocked - blocked_actions),
+            },
+        )
+    )
+
+    errors = [
+        {
+            "gate_id": check["gate_id"],
+            "detail": check["detail"],
+        }
+        for check in checks
+        if not check["passed"]
+    ]
+    return {
+        "version": EVIDENCE_PACK_VERSION,
+        "evidence_pack_id": pack.get("evidence_pack_id", "unknown"),
+        "family": pack.get("family", "unknown"),
+        "valid": not errors,
+        "checks": checks,
+        "errors": errors,
     }

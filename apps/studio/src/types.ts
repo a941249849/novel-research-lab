@@ -121,6 +121,46 @@ export type PipelinePlan = {
   content_generation_allowed: boolean;
 };
 
+export type EvidencePack = {
+  version: string;
+  evidence_pack_id: string;
+  pipeline_id: string;
+  project: string;
+  mode: string;
+  content_progression: string;
+  family: string;
+  label: string;
+  status: string;
+  output_path: string;
+  schema_contract: PipelinePlan['schema_contract'];
+  research_query: PipelinePlan['research_query'];
+  evidence_requirements: PipelinePlan['evidence_requirements'];
+  evidence_summary: {
+    item_count: number;
+    source_paths: string[];
+    structured_only: boolean;
+    raw_corpus_allowed: boolean;
+  };
+  research_evidence: ResearchAsset[];
+  validation_gates: PipelinePlan['validation_gates'];
+  promotion_dependencies: {
+    full_corpus_proof: {
+      job_id: string;
+      status: string;
+      proof_verified: boolean;
+      verified_receipts: number;
+      required_receipts: number;
+      promotion_allowed: boolean;
+      next_required_action: string;
+    };
+  };
+  agent_review_policy: PipelinePlan['agent_review_policy'];
+  owner_gate: PipelinePlan['owner_gate'];
+  blocked_actions: string[];
+  content_generation_allowed: boolean;
+  external_agent_execution_allowed: boolean;
+};
+
 export type ArchitectureReconciliation = {
   version: string;
   source_context: {
@@ -255,6 +295,7 @@ export type StudioData = {
     next_family: PipelineFamily;
     forbidden_actions: string[];
     next_plan: PipelinePlan;
+    next_evidence_pack: EvidencePack;
   };
   system_identity: {
     name: string;

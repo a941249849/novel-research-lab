@@ -62,6 +62,69 @@ class CorpusPipelineCliTests(unittest.TestCase):
         self.assertEqual(plan["pipeline_id"], "corpus-to-creation-naming")
         self.assertFalse(plan["content_generation_allowed"])
 
+    def test_evidence_pack_next_writes_guarded_manifest_without_raw_corpus(self):
+        output_path = REPO_ROOT / "system/research_assets/evidence_packs/naming.v0.10.json"
+        if output_path.exists():
+            output_path.unlink()
+        result = self.run_cli("evidence-pack", "--next", "--write")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        pack = json.loads(result.stdout)
+        self.assertTrue(output_path.exists())
+        written = json.loads(output_path.read_text(encoding="utf-8"))
+        self.assertEqual(pack, written)
+        self.assertEqual(pack["evidence_pack_id"], "evidence-pack-naming-v0.10")
+        self.assertEqual(pack["family"], "naming")
+        self.assertEqual(
+            pack["schema_contract"]["path"],
+            "system/creation_assets/schemas/naming.schema.json",
+        )
+        self.assertGreaterEqual(pack["evidence_summary"]["item_count"], 3)
+        self.assertFalse(pack["content_generation_allowed"])
+        self.assertFalse(pack["external_agent_execution_allowed"])
+        self.assertIn("execute_hermes", pack["blocked_actions"])
+        self.assertIn("execute_antigravity", pack["blocked_actions"])
+        serialized = json.dumps(pack, ensure_ascii=False)
+        self.assertNotIn("novel_training_set/", serialized)
+        self.assertEqual(
+            pack["promotion_dependencies"]["full_corpus_proof"]["status"],
+            "blocked_on_owner_gate",
+        )
+
+    def test_evidence_pack_validate_enforces_active_gates(self):
+        write_result = self.run_cli("evidence-pack", "--next", "--write")
+        self.assertEqual(write_result.returncode, 0, write_result.stderr)
+        result = self.run_cli("evidence-pack-validate", "--next")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        validation = json.loads(result.stdout)
+        self.assertTrue(validation["valid"])
+        self.assertEqual(validation["family"], "naming")
+        required_gates = {
+            "schema_validation",
+            "source_evidence",
+            "raw_corpus_boundary",
+            "creation_asset_store",
+            "owner_gate",
+            "agent_execution_boundary",
+        }
+        self.assertTrue(required_gates <= {check["gate_id"] for check in validation["checks"]})
+        self.assertTrue(all(check["passed"] for check in validation["checks"]))
+        self.assertNotIn("novel_training_set/", json.dumps(validation, ensure_ascii=False))
+
+    def test_evidence_pack_validate_rejects_raw_corpus_path(self):
+        pack = json.loads(self.run_cli("evidence-pack", "--next").stdout)
+        pack["research_evidence"][0]["source_path"] = "novel_training_set/example.txt"
+        fixture = REPO_ROOT / "system/research_assets/evidence_packs/_invalid_raw_path.test.json"
+        fixture.parent.mkdir(parents=True, exist_ok=True)
+        fixture.write_text(json.dumps(pack, ensure_ascii=False, indent=2), encoding="utf-8")
+        try:
+            result = self.run_cli("evidence-pack-validate", "--file", str(fixture))
+            self.assertNotEqual(result.returncode, 0)
+            validation = json.loads(result.stdout)
+            self.assertFalse(validation["valid"])
+            self.assertIn("raw_corpus_boundary", {error["gate_id"] for error in validation["errors"]})
+        finally:
+            fixture.unlink(missing_ok=True)
+
     def test_pipeline_plan_rejects_unknown_family(self):
         result = self.run_cli("pipeline-plan", "--family", "unknown")
         self.assertNotEqual(result.returncode, 0)
@@ -181,6 +244,13 @@ class CorpusPipelineServerTests(unittest.TestCase):
             status, data = self.request_json(path)
             self.assertEqual(status, 200)
             self.assertIn(expected_key, data)
+
+    def test_evidence_pack_route_returns_next_pack(self):
+        status, data = self.request_json("/api/evidence-pack?next=true")
+        self.assertEqual(status, 200)
+        self.assertEqual(data["family"], "naming")
+        self.assertEqual(data["evidence_pack_id"], "evidence-pack-naming-v0.10")
+        self.assertFalse(data["content_generation_allowed"])
 
     def test_pipeline_plan_route_rejects_invalid_family(self):
         with self.assertRaises(urllib.error.HTTPError) as raised:

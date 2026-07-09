@@ -8,7 +8,11 @@ from nrl_asset_producers import build_producer_status
 from nrl_capabilities import build_hardening_status
 from nrl_creation_assets import load_creation_asset_registry
 from nrl_creation_schemas import build_creation_schema_registry
-from nrl_corpus_pipeline import build_pipeline_plan, build_pipeline_status
+from nrl_corpus_pipeline import (
+    build_evidence_pack,
+    build_pipeline_plan,
+    build_pipeline_status,
+)
 from nrl_full_corpus_proof import build_proof_status
 from nrl_research_assets import build_research_asset_catalog
 from nrl_system_status import build_system_status
@@ -85,6 +89,11 @@ def build_studio_data(
     creation_schemas = build_creation_schema_registry()
     corpus_pipeline = build_pipeline_status(state, adapters)
     corpus_pipeline["next_plan"] = build_pipeline_plan(
+        state,
+        adapters,
+        next_only=True,
+    )
+    corpus_pipeline["next_evidence_pack"] = build_evidence_pack(
         state,
         adapters,
         next_only=True,
@@ -230,6 +239,8 @@ def build_studio_data(
                 "python3 system/runtime/nrl.py validate-creation-assets",
                 "python3 system/runtime/nrl.py pipeline-status",
                 "python3 system/runtime/nrl.py pipeline-plan --next",
+                "python3 system/runtime/nrl.py evidence-pack --next",
+                "python3 system/runtime/nrl.py evidence-pack-validate --next",
                 "python3 system/runtime/nrl.py system-check",
                 "python3 system/runtime/nrl.py validate-state",
             ],
@@ -254,6 +265,8 @@ def build_studio_data(
                 "python3 system/runtime/nrl.py studio-build",
                 "python3 system/runtime/nrl.py pipeline-status",
                 "python3 system/runtime/nrl.py pipeline-plan --next",
+                "python3 system/runtime/nrl.py evidence-pack --next",
+                "python3 system/runtime/nrl.py evidence-pack-validate --next",
                 "python3 system/runtime/nrl.py validate-state",
             ],
         },

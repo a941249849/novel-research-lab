@@ -166,6 +166,40 @@ const EMPTY_DATA = {
       forbidden_actions: [],
       content_generation_allowed: false,
     },
+    next_evidence_pack: {
+      version: '0.10',
+      evidence_pack_id: 'evidence-pack-unknown-v0.10',
+      pipeline_id: 'corpus-to-creation-unknown',
+      project: 'UNKNOWN_PROJECT',
+      mode: 'UNKNOWN_MODE',
+      content_progression: 'UNKNOWN',
+      family: 'unknown',
+      label: 'Unknown',
+      status: 'missing',
+      output_path: '',
+      schema_contract: {family: 'unknown', draft: '', path: '', payload_key: '', valid: false},
+      research_query: {asset_types: [], categories: [], review_state: ''},
+      evidence_requirements: {minimum_items: 0, structured_only: true, raw_corpus_allowed: false},
+      evidence_summary: {item_count: 0, source_paths: [], structured_only: true, raw_corpus_allowed: false},
+      research_evidence: [],
+      validation_gates: [],
+      promotion_dependencies: {
+        full_corpus_proof: {
+          job_id: '',
+          status: 'unknown',
+          proof_verified: false,
+          verified_receipts: 0,
+          required_receipts: 0,
+          promotion_allowed: false,
+          next_required_action: '',
+        },
+      },
+      agent_review_policy: {codex: '', antigravity: '', hermes: '', web_gpt: ''},
+      owner_gate: {required: true, status: 'UNKNOWN'},
+      blocked_actions: [],
+      content_generation_allowed: false,
+      external_agent_execution_allowed: false,
+    },
   },
   system_identity: {name: 'Novel Research Lab', positioning: 'Corpus-to-Creation', not_a: [], core_chain: []},
   current_project: {
@@ -737,6 +771,7 @@ function PipelineView({data, compact}: {data: StudioData; compact: boolean}) {
     next: item.next_safe_action,
   }));
   const plan = data.corpus_pipeline.next_plan;
+  const pack = data.corpus_pipeline.next_evidence_pack;
   const gateRows: TableRow[] = plan.validation_gates.map((item) => ({
     id: item.gate_id,
     gate: statusNames[item.gate_id] || item.gate_id,
@@ -830,6 +865,18 @@ function PipelineView({data, compact}: {data: StudioData; compact: boolean}) {
               <MetadataListItem label="Research Evidence">{String(plan.research_evidence.length)}</MetadataListItem>
             </MetadataList>
           </VStack>
+          <VStack gap={2}>
+            <Heading level={3}>证据包</Heading>
+            <MetadataList columns="single">
+              <MetadataListItem label="Pack ID">{pack.evidence_pack_id}</MetadataListItem>
+              <MetadataListItem label="Output Path">{pack.output_path}</MetadataListItem>
+              <MetadataListItem label="Evidence Items">{String(pack.evidence_summary.item_count)}</MetadataListItem>
+              <MetadataListItem label="Full Corpus Proof">{pack.promotion_dependencies.full_corpus_proof.status}</MetadataListItem>
+              <MetadataListItem label="External Agents">{pack.external_agent_execution_allowed ? '允许' : '禁止'}</MetadataListItem>
+            </MetadataList>
+          </VStack>
+        </Grid>
+        <Grid columns={{minWidth: 300, max: 2, repeat: 'fit'}} gap={4}>
           <VStack gap={2}>
             <Heading level={3}>禁止动作</Heading>
             <List density="compact" hasDividers>

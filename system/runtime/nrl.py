@@ -33,7 +33,14 @@ from nrl_creation_schemas import (
     build_creation_schema_registry,
     validate_creation_asset_store,
 )
-from nrl_corpus_pipeline import build_pipeline_plan, build_pipeline_status
+from nrl_corpus_pipeline import (
+    build_evidence_pack,
+    build_pipeline_plan,
+    build_pipeline_status,
+    load_evidence_pack,
+    validate_evidence_pack,
+    write_evidence_pack,
+)
 from nrl_dna_registry import load_or_build_dna_registry, write_dna_registry
 from nrl_doctor import run_doctor
 from nrl_full_corpus_handoff import (
@@ -320,6 +327,34 @@ def cmd_pipeline_plan(args: argparse.Namespace) -> int:
         )
     )
     return 0
+
+
+def cmd_evidence_pack(args: argparse.Namespace) -> int:
+    pack = build_evidence_pack(
+        load_state(),
+        load_adapters(),
+        family=args.family,
+        next_only=args.next,
+    )
+    if args.write:
+        pack = write_evidence_pack(pack)
+    print_json(pack)
+    return 0
+
+
+def cmd_evidence_pack_validate(args: argparse.Namespace) -> int:
+    if args.file:
+        pack = load_evidence_pack(args.file)
+    else:
+        pack = build_evidence_pack(
+            load_state(),
+            load_adapters(),
+            family=args.family,
+            next_only=args.next,
+        )
+    validation = validate_evidence_pack(pack)
+    print_json(validation)
+    return 0 if validation["valid"] else 1
 
 
 def cmd_architecture_status(_: argparse.Namespace) -> int:
@@ -829,6 +864,18 @@ def build_parser() -> argparse.ArgumentParser:
     pipeline_target.add_argument("--family")
     pipeline_target.add_argument("--next", action="store_true")
     pipeline_plan.set_defaults(func=cmd_pipeline_plan)
+    evidence_pack = sub.add_parser("evidence-pack")
+    evidence_target = evidence_pack.add_mutually_exclusive_group(required=True)
+    evidence_target.add_argument("--family")
+    evidence_target.add_argument("--next", action="store_true")
+    evidence_pack.add_argument("--write", action="store_true")
+    evidence_pack.set_defaults(func=cmd_evidence_pack)
+    evidence_pack_validate = sub.add_parser("evidence-pack-validate")
+    evidence_pack_validate_target = evidence_pack_validate.add_mutually_exclusive_group(required=True)
+    evidence_pack_validate_target.add_argument("--family")
+    evidence_pack_validate_target.add_argument("--next", action="store_true")
+    evidence_pack_validate_target.add_argument("--file")
+    evidence_pack_validate.set_defaults(func=cmd_evidence_pack_validate)
     sub.add_parser("architecture-status").set_defaults(func=cmd_architecture_status)
     sub.add_parser("dna-registry-build").set_defaults(func=cmd_dna_registry_build)
     sub.add_parser("dna-registry").set_defaults(func=cmd_dna_registry)

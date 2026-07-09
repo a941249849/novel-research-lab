@@ -145,12 +145,16 @@ def plan_agent_job(
     job_id = _job_id(family)
     created = now_iso()
     existing = next((item for item in jobs if item.get("job_id") == job_id), None)
+    preserved_state = str(existing.get("state")) if existing else "ready_for_antigravity"
+    if preserved_state not in {"validated", "promoted"}:
+        preserved_state = "ready_for_antigravity"
+    updated_at = existing.get("updated_at") if existing and preserved_state in {"validated", "promoted"} else created
     job = {
         "job_id": job_id,
         "job_type": "antigravity_structural_review",
         "target_family": family,
         "owner_agent": "antigravity",
-        "state": "ready_for_antigravity",
+        "state": preserved_state,
         "source_dna_ids": _source_dna_ids(state, family),
         "input_packet_path": f"system/agent_ops/packets/{job_id}.md",
         "expected_output_path": _expected_output_path(job_id),
@@ -158,7 +162,7 @@ def plan_agent_job(
         "validation_report_path": existing.get("validation_report_path") if existing else None,
         "promotion_target": f"system/creation_assets/project_assets.v0.2.json::{family}",
         "created_at": existing.get("created_at") if existing else created,
-        "updated_at": created,
+        "updated_at": updated_at,
         "blocked_reason": None,
     }
     jobs = [item for item in jobs if item.get("job_id") != job_id]
@@ -251,7 +255,10 @@ def ingest_agent_output(job_id: str, file_arg: str) -> dict[str, Any]:
         raise RuntimeError(f"agent output must be placed under system/agent_ops/inbox: {file_arg}")
     if not file_path.exists():
         raise RuntimeError(f"agent output file does not exist: {file_arg}")
-    job["actual_output_path"] = str(file_path.relative_to(ROOT))
+    rel_path = str(file_path.relative_to(ROOT))
+    if job.get("state") in {"validated", "promoted"} and job.get("actual_output_path") == rel_path:
+        return {"job": job, "ingested": rel_path}
+    job["actual_output_path"] = rel_path
     job["state"] = "output_received"
     job["updated_at"] = now_iso()
     save_job_queue(queue)
@@ -269,6 +276,9 @@ def validate_agent_job(job_id: str) -> dict[str, Any]:
     missing_sections = [section for section in REQUIRED_REVIEW_SECTIONS if section not in text]
     forbidden_hits = [value for value in FORBIDDEN_OUTPUT_TEXT if value in text]
     valid = not missing_sections and not forbidden_hits and job_id in text
+    report_path = VALIDATION_DIR / f"{job_id}_validation.json"
+    if valid and job.get("state") == "validated" and report_path.exists():
+        return {"valid": True, "job": job, "report": _read_json(report_path)}
     report = {
         "job_id": job_id,
         "valid": valid,
@@ -277,7 +287,6 @@ def validate_agent_job(job_id: str) -> dict[str, Any]:
         "validated_at": now_iso(),
     }
     VALIDATION_DIR.mkdir(parents=True, exist_ok=True)
-    report_path = VALIDATION_DIR / f"{job_id}_validation.json"
     _write_json(report_path, report)
     job["validation_report_path"] = str(report_path.relative_to(ROOT))
     if valid:

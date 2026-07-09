@@ -7,7 +7,7 @@
       "job_type": "antigravity_structural_review",
       "target_family": "techniques",
       "owner_agent": "antigravity",
-      "state": "ready_for_antigravity",
+      "state": "validated",
       "source_dna_ids": [
         "dna-v05-mechanism_dna-mechanism-dpcq-m1",
         "dna-v05-mechanism_dna-mechanism-dpcq-m2",
@@ -34,14 +34,14 @@
       "validation_report_path": "system/agent_ops/validation/job-v05-techniques-antigravity-review_validation.json",
       "promotion_target": "system/creation_assets/project_assets.v0.2.json::techniques",
       "created_at": "2026-07-09T17:51:31+08:00",
-      "updated_at": "2026-07-09T17:54:08+08:00",
+      "updated_at": "2026-07-09T17:58:38+08:00",
       "blocked_reason": null
     }
   ],
   "summary": {
     "total_jobs": 1,
     "by_state": {
-      "ready_for_antigravity": 1
+      "validated": 1
     },
     "by_family": {
       "techniques": 1

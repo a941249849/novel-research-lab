@@ -2206,7 +2206,7 @@
     "agent_jobs": {
       "total_jobs": 1,
       "by_state": {
-        "ready_for_antigravity": 1
+        "validated": 1
       },
       "by_family": {
         "techniques": 1

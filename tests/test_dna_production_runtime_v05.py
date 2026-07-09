@@ -67,7 +67,7 @@ class AgentOpsCliTests(RuntimeCliCase):
         job = json.loads(result.stdout)["job"]
         self.assertEqual(job["target_family"], "techniques")
         self.assertEqual(job["owner_agent"], "antigravity")
-        self.assertEqual(job["state"], "ready_for_antigravity")
+        self.assertIn(job["state"], {"ready_for_antigravity", "validated"})
         self.assertTrue((REPO_ROOT / "system/agent_ops/job_queue.v0.5.json").exists())
 
         packet = self.run_cli("agent-pack", "--job-id", job["job_id"])
@@ -106,6 +106,31 @@ class AgentOpsCliTests(RuntimeCliCase):
         data = json.loads(validate.stdout)
         self.assertTrue(data["valid"])
         self.assertEqual(data["job"]["state"], "validated")
+
+    def test_agent_job_plan_does_not_downgrade_validated_job(self):
+        job = json.loads(self.run_cli("agent-job-plan", "--family", "techniques").stdout)["job"]
+        inbox = REPO_ROOT / "system/agent_ops/inbox/valid_antigravity_techniques_review.md"
+        inbox.parent.mkdir(parents=True, exist_ok=True)
+        inbox.write_text(
+            (REPO_ROOT / "tests/fixtures/agent_ops/valid_antigravity_techniques_review.md").read_text(
+                encoding="utf-8"
+            ),
+            encoding="utf-8",
+        )
+        self.assertEqual(
+            self.run_cli(
+                "agent-ingest",
+                "--job-id",
+                job["job_id"],
+                "--file",
+                str(inbox.relative_to(REPO_ROOT)),
+            ).returncode,
+            0,
+        )
+        self.assertEqual(self.run_cli("agent-validate", "--job-id", job["job_id"]).returncode, 0)
+        planned = json.loads(self.run_cli("agent-job-plan", "--family", "techniques").stdout)["job"]
+        self.assertEqual(planned["state"], "validated")
+        self.assertEqual(planned["actual_output_path"], "system/agent_ops/inbox/valid_antigravity_techniques_review.md")
 
 
 class ProductionRuntimeIntegrationTests(RuntimeCliCase):

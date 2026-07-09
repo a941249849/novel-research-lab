@@ -105,5 +105,30 @@ class ArchitectureReconciliationIntegrationTests(unittest.TestCase):
         self.assertEqual(check["detail"]["layer_count"], 10)
 
 
+class ArchitectureReconciliationStudioTests(unittest.TestCase):
+    def run_cli(self, *args):
+        return subprocess.run(
+            [sys.executable, str(NRL), *args],
+            cwd=REPO_ROOT,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+
+    def test_studio_build_contains_architecture_view_labels(self):
+        result = self.run_cli("studio-build")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        html = (REPO_ROOT / "system/runtime/studio/index.html").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("系统架构", html)
+        self.assertIn("#architecture", html)
+        self.assertIn("Corpus-to-Creation", html)
+        self.assertIn("Core7 小批量试验", html)
+        self.assertIn("Hermes: paused_not_removed", html)
+        self.assertIn("Owner Gate", html)
+        self.assertNotIn("/api/actions/execute-hermes", html)
+
+
 if __name__ == "__main__":
     unittest.main()

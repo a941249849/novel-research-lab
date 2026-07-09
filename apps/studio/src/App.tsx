@@ -35,7 +35,7 @@ declare global {
   }
 }
 
-type ViewID = 'overview' | 'research' | 'creation' | 'pipeline' | 'agents' | 'runtime';
+type ViewID = 'overview' | 'architecture' | 'research' | 'creation' | 'pipeline' | 'agents' | 'runtime';
 type TableRow = Record<string, unknown> & {id: string};
 
 const EMPTY_DATA = {
@@ -70,6 +70,51 @@ const EMPTY_DATA = {
     summary: {family_count: 0, all_schemas_valid: false},
   },
   safe_action_catalog: {actions: [], forbidden_actions: []},
+  architecture_reconciliation: {
+    version: '0.4',
+    source_context: {
+      conversation_title: '',
+      accepted_on: '',
+      source_role: '',
+    },
+    fixed_identity: {
+      short_name: 'Novel Research Lab',
+      principle: 'Corpus-to-Creation',
+      positioning_zh: '基于中文热门长篇小说语料研究蒸馏的原创长篇小说创作引擎',
+      not_a: [],
+      core_chain: [],
+    },
+    architecture_layers: [],
+    experiment_calibration: {
+      label_zh: 'Core7 小批量试验',
+      status: 'accepted_as_calibration_basis',
+      scope: '',
+      production_meaning: '',
+    },
+    implementation_alignment: {
+      pipeline_version: '0.3',
+      pipeline_id: 'corpus-to-creation',
+      pipeline_layer: 'planning_pipeline',
+      classification: '',
+      next_family: '',
+    },
+    agent_role_contract: [],
+    current_mismatch_report: [],
+    production_readiness: {
+      system_mode: 'UNKNOWN_MODE',
+      content_progression: 'UNKNOWN',
+      owner_gate_required: true,
+      owner_gate_status: 'UNKNOWN',
+      content_generation_allowed: false,
+      hermes_execution_status: 'paused_not_removed',
+    },
+    next_architecture_action: {
+      action_id: 'architecture_reconciliation_v0_4',
+      label_zh: '锁定系统架构并把 v0.3 归位为规划管线层',
+      safe_command: 'python3 system/runtime/nrl.py architecture-status',
+      blocked_actions: [],
+    },
+  },
   corpus_pipeline: {
     version: '0.3',
     pipeline_id: 'corpus-to-creation',
@@ -151,9 +196,10 @@ const EMPTY_DATA = {
 
 const viewLabels: Record<ViewID, {label: string; subtitle: string; icon: 'info' | 'search' | 'viewColumns' | 'wrench' | 'warning'}> = {
   overview: {label: '系统总览', subtitle: '能力、状态与下一动作', icon: 'info'},
+  architecture: {label: '系统架构', subtitle: '源架构、Core7 校准与 v0.3 归位', icon: 'info'},
   research: {label: '研究资产', subtitle: 'Phase 1 结构化研究目录', icon: 'search'},
   creation: {label: '创作资产', subtitle: '九类资产覆盖与契约', icon: 'viewColumns'},
-  pipeline: {label: '生成管线', subtitle: 'Corpus-to-Creation Pipeline', icon: 'wrench'},
+  pipeline: {label: '生成管线', subtitle: 'Planning Pipeline layer · v0.3', icon: 'wrench'},
   agents: {label: 'Agent 与任务', subtitle: '角色、适配器与任务边界', icon: 'wrench'},
   runtime: {label: '运行状态与 Owner Gate', subtitle: '体检、门禁与阻塞动作', icon: 'warning'},
 };
@@ -165,7 +211,11 @@ const statusNames: Record<string, string> = {
   runnable: '可运行',
   blocked: '已阻塞',
   partial: '部分覆盖',
+  partial_data: '数据部分完成',
+  partial_engine: '引擎部分可用',
+  protected_input: '受保护输入',
   seed: '种子状态',
+  accepted_as_calibration_basis: '已接受为校准依据',
   formal: '已审核',
   stub: '占位资产',
   candidate_retained: '候选保留',
@@ -175,7 +225,6 @@ const statusNames: Record<string, string> = {
   manual_handoff: '人工交接',
   review_received_pending_owner_gate: '等待 Owner Gate',
   asset_layer_present: '资产层已存在',
-  partial_engine: '引擎部分可用',
   research_asset: '研究资产',
   completed: '已完成',
   prepared: '已准备',
@@ -303,6 +352,140 @@ function OverviewView({data, compact}: {data: StudioData; compact: boolean}) {
               />
             ))}
           </List>
+        </VStack>
+      </VStack>
+    </Section>
+  );
+}
+
+function ArchitectureView({data, compact}: {data: StudioData; compact: boolean}) {
+  const architecture = data.architecture_reconciliation;
+  const layerRows: TableRow[] = architecture.architecture_layers.map((layer) => ({
+    id: layer.layer_id,
+    order: layer.order,
+    layer: layer.label_zh,
+    status: statusNames[layer.status] || layer.status,
+    child: layer.child_implementation || '无',
+    purpose: layer.purpose,
+  }));
+  const agentRows: TableRow[] = architecture.agent_role_contract.map((item) => ({
+    id: item.agent,
+    agent: item.agent,
+    status: item.display_status || item.status,
+    role: item.role,
+    boundary: item.execution_boundary,
+  }));
+
+  return (
+    <Section padding={5}>
+      <VStack gap={5}>
+        <Banner
+          status="info"
+          title={`${architecture.fixed_identity.short_name} / ${architecture.fixed_identity.principle}`}
+          description={architecture.fixed_identity.positioning_zh}
+        />
+        <Grid columns={{minWidth: 220, max: 4, repeat: 'fit'}} gap={3}>
+          <SummaryCard label="架构版本" value={architecture.version} />
+          <SummaryCard label="校准依据" value={architecture.experiment_calibration.label_zh} status={architecture.experiment_calibration.status} />
+          <SummaryCard label="v0.3 归位" value={architecture.implementation_alignment.pipeline_layer} />
+          <SummaryCard label="Owner Gate" value={architecture.production_readiness.owner_gate_status} status="blocked" />
+        </Grid>
+        <VStack gap={2}>
+          <HStack gap={2} vAlign="center" wrap="wrap">
+            <Heading level={3}>Corpus-to-Creation 链路</Heading>
+            <Token label={architecture.source_context.conversation_title || 'source context'} color="blue" size="sm" />
+          </HStack>
+          <List density="compact" hasDividers>
+            {architecture.fixed_identity.core_chain.map((item) => (
+              <ListItem key={item} label={item} />
+            ))}
+          </List>
+        </VStack>
+        <VStack gap={2}>
+          <HStack gap={2} vAlign="center" wrap="wrap">
+            <Heading level={3}>十层系统架构</Heading>
+            <Token label={architecture.implementation_alignment.classification} color="teal" size="sm" />
+          </HStack>
+          {compact ? (
+            <List density="compact" hasDividers>
+              {architecture.architecture_layers.map((layer) => (
+                <ListItem
+                  key={layer.layer_id}
+                  label={`${layer.order}. ${layer.label_zh}`}
+                  description={<Text type="supporting" display="block" textWrap="wrap" wordBreak="break-word">{layer.purpose}</Text>}
+                  endContent={<StatusToken status={layer.status} />}
+                />
+              ))}
+            </List>
+          ) : (
+            <Table
+              data={layerRows}
+              idKey="id"
+              density="compact"
+              dividers="rows"
+              hasHover
+              textOverflow="wrap"
+              columns={[
+                {key: 'order', header: '#', width: pixel(56)},
+                {key: 'layer', header: '架构层', width: proportional(1)},
+                {key: 'status', header: '状态', width: pixel(140)},
+                {key: 'child', header: '子实现', width: pixel(190)},
+                {key: 'purpose', header: '职责', width: proportional(2)},
+              ]}
+            />
+          )}
+        </VStack>
+        <Grid columns={{minWidth: 300, max: 2, repeat: 'fit'}} gap={4}>
+          <VStack gap={2}>
+            <Heading level={3}>Core7 小批量试验</Heading>
+            <MetadataList columns="single">
+              <MetadataListItem label="状态">{statusNames[architecture.experiment_calibration.status] || architecture.experiment_calibration.status}</MetadataListItem>
+              <MetadataListItem label="范围">{architecture.experiment_calibration.scope}</MetadataListItem>
+              <MetadataListItem label="生产含义">{architecture.experiment_calibration.production_meaning}</MetadataListItem>
+            </MetadataList>
+          </VStack>
+          <VStack gap={2}>
+            <Heading level={3}>下一架构动作</Heading>
+            <MetadataList columns="single">
+              <MetadataListItem label="动作">{architecture.next_architecture_action.label_zh}</MetadataListItem>
+              <MetadataListItem label="命令">{architecture.next_architecture_action.safe_command}</MetadataListItem>
+              <MetadataListItem label="Hermes">{`Hermes: ${architecture.production_readiness.hermes_execution_status}`}</MetadataListItem>
+            </MetadataList>
+          </VStack>
+        </Grid>
+        <Banner
+          status="warning"
+          title="当前偏差修正"
+          description={architecture.current_mismatch_report.map((item) => `${item.summary} ${item.correction}`).join(' ')}
+        />
+        <VStack gap={2}>
+          <Heading level={3}>Agent 角色边界</Heading>
+          {compact ? (
+            <List density="compact" hasDividers>
+              {architecture.agent_role_contract.map((item) => (
+                <ListItem
+                  key={item.agent}
+                  label={`${item.agent}: ${item.display_status || item.status}`}
+                  description={<Text type="supporting" display="block" textWrap="wrap" wordBreak="break-word">{item.role}</Text>}
+                />
+              ))}
+            </List>
+          ) : (
+            <Table
+              data={agentRows}
+              idKey="id"
+              density="compact"
+              dividers="rows"
+              hasHover
+              textOverflow="wrap"
+              columns={[
+                {key: 'agent', header: 'Agent', width: pixel(150)},
+                {key: 'status', header: '状态', width: pixel(220)},
+                {key: 'role', header: '职责', width: proportional(1)},
+                {key: 'boundary', header: '边界', width: proportional(1)},
+              ]}
+            />
+          )}
         </VStack>
       </VStack>
     </Section>
@@ -806,15 +989,17 @@ function App() {
 
   const content = view === 'overview'
     ? <OverviewView data={data} compact={compact} />
-    : view === 'research'
-      ? <ResearchView data={data} compact={compact} />
-      : view === 'creation'
-        ? <CreationView data={data} compact={compact} />
-        : view === 'pipeline'
-          ? <PipelineView data={data} compact={compact} />
-          : view === 'agents'
-            ? <AgentsView data={data} />
-            : <RuntimeView data={data} live={live} />;
+    : view === 'architecture'
+      ? <ArchitectureView data={data} compact={compact} />
+      : view === 'research'
+        ? <ResearchView data={data} compact={compact} />
+        : view === 'creation'
+          ? <CreationView data={data} compact={compact} />
+          : view === 'pipeline'
+            ? <PipelineView data={data} compact={compact} />
+            : view === 'agents'
+              ? <AgentsView data={data} />
+              : <RuntimeView data={data} live={live} />;
 
   return (
     <Theme theme={neutralTheme}>

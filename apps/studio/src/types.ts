@@ -82,6 +82,70 @@ export type PipelinePlan = {
   content_generation_allowed: boolean;
 };
 
+export type ArchitectureReconciliation = {
+  version: string;
+  source_context: {
+    conversation_title: string;
+    accepted_on: string;
+    source_role: string;
+  };
+  fixed_identity: {
+    short_name: string;
+    principle: string;
+    positioning_zh: string;
+    not_a: string[];
+    core_chain: string[];
+  };
+  architecture_layers: Array<{
+    order: number;
+    layer_id: string;
+    label_zh: string;
+    status: string;
+    purpose: string;
+    child_implementation: string | null;
+  }>;
+  experiment_calibration: {
+    label_zh: string;
+    status: string;
+    scope: string;
+    production_meaning: string;
+  };
+  implementation_alignment: {
+    pipeline_version: string;
+    pipeline_id: string;
+    pipeline_layer: string;
+    classification: string;
+    next_family: string;
+  };
+  agent_role_contract: Array<{
+    agent: string;
+    status: string;
+    display_status?: string;
+    role: string;
+    execution_boundary: string;
+  }>;
+  current_mismatch_report: Array<{
+    mismatch_id: string;
+    severity: string;
+    summary: string;
+    correction: string;
+  }>;
+  production_readiness: {
+    system_mode: string;
+    content_progression: string;
+    owner_gate_required: boolean;
+    owner_gate_status: string;
+    content_generation_allowed: boolean;
+    hermes_execution_status: string;
+  };
+  next_architecture_action: {
+    action_id: string;
+    label_zh: string;
+    safe_command: string;
+    blocked_actions: string[];
+  };
+};
+
 export type StudioData = {
   control_plane: {
     version: string;
@@ -139,6 +203,7 @@ export type StudioData = {
     }>;
     forbidden_actions: string[];
   };
+  architecture_reconciliation: ArchitectureReconciliation;
   corpus_pipeline: {
     version: string;
     pipeline_id: string;

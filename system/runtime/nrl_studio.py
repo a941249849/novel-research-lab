@@ -14,6 +14,8 @@ APP_ROOT = Path(__file__).resolve().parents[2] / "apps/studio"
 SECTION_LABELS = [
     "read-only",
     "系统总览",
+    "系统架构",
+    "#architecture",
     "研究资产",
     "创作资产",
     "生成管线",
@@ -28,6 +30,7 @@ SECTION_LABELS = [
     "Artifact Map",
     "Creation Coverage Matrix",
     "Corpus-to-Creation Pipeline",
+    "Core7 小批量试验",
     "pipeline-status",
     "pipeline-plan --next",
     "Creation Asset Registry",

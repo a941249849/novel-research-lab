@@ -371,4 +371,50 @@ v0.3 remains read-only and infrastructure-only:
 - no raw `novel_training_set/` reads
 - no Hermes or Antigravity execution
 
+## Architecture Reconciliation v0.4
+
+Architecture Reconciliation v0.4 exposes the accepted Novel Research Lab source
+architecture as a read-only runtime contract. It locks the product identity as
+Corpus-to-Creation and classifies v0.3 `corpus_pipeline` as the
+`planning_pipeline` layer under the full architecture, not as the whole system.
+
+Architecture commands:
+
+```bash
+python3 system/runtime/nrl.py architecture-status
+python3 system/runtime/nrl.py studio-data
+python3 system/runtime/nrl.py system-check
+python3 system/runtime/nrl.py studio-build
+```
+
+`architecture-status` returns the ten-layer architecture:
+
+```text
+corpus_layer
+single_book_decomposition
+cross_book_distillation
+research_asset_engine
+original_project_synthesis
+long_form_creation_asset_os
+planning_pipeline
+agent_review_and_production
+runtime_control_plane
+studio_cockpit
+```
+
+The command also records the Core7 small-batch experiment as the accepted
+calibration basis, exposes the current mismatch report, and keeps the agent
+contract explicit:
+
+- Codex: local runtime host, engineering, validation, orchestration.
+- Antigravity: manual external literary review.
+- Hermes: `paused_not_removed`, later writer/literary enrichment only after
+  explicit Owner authorization.
+- Web GPT: architecture review only, not task dispatcher.
+- Owner: gate authority.
+
+v0.4 remains read-only. It does not progress Phase 2F, call Hermes, call
+Antigravity, read `novel_training_set/`, generate prose, or generate final
+creative assets.
+
 GitHub binding is intentionally outside the runtime. Bind the workspace to a confirmed repository first; then `doctor` will report repository root, branch, and remotes. Do not bind this workspace to an unrelated repository.

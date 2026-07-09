@@ -24,6 +24,7 @@ from nrl_creation_schemas import (
     validate_creation_asset_store,
 )
 from nrl_corpus_pipeline import build_pipeline_plan, build_pipeline_status
+from nrl_dna_registry import load_or_build_dna_registry, write_dna_registry
 from nrl_doctor import run_doctor
 from nrl_handoff_packet import write_antigravity_packet
 from nrl_paths import ROOT, runtime_path
@@ -299,6 +300,16 @@ def cmd_pipeline_plan(args: argparse.Namespace) -> int:
 
 def cmd_architecture_status(_: argparse.Namespace) -> int:
     print_json(build_architecture_reconciliation(load_state(), load_adapters()))
+    return 0
+
+
+def cmd_dna_registry_build(_: argparse.Namespace) -> int:
+    print_json(write_dna_registry(load_state()))
+    return 0
+
+
+def cmd_dna_registry(_: argparse.Namespace) -> int:
+    print_json(load_or_build_dna_registry(load_state()))
     return 0
 
 
@@ -680,6 +691,8 @@ def build_parser() -> argparse.ArgumentParser:
     pipeline_target.add_argument("--next", action="store_true")
     pipeline_plan.set_defaults(func=cmd_pipeline_plan)
     sub.add_parser("architecture-status").set_defaults(func=cmd_architecture_status)
+    sub.add_parser("dna-registry-build").set_defaults(func=cmd_dna_registry_build)
+    sub.add_parser("dna-registry").set_defaults(func=cmd_dna_registry)
     sub.add_parser("doctor").set_defaults(func=cmd_doctor)
     sub.add_parser("advance").set_defaults(func=cmd_advance)
     owner = sub.add_parser("owner-gate")

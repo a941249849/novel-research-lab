@@ -75,6 +75,7 @@ def build_corpus_inventory(include_hashes: bool = False) -> dict[str, Any]:
 
 def build_proof_status() -> dict[str, Any]:
     inventory = build_corpus_inventory(include_hashes=False)
+    latest_validation = load_latest_validation()
     return {
         "version": VERSION,
         "job_id": JOB_ID,
@@ -82,7 +83,8 @@ def build_proof_status() -> dict[str, Any]:
         "corpus_inventory": inventory,
         "required_receipts": inventory["file_count"],
         "required_phases": list(REQUIRED_PHASES),
-        "latest_validation": load_latest_validation(),
+        "latest_validation": latest_validation,
+        "promotion_readiness": build_promotion_readiness(latest_validation),
         "promotion_allowed": False,
         "commands": {
             "pack": "python3 system/runtime/nrl.py full-corpus-proof-pack --all",
@@ -102,6 +104,29 @@ def load_latest_validation() -> dict[str, Any] | None:
             "valid": False,
             "path": _relative_to_root(VALIDATION_PATH),
         }
+
+
+def build_promotion_readiness(latest_validation: dict[str, Any] | None) -> dict[str, Any]:
+    proof_verified = bool(latest_validation and latest_validation.get("status") == "proof_verified")
+    required = int(latest_validation.get("required_receipts", 0)) if latest_validation else 0
+    verified = int(latest_validation.get("verified_receipts", 0)) if latest_validation else 0
+    return {
+        "status": "blocked_on_owner_gate" if proof_verified else "blocked_on_proof_verification",
+        "proof_verified": proof_verified,
+        "verified_receipts": verified,
+        "required_receipts": required,
+        "promotion_allowed": False,
+        "next_required_action": (
+            "Owner must explicitly authorize research-asset promotion."
+            if proof_verified
+            else "Complete full-corpus proof verification before promotion."
+        ),
+        "forbidden_actions": [
+            "auto_promote_research_assets",
+            "generate_novel_prose",
+            "execute_hermes",
+        ],
+    }
 
 
 def _resolve_repo_path(file_arg: str) -> Path:

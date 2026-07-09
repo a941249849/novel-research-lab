@@ -172,6 +172,9 @@ class FullCorpusProofGateV08Tests(unittest.TestCase):
         self.assertEqual(data["latest_validation"]["status"], "proof_verified")
         self.assertEqual(data["latest_validation"]["verified_receipts"], 2)
         self.assertEqual(data["latest_validation"]["required_receipts"], 2)
+        self.assertEqual(data["promotion_readiness"]["status"], "blocked_on_owner_gate")
+        self.assertTrue(data["promotion_readiness"]["proof_verified"])
+        self.assertFalse(data["promotion_readiness"]["promotion_allowed"])
 
     def test_validate_rejects_missing_phase_chunk_coverage(self):
         receipt = self.valid_receipt(self.book_a, "测试甲")

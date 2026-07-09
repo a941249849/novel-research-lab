@@ -2167,6 +2167,69 @@
       "content_generation_allowed": false
     }
   },
+  "dna_production_runtime": {
+    "version": "0.5",
+    "system_mode": "SYSTEM_HARDENING",
+    "content_progression": "FROZEN_AT_OWNER_GATE",
+    "owner_gate": {
+      "required": true,
+      "status": "REQUIRED_PENDING_ACKNOWLEDGEMENT"
+    },
+    "dna_registry": {
+      "total_entries": 97,
+      "by_family": {
+        "book_dna": 18,
+        "mechanism_dna": 42,
+        "narrative_dna": 18,
+        "project_dna": 1,
+        "state_dna": 18
+      },
+      "by_promotion_state": {
+        "blocked": 1,
+        "promoted": 63,
+        "stub": 33
+      }
+    },
+    "rag_index": {
+      "total_items": 96,
+      "by_asset_type": {
+        "book_dna": 18,
+        "mechanism_dna": 42,
+        "narrative_dna": 18,
+        "state_dna": 18
+      },
+      "by_evidence_weight": {
+        "1": 33,
+        "3": 63
+      }
+    },
+    "agent_jobs": {
+      "total_jobs": 1,
+      "by_state": {
+        "ready_for_antigravity": 1
+      },
+      "by_family": {
+        "techniques": 1
+      }
+    },
+    "current_packets": [
+      "system/agent_ops/packets/job-v05-techniques-antigravity-review.md"
+    ],
+    "agent_io": {
+      "inbox_dir": "system/agent_ops/inbox",
+      "outbox_dir": "system/agent_ops/outbox",
+      "inbox_count": 1,
+      "outbox_count": 1
+    },
+    "antigravity": {
+      "mode": "manual_handoff",
+      "status": "manual_external_review"
+    },
+    "hermes": {
+      "status": "paused_not_removed",
+      "allowed": false
+    }
+  },
   "system_identity": {
     "name": "Novel Research Lab",
     "positioning": "Corpus-to-Creation engine for Chinese long-form web novel creation.",

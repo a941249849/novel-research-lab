@@ -185,6 +185,48 @@ The validator requires the v0.7 JSON Manifest, all nine creation asset
 families, at least one book review, at least one cross-book mechanism, and no
 forbidden content-generation markers. Hermes remains paused after validation.
 
+## Antigravity CLI Bridge v0.8
+
+Use this when Codex needs to send a bounded task file to Antigravity CLI and
+capture the response as a repo artifact. This bridge calls only `agy -p`; it is
+not arbitrary shell execution and it does not operate the Antigravity GUI.
+
+Check bridge availability:
+
+```bash
+python3 system/runtime/nrl.py antigravity-bridge-status
+```
+
+Write a request file:
+
+```bash
+mkdir -p .agent-handoff/antigravity/requests .agent-handoff/antigravity/responses
+cat > .agent-handoff/antigravity/requests/nrl-review.md <<'EOF'
+Review the current NRL runtime state and return a structured markdown report.
+Do not write creative prose. Do not advance Owner Gate.
+EOF
+```
+
+Send it to Antigravity and save the response:
+
+```bash
+python3 system/runtime/nrl.py antigravity-bridge-ask \
+  --request-file .agent-handoff/antigravity/requests/nrl-review.md \
+  --output-file .agent-handoff/antigravity/responses/nrl-review.md \
+  --print-timeout 5m0s
+```
+
+The last run metadata is written to:
+
+```text
+system/agent_ops/antigravity_bridge_last_run.v0.8.json
+```
+
+The bridge should be used for bounded review, proof-gated reading tasks, and
+second-opinion architecture critique. It should not be used for prose
+generation, Owner Gate bypass, or unrestricted full-corpus claims without a
+separate proof-of-work validator.
+
 ## Owner Gate Rules
 
 Owner Gate is required when:

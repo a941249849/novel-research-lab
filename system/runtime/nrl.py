@@ -25,6 +25,7 @@ from nrl_agent_ops import (
     validate_agent_job,
     write_agent_packet,
 )
+from nrl_antigravity_bridge import ask_antigravity, build_antigravity_bridge_status
 from nrl_asset_producers import build_producer_status, produce_technique_candidates
 from nrl_capabilities import build_hardening_status
 from nrl_creation_assets import load_creation_asset_registry
@@ -400,6 +401,21 @@ def cmd_antigravity_full_corpus_validate(_: argparse.Namespace) -> int:
     result = validate_full_corpus_output()
     print_json(result)
     return 0 if result["valid"] else 1
+
+
+def cmd_antigravity_bridge_status(_: argparse.Namespace) -> int:
+    print_json(build_antigravity_bridge_status())
+    return 0
+
+
+def cmd_antigravity_bridge_ask(args: argparse.Namespace) -> int:
+    result = ask_antigravity(
+        args.request_file,
+        output_file=args.output_file,
+        print_timeout=args.print_timeout,
+    )
+    print_json(result)
+    return 0
 
 
 def cmd_studio_serve(args: argparse.Namespace) -> int:
@@ -817,6 +833,14 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("antigravity-full-corpus-validate").set_defaults(
         func=cmd_antigravity_full_corpus_validate
     )
+    sub.add_parser("antigravity-bridge-status").set_defaults(
+        func=cmd_antigravity_bridge_status
+    )
+    antigravity_bridge_ask = sub.add_parser("antigravity-bridge-ask")
+    antigravity_bridge_ask.add_argument("--request-file", required=True)
+    antigravity_bridge_ask.add_argument("--output-file")
+    antigravity_bridge_ask.add_argument("--print-timeout", default="5m0s")
+    antigravity_bridge_ask.set_defaults(func=cmd_antigravity_bridge_ask)
     sub.add_parser("doctor").set_defaults(func=cmd_doctor)
     sub.add_parser("advance").set_defaults(func=cmd_advance)
     owner = sub.add_parser("owner-gate")

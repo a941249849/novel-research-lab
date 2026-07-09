@@ -17,6 +17,7 @@ from nrl_system_status import build_system_status
 
 VERSION = "0.3"
 EVIDENCE_PACK_VERSION = "0.10"
+EVIDENCE_PACK_MATRIX_VERSION = "0.11"
 EVIDENCE_PACK_DIR = runtime_path("system/research_assets/evidence_packs")
 FAMILY_PRIORITY = (
     "characters",
@@ -523,4 +524,97 @@ def validate_evidence_pack(pack: dict[str, Any]) -> dict[str, Any]:
         "valid": not errors,
         "checks": checks,
         "errors": errors,
+    }
+
+
+def build_evidence_pack_matrix(
+    state: dict[str, Any],
+    adapters: dict[str, Any],
+) -> dict[str, Any]:
+    family_items: dict[str, dict[str, Any]] = {}
+    for family in FAMILY_PRIORITY:
+        pack = build_evidence_pack(state, adapters, family=family)
+        validation = validate_evidence_pack(pack)
+        family_items[family] = {
+            "family": family,
+            "label": pack["label"],
+            "status": pack["status"],
+            "output_path": pack["output_path"],
+            "schema_path": pack["schema_contract"]["path"],
+            "evidence_item_count": pack["evidence_summary"]["item_count"],
+            "validation_status": "valid" if validation["valid"] else "invalid",
+            "validation_error_count": len(validation["errors"]),
+            "content_generation_allowed": pack["content_generation_allowed"],
+            "external_agent_execution_allowed": pack[
+                "external_agent_execution_allowed"
+            ],
+            "full_corpus_proof_status": pack["promotion_dependencies"][
+                "full_corpus_proof"
+            ]["status"],
+        }
+    invalid_families = sorted(
+        family
+        for family, item in family_items.items()
+        if item["validation_status"] != "valid"
+    )
+    return {
+        "version": EVIDENCE_PACK_MATRIX_VERSION,
+        "matrix_id": f"evidence-pack-matrix-v{EVIDENCE_PACK_MATRIX_VERSION}",
+        "pipeline_id": "corpus-to-creation",
+        "project": state.get("selected_project", "UNKNOWN_PROJECT"),
+        "mode": build_system_status(state, adapters)["operating_mode"],
+        "content_progression": build_system_status(state, adapters)[
+            "content_progression"
+        ],
+        "output_path": (
+            f"system/research_assets/evidence_packs/manifest.v{EVIDENCE_PACK_MATRIX_VERSION}.json"
+        ),
+        "family_count": len(family_items),
+        "valid_family_count": len(family_items) - len(invalid_families),
+        "invalid_families": invalid_families,
+        "families": family_items,
+        "content_generation_allowed": False,
+        "external_agent_execution_allowed": False,
+        "owner_gate_required": True,
+    }
+
+
+def write_evidence_pack_matrix(matrix: dict[str, Any], state: dict[str, Any], adapters: dict[str, Any]) -> dict[str, Any]:
+    for family in FAMILY_PRIORITY:
+        write_evidence_pack(build_evidence_pack(state, adapters, family=family))
+    output_path = runtime_path(str(matrix["output_path"]))
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(
+        json.dumps(matrix, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    return matrix
+
+
+def validate_all_evidence_packs(
+    state: dict[str, Any],
+    adapters: dict[str, Any],
+) -> dict[str, Any]:
+    families: dict[str, dict[str, Any]] = {}
+    for family in FAMILY_PRIORITY:
+        pack = build_evidence_pack(state, adapters, family=family)
+        validation = validate_evidence_pack(pack)
+        families[family] = {
+            "family": family,
+            "valid": validation["valid"],
+            "check_count": len(validation["checks"]),
+            "error_count": len(validation["errors"]),
+            "checks": validation["checks"],
+        }
+    invalid_families = sorted(
+        family for family, validation in families.items() if not validation["valid"]
+    )
+    return {
+        "version": EVIDENCE_PACK_MATRIX_VERSION,
+        "mode": "all",
+        "valid": not invalid_families,
+        "family_count": len(families),
+        "valid_family_count": len(families) - len(invalid_families),
+        "invalid_families": invalid_families,
+        "families": families,
     }

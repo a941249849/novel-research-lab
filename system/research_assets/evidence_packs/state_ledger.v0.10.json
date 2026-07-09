@@ -1,0 +1,333 @@
+{
+  "version": "0.10",
+  "evidence_pack_id": "evidence-pack-state_ledger-v0.10",
+  "pipeline_id": "corpus-to-creation-state_ledger",
+  "project": "《借天改命账》",
+  "mode": "SYSTEM_HARDENING",
+  "content_progression": "FROZEN_AT_OWNER_GATE",
+  "family": "state_ledger",
+  "label": "State Ledger",
+  "status": "ready_for_contract_planning",
+  "output_path": "system/research_assets/evidence_packs/state_ledger.v0.10.json",
+  "schema_contract": {
+    "family": "state_ledger",
+    "draft": "http://json-schema.org/draft-07/schema#",
+    "path": "system/creation_assets/schemas/state_ledger.schema.json",
+    "payload_key": "state_ledger",
+    "valid": true
+  },
+  "research_query": {
+    "asset_types": [
+      "state_ledger",
+      "book_dna",
+      "narrative_dna"
+    ],
+    "categories": [
+      "反噬/代价/污染机制",
+      "资源与资产机制"
+    ],
+    "review_state": "formal_or_reviewed"
+  },
+  "evidence_requirements": {
+    "minimum_items": 3,
+    "structured_only": true,
+    "raw_corpus_allowed": false,
+    "evidence_status": "ready"
+  },
+  "evidence_summary": {
+    "item_count": 18,
+    "source_paths": [
+      "phase1/02_book_dna/一念永恒_dna.json",
+      "phase1/02_book_dna/不死不灭_dna.json",
+      "phase1/02_book_dna/人道至尊_dna.json",
+      "phase1/02_book_dna/仙逆_dna.json",
+      "phase1/02_book_dna/凡人修仙传_dna.json",
+      "phase1/02_book_dna/圣墟_dna.json",
+      "phase1/02_book_dna/斗破苍穹_dna.json",
+      "phase1/02_book_dna/求魔_dna.json",
+      "phase1/02_book_dna/蛊真人_dna.json",
+      "phase1/02_book_dna/诡秘之主_dna.json",
+      "phase1/02_book_dna/遮天_dna.json",
+      "phase1/04_mechanism_library/core7_mechanism_inventory.json"
+    ],
+    "structured_only": true,
+    "raw_corpus_allowed": false
+  },
+  "research_evidence": [
+    {
+      "asset_id": "mechanism-dpcq-m3",
+      "title": "斗破苍穹",
+      "asset_type": "mechanism",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [
+        "资源与资产机制"
+      ],
+      "mechanism_id": "DPCQ-M3",
+      "mechanism_name": "亏损型导师外挂",
+      "exists": true
+    },
+    {
+      "asset_id": "mechanism-frxxz-m2",
+      "title": "凡人修仙传",
+      "asset_type": "mechanism",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [
+        "资源与资产机制"
+      ],
+      "mechanism_id": "FRXXZ-M2",
+      "mechanism_name": "隐秘资产长期复利",
+      "exists": true
+    },
+    {
+      "asset_id": "mechanism-gzr-m4",
+      "title": "蛊真人",
+      "asset_type": "mechanism",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [
+        "反噬/代价/污染机制"
+      ],
+      "mechanism_id": "GZR-M4",
+      "mechanism_name": "运势反噬压力",
+      "exists": true
+    },
+    {
+      "asset_id": "mechanism-qm-m2",
+      "title": "求魔",
+      "asset_type": "mechanism",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [
+        "反噬/代价/污染机制"
+      ],
+      "mechanism_id": "QM-M2",
+      "mechanism_name": "资格缺失内伤",
+      "exists": true
+    },
+    {
+      "asset_id": "mechanism-qm-m3",
+      "title": "求魔",
+      "asset_type": "mechanism",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [
+        "资源与资产机制"
+      ],
+      "mechanism_id": "QM-M3",
+      "mechanism_name": "异物触发真相",
+      "exists": true
+    },
+    {
+      "asset_id": "mechanism-rdzz-m2",
+      "title": "人道至尊",
+      "asset_type": "mechanism",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [
+        "资源与资产机制"
+      ],
+      "mechanism_id": "RDZZ-M2",
+      "mechanism_name": "传承火种解封",
+      "exists": true
+    },
+    {
+      "asset_id": "mechanism-zt-m2",
+      "title": "遮天",
+      "asset_type": "mechanism",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [
+        "资源与资产机制"
+      ],
+      "mechanism_id": "ZT-M2",
+      "mechanism_name": "旧时代资源坟场",
+      "exists": true
+    },
+    {
+      "asset_id": "phase1-book_dna-001",
+      "title": "遮天",
+      "asset_type": "book_dna",
+      "source_path": "phase1/02_book_dna/遮天_dna.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [],
+      "exists": true
+    },
+    {
+      "asset_id": "phase1-book_dna-005",
+      "title": "蛊真人",
+      "asset_type": "book_dna",
+      "source_path": "phase1/02_book_dna/蛊真人_dna.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [],
+      "exists": true
+    },
+    {
+      "asset_id": "phase1-book_dna-009",
+      "title": "人道至尊",
+      "asset_type": "book_dna",
+      "source_path": "phase1/02_book_dna/人道至尊_dna.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [],
+      "exists": true
+    },
+    {
+      "asset_id": "phase1-book_dna-013",
+      "title": "凡人修仙传",
+      "asset_type": "book_dna",
+      "source_path": "phase1/02_book_dna/凡人修仙传_dna.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [],
+      "exists": true
+    },
+    {
+      "asset_id": "phase1-book_dna-017",
+      "title": "斗破苍穹",
+      "asset_type": "book_dna",
+      "source_path": "phase1/02_book_dna/斗破苍穹_dna.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [],
+      "exists": true
+    },
+    {
+      "asset_id": "phase1-book_dna-021",
+      "title": "诡秘之主",
+      "asset_type": "book_dna",
+      "source_path": "phase1/02_book_dna/诡秘之主_dna.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [],
+      "exists": true
+    },
+    {
+      "asset_id": "phase1-book_dna-025",
+      "title": "求魔",
+      "asset_type": "book_dna",
+      "source_path": "phase1/02_book_dna/求魔_dna.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [],
+      "exists": true
+    },
+    {
+      "asset_id": "phase1-book_dna-036",
+      "title": "一念永恒",
+      "asset_type": "book_dna",
+      "source_path": "phase1/02_book_dna/一念永恒_dna.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "categories": [],
+      "exists": true
+    },
+    {
+      "asset_id": "phase1-book_dna-039",
+      "title": "不死不灭",
+      "asset_type": "book_dna",
+      "source_path": "phase1/02_book_dna/不死不灭_dna.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "categories": [],
+      "exists": true
+    },
+    {
+      "asset_id": "phase1-book_dna-042",
+      "title": "仙逆",
+      "asset_type": "book_dna",
+      "source_path": "phase1/02_book_dna/仙逆_dna.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "categories": [],
+      "exists": true
+    },
+    {
+      "asset_id": "phase1-book_dna-045",
+      "title": "圣墟",
+      "asset_type": "book_dna",
+      "source_path": "phase1/02_book_dna/圣墟_dna.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "categories": [],
+      "exists": true
+    }
+  ],
+  "validation_gates": [
+    {
+      "gate_id": "schema_validation",
+      "description": "Draft-07 family schema must validate the asset envelope and payload."
+    },
+    {
+      "gate_id": "source_evidence",
+      "description": "Plan must retain structured research evidence and source paths."
+    },
+    {
+      "gate_id": "reference_integrity",
+      "description": "Cross-asset references must resolve before any asset can be promoted."
+    },
+    {
+      "gate_id": "naming_collision",
+      "description": "Normalized names must not collide across the project asset store."
+    },
+    {
+      "gate_id": "lifecycle_transition",
+      "description": "Lifecycle transitions must follow the creation asset contract."
+    },
+    {
+      "gate_id": "owner_gate",
+      "description": "Owner Gate must remain active before prose or final asset generation."
+    }
+  ],
+  "promotion_dependencies": {
+    "full_corpus_proof": {
+      "job_id": "job-v08-full-corpus-proof-review",
+      "status": "blocked_on_owner_gate",
+      "proof_verified": true,
+      "verified_receipts": 18,
+      "required_receipts": 18,
+      "promotion_allowed": false,
+      "next_required_action": "Owner must explicitly authorize research-asset promotion."
+    }
+  },
+  "agent_review_policy": {
+    "codex": "local_validation_orchestration",
+    "antigravity": "manual_handoff",
+    "hermes": "paused_not_removed",
+    "web_gpt": "architecture_review_only"
+  },
+  "owner_gate": {
+    "required": true,
+    "status": "REQUIRED_PENDING_ACKNOWLEDGEMENT"
+  },
+  "blocked_actions": [
+    "advance content state",
+    "bypass Phase 2E planning constraints",
+    "execute-antigravity",
+    "execute-hermes",
+    "execute_antigravity",
+    "execute_hermes",
+    "freely read novel_training_set",
+    "generate final creative assets",
+    "generate full character cards",
+    "generate_final_creation_assets",
+    "generate_novel_prose",
+    "ignore Antigravity required fixes",
+    "invent chapter-by-chapter events",
+    "read_raw_novel_training_set",
+    "write first chapter",
+    "write novel prose"
+  ],
+  "content_generation_allowed": false,
+  "external_agent_execution_allowed": false
+}

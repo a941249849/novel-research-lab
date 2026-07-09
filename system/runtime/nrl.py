@@ -35,11 +35,14 @@ from nrl_creation_schemas import (
 )
 from nrl_corpus_pipeline import (
     build_evidence_pack,
+    build_evidence_pack_matrix,
     build_pipeline_plan,
     build_pipeline_status,
     load_evidence_pack,
+    validate_all_evidence_packs,
     validate_evidence_pack,
     write_evidence_pack,
+    write_evidence_pack_matrix,
 )
 from nrl_dna_registry import load_or_build_dna_registry, write_dna_registry
 from nrl_doctor import run_doctor
@@ -343,6 +346,10 @@ def cmd_evidence_pack(args: argparse.Namespace) -> int:
 
 
 def cmd_evidence_pack_validate(args: argparse.Namespace) -> int:
+    if args.all:
+        validation = validate_all_evidence_packs(load_state(), load_adapters())
+        print_json(validation)
+        return 0 if validation["valid"] else 1
     if args.file:
         pack = load_evidence_pack(args.file)
     else:
@@ -355,6 +362,16 @@ def cmd_evidence_pack_validate(args: argparse.Namespace) -> int:
     validation = validate_evidence_pack(pack)
     print_json(validation)
     return 0 if validation["valid"] else 1
+
+
+def cmd_evidence_pack_matrix(args: argparse.Namespace) -> int:
+    state = load_state()
+    adapters = load_adapters()
+    matrix = build_evidence_pack_matrix(state, adapters)
+    if args.write:
+        matrix = write_evidence_pack_matrix(matrix, state, adapters)
+    print_json(matrix)
+    return 0 if matrix["valid_family_count"] == matrix["family_count"] else 1
 
 
 def cmd_architecture_status(_: argparse.Namespace) -> int:
@@ -875,7 +892,11 @@ def build_parser() -> argparse.ArgumentParser:
     evidence_pack_validate_target.add_argument("--family")
     evidence_pack_validate_target.add_argument("--next", action="store_true")
     evidence_pack_validate_target.add_argument("--file")
+    evidence_pack_validate_target.add_argument("--all", action="store_true")
     evidence_pack_validate.set_defaults(func=cmd_evidence_pack_validate)
+    evidence_pack_matrix = sub.add_parser("evidence-pack-matrix")
+    evidence_pack_matrix.add_argument("--write", action="store_true")
+    evidence_pack_matrix.set_defaults(func=cmd_evidence_pack_matrix)
     sub.add_parser("architecture-status").set_defaults(func=cmd_architecture_status)
     sub.add_parser("dna-registry-build").set_defaults(func=cmd_dna_registry_build)
     sub.add_parser("dna-registry").set_defaults(func=cmd_dna_registry)

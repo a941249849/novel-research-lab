@@ -161,6 +161,35 @@ export type EvidencePack = {
   external_agent_execution_allowed: boolean;
 };
 
+export type EvidencePackMatrix = {
+  version: string;
+  matrix_id: string;
+  pipeline_id: string;
+  project: string;
+  mode: string;
+  content_progression: string;
+  output_path: string;
+  family_count: number;
+  valid_family_count: number;
+  invalid_families: string[];
+  families: Record<string, {
+    family: string;
+    label: string;
+    status: string;
+    output_path: string;
+    schema_path: string;
+    evidence_item_count: number;
+    validation_status: string;
+    validation_error_count: number;
+    content_generation_allowed: boolean;
+    external_agent_execution_allowed: boolean;
+    full_corpus_proof_status: string;
+  }>;
+  content_generation_allowed: boolean;
+  external_agent_execution_allowed: boolean;
+  owner_gate_required: boolean;
+};
+
 export type ArchitectureReconciliation = {
   version: string;
   source_context: {
@@ -296,6 +325,7 @@ export type StudioData = {
     forbidden_actions: string[];
     next_plan: PipelinePlan;
     next_evidence_pack: EvidencePack;
+    evidence_pack_matrix: EvidencePackMatrix;
   };
   system_identity: {
     name: string;

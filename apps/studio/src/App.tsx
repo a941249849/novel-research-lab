@@ -200,6 +200,22 @@ const EMPTY_DATA = {
       content_generation_allowed: false,
       external_agent_execution_allowed: false,
     },
+    evidence_pack_matrix: {
+      version: '0.11',
+      matrix_id: 'evidence-pack-matrix-v0.11',
+      pipeline_id: 'corpus-to-creation',
+      project: 'UNKNOWN_PROJECT',
+      mode: 'UNKNOWN_MODE',
+      content_progression: 'UNKNOWN',
+      output_path: '',
+      family_count: 0,
+      valid_family_count: 0,
+      invalid_families: [],
+      families: {},
+      content_generation_allowed: false,
+      external_agent_execution_allowed: false,
+      owner_gate_required: true,
+    },
   },
   system_identity: {name: 'Novel Research Lab', positioning: 'Corpus-to-Creation', not_a: [], core_chain: []},
   current_project: {
@@ -772,10 +788,19 @@ function PipelineView({data, compact}: {data: StudioData; compact: boolean}) {
   }));
   const plan = data.corpus_pipeline.next_plan;
   const pack = data.corpus_pipeline.next_evidence_pack;
+  const matrix = data.corpus_pipeline.evidence_pack_matrix;
   const gateRows: TableRow[] = plan.validation_gates.map((item) => ({
     id: item.gate_id,
     gate: statusNames[item.gate_id] || item.gate_id,
     description: item.description,
+  }));
+  const packRows: TableRow[] = Object.values(matrix.families).map((item) => ({
+    id: item.family,
+    family: item.label,
+    evidence: item.evidence_item_count,
+    validation: item.validation_status,
+    proof: item.full_corpus_proof_status,
+    path: item.output_path,
   }));
   return (
     <Section padding={5}>
@@ -876,6 +901,42 @@ function PipelineView({data, compact}: {data: StudioData; compact: boolean}) {
             </MetadataList>
           </VStack>
         </Grid>
+        <VStack gap={2}>
+          <HStack gap={2} vAlign="center" wrap="wrap">
+            <Heading level={3}>证据包矩阵</Heading>
+            <Token label={`${matrix.valid_family_count}/${matrix.family_count}`} color="green" size="sm" />
+            <Token label={matrix.matrix_id} color="blue" size="sm" />
+          </HStack>
+          {compact ? (
+            <List density="compact" hasDividers>
+              {Object.values(matrix.families).map((item) => (
+                <ListItem
+                  key={item.family}
+                  label={`${item.label} · ${item.evidence_item_count}`}
+                  description={<Text type="supporting" display="block" textWrap="wrap" wordBreak="break-word">{item.output_path}</Text>}
+                  endContent={<StatusToken status={item.validation_status} />}
+                />
+              ))}
+            </List>
+          ) : (
+            <Table
+              data={packRows}
+              idKey="id"
+              density="compact"
+              dividers="rows"
+              isStriped
+              hasHover
+              textOverflow="wrap"
+              columns={[
+                {key: 'family', header: 'Family', width: pixel(150)},
+                {key: 'evidence', header: '证据', width: pixel(80)},
+                {key: 'validation', header: '校验', width: pixel(110)},
+                {key: 'proof', header: '语料证明', width: pixel(160)},
+                {key: 'path', header: '路径', width: proportional(3)},
+              ]}
+            />
+          )}
+        </VStack>
         <Grid columns={{minWidth: 300, max: 2, repeat: 'fit'}} gap={4}>
           <VStack gap={2}>
             <Heading level={3}>禁止动作</Heading>

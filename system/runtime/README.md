@@ -607,6 +607,8 @@ python3 system/runtime/nrl.py pipeline-plan --family techniques
 python3 system/runtime/nrl.py evidence-pack --next
 python3 system/runtime/nrl.py evidence-pack --next --write
 python3 system/runtime/nrl.py evidence-pack-validate --next
+python3 system/runtime/nrl.py evidence-pack-validate --all
+python3 system/runtime/nrl.py evidence-pack-matrix --write
 python3 system/runtime/nrl.py evidence-pack-validate --file system/research_assets/evidence_packs/naming.v0.10.json
 ```
 
@@ -621,6 +623,10 @@ corpus text or generating final creative assets. `evidence-pack-validate`
 actively enforces schema validity, source evidence existence, raw corpus
 boundaries, current creation asset store consistency, Owner Gate, and external
 agent execution boundaries before a pack can be treated as usable downstream.
+`evidence-pack-matrix --write` materializes guarded evidence packages for all
+nine creation asset families and writes
+`system/research_assets/evidence_packs/manifest.v0.11.json` as the all-family
+input manifest for downstream Corpus-to-Creation planning.
 
 The current expected next family is derived from the creation coverage matrix
 by readiness score and stable family priority. At the current Phase 2E Owner

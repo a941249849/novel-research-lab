@@ -12,6 +12,7 @@ from nrl_asset_producers import build_producer_status
 from nrl_creation_schemas import build_creation_schema_registry
 from nrl_corpus_pipeline import (
     build_evidence_pack,
+    build_evidence_pack_matrix,
     build_pipeline_plan,
     build_pipeline_status,
 )
@@ -92,11 +93,19 @@ def _evidence_pack(query: str) -> dict[str, Any]:
     )
 
 
+def _evidence_pack_matrix() -> dict[str, Any]:
+    return build_evidence_pack_matrix(
+        _load_json(STATE_PATH),
+        _load_json(ADAPTERS_PATH),
+    )
+
+
 GET_ROUTES: dict[str, Callable[[], dict[str, Any]]] = {
     "/api/studio-data": _studio_data,
     "/api/research-assets": build_research_asset_catalog,
     "/api/creation-schemas": build_creation_schema_registry,
     "/api/pipeline-status": _pipeline_status,
+    "/api/evidence-pack-matrix": _evidence_pack_matrix,
     "/api/dna-registry": _dna_registry,
     "/api/rag-index": _rag_index,
     "/api/agent-jobs": load_job_queue,

@@ -1,0 +1,332 @@
+{
+  "version": "0.10",
+  "evidence_pack_id": "evidence-pack-foreshadowing-v0.10",
+  "pipeline_id": "corpus-to-creation-foreshadowing",
+  "project": "《借天改命账》",
+  "mode": "SYSTEM_HARDENING",
+  "content_progression": "FROZEN_AT_OWNER_GATE",
+  "family": "foreshadowing",
+  "label": "Foreshadowing",
+  "status": "ready_for_contract_planning",
+  "output_path": "system/research_assets/evidence_packs/foreshadowing.v0.10.json",
+  "schema_contract": {
+    "family": "foreshadowing",
+    "draft": "http://json-schema.org/draft-07/schema#",
+    "path": "system/creation_assets/schemas/foreshadowing.schema.json",
+    "payload_key": "foreshadowing",
+    "valid": true
+  },
+  "research_query": {
+    "asset_types": [
+      "narrative_dna",
+      "state_ledger"
+    ],
+    "categories": [
+      "探索/谜团/知识机制",
+      "隐藏实力与信息差机制"
+    ],
+    "review_state": "formal_or_reviewed"
+  },
+  "evidence_requirements": {
+    "minimum_items": 3,
+    "structured_only": true,
+    "raw_corpus_allowed": false,
+    "evidence_status": "ready"
+  },
+  "evidence_summary": {
+    "item_count": 18,
+    "source_paths": [
+      "phase1/02_narrative_dna/一念永恒_narrative.json",
+      "phase1/02_narrative_dna/不死不灭_narrative.json",
+      "phase1/02_narrative_dna/人道至尊_narrative.json",
+      "phase1/02_narrative_dna/仙逆_narrative.json",
+      "phase1/02_narrative_dna/凡人修仙传_narrative.json",
+      "phase1/02_narrative_dna/圣墟_narrative.json",
+      "phase1/02_narrative_dna/斗破苍穹_narrative.json",
+      "phase1/02_narrative_dna/求魔_narrative.json",
+      "phase1/02_narrative_dna/蛊真人_narrative.json",
+      "phase1/02_narrative_dna/诡秘之主_narrative.json",
+      "phase1/02_narrative_dna/遮天_narrative.json",
+      "phase1/04_mechanism_library/core7_mechanism_inventory.json"
+    ],
+    "structured_only": true,
+    "raw_corpus_allowed": false
+  },
+  "research_evidence": [
+    {
+      "asset_id": "mechanism-gmzz-m1",
+      "title": "诡秘之主",
+      "asset_type": "mechanism",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [
+        "探索/谜团/知识机制"
+      ],
+      "mechanism_id": "GMZZ-M1",
+      "mechanism_name": "案发现场苏醒",
+      "exists": true
+    },
+    {
+      "asset_id": "mechanism-gmzz-m4",
+      "title": "诡秘之主",
+      "asset_type": "mechanism",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [
+        "隐藏实力与信息差机制"
+      ],
+      "mechanism_id": "GMZZ-M4",
+      "mechanism_name": "马甲身份隔离",
+      "exists": true
+    },
+    {
+      "asset_id": "mechanism-gmzz-m5",
+      "title": "诡秘之主",
+      "asset_type": "mechanism",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [
+        "探索/谜团/知识机制"
+      ],
+      "mechanism_id": "GMZZ-M5",
+      "mechanism_name": "冰山普通人视角",
+      "exists": true
+    },
+    {
+      "asset_id": "mechanism-gzr-m1",
+      "title": "蛊真人",
+      "asset_type": "mechanism",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [
+        "隐藏实力与信息差机制"
+      ],
+      "mechanism_id": "GZR-M1",
+      "mechanism_name": "失败终局回切先手",
+      "exists": true
+    },
+    {
+      "asset_id": "mechanism-gzr-m2",
+      "title": "蛊真人",
+      "asset_type": "mechanism",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [
+        "隐藏实力与信息差机制"
+      ],
+      "mechanism_id": "GZR-M2",
+      "mechanism_name": "制度漏洞套利",
+      "exists": true
+    },
+    {
+      "asset_id": "mechanism-gzr-m5",
+      "title": "蛊真人",
+      "asset_type": "mechanism",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [
+        "探索/谜团/知识机制"
+      ],
+      "mechanism_id": "GZR-M5",
+      "mechanism_name": "底层规则所有权",
+      "exists": true
+    },
+    {
+      "asset_id": "mechanism-zt-m1",
+      "title": "遮天",
+      "asset_type": "mechanism",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [
+        "探索/谜团/知识机制"
+      ],
+      "mechanism_id": "ZT-M1",
+      "mechanism_name": "现实认知断裂入口",
+      "exists": true
+    },
+    {
+      "asset_id": "phase1-narrative_dna-002",
+      "title": "遮天",
+      "asset_type": "narrative_dna",
+      "source_path": "phase1/02_narrative_dna/遮天_narrative.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [],
+      "exists": true
+    },
+    {
+      "asset_id": "phase1-narrative_dna-006",
+      "title": "蛊真人",
+      "asset_type": "narrative_dna",
+      "source_path": "phase1/02_narrative_dna/蛊真人_narrative.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [],
+      "exists": true
+    },
+    {
+      "asset_id": "phase1-narrative_dna-010",
+      "title": "人道至尊",
+      "asset_type": "narrative_dna",
+      "source_path": "phase1/02_narrative_dna/人道至尊_narrative.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [],
+      "exists": true
+    },
+    {
+      "asset_id": "phase1-narrative_dna-014",
+      "title": "凡人修仙传",
+      "asset_type": "narrative_dna",
+      "source_path": "phase1/02_narrative_dna/凡人修仙传_narrative.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [],
+      "exists": true
+    },
+    {
+      "asset_id": "phase1-narrative_dna-018",
+      "title": "斗破苍穹",
+      "asset_type": "narrative_dna",
+      "source_path": "phase1/02_narrative_dna/斗破苍穹_narrative.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [],
+      "exists": true
+    },
+    {
+      "asset_id": "phase1-narrative_dna-022",
+      "title": "诡秘之主",
+      "asset_type": "narrative_dna",
+      "source_path": "phase1/02_narrative_dna/诡秘之主_narrative.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [],
+      "exists": true
+    },
+    {
+      "asset_id": "phase1-narrative_dna-026",
+      "title": "求魔",
+      "asset_type": "narrative_dna",
+      "source_path": "phase1/02_narrative_dna/求魔_narrative.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [],
+      "exists": true
+    },
+    {
+      "asset_id": "phase1-narrative_dna-037",
+      "title": "一念永恒",
+      "asset_type": "narrative_dna",
+      "source_path": "phase1/02_narrative_dna/一念永恒_narrative.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "categories": [],
+      "exists": true
+    },
+    {
+      "asset_id": "phase1-narrative_dna-040",
+      "title": "不死不灭",
+      "asset_type": "narrative_dna",
+      "source_path": "phase1/02_narrative_dna/不死不灭_narrative.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "categories": [],
+      "exists": true
+    },
+    {
+      "asset_id": "phase1-narrative_dna-043",
+      "title": "仙逆",
+      "asset_type": "narrative_dna",
+      "source_path": "phase1/02_narrative_dna/仙逆_narrative.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "categories": [],
+      "exists": true
+    },
+    {
+      "asset_id": "phase1-narrative_dna-046",
+      "title": "圣墟",
+      "asset_type": "narrative_dna",
+      "source_path": "phase1/02_narrative_dna/圣墟_narrative.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "categories": [],
+      "exists": true
+    }
+  ],
+  "validation_gates": [
+    {
+      "gate_id": "schema_validation",
+      "description": "Draft-07 family schema must validate the asset envelope and payload."
+    },
+    {
+      "gate_id": "source_evidence",
+      "description": "Plan must retain structured research evidence and source paths."
+    },
+    {
+      "gate_id": "reference_integrity",
+      "description": "Cross-asset references must resolve before any asset can be promoted."
+    },
+    {
+      "gate_id": "naming_collision",
+      "description": "Normalized names must not collide across the project asset store."
+    },
+    {
+      "gate_id": "lifecycle_transition",
+      "description": "Lifecycle transitions must follow the creation asset contract."
+    },
+    {
+      "gate_id": "owner_gate",
+      "description": "Owner Gate must remain active before prose or final asset generation."
+    }
+  ],
+  "promotion_dependencies": {
+    "full_corpus_proof": {
+      "job_id": "job-v08-full-corpus-proof-review",
+      "status": "blocked_on_owner_gate",
+      "proof_verified": true,
+      "verified_receipts": 18,
+      "required_receipts": 18,
+      "promotion_allowed": false,
+      "next_required_action": "Owner must explicitly authorize research-asset promotion."
+    }
+  },
+  "agent_review_policy": {
+    "codex": "local_validation_orchestration",
+    "antigravity": "manual_handoff",
+    "hermes": "paused_not_removed",
+    "web_gpt": "architecture_review_only"
+  },
+  "owner_gate": {
+    "required": true,
+    "status": "REQUIRED_PENDING_ACKNOWLEDGEMENT"
+  },
+  "blocked_actions": [
+    "add new plot hooks",
+    "bypass Phase 2E planning constraints",
+    "execute-antigravity",
+    "execute-hermes",
+    "execute_antigravity",
+    "execute_hermes",
+    "freely read novel_training_set",
+    "generate final creative assets",
+    "generate full character cards",
+    "generate_final_creation_assets",
+    "generate_novel_prose",
+    "ignore Antigravity required fixes",
+    "read_raw_novel_training_set",
+    "write first chapter",
+    "write novel prose",
+    "write reveal scenes"
+  ],
+  "content_generation_allowed": false,
+  "external_agent_execution_allowed": false
+}

@@ -150,9 +150,13 @@ class ControlPlaneCliTests(unittest.TestCase):
                 "creation_schemas",
                 "creation_asset_store",
                 "corpus_pipeline",
+                "evidence_pack_matrix",
                 "architecture_reconciliation",
             },
         )
+        matrix = next(check for check in data["checks"] if check["check_id"] == "evidence_pack_matrix")
+        self.assertEqual(matrix["detail"]["family_count"], 9)
+        self.assertEqual(matrix["detail"]["valid_family_count"], 9)
         self.assertEqual(state_path.read_text(encoding="utf-8"), before)
 
 

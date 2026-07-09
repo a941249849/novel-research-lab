@@ -11,7 +11,7 @@ from nrl_creation_schemas import (
     build_creation_schema_registry,
     validate_creation_asset_store,
 )
-from nrl_corpus_pipeline import build_pipeline_status
+from nrl_corpus_pipeline import build_evidence_pack_matrix, build_pipeline_status
 from nrl_paths import runtime_path
 from nrl_research_assets import build_research_asset_catalog
 
@@ -46,6 +46,7 @@ def run_system_check() -> dict[str, Any]:
     schemas = build_creation_schema_registry()
     store = validate_creation_asset_store()
     pipeline = build_pipeline_status(state, adapters)
+    evidence_matrix = build_evidence_pack_matrix(state, adapters)
     architecture = build_architecture_reconciliation(
         state,
         adapters,
@@ -103,6 +104,21 @@ def run_system_check() -> dict[str, Any]:
                 "pipeline_id": pipeline["pipeline_id"],
                 "next_family": pipeline["next_family"]["family"],
                 "stage_count": len(pipeline["stages"]),
+            },
+        },
+        {
+            "check_id": "evidence_pack_matrix",
+            "passed": (
+                evidence_matrix["family_count"] == 9
+                and evidence_matrix["valid_family_count"] == 9
+                and not evidence_matrix["content_generation_allowed"]
+                and not evidence_matrix["external_agent_execution_allowed"]
+            ),
+            "detail": {
+                "matrix_id": evidence_matrix["matrix_id"],
+                "family_count": evidence_matrix["family_count"],
+                "valid_family_count": evidence_matrix["valid_family_count"],
+                "invalid_families": evidence_matrix["invalid_families"],
             },
         },
         {

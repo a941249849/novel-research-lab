@@ -10,6 +10,7 @@ from nrl_creation_assets import load_creation_asset_registry
 from nrl_creation_schemas import build_creation_schema_registry
 from nrl_corpus_pipeline import (
     build_evidence_pack,
+    build_evidence_pack_matrix,
     build_pipeline_plan,
     build_pipeline_status,
 )
@@ -97,6 +98,10 @@ def build_studio_data(
         state,
         adapters,
         next_only=True,
+    )
+    corpus_pipeline["evidence_pack_matrix"] = build_evidence_pack_matrix(
+        state,
+        adapters,
     )
     architecture_reconciliation = build_architecture_reconciliation(
         state,

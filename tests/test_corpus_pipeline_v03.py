@@ -125,6 +125,42 @@ class CorpusPipelineCliTests(unittest.TestCase):
         finally:
             fixture.unlink(missing_ok=True)
 
+    def test_evidence_pack_matrix_writes_all_families_and_manifest(self):
+        output_path = REPO_ROOT / "system/research_assets/evidence_packs/manifest.v0.11.json"
+        if output_path.exists():
+            output_path.unlink()
+        result = self.run_cli("evidence-pack-matrix", "--write")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        matrix = json.loads(result.stdout)
+        self.assertTrue(output_path.exists())
+        self.assertEqual(matrix, json.loads(output_path.read_text(encoding="utf-8")))
+        self.assertEqual(matrix["version"], "0.11")
+        self.assertEqual(matrix["matrix_id"], "evidence-pack-matrix-v0.11")
+        self.assertEqual(matrix["family_count"], len(FAMILIES))
+        self.assertEqual(set(matrix["families"].keys()), set(FAMILIES))
+        self.assertFalse(matrix["content_generation_allowed"])
+        self.assertFalse(matrix["external_agent_execution_allowed"])
+        for family in FAMILIES:
+            with self.subTest(family=family):
+                item = matrix["families"][family]
+                pack_path = REPO_ROOT / item["output_path"]
+                self.assertTrue(pack_path.exists())
+                self.assertEqual(item["family"], family)
+                self.assertGreaterEqual(item["evidence_item_count"], 3)
+                self.assertEqual(item["validation_status"], "valid")
+        self.assertNotIn("novel_training_set/", json.dumps(matrix, ensure_ascii=False))
+
+    def test_evidence_pack_validate_all_reports_all_family_packs_valid(self):
+        result = self.run_cli("evidence-pack-validate", "--all")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        validation = json.loads(result.stdout)
+        self.assertTrue(validation["valid"])
+        self.assertEqual(validation["mode"], "all")
+        self.assertEqual(validation["family_count"], len(FAMILIES))
+        self.assertEqual(validation["valid_family_count"], len(FAMILIES))
+        self.assertEqual(set(validation["families"].keys()), set(FAMILIES))
+        self.assertNotIn("novel_training_set/", json.dumps(validation, ensure_ascii=False))
+
     def test_pipeline_plan_rejects_unknown_family(self):
         result = self.run_cli("pipeline-plan", "--family", "unknown")
         self.assertNotEqual(result.returncode, 0)
@@ -138,6 +174,12 @@ class CorpusPipelineCliTests(unittest.TestCase):
             "corpus_pipeline",
             {check["check_id"] for check in data["checks"]},
         )
+        evidence_matrix = next(
+            check for check in data["checks"] if check["check_id"] == "evidence_pack_matrix"
+        )
+        self.assertTrue(evidence_matrix["passed"])
+        self.assertEqual(evidence_matrix["detail"]["family_count"], len(FAMILIES))
+        self.assertEqual(evidence_matrix["detail"]["valid_family_count"], len(FAMILIES))
 
 
 class CorpusPipelineContractTests(unittest.TestCase):
@@ -204,6 +246,11 @@ class CorpusPipelineStudioTests(unittest.TestCase):
         data = json.loads(result.stdout)
         self.assertIn("corpus_pipeline", data)
         self.assertEqual(data["corpus_pipeline"]["next_family"]["family"], "naming")
+        self.assertIn("evidence_pack_matrix", data["corpus_pipeline"])
+        self.assertEqual(
+            data["corpus_pipeline"]["evidence_pack_matrix"]["family_count"],
+            len(FAMILIES),
+        )
 
     def test_studio_build_contains_pipeline_view_labels(self):
         result = self.run_cli("studio-build")
@@ -240,6 +287,7 @@ class CorpusPipelineServerTests(unittest.TestCase):
             ("/api/pipeline-status", "next_family"),
             ("/api/pipeline-plan?next=true", "target_family"),
             ("/api/pipeline-plan?family=characters", "target_family"),
+            ("/api/evidence-pack-matrix", "families"),
         ):
             status, data = self.request_json(path)
             self.assertEqual(status, 200)

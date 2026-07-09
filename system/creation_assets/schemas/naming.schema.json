@@ -9,12 +9,35 @@
         "family": {"const": "naming"},
         "naming": {
           "type": "object",
+          "required": [
+            "semantic_field",
+            "naming_roots",
+            "form_rules",
+            "forbidden_collisions",
+            "forbidden_terms",
+            "originality_policy"
+          ],
           "properties": {
-            "semantic_field": {"type": "string"},
+            "semantic_field": {"type": "string", "minLength": 1},
+            "naming_roots": {
+              "type": "array",
+              "minItems": 1,
+              "items": {"type": "string", "minLength": 1}
+            },
+            "form_rules": {
+              "type": "array",
+              "minItems": 1,
+              "items": {"type": "string", "minLength": 1}
+            },
             "forbidden_collisions": {
               "type": "array",
               "items": {"type": "string"}
-            }
+            },
+            "forbidden_terms": {
+              "type": "array",
+              "items": {"type": "string"}
+            },
+            "originality_policy": {"type": "string", "minLength": 1}
           },
           "additionalProperties": false
         }

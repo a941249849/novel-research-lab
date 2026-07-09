@@ -21,7 +21,7 @@
       "validation_error_count": 0,
       "content_generation_allowed": false,
       "external_agent_execution_allowed": false,
-      "full_corpus_proof_status": "blocked_on_owner_gate"
+      "full_corpus_proof_status": "promotable_research_asset"
     },
     "npcs": {
       "family": "npcs",
@@ -34,7 +34,7 @@
       "validation_error_count": 0,
       "content_generation_allowed": false,
       "external_agent_execution_allowed": false,
-      "full_corpus_proof_status": "blocked_on_owner_gate"
+      "full_corpus_proof_status": "promotable_research_asset"
     },
     "factions": {
       "family": "factions",
@@ -47,7 +47,7 @@
       "validation_error_count": 0,
       "content_generation_allowed": false,
       "external_agent_execution_allowed": false,
-      "full_corpus_proof_status": "blocked_on_owner_gate"
+      "full_corpus_proof_status": "promotable_research_asset"
     },
     "artifacts": {
       "family": "artifacts",
@@ -60,7 +60,7 @@
       "validation_error_count": 0,
       "content_generation_allowed": false,
       "external_agent_execution_allowed": false,
-      "full_corpus_proof_status": "blocked_on_owner_gate"
+      "full_corpus_proof_status": "promotable_research_asset"
     },
     "techniques": {
       "family": "techniques",
@@ -73,7 +73,7 @@
       "validation_error_count": 0,
       "content_generation_allowed": false,
       "external_agent_execution_allowed": false,
-      "full_corpus_proof_status": "blocked_on_owner_gate"
+      "full_corpus_proof_status": "promotable_research_asset"
     },
     "naming": {
       "family": "naming",
@@ -86,7 +86,7 @@
       "validation_error_count": 0,
       "content_generation_allowed": false,
       "external_agent_execution_allowed": false,
-      "full_corpus_proof_status": "blocked_on_owner_gate"
+      "full_corpus_proof_status": "promotable_research_asset"
     },
     "emotional_bonds": {
       "family": "emotional_bonds",
@@ -99,7 +99,7 @@
       "validation_error_count": 0,
       "content_generation_allowed": false,
       "external_agent_execution_allowed": false,
-      "full_corpus_proof_status": "blocked_on_owner_gate"
+      "full_corpus_proof_status": "promotable_research_asset"
     },
     "foreshadowing": {
       "family": "foreshadowing",
@@ -112,7 +112,7 @@
       "validation_error_count": 0,
       "content_generation_allowed": false,
       "external_agent_execution_allowed": false,
-      "full_corpus_proof_status": "blocked_on_owner_gate"
+      "full_corpus_proof_status": "promotable_research_asset"
     },
     "state_ledger": {
       "family": "state_ledger",
@@ -125,7 +125,7 @@
       "validation_error_count": 0,
       "content_generation_allowed": false,
       "external_agent_execution_allowed": false,
-      "full_corpus_proof_status": "blocked_on_owner_gate"
+      "full_corpus_proof_status": "promotable_research_asset"
     }
   },
   "content_generation_allowed": false,

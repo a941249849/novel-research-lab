@@ -27,7 +27,18 @@ from nrl_agent_ops import (
     write_agent_packet,
 )
 from nrl_antigravity_bridge import ask_antigravity, build_antigravity_bridge_status
-from nrl_asset_producers import build_producer_status, produce_technique_candidates
+from nrl_asset_producers import (
+    build_producer_status,
+    produce_artifact_seed,
+    produce_npc_seed,
+    produce_naming_seed,
+    produce_emotional_bond_seed,
+    produce_foreshadowing_seed,
+    produce_character_seed,
+    produce_faction_seed,
+    produce_state_ledger_seed,
+    produce_technique_candidates,
+)
 from nrl_capabilities import build_hardening_status
 from nrl_creation_assets import load_creation_asset_registry
 from nrl_creation_schemas import (
@@ -45,6 +56,7 @@ from nrl_corpus_pipeline import (
     write_evidence_pack,
     write_evidence_pack_matrix,
 )
+from nrl_corpus_ingestion import write_promoted_review_assets
 from nrl_dna_registry import load_or_build_dna_registry, write_dna_registry
 from nrl_doctor import run_doctor
 from nrl_full_corpus_handoff import (
@@ -61,6 +73,7 @@ from nrl_full_corpus_proof import (
     write_proof_packets,
 )
 from nrl_handoff_packet import write_antigravity_packet
+from nrl_hermes_gate import build_hermes_readiness
 from nrl_paths import ROOT, runtime_path
 from nrl_owner_gate import load_decisions, record_owner_decision
 from nrl_phase2e import (
@@ -467,6 +480,60 @@ def cmd_produce_techniques(args: argparse.Namespace) -> int:
     return 0 if result["store_validation"]["valid"] else 1
 
 
+def cmd_produce_naming_seed(args: argparse.Namespace) -> int:
+    result = produce_naming_seed(load_state(), args.job_id)
+    print_json(result)
+    return 0 if result["store_validation"]["valid"] else 1
+
+
+def cmd_produce_npc_seed(args: argparse.Namespace) -> int:
+    result = produce_npc_seed(load_state(), args.job_id)
+    print_json(result)
+    return 0 if result["store_validation"]["valid"] else 1
+
+
+def cmd_produce_artifact_seed(args: argparse.Namespace) -> int:
+    result = produce_artifact_seed(load_state(), args.job_id)
+    print_json(result)
+    return 0 if result["store_validation"]["valid"] else 1
+
+
+def cmd_produce_state_ledger_seed(args: argparse.Namespace) -> int:
+    result = produce_state_ledger_seed(load_state(), args.job_id)
+    print_json(result)
+    return 0 if result["store_validation"]["valid"] else 1
+
+
+def cmd_produce_emotional_bond_seed(args: argparse.Namespace) -> int:
+    result = produce_emotional_bond_seed(load_state(), args.job_id)
+    print_json(result)
+    return 0 if result["store_validation"]["valid"] else 1
+
+
+def cmd_produce_foreshadowing_seed(args: argparse.Namespace) -> int:
+    result = produce_foreshadowing_seed(load_state(), args.job_id)
+    print_json(result)
+    return 0 if result["store_validation"]["valid"] else 1
+
+
+def cmd_produce_character_seed(args: argparse.Namespace) -> int:
+    result = produce_character_seed(load_state(), args.job_id)
+    print_json(result)
+    return 0 if result["store_validation"]["valid"] else 1
+
+
+def cmd_produce_faction_seed(args: argparse.Namespace) -> int:
+    result = produce_faction_seed(load_state(), args.job_id)
+    print_json(result)
+    return 0 if result["store_validation"]["valid"] else 1
+
+
+def cmd_hermes_readiness(_: argparse.Namespace) -> int:
+    result = build_hermes_readiness(load_state(), load_adapters())
+    print_json(result)
+    return 0
+
+
 def cmd_antigravity_full_corpus_pack(_: argparse.Namespace) -> int:
     print_json(write_full_corpus_packet(load_state(), load_adapters()))
     return 0
@@ -513,6 +580,12 @@ def cmd_full_corpus_proof_promote(_: argparse.Namespace) -> int:
     result = promote_verified_proof()
     print_json(result)
     return 0 if result["status"] == "promoted_research_asset" else 1
+
+
+def cmd_full_corpus_review_ingest(_: argparse.Namespace) -> int:
+    result = write_promoted_review_assets()
+    print_json(result)
+    return 0
 
 
 def cmd_antigravity_bridge_status(_: argparse.Namespace) -> int:
@@ -959,6 +1032,31 @@ def build_parser() -> argparse.ArgumentParser:
     produce_techniques = sub.add_parser("produce-techniques")
     produce_techniques.add_argument("--job-id", required=True)
     produce_techniques.set_defaults(func=cmd_produce_techniques)
+    produce_naming = sub.add_parser("produce-naming-seed")
+    produce_naming.add_argument("--job-id", required=True)
+    produce_naming.set_defaults(func=cmd_produce_naming_seed)
+    produce_npc = sub.add_parser("produce-npc-seed")
+    produce_npc.add_argument("--job-id", required=True)
+    produce_npc.set_defaults(func=cmd_produce_npc_seed)
+    produce_artifact = sub.add_parser("produce-artifact-seed")
+    produce_artifact.add_argument("--job-id", required=True)
+    produce_artifact.set_defaults(func=cmd_produce_artifact_seed)
+    produce_state = sub.add_parser("produce-state-ledger-seed")
+    produce_state.add_argument("--job-id", required=True)
+    produce_state.set_defaults(func=cmd_produce_state_ledger_seed)
+    produce_bond = sub.add_parser("produce-emotional-bond-seed")
+    produce_bond.add_argument("--job-id", required=True)
+    produce_bond.set_defaults(func=cmd_produce_emotional_bond_seed)
+    produce_foreshadowing = sub.add_parser("produce-foreshadowing-seed")
+    produce_foreshadowing.add_argument("--job-id", required=True)
+    produce_foreshadowing.set_defaults(func=cmd_produce_foreshadowing_seed)
+    produce_character = sub.add_parser("produce-character-seed")
+    produce_character.add_argument("--job-id", required=True)
+    produce_character.set_defaults(func=cmd_produce_character_seed)
+    produce_faction = sub.add_parser("produce-faction-seed")
+    produce_faction.add_argument("--job-id", required=True)
+    produce_faction.set_defaults(func=cmd_produce_faction_seed)
+    sub.add_parser("hermes-readiness").set_defaults(func=cmd_hermes_readiness)
     sub.add_parser("antigravity-full-corpus-pack").set_defaults(
         func=cmd_antigravity_full_corpus_pack
     )
@@ -988,6 +1086,9 @@ def build_parser() -> argparse.ArgumentParser:
     full_corpus_proof_merge.set_defaults(func=cmd_full_corpus_proof_merge)
     sub.add_parser("full-corpus-proof-promote").set_defaults(
         func=cmd_full_corpus_proof_promote
+    )
+    sub.add_parser("full-corpus-review-ingest").set_defaults(
+        func=cmd_full_corpus_review_ingest
     )
     sub.add_parser("antigravity-bridge-status").set_defaults(
         func=cmd_antigravity_bridge_status

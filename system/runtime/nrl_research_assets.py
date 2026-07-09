@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Any
 
 from nrl_full_corpus_proof import build_proof_status
+from nrl_corpus_ingestion import load_promoted_review_assets
 from nrl_paths import ROOT, runtime_path
 
 
@@ -19,12 +20,18 @@ ALLOWED_ASSET_TYPES = {
     "state_ledger",
     "mechanism_notes",
     "corpus_proof",
+    "full_corpus_book_review",
+    "cross_book_mechanism",
+    "creation_family_evidence",
 }
 FULL_CORPUS_PROOF_VALIDATION = runtime_path(
     "system/agent_ops/validation/full_corpus_proof_v0.8.json"
 )
 FULL_CORPUS_PROOF_MASTER = runtime_path(
     "system/agent_ops/inbox/full_corpus_proof_v0.8/master.md"
+)
+FULL_CORPUS_REVIEW_ASSETS = runtime_path(
+    "system/research_assets/promotions/full_corpus_review_assets.v0.10.json"
 )
 
 
@@ -132,11 +139,82 @@ def _full_corpus_proof_item() -> list[dict[str, Any]]:
     return [item]
 
 
+def _full_corpus_review_items() -> list[dict[str, Any]]:
+    promoted = load_promoted_review_assets()
+    if not promoted:
+        return []
+    source_path = str(promoted["source_artifact"])
+    items: list[dict[str, Any]] = []
+    for index, review in enumerate(promoted.get("book_reviews", []), start=1):
+        if not isinstance(review, dict):
+            continue
+        items.append(
+            {
+                "asset_id": f"full-review-book-{index:02d}",
+                "title": str(review.get("book_title", "")),
+                "asset_type": "full_corpus_book_review",
+                "source_path": source_path,
+                "review_state": "formal",
+                "provenance": "promoted",
+                "categories": [
+                    str(item) for item in review.get("asset_family_relevance", [])
+                ],
+                "author": str(review.get("author", "")),
+                "read_scope": str(review.get("read_scope", "")),
+                "reusable_mechanisms": list(review.get("reusable_mechanisms", [])),
+                "exists": FULL_CORPUS_REVIEW_ASSETS.exists(),
+            }
+        )
+    for mechanism in promoted.get("cross_book_mechanisms", []):
+        if not isinstance(mechanism, dict):
+            continue
+        mechanism_id = str(mechanism.get("mechanism_id", ""))
+        items.append(
+            {
+                "asset_id": f"full-review-mechanism-{mechanism_id.lower()}",
+                "title": mechanism_id,
+                "asset_type": "cross_book_mechanism",
+                "source_path": source_path,
+                "review_state": "formal",
+                "provenance": "promoted",
+                "categories": ["跨书机制蒸馏"],
+                "mechanism_id": mechanism_id,
+                "source_books": list(mechanism.get("source_books", [])),
+                "reusable_for_nrl": bool(mechanism.get("reusable_for_NRL", False)),
+                "exists": FULL_CORPUS_REVIEW_ASSETS.exists(),
+            }
+        )
+    for family, evidence in sorted(promoted.get("asset_family_evidence", {}).items()):
+        if not isinstance(evidence, dict):
+            continue
+        items.append(
+            {
+                "asset_id": f"full-review-family-{family}",
+                "title": family,
+                "asset_type": "creation_family_evidence",
+                "source_path": source_path,
+                "review_state": str(evidence.get("status", "unknown")),
+                "provenance": "promoted",
+                "categories": [family, "创作资产证据"],
+                "evidence_count": len(evidence.get("evidence", []))
+                if isinstance(evidence.get("evidence"), list)
+                else 0,
+                "exists": FULL_CORPUS_REVIEW_ASSETS.exists(),
+            }
+        )
+    return items
+
+
 def build_research_asset_catalog(
     filters: dict[str, str | None] | None = None,
 ) -> dict[str, Any]:
     filters = filters or {}
-    all_items = _manifest_items() + _mechanism_items() + _full_corpus_proof_item()
+    all_items = (
+        _manifest_items()
+        + _mechanism_items()
+        + _full_corpus_proof_item()
+        + _full_corpus_review_items()
+    )
     if any(not item["exists"] for item in all_items):
         missing = [item["source_path"] for item in all_items if not item["exists"]]
         raise RuntimeError(f"research catalog source paths missing: {sorted(set(missing))}")
@@ -165,6 +243,7 @@ def build_research_asset_catalog(
             "phase1/04_mechanism_library/category_manifest.json",
             "system/agent_ops/inbox/full_corpus_proof_v0.8/master.md",
             "system/agent_ops/validation/full_corpus_proof_v0.8.json",
+            "system/research_assets/promotions/full_corpus_review_assets.v0.10.json",
         ],
         "filters": {key: value for key, value in filters.items() if value},
         "items": items,

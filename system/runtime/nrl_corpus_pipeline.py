@@ -97,6 +97,7 @@ def _families(state: dict[str, Any], adapters: dict[str, Any]) -> list[dict[str,
                 "gap": str(family["why_not_complete"]),
                 "next_safe_action": str(family["next_safe_action"]),
                 "blocked_actions": list(family["blocked_actions"]),
+                "project_asset_count": int(family.get("project_asset_count", 0)),
                 "priority": order[family_id],
                 "is_next": False,
             }
@@ -182,13 +183,53 @@ def _relative_to_root(path: Any) -> str:
 def _evidence_for_family(family: str) -> tuple[dict[str, Any], list[dict[str, Any]]]:
     needs = FAMILY_RESEARCH_NEEDS[family]
     catalog = build_research_asset_catalog()
-    evidence = [
-        item
-        for item in catalog["items"]
-        if item["asset_type"] in needs["asset_types"]
-        or any(category in item["categories"] for category in needs["categories"])
-    ]
-    evidence = sorted(evidence, key=lambda item: item["asset_id"])[:18]
+    catalog_items = catalog["items"]
+    selected: list[dict[str, Any]] = []
+    selected_ids: set[str] = set()
+
+    def add(items: list[dict[str, Any]]) -> None:
+        for item in items:
+            asset_id = str(item.get("asset_id", ""))
+            if asset_id and asset_id not in selected_ids:
+                selected.append(item)
+                selected_ids.add(asset_id)
+
+    # Promoted full-corpus family evidence is the primary source. Legacy Phase
+    # 1 DNA remains useful as secondary support, but must not replace the
+    # family-specific review output or distort provenance.
+    add(
+        [
+            item
+            for item in catalog_items
+            if item["asset_type"] == "creation_family_evidence"
+            and family in item.get("categories", [])
+        ]
+    )
+    add(
+        [
+            item
+            for item in catalog_items
+            if item["asset_type"] == "full_corpus_book_review"
+            and family in item.get("categories", [])
+        ]
+    )
+    add(
+        [
+            item
+            for item in catalog_items
+            if item["asset_type"] == "cross_book_mechanism"
+            and item.get("reusable_for_nrl") is True
+        ]
+    )
+    add(
+        [
+            item
+            for item in catalog_items
+            if item["asset_type"] in needs["asset_types"]
+            or any(category in item["categories"] for category in needs["categories"])
+        ]
+    )
+    evidence = sorted(selected, key=lambda item: item["asset_id"])[:18]
     return (
         {
             "asset_types": needs["asset_types"],
@@ -204,7 +245,10 @@ def build_pipeline_status(state: dict[str, Any], adapters: dict[str, Any]) -> di
     families = _families(state, adapters)
     if not families:
         raise RuntimeError("creation asset families are empty")
-    families[0]["is_next"] = True
+    pending_families = [family for family in families if family["project_asset_count"] == 0]
+    (pending_families[0] if pending_families else families[0])["is_next"] = True
+    next_family = next(family for family in families if family["is_next"])
+    creation_contract_seed_matrix_ready = not pending_families
     forbidden = sorted(
         {
             *[str(item) for item in state.get("blocked_actions", [])],
@@ -221,7 +265,13 @@ def build_pipeline_status(state: dict[str, Any], adapters: dict[str, Any]) -> di
         "project": state.get("selected_project", "UNKNOWN_PROJECT"),
         "stages": _stages(system_status),
         "families": families,
-        "next_family": families[0],
+        "next_family": next_family,
+        "creation_contract_seed_matrix_ready": creation_contract_seed_matrix_ready,
+        "next_safe_action": (
+            "运行 hermes-readiness；最终创作资产与 Hermes 仍受 Owner Gate 约束。"
+            if creation_contract_seed_matrix_ready
+            else "继续为缺失创作资产家族生成 schema-bound seed，并保持内容冻结。"
+        ),
         "forbidden_actions": forbidden,
     }
 
@@ -467,11 +517,15 @@ def validate_evidence_pack(pack: dict[str, Any]) -> dict[str, Any]:
 
     owner_gate = pack.get("owner_gate", {})
     proof = pack.get("promotion_dependencies", {}).get("full_corpus_proof", {})
+    proof_gate_present = (
+        proof.get("proof_verified") is True
+        and proof.get("promotion_allowed") in {True, False}
+    )
     owner_gate_passed = (
         owner_gate.get("required") is True
         and str(owner_gate.get("status", ""))
         and pack.get("content_generation_allowed") is False
-        and proof.get("promotion_allowed") is False
+        and proof_gate_present
     )
     checks.append(
         _check_result(
@@ -481,6 +535,7 @@ def validate_evidence_pack(pack: dict[str, Any]) -> dict[str, Any]:
                 "owner_gate_required": owner_gate.get("required"),
                 "owner_gate_status": owner_gate.get("status"),
                 "full_corpus_promotion_allowed": proof.get("promotion_allowed"),
+                "full_corpus_proof_verified": proof.get("proof_verified"),
             },
         )
     )

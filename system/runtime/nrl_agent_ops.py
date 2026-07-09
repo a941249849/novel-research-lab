@@ -19,6 +19,7 @@ from nrl_system_status import build_system_status
 
 
 VERSION = "0.5"
+PACKET_CONTRACT_VERSION = "0.13.1"
 QUEUE_PATH = runtime_path("system/agent_ops/job_queue.v0.5.json")
 PACKET_DIR = runtime_path("system/agent_ops/packets")
 INBOX_DIR = runtime_path("system/agent_ops/inbox")
@@ -129,6 +130,19 @@ def _source_dna_ids(state: dict[str, Any], family: str) -> list[str]:
     return sorted(dict.fromkeys(str(item) for item in selected))[:18]
 
 
+def _source_evidence_ids(
+    state: dict[str, Any],
+    adapters: dict[str, Any],
+    family: str,
+) -> list[str]:
+    plan = build_pipeline_plan(state, adapters, family=family)
+    return [
+        str(item["asset_id"])
+        for item in plan.get("research_evidence", [])
+        if isinstance(item, dict) and item.get("asset_id")
+    ]
+
+
 def _job_id(family: str) -> str:
     return f"job-v05-{family}-antigravity-review"
 
@@ -149,21 +163,44 @@ def plan_agent_job(
     job_id = _job_id(family)
     created = now_iso()
     existing = next((item for item in jobs if item.get("job_id") == job_id), None)
-    preserved_state = str(existing.get("state")) if existing else "ready_for_antigravity"
+    source_evidence_ids = _source_evidence_ids(state, adapters, family)
+    review_inputs_unchanged = bool(
+        existing
+        and existing.get("packet_contract_version") == PACKET_CONTRACT_VERSION
+        and existing.get("source_evidence_ids") == source_evidence_ids
+    )
+    preserved_state = (
+        str(existing.get("state"))
+        if review_inputs_unchanged
+        else "ready_for_antigravity"
+    )
     if preserved_state not in {"validated", "promoted"}:
         preserved_state = "ready_for_antigravity"
     updated_at = existing.get("updated_at") if existing and preserved_state in {"validated", "promoted"} else created
     job = {
         "job_id": job_id,
         "job_type": "antigravity_structural_review",
+        "packet_contract_version": PACKET_CONTRACT_VERSION,
         "target_family": family,
         "owner_agent": "antigravity",
         "state": preserved_state,
-        "source_dna_ids": _source_dna_ids(state, family),
+        # Keep the legacy field for queue compatibility, but make it carry the
+        # exact evidence IDs consumed by the pipeline. This prevents the job
+        # registry from drifting away from its packet provenance.
+        "source_dna_ids": source_evidence_ids,
+        "source_evidence_ids": source_evidence_ids,
         "input_packet_path": f"system/agent_ops/packets/{job_id}.md",
         "expected_output_path": _expected_output_path(job_id),
-        "actual_output_path": existing.get("actual_output_path") if existing else None,
-        "validation_report_path": existing.get("validation_report_path") if existing else None,
+        "actual_output_path": (
+            existing.get("actual_output_path")
+            if existing and preserved_state in {"validated", "promoted"}
+            else None
+        ),
+        "validation_report_path": (
+            existing.get("validation_report_path")
+            if existing and preserved_state in {"validated", "promoted"}
+            else None
+        ),
         "promotion_target": f"system/creation_assets/project_assets.v0.2.json::{family}",
         "created_at": existing.get("created_at") if existing else created,
         "updated_at": updated_at,
@@ -176,7 +213,8 @@ def plan_agent_job(
 
 
 def _packet_text(job: dict[str, Any]) -> str:
-    dna_lines = "\n".join(f"- {dna_id}" for dna_id in job["source_dna_ids"])
+    evidence_ids = job.get("source_evidence_ids") or job.get("source_dna_ids", [])
+    evidence_lines = "\n".join(f"- {evidence_id}" for evidence_id in evidence_ids)
     required_sections = "\n".join(f"- {section}" for section in REQUIRED_REVIEW_SECTIONS)
     return f"""# NRL Antigravity Registered Review Packet
 
@@ -192,9 +230,9 @@ def _packet_text(job: dict[str, Any]) -> str:
 Review whether the current DNA evidence is sufficient to plan the `{job["target_family"]}` creation asset family.
 Focus on long-form vitality, structural usefulness, originality risk, and missing evidence.
 
-## SOURCE DNA IDS
+## SOURCE EVIDENCE IDS
 
-{dna_lines}
+{evidence_lines}
 
 ## REQUIRED OUTPUT SECTIONS
 
@@ -210,7 +248,15 @@ Focus on long-form vitality, structural usefulness, originality risk, and missin
 
 ## RETURN INSTRUCTION
 
-Save the completed review to:
+The Codex bridge captures your stdout and writes the file. Do not write files,
+run shell commands, create scratch scripts, or describe tool use. Return only
+the completed Markdown review body, beginning with `## Job ID`, followed by the
+six required sections in the exact order below. Do not include a preamble or
+postscript.
+
+Do not save or edit any file. Return the completed review in stdout only.
+
+The expected output path is metadata only:
 
 ```text
 {job["expected_output_path"]}

@@ -9,9 +9,32 @@
         "family": {"const": "npcs"},
         "npc": {
           "type": "object",
+          "required": [
+            "role_class",
+            "recurrence_policy",
+            "faction_id",
+            "information_state",
+            "ledger_debt_balance",
+            "trust_metric",
+            "originality_policy"
+          ],
           "properties": {
-            "role_class": {"type": "string"},
-            "recurrence_policy": {"type": "string"}
+            "role_class": {"type": "string", "minLength": 1},
+            "recurrence_policy": {
+              "type": "object",
+              "required": ["map_transition", "power_scaling", "retirement_condition"],
+              "properties": {
+                "map_transition": {"type": "string", "minLength": 1},
+                "power_scaling": {"type": "string", "minLength": 1},
+                "retirement_condition": {"type": "string", "minLength": 1}
+              },
+              "additionalProperties": false
+            },
+            "faction_id": {"type": "string", "minLength": 1},
+            "information_state": {"type": "string", "minLength": 1},
+            "ledger_debt_balance": {"type": "number"},
+            "trust_metric": {"type": "number", "minimum": -1, "maximum": 1},
+            "originality_policy": {"type": "string", "minLength": 1}
           },
           "additionalProperties": false
         }

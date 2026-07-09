@@ -123,7 +123,9 @@ printf 'FAKE_ANTIGRAVITY_RESPONSE:%s\\n' "$prompt"
         self.assertEqual(data["request_file"], str(request_path.relative_to(self.root)))
         self.assertEqual(data["output_file"], str(response_path.relative_to(self.root)))
         self.assertTrue(response_path.exists())
-        self.assertIn("FAKE_ANTIGRAVITY_RESPONSE:Reply with bridge ok.", response_path.read_text(encoding="utf-8"))
+        response = response_path.read_text(encoding="utf-8")
+        self.assertIn("FAKE_ANTIGRAVITY_RESPONSE:NRL bridge contract", response)
+        self.assertIn("Reply with bridge ok.", response)
 
     def test_bridge_ask_rejects_missing_request_file(self):
         result = self.run_cli(

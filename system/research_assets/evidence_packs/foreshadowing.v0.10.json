@@ -36,229 +36,386 @@
   "evidence_summary": {
     "item_count": 18,
     "source_paths": [
-      "phase1/02_narrative_dna/一念永恒_narrative.json",
-      "phase1/02_narrative_dna/不死不灭_narrative.json",
-      "phase1/02_narrative_dna/人道至尊_narrative.json",
-      "phase1/02_narrative_dna/仙逆_narrative.json",
-      "phase1/02_narrative_dna/凡人修仙传_narrative.json",
-      "phase1/02_narrative_dna/圣墟_narrative.json",
-      "phase1/02_narrative_dna/斗破苍穹_narrative.json",
-      "phase1/02_narrative_dna/求魔_narrative.json",
-      "phase1/02_narrative_dna/蛊真人_narrative.json",
-      "phase1/02_narrative_dna/诡秘之主_narrative.json",
-      "phase1/02_narrative_dna/遮天_narrative.json",
-      "phase1/04_mechanism_library/core7_mechanism_inventory.json"
+      "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md"
     ],
     "structured_only": true,
     "raw_corpus_allowed": false
   },
   "research_evidence": [
     {
-      "asset_id": "mechanism-gmzz-m1",
-      "title": "诡秘之主",
-      "asset_type": "mechanism",
-      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
-      "review_state": "formal",
-      "provenance": "promoted",
-      "categories": [
-        "探索/谜团/知识机制"
-      ],
-      "mechanism_id": "GMZZ-M1",
-      "mechanism_name": "案发现场苏醒",
-      "exists": true
-    },
-    {
-      "asset_id": "mechanism-gmzz-m4",
-      "title": "诡秘之主",
-      "asset_type": "mechanism",
-      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
-      "review_state": "formal",
-      "provenance": "promoted",
-      "categories": [
-        "隐藏实力与信息差机制"
-      ],
-      "mechanism_id": "GMZZ-M4",
-      "mechanism_name": "马甲身份隔离",
-      "exists": true
-    },
-    {
-      "asset_id": "mechanism-gmzz-m5",
-      "title": "诡秘之主",
-      "asset_type": "mechanism",
-      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
-      "review_state": "formal",
-      "provenance": "promoted",
-      "categories": [
-        "探索/谜团/知识机制"
-      ],
-      "mechanism_id": "GMZZ-M5",
-      "mechanism_name": "冰山普通人视角",
-      "exists": true
-    },
-    {
-      "asset_id": "mechanism-gzr-m1",
-      "title": "蛊真人",
-      "asset_type": "mechanism",
-      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
-      "review_state": "formal",
-      "provenance": "promoted",
-      "categories": [
-        "隐藏实力与信息差机制"
-      ],
-      "mechanism_id": "GZR-M1",
-      "mechanism_name": "失败终局回切先手",
-      "exists": true
-    },
-    {
-      "asset_id": "mechanism-gzr-m2",
-      "title": "蛊真人",
-      "asset_type": "mechanism",
-      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
-      "review_state": "formal",
-      "provenance": "promoted",
-      "categories": [
-        "隐藏实力与信息差机制"
-      ],
-      "mechanism_id": "GZR-M2",
-      "mechanism_name": "制度漏洞套利",
-      "exists": true
-    },
-    {
-      "asset_id": "mechanism-gzr-m5",
-      "title": "蛊真人",
-      "asset_type": "mechanism",
-      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
-      "review_state": "formal",
-      "provenance": "promoted",
-      "categories": [
-        "探索/谜团/知识机制"
-      ],
-      "mechanism_id": "GZR-M5",
-      "mechanism_name": "底层规则所有权",
-      "exists": true
-    },
-    {
-      "asset_id": "mechanism-zt-m1",
-      "title": "遮天",
-      "asset_type": "mechanism",
-      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
-      "review_state": "formal",
-      "provenance": "promoted",
-      "categories": [
-        "探索/谜团/知识机制"
-      ],
-      "mechanism_id": "ZT-M1",
-      "mechanism_name": "现实认知断裂入口",
-      "exists": true
-    },
-    {
-      "asset_id": "phase1-narrative_dna-002",
-      "title": "遮天",
-      "asset_type": "narrative_dna",
-      "source_path": "phase1/02_narrative_dna/遮天_narrative.json",
-      "review_state": "formal",
-      "provenance": "promoted",
-      "categories": [],
-      "exists": true
-    },
-    {
-      "asset_id": "phase1-narrative_dna-006",
-      "title": "蛊真人",
-      "asset_type": "narrative_dna",
-      "source_path": "phase1/02_narrative_dna/蛊真人_narrative.json",
-      "review_state": "formal",
-      "provenance": "promoted",
-      "categories": [],
-      "exists": true
-    },
-    {
-      "asset_id": "phase1-narrative_dna-010",
-      "title": "人道至尊",
-      "asset_type": "narrative_dna",
-      "source_path": "phase1/02_narrative_dna/人道至尊_narrative.json",
-      "review_state": "formal",
-      "provenance": "promoted",
-      "categories": [],
-      "exists": true
-    },
-    {
-      "asset_id": "phase1-narrative_dna-014",
-      "title": "凡人修仙传",
-      "asset_type": "narrative_dna",
-      "source_path": "phase1/02_narrative_dna/凡人修仙传_narrative.json",
-      "review_state": "formal",
-      "provenance": "promoted",
-      "categories": [],
-      "exists": true
-    },
-    {
-      "asset_id": "phase1-narrative_dna-018",
-      "title": "斗破苍穹",
-      "asset_type": "narrative_dna",
-      "source_path": "phase1/02_narrative_dna/斗破苍穹_narrative.json",
-      "review_state": "formal",
-      "provenance": "promoted",
-      "categories": [],
-      "exists": true
-    },
-    {
-      "asset_id": "phase1-narrative_dna-022",
-      "title": "诡秘之主",
-      "asset_type": "narrative_dna",
-      "source_path": "phase1/02_narrative_dna/诡秘之主_narrative.json",
-      "review_state": "formal",
-      "provenance": "promoted",
-      "categories": [],
-      "exists": true
-    },
-    {
-      "asset_id": "phase1-narrative_dna-026",
-      "title": "求魔",
-      "asset_type": "narrative_dna",
-      "source_path": "phase1/02_narrative_dna/求魔_narrative.json",
-      "review_state": "formal",
-      "provenance": "promoted",
-      "categories": [],
-      "exists": true
-    },
-    {
-      "asset_id": "phase1-narrative_dna-037",
-      "title": "一念永恒",
-      "asset_type": "narrative_dna",
-      "source_path": "phase1/02_narrative_dna/一念永恒_narrative.json",
-      "review_state": "stub",
-      "provenance": "stub",
-      "categories": [],
-      "exists": true
-    },
-    {
-      "asset_id": "phase1-narrative_dna-040",
+      "asset_id": "full-review-book-02",
       "title": "不死不灭",
-      "asset_type": "narrative_dna",
-      "source_path": "phase1/02_narrative_dna/不死不灭_narrative.json",
-      "review_state": "stub",
-      "provenance": "stub",
-      "categories": [],
+      "asset_type": "full_corpus_book_review",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [
+        "foreshadowing",
+        "factions",
+        "techniques"
+      ],
+      "author": "辰东",
+      "read_scope": "full_text_reviewed",
+      "reusable_mechanisms": [
+        "古战场英灵觉醒引导",
+        "肉身损毁自愈进阶功法"
+      ],
       "exists": true
     },
     {
-      "asset_id": "phase1-narrative_dna-043",
-      "title": "仙逆",
-      "asset_type": "narrative_dna",
-      "source_path": "phase1/02_narrative_dna/仙逆_narrative.json",
-      "review_state": "stub",
-      "provenance": "stub",
-      "categories": [],
-      "exists": true
-    },
-    {
-      "asset_id": "phase1-narrative_dna-046",
+      "asset_id": "full-review-book-06",
       "title": "圣墟",
-      "asset_type": "narrative_dna",
-      "source_path": "phase1/02_narrative_dna/圣墟_narrative.json",
-      "review_state": "stub",
-      "provenance": "stub",
-      "categories": [],
+      "asset_type": "full_corpus_book_review",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [
+        "artifacts",
+        "foreshadowing",
+        "techniques"
+      ],
+      "author": "辰东",
+      "read_scope": "full_text_reviewed",
+      "reusable_mechanisms": [
+        "隔绝天道注视的神秘容器",
+        "神话遗迹种子催化成长"
+      ],
+      "exists": true
+    },
+    {
+      "asset_id": "full-review-book-09",
+      "title": "将夜",
+      "asset_type": "full_corpus_book_review",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [
+        "foreshadowing",
+        "factions",
+        "emotional_bonds"
+      ],
+      "author": "猫腻",
+      "read_scope": "full_text_reviewed",
+      "reusable_mechanisms": [
+        "以平凡凡尘烟火气构建惊神大阵",
+        "大黑伞隔绝因果的质朴道具设计"
+      ],
+      "exists": true
+    },
+    {
+      "asset_id": "full-review-book-13",
+      "title": "求魔",
+      "asset_type": "full_corpus_book_review",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [
+        "emotional_bonds",
+        "npcs",
+        "foreshadowing"
+      ],
+      "author": "耳根",
+      "read_scope": "full_text_reviewed",
+      "reusable_mechanisms": [
+        "人生虚无幻境认知反转",
+        "自我缺席的终极奉献闭环"
+      ],
+      "exists": true
+    },
+    {
+      "asset_id": "full-review-book-16",
+      "title": "诡秘之主",
+      "asset_type": "full_corpus_book_review",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [
+        "foreshadowing",
+        "artifacts",
+        "state_ledger"
+      ],
+      "author": "爱潜水的乌贼",
+      "read_scope": "full_text_reviewed",
+      "reusable_mechanisms": [
+        "负效益约束型命器设计",
+        "扮演社会角色消化超凡能量"
+      ],
+      "exists": true
+    },
+    {
+      "asset_id": "full-review-book-17",
+      "title": "遮天",
+      "asset_type": "full_corpus_book_review",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [
+        "foreshadowing",
+        "npcs",
+        "factions"
+      ],
+      "author": "辰东",
+      "read_scope": "full_text_reviewed",
+      "reusable_mechanisms": [
+        "大纪元遗迹淘金源术石坊",
+        "带全体旧部与故人共同飞升"
+      ],
+      "exists": true
+    },
+    {
+      "asset_id": "full-review-family-foreshadowing",
+      "title": "foreshadowing",
+      "asset_type": "creation_family_evidence",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "review_state": "covered",
+      "provenance": "promoted",
+      "categories": [
+        "foreshadowing",
+        "创作资产证据"
+      ],
+      "evidence_count": 6,
+      "exists": true
+    },
+    {
+      "asset_id": "full-review-mechanism-cb-m1",
+      "title": "CB-M1",
+      "asset_type": "cross_book_mechanism",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "mechanism_id": "CB-M1",
+      "source_books": [
+        "斗破苍穹",
+        "凡人修仙传",
+        "求魔",
+        "大主宰",
+        "完美世界",
+        "雪中悍刀行"
+      ],
+      "reusable_for_nrl": true,
+      "exists": true
+    },
+    {
+      "asset_id": "full-review-mechanism-cb-m10",
+      "title": "CB-M10",
+      "asset_type": "cross_book_mechanism",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "mechanism_id": "CB-M10",
+      "source_books": [
+        "求魔",
+        "斗破苍穹",
+        "牧神记",
+        "一念永恒",
+        "仙逆",
+        "雪中悍刀行"
+      ],
+      "reusable_for_nrl": true,
+      "exists": true
+    },
+    {
+      "asset_id": "full-review-mechanism-cb-m11",
+      "title": "CB-M11",
+      "asset_type": "cross_book_mechanism",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "mechanism_id": "CB-M11",
+      "source_books": [
+        "诡秘之主",
+        "蛊真人",
+        "永生",
+        "完美世界",
+        "仙逆",
+        "求魔"
+      ],
+      "reusable_for_nrl": true,
+      "exists": true
+    },
+    {
+      "asset_id": "full-review-mechanism-cb-m12",
+      "title": "CB-M12",
+      "asset_type": "cross_book_mechanism",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "mechanism_id": "CB-M12",
+      "source_books": [
+        "遮天",
+        "人道至尊",
+        "大主宰",
+        "一念永恒",
+        "雪中悍刀行",
+        "将夜"
+      ],
+      "reusable_for_nrl": true,
+      "exists": true
+    },
+    {
+      "asset_id": "full-review-mechanism-cb-m2",
+      "title": "CB-M2",
+      "asset_type": "cross_book_mechanism",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "mechanism_id": "CB-M2",
+      "source_books": [
+        "凡人修仙传",
+        "仙逆",
+        "圣墟",
+        "武动乾坤",
+        "永生",
+        "诡秘之主"
+      ],
+      "reusable_for_nrl": true,
+      "exists": true
+    },
+    {
+      "asset_id": "full-review-mechanism-cb-m3",
+      "title": "CB-M3",
+      "asset_type": "cross_book_mechanism",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "mechanism_id": "CB-M3",
+      "source_books": [
+        "诡秘之主",
+        "凡人修仙传",
+        "遮天",
+        "人道至尊",
+        "牧神记",
+        "将夜"
+      ],
+      "reusable_for_nrl": true,
+      "exists": true
+    },
+    {
+      "asset_id": "full-review-mechanism-cb-m4",
+      "title": "CB-M4",
+      "asset_type": "cross_book_mechanism",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "mechanism_id": "CB-M4",
+      "source_books": [
+        "斗破苍穹",
+        "将夜",
+        "仙逆",
+        "求魔",
+        "人道至尊",
+        "雪中悍刀行"
+      ],
+      "reusable_for_nrl": true,
+      "exists": true
+    },
+    {
+      "asset_id": "full-review-mechanism-cb-m5",
+      "title": "CB-M5",
+      "asset_type": "cross_book_mechanism",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "mechanism_id": "CB-M5",
+      "source_books": [
+        "诡秘之主",
+        "凡人修仙传",
+        "一念永恒",
+        "蛊真人",
+        "永生",
+        "完美世界"
+      ],
+      "reusable_for_nrl": true,
+      "exists": true
+    },
+    {
+      "asset_id": "full-review-mechanism-cb-m6",
+      "title": "CB-M6",
+      "asset_type": "cross_book_mechanism",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "mechanism_id": "CB-M6",
+      "source_books": [
+        "斗破苍穹",
+        "凡人修仙传",
+        "大主宰",
+        "一念永恒",
+        "永生",
+        "牧神记"
+      ],
+      "reusable_for_nrl": true,
+      "exists": true
+    },
+    {
+      "asset_id": "full-review-mechanism-cb-m7",
+      "title": "CB-M7",
+      "asset_type": "cross_book_mechanism",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "mechanism_id": "CB-M7",
+      "source_books": [
+        "人道至尊",
+        "武动乾坤",
+        "雪中悍刀行",
+        "将夜",
+        "完美世界",
+        "遮天"
+      ],
+      "reusable_for_nrl": true,
+      "exists": true
+    },
+    {
+      "asset_id": "full-review-mechanism-cb-m8",
+      "title": "CB-M8",
+      "asset_type": "cross_book_mechanism",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "mechanism_id": "CB-M8",
+      "source_books": [
+        "求魔",
+        "雪中悍刀行",
+        "人道至尊",
+        "完美世界",
+        "将夜",
+        "仙逆"
+      ],
+      "reusable_for_nrl": true,
       "exists": true
     }
   ],
@@ -291,12 +448,12 @@
   "promotion_dependencies": {
     "full_corpus_proof": {
       "job_id": "job-v08-full-corpus-proof-review",
-      "status": "blocked_on_owner_gate",
+      "status": "promotable_research_asset",
       "proof_verified": true,
       "verified_receipts": 18,
       "required_receipts": 18,
-      "promotion_allowed": false,
-      "next_required_action": "Owner must explicitly authorize research-asset promotion."
+      "promotion_allowed": true,
+      "next_required_action": "Promote the verified proof into research-asset ingestion; prose remains blocked."
     }
   },
   "agent_review_policy": {

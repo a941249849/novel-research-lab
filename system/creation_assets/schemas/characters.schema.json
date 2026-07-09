@@ -9,9 +9,42 @@
         "family": {"const": "characters"},
         "character": {
           "type": "object",
+          "required": [
+            "role",
+            "growth_stage",
+            "debt_balance",
+            "exposure_rate",
+            "sanity_level",
+            "identity_masks",
+            "growth_policy",
+            "originality_policy"
+          ],
           "properties": {
-            "role": {"type": "string"},
-            "growth_stage": {"type": "string"}
+            "role": {"type": "string", "minLength": 1},
+            "growth_stage": {"type": "string", "minLength": 1},
+            "debt_balance": {"type": "number"},
+            "exposure_rate": {"type": "number", "minimum": 0},
+            "sanity_level": {"type": "number"},
+            "identity_masks": {
+              "type": "object",
+              "required": ["max_active_masks", "exposure_parameter"],
+              "properties": {
+                "max_active_masks": {"type": "integer", "minimum": 0},
+                "exposure_parameter": {"type": "string", "minLength": 1}
+              },
+              "additionalProperties": false
+            },
+            "growth_policy": {
+              "type": "object",
+              "required": ["transition_condition", "forbidden_shortcut", "audit_resolution"],
+              "properties": {
+                "transition_condition": {"type": "string", "minLength": 1},
+                "forbidden_shortcut": {"type": "string", "minLength": 1},
+                "audit_resolution": {"type": "string", "minLength": 1}
+              },
+              "additionalProperties": false
+            },
+            "originality_policy": {"type": "string", "minLength": 1}
           },
           "additionalProperties": false
         }

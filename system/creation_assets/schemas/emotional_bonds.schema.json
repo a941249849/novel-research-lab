@@ -9,9 +9,31 @@
         "family": {"const": "emotional_bonds"},
         "emotional_bond": {
           "type": "object",
+          "required": [
+            "bond_type",
+            "trust_state",
+            "persona_trust_map",
+            "lifespan_decay_rate",
+            "preservation_deadline",
+            "karmic_debt_modifier",
+            "exposure_backlash_coefficient",
+            "transition_policy",
+            "originality_policy"
+          ],
           "properties": {
-            "bond_type": {"type": "string"},
-            "trust_state": {"type": "string"}
+            "bond_type": {"type": "string", "minLength": 1},
+            "trust_state": {"type": "string", "minLength": 1},
+            "persona_trust_map": {
+              "type": "array",
+              "minItems": 1,
+              "items": {"type": "string", "minLength": 1}
+            },
+            "lifespan_decay_rate": {"type": "number", "minimum": 0},
+            "preservation_deadline": {"type": "string", "minLength": 1},
+            "karmic_debt_modifier": {"type": "number"},
+            "exposure_backlash_coefficient": {"type": "number", "minimum": 0},
+            "transition_policy": {"type": "string", "minLength": 1},
+            "originality_policy": {"type": "string", "minLength": 1}
           },
           "additionalProperties": false
         }

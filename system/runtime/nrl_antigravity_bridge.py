@@ -118,6 +118,14 @@ def ask_antigravity(
     prompt = request_path.read_text(encoding="utf-8")
     if not prompt.strip():
         raise RuntimeError(f"request file is empty: {request_file}")
+    bridge_contract = """\
+NRL bridge contract: this is a non-interactive structural review call. Do not
+write files, run shell commands, create scratch scripts, or narrate tool use.
+Return only the final Markdown review body. The first line must be a Markdown
+heading and the response must use the exact section headings requested by the
+packet. Do not include a preamble, plan, progress log, file links, or postscript.
+
+"""
     if output_file:
         response_path = _resolve_repo_path(output_file)
     else:
@@ -127,7 +135,16 @@ def ask_antigravity(
     response_path.parent.mkdir(parents=True, exist_ok=True)
     started_at = now_iso()
     result = subprocess.run(
-        [binary, "--print-timeout", print_timeout, "-p", prompt],
+        [
+            binary,
+            "--mode",
+            "plan",
+            "--sandbox",
+            "--print-timeout",
+            print_timeout,
+            "-p",
+            bridge_contract + prompt,
+        ],
         cwd=ROOT,
         text=True,
         capture_output=True,

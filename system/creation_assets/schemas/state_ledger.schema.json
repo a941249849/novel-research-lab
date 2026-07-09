@@ -9,9 +9,48 @@
         "family": {"const": "state_ledger"},
         "state_ledger": {
           "type": "object",
+          "required": [
+            "state_key",
+            "value_type",
+            "audit_policy",
+            "retribution_triggers",
+            "tracking_metrics",
+            "decay_policy",
+            "originality_policy"
+          ],
           "properties": {
-            "state_key": {"type": "string"},
-            "value_type": {"type": "string"}
+            "state_key": {"type": "string", "minLength": 1},
+            "value_type": {"type": "string", "minLength": 1},
+            "audit_policy": {
+              "type": "object",
+              "required": ["validation_rule", "transaction_boundary", "balance_rule"],
+              "properties": {
+                "validation_rule": {"type": "string", "minLength": 1},
+                "transaction_boundary": {"type": "string", "minLength": 1},
+                "balance_rule": {"type": "string", "minLength": 1}
+              },
+              "additionalProperties": false
+            },
+            "retribution_triggers": {
+              "type": "array",
+              "minItems": 1,
+              "items": {"type": "string", "minLength": 1}
+            },
+            "tracking_metrics": {
+              "type": "array",
+              "minItems": 1,
+              "items": {"type": "string", "minLength": 1}
+            },
+            "decay_policy": {
+              "type": "object",
+              "required": ["decay_condition", "restoration_condition"],
+              "properties": {
+                "decay_condition": {"type": "string", "minLength": 1},
+                "restoration_condition": {"type": "string", "minLength": 1}
+              },
+              "additionalProperties": false
+            },
+            "originality_policy": {"type": "string", "minLength": 1}
           },
           "additionalProperties": false
         }

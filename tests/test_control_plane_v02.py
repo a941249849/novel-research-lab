@@ -71,7 +71,7 @@ class ControlPlaneCliTests(unittest.TestCase):
             all("升级与境界机制" in item["categories"] for item in data["items"])
         )
 
-    def test_research_assets_exposes_verified_full_corpus_proof_without_promotion(self):
+    def test_research_assets_exposes_promoted_full_corpus_proof(self):
         result = self.run_cli("research-assets", "--asset-type", "corpus_proof")
         self.assertEqual(result.returncode, 0, result.stderr)
         data = json.loads(result.stdout)
@@ -79,10 +79,14 @@ class ControlPlaneCliTests(unittest.TestCase):
         proof = data["items"][0]
         self.assertEqual(proof["asset_id"], "full-corpus-proof-v08")
         self.assertEqual(proof["review_state"], "proof_verified")
-        self.assertEqual(proof["provenance"], "verified_not_promoted")
+        self.assertEqual(proof["provenance"], "promotable_research_asset")
         self.assertEqual(proof["verified_receipts"], 18)
         self.assertEqual(proof["required_receipts"], 18)
-        self.assertFalse(proof["promotion_allowed"])
+        self.assertTrue(proof["promotion_allowed"])
+        self.assertEqual(
+            proof["owner_decision_id"],
+            "owner_gate_full_corpus_research_promotion_001",
+        )
         self.assertNotIn("novel_training_set/", json.dumps(proof, ensure_ascii=False))
 
     def test_creation_schema_registry_exposes_nine_draft7_families(self):
@@ -129,10 +133,10 @@ class ControlPlaneCliTests(unittest.TestCase):
         self.assertEqual(proof["status"], "proof_gate_ready")
         self.assertEqual(proof["corpus_inventory"]["file_count"], 18)
         self.assertEqual(proof["latest_validation"]["status"], "proof_verified")
-        self.assertEqual(proof["promotion_readiness"]["status"], "blocked_on_owner_gate")
+        self.assertEqual(proof["promotion_readiness"]["status"], "promotable_research_asset")
         self.assertEqual(proof["promotion_readiness"]["verified_receipts"], 18)
         self.assertEqual(proof["promotion_readiness"]["required_receipts"], 18)
-        self.assertFalse(proof["promotion_readiness"]["promotion_allowed"])
+        self.assertTrue(proof["promotion_readiness"]["promotion_allowed"])
 
     def test_system_check_is_read_only_and_reports_all_contracts(self):
         state_path = REPO_ROOT / "system/mission_controller/current_phase_state.json"

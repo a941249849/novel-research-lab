@@ -611,8 +611,9 @@ python3 system/runtime/nrl.py system-check
 
 `research-assets` indexes structured Phase 1 derivatives and preserves
 provenance. It does not read raw corpus files. `creation-schemas` reports the
-nine Draft-07 creation asset contracts. The production project asset store is
-intentionally empty until a later Owner-authorized content workflow.
+nine Draft-07 creation asset contracts. The project asset store may contain
+schema-bound seed contracts after the research promotion gate; these are not
+final creative assets and do not authorize prose generation.
 
 ## Corpus-to-Creation v0.3
 
@@ -652,9 +653,11 @@ nine creation asset families and writes
 input manifest for downstream Corpus-to-Creation planning.
 
 The current expected next family is derived from the creation coverage matrix
-by readiness score and stable family priority. At the current Phase 2E Owner
-Gate state, the next family is `naming`, because naming coverage is missing and
-has the lowest readiness score under the current stable ordering.
+by readiness score and stable family priority. It is a refinement candidate,
+not a permission to generate final content. When all nine schema-bound seed
+contracts exist, `pipeline-status` reports
+`creation_contract_seed_matrix_ready: true` and changes `next_safe_action` to
+`hermes-readiness`; the final asset and writing gate remains with the Owner.
 
 v0.3 remains read-only and infrastructure-only:
 
@@ -711,5 +714,43 @@ contract explicit:
 v0.4 remains read-only. It does not progress Phase 2F, call Hermes, dispatch
 Antigravity from Studio, read `novel_training_set/`, generate prose, or generate
 final creative assets.
+
+## Corpus Review Ingestion v0.14
+
+After the full-corpus proof and the explicit research-promotion decision, the
+validated Antigravity review can be ingested into structured research assets:
+
+```bash
+python3 system/runtime/nrl.py full-corpus-proof-promote
+python3 system/runtime/nrl.py full-corpus-review-ingest
+python3 system/runtime/nrl.py evidence-pack-matrix --write
+python3 system/runtime/nrl.py creation-context-index-build
+```
+
+The promoted research artifact records 18 book reviews, cross-book mechanisms,
+and nine creation-family evidence sets. It contains no raw novel text and is
+not a training set. The nine seed producers then establish contract coverage:
+
+```bash
+python3 system/runtime/nrl.py produce-naming-seed --job-id job-v05-naming-antigravity-review
+python3 system/runtime/nrl.py produce-npc-seed --job-id job-v05-npcs-antigravity-review
+python3 system/runtime/nrl.py produce-artifact-seed --job-id job-v05-artifacts-antigravity-review
+python3 system/runtime/nrl.py produce-state-ledger-seed --job-id job-v05-state_ledger-antigravity-review
+python3 system/runtime/nrl.py produce-emotional-bond-seed --job-id job-v05-emotional_bonds-antigravity-review
+python3 system/runtime/nrl.py produce-foreshadowing-seed --job-id job-v05-foreshadowing-antigravity-review
+python3 system/runtime/nrl.py produce-character-seed --job-id job-v05-characters-antigravity-review
+python3 system/runtime/nrl.py produce-faction-seed --job-id job-v05-factions-antigravity-review
+python3 system/runtime/nrl.py produce-techniques --job-id job-v05-techniques-antigravity-review
+```
+
+Check the final handoff boundary:
+
+```bash
+python3 system/runtime/nrl.py hermes-readiness
+```
+
+The expected current state is `blocked_on_final_asset_owner_gate` with
+`ready_to_call_hermes: false`. Hermes is not called by this runtime until the
+Owner explicitly authorizes final creative asset generation and writing.
 
 GitHub binding is intentionally outside the runtime. Bind the workspace to a confirmed repository first; then `doctor` will report repository root, branch, and remotes. Do not bind this workspace to an unrelated repository.

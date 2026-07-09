@@ -9,9 +9,33 @@
         "family": {"const": "foreshadowing"},
         "foreshadowing": {
           "type": "object",
+          "required": [
+            "surface_explanation",
+            "payoff_stage",
+            "hidden_logic_key",
+            "payoff_condition_ledger_state",
+            "clue_exposure_risk",
+            "lifecycle_policy",
+            "originality_policy"
+          ],
           "properties": {
-            "surface_explanation": {"type": "string"},
-            "payoff_stage": {"type": "string"}
+            "surface_explanation": {"type": "string", "minLength": 1},
+            "payoff_stage": {"type": "string", "minLength": 1},
+            "hidden_logic_key": {"type": "string", "minLength": 1},
+            "payoff_condition_ledger_state": {"type": "string", "minLength": 1},
+            "clue_exposure_risk": {"type": "number", "minimum": 0},
+            "lifecycle_policy": {
+              "type": "object",
+              "required": ["setup", "misdirection", "reveal", "retirement"],
+              "properties": {
+                "setup": {"type": "string", "minLength": 1},
+                "misdirection": {"type": "string", "minLength": 1},
+                "reveal": {"type": "string", "minLength": 1},
+                "retirement": {"type": "string", "minLength": 1}
+              },
+              "additionalProperties": false
+            },
+            "originality_policy": {"type": "string", "minLength": 1}
           },
           "additionalProperties": false
         }

@@ -3,6 +3,316 @@
   "project": "《借天改命账》",
   "assets": [
     {
+      "asset_id": "artifacts_project_contract_seed",
+      "family": "artifacts",
+      "display_name": "Artifact Lifecycle Contract Seed",
+      "lifecycle_state": "seed",
+      "source_refs": [
+        "system/agent_ops/outbox/job-v05-artifacts-antigravity-review_validated.md",
+        "full-review-book-01",
+        "full-review-book-04",
+        "full-review-book-05"
+      ],
+      "relationships": [],
+      "constraints": [
+        "seed contract only",
+        "not a final item catalog",
+        "no final physical description",
+        "every benefit must map to a tracked cost or exposure state"
+      ],
+      "artifact": {
+        "cost": "Every activation consumes a tracked life, debt, exposure, or trust state.",
+        "upgrade_stage": "contract_seed",
+        "lifecycle_policy": {
+          "acquisition": "enter the registry only with source evidence and a bounded acquisition condition",
+          "activation": "activate only when the linked state transition is explicit",
+          "dormancy": "become dormant when cost, exposure, or map conditions are unmet",
+          "retirement": "retire when its narrative function is resolved or its debt is unrecoverable"
+        },
+        "cost_and_limitation_rules": {
+          "usage_cost": "must name a ledger state key and a measurable decrement or debt increase",
+          "backlash": "must define delayed backlash or exposure, never cost-free progression",
+          "exposure_state_key": "artifact_exposure_rate"
+        },
+        "upgrade_path": {
+          "criteria": "upgrade only after a validated state transition and evidence-backed function change",
+          "materials": "tracked resources or obligations, not arbitrary treasure accumulation",
+          "state_transition": "seed -> active -> dormant or retired"
+        },
+        "visual_symbol_ledger": "visual symbol must reinforce ledger, debt, audit, fire, or scale semantics without copying source-object imagery",
+        "originality_policy": "translate function and narrative pressure; never copy names, shapes, scenes, or exact abilities from source works"
+      }
+    },
+    {
+      "asset_id": "characters_project_contract_seed",
+      "family": "characters",
+      "display_name": "Character Growth Contract Seed",
+      "lifecycle_state": "seed",
+      "source_refs": [
+        "system/agent_ops/outbox/job-v05-characters-antigravity-review_validated.md",
+        "full-review-book-01",
+        "full-review-book-08",
+        "full-review-book-15"
+      ],
+      "relationships": [],
+      "constraints": [
+        "seed contract only",
+        "not a final character card",
+        "no final names or dialogue",
+        "growth cannot be represented as a level-only ladder"
+      ],
+      "character": {
+        "role": "ledger-bound protagonist growth contract",
+        "growth_stage": "contract_seed",
+        "debt_balance": 0,
+        "exposure_rate": 0,
+        "sanity_level": 0,
+        "identity_masks": {
+          "max_active_masks": 0,
+          "exposure_parameter": "protagonist_exposure_rate"
+        },
+        "growth_policy": {
+          "transition_condition": "growth requires a validated debt-clearing or audit-resolution state transition",
+          "forbidden_shortcut": "no free power-up, copied realm ladder, or untracked inheritance jump",
+          "audit_resolution": "each growth stage must reconcile cost, trust, exposure, and consequence references"
+        },
+        "originality_policy": "abstract growth pressure and role function only; never copy names, identities, relationships, or progression titles from source works"
+      }
+    },
+    {
+      "asset_id": "emotional_bonds_project_contract_seed",
+      "family": "emotional_bonds",
+      "display_name": "Emotional Bond Contract Seed",
+      "lifecycle_state": "seed",
+      "source_refs": [
+        "system/agent_ops/outbox/job-v05-emotional_bonds-antigravity-review_validated.md",
+        "full-review-book-03",
+        "full-review-book-04",
+        "full-review-book-08"
+      ],
+      "relationships": [],
+      "constraints": [
+        "seed contract only",
+        "not a final relationship arc",
+        "no final dialogue or sacrifice scene",
+        "trust changes require state-ledger evidence"
+      ],
+      "emotional_bond": {
+        "bond_type": "trust-debt transition contract",
+        "trust_state": "unresolved",
+        "persona_trust_map": [
+          "primary_persona:unresolved",
+          "masked_persona:unresolved"
+        ],
+        "lifespan_decay_rate": 0,
+        "preservation_deadline": "requires explicit deadline state before activation",
+        "karmic_debt_modifier": 0,
+        "exposure_backlash_coefficient": 0,
+        "transition_policy": "devoted, suspicious, and adversarial states must alter downstream role and faction behavior through validated transitions",
+        "originality_policy": "translate relationship pressure into trust, debt, risk, and repair states; never copy iconic identities or backstory configurations"
+      }
+    },
+    {
+      "asset_id": "factions_project_contract_seed",
+      "family": "factions",
+      "display_name": "Faction Pressure Contract Seed",
+      "lifecycle_state": "seed",
+      "source_refs": [
+        "system/agent_ops/outbox/job-v05-factions-antigravity-review_validated.md",
+        "full-review-book-02",
+        "full-review-book-03",
+        "full-review-book-07"
+      ],
+      "relationships": [],
+      "constraints": [
+        "seed contract only",
+        "not a final faction roster",
+        "no named institutions or plot dossiers",
+        "faction pressure must be ledger-backed"
+      ],
+      "faction": {
+        "interest": "manage survival, debt collection, public legitimacy, and access to life resources",
+        "pressure_level": 0,
+        "tax_enforcement_role": "role contract pending original faction naming",
+        "associated_ledger_states": [
+          "protagonist_exposure_rate",
+          "community_trust_level",
+          "lifespan_debt_balance"
+        ],
+        "cohort_capacity": 0,
+        "threat_exposure_coefficient": 0,
+        "lifecycle_policy": {
+          "establishment": "establish only when an interest, resource, authority, and ledger state are registered",
+          "alliance_shift": "shift alliance only after an interest or debt transition is validated",
+          "territorial_expansion": "expand with map evidence and increased exposure cost",
+          "retirement": "retire or dissolve when its pressure function and outstanding obligations are reconciled"
+        },
+        "originality_policy": "translate systemic interests and pressure functions; never copy faction names, institutions, or plot structures from source works"
+      }
+    },
+    {
+      "asset_id": "foreshadowing_project_contract_seed",
+      "family": "foreshadowing",
+      "display_name": "Foreshadowing Lifecycle Contract Seed",
+      "lifecycle_state": "seed",
+      "source_refs": [
+        "system/agent_ops/outbox/job-v05-foreshadowing-antigravity-review_validated.md",
+        "full-review-book-02",
+        "full-review-book-06",
+        "full-review-book-09"
+      ],
+      "relationships": [],
+      "constraints": [
+        "seed contract only",
+        "not a final clue dictionary",
+        "no new plot promises",
+        "every payoff requires state-ledger evidence"
+      ],
+      "foreshadowing": {
+        "surface_explanation": "initial clue presents a bounded ledger anomaly without confirming its cause",
+        "payoff_stage": "contract_seed",
+        "hidden_logic_key": "unresolved_audit_liability",
+        "payoff_condition_ledger_state": "protagonist_exposure_rate and community_trust_level must satisfy the registered transition",
+        "clue_exposure_risk": 0,
+        "lifecycle_policy": {
+          "setup": "register one observable anomaly with source and state impact",
+          "misdirection": "allow only evidence-backed alternative explanations",
+          "reveal": "reveal only after the linked ledger condition is met",
+          "retirement": "retire after payoff and downstream references are reconciled"
+        },
+        "originality_policy": "abstract clue function and payoff pressure; never copy iconic objects, setups, names, or resolution scenes"
+      }
+    },
+    {
+      "asset_id": "naming_project_contract_seed",
+      "family": "naming",
+      "display_name": "Project Naming Contract Seed",
+      "lifecycle_state": "seed",
+      "source_refs": [
+        "system/agent_ops/outbox/job-v05-naming-antigravity-review_validated.md",
+        "full-review-book-01",
+        "full-review-book-05",
+        "full-review-book-07"
+      ],
+      "relationships": [],
+      "constraints": [
+        "seed contract only",
+        "not a final naming dictionary",
+        "do not use as prose generation output",
+        "every derived name requires collision validation"
+      ],
+      "naming": {
+        "semantic_field": "寿命、债务、账册、税序、火、秤的审计语义",
+        "naming_roots": [
+          "命",
+          "账",
+          "债",
+          "算",
+          "簿",
+          "漏",
+          "劫"
+        ],
+        "form_rules": [
+          "角色与势力名称优先使用制度、职业或地域语义",
+          "道具与招式名称必须体现账务动作、代价或状态变化",
+          "境界与能力名称不得复用训练集的现成等级词或专名结构",
+          "每个名称必须保留来源机制与原创转译说明"
+        ],
+        "forbidden_collisions": [
+          "至尊骨",
+          "重瞳",
+          "九秘",
+          "掌天瓶",
+          "春秋蝉",
+          "魂殿"
+        ],
+        "forbidden_terms": [
+          "测名院",
+          "无名者航路",
+          "群岛无名碑",
+          "海图擦除",
+          "旧名碑逻辑"
+        ],
+        "originality_policy": "只迁移抽象功能与叙事作用，不复制原作专名、词法模板或境界序列。"
+      }
+    },
+    {
+      "asset_id": "npcs_project_contract_seed",
+      "family": "npcs",
+      "display_name": "NPC Role Contract Seed",
+      "lifecycle_state": "seed",
+      "source_refs": [
+        "system/agent_ops/outbox/job-v05-npcs-antigravity-review_validated.md",
+        "full-review-book-03",
+        "full-review-book-10",
+        "full-review-book-13"
+      ],
+      "relationships": [],
+      "constraints": [
+        "seed contract only",
+        "not a final NPC roster",
+        "no final names or dialogue",
+        "every recurrence change requires state-ledger validation"
+      ],
+      "npc": {
+        "role_class": "debt-auditing role taxonomy seed",
+        "recurrence_policy": {
+          "map_transition": "re-enter only when the current map exposes a new ledger consequence",
+          "power_scaling": "scale by information, authority, and debt exposure before combat power",
+          "retirement_condition": "retire when the role's debt, witness, or trust function is resolved"
+        },
+        "faction_id": "faction_registry_pending",
+        "information_state": "role-level information boundary only",
+        "ledger_debt_balance": 0,
+        "trust_metric": 0,
+        "originality_policy": "Use systemic functions and state transitions, never copied identities, titles, or dialogue patterns."
+      }
+    },
+    {
+      "asset_id": "state_ledger_project_contract_seed",
+      "family": "state_ledger",
+      "display_name": "State Ledger Contract Seed",
+      "lifecycle_state": "seed",
+      "source_refs": [
+        "system/agent_ops/outbox/job-v05-state_ledger-antigravity-review_validated.md",
+        "full-review-book-16",
+        "full-review-family-state_ledger",
+        "full-review-mechanism-cb-m1"
+      ],
+      "relationships": [],
+      "constraints": [
+        "seed contract only",
+        "not a chapter-by-chapter event log",
+        "no invented unreleased plot events",
+        "every update must balance a tracked debit and credit"
+      ],
+      "state_ledger": {
+        "state_key": "project_audit_balance",
+        "value_type": "bounded_numeric_with_transition_reason",
+        "audit_policy": {
+          "validation_rule": "every state change requires source, reason, delta, and affected asset IDs",
+          "transaction_boundary": "a state transaction closes only after downstream references resolve",
+          "balance_rule": "life, debt, reputation, exposure, and trust deltas must reconcile before promotion"
+        },
+        "retribution_triggers": [
+          "debt threshold crossing",
+          "exposure threshold crossing",
+          "unbalanced transaction"
+        ],
+        "tracking_metrics": [
+          "lifespan_debt_balance",
+          "protagonist_exposure_rate",
+          "community_trust_level",
+          "reincarnation_lifespan_count"
+        ],
+        "decay_policy": {
+          "decay_condition": "unresolved debt and exposure increase when a promised settlement is skipped",
+          "restoration_condition": "restoration requires a validated repayment, sacrifice, or trust repair transition"
+        },
+        "originality_policy": "abstract state mechanics only; never copy named meters, progression labels, or numeric systems from source works"
+      }
+    },
+    {
       "asset_id": "technique_backlash_guard",
       "family": "techniques",
       "display_name": "Backlash Guard Candidate",
@@ -22,7 +332,18 @@
       ],
       "technique": {
         "cost": "Every defensive or stabilizing action must leave a delayed backlash, debt marker, or opportunity cost.",
-        "counter_ids": []
+        "counter_ids": [],
+        "ledger_state_cost_key": "lifespan_debt_balance",
+        "measurable_decrement": 1,
+        "backlash_state_modifier": "increase protagonist_exposure_rate or delayed debt",
+        "required_auditing_role": "auditor_role_pending",
+        "relic_exposure_coefficient": 0,
+        "lifecycle_policy": {
+          "evolution": "evolve only after a validated ledger transition and evidence-backed function change",
+          "decay": "decay when cost, role, or map prerequisites are unmet",
+          "retirement": "retire when its counter path or debt function is resolved"
+        },
+        "originality_policy": "abstract function and cost; never copy source technique names, realms, or proprietary jargon"
       }
     },
     {
@@ -45,7 +366,18 @@
       ],
       "technique": {
         "cost": "Every advancement action must spend a visible resource, reputation position, or bodily state.",
-        "counter_ids": []
+        "counter_ids": [],
+        "ledger_state_cost_key": "lifespan_debt_balance",
+        "measurable_decrement": 1,
+        "backlash_state_modifier": "increase protagonist_exposure_rate or delayed debt",
+        "required_auditing_role": "auditor_role_pending",
+        "relic_exposure_coefficient": 0,
+        "lifecycle_policy": {
+          "evolution": "evolve only after a validated ledger transition and evidence-backed function change",
+          "decay": "decay when cost, role, or map prerequisites are unmet",
+          "retirement": "retire when its counter path or debt function is resolved"
+        },
+        "originality_policy": "abstract function and cost; never copy source technique names, realms, or proprietary jargon"
       }
     },
     {
@@ -68,7 +400,18 @@
       ],
       "technique": {
         "cost": "Every reversal action must convert one tracked state into another rather than erasing consequences.",
-        "counter_ids": []
+        "counter_ids": [],
+        "ledger_state_cost_key": "lifespan_debt_balance",
+        "measurable_decrement": 1,
+        "backlash_state_modifier": "increase protagonist_exposure_rate or delayed debt",
+        "required_auditing_role": "auditor_role_pending",
+        "relic_exposure_coefficient": 0,
+        "lifecycle_policy": {
+          "evolution": "evolve only after a validated ledger transition and evidence-backed function change",
+          "decay": "decay when cost, role, or map prerequisites are unmet",
+          "retirement": "retire when its counter path or debt function is resolved"
+        },
+        "originality_policy": "abstract function and cost; never copy source technique names, realms, or proprietary jargon"
       }
     }
   ]

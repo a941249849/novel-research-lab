@@ -31,6 +31,7 @@ class ProducerStatusCliTests(RuntimeCliCase):
         data = json.loads(result.stdout)
         self.assertEqual(data["version"], "0.6")
         self.assertIn("techniques", data["supported_families"])
+        self.assertIn("naming", data["supported_families"])
         self.assertTrue(data["techniques"]["job_validated"])
         self.assertEqual(data["system_mode"], "SYSTEM_HARDENING")
         self.assertEqual(data["content_progression"], "FROZEN_AT_OWNER_GATE")
@@ -80,6 +81,82 @@ class TechniqueProducerCliTests(RuntimeCliCase):
             )
         )
         self.assertEqual(len([asset for asset in store["assets"] if asset["family"] == "techniques"]), 3)
+
+
+class NamingProducerCliTests(RuntimeCliCase):
+    def test_produce_naming_seed_writes_schema_bound_contract(self):
+        result = self.run_cli(
+            "produce-naming-seed",
+            "--job-id",
+            "job-v05-naming-antigravity-review",
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        data = json.loads(result.stdout)
+        self.assertEqual(data["produced_count"], 1)
+        self.assertTrue(data["store_validation"]["valid"])
+        store = json.loads(
+            (REPO_ROOT / "system/creation_assets/project_assets.v0.2.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        asset = next(item for item in store["assets"] if item["family"] == "naming")
+        self.assertEqual(asset["lifecycle_state"], "seed")
+        self.assertIn("naming_roots", asset["naming"])
+        self.assertIn("测名院", asset["naming"]["forbidden_terms"])
+
+    def test_naming_contamination_is_rejected(self):
+        from nrl_creation_schemas import validate_creation_asset_store
+
+        store = {
+            "version": "0.2",
+            "project": "test",
+            "assets": [
+                {
+                    "asset_id": "naming-bad",
+                    "family": "naming",
+                    "display_name": "bad",
+                    "lifecycle_state": "seed",
+                    "source_refs": ["system:test"],
+                    "relationships": [],
+                    "constraints": [],
+                    "naming": {
+                        "semantic_field": "测名院",
+                        "naming_roots": ["x"],
+                        "form_rules": ["x"],
+                        "forbidden_collisions": [],
+                        "forbidden_terms": ["测名院"],
+                        "originality_policy": "x",
+                    },
+                }
+            ],
+        }
+        result = validate_creation_asset_store(store)
+        self.assertFalse(result["valid"])
+        self.assertIn(
+            "naming_anti_contamination",
+            {error["code"] for error in result["errors"]},
+        )
+
+
+class NpcProducerCliTests(RuntimeCliCase):
+    def test_produce_npc_seed_writes_state_bound_contract(self):
+        result = self.run_cli(
+            "produce-npc-seed",
+            "--job-id",
+            "job-v05-npcs-antigravity-review",
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        data = json.loads(result.stdout)
+        self.assertEqual(data["produced_count"], 1)
+        self.assertTrue(data["store_validation"]["valid"])
+        store = json.loads(
+            (REPO_ROOT / "system/creation_assets/project_assets.v0.2.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        asset = next(item for item in store["assets"] if item["family"] == "npcs")
+        self.assertIn("information_state", asset["npc"])
+        self.assertIn("recurrence_policy", asset["npc"])
 
 
 class ProducerIntegrationTests(RuntimeCliCase):

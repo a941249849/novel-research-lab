@@ -9,12 +9,39 @@
         "family": {"const": "techniques"},
         "technique": {
           "type": "object",
+          "required": [
+            "cost",
+            "counter_ids",
+            "ledger_state_cost_key",
+            "measurable_decrement",
+            "backlash_state_modifier",
+            "required_auditing_role",
+            "relic_exposure_coefficient",
+            "lifecycle_policy",
+            "originality_policy"
+          ],
           "properties": {
-            "cost": {"type": "string"},
+            "cost": {"type": "string", "minLength": 1},
             "counter_ids": {
               "type": "array",
               "items": {"type": "string"}
-            }
+            },
+            "ledger_state_cost_key": {"type": "string", "minLength": 1},
+            "measurable_decrement": {"type": "number", "minimum": 0},
+            "backlash_state_modifier": {"type": "string", "minLength": 1},
+            "required_auditing_role": {"type": "string", "minLength": 1},
+            "relic_exposure_coefficient": {"type": "number", "minimum": 0},
+            "lifecycle_policy": {
+              "type": "object",
+              "required": ["evolution", "decay", "retirement"],
+              "properties": {
+                "evolution": {"type": "string", "minLength": 1},
+                "decay": {"type": "string", "minLength": 1},
+                "retirement": {"type": "string", "minLength": 1}
+              },
+              "additionalProperties": false
+            },
+            "originality_policy": {"type": "string", "minLength": 1}
           },
           "additionalProperties": false
         }

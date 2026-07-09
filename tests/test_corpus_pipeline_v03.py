@@ -43,7 +43,7 @@ class CorpusPipelineCliTests(unittest.TestCase):
         self.assertEqual(data["version"], "0.3")
         self.assertEqual(data["mode"], "SYSTEM_HARDENING")
         self.assertEqual(data["content_progression"], "FROZEN_AT_OWNER_GATE")
-        self.assertEqual(data["next_family"]["family"], "naming")
+        self.assertEqual(data["next_family"]["family"], "npcs")
         self.assertEqual(
             len([family for family in data["families"] if family["is_next"]]),
             1,
@@ -51,6 +51,8 @@ class CorpusPipelineCliTests(unittest.TestCase):
         self.assertGreaterEqual(len(data["stages"]), 7)
         self.assertIn("prose_generation", {stage["stage_id"] for stage in data["stages"]})
         self.assertIn("write novel prose", data["forbidden_actions"])
+        self.assertTrue(data["creation_contract_seed_matrix_ready"])
+        self.assertIn("hermes-readiness", data["next_safe_action"])
         self.assertNotIn("novel_training_set/", json.dumps(data, ensure_ascii=False))
 
     def test_pipeline_plan_next_matches_status(self):
@@ -59,11 +61,11 @@ class CorpusPipelineCliTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         plan = json.loads(result.stdout)
         self.assertEqual(plan["target_family"]["family"], status["next_family"]["family"])
-        self.assertEqual(plan["pipeline_id"], "corpus-to-creation-naming")
+        self.assertEqual(plan["pipeline_id"], "corpus-to-creation-npcs")
         self.assertFalse(plan["content_generation_allowed"])
 
     def test_evidence_pack_next_writes_guarded_manifest_without_raw_corpus(self):
-        output_path = REPO_ROOT / "system/research_assets/evidence_packs/naming.v0.10.json"
+        output_path = REPO_ROOT / "system/research_assets/evidence_packs/npcs.v0.10.json"
         if output_path.exists():
             output_path.unlink()
         result = self.run_cli("evidence-pack", "--next", "--write")
@@ -72,11 +74,11 @@ class CorpusPipelineCliTests(unittest.TestCase):
         self.assertTrue(output_path.exists())
         written = json.loads(output_path.read_text(encoding="utf-8"))
         self.assertEqual(pack, written)
-        self.assertEqual(pack["evidence_pack_id"], "evidence-pack-naming-v0.10")
-        self.assertEqual(pack["family"], "naming")
+        self.assertEqual(pack["evidence_pack_id"], "evidence-pack-npcs-v0.10")
+        self.assertEqual(pack["family"], "npcs")
         self.assertEqual(
             pack["schema_contract"]["path"],
-            "system/creation_assets/schemas/naming.schema.json",
+            "system/creation_assets/schemas/npcs.schema.json",
         )
         self.assertGreaterEqual(pack["evidence_summary"]["item_count"], 3)
         self.assertFalse(pack["content_generation_allowed"])
@@ -87,7 +89,7 @@ class CorpusPipelineCliTests(unittest.TestCase):
         self.assertNotIn("novel_training_set/", serialized)
         self.assertEqual(
             pack["promotion_dependencies"]["full_corpus_proof"]["status"],
-            "blocked_on_owner_gate",
+            "promotable_research_asset",
         )
 
     def test_evidence_pack_validate_enforces_active_gates(self):
@@ -97,7 +99,7 @@ class CorpusPipelineCliTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         validation = json.loads(result.stdout)
         self.assertTrue(validation["valid"])
-        self.assertEqual(validation["family"], "naming")
+        self.assertEqual(validation["family"], "npcs")
         required_gates = {
             "schema_validation",
             "source_evidence",
@@ -196,9 +198,9 @@ class CorpusPipelineContractTests(unittest.TestCase):
         first = self.build_status(self.state, self.adapters)
         second = self.build_status(self.state, self.adapters)
         self.assertEqual(first, second)
-        self.assertEqual(first["next_family"]["family"], "naming")
+        self.assertEqual(first["next_family"]["family"], "npcs")
         ordered = [family["family"] for family in first["families"][:2]]
-        self.assertEqual(ordered, ["naming", "npcs"])
+        self.assertEqual(ordered, ["npcs", "artifacts"])
 
     def test_every_family_plan_has_schema_evidence_and_validation_gates(self):
         required_gates = {
@@ -245,7 +247,7 @@ class CorpusPipelineStudioTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         data = json.loads(result.stdout)
         self.assertIn("corpus_pipeline", data)
-        self.assertEqual(data["corpus_pipeline"]["next_family"]["family"], "naming")
+        self.assertEqual(data["corpus_pipeline"]["next_family"]["family"], "npcs")
         self.assertIn("evidence_pack_matrix", data["corpus_pipeline"])
         self.assertEqual(
             data["corpus_pipeline"]["evidence_pack_matrix"]["family_count"],
@@ -296,8 +298,8 @@ class CorpusPipelineServerTests(unittest.TestCase):
     def test_evidence_pack_route_returns_next_pack(self):
         status, data = self.request_json("/api/evidence-pack?next=true")
         self.assertEqual(status, 200)
-        self.assertEqual(data["family"], "naming")
-        self.assertEqual(data["evidence_pack_id"], "evidence-pack-naming-v0.10")
+        self.assertEqual(data["family"], "npcs")
+        self.assertEqual(data["evidence_pack_id"], "evidence-pack-npcs-v0.10")
         self.assertFalse(data["content_generation_allowed"])
 
     def test_pipeline_plan_route_rejects_invalid_family(self):

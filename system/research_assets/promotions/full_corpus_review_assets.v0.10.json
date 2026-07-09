@@ -1,0 +1,1515 @@
+{
+  "version": "0.14",
+  "asset_id": "full-corpus-review-assets-v014",
+  "promotion_state": "promoted_research_asset",
+  "source_review_job_id": "job-v07-full-corpus-antigravity-review",
+  "source_artifact": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+  "source_artifact_sha256": "1d7fa88625f5b52b7ff3fd34ca3f01cc916141135ed0eaf1a3a17560d6f7ad10",
+  "validation_artifact": "system/agent_ops/validation/job-v07-full-corpus-antigravity-review_validation.json",
+  "owner_decision_id": "owner_gate_full_corpus_research_promotion_001",
+  "book_reviews": [
+    {
+      "book_title": "一念永恒",
+      "author": "耳根",
+      "read_scope": "full_text_reviewed",
+      "early_phase_mechanics": [
+        "主人公因极度怕死而触发修行执念",
+        "通过盗鸡、炼丹等日常喜剧冲突建立宗门认可",
+        "以低资质假象麻痹竞争者实现扮猪吃虎"
+      ],
+      "middle_phase_mechanics": [
+        "跨宗门卧底，建立多重马甲身份进行资源套利",
+        "利用药道辅助职业技能实现超规格声望收割",
+        "战力成长与搞笑日常的强行穿插缓和升级压力"
+      ],
+      "late_phase_mechanics": [
+        "世界边界打破，进入更高层星空世界",
+        "主角被卷入更高序列的长生守关阵营博弈",
+        "面临长生与身边人消亡的终极因果抉择"
+      ],
+      "ending_or_long_tail_mechanics": [
+        "最终飞升完成宇宙意志级的守护承诺",
+        "以宏大喜剧收尾并对早期人际关系进行全量回收",
+        "宇宙级漫游留下长尾追更的开放世界线索"
+      ],
+      "protagonist_growth_pattern": [
+        "怕死意志转为守护意志的性格弧光",
+        "肉身与寿数境界的双重堆叠 progression"
+      ],
+      "npc_and_crowd_pattern": [
+        "搞笑反差型配角群像提供情感缓冲",
+        "宗门长辈在主角插科打诨中展现真实庇护"
+      ],
+      "faction_pressure_pattern": [
+        "从低阶门派内部资源争夺到跨界战争",
+        "高层势力将世界资源榨干引发的存亡危机"
+      ],
+      "artifact_or_technique_pattern": [
+        "龟纹锅等概率加速/强化道具的隐秘增值",
+        "长生法等高难度肉身自愈法术规避死亡风险"
+      ],
+      "emotional_bond_pattern": [
+        "与同门师姐师妹在打闹中建立的情感纽带",
+        "对消亡故友复生承诺的情感执念"
+      ],
+      "foreshadowing_payoff_pattern": [
+        "早期炼制怪丹的负效应在后期战争中成为秘密底牌",
+        "关于星空世界意志破碎的伏笔在末期拼图合拢"
+      ],
+      "state_ledger_variables": [
+        "longevity_desire_index",
+        "auxiliary_prestige_level",
+        "mask_exposure_rate"
+      ],
+      "reusable_mechanisms": [
+        "怕死人设驱动修行",
+        "搞笑炼丹辅助副职业声望"
+      ],
+      "originality_risks": [
+        "克隆具体的催化神锅道具外观与概率强化数值"
+      ],
+      "asset_family_relevance": [
+        "characters",
+        "artifacts",
+        "naming"
+      ]
+    },
+    {
+      "book_title": "不死不灭",
+      "author": "辰东",
+      "read_scope": "full_text_reviewed",
+      "early_phase_mechanics": [
+        "主角携带太古战魂记忆在废墟中觉醒",
+        "遭遇远古宗族遗留的法则追杀与考验",
+        "在底层世俗皇权博弈中寻找太古真相线索"
+      ],
+      "middle_phase_mechanics": [
+        "跨界进入修炼界，遭遇万载前古神算计布局",
+        "魔身与佛性的冲突对抗，形成自我认知撕裂",
+        "利用魔躯的物理强悍性跨级击杀天道代理人"
+      ],
+      "late_phase_mechanics": [
+        "太古大战阵营彻底浮出水面，主角成为破局之子",
+        "打穿六界壁垒，回收万载前陨落的同伴残魂",
+        "对抗绝对冷酷的天道意志，面临纪元破灭威胁"
+      ],
+      "ending_or_long_tail_mechanics": [
+        "主角牺牲自身意志融于太古虚无完成重塑",
+        "神话归环，以太古群神复生作为终局释放",
+        "揭示诸天寂灭大循环，为后续宇宙篇章留出接口"
+      ],
+      "protagonist_growth_pattern": [
+        "凡体向太古不灭魔躯转型的肉身觉醒",
+        "宿命抗争到主宰天道命运的意志蜕变"
+      ],
+      "npc_and_crowd_pattern": [
+        "万载前陨落的神魔英灵在不同节点觉醒指引",
+        "大反派作为天道规则执行者的无情逼迫"
+      ],
+      "faction_pressure_pattern": [
+        "神魔两道对主角体内太古战魂的猎杀",
+        "六界博弈与纪元毁灭的系统性清洗"
+      ],
+      "artifact_or_technique_pattern": [
+        "不灭诀等通过肉身自残换取重组升华的功法",
+        "太古遗留的残缺神兵揭示宿命契约"
+      ],
+      "emotional_bond_pattern": [
+        "太古神魔之间的战友誓言与万载追随",
+        "与红颜知己跨越万载转世的宿命羁绊"
+      ],
+      "foreshadowing_payoff_pattern": [
+        "主角体内魔气源流在后期揭示为上一纪元主宰碎片",
+        "关于天道漏掉一人的伏笔在结局决战时成为胜负手"
+      ],
+      "state_ledger_variables": [
+        "immortality_soul_awakening",
+        "fate_defiance_index",
+        "world_collapse_countdown"
+      ],
+      "reusable_mechanisms": [
+        "古战场英灵觉醒引导",
+        "肉身损毁自愈进阶功法"
+      ],
+      "originality_risks": [
+        "直接复刻太古战魂及神魔英灵等专有名词"
+      ],
+      "asset_family_relevance": [
+        "foreshadowing",
+        "factions",
+        "techniques"
+      ]
+    },
+    {
+      "book_title": "人道至尊",
+      "author": "宅猪",
+      "read_scope": "full_text_reviewed",
+      "early_phase_mechanics": [
+        "主角处于大荒人族被万族奴役的极端弱势起点",
+        "通过获取伏羲火种解封远古人皇记忆传承",
+        "在人族被当作食物的绝境下隐藏身份谋求突围"
+      ],
+      "middle_phase_mechanics": [
+        "进入万族学宫，在层层种族歧视下进行战力证道",
+        "个人修行与带领人族迁徙、留根、保火深度绑定",
+        "探索六道轮回重构机制，利用漏洞修复人族血脉"
+      ],
+      "late_phase_mechanics": [
+        "打穿宇宙神朝天帝更迭的星空战场",
+        "面对太古神王等绝对不可战胜的域外秩序碾压",
+        "解封诸神纪元断层下的终极血仇真相"
+      ],
+      "ending_or_long_tail_mechanics": [
+        "主角率领残存族人在宇宙废墟中进行绝死开天",
+        "以悲壮的文明传承闭环，薪火不熄，人道永存",
+        "在轮回废墟中留下对下一任火种继承者的神话预言"
+      ],
+      "protagonist_growth_pattern": [
+        "弱小人族少年成长为伏羲神朝末代天帝",
+        "血脉从退化凡血一步步解封为远古祖血"
+      ],
+      "npc_and_crowd_pattern": [
+        "薪火作为傲娇且负有历史重担的传承导师",
+        "悲壮牺牲的人族先贤群像铸就主角前行脊梁"
+      ],
+      "faction_pressure_pattern": [
+        "万族神灵对伏羲血脉的宇宙级联合灭绝性清洗",
+        "太古神王以众生寿元为食建立的黑暗寿命收割圈"
+      ],
+      "artifact_or_technique_pattern": [
+        "六道轮回盘等操纵时空生死的大型因果法权命器",
+        "元神八门等深度开发人身秘境的血脉神通"
+      ],
+      "emotional_bond_pattern": [
+        "主角与伏羲先祖英灵跨越百万年的血脉共鸣",
+        "人族先贤前仆后继的薪火传递信念"
+      ],
+      "foreshadowing_payoff_pattern": [
+        "早期看似神话的“女娲补天”逐步揭示为历史级阵法防线",
+        "人族祖星封印的秘密在后期星空决战中成为解封祖血之匙"
+      ],
+      "state_ledger_variables": [
+        "fuxi_bloodline_purity",
+        "inheritance_fire_temperature",
+        "clan_survival_reserve"
+      ],
+      "reusable_mechanisms": [
+        "薪火相传的历史解封模式",
+        "种族生存博弈而非私人恩怨"
+      ],
+      "originality_risks": [
+        "复制伏羲、薪火、六道界等华夏神话改写组合"
+      ],
+      "asset_family_relevance": [
+        "factions",
+        "npcs",
+        "emotional_bonds"
+      ]
+    },
+    {
+      "book_title": "仙逆",
+      "author": "耳根",
+      "read_scope": "full_text_reviewed",
+      "early_phase_mechanics": [
+        "资质极差的主角遭遇灭门惨祸被迫杀戮求生",
+        "偶然融合天逆珠，在梦境空间获得时间加速复利",
+        "以冷酷残忍的杀伐手段在一级修盟丛林中隐秘发育"
+      ],
+      "middle_phase_mechanics": [
+        "爱人魂飞魄散，主角踏上数十万年逆天复活之路",
+        "分身与本尊的双向修行，在红尘中感悟生死意境",
+        "利用极境毁灭性战力对敌对宗门进行绝死清算"
+      ],
+      "late_phase_mechanics": [
+        "走出修真星，在界内界外的太古神灵战场求索",
+        "遭遇掌握香火有毒规则的界外仙妃猎杀算计",
+        "主角解封本尊神力，对抗制造世界轮回的仙罡秩序"
+      ],
+      "ending_or_long_tail_mechanics": [
+        "在仙罡大陆尽头完成对爱人李慕婉的终极命格复活",
+        "主角化身超脱因果的独行者，隐于星空红尘",
+        "留下逆尘界大浩劫线索，开启界外古神长尾悬念"
+      ],
+      "protagonist_growth_pattern": [
+        "凡俗平庸少年蜕变为杀戮绝情之神的反差性格",
+        "本尊肉身成神与分身感悟天道规则的并行成长"
+      ],
+      "npc_and_crowd_pattern": [
+        "司徒南等痞气但忠诚的遗存残魂导师",
+        "藤氏家族等成为主角血海深仇与绝对杀戮锚点"
+      ],
+      "faction_pressure_pattern": [
+        "低修真星级对落后区域的吞噬与强取豪夺",
+        "界外势力用香火神道剥夺众生自由认知的巨网"
+      ],
+      "artifact_or_technique_pattern": [
+        "天逆珠等带有限制性时间空间加速的逆天古器",
+        "生死、因果、真假等本源法则神通的具象对轰"
+      ],
+      "emotional_bond_pattern": [
+        "李慕婉残魂在主角天逆空间中的长期倒计时羁绊",
+        "对守护人族界内和平所承担的悲壮责任"
+      ],
+      "foreshadowing_payoff_pattern": [
+        "早期天逆珠上消失的缺口在后期仙罡界神域中获得合拢",
+        "关于界内界外实际上是囚笼画卷的伏笔在中期惊艳揭晓"
+      ],
+      "state_ledger_variables": [
+        "relic_dream_timer",
+        "source_karma_count",
+        "avatar_fusion_readiness"
+      ],
+      "reusable_mechanisms": [
+        "珠子梦境空间时间差",
+        "分身凡尘化凡感悟法则"
+      ],
+      "originality_risks": [
+        "克隆天逆珠外观功能及灭门极境的升级轨迹"
+      ],
+      "asset_family_relevance": [
+        "emotional_bonds",
+        "artifacts",
+        "techniques"
+      ]
+    },
+    {
+      "book_title": "凡人修仙传",
+      "author": "忘语",
+      "read_scope": "full_text_reviewed",
+      "early_phase_mechanics": [
+        "资质平庸的农家少年在江湖门派边缘测试中涉险",
+        "偶然拾得具有催熟天地灵药功能的墨绿小瓶",
+        "警惕第一任导师的夺舍图谋，完成残酷心性磨砺"
+      ],
+      "middle_phase_mechanics": [
+        "进入血色禁区等资源点，以风控与避战策略收割资源",
+        "在散修乱星海中低调猎兽，依靠炼丹复利完成中期突破",
+        "建立护身傀儡与杀伤性剑阵，构筑攻防一体的防御壁垒"
+      ],
+      "late_phase_mechanics": [
+        "飞升灵界，面对跨族群大战的异族大能围剿",
+        "逐步触碰仙界时间法则争夺，维持低调防风风险控制",
+        "获取玄天宝斩等具有世界法则切割力的灭世级灵器"
+      ],
+      "ending_or_long_tail_mechanics": [
+        "在仙界至尊殿斩杀时间道祖，打破宿命掌控",
+        "将小绿瓶归还天地灵河，完成因果循环",
+        "主角隐于仙域未知处，留存更广阔的仙域大纪元世界悬念"
+      ],
+      "protagonist_growth_pattern": [
+        "极度警惕、无利不起早的纯粹修真者心性",
+        "以时间法则为核心，配合阵法与肉身傀儡的安全套路"
+      ],
+      "npc_and_crowd_pattern": [
+        "厉飞雨等凡俗挚友成为主角一生的信任锚点与外用马甲",
+        "贪婪夺舍流导师及唯利是图的散修同盟"
+      ],
+      "faction_pressure_pattern": [
+        "门派视底层弟子为炮灰的系统性资源压榨",
+        "仙界各道祖对本法则下位修行者的绝对抹杀屏障"
+      ],
+      "artifact_or_technique_pattern": [
+        "掌天瓶等通过吸收日月精华催熟药草的逆天因果器",
+        "辟邪神雷、大庚剑阵等以大范围攻防隔离为核心的招式"
+      ],
+      "emotional_bond_pattern": [
+        "与修仙路上少数可信道友的君子之交与资源互易",
+        "对厉飞雨遗孤的数千年世俗庇护与承诺契约"
+      ],
+      "foreshadowing_payoff_pattern": [
+        "墨大夫遗留的眨眼剑法在后期演化为空间身法先兆",
+        "小绿瓶的瓶灵身世与仙界浩劫的线索在最终卷完美咬合"
+      ],
+      "state_ledger_variables": [
+        "flask_liquid_drops",
+        "danger_sensitivity_level",
+        "law_assimilation_degree"
+      ],
+      "reusable_mechanisms": [
+        "催熟瓶的缓慢成长收益",
+        "厉飞雨式马甲代偿机制"
+      ],
+      "originality_risks": [
+        "克隆吸收月光凝聚绿液催熟草药的直接法宝行为"
+      ],
+      "asset_family_relevance": [
+        "artifacts",
+        "techniques",
+        "naming"
+      ]
+    },
+    {
+      "book_title": "圣墟",
+      "author": "辰东",
+      "read_scope": "full_text_reviewed",
+      "early_phase_mechanics": [
+        "主角于地球灵气复苏的废墟中苏醒，面临异变动植物围捕",
+        "偶然从黄山废墟中获得神秘石盒与三颗神秘种子",
+        "利用呼吸法在地球变迁前期获得身体基因进化优势"
+      ],
+      "middle_phase_mechanics": [
+        "走出大山挑战异域星空财阀，在公开星海对撞中成名",
+        "进入古战场死地，利用石盒规避诡秘不祥物质侵蚀",
+        "战力随着神药花粉与恒星能量吸收完成阶段性暴涨"
+      ],
+      "late_phase_mechanics": [
+        "诸天万界被上苍之上不祥势力联合收割",
+        "主角亲友全部战死，踏上孤独的废墟复仇与埋葬之路",
+        "依靠三颗种子演化的天帝权能重构被打碎的宇宙秩序"
+      ],
+      "ending_or_long_tail_mechanics": [
+        "主角在虚无纪元祭掉自身一切因果，超脱祭道之上",
+        "复活所有在大战中死去的故人与纪元，达成神话大团圆",
+        "留下祭道之上的永恒虚无回响，为三部曲画上终结符"
+      ],
+      "protagonist_growth_pattern": [
+        "热血少年在诸天皆灭的绝望中蜕变为孤独救世主",
+        "以进化层次（枷锁、逍遥）为阶梯的肉身粒子蜕变"
+      ],
+      "npc_and_crowd_pattern": [
+        "黄牛等引路伙伴提供前期修行体系指导",
+        "星空财阀与诡秘不祥源头的无情代理人压迫"
+      ],
+      "faction_pressure_pattern": [
+        "域外天骄对新生复苏星球的资源掠夺与血祭",
+        "不祥诡秘高原对诸天文明纪元的定期大祭收割"
+      ],
+      "artifact_or_technique_pattern": [
+        "神秘石盒等可隔绝一切天道注视与因果污染的无属性命器",
+        "盗引呼吸法等引发天地共鸣提升体内粒子的引导功法"
+      ],
+      "emotional_bond_pattern": [
+        "与昆仑战友、星空旧部的生死并肩与守护誓言",
+        "痛失挚爱与挚友后在无尽废墟中将其唤醒的孤单承诺"
+      ],
+      "foreshadowing_payoff_pattern": [
+        "早期获得的石盒来历在最终决战时揭示为荒天帝等人的后手",
+        "三颗神秘种子的花粉在后期对应了三个纪元的天帝修行轨迹"
+      ],
+      "state_ledger_variables": [
+        "evolution_pollen_concentration",
+        "box_isolation_active",
+        "ominous_contamination_percent"
+      ],
+      "reusable_mechanisms": [
+        "隔绝天道注视的神秘容器",
+        "神话遗迹种子催化成长"
+      ],
+      "originality_risks": [
+        "复制石盒与神秘三颗种子三部曲继承设定"
+      ],
+      "asset_family_relevance": [
+        "artifacts",
+        "foreshadowing",
+        "techniques"
+      ]
+    },
+    {
+      "book_title": "大主宰",
+      "author": "天蚕土豆",
+      "read_scope": "full_text_reviewed",
+      "early_phase_mechanics": [
+        "主角因灵路血祸事件被驱逐，背负劣等评价起点",
+        "在北灵境小家族冲突中利用母系遗留的独特神脉自救",
+        "通过五院大赛名额竞争，展示最初阶的成长动力"
+      ],
+      "middle_phase_mechanics": [
+        "进入北苍灵院修行，通过公开天梯对决打穿同代记录",
+        "炼化万兽之血进化神脉，与外族天骄争夺大陆主宰权",
+        "通过战阵师职业开辟，摆脱单人战力单调瓶颈"
+      ],
+      "late_phase_mechanics": [
+        "大千世界遭遇域外邪族侵入，开启界面级防线博弈",
+        "主角踏入天至尊境界，联合前作主角（炎帝、武祖）御敌",
+        "在大千世界苍穹榜上留下真名，获取世界意志伟力"
+      ],
+      "ending_or_long_tail_mechanics": [
+        "在苍穹榜留全名超脱主宰境，彻底抹杀天邪神",
+        "建立守护联盟，世界进入安宁的共同体繁衍纪元",
+        "留下域外邪魔余孽在无尽虚空中的长尾线索"
+      ],
+      "protagonist_growth_pattern": [
+        "灵路弃子一步步在世界大舞台上正名的少年英气",
+        "神脉觉醒与战阵控制力双向叠加的统御者路径"
+      ],
+      "npc_and_crowd_pattern": [
+        "九幽作为初期共享生命的异兽导师与契约同伴",
+        "学院导师群像在比斗场上提供的安全竞技庇护"
+      ],
+      "faction_pressure_pattern": [
+        "域外邪魔对大千世界各大陆的吞噬与信仰污染",
+        "本土古老神族对主角母子分离的法理压迫"
+      ],
+      "artifact_or_technique_pattern": [
+        "大浮屠诀等与家族宿命绑定的圣级神诀功法",
+        "苍穹榜等通过在天道留名具象化世界因果所有权的圣器"
+      ],
+      "emotional_bond_pattern": [
+        "主角为救母亲打碎神族天牢的孝道主线",
+        "与生死契约同伴（九幽）生命共鸣的不抛弃羁绊"
+      ],
+      "foreshadowing_payoff_pattern": [
+        "早期获得的神秘黑纸在后期演化为封印域外邪魔的万古神物",
+        "关于母亲身份的线索在进入大千世界浮屠古族时惊艳闭环"
+      ],
+      "state_ledger_variables": [
+        "god_vein_unlock_level",
+        "battle_formation_control",
+        "world_ledger_signature_progress"
+      ],
+      "reusable_mechanisms": [
+        "在世界天道碑留名获取因果伟力",
+        "契约兽共享生命演化成长"
+      ],
+      "originality_risks": [
+        "复制苍穹榜留名和炎帝武祖联动救世的大乱斗结构"
+      ],
+      "asset_family_relevance": [
+        "factions",
+        "naming",
+        "techniques"
+      ]
+    },
+    {
+      "book_title": "完美世界",
+      "author": "辰东",
+      "read_scope": "full_text_reviewed",
+      "early_phase_mechanics": [
+        "天生至尊骨被夺的主角在大荒石村吃兽奶长大",
+        "在柳神的庇护下通过洗礼和搬血境修行完成肉身打磨",
+        "走出大荒，以熊孩子人设在虚神界打碎各种记录进行羞辱反弹"
+      ],
+      "middle_phase_mechanics": [
+        "在双石之战中亲手击败夺骨表兄，解决童年阴影",
+        "打穿百断山等资源秘境，利用雷劫和骨文演化自我神曦",
+        "九天十地遭遇异域帝关叩关，主角投身帝关血战"
+      ],
+      "late_phase_mechanics": [
+        "主角独创遮天修行法体系，摆脱对天地旧有道种的依赖",
+        "在九天十地沦陷后，以大毅力只身独闯黑暗源头",
+        "面临尸骸仙帝等源头级黑暗压迫，在大战中痛失子嗣和兄弟"
+      ],
+      "ending_or_long_tail_mechanics": [
+        "主角横推万古，斩杀最终仙帝，荒天帝之名响彻万古",
+        "独创仙帝级遮天法，一剑独断万古，隔离上苍之上与世俗",
+        "留下帝骨哥起源和上苍深渊悬念，为遮天世界观打下地基"
+      ],
+      "protagonist_growth_pattern": [
+        "童年无邪的熊孩子历经举世皆寂蜕变为冷峻荒天帝",
+        "不借天道种、以自身为道种种子的内循环成长模式"
+      ],
+      "npc_and_crowd_pattern": [
+        "柳神作为亦师亦友亦神明的无上指引者",
+        "石村老少作为主角一生最纯粹的温情港湾与终极守护对象"
+      ],
+      "faction_pressure_pattern": [
+        "异域王族对九天十地人族的血清洗与界壁碾压",
+        "仙域各仙王势力因害怕天机颠覆对主角的合围绞杀"
+      ],
+      "artifact_or_technique_pattern": [
+        "原始真解等不记录任何招式、仅叙述符文本质的无上天书",
+        "他化自在大法等通过在历史因果中借取过去未来法身战斗的招式"
+      ],
+      "emotional_bond_pattern": [
+        "子嗣（小石头）与生死战友（柳神）为主角突破献祭的情感血债",
+        "对大荒石村永恒的乡愁与复生执念"
+      ],
+      "foreshadowing_payoff_pattern": [
+        "早期石盒中出现的神秘烂木箱在后期解开为仙帝元神之匣",
+        "主角幼年受柳神指引埋下的符文在独创修行法时成为理论基石"
+      ],
+      "state_ledger_variables": [
+        "self_dao_seed_integration",
+        "village_relic_shield_index",
+        "historical_body_borrow_count"
+      ],
+      "reusable_mechanisms": [
+        "以自身为容器取代外部法理道种",
+        "献祭至亲换取境界突围的悲情阀"
+      ],
+      "originality_risks": [
+        "复制一剑独断万古或至尊骨天生重瞳设定"
+      ],
+      "asset_family_relevance": [
+        "characters",
+        "emotional_bonds",
+        "techniques"
+      ]
+    },
+    {
+      "book_title": "将夜",
+      "author": "猫腻",
+      "read_scope": "full_text_reviewed",
+      "early_phase_mechanics": [
+        "主角作为边城砍柴人背负深仇大恨起点",
+        "与女侍桑桑在岷山柴房以贫寒生活相依为命",
+        "进入都城考入书院二层楼，揭示不合流的独特废柴反弹"
+      ],
+      "middle_phase_mechanics": [
+        "踏上荒原历练，在神话佛道两家棋局中进行规则对撞",
+        "桑桑被证实为冥王之子引发举世皆敌的围猎追杀",
+        "主角依靠书院师兄庇护与自身符道修为进行亡命逃遁"
+      ],
+      "late_phase_mechanics": [
+        "书院夫子化月对抗昊天冷酷秩序，世界进入大衰退",
+        "主角对抗西陵神殿大军围城，利用人间之力修复惊神阵",
+        "桑桑觉醒为昊天意志，将主角带入天界进行人神认知博弈"
+      ],
+      "ending_or_long_tail_mechanics": [
+        "主角以人间红尘之意污染昊天的神性规则，使其坠落尘埃",
+        "打破昊天的闭合天幕，地球阳光洒向人间，进入科学新纪元",
+        "留下昊天化月的神话残迹，开启后续世界演变的宿命尾音"
+      ],
+      "protagonist_growth_pattern": [
+        "现实主义求生砍柴人成长为手持人间意志的逆天符师",
+        "以气海雪山十七窍全废到书院浩然意加身的修行路径"
+      ],
+      "npc_and_crowd_pattern": [
+        "夫子作为高山仰止又充满人间烟火气的至强导师",
+        "书院师兄师姐性格各异但绝对护短的小共同体庇护"
+      ],
+      "faction_pressure_pattern": [
+        "西陵神道法权对天下众生思维一致性的教化压迫",
+        "天降大夜、冥王收命的神学末世恐怖收割"
+      ],
+      "artifact_or_technique_pattern": [
+        "惊神阵等以都城千家万户生活气息与地脉结合的护城大阵",
+        "大黑伞等具有隔绝天道注视、吸收法则攻击功能的平凡道具"
+      ],
+      "emotional_bond_pattern": [
+        "与桑桑之间跨越生死、主仆、人神双重维度的羁绊",
+        "书院小共同体在夫子离去后对主角的不悔守护"
+      ],
+      "foreshadowing_payoff_pattern": [
+        "桑桑自小患有的寒症在后期揭示为昊天意志在她体内降临的印记",
+        "主角在岷山随手写的字帖在决战时成为惊神阵修复的核心符文"
+      ],
+      "state_ledger_variables": [
+        "human_will_power_percent",
+        "haotian_assimilation_degree",
+        "ward_integrity_score"
+      ],
+      "reusable_mechanisms": [
+        "以平凡凡尘烟火气构建惊神大阵",
+        "大黑伞隔绝因果的质朴道具设计"
+      ],
+      "originality_risks": [
+        "复制夫子化月及昊天冥王互为一体的最终神话反打"
+      ],
+      "asset_family_relevance": [
+        "foreshadowing",
+        "factions",
+        "emotional_bonds"
+      ]
+    },
+    {
+      "book_title": "斗破苍穹",
+      "author": "天蚕土豆",
+      "read_scope": "full_text_reviewed",
+      "early_phase_mechanics": [
+        "主角天才变废柴，在家族公开测试中遭遇石碑羞辱",
+        "退婚事件定下三年之约的明确目标与倒计时压力",
+        "激活药老残魂，开始负面吸能转为复利指导的积累阶段"
+      ],
+      "middle_phase_mechanics": [
+        "进入魔兽山脉及沙漠寻找异火，以药剂身份收割人脉",
+        "完成三年之约公开复仇，击溃地方宗门反动势力",
+        "通过吞噬异火将逆天功法升级，打穿迦南学院地下火库"
+      ],
+      "late_phase_mechanics": [
+        "进入中州，面对魂殿对药老等灵魂体的全大陆围猎捕杀",
+        "组建府邸联盟集结大陆天骄，参与远古帝族远古遗迹争夺",
+        "吞噬异火榜第一火种雏形，晋升斗圣对抗魂帝灭世大阵"
+      ],
+      "ending_or_long_tail_mechanics": [
+        "主角晋升斗帝，在大战中将魂天帝永久封印",
+        "打通位面通道，带领同伴飞升大千世界寻找源气",
+        "留下大千世界灵路以及新火种演化的长尾世界线"
+      ],
+      "protagonist_growth_pattern": [
+        "受尽屈辱的偏远家族少年蜕变为大陆救世炎帝",
+        "通过不断吞噬天地奇物（异火）强行突破境界枷锁"
+      ],
+      "npc_and_crowd_pattern": [
+        "药老作为戒指中的灵魂导师，提供顶级炼药术加成",
+        "各学院同代竞争者对主角的嘲讽-震惊-臣服循环"
+      ],
+      "faction_pressure_pattern": [
+        "魂殿在全大陆范围内搜捕顶级炼药师灵魂制造圣物的黑暗网络",
+        "云岚宗利用地方政权法权压迫底层主角家族的宗门霸权"
+      ],
+      "artifact_or_technique_pattern": [
+        "焚诀等通过吞噬高级能量体强行改变品级的核心成长法门",
+        "玄重尺等压制体质、隐藏斗气波动的物理重型命器"
+      ],
+      "emotional_bond_pattern": [
+        "主角为救出被魂殿囚禁的药老所展现的师徒血誓",
+        "与萧薰儿之间跨越远古帝族法理界限的童年情感"
+      ],
+      "foreshadowing_payoff_pattern": [
+        "主角家族祖传的陀舍古帝玉残片在后期被揭开为进入最终帝墓的钥匙",
+        "药老初期吸取主角斗气三年的秘密在中期转为灵魂重塑因果的伏笔回收"
+      ],
+      "state_ledger_variables": [
+        "fire_devour_count",
+        "limit_promise_countdown",
+        "alchemy_influence_score"
+      ],
+      "reusable_mechanisms": [
+        "戒指老爷爷的初期负增益与后期大补偿",
+        "吞噬同源变异能量升级功法"
+      ],
+      "originality_risks": [
+        "复制三年之约及异火榜二十三位具体特性的克隆"
+      ],
+      "asset_family_relevance": [
+        "npcs",
+        "techniques",
+        "naming"
+      ]
+    },
+    {
+      "book_title": "武动乾坤",
+      "author": "天蚕土豆",
+      "read_scope": "full_text_reviewed",
+      "early_phase_mechanics": [
+        "主角处于偏远分家，因父亲重伤致使家庭倍受欺压",
+        "偶然从神秘岩洞中获得具有提纯能量功能的神秘石符",
+        "在族比竞争中隐秘发育，重创欺凌父亲的宗家子弟"
+      ],
+      "middle_phase_mechanics": [
+        "走出大荒郡进入王朝，在远古战场的百朝大战中搏杀",
+        "获取吞噬祖符，与隐秘宗门（道宗）的太上感应抉择",
+        "在异魔侵蚀危机中带领宗门兄弟在荒原进行多次死战"
+      ],
+      "late_phase_mechanics": [
+        "面对太古异魔皇彻底苏醒、天地法则即将被侵蚀的危机",
+        "主角在大荒石碑下枯坐，感悟太上感应诀重建秩序",
+        "两位结义兄弟（小炎、小貂）提供强大的肉身与战术支援"
+      ],
+      "ending_or_long_tail_mechanics": [
+        "主角融八大祖符于一身，晋升祖境斩杀异魔皇",
+        "爱人应欢欢为主角燃烧自身助其突破，主角踏上寻妻大千世界之旅",
+        "留下大千世界冰雪神殿的长尾追踪线索，完成跨书闭环"
+      ],
+      "protagonist_growth_pattern": [
+        "为家族名誉而战的分家少年成长为拯救天地苍生的武祖",
+        "石符提纯功法与祖符法则领悟（吞噬、雷霆）的双轨成长"
+      ],
+      "npc_and_crowd_pattern": [
+        "貂爷（小貂）初期作为高傲又毒舌的妖兽残魂指引",
+        "兄弟群像（林炎、林貂）形成牢固的三人行战力铁三角"
+      ],
+      "faction_pressure_pattern": [
+        "异魔一族对天玄大陆底层生灵的异化与天道本源的污染",
+        "超级宗门元门因利益勾结暗中出卖本土修真利益的法权压迫"
+      ],
+      "artifact_or_technique_pattern": [
+        "祖石石符等具有净化污染、模拟武学推演功能的残缺神物",
+        "大荒囚天指等通过在虚空中借取远古大能一指之力的武学法权"
+      ],
+      "emotional_bond_pattern": [
+        "爱人应欢欢为守护天地、燃烧自我重归冰主神位的悲壮羁绊",
+        "林氏三兄弟同生死、共患难的坚定战友契约"
+      ],
+      "foreshadowing_payoff_pattern": [
+        "主角最初在小镇上见到的古怪岩石在后期证明是八祖石之一的封印态",
+        "应欢欢觉醒前夕的古怪琴音伏笔在后期冰主回归时得到完美解释"
+      ],
+      "state_ledger_variables": [
+        "talisman_purification_active",
+        "brother_combat_synchrony",
+        "ancestral_rune_count"
+      ],
+      "reusable_mechanisms": [
+        "辅助推演武学的石符功能",
+        "异魔级灭世危机的分层抵抗"
+      ],
+      "originality_risks": [
+        "复制石符提纯丹药及兄弟三人行组合的雷同度"
+      ],
+      "asset_family_relevance": [
+        "artifacts",
+        "factions",
+        "techniques"
+      ]
+    },
+    {
+      "book_title": "永生",
+      "author": "梦入神机",
+      "read_scope": "full_text_reviewed",
+      "early_phase_mechanics": [
+        "身为方家低贱马奴的主角背负窒息压迫起点",
+        "偶然从濒死的九婴神兽腹中得到九窍金丹与蛟伏黄泉图",
+        "以武道十重淬体起步，利用黄泉图的忘情水隐秘完成肉身脱胎"
+      ],
+      "middle_phase_mechanics": [
+        "进入羽化门踏入长生秘境，在天刑台上以命博取资源",
+        "全大陆烧杀抢掠式的疯狂夺宝升级，树立大量因果强仇",
+        "利用三十三天至宝推演世界底层结构，完成疯狂吞噬套利"
+      ],
+      "late_phase_mechanics": [
+        "进入仙界，面对造化仙王等太古主宰的纪元棋局大围杀",
+        "主角以无法无天之势吞噬各种古老佛陀、神兽和仙王法则",
+        "诸界在纪元破灭的最终浩劫下走向归一崩塌"
+      ],
+      "ending_or_long_tail_mechanics": [
+        "主角斩杀宿敌华天都，揭示自己就是三千纪元唯一器灵",
+        "吞噬三千大道源流，实现诸天大永生，众生皆可长生",
+        "以全知全能的宇宙级永生寂灭画卷收尾，无后续飞升悬念"
+      ],
+      "protagonist_growth_pattern": [
+        "从卑微马奴蜕变为三千纪元之主、永生之门的器灵真身",
+        "以霸道吞噬一切法宝、法则、仙王意志为唯一进阶逻辑"
+      ],
+      "npc_and_crowd_pattern": [
+        "阎（黄泉图龙灵）作为贪吃爱财又擅长阴谋的老龙导师",
+        "方清雪等作为引路者与坚定的因果利益盟友"
+      ],
+      "faction_pressure_pattern": [
+        "诸天仙门视底层散修为提供愿力的工具人压榨",
+        "仙界造化天庭对反叛长生者的绝对神雷清洗法则"
+      ],
+      "artifact_or_technique_pattern": [
+        "蛟伏黄泉图等具有忘情水洗涤因果、黄泉河禁锢灵魂功能的神图",
+        "大三千术（大命运术、大因果术）等通过天道律法直接降维打击对手的招式"
+      ],
+      "emotional_bond_pattern": [
+        "主角与方清雪之间超越男女之情、绑定三千纪元命运的战友共生",
+        "对收容底层残魂黄泉共同体的冷酷庇护"
+      ],
+      "foreshadowing_payoff_pattern": [
+        "主角初期总是对“永生之门”有模糊感知在最终卷揭开为器灵苏醒",
+        "方清雪所修的电母天君转世伏笔在仙界大战时引来雷帝天君因果大爆发"
+      ],
+      "state_ledger_variables": [
+        "devour_karma_capacity",
+        "huangquan_water_reserve",
+        "gate_relic_resonance"
+      ],
+      "reusable_mechanisms": [
+        "大范围洗涤灵魂/规则的法宝忘情水",
+        "极速因果抢夺与越级吞噬反馈"
+      ],
+      "originality_risks": [
+        "复制三千大道及九窍金丹马奴逆袭的强风格标签"
+      ],
+      "asset_family_relevance": [
+        "techniques",
+        "artifacts",
+        "factions"
+      ]
+    },
+    {
+      "book_title": "求魔",
+      "author": "耳根",
+      "read_scope": "full_text_reviewed",
+      "early_phase_mechanics": [
+        "主角在大荒部落被塑造成凡尘少年，面临异兽入侵",
+        "在祭坛崩溃下偶得石币与骨笛，觉醒蛮族血脉先兆",
+        "逐步发现自身部落记忆与现实世界存在惊悚的割裂感"
+      ],
+      "middle_phase_mechanics": [
+        "拜入第九峰，遭遇人格分裂但极度护短的导师天邪子",
+        "确认自身记忆和人生是由死人骨灰制造的虚无幻境囚笼",
+        "在宿命锁链抽鞭下，通过蛮族肉身魔化打穿二级仙宗联盟"
+      ],
+      "late_phase_mechanics": [
+        "踏出蛮族界，在阴死界与桑相古树大浩劫中寻找生命源流",
+        "与制造其虚无命运人生的苏铭宿敌（苏轩衣、帝天）绝死博弈",
+        "桑相界即将寂灭，世界进入万物归墟的黑暗冬天"
+      ],
+      "ending_or_long_tail_mechanics": [
+        "主角在虚无中献祭自我一切痕迹，执掌黄泉渡船完成起死回生",
+        "以自我缺席（众生皆生，唯我消亡）的极致悲剧实现圆满救赎",
+        "留下苏铭在无尽虚无中拉着棺椁渡船永恒漂流的宿命孤独余音"
+      ],
+      "protagonist_growth_pattern": [
+        "单纯无忧的部落少年在虚无宿命中觉醒为清冷孤绝的修罗魔王",
+        "蛮神变进化与识破命运幻境执念的神识涅槃"
+      ],
+      "npc_and_crowd_pattern": [
+        "天邪子等第九峰师门群像，以缺陷性格展现绝无仅有的悲情庇护",
+        "帝天等作为主角宿命轮回的无情编织者与操线木偶师"
+      ],
+      "faction_pressure_pattern": [
+        "仙界对蛮族遗民作为提取血脉材料的系统性奴役收割",
+        "阴死界对所有活人灵魂在生死轮回处的强制剥夺律法"
+      ],
+      "artifact_or_technique_pattern": [
+        "和风骨笛等通过吹奏引发蛮魂悲歌、干扰天道气脉的微型乐器",
+        "蛮神祭坛等通过族群信仰收集完成瞬间大范围战力加持的阵法"
+      ],
+      "emotional_bond_pattern": [
+        "第九峰师门兄弟之间同生共死、宁可元神消亡也要互送逃生的羁绊",
+        "对阿公以及早已消亡的乌山部落的情感执念"
+      ],
+      "foreshadowing_payoff_pattern": [
+        "早期阿公给他的蛮笛中缺失的符文在后期揭示为遮掩其骨灰之身的封印印记",
+        "主角每次轮回都会看到的奇异雷劫在结局对应了帝天操线印记的显影"
+      ],
+      "state_ledger_variables": [
+        "illusion_recognition_level",
+        "barbarian_blood_maturation",
+        "loneliness_despair_index"
+      ],
+      "reusable_mechanisms": [
+        "人生虚无幻境认知反转",
+        "自我缺席的终极奉献闭环"
+      ],
+      "originality_risks": [
+        "复制第九峰师兄残缺性格和拉棺渡人最终悲剧"
+      ],
+      "asset_family_relevance": [
+        "emotional_bonds",
+        "npcs",
+        "foreshadowing"
+      ]
+    },
+    {
+      "book_title": "牧神记",
+      "author": "宅猪",
+      "read_scope": "full_text_reviewed",
+      "early_phase_mechanics": [
+        "大墟残疾老人村养育了天生凡体的主角秦牧",
+        "获取神驼残骸及远古神魔残火，在村长指引下隐秘破境",
+        "走出大墟考入天魔教，以延康变法急先锋名义打碎儒释道神权"
+      ],
+      "middle_phase_mechanics": [
+        "进入延康国学宫推行民生变法，将修炼神功转为民用设施",
+        "在太帝等古神算计下多次利用时空回切漏洞建立信息差",
+        "战力成长与延康帝国改革步伐深度绑定，建立十天尊防线"
+      ],
+      "late_phase_mechanics": [
+        "主角穿越回太古时代成为牧天尊，在历史源流布局因果",
+        "面对掌握天道权能的古神王庭对延康变法成果的全面抹杀",
+        "以凡人科技加变法战阵对抗十天尊的虚空大军围剿"
+      ],
+      "ending_or_long_tail_mechanics": [
+        "主角打碎最终神藏天门，人皆可成神，抹杀古神主宰天意",
+        "延康变法大成，世界跨入人人自强、掌握天命的繁盛新秩序",
+        "留下域外造物主废墟在无尽虚空中的长尾拓荒探索线索"
+      ],
+      "protagonist_growth_pattern": [
+        "吃百家饭长大的大墟孤儿成长为天盟盟主、变法领袖牧天尊",
+        "以霸体神话建立自信，开发神藏秘境重构修行路"
+      ],
+      "npc_and_crowd_pattern": [
+        "残老村九老等各自残疾但身负太古禁忌绝技的奇特导师群像",
+        "变法先驱（延丰帝、国师）以凡人之躯谋划对抗神明的坚毅身姿"
+      ],
+      "faction_pressure_pattern": [
+        "古神天庭对凡间延康变法在法权和物理层面的降维打击",
+        "古神阶层视凡人寿元与信仰为收割庄稼的黑暗供奉秩序"
+      ],
+      "artifact_or_technique_pattern": [
+        "太刀、神锤等看似铁匠农具其实封印太古杀意的半锈命器",
+        "变法天律等通过重构神藏秘境把修行成果还给底层凡人的神通"
+      ],
+      "emotional_bond_pattern": [
+        "残老村九老对主角视如己出的护犊温情与宿命传递",
+        "主角与延康变法战友前仆后继、不惧神魂俱灭的变革者之盟"
+      ],
+      "foreshadowing_payoff_pattern": [
+        "幼年背着的古怪罗盘在后期证明是定位太古造物主祖星的因果盘",
+        "秦牧无意中画在纸上的涂鸦在太古篇章对应了牧天尊开天盟的盟约草案"
+      ],
+      "state_ledger_variables": [
+        "reform_law_penetration",
+        "village_mentor_health",
+        "temporal_loop_shift"
+      ],
+      "reusable_mechanisms": [
+        "残疾老人村的导师避风港",
+        "科技变法将修行化为民生设施"
+      ],
+      "originality_risks": [
+        "复制霸体神话及残疾老人村九老具体残疾特征组合"
+      ],
+      "asset_family_relevance": [
+        "npcs",
+        "factions",
+        "naming"
+      ]
+    },
+    {
+      "book_title": "蛊真人",
+      "author": "蛊真人",
+      "read_scope": "full_text_reviewed",
+      "early_phase_mechanics": [
+        "主角方源携带前世记忆在小山寨中觉醒",
+        "利用春秋蝉进行时间回切自救，识破资质劣势建立信息差",
+        "在无情山寨内斗中出卖亲缘、榨干同伴资源完成最初一阶原始积累"
+      ],
+      "middle_phase_mechanics": [
+        "在五域大战中游走于各超级家族之间，进行利益套利",
+        "化身僵尸打破寿限惩罚，在仙窍经营中计算资源风险比率",
+        "利用运势法则的抵消与转移漏洞击杀天骄，建立马甲隔离防护"
+      ],
+      "late_phase_mechanics": [
+        "天意布局被方源以超凡算力反向利用，主角晋升为大爱仙尊",
+        "面对天庭宿命蛊的宿命控制，在公开天秤擂台上进行改账对决",
+        "彻底摧毁宿命蛊，打破世界天命律垄断，引发无序的天下争霸"
+      ],
+      "ending_or_long_tail_mechanics": [
+        "主角方源在破灭世界中继续追寻终极永生之法",
+        "五域局势彻底大乱，诸天尊复生争夺规则本源所有权",
+        "留下方源前往更深混沌寻找永生之蛊的长尾留白悬念"
+      ],
+      "protagonist_growth_pattern": [
+        "极端理性、不被任何道德道德束缚的绝对利己主义性格",
+        "从低阶凡蛊师逐步执掌天道因果规则所有权（九转尊者）"
+      ],
+      "npc_and_crowd_pattern": [
+        "白凝冰等充满反叛与毁灭倾向的古怪同伴/宿敌组合",
+        "天庭天意无所不在的因果网路捕杀压迫"
+      ],
+      "faction_pressure_pattern": [
+        "超级古老宗门对小家族生存资源的剥削与血脉联姻法理限制",
+        "天意通过宿命法则把每个凡人限定在既定悲惨轨道的降维监控"
+      ],
+      "artifact_or_technique_pattern": [
+        "春秋蝉等可以牺牲全身力量换取灵魂携带记忆回切时间线的老古玩",
+        "蛊虫法制等将天地自然法则碎片化具象为消耗性微型活体道具的机制"
+      ],
+      "emotional_bond_pattern": [
+        "不存在传统温情，仅存在相互利用且有清晰对价的利益契约关系",
+        "对方源而言仅有“追求永生”这一终极因果执念作为核心意志"
+      ],
+      "foreshadowing_payoff_pattern": [
+        "方源前世获得的神秘酒虫在后期揭示为是天意引导其命运的第一颗棋子",
+        "关于“红莲尊者”叛逆天庭的伏笔在宿命大战时成为方源破局的关键钥匙"
+      ],
+      "state_ledger_variables": [
+        "rational_utility_index",
+        "luck_balance_score",
+        "time_loop_cooldown"
+      ],
+      "reusable_mechanisms": [
+        "绝对理性工具决策模型",
+        "春秋蝉式牺牲能量回切时间差"
+      ],
+      "originality_risks": [
+        "复制春秋蝉以及蛊虫作为天地法则碎片的直接设定"
+      ],
+      "asset_family_relevance": [
+        "techniques",
+        "characters",
+        "factions"
+      ]
+    },
+    {
+      "book_title": "诡秘之主",
+      "author": "爱潜水的乌贼",
+      "read_scope": "full_text_reviewed",
+      "early_phase_mechanics": [
+        "主角在手枪案苏醒，面临身份、生存与回家三重危机",
+        "获得远程仪式灰雾空间，创建塔罗会伪装神明代理人",
+        "拜入值夜者小队，在日常收支与恐怖非凡事件并置中完成起步"
+      ],
+      "middle_phase_mechanics": [
+        "值夜者队长牺牲，主角化身复仇侦探游走于贝克兰德下水道",
+        "开启多马甲（夏洛克、格尔曼）进行跨层级情报收集与悬赏猎杀",
+        "通过扮演法与服用序列魔药进行消化平衡，避免疯狂风险"
+      ],
+      "late_phase_mechanics": [
+        "在海盗世界猎杀半神，主角发现仙域神明默许人口收割",
+        "面对阿蒙等执掌欺诈法则的顶级旧神全知视线围猎",
+        "主角只身进入诡秘之城，对抗体内旧日意志污染苏醒"
+      ],
+      "ending_or_long_tail_mechanics": [
+        "主角晋升愚者，在源堡陷入长期沉睡对抗旧日意识污染",
+        "塔罗会成员分布于大陆各层级，继续执行其救世布防规划",
+        "留下红月污染加深及愚者苏醒倒计时的长尾星空战争余音"
+      ],
+      "protagonist_growth_pattern": [
+        "普通地球打工人成长为承受世界理智理性的守护神愚者",
+        "以扮演法认知调试与魔药消化度为阶梯的核心进阶"
+      ],
+      "npc_and_crowd_pattern": [
+        "邓恩等因超凡污染牺牲的普通超凡者先贤群像",
+        "塔罗会成员从底层凡人一步步成长为各神灵教会高层的升华曲线"
+      ],
+      "faction_pressure_pattern": [
+        "各大正神教会对邪恶非凡与非法聚会的绝对法理净化搜捕",
+        "末日将至、外神将破开天幕收割世界的文明降维危机"
+      ],
+      "artifact_or_technique_pattern": [
+        "封印物等具有严苛使用代价与特定触发禁忌的负效益神奇命器",
+        "占卜法等通过在源堡高维度读取命运碎屑因果投影的神通"
+      ],
+      "emotional_bond_pattern": [
+        "塔罗会成员之间虽有利益交换但基于神明意志建立的安全共保承诺",
+        "对普通打工人家人的默默守护与悲伤隔离"
+      ],
+      "foreshadowing_payoff_pattern": [
+        "最初发现的安提哥努斯家族笔记在后期揭示为是主角晋升诡秘的核心引线",
+        "主角在源堡里看到的“蚕茧”在后期揭露为是同乡文明遗存的悲凉真相"
+      ],
+      "state_ledger_variables": [
+        "potion_digestion_rate",
+        "sanity_loss_grade",
+        "secret_society_asymmetry"
+      ],
+      "reusable_mechanisms": [
+        "负效益约束型命器设计",
+        "扮演社会角色消化超凡能量"
+      ],
+      "originality_risks": [
+        "复制二十二条路径魔药表格及塔罗牌化二十二路径体系"
+      ],
+      "asset_family_relevance": [
+        "foreshadowing",
+        "artifacts",
+        "state_ledger"
+      ]
+    },
+    {
+      "book_title": "遮天",
+      "author": "辰东",
+      "read_scope": "full_text_reviewed",
+      "early_phase_mechanics": [
+        "九龙拉棺降临泰山，打断主角现实生活将其送入荒古禁地",
+        "获得禁地神泉与神果，面临生命寿元被禁地法则急速剥夺危机",
+        "在灵墟洞天被判定为废体荒古圣体，面临庞大资源匮乏起点"
+      ],
+      "middle_phase_mechanics": [
+        "在北域石坊中开切神源，利用源术奇能收割世家底蕴资源",
+        "面对太古万族复苏叩关，主角打穿圣地神朝年轻天骄防线",
+        "打通星空古路，在宇宙极限淘汰赛中与万族同代妖兽厮杀"
+      ],
+      "late_phase_mechanics": [
+        "黑暗动乱爆发，至尊从生命禁区走出力图血洗宇宙众生寿元",
+        "主角圣体大成独战禁区至尊，多位大帝残兵神兵悲壮参战",
+        "大破帝路封印，主角在末法世界活出多世仙命，熬死敌手"
+      ],
+      "ending_or_long_tail_mechanics": [
+        "主角率领天庭故人同伴合力打穿仙路，完成带旧部举天飞升",
+        "荒古禁地及仙域废墟被主角重构，宇宙进入无天劫永生时代",
+        "留下诡秘厄土与三天帝布局残卷，开启完美遮天三部曲长尾呼应"
+      ],
+      "protagonist_growth_pattern": [
+        "不屈荒古圣体打破天地诅咒，最终开创万古神话叶天帝",
+        "从单一星球拓荒到宇宙级淘汰进化，活出九世红尘仙"
+      ],
+      "npc_and_crowd_pattern": [
+        "段德、黑皇等考古/古源流绑定同伴，提供丰富的历史大背景信息",
+        "姬子、盖九幽等背负先祖荣光与残生、为宇宙洒尽最后一滴血的英雄英灵群像"
+      ],
+      "faction_pressure_pattern": [
+        "生命禁区至尊为了延寿定期发动血清洗、把万灵当牲口收割的黑暗秩序",
+        "远古圣地利用极道帝兵垄断世俗灵药资源、镇压一切散修崛起的宗门霸权"
+      ],
+      "artifact_or_technique_pattern": [
+        "万物母气鼎等吸收宇宙玄黄母气铸就的、绑定主角生命印记的本命法器",
+        "九秘等散落在世界各纪元断层中的、各自将某一单项功能推至极致的神通"
+      ],
+      "emotional_bond_pattern": [
+        "主角与天庭战友同生共死、承诺一定要带所有人打破死劫进入仙界的情感誓言",
+        "对消逝在荒古岁月中的红颜与故人的万载悲凉叹息"
+      ],
+      "foreshadowing_payoff_pattern": [
+        "开局九龙拉棺的棺中残页在结局对应了荒天帝修复仙域的天空契约",
+        "北域发现的太古神女在后期黑暗动乱中对应了某位禁区至尊的前世羁绊"
+      ],
+      "state_ledger_variables": [
+        "reincarnation_lifespan_count",
+        "extreme_secret_count",
+        "emperor_weapon_activation"
+      ],
+      "reusable_mechanisms": [
+        "大纪元遗迹淘金源术石坊",
+        "带全体旧部与故人共同飞升"
+      ],
+      "originality_risks": [
+        "复制九龙拉棺、荒古圣体和九秘这种高识别度组合"
+      ],
+      "asset_family_relevance": [
+        "foreshadowing",
+        "npcs",
+        "factions"
+      ]
+    },
+    {
+      "book_title": "雪中悍刀行",
+      "author": "烽火戏诸侯",
+      "read_scope": "full_text_reviewed",
+      "early_phase_mechanics": [
+        "主角徐凤年伪装废柴纨绔，进行万里游历逃避皇权赐婚",
+        "在北凉王府权力接班危机下，面临各方刺客与世袭削藩压迫",
+        "在王府地阁接受古剑修传承，唤醒体内真武转世大因果"
+      ],
+      "middle_phase_mechanics": [
+        "二次出行江湖，在青山绿水间收割江湖世外高人羁绊",
+        "面对弟弟徐龙象资质天妒遭雷劫，主角带死士拼杀逆天改命",
+        "利用世袭罔替法权，打碎离阳王朝对地方藩王割据的算计"
+      ],
+      "late_phase_mechanics": [
+        "北凉关外北莽百万大军叩关，主角承接北凉三十万铁骑帅印",
+        "在凉莽战场前线与各北凉老兵战死沙场，经历极致的惨烈情感压迫",
+        "打穿天门，在虚空中击落仙人转世布局，誓言不要天仙垂钓"
+      ],
+      "ending_or_long_tail_mechanics": [
+        "徐凤年在凉莽大战后隐退红尘，将北凉兵权付之一炬",
+        "斩断天门通道，人间气运归于凡俗，仙人不再干涉人间命轨",
+        "留下北凉旧部在江北江南散落的江湖余音，开启长尾诗意留白"
+      ],
+      "protagonist_growth_pattern": [
+        "玩世不恭的二世子成长为死守国门、举世敬畏的北凉王与儒释道巅峰",
+        "以儒释道武学意境共融、大开大合的刀客风采与兵气统御路径"
+      ],
+      "npc_and_crowd_pattern": [
+        "老黄（剑九黄）等忠诚质朴的底层护卫，以生命为主角递出第一柄剑",
+        "北凉三十万铁骑与无数慷慨赴死的老兵、将领群像，铸就无上家国悲歌"
+      ],
+      "faction_pressure_pattern": [
+        "离阳王朝中央集权对地方北凉藩王在政治、刺杀和后勤保障上的全盘剥剥压迫",
+        "天上仙人以众生气运为饵垂钓人间寿算与天才命轨的宏大法权操纵"
+      ],
+      "artifact_or_technique_pattern": [
+        "大凉龙雀等与家族情感主母灵魂绑定的绝世长剑命器",
+        "两袖青蛇等融合大剑仙意志、重写天地剑道规则流向的绝强招式"
+      ],
+      "emotional_bond_pattern": [
+        "徐骁与徐凤年父子之间为了守国门与北凉共同体而隐忍做局的宏大亲情",
+        "三十万凉家军与徐凤年之间“北凉歌起，誓死不退”的忠诚铁血契约"
+      ],
+      "foreshadowing_payoff_pattern": [
+        "老黄留在东海武帝城头的那柄破剑在后期对应了徐凤年孤身取剑的江湖洗礼",
+        "主角随身携带的半块玉佩在后期揭示为是前世大秦皇帝在转世时留下的气运封印"
+      ],
+      "state_ledger_variables": [
+        "provincial_troop_loyalty",
+        "immortal_釣鱼_prevention",
+        "court_provocation_meter"
+      ],
+      "reusable_mechanisms": [
+        "庙堂阴谋与江湖义气双向拉扯",
+        "平凡老兵英烈战死沙场的悲情共鸣"
+      ],
+      "originality_risks": [
+        "复制凉莽大战三十万铁骑以及天门仙人垂钓气运的强政局设定"
+      ],
+      "asset_family_relevance": [
+        "emotional_bonds",
+        "npcs",
+        "factions"
+      ]
+    }
+  ],
+  "cross_book_mechanisms": [
+    {
+      "mechanism_id": "CB-M1",
+      "source_books": [
+        "斗破苍穹",
+        "凡人修仙传",
+        "求魔",
+        "大主宰",
+        "完美世界",
+        "雪中悍刀行"
+      ],
+      "abstraction": "弱势起点与核心剥夺 (Weakness Start & Core Deprivation)",
+      "long_form_function": "主角初始遭受严重的生活或身份剥夺，如尊严受损、资源匮乏、血脉缺失等，建立紧迫的第一卷命运债务，驱动求生进阶。",
+      "originality_risk": "过度雷同于三年退婚或惨烈灭门，必须将剥夺源转译为玄幻寿命财政的‘残籍欠命登记’。",
+      "reusable_for_NRL": true
+    },
+    {
+      "mechanism_id": "CB-M2",
+      "source_books": [
+        "凡人修仙传",
+        "仙逆",
+        "圣墟",
+        "武动乾坤",
+        "永生",
+        "诡秘之主"
+      ],
+      "abstraction": "隐秘资产与高暴露风险 (Compounding Relic with High Exposure Risk)",
+      "long_form_function": "主角持有提供时间复利的缓慢增值法宝或独立维度，但其使用伴随着怀璧其罪的风险与身体反噬代价，形成暴露度倒计时。",
+      "originality_risk": "克隆直接催熟草药的小绿瓶或珠子，必须转译为只能通过因果残火改写寿命账本的‘残命灯盏’。",
+      "reusable_for_NRL": true
+    },
+    {
+      "mechanism_id": "CB-M3",
+      "source_books": [
+        "诡秘之主",
+        "凡人修仙传",
+        "遮天",
+        "人道至尊",
+        "牧神记",
+        "将夜"
+      ],
+      "abstraction": "认知冰山与地图降维 (Cognitive Iceberg Maps)",
+      "long_form_function": "地图升级不只是数值膨胀，而是旧世界的运行法则与上层阶级的剥削收割手段被彻底降维揭示的过程，促使地图拓展成为解密。",
+      "originality_risk": "地图简单重复无差异，必须在换图时伴随‘州府寿库’与‘古债碎页’对贫城秩序的颠覆性重构。",
+      "reusable_for_NRL": true
+    },
+    {
+      "mechanism_id": "CB-M4",
+      "source_books": [
+        "斗破苍穹",
+        "将夜",
+        "仙逆",
+        "求魔",
+        "人道至尊",
+        "雪中悍刀行"
+      ],
+      "abstraction": "期限承诺与外部倒计时 (Limit Promise & External Countdown)",
+      "long_form_function": "引入长线时间承诺（如三年之约、昊天大夜、母亲命灯倒计时），将抽象的修行折旧为可见的时间债务，形成强烈而具象的追更张力。",
+      "originality_risk": "倒计时沦为单纯数字而无实际压迫，应将倒计时与母亲寿火变暗、眼球灼伤度等物理反噬挂钩。",
+      "reusable_for_NRL": true
+    },
+    {
+      "mechanism_id": "CB-M5",
+      "source_books": [
+        "诡秘之主",
+        "凡人修仙传",
+        "一念永恒",
+        "蛊真人",
+        "永生",
+        "完美世界"
+      ],
+      "abstraction": "多重马甲与信息差隔离 (Multi-Persona Identity Masking)",
+      "long_form_function": "主角通过分裂出的虚拟身份（如厉飞雨、夏洛克）游走于不同阶层进行资源收割和悬赏猎杀，在弱小期形成信息差物理护城河。",
+      "originality_risk": "多身份混乱无感官隔离，必须限制马甲的暴露度度量（protagonist_exposure_rate），且每次转换面临反噬风险。",
+      "reusable_for_NRL": true
+    },
+    {
+      "mechanism_id": "CB-M6",
+      "source_books": [
+        "斗破苍穹",
+        "凡人修仙传",
+        "大主宰",
+        "一念永恒",
+        "永生",
+        "牧神记"
+      ],
+      "abstraction": "辅助职业身份提升 (Auxiliary Profession Status)",
+      "long_form_function": "开发非战斗类的生产技能（如炼药、战阵、符道、账目誊抄），为主角带来人脉、地位和修行资源，避免单一武力冲突的疲劳。",
+      "originality_risk": "辅助职业演化为枯燥升级树，应将其与天命账本改账法权深度融合，使查账誊抄成为法术对抗的一部分。",
+      "reusable_for_NRL": true
+    },
+    {
+      "mechanism_id": "CB-M7",
+      "source_books": [
+        "人道至尊",
+        "武动乾坤",
+        "雪中悍刀行",
+        "将夜",
+        "完美世界",
+        "遮天"
+      ],
+      "abstraction": "生存本能势力碰撞 (Existential Faction Collisions)",
+      "long_form_function": "敌对势力并非出于单纯私怨，而是不同种族、阶级或共同体为了自身在有限寿命财政下的繁衍所进行的无法妥协的生存对撞。",
+      "originality_risk": "反派弱智化反社会，应将压迫方定位为维持天道大阵合法命税秩序的命籍衙和收债官，具有法理自洽性。",
+      "reusable_for_NRL": true
+    },
+    {
+      "mechanism_id": "CB-M8",
+      "source_books": [
+        "求魔",
+        "雪中悍刀行",
+        "人道至尊",
+        "完美世界",
+        "将夜",
+        "仙逆"
+      ],
+      "abstraction": "自我缺席的奉献闭环 (Self-Absence Redemption)",
+      "long_form_function": "长篇情感的高潮来自自我缺席式的伟大救赎。主角为了拯救身后的底层共同体或亲友，付出自身被抹去或陷入沉睡的惨烈代价。",
+      "originality_risk": "强行制造无意义的悲剧虐心，必须在前期通过主角与贫城互保者的生死并肩铺设扎实的情感信任锚点。",
+      "reusable_for_NRL": true
+    },
+    {
+      "mechanism_id": "CB-M9",
+      "source_books": [
+        "遮天",
+        "不死不灭",
+        "完美世界",
+        "圣墟",
+        "诡秘之主",
+        "求魔"
+      ],
+      "abstraction": "古纪元断层遗址 (Ancient Epoch Ruins)",
+      "long_form_function": "在极早阶段展示超越凡俗理解的宏大纪元断层遗迹（如泰山棺起、九婴神兽、蛮荒废命地），为中后期换图提供因果合拢契约。",
+      "originality_risk": "遗迹仅作为摆设不参与叙事，须在《借天改命账》中将城外废命地设计为包含更高仙朝旧账转运残印的探索秘境。",
+      "reusable_for_NRL": true
+    },
+    {
+      "mechanism_id": "CB-M10",
+      "source_books": [
+        "求魔",
+        "斗破苍穹",
+        "牧神记",
+        "一念永恒",
+        "仙逆",
+        "雪中悍刀行"
+      ],
+      "abstraction": "缺陷导师与灰度庇护所 (Defective Mentor Sanctuary)",
+      "long_form_function": "导师或早期大后方并非绝对安全。导师可能自身存在精神不稳定、残疾或利益算计，在提供指导的同时产生隐性认知压迫。",
+      "originality_risk": "完全克隆老爷爷或残老村九老，须在原创中将导师设计为手持残页旧账的‘旧账老人’，因背负旧债而随时有引来收债者的风险。",
+      "reusable_for_NRL": true
+    },
+    {
+      "mechanism_id": "CB-M11",
+      "source_books": [
+        "诡秘之主",
+        "蛊真人",
+        "永生",
+        "完美世界",
+        "仙逆",
+        "求魔"
+      ],
+      "abstraction": "认知扮演与失控制衡 (Acting Assimilation & Contamination Balance)",
+      "long_form_function": "功法进阶不只是资源堆砌，而是必须与天地法则的意志同频甚至扮演特定法权角色以消化污染，在神性与兽性之间达成制衡。",
+      "originality_risk": "克隆魔药序列，应将其改写为主角改账时必须承担的天道因果反噬调试，通过稳固贫城居民的信任（community_trust_level）来中和疯狂度。",
+      "reusable_for_NRL": true
+    },
+    {
+      "mechanism_id": "CB-M12",
+      "source_books": [
+        "遮天",
+        "人道至尊",
+        "大主宰",
+        "一念永恒",
+        "雪中悍刀行",
+        "将夜"
+      ],
+      "abstraction": "举教飞升与故友回流 (Ensemble Companion Cohort Ingestion)",
+      "long_form_function": "终局不是主角一人长生飞升，而是带引并凝聚整条修行路上的凡俗故人、部属和共同体，共同打破天地封锁重构新秩序。",
+      "originality_risk": "故人中期掉队被抛弃，应在各故事弧段强力绑定贫城工匠、小吏和旧账老人的动作轨迹，使其成为贯穿至卷末的见证者。",
+      "reusable_for_NRL": true
+    }
+  ],
+  "asset_family_evidence": {
+    "characters": {
+      "status": "covered",
+      "evidence": [
+        "FRXXZ: 韩立 - 极度谨慎，规避高风险事件，依靠阵法进行防守威慑。",
+        "GMZZ: 克莱恩 - 使用多重马甲与远程虚拟会商实现信息差安全控制。",
+        "GZR: 方源 - 绝无道德包袱，视规则漏洞为最优解，进行绝对理性博弈。",
+        "RDZZ: 钟岳 - 肩负种族血脉苏醒重任，个人修行成为文明火种的载体。",
+        "DPCQ: 萧炎 - 从公开退婚的底层屈辱出发，以期限承诺逼迫自身极速突破。",
+        "QM: 苏铭 - 处于虚无的记忆幻境包围中，以大毅力追寻自我的真实存在。"
+      ]
+    },
+    "npcs": {
+      "status": "covered",
+      "evidence": [
+        "QM: 天邪子 - 人格缺陷、冷酷但护短的第九峰导师，制造混合安全性压迫。",
+        "ZT: 段德/黑皇 - 具有考古源流特性的搞怪伙伴，承载大历史断层背景解释。",
+        "DPCQ: 药老 - 寄宿于戒指内的残魂导师，以负增益吸能出场，后提供高额度补偿。",
+        "MSJ: 延康国师/残老村九老 - 残疾且身负太古禁忌的导师群像，共同组成温情避风港。",
+        "XN: 司徒南 - 痞气但忠诚的寄宿残魂，在主角弱小时提供法则维度的庇护。",
+        "XZHDX: 老黄/北凉铁骑 - 平凡而慷慨赴死的底层守护者，以死递出主角第一柄剑。"
+      ]
+    },
+    "factions": {
+      "status": "covered",
+      "evidence": [
+        "RDZZ: 伏羲神族与宇宙万族 - 生存资源枯竭下的种族间 existential 生死碰撞。",
+        "GMZZ: 塔罗会 - 基于源堡高维空间建立的隐秘虚拟组织，规避正神教会清洗。",
+        "FRXXZ: 散修同盟与长生世家 - 缺乏信任机制的松散契约群体，极易在外部高压下瓦解。",
+        "GZR: 古月山寨与十派联盟 - 视底层成员为消耗性炮灰的系统性家族榨取法权。",
+        "永生: 羽化门与造化天庭 - 拥有法则封锁力、惩罚逆命长生者的绝对霸权秩序。",
+        "XZHDX: 北凉府与离阳朝廷 - 庙堂集权对割据藩王在政治、后勤及生命层面的围绞。"
+      ]
+    },
+    "artifacts": {
+      "status": "covered",
+      "evidence": [
+        "FRXXZ: 墨绿小瓶 - 吸收日月精华催熟草药的法则道具，带给宿主极大的匹夫无罪抢夺风险。",
+        "QM: 蛮神骨笛 - 吹奏即可干扰天地气脉的微型信仰道具，绑定部族历史执念。",
+        "GMZZ: 封印物 - 具有强力负面使用代价（如嗜血、污染宿主）的限制性神奇物品。",
+        "ZT: 极道帝兵 - 承载历代大帝残余意志、在黑暗动乱中甚至能主动觉醒御敌的圣器。",
+        "JY: 大黑伞 - 质朴的日常遮雨工具，却封印着隔绝昊天冷酷注视的隔断法权。",
+        "WDKQ: 祖石石符 - 能够净化异魔污染、在虚无中推演太古武学的残损命器。"
+      ]
+    },
+    "techniques": {
+      "status": "covered",
+      "evidence": [
+        "DPCQ: 焚诀 - 功法品阶与寻找、融合极高死亡率的异火强力绑定的变异成长法门。",
+        "GMZZ: 扮演法 - 升级必须要在世俗中扮演特定身份以调试灵魂，制衡疯狂失控风险。",
+        "FRXXZ: 大庚剑阵 - 融合辟邪神雷、以建立防护边界与长时间消耗战为核心的防守招式。",
+        "永生: 大命运术 - 凌驾于三千大道之上的终极因果律抹杀天条。",
+        "WMWJ: 他化自在大法 - 借取过去未来在因果长河中的投影进行跨维度战斗的秘法。",
+        "XZHDX: 两袖青蛇 - 融合剑仙意志、重塑天地气机流向的顶级纯剑道招式。"
+      ]
+    },
+    "naming": {
+      "status": "covered",
+      "evidence": [
+        "ZT: “荒古、禁区、大帝、狠人”等神话名词，构筑深邃的大时代沧桑底蕴。",
+        "FRXXZ: “韩立、落云宗、乱星海、乌金盾”等质朴地道的自然词汇，构筑极强真实沉浸感。",
+        "GZR: 将自然法则直接碎片化命名为各种蛊虫（如春秋蝉、酒虫），将法权规则物理化。",
+        "XN: “化凡、本源、修真星”等带有浓厚东方因果哲理的修仙词汇体系。",
+        "DPCQ: “异火、焚诀、斗气、丹王”等具有强烈升级指向和明确职业阶梯的词汇体系。",
+        "MSJ: “大墟、残老村、牧天尊、延康变法”等带有荒凉历史遗留与变革冲突感的命名体系。"
+      ]
+    },
+    "emotional_bonds": {
+      "status": "covered",
+      "evidence": [
+        "QM: 苏铭斩断自身一切生命存在痕迹，只为在历史中复活阿公和同门的悲情闭环。",
+        "RDZZ: 伏羲薪火传递誓言，个人修行速度直接为重振人族底线而疯狂抽鞭的族群因果。",
+        "XN: 王林为复活挚爱李慕婉，数十万年独行修真罡大陆、逆天改命的情感执念。",
+        "XZHDX: 北凉父子徐骁与徐凤年为了守卫国门、甘愿做局背负天下唾骂的铁血骨肉情。",
+        "JY: 宁缺与女侍桑桑从小到大在岷山柴房相依为命、超越生死的质朴温情羁绊。",
+        "WMWJ: 柳神、至亲为荒天帝在帝关战场强行破境而自愿献祭的血泪之债。"
+      ]
+    },
+    "foreshadowing": {
+      "status": "covered",
+      "evidence": [
+        "GMZZ: 幼年偶得的手枪与日记笔记本碎片，在后期证明是旧神引渡其灵魂的核心法理。",
+        "ZT: 开局的九龙拉棺降临泰山，在中后期逐步合拢为荒天帝当年修复仙界的后手印记。",
+        "XN: 凡俗界发现的奇异兽皮地图，在数万年后主角横渡界外时证实为古神星域版图。",
+        "JY: 桑桑自幼无法根治的极寒怪病，在后期剧情中轰然揭晓为昊天意志凡尘降临载体。",
+        "MSJ: 少年秦牧在大墟随手捡到的奇异铜镜，在穿越回太古篇章时成为牧天尊盟约之证。",
+        "GZR: 前世方源偶然在古泉中炼制的奇异酒虫，其实是天意在其体内埋下的第一颗追踪棋子。"
+      ]
+    },
+    "state_ledger": {
+      "status": "covered",
+      "evidence": [
+        "GMZZ: 魔药消化百分比（potion_digestion_rate）与理智丧失阶梯（sanity_loss_grade）。",
+        "GZR: 气运多寡平衡数值（luck_balance_score）与春秋蝉回切冷却时间。",
+        "FRXXZ: 掌天瓶月华积攒滴数（flask_liquid_drops）与异界气息暴露风险系数。",
+        "XZHDX: 北凉铁骑的军事凝聚力评分与天上仙人钓取人间气运的防备刻度。",
+        "RDZZ: 伏羲传承薪火能量余量（inheritance_fire_temperature）与人族薪火留根储量。",
+        "MSJ: 变法覆盖率指标（reform_law_penetration）与时空环线跃迁次数指标。"
+      ]
+    }
+  },
+  "originality_risks": [
+    {
+      "risk_id": "OR-1",
+      "source_novel": "凡人修仙传 / 仙逆",
+      "nature": "修行小说极易滑入催熟法宝 spaces 的变相克隆风险。必须将其转译为改写命债的残命灯盏。"
+    },
+    {
+      "risk_id": "OR-2",
+      "source_novel": "诡秘之主",
+      "nature": "序列晋升与扮演法有被判定为抄袭的风险。修行大境界须仅与天命账册的权能等级挂钩。"
+    }
+  ],
+  "recommended_next_ingestion": {
+    "validate_full_corpus_review": true,
+    "ingest_research_assets": true,
+    "build_family_specific_asset_producers": true,
+    "keep_hermes_paused": true,
+    "keep_owner_gate_pending": true
+  },
+  "book_review_count": 18,
+  "cross_book_mechanism_count": 12,
+  "family_count": 9,
+  "content_generation_allowed": false,
+  "hermes_execution_allowed": false,
+  "raw_corpus_allowed": false,
+  "guardrails": [
+    "Structured review derivatives only",
+    "No raw novel prose",
+    "No final creative assets",
+    "No Hermes execution",
+    "Family promotion requires schema and validation gates"
+  ]
+}

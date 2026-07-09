@@ -8,6 +8,7 @@ from typing import Any
 from nrl_paths import runtime_path
 
 REGISTRY_PATH = runtime_path("system/creation_assets/creation_asset_registry.v0.1.json")
+PROJECT_ASSET_STORE_PATH = runtime_path("system/creation_assets/project_assets.v0.2.json")
 ALLOWED_STATUSES = {"missing", "seed", "partial"}
 EXPECTED_ASSET_IDS = {
     "characters",
@@ -55,8 +56,24 @@ def load_creation_asset_registry(project: str, mode: str) -> dict[str, Any]:
     families = artifact.get("asset_families", [])
     if not isinstance(families, list):
         raise RuntimeError("creation asset registry asset_families must be a list")
+    project_asset_counts: Counter[str] = Counter()
+    if PROJECT_ASSET_STORE_PATH.exists():
+        with PROJECT_ASSET_STORE_PATH.open("r", encoding="utf-8") as handle:
+            store = json.load(handle)
+        for asset in store.get("assets", []):
+            if isinstance(asset, dict):
+                project_asset_counts[str(asset.get("family", "unknown"))] += 1
     for family in families:
         _validate_family(family)
+        family_id = str(family["asset_id"])
+        asset_count = project_asset_counts.get(family_id, 0)
+        if asset_count and family["status"] == "missing":
+            family["status"] = "seed"
+            family["readiness_score"] = max(int(family["readiness_score"]), 20)
+            family["known_support"] = list(family.get("known_support", [])) + [
+                f"Project asset store contains {asset_count} schema-bound seed asset(s)."
+            ]
+        family["project_asset_count"] = asset_count
     family_ids = {str(family["asset_id"]) for family in families}
     if family_ids != EXPECTED_ASSET_IDS:
         missing = sorted(EXPECTED_ASSET_IDS - family_ids)

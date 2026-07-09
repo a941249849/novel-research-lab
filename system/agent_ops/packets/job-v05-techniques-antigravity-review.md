@@ -12,26 +12,26 @@
 Review whether the current DNA evidence is sufficient to plan the `techniques` creation asset family.
 Focus on long-form vitality, structural usefulness, originality risk, and missing evidence.
 
-## SOURCE DNA IDS
+## SOURCE EVIDENCE IDS
 
-- dna-v05-mechanism_dna-mechanism-dpcq-m1
-- dna-v05-mechanism_dna-mechanism-dpcq-m2
-- dna-v05-mechanism_dna-mechanism-dpcq-m3
-- dna-v05-mechanism_dna-mechanism-dpcq-m4
-- dna-v05-mechanism_dna-mechanism-dpcq-m5
-- dna-v05-mechanism_dna-mechanism-frxxz-m1
-- dna-v05-mechanism_dna-mechanism-frxxz-m2
-- dna-v05-mechanism_dna-mechanism-frxxz-m3
-- dna-v05-mechanism_dna-mechanism-frxxz-m4
-- dna-v05-mechanism_dna-mechanism-frxxz-m5
-- dna-v05-mechanism_dna-mechanism-gmzz-m1
-- dna-v05-mechanism_dna-mechanism-gmzz-m2
-- dna-v05-mechanism_dna-mechanism-gmzz-m3
-- dna-v05-mechanism_dna-mechanism-gmzz-m4
-- dna-v05-mechanism_dna-mechanism-gmzz-m5
-- dna-v05-mechanism_dna-mechanism-gzr-m1
-- dna-v05-mechanism_dna-mechanism-gzr-m2
-- dna-v05-mechanism_dna-mechanism-gzr-m3
+- full-review-book-02
+- full-review-book-04
+- full-review-book-05
+- full-review-book-06
+- full-review-book-07
+- full-review-book-08
+- full-review-book-10
+- full-review-book-11
+- full-review-book-12
+- full-review-book-15
+- full-review-family-techniques
+- full-review-mechanism-cb-m1
+- full-review-mechanism-cb-m10
+- full-review-mechanism-cb-m11
+- full-review-mechanism-cb-m12
+- full-review-mechanism-cb-m2
+- full-review-mechanism-cb-m3
+- full-review-mechanism-cb-m4
 
 ## REQUIRED OUTPUT SECTIONS
 
@@ -52,7 +52,15 @@ Focus on long-form vitality, structural usefulness, originality risk, and missin
 
 ## RETURN INSTRUCTION
 
-Save the completed review to:
+The Codex bridge captures your stdout and writes the file. Do not write files,
+run shell commands, create scratch scripts, or describe tool use. Return only
+the completed Markdown review body, beginning with `## Job ID`, followed by the
+six required sections in the exact order below. Do not include a preamble or
+postscript.
+
+Do not save or edit any file. Return the completed review in stdout only.
+
+The expected output path is metadata only:
 
 ```text
 system/agent_ops/inbox/job-v05-techniques-antigravity-review.md

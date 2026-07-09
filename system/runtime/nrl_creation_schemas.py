@@ -47,6 +47,13 @@ TRANSITIONS = {
     "dormant": {"active", "dormant", "retired"},
     "retired": {"retired"},
 }
+FORBIDDEN_NAMING_TERMS = (
+    "测名院",
+    "无名者航路",
+    "群岛无名碑",
+    "海图擦除",
+    "旧名碑逻辑",
+)
 
 
 def _load_json(path: Path) -> dict[str, Any]:
@@ -181,6 +188,31 @@ def validate_creation_asset_store(
                         "asset_id": asset_id,
                         "asset_index": index,
                         "message": error.message,
+                    }
+                )
+        if family == "naming":
+            naming_payload = asset.get("naming", {})
+            naming_content = (
+                {
+                    key: value
+                    for key, value in naming_payload.items()
+                    if key != "forbidden_terms"
+                }
+                if isinstance(naming_payload, dict)
+                else naming_payload
+            )
+            naming_text = json.dumps(
+                {"display_name": asset.get("display_name"), "naming": naming_content},
+                ensure_ascii=False,
+            )
+            forbidden_hits = [term for term in FORBIDDEN_NAMING_TERMS if term in naming_text]
+            if forbidden_hits:
+                errors.append(
+                    {
+                        "code": "naming_anti_contamination",
+                        "asset_id": asset_id,
+                        "forbidden_terms": forbidden_hits,
+                        "message": "naming asset contains forbidden Phase 2A concepts",
                     }
                 )
 

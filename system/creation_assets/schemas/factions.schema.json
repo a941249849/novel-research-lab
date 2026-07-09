@@ -9,9 +9,39 @@
         "family": {"const": "factions"},
         "faction": {
           "type": "object",
+          "required": [
+            "interest",
+            "pressure_level",
+            "tax_enforcement_role",
+            "associated_ledger_states",
+            "cohort_capacity",
+            "threat_exposure_coefficient",
+            "lifecycle_policy",
+            "originality_policy"
+          ],
           "properties": {
-            "interest": {"type": "string"},
-            "pressure_level": {"type": "integer", "minimum": 0}
+            "interest": {"type": "string", "minLength": 1},
+            "pressure_level": {"type": "integer", "minimum": 0},
+            "tax_enforcement_role": {"type": "string", "minLength": 1},
+            "associated_ledger_states": {
+              "type": "array",
+              "minItems": 1,
+              "items": {"type": "string", "minLength": 1}
+            },
+            "cohort_capacity": {"type": "integer", "minimum": 0},
+            "threat_exposure_coefficient": {"type": "number", "minimum": 0},
+            "lifecycle_policy": {
+              "type": "object",
+              "required": ["establishment", "alliance_shift", "territorial_expansion", "retirement"],
+              "properties": {
+                "establishment": {"type": "string", "minLength": 1},
+                "alliance_shift": {"type": "string", "minLength": 1},
+                "territorial_expansion": {"type": "string", "minLength": 1},
+                "retirement": {"type": "string", "minLength": 1}
+              },
+              "additionalProperties": false
+            },
+            "originality_policy": {"type": "string", "minLength": 1}
           },
           "additionalProperties": false
         }

@@ -94,6 +94,19 @@ class AgentOpsCliTests(RuntimeCliCase):
         self.assertIn("FORBIDDEN ACTIONS", packet_text)
         self.assertIn("Do not write prose", packet_text)
 
+    def test_agent_packet_uses_pipeline_evidence_ids(self):
+        job = json.loads(self.run_cli("agent-job-plan", "--family", "naming").stdout)["job"]
+        packet = self.run_cli("agent-pack", "--job-id", job["job_id"])
+        self.assertEqual(packet.returncode, 0, packet.stderr)
+        packet_path = REPO_ROOT / json.loads(packet.stdout)["packet_path"]
+        packet_text = packet_path.read_text(encoding="utf-8")
+        plan = json.loads(self.run_cli("pipeline-plan", "--family", "naming").stdout)
+        evidence_ids = [item["asset_id"] for item in plan["research_evidence"]]
+        self.assertTrue(evidence_ids)
+        self.assertTrue(all(evidence_id in packet_text for evidence_id in evidence_ids))
+        self.assertIn("SOURCE EVIDENCE IDS", packet_text)
+        self.assertNotIn("dna-v05-", packet_text)
+
     def test_agent_ingest_rejects_files_outside_inbox(self):
         job = json.loads(self.run_cli("agent-job-plan", "--family", "techniques").stdout)["job"]
         result = self.run_cli("agent-ingest", "--job-id", job["job_id"], "--file", "README.md")

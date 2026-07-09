@@ -35,5 +35,50 @@ class ProducerStatusCliTests(RuntimeCliCase):
         self.assertFalse(data["hermes_allowed"])
 
 
+class TechniqueProducerCliTests(RuntimeCliCase):
+    def test_produce_techniques_writes_three_seed_assets_and_validates_store(self):
+        result = self.run_cli(
+            "produce-techniques",
+            "--job-id",
+            "job-v05-techniques-antigravity-review",
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        data = json.loads(result.stdout)
+        self.assertEqual(data["produced_count"], 3)
+        self.assertTrue(data["store_validation"]["valid"])
+        store = json.loads(
+            (REPO_ROOT / "system/creation_assets/project_assets.v0.2.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        techniques = [asset for asset in store["assets"] if asset["family"] == "techniques"]
+        self.assertEqual(len(techniques), 3)
+        self.assertTrue(all(asset["lifecycle_state"] == "seed" for asset in techniques))
+        self.assertNotIn("novel_training_set/", json.dumps(store, ensure_ascii=False))
+
+    def test_produce_techniques_is_idempotent(self):
+        first_result = self.run_cli(
+            "produce-techniques",
+            "--job-id",
+            "job-v05-techniques-antigravity-review",
+        )
+        self.assertEqual(first_result.returncode, 0, first_result.stderr)
+        first = json.loads(first_result.stdout)
+        second_result = self.run_cli(
+            "produce-techniques",
+            "--job-id",
+            "job-v05-techniques-antigravity-review",
+        )
+        self.assertEqual(second_result.returncode, 0, second_result.stderr)
+        second = json.loads(second_result.stdout)
+        self.assertEqual(first["asset_ids"], second["asset_ids"])
+        store = json.loads(
+            (REPO_ROOT / "system/creation_assets/project_assets.v0.2.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        self.assertEqual(len([asset for asset in store["assets"] if asset["family"] == "techniques"]), 3)
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -1,5 +1,75 @@
 {
   "version": "0.2",
   "project": "《借天改命账》",
-  "assets": []
+  "assets": [
+    {
+      "asset_id": "technique_backlash_guard",
+      "family": "techniques",
+      "display_name": "Backlash Guard Candidate",
+      "lifecycle_state": "seed",
+      "source_refs": [
+        "system/agent_ops/outbox/job-v05-techniques-antigravity-review_validated.md",
+        "dna-v05-book_dna-phase1-book-dna-001",
+        "dna-v05-book_dna-phase1-book-dna-005",
+        "dna-v05-book_dna-phase1-book-dna-009"
+      ],
+      "relationships": [],
+      "constraints": [
+        "seed candidate only",
+        "not a final in-world technique name",
+        "do not use for combat scene drafting",
+        "must preserve a cost or counter path"
+      ],
+      "technique": {
+        "cost": "Every defensive or stabilizing action must leave a delayed backlash, debt marker, or opportunity cost.",
+        "counter_ids": []
+      }
+    },
+    {
+      "asset_id": "technique_costed_advancement",
+      "family": "techniques",
+      "display_name": "Costed Advancement Candidate",
+      "lifecycle_state": "seed",
+      "source_refs": [
+        "system/agent_ops/outbox/job-v05-techniques-antigravity-review_validated.md",
+        "dna-v05-book_dna-phase1-book-dna-001",
+        "dna-v05-book_dna-phase1-book-dna-005",
+        "dna-v05-book_dna-phase1-book-dna-009"
+      ],
+      "relationships": [],
+      "constraints": [
+        "seed candidate only",
+        "not a final in-world technique name",
+        "do not use for prose generation",
+        "do not treat as final technique tree"
+      ],
+      "technique": {
+        "cost": "Every advancement action must spend a visible resource, reputation position, or bodily state.",
+        "counter_ids": []
+      }
+    },
+    {
+      "asset_id": "technique_state_reversal",
+      "family": "techniques",
+      "display_name": "State Reversal Candidate",
+      "lifecycle_state": "seed",
+      "source_refs": [
+        "system/agent_ops/outbox/job-v05-techniques-antigravity-review_validated.md",
+        "dna-v05-book_dna-phase1-book-dna-001",
+        "dna-v05-book_dna-phase1-book-dna-005",
+        "dna-v05-book_dna-phase1-book-dna-009"
+      ],
+      "relationships": [],
+      "constraints": [
+        "seed candidate only",
+        "not a final in-world technique name",
+        "do not generate final naming dictionary",
+        "must cite DNA evidence before promotion"
+      ],
+      "technique": {
+        "cost": "Every reversal action must convert one tracked state into another rather than erasing consequences.",
+        "counter_ids": []
+      }
+    }
+  ]
 }

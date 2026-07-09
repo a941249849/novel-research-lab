@@ -23,6 +23,41 @@ OWNED_TECHNIQUE_IDS = (
     "technique_state_reversal",
 )
 FORBIDDEN_TEXT = ("novel_training_set/", "正文", "第一章", "Chapter 1")
+TECHNIQUE_CANDIDATES = (
+    {
+        "asset_id": "technique_costed_advancement",
+        "display_name": "Costed Advancement Candidate",
+        "cost": "Every advancement action must spend a visible resource, reputation position, or bodily state.",
+        "constraints": [
+            "seed candidate only",
+            "not a final in-world technique name",
+            "do not use for prose generation",
+            "do not treat as final technique tree",
+        ],
+    },
+    {
+        "asset_id": "technique_backlash_guard",
+        "display_name": "Backlash Guard Candidate",
+        "cost": "Every defensive or stabilizing action must leave a delayed backlash, debt marker, or opportunity cost.",
+        "constraints": [
+            "seed candidate only",
+            "not a final in-world technique name",
+            "do not use for combat scene drafting",
+            "must preserve a cost or counter path",
+        ],
+    },
+    {
+        "asset_id": "technique_state_reversal",
+        "display_name": "State Reversal Candidate",
+        "cost": "Every reversal action must convert one tracked state into another rather than erasing consequences.",
+        "constraints": [
+            "seed candidate only",
+            "not a final in-world technique name",
+            "do not generate final naming dictionary",
+            "must cite DNA evidence before promotion",
+        ],
+    },
+)
 
 
 def _read_json(path: Path) -> dict[str, Any]:
@@ -55,6 +90,15 @@ def _job_by_id(job_id: str) -> dict[str, Any] | None:
 def _positive_evidence_count(state: dict[str, Any]) -> int:
     index = load_or_build_rag_index(state)
     return len([item for item in index.get("items", []) if int(item.get("evidence_weight", 0)) > 0])
+
+
+def _positive_evidence_ids(state: dict[str, Any]) -> list[str]:
+    index = load_or_build_rag_index(state)
+    return [
+        str(item["source_dna_id"])
+        for item in index.get("items", [])
+        if int(item.get("evidence_weight", 0)) > 0
+    ]
 
 
 def _store_validation(store: dict[str, Any]) -> dict[str, Any]:
@@ -111,4 +155,86 @@ def build_producer_status(
             if job.get("state") != "validated"
             else "Produce or inspect seed-level technique candidates."
         ),
+    }
+
+
+def _assert_no_forbidden_text(data: dict[str, Any]) -> None:
+    encoded = json.dumps(data, ensure_ascii=False)
+    for value in FORBIDDEN_TEXT:
+        if value in encoded:
+            raise RuntimeError(f"producer output contains forbidden text: {value}")
+
+
+def _technique_candidate_assets(source_refs: list[str]) -> list[dict[str, Any]]:
+    return [
+        {
+            "asset_id": candidate["asset_id"],
+            "family": "techniques",
+            "display_name": candidate["display_name"],
+            "lifecycle_state": "seed",
+            "source_refs": source_refs,
+            "relationships": [],
+            "constraints": list(candidate["constraints"]),
+            "technique": {
+                "cost": candidate["cost"],
+                "counter_ids": [],
+            },
+        }
+        for candidate in TECHNIQUE_CANDIDATES
+    ]
+
+
+def _upsert_assets(store: dict[str, Any], produced: list[dict[str, Any]]) -> dict[str, Any]:
+    owned = {asset["asset_id"] for asset in produced}
+    preserved = [
+        asset
+        for asset in store.get("assets", [])
+        if asset.get("asset_id") not in owned
+    ]
+    updated = {**store, "assets": sorted([*preserved, *produced], key=lambda item: item["asset_id"])}
+    return updated
+
+
+def produce_technique_candidates(state: dict[str, Any], job_id: str) -> dict[str, Any]:
+    if job_id != TECHNIQUES_JOB_ID:
+        raise RuntimeError(f"unsupported technique producer job: {job_id}")
+    job = _job_by_id(job_id)
+    if not job or job.get("state") != "validated":
+        raise RuntimeError(f"techniques job must be validated before production: {job_id}")
+    outbox_path = ROOT / TECHNIQUES_OUTBOX_PATH
+    if not outbox_path.exists():
+        raise RuntimeError(f"validated Antigravity outbox is missing: {TECHNIQUES_OUTBOX_PATH}")
+
+    evidence_ids = _positive_evidence_ids(state)
+    if len(evidence_ids) < 3:
+        raise RuntimeError("technique producer requires at least three positive evidence items")
+    source_refs = [
+        TECHNIQUES_OUTBOX_PATH,
+        *evidence_ids[:3],
+    ]
+    produced = _technique_candidate_assets(source_refs)
+    candidate_payload = {"assets": produced}
+    _assert_no_forbidden_text(candidate_payload)
+
+    store = _project_store()
+    updated_store = _upsert_assets(store, produced)
+    validation = validate_creation_asset_store(updated_store)
+    if not validation["valid"]:
+        return {
+            "produced_count": 0,
+            "asset_ids": [asset["asset_id"] for asset in produced],
+            "store_validation": validation,
+            "store_path": "system/creation_assets/project_assets.v0.2.json",
+        }
+    _assert_no_forbidden_text(updated_store)
+    _write_json(PROJECT_ASSET_STORE_PATH, updated_store)
+    return {
+        "producer": "technique_asset_producer",
+        "version": VERSION,
+        "job_id": job_id,
+        "produced_count": len(produced),
+        "asset_ids": [asset["asset_id"] for asset in produced],
+        "store_validation": validation,
+        "store_path": "system/creation_assets/project_assets.v0.2.json",
+        "content_generation_allowed": False,
     }

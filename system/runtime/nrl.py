@@ -25,7 +25,7 @@ from nrl_agent_ops import (
     validate_agent_job,
     write_agent_packet,
 )
-from nrl_asset_producers import build_producer_status
+from nrl_asset_producers import build_producer_status, produce_technique_candidates
 from nrl_capabilities import build_hardening_status
 from nrl_creation_assets import load_creation_asset_registry
 from nrl_creation_schemas import (
@@ -367,6 +367,12 @@ def cmd_production_runtime_status(_: argparse.Namespace) -> int:
 def cmd_producer_status(_: argparse.Namespace) -> int:
     print_json(build_producer_status(load_state(), load_adapters()))
     return 0
+
+
+def cmd_produce_techniques(args: argparse.Namespace) -> int:
+    result = produce_technique_candidates(load_state(), args.job_id)
+    print_json(result)
+    return 0 if result["store_validation"]["valid"] else 1
 
 
 def cmd_studio_serve(args: argparse.Namespace) -> int:
@@ -769,6 +775,9 @@ def build_parser() -> argparse.ArgumentParser:
         func=cmd_production_runtime_status
     )
     sub.add_parser("producer-status").set_defaults(func=cmd_producer_status)
+    produce_techniques = sub.add_parser("produce-techniques")
+    produce_techniques.add_argument("--job-id", required=True)
+    produce_techniques.set_defaults(func=cmd_produce_techniques)
     sub.add_parser("doctor").set_defaults(func=cmd_doctor)
     sub.add_parser("advance").set_defaults(func=cmd_advance)
     owner = sub.add_parser("owner-gate")

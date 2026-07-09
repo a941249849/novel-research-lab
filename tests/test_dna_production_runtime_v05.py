@@ -75,6 +75,36 @@ class AgentOpsCliTests(RuntimeCliCase):
         self.assertIn("FORBIDDEN ACTIONS", packet_text)
         self.assertIn("Do not write prose", packet_text)
 
+    def test_agent_ingest_rejects_files_outside_inbox(self):
+        job = json.loads(self.run_cli("agent-job-plan", "--family", "techniques").stdout)["job"]
+        result = self.run_cli("agent-ingest", "--job-id", job["job_id"], "--file", "README.md")
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("system/agent_ops/inbox", result.stderr)
+
+    def test_agent_validate_accepts_sample_review_and_marks_job_validated(self):
+        job = json.loads(self.run_cli("agent-job-plan", "--family", "techniques").stdout)["job"]
+        inbox = REPO_ROOT / "system/agent_ops/inbox/valid_antigravity_techniques_review.md"
+        inbox.parent.mkdir(parents=True, exist_ok=True)
+        inbox.write_text(
+            (REPO_ROOT / "tests/fixtures/agent_ops/valid_antigravity_techniques_review.md").read_text(
+                encoding="utf-8"
+            ),
+            encoding="utf-8",
+        )
+        ingest = self.run_cli(
+            "agent-ingest",
+            "--job-id",
+            job["job_id"],
+            "--file",
+            str(inbox.relative_to(REPO_ROOT)),
+        )
+        self.assertEqual(ingest.returncode, 0, ingest.stderr)
+        validate = self.run_cli("agent-validate", "--job-id", job["job_id"])
+        self.assertEqual(validate.returncode, 0, validate.stderr)
+        data = json.loads(validate.stdout)
+        self.assertTrue(data["valid"])
+        self.assertEqual(data["job"]["state"], "validated")
+
 
 if __name__ == "__main__":
     unittest.main()

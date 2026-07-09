@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import shutil
 from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
@@ -15,6 +16,9 @@ from nrl_rag_index import load_or_build_rag_index, write_rag_index
 VERSION = "0.5"
 QUEUE_PATH = runtime_path("system/agent_ops/job_queue.v0.5.json")
 PACKET_DIR = runtime_path("system/agent_ops/packets")
+INBOX_DIR = runtime_path("system/agent_ops/inbox")
+OUTBOX_DIR = runtime_path("system/agent_ops/outbox")
+VALIDATION_DIR = runtime_path("system/agent_ops/validation")
 JOB_STATES = {
     "planned",
     "ready_for_codex",
@@ -34,6 +38,7 @@ REQUIRED_REVIEW_SECTIONS = (
     "## Required Fixes",
     "## Promotion Recommendation",
 )
+FORBIDDEN_OUTPUT_TEXT = ("Chapter 1", "正文", "第一章")
 
 
 def now_iso() -> str:
@@ -219,3 +224,70 @@ def write_agent_packet(job_id: str) -> dict[str, Any]:
         "packet_path": str(packet_path.relative_to(ROOT)),
         "expected_output_path": job["expected_output_path"],
     }
+
+
+def _resolve_repo_path(file_arg: str) -> Path:
+    path = Path(file_arg)
+    if not path.is_absolute():
+        path = ROOT / path
+    return path.resolve()
+
+
+def _is_relative_to(path: Path, parent: Path) -> bool:
+    try:
+        path.relative_to(parent)
+        return True
+    except ValueError:
+        return False
+
+
+def ingest_agent_output(job_id: str, file_arg: str) -> dict[str, Any]:
+    queue = load_job_queue()
+    job = _find_job(queue, job_id)
+    file_path = _resolve_repo_path(file_arg)
+    inbox = INBOX_DIR.resolve()
+    if not _is_relative_to(file_path, inbox):
+        raise RuntimeError(f"agent output must be placed under system/agent_ops/inbox: {file_arg}")
+    if not file_path.exists():
+        raise RuntimeError(f"agent output file does not exist: {file_arg}")
+    job["actual_output_path"] = str(file_path.relative_to(ROOT))
+    job["state"] = "output_received"
+    job["updated_at"] = now_iso()
+    save_job_queue(queue)
+    return {"job": job, "ingested": job["actual_output_path"]}
+
+
+def validate_agent_job(job_id: str) -> dict[str, Any]:
+    queue = load_job_queue()
+    job = _find_job(queue, job_id)
+    actual = job.get("actual_output_path")
+    if not actual:
+        raise RuntimeError(f"agent job has no ingested output: {job_id}")
+    output_path = ROOT / str(actual)
+    text = output_path.read_text(encoding="utf-8")
+    missing_sections = [section for section in REQUIRED_REVIEW_SECTIONS if section not in text]
+    forbidden_hits = [value for value in FORBIDDEN_OUTPUT_TEXT if value in text]
+    valid = not missing_sections and not forbidden_hits and job_id in text
+    report = {
+        "job_id": job_id,
+        "valid": valid,
+        "missing_sections": missing_sections,
+        "forbidden_hits": forbidden_hits,
+        "validated_at": now_iso(),
+    }
+    VALIDATION_DIR.mkdir(parents=True, exist_ok=True)
+    report_path = VALIDATION_DIR / f"{job_id}_validation.json"
+    _write_json(report_path, report)
+    job["validation_report_path"] = str(report_path.relative_to(ROOT))
+    if valid:
+        OUTBOX_DIR.mkdir(parents=True, exist_ok=True)
+        outbox_path = OUTBOX_DIR / f"{job_id}_validated.md"
+        shutil.copyfile(output_path, outbox_path)
+        job["state"] = "validated"
+        job["blocked_reason"] = None
+    else:
+        job["state"] = "rejected"
+        job["blocked_reason"] = "validation_failed"
+    job["updated_at"] = now_iso()
+    queue = save_job_queue(queue)
+    return {"valid": valid, "job": _find_job(queue, job_id), "report": report}

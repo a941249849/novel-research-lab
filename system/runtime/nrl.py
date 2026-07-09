@@ -17,7 +17,13 @@ from typing import Any
 
 from nrl_compiler import compile_packet
 from nrl_architecture import build_architecture_reconciliation
-from nrl_agent_ops import load_job_queue, plan_agent_job, write_agent_packet
+from nrl_agent_ops import (
+    ingest_agent_output,
+    load_job_queue,
+    plan_agent_job,
+    validate_agent_job,
+    write_agent_packet,
+)
 from nrl_capabilities import build_hardening_status
 from nrl_creation_assets import load_creation_asset_registry
 from nrl_creation_schemas import (
@@ -338,6 +344,17 @@ def cmd_agent_job_plan(args: argparse.Namespace) -> int:
 def cmd_agent_pack(args: argparse.Namespace) -> int:
     print_json(write_agent_packet(args.job_id))
     return 0
+
+
+def cmd_agent_ingest(args: argparse.Namespace) -> int:
+    print_json(ingest_agent_output(args.job_id, args.file))
+    return 0
+
+
+def cmd_agent_validate(args: argparse.Namespace) -> int:
+    result = validate_agent_job(args.job_id)
+    print_json(result)
+    return 0 if result["valid"] else 1
 
 
 def cmd_studio_serve(args: argparse.Namespace) -> int:
@@ -729,6 +746,13 @@ def build_parser() -> argparse.ArgumentParser:
     agent_pack = sub.add_parser("agent-pack")
     agent_pack.add_argument("--job-id", required=True)
     agent_pack.set_defaults(func=cmd_agent_pack)
+    agent_ingest = sub.add_parser("agent-ingest")
+    agent_ingest.add_argument("--job-id", required=True)
+    agent_ingest.add_argument("--file", required=True)
+    agent_ingest.set_defaults(func=cmd_agent_ingest)
+    agent_validate = sub.add_parser("agent-validate")
+    agent_validate.add_argument("--job-id", required=True)
+    agent_validate.set_defaults(func=cmd_agent_validate)
     sub.add_parser("doctor").set_defaults(func=cmd_doctor)
     sub.add_parser("advance").set_defaults(func=cmd_advance)
     owner = sub.add_parser("owner-gate")

@@ -17,6 +17,12 @@ PROMOTION_SCOPE = "promote_full_corpus_proof_to_research_assets"
 REQUIRED_PHASES = ("early", "middle", "late", "ending")
 REQUEST_DIR = runtime_path("system/agent_ops/packets/full_corpus_proof_v0.8")
 VALIDATION_PATH = runtime_path("system/agent_ops/validation/full_corpus_proof_v0.8.json")
+FULL_CORPUS_PROOF_MASTER = runtime_path(
+    "system/agent_ops/inbox/full_corpus_proof_v0.8/master.md"
+)
+PROMOTION_MANIFEST_PATH = runtime_path(
+    "system/research_assets/promotions/full_corpus_proof_v0.9.json"
+)
 
 
 def now_iso() -> str:
@@ -92,6 +98,7 @@ def build_proof_status() -> dict[str, Any]:
         "commands": {
             "pack": "python3 system/runtime/nrl.py full-corpus-proof-pack --all",
             "validate": "python3 system/runtime/nrl.py full-corpus-proof-validate --file <path>",
+            "promote": "python3 system/runtime/nrl.py full-corpus-proof-promote",
         },
     }
 
@@ -329,6 +336,56 @@ def merge_proof_receipts(input_dir_arg: str, output_file_arg: str) -> dict[str, 
         "output_file": _relative_to_root(output_file),
         "source_manifest_count": len(manifests),
         "receipt_count": len(receipts),
+    }
+
+
+def promote_verified_proof() -> dict[str, Any]:
+    proof_status = build_proof_status()
+    readiness = proof_status["promotion_readiness"]
+    if not readiness["promotion_allowed"]:
+        return {
+            "version": "0.9",
+            "job_id": JOB_ID,
+            "status": readiness["status"],
+            "promotion_allowed": False,
+            "manifest_written": False,
+            "next_required_action": readiness["next_required_action"],
+        }
+    if not FULL_CORPUS_PROOF_MASTER.exists():
+        return {
+            "version": "0.9",
+            "job_id": JOB_ID,
+            "status": "blocked_missing_master_manifest",
+            "promotion_allowed": False,
+            "manifest_written": False,
+            "next_required_action": "Rebuild full-corpus proof master manifest before promotion.",
+        }
+    manifest = {
+        "version": "0.9",
+        "asset_id": "full-corpus-proof-v08",
+        "promotion_state": "promoted_research_asset",
+        "source_proof_state": proof_status["latest_validation"]["status"],
+        "proof_master_path": _relative_to_root(FULL_CORPUS_PROOF_MASTER),
+        "proof_master_sha256": _sha256_file(FULL_CORPUS_PROOF_MASTER),
+        "validation_path": _relative_to_root(VALIDATION_PATH),
+        "validation_sha256": _sha256_file(VALIDATION_PATH),
+        "owner_decision_id": readiness["owner_decision_id"],
+        "verified_receipts": readiness["verified_receipts"],
+        "required_receipts": readiness["required_receipts"],
+        "content_generation_allowed": False,
+        "forbidden_actions": readiness["forbidden_actions"],
+        "created_at": now_iso(),
+    }
+    PROMOTION_MANIFEST_PATH.parent.mkdir(parents=True, exist_ok=True)
+    _write_json(PROMOTION_MANIFEST_PATH, manifest)
+    return {
+        "version": "0.9",
+        "job_id": JOB_ID,
+        "status": "promoted_research_asset",
+        "promotion_allowed": True,
+        "manifest_written": True,
+        "manifest_path": _relative_to_root(PROMOTION_MANIFEST_PATH),
+        "owner_decision_id": readiness["owner_decision_id"],
     }
 
 

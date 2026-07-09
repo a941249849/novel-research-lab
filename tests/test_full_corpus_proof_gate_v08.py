@@ -270,6 +270,89 @@ class FullCorpusProofGateV08Tests(unittest.TestCase):
             "owner_gate_full_corpus_proof_promote_001",
         )
 
+    def test_promote_command_blocks_without_owner_decision_and_writes_nothing(self):
+        self.write_review(
+            {
+                "job_id": "job-v08-full-corpus-proof-review",
+                "contract_version": "0.8",
+                "reading_receipts": [
+                    self.valid_receipt(self.book_a, "测试甲"),
+                    self.valid_receipt(self.book_b, "测试乙"),
+                ],
+            }
+        )
+        master = self.root / "system/agent_ops/inbox/full_corpus_proof_v0.8/master.md"
+        master.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(self.review_path, master)
+        validated = self.run_cli(
+            "full-corpus-proof-validate",
+            "--file",
+            str(master.relative_to(self.root)),
+        )
+        self.assertEqual(validated.returncode, 0, validated.stderr)
+        result = self.run_cli("full-corpus-proof-promote")
+        self.assertNotEqual(result.returncode, 0)
+        data = json.loads(result.stdout)
+        self.assertEqual(data["status"], "blocked_on_owner_gate")
+        self.assertFalse(data["promotion_allowed"])
+        self.assertFalse(
+            (self.root / "system/research_assets/promotions/full_corpus_proof_v0.9.json").exists()
+        )
+
+    def test_promote_command_writes_guarded_research_asset_manifest(self):
+        self.write_review(
+            {
+                "job_id": "job-v08-full-corpus-proof-review",
+                "contract_version": "0.8",
+                "reading_receipts": [
+                    self.valid_receipt(self.book_a, "测试甲"),
+                    self.valid_receipt(self.book_b, "测试乙"),
+                ],
+            }
+        )
+        master = self.root / "system/agent_ops/inbox/full_corpus_proof_v0.8/master.md"
+        master.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(self.review_path, master)
+        validated = self.run_cli(
+            "full-corpus-proof-validate",
+            "--file",
+            str(master.relative_to(self.root)),
+        )
+        self.assertEqual(validated.returncode, 0, validated.stderr)
+        decision = self.run_cli(
+            "owner-gate",
+            "record",
+            "--decision-id",
+            "owner_gate_full_corpus_proof_promote_001",
+            "--decision-type",
+            "authorize_research_promotion",
+            "--authorized-scope",
+            "promote_full_corpus_proof_to_research_assets",
+            "--forbidden-scope",
+            "generate_novel_prose",
+            "--forbidden-scope",
+            "execute_hermes",
+            "--expires-after-mission",
+            "job-v08-full-corpus-proof-review",
+        )
+        self.assertEqual(decision.returncode, 0, decision.stderr)
+        result = self.run_cli("full-corpus-proof-promote")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        data = json.loads(result.stdout)
+        self.assertEqual(data["status"], "promoted_research_asset")
+        self.assertEqual(
+            data["manifest_path"],
+            "system/research_assets/promotions/full_corpus_proof_v0.9.json",
+        )
+        manifest = json.loads((self.root / data["manifest_path"]).read_text(encoding="utf-8"))
+        self.assertEqual(manifest["promotion_state"], "promoted_research_asset")
+        self.assertEqual(manifest["owner_decision_id"], "owner_gate_full_corpus_proof_promote_001")
+        self.assertEqual(manifest["verified_receipts"], 2)
+        self.assertEqual(manifest["required_receipts"], 2)
+        self.assertFalse(manifest["content_generation_allowed"])
+        self.assertIn("generate_novel_prose", manifest["forbidden_actions"])
+        self.assertNotIn("novel_training_set/", json.dumps(manifest, ensure_ascii=False))
+
     def test_stale_owner_decision_does_not_authorize_full_corpus_promotion(self):
         self.write_review(
             {

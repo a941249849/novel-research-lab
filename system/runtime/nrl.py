@@ -45,6 +45,7 @@ from nrl_full_corpus_handoff import (
 from nrl_full_corpus_proof import (
     build_proof_status,
     merge_proof_receipts,
+    promote_verified_proof,
     validate_proof_file,
     write_proof_packets,
 )
@@ -428,6 +429,12 @@ def cmd_full_corpus_proof_validate(args: argparse.Namespace) -> int:
 def cmd_full_corpus_proof_merge(args: argparse.Namespace) -> int:
     print_json(merge_proof_receipts(args.input_dir, args.output_file))
     return 0
+
+
+def cmd_full_corpus_proof_promote(_: argparse.Namespace) -> int:
+    result = promote_verified_proof()
+    print_json(result)
+    return 0 if result["status"] == "promoted_research_asset" else 1
 
 
 def cmd_antigravity_bridge_status(_: argparse.Namespace) -> int:
@@ -875,6 +882,9 @@ def build_parser() -> argparse.ArgumentParser:
     full_corpus_proof_merge.add_argument("--input-dir", required=True)
     full_corpus_proof_merge.add_argument("--output-file", required=True)
     full_corpus_proof_merge.set_defaults(func=cmd_full_corpus_proof_merge)
+    sub.add_parser("full-corpus-proof-promote").set_defaults(
+        func=cmd_full_corpus_proof_promote
+    )
     sub.add_parser("antigravity-bridge-status").set_defaults(
         func=cmd_antigravity_bridge_status
     )

@@ -296,6 +296,23 @@ This does not authorize prose, chapter planning, Hermes execution, raw corpus
 exposure, or automatic content generation. A stale Owner Gate decision with a
 different `expires-after-mission` is ignored by `full-corpus-proof-status`.
 
+After that narrow decision exists, run the promotion executor:
+
+```bash
+python3 system/runtime/nrl.py full-corpus-proof-promote
+```
+
+Without the matching Owner Gate decision, this command exits non-zero and writes
+no manifest. With the matching decision, it writes only:
+
+```text
+system/research_assets/promotions/full_corpus_proof_v0.9.json
+```
+
+The manifest records proof hashes, the Owner decision id, receipt counts,
+`content_generation_allowed: false`, and forbidden actions. It still does not
+promote prose generation or Hermes execution.
+
 ## Owner Gate Rules
 
 Owner Gate is required when:

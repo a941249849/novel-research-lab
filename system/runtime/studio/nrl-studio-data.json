@@ -1478,7 +1478,8 @@
     "promotion_allowed": false,
     "commands": {
       "pack": "python3 system/runtime/nrl.py full-corpus-proof-pack --all",
-      "validate": "python3 system/runtime/nrl.py full-corpus-proof-validate --file <path>"
+      "validate": "python3 system/runtime/nrl.py full-corpus-proof-validate --file <path>",
+      "promote": "python3 system/runtime/nrl.py full-corpus-proof-promote"
     }
   },
   "creation_schema_registry": {

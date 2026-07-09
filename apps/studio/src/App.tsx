@@ -260,6 +260,7 @@ const statusNames: Record<string, string> = {
   proof_gate_ready: '证明门已就绪',
   proof_verified: '证明已验证',
   verified_not_promoted: '已验证未提升',
+  promotable_research_asset: '可提升为研究资产',
   blocked_on_owner_gate: 'Owner Gate 阻塞',
   blocked_on_proof_verification: '等待证明验证',
 };
@@ -268,7 +269,7 @@ function statusColor(status: string) {
   if (status.includes('blocked') || status.includes('missing') || status.includes('REQUIRED')) return 'red';
   if (status.includes('partial') || status.includes('pending') || status.includes('manual')) return 'orange';
   if (status.includes('seed') || status.includes('contract')) return 'yellow';
-  if (status.includes('runnable') || status.includes('ready') || status.includes('verified') || status.includes('PASS') || status === 'formal') return 'green';
+  if (status.includes('runnable') || status.includes('ready') || status.includes('verified') || status.includes('promotable') || status.includes('PASS') || status === 'formal') return 'green';
   return 'gray';
 }
 

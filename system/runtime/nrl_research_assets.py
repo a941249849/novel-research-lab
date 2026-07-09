@@ -5,6 +5,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
 
+from nrl_full_corpus_proof import build_proof_status
 from nrl_paths import ROOT, runtime_path
 
 
@@ -104,24 +105,31 @@ def _full_corpus_proof_item() -> list[dict[str, Any]]:
     validation = _read_json(FULL_CORPUS_PROOF_VALIDATION)
     if validation.get("status") != "proof_verified":
         return []
+    proof_status = build_proof_status()
+    readiness = proof_status["promotion_readiness"]
     source_path = str(FULL_CORPUS_PROOF_MASTER.relative_to(ROOT))
     validation_path = str(FULL_CORPUS_PROOF_VALIDATION.relative_to(ROOT))
-    return [
-        {
-            "asset_id": "full-corpus-proof-v08",
-            "title": "全量小说集阅读证明",
-            "asset_type": "corpus_proof",
-            "source_path": source_path,
-            "validation_path": validation_path,
-            "review_state": "proof_verified",
-            "provenance": "verified_not_promoted",
-            "categories": ["全文深读证明", "语料工程"],
-            "exists": FULL_CORPUS_PROOF_MASTER.exists(),
-            "verified_receipts": int(validation.get("verified_receipts", 0)),
-            "required_receipts": int(validation.get("required_receipts", 0)),
-            "promotion_allowed": bool(validation.get("promotion_allowed", False)),
-        }
-    ]
+    item = {
+        "asset_id": "full-corpus-proof-v08",
+        "title": "全量小说集阅读证明",
+        "asset_type": "corpus_proof",
+        "source_path": source_path,
+        "validation_path": validation_path,
+        "review_state": "proof_verified",
+        "provenance": (
+            "promotable_research_asset"
+            if readiness["promotion_allowed"]
+            else "verified_not_promoted"
+        ),
+        "categories": ["全文深读证明", "语料工程"],
+        "exists": FULL_CORPUS_PROOF_MASTER.exists(),
+        "verified_receipts": int(validation.get("verified_receipts", 0)),
+        "required_receipts": int(validation.get("required_receipts", 0)),
+        "promotion_allowed": bool(readiness["promotion_allowed"]),
+    }
+    if readiness.get("owner_decision_id"):
+        item["owner_decision_id"] = str(readiness["owner_decision_id"])
+    return [item]
 
 
 def build_research_asset_catalog(

@@ -7,11 +7,13 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from nrl_owner_gate import load_decisions
 from nrl_paths import ROOT, runtime_path
 
 
 VERSION = "0.8"
 JOB_ID = "job-v08-full-corpus-proof-review"
+PROMOTION_SCOPE = "promote_full_corpus_proof_to_research_assets"
 REQUIRED_PHASES = ("early", "middle", "late", "ending")
 REQUEST_DIR = runtime_path("system/agent_ops/packets/full_corpus_proof_v0.8")
 VALIDATION_PATH = runtime_path("system/agent_ops/validation/full_corpus_proof_v0.8.json")
@@ -76,6 +78,7 @@ def build_corpus_inventory(include_hashes: bool = False) -> dict[str, Any]:
 def build_proof_status() -> dict[str, Any]:
     inventory = build_corpus_inventory(include_hashes=False)
     latest_validation = load_latest_validation()
+    promotion_readiness = build_promotion_readiness(latest_validation)
     return {
         "version": VERSION,
         "job_id": JOB_ID,
@@ -84,8 +87,8 @@ def build_proof_status() -> dict[str, Any]:
         "required_receipts": inventory["file_count"],
         "required_phases": list(REQUIRED_PHASES),
         "latest_validation": latest_validation,
-        "promotion_readiness": build_promotion_readiness(latest_validation),
-        "promotion_allowed": False,
+        "promotion_readiness": promotion_readiness,
+        "promotion_allowed": promotion_readiness["promotion_allowed"],
         "commands": {
             "pack": "python3 system/runtime/nrl.py full-corpus-proof-pack --all",
             "validate": "python3 system/runtime/nrl.py full-corpus-proof-validate --file <path>",
@@ -110,6 +113,18 @@ def build_promotion_readiness(latest_validation: dict[str, Any] | None) -> dict[
     proof_verified = bool(latest_validation and latest_validation.get("status") == "proof_verified")
     required = int(latest_validation.get("required_receipts", 0)) if latest_validation else 0
     verified = int(latest_validation.get("verified_receipts", 0)) if latest_validation else 0
+    decision = _latest_full_corpus_promotion_decision() if proof_verified else None
+    if decision:
+        return {
+            "status": "promotable_research_asset",
+            "proof_verified": proof_verified,
+            "verified_receipts": verified,
+            "required_receipts": required,
+            "promotion_allowed": True,
+            "owner_decision_id": decision["decision_id"],
+            "next_required_action": "Promote the verified proof into research-asset ingestion; prose remains blocked.",
+            "forbidden_actions": _promotion_forbidden_actions(decision),
+        }
     return {
         "status": "blocked_on_owner_gate" if proof_verified else "blocked_on_proof_verification",
         "proof_verified": proof_verified,
@@ -127,6 +142,25 @@ def build_promotion_readiness(latest_validation: dict[str, Any] | None) -> dict[
             "execute_hermes",
         ],
     }
+
+
+def _latest_full_corpus_promotion_decision() -> dict[str, Any] | None:
+    for decision in reversed(load_decisions()):
+        if decision.get("decision_type") != "authorize_research_promotion":
+            continue
+        scopes = set(decision.get("authorized_scope", []))
+        if PROMOTION_SCOPE not in scopes:
+            continue
+        if decision.get("expires_after_mission") != JOB_ID:
+            continue
+        return decision
+    return None
+
+
+def _promotion_forbidden_actions(decision: dict[str, Any]) -> list[str]:
+    forbidden = list(decision.get("forbidden_scope", []))
+    forbidden.extend(["generate_novel_prose", "execute_hermes"])
+    return sorted(dict.fromkeys(str(item) for item in forbidden))
 
 
 def _resolve_repo_path(file_arg: str) -> Path:

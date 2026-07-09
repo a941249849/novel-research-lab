@@ -892,7 +892,13 @@ def build_parser() -> argparse.ArgumentParser:
     owner_record.add_argument(
         "--decision-type",
         required=True,
-        choices=["accept_review", "request_rework", "authorize_next_phase", "authorize_adapter_upgrade"],
+        choices=[
+            "accept_review",
+            "request_rework",
+            "authorize_next_phase",
+            "authorize_adapter_upgrade",
+            "authorize_research_promotion",
+        ],
     )
     owner_record.add_argument("--authorized-scope", action="append", required=True)
     owner_record.add_argument("--forbidden-scope", action="append", required=True)

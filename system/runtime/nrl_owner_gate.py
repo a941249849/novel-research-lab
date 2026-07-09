@@ -7,7 +7,13 @@ from nrl_paths import runtime_path
 
 
 OWNER_GATE_PATH = runtime_path("system/runtime/owner_gate_decisions.json")
-DECISION_TYPES = {"accept_review", "request_rework", "authorize_next_phase", "authorize_adapter_upgrade"}
+DECISION_TYPES = {
+    "accept_review",
+    "request_rework",
+    "authorize_next_phase",
+    "authorize_adapter_upgrade",
+    "authorize_research_promotion",
+}
 
 
 def load_decisions() -> list[dict[str, Any]]:

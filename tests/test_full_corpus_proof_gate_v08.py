@@ -176,6 +176,141 @@ class FullCorpusProofGateV08Tests(unittest.TestCase):
         self.assertTrue(data["promotion_readiness"]["proof_verified"])
         self.assertFalse(data["promotion_readiness"]["promotion_allowed"])
 
+    def test_owner_decision_can_authorize_research_asset_promotion_only(self):
+        self.write_review(
+            {
+                "job_id": "job-v08-full-corpus-proof-review",
+                "contract_version": "0.8",
+                "reading_receipts": [
+                    self.valid_receipt(self.book_a, "测试甲"),
+                    self.valid_receipt(self.book_b, "测试乙"),
+                ],
+            }
+        )
+        validated = self.run_cli(
+            "full-corpus-proof-validate",
+            "--file",
+            str(self.review_path.relative_to(self.root)),
+        )
+        self.assertEqual(validated.returncode, 0, validated.stderr)
+        decision = self.run_cli(
+            "owner-gate",
+            "record",
+            "--decision-id",
+            "owner_gate_full_corpus_proof_promote_001",
+            "--decision-type",
+            "authorize_research_promotion",
+            "--authorized-scope",
+            "promote_full_corpus_proof_to_research_assets",
+            "--forbidden-scope",
+            "generate_novel_prose",
+            "--forbidden-scope",
+            "execute_hermes",
+            "--expires-after-mission",
+            "job-v08-full-corpus-proof-review",
+            "--owner-note",
+            "authorize proof promotion only",
+        )
+        self.assertEqual(decision.returncode, 0, decision.stderr)
+        status = self.run_cli("full-corpus-proof-status")
+        self.assertEqual(status.returncode, 0, status.stderr)
+        data = json.loads(status.stdout)
+        readiness = data["promotion_readiness"]
+        self.assertEqual(readiness["status"], "promotable_research_asset")
+        self.assertTrue(readiness["promotion_allowed"])
+        self.assertEqual(
+            readiness["owner_decision_id"],
+            "owner_gate_full_corpus_proof_promote_001",
+        )
+        self.assertIn("generate_novel_prose", readiness["forbidden_actions"])
+        self.assertIn("execute_hermes", readiness["forbidden_actions"])
+
+    def test_research_asset_catalog_uses_full_corpus_promotion_gate(self):
+        self.write_review(
+            {
+                "job_id": "job-v08-full-corpus-proof-review",
+                "contract_version": "0.8",
+                "reading_receipts": [
+                    self.valid_receipt(self.book_a, "测试甲"),
+                    self.valid_receipt(self.book_b, "测试乙"),
+                ],
+            }
+        )
+        master = self.root / "system/agent_ops/inbox/full_corpus_proof_v0.8/master.md"
+        master.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(self.review_path, master)
+        validated = self.run_cli(
+            "full-corpus-proof-validate",
+            "--file",
+            str(master.relative_to(self.root)),
+        )
+        self.assertEqual(validated.returncode, 0, validated.stderr)
+        decision = self.run_cli(
+            "owner-gate",
+            "record",
+            "--decision-id",
+            "owner_gate_full_corpus_proof_promote_001",
+            "--decision-type",
+            "authorize_research_promotion",
+            "--authorized-scope",
+            "promote_full_corpus_proof_to_research_assets",
+            "--forbidden-scope",
+            "generate_novel_prose",
+            "--expires-after-mission",
+            "job-v08-full-corpus-proof-review",
+        )
+        self.assertEqual(decision.returncode, 0, decision.stderr)
+        result = self.run_cli("research-assets", "--asset-type", "corpus_proof")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        proof = json.loads(result.stdout)["items"][0]
+        self.assertEqual(proof["provenance"], "promotable_research_asset")
+        self.assertTrue(proof["promotion_allowed"])
+        self.assertEqual(
+            proof["owner_decision_id"],
+            "owner_gate_full_corpus_proof_promote_001",
+        )
+
+    def test_stale_owner_decision_does_not_authorize_full_corpus_promotion(self):
+        self.write_review(
+            {
+                "job_id": "job-v08-full-corpus-proof-review",
+                "contract_version": "0.8",
+                "reading_receipts": [
+                    self.valid_receipt(self.book_a, "测试甲"),
+                    self.valid_receipt(self.book_b, "测试乙"),
+                ],
+            }
+        )
+        validated = self.run_cli(
+            "full-corpus-proof-validate",
+            "--file",
+            str(self.review_path.relative_to(self.root)),
+        )
+        self.assertEqual(validated.returncode, 0, validated.stderr)
+        stale = self.run_cli(
+            "owner-gate",
+            "record",
+            "--decision-id",
+            "owner_gate_old_research_promotion_001",
+            "--decision-type",
+            "authorize_research_promotion",
+            "--authorized-scope",
+            "promote_full_corpus_proof_to_research_assets",
+            "--forbidden-scope",
+            "generate_novel_prose",
+            "--expires-after-mission",
+            "phase2e_entry_preparation",
+            "--owner-note",
+            "wrong gate",
+        )
+        self.assertEqual(stale.returncode, 0, stale.stderr)
+        status = self.run_cli("full-corpus-proof-status")
+        self.assertEqual(status.returncode, 0, status.stderr)
+        readiness = json.loads(status.stdout)["promotion_readiness"]
+        self.assertEqual(readiness["status"], "blocked_on_owner_gate")
+        self.assertFalse(readiness["promotion_allowed"])
+        self.assertNotIn("owner_decision_id", readiness)
+
     def test_validate_rejects_missing_phase_chunk_coverage(self):
         receipt = self.valid_receipt(self.book_a, "测试甲")
         receipt["segments"] = receipt["segments"][:3]

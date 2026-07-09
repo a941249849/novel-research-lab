@@ -279,6 +279,23 @@ python3 system/runtime/nrl.py full-corpus-proof-validate \
 If a report lacks `reading_receipts`, the validator returns
 `schema_valid_but_depth_unverified` and `promotion_allowed: false`.
 
+Promotion from `proof_verified` into a promotable research asset requires a
+fresh Owner Gate decision scoped only to research-asset promotion:
+
+```bash
+python3 system/runtime/nrl.py owner-gate record \
+  --decision-id owner_gate_full_corpus_proof_promote_001 \
+  --decision-type authorize_research_promotion \
+  --authorized-scope promote_full_corpus_proof_to_research_assets \
+  --forbidden-scope generate_novel_prose \
+  --forbidden-scope execute_hermes \
+  --expires-after-mission job-v08-full-corpus-proof-review
+```
+
+This does not authorize prose, chapter planning, Hermes execution, raw corpus
+exposure, or automatic content generation. A stale Owner Gate decision with a
+different `expires-after-mission` is ignored by `full-corpus-proof-status`.
+
 ## Owner Gate Rules
 
 Owner Gate is required when:

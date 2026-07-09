@@ -11,6 +11,7 @@ from nrl_corpus_pipeline import build_pipeline_plan
 from nrl_dna_registry import load_or_build_dna_registry
 from nrl_paths import ROOT, runtime_path
 from nrl_rag_index import load_or_build_rag_index, write_rag_index
+from nrl_system_status import build_system_status
 
 
 VERSION = "0.5"
@@ -291,3 +292,48 @@ def validate_agent_job(job_id: str) -> dict[str, Any]:
     job["updated_at"] = now_iso()
     queue = save_job_queue(queue)
     return {"valid": valid, "job": _find_job(queue, job_id), "report": report}
+
+
+def build_production_runtime_status(
+    state: dict[str, Any],
+    adapters: dict[str, Any],
+) -> dict[str, Any]:
+    system_status = build_system_status(state, adapters)
+    registry = load_or_build_dna_registry(state)
+    index = load_or_build_rag_index(state)
+    queue = load_job_queue()
+    packet_paths = (
+        sorted(str(path.relative_to(ROOT)) for path in PACKET_DIR.glob("*.md"))
+        if PACKET_DIR.exists()
+        else []
+    )
+    inbox_count = len([path for path in INBOX_DIR.glob("*") if path.is_file()]) if INBOX_DIR.exists() else 0
+    outbox_count = len([path for path in OUTBOX_DIR.glob("*") if path.is_file()]) if OUTBOX_DIR.exists() else 0
+    antigravity = adapters.get("antigravity", {})
+    return {
+        "version": VERSION,
+        "system_mode": system_status["operating_mode"],
+        "content_progression": system_status["content_progression"],
+        "owner_gate": {
+            "required": system_status["owner_gate_required"],
+            "status": system_status["owner_gate_status"],
+        },
+        "dna_registry": registry["summary"],
+        "rag_index": index["summary"],
+        "agent_jobs": queue["summary"],
+        "current_packets": packet_paths,
+        "agent_io": {
+            "inbox_dir": "system/agent_ops/inbox",
+            "outbox_dir": "system/agent_ops/outbox",
+            "inbox_count": inbox_count,
+            "outbox_count": outbox_count,
+        },
+        "antigravity": {
+            "mode": antigravity.get("mode", "manual_handoff"),
+            "status": "manual_external_review",
+        },
+        "hermes": {
+            "status": system_status["hermes_execution_status"],
+            "allowed": False,
+        },
+    }

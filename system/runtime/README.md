@@ -258,6 +258,58 @@ It reports:
 - adapter modes and execution capability
 - current validation, review, and Owner Gate state
 - expected handoff output paths
+
+## DNA Production Runtime v0.5
+
+v0.5 is the first operational Corpus-to-Creation runtime layer. It converts
+structured research derivatives into a DNA Registry, builds a metadata-only
+Research RAG Index, and manages manual Antigravity review jobs through a
+file-backed queue.
+
+Build and inspect the DNA mother-library:
+
+```bash
+python3 system/runtime/nrl.py dna-registry-build
+python3 system/runtime/nrl.py dna-registry
+```
+
+Build and inspect the structured retrieval index:
+
+```bash
+python3 system/runtime/nrl.py rag-index-build
+python3 system/runtime/nrl.py rag-index
+```
+
+Create the first production job for the current missing asset family:
+
+```bash
+python3 system/runtime/nrl.py agent-job-plan --family techniques
+python3 system/runtime/nrl.py agent-pack --job-id job-v05-techniques-antigravity-review
+python3 system/runtime/nrl.py agent-jobs
+```
+
+Manual Antigravity output must be placed under:
+
+```text
+system/agent_ops/inbox/
+```
+
+Then ingest and validate it:
+
+```bash
+python3 system/runtime/nrl.py agent-ingest --job-id job-v05-techniques-antigravity-review --file system/agent_ops/inbox/job-v05-techniques-antigravity-review.md
+python3 system/runtime/nrl.py agent-validate --job-id job-v05-techniques-antigravity-review
+```
+
+Inspect the complete production runtime status:
+
+```bash
+python3 system/runtime/nrl.py production-runtime-status
+```
+
+This runtime still does not call Antigravity or Hermes. It only creates the
+shared-folder contract, validates returned artifacts, and keeps Owner Gate
+active before any prose or final creative asset generation.
 - current blocked actions
 - recommended next runtime command
 

@@ -18,6 +18,7 @@ from typing import Any
 from nrl_compiler import compile_packet
 from nrl_architecture import build_architecture_reconciliation
 from nrl_agent_ops import (
+    build_production_runtime_status,
     ingest_agent_output,
     load_job_queue,
     plan_agent_job,
@@ -355,6 +356,11 @@ def cmd_agent_validate(args: argparse.Namespace) -> int:
     result = validate_agent_job(args.job_id)
     print_json(result)
     return 0 if result["valid"] else 1
+
+
+def cmd_production_runtime_status(_: argparse.Namespace) -> int:
+    print_json(build_production_runtime_status(load_state(), load_adapters()))
+    return 0
 
 
 def cmd_studio_serve(args: argparse.Namespace) -> int:
@@ -753,6 +759,9 @@ def build_parser() -> argparse.ArgumentParser:
     agent_validate = sub.add_parser("agent-validate")
     agent_validate.add_argument("--job-id", required=True)
     agent_validate.set_defaults(func=cmd_agent_validate)
+    sub.add_parser("production-runtime-status").set_defaults(
+        func=cmd_production_runtime_status
+    )
     sub.add_parser("doctor").set_defaults(func=cmd_doctor)
     sub.add_parser("advance").set_defaults(func=cmd_advance)
     owner = sub.add_parser("owner-gate")

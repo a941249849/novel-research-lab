@@ -1,7 +1,9 @@
 import json
 import subprocess
 import sys
+import threading
 import unittest
+import urllib.request
 from pathlib import Path
 
 
@@ -104,6 +106,61 @@ class AgentOpsCliTests(RuntimeCliCase):
         data = json.loads(validate.stdout)
         self.assertTrue(data["valid"])
         self.assertEqual(data["job"]["state"], "validated")
+
+
+class ProductionRuntimeIntegrationTests(RuntimeCliCase):
+    def test_production_runtime_status_reports_real_runtime_sections(self):
+        self.run_cli("dna-registry-build")
+        self.run_cli("rag-index-build")
+        self.run_cli("agent-job-plan", "--family", "techniques")
+        result = self.run_cli("production-runtime-status")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        data = json.loads(result.stdout)
+        self.assertEqual(data["version"], "0.5")
+        self.assertEqual(data["system_mode"], "SYSTEM_HARDENING")
+        self.assertEqual(data["content_progression"], "FROZEN_AT_OWNER_GATE")
+        self.assertEqual(data["antigravity"]["mode"], "manual_handoff")
+        self.assertEqual(data["hermes"]["status"], "paused_not_removed")
+        self.assertIn("techniques", data["agent_jobs"]["by_family"])
+
+    def test_studio_data_contains_dna_production_runtime(self):
+        result = self.run_cli("studio-data")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        data = json.loads(result.stdout)
+        self.assertIn("dna_production_runtime", data)
+
+
+class ProductionRuntimeServerTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        from nrl_studio_server import create_studio_server
+
+        cls.server = create_studio_server("127.0.0.1", 0)
+        cls.thread = threading.Thread(target=cls.server.serve_forever, daemon=True)
+        cls.thread.start()
+        cls.base_url = f"http://127.0.0.1:{cls.server.server_port}"
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.server.shutdown()
+        cls.server.server_close()
+        cls.thread.join(timeout=2)
+
+    def request_json(self, path):
+        request = urllib.request.Request(self.base_url + path, method="GET")
+        with urllib.request.urlopen(request, timeout=5) as response:
+            return response.status, json.loads(response.read().decode("utf-8"))
+
+    def test_production_runtime_get_routes_return_data(self):
+        for path, expected_key in (
+            ("/api/dna-registry", "entries"),
+            ("/api/rag-index", "items"),
+            ("/api/agent-jobs", "jobs"),
+            ("/api/production-runtime-status", "agent_jobs"),
+        ):
+            status, data = self.request_json(path)
+            self.assertEqual(status, 200)
+            self.assertIn(expected_key, data)
 
 
 if __name__ == "__main__":

@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import Any
 
 from nrl_architecture import build_architecture_reconciliation
+from nrl_agent_ops import build_production_runtime_status
 from nrl_capabilities import build_hardening_status
 from nrl_creation_assets import load_creation_asset_registry
 from nrl_creation_schemas import build_creation_schema_registry
@@ -90,6 +91,7 @@ def build_studio_data(
         adapters,
         pipeline_status=corpus_pipeline,
     )
+    dna_production_runtime = build_production_runtime_status(state, adapters)
 
     return {
         "control_plane": {
@@ -121,6 +123,7 @@ def build_studio_data(
         },
         "architecture_reconciliation": architecture_reconciliation,
         "corpus_pipeline": corpus_pipeline,
+        "dna_production_runtime": dna_production_runtime,
         "system_identity": {
             "name": "Novel Research Lab",
             "positioning": "Corpus-to-Creation engine for Chinese long-form web novel creation.",

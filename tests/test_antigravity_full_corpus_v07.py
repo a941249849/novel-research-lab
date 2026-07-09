@@ -1,7 +1,9 @@
 import json
+import os
 import shutil
 import subprocess
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -9,36 +11,45 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[1]
 NRL = REPO_ROOT / "system/runtime/nrl.py"
 JOB_ID = "job-v07-full-corpus-antigravity-review"
-INBOX_REVIEW = REPO_ROOT / f"system/agent_ops/inbox/{JOB_ID}.md"
 
 
 class AntigravityFullCorpusCliTests(unittest.TestCase):
     def run_cli(self, *args):
+        env = os.environ.copy()
+        env["NRL_ROOT"] = str(self.root)
         return subprocess.run(
             [sys.executable, str(NRL), *args],
             cwd=REPO_ROOT,
+            env=env,
             text=True,
             capture_output=True,
             check=False,
         )
 
     def setUp(self):
-        for path in (
-            REPO_ROOT / "system/agent_ops/full_corpus_job.v0.7.json",
-            REPO_ROOT / f"system/agent_ops/validation/{JOB_ID}_validation.json",
-            REPO_ROOT / f"system/agent_ops/outbox/{JOB_ID}_validated.md",
-            INBOX_REVIEW,
-        ):
-            if path.exists():
-                path.unlink()
+        self.tmp = tempfile.TemporaryDirectory()
+        self.root = Path(self.tmp.name)
+        shutil.copytree(
+            REPO_ROOT / "system/mission_controller",
+            self.root / "system/mission_controller",
+        )
+        (self.root / "system/runtime").mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(
+            REPO_ROOT / "system/runtime/agent_adapters.json",
+            self.root / "system/runtime/agent_adapters.json",
+        )
+        self.inbox_review = self.root / f"system/agent_ops/inbox/{JOB_ID}.md"
+
+    def tearDown(self):
+        self.tmp.cleanup()
 
     def test_pack_writes_owner_command_packet(self):
         result = self.run_cli("antigravity-full-corpus-pack")
         self.assertEqual(result.returncode, 0, result.stderr)
         data = json.loads(result.stdout)
         self.assertEqual(data["job_id"], JOB_ID)
-        packet_path = REPO_ROOT / data["packet_path"]
-        command_path = REPO_ROOT / data["command_path"]
+        packet_path = self.root / data["packet_path"]
+        command_path = self.root / data["command_path"]
         self.assertTrue(packet_path.exists())
         self.assertTrue(command_path.exists())
 
@@ -79,15 +90,15 @@ class AntigravityFullCorpusCliTests(unittest.TestCase):
 
     def test_validate_accepts_structured_full_corpus_review(self):
         self.run_cli("antigravity-full-corpus-pack")
-        INBOX_REVIEW.parent.mkdir(parents=True, exist_ok=True)
+        self.inbox_review.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(
             REPO_ROOT / "tests/fixtures/agent_ops/valid_full_corpus_antigravity_review.md",
-            INBOX_REVIEW,
+            self.inbox_review,
         )
         ingest = self.run_cli(
             "antigravity-full-corpus-ingest",
             "--file",
-            str(INBOX_REVIEW.relative_to(REPO_ROOT)),
+            str(self.inbox_review.relative_to(self.root)),
         )
         self.assertEqual(ingest.returncode, 0, ingest.stderr)
         validate = self.run_cli("antigravity-full-corpus-validate")
@@ -109,16 +120,16 @@ class AntigravityFullCorpusCliTests(unittest.TestCase):
 
     def test_validate_rejects_forbidden_generation_markers(self):
         self.run_cli("antigravity-full-corpus-pack")
-        INBOX_REVIEW.parent.mkdir(parents=True, exist_ok=True)
+        self.inbox_review.parent.mkdir(parents=True, exist_ok=True)
         text = (REPO_ROOT / "tests/fixtures/agent_ops/valid_full_corpus_antigravity_review.md").read_text(
             encoding="utf-8"
         )
-        INBOX_REVIEW.write_text(text + "\n第一章\n", encoding="utf-8")
+        self.inbox_review.write_text(text + "\n第一章\n", encoding="utf-8")
         self.assertEqual(
             self.run_cli(
                 "antigravity-full-corpus-ingest",
                 "--file",
-                str(INBOX_REVIEW.relative_to(REPO_ROOT)),
+                str(self.inbox_review.relative_to(self.root)),
             ).returncode,
             0,
         )

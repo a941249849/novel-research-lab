@@ -142,6 +142,49 @@ A future Antigravity adapter can extend `agent_adapters.json` with:
 
 The runtime must not mark review complete until a report artifact is ingested and registered.
 
+## Antigravity Full Corpus Handoff v0.7
+
+Use this when the architecture is frozen and the Owner wants Antigravity to
+perform full-corpus rereading, reanalysis, and replanning. This is a manual
+external review workflow, not an Antigravity API call.
+
+Generate the Owner-facing command packet:
+
+```bash
+python3 system/runtime/nrl.py antigravity-full-corpus-pack
+```
+
+This writes:
+
+```text
+system/agent_ops/packets/job-v07-full-corpus-antigravity-review.md
+system/agent_ops/packets/job-v07-full-corpus-antigravity-review-command.md
+```
+
+Paste the command file into Antigravity. Antigravity must save the completed
+structured review to:
+
+```text
+system/agent_ops/inbox/job-v07-full-corpus-antigravity-review.md
+```
+
+Check handoff status:
+
+```bash
+python3 system/runtime/nrl.py antigravity-full-corpus-status
+```
+
+After Antigravity writes the output file, ingest and validate it:
+
+```bash
+python3 system/runtime/nrl.py antigravity-full-corpus-ingest --file system/agent_ops/inbox/job-v07-full-corpus-antigravity-review.md
+python3 system/runtime/nrl.py antigravity-full-corpus-validate
+```
+
+The validator requires the v0.7 JSON Manifest, all nine creation asset
+families, at least one book review, at least one cross-book mechanism, and no
+forbidden content-generation markers. Hermes remains paused after validation.
+
 ## Owner Gate Rules
 
 Owner Gate is required when:

@@ -35,6 +35,12 @@ from nrl_creation_schemas import (
 from nrl_corpus_pipeline import build_pipeline_plan, build_pipeline_status
 from nrl_dna_registry import load_or_build_dna_registry, write_dna_registry
 from nrl_doctor import run_doctor
+from nrl_full_corpus_handoff import (
+    build_full_corpus_status,
+    ingest_full_corpus_output,
+    validate_full_corpus_output,
+    write_full_corpus_packet,
+)
 from nrl_handoff_packet import write_antigravity_packet
 from nrl_paths import ROOT, runtime_path
 from nrl_owner_gate import load_decisions, record_owner_decision
@@ -373,6 +379,27 @@ def cmd_produce_techniques(args: argparse.Namespace) -> int:
     result = produce_technique_candidates(load_state(), args.job_id)
     print_json(result)
     return 0 if result["store_validation"]["valid"] else 1
+
+
+def cmd_antigravity_full_corpus_pack(_: argparse.Namespace) -> int:
+    print_json(write_full_corpus_packet(load_state(), load_adapters()))
+    return 0
+
+
+def cmd_antigravity_full_corpus_status(_: argparse.Namespace) -> int:
+    print_json(build_full_corpus_status(load_state(), load_adapters()))
+    return 0
+
+
+def cmd_antigravity_full_corpus_ingest(args: argparse.Namespace) -> int:
+    print_json(ingest_full_corpus_output(args.file))
+    return 0
+
+
+def cmd_antigravity_full_corpus_validate(_: argparse.Namespace) -> int:
+    result = validate_full_corpus_output()
+    print_json(result)
+    return 0 if result["valid"] else 1
 
 
 def cmd_studio_serve(args: argparse.Namespace) -> int:
@@ -778,6 +805,18 @@ def build_parser() -> argparse.ArgumentParser:
     produce_techniques = sub.add_parser("produce-techniques")
     produce_techniques.add_argument("--job-id", required=True)
     produce_techniques.set_defaults(func=cmd_produce_techniques)
+    sub.add_parser("antigravity-full-corpus-pack").set_defaults(
+        func=cmd_antigravity_full_corpus_pack
+    )
+    sub.add_parser("antigravity-full-corpus-status").set_defaults(
+        func=cmd_antigravity_full_corpus_status
+    )
+    full_corpus_ingest = sub.add_parser("antigravity-full-corpus-ingest")
+    full_corpus_ingest.add_argument("--file", required=True)
+    full_corpus_ingest.set_defaults(func=cmd_antigravity_full_corpus_ingest)
+    sub.add_parser("antigravity-full-corpus-validate").set_defaults(
+        func=cmd_antigravity_full_corpus_validate
+    )
     sub.add_parser("doctor").set_defaults(func=cmd_doctor)
     sub.add_parser("advance").set_defaults(func=cmd_advance)
     owner = sub.add_parser("owner-gate")

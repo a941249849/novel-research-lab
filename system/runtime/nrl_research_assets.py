@@ -17,7 +17,14 @@ ALLOWED_ASSET_TYPES = {
     "narrative_dna",
     "state_ledger",
     "mechanism_notes",
+    "corpus_proof",
 }
+FULL_CORPUS_PROOF_VALIDATION = runtime_path(
+    "system/agent_ops/validation/full_corpus_proof_v0.8.json"
+)
+FULL_CORPUS_PROOF_MASTER = runtime_path(
+    "system/agent_ops/inbox/full_corpus_proof_v0.8/master.md"
+)
 
 
 def _read_json(path: Path) -> dict[str, Any]:
@@ -91,11 +98,37 @@ def _mechanism_items() -> list[dict[str, Any]]:
     ]
 
 
+def _full_corpus_proof_item() -> list[dict[str, Any]]:
+    if not FULL_CORPUS_PROOF_VALIDATION.exists() or not FULL_CORPUS_PROOF_MASTER.exists():
+        return []
+    validation = _read_json(FULL_CORPUS_PROOF_VALIDATION)
+    if validation.get("status") != "proof_verified":
+        return []
+    source_path = str(FULL_CORPUS_PROOF_MASTER.relative_to(ROOT))
+    validation_path = str(FULL_CORPUS_PROOF_VALIDATION.relative_to(ROOT))
+    return [
+        {
+            "asset_id": "full-corpus-proof-v08",
+            "title": "全量小说集阅读证明",
+            "asset_type": "corpus_proof",
+            "source_path": source_path,
+            "validation_path": validation_path,
+            "review_state": "proof_verified",
+            "provenance": "verified_not_promoted",
+            "categories": ["全文深读证明", "语料工程"],
+            "exists": FULL_CORPUS_PROOF_MASTER.exists(),
+            "verified_receipts": int(validation.get("verified_receipts", 0)),
+            "required_receipts": int(validation.get("required_receipts", 0)),
+            "promotion_allowed": bool(validation.get("promotion_allowed", False)),
+        }
+    ]
+
+
 def build_research_asset_catalog(
     filters: dict[str, str | None] | None = None,
 ) -> dict[str, Any]:
     filters = filters or {}
-    all_items = _manifest_items() + _mechanism_items()
+    all_items = _manifest_items() + _mechanism_items() + _full_corpus_proof_item()
     if any(not item["exists"] for item in all_items):
         missing = [item["source_path"] for item in all_items if not item["exists"]]
         raise RuntimeError(f"research catalog source paths missing: {sorted(set(missing))}")
@@ -122,6 +155,8 @@ def build_research_asset_catalog(
         "source_of_truth": [
             "phase1/05_review/phase1C_asset_manifest.json",
             "phase1/04_mechanism_library/category_manifest.json",
+            "system/agent_ops/inbox/full_corpus_proof_v0.8/master.md",
+            "system/agent_ops/validation/full_corpus_proof_v0.8.json",
         ],
         "filters": {key: value for key, value in filters.items() if value},
         "items": items,

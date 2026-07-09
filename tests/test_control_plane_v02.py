@@ -39,6 +39,17 @@ class ControlPlaneCliTests(unittest.TestCase):
             <= {"missing", "contract_ready", "data_ready", "runnable", "blocked"}
         )
 
+    def test_hardening_status_counts_full_corpus_proof_as_corpus_engineering_evidence(self):
+        result = self.run_cli("hardening-status")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        data = json.loads(result.stdout)
+        corpus = data["capabilities"][0]
+        evidence_paths = {item["path"] for item in corpus["evidence"]}
+        self.assertIn("system/agent_ops/inbox/full_corpus_proof_v0.8/master.md", evidence_paths)
+        self.assertIn("system/agent_ops/validation/full_corpus_proof_v0.8.json", evidence_paths)
+        self.assertEqual(corpus["status"], "data_ready")
+        self.assertTrue(corpus["evidence_complete"])
+
     def test_research_assets_indexes_reviewed_phase1_assets(self):
         result = self.run_cli("research-assets", "--title", "遮天")
         self.assertEqual(result.returncode, 0, result.stderr)
@@ -59,6 +70,20 @@ class ControlPlaneCliTests(unittest.TestCase):
         self.assertTrue(
             all("升级与境界机制" in item["categories"] for item in data["items"])
         )
+
+    def test_research_assets_exposes_verified_full_corpus_proof_without_promotion(self):
+        result = self.run_cli("research-assets", "--asset-type", "corpus_proof")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        data = json.loads(result.stdout)
+        self.assertEqual(data["summary"]["returned"], 1)
+        proof = data["items"][0]
+        self.assertEqual(proof["asset_id"], "full-corpus-proof-v08")
+        self.assertEqual(proof["review_state"], "proof_verified")
+        self.assertEqual(proof["provenance"], "verified_not_promoted")
+        self.assertEqual(proof["verified_receipts"], 18)
+        self.assertEqual(proof["required_receipts"], 18)
+        self.assertFalse(proof["promotion_allowed"])
+        self.assertNotIn("novel_training_set/", json.dumps(proof, ensure_ascii=False))
 
     def test_creation_schema_registry_exposes_nine_draft7_families(self):
         result = self.run_cli("creation-schemas")

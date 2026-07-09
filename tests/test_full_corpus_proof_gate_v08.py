@@ -149,6 +149,30 @@ class FullCorpusProofGateV08Tests(unittest.TestCase):
         self.assertEqual(data["verified_receipts"], 2)
         self.assertEqual(data["promotion_allowed"], False)
 
+    def test_status_reports_latest_validation_result(self):
+        self.write_review(
+            {
+                "job_id": "job-v08-full-corpus-proof-review",
+                "contract_version": "0.8",
+                "reading_receipts": [
+                    self.valid_receipt(self.book_a, "测试甲"),
+                    self.valid_receipt(self.book_b, "测试乙"),
+                ],
+            }
+        )
+        validate = self.run_cli(
+            "full-corpus-proof-validate",
+            "--file",
+            str(self.review_path.relative_to(self.root)),
+        )
+        self.assertEqual(validate.returncode, 0, validate.stderr)
+        status = self.run_cli("full-corpus-proof-status")
+        self.assertEqual(status.returncode, 0, status.stderr)
+        data = json.loads(status.stdout)
+        self.assertEqual(data["latest_validation"]["status"], "proof_verified")
+        self.assertEqual(data["latest_validation"]["verified_receipts"], 2)
+        self.assertEqual(data["latest_validation"]["required_receipts"], 2)
+
     def test_validate_rejects_missing_phase_chunk_coverage(self):
         receipt = self.valid_receipt(self.book_a, "测试甲")
         receipt["segments"] = receipt["segments"][:3]

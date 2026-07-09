@@ -82,12 +82,26 @@ def build_proof_status() -> dict[str, Any]:
         "corpus_inventory": inventory,
         "required_receipts": inventory["file_count"],
         "required_phases": list(REQUIRED_PHASES),
+        "latest_validation": load_latest_validation(),
         "promotion_allowed": False,
         "commands": {
             "pack": "python3 system/runtime/nrl.py full-corpus-proof-pack --all",
             "validate": "python3 system/runtime/nrl.py full-corpus-proof-validate --file <path>",
         },
     }
+
+
+def load_latest_validation() -> dict[str, Any] | None:
+    if not VALIDATION_PATH.exists():
+        return None
+    try:
+        return json.loads(VALIDATION_PATH.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return {
+            "status": "invalid_validation_json",
+            "valid": False,
+            "path": _relative_to_root(VALIDATION_PATH),
+        }
 
 
 def _resolve_repo_path(file_arg: str) -> Path:

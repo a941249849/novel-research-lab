@@ -304,7 +304,7 @@
   },
   "agent_review_policy": {
     "codex": "local_validation_orchestration",
-    "antigravity": "manual_handoff",
+    "antigravity": "ready",
     "hermes": "paused_not_removed",
     "web_gpt": "architecture_review_only"
   },

@@ -49,7 +49,7 @@
   },
   "guardrails": [
     "File-backed queue only",
-    "Manual external agent execution only",
+    "Registered Antigravity CLI review jobs only",
     "No prose generation jobs"
   ]
 }

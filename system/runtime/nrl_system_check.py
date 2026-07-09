@@ -13,7 +13,7 @@ from nrl_creation_schemas import (
 )
 from nrl_corpus_pipeline import build_evidence_pack_matrix, build_pipeline_status
 from nrl_paths import runtime_path
-from nrl_rag_index import build_creation_context_index
+from nrl_rag_index import load_or_build_creation_context_index
 from nrl_research_assets import build_research_asset_catalog
 
 
@@ -48,7 +48,10 @@ def run_system_check() -> dict[str, Any]:
     store = validate_creation_asset_store()
     pipeline = build_pipeline_status(state, adapters)
     evidence_matrix = build_evidence_pack_matrix(state, adapters)
-    creation_context = build_creation_context_index(state, adapters)
+    # The evidence-pack matrix is rebuilt above; the context index itself is a
+    # materialized read-only artifact and should not be regenerated on every
+    # health request. This keeps the allowlisted Studio action responsive.
+    creation_context = load_or_build_creation_context_index(state, adapters)
     architecture = build_architecture_reconciliation(
         state,
         adapters,

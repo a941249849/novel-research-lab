@@ -19,14 +19,16 @@
     "expected_output_dir": "handoff/hermes/outputs"
   },
   "antigravity": {
-    "mode": "manual_handoff",
+    "mode": "cli_bridge",
     "supported_modes": [
       "manual_handoff",
       "client_handoff",
       "api",
-      "cli"
+      "cli",
+      "cli_bridge"
     ],
-    "can_execute": false,
+    "can_execute": true,
+    "execution_policy": "registered_review_jobs_only",
     "handoff_dir": "handoff/antigravity",
     "expected_output_dir": "handoff/antigravity/outputs"
   }

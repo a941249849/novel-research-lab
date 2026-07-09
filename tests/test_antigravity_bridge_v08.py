@@ -81,8 +81,27 @@ printf 'FAKE_ANTIGRAVITY_RESPONSE:%s\\n' "$prompt"
         data = json.loads(result.stdout)
         self.assertTrue(data["antigravity_bridge"]["available"])
         self.assertEqual(data["antigravity_bridge"]["mode"], "cli")
-        self.assertEqual(data["adapter_modes"]["antigravity"]["mode"], "manual_handoff")
-        self.assertFalse(data["adapter_modes"]["antigravity"]["can_execute"])
+        self.assertEqual(data["adapter_modes"]["antigravity"]["mode"], "cli_bridge")
+        self.assertTrue(data["adapter_modes"]["antigravity"]["can_execute"])
+        self.assertEqual(data["antigravity_execution"]["effective_state"], "ready")
+        self.assertTrue(data["antigravity_execution"]["can_dispatch_registered_reviews"])
+
+    def test_execution_status_blocks_when_agy_is_unavailable(self):
+        env = os.environ.copy()
+        env["NRL_ROOT"] = str(self.root)
+        env["NRL_AGY_BIN"] = str(self.root / "bin/missing-agy")
+        result = subprocess.run(
+            [sys.executable, str(NRL), "system-status"],
+            cwd=REPO_ROOT,
+            env=env,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        data = json.loads(result.stdout)
+        self.assertEqual(data["antigravity_execution"]["effective_state"], "blocked_bridge_unavailable")
+        self.assertFalse(data["antigravity_execution"]["can_dispatch_registered_reviews"])
 
     def test_bridge_ask_runs_agy_and_writes_response(self):
         request_path = self.root / ".agent-handoff/antigravity/requests/ping.md"

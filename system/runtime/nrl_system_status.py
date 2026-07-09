@@ -2,7 +2,10 @@ from __future__ import annotations
 
 from typing import Any
 
-from nrl_antigravity_bridge import build_antigravity_bridge_status
+from nrl_antigravity_bridge import (
+    build_antigravity_bridge_status,
+    build_antigravity_execution_status,
+)
 
 
 def content_progression_for(state: dict[str, Any]) -> str:
@@ -20,6 +23,7 @@ def operating_mode_for(state: dict[str, Any]) -> str:
 
 
 def build_system_status(state: dict[str, Any], adapters: dict[str, Any]) -> dict[str, Any]:
+    antigravity_execution = build_antigravity_execution_status(adapters)
     return {
         "operating_mode": operating_mode_for(state),
         "content_progression": content_progression_for(state),
@@ -31,7 +35,7 @@ def build_system_status(state: dict[str, Any], adapters: dict[str, Any]) -> dict
         "hermes_execution_status": "paused_not_removed",
         "agent_roles": {
             "codex": "runtime_engineering_validation_orchestration",
-            "antigravity": "manual_external_literary_review",
+            "antigravity": "cli_collaborative_literary_review",
             "hermes": "later_writer_or_literary_enrichment_after_explicit_authorization",
         },
         "adapter_modes": {
@@ -42,6 +46,7 @@ def build_system_status(state: dict[str, Any], adapters: dict[str, Any]) -> dict
             for name, adapter in adapters.items()
         },
         "antigravity_bridge": build_antigravity_bridge_status(),
+        "antigravity_execution": antigravity_execution,
         "hard_rules": [
             "do not advance story phase",
             "do not advance story phase while owner gate is pending",

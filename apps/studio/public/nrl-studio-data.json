@@ -6,6 +6,16 @@
     "content_progression": "FROZEN_AT_OWNER_GATE",
     "live_server_command": "python3 system/runtime/nrl.py studio-serve --port 4173"
   },
+  "antigravity_execution": {
+    "declared_mode": "cli_bridge",
+    "bridge_available": true,
+    "effective_state": "ready",
+    "can_dispatch_registered_reviews": true,
+    "blocked_reason": null,
+    "allowed_job_types": [
+      "antigravity_structural_review"
+    ]
+  },
   "capability_roadmap": {
     "version": "0.2",
     "mode": "SYSTEM_HARDENING",
@@ -164,7 +174,7 @@
             "exists": true
           }
         ],
-        "next_action": "继续使用真实 manual_handoff，等待 Owner 授权适配器升级。",
+        "next_action": "通过 cli_bridge 派发已登记的 Antigravity 结构审查任务；回执必须显式验证。",
         "evidence_complete": true,
         "declared_status": "contract_ready",
         "blocked_dependencies": [],
@@ -1671,7 +1681,7 @@
         "layer_id": "agent_review_and_production",
         "label_zh": "Agent 审查与生产层",
         "status": "blocked",
-        "purpose": "Codex validates locally; Antigravity is manual review; Hermes is paused",
+        "purpose": "Codex validates locally; Antigravity uses guarded CLI review; Hermes is paused",
         "child_implementation": null
       },
       {
@@ -1713,9 +1723,9 @@
       },
       {
         "agent": "Antigravity",
-        "status": "manual_external_literary_review",
-        "role": "人工外部文学审查 / 长篇生命力评估",
-        "execution_boundary": "manual handoff only"
+        "status": "ready",
+        "role": "CLI 协作文学审查 / 长篇生命力评估",
+        "execution_boundary": "registered structural-review jobs only"
       },
       {
         "agent": "Hermes",
@@ -2321,7 +2331,7 @@
       ],
       "agent_review_policy": {
         "codex": "local_validation_orchestration",
-        "antigravity": "manual_handoff",
+        "antigravity": "ready",
         "hermes": "paused_not_removed",
         "web_gpt": "architecture_review_only"
       },
@@ -2657,7 +2667,7 @@
       },
       "agent_review_policy": {
         "codex": "local_validation_orchestration",
-        "antigravity": "manual_handoff",
+        "antigravity": "ready",
         "hermes": "paused_not_removed",
         "web_gpt": "architecture_review_only"
       },
@@ -2878,8 +2888,10 @@
       "outbox_count": 2
     },
     "antigravity": {
-      "mode": "manual_handoff",
-      "status": "manual_external_review"
+      "mode": "cli_bridge",
+      "status": "ready",
+      "bridge_available": true,
+      "can_dispatch_registered_reviews": true
     },
     "hermes": {
       "status": "paused_not_removed",
@@ -5407,10 +5419,10 @@
       },
       {
         "agent": "Antigravity",
-        "status": "manual_external_literary_review",
-        "mode": "manual_handoff",
-        "can_execute": false,
-        "role": "manual external literary review"
+        "status": "ready",
+        "mode": "cli_bridge",
+        "can_execute": true,
+        "role": "CLI collaborative literary review"
       },
       {
         "agent": "Hermes",
@@ -5818,7 +5830,7 @@
       "Do not generate full character cards",
       "Do not generate final NPC sheets, faction dossiers, technique trees, naming dictionaries, or item catalogs",
       "Do not read raw novel_training_set/",
-      "Do not call Hermes or Antigravity"
+      "Do not call Hermes or dispatch Antigravity outside registered CLI review jobs"
     ],
     "next_safe_action": "Use the registry to design schemas and validation before any content progression."
   },
@@ -5854,8 +5866,8 @@
         "can_execute": false
       },
       "antigravity": {
-        "mode": "manual_handoff",
-        "can_execute": false
+        "mode": "cli_bridge",
+        "can_execute": true
       }
     },
     "handoff_attempts": [

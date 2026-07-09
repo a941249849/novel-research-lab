@@ -260,7 +260,7 @@ def build_pipeline_plan(
         "validation_gates": _validation_gates(),
         "agent_review_policy": {
             "codex": "local_validation_orchestration",
-            "antigravity": adapters_policy["adapter_modes"]["antigravity"]["mode"],
+            "antigravity": adapters_policy["antigravity_execution"]["effective_state"],
             "hermes": adapters_policy["hermes_execution_status"],
             "web_gpt": "architecture_review_only",
         },

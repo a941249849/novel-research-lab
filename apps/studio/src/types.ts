@@ -262,6 +262,14 @@ export type StudioData = {
     content_progression: string;
     live_server_command: string;
   };
+  antigravity_execution: {
+    declared_mode: string;
+    bridge_available: boolean;
+    effective_state: string;
+    can_dispatch_registered_reviews: boolean;
+    blocked_reason: string | null;
+    allowed_job_types: string[];
+  };
   capability_roadmap: {
     version: string;
     mode: string;

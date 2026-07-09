@@ -1,4 +1,4 @@
-# NRL Antigravity Manual Review Packet
+# NRL Antigravity Registered Review Packet
 
 ## JOB
 
@@ -48,7 +48,7 @@ Focus on long-form vitality, structural usefulness, originality risk, and missin
 - Do not draft Chapter 1.
 - Do not create final character sheets, technique trees, naming dictionaries, or NPC dossiers.
 - Do not claim Hermes execution.
-- Do not read or quote raw `novel_training_set/` prose.
+- Do not read or quote the protected raw training corpus.
 
 ## RETURN INSTRUCTION
 

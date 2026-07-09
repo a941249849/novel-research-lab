@@ -46,6 +46,14 @@ const EMPTY_DATA = {
     content_progression: 'UNKNOWN',
     live_server_command: 'python3 system/runtime/nrl.py studio-serve --port 4173',
   },
+  antigravity_execution: {
+    declared_mode: 'cli_bridge',
+    bridge_available: false,
+    effective_state: 'blocked_bridge_unavailable',
+    can_dispatch_registered_reviews: false,
+    blocked_reason: '等待运行时数据',
+    allowed_job_types: [],
+  },
   capability_roadmap: {
     version: '0.2',
     mode: 'UNKNOWN_MODE',
@@ -296,6 +304,11 @@ const statusNames: Record<string, string> = {
   candidate: '候选',
   local: '本地执行',
   manual_handoff: '人工交接',
+  cli_bridge: 'CLI 桥接',
+  ready: '已连接，可派发受限审查',
+  blocked_bridge_unavailable: '桥接器不可用',
+  external_running: '审查运行中',
+  output_received: '回执待验证',
   review_received_pending_owner_gate: '等待 Owner Gate',
   asset_layer_present: '资产层已存在',
   research_asset: '研究资产',
@@ -981,7 +994,7 @@ function PipelineView({data, compact}: {data: StudioData; compact: boolean}) {
 
 const roleNames: Record<string, string> = {
   Codex: '本地运行时、工程实现、验证与编排',
-  Antigravity: '人工外部文学审查',
+  Antigravity: 'CLI 协作文学审查，仅限已登记任务',
   Hermes: '暂停但未移除；授权后承担写作与文学增强',
   'Web GPT': '架构审查，不负责派发任务',
   Owner: '阶段和能力变更的最终门禁',
@@ -1007,11 +1020,12 @@ function AgentsView({data}: {data: StudioData}) {
           <MetadataListItem label="责任 Agent">{data.runtime_status.responsible_agent}</MetadataListItem>
           <MetadataListItem label="任务注册状态">{data.runtime_status.registry_status}</MetadataListItem>
           <MetadataListItem label="预期产物">{data.runtime_status.expected_outputs.join(', ') || '无'}</MetadataListItem>
+          <MetadataListItem label="Antigravity 桥接">{statusNames[data.antigravity_execution.effective_state] || data.antigravity_execution.effective_state}</MetadataListItem>
         </MetadataList>
         <Banner
           status="info"
           title="客户端协作边界"
-          description="Studio 不直接调用 Hermes 或 Antigravity；没有真实适配器时继续使用 manual_handoff。"
+          description="Antigravity 由 Codex Runtime 通过 CLI 桥接执行已登记的结构审查任务；回执仍需显式验证，Hermes 保持暂停。"
         />
       </VStack>
     </Section>

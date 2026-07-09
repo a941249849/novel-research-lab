@@ -8,6 +8,10 @@ from pathlib import Path
 from typing import Any
 
 from nrl_corpus_pipeline import build_pipeline_plan
+from nrl_antigravity_bridge import (
+    ask_antigravity,
+    build_antigravity_execution_status,
+)
 from nrl_dna_registry import load_or_build_dna_registry
 from nrl_paths import ROOT, runtime_path
 from nrl_rag_index import load_or_build_rag_index, write_rag_index
@@ -81,10 +85,10 @@ def _queue_payload(jobs: list[dict[str, Any]]) -> dict[str, Any]:
         "version": VERSION,
         "jobs": sorted(jobs, key=lambda job: job["job_id"]),
         "summary": _summarize_jobs(jobs),
-        "guardrails": [
-            "File-backed queue only",
-            "Manual external agent execution only",
-            "No prose generation jobs",
+    "guardrails": [
+        "File-backed queue only",
+        "Registered Antigravity CLI review jobs only",
+        "No prose generation jobs",
         ],
     }
 
@@ -174,7 +178,7 @@ def plan_agent_job(
 def _packet_text(job: dict[str, Any]) -> str:
     dna_lines = "\n".join(f"- {dna_id}" for dna_id in job["source_dna_ids"])
     required_sections = "\n".join(f"- {section}" for section in REQUIRED_REVIEW_SECTIONS)
-    return f"""# NRL Antigravity Manual Review Packet
+    return f"""# NRL Antigravity Registered Review Packet
 
 ## JOB
 
@@ -202,7 +206,7 @@ Focus on long-form vitality, structural usefulness, originality risk, and missin
 - Do not draft Chapter 1.
 - Do not create final character sheets, technique trees, naming dictionaries, or NPC dossiers.
 - Do not claim Hermes execution.
-- Do not read or quote raw `novel_training_set/` prose.
+- Do not read or quote the protected raw training corpus.
 
 ## RETURN INSTRUCTION
 
@@ -212,6 +216,102 @@ Save the completed review to:
 {job["expected_output_path"]}
 ```
 """
+
+
+def _dispatch_job_packet_path(job: dict[str, Any]) -> Path:
+    packet_path = _resolve_repo_path(str(job.get("input_packet_path", "")))
+    if not _is_relative_to(packet_path, ROOT):
+        raise RuntimeError("agent job packet must remain inside the Runtime root")
+    if not packet_path.exists():
+        raise RuntimeError(f"agent job packet does not exist: {job.get('input_packet_path')}")
+    return packet_path
+
+
+def _dispatch_output_path(job: dict[str, Any]) -> Path:
+    output_path = _resolve_repo_path(str(job.get("expected_output_path", "")))
+    if not _is_relative_to(output_path, INBOX_DIR.resolve()):
+        raise RuntimeError("agent job expected output must remain under system/agent_ops/inbox")
+    return output_path
+
+
+def dispatch_agent_job(
+    job_id: str,
+    adapters: dict[str, Any],
+    print_timeout: str = "5m0s",
+) -> dict[str, Any]:
+    queue = load_job_queue()
+    job = _find_job(queue, job_id)
+    if job.get("owner_agent") != "antigravity":
+        raise RuntimeError("agent dispatch only supports antigravity jobs")
+    if job.get("job_type") != "antigravity_structural_review":
+        raise RuntimeError("agent dispatch only supports structural review jobs")
+    if job.get("state") != "ready_for_antigravity":
+        raise RuntimeError(f"agent job state is not dispatchable: {job.get('state')}")
+    execution = build_antigravity_execution_status(adapters)
+    if not execution["can_dispatch_registered_reviews"]:
+        raise RuntimeError(
+            f"antigravity dispatch is blocked: {execution['blocked_reason']}"
+        )
+    packet_path = _dispatch_job_packet_path(job)
+    packet_text = packet_path.read_text(encoding="utf-8")
+    if "novel_training_set/" in packet_text and "protected raw training corpus" not in packet_text:
+        raise RuntimeError("agent job packet contains a raw corpus path")
+    output_path = _dispatch_output_path(job)
+    request_path = runtime_path(
+        f".agent-handoff/antigravity/requests/{job_id}.md"
+    )
+    request_path.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(packet_path, request_path)
+    job["state"] = "external_running"
+    job["updated_at"] = now_iso()
+    save_job_queue(queue)
+    try:
+        bridge = ask_antigravity(
+            str(request_path.relative_to(ROOT)),
+            output_file=str(output_path.relative_to(ROOT)),
+            print_timeout=print_timeout,
+        )
+    except Exception as error:
+        job["state"] = "blocked"
+        job["blocked_reason"] = "antigravity_bridge_failed"
+        job["updated_at"] = now_iso()
+        queue = save_job_queue(queue)
+        return {
+            "job_id": job_id,
+            "state": "blocked",
+            "error": str(error),
+            "request_file": str(request_path.relative_to(ROOT)),
+            "bridge_log_path": str(
+                runtime_path("system/agent_ops/antigravity_bridge_last_run.v0.8.json").relative_to(ROOT)
+            ),
+            "job": _find_job(queue, job_id),
+        }
+    if not output_path.exists() or not output_path.read_text(encoding="utf-8").strip():
+        job["state"] = "blocked"
+        job["blocked_reason"] = "empty_antigravity_response"
+        job["updated_at"] = now_iso()
+        queue = save_job_queue(queue)
+        return {
+            "job_id": job_id,
+            "state": "blocked",
+            "error": "Antigravity returned an empty response",
+            "request_file": str(request_path.relative_to(ROOT)),
+            "bridge_log_path": bridge.get("bridge_log_path"),
+            "job": _find_job(queue, job_id),
+        }
+    job["actual_output_path"] = str(output_path.relative_to(ROOT))
+    job["state"] = "output_received"
+    job["blocked_reason"] = None
+    job["updated_at"] = now_iso()
+    queue = save_job_queue(queue)
+    return {
+        "job_id": job_id,
+        "state": "output_received",
+        "request_file": str(request_path.relative_to(ROOT)),
+        "output_file": str(output_path.relative_to(ROOT)),
+        "bridge_log_path": bridge.get("bridge_log_path"),
+        "job": _find_job(queue, job_id),
+    }
 
 
 def write_agent_packet(job_id: str) -> dict[str, Any]:
@@ -340,7 +440,9 @@ def build_production_runtime_status(
         },
         "antigravity": {
             "mode": antigravity.get("mode", "manual_handoff"),
-            "status": "manual_external_review",
+            "status": system_status["antigravity_execution"]["effective_state"],
+            "bridge_available": system_status["antigravity_execution"]["bridge_available"],
+            "can_dispatch_registered_reviews": system_status["antigravity_execution"]["can_dispatch_registered_reviews"],
         },
         "hermes": {
             "status": system_status["hermes_execution_status"],

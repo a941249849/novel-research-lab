@@ -6,7 +6,7 @@
 
 - Read `system/mission_controller/current_phase_state.json`.
 - Report current status and the next recommended mission.
-- Prepare manual handoff task files for Hermes or Antigravity.
+- Prepare bounded handoff task files and dispatch registered Antigravity review jobs through the local CLI bridge.
 - Register externally produced Hermes or Antigravity outputs.
 - Update Mission Controller state after ingest.
 - Validate current phase state against `phase_state.schema.json`.
@@ -14,27 +14,30 @@
 ## What This Runtime Does Not Do
 
 - It does not call Hermes.
-- It does not call Antigravity through the generic mission adapter or GUI.
-- It can call Antigravity CLI only through explicit allowlisted bridge commands.
+- It does not operate the Antigravity GUI.
+- It can call Antigravity CLI only for registered structural-review jobs through the guarded `agent-dispatch` command.
 - It does not generate novel prose.
 - It does not generate first chapters.
 - It does not generate Outline Trees by itself unless Codex is explicitly tasked outside this runtime.
 - It does not read `novel_training_set/`.
 - It does not replace Codex validation, Antigravity review, or Owner Gate.
 
-## Why Hermes And Antigravity Use Manual Handoff
+## Why Hermes Remains Manual And Antigravity Is Guarded
 
-No Hermes CLI/API adapter is currently configured, and the generic Antigravity
-mission adapter remains manual. The runtime therefore uses:
+No Hermes CLI/API adapter is currently configured. Antigravity has a local CLI
+bridge, but its Runtime adapter is restricted to registered review jobs. The
+runtime therefore uses:
 
 - Hermes adapter: `manual_handoff`
-- Antigravity adapter: `manual_handoff`
+- Antigravity adapter: `cli_bridge`
 - Codex adapter: `local`
 
-Manual handoff means the runtime writes a task file, waits for an external human-run or tool-run agent output, then ingests that output path.
+Antigravity dispatch copies the registered packet, calls `agy -p`, captures the
+response in the controlled inbox, and leaves validation and promotion as
+explicit later commands.
 
-Antigravity also has a separate CLI bridge for bounded review/proof tasks. This
-does not change the generic Antigravity adapter to `can_execute: true`.
+The effective state is checked with `agy --version` at runtime. If the bridge is
+unavailable, dispatch is blocked without changing the job state.
 
 ## Commands
 
@@ -98,6 +101,16 @@ Ingest an Antigravity external review:
 python3 system/runtime/nrl.py ingest --agent antigravity --file <path>
 ```
 
+Dispatch a registered structural-review job through the CLI bridge:
+
+```bash
+python3 system/runtime/nrl.py agent-dispatch --job-id <job-id>
+```
+
+Dispatch only produces `output_received`. Validate it explicitly with
+`agent-validate`; dispatch never promotes an asset, advances a phase, or calls
+Hermes.
+
 Validate current Mission Controller state:
 
 ```bash
@@ -135,12 +148,12 @@ A future Hermes adapter can extend `agent_adapters.json` with:
 
 The runtime must still keep blocked actions and Owner Gate checks.
 
-## Future Antigravity CLI/API Adapter
+## Antigravity CLI Bridge Adapter
 
-A future Antigravity adapter can extend `agent_adapters.json` with:
+The configured Antigravity adapter uses `cli_bridge` with:
 
-- `mode`: `cli` or `api`
-- review command or endpoint
+- `mode`: `cli_bridge`
+- registered review-job allowlist
 - handoff input file
 - expected review report path
 - status mapping for pass, warnings, hold, or fail
@@ -150,8 +163,9 @@ The runtime must not mark review complete until a report artifact is ingested an
 ## Antigravity Full Corpus Handoff v0.7
 
 Use this when the architecture is frozen and the Owner wants Antigravity to
-perform full-corpus rereading, reanalysis, and replanning. This is a manual
-external review workflow, not an Antigravity API call.
+perform full-corpus rereading, reanalysis, and replanning. This remains an
+Owner-gated full-corpus workflow; the CLI bridge does not automatically promote
+its candidate outputs.
 
 Generate the Owner-facing command packet:
 
@@ -326,7 +340,9 @@ Owner Gate is not required for status reads, schema validation, or manual handof
 
 ## SYS-3 Runtime Control Patch
 
-SYS-3 keeps Codex / NRL as the local runtime host. Hermes and Antigravity remain external adapters unless their adapter mode is explicitly upgraded by Owner Gate.
+SYS-3 keeps Codex / NRL as the local runtime host. Hermes remains paused;
+Antigravity is a guarded local CLI adapter and can dispatch only registered
+structural-review jobs.
 
 New read commands:
 
@@ -359,7 +375,7 @@ python3 system/runtime/nrl.py studio-build
 open system/runtime/studio/index.html
 ```
 
-Studio is a read-only cockpit plus command launcher. It must not maintain independent project state. It reads `current_phase_state.json`, `mission_registry.json`, and `agent_adapters.json`; it does not call Hermes, does not call Antigravity, does not generate novel prose, and does not read `novel_training_set/`.
+Studio is a read-only cockpit plus command launcher. It must not maintain independent project state. It reads `current_phase_state.json`, `mission_registry.json`, and `agent_adapters.json`; it does not call Hermes, does not dispatch Antigravity, does not generate novel prose, and does not read `novel_training_set/`.
 
 `client_handoff` is a staging mode, not API execution. If a client cannot be automated, the runtime falls back to manual handoff while preserving task packet, expected output path, and ingest command.
 
@@ -434,8 +450,8 @@ It reports:
 
 v0.5 is the first operational Corpus-to-Creation runtime layer. It converts
 structured research derivatives into a DNA Registry, builds a metadata-only
-Research RAG Index, and manages manual Antigravity review jobs through a
-file-backed queue.
+Research RAG Index, and manages registered Antigravity review jobs through a
+file-backed queue and the guarded CLI bridge.
 
 Build and inspect the DNA mother-library:
 
@@ -485,9 +501,9 @@ Inspect the complete production runtime status:
 python3 system/runtime/nrl.py production-runtime-status
 ```
 
-This runtime still does not call Antigravity or Hermes. It only creates the
-shared-folder contract, validates returned artifacts, and keeps Owner Gate
-active before any prose or final creative asset generation.
+This runtime calls Antigravity only through the guarded `agent-dispatch`
+command. It validates returned artifacts and keeps Owner Gate active before
+any prose or final creative asset generation. Hermes remains paused.
 
 ## Technique Asset Producer v0.6
 
@@ -519,7 +535,7 @@ The producer remains bounded:
 - no combat scenes
 - no final technique tree
 - no Hermes execution
-- no automatic Antigravity execution
+- no Antigravity dispatch from Studio
 - no raw `novel_training_set/` reads
 - current blocked actions
 - recommended next runtime command
@@ -561,7 +577,7 @@ The dashboard renders:
 
 The Studio build generates current runtime data, builds the React/Astryx app from `apps/studio/`, copies the static output to `system/runtime/studio/`, and injects the current data into `index.html` for offline inspection.
 
-Studio v0.1 intentionally keeps the current Phase 2E Owner Gate pending state visible as a system-state sample. It must not progress Phase 2F, produce chapter content, call Hermes, call Antigravity, or convert manual handoff into automatic execution.
+Studio v0.1 intentionally keeps the current Phase 2E Owner Gate pending state visible as a system-state sample. It must not progress Phase 2F, produce chapter content, call Hermes, or dispatch Antigravity jobs; Codex Runtime remains the only dispatch surface.
 
 ## NRL Control Plane v0.2
 
@@ -686,14 +702,14 @@ calibration basis, exposes the current mismatch report, and keeps the agent
 contract explicit:
 
 - Codex: local runtime host, engineering, validation, orchestration.
-- Antigravity: manual external literary review.
+- Antigravity: guarded CLI collaborative literary review for registered jobs.
 - Hermes: `paused_not_removed`, later writer/literary enrichment only after
   explicit Owner authorization.
 - Web GPT: architecture review only, not task dispatcher.
 - Owner: gate authority.
 
-v0.4 remains read-only. It does not progress Phase 2F, call Hermes, call
-Antigravity, read `novel_training_set/`, generate prose, or generate final
-creative assets.
+v0.4 remains read-only. It does not progress Phase 2F, call Hermes, dispatch
+Antigravity from Studio, read `novel_training_set/`, generate prose, or generate
+final creative assets.
 
 GitHub binding is intentionally outside the runtime. Bind the workspace to a confirmed repository first; then `doctor` will report repository root, branch, and remotes. Do not bind this workspace to an unrelated repository.

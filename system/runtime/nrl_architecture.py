@@ -62,7 +62,7 @@ ARCHITECTURE_LAYERS = [
         "agent_review_and_production",
         "Agent 审查与生产层",
         "blocked",
-        "Codex validates locally; Antigravity is manual review; Hermes is paused",
+        "Codex validates locally; Antigravity uses guarded CLI review; Hermes is paused",
         None,
     ),
     (
@@ -108,9 +108,9 @@ def _agent_roles(system_status: dict[str, Any]) -> list[dict[str, Any]]:
         },
         {
             "agent": "Antigravity",
-            "status": "manual_external_literary_review",
-            "role": "人工外部文学审查 / 长篇生命力评估",
-            "execution_boundary": "manual handoff only",
+            "status": system_status["antigravity_execution"]["effective_state"],
+            "role": "CLI 协作文学审查 / 长篇生命力评估",
+            "execution_boundary": "registered structural-review jobs only",
         },
         {
             "agent": "Hermes",

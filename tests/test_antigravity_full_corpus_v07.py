@@ -71,14 +71,14 @@ class AntigravityFullCorpusCliTests(unittest.TestCase):
             self.assertIn(family, command_text)
         self.assertNotIn("Hermes 已执行", command_text)
 
-    def test_status_reports_manual_handoff_boundaries(self):
+    def test_status_reports_cli_bridge_owner_boundary(self):
         self.run_cli("antigravity-full-corpus-pack")
         result = self.run_cli("antigravity-full-corpus-status")
         self.assertEqual(result.returncode, 0, result.stderr)
         data = json.loads(result.stdout)
         self.assertEqual(data["job_id"], JOB_ID)
         self.assertEqual(data["contract_version"], "0.7")
-        self.assertEqual(data["antigravity_mode"], "manual_external_literary_review")
+        self.assertEqual(data["antigravity_mode"], "cli_bridge_owner_gated_full_corpus_review")
         self.assertFalse(data["hermes_allowed"])
         self.assertEqual(data["state"], "ready_for_antigravity")
 

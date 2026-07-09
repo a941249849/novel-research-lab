@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Novel Research Lab Mission Runtime MVP.
 
-This runtime is intentionally small: it routes missions, prepares manual
-handoffs, ingests external outputs, and validates phase state. It does not call
-Hermes or Antigravity directly.
+This runtime is intentionally small: it routes missions, prepares bounded
+handoffs, dispatches registered Antigravity review jobs through the local CLI
+bridge, ingests outputs, and validates phase state. It never calls Hermes.
 """
 
 from __future__ import annotations
@@ -19,6 +19,7 @@ from nrl_compiler import compile_packet
 from nrl_architecture import build_architecture_reconciliation
 from nrl_agent_ops import (
     build_production_runtime_status,
+    dispatch_agent_job,
     ingest_agent_output,
     load_job_queue,
     plan_agent_job,
@@ -438,6 +439,16 @@ def cmd_agent_validate(args: argparse.Namespace) -> int:
     result = validate_agent_job(args.job_id)
     print_json(result)
     return 0 if result["valid"] else 1
+
+
+def cmd_agent_dispatch(args: argparse.Namespace) -> int:
+    result = dispatch_agent_job(
+        args.job_id,
+        load_adapters(),
+        print_timeout=args.print_timeout,
+    )
+    print_json(result)
+    return 0 if result["state"] == "output_received" else 1
 
 
 def cmd_production_runtime_status(_: argparse.Namespace) -> int:
@@ -937,6 +948,10 @@ def build_parser() -> argparse.ArgumentParser:
     agent_validate = sub.add_parser("agent-validate")
     agent_validate.add_argument("--job-id", required=True)
     agent_validate.set_defaults(func=cmd_agent_validate)
+    agent_dispatch = sub.add_parser("agent-dispatch")
+    agent_dispatch.add_argument("--job-id", required=True)
+    agent_dispatch.add_argument("--print-timeout", default="5m0s")
+    agent_dispatch.set_defaults(func=cmd_agent_dispatch)
     sub.add_parser("production-runtime-status").set_defaults(
         func=cmd_production_runtime_status
     )

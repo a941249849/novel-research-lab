@@ -121,6 +121,7 @@ def build_studio_data(
             "content_progression": system_status["content_progression"],
             "live_server_command": "python3 system/runtime/nrl.py studio-serve --port 4173",
         },
+        "antigravity_execution": system_status["antigravity_execution"],
         "capability_roadmap": hardening_status,
         "research_asset_catalog": research_assets,
         "full_corpus_proof": full_corpus_proof,
@@ -189,10 +190,10 @@ def build_studio_data(
                 },
                 {
                     "agent": "Antigravity",
-                    "status": "manual_external_literary_review",
+                    "status": system_status["antigravity_execution"]["effective_state"],
                     "mode": _adapter_mode(adapters, "antigravity"),
-                    "can_execute": _adapter_can_execute(adapters, "antigravity"),
-                    "role": "manual external literary review",
+                    "can_execute": system_status["antigravity_execution"]["can_dispatch_registered_reviews"],
+                    "role": "CLI collaborative literary review",
                 },
                 {
                     "agent": "Hermes",

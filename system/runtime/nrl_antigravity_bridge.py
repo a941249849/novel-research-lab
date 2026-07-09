@@ -65,6 +65,31 @@ def build_antigravity_bridge_status() -> dict[str, Any]:
     }
 
 
+def build_antigravity_execution_status(adapters: dict[str, Any]) -> dict[str, Any]:
+    declared_mode = str(adapters.get("antigravity", {}).get("mode", "manual_handoff"))
+    bridge = build_antigravity_bridge_status()
+    if declared_mode == "cli_bridge" and bridge["available"]:
+        effective_state = "ready"
+        can_dispatch = True
+        blocked_reason = None
+    elif declared_mode == "cli_bridge":
+        effective_state = "blocked_bridge_unavailable"
+        can_dispatch = False
+        blocked_reason = bridge["blocked_reason"]
+    else:
+        effective_state = "manual_handoff"
+        can_dispatch = False
+        blocked_reason = "antigravity adapter is not configured for cli_bridge"
+    return {
+        "declared_mode": declared_mode,
+        "bridge_available": bool(bridge["available"]),
+        "effective_state": effective_state,
+        "can_dispatch_registered_reviews": can_dispatch,
+        "blocked_reason": blocked_reason,
+        "allowed_job_types": ["antigravity_structural_review"] if can_dispatch else [],
+    }
+
+
 def _resolve_repo_path(file_arg: str) -> Path:
     path = Path(file_arg)
     if not path.is_absolute():
@@ -121,9 +146,9 @@ def ask_antigravity(
         "returncode": result.returncode,
         "started_at": started_at,
         "finished_at": now_iso(),
+        "bridge_log_path": str(BRIDGE_LOG_PATH.relative_to(ROOT)),
     }
     _write_json(BRIDGE_LOG_PATH, payload)
     if result.returncode != 0:
         raise RuntimeError(f"agy bridge call failed with exit code {result.returncode}; response written to {payload['output_file']}")
     return payload
-

@@ -59,7 +59,7 @@
       "status": "contract_ready",
       "dependencies": ["consistency_validation"],
       "evidence": ["system/runtime/agent_adapters.json", "system/runtime/mission_registry.json"],
-      "next_action": "继续使用真实 manual_handoff，等待 Owner 授权适配器升级。"
+      "next_action": "通过 cli_bridge 派发已登记的 Antigravity 结构审查任务；回执必须显式验证。"
     },
     {
       "capability_id": "prose_production",

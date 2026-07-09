@@ -162,7 +162,9 @@ class ProductionRuntimeIntegrationTests(RuntimeCliCase):
         self.assertEqual(data["version"], "0.5")
         self.assertEqual(data["system_mode"], "SYSTEM_HARDENING")
         self.assertEqual(data["content_progression"], "FROZEN_AT_OWNER_GATE")
-        self.assertEqual(data["antigravity"]["mode"], "manual_handoff")
+        self.assertEqual(data["antigravity"]["mode"], "cli_bridge")
+        self.assertEqual(data["antigravity"]["status"], "ready")
+        self.assertTrue(data["antigravity"]["can_dispatch_registered_reviews"])
         self.assertEqual(data["hermes"]["status"], "paused_not_removed")
         self.assertIn("techniques", data["agent_jobs"]["by_family"])
 
@@ -173,6 +175,8 @@ class ProductionRuntimeIntegrationTests(RuntimeCliCase):
         self.assertIn("dna_production_runtime", data)
         self.assertIn("creation_context_index", data)
         self.assertEqual(data["creation_context_index"]["version"], "0.12")
+        self.assertEqual(data["antigravity_execution"]["effective_state"], "ready")
+        self.assertTrue(data["antigravity_execution"]["can_dispatch_registered_reviews"])
 
 
 class ProductionRuntimeServerTests(unittest.TestCase):

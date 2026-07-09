@@ -225,7 +225,7 @@ class CorpusPipelineContractTests(unittest.TestCase):
                 )
                 self.assertTrue(required_gates <= {gate["gate_id"] for gate in plan["validation_gates"]})
                 self.assertEqual(plan["agent_review_policy"]["hermes"], "paused_not_removed")
-                self.assertEqual(plan["agent_review_policy"]["antigravity"], "manual_handoff")
+                self.assertEqual(plan["agent_review_policy"]["antigravity"], "ready")
                 self.assertTrue(plan["owner_gate"]["required"])
                 self.assertFalse(plan["content_generation_allowed"])
 

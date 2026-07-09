@@ -200,7 +200,7 @@ def _command_text(state: dict[str, Any]) -> str:
 - 内容推进状态：FROZEN_AT_OWNER_GATE
 - Hermes：paused_not_removed，不要调用，不要代替 Hermes 写作
 - Codex：本地 runtime / 工程 / 校验 / 编排
-- Antigravity：人工外部文学审查 / 全量小说集重读 / 长篇生命力评估
+- Antigravity：CLI 协作文学审查 / 全量小说集重读 / 长篇生命力评估
 
 ## v0.4 十层架构
 
@@ -341,7 +341,11 @@ def build_full_corpus_status(state: dict[str, Any], adapters: dict[str, Any]) ->
         "actual_output_path": job.get("actual_output_path"),
         "validation_report_path": job.get("validation_report_path"),
         "validated_outbox_path": job.get("validated_outbox_path"),
-        "antigravity_mode": "manual_external_literary_review",
+        "antigravity_mode": (
+            "cli_bridge_owner_gated_full_corpus_review"
+            if system_status["antigravity_execution"]["effective_state"] == "ready"
+            else f"{system_status['antigravity_execution']['effective_state']}_full_corpus_review"
+        ),
         "hermes_allowed": False,
         "system_mode": system_status["operating_mode"],
         "content_progression": system_status["content_progression"],

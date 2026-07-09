@@ -16,6 +16,7 @@ from pathlib import Path
 from typing import Any
 
 from nrl_compiler import compile_packet
+from nrl_architecture import build_architecture_reconciliation
 from nrl_capabilities import build_hardening_status
 from nrl_creation_assets import load_creation_asset_registry
 from nrl_creation_schemas import (
@@ -293,6 +294,11 @@ def cmd_pipeline_plan(args: argparse.Namespace) -> int:
             next_only=args.next,
         )
     )
+    return 0
+
+
+def cmd_architecture_status(_: argparse.Namespace) -> int:
+    print_json(build_architecture_reconciliation(load_state(), load_adapters()))
     return 0
 
 
@@ -673,6 +679,7 @@ def build_parser() -> argparse.ArgumentParser:
     pipeline_target.add_argument("--family")
     pipeline_target.add_argument("--next", action="store_true")
     pipeline_plan.set_defaults(func=cmd_pipeline_plan)
+    sub.add_parser("architecture-status").set_defaults(func=cmd_architecture_status)
     sub.add_parser("doctor").set_defaults(func=cmd_doctor)
     sub.add_parser("advance").set_defaults(func=cmd_advance)
     owner = sub.add_parser("owner-gate")

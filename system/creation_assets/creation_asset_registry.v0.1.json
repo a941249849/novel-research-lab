@@ -108,24 +108,26 @@
     {
       "asset_id": "techniques",
       "label": "Techniques",
-      "status": "missing",
-      "readiness_score": 5,
-      "why_not_complete": "Ability tree, move names, costs, counters, visual effects, and realm binding are not registered.",
+      "status": "seed",
+      "readiness_score": 20,
+      "why_not_complete": "Seed technique candidates now exist, but final ability tree, move names, counters, visual effects, and realm binding are not registered.",
       "known_support": [
         "The current premise implies powers and costs.",
-        "Studio v0.1 identifies technique coverage as missing."
+        "v0.6 produced three schema-bound seed technique candidates.",
+        "The validated Antigravity techniques review is available as source evidence."
       ],
       "missing_capabilities": [
         "ability tree schema",
         "technique naming contract",
-        "cost and backlash ledger",
+        "expanded cost and backlash ledger",
         "counter relationship map"
       ],
       "source_artifacts": [
-        "docs/superpowers/specs/2026-07-09-nrl-studio-v0.1-design.md",
-        "system/runtime/studio/nrl-studio-data.json"
+        "system/creation_assets/project_assets.v0.2.json",
+        "system/agent_ops/outbox/job-v05-techniques-antigravity-review_validated.md",
+        "docs/superpowers/specs/2026-07-09-nrl-technique-asset-producer-v0.6-design.md"
       ],
-      "next_safe_action": "Define technique registry fields and constraints without generating final technique trees.",
+      "next_safe_action": "Promote or refine seed technique candidates only after stronger schema and counter rules are defined.",
       "blocked_actions": [
         "generate final technique tree",
         "write combat scenes"

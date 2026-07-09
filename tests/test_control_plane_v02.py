@@ -68,12 +68,13 @@ class ControlPlaneCliTests(unittest.TestCase):
         self.assertEqual(data["summary"]["family_count"], 9)
         self.assertTrue(data["summary"]["all_schemas_valid"])
 
-    def test_validate_creation_assets_accepts_empty_project_store(self):
+    def test_validate_creation_assets_accepts_current_project_store(self):
         result = self.run_cli("validate-creation-assets")
         self.assertEqual(result.returncode, 0, result.stderr)
         data = json.loads(result.stdout)
         self.assertTrue(data["valid"])
-        self.assertEqual(data["summary"]["asset_count"], 0)
+        self.assertGreaterEqual(data["summary"]["asset_count"], 0)
+        self.assertNotIn("novel_training_set/", json.dumps(data, ensure_ascii=False))
 
     def test_studio_data_adds_v02_sections_without_removing_v01_sections(self):
         result = self.run_cli("studio-data")

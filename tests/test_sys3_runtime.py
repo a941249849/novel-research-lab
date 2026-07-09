@@ -361,7 +361,7 @@ class RuntimeFixture(unittest.TestCase):
         self.assertEqual(matrix["NPCs"], "missing")
         self.assertEqual(matrix["Factions"], "partial")
         self.assertEqual(matrix["Artifacts"], "seed")
-        self.assertEqual(matrix["Techniques"], "missing")
+        self.assertEqual(matrix["Techniques"], "seed")
         self.assertEqual(matrix["Naming"], "missing")
         self.assertEqual(matrix["Emotional Bonds"], "partial")
         self.assertEqual(matrix["Foreshadowing"], "partial")
@@ -390,7 +390,7 @@ class RuntimeFixture(unittest.TestCase):
             },
         )
         self.assertNotIn("complete", {item["status"] for item in families.values()})
-        self.assertEqual(families["techniques"]["status"], "missing")
+        self.assertEqual(families["techniques"]["status"], "seed")
         self.assertEqual(families["naming"]["status"], "missing")
 
     def test_creation_assets_summary_matches_status_counts(self):

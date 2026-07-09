@@ -43,7 +43,7 @@ class CorpusPipelineCliTests(unittest.TestCase):
         self.assertEqual(data["version"], "0.3")
         self.assertEqual(data["mode"], "SYSTEM_HARDENING")
         self.assertEqual(data["content_progression"], "FROZEN_AT_OWNER_GATE")
-        self.assertEqual(data["next_family"]["family"], "techniques")
+        self.assertEqual(data["next_family"]["family"], "naming")
         self.assertEqual(
             len([family for family in data["families"] if family["is_next"]]),
             1,
@@ -59,7 +59,7 @@ class CorpusPipelineCliTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         plan = json.loads(result.stdout)
         self.assertEqual(plan["target_family"]["family"], status["next_family"]["family"])
-        self.assertEqual(plan["pipeline_id"], "corpus-to-creation-techniques")
+        self.assertEqual(plan["pipeline_id"], "corpus-to-creation-naming")
         self.assertFalse(plan["content_generation_allowed"])
 
     def test_pipeline_plan_rejects_unknown_family(self):
@@ -91,9 +91,9 @@ class CorpusPipelineContractTests(unittest.TestCase):
         first = self.build_status(self.state, self.adapters)
         second = self.build_status(self.state, self.adapters)
         self.assertEqual(first, second)
-        self.assertEqual(first["next_family"]["family"], "techniques")
+        self.assertEqual(first["next_family"]["family"], "naming")
         ordered = [family["family"] for family in first["families"][:2]]
-        self.assertEqual(ordered, ["techniques", "naming"])
+        self.assertEqual(ordered, ["naming", "npcs"])
 
     def test_every_family_plan_has_schema_evidence_and_validation_gates(self):
         required_gates = {
@@ -140,7 +140,7 @@ class CorpusPipelineStudioTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         data = json.loads(result.stdout)
         self.assertIn("corpus_pipeline", data)
-        self.assertEqual(data["corpus_pipeline"]["next_family"]["family"], "techniques")
+        self.assertEqual(data["corpus_pipeline"]["next_family"]["family"], "naming")
 
     def test_studio_build_contains_pipeline_view_labels(self):
         result = self.run_cli("studio-build")

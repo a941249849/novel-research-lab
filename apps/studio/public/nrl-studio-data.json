@@ -1535,7 +1535,7 @@
       "pipeline_id": "corpus-to-creation",
       "pipeline_layer": "planning_pipeline",
       "classification": "child_implementation_not_full_architecture",
-      "next_family": "techniques"
+      "next_family": "naming"
     },
     "agent_role_contract": [
       {
@@ -1661,20 +1661,6 @@
     ],
     "families": [
       {
-        "family": "techniques",
-        "label": "Techniques",
-        "status": "missing",
-        "readiness_score": 5,
-        "gap": "Ability tree, move names, costs, counters, visual effects, and realm binding are not registered.",
-        "next_safe_action": "Define technique registry fields and constraints without generating final technique trees.",
-        "blocked_actions": [
-          "generate final technique tree",
-          "write combat scenes"
-        ],
-        "priority": 4,
-        "is_next": true
-      },
-      {
         "family": "naming",
         "label": "Naming",
         "status": "missing",
@@ -1686,7 +1672,7 @@
           "rename existing content artifacts"
         ],
         "priority": 5,
-        "is_next": false
+        "is_next": true
       },
       {
         "family": "npcs",
@@ -1714,6 +1700,20 @@
           "write artifact reveal scenes"
         ],
         "priority": 3,
+        "is_next": false
+      },
+      {
+        "family": "techniques",
+        "label": "Techniques",
+        "status": "seed",
+        "readiness_score": 20,
+        "gap": "Seed technique candidates now exist, but final ability tree, move names, counters, visual effects, and realm binding are not registered.",
+        "next_safe_action": "Promote or refine seed technique candidates only after stronger schema and counter rules are defined.",
+        "blocked_actions": [
+          "generate final technique tree",
+          "write combat scenes"
+        ],
+        "priority": 4,
         "is_next": false
       },
       {
@@ -1788,17 +1788,17 @@
       }
     ],
     "next_family": {
-      "family": "techniques",
-      "label": "Techniques",
+      "family": "naming",
+      "label": "Naming",
       "status": "missing",
       "readiness_score": 5,
-      "gap": "Ability tree, move names, costs, counters, visual effects, and realm binding are not registered.",
-      "next_safe_action": "Define technique registry fields and constraints without generating final technique trees.",
+      "gap": "There is no naming grammar for people, places, factions, artifacts, techniques, realms, or forbidden collisions.",
+      "next_safe_action": "Define naming system schema and validation needs without generating final dictionaries.",
       "blocked_actions": [
-        "generate final technique tree",
-        "write combat scenes"
+        "generate final naming dictionary",
+        "rename existing content artifacts"
       ],
-      "priority": 4,
+      "priority": 5,
       "is_next": true
     },
     "forbidden_actions": [
@@ -1814,22 +1814,22 @@
     ],
     "next_plan": {
       "version": "0.3",
-      "pipeline_id": "corpus-to-creation-techniques",
+      "pipeline_id": "corpus-to-creation-naming",
       "project": "《借天改命账》",
       "mode": "SYSTEM_HARDENING",
       "content_progression": "FROZEN_AT_OWNER_GATE",
       "target_family": {
-        "family": "techniques",
-        "label": "Techniques",
+        "family": "naming",
+        "label": "Naming",
         "status": "missing",
         "readiness_score": 5,
-        "gap": "Ability tree, move names, costs, counters, visual effects, and realm binding are not registered.",
-        "next_safe_action": "Define technique registry fields and constraints without generating final technique trees.",
+        "gap": "There is no naming grammar for people, places, factions, artifacts, techniques, realms, or forbidden collisions.",
+        "next_safe_action": "Define naming system schema and validation needs without generating final dictionaries.",
         "blocked_actions": [
-          "generate final technique tree",
-          "write combat scenes"
+          "generate final naming dictionary",
+          "rename existing content artifacts"
         ],
-        "priority": 4,
+        "priority": 5,
         "is_next": true
       },
       "stage_statuses": [
@@ -1878,11 +1878,12 @@
       ],
       "research_query": {
         "asset_types": [
-          "state_ledger"
+          "book_dna",
+          "narrative_dna"
         ],
         "categories": [
           "升级与境界机制",
-          "反噬/代价/污染机制"
+          "宿命/情绪/哲学机制"
         ],
         "review_state": "formal_or_reviewed"
       },
@@ -1964,31 +1965,31 @@
           "exists": true
         },
         {
-          "asset_id": "mechanism-gzr-m4",
+          "asset_id": "mechanism-gzr-m3",
           "title": "蛊真人",
           "asset_type": "mechanism",
           "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
           "review_state": "formal",
           "provenance": "promoted",
           "categories": [
-            "反噬/代价/污染机制"
+            "宿命/情绪/哲学机制"
           ],
-          "mechanism_id": "GZR-M4",
-          "mechanism_name": "运势反噬压力",
+          "mechanism_id": "GZR-M3",
+          "mechanism_name": "道德叙事反包装",
           "exists": true
         },
         {
-          "asset_id": "mechanism-qm-m2",
+          "asset_id": "mechanism-qm-m5",
           "title": "求魔",
           "asset_type": "mechanism",
           "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
           "review_state": "formal",
           "provenance": "promoted",
           "categories": [
-            "反噬/代价/污染机制"
+            "宿命/情绪/哲学机制"
           ],
-          "mechanism_id": "QM-M2",
-          "mechanism_name": "资格缺失内伤",
+          "mechanism_id": "QM-M5",
+          "mechanism_name": "自我缺席式圆满",
           "exists": true
         },
         {
@@ -2006,6 +2007,20 @@
           "exists": true
         },
         {
+          "asset_id": "mechanism-rdzz-m5",
+          "title": "人道至尊",
+          "asset_type": "mechanism",
+          "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+          "review_state": "formal",
+          "provenance": "promoted",
+          "categories": [
+            "宿命/情绪/哲学机制"
+          ],
+          "mechanism_id": "RDZZ-M5",
+          "mechanism_name": "古今祖地闭环",
+          "exists": true
+        },
+        {
           "asset_id": "mechanism-zt-m4",
           "title": "遮天",
           "asset_type": "mechanism",
@@ -2020,101 +2035,95 @@
           "exists": true
         },
         {
-          "asset_id": "phase1-state_ledger-003",
+          "asset_id": "mechanism-zt-m5",
           "title": "遮天",
-          "asset_type": "state_ledger",
-          "source_path": "phase1/02_state_ledgers/遮天_ledger.json",
+          "asset_type": "mechanism",
+          "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+          "review_state": "formal",
+          "provenance": "promoted",
+          "categories": [
+            "宿命/情绪/哲学机制"
+          ],
+          "mechanism_id": "ZT-M5",
+          "mechanism_name": "故人回流终局",
+          "exists": true
+        },
+        {
+          "asset_id": "phase1-book_dna-001",
+          "title": "遮天",
+          "asset_type": "book_dna",
+          "source_path": "phase1/02_book_dna/遮天_dna.json",
           "review_state": "formal",
           "provenance": "promoted",
           "categories": [],
           "exists": true
         },
         {
-          "asset_id": "phase1-state_ledger-007",
+          "asset_id": "phase1-book_dna-005",
           "title": "蛊真人",
-          "asset_type": "state_ledger",
-          "source_path": "phase1/02_state_ledgers/蛊真人_ledger.json",
+          "asset_type": "book_dna",
+          "source_path": "phase1/02_book_dna/蛊真人_dna.json",
           "review_state": "formal",
           "provenance": "promoted",
           "categories": [],
           "exists": true
         },
         {
-          "asset_id": "phase1-state_ledger-011",
+          "asset_id": "phase1-book_dna-009",
           "title": "人道至尊",
-          "asset_type": "state_ledger",
-          "source_path": "phase1/02_state_ledgers/人道至尊_ledger.json",
+          "asset_type": "book_dna",
+          "source_path": "phase1/02_book_dna/人道至尊_dna.json",
           "review_state": "formal",
           "provenance": "promoted",
           "categories": [],
           "exists": true
         },
         {
-          "asset_id": "phase1-state_ledger-015",
+          "asset_id": "phase1-book_dna-013",
           "title": "凡人修仙传",
-          "asset_type": "state_ledger",
-          "source_path": "phase1/02_state_ledgers/凡人修仙传_ledger.json",
+          "asset_type": "book_dna",
+          "source_path": "phase1/02_book_dna/凡人修仙传_dna.json",
           "review_state": "formal",
           "provenance": "promoted",
           "categories": [],
           "exists": true
         },
         {
-          "asset_id": "phase1-state_ledger-019",
+          "asset_id": "phase1-book_dna-017",
           "title": "斗破苍穹",
-          "asset_type": "state_ledger",
-          "source_path": "phase1/02_state_ledgers/斗破苍穹_ledger.json",
+          "asset_type": "book_dna",
+          "source_path": "phase1/02_book_dna/斗破苍穹_dna.json",
           "review_state": "formal",
           "provenance": "promoted",
           "categories": [],
           "exists": true
         },
         {
-          "asset_id": "phase1-state_ledger-023",
+          "asset_id": "phase1-book_dna-021",
           "title": "诡秘之主",
-          "asset_type": "state_ledger",
-          "source_path": "phase1/02_state_ledgers/诡秘之主_ledger.json",
+          "asset_type": "book_dna",
+          "source_path": "phase1/02_book_dna/诡秘之主_dna.json",
           "review_state": "formal",
           "provenance": "promoted",
           "categories": [],
           "exists": true
         },
         {
-          "asset_id": "phase1-state_ledger-027",
+          "asset_id": "phase1-book_dna-025",
           "title": "求魔",
-          "asset_type": "state_ledger",
-          "source_path": "phase1/02_state_ledgers/求魔_ledger.json",
+          "asset_type": "book_dna",
+          "source_path": "phase1/02_book_dna/求魔_dna.json",
           "review_state": "formal",
           "provenance": "promoted",
-          "categories": [],
-          "exists": true
-        },
-        {
-          "asset_id": "phase1-state_ledger-038",
-          "title": "一念永恒",
-          "asset_type": "state_ledger",
-          "source_path": "phase1/02_state_ledgers/一念永恒_ledger.json",
-          "review_state": "stub",
-          "provenance": "stub",
-          "categories": [],
-          "exists": true
-        },
-        {
-          "asset_id": "phase1-state_ledger-041",
-          "title": "不死不灭",
-          "asset_type": "state_ledger",
-          "source_path": "phase1/02_state_ledgers/不死不灭_ledger.json",
-          "review_state": "stub",
-          "provenance": "stub",
           "categories": [],
           "exists": true
         }
       ],
       "schema_contract": {
-        "family": "techniques",
+        "family": "naming",
         "draft": "http://json-schema.org/draft-07/schema#",
-        "path": "system/creation_assets/schemas/techniques.schema.json",
-        "payload_key": "technique",
+        "path": "system/creation_assets/schemas/naming.schema.json",
+        "payload_key": "naming",
         "valid": true
       },
       "validation_gates": [
@@ -2229,6 +2238,55 @@
       "status": "paused_not_removed",
       "allowed": false
     }
+  },
+  "asset_producers": {
+    "version": "0.6",
+    "system_mode": "SYSTEM_HARDENING",
+    "content_progression": "FROZEN_AT_OWNER_GATE",
+    "supported_families": [
+      "techniques"
+    ],
+    "hermes_allowed": false,
+    "owner_gate": {
+      "required": true,
+      "status": "REQUIRED_PENDING_ACKNOWLEDGEMENT"
+    },
+    "techniques": {
+      "job_id": "job-v05-techniques-antigravity-review",
+      "job_state": "validated",
+      "job_validated": true,
+      "validated_outbox_path": "system/agent_ops/outbox/job-v05-techniques-antigravity-review_validated.md",
+      "validated_outbox_exists": true,
+      "candidate_count": 3,
+      "owned_candidate_count": 3,
+      "positive_evidence_count": 96
+    },
+    "project_asset_store": {
+      "path": "system/creation_assets/project_assets.v0.2.json",
+      "family_counts": {
+        "techniques": 3
+      },
+      "validation": {
+        "valid": true,
+        "errors": [],
+        "summary": {
+          "asset_count": 3,
+          "family_counts": {
+            "techniques": 3
+          }
+        },
+        "store_path": "system/creation_assets/project_assets.v0.2.json"
+      }
+    },
+    "blocked_actions": [
+      "write novel prose",
+      "write combat scenes",
+      "generate final technique tree",
+      "execute-hermes",
+      "execute-antigravity",
+      "read novel_training_set/"
+    ],
+    "next_safe_action": "Produce or inspect seed-level technique candidates."
   },
   "system_identity": {
     "name": "Novel Research Lab",
@@ -2383,10 +2441,10 @@
       },
       {
         "asset": "Techniques",
-        "status": "missing",
-        "gap": "Ability tree, move names, costs, counters, visual effects, and realm binding are not registered.",
+        "status": "seed",
+        "gap": "Seed technique candidates now exist, but final ability tree, move names, counters, visual effects, and realm binding are not registered.",
         "asset_id": "techniques",
-        "readiness_score": 5
+        "readiness_score": 20
       },
       {
         "asset": "Naming",
@@ -2536,24 +2594,26 @@
       {
         "asset_id": "techniques",
         "label": "Techniques",
-        "status": "missing",
-        "readiness_score": 5,
-        "why_not_complete": "Ability tree, move names, costs, counters, visual effects, and realm binding are not registered.",
+        "status": "seed",
+        "readiness_score": 20,
+        "why_not_complete": "Seed technique candidates now exist, but final ability tree, move names, counters, visual effects, and realm binding are not registered.",
         "known_support": [
           "The current premise implies powers and costs.",
-          "Studio v0.1 identifies technique coverage as missing."
+          "v0.6 produced three schema-bound seed technique candidates.",
+          "The validated Antigravity techniques review is available as source evidence."
         ],
         "missing_capabilities": [
           "ability tree schema",
           "technique naming contract",
-          "cost and backlash ledger",
+          "expanded cost and backlash ledger",
           "counter relationship map"
         ],
         "source_artifacts": [
-          "docs/superpowers/specs/2026-07-09-nrl-studio-v0.1-design.md",
-          "system/runtime/studio/nrl-studio-data.json"
+          "system/creation_assets/project_assets.v0.2.json",
+          "system/agent_ops/outbox/job-v05-techniques-antigravity-review_validated.md",
+          "docs/superpowers/specs/2026-07-09-nrl-technique-asset-producer-v0.6-design.md"
         ],
-        "next_safe_action": "Define technique registry fields and constraints without generating final technique trees.",
+        "next_safe_action": "Promote or refine seed technique candidates only after stronger schema and counter rules are defined.",
         "blocked_actions": [
           "generate final technique tree",
           "write combat scenes"
@@ -2667,9 +2727,9 @@
     "coverage_summary": {
       "total": 9,
       "by_status": {
-        "missing": 3,
+        "missing": 2,
         "partial": 4,
-        "seed": 2
+        "seed": 3
       },
       "complete": 0,
       "lowest_readiness": 5,

@@ -221,8 +221,9 @@ def write_agent_packet(job_id: str) -> dict[str, Any]:
     packet_path = ROOT / job["input_packet_path"]
     packet_path.parent.mkdir(parents=True, exist_ok=True)
     packet_path.write_text(_packet_text(job), encoding="utf-8")
-    job["state"] = "ready_for_antigravity"
-    job["updated_at"] = now_iso()
+    if job.get("state") not in {"validated", "promoted"}:
+        job["state"] = "ready_for_antigravity"
+        job["updated_at"] = now_iso()
     save_job_queue(queue)
     return {
         "job_id": job_id,

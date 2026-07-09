@@ -128,6 +128,7 @@ class AgentOpsCliTests(RuntimeCliCase):
             0,
         )
         self.assertEqual(self.run_cli("agent-validate", "--job-id", job["job_id"]).returncode, 0)
+        self.assertEqual(self.run_cli("agent-pack", "--job-id", job["job_id"]).returncode, 0)
         planned = json.loads(self.run_cli("agent-job-plan", "--family", "techniques").stdout)["job"]
         self.assertEqual(planned["state"], "validated")
         self.assertEqual(planned["actual_output_path"], "system/agent_ops/inbox/valid_antigravity_techniques_review.md")

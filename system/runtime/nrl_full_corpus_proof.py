@@ -214,7 +214,7 @@ def merge_proof_receipts(input_dir_arg: str, output_file_arg: str) -> dict[str, 
     manifests = []
     receipts = []
     errors = []
-    for path in sorted(input_dir.glob("*.md")):
+    for path in sorted(input_dir.glob("*_response.md")):
         manifest, manifest_errors = _read_manifest(str(path))
         if manifest_errors:
             errors.extend(f"{_relative_to_root(path)}: {error}" for error in manifest_errors)
@@ -233,7 +233,7 @@ def merge_proof_receipts(input_dir_arg: str, output_file_arg: str) -> dict[str, 
         "job_id": JOB_ID,
         "contract_version": VERSION,
         "merged_from": manifests,
-        "reading_receipts": receipts,
+        "reading_receipts": _normalize_master_receipts(receipts),
     }
     output_file.write_text(
         "\n".join(
@@ -257,6 +257,29 @@ def merge_proof_receipts(input_dir_arg: str, output_file_arg: str) -> dict[str, 
         "source_manifest_count": len(manifests),
         "receipt_count": len(receipts),
     }
+
+
+def _normalize_master_receipts(receipts: list[Any]) -> list[Any]:
+    normalized_receipts = []
+    for receipt_index, receipt in enumerate(receipts, start=1):
+        if not isinstance(receipt, dict):
+            normalized_receipts.append(receipt)
+            continue
+        normalized = dict(receipt)
+        segments = normalized.get("segments")
+        if isinstance(segments, list):
+            normalized_segments = []
+            for segment_index, segment in enumerate(segments, start=1):
+                if not isinstance(segment, dict):
+                    normalized_segments.append(segment)
+                    continue
+                normalized_segment = dict(segment)
+                phase = str(normalized_segment.get("phase", "segment"))
+                normalized_segment["chunk_id"] = f"receipt_{receipt_index:02d}_{phase}_{segment_index:02d}"
+                normalized_segments.append(normalized_segment)
+            normalized["segments"] = normalized_segments
+        normalized_receipts.append(normalized)
+    return normalized_receipts
 
 
 def _validation_result(

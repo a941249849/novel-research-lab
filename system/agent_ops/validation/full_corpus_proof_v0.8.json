@@ -1,0 +1,12 @@
+{
+  "version": "0.8",
+  "job_id": "job-v08-full-corpus-proof-review",
+  "file": "system/agent_ops/inbox/full_corpus_proof_v0.8/master.md",
+  "status": "proof_verified",
+  "valid": true,
+  "errors": [],
+  "verified_receipts": 18,
+  "required_receipts": 18,
+  "promotion_allowed": false,
+  "validated_at": "2026-07-09T22:24:32+08:00"
+}

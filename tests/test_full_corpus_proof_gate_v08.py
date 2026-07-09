@@ -206,14 +206,19 @@ class FullCorpusProofGateV08Tests(unittest.TestCase):
     def test_merge_combines_per_book_receipts_into_master_manifest(self):
         input_dir = self.root / "system/agent_ops/inbox/full_corpus_proof_v0.8"
         input_dir.mkdir(parents=True, exist_ok=True)
+        receipts = [
+            self.valid_receipt(self.book_a, "测试甲"),
+            self.valid_receipt(self.book_b, "测试乙"),
+        ]
+        receipts[0]["segments"][0]["chunk_id"] = "chapter_1_header"
         for index, receipt in enumerate(
             [
-                self.valid_receipt(self.book_a, "测试甲"),
-                self.valid_receipt(self.book_b, "测试乙"),
+                receipts[0],
+                receipts[1],
             ],
             start=1,
         ):
-            (input_dir / f"{index:02d}.md").write_text(
+            (input_dir / f"{index:02d}_response.md").write_text(
                 "\n".join(
                     [
                         "# Per Book Proof",
@@ -246,6 +251,7 @@ class FullCorpusProofGateV08Tests(unittest.TestCase):
         data = json.loads(merge.stdout)
         self.assertEqual(data["receipt_count"], 2)
         self.assertTrue(output_file.exists())
+        self.assertNotIn("chapter_1_header", output_file.read_text(encoding="utf-8"))
         validate = self.run_cli(
             "full-corpus-proof-validate",
             "--file",

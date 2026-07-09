@@ -17,6 +17,7 @@ from typing import Any
 
 from nrl_compiler import compile_packet
 from nrl_architecture import build_architecture_reconciliation
+from nrl_agent_ops import load_job_queue, plan_agent_job, write_agent_packet
 from nrl_capabilities import build_hardening_status
 from nrl_creation_assets import load_creation_asset_registry
 from nrl_creation_schemas import (
@@ -321,6 +322,21 @@ def cmd_rag_index_build(_: argparse.Namespace) -> int:
 
 def cmd_rag_index(_: argparse.Namespace) -> int:
     print_json(load_or_build_rag_index(load_state()))
+    return 0
+
+
+def cmd_agent_jobs(_: argparse.Namespace) -> int:
+    print_json(load_job_queue())
+    return 0
+
+
+def cmd_agent_job_plan(args: argparse.Namespace) -> int:
+    print_json(plan_agent_job(load_state(), load_adapters(), args.family))
+    return 0
+
+
+def cmd_agent_pack(args: argparse.Namespace) -> int:
+    print_json(write_agent_packet(args.job_id))
     return 0
 
 
@@ -706,6 +722,13 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("dna-registry").set_defaults(func=cmd_dna_registry)
     sub.add_parser("rag-index-build").set_defaults(func=cmd_rag_index_build)
     sub.add_parser("rag-index").set_defaults(func=cmd_rag_index)
+    sub.add_parser("agent-jobs").set_defaults(func=cmd_agent_jobs)
+    agent_job_plan = sub.add_parser("agent-job-plan")
+    agent_job_plan.add_argument("--family", required=True)
+    agent_job_plan.set_defaults(func=cmd_agent_job_plan)
+    agent_pack = sub.add_parser("agent-pack")
+    agent_pack.add_argument("--job-id", required=True)
+    agent_pack.set_defaults(func=cmd_agent_pack)
     sub.add_parser("doctor").set_defaults(func=cmd_doctor)
     sub.add_parser("advance").set_defaults(func=cmd_advance)
     owner = sub.add_parser("owner-gate")

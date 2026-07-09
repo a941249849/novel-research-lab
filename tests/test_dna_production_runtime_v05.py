@@ -58,5 +58,23 @@ class RagIndexCliTests(RuntimeCliCase):
         self.assertNotIn("novel_training_set/", json.dumps(data, ensure_ascii=False))
 
 
+class AgentOpsCliTests(RuntimeCliCase):
+    def test_agent_job_plan_creates_techniques_job_and_packet(self):
+        result = self.run_cli("agent-job-plan", "--family", "techniques")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        job = json.loads(result.stdout)["job"]
+        self.assertEqual(job["target_family"], "techniques")
+        self.assertEqual(job["owner_agent"], "antigravity")
+        self.assertEqual(job["state"], "ready_for_antigravity")
+        self.assertTrue((REPO_ROOT / "system/agent_ops/job_queue.v0.5.json").exists())
+
+        packet = self.run_cli("agent-pack", "--job-id", job["job_id"])
+        self.assertEqual(packet.returncode, 0, packet.stderr)
+        packet_data = json.loads(packet.stdout)
+        packet_text = (REPO_ROOT / packet_data["packet_path"]).read_text(encoding="utf-8")
+        self.assertIn("FORBIDDEN ACTIONS", packet_text)
+        self.assertIn("Do not write prose", packet_text)
+
+
 if __name__ == "__main__":
     unittest.main()

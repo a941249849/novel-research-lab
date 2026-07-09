@@ -66,5 +66,44 @@ class ArchitectureReconciliationContractTests(unittest.TestCase):
         self.assertFalse(first["production_readiness"]["content_generation_allowed"])
 
 
+class ArchitectureReconciliationIntegrationTests(unittest.TestCase):
+    def run_cli(self, *args):
+        return subprocess.run(
+            [sys.executable, str(NRL), *args],
+            cwd=REPO_ROOT,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+
+    def test_studio_data_contains_architecture_reconciliation(self):
+        result = self.run_cli("studio-data")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        data = json.loads(result.stdout)
+        self.assertIn("architecture_reconciliation", data)
+        architecture = data["architecture_reconciliation"]
+        self.assertEqual(architecture["version"], "0.4")
+        self.assertEqual(
+            architecture["implementation_alignment"]["pipeline_layer"],
+            "planning_pipeline",
+        )
+        self.assertEqual(len(architecture["architecture_layers"]), 10)
+
+    def test_system_check_includes_architecture_reconciliation(self):
+        result = self.run_cli("system-check")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        data = json.loads(result.stdout)
+        self.assertTrue(data["passed"])
+        check_ids = {check["check_id"] for check in data["checks"]}
+        self.assertIn("architecture_reconciliation", check_ids)
+        check = next(
+            item
+            for item in data["checks"]
+            if item["check_id"] == "architecture_reconciliation"
+        )
+        self.assertEqual(check["detail"]["version"], "0.4")
+        self.assertEqual(check["detail"]["layer_count"], 10)
+
+
 if __name__ == "__main__":
     unittest.main()

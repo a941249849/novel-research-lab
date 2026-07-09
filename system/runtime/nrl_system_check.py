@@ -5,6 +5,7 @@ from typing import Any
 
 import jsonschema
 
+from nrl_architecture import build_architecture_reconciliation
 from nrl_capabilities import build_hardening_status
 from nrl_creation_schemas import (
     build_creation_schema_registry,
@@ -45,6 +46,23 @@ def run_system_check() -> dict[str, Any]:
     schemas = build_creation_schema_registry()
     store = validate_creation_asset_store()
     pipeline = build_pipeline_status(state, adapters)
+    architecture = build_architecture_reconciliation(
+        state,
+        adapters,
+        pipeline_status=pipeline,
+    )
+    architecture_payload = json.dumps(architecture, ensure_ascii=False)
+    architecture_passed = (
+        architecture["version"] == "0.4"
+        and len(architecture["architecture_layers"]) == 10
+        and architecture["architecture_layers"][6]["layer_id"] == "planning_pipeline"
+        and architecture["architecture_layers"][6]["child_implementation"]
+        == "corpus_pipeline_v0.3"
+        and architecture["production_readiness"]["owner_gate_required"]
+        and architecture["production_readiness"]["hermes_execution_status"]
+        == "paused_not_removed"
+        and "novel_training_set/" not in architecture_payload
+    )
 
     checks = [
         {
@@ -85,6 +103,17 @@ def run_system_check() -> dict[str, Any]:
                 "pipeline_id": pipeline["pipeline_id"],
                 "next_family": pipeline["next_family"]["family"],
                 "stage_count": len(pipeline["stages"]),
+            },
+        },
+        {
+            "check_id": "architecture_reconciliation",
+            "passed": architecture_passed,
+            "detail": {
+                "version": architecture["version"],
+                "layer_count": len(architecture["architecture_layers"]),
+                "pipeline_layer": architecture["implementation_alignment"][
+                    "pipeline_layer"
+                ],
             },
         },
     ]

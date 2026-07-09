@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import Any
 
+from nrl_architecture import build_architecture_reconciliation
 from nrl_capabilities import build_hardening_status
 from nrl_creation_assets import load_creation_asset_registry
 from nrl_creation_schemas import build_creation_schema_registry
@@ -84,6 +85,11 @@ def build_studio_data(
         adapters,
         next_only=True,
     )
+    architecture_reconciliation = build_architecture_reconciliation(
+        state,
+        adapters,
+        pipeline_status=corpus_pipeline,
+    )
 
     return {
         "control_plane": {
@@ -113,6 +119,7 @@ def build_studio_data(
             ],
             "forbidden_actions": ["advance", "execute-hermes", "execute-antigravity"],
         },
+        "architecture_reconciliation": architecture_reconciliation,
         "corpus_pipeline": corpus_pipeline,
         "system_identity": {
             "name": "Novel Research Lab",

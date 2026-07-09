@@ -1411,6 +1411,204 @@
       "execute-antigravity"
     ]
   },
+  "architecture_reconciliation": {
+    "version": "0.4",
+    "source_context": {
+      "conversation_title": "中文玄幻小说汇总",
+      "accepted_on": "2026-07-09",
+      "source_role": "architecture_review_baseline"
+    },
+    "fixed_identity": {
+      "short_name": "Novel Research Lab",
+      "principle": "Corpus-to-Creation",
+      "positioning_zh": "基于中文热门长篇小说语料研究蒸馏的原创长篇小说创作引擎",
+      "not_a": [
+        "generic writing app",
+        "InkOS clone",
+        "document pipeline"
+      ],
+      "core_chain": [
+        "training corpus",
+        "single-book decomposition",
+        "cross-book mechanism distillation",
+        "narrative law / mechanism library",
+        "original project synthesis",
+        "Story Bible",
+        "long-form creation asset system",
+        "outline / chapter planning",
+        "draft",
+        "review",
+        "state ledger",
+        "continuous long-form production"
+      ]
+    },
+    "architecture_layers": [
+      {
+        "order": 1,
+        "layer_id": "corpus_layer",
+        "label_zh": "语料层",
+        "status": "protected_input",
+        "purpose": "raw corpus is protected; normal runtime uses structured derivatives",
+        "child_implementation": null
+      },
+      {
+        "order": 2,
+        "layer_id": "single_book_decomposition",
+        "label_zh": "单书拆解层",
+        "status": "partial_data",
+        "purpose": "Book DNA / Narrative DNA / State Ledger derivatives exist with Core7 promoted assets",
+        "child_implementation": null
+      },
+      {
+        "order": 3,
+        "layer_id": "cross_book_distillation",
+        "label_zh": "跨书蒸馏层",
+        "status": "partial_engine",
+        "purpose": "mechanism notes and synthesis exist but are not a full mechanism engine",
+        "child_implementation": null
+      },
+      {
+        "order": 4,
+        "layer_id": "research_asset_engine",
+        "label_zh": "研究资产引擎",
+        "status": "runnable",
+        "purpose": "structured Phase 1 assets are indexed for runtime evidence",
+        "child_implementation": null
+      },
+      {
+        "order": 5,
+        "layer_id": "original_project_synthesis",
+        "label_zh": "原创项目综合层",
+        "status": "data_ready",
+        "purpose": "current project is synthesized into Story Bible and related phase assets",
+        "child_implementation": null
+      },
+      {
+        "order": 6,
+        "layer_id": "long_form_creation_asset_os",
+        "label_zh": "长篇创作资产系统",
+        "status": "contract_ready",
+        "purpose": "nine asset families exist as contracts; operating registries are incomplete",
+        "child_implementation": null
+      },
+      {
+        "order": 7,
+        "layer_id": "planning_pipeline",
+        "label_zh": "规划管线层",
+        "status": "runnable",
+        "purpose": "v0.3 plans one asset family from research evidence without generating final assets",
+        "child_implementation": "corpus_pipeline_v0.3"
+      },
+      {
+        "order": 8,
+        "layer_id": "agent_review_and_production",
+        "label_zh": "Agent 审查与生产层",
+        "status": "blocked",
+        "purpose": "Codex validates locally; Antigravity is manual review; Hermes is paused",
+        "child_implementation": null
+      },
+      {
+        "order": 9,
+        "layer_id": "runtime_control_plane",
+        "label_zh": "Runtime / Control Plane 层",
+        "status": "runnable",
+        "purpose": "runtime reads state, validates, exposes safe actions, and serves local APIs",
+        "child_implementation": null
+      },
+      {
+        "order": 10,
+        "layer_id": "studio_cockpit",
+        "label_zh": "Studio 驾驶舱层",
+        "status": "partial",
+        "purpose": "Studio exposes system state and must now expose architecture reconciliation",
+        "child_implementation": null
+      }
+    ],
+    "experiment_calibration": {
+      "label_zh": "Core7 小批量试验",
+      "status": "accepted_as_calibration_basis",
+      "scope": "Core7 promoted assets are real calibration data; remaining corpus is not assumed complete.",
+      "production_meaning": "small-batch validation supports architecture convergence before full production execution"
+    },
+    "implementation_alignment": {
+      "pipeline_version": "0.3",
+      "pipeline_id": "corpus-to-creation",
+      "pipeline_layer": "planning_pipeline",
+      "classification": "child_implementation_not_full_architecture",
+      "next_family": "techniques"
+    },
+    "agent_role_contract": [
+      {
+        "agent": "Codex",
+        "status": "local_runtime_host",
+        "role": "本地系统宿主 / Runtime / 工程 / 校验 / 编排",
+        "execution_boundary": "may execute local runtime and validation only"
+      },
+      {
+        "agent": "Antigravity",
+        "status": "manual_external_literary_review",
+        "role": "人工外部文学审查 / 长篇生命力评估",
+        "execution_boundary": "manual handoff only"
+      },
+      {
+        "agent": "Hermes",
+        "status": "paused_not_removed",
+        "display_status": "Hermes: paused_not_removed",
+        "role": "后期写手 / 文学增强 / 受控创意生成",
+        "execution_boundary": "paused until explicit Owner authorization"
+      },
+      {
+        "agent": "Web GPT",
+        "status": "architecture_review_only",
+        "role": "架构互审和源上下文裁决",
+        "execution_boundary": "not a task dispatcher"
+      },
+      {
+        "agent": "Owner",
+        "status": "gate_authority",
+        "role": "阶段、外部 Agent、内容生产授权",
+        "execution_boundary": "manual decision authority"
+      }
+    ],
+    "current_mismatch_report": [
+      {
+        "mismatch_id": "runtime_pipeline_ahead_of_architecture",
+        "severity": "high",
+        "summary": "Runtime and pipeline work advanced before source architecture reconciliation was locked.",
+        "correction": "Classify v0.3 as planning_pipeline and expose the ten-layer architecture in runtime and Studio."
+      },
+      {
+        "mismatch_id": "product_visibility_gap",
+        "severity": "high",
+        "summary": "The Owner could not see how research assets, agents, runtime, and creation assets form one system.",
+        "correction": "Studio must expose architecture layers, Core7 calibration, mismatch report, and next architecture action."
+      }
+    ],
+    "production_readiness": {
+      "system_mode": "SYSTEM_HARDENING",
+      "content_progression": "FROZEN_AT_OWNER_GATE",
+      "owner_gate_required": true,
+      "owner_gate_status": "REQUIRED_PENDING_ACKNOWLEDGEMENT",
+      "content_generation_allowed": false,
+      "hermes_execution_status": "paused_not_removed"
+    },
+    "next_architecture_action": {
+      "action_id": "architecture_reconciliation_v0_4",
+      "label_zh": "锁定系统架构并把 v0.3 归位为规划管线层",
+      "safe_command": "python3 system/runtime/nrl.py architecture-status",
+      "blocked_actions": [
+        "bypass Phase 2E planning constraints",
+        "execute-antigravity",
+        "execute-hermes",
+        "freely read novel_training_set",
+        "generate final creative assets",
+        "generate full character cards",
+        "ignore Antigravity required fixes",
+        "write first chapter",
+        "write novel prose"
+      ]
+    }
+  },
   "corpus_pipeline": {
     "version": "0.3",
     "pipeline_id": "corpus-to-creation",

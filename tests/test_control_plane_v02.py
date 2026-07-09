@@ -111,6 +111,7 @@ class ControlPlaneCliTests(unittest.TestCase):
                 "creation_schemas",
                 "creation_asset_store",
                 "corpus_pipeline",
+                "architecture_reconciliation",
             },
         )
         self.assertEqual(state_path.read_text(encoding="utf-8"), before)

@@ -503,6 +503,15 @@ class RuntimeFixture(unittest.TestCase):
         self.assertIn("write novel prose", html)
         self.assertIn("read-only", html)
 
+    def test_studio_build_does_not_write_fixture_data_to_workspace_public_snapshot(self):
+        public_snapshot = REPO_ROOT / "apps/studio/public/nrl-studio-data.json"
+        before = public_snapshot.read_text(encoding="utf-8")
+
+        result = self.run_cli("studio-build")
+
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(public_snapshot.read_text(encoding="utf-8"), before)
+
     def test_studio_build_includes_doctor_command(self):
         result = self.run_cli("studio-build")
         self.assertEqual(result.returncode, 0, result.stderr)

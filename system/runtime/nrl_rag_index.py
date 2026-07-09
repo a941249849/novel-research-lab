@@ -5,12 +5,17 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
+from nrl_corpus_pipeline import build_evidence_pack, build_evidence_pack_matrix
 from nrl_dna_registry import load_or_build_dna_registry
 from nrl_paths import runtime_path
 
 
 VERSION = "0.5"
+CREATION_CONTEXT_VERSION = "0.12"
 INDEX_PATH = runtime_path("system/research_index/research_rag_index.v0.5.json")
+CREATION_CONTEXT_INDEX_PATH = runtime_path(
+    "system/research_index/creation_context_index.v0.12.json"
+)
 WEIGHT_BY_PROMOTION_STATE = {
     "promoted": 3,
     "candidate": 2,
@@ -109,3 +114,98 @@ def load_or_build_rag_index(state: dict[str, Any]) -> dict[str, Any]:
 
 def rag_index_path() -> Path:
     return INDEX_PATH
+
+
+def _context_retrieval_text(family: str, evidence: dict[str, Any]) -> str:
+    categories = ", ".join(str(item) for item in evidence.get("categories", []))
+    return " | ".join(
+        [
+            family,
+            str(evidence.get("title", "")),
+            str(evidence.get("asset_type", "")),
+            str(evidence.get("review_state", "")),
+            str(evidence.get("provenance", "")),
+            categories,
+        ]
+    )
+
+
+def _context_item(family: str, pack: dict[str, Any], evidence: dict[str, Any]) -> dict[str, Any]:
+    source_path = str(evidence["source_path"])
+    if "novel_training_set/" in source_path:
+        raise RuntimeError(f"raw corpus path is forbidden in Creation Context Index: {source_path}")
+    return {
+        "context_id": f"creation-context-v012-{family}-{evidence['asset_id']}",
+        "target_family": family,
+        "evidence_pack_id": pack["evidence_pack_id"],
+        "evidence_pack_path": pack["output_path"],
+        "schema_path": pack["schema_contract"]["path"],
+        "source_asset_id": str(evidence["asset_id"]),
+        "source_path": source_path,
+        "source_asset_type": str(evidence["asset_type"]),
+        "title": str(evidence.get("title", "")),
+        "categories": [str(item) for item in evidence.get("categories", [])],
+        "retrieval_text": _context_retrieval_text(family, evidence),
+        "content_generation_allowed": False,
+    }
+
+
+def build_creation_context_index(state: dict[str, Any], adapters: dict[str, Any]) -> dict[str, Any]:
+    matrix = build_evidence_pack_matrix(state, adapters)
+    items = []
+    for family in matrix["families"]:
+        pack = build_evidence_pack(state, adapters, family=family)
+        items.extend(
+            _context_item(family, pack, evidence)
+            for evidence in pack["research_evidence"]
+        )
+    items = sorted(items, key=lambda item: item["context_id"])
+    encoded = json.dumps(items, ensure_ascii=False)
+    if "novel_training_set/" in encoded:
+        raise RuntimeError("Creation Context Index includes forbidden raw corpus path")
+    by_family = Counter(str(item["target_family"]) for item in items)
+    return {
+        "index_name": "NRL Creation Context Index",
+        "version": CREATION_CONTEXT_VERSION,
+        "source_matrix_id": matrix["matrix_id"],
+        "source_of_truth": [
+            matrix["output_path"],
+            "system/research_assets/evidence_packs/*.v0.10.json",
+        ],
+        "items": items,
+        "summary": {
+            "total_items": len(items),
+            "family_count": len(by_family),
+            "by_family": dict(sorted(by_family.items())),
+        },
+        "content_generation_allowed": False,
+        "external_agent_execution_allowed": False,
+        "guardrails": [
+            "Evidence-pack metadata only",
+            "No raw novel prose",
+            "No Hermes execution",
+            "No final creative assets",
+        ],
+    }
+
+
+def write_creation_context_index(state: dict[str, Any], adapters: dict[str, Any]) -> dict[str, Any]:
+    index = build_creation_context_index(state, adapters)
+    CREATION_CONTEXT_INDEX_PATH.parent.mkdir(parents=True, exist_ok=True)
+    CREATION_CONTEXT_INDEX_PATH.write_text(
+        json.dumps(index, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    return index
+
+
+def load_or_build_creation_context_index(
+    state: dict[str, Any],
+    adapters: dict[str, Any],
+) -> dict[str, Any]:
+    if CREATION_CONTEXT_INDEX_PATH.exists():
+        with CREATION_CONTEXT_INDEX_PATH.open("r", encoding="utf-8") as handle:
+            data = json.load(handle)
+        if data.get("version") == CREATION_CONTEXT_VERSION:
+            return data
+    return write_creation_context_index(state, adapters)

@@ -191,7 +191,9 @@ def render_studio() -> Path:
     out_dir = runtime_path("system/runtime/studio")
     if not (APP_ROOT / "package.json").exists():
         return _fallback_studio(out_dir, data, state, adapters)
-    _write_frontend_data(APP_ROOT, data)
+    # Fixture roots must not overwrite the source workspace's static snapshot.
+    if ROOT == APP_ROOT.parents[1]:
+        _write_frontend_data(APP_ROOT, data)
     _run_frontend_build(APP_ROOT)
     out = _copy_frontend_dist(APP_ROOT, out_dir)
     _inject_runtime_data(out, data)

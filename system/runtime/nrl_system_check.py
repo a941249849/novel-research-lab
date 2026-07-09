@@ -13,6 +13,7 @@ from nrl_creation_schemas import (
 )
 from nrl_corpus_pipeline import build_evidence_pack_matrix, build_pipeline_status
 from nrl_paths import runtime_path
+from nrl_rag_index import build_creation_context_index
 from nrl_research_assets import build_research_asset_catalog
 
 
@@ -47,6 +48,7 @@ def run_system_check() -> dict[str, Any]:
     store = validate_creation_asset_store()
     pipeline = build_pipeline_status(state, adapters)
     evidence_matrix = build_evidence_pack_matrix(state, adapters)
+    creation_context = build_creation_context_index(state, adapters)
     architecture = build_architecture_reconciliation(
         state,
         adapters,
@@ -120,6 +122,16 @@ def run_system_check() -> dict[str, Any]:
                 "valid_family_count": evidence_matrix["valid_family_count"],
                 "invalid_families": evidence_matrix["invalid_families"],
             },
+        },
+        {
+            "check_id": "creation_context_index",
+            "passed": (
+                creation_context["summary"]["family_count"] == 9
+                and creation_context["summary"]["total_items"] >= 27
+                and not creation_context["content_generation_allowed"]
+                and not creation_context["external_agent_execution_allowed"]
+            ),
+            "detail": creation_context["summary"],
         },
         {
             "check_id": "architecture_reconciliation",

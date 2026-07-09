@@ -449,7 +449,14 @@ Build and inspect the structured retrieval index:
 ```bash
 python3 system/runtime/nrl.py rag-index-build
 python3 system/runtime/nrl.py rag-index
+python3 system/runtime/nrl.py creation-context-index-build
+python3 system/runtime/nrl.py creation-context-index
 ```
+
+`creation-context-index` expands the guarded evidence-pack matrix into a
+metadata-only context index for downstream Story Bible and Hermes handoff
+preparation. It remains content-frozen: no prose, no final creative assets, and
+no Hermes execution.
 
 Create the first production job for the current missing asset family:
 

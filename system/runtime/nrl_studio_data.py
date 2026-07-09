@@ -15,6 +15,7 @@ from nrl_corpus_pipeline import (
     build_pipeline_status,
 )
 from nrl_full_corpus_proof import build_proof_status
+from nrl_rag_index import load_or_build_creation_context_index
 from nrl_research_assets import build_research_asset_catalog
 from nrl_system_status import build_system_status
 
@@ -110,6 +111,7 @@ def build_studio_data(
     )
     dna_production_runtime = build_production_runtime_status(state, adapters)
     asset_producers = build_producer_status(state, adapters)
+    creation_context_index = load_or_build_creation_context_index(state, adapters)
 
     return {
         "control_plane": {
@@ -144,6 +146,7 @@ def build_studio_data(
         "corpus_pipeline": corpus_pipeline,
         "dna_production_runtime": dna_production_runtime,
         "asset_producers": asset_producers,
+        "creation_context_index": creation_context_index,
         "system_identity": {
             "name": "Novel Research Lab",
             "positioning": "Corpus-to-Creation engine for Chinese long-form web novel creation.",

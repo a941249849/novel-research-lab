@@ -77,7 +77,12 @@ from nrl_registry import (
     save_registry,
     upsert_registry_mission,
 )
-from nrl_rag_index import load_or_build_rag_index, write_rag_index
+from nrl_rag_index import (
+    load_or_build_creation_context_index,
+    load_or_build_rag_index,
+    write_creation_context_index,
+    write_rag_index,
+)
 from nrl_research_assets import build_research_asset_catalog
 from nrl_studio import render_studio
 from nrl_studio_data import build_studio_data
@@ -396,6 +401,16 @@ def cmd_rag_index_build(_: argparse.Namespace) -> int:
 
 def cmd_rag_index(_: argparse.Namespace) -> int:
     print_json(load_or_build_rag_index(load_state()))
+    return 0
+
+
+def cmd_creation_context_index_build(_: argparse.Namespace) -> int:
+    print_json(write_creation_context_index(load_state(), load_adapters()))
+    return 0
+
+
+def cmd_creation_context_index(_: argparse.Namespace) -> int:
+    print_json(load_or_build_creation_context_index(load_state(), load_adapters()))
     return 0
 
 
@@ -902,6 +917,12 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("dna-registry").set_defaults(func=cmd_dna_registry)
     sub.add_parser("rag-index-build").set_defaults(func=cmd_rag_index_build)
     sub.add_parser("rag-index").set_defaults(func=cmd_rag_index)
+    sub.add_parser("creation-context-index-build").set_defaults(
+        func=cmd_creation_context_index_build
+    )
+    sub.add_parser("creation-context-index").set_defaults(
+        func=cmd_creation_context_index
+    )
     sub.add_parser("agent-jobs").set_defaults(func=cmd_agent_jobs)
     agent_job_plan = sub.add_parser("agent-job-plan")
     agent_job_plan.add_argument("--family", required=True)

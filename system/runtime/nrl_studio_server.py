@@ -18,7 +18,10 @@ from nrl_corpus_pipeline import (
 )
 from nrl_dna_registry import load_or_build_dna_registry
 from nrl_paths import runtime_path
-from nrl_rag_index import load_or_build_rag_index
+from nrl_rag_index import (
+    load_or_build_creation_context_index,
+    load_or_build_rag_index,
+)
 from nrl_registry import load_registry
 from nrl_research_assets import build_research_asset_catalog
 from nrl_studio_data import build_studio_data
@@ -53,6 +56,13 @@ def _dna_registry() -> dict[str, Any]:
 
 def _rag_index() -> dict[str, Any]:
     return load_or_build_rag_index(_load_json(STATE_PATH))
+
+
+def _creation_context_index() -> dict[str, Any]:
+    return load_or_build_creation_context_index(
+        _load_json(STATE_PATH),
+        _load_json(ADAPTERS_PATH),
+    )
 
 
 def _production_runtime_status() -> dict[str, Any]:
@@ -108,6 +118,7 @@ GET_ROUTES: dict[str, Callable[[], dict[str, Any]]] = {
     "/api/evidence-pack-matrix": _evidence_pack_matrix,
     "/api/dna-registry": _dna_registry,
     "/api/rag-index": _rag_index,
+    "/api/creation-context-index": _creation_context_index,
     "/api/agent-jobs": load_job_queue,
     "/api/production-runtime-status": _production_runtime_status,
     "/api/producer-status": _producer_status,

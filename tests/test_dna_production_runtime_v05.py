@@ -59,6 +59,23 @@ class RagIndexCliTests(RuntimeCliCase):
         self.assertIn("evidence_weight", item)
         self.assertNotIn("novel_training_set/", json.dumps(data, ensure_ascii=False))
 
+    def test_creation_context_index_builds_from_evidence_pack_matrix(self):
+        result = self.run_cli("creation-context-index-build")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        data = json.loads(result.stdout)
+        self.assertEqual(data["version"], "0.12")
+        self.assertEqual(data["source_matrix_id"], "evidence-pack-matrix-v0.11")
+        self.assertEqual(data["summary"]["family_count"], 9)
+        self.assertGreaterEqual(data["summary"]["total_items"], 9 * 3)
+        self.assertFalse(data["content_generation_allowed"])
+        self.assertFalse(data["external_agent_execution_allowed"])
+        self.assertTrue((REPO_ROOT / "system/research_index/creation_context_index.v0.12.json").exists())
+        item = data["items"][0]
+        self.assertIn("retrieval_text", item)
+        self.assertIn("target_family", item)
+        self.assertIn("evidence_pack_path", item)
+        self.assertNotIn("novel_training_set/", json.dumps(data, ensure_ascii=False))
+
 
 class AgentOpsCliTests(RuntimeCliCase):
     def test_agent_job_plan_creates_techniques_job_and_packet(self):
@@ -154,6 +171,8 @@ class ProductionRuntimeIntegrationTests(RuntimeCliCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         data = json.loads(result.stdout)
         self.assertIn("dna_production_runtime", data)
+        self.assertIn("creation_context_index", data)
+        self.assertEqual(data["creation_context_index"]["version"], "0.12")
 
 
 class ProductionRuntimeServerTests(unittest.TestCase):
@@ -181,6 +200,7 @@ class ProductionRuntimeServerTests(unittest.TestCase):
         for path, expected_key in (
             ("/api/dna-registry", "entries"),
             ("/api/rag-index", "items"),
+            ("/api/creation-context-index", "items"),
             ("/api/agent-jobs", "jobs"),
             ("/api/production-runtime-status", "agent_jobs"),
         ):

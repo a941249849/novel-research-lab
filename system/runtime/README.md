@@ -310,6 +310,39 @@ python3 system/runtime/nrl.py production-runtime-status
 This runtime still does not call Antigravity or Hermes. It only creates the
 shared-folder contract, validates returned artifacts, and keeps Owner Gate
 active before any prose or final creative asset generation.
+
+## Technique Asset Producer v0.6
+
+v0.6 connects the validated techniques review to the first seed-level creation
+asset producer. It writes schema-bound technique candidates into the project
+asset store, not final technique trees.
+
+Inspect producer readiness:
+
+```bash
+python3 system/runtime/nrl.py producer-status
+```
+
+Produce the current seed technique candidates:
+
+```bash
+python3 system/runtime/nrl.py produce-techniques --job-id job-v05-techniques-antigravity-review
+```
+
+Validate the project asset store after production:
+
+```bash
+python3 system/runtime/nrl.py validate-creation-assets
+```
+
+The producer remains bounded:
+
+- no prose
+- no combat scenes
+- no final technique tree
+- no Hermes execution
+- no automatic Antigravity execution
+- no raw `novel_training_set/` reads
 - current blocked actions
 - recommended next runtime command
 

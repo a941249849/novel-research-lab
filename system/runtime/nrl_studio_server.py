@@ -8,6 +8,7 @@ from typing import Any, Callable
 from urllib.parse import parse_qs, urlparse
 
 from nrl_agent_ops import build_production_runtime_status, load_job_queue
+from nrl_asset_producers import build_producer_status
 from nrl_creation_schemas import build_creation_schema_registry
 from nrl_corpus_pipeline import build_pipeline_plan, build_pipeline_status
 from nrl_dna_registry import load_or_build_dna_registry
@@ -53,6 +54,10 @@ def _production_runtime_status() -> dict[str, Any]:
     return build_production_runtime_status(_load_json(STATE_PATH), _load_json(ADAPTERS_PATH))
 
 
+def _producer_status() -> dict[str, Any]:
+    return build_producer_status(_load_json(STATE_PATH), _load_json(ADAPTERS_PATH))
+
+
 def _pipeline_plan(query: str) -> dict[str, Any]:
     params = parse_qs(query)
     next_only = params.get("next", ["false"])[0].lower() == "true"
@@ -77,6 +82,7 @@ GET_ROUTES: dict[str, Callable[[], dict[str, Any]]] = {
     "/api/rag-index": _rag_index,
     "/api/agent-jobs": load_job_queue,
     "/api/production-runtime-status": _production_runtime_status,
+    "/api/producer-status": _producer_status,
 }
 ACTION_ROUTES: dict[str, Callable[[], dict[str, Any]]] = {
     "/api/actions/system-check": run_system_check,

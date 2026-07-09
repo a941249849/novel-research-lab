@@ -1,7 +1,9 @@
 import json
 import subprocess
 import sys
+import threading
 import unittest
+import urllib.request
 from pathlib import Path
 
 
@@ -78,6 +80,34 @@ class TechniqueProducerCliTests(RuntimeCliCase):
             )
         )
         self.assertEqual(len([asset for asset in store["assets"] if asset["family"] == "techniques"]), 3)
+
+
+class ProducerIntegrationTests(RuntimeCliCase):
+    def test_studio_data_contains_asset_producers(self):
+        result = self.run_cli("studio-data")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        data = json.loads(result.stdout)
+        self.assertIn("asset_producers", data)
+        self.assertTrue(data["asset_producers"]["techniques"]["job_validated"])
+
+
+class ProducerServerTests(unittest.TestCase):
+    def test_producer_status_route_returns_status(self):
+        from nrl_studio_server import create_studio_server
+
+        server = create_studio_server("127.0.0.1", 0)
+        thread = threading.Thread(target=server.serve_forever, daemon=True)
+        thread.start()
+        try:
+            url = f"http://127.0.0.1:{server.server_port}/api/producer-status"
+            with urllib.request.urlopen(url, timeout=5) as response:
+                data = json.loads(response.read().decode("utf-8"))
+            self.assertEqual(data["version"], "0.6")
+            self.assertIn("techniques", data["supported_families"])
+        finally:
+            server.shutdown()
+            server.server_close()
+            thread.join(timeout=2)
 
 
 if __name__ == "__main__":

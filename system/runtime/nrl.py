@@ -114,6 +114,8 @@ from nrl_project_reconciliation import (
 from nrl_production_runtime import (
     analyze_prose_metrics,
     build_production_readiness,
+    compile_chapter_context,
+    initialize_chapter,
     load_chapter_runtime_status,
 )
 from nrl_registry import (
@@ -777,6 +779,16 @@ def cmd_prose_metrics(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_chapter_init(args: argparse.Namespace) -> int:
+    print_json(initialize_chapter(args.intent_file))
+    return 0
+
+
+def cmd_chapter_compile(args: argparse.Namespace) -> int:
+    print_json(compile_chapter_context(args.chapter_id))
+    return 0
+
+
 def cmd_antigravity_bridge_status(_: argparse.Namespace) -> int:
     print_json(build_antigravity_bridge_status())
     return 0
@@ -1331,6 +1343,12 @@ def build_parser() -> argparse.ArgumentParser:
     prose_metrics = sub.add_parser("prose-metrics")
     prose_metrics.add_argument("--file", required=True)
     prose_metrics.set_defaults(func=cmd_prose_metrics)
+    chapter_init = sub.add_parser("chapter-init")
+    chapter_init.add_argument("--intent-file", required=True)
+    chapter_init.set_defaults(func=cmd_chapter_init)
+    chapter_compile = sub.add_parser("chapter-compile")
+    chapter_compile.add_argument("--chapter-id", required=True)
+    chapter_compile.set_defaults(func=cmd_chapter_compile)
     sub.add_parser("antigravity-bridge-status").set_defaults(
         func=cmd_antigravity_bridge_status
     )

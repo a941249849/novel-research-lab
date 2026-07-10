@@ -8,6 +8,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "system/runtime"))
 from nrl_production_runtime import (
     STAGES,
     analyze_prose_metrics,
+    compile_chapter_context_payload,
     validate_stage_transition,
 )
 
@@ -39,6 +40,35 @@ class ProductionChapterRuntimeV020Tests(unittest.TestCase):
         self.assertGreaterEqual(result["rhetorical_template_hits"], 3)
         self.assertTrue(result["flags"])
         self.assertNotIn("literary_verdict", result)
+
+    def test_context_compiler_selects_only_requested_assets_and_emits_trace(self):
+        intent = {
+            "chapter_id": "chapter-0001",
+            "dramatic_purpose": "force a choice",
+            "must_keep": ["cost"],
+            "must_avoid": ["free power"],
+            "expected_state_deltas": [],
+            "required_asset_ids": ["character-a"],
+            "active_hook_ids": ["hook-a"],
+            "scene_constraints": ["one location"],
+        }
+        assets = [
+            {"asset_id": "character-a", "family": "characters"},
+            {"asset_id": "artifact-b", "family": "artifacts"},
+        ]
+        result = compile_chapter_context_payload(
+            intent,
+            assets,
+            {"story_bible": "a" * 64, "volume_outline": "b" * 64},
+            [],
+        )
+        self.assertTrue(result["valid"])
+        self.assertEqual([item["asset_id"] for item in result["context"]["assets"]], ["character-a"])
+        self.assertEqual(result["trace"]["excluded_asset_count"], 1)
+        intent["required_asset_ids"] = ["missing"]
+        self.assertFalse(
+            compile_chapter_context_payload(intent, assets, {}, [])["valid"]
+        )
 
 
 if __name__ == "__main__":

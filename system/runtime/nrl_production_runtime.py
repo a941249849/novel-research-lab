@@ -129,6 +129,149 @@ def analyze_prose_metrics(text: str) -> dict[str, Any]:
     }
 
 
+def compile_chapter_context_payload(
+    intent: dict[str, Any],
+    assets: list[dict[str, Any]],
+    canonical_hashes: dict[str, str],
+    prior_settlements: list[dict[str, Any]],
+) -> dict[str, Any]:
+    asset_map = {
+        str(asset.get("asset_id")): asset
+        for asset in assets
+        if isinstance(asset, dict) and asset.get("asset_id")
+    }
+    requested = [str(item) for item in intent.get("required_asset_ids", [])]
+    missing = [asset_id for asset_id in requested if asset_id not in asset_map]
+    if missing:
+        return {"valid": False, "errors": [f"missing required assets: {', '.join(missing)}"]}
+    selected = [asset_map[asset_id] for asset_id in requested]
+    context = {
+        "version": VERSION,
+        "chapter_id": intent.get("chapter_id"),
+        "dramatic_purpose": intent.get("dramatic_purpose"),
+        "must_keep": list(intent.get("must_keep", [])),
+        "must_avoid": list(intent.get("must_avoid", [])),
+        "scene_constraints": list(intent.get("scene_constraints", [])),
+        "active_hook_ids": list(intent.get("active_hook_ids", [])),
+        "assets": selected,
+        "prior_settlements": prior_settlements,
+        "canonical_hashes": canonical_hashes,
+    }
+    trace = {
+        "version": VERSION,
+        "chapter_id": intent.get("chapter_id"),
+        "selected_asset_ids": requested,
+        "excluded_asset_count": len(asset_map) - len(selected),
+        "selection_reason": "explicit chapter intent requirements",
+        "canonical_hashes": canonical_hashes,
+        "prior_settlement_count": len(prior_settlements),
+    }
+    rule_stack = {
+        "version": VERSION,
+        "chapter_id": intent.get("chapter_id"),
+        "priority_order": [
+            "safety_and_originality",
+            "canonical_story_bible",
+            "volume_outline",
+            "accepted_state_settlements",
+            "creation_asset_constraints",
+            "chapter_must_keep_and_must_avoid",
+            "anti_ai_style_evidence",
+        ],
+        "hard_rules": [
+            "no source-work names, scenes, signature systems, or prose imitation",
+            "no untracked power, relationship, location, item, or timeline changes",
+            "all benefits carry an embodied, relational, or systemic cost",
+            "reader-facing prose contains no runtime or database vocabulary",
+            *[str(item) for item in intent.get("must_avoid", [])],
+        ],
+        "chapter_rules": [str(item) for item in intent.get("must_keep", [])],
+        "scene_constraints": [str(item) for item in intent.get("scene_constraints", [])],
+    }
+    return {"valid": True, "errors": [], "context": context, "trace": trace, "rule_stack": rule_stack}
+
+
+def _write_json(path: Path, data: Any) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def _load_registry() -> dict[str, Any]:
+    return _read_json(REGISTRY_PATH) if REGISTRY_PATH.exists() else {
+        "version": VERSION, "project": "《借天改命账》", "chapters": []
+    }
+
+
+def _save_registry(registry: dict[str, Any]) -> None:
+    schema = _read_json(runtime_path("system/production_runtime/schemas/chapter_registry.schema.json"))
+    jsonschema.validate(registry, schema)
+    _write_json(REGISTRY_PATH, registry)
+
+
+def initialize_chapter(intent_file: str) -> dict[str, Any]:
+    readiness = build_production_readiness()
+    if not readiness["ready"]:
+        raise RuntimeError("production readiness gate is blocked")
+    source = Path(intent_file)
+    if not source.is_absolute():
+        source = ROOT / source
+    intent = _read_json(source)
+    schema = _read_json(runtime_path("system/production_runtime/schemas/chapter_intent.schema.json"))
+    jsonschema.validate(intent, schema)
+    registry = _load_registry()
+    chapter_id = str(intent["chapter_id"])
+    if any(item.get("chapter_id") == chapter_id for item in registry["chapters"]):
+        raise RuntimeError(f"chapter already exists: {chapter_id}")
+    chapter_dir = runtime_path(f"system/production_runtime/chapters/{chapter_id}")
+    intent_path = chapter_dir / "intent.json"
+    _write_json(intent_path, intent)
+    source_hashes = {
+        Path(item["path"]).stem: str(item["sha256"])
+        for item in readiness["canonical_inputs"]
+    }
+    record = {
+        "chapter_id": chapter_id,
+        "stage": "chapter_intent",
+        "artifacts": {"intent": str(intent_path.relative_to(ROOT))},
+        "source_hashes": source_hashes,
+    }
+    registry["chapters"].append(record)
+    _save_registry(registry)
+    return record
+
+
+def compile_chapter_context(chapter_id: str) -> dict[str, Any]:
+    registry = _load_registry()
+    record = next((item for item in registry["chapters"] if item["chapter_id"] == chapter_id), None)
+    if not record:
+        raise RuntimeError(f"unknown chapter: {chapter_id}")
+    transition = validate_stage_transition(record, "context_compiled", "context.json")
+    if not transition["valid"]:
+        raise RuntimeError("; ".join(transition["errors"]))
+    intent = _read_json(runtime_path(record["artifacts"]["intent"]))
+    store = _read_json(runtime_path("system/creation_assets/project_assets.v0.2.json"))
+    prior = []
+    for item in registry["chapters"]:
+        settlement_path = item.get("artifacts", {}).get("settlement")
+        if settlement_path:
+            prior.append(_read_json(runtime_path(settlement_path)))
+    compiled = compile_chapter_context_payload(intent, store.get("assets", []), record["source_hashes"], prior)
+    if not compiled["valid"]:
+        raise RuntimeError("; ".join(compiled["errors"]))
+    chapter_dir = runtime_path(f"system/production_runtime/chapters/{chapter_id}")
+    paths = {
+        "context": chapter_dir / "context.json",
+        "rule_stack": chapter_dir / "rule_stack.json",
+        "trace": chapter_dir / "trace.json",
+    }
+    for key, path in paths.items():
+        _write_json(path, compiled[key])
+        record["artifacts"][key] = str(path.relative_to(ROOT))
+    record["stage"] = "context_compiled"
+    _save_registry(registry)
+    return {"chapter_id": chapter_id, "stage": record["stage"], "artifacts": record["artifacts"]}
+
+
 def build_production_readiness() -> dict[str, Any]:
     deep_read = build_deep_read_status()
     if PROJECT_RECONCILIATION_VALIDATION.exists():

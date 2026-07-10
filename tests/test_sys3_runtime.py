@@ -469,6 +469,27 @@ class RuntimeFixture(unittest.TestCase):
         self.assertEqual(data["decisions"][0]["decision_id"], "owner_gate_phase2d_review_acceptance_001")
         self.assertEqual(data["decisions"][0]["forbidden_scope"], ["write_novel_prose"])
 
+    def test_owner_gate_records_final_asset_generation_authorization(self):
+        record = self.run_cli(
+            "owner-gate",
+            "record",
+            "--decision-id",
+            "owner_gate_final_assets_001",
+            "--decision-type",
+            "authorize_final_asset_generation",
+            "--authorized-scope",
+            "generate_final_creation_assets",
+            "--forbidden-scope",
+            "generate_novel_prose",
+            "--expires-after-mission",
+            "phase2f_final_asset_generation",
+            "--owner-note",
+            "authorize final assets only",
+        )
+        self.assertEqual(record.returncode, 0, record.stderr)
+        data = json.loads(record.stdout)
+        self.assertEqual(data["decision_type"], "authorize_final_asset_generation")
+
     def test_compile_context_writes_compact_packet(self):
         result = self.run_cli("compile-context", "--agent", "antigravity")
         self.assertEqual(result.returncode, 0, result.stderr)

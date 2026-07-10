@@ -2604,7 +2604,7 @@
           "generate final NPC sheets",
           "write NPC dialogue scenes"
         ],
-        "project_asset_count": 1,
+        "project_asset_count": 2,
         "priority": 1,
         "is_next": true
       },
@@ -2619,7 +2619,7 @@
           "generate final item catalog",
           "write artifact reveal scenes"
         ],
-        "project_asset_count": 1,
+        "project_asset_count": 2,
         "priority": 3,
         "is_next": false
       },
@@ -2634,7 +2634,7 @@
           "generate final technique tree",
           "write combat scenes"
         ],
-        "project_asset_count": 3,
+        "project_asset_count": 4,
         "priority": 4,
         "is_next": false
       },
@@ -2649,7 +2649,7 @@
           "generate final naming dictionary",
           "rename existing content artifacts"
         ],
-        "project_asset_count": 1,
+        "project_asset_count": 2,
         "priority": 5,
         "is_next": false
       },
@@ -2664,7 +2664,7 @@
           "invent chapter-by-chapter events",
           "advance content state"
         ],
-        "project_asset_count": 1,
+        "project_asset_count": 2,
         "priority": 8,
         "is_next": false
       },
@@ -2679,7 +2679,7 @@
           "write emotional prose",
           "generate full relationship arcs"
         ],
-        "project_asset_count": 1,
+        "project_asset_count": 2,
         "priority": 6,
         "is_next": false
       },
@@ -2694,7 +2694,7 @@
           "add new plot hooks",
           "write reveal scenes"
         ],
-        "project_asset_count": 1,
+        "project_asset_count": 2,
         "priority": 7,
         "is_next": false
       },
@@ -2709,7 +2709,7 @@
           "generate full character cards",
           "write character-driven prose scenes"
         ],
-        "project_asset_count": 1,
+        "project_asset_count": 2,
         "priority": 0,
         "is_next": false
       },
@@ -2724,7 +2724,7 @@
           "generate final faction dossiers",
           "advance faction plotlines"
         ],
-        "project_asset_count": 1,
+        "project_asset_count": 2,
         "priority": 2,
         "is_next": false
       }
@@ -2740,7 +2740,7 @@
         "generate final NPC sheets",
         "write NPC dialogue scenes"
       ],
-      "project_asset_count": 1,
+      "project_asset_count": 2,
       "priority": 1,
       "is_next": true
     },
@@ -2774,7 +2774,7 @@
           "generate final NPC sheets",
           "write NPC dialogue scenes"
         ],
-        "project_asset_count": 1,
+        "project_asset_count": 2,
         "priority": 1,
         "is_next": true
       },
@@ -3951,6 +3951,7 @@
       }
     },
     "current_packets": [
+      "system/agent_ops/packets/hermes-final-asset-generation-v015.md",
       "system/agent_ops/packets/job-v05-artifacts-antigravity-review.md",
       "system/agent_ops/packets/job-v05-characters-antigravity-review.md",
       "system/agent_ops/packets/job-v05-emotional_bonds-antigravity-review.md",
@@ -3966,7 +3967,7 @@
     "agent_io": {
       "inbox_dir": "system/agent_ops/inbox",
       "outbox_dir": "system/agent_ops/outbox",
-      "inbox_count": 11,
+      "inbox_count": 12,
       "outbox_count": 10
     },
     "antigravity": {
@@ -3999,7 +4000,7 @@
       "job_validated": true,
       "validated_outbox_path": "system/agent_ops/outbox/job-v05-techniques-antigravity-review_validated.md",
       "validated_outbox_exists": true,
-      "candidate_count": 3,
+      "candidate_count": 4,
       "owned_candidate_count": 3,
       "positive_evidence_count": 96
     },
@@ -4014,31 +4015,31 @@
     "project_asset_store": {
       "path": "system/creation_assets/project_assets.v0.2.json",
       "family_counts": {
-        "artifacts": 1,
-        "characters": 1,
-        "emotional_bonds": 1,
-        "factions": 1,
-        "foreshadowing": 1,
-        "naming": 1,
-        "npcs": 1,
-        "state_ledger": 1,
-        "techniques": 3
+        "artifacts": 2,
+        "characters": 2,
+        "emotional_bonds": 2,
+        "factions": 2,
+        "foreshadowing": 2,
+        "naming": 2,
+        "npcs": 2,
+        "state_ledger": 2,
+        "techniques": 4
       },
       "validation": {
         "valid": true,
         "errors": [],
         "summary": {
-          "asset_count": 11,
+          "asset_count": 20,
           "family_counts": {
-            "artifacts": 1,
-            "characters": 1,
-            "emotional_bonds": 1,
-            "factions": 1,
-            "foreshadowing": 1,
-            "naming": 1,
-            "npcs": 1,
-            "state_ledger": 1,
-            "techniques": 3
+            "artifacts": 2,
+            "characters": 2,
+            "emotional_bonds": 2,
+            "factions": 2,
+            "foreshadowing": 2,
+            "naming": 2,
+            "npcs": 2,
+            "state_ledger": 2,
+            "techniques": 4
           }
         },
         "store_path": "system/creation_assets/project_assets.v0.2.json"
@@ -6799,7 +6800,7 @@
   },
   "hermes_readiness": {
     "version": "0.1",
-    "status": "blocked_on_final_asset_owner_gate",
+    "status": "final_assets_promoted_awaiting_prose_owner_gate",
     "ready_to_call_hermes": false,
     "project": "《借天改命账》",
     "checks": {
@@ -6807,9 +6808,20 @@
       "creation_store_valid": true,
       "all_creation_families_seeded": true,
       "evidence_packs_valid": true,
+      "final_asset_generation_authorized": true,
+      "final_assets_promoted": true,
       "content_generation_authorized": false,
       "owner_gate_required": true,
       "hermes_paused": true
+    },
+    "owner_authorization": {
+      "decision_id": "owner_gate_final_asset_generation_001",
+      "authorized_scope": [
+        "generate_final_creation_assets",
+        "execute_hermes_final_asset_generation",
+        "prepare_controlled_writing_test"
+      ],
+      "prose_authorized": false
     },
     "research_review": {
       "book_review_count": 18,
@@ -6817,28 +6829,29 @@
       "family_count": 9
     },
     "creation_families": {
-      "characters": 1,
-      "npcs": 1,
-      "factions": 1,
-      "artifacts": 1,
-      "techniques": 3,
-      "naming": 1,
-      "emotional_bonds": 1,
-      "foreshadowing": 1,
-      "state_ledger": 1
+      "characters": 2,
+      "npcs": 2,
+      "factions": 2,
+      "artifacts": 2,
+      "techniques": 4,
+      "naming": 2,
+      "emotional_bonds": 2,
+      "foreshadowing": 2,
+      "state_ledger": 2
     },
     "hermes": {
       "declared_mode": "manual_handoff",
-      "status": "paused_not_removed",
-      "allowed": false
+      "status": "paused_awaiting_prose_owner_gate",
+      "allowed": false,
+      "allowed_actions": []
     },
-    "next_required_action": "Owner must explicitly authorize final creative asset generation and Hermes writing.",
+    "next_required_action": "Owner must explicitly authorize a bounded controlled prose test.",
     "forbidden_actions": [
-      "execute_hermes",
       "generate_novel_prose",
-      "generate_final_creation_assets",
       "bypass_owner_gate",
-      "read_raw_novel_training_set"
+      "read_raw_novel_training_set",
+      "execute_hermes",
+      "generate_final_creation_assets"
     ]
   },
   "system_identity": {
@@ -7065,7 +7078,7 @@
           "generate full character cards",
           "write character-driven prose scenes"
         ],
-        "project_asset_count": 1
+        "project_asset_count": 2
       },
       {
         "asset_id": "npcs",
@@ -7076,7 +7089,7 @@
         "known_support": [
           "The world premise implies many NPC classes.",
           "Studio v0.1 identifies NPC coverage as missing.",
-          "Project asset store contains 1 schema-bound seed asset(s)."
+          "Project asset store contains 2 schema-bound seed asset(s)."
         ],
         "missing_capabilities": [
           "NPC class taxonomy",
@@ -7093,7 +7106,7 @@
           "generate final NPC sheets",
           "write NPC dialogue scenes"
         ],
-        "project_asset_count": 1
+        "project_asset_count": 2
       },
       {
         "asset_id": "factions",
@@ -7120,7 +7133,7 @@
           "generate final faction dossiers",
           "advance faction plotlines"
         ],
-        "project_asset_count": 1
+        "project_asset_count": 2
       },
       {
         "asset_id": "artifacts",
@@ -7147,7 +7160,7 @@
           "generate final item catalog",
           "write artifact reveal scenes"
         ],
-        "project_asset_count": 1
+        "project_asset_count": 2
       },
       {
         "asset_id": "techniques",
@@ -7176,7 +7189,7 @@
           "generate final technique tree",
           "write combat scenes"
         ],
-        "project_asset_count": 3
+        "project_asset_count": 4
       },
       {
         "asset_id": "naming",
@@ -7187,7 +7200,7 @@
         "known_support": [
           "Studio v0.1 identifies naming coverage as missing.",
           "The current project has a strong account/life/debt semantic field that can later seed naming rules.",
-          "Project asset store contains 1 schema-bound seed asset(s)."
+          "Project asset store contains 2 schema-bound seed asset(s)."
         ],
         "missing_capabilities": [
           "root word taxonomy",
@@ -7204,7 +7217,7 @@
           "generate final naming dictionary",
           "rename existing content artifacts"
         ],
-        "project_asset_count": 1
+        "project_asset_count": 2
       },
       {
         "asset_id": "emotional_bonds",
@@ -7231,7 +7244,7 @@
           "write emotional prose",
           "generate full relationship arcs"
         ],
-        "project_asset_count": 1
+        "project_asset_count": 2
       },
       {
         "asset_id": "foreshadowing",
@@ -7258,7 +7271,7 @@
           "add new plot hooks",
           "write reveal scenes"
         ],
-        "project_asset_count": 1
+        "project_asset_count": 2
       },
       {
         "asset_id": "state_ledger",
@@ -7285,7 +7298,7 @@
           "invent chapter-by-chapter events",
           "advance content state"
         ],
-        "project_asset_count": 1
+        "project_asset_count": 2
       }
     ],
     "coverage_summary": {

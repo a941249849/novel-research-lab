@@ -1,0 +1,26 @@
+{
+  "version": "0.15",
+  "promotion_state": "promoted_final_creation_assets",
+  "project": "《借天改命账》",
+  "candidate_path": "system/agent_ops/inbox/hermes-final-asset-bundle-v015.json",
+  "candidate_sha256": "1a749825e787548a4065d4f22bc37a1f15f3582134df3f140252d5d002195df2",
+  "validation_path": "system/agent_ops/validation/final_asset_bundle_v0.15.json",
+  "owner_decision_id": "owner_gate_final_asset_generation_001",
+  "asset_ids": [
+    "character_lu_chenyuan",
+    "npc_mo_jinglan",
+    "faction_mudlamp_lane",
+    "artifact_ashlight_cup",
+    "technique_embertrace_return",
+    "naming_lifefire_local_style",
+    "bond_mother_su_wan",
+    "foreshadowing_cinder_seal_rain",
+    "state_ledger_poorcity_returnfire"
+  ],
+  "asset_family_count": 9,
+  "content_generation_allowed": false,
+  "forbidden_actions": [
+    "generate_novel_prose",
+    "generate_full_chapter"
+  ]
+}

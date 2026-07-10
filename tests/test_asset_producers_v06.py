@@ -99,7 +99,11 @@ class NamingProducerCliTests(RuntimeCliCase):
                 encoding="utf-8"
             )
         )
-        asset = next(item for item in store["assets"] if item["family"] == "naming")
+        asset = next(
+            item
+            for item in store["assets"]
+            if item["asset_id"] == "naming_project_contract_seed"
+        )
         self.assertEqual(asset["lifecycle_state"], "seed")
         self.assertIn("naming_roots", asset["naming"])
         self.assertIn("测名院", asset["naming"]["forbidden_terms"])

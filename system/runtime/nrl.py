@@ -72,10 +72,11 @@ from nrl_full_corpus_proof import (
     validate_proof_file,
     write_proof_packets,
 )
+from nrl_final_assets import promote_final_asset_bundle, validate_final_asset_bundle
 from nrl_handoff_packet import write_antigravity_packet
 from nrl_hermes_gate import build_hermes_readiness
 from nrl_paths import ROOT, runtime_path
-from nrl_owner_gate import load_decisions, record_owner_decision
+from nrl_owner_gate import DECISION_TYPES, load_decisions, record_owner_decision
 from nrl_phase2e import (
     latest_phase2e_acceptance,
     prepare_phase2e_controlled_planning_output,
@@ -326,6 +327,18 @@ def cmd_validate_creation_assets(_: argparse.Namespace) -> int:
     result = validate_creation_asset_store()
     print_json(result)
     return 0 if result["valid"] else 1
+
+
+def cmd_final_assets_validate(args: argparse.Namespace) -> int:
+    result = validate_final_asset_bundle(args.file)
+    print_json(result)
+    return 0 if result["valid"] else 1
+
+
+def cmd_final_assets_promote(args: argparse.Namespace) -> int:
+    result = promote_final_asset_bundle(args.file)
+    print_json(result)
+    return 0 if result["promotion_allowed"] else 1
 
 
 def cmd_system_check(_: argparse.Namespace) -> int:
@@ -973,6 +986,12 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("validate-creation-assets").set_defaults(
         func=cmd_validate_creation_assets
     )
+    final_assets_validate = sub.add_parser("final-assets-validate")
+    final_assets_validate.add_argument("--file", required=True)
+    final_assets_validate.set_defaults(func=cmd_final_assets_validate)
+    final_assets_promote = sub.add_parser("final-assets-promote")
+    final_assets_promote.add_argument("--file", required=True)
+    final_assets_promote.set_defaults(func=cmd_final_assets_promote)
     sub.add_parser("system-check").set_defaults(func=cmd_system_check)
     sub.add_parser("pipeline-status").set_defaults(func=cmd_pipeline_status)
     pipeline_plan = sub.add_parser("pipeline-plan")
@@ -1107,13 +1126,7 @@ def build_parser() -> argparse.ArgumentParser:
     owner_record.add_argument(
         "--decision-type",
         required=True,
-        choices=[
-            "accept_review",
-            "request_rework",
-            "authorize_next_phase",
-            "authorize_adapter_upgrade",
-            "authorize_research_promotion",
-        ],
+        choices=sorted(DECISION_TYPES),
     )
     owner_record.add_argument("--authorized-scope", action="append", required=True)
     owner_record.add_argument("--forbidden-scope", action="append", required=True)

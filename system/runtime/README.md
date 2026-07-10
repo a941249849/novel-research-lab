@@ -749,8 +749,18 @@ Check the final handoff boundary:
 python3 system/runtime/nrl.py hermes-readiness
 ```
 
-The expected current state is `blocked_on_final_asset_owner_gate` with
-`ready_to_call_hermes: false`. Hermes is not called by this runtime until the
-Owner explicitly authorizes final creative asset generation and writing.
+Validate and promote a Hermes final-asset bundle through the controlled inbox:
+
+```bash
+python3 system/runtime/nrl.py final-assets-validate --file system/agent_ops/inbox/hermes-final-asset-bundle-v015.json
+python3 system/runtime/nrl.py final-assets-promote --file system/agent_ops/inbox/hermes-final-asset-bundle-v015.json
+```
+
+The v0.15 promotion preserves all seed assets, requires the matching Owner
+decision, records the candidate SHA-256, and is idempotent once promoted. The
+current expected state after promotion is
+`final_assets_promoted_awaiting_prose_owner_gate` with
+`ready_to_call_hermes: false`: final creation assets are available, but novel
+prose still requires a separate bounded Owner authorization.
 
 GitHub binding is intentionally outside the runtime. Bind the workspace to a confirmed repository first; then `doctor` will report repository root, branch, and remotes. Do not bind this workspace to an unrelated repository.

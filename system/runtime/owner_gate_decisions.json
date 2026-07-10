@@ -30,5 +30,23 @@
     "expires_after_mission": "job-v08-full-corpus-proof-review",
     "owner_note": "继续推进研究资产晋级与 Corpus-to-Creation 契约流水线；Hermes 仅在最终写作阶段调用",
     "created_at": "2026-07-10T06:57:04+08:00"
+  },
+  {
+    "decision_id": "owner_gate_final_asset_generation_001",
+    "decision_type": "authorize_final_asset_generation",
+    "authorized_scope": [
+      "generate_final_creation_assets",
+      "execute_hermes_final_asset_generation",
+      "prepare_controlled_writing_test"
+    ],
+    "forbidden_scope": [
+      "generate_novel_prose",
+      "generate_full_chapter",
+      "read_raw_novel_training_set",
+      "bypass_asset_validation"
+    ],
+    "expires_after_mission": "phase2f_final_asset_generation",
+    "owner_note": "Hermes gpt-5.6-terra preflight found no structural blocker; authorize final creative asset generation and controlled writing preparation only.",
+    "created_at": "2026-07-10T18:25:21+08:00"
   }
 ]

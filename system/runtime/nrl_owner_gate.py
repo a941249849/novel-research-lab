@@ -13,6 +13,7 @@ DECISION_TYPES = {
     "authorize_next_phase",
     "authorize_adapter_upgrade",
     "authorize_research_promotion",
+    "authorize_final_asset_generation",
 }
 
 

@@ -106,6 +106,11 @@ from nrl_phase2e import (
     prepare_phase2e_entry,
     prepare_phase2e_planning_package,
 )
+from nrl_project_reconciliation import (
+    build_project_reconciliation_packet,
+    dispatch_project_reconciliation,
+    validate_project_reconciliation,
+)
 from nrl_registry import (
     find_active_attempt,
     load_registry,
@@ -729,6 +734,23 @@ def cmd_deep_read_cross_validate(_: argparse.Namespace) -> int:
     return 0 if result["valid"] else 1
 
 
+def cmd_project_reconciliation_pack(_: argparse.Namespace) -> int:
+    print_json(build_project_reconciliation_packet())
+    return 0
+
+
+def cmd_project_reconciliation_dispatch(args: argparse.Namespace) -> int:
+    result = dispatch_project_reconciliation(model=args.model, print_timeout=args.print_timeout)
+    print_json(result)
+    return 0 if result["validation"]["valid"] else 1
+
+
+def cmd_project_reconciliation_validate(_: argparse.Namespace) -> int:
+    result = validate_project_reconciliation()
+    print_json(result)
+    return 0 if result["valid"] else 1
+
+
 def cmd_antigravity_bridge_status(_: argparse.Namespace) -> int:
     print_json(build_antigravity_bridge_status())
     return 0
@@ -1272,6 +1294,12 @@ def build_parser() -> argparse.ArgumentParser:
     deep_read_cross_dispatch.add_argument("--print-timeout", default="15m0s")
     deep_read_cross_dispatch.set_defaults(func=cmd_deep_read_cross_dispatch)
     sub.add_parser("deep-read-cross-validate").set_defaults(func=cmd_deep_read_cross_validate)
+    sub.add_parser("project-reconciliation-pack").set_defaults(func=cmd_project_reconciliation_pack)
+    project_reconciliation_dispatch = sub.add_parser("project-reconciliation-dispatch")
+    project_reconciliation_dispatch.add_argument("--model", default="Gemini 3.5 Flash (High)")
+    project_reconciliation_dispatch.add_argument("--print-timeout", default="15m0s")
+    project_reconciliation_dispatch.set_defaults(func=cmd_project_reconciliation_dispatch)
+    sub.add_parser("project-reconciliation-validate").set_defaults(func=cmd_project_reconciliation_validate)
     sub.add_parser("antigravity-bridge-status").set_defaults(
         func=cmd_antigravity_bridge_status
     )

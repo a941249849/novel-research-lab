@@ -821,6 +821,694 @@
         },
         "originality_policy": "abstract function and cost; never copy source technique names, realms, or proprietary jargon"
       }
+    },
+    {
+      "asset_id": "npc_su_wan",
+      "family": "npcs",
+      "display_name": "苏晚",
+      "lifecycle_state": "active",
+      "source_refs": [
+        "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md",
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md",
+        "system/agent_ops/inbox/antigravity-volume1-readiness-audit-v017.md"
+      ],
+      "relationships": [
+        {
+          "target_id": "character_lu_chenyuan",
+          "relation_type": "mother_of"
+        },
+        {
+          "target_id": "bond_mother_su_wan",
+          "relation_type": "embodies"
+        },
+        {
+          "target_id": "faction_mudlamp_lane",
+          "relation_type": "mutual_aid_member_of"
+        },
+        {
+          "target_id": "state_ledger_protagonist_strain",
+          "relation_type": "raises_restraint_threshold_for"
+        }
+      ],
+      "constraints": [
+        "苏晚是能拒绝错误救法的行动者，不是可消耗的动机。",
+        "她绝不接受以邻里命火、孩童寿数或无辜者命页抵消自己的寿债。",
+        "她的命灯裂纹、冷灰气息和掌背失温须以感官后果呈现，不以抽象说明替代。"
+      ],
+      "npc": {
+        "role_class": "陆沉渊之母，曾以自身命火垫住半寿残页的贫城织灯人。",
+        "recurrence_policy": {
+          "map_transition": "在泥灯巷守灯、公开命审的旧印见证及卷末送别中出现；离开贫城后以命灯回响维持联系。",
+          "power_scaling": "不以斗法增强；她能辨认垫寿旧印，并以拒绝牺牲邻里的选择限制主角。",
+          "retirement_condition": "母亲寿债得到可验证的长期安置、且她不再被任何追缴令作为人质时退入普通生活。"
+        },
+        "faction_id": "faction_mudlamp_lane",
+        "information_state": "知道自己曾为儿子垫寿，也认得旧印与灰雨同源；不知道古债全貌及州府转运链。",
+        "ledger_debt_balance": 34,
+        "trust_metric": 0.9,
+        "originality_policy": "以垫寿后的清醒选择、织灯劳作和拒绝转嫁代价构成，不套用牺牲型母亲或秘境遗产模板。"
+      }
+    },
+    {
+      "asset_id": "faction_life_registry_office",
+      "family": "factions",
+      "display_name": "命籍衙",
+      "lifecycle_state": "active",
+      "source_refs": [
+        "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md",
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md",
+        "system/agent_ops/inbox/antigravity-volume1-readiness-audit-v017.md"
+      ],
+      "relationships": [
+        {
+          "target_id": "npc_registrar_qiu_shen",
+          "relation_type": "employs"
+        },
+        {
+          "target_id": "npc_debt_collector_gu_xun",
+          "relation_type": "issues_local_writs_to"
+        },
+        {
+          "target_id": "faction_mudlamp_lane",
+          "relation_type": "assesses_and_pressures"
+        },
+        {
+          "target_id": "state_ledger_poorcity_returnfire",
+          "relation_type": "contests"
+        }
+      ],
+      "constraints": [
+        "其压迫必须通过寿印、命灯、命审台和具体家庭后果显形，不写成现实机构讽刺。",
+        "本地权限只能冻结、登记、送审与申请追缴，不能解释州府或天庭的完整真相。",
+        "命审程序必须成为可被证据、见证和法术反打的冲突场域。"
+      ],
+      "faction": {
+        "interest": "维持贫城命页归档与征命表象，按期完成上级额度以保住衙内寿禄。",
+        "pressure_level": 6,
+        "tax_enforcement_role": "本地命籍登记、寿印限制、命审与追缴令转发的执行层。",
+        "associated_ledger_states": [
+          "half_life_registry_exposure",
+          "mudlamp_array_integrity",
+          "revealed_account_errors"
+        ],
+        "cohort_capacity": 18,
+        "threat_exposure_coefficient": 0.72,
+        "lifecycle_policy": {
+          "establishment": "以残页抄录、户灯验火和命审台维系本地法权。",
+          "alliance_shift": "当州府命库要求灭口与公开证据可能引发贫城失控相冲突时，内部小吏才可能分化。",
+          "territorial_expansion": "只能借州府批下的转运令扩大冻结与追缴，不能自行跨城执法。",
+          "retirement": "本地错征被公开翻正且其寿印权限被收回后，转为受审或重组的旧执行层。"
+        },
+        "originality_policy": "组织以命页、寿印、公开称量和寿火征收的奇观逻辑运作，不复刻现成宗门、官府或衙门权力结构。"
+      }
+    },
+    {
+      "asset_id": "npc_registrar_qiu_shen",
+      "family": "npcs",
+      "display_name": "仇慎",
+      "lifecycle_state": "active",
+      "source_refs": [
+        "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md",
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md",
+        "system/agent_ops/inbox/antigravity-volume1-readiness-audit-v017.md"
+      ],
+      "relationships": [
+        {
+          "target_id": "faction_life_registry_office",
+          "relation_type": "serves_as_registrar_for"
+        },
+        {
+          "target_id": "character_lu_chenyuan",
+          "relation_type": "supervises_and_targets"
+        },
+        {
+          "target_id": "npc_debt_collector_gu_xun",
+          "relation_type": "forwards_writs_to"
+        },
+        {
+          "target_id": "faction_mudlamp_lane",
+          "relation_type": "pressures_with_seals"
+        }
+      ],
+      "constraints": [
+        "仇慎只能掌握本地残页与寿印权限，不能成为无所不知的阴谋解释者。",
+        "其每一次施印必须留下可辨的冷金印痕或命灯失色，并制造可追责的现场后果。",
+        "他可恐惧上级追责，但不能因恐惧自动洗白。"
+      ],
+      "npc": {
+        "role_class": "命籍衙主管，掌管残籍核验与命审台呈印。",
+        "recurrence_policy": {
+          "map_transition": "贫城命审结束后留在本地应对封档与问责，仅以送出的寿印余波影响州府线。",
+          "power_scaling": "强项是程序性压制与寿印封锁，不提升为正面强敌。",
+          "retirement_condition": "其伪造或放任错误归属的印痕被公开称量后，失去呈印资格并接受本地后果。"
+        },
+        "faction_id": "faction_life_registry_office",
+        "information_state": "知道重复征命不能见光，也知道州府转运令不可质疑；不知道古债来源。",
+        "ledger_debt_balance": 19,
+        "trust_metric": -0.56,
+        "originality_policy": "以低阶执行者的自保、伪装合规和可见寿印代价构造，不借用脸谱化贪官或权贵反派链条。"
+      }
+    },
+    {
+      "asset_id": "technique_ledger_recognition",
+      "family": "techniques",
+      "display_name": "识账术",
+      "lifecycle_state": "active",
+      "source_refs": [
+        "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md",
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md",
+        "system/agent_ops/inbox/antigravity-volume1-readiness-audit-v017.md"
+      ],
+      "relationships": [
+        {
+          "target_id": "character_lu_chenyuan",
+          "relation_type": "is_practiced_by"
+        },
+        {
+          "target_id": "technique_embertrace_return",
+          "relation_type": "verifies_targets_for"
+        },
+        {
+          "target_id": "state_ledger_protagonist_strain",
+          "relation_type": "increases"
+        },
+        {
+          "target_id": "foreshadowing_ancient_debt_covenant_fragment",
+          "relation_type": "can_glimpse"
+        }
+      ],
+      "constraints": [
+        "只能辨认眼前命页、寿痕、债链与残火的错位，不能直接读心、预知或产出完整答案。",
+        "施展后瞳孔浮出焦黑纹路、视野残留银灰火屑，并提升被寿印锁定的风险。",
+        "所有判断须由可见痕迹或受害者见证复核，不能以主角独白定案。"
+      ],
+      "technique": {
+        "cost": "以半寿命火灼烧双眼，换取片刻看见寿痕去向；连续使用会使眼角渗灰并引发眩晕失忆。",
+        "counter_ids": [
+          "npc_registrar_qiu_shen",
+          "npc_debt_collector_gu_xun",
+          "artifact_prefecture_transit_registry_seal"
+        ],
+        "ledger_state_cost_key": "sanity_level",
+        "measurable_decrement": 0.08,
+        "backlash_state_modifier": "降低sanity_level并增加half_life_registry_exposure；白发与眼中焦纹必须当场可见。",
+        "required_auditing_role": "至少一名命火受害者、守灯见证者或灰痕实物须与所见相互印证。",
+        "relic_exposure_coefficient": 0.62,
+        "lifecycle_policy": {
+          "evolution": "在一次公开场域中辨清错位债链且不误伤证人后，才能由看痕扩展到短暂追溯去向。",
+          "decay": "空寿、泪中带灰或精神失序时，所见会被旧债回声扭曲。",
+          "retirement": "若施术者瞳纹永久烧毁，术式封止，须改由共同体证据承接。"
+        },
+        "originality_policy": "能力来自寿火灼眼、灰痕感官和见证复核，不采用全知鉴定或数值扫描式能力。"
+      }
+    },
+    {
+      "asset_id": "npc_debt_collector_gu_xun",
+      "family": "npcs",
+      "display_name": "顾巡",
+      "lifecycle_state": "active",
+      "source_refs": [
+        "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md",
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md",
+        "system/agent_ops/inbox/antigravity-volume1-readiness-audit-v017.md"
+      ],
+      "relationships": [
+        {
+          "target_id": "faction_life_registry_office",
+          "relation_type": "receives_writs_from"
+        },
+        {
+          "target_id": "character_lu_chenyuan",
+          "relation_type": "pursues_as_anomaly"
+        },
+        {
+          "target_id": "technique_chain_deflection_seal_breaking",
+          "relation_type": "is_countered_by"
+        },
+        {
+          "target_id": "faction_mudlamp_lane",
+          "relation_type": "threatens_with_joint_collection"
+        }
+      ],
+      "constraints": [
+        "顾巡的债链只能按已接收的追缴令锁定归属；错误令会让锁链显出断续灰痕。",
+        "每次夺寿须以命灯熄暗、骨节受缚或冷铁气味呈现，不能只是宣告账面扣除。",
+        "他优先服从命令与额度，个人恶意不可替代制度压力。"
+      ],
+      "npc": {
+        "role_class": "初级收债者，以债链钩和寿算盘执行贫城连带追缴。",
+        "recurrence_policy": {
+          "map_transition": "在卷一随错误追缴令进入泥灯巷、命审台与卷末围堵；其升级令成为州府压力的入口。",
+          "power_scaling": "债链数量和封锁范围随上级授权增长，但始终受错误归属、证据显影与自身寿算盘反噬限制。",
+          "retirement_condition": "错误追缴令被公开废止且其寿算盘反噬记录成立后，失去对泥灯巷的执行权。"
+        },
+        "faction_id": "faction_life_registry_office",
+        "information_state": "知道令上归属有缺口，却将核验责任推回命籍衙；不知道转运残印的全链路。",
+        "ledger_debt_balance": 27,
+        "trust_metric": -0.82,
+        "originality_policy": "以可被反证的法权兵器、执行惯性和肉身夺寿效果塑形，不复刻传统魔头、杀手或宗门执法者。"
+      }
+    },
+    {
+      "asset_id": "technique_chain_deflection_seal_breaking",
+      "family": "techniques",
+      "display_name": "反账命印",
+      "lifecycle_state": "active",
+      "source_refs": [
+        "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md",
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md",
+        "system/agent_ops/inbox/antigravity-volume1-readiness-audit-v017.md"
+      ],
+      "relationships": [
+        {
+          "target_id": "character_lu_chenyuan",
+          "relation_type": "is_cast_by"
+        },
+        {
+          "target_id": "artifact_ashlight_cup",
+          "relation_type": "requires_ashlight_from"
+        },
+        {
+          "target_id": "npc_debt_collector_gu_xun",
+          "relation_type": "deflects_chains_of"
+        },
+        {
+          "target_id": "state_ledger_protagonist_strain",
+          "relation_type": "worsens"
+        }
+      ],
+      "constraints": [
+        "只能截偏已被识账术确认错误归属的一段债链，不能抹除真实命债或制造寿数。",
+        "偏转的反噬先落在施术者胸骨、掌纹与命灯，不能转嫁给泥灯巷居民。",
+        "必须有灰烬回灯盏照出的错征残火作为印证，否则命印反噬施术者。"
+      ],
+      "technique": {
+        "cost": "以掌心命火压住债链的错误节点，胸骨随之响裂，短时削去持术者的命火稳定。",
+        "counter_ids": [
+          "npc_debt_collector_gu_xun",
+          "npc_registrar_qiu_shen"
+        ],
+        "ledger_state_cost_key": "caster_lifefire_stability",
+        "measurable_decrement": 2,
+        "backlash_state_modifier": "增加bone_fissure_severity和half_life_registry_exposure；施术后必须出现裂皮、白发或咳出冷灰。",
+        "required_auditing_role": "须由识账术辨认错链，并由受害住户或命审场域的可见残火确认。",
+        "relic_exposure_coefficient": 0.76,
+        "lifecycle_policy": {
+          "evolution": "完成一次不牵连旁人的链路偏转后，才能在命审台短暂破开低阶寿印。",
+          "decay": "当护阵濒毁或施术者进入空寿状态，命印会反向把债链钉入自身骨缝。",
+          "retirement": "若为逃避真实债务而施展，命印自毁并留下不可逆命裂。"
+        },
+        "originality_policy": "术法围绕错误归属的债链截偏、回灯印证和身体承债展开，不使用常规破封万能法或既有招式链。"
+      }
+    },
+    {
+      "asset_id": "bond_mudlamp_lane_trust",
+      "family": "emotional_bonds",
+      "display_name": "泥灯巷共灯之信",
+      "lifecycle_state": "active",
+      "source_refs": [
+        "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md",
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md",
+        "system/agent_ops/inbox/antigravity-volume1-readiness-audit-v017.md"
+      ],
+      "relationships": [
+        {
+          "target_id": "character_lu_chenyuan",
+          "relation_type": "binds_to_community"
+        },
+        {
+          "target_id": "faction_mudlamp_lane",
+          "relation_type": "measures_mutual_aid_of"
+        },
+        {
+          "target_id": "npc_su_wan",
+          "relation_type": "is_guarded_by_moral_boundary_of"
+        },
+        {
+          "target_id": "state_ledger_poorcity_returnfire",
+          "relation_type": "conditions_witnessed_return"
+        }
+      ],
+      "constraints": [
+        "共同体信任不是主角可提取的资源；巷民有拒绝、质询和撤回见证的权利。",
+        "信任提升必须来自共同承担、返还寿火或公开承担反噬，而非主角单方面胜利。",
+        "任何高风险行动都须显示巷民的恐惧、选择与实际保护行为。"
+      ],
+      "emotional_bond": {
+        "bond_type": "以共守命灯、互认灰痕和拒交同伴形成的社区信任。",
+        "trust_state": "受追缴惊惧压迫下的谨慎互保",
+        "persona_trust_map": [
+          "陆沉渊:愿承担反噬但不得替巷民决定代价",
+          "苏晚:拒绝用街坊寿数救家人",
+          "莫井兰:以旧灰痕和口述提供可撤回的见证",
+          "泥灯巷住户:在命灯与护阵受威胁时保有拒绝行动的权利"
+        ],
+        "lifespan_decay_rate": 0.03,
+        "preservation_deadline": "州府影使要求交人前，巷民必须自行决定是否公开作证与互保。",
+        "karmic_debt_modifier": -1,
+        "exposure_backlash_coefficient": 0.68,
+        "transition_policy": "若陆沉渊隐瞒反噬或使巷民被动连坐，信任转为撤证；若他公开承担代价并返还可认残火，巷民可主动提供见证与护阵协作。",
+        "originality_policy": "情感关系由互保选择、可撤回见证和共同承担构成，不把群体塑为无条件献祭的主角燃料。"
+      }
+    },
+    {
+      "asset_id": "state_ledger_protagonist_strain",
+      "family": "state_ledger",
+      "display_name": "陆沉渊命火与心魄承压",
+      "lifecycle_state": "active",
+      "source_refs": [
+        "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md",
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md",
+        "system/agent_ops/inbox/antigravity-volume1-readiness-audit-v017.md"
+      ],
+      "relationships": [
+        {
+          "target_id": "character_lu_chenyuan",
+          "relation_type": "tracks_strain_for"
+        },
+        {
+          "target_id": "technique_ledger_recognition",
+          "relation_type": "is_decreased_by"
+        },
+        {
+          "target_id": "technique_chain_deflection_seal_breaking",
+          "relation_type": "is_worsened_by"
+        },
+        {
+          "target_id": "bond_mother_su_wan",
+          "relation_type": "raises_family_risk_for"
+        }
+      ],
+      "constraints": [
+        "状态只记录可叙事化的命火、骨裂、瞳纹、冷灰与心魄恍惚，读者文本不得呈现工程字段。",
+        "任何恢复都不能自动解除母亲寿债、半寿身份或既有追缴。",
+        "承压过界时主角应失去施术窗口或需要他人阻止，而非获得无代价爆发。"
+      ],
+      "state_ledger": {
+        "state_key": "protagonist_lifefire_and_sanity_strain",
+        "value_type": "bounded_multiaxis_condition_with_visible_bodily_and_cognitive_consequences",
+        "audit_policy": {
+          "validation_rule": "每次施术后须同时核验sanity_level、caster_lifefire_stability、bone_fissure_severity、half_life_registry_exposure与母亲命灯波及。",
+          "transaction_boundary": "一次承压在主角脱离追缴现场、且身体或心魄后果已实际显现时才可结算。",
+          "balance_rule": "战力窗口、取证收益与追缴风险必须同向记录；不得以精神承压抵消真实寿债。"
+        },
+        "retribution_triggers": [
+          "sanity_level跌破安全线仍强行识账",
+          "bone_fissure_severity加深后连续施展反账命印",
+          "为掩盖个人反噬而让共同体承担错误风险"
+        ],
+        "tracking_metrics": [
+          "sanity_level",
+          "caster_lifefire_stability",
+          "bone_fissure_severity",
+          "eye_pattern_burn",
+          "cold_ash_cough_frequency",
+          "half_life_registry_exposure",
+          "mother_life_lamp_cracks"
+        ],
+        "decay_policy": {
+          "decay_condition": "连续燃命、直视高阶旧印、空寿作战或压下心魄恍惚时承压恶化。",
+          "restoration_condition": "只能经停术、守灯休养、共同体看护与不转嫁他人的实际代价缓解，不能彻底清零。"
+        },
+        "originality_policy": "状态围绕肉身裂痕、寿火衰明与认知回声联动，不以游戏化数值替代人物后果。"
+      }
+    },
+    {
+      "asset_id": "artifact_prefecture_transit_registry_seal",
+      "family": "artifacts",
+      "display_name": "州府转运残印",
+      "lifecycle_state": "active",
+      "source_refs": [
+        "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md",
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md",
+        "system/agent_ops/inbox/antigravity-volume1-readiness-audit-v017.md"
+      ],
+      "relationships": [
+        {
+          "target_id": "faction_prefecture_life_treasury",
+          "relation_type": "originates_from"
+        },
+        {
+          "target_id": "npc_prefecture_shadow_envoy",
+          "relation_type": "is_sought_by"
+        },
+        {
+          "target_id": "foreshadowing_ancient_debt_covenant_fragment",
+          "relation_type": "bears_partial_mark_of"
+        },
+        {
+          "target_id": "state_ledger_protagonist_strain",
+          "relation_type": "risks_worsening"
+        }
+      ],
+      "constraints": [
+        "残印只能证明一段命火曾被转运，不可单独证明完整获利链或古债真相。",
+        "启用或辨读时须放出铁锈冷香、银灰印屑或旧灯回声，立即增加追踪风险。",
+        "它是卷末地图边界线索，不能提前开启州府全貌。"
+      ],
+      "artifact": {
+        "cost": "以持有者一段清醒记忆为引，才能令残印吐出一次转运方向；记忆会留下短暂缺口。",
+        "upgrade_stage": "残角未合",
+        "lifecycle_policy": {
+          "acquisition": "于废命地的注销残影与护阵灰屑间取得，须由错征痕迹引出。",
+          "activation": "仅当灰烬回灯盏或识账术确认现场残火来自同一转运链时短暂发亮。",
+          "dormancy": "脱离错征残火或被完整寿印压住时沉暗如普通铜角。",
+          "retirement": "转运链被公开证实并移交新的见证者后，残印失去指向权。"
+        },
+        "cost_and_limitation_rules": {
+          "usage_cost": "每次指路削弱持有者的sanity_level，并留下可被州府寿印闻见的冷香。",
+          "backlash": "错误辨读会把废命地残影压入梦中，使持有者短暂分不清自身与被注销者的年月。",
+          "exposure_state_key": "half_life_registry_exposure"
+        },
+        "upgrade_path": {
+          "criteria": "须取得两处独立错征残火并由受害者共同见证。",
+          "materials": "废命地印屑、护阵裂屑与经返还确认的残火，禁止用活人寿数熔补。",
+          "state_transition": "残角未合 -> 路纹显明 -> 转运证印"
+        },
+        "visual_symbol_ledger": "一枚缺去半边的暗铜印，断口像被冷火啃过；触及错征灰烬时，印背浮起细如血丝的银线。",
+        "originality_policy": "器物作为有限方向证据与记忆代价载体，不采用万能钥匙、完整地图或一物解谜结构。"
+      }
+    },
+    {
+      "asset_id": "npc_prefecture_shadow_envoy",
+      "family": "npcs",
+      "display_name": "闻照微",
+      "lifecycle_state": "active",
+      "source_refs": [
+        "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md",
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md",
+        "system/agent_ops/inbox/antigravity-volume1-readiness-audit-v017.md"
+      ],
+      "relationships": [
+        {
+          "target_id": "faction_prefecture_life_treasury",
+          "relation_type": "serves_as_shadow_envoy_for"
+        },
+        {
+          "target_id": "artifact_prefecture_transit_registry_seal",
+          "relation_type": "seeks_recovery_of"
+        },
+        {
+          "target_id": "character_lu_chenyuan",
+          "relation_type": "marks_for_prefecture_review"
+        },
+        {
+          "target_id": "bond_mudlamp_lane_trust",
+          "relation_type": "tests"
+        }
+      ],
+      "constraints": [
+        "闻照微只代表州府边缘权限，不能在卷一揭露仙朝或天庭完整布局。",
+        "其威胁以影印、命灯失温和交人期限显形，不能以无解碾压终结共同体选择。",
+        "她可提出交换，但任何交换必须暴露其对错征证据和残印的真实需求。"
+      ],
+      "npc": {
+        "role_class": "州府命库影使，负责回收转运异物并评估异常债源。",
+        "recurrence_policy": {
+          "map_transition": "卷末只在贫城边界投下影印并下达交人条件；下一地图作为州府命库入口持续施压。",
+          "power_scaling": "以权限、封档和追踪网络升级，正面术法保持为未完全显露的威慑。",
+          "retirement_condition": "转运残印的错误链被更高场域确认且其评估权被收回后，转为可被追查的中间执行者。"
+        },
+        "faction_id": "faction_prefecture_life_treasury",
+        "information_state": "知道贫城错征牵涉转运异常，知晓古债符号需要封存；不知道或不承认古债全貌。",
+        "ledger_debt_balance": 11,
+        "trust_metric": -0.68,
+        "originality_policy": "以边缘投影、回收权限和期限压迫构成高地图入口，不使用神秘师尊、绝世强者试炼或全知监视者套路。"
+      }
+    },
+    {
+      "asset_id": "faction_prefecture_life_treasury",
+      "family": "factions",
+      "display_name": "州府命库",
+      "lifecycle_state": "active",
+      "source_refs": [
+        "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md",
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md",
+        "system/agent_ops/inbox/antigravity-volume1-readiness-audit-v017.md"
+      ],
+      "relationships": [
+        {
+          "target_id": "faction_life_registry_office",
+          "relation_type": "oversees_quota_and_transfer_of"
+        },
+        {
+          "target_id": "npc_prefecture_shadow_envoy",
+          "relation_type": "deploys"
+        },
+        {
+          "target_id": "artifact_prefecture_transit_registry_seal",
+          "relation_type": "is_implicated_by"
+        },
+        {
+          "target_id": "faction_mudlamp_lane",
+          "relation_type": "imposes_regional_pressure_on"
+        }
+      ],
+      "constraints": [
+        "卷一只允许显露转运、封档、配额和回收权限，不公开其全部层级或仙朝总账。",
+        "其力量必须通过命火转运痕、封档后的寿裂和影使条件落地，而非纯抽象阴谋。",
+        "它不能把贫城共同体抹为被动背景；交人要求必须引出可选择的互保回应。"
+      ],
+      "faction": {
+        "interest": "维持州府辖下命火转运、寿库储备与额度平衡，遮蔽会动摇上行链路的错征证据。",
+        "pressure_level": 8,
+        "tax_enforcement_role": "向本地命籍衙分配额度、封存异议旧档、回收转运残印并授权升级追缴。",
+        "associated_ledger_states": [
+          "half_life_registry_exposure",
+          "returned_miscollected_lifefire",
+          "map_unlock_status",
+          "unresolved_mysteries"
+        ],
+        "cohort_capacity": 120,
+        "threat_exposure_coefficient": 0.91,
+        "lifecycle_policy": {
+          "establishment": "以州府寿库、转运印与影使回收网络承接仙朝命卷的下行压力。",
+          "alliance_shift": "只有转运失衡危及自身储备或公开证据无法封存时，才会牺牲本地执行层。",
+          "territorial_expansion": "通过增加配额、冻结迁徙与调遣影使向贫城边缘延伸，卷一不直接展开州府腹地。",
+          "retirement": "当其转运链被公开审理且命火归属获得新的共同裁决后，原有封档权终止。"
+        },
+        "originality_policy": "组织以寿火中转、封档权和跨地图追缴构成，不沿用传统仙朝官署或商业财库的既成范式。"
+      }
+    },
+    {
+      "asset_id": "naming_prefecture_celestial_style",
+      "family": "naming",
+      "display_name": "州府与仙朝命名法",
+      "lifecycle_state": "active",
+      "source_refs": [
+        "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md",
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md",
+        "system/agent_ops/inbox/antigravity-volume1-readiness-audit-v017.md"
+      ],
+      "relationships": [
+        {
+          "target_id": "faction_prefecture_life_treasury",
+          "relation_type": "governs_names_for"
+        },
+        {
+          "target_id": "npc_prefecture_shadow_envoy",
+          "relation_type": "guides_title_style_for"
+        },
+        {
+          "target_id": "naming_lifefire_local_style",
+          "relation_type": "expands_without_replacing"
+        }
+      ],
+      "constraints": [
+        "州府名称应比泥灯巷更冷峻、转运化，但仍保留可感知的印、河、灰、秤与火，不可堆砌尊号。",
+        "读者可见名称不得使用工程流程词或现实行政机构直译。",
+        "所有新专名须先筛除禁用碰撞与训练集来源词。"
+      ],
+      "naming": {
+        "semantic_field": "州府转运、寿河边界、印纹冷光、仙朝法权与未显露的高空压迫。",
+        "naming_roots": [
+          "州",
+          "转",
+          "印",
+          "衡",
+          "河",
+          "晷",
+          "霜",
+          "照",
+          "阙"
+        ],
+        "form_rules": [
+          "州府地名以方位、冷光、转运痕或可见天象组合，避免帝王式夸张尊号。",
+          "高层机构名以两至四字的器物、法权或寿火意象组合，不直接采用现实官制名称。",
+          "影使与执行者名使用常姓配克制双字，头衔以功能暗示权限而不泄露全貌。",
+          "仙朝相关专名只显示卷一所需的边缘压力，不用名称预先承诺天庭或古债真相。"
+        ],
+        "forbidden_collisions": [
+          "至尊骨",
+          "重瞳",
+          "九秘",
+          "掌天瓶",
+          "春秋蝉",
+          "魂殿",
+          "源堡",
+          "塔罗会",
+          "九龙拉棺"
+        ],
+        "forbidden_terms": [
+          "测名院",
+          "无名者航路",
+          "群岛无名碑",
+          "海图擦除",
+          "旧名碑逻辑",
+          "小绿瓶",
+          "退婚",
+          "天道酬勤"
+        ],
+        "originality_policy": "从寿火转运与冷印奇观生长高地图词汇，避免复用任何既有玄幻的组织、器物、境界或称号语法。"
+      }
+    },
+    {
+      "asset_id": "foreshadowing_ancient_debt_covenant_fragment",
+      "family": "foreshadowing",
+      "display_name": "古债契约碎影",
+      "lifecycle_state": "active",
+      "source_refs": [
+        "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md",
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md",
+        "system/agent_ops/inbox/antigravity-volume1-readiness-audit-v017.md"
+      ],
+      "relationships": [
+        {
+          "target_id": "artifact_prefecture_transit_registry_seal",
+          "relation_type": "is_partially_imprinted_on"
+        },
+        {
+          "target_id": "foreshadowing_cinder_seal_rain",
+          "relation_type": "extends"
+        },
+        {
+          "target_id": "faction_prefecture_life_treasury",
+          "relation_type": "is_feared_by"
+        },
+        {
+          "target_id": "state_ledger_poorcity_returnfire",
+          "relation_type": "pays_off_after"
+        }
+      ],
+      "constraints": [
+        "卷一只呈现断裂手印、倒流银灰火和听不全的旧誓，不给出古债双方、金额或终局解释。",
+        "碎影必须在命审台反转或残印辨读的高压现场出现，不能独立作为设定说明。",
+        "接触碎影须造成身体或心魄后果，并令追缴风险上升。"
+      ],
+      "foreshadowing": {
+        "surface_explanation": "天秤短暂倒向贫城时，灰雨在半空聚成一截烧焦的掌印；印中有银灰火逆流，像有人隔着极远的年月按住一盏将灭未灭的灯。",
+        "payoff_stage": "第一卷命审台首次显影，卷末由州府转运残印证实它不属于本地错账。",
+        "hidden_logic_key": "ancient_opening_lifesource_covenant_was_rewritten_through_repeated_collection",
+        "payoff_condition_ledger_state": "returned_miscollected_lifefire出现经共同体见证的正向回流，且artifact_prefecture_transit_registry_seal完成一次有效辨读。",
+        "clue_exposure_risk": 0.84,
+        "lifecycle_policy": {
+          "setup": "以灰雨贴骨的刺痛、旧印闪灭和听不清的誓音掠过，不解释来源。",
+          "misdirection": "可被命籍衙解释为护阵反噬或残印杂响，但现场的逆流火屑始终保留异常。",
+          "reveal": "仅揭示贫城错征与更久远的借寿痕迹相连，不揭示天庭、仙朝或域外债主的完整责任。",
+          "retirement": "待后续卷在古债遗址取得独立见证后，转为已验证的历史线索。"
+        },
+        "originality_policy": "伏笔以可见火屑、断掌印和不完整誓音制造宇宙级疑问，不借用既有遗迹、契约物或真相揭示结构。"
+      }
     }
   ]
 }

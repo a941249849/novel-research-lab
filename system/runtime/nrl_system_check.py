@@ -22,6 +22,7 @@ from nrl_research_assets import build_research_asset_catalog
 STATE_PATH = runtime_path("system/mission_controller/current_phase_state.json")
 STATE_SCHEMA_PATH = runtime_path("system/mission_controller/phase_state.schema.json")
 ADAPTERS_PATH = runtime_path("system/runtime/agent_adapters.json")
+SOURCE_OWNERSHIP_PATH = runtime_path("system/control_plane/source_ownership.v0.20.json")
 
 
 def _load_json(path) -> dict[str, Any]:
@@ -61,6 +62,8 @@ def run_system_check() -> dict[str, Any]:
     )
     deep_read = build_deep_read_status()
     production_runtime = build_production_readiness()
+    source_ownership = _load_json(SOURCE_OWNERSHIP_PATH)
+    ownership_domains = [item.get("domain") for item in source_ownership.get("domains", [])]
     architecture_payload = json.dumps(architecture, ensure_ascii=False)
     architecture_passed = (
         architecture["version"] == "0.4"
@@ -139,6 +142,20 @@ def run_system_check() -> dict[str, Any]:
                 and not creation_context["external_agent_execution_allowed"]
             ),
             "detail": creation_context["summary"],
+        },
+        {
+            "check_id": "source_ownership",
+            "passed": (
+                source_ownership.get("version") == "0.20"
+                and len(ownership_domains) == len(set(ownership_domains)) == 9
+            ),
+            "detail": {
+                "version": source_ownership.get("version"),
+                "domain_count": len(ownership_domains),
+                "duplicate_domains": sorted(
+                    domain for domain in set(ownership_domains) if ownership_domains.count(domain) > 1
+                ),
+            },
         },
         {
             "check_id": "production_chapter_runtime",

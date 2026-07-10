@@ -456,7 +456,7 @@
   "agent_review_policy": {
     "codex": "local_validation_orchestration",
     "antigravity": "ready",
-    "hermes": "paused_not_removed",
+    "hermes": "ready",
     "web_gpt": "architecture_review_only"
   },
   "owner_gate": {

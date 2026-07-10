@@ -130,6 +130,13 @@ class CorpusPipelineCliTests(unittest.TestCase):
     def test_evidence_pack_matrix_writes_all_families_and_manifest(self):
         output_path = REPO_ROOT / "system/research_assets/evidence_packs/manifest.v0.11.json"
         original = output_path.read_bytes() if output_path.exists() else None
+        pack_paths = [
+            REPO_ROOT / "system/research_assets/evidence_packs" / f"{family}.v0.10.json"
+            for family in FAMILIES
+        ]
+        pack_originals = {
+            path: path.read_bytes() if path.exists() else None for path in pack_paths
+        }
         try:
             if output_path.exists():
                 output_path.unlink()
@@ -156,6 +163,9 @@ class CorpusPipelineCliTests(unittest.TestCase):
         finally:
             if original is not None:
                 output_path.write_bytes(original)
+            for path, original_pack in pack_originals.items():
+                if original_pack is not None:
+                    path.write_bytes(original_pack)
 
     def test_evidence_pack_validate_all_reports_all_family_packs_valid(self):
         result = self.run_cli("evidence-pack-validate", "--all")

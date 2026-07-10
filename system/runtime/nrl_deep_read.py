@@ -428,31 +428,42 @@ def dispatch_pending_chunks(
     if limit > 0:
         pending = pending[:limit]
     results: list[dict[str, Any]] = []
-    with ThreadPoolExecutor(max_workers=workers) as executor:
-        futures = {
-            executor.submit(_dispatch_one, chunk, model, print_timeout): chunk
-            for chunk in pending
-        }
-        for future in as_completed(futures):
-            chunk = futures[future]
+    quota_blocked = False
+    if workers == 1:
+        for chunk in pending:
             try:
-                results.append(future.result())
+                item = _dispatch_one(chunk, model, print_timeout)
             except Exception as error:  # keep the batch resumable
-                results.append(
-                    {
-                        "chunk_id": chunk["chunk_id"],
-                        "valid": False,
-                        "errors": [str(error)],
-                    }
-                )
+                item = {"chunk_id": chunk["chunk_id"], "valid": False, "errors": [str(error)]}
+            results.append(item)
+            error_text = " ".join(str(error) for error in item.get("errors", []))
+            if "quota reached" in error_text.casefold():
+                quota_blocked = True
+                break
+    else:
+        with ThreadPoolExecutor(max_workers=workers) as executor:
+            futures = {
+                executor.submit(_dispatch_one, chunk, model, print_timeout): chunk
+                for chunk in pending
+            }
+            for future in as_completed(futures):
+                chunk = futures[future]
+                try:
+                    results.append(future.result())
+                except Exception as error:  # keep the batch resumable
+                    results.append(
+                        {"chunk_id": chunk["chunk_id"], "valid": False, "errors": [str(error)]}
+                    )
     coverage = validate_all_chunks()
     return {
         "version": VERSION,
         "job_id": JOB_ID,
         "model": model,
-        "dispatched": len(pending),
+        "requested": len(pending),
+        "dispatched": len(results),
         "succeeded": sum(1 for item in results if item["valid"]),
         "failed": [item for item in results if not item["valid"]],
+        "quota_blocked": quota_blocked,
         "coverage": coverage,
     }
 

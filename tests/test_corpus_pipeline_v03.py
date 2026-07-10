@@ -129,28 +129,33 @@ class CorpusPipelineCliTests(unittest.TestCase):
 
     def test_evidence_pack_matrix_writes_all_families_and_manifest(self):
         output_path = REPO_ROOT / "system/research_assets/evidence_packs/manifest.v0.11.json"
-        if output_path.exists():
-            output_path.unlink()
-        result = self.run_cli("evidence-pack-matrix", "--write")
-        self.assertEqual(result.returncode, 0, result.stderr)
-        matrix = json.loads(result.stdout)
-        self.assertTrue(output_path.exists())
-        self.assertEqual(matrix, json.loads(output_path.read_text(encoding="utf-8")))
-        self.assertEqual(matrix["version"], "0.11")
-        self.assertEqual(matrix["matrix_id"], "evidence-pack-matrix-v0.11")
-        self.assertEqual(matrix["family_count"], len(FAMILIES))
-        self.assertEqual(set(matrix["families"].keys()), set(FAMILIES))
-        self.assertFalse(matrix["content_generation_allowed"])
-        self.assertFalse(matrix["external_agent_execution_allowed"])
-        for family in FAMILIES:
-            with self.subTest(family=family):
-                item = matrix["families"][family]
-                pack_path = REPO_ROOT / item["output_path"]
-                self.assertTrue(pack_path.exists())
-                self.assertEqual(item["family"], family)
-                self.assertGreaterEqual(item["evidence_item_count"], 3)
-                self.assertEqual(item["validation_status"], "valid")
-        self.assertNotIn("novel_training_set/", json.dumps(matrix, ensure_ascii=False))
+        original = output_path.read_bytes() if output_path.exists() else None
+        try:
+            if output_path.exists():
+                output_path.unlink()
+            result = self.run_cli("evidence-pack-matrix", "--write")
+            self.assertEqual(result.returncode, 0, result.stderr)
+            matrix = json.loads(result.stdout)
+            self.assertTrue(output_path.exists())
+            self.assertEqual(matrix, json.loads(output_path.read_text(encoding="utf-8")))
+            self.assertEqual(matrix["version"], "0.11")
+            self.assertEqual(matrix["matrix_id"], "evidence-pack-matrix-v0.11")
+            self.assertEqual(matrix["family_count"], len(FAMILIES))
+            self.assertEqual(set(matrix["families"].keys()), set(FAMILIES))
+            self.assertFalse(matrix["content_generation_allowed"])
+            self.assertFalse(matrix["external_agent_execution_allowed"])
+            for family in FAMILIES:
+                with self.subTest(family=family):
+                    item = matrix["families"][family]
+                    pack_path = REPO_ROOT / item["output_path"]
+                    self.assertTrue(pack_path.exists())
+                    self.assertEqual(item["family"], family)
+                    self.assertGreaterEqual(item["evidence_item_count"], 3)
+                    self.assertEqual(item["validation_status"], "valid")
+            self.assertNotIn("novel_training_set/", json.dumps(matrix, ensure_ascii=False))
+        finally:
+            if original is not None:
+                output_path.write_bytes(original)
 
     def test_evidence_pack_validate_all_reports_all_family_packs_valid(self):
         result = self.run_cli("evidence-pack-validate", "--all")

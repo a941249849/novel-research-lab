@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "nrl://production/chapter-registry-v0.20",
+  "type": "object",
+  "required": ["version", "project", "chapters"],
+  "properties": {
+    "version": {"const": "0.20"},
+    "project": {"const": "《借天改命账》"},
+    "chapters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["chapter_id", "stage", "artifacts", "source_hashes"],
+        "properties": {
+          "chapter_id": {"type": "string", "pattern": "^chapter-[0-9]{4}$"},
+          "stage": {"enum": ["chapter_intent", "context_compiled", "draft_generated", "facts_observed", "continuity_audited", "revision_generated", "state_settled", "chapter_accepted"]},
+          "artifacts": {"type": "object"},
+          "source_hashes": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

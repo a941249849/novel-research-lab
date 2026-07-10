@@ -8,6 +8,8 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
+import jsonschema
+
 from nrl_creation_schemas import validate_creation_asset_store
 from nrl_deep_read import build_deep_read_status
 from nrl_paths import ROOT, runtime_path
@@ -32,6 +34,12 @@ CANONICAL_INPUTS = (
     "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md",
     "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md",
     "system/creation_assets/project_assets.v0.2.json",
+)
+RUNTIME_SCHEMAS = (
+    "system/production_runtime/schemas/chapter_intent.schema.json",
+    "system/production_runtime/schemas/chapter_observation.schema.json",
+    "system/production_runtime/schemas/chapter_settlement.schema.json",
+    "system/production_runtime/schemas/chapter_registry.schema.json",
 )
 TRANSITION_WORDS = (
     "然而", "此外", "与此同时", "因此", "于是", "不过", "随即", "紧接着", "更重要的是",
@@ -138,6 +146,18 @@ def build_production_readiness() -> dict[str, Any]:
                 "sha256": _sha256(path) if path.exists() else None,
             }
         )
+    schema_checks = []
+    for relative in RUNTIME_SCHEMAS:
+        path = runtime_path(relative)
+        valid = False
+        error = None
+        if path.exists():
+            try:
+                jsonschema.Draft7Validator.check_schema(_read_json(path))
+                valid = True
+            except jsonschema.SchemaError as exc:
+                error = exc.message
+        schema_checks.append({"path": relative, "valid": valid, "error": error})
     checks = {
         "deep_read_verified": bool(deep_read["deep_read_verified"]),
         "project_reconciliation_accepted": bool(
@@ -146,7 +166,7 @@ def build_production_readiness() -> dict[str, Any]:
         ),
         "creation_assets_valid": bool(store["valid"]),
         "canonical_inputs_locked": all(item["exists"] and item["sha256"] for item in canonical),
-        "chapter_runtime_contract_ready": True,
+        "chapter_runtime_contract_ready": all(item["valid"] for item in schema_checks),
     }
     ready = all(checks.values())
     return {
@@ -155,6 +175,7 @@ def build_production_readiness() -> dict[str, Any]:
         "ready": ready,
         "checks": checks,
         "canonical_inputs": canonical,
+        "schema_checks": schema_checks,
         "stage_order": list(STAGES),
         "blocked_actions": [] if ready else ["generate_chapter_draft", "run_hermes_writer", "bulk_prose"],
         "next_action": (

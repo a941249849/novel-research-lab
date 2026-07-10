@@ -133,6 +133,53 @@ class VerifiableDeepReadingV018Tests(unittest.TestCase):
         self.assertFalse(validation["deep_read_verified"])
         self.assertEqual(validation["validated_byte_ratio"], 1.0)
 
+    def test_book_synthesis_requires_exact_chunk_coverage_and_nine_families(self):
+        plan = self.plan()
+        chunks = plan["books"][0]["chunks"]
+        for chunk in chunks:
+            self.write_response(chunk)
+        packed = self.run_cli("deep-read-synthesis-pack")
+        self.assertEqual(packed.returncode, 0, packed.stderr)
+        request = json.loads(packed.stdout)["requests"][0]
+        response_path = self.root / request["response_path"]
+        response_path.parent.mkdir(parents=True, exist_ok=True)
+        families = {
+            family: ["evidence"]
+            for family in (
+                "characters", "npcs", "factions", "artifacts", "techniques",
+                "naming", "emotional_bonds", "foreshadowing", "state_ledger",
+            )
+        }
+        response_path.write_text(
+            json.dumps(
+                {
+                    "job_id": "job-v018-verifiable-deep-reading",
+                    "contract_version": "0.18",
+                    "book_id": request["book_id"],
+                    "book_title": "测试长篇",
+                    "covered_chunk_ids": request["covered_chunk_ids"],
+                    "synthesis": {
+                        "narrative_spine": ["spine"],
+                        "character_arcs": ["arc"],
+                        "mechanism_evolution": ["mechanism"],
+                        "world_expansion": ["world"],
+                        "long_term_reader_hooks": ["hook"],
+                        "style_and_life_force": ["style"],
+                        "continuity_failures": ["risk"],
+                        "creation_family_evidence": families,
+                        "originality_red_lines": ["boundary"],
+                    },
+                },
+                ensure_ascii=False,
+            ),
+            encoding="utf-8",
+        )
+        validated = self.run_cli("deep-read-synthesis-validate")
+        self.assertEqual(validated.returncode, 0, validated.stderr)
+        result = json.loads(validated.stdout)
+        self.assertTrue(result["valid"])
+        self.assertEqual(result["validated_book_count"], 1)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -14,6 +14,7 @@ DECISION_TYPES = {
     "authorize_adapter_upgrade",
     "authorize_research_promotion",
     "authorize_final_asset_generation",
+    "authorize_controlled_prose_test",
 }
 
 

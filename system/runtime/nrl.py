@@ -74,6 +74,15 @@ from nrl_full_corpus_proof import (
 )
 from nrl_final_assets import promote_final_asset_bundle, validate_final_asset_bundle
 from nrl_handoff_packet import write_antigravity_packet
+from nrl_hermes_bridge import build_hermes_execution_status
+from nrl_hermes_controlled_prose import (
+    AUDIT_PATH,
+    OUTPUT_PATH as CONTROLLED_PROSE_OUTPUT_PATH,
+    build_controlled_prose_prompt,
+    build_controlled_prose_readiness,
+    dispatch_controlled_prose_test,
+    validate_controlled_prose_text,
+)
 from nrl_hermes_gate import build_hermes_readiness
 from nrl_paths import ROOT, runtime_path
 from nrl_owner_gate import DECISION_TYPES, load_decisions, record_owner_decision
@@ -339,6 +348,45 @@ def cmd_final_assets_promote(args: argparse.Namespace) -> int:
     result = promote_final_asset_bundle(args.file)
     print_json(result)
     return 0 if result["promotion_allowed"] else 1
+
+
+def cmd_hermes_bridge_status(_: argparse.Namespace) -> int:
+    print_json(build_hermes_execution_status(load_adapters().get("hermes", {})))
+    return 0
+
+
+def cmd_controlled_prose_status(_: argparse.Namespace) -> int:
+    audit_text = AUDIT_PATH.read_text(encoding="utf-8") if AUDIT_PATH.exists() else ""
+    print_json(build_controlled_prose_readiness(load_decisions(), audit_text))
+    return 0
+
+
+def cmd_controlled_prose_test(_: argparse.Namespace) -> int:
+    adapter_status = build_hermes_execution_status(load_adapters().get("hermes", {}))
+    if not adapter_status["can_execute_controlled_prose_test"]:
+        print_json({"valid": False, "error": adapter_status["blocked_reason"]})
+        return 1
+    audit_text = AUDIT_PATH.read_text(encoding="utf-8") if AUDIT_PATH.exists() else ""
+    result = dispatch_controlled_prose_test(
+        build_controlled_prose_prompt(),
+        load_decisions(),
+        audit_text,
+        CONTROLLED_PROSE_OUTPUT_PATH,
+    )
+    print_json(result)
+    return 0 if result["valid"] else 1
+
+
+def cmd_controlled_prose_validate(args: argparse.Namespace) -> int:
+    path = Path(args.file)
+    if not path.is_absolute():
+        path = ROOT / path
+    if not path.exists():
+        print_json({"valid": False, "errors": [{"code": "missing_output", "message": str(path)}]})
+        return 1
+    result = validate_controlled_prose_text(path.read_text(encoding="utf-8"))
+    print_json(result)
+    return 0 if result["valid"] else 1
 
 
 def cmd_system_check(_: argparse.Namespace) -> int:
@@ -992,6 +1040,12 @@ def build_parser() -> argparse.ArgumentParser:
     final_assets_promote = sub.add_parser("final-assets-promote")
     final_assets_promote.add_argument("--file", required=True)
     final_assets_promote.set_defaults(func=cmd_final_assets_promote)
+    sub.add_parser("hermes-bridge-status").set_defaults(func=cmd_hermes_bridge_status)
+    sub.add_parser("controlled-prose-status").set_defaults(func=cmd_controlled_prose_status)
+    sub.add_parser("controlled-prose-test").set_defaults(func=cmd_controlled_prose_test)
+    controlled_prose_validate = sub.add_parser("controlled-prose-validate")
+    controlled_prose_validate.add_argument("--file", required=True)
+    controlled_prose_validate.set_defaults(func=cmd_controlled_prose_validate)
     sub.add_parser("system-check").set_defaults(func=cmd_system_check)
     sub.add_parser("pipeline-status").set_defaults(func=cmd_pipeline_status)
     pipeline_plan = sub.add_parser("pipeline-plan")

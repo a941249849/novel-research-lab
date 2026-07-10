@@ -40,7 +40,7 @@ class ArchitectureReconciliationCliTests(unittest.TestCase):
             {item["mismatch_id"] for item in data["current_mismatch_report"]},
         )
         self.assertEqual(data["agent_role_contract"][2]["agent"], "Hermes")
-        self.assertEqual(data["agent_role_contract"][2]["status"], "paused_not_removed")
+        self.assertEqual(data["agent_role_contract"][2]["status"], "ready")
         self.assertEqual(data["agent_role_contract"][1]["agent"], "Antigravity")
         self.assertEqual(data["agent_role_contract"][1]["status"], "ready")
         self.assertNotIn("novel_training_set/", json.dumps(data, ensure_ascii=False))
@@ -127,7 +127,7 @@ class ArchitectureReconciliationStudioTests(unittest.TestCase):
         self.assertIn("#architecture", html)
         self.assertIn("Corpus-to-Creation", html)
         self.assertIn("Core7 小批量试验", html)
-        self.assertIn("Hermes: paused_not_removed", html)
+        self.assertIn("Hermes: ready", html)
         self.assertIn("CLI 协作文学审查", html)
         self.assertNotIn("人工外部文学审查", html)
         self.assertIn("Owner Gate", html)

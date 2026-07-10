@@ -66,7 +66,7 @@ def run_system_check() -> dict[str, Any]:
         == "corpus_pipeline_v0.3"
         and architecture["production_readiness"]["owner_gate_required"]
         and architecture["production_readiness"]["hermes_execution_status"]
-        == "paused_not_removed"
+        == "ready"
         and "novel_training_set/" not in architecture_payload
     )
 

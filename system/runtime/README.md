@@ -763,4 +763,19 @@ current expected state after promotion is
 `ready_to_call_hermes: false`: final creation assets are available, but novel
 prose still requires a separate bounded Owner authorization.
 
+After an independent final-asset review, Hermes can run one controlled prose
+test through the Codex OAuth bridge. This is not chapter or serial production:
+
+```bash
+python3 system/runtime/nrl.py hermes-bridge-status
+python3 system/runtime/nrl.py controlled-prose-status
+python3 system/runtime/nrl.py controlled-prose-test
+python3 system/runtime/nrl.py controlled-prose-validate --file system/agent_ops/inbox/hermes-controlled-prose-test-v016.md
+```
+
+The bridge pins `openai-codex` and `gpt-5.6-terra`, captures Hermes stdout in a
+controlled inbox file, and rejects output outside the one-scene character
+range, story anchors, and reader-facing jargon boundary. A passing test is a
+style benchmark only; full chapters and serial prose remain blocked.
+
 GitHub binding is intentionally outside the runtime. Bind the workspace to a confirmed repository first; then `doctor` will report repository root, branch, and remotes. Do not bind this workspace to an unrelated repository.

@@ -6,6 +6,7 @@ from nrl_antigravity_bridge import (
     build_antigravity_bridge_status,
     build_antigravity_execution_status,
 )
+from nrl_hermes_bridge import build_hermes_execution_status
 
 
 def content_progression_for(state: dict[str, Any]) -> str:
@@ -24,6 +25,7 @@ def operating_mode_for(state: dict[str, Any]) -> str:
 
 def build_system_status(state: dict[str, Any], adapters: dict[str, Any]) -> dict[str, Any]:
     antigravity_execution = build_antigravity_execution_status(adapters)
+    hermes_execution = build_hermes_execution_status(adapters.get("hermes", {}))
     return {
         "operating_mode": operating_mode_for(state),
         "content_progression": content_progression_for(state),
@@ -32,11 +34,11 @@ def build_system_status(state: dict[str, Any], adapters: dict[str, Any]) -> dict
         "owner_gate_required": state.get("owner_gate_required", False),
         "owner_gate_status": state.get("owner_gate_status"),
         "hermes_role": "later_writer_or_literary_enrichment",
-        "hermes_execution_status": "paused_not_removed",
+        "hermes_execution_status": hermes_execution["effective_state"],
         "agent_roles": {
             "codex": "runtime_engineering_validation_orchestration",
             "antigravity": "cli_collaborative_literary_review",
-            "hermes": "later_writer_or_literary_enrichment_after_explicit_authorization",
+            "hermes": "cli_controlled_literary_enrichment_after_explicit_authorization",
         },
         "adapter_modes": {
             name: {
@@ -47,13 +49,14 @@ def build_system_status(state: dict[str, Any], adapters: dict[str, Any]) -> dict
         },
         "antigravity_bridge": build_antigravity_bridge_status(),
         "antigravity_execution": antigravity_execution,
+        "hermes_execution": hermes_execution,
         "hard_rules": [
             "do not advance story phase",
             "do not advance story phase while owner gate is pending",
-            "do not write novel prose",
+            "do not generate unrestricted novel prose",
             "do not write first chapter",
             "do not generate full character cards",
-            "do not call Hermes until explicitly reauthorized",
+            "call Hermes only through the controlled prose-test gate",
             "use current pending review as a system-state test sample",
         ],
     }

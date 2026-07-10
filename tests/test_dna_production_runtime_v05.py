@@ -178,7 +178,7 @@ class ProductionRuntimeIntegrationTests(RuntimeCliCase):
         self.assertEqual(data["antigravity"]["mode"], "cli_bridge")
         self.assertEqual(data["antigravity"]["status"], "ready")
         self.assertTrue(data["antigravity"]["can_dispatch_registered_reviews"])
-        self.assertEqual(data["hermes"]["status"], "paused_not_removed")
+        self.assertEqual(data["hermes"]["status"], "ready")
         self.assertIn("techniques", data["agent_jobs"]["by_family"])
 
     def test_studio_data_contains_dna_production_runtime(self):

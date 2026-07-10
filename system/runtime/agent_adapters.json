@@ -7,14 +7,16 @@
     "can_execute": true
   },
   "hermes": {
-    "mode": "manual_handoff",
+    "mode": "cli_bridge",
     "supported_modes": [
       "manual_handoff",
       "client_handoff",
       "api",
-      "cli"
+      "cli",
+      "cli_bridge"
     ],
-    "can_execute": false,
+    "can_execute": true,
+    "execution_policy": "controlled_prose_test_only",
     "handoff_dir": "handoff/hermes",
     "expected_output_dir": "handoff/hermes/outputs"
   },

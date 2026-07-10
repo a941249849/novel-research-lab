@@ -48,5 +48,21 @@
     "expires_after_mission": "phase2f_final_asset_generation",
     "owner_note": "Hermes gpt-5.6-terra preflight found no structural blocker; authorize final creative asset generation and controlled writing preparation only.",
     "created_at": "2026-07-10T18:25:21+08:00"
+  },
+  {
+    "decision_id": "owner_gate_controlled_prose_test_001",
+    "decision_type": "authorize_controlled_prose_test",
+    "authorized_scope": [
+      "generate_controlled_prose_test"
+    ],
+    "forbidden_scope": [
+      "generate_full_chapter",
+      "generate_serial_prose",
+      "publish_prose",
+      "read_raw_novel_training_set"
+    ],
+    "expires_after_mission": "phase2g_controlled_prose_test",
+    "owner_note": "Owner previously authorized Hermes writing after final-asset approval; Antigravity v0.16 accepted the promoted asset bundle with non-blocking warnings. Authorize one controlled prose test only.",
+    "created_at": "2026-07-10T23:06:43+08:00"
   }
 ]

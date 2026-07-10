@@ -557,7 +557,7 @@ class RuntimeFixture(unittest.TestCase):
         self.assertIn("Current Project", html)
         self.assertIn("SYSTEM_HARDENING", html)
         self.assertIn("FROZEN_AT_OWNER_GATE", html)
-        self.assertIn("Hermes: paused_not_removed", html)
+        self.assertIn("Hermes: ready", html)
 
     def test_readme_documents_sys3_commands(self):
         readme = (REPO_ROOT / "system/runtime/README.md").read_text(encoding="utf-8")

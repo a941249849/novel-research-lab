@@ -111,6 +111,11 @@ from nrl_project_reconciliation import (
     dispatch_project_reconciliation,
     validate_project_reconciliation,
 )
+from nrl_production_runtime import (
+    analyze_prose_metrics,
+    build_production_readiness,
+    load_chapter_runtime_status,
+)
 from nrl_registry import (
     find_active_attempt,
     load_registry,
@@ -751,6 +756,27 @@ def cmd_project_reconciliation_validate(_: argparse.Namespace) -> int:
     return 0 if result["valid"] else 1
 
 
+def cmd_production_readiness(_: argparse.Namespace) -> int:
+    result = build_production_readiness()
+    print_json(result)
+    return 0 if result["ready"] else 1
+
+
+def cmd_chapter_runtime_status(_: argparse.Namespace) -> int:
+    print_json(load_chapter_runtime_status())
+    return 0
+
+
+def cmd_prose_metrics(args: argparse.Namespace) -> int:
+    path = Path(args.file)
+    if not path.is_absolute():
+        path = ROOT / path
+    if not path.exists():
+        raise RuntimeError(f"prose file does not exist: {args.file}")
+    print_json(analyze_prose_metrics(path.read_text(encoding="utf-8")))
+    return 0
+
+
 def cmd_antigravity_bridge_status(_: argparse.Namespace) -> int:
     print_json(build_antigravity_bridge_status())
     return 0
@@ -1300,6 +1326,11 @@ def build_parser() -> argparse.ArgumentParser:
     project_reconciliation_dispatch.add_argument("--print-timeout", default="15m0s")
     project_reconciliation_dispatch.set_defaults(func=cmd_project_reconciliation_dispatch)
     sub.add_parser("project-reconciliation-validate").set_defaults(func=cmd_project_reconciliation_validate)
+    sub.add_parser("production-readiness").set_defaults(func=cmd_production_readiness)
+    sub.add_parser("chapter-runtime-status").set_defaults(func=cmd_chapter_runtime_status)
+    prose_metrics = sub.add_parser("prose-metrics")
+    prose_metrics.add_argument("--file", required=True)
+    prose_metrics.set_defaults(func=cmd_prose_metrics)
     sub.add_parser("antigravity-bridge-status").set_defaults(
         func=cmd_antigravity_bridge_status
     )

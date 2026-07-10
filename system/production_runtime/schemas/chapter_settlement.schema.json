@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "nrl://production/chapter-settlement-v0.20",
+  "type": "object",
+  "required": ["chapter_id", "accepted_revision_sha256", "state_deltas", "resolved_audit_ids"],
+  "properties": {
+    "chapter_id": {"type": "string", "pattern": "^chapter-[0-9]{4}$"},
+    "accepted_revision_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "state_deltas": {"type": "array", "items": {"type": "object"}},
+    "resolved_audit_ids": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "nrl://production/chapter-observation-v0.20",
+  "type": "object",
+  "required": ["chapter_id", "draft_sha256", "facts"],
+  "properties": {
+    "chapter_id": {"type": "string", "pattern": "^chapter-[0-9]{4}$"},
+    "draft_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "facts": {
+      "type": "object",
+      "required": ["characters", "npcs", "locations", "factions", "artifacts", "techniques", "relationships", "emotions", "information", "hooks", "timeline", "physical_state", "naming"]
+    }
+  },
+  "additionalProperties": false
+}

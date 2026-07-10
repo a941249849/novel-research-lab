@@ -311,6 +311,18 @@ export type StudioData = {
   };
   full_corpus_proof: FullCorpusProof;
   verifiable_deep_reading: VerifiableDeepReading;
+  chapter_runtime: {
+    version: string;
+    chapter_count: number;
+    stage_order: string[];
+    readiness: {
+      status: string;
+      ready: boolean;
+      checks: Record<string, boolean>;
+      blocked_actions: string[];
+      next_action: string;
+    };
+  };
   creation_schema_registry: {
     registry_name: string;
     version: string;

@@ -103,6 +103,18 @@ const EMPTY_DATA = {
     validation: null,
     next_action: '创建连续覆盖深读计划。',
   },
+  chapter_runtime: {
+    version: '0.20',
+    chapter_count: 0,
+    stage_order: [],
+    readiness: {
+      status: 'blocked_before_prose',
+      ready: false,
+      checks: {},
+      blocked_actions: [],
+      next_action: '完成深读与项目重审。',
+    },
+  },
   creation_schema_registry: {
     registry_name: 'NRL Creation Schema Registry',
     version: '0.2',
@@ -430,8 +442,8 @@ function OverviewView({data, compact}: {data: StudioData; compact: boolean}) {
           />
           <SummaryCard
             label="正文生产"
-            value="禁止"
-            status="blocked"
+            value={data.chapter_runtime.readiness.ready ? '受控可运行' : '门禁阻断'}
+            status={data.chapter_runtime.readiness.status}
           />
         </Grid>
         <Banner

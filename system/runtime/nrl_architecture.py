@@ -82,8 +82,8 @@ ARCHITECTURE_LAYERS = [
 ]
 
 
-def _layers() -> list[dict[str, Any]]:
-    return [
+def _layers(system_status: dict[str, Any]) -> list[dict[str, Any]]:
+    layers = [
         {
             "order": index + 1,
             "layer_id": layer_id,
@@ -96,6 +96,15 @@ def _layers() -> list[dict[str, Any]]:
             ARCHITECTURE_LAYERS
         )
     ]
+    deep_status = system_status["verifiable_deep_reading"]["status"]
+    layers[0]["status"] = "deep_read_verified" if system_status["production_ready"] else deep_status
+    layers[1]["status"] = "data_ready" if system_status["production_ready"] else "revalidation_in_progress"
+    layers[2]["status"] = "data_ready" if system_status["production_ready"] else "blocked_on_deep_read"
+    layers[5]["status"] = "data_ready"
+    layers[7]["status"] = "runnable" if system_status["production_ready"] else "blocked_before_prose"
+    layers[7]["child_implementation"] = "production_chapter_runtime_v0.20"
+    layers[9]["status"] = "runnable"
+    return layers
 
 
 def _agent_roles(system_status: dict[str, Any]) -> list[dict[str, Any]]:
@@ -104,20 +113,20 @@ def _agent_roles(system_status: dict[str, Any]) -> list[dict[str, Any]]:
             "agent": "Codex",
             "status": "local_runtime_host",
             "role": "本地系统宿主 / Runtime / 工程 / 校验 / 编排",
-            "execution_boundary": "may execute local runtime and validation only",
+            "execution_boundary": "supervisor, compiler, validator, observer, and state settler",
         },
         {
             "agent": "Antigravity",
             "status": system_status["antigravity_execution"]["effective_state"],
             "role": "CLI 协作文学审查 / 长篇生命力评估",
-            "execution_boundary": "registered structural-review jobs only",
+            "execution_boundary": "registered deep-reading, continuity, and literary-review jobs only",
         },
         {
             "agent": "Hermes",
             "status": system_status["hermes_execution_status"],
             "display_status": f"Hermes: {system_status['hermes_execution_status']}",
             "role": "后期写手 / 文学增强 / 受控创意生成",
-            "execution_boundary": "paused until explicit Owner authorization",
+            "execution_boundary": "writer and bounded reviser after production readiness",
         },
         {
             "agent": "Web GPT",
@@ -143,6 +152,7 @@ def build_architecture_reconciliation(
     pipeline = pipeline_status or build_pipeline_status(state, adapters)
     return {
         "version": VERSION,
+        "implementation_revision": "0.20",
         "source_context": {
             "conversation_title": "中文玄幻小说汇总",
             "accepted_on": "2026-07-09",
@@ -168,7 +178,7 @@ def build_architecture_reconciliation(
                 "continuous long-form production",
             ],
         },
-        "architecture_layers": _layers(),
+        "architecture_layers": _layers(system_status),
         "experiment_calibration": {
             "label_zh": "Core7 小批量试验",
             "status": "accepted_as_calibration_basis",
@@ -181,20 +191,35 @@ def build_architecture_reconciliation(
             "pipeline_layer": "planning_pipeline",
             "classification": "child_implementation_not_full_architecture",
             "next_family": pipeline["next_family"]["family"],
+            "deep_read_runtime": "verifiable_deep_reading_v0.18",
+            "project_reconciliation": "borrowed_heaven_project_reconciliation_v0.19",
+            "chapter_runtime": "production_chapter_runtime_v0.20",
         },
         "agent_role_contract": _agent_roles(system_status),
         "current_mismatch_report": [
             {
                 "mismatch_id": "runtime_pipeline_ahead_of_architecture",
                 "severity": "high",
-                "summary": "Runtime and pipeline work advanced before source architecture reconciliation was locked.",
-                "correction": "Classify v0.3 as planning_pipeline and expose the ten-layer architecture in runtime and Studio.",
+                "summary": "Resolved: v0.3 is classified as the planning child layer and the ten-layer architecture remains canonical.",
+                "correction": "No further architecture fork; new runtimes remain child implementations.",
             },
             {
                 "mismatch_id": "product_visibility_gap",
                 "severity": "high",
-                "summary": "The Owner could not see how research assets, agents, runtime, and creation assets form one system.",
-                "correction": "Studio must expose architecture layers, Core7 calibration, mismatch report, and next architecture action.",
+                "summary": "Resolved: Studio reads the same runtime status and now exposes truthful deep-reading and production gates.",
+                "correction": "Keep Studio generated and read-only; do not create UI-owned state.",
+            },
+            {
+                "mismatch_id": "legacy_proof_overclaim",
+                "severity": "high",
+                "summary": "v0.8 sampled-access evidence was previously presented as full deep reading.",
+                "correction": "v0.18 requires contiguous byte coverage, per-book synthesis, and cross-book distillation.",
+            },
+            {
+                "mismatch_id": "missing_chapter_runtime",
+                "severity": "high",
+                "summary": "Research and asset layers existed without a traceable chapter production lifecycle.",
+                "correction": "v0.20 adds intent, compiled context, rule stack, draft, observation, audit, revision, and settlement stages.",
             },
         ],
         "production_readiness": {
@@ -204,11 +229,18 @@ def build_architecture_reconciliation(
             "owner_gate_status": system_status["owner_gate_status"],
             "content_generation_allowed": False,
             "hermes_execution_status": system_status["hermes_execution_status"],
+            "deep_read_status": system_status["verifiable_deep_reading"]["status"],
+            "production_ready": system_status["production_ready"],
         },
         "next_architecture_action": {
-            "action_id": "architecture_reconciliation_v0_4",
-            "label_zh": "锁定系统架构并把 v0.3 归位为规划管线层",
-            "safe_command": "python3 system/runtime/nrl.py architecture-status",
-            "blocked_actions": pipeline["forbidden_actions"],
+            "action_id": "verifiable_deep_reading_v0_18",
+            "label_zh": "完成连续深读、项目重审与正文运行门禁",
+            "safe_command": "python3 system/runtime/nrl.py deep-read-status",
+            "blocked_actions": [
+                "generate chapter prose before production readiness",
+                "call Hermes writer before v0.18 and v0.19 gates",
+                "promote unvalidated Agent output",
+                "treat historical v0.8 proof as full deep reading",
+            ],
         },
     }

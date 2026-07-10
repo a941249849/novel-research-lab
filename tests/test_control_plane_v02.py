@@ -157,6 +157,7 @@ class ControlPlaneCliTests(unittest.TestCase):
                 "corpus_pipeline",
                 "evidence_pack_matrix",
                 "creation_context_index",
+                "production_chapter_runtime",
                 "verifiable_deep_reading",
                 "architecture_reconciliation",
             },

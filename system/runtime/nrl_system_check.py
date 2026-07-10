@@ -14,6 +14,7 @@ from nrl_creation_schemas import (
 from nrl_corpus_pipeline import build_evidence_pack_matrix, build_pipeline_status
 from nrl_deep_read import build_deep_read_status
 from nrl_paths import runtime_path
+from nrl_production_runtime import build_production_readiness
 from nrl_rag_index import load_or_build_creation_context_index
 from nrl_research_assets import build_research_asset_catalog
 
@@ -59,6 +60,7 @@ def run_system_check() -> dict[str, Any]:
         pipeline_status=pipeline,
     )
     deep_read = build_deep_read_status()
+    production_runtime = build_production_readiness()
     architecture_payload = json.dumps(architecture, ensure_ascii=False)
     architecture_passed = (
         architecture["version"] == "0.4"
@@ -137,6 +139,15 @@ def run_system_check() -> dict[str, Any]:
                 and not creation_context["external_agent_execution_allowed"]
             ),
             "detail": creation_context["summary"],
+        },
+        {
+            "check_id": "production_chapter_runtime",
+            "passed": production_runtime["checks"]["chapter_runtime_contract_ready"],
+            "detail": {
+                "status": production_runtime["status"],
+                "ready": production_runtime["ready"],
+                "stage_count": len(production_runtime["stage_order"]),
+            },
         },
         {
             "check_id": "verifiable_deep_reading",

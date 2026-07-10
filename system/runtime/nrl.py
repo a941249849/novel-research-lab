@@ -58,6 +58,19 @@ from nrl_corpus_pipeline import (
 )
 from nrl_corpus_ingestion import write_promoted_review_assets
 from nrl_dna_registry import load_or_build_dna_registry, write_dna_registry
+from nrl_deep_read import (
+    build_deep_read_plan,
+    build_deep_read_status,
+    build_book_synthesis_packets,
+    build_cross_book_packet,
+    dispatch_pending_chunks,
+    dispatch_book_syntheses,
+    dispatch_cross_book_distillation,
+    validate_all_chunks,
+    validate_book_syntheses,
+    validate_cross_book_distillation,
+    validate_chunk_response,
+)
 from nrl_doctor import run_doctor
 from nrl_full_corpus_handoff import (
     build_full_corpus_status,
@@ -649,6 +662,73 @@ def cmd_full_corpus_review_ingest(_: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_deep_read_plan(args: argparse.Namespace) -> int:
+    print_json(build_deep_read_plan(args.target_bytes))
+    return 0
+
+
+def cmd_deep_read_status(_: argparse.Namespace) -> int:
+    print_json(build_deep_read_status())
+    return 0
+
+
+def cmd_deep_read_validate_chunk(args: argparse.Namespace) -> int:
+    result = validate_chunk_response(args.chunk_id)
+    print_json(result)
+    return 0 if result["valid"] else 1
+
+
+def cmd_deep_read_validate_all(_: argparse.Namespace) -> int:
+    result = validate_all_chunks()
+    print_json(result)
+    return 0 if result["status"] == "chunk_coverage_verified" else 1
+
+
+def cmd_deep_read_dispatch(args: argparse.Namespace) -> int:
+    result = dispatch_pending_chunks(
+        limit=args.limit,
+        workers=args.workers,
+        model=args.model,
+        print_timeout=args.print_timeout,
+    )
+    print_json(result)
+    return 0 if not result["failed"] else 1
+
+
+def cmd_deep_read_synthesis_pack(_: argparse.Namespace) -> int:
+    print_json(build_book_synthesis_packets())
+    return 0
+
+
+def cmd_deep_read_synthesis_dispatch(args: argparse.Namespace) -> int:
+    result = dispatch_book_syntheses(workers=args.workers, model=args.model, print_timeout=args.print_timeout)
+    print_json(result)
+    return 0 if result["validation"]["valid"] else 1
+
+
+def cmd_deep_read_synthesis_validate(_: argparse.Namespace) -> int:
+    result = validate_book_syntheses()
+    print_json(result)
+    return 0 if result["valid"] else 1
+
+
+def cmd_deep_read_cross_pack(_: argparse.Namespace) -> int:
+    print_json(build_cross_book_packet())
+    return 0
+
+
+def cmd_deep_read_cross_dispatch(args: argparse.Namespace) -> int:
+    result = dispatch_cross_book_distillation(model=args.model, print_timeout=args.print_timeout)
+    print_json(result)
+    return 0 if result["validation"]["valid"] else 1
+
+
+def cmd_deep_read_cross_validate(_: argparse.Namespace) -> int:
+    result = validate_cross_book_distillation()
+    print_json(result)
+    return 0 if result["valid"] else 1
+
+
 def cmd_antigravity_bridge_status(_: argparse.Namespace) -> int:
     print_json(build_antigravity_bridge_status())
     return 0
@@ -1163,6 +1243,35 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("full-corpus-review-ingest").set_defaults(
         func=cmd_full_corpus_review_ingest
     )
+    deep_read_plan = sub.add_parser("deep-read-plan")
+    deep_read_plan.add_argument("--target-bytes", type=int, default=1_500_000)
+    deep_read_plan.set_defaults(func=cmd_deep_read_plan)
+    sub.add_parser("deep-read-status").set_defaults(func=cmd_deep_read_status)
+    deep_read_chunk = sub.add_parser("deep-read-validate-chunk")
+    deep_read_chunk.add_argument("--chunk-id", required=True)
+    deep_read_chunk.set_defaults(func=cmd_deep_read_validate_chunk)
+    sub.add_parser("deep-read-validate-all").set_defaults(
+        func=cmd_deep_read_validate_all
+    )
+    deep_read_dispatch = sub.add_parser("deep-read-dispatch")
+    deep_read_dispatch.add_argument("--limit", type=int, default=0)
+    deep_read_dispatch.add_argument("--workers", type=int, default=2)
+    deep_read_dispatch.add_argument("--model", default="Gemini 3.5 Flash (High)")
+    deep_read_dispatch.add_argument("--print-timeout", default="10m0s")
+    deep_read_dispatch.set_defaults(func=cmd_deep_read_dispatch)
+    sub.add_parser("deep-read-synthesis-pack").set_defaults(func=cmd_deep_read_synthesis_pack)
+    deep_read_synth_dispatch = sub.add_parser("deep-read-synthesis-dispatch")
+    deep_read_synth_dispatch.add_argument("--workers", type=int, default=2)
+    deep_read_synth_dispatch.add_argument("--model", default="Gemini 3.5 Flash (High)")
+    deep_read_synth_dispatch.add_argument("--print-timeout", default="10m0s")
+    deep_read_synth_dispatch.set_defaults(func=cmd_deep_read_synthesis_dispatch)
+    sub.add_parser("deep-read-synthesis-validate").set_defaults(func=cmd_deep_read_synthesis_validate)
+    sub.add_parser("deep-read-cross-pack").set_defaults(func=cmd_deep_read_cross_pack)
+    deep_read_cross_dispatch = sub.add_parser("deep-read-cross-dispatch")
+    deep_read_cross_dispatch.add_argument("--model", default="Gemini 3.5 Flash (High)")
+    deep_read_cross_dispatch.add_argument("--print-timeout", default="15m0s")
+    deep_read_cross_dispatch.set_defaults(func=cmd_deep_read_cross_dispatch)
+    sub.add_parser("deep-read-cross-validate").set_defaults(func=cmd_deep_read_cross_validate)
     sub.add_parser("antigravity-bridge-status").set_defaults(
         func=cmd_antigravity_bridge_status
     )

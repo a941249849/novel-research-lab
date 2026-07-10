@@ -118,7 +118,7 @@ def _full_corpus_proof_item() -> list[dict[str, Any]]:
     validation_path = str(FULL_CORPUS_PROOF_VALIDATION.relative_to(ROOT))
     item = {
         "asset_id": "full-corpus-proof-v08",
-        "title": "全量小说集阅读证明",
+        "title": "全量小说集抽样访问证明（历史）",
         "asset_type": "corpus_proof",
         "source_path": source_path,
         "validation_path": validation_path,
@@ -128,7 +128,9 @@ def _full_corpus_proof_item() -> list[dict[str, Any]]:
             if readiness["promotion_allowed"]
             else "verified_not_promoted"
         ),
-        "categories": ["全文深读证明", "语料工程"],
+        "categories": ["抽样访问证明", "语料工程", "历史证据"],
+        "evidence_scope": "sampled_access_only",
+        "deep_read_claim_allowed": False,
         "exists": FULL_CORPUS_PROOF_MASTER.exists(),
         "verified_receipts": int(validation.get("verified_receipts", 0)),
         "required_receipts": int(validation.get("required_receipts", 0)),

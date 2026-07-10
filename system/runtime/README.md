@@ -778,4 +778,33 @@ controlled inbox file, and rejects output outside the one-scene character
 range, story anchors, and reader-facing jargon boundary. A passing test is a
 style benchmark only; full chapters and serial prose remain blocked.
 
+## Verifiable deep reading v0.18
+
+The historical v0.8 proof verifies source-file identity and four sampled byte
+ranges. It is retained as `access_sample_verified` evidence and must not be
+described as proof that every corpus byte was deeply read.
+
+The v0.18 pipeline creates contiguous bounded files under the Git-ignored
+`.nrl-work/` directory. Every corpus byte belongs to exactly one chunk, every
+Antigravity response is hash-bound to that chunk, and per-book plus cross-book
+synthesis gates are required before `deep_read_verified`.
+
+```bash
+python3 system/runtime/nrl.py deep-read-plan --target-bytes 1500000
+python3 system/runtime/nrl.py deep-read-status
+python3 system/runtime/nrl.py deep-read-dispatch --workers 2 --model "Gemini 3.5 Flash (High)"
+python3 system/runtime/nrl.py deep-read-validate-all
+python3 system/runtime/nrl.py deep-read-synthesis-pack
+python3 system/runtime/nrl.py deep-read-synthesis-dispatch --workers 2
+python3 system/runtime/nrl.py deep-read-synthesis-validate
+python3 system/runtime/nrl.py deep-read-cross-pack
+python3 system/runtime/nrl.py deep-read-cross-dispatch
+python3 system/runtime/nrl.py deep-read-cross-validate
+```
+
+Antigravity quota failures and empty responses never count toward coverage.
+All dispatch commands are resumable and retry only missing or invalid outputs.
+Hermes serial prose remains blocked until v0.18, project impact review, and
+creation-asset validation complete.
+
 GitHub binding is intentionally outside the runtime. Bind the workspace to a confirmed repository first; then `doctor` will report repository root, branch, and remotes. Do not bind this workspace to an unrelated repository.

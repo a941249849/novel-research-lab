@@ -92,6 +92,17 @@ const EMPTY_DATA = {
       validate: 'python3 system/runtime/nrl.py full-corpus-proof-validate --file <path>',
     },
   },
+  verifiable_deep_reading: {
+    version: '0.18',
+    job_id: 'job-v018-verifiable-deep-reading',
+    status: 'missing',
+    deep_read_verified: false,
+    legacy_v08_effective_status: 'missing',
+    book_count: 0,
+    required_chunk_count: 0,
+    validation: null,
+    next_action: '创建连续覆盖深读计划。',
+  },
   creation_schema_registry: {
     registry_name: 'NRL Creation Schema Registry',
     version: '0.2',
@@ -322,6 +333,13 @@ const statusNames: Record<string, string> = {
   owner_gate: 'Owner Gate',
   proof_gate_ready: '证明门已就绪',
   proof_verified: '证明已验证',
+  legacy_sample_access_gate: '历史抽样访问',
+  access_sample_verified: '抽样访问已验证',
+  planned: '已规划',
+  in_progress: '进行中',
+  chunk_coverage_verified: '分块覆盖已验证',
+  book_synthesis_verified: '单书综合已验证',
+  deep_read_verified: '全文深读已验证',
   verified_not_promoted: '已验证未提升',
   promotable_research_asset: '可提升为研究资产',
   blocked_on_owner_gate: 'Owner Gate 阻塞',
@@ -401,9 +419,9 @@ function OverviewView({data, compact}: {data: StudioData; compact: boolean}) {
             status={data.full_corpus_proof.status}
           />
           <SummaryCard
-            label="阅读证明"
-            value={`${data.full_corpus_proof.promotion_readiness.verified_receipts}/${data.full_corpus_proof.promotion_readiness.required_receipts}`}
-            status={data.full_corpus_proof.latest_validation?.status || data.full_corpus_proof.promotion_readiness.status}
+            label="连续深读"
+            value={`${data.verifiable_deep_reading.validation?.validated_chunk_count || 0}/${data.verifiable_deep_reading.required_chunk_count} 块`}
+            status={data.verifiable_deep_reading.status}
           />
           <SummaryCard
             label="提升状态"
@@ -417,9 +435,9 @@ function OverviewView({data, compact}: {data: StudioData; compact: boolean}) {
           />
         </Grid>
         <Banner
-          status={data.full_corpus_proof.promotion_readiness.proof_verified ? 'success' : 'warning'}
-          title="全量小说集阅读证明"
-          description={`${data.full_corpus_proof.promotion_readiness.verified_receipts}/${data.full_corpus_proof.promotion_readiness.required_receipts} 条证明已验证；${data.full_corpus_proof.promotion_readiness.next_required_action}`}
+          status={data.verifiable_deep_reading.deep_read_verified ? 'success' : 'warning'}
+          title="可验证全文深读 v0.18"
+          description={`${data.verifiable_deep_reading.book_count} 本、${data.verifiable_deep_reading.required_chunk_count} 个连续范围；当前 ${statusNames[data.verifiable_deep_reading.status] || data.verifiable_deep_reading.status}。旧 v0.8 仅为抽样访问证明。`}
         />
         <Banner
           status="info"
@@ -633,10 +651,10 @@ function ResearchView({data, compact}: {data: StudioData; compact: boolean}) {
     <Section padding={5}>
       <VStack gap={4}>
         <Banner
-          status={data.full_corpus_proof.promotion_readiness.proof_verified ? 'success' : 'warning'}
-          title="全量小说集阅读证明已进入研究资产目录"
-          description={`${data.full_corpus_proof.corpus_inventory.file_count} 本语料，${data.full_corpus_proof.promotion_readiness.verified_receipts}/${data.full_corpus_proof.promotion_readiness.required_receipts} 条证明；状态为 ${statusNames[data.full_corpus_proof.promotion_readiness.status] || data.full_corpus_proof.promotion_readiness.status}。`}
-          endContent={<StatusToken status={data.full_corpus_proof.latest_validation?.status || data.full_corpus_proof.promotion_readiness.status} />}
+          status={data.verifiable_deep_reading.deep_read_verified ? 'success' : 'warning'}
+          title="全量研究资产深度状态"
+          description={`旧 v0.8 已降级为抽样访问证据；v0.18 连续深读当前为 ${statusNames[data.verifiable_deep_reading.status] || data.verifiable_deep_reading.status}。只有 deep_read_verified 才代表全文深读完成。`}
+          endContent={<StatusToken status={data.verifiable_deep_reading.status} />}
         />
         <HStack gap={3} wrap="wrap" vAlign="end">
           <TextInput

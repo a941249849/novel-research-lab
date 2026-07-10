@@ -4,6 +4,7 @@ import json
 from typing import Any
 
 from nrl_creation_schemas import validate_creation_asset_store
+from nrl_deep_read import build_deep_read_status
 from nrl_corpus_pipeline import validate_all_evidence_packs
 from nrl_corpus_ingestion import load_promoted_review_assets
 from nrl_owner_gate import load_decisions
@@ -73,6 +74,7 @@ def build_hermes_readiness(state: dict[str, Any], adapters: dict[str, Any]) -> d
     owner_gate_required = bool(state.get("owner_gate_required", True))
     authorization = latest_final_asset_generation_decision(load_decisions())
     final_assets_promoted = _final_assets_promoted()
+    deep_read = build_deep_read_status()
     prerequisites_ready = all(
         (
             bool(
@@ -84,6 +86,7 @@ def build_hermes_readiness(state: dict[str, Any], adapters: dict[str, Any]) -> d
             bool(store_validation["valid"]),
             all(count > 0 for count in family_counts.values()),
             bool(evidence["valid"] and evidence["valid_family_count"] == len(FAMILIES)),
+            bool(deep_read["deep_read_verified"]),
         )
     )
     final_asset_generation_ready = (
@@ -91,6 +94,7 @@ def build_hermes_readiness(state: dict[str, Any], adapters: dict[str, Any]) -> d
     )
     checks = {
         "research_review_promoted": bool(promoted) and promoted.get("book_review_count") == 18,
+        "verifiable_deep_reading_complete": bool(deep_read["deep_read_verified"]),
         "creation_store_valid": bool(store_validation["valid"]),
         "all_creation_families_seeded": all(count > 0 for count in family_counts.values()),
         "evidence_packs_valid": bool(

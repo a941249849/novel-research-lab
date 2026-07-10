@@ -14,6 +14,7 @@ from nrl_corpus_pipeline import (
     build_pipeline_plan,
     build_pipeline_status,
 )
+from nrl_deep_read import build_deep_read_status
 from nrl_full_corpus_proof import build_proof_status
 from nrl_hermes_gate import build_hermes_readiness
 from nrl_rag_index import load_or_build_creation_context_index
@@ -89,6 +90,7 @@ def build_studio_data(
     hardening_status = build_hardening_status(state, adapters)
     research_assets = build_research_asset_catalog()
     full_corpus_proof = build_proof_status()
+    deep_read_status = build_deep_read_status()
     creation_schemas = build_creation_schema_registry()
     corpus_pipeline = build_pipeline_status(state, adapters)
     corpus_pipeline["next_plan"] = build_pipeline_plan(
@@ -127,6 +129,7 @@ def build_studio_data(
         "capability_roadmap": hardening_status,
         "research_asset_catalog": research_assets,
         "full_corpus_proof": full_corpus_proof,
+        "verifiable_deep_reading": deep_read_status,
         "creation_schema_registry": creation_schemas,
         "safe_action_catalog": {
             "actions": [

@@ -12,6 +12,7 @@ from nrl_creation_schemas import (
     validate_creation_asset_store,
 )
 from nrl_corpus_pipeline import build_evidence_pack_matrix, build_pipeline_status
+from nrl_deep_read import build_deep_read_status
 from nrl_paths import runtime_path
 from nrl_rag_index import load_or_build_creation_context_index
 from nrl_research_assets import build_research_asset_catalog
@@ -57,6 +58,7 @@ def run_system_check() -> dict[str, Any]:
         adapters,
         pipeline_status=pipeline,
     )
+    deep_read = build_deep_read_status()
     architecture_payload = json.dumps(architecture, ensure_ascii=False)
     architecture_passed = (
         architecture["version"] == "0.4"
@@ -137,6 +139,17 @@ def run_system_check() -> dict[str, Any]:
             "detail": creation_context["summary"],
         },
         {
+            "check_id": "verifiable_deep_reading",
+            "passed": deep_read["deep_read_verified"],
+            "blocking_scope": "production_readiness",
+            "detail": {
+                "status": deep_read["status"],
+                "deep_read_verified": deep_read["deep_read_verified"],
+                "legacy_v08_effective_status": deep_read["legacy_v08_effective_status"],
+                "required_chunk_count": deep_read["required_chunk_count"],
+            },
+        },
+        {
             "check_id": "architecture_reconciliation",
             "passed": architecture_passed,
             "detail": {
@@ -148,9 +161,13 @@ def run_system_check() -> dict[str, Any]:
             },
         },
     ]
+    integrity_checks = [
+        check for check in checks if check.get("blocking_scope") != "production_readiness"
+    ]
     return {
         "system": "Novel Research Lab",
         "control_plane_version": "0.2",
-        "passed": all(check["passed"] for check in checks),
+        "passed": all(check["passed"] for check in integrity_checks),
+        "production_ready": all(check["passed"] for check in checks),
         "checks": checks,
     }

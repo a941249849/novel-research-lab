@@ -61,6 +61,22 @@ export type FullCorpusProof = {
   };
 };
 
+export type VerifiableDeepReading = {
+  version: string;
+  job_id: string;
+  status: string;
+  deep_read_verified: boolean;
+  legacy_v08_effective_status: string;
+  book_count: number;
+  required_chunk_count: number;
+  validation: {
+    validated_chunk_count: number;
+    required_chunk_count: number;
+    validated_byte_ratio: number;
+  } | null;
+  next_action: string;
+};
+
 export type PipelineFamily = {
   family: string;
   label: string;
@@ -294,6 +310,7 @@ export type StudioData = {
     guardrails: string[];
   };
   full_corpus_proof: FullCorpusProof;
+  verifiable_deep_reading: VerifiableDeepReading;
   creation_schema_registry: {
     registry_name: string;
     version: string;

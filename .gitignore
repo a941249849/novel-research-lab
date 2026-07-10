@@ -4,6 +4,7 @@ __pycache__/
 
 # Source corpus and raw training material must stay local.
 novel_training_set/
+.nrl-work/
 
 # Local generated caches and review bundles.
 .pytest_cache/

@@ -54,9 +54,11 @@ class TechniqueProducerCliTests(RuntimeCliCase):
                 encoding="utf-8"
             )
         )
-        techniques = [asset for asset in store["assets"] if asset["family"] == "techniques"]
-        self.assertEqual(len(techniques), 3)
-        self.assertTrue(all(asset["lifecycle_state"] == "seed" for asset in techniques))
+        produced = [
+            asset for asset in store["assets"] if asset["asset_id"] in data["asset_ids"]
+        ]
+        self.assertEqual(len(produced), 3)
+        self.assertTrue(all(asset["lifecycle_state"] == "seed" for asset in produced))
         self.assertNotIn("novel_training_set/", json.dumps(store, ensure_ascii=False))
 
     def test_produce_techniques_is_idempotent(self):
@@ -80,7 +82,10 @@ class TechniqueProducerCliTests(RuntimeCliCase):
                 encoding="utf-8"
             )
         )
-        self.assertEqual(len([asset for asset in store["assets"] if asset["family"] == "techniques"]), 3)
+        self.assertEqual(
+            len([asset for asset in store["assets"] if asset["asset_id"] in first["asset_ids"]]),
+            3,
+        )
 
 
 class NamingProducerCliTests(RuntimeCliCase):

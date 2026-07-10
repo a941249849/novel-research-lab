@@ -7,6 +7,7 @@ from nrl_antigravity_bridge import (
     build_antigravity_execution_status,
 )
 from nrl_hermes_bridge import build_hermes_execution_status
+from nrl_deep_read import build_deep_read_status
 
 
 def content_progression_for(state: dict[str, Any]) -> str:
@@ -26,6 +27,7 @@ def operating_mode_for(state: dict[str, Any]) -> str:
 def build_system_status(state: dict[str, Any], adapters: dict[str, Any]) -> dict[str, Any]:
     antigravity_execution = build_antigravity_execution_status(adapters)
     hermes_execution = build_hermes_execution_status(adapters.get("hermes", {}))
+    deep_read = build_deep_read_status()
     return {
         "operating_mode": operating_mode_for(state),
         "content_progression": content_progression_for(state),
@@ -50,6 +52,8 @@ def build_system_status(state: dict[str, Any], adapters: dict[str, Any]) -> dict
         "antigravity_bridge": build_antigravity_bridge_status(),
         "antigravity_execution": antigravity_execution,
         "hermes_execution": hermes_execution,
+        "verifiable_deep_reading": deep_read,
+        "production_ready": deep_read["deep_read_verified"],
         "hard_rules": [
             "do not advance story phase",
             "do not advance story phase while owner gate is pending",
@@ -58,5 +62,7 @@ def build_system_status(state: dict[str, Any], adapters: dict[str, Any]) -> dict
             "do not generate full character cards",
             "call Hermes only through the controlled prose-test gate",
             "use current pending review as a system-state test sample",
+            "do not claim full-corpus deep reading before v0.18 is deep_read_verified",
+            "do not start serial prose while corpus depth revalidation is incomplete",
         ],
     }

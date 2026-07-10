@@ -130,7 +130,8 @@ class ControlPlaneCliTests(unittest.TestCase):
         result = self.run_cli("studio-data")
         self.assertEqual(result.returncode, 0, result.stderr)
         proof = json.loads(result.stdout)["full_corpus_proof"]
-        self.assertEqual(proof["status"], "proof_gate_ready")
+        self.assertEqual(proof["status"], "legacy_sample_access_gate")
+        self.assertFalse(proof["deep_read_claim_allowed"])
         self.assertEqual(proof["corpus_inventory"]["file_count"], 18)
         self.assertEqual(proof["latest_validation"]["status"], "proof_verified")
         self.assertEqual(proof["promotion_readiness"]["status"], "promotable_research_asset")
@@ -156,6 +157,7 @@ class ControlPlaneCliTests(unittest.TestCase):
                 "corpus_pipeline",
                 "evidence_pack_matrix",
                 "creation_context_index",
+                "verifiable_deep_reading",
                 "architecture_reconciliation",
             },
         )

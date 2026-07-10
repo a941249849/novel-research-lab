@@ -3,6 +3,7 @@ from __future__ import annotations
 import os
 import shutil
 import subprocess
+from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
@@ -18,6 +19,17 @@ def find_hermes_binary() -> str | None:
     return shutil.which("hermes") or shutil.which(str(Path.home() / ".local/bin/hermes"))
 
 
+@lru_cache(maxsize=1)
+def _probe_hermes(binary: str) -> tuple[bool, str]:
+    try:
+        probe = subprocess.run(
+            [binary, "--version"], text=True, capture_output=True, check=False, timeout=2
+        )
+    except subprocess.TimeoutExpired:
+        return True, "version check deferred while CLI is busy"
+    return probe.returncode == 0, (probe.stdout or probe.stderr).strip()
+
+
 def build_hermes_execution_status(adapter: dict[str, Any]) -> dict[str, Any]:
     binary = find_hermes_binary()
     if not binary:
@@ -30,18 +42,15 @@ def build_hermes_execution_status(adapter: dict[str, Any]) -> dict[str, Any]:
             "can_execute_controlled_prose_test": False,
             "blocked_reason": "hermes binary not found",
         }
-    probe = subprocess.run(
-        [binary, "--version"], text=True, capture_output=True, check=False
-    )
+    available, version_output = _probe_hermes(binary)
     configured = adapter.get("mode") == "cli_bridge"
-    available = probe.returncode == 0
     ready = configured and available
     return {
         "declared_mode": adapter.get("mode", "manual_handoff"),
         "available": available,
         "binary_path": binary,
         "model": MODEL,
-        "version_output": (probe.stdout or probe.stderr).strip(),
+        "version_output": version_output,
         "effective_state": "ready" if ready else "manual_handoff",
         "can_execute_controlled_prose_test": ready,
         "blocked_reason": None if ready else "Hermes adapter is not configured for cli_bridge",

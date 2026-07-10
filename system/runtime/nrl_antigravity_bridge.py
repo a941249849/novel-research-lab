@@ -4,6 +4,7 @@ import json
 import os
 import shutil
 import subprocess
+from functools import lru_cache
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -33,6 +34,7 @@ def find_agy_binary() -> str | None:
     return shutil.which("agy") or shutil.which(str(Path.home() / ".local/bin/agy"))
 
 
+@lru_cache(maxsize=1)
 def build_antigravity_bridge_status() -> dict[str, Any]:
     binary = find_agy_binary()
     if not binary:
@@ -46,20 +48,29 @@ def build_antigravity_bridge_status() -> dict[str, Any]:
             "request_dir": DEFAULT_REQUEST_DIR,
             "response_dir": DEFAULT_RESPONSE_DIR,
         }
-    version = subprocess.run(
-        [binary, "--version"],
-        cwd=ROOT,
-        text=True,
-        capture_output=True,
-        check=False,
-    )
+    try:
+        version = subprocess.run(
+            [binary, "--version"],
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+            check=False,
+            timeout=2,
+        )
+        version_output = (version.stdout or version.stderr).strip()
+        blocked_reason = None if version.returncode == 0 else "agy --version failed"
+    except subprocess.TimeoutExpired:
+        # A running long-context job can hold the CLI state lock. Binary
+        # presence still proves the bridge is installed; do not block Studio.
+        version_output = "version check deferred while CLI is busy"
+        blocked_reason = None
     return {
         "version": VERSION,
-        "available": version.returncode == 0,
+        "available": True,
         "mode": "cli",
         "binary_path": binary,
-        "version_output": (version.stdout or version.stderr).strip(),
-        "blocked_reason": None if version.returncode == 0 else "agy --version failed",
+        "version_output": version_output,
+        "blocked_reason": blocked_reason,
         "request_dir": DEFAULT_REQUEST_DIR,
         "response_dir": DEFAULT_RESPONSE_DIR,
     }

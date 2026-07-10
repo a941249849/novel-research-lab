@@ -807,4 +807,23 @@ All dispatch commands are resumable and retry only missing or invalid outputs.
 Hermes serial prose remains blocked until v0.18, project impact review, and
 creation-asset validation complete.
 
+## Production chapter runtime v0.20
+
+The chapter runtime is an ordered, artifact-backed state machine. It does not
+create prose until corpus depth and project reconciliation gates pass.
+
+```bash
+python3 system/runtime/nrl.py project-reconciliation-pack
+python3 system/runtime/nrl.py project-reconciliation-dispatch
+python3 system/runtime/nrl.py project-reconciliation-validate
+python3 system/runtime/nrl.py production-readiness
+python3 system/runtime/nrl.py chapter-runtime-status
+python3 system/runtime/nrl.py prose-metrics --file <draft-or-revision.md>
+```
+
+The eight stages are chapter intent, context compilation, draft generation,
+fact observation, continuity audit, revision, state settlement, and acceptance.
+Accepted chapters are immutable; later corrections create explicit revision and
+settlement artifacts rather than rewriting history silently.
+
 GitHub binding is intentionally outside the runtime. Bind the workspace to a confirmed repository first; then `doctor` will report repository root, branch, and remotes. Do not bind this workspace to an unrelated repository.

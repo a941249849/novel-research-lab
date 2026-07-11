@@ -4,54 +4,12 @@
   "status": "in_progress",
   "deep_read_verified": false,
   "book_count": 18,
-  "validated_chunk_count": 55,
+  "validated_chunk_count": 61,
   "required_chunk_count": 143,
-  "validated_bytes": 76154121,
+  "validated_bytes": 85154417,
   "required_bytes": 197294465,
-  "validated_byte_ratio": 0.385992,
+  "validated_byte_ratio": 0.431611,
   "invalid_chunks": [
-    {
-      "chunk_id": "book-08-322e84872b22-chunk-004",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
-    {
-      "chunk_id": "book-08-322e84872b22-chunk-005",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
-    {
-      "chunk_id": "book-08-322e84872b22-chunk-006",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
-    {
-      "chunk_id": "book-08-322e84872b22-chunk-007",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
-    {
-      "chunk_id": "book-08-322e84872b22-chunk-008",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
-    {
-      "chunk_id": "book-08-322e84872b22-chunk-009",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
     {
       "chunk_id": "book-08-322e84872b22-chunk-010",
       "valid": false,
@@ -631,5 +589,5 @@
     "valid": true,
     "errors": []
   },
-  "validated_at": "2026-07-12T00:21:17+08:00"
+  "validated_at": "2026-07-12T00:26:43+08:00"
 }

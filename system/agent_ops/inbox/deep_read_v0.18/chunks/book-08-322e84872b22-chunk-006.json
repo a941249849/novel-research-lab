@@ -1,0 +1,110 @@
+```json
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "chunk_id": "book-08-322e84872b22-chunk-006",
+  "source_file": "novel_training_set/《完美世界》（校对版全本）作者：辰东.txt",
+  "source_file_sha256": "322e84872b2259d9210f84de63efd70d901a412dfefbe9bb9d52168eea56d481",
+  "start_byte": 7500269,
+  "end_byte": 9000328,
+  "chunk_sha256": "36193efe9167094b9335e15fb9b1ff2fe06a89fa41d32405b758eb6fc4e967d0",
+  "source_encoding": "gb18030",
+  "bounded_chunk_utf8_sha256": "7984bd5e5f45f81dff7c96823f9aea3fe9e9b85e6b6bcbe0d1ff330568eb4ffd",
+  "analysis": {
+    "chapter_span": [
+      "第1015章 畅快",
+      "第1247章 生命蓬勃"
+    ],
+    "major_events": [
+      "Qi Daolin and the Unyielding Creature (不灭生灵) arrive to protect Shi Hao from the siege of various sect masters after he emerges from the immortal ancient land in [第1015章 畅快].",
+      "A golden leaf from the Willow Deity (柳神) descends and kills a blood bat sect master, intimidating the surrounding crowd of sect leaders in [第1018章 柳神再现].",
+      "The Bell of No End (无终之钟), a treasure belonging to the supreme expert Wu Zhong from the previous era, is deployed against the Willow Deity to manipulate time in [第1022章 无终].",
+      "The Willow Deity speaks to Shi Hao about the nature of the desolate path of supreme strength and prepares to cross the Primitive Gate (原始之门) to seek the origin in [第1025章 柳神心中的世界].",
+      "Shi Hao and the Strike-God Stone (打神石) invade the Celestial Clan (天人族) ancestral hunting grounds, harvesting various spirit medicines as revenge in [第1030章 驾临天人族祖地].",
+      "Shi Hao waits outside the City of Heaven and defeats the Celestial Clan heavenly deity Qi Tuo (戚拓) who had previously imprisoned him in [第1033章 天人殇].",
+      "Shi Hao defeats the domain challenger Lin Tian, tearing off his forearm, which earns him eligibility to enter the Heavenly Deity Academy (天神书院) in [第1040章 入选天神书院].",
+      "Shi Hao encounters a floating eyeball creature from the other side of the border in a desolate mountain area, which utilizes corrosive blood pool magic in [第1045章 边荒那一边的生灵].",
+      "Shi Hao is sold as a slave miner to the Red Blood pirate ship and sent to the dangerous Tai Chu Ancient Mine (太初古矿) in [第1078章 太初古矿].",
+      "Shi Hao discovers a pool of magical fluid formed from the shedding of a legendary Long Life Herb (长生药) that transformed into a small beast and escaped in [第1083章 长生液].",
+      "The elders of the Heavenly Deity Academy bring out the Nine Phoenix Furnace (九凰炉), a top treasure of Wu Liang Tian, to support the students who wish to explore the mine in [第1086章 九凰炉].",
+      "Shi Hao, having survived the Tai Chu Ancient Mine, defeats and systematically robs the academy geniuses who entered the mine, collecting Phoenix blood in [第1096章 洗劫天才].",
+      "Wang Xi of the long-lived Wang Clan notices the high-grade replica of the Gold Diamond Ring (金刚琢) on Shi Hao's head, leading to their interaction in [第1102章 王曦仙子].",
+      "Shi Hao bickers with a disciple from the Demon Bear race, refusing to fight unless rewarded, and eventually wins a furnace of Purple Mansion Fluid (紫府液) in [第1106章 极品].",
+      "Shi Hao pursues and executes Yuan Feng (the grandson of Yuan Qing who had banished him to the mine), shattering his golden spear in [第1114章 击杀元丰].",
+      "Wang Xi, Princess Yaoyue (邀月公主), and Xuan Kun (玄昆) put aside their rivalries to launch a joint ambush against Lv Tuo (绿陀), severely wounding him in [第1116章 伏击].",
+      "Shi Hao finds a mysterious bone key (骨钥) hidden in a fissure of an ancient purple altar within the immortal battlefield in [第1126章 风起].",
+      "Shi Hao captures a Void Beast (虚空兽), chops a piece of its flesh to boil in a cauldron, and forces its primordial spirit to attempt rebirth in [第1136章 剁了].",
+      "Shi Hao fights the Nightmare-class spider beast Three-Headed King (三头王), destroying its lion head and forcing it to confront his Unified Cave-Heaven in [第1146章 悟法].",
+      "Shi Hao witnesses an epoch-transcending battle along the river of time between a mysterious white-clothed woman and a dark king-like figure in [第1156章 回途].",
+      "Given the choice by the elders to either pursue the modern path or the Immortal Ancient Path, Shi Hao resolutely chooses the Immortal Ancient Path in [第1166章 仙古法].",
+      "Shi Hao refines various pieces of ancient immortal pills and dark gold companion herbs in a bone tripod, breaking through to the Heavenly Deity (天神) realm in [第1176章 晋阶天神].",
+      "Shi Hao protects Feng Wu (凤舞) from her tormentor Jin Yun (金芸), allowing Feng Wu to stomp on her, and publicly reveals that he is 'Huang' (荒) in [第1184章 我是荒].",
+      "Dugu Yun (独孤云), the descendant of the ancient Protector lineage returned from the foreign realm, challenges and sweeps through the academy disciples using his golden bloodline in [第1196章 横扫].",
+      "The academy expedition spots a giant golden tree evolving into a World Tree in the Boundary Grave (界坟), and Shi Hao sees the golden-winged woman still meditating in its flower in [第1204章 准世界树].",
+      "Shi Hao defeats the elite student Meng Du (孟都) who also possessed three Dao flowers, solidifying his status as a 'true gold' cultivator in [第1217章 真金].",
+      "The group discovers that a supreme 'Heaven Seed' was being cultivated using foreign royal blood inside the Great Dao Bottle (大道宝瓶) in [第1224章 万道树].",
+      "Representatives from the Immortal Academy (仙院) and Sacred Academy (圣院) arrive at the Heavenly Deity Academy seeking supreme blood from three-energy geniuses to repair damaged ancient seeds in [第1227章 来势汹汹].",
+      "Shi Hao consults the Grand Elder (大长老) about his cultivation path, stating his ambition to master both the ancient and modern systems in [第1238章 以身为种].",
+      "Shi Hao undergoes a brutal transformation using the divine bamboo sap (辟邪神竹) under a terrifying tribulation, rejuvenating his bones and achieving a pure newborn-like state in [第1247章 生命蓬勃]."
+    ],
+    "character_state_transitions": [
+      "Shi Hao: transition from a battle-weary cultivator emerging from Immortal Ancient to a protected, celebrated genius under Qi Daolin in [第1015章 畅快].",
+      "Willow Deity (柳神): transition from a low-profile mystery status in the lower realm to a legendary, high-status deterrent that scares the sect leaders in [第1018章 柳神再现].",
+      "Shi Hao: transition from a vengeful youth sneaking into the Celestial Clan's hunting ground to a dominant conqueror blocking their City of Heaven in [第1030章 驾临天人族祖地] and [第1033章 天人殇].",
+      "Lin Tian: transition from an arrogant domain challenger undefeated in the upper realm to a defeated, humbled fighter with a severed arm in [第1040章 入选天神书院].",
+      "Shi Hao: transition from a free-roaming cultivator to a captive, silver-bound slave miner shipped to the Tai Chu Ancient Mine in [第1078章 太初古矿].",
+      "Shi Hao: transition from an injured captive in the mine to a fully-healed, energized cultivator after discovering and consuming the Long Life Liquid in [第1083章 长生液].",
+      "Shi Hao: transition from a low-key slave/servant to a feared robber of the academy geniuses inside the mine in [第1096章 洗劫天才].",
+      "Lv Tuo (绿陀): transition from a peerless, unchallenged supreme student to a heavily injured, retreating fugitive after the joint ambush in [第1116章 伏击].",
+      "Shi Hao: transition from the 圣祭 (Holy Sacrifice) realm to the formal Heavenly Deity (天神) realm after the blooming of his third Dao Flower in [第1176章 晋阶天神].",
+      "Dugu Yun (独孤云): transition from a captive returned from the foreign realm to a free, proud challenger seeking family vengeance and sweeping the academy in [第1196章 横扫].",
+      "Meng Du (孟都): transition from an elite disciple with three Dao flowers to a defeated, retreating fighter after his clash with Shi Hao in [第1217章 真金].",
+      "Shi Hao: transition from a hesitant cultivator looking for an external Dao seed to a determined pioneer of the 'body-as-a-seed' (以身为种) path under the guidance of the Grand Elder in [第1238章 以身为种] and [第1247章 生命蓬勃]."
+    ],
+    "long_form_mechanisms": [
+      "The Bell of No End (无终之钟) and Time Magic: The mechanism where the bell utilizes two combined runes '无' (No) and '终' (End) to manipulate the river of time, putting opponents into temporal banishment and accelerating their aging or decay, as shown in [第1022章 无终].",
+      "The Primitive Gate (原始之门) and Transcendent Travel: The mechanism where entering the mysterious white bone door forces supreme cultivators into a path of no return, aiming to reach the ultimate world beyond, though most end up dying or dissolving, as mentioned in [第1025章 柳神心中的世界].",
+      "The Celestial City (天之城) Defensive Arrays: The mechanism where the ancient city of the Celestial Clan is protected by grand arrays set up by the six celestial ancestors, allowing it to withstand external sieges while being difficult for outsiders to breach without specialized talismans like the gold broken-world charm, as seen in [第1033章 天人殇].",
+      "The Boundary Eyeball's Blood Pool Decay: The mechanism of the foreign boundary creature's eye, which when closed hides in the void, and when open fires destructive red flames and summons a pool of corrosive blood that dissolves cultivators down to their skins, as described in [第1045章 边荒那一边的生灵].",
+      "The Long Life Herb (长生药) Regeneration: The mechanism where a Long Life Herb nearing its limit undergoes nirvana (涅槃) by shedding its old skin/leaves into a divine spring to form the potent Long Life Liquid (长生液) while the new form escapes as a sentient animal, as shown in [第1083章 长生液].",
+      "The Nine Phoenix Furnace (九凰炉) and Boundary Protection: The mechanism of the ancient furnace made of phoenix bone, which has a small puncture from a foreign expert during the ancient wars, rendering its spirit dormant but still maintaining its status as a supreme protective treasure that the Tai Chu Mine will not harm, as explained in [第1086章 九凰炉].",
+      "The Gold Diamond Ring (金刚琢) Captive Bond: The mechanism where the replica of the Wang Clan's ancestral treasure, containing a trace of immortal gold, is placed on a captive's head to restrict their cultivation and allow the clan members to track and command them as servants, as described in [第1102章 王曦仙子].",
+      "The Three-Headed King (三头王) Life Substitution: The mechanism of the Nightmare-class spider beast where each of its three heads represents a separate life (such as its lion head), allowing it to sacrifice a head to substitute for its death when receiving a fatal strike, as shown in [第1146章 悟法].",
+      "The Unified Cave-Heaven (唯一洞天) Magic Immunity: The mechanism where merging ten cave-heavens into a single ring of light forms a domain that grants temporary immunity to external magical energy and laws, preventing opponents from casting spells on the user, as demonstrated in [第1146章 悟法].",
+      "The Immortal Ancient language and Dao Words: The mechanism of learning the Immortal Ancient Path where the cultivator must master up to a million characters, each character representing a unique law of the universe and requiring immortal energy to write, as detailed in [第1166章 仙古法].",
+      "The Body-As-A-Seed (以身为种) Path: The mechanism of breaking through to the next realm without relying on external Dao seeds (like ancient seeds or world trees), instead using the body's internal potential and bone structures as the seed of cultivation, requiring brutal tribulation and body restructuring, as described in [第1238章 以身为种] and [第1247章 生命蓬勃]."
+    ],
+    "continuity_observations": [
+      "Unresolved Identity of the Unyielding Creature (不灭生灵): In [第1015章 畅快], Shi Hao notices that the Unyielding Creature has golden feathers and wings like a Peng, hinting at his connection to the Kunpeng lineage, which aligns with his identity as the Kunpeng's son (鲲鹏子) introduced in earlier books.",
+      "The Solar Tree and Golden Woman's Relocation: In [第1204章 准世界树], the appearance of the quasi-world tree and the golden-winged woman in the Boundary Grave continues the plot from the lower realm (where Shi Hao and Little Toy fought at Mount Bu Lao to save the Unyielding Creature and saw the Sun Tree fly away), resolving the question of where the tree vanished to.",
+      "The Gold Diamond Ring (金刚琢) Plot: The replica ring placed on Shi Hao's head in [第1102章 王曦仙子] continues the plot of Shi Hao being captured by the Wang Clan representatives, which leads to his role as Wang Xi's 'servant' in the academy.",
+      "Qing Yi (清漪) and the Blue Moon Flame (青月焰): In [第1217章 真金], Qing Yi's vision of a legendary fairy walking into her heart when the Blue Moon Flame is active continues the mystery of her past life/reincarnation connection to the ancient fairy Qing Yue (青月) mentioned in [第1166章 仙古法].",
+      "Dugu Yun (独孤云) and the Protector Lineage: The introduction of Dugu Yun in [第1196章 横扫] as a protector descendant returned from the foreign realm continues the lore of the ancient war between the two worlds where some protectors were corrupted or captured.",
+      "The Banishment by Yuan Qing (元青): The mention in [第1078章 太初古矿] of Shi Hao being sent to the mine by Yuan Qing matches the previous development where Yuan Qing suppressed Shi Hao to please the Wind Clan, leading to Shi Hao's quest for revenge in [第1114章 击杀元丰].",
+      "The Bell of No End (无终之钟) and the Three-Lifetime Copper Coffin: The discussion in [第1022章 无终] linking the bell and the copper coffin to the previous Immortal Ancient epoch shows a persistent lore connecting these ancient items.",
+      "The Strike-God Stone (打神石) Evolution: The stone's mention in [第1030章 驾临天人族祖地] of having consumed mixed elements, destiny stone, and phoenix nest rocks in the ancient land continues its gluttonous cultivation path from earlier chapters.",
+      "Ten-Cave-Heaven Integration: The description of the merged cave-heaven in [第1146章 悟法] as a theoretical path that ancient people wrote off as impossible continues Shi Hao's unique path established in the lower realm."
+    ],
+    "style_observations": [
+      "Double-Character Titles and Parallel Structuring: Chapter titles are consistently short and thematic, often consisting of two characters (e.g., [第1015章 畅快], [第1022章 无终], [第1136章 剁了], [第1177章 空灵], [第1243章 闯]), reflecting a punchy, rapid-fire pacing style.",
+      "Spectator Commentary and Reactions: Combat scenes and major breakthroughs are frequently accompanied by detailed commentary from surrounding characters or generic 'spectators' (e.g., in [第1040章 入选天神书院] and [第1096章 洗劫天才]), serving to hype up the protagonist's achievements and explain technical lore.",
+      "Hyperbolic Combat Vocabulary: Descriptions of fights rely heavily on extreme scale adjectives, such as '天崩地裂' (heaven collapses and earth cracks), '秩序神链' (chains of order), '混沌气' (chaotic energy), and '乾坤都在颤栗' (the cosmos is trembling), creating a grand epic atmosphere.",
+      "Comedic Juxtaposition with Brutality: Dramatic, high-stakes battle chapters often feature comedic elements or bickering involving characters like the Strike-God Stone, the rabbit (小兔子), or the baby麒麟 (e.g., in [第1030章 驾临天人族祖地] and [第1086章 九凰炉]).",
+      "Color Coding for Factions and Powers: Colors are consistently used to symbolize power levels and origins (e.g., gold/purple for supreme bloodlines/sacred places, red/crimson for Phoenix or fire power, black/gray for dark or foreign threats).",
+      "Repetitive Protagonist Defiance Archetype: The narrative emphasizes the protagonist's physical resilience and mental determination in the face of impossible odds, frequently using phrases like '我心坚如铁' (my heart is as firm as iron) to emphasize willpower."
+    ],
+    "creation_family_evidence": {
+      "chapter_formatting_alignment": "Every chapter heading in the chunk is preceded by exactly two empty lines and followed directly by narrative prose, with no intervening empty lines.",
+      "paragraph_indentation": "All narrative prose lines in the entire chunk begin with exactly two full-width/ideographic spaces (\\u3000\\u3000), while the chapter heading lines carry no indentation.",
+      "clean_proofread_status": "The text lacks any author notes, postscripts (e.g., PS), website advertisements, or solicitation of monthly tickets, confirming it is a highly sanitized digital '校对版' (proofread edition)."
+    },
+    "originality_risks": [
+      "The 'Steal and Return' Arm/Bone Trope: The sequence in [第1040章 入选天神书院] where Shi Hao rips off Lin Tian's arm but throws it back because 'it is human and disappointing' is a recycled variation of xianxia power-moves showing dominance and contempt for the opponent's physical lineage.",
+      "The 'Face-Slapping' of Underestimated Protagonists by Arrogant Elites: Hostile clans and academy disciples constantly dismiss Shi Hao as a 'slave' or 'lowly cultivator from the lower realm' (e.g., in [第1106章 极品] and [第1196章 横扫]), only to be immediately defeated in dramatic combat, which is a highly formulaic xianxia plot device.",
+      "The Overused 'Nirvana/Rebirth under Lightning' Breakthrough: In [第1247章 生命蓬勃], the protagonist breaks through by enduring a near-fatal lightning tribulation that shatters his bones only to rebuild them stronger, a standard trope used across countless cultivation novels to justify sudden power-ups.",
+      "The 'Ancient Ruins as a Magic Shopping Mall' Mechanic: The academy geniuses exploring the Tai Chu Mine or Boundary Grave (e.g., in [第1083章 长生液] and [第1215章 力敌群雄]) find ancient items, divine springs, and residual pills perfectly suited to their current cultivation bottlenecks, which simplifies progression through convenient coincidences.",
+      "The Secret 'Protector/Traitor' Lineage Rivalry: The trope in [第1196章 横扫] of a returning guardian's descendant who holds an ancient blood feud against local clans is a standard dramatic device used to generate quick conflict within a school/sect setting."
+    ]
+  }
+}
+```

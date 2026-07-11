@@ -712,7 +712,6 @@ def cmd_deep_read_dispatch(args: argparse.Namespace) -> int:
         model=args.model,
         print_timeout=args.print_timeout,
         runner=args.runner,
-        variant=args.variant,
     )
     print_json(result)
     return 0 if not result["failed"] else 1
@@ -1379,8 +1378,7 @@ def build_parser() -> argparse.ArgumentParser:
     deep_read_dispatch.add_argument("--workers", type=int, default=2)
     deep_read_dispatch.add_argument("--model", default="Gemini 3.5 Flash (High)")
     deep_read_dispatch.add_argument("--print-timeout", default="10m0s")
-    deep_read_dispatch.add_argument("--runner", choices=("agy", "opencode-go"), default="agy")
-    deep_read_dispatch.add_argument("--variant", default="high")
+    deep_read_dispatch.add_argument("--runner", choices=("agy",), default="agy")
     deep_read_dispatch.set_defaults(func=cmd_deep_read_dispatch)
     sub.add_parser("deep-read-synthesis-pack").set_defaults(func=cmd_deep_read_synthesis_pack)
     deep_read_synth_dispatch = sub.add_parser("deep-read-synthesis-dispatch")

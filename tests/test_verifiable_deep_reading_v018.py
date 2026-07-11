@@ -97,27 +97,16 @@ class VerifiableDeepReadingV018Tests(unittest.TestCase):
         self.assertEqual(response["chunk_id"], "target")
         self.assertEqual(response["analysis"]["major_events"], ["event"])
 
-    def test_dispatch_help_exposes_opencode_go_runner_and_variant(self):
+    def test_dispatch_help_exposes_only_the_approved_long_text_runner(self):
         result = self.run_cli("deep-read-dispatch", "--help")
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn("--runner", result.stdout)
-        self.assertIn("--variant", result.stdout)
+        self.assertNotIn("opencode-go", result.stdout)
+        self.assertNotIn("--variant", result.stdout)
 
-    def test_opencode_go_runner_rejects_parallel_workers(self):
-        with self.assertRaisesRegex(ValueError, "workers=1"):
-            nrl_deep_read.validate_dispatch_options("opencode-go", 2)
-
-    def test_opencode_go_runner_has_a_bounded_timeout(self):
-        self.assertEqual(nrl_deep_read.OPENCODE_RUN_TIMEOUT_SECONDS, 600)
-
-    def test_opencode_go_runner_uses_the_bounded_reader_agent(self):
-        self.assertEqual(nrl_deep_read.OPENCODE_DEEP_READ_AGENT, "nrl-deep-reader")
-        agent_path = REPO_ROOT / ".opencode" / "agents" / "nrl-deep-reader.md"
-        self.assertTrue(agent_path.is_file())
-        agent = agent_path.read_text(encoding="utf-8")
-        self.assertIn("steps: 2", agent)
-        self.assertIn("doom_loop", agent)
-        self.assertIn("effect: deny", agent)
+    def test_opencode_go_runner_is_rejected_for_v018_long_source_chunks(self):
+        with self.assertRaisesRegex(ValueError, "not supported"):
+            nrl_deep_read.validate_dispatch_options("opencode-go", 1)
 
     def test_plan_normalizes_gb18030_chunks_to_hash_bound_utf8_reading_files(self):
         self.book.write_bytes(("第一章 起点\n凡人踏上修行路。\n" * 80).encode("gb18030"))

@@ -103,6 +103,13 @@ class VerifiableDeepReadingV018Tests(unittest.TestCase):
         self.assertIn("--runner", result.stdout)
         self.assertIn("--variant", result.stdout)
 
+    def test_opencode_go_runner_rejects_parallel_workers(self):
+        with self.assertRaisesRegex(ValueError, "workers=1"):
+            nrl_deep_read.validate_dispatch_options("opencode-go", 2)
+
+    def test_opencode_go_runner_has_a_bounded_timeout(self):
+        self.assertEqual(nrl_deep_read.OPENCODE_RUN_TIMEOUT_SECONDS, 600)
+
     def test_plan_normalizes_gb18030_chunks_to_hash_bound_utf8_reading_files(self):
         self.book.write_bytes(("第一章 起点\n凡人踏上修行路。\n" * 80).encode("gb18030"))
         plan = self.plan()

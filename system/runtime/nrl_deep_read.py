@@ -18,6 +18,7 @@ from nrl_paths import ROOT, runtime_path
 VERSION = "0.18"
 JOB_ID = "job-v018-verifiable-deep-reading"
 DEFAULT_TARGET_BYTES = 1_500_000
+OPENCODE_RUN_TIMEOUT_SECONDS = 600
 PLAN_PATH = runtime_path("system/research_assets/deep_read/v0.18/plan.json")
 VALIDATION_PATH = runtime_path("system/research_assets/deep_read/v0.18/validation.json")
 REQUEST_DIR = runtime_path("system/agent_ops/packets/deep_read_v0.18")
@@ -553,21 +554,31 @@ def _dispatch_one_opencode_go(
     request_path = runtime_path(str(chunk["request_path"]))
     response_path = runtime_path(str(chunk["response_path"]))
     model_id = model if model.startswith("opencode-go/") else f"opencode-go/{model}"
-    result = subprocess.run(
-        [
-            binary,
-            "run",
-            "--model",
-            model_id,
-            "--variant",
-            variant,
-            request_path.read_text(encoding="utf-8"),
-        ],
-        cwd=ROOT,
-        text=True,
-        capture_output=True,
-        check=False,
-    )
+    try:
+        result = subprocess.run(
+            [
+                binary,
+                "run",
+                "--model",
+                model_id,
+                "--variant",
+                variant,
+                request_path.read_text(encoding="utf-8"),
+            ],
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+            check=False,
+            timeout=OPENCODE_RUN_TIMEOUT_SECONDS,
+        )
+    except subprocess.TimeoutExpired:
+        response_path.unlink(missing_ok=True)
+        return {
+            "chunk_id": chunk["chunk_id"],
+            "valid": False,
+            "errors": [f"opencode timed out after {OPENCODE_RUN_TIMEOUT_SECONDS} seconds"],
+            "returncode": None,
+        }
     extraction_error = ""
     if result.returncode == 0:
         try:
@@ -600,6 +611,13 @@ def _dispatch_one(
     raise RuntimeError(f"unknown deep-read runner: {runner}")
 
 
+def validate_dispatch_options(runner: str, workers: int) -> None:
+    if workers < 1 or workers > 8:
+        raise ValueError("workers must be between 1 and 8")
+    if runner == "opencode-go" and workers != 1:
+        raise ValueError("opencode-go requires workers=1 because its local session database is exclusive")
+
+
 def dispatch_pending_chunks(
     *,
     limit: int = 0,
@@ -611,8 +629,7 @@ def dispatch_pending_chunks(
 ) -> dict[str, Any]:
     if not PLAN_PATH.exists():
         raise RuntimeError("deep-read plan is missing")
-    if workers < 1 or workers > 8:
-        raise RuntimeError("workers must be between 1 and 8")
+    validate_dispatch_options(runner, workers)
     plan = _read_json(PLAN_PATH)
     chunks = [chunk for book in plan["books"] for chunk in book["chunks"]]
     pending = [chunk for chunk in chunks if not validate_chunk_response(chunk["chunk_id"])["valid"]]

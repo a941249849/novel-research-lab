@@ -4,19 +4,12 @@
   "status": "in_progress",
   "deep_read_verified": false,
   "book_count": 18,
-  "validated_chunk_count": 47,
+  "validated_chunk_count": 48,
   "required_chunk_count": 143,
-  "validated_bytes": 64244576,
+  "validated_bytes": 65744644,
   "required_bytes": 197294465,
-  "validated_byte_ratio": 0.325628,
+  "validated_byte_ratio": 0.333231,
   "invalid_chunks": [
-    {
-      "chunk_id": "book-07-f82ccdb9a2b3-chunk-003",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
     {
       "chunk_id": "book-07-f82ccdb9a2b3-chunk-004",
       "valid": false,
@@ -687,5 +680,5 @@
     "valid": true,
     "errors": []
   },
-  "validated_at": "2026-07-11T19:43:21+08:00"
+  "validated_at": "2026-07-11T20:51:28+08:00"
 }

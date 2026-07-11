@@ -10,6 +10,8 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 NRL = REPO_ROOT / "system/runtime/nrl.py"
+sys.path.insert(0, str(REPO_ROOT / "system/runtime"))
+import nrl_deep_read
 
 
 class VerifiableDeepReadingV018Tests(unittest.TestCase):
@@ -85,6 +87,21 @@ class VerifiableDeepReadingV018Tests(unittest.TestCase):
             self.assertEqual(left["end_byte"], right["start_byte"])
         self.assertEqual(plan["coverage_bytes"], plan["total_size_bytes"])
         self.assertEqual(plan["coverage_ratio"], 1.0)
+
+    def test_extracts_unique_bound_json_from_opencode_transcript(self):
+        transcript = "tool log\n" + json.dumps({"chunk_id": "other"}) + "\n" + json.dumps(
+            {"chunk_id": "target", "analysis": {"major_events": ["event"]}},
+            ensure_ascii=False,
+        )
+        response = nrl_deep_read.extract_bound_response_json(transcript, "target")
+        self.assertEqual(response["chunk_id"], "target")
+        self.assertEqual(response["analysis"]["major_events"], ["event"])
+
+    def test_dispatch_help_exposes_opencode_go_runner_and_variant(self):
+        result = self.run_cli("deep-read-dispatch", "--help")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("--runner", result.stdout)
+        self.assertIn("--variant", result.stdout)
 
     def test_plan_normalizes_gb18030_chunks_to_hash_bound_utf8_reading_files(self):
         self.book.write_bytes(("第一章 起点\n凡人踏上修行路。\n" * 80).encode("gb18030"))

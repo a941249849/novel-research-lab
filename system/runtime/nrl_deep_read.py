@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -63,6 +64,23 @@ def _write_json(path: Path, data: Any) -> None:
 
 def _read_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def extract_bound_response_json(transcript: str, chunk_id: str) -> dict[str, Any]:
+    decoder = json.JSONDecoder()
+    matches: list[dict[str, Any]] = []
+    for candidate_start in (match.start() for match in re.finditer(r"\{", transcript)):
+        try:
+            candidate, _ = decoder.raw_decode(transcript[candidate_start:])
+        except json.JSONDecodeError:
+            continue
+        if isinstance(candidate, dict) and candidate.get("chunk_id") == chunk_id:
+            matches.append(candidate)
+    if len(matches) != 1:
+        raise ValueError(
+            f"expected exactly one bound JSON response for {chunk_id}; found {len(matches)}"
+        )
+    return matches[0]
 
 
 def _corpus_files() -> list[Path]:
@@ -478,7 +496,7 @@ def validate_all_chunks() -> dict[str, Any]:
     return result
 
 
-def _dispatch_one(chunk: dict[str, Any], model: str, print_timeout: str) -> dict[str, Any]:
+def _dispatch_one_agy(chunk: dict[str, Any], model: str, print_timeout: str) -> dict[str, Any]:
     binary = shutil.which("agy") or str(Path.home() / ".local/bin/agy")
     if not Path(binary).exists():
         return {"chunk_id": chunk["chunk_id"], "valid": False, "errors": ["agy binary is missing"]}
@@ -520,12 +538,76 @@ def _dispatch_one(chunk: dict[str, Any], model: str, print_timeout: str) -> dict
     return validation
 
 
+def _dispatch_one_opencode_go(
+    chunk: dict[str, Any], model: str, variant: str
+) -> dict[str, Any]:
+    binary = os.environ.get("NRL_OPENCODE_BINARY") or str(
+        Path.home() / ".opencode/bin/opencode"
+    )
+    if not Path(binary).is_file():
+        return {
+            "chunk_id": chunk["chunk_id"],
+            "valid": False,
+            "errors": ["OpenCode CLI is missing"],
+        }
+    request_path = runtime_path(str(chunk["request_path"]))
+    response_path = runtime_path(str(chunk["response_path"]))
+    model_id = model if model.startswith("opencode-go/") else f"opencode-go/{model}"
+    result = subprocess.run(
+        [
+            binary,
+            "run",
+            "--model",
+            model_id,
+            "--variant",
+            variant,
+            request_path.read_text(encoding="utf-8"),
+        ],
+        cwd=ROOT,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    extraction_error = ""
+    if result.returncode == 0:
+        try:
+            _write_json(
+                response_path,
+                extract_bound_response_json(result.stdout, str(chunk["chunk_id"])),
+            )
+        except ValueError as error:
+            extraction_error = str(error)
+            response_path.unlink(missing_ok=True)
+    else:
+        response_path.unlink(missing_ok=True)
+    validation = validate_chunk_response(str(chunk["chunk_id"]))
+    validation["returncode"] = result.returncode
+    if result.returncode != 0 or extraction_error:
+        validation["errors"] = list(validation["errors"]) + [
+            extraction_error or result.stderr.strip() or f"opencode exited with {result.returncode}"
+        ]
+        validation["valid"] = False
+    return validation
+
+
+def _dispatch_one(
+    chunk: dict[str, Any], model: str, print_timeout: str, runner: str, variant: str
+) -> dict[str, Any]:
+    if runner == "agy":
+        return _dispatch_one_agy(chunk, model, print_timeout)
+    if runner == "opencode-go":
+        return _dispatch_one_opencode_go(chunk, model, variant)
+    raise RuntimeError(f"unknown deep-read runner: {runner}")
+
+
 def dispatch_pending_chunks(
     *,
     limit: int = 0,
     workers: int = 2,
     model: str = "Gemini 3.5 Flash (High)",
     print_timeout: str = "10m0s",
+    runner: str = "agy",
+    variant: str = "high",
 ) -> dict[str, Any]:
     if not PLAN_PATH.exists():
         raise RuntimeError("deep-read plan is missing")
@@ -541,7 +623,7 @@ def dispatch_pending_chunks(
     if workers == 1:
         for chunk in pending:
             try:
-                item = _dispatch_one(chunk, model, print_timeout)
+                item = _dispatch_one(chunk, model, print_timeout, runner, variant)
             except Exception as error:  # keep the batch resumable
                 item = {"chunk_id": chunk["chunk_id"], "valid": False, "errors": [str(error)]}
             results.append(item)
@@ -552,7 +634,7 @@ def dispatch_pending_chunks(
     else:
         with ThreadPoolExecutor(max_workers=workers) as executor:
             futures = {
-                executor.submit(_dispatch_one, chunk, model, print_timeout): chunk
+                executor.submit(_dispatch_one, chunk, model, print_timeout, runner, variant): chunk
                 for chunk in pending
             }
             for future in as_completed(futures):
@@ -571,6 +653,7 @@ def dispatch_pending_chunks(
     return {
         "version": VERSION,
         "job_id": JOB_ID,
+        "runner": runner,
         "model": model,
         "requested": len(pending),
         "dispatched": len(results),

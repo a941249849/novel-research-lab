@@ -19,7 +19,7 @@
       "status": "data_ready",
       "dependencies": ["corpus_engineering"],
       "evidence": ["phase1/02_book_dna", "phase1/02_narrative_dna", "phase1/02_state_ledgers"],
-      "next_action": "通过研究资产目录检索已审核拆解结果。"
+      "next_action": "完成 v0.18 的 143 个连续全文分块、18 本单书综合及哈希验证。"
     },
     {
       "capability_id": "cross_book_mechanism_distillation",
@@ -27,7 +27,7 @@
       "status": "data_ready",
       "dependencies": ["single_book_decomposition"],
       "evidence": ["phase1/04_mechanism_library/core7_mechanism_inventory.json"],
-      "next_action": "保持机制来源与原创性红线可追溯。"
+      "next_action": "在 18 本单书综合通过后完成跨书机制蒸馏，并绑定全部输入哈希。"
     },
     {
       "capability_id": "research_asset_retrieval",

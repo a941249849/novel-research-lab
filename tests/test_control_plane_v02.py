@@ -50,6 +50,15 @@ class ControlPlaneCliTests(unittest.TestCase):
         self.assertEqual(corpus["status"], "data_ready")
         self.assertTrue(corpus["evidence_complete"])
 
+    def test_hardening_status_does_not_promote_sampled_assets_as_deep_decomposition(self):
+        result = self.run_cli("hardening-status")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        capabilities = {
+            item["capability_id"]: item for item in json.loads(result.stdout)["capabilities"]
+        }
+        self.assertEqual(capabilities["single_book_decomposition"]["status"], "missing")
+        self.assertEqual(capabilities["cross_book_mechanism_distillation"]["status"], "blocked")
+
     def test_research_assets_indexes_reviewed_phase1_assets(self):
         result = self.run_cli("research-assets", "--title", "遮天")
         self.assertEqual(result.returncode, 0, result.stderr)
@@ -88,6 +97,14 @@ class ControlPlaneCliTests(unittest.TestCase):
             "owner_gate_full_corpus_research_promotion_001",
         )
         self.assertNotIn("novel_training_set/", json.dumps(proof, ensure_ascii=False))
+
+    def test_legacy_full_corpus_reviews_cannot_claim_verified_deep_reading(self):
+        result = self.run_cli("research-assets", "--asset-type", "full_corpus_book_review")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        items = json.loads(result.stdout)["items"]
+        self.assertEqual(len(items), 18)
+        self.assertTrue(all(item["read_scope"] == "legacy_unverified_summary" for item in items))
+        self.assertTrue(all(not item["deep_read_claim_allowed"] for item in items))
 
     def test_creation_schema_registry_exposes_nine_draft7_families(self):
         result = self.run_cli("creation-schemas")

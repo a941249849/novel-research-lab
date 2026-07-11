@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
@@ -23,6 +24,8 @@ ALLOWED_ASSET_TYPES = {
     "full_corpus_book_review",
     "cross_book_mechanism",
     "creation_family_evidence",
+    "verified_book_synthesis",
+    "verified_cross_book_mechanism",
 }
 FULL_CORPUS_PROOF_VALIDATION = runtime_path(
     "system/agent_ops/validation/full_corpus_proof_v0.8.json"
@@ -33,11 +36,27 @@ FULL_CORPUS_PROOF_MASTER = runtime_path(
 FULL_CORPUS_REVIEW_ASSETS = runtime_path(
     "system/research_assets/promotions/full_corpus_review_assets.v0.10.json"
 )
+DEEP_READ_SYNTHESIS_VALIDATION = runtime_path(
+    "system/research_assets/deep_read/v0.18/synthesis_validation.json"
+)
+DEEP_READ_CROSS_VALIDATION = runtime_path(
+    "system/research_assets/deep_read/v0.18/cross_validation.json"
+)
+DEEP_READ_SYNTHESIS_DIR = runtime_path("system/agent_ops/inbox/deep_read_v0.18/synthesis")
+DEEP_READ_CROSS_RESPONSE = runtime_path(
+    "system/agent_ops/inbox/deep_read_v0.18/cross_book_distillation.json"
+)
 
 
 def _read_json(path: Path) -> dict[str, Any]:
     with path.open("r", encoding="utf-8") as handle:
         return json.load(handle)
+
+
+def _read_agent_json(path: Path) -> dict[str, Any]:
+    text = path.read_text(encoding="utf-8").strip()
+    match = re.search(r"```json\s*(.*?)\s*```", text, re.DOTALL)
+    return json.loads(match.group(1) if match else text)
 
 
 def _provenance(status: str, path: str) -> str:
@@ -156,13 +175,14 @@ def _full_corpus_review_items() -> list[dict[str, Any]]:
                 "title": str(review.get("book_title", "")),
                 "asset_type": "full_corpus_book_review",
                 "source_path": source_path,
-                "review_state": "formal",
-                "provenance": "promoted",
+                "review_state": "legacy_unverified",
+                "provenance": "legacy_candidate",
                 "categories": [
                     str(item) for item in review.get("asset_family_relevance", [])
                 ],
                 "author": str(review.get("author", "")),
-                "read_scope": str(review.get("read_scope", "")),
+                "read_scope": "legacy_unverified_summary",
+                "deep_read_claim_allowed": False,
                 "reusable_mechanisms": list(review.get("reusable_mechanisms", [])),
                 "exists": FULL_CORPUS_REVIEW_ASSETS.exists(),
             }
@@ -177,12 +197,13 @@ def _full_corpus_review_items() -> list[dict[str, Any]]:
                 "title": mechanism_id,
                 "asset_type": "cross_book_mechanism",
                 "source_path": source_path,
-                "review_state": "formal",
-                "provenance": "promoted",
+                "review_state": "legacy_unverified",
+                "provenance": "legacy_candidate",
                 "categories": ["跨书机制蒸馏"],
                 "mechanism_id": mechanism_id,
                 "source_books": list(mechanism.get("source_books", [])),
                 "reusable_for_nrl": bool(mechanism.get("reusable_for_NRL", False)),
+                "deep_read_claim_allowed": False,
                 "exists": FULL_CORPUS_REVIEW_ASSETS.exists(),
             }
         )
@@ -196,14 +217,63 @@ def _full_corpus_review_items() -> list[dict[str, Any]]:
                 "asset_type": "creation_family_evidence",
                 "source_path": source_path,
                 "review_state": str(evidence.get("status", "unknown")),
-                "provenance": "promoted",
+                "provenance": "legacy_candidate",
                 "categories": [family, "创作资产证据"],
                 "evidence_count": len(evidence.get("evidence", []))
                 if isinstance(evidence.get("evidence"), list)
                 else 0,
+                "deep_read_claim_allowed": False,
                 "exists": FULL_CORPUS_REVIEW_ASSETS.exists(),
             }
         )
+    return items
+
+
+def _verified_deep_read_items() -> list[dict[str, Any]]:
+    items = []
+    synthesis_valid = (
+        DEEP_READ_SYNTHESIS_VALIDATION.exists()
+        and _read_json(DEEP_READ_SYNTHESIS_VALIDATION).get("valid") is True
+    )
+    if synthesis_valid:
+        for path in sorted(DEEP_READ_SYNTHESIS_DIR.glob("*.json")):
+            data = _read_agent_json(path)
+            items.append(
+                {
+                    "asset_id": f"deep-read-{data.get('book_id')}",
+                    "title": str(data.get("book_title", "")),
+                    "asset_type": "verified_book_synthesis",
+                    "source_path": str(path.relative_to(ROOT)),
+                    "review_state": "verified",
+                    "provenance": "v0.18_hash_bound",
+                    "categories": ["单书深读", "九类创作资产证据"],
+                    "read_scope": "contiguous_full_text_verified",
+                    "deep_read_claim_allowed": True,
+                    "exists": True,
+                }
+            )
+    cross_valid = (
+        DEEP_READ_CROSS_VALIDATION.exists()
+        and _read_json(DEEP_READ_CROSS_VALIDATION).get("valid") is True
+        and DEEP_READ_CROSS_RESPONSE.exists()
+    )
+    if cross_valid:
+        cross = _read_agent_json(DEEP_READ_CROSS_RESPONSE)
+        for mechanism in cross.get("cross_book_mechanisms", []):
+            items.append(
+                {
+                    "asset_id": f"deep-read-{mechanism.get('mechanism_id')}",
+                    "title": str(mechanism.get("name", "")),
+                    "asset_type": "verified_cross_book_mechanism",
+                    "source_path": str(DEEP_READ_CROSS_RESPONSE.relative_to(ROOT)),
+                    "review_state": "verified",
+                    "provenance": "v0.18_hash_bound",
+                    "categories": ["跨书机制蒸馏"],
+                    "source_book_ids": list(mechanism.get("source_book_ids", [])),
+                    "deep_read_claim_allowed": True,
+                    "exists": True,
+                }
+            )
     return items
 
 
@@ -216,6 +286,7 @@ def build_research_asset_catalog(
         + _mechanism_items()
         + _full_corpus_proof_item()
         + _full_corpus_review_items()
+        + _verified_deep_read_items()
     )
     if any(not item["exists"] for item in all_items):
         missing = [item["source_path"] for item in all_items if not item["exists"]]

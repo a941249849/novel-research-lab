@@ -18,6 +18,8 @@ VERSION = "0.18"
 JOB_ID = "job-v018-verifiable-deep-reading"
 DEFAULT_TARGET_BYTES = 1_500_000
 AGY_RUN_TIMEOUT_SECONDS = 900
+OPENCODE_RUN_TIMEOUT_SECONDS = 900
+OPENCODE_DIRECT_SCRIPT = runtime_path("system/runtime/opencode_direct.mjs")
 PLAN_PATH = runtime_path("system/research_assets/deep_read/v0.18/plan.json")
 VALIDATION_PATH = runtime_path("system/research_assets/deep_read/v0.18/validation.json")
 REQUEST_DIR = runtime_path("system/agent_ops/packets/deep_read_v0.18")
@@ -543,21 +545,46 @@ def _dispatch_one_agy(chunk: dict[str, Any], model: str, print_timeout: str) -> 
     return validation
 
 
+def _dispatch_one_opencode_go(chunk: dict[str, Any], model: str) -> dict[str, Any]:
+    node = shutil.which("node")
+    if not node or not OPENCODE_DIRECT_SCRIPT.is_file():
+        return {"chunk_id": chunk["chunk_id"], "valid": False, "errors": ["OpenCode direct runtime is unavailable"]}
+    response_path = runtime_path(str(chunk["response_path"]))
+    try:
+        result = subprocess.run(
+            [node, str(OPENCODE_DIRECT_SCRIPT), str(runtime_path(chunk["request_path"])), str(runtime_path(chunk["bounded_chunk_file"])), model],
+            cwd=ROOT, text=True, capture_output=True, check=False, timeout=OPENCODE_RUN_TIMEOUT_SECONDS,
+        )
+    except subprocess.TimeoutExpired:
+        response_path.unlink(missing_ok=True)
+        return {"chunk_id": chunk["chunk_id"], "valid": False, "errors": ["OpenCode direct runtime timed out"]}
+    if result.returncode == 0:
+        try:
+            _write_json(response_path, extract_bound_response_json(result.stdout, str(chunk["chunk_id"])))
+        except ValueError as error:
+            response_path.unlink(missing_ok=True)
+            return {"chunk_id": chunk["chunk_id"], "valid": False, "errors": [str(error)]}
+    else:
+        response_path.unlink(missing_ok=True)
+        return {"chunk_id": chunk["chunk_id"], "valid": False, "errors": [result.stderr.strip() or f"OpenCode exited with {result.returncode}"]}
+    return validate_chunk_response(str(chunk["chunk_id"]))
+
+
 def _dispatch_one(
     chunk: dict[str, Any], model: str, print_timeout: str, runner: str
 ) -> dict[str, Any]:
     if runner == "agy":
         return _dispatch_one_agy(chunk, model, print_timeout)
+    if runner == "opencode-go":
+        return _dispatch_one_opencode_go(chunk, model)
     raise RuntimeError(f"unknown deep-read runner: {runner}")
 
 
 def validate_dispatch_options(runner: str, workers: int) -> None:
     if workers < 1 or workers > 8:
         raise ValueError("workers must be between 1 and 8")
-    if runner == "opencode-go":
-        raise ValueError(
-            "opencode-go is not supported for v0.18 long source chunks; use agy"
-        )
+    if runner == "opencode-go" and workers != 1:
+        raise ValueError("opencode-go requires workers=1")
 
 
 def dispatch_pending_chunks(

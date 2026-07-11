@@ -97,16 +97,17 @@ class VerifiableDeepReadingV018Tests(unittest.TestCase):
         self.assertEqual(response["chunk_id"], "target")
         self.assertEqual(response["analysis"]["major_events"], ["event"])
 
-    def test_dispatch_help_exposes_only_the_approved_long_text_runner(self):
+    def test_dispatch_help_exposes_both_approved_long_text_runners(self):
         result = self.run_cli("deep-read-dispatch", "--help")
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn("--runner", result.stdout)
-        self.assertNotIn("opencode-go", result.stdout)
+        self.assertIn("opencode-go", result.stdout)
         self.assertNotIn("--variant", result.stdout)
 
-    def test_opencode_go_runner_is_rejected_for_v018_long_source_chunks(self):
-        with self.assertRaisesRegex(ValueError, "not supported"):
-            nrl_deep_read.validate_dispatch_options("opencode-go", 1)
+    def test_opencode_go_runner_requires_single_worker(self):
+        nrl_deep_read.validate_dispatch_options("opencode-go", 1)
+        with self.assertRaisesRegex(ValueError, "workers=1"):
+            nrl_deep_read.validate_dispatch_options("opencode-go", 2)
 
     def test_plan_normalizes_gb18030_chunks_to_hash_bound_utf8_reading_files(self):
         self.book.write_bytes(("第一章 起点\n凡人踏上修行路。\n" * 80).encode("gb18030"))

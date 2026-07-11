@@ -1,0 +1,338 @@
+```json
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "chunk_id": "book-08-322e84872b22-chunk-001",
+  "source_file": "novel_training_set/《完美世界》（校对版全本）作者：辰东.txt",
+  "source_file_sha256": "322e84872b2259d9210f84de63efd70d901a412dfefbe9bb9d52168eea56d481",
+  "start_byte": 0,
+  "end_byte": 1500032,
+  "chunk_sha256": "eac71354c27146c595b9cebc0f06b14743e67e42d225fa4c79c0215c0a031680",
+  "source_encoding": "gb18030",
+  "bounded_chunk_utf8_sha256": "5e8b2c48cd132e55b53405a0d45eaad70629620693b86c51ccc68d32e395ea90",
+  "analysis": {
+    "chapter_span": [
+      "第0001章 朝气蓬勃",
+      "第0197章 八珍鸡"
+    ],
+    "major_events": [
+      {
+        "event_label": "Body Tempering via Medicinal Bath",
+        "chapter_reference": "第0004章 药浴",
+        "summary": "Chief Shi Yunfeng prepares a hot medicinal bath in a cauldron using beast bones, blood, and rare herbs to refine and temper the young Xiao Budian's physical body."
+      },
+      {
+        "event_label": "Stealing the Green-Scaled Eagle Eggs",
+        "chapter_reference": "第0007章 梧木巢",
+        "summary": "The children of Stone Village sneak into the nest of the Green-Scaled Eagle and steal its eggs, initiating a confrontation with the powerful bird."
+      },
+      {
+        "event_label": "Defense Against the Green-Scaled Eagle",
+        "chapter_reference": "第0008章 青鳞鹰",
+        "summary": "The mother eagle attacks Stone Village to reclaim her eggs, but the villagers defend their homes and the Willow Deity eventually intervenes to resolve the conflict."
+      },
+      {
+        "event_label": "Defeating Bei Village Hunters",
+        "chapter_reference": "第0015章 小不点显威",
+        "summary": "Xiao Budian uses his emerging bone rune powers to easily defeat the hostile hunters of Bei Village who were trespassing and hunting in Stone Village's territory."
+      },
+      {
+        "event_label": "The Death of the Suanni",
+        "chapter_reference": "第0021章 狻猊",
+        "summary": "A powerful primeval beast, the Suanni, approaches the end of its life, triggering a fierce competition among neighboring villages to claim its remains."
+      },
+      {
+        "event_label": "Slaying the Bei Village Guardian Spirit",
+        "chapter_reference": "第0025章 狈村祭灵",
+        "summary": "Xiao Budian and the villagers engage in a deadly battle with the wolf-like guardian spirit of Bei Village, defeating it and securing the Suanni's core bones."
+      },
+      {
+        "event_label": "The Great Calamity of the Wasteland",
+        "chapter_reference": "第0047章 祸起",
+        "summary": "Primeval supreme beasts wage a devastating war deep in the mountains, destroying the ecosystem. Stone Village is shielded and relocated to safety by the Willow Deity."
+      },
+      {
+        "event_label": "Finding the Wounded Zhuyan (Mao Qiu)",
+        "chapter_reference": "第0053章 朱厌",
+        "summary": "Following the mountain calamity, Xiao Budian finds a small, injured golden monkey which is actually the legendary Zhuyan, naming it Mao Qiu."
+      },
+      {
+        "event_label": "Revelation of the Supreme Bone Theft",
+        "chapter_reference": "第0055章 身世",
+        "summary": "Chief Shi Yunfeng tells Xiao Budian his true identity as Shi Hao and details the tragedy at the Martial Imperial Mansion where his cousin's mother stole his Supreme Bone."
+      },
+      {
+        "event_label": "Achieving the Extreme Realm of 100,000 Jin",
+        "chapter_reference": "第0065章 十万极境",
+        "summary": "Xiao Budian achieves the mythical limit of 100,000 jin of physical force in the Single Realm by studying the Primitive True Record and practicing rigorous training."
+      },
+      {
+        "event_label": "Encountering Huo Ling'er in the Wilderness",
+        "chapter_reference": "第0071章 美女",
+        "summary": "During his travels through the wilderness, Xiao Budian encounters Huo Ling'er, the princess of the Fire Nation, establishing a combative friendship."
+      },
+      {
+        "event_label": "Breaking Records in the Void God Realm",
+        "chapter_reference": "第0089章 最爱吃兽奶",
+        "summary": "Xiao Budian enters the virtual Void God Realm under the pseudonym 'Most Loves Eating Beast Milk,' breaking multiple records and causing a sensation."
+      },
+      {
+        "event_label": "Entering the Heaven-Mending Pavilion",
+        "chapter_reference": "第0098章 闯关",
+        "summary": "Xiao Budian participates in the entrance trials of the Heaven-Mending Pavilion, using disruptive tactics and a large hammer to easily pass the tests."
+      },
+      {
+        "event_label": "Subduing the Nine-Headed Lion",
+        "chapter_reference": "第0122章 败九头狮子",
+        "summary": "In the Hundred-Severing Mountains, Xiao Budian defeats the Nine-Headed Lion, subduing it to serve as his mount and forming a strong bond."
+      },
+      {
+        "event_label": "Obtaining the Divine Striking Stone and Unaging Spring",
+        "chapter_reference": "第0155章 打神石",
+        "summary": "Xiao Budian penetrates the Divine Garden, gaining the sentient Divine Striking Stone and capturing drops of the Unaging Spring."
+      },
+      {
+        "event_label": "Breaking through to the Nine Caves Realm",
+        "chapter_reference": "第0170章 九洞天",
+        "summary": "While training in the Hundred-Severing Mountains, Xiao Budian successfully opens his ninth Cave-Heaven, achieving a near-legendary status."
+      },
+      {
+        "event_label": "The Destruction of Heaven-Mending Pavilion",
+        "chapter_reference": "第0185章 祭灵战",
+        "summary": "Outside sects attack the Heaven-Mending Pavilion as its guardian gourd vine dies. Xiao Budian fights desperately to defend the sect before fleeing."
+      },
+      {
+        "event_label": "Capturing the Eight-Treasures Chicken in Luohang Ridge",
+        "chapter_reference": "第0197章 八珍鸡",
+        "summary": "Mao Qiu and the Divine Striking Stone slip into the Rain Clan's outpost at Luohang Ridge, stealing their herbs and capturing the rare Eight-Treasures Chicken."
+      }
+    ],
+    "character_state_transitions": [
+      {
+        "character": "Xiao Budian",
+        "from_state": "Fragile toddler with latent but undeveloped physical strength.",
+        "to_state": "Tempered youth with active bone runes and high physical endurance.",
+        "chapter_trigger": "第0004章 药浴"
+      },
+      {
+        "character": "Xiao Budian",
+        "from_state": "Standard Blood-Refining cultivator.",
+        "to_state": "Extreme Single Realm cultivator possessing 100,000 jin of physical strength.",
+        "chapter_trigger": "第0065章 十万极境"
+      },
+      {
+        "character": "Xiao Budian",
+        "from_state": "Believing himself to be an ordinary orphan of Stone Village.",
+        "to_state": "Aware of his true identity as Shi Hao and the theft of his Supreme Bone.",
+        "chapter_trigger": "第0055章 身世"
+      },
+      {
+        "character": "Xiao Budian",
+        "from_state": "Ordinary multi-cave cultivator.",
+        "to_state": "Ninth Cave-Heaven cultivator with supreme spiritual energy capacity.",
+        "chapter_trigger": "第0170章 九洞天"
+      },
+      {
+        "character": "The Willow Deity",
+        "from_state": "Charred tree stump with a single green willow branch.",
+        "to_state": "Recovering deity sprouting multiple glowing branches with spatial transmission abilities.",
+        "chapter_trigger": "第0086章 柳树通天"
+      },
+      {
+        "character": "Zhuyan / Mao Qiu",
+        "from_state": "Injured, weakened primeval beast fleeing from a mountain battle.",
+        "to_state": "Playful pet that loves eating spiritual herbs and stealing items.",
+        "chapter_trigger": "第0053章 朱厌"
+      },
+      {
+        "character": "Nine-Headed Lion",
+        "from_state": "Arrogant, hostile primeval creature that views humans as food.",
+        "to_state": "Beaten, cooperative mount and brotherly friend of Xiao Budian.",
+        "chapter_trigger": "第0122章 败九头狮子"
+      },
+      {
+        "character": "The Rain Clan",
+        "from_state": "Ignorant of Xiao Budian's survival, focusing solely on supporting Shi Yi.",
+        "to_state": "Hostile and actively plotting to assassinate Xiao Budian after recognizing his threat.",
+        "chapter_trigger": "第0126章 雨族"
+      },
+      {
+        "character": "Green-Scaled Eagle",
+        "from_state": "A standard wild avian beast of the mountains.",
+        "to_state": "Mutated avian beast with awakened ancestral runes.",
+        "chapter_trigger": "第0011章 返祖"
+      },
+      {
+        "character": "Heaven-Mending Gourd Vine",
+        "from_state": "Dying ancient guardian spirit struggling to protect the sect.",
+        "to_state": "Deceased, dissolving into seeds and spirit liquid after a final defense.",
+        "chapter_trigger": "第0189章 末日"
+      }
+    ],
+    "long_form_mechanisms": [
+      {
+        "mechanism_name": "Bone Runes (骨文)",
+        "rules_and_operation": "Cultivators study the natural runic patterns engraved on the bones of high-level beasts, integrating them into their flesh and blood to manifest supernatural elements like lightning or protective barriers.",
+        "narrative_significance": "Serves as the foundational magic system, separating ordinary fighters from supernatural cultivators."
+      },
+      {
+        "mechanism_name": "Medicinal Cauldron Refining (药浴)",
+        "rules_and_operation": "Young children are submerged in boiling cauldrons containing beast blood, bones, and herbs to temper their physical bodies.",
+        "narrative_significance": "Explains how the protagonist and other village kids develop monstrous physical strength early in life."
+      },
+      {
+        "mechanism_name": "Single Realm Extreme (单境极境)",
+        "rules_and_operation": "Pushing a specific cultivation realm (e.g., Blood-Refining) to its absolute theoretical limit before breaking through to the next.",
+        "narrative_significance": "Establishes a metric of exceptional talent, explaining why Xiao Budian can defeat higher-realm opponents."
+      },
+      {
+        "mechanism_name": "Guardian Spirits (祭灵)",
+        "rules_and_operation": "Villages or sects offer devotion and resources to a powerful entity (tree, beast, or artifact) in exchange for physical protection.",
+        "narrative_significance": "Frames the defense of Stone Village and Heaven-Mending Pavilion, linking group survival to their guardian's health."
+      },
+      {
+        "mechanism_name": "Void God Realm (虚神界)",
+        "rules_and_operation": "A spiritual virtual reality constructed by ancient gods where characters enter in spirit form to compete, trade, and record achievements.",
+        "narrative_significance": "Acts as a global stage where the protagonist can show off his talents and build notoriety without immediate real-world capture."
+      },
+      {
+        "mechanism_name": "Cave-Heaven Expansion (洞天)",
+        "rules_and_operation": "Cultivators manifest spatial portals (Caves) that draw energy from the environment to boost their spells and physical strength.",
+        "narrative_significance": "Indicates genius levels, with standard cultivators having 3-6 caves while supreme talents reach 9 caves."
+      },
+      {
+        "mechanism_name": "Supreme Bone Regeneration (至尊骨)",
+        "rules_and_operation": "An anatomical bone containing supreme natural runes. If extracted, the host experiences near-death, but survival can trigger a rebirth.",
+        "narrative_significance": "Underpins the tragic backstory of Shi Hao and the inevitable clash with his cousin Shi Yi."
+      },
+      {
+        "mechanism_name": "Taigu Yizhong Atavism (返祖)",
+        "rules_and_operation": "Beasts with divine heritage can activate their dormant ancestral genes under extreme stimulation or runic blood absorption.",
+        "narrative_significance": "Allows pet beasts like the Green-Scaled Eagle to evolve and remain relevant in higher-level conflicts."
+      }
+    ],
+    "continuity_observations": [
+      {
+        "continuity_aspect": "Xiao Budian's Milk Addiction",
+        "observation_details": "Consistently portrayed as obsessed with drinking animal milk, leading directly to his humorous pseudonym '最爱吃兽奶' in the Void God Realm.",
+        "chapters_involved": [
+          "第0001章 朝气蓬勃",
+          "第0089章 最爱吃兽奶"
+        ]
+      },
+      {
+        "continuity_aspect": "Willow Deity's Branch Count",
+        "observation_details": "The number of green branches on the Willow Deity's charred stump increases step-by-step as it recovers its divinity.",
+        "chapters_involved": [
+          "第0001章 朝气蓬勃",
+          "第0086章 柳树通天"
+        ]
+      },
+      {
+        "continuity_aspect": "Mao Qiu's Appetite for Herbs",
+        "observation_details": "Mao Qiu's consistent gluttony for spiritual herbs, which is established early on and culminates in the looting of Luohang Ridge.",
+        "chapters_involved": [
+          "第0053章 朱厌",
+          "第0197章 八珍鸡"
+        ]
+      },
+      {
+        "continuity_aspect": "The Broken Sword Weapon",
+        "observation_details": "The broken sword obtained at the 分宝崖 is repeatedly used by Xiao Budian and Mao Qiu to break arrays.",
+        "chapters_involved": [
+          "第0145章 古剑",
+          "第0197章 八珍鸡"
+        ]
+      },
+      {
+        "continuity_aspect": "The Sentient Divine Striking Stone",
+        "observation_details": "The stone obtained in the Divine Garden remains in Xiao Budian's hair and is active in subsequent chapters as an advisor and weapon.",
+        "chapters_involved": [
+          "第0155章 打神石",
+          "第0197章 八珍鸡"
+        ]
+      },
+      {
+        "continuity_aspect": "Unaging Spring Resource",
+        "observation_details": "The Unaging Spring captured in the garden is carried over as a vital resource for nurturing companions and weapons.",
+        "chapters_involved": [
+          "第0156章 不老泉",
+          "第0197章 八珍鸡"
+        ]
+      },
+      {
+        "continuity_aspect": "The Rain Clan's Persistent Enmity",
+        "observation_details": "The Rain Clan's hostility spans from the Supreme Bone theft to the Void God Realm and Luohang Ridge encounters.",
+        "chapters_involved": [
+          "第0055章 身世",
+          "第0126章 雨族",
+          "第0197章 八珍鸡"
+        ]
+      },
+      {
+        "continuity_aspect": "Primitive True Record Study",
+        "observation_details": "Xiao Budian consistently returns to studying the Primitive True Record to reinforce his basic understanding of runes.",
+        "chapters_involved": [
+          "第0063章 原始真解",
+          "第0065章 十万极境"
+        ]
+      }
+    ],
+    "style_observations": [
+      {
+        "style_feature": "Comedic Gourmet Focus",
+        "textual_evidence_summary": "Juxtaposing high-stakes battles with descriptions of cooking and eating the defeated magical beasts (e.g., cooking the lion, capturing the chicken).",
+        "stylistic_effect": "Softens the grimness of a brutal world, adding light-hearted charm and a distinct protagonist personality."
+      },
+      {
+        "style_feature": "Hyperbolic Scales",
+        "textual_evidence_summary": "Describing massive battles with exaggerated numbers, such as blood flowing for 100,000 miles and giants walking as high as mountains.",
+        "stylistic_effect": "Establishes a mythic, primordial atmosphere suited for a high-fantasy xianxia setting."
+      },
+      {
+        "style_feature": "Innocence vs. Brutality Contrast",
+        "textual_evidence_summary": "Depicting Xiao Budian as an innocent baby-talking child who ruthlessly breaks bones and defeats enemies in combat.",
+        "stylistic_effect": "Creates a memorable comedic contrast that heightens the satisfaction of the protagonist's triumphs."
+      },
+      {
+        "style_feature": "Visual Runic Combat",
+        "textual_evidence_summary": "Using vivid, colorful runic descriptions during battle scenes (e.g., golden light, silver chains, thunderous storms).",
+        "stylistic_effect": "Makes action scenes visually engaging and fast-paced, emphasizing power and momentum."
+      },
+      {
+        "style_feature": "Descriptive Monikers",
+        "textual_evidence_summary": "Using distinctive names like 'Bear Child,' 'Most Loves Eating Beast Milk,' and 'Divine Striking Stone' repeatedly in dialogue.",
+        "stylistic_effect": "Builds character recognition and facilitates recurring comedic payoffs."
+      },
+      {
+        "style_feature": "Crowd Reaction Validation",
+        "textual_evidence_summary": "Using the collective shock and discussions of onlookers (e.g., in the Void God Realm) to validate the protagonist's feats.",
+        "stylistic_effect": "Amplifies the impact of achievements, building hype and satisfying the reader's desire for status validation."
+      }
+    ],
+    "creation_family_evidence": {
+      "ebook_source_header": "Contains a specific text header from \"知轩藏书\" (zxcs.zip), indicating compilation and proofreading for digital distribution.",
+      "digitized_chapter_padding": "Chapters are padded to four digits (e.g., 第0001章, 第0010章), which is a common crawler/ebook builder standard to ensure correct file sorting.",
+      "missing_subtitles": "Several chapters (e.g., 第0107章, 第0114章, 第0130章) only contain the chapter number and lack sub-titles, with the story text starting directly on the next line."
+    },
+    "originality_risks": [
+      {
+        "risk_label": "Stolen Supreme Talent Trope",
+        "description": "The plot of a cousin stealing the protagonist's innate magical bone (Supreme Bone) to boost his own talent is a highly common trope in xianxia/xuanhuan novels."
+      },
+      {
+        "risk_label": "Hidden Village Cradle",
+        "description": "An apparently simple village in the wilderness harboring powerful hidden items, manuals, and protected by a supreme guardian spirit is a standard fantasy trope."
+      },
+      {
+        "risk_label": "Fantasy Virtual Reality",
+        "description": "The Void God Realm functions almost identically to a virtual reality MMORPG with global announcements, safe arenas, and virtual markets, blending litRPG tropes into traditional fantasy."
+      },
+      {
+        "risk_label": "Sect Destruction Arc",
+        "description": "The siege and destruction of the protagonist's first academy (Heaven-Mending Pavilion) by opportunistic rival sects to steal resources is a foundational, formulaic plot device."
+      }
+    ]
+  }
+}
+```

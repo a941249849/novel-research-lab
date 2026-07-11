@@ -1,0 +1,120 @@
+```json
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "chunk_id": "book-09-4f463d84ee63-chunk-001",
+  "source_file": "novel_training_set/《将夜》（校对版全本）作者：猫腻.txt",
+  "source_file_sha256": "4f463d84ee639ec618bf9be58e568791a07849f7b2048fc7281d2c56d84c3494",
+  "start_byte": 0,
+  "end_byte": 1500063,
+  "chunk_sha256": "d4d33c1791e237a1cbcf82c801630f95567920132ad5bb843ac0aa398325cb0f",
+  "source_encoding": "gb18030",
+  "bounded_chunk_utf8_sha256": "a9c5f52caa218075df56ce04e5cb124418f82ee4285436070688c9af3608e29f",
+  "analysis": {
+    "chapter_span": [
+      "第一章 渭城有雨，少年有侍",
+      "第二卷 凛冬之湖 第一章 军营里的十三先生"
+    ],
+    "major_events": [
+      "Ning Que acts as the guide and hunter for Princess Li Yu's escort team fleeing back to the Tang border from Weicheng (第一章 渭城有雨，少年有侍).",
+      "Princess Li Yu's caravan is ambushed on the North Mountain Road by Xiling assassins and barbarians, where Ning Que kills multiple attackers with arrows and close-range blades (第八章 北山道外，一箭南来, 第九章 心如磐石的侍卫们).",
+      "Ning Que and his maidservant Sang Sang arrive in the capital city Chang'an, marveling at its size and security (第二十六章 雄城，好久不见).",
+      "Ning Que rents a property in Lin 47 Alley to set up the calligraphy shop 'Lao Bi Zhai', meeting Chao Xiaoshu (under the alias of a landlord) as his first visitor (第三十三章 笔落临四十七巷, 第三十四章 老笔斋的第一位客人).",
+      "Ning Que executes his first revenge target, Yu Shi Zhang Yiqi, by driving a nail into his brain in a brothel (Hongxiu Zhao), making it look like a panicked carriage accident (第四十三章 御史张贻琦之入港, 第四十五章 御史张贻琦之死亡).",
+      "Chao Xiaoshu, leader of the Fish Dragon Gang, recruits Ning Que for 500 taels of silver to protect him during a night of gang wars in Chang'an (第五十二章 春风亭，老朝小树).",
+      "In the Spring Breeze Pavilion battle, Chao Xiaoshu and Ning Que defeat gang factions, a Yuelun monk, and a South Jin swordmaster under the pouring rain (第五仿真 雨夜里，传奇重现, 第五十五章 朝小树！朝小树！).",
+      "Ning Que kills the military's Grand Psychokinesis Master, Xiao Kuyu, by shooting a flurry of arrows and stabbing him in the foot inside his carriage (第六十章 奔跑射箭的少年, 第六十一章 从天而降的亿万滴雨).",
+      "Wang Jinglue attempts to execute Chao Xiaoshu, but is easily suppressed by the Divine Talisman Master Yan Se who steps in to protect Chao and Ning (第六十二章 杀人锄田别样累, 第六十四章 御书房).",
+      "Ning Que enters the Academy's examinations, scoring top marks in calligraphy and riding/archery, but fails to enter cultivation studies due to blocked meridians (第七十一章 书院, 第七十七章 甲书院).",
+      "Ning Que discovers the Old Book Library, reading cultivation guides and starting a letter correspondence with a mysterious writer (Third Senior Sister Yu Lian) in the margins (第八十二章 旧书楼, 第一百零三章 搬山).",
+      "Ning Que executes his second revenge target, former deputy general Chen Zixian, using a wood-chopping knife in a slum iron shop (第九十一章 铁坊柴房杀人, 第九十二章 以血洗血).",
+      "Ning Que kills his third target, swordmaster Yan Xianjing, at Linhu Xiaozhu, using the Great Black Umbrella to block Yan's flying sword and drain his energy (第一百零八章 人生第一战, 第一百一十章 朱雀、黑伞以及光明的夜).",
+      "The stone Vermilion Bird (Zhuque) statue of Chang'an awakens and attacks Ning Que due to his murderous intent, severely injuring him but also shatteting some of his meridian blocks (第一百一十章 朱雀、黑伞以及光明的夜).",
+      "Chen Pipip uses the Tongtian Pill to save Ning Que, which opens his 'Qi Ocean and Snow Mountain' and allows him to perceive energy (第一百一十四章 生命不可承受之重).",
+      "Ning Que and Prince Long Qing compete in ascending the Back Hill of the Academy, navigating through tests of willpower and illusions (第一百五十章 登山, 第一百五十四章 银道与柴门，入雾).",
+      "Ning Que wins the climbing exam by rejecting the illusion and discarding the safety bamboo slip, while Long Qing forfeits by crushing his slip, making Ning Que the thirteenth disciple of Fu Zi (第一百五十六章 山顶的青树，压烂的糕点... , 第一百五十八章 咔嚓！咔嚓！).",
+      "Master Yan Se recognizes Ning Que's genius for talisman magic through his written calligraphy piece ('Jiusha Tie') and battles the Academy for the right to teach him (第一百七十一章 以符道之, 第一百八十章 吃的是米，流出来的是蛋).",
+      "Ning Que is appointed as the military inspector representing the Academy and departs for the northern border front in the Desolate plains (第一百八十一章 为了吃饭，南归！, 第二卷 第一章 军营里的十三先生)."
+    ],
+    "character_state_transitions": [
+      "Ning Que: From a minor border soldier and woodcutter of Shubihu (第一章 渭城有雨，少年有侍) to the 13th personal disciple of Fu Zi (Thirteen先生) of the Academy's Back Hill (第一百五十八章 咔嚓！咔嚓！).",
+      "Ning Que: From an ordinary martial artist unable to cultivate due to blocked 'Qi Ocean and Snow Mountain' meridians (旧书楼) to a cultivator who can perceive energy after being attacked by Zhuque and saved by Chen Pipip's Tongtian Pill (第一百一十章 朱雀、黑伞以及光明的夜, 第一百一十四章 生命不可承受之重).",
+      "Sang Sang: From a young, dark, and sickly maidservant who cooks and counts copper coins (一文钱难死主仆俩) to a crucial assistant who can wield the Great Black Umbrella to save Ning's life in combat (第一百一十章 朱雀、黑伞以及光明的夜).",
+      "Chao Xiaoshu: From a legendary underground gang leader of the Fish Dragon Gang in Chang'an (春风亭，老朝小树) to a respected cultivation brother who enters the court as an imperial officer and later leaves the secular gang life to cultivate in the wilderness (第七十章 告别的长街).",
+      "Prince Long Qing: From a peerless, celebrated genius of Xiling who is expected to enter the Academy's Back Hill (青帘马车) to a defeated candidate who leaves Chang'an in shame after losing to Ning Que (第一百五十八章 咔嚓！咔嚓！).",
+      "Xie Chengyun: From an arrogant South Jin scholar (谢三公子) who looks down on Ning Que (暮色中的“学术讨论”) to a shocked and humbled classmate who realizes Ning Que's hidden depth and is left far behind (第一百五十四章 银道与柴门，入雾).",
+      "Master Yan Se: From a lazy, wandering old Taoist of the Southern Gate of Haotian (第五十六章 雨中的马车，再而三的剑) to a devoted master who fights fiercely to claim Ning Que as his successor in Divine Talisman magic (第一百八十章 吃的是米，流出来的是蛋).",
+      "Princess Li Yu: From a widowed princess returning from her marriage to the golden horde in exile (渭城有雨，少年有侍) to an influential, calculating political force in the Chang'an court, backing Ning Que to support her faction (第一百九十一章 公主府里的卖艺者).",
+      "Chen Pipip: From a lazy, hidden genius who hoards food in the Academy's Back Hill (第一百零五章 牛群，后山，良方) to Ning Que's first cultivation guide and friend who gives him the Tongtian Pill (第一百一十四章 生命不可承受之重).",
+      "Emperor of Tang (Li Zhongyi): From a distant sovereign (御书房) to an enthusiastic patron of Ning Que's calligraphy, recognizing the 'Jiusha Tie' and welcoming him to the palace feast (第一百六十三章 御宴)."
+    ],
+    "long_form_mechanisms": [
+      "Qi Ocean and Snow Mountain (气海雪山): The seventeen nodes in the human meridian system that determine whether a person can perceive and draw the natural energy of heaven and earth. If they are blocked, normal cultivation is impossible (旧书楼, 第一百零三章 搬山).",
+      "The Five Realms of Cultivation (修行五境): The sequential steps of early cultivation: First Recognition (初识) - realizing the existence of energy, Perception (感知) - feeling the flow of energy, Doubtless (不惑) - manipulating energy, Profound Vision (洞玄) - projecting energy outside the body, and Knowing Mandate (知命) - understanding the natural laws of heaven and earth (第九方十四章 通往那个世界的第一扇门).",
+      "Divine Talismans / Runes (符道): The method of drawing lines and symbols that mimic the natural flow of heaven and earth's laws, allowing the cultivator to call upon natural forces (like rain, wind, or fire) without relying on traditional spellcasting or weapons (第一百七十一章 以符道之).",
+      "The Great Black Umbrella (大黑伞): A mysterious, indestructible umbrella carried by Sang Sang that can block all magic, flying swords, and psychokinesis, and has a unique energy-dampening/draining effect when touched by cultivators (第一百一十章 朱雀、黑伞以及光明的夜).",
+      "The Array of Chang'an / Jing Shen Array (惊神阵): A massive protection array built by the first master of the Tang Empire, which protects the city and is linked to the geographic layout of Chang'an, powered by the secular life and writing of characters (第一百七十八章 长安城是一座阵).",
+      "The Academy's Mountain climbing array (登山考验阵法): A natural-yuanqi-based illusion array on the Back Hill's stone path. It detects the cultivator's mind power and shifts its shape dynamically, forcing the climber to either be extremely fast, have extremely high cultivation, or use incredibly precise, gentle yuanqi control to find the path (第一百五十四章 银道与柴门，入雾).",
+      "The telekinetic attack of Psychokinesis Masters (念师念力御气): The mechanism where psychokinesis masters use their mind power to directly manipulate the natural energy (yuanqi) of the world to attack targets at a distance (up to ten zhang), including directly crushing the internal organs or heart of the opponent (第五十八章 风雨夜色皆能进, 第六十章 奔跑射箭的少年).",
+      "Flying Swords of Swordmasters (剑师飞剑): The method where a swordmaster binds their mind power to a physical sword (or blade fragments), allowing them to control it through the air at high speeds to assassinate targets, but leaving their physical body vulnerable to close-range attacks (第十章 有剑横于膝前，有剑穿行血间, 第五十四章 雨夜里，传奇重现).",
+      "The Emperor's 'Jing Shen Array' inheritance (惊神阵眼): The inheritance mechanism where the array's controller must write specific characters to maintain or trigger the array, which explains why the Emperor is so obsessed with calligraphy (第一百七十八章 长安城是一座阵)."
+    ],
+    "continuity_observations": [
+      "The Great Black Umbrella's consistent protection: Sang Sang's black umbrella is introduced as a cheap, dirty item in Weicheng (第一章 渭城有雨，少年有侍) but is consistently used to shield them from sun and rain, and later from deadly flying swords (第一百一十章 朱雀、黑伞以及光明的夜), establishing its mysterious defensive properties.",
+      "Ning Que's blocked meridians: The blockages of his 17 'Qi Ocean and Snow Mountain' nodes are established early as an impassable barrier to cultivation (第一章), which remains the central conflict of his early life in Chang'an and is only resolved through a combination of extreme external stimuli (Zhuque's attack) and a miracle pill (Tongtian Pill) (第一百一十四章 生命不可承受之重).",
+      "Calligraphy as a path to Talisman magic: Ning Que's calligraphy practice is introduced as a way to make money in Weicheng and Chang'an (第三十三章 笔落临四十七巷), but this physical skill of controlling brush ink ('永字八法') is later revealed to be the foundation of his unique, precise control of yuanqi, which enables him to pass the climbing array and become a Divine Talisman master (第一百七十一章 以符道之).",
+      "The mystery of the General's mansion massacre: The massacre of the Xuanwei General's mansion 15 years ago is mentioned early as the source of Ning Que's trauma and revenge quest (第二十八章 将军府外), and the targets on the oil-paper list are systematically hunted down (Zhang Yiqi, Chen Zixian, Yan Xianjing), keeping the revenge plotline continuous.",
+      "Chao Xiaoshu's secret backing: Chao Xiaoshu is introduced as a wealthy shop owner who seems too powerful for a simple gang leader (第三十四章 老笔斋的第一位客人). His connection to the imperial court is hinted at during his talks with Ning Que and is fully revealed when he is shown to be a close confidant and agent of the Tang Emperor (第六十四章 御书房).",
+      "The Vermilion Bird (Zhuque) statue's reaction: The ancient Vermilion Bird statue of Chang'an is described as a silent, stone guardian that seems to glare at Ning Que when he first enters the city (第三十章 我见朱雀多肃杀). This foreshadows the scene where the statue actually awakens and attacks Ning Que because it senses his deep murderous intent and the bloodline connection to the general's mansion (第一百一十章 朱雀、黑伞以及光明的夜).",
+      "Prince Long Qing's pride and fall: Long Qing is introduced as a legendary, peerless genius of Xiling who represents light and absolute confidence (青帘马车). His pride is tested and shattered during the climbing trial, where he cannot overcome his own absolute dogma, leading to his defeat and exit (第一百五十八章 咔嚓！咔嚓！).",
+      "The letters in the Old Book Library: Ning Que leaves comments in the margins of books in the library, which are answered by a mysterious writer (第一百零三章 搬山). This silent exchange continues over several chapters, building the connection between Ning Que and the Third Senior Sister Yu Lian before they formally meet as disciples (第一百六十五章 后山).",
+      "Chen Pipip's gluttony and hidden identity: Chen Pipip is introduced as a fat student who loves eating and resides in the Back Hill, complaining about the food (第一百零五章 牛群，后山，良方). He is later revealed to be a genius from the hidden Zhishou Temple (知守观) who ran away to the Academy, linking the Academy's cozy life to the broader world's top factions (第一百五十八章 咔嚓！咔嚓！)."
+    ],
+    "style_observations": [
+      "Contrast between Mundane Domesticity and Epic Magic: The narrative frequently pairs high-stakes cultivation battles or political schemes with cozy, detailed descriptions of domestic chores, such as Sang Sang washing dishes, Ning Que counting copper coins, and making sour-meat noodles (第一章, 第三十四章).",
+      "Pragmatic, Anti-Heroic Protagonist Voice: Unlike typical righteous cultivation protagonists, Ning Que is written as a cold, pragmatic survivor ('woodcutter' mindset) who thinks of combat in terms of dirty tricks, sneak attacks, and efficiency. He is highly self-aware and speaks with a dry, modern humor (referencing 'chocolate hotpot' or 'Olympiad math') (第一章, 第九十二章).",
+      "Calligraphy and Runic Symbolism in Combat: Combat is described using artistic and poetic metaphors related to writing, ink, and lines. The characters of calligraphy ('永', '日', '妥') represent flow, light, and balance, transforming martial arts into a form of intellectual expression (第一百七十一章).",
+      "Deliberate, Rhythmic Pacing: The prose oscillates between slow, slice-of-life descriptions of Chang'an street life and rapid, explosive action sequences (such as the Spring Breeze Pavilion battle), allowing the setting to feel lived-in and real (第五十二章, 第五十四章).",
+      "Thematic Deconstruction of Absolute Morality: The text continuously critiques the concept of absolute light and religious dogmatism (represented by Xiling), showing that absolute light leads to absolute coldness and violence, whereas secular, 'dark' human survival is warmer and more humane (第一百五十六章).",
+      "Heavy Use of Irony and Understated Climax: Major triumphs (like Ning Que winning the climb or Yan Se recognizing his talent) are often met with dry humor, physical collapse (Ning Que fainting and being carried on Chen Pipip's back), or bureaucratic squabbling among masters, deflating typical web-novel grandiosity (第一百五十八章)."
+    ],
+    "creation_family_evidence": {
+      "author": "猫腻 (Mao Ni)",
+      "protagonist": "宁缺 (Ning Que)",
+      "key_concepts": [
+        "气海雪山 (Qi Ocean and Snow Mountain)",
+        "大黑伞 (Great Black Umbrella)",
+        "惊神阵 (Jing Shen Array)",
+        "书院后山 (Academy Back Hill)",
+        "昊天与永夜 (Haotian and Eternal Night)"
+      ],
+      "stylistic_signature": "Blending epic high fantasy with detailed, mundane realism (cozy domesticity), dry modern humor, and a focus on secular humanism over absolute religious dogma.",
+      "compilation_indicators": "The chapter headers utilize uniform Chinese numbering format followed by a space and the title (e.g., '第一章 渭城有雨，少年有侍', '第一百五十章 登山') and double-byte spacing at paragraph starts, indicating standard web serialization compilation formatting.",
+      "secular_domestic_vs_cosmic": {
+        "concept": "Secular Domesticity vs Cosmic Will",
+        "details": "The contrast between the warm, petty, domestic life of Ning Que and Sang Sang (cooking, counting money, Lao Bi Zhai) and the cold, absolute cosmic will of Haotian. This is a signature theme of the author, showing that human connection and mundane warmth are the ultimate forces that defy fate.",
+        "chapters": [
+          "第一章 渭城有雨，少年有侍",
+          "第三十四章 老笔斋的第一位客人",
+          "第一百一八章 大黑伞的故事"
+        ]
+      },
+      "calligraphy_talisman_integration": {
+        "concept": "Integration of Calligraphy and Talisman Magic",
+        "details": "The physical art of writing characters is integrated with runic/talisman magic (Fulu). Ning Que's years of calligraphy practice provide the exact, precise control over energy lines required to draw powerful talismans, demonstrating that mundane skills can become the foundation of supreme cultivation.",
+        "chapters": [
+          "第三十三章 笔落临四十七巷",
+          "第一百三十六章 一帖惊长安",
+          "第一百七十一章 以符道之"
+        ]
+      }
+    },
+    "originality_risks": [
+      "The 'Blocked Meridian to Underdog Genius' Trope: Starting the novel with a protagonist whose meridians ('Qi Ocean and Snow Mountain') are completely blocked, making him unable to cultivate, only to later have them opened through a miracle pill or external trauma, is a highly common trope in xianxia web novels (旧书楼, 第一百一十四章 生命不可承受之重).",
+      "The 'Hidden Master / Academy Back Hill' Structure: The concept of a hidden, elite academy section (the Back Hill of the Academy) where the protagonist is recruited as the personal disciple of the world's strongest master (Fu Zi) and meets quirky, genius senior brothers/sisters follows a standard academy progression template (第一百二十八章 书院里的天才们, 第一百六十五章 后山).",
+      "The 'Secret/Reluctant Royal Princess Alliance': Having a widowed princess (Li Yu) who returns from exile, meets the protagonist in a border town, and later uses her political influence in the capital to back his career and calligraphy shop, is a common plot device to provide early political protection and status to the protagonist (第一章 渭城有雨，少年有侍, 第一百九十一章 公主府里的卖艺者).",
+      "Over-reliance on 'Cheat' Defenses (The Black Umbrella): The Great Black Umbrella acts as an absolute defense that can block any magical attack, flying sword, or mental energy without requiring Ning Que to have any actual cultivation level. This can sometimes reduce tactical tension in early battles, as the umbrella acts as an invulnerability shield (第一百一十章 朱雀、黑伞以及光明的夜, 第一百五十八章 咔嚓！咔嚓！)."
+    ]
+  }
+}
+```

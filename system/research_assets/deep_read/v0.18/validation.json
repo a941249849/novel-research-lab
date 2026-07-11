@@ -4,52 +4,27 @@
   "status": "in_progress",
   "deep_read_verified": false,
   "book_count": 18,
-  "validated_chunk_count": 61,
+  "validated_chunk_count": 65,
   "required_chunk_count": 143,
-  "validated_bytes": 85154417,
+  "validated_bytes": 91154599,
   "required_bytes": 197294465,
-  "validated_byte_ratio": 0.431611,
+  "validated_byte_ratio": 0.462023,
   "invalid_chunks": [
     {
       "chunk_id": "book-08-322e84872b22-chunk-010",
       "valid": false,
       "errors": [
-        "response file is missing"
-      ]
-    },
-    {
-      "chunk_id": "book-09-4f463d84ee63-chunk-001",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
-    {
-      "chunk_id": "book-09-4f463d84ee63-chunk-002",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
+        "analysis must cite at least 6 detected chapter headings"
+      ],
+      "response_path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-08-322e84872b22-chunk-010.json",
+      "size_bytes": 552770,
+      "evidence_heading_matches": 0
     },
     {
       "chunk_id": "book-09-4f463d84ee63-chunk-003",
       "valid": false,
       "errors": [
-        "response file is missing"
-      ]
-    },
-    {
-      "chunk_id": "book-09-4f463d84ee63-chunk-004",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
-    {
-      "chunk_id": "book-09-4f463d84ee63-chunk-005",
-      "valid": false,
-      "errors": [
-        "response file is missing"
+        "invalid response JSON: Expecting value: line 1 column 1 (char 0)"
       ]
     },
     {
@@ -589,5 +564,5 @@
     "valid": true,
     "errors": []
   },
-  "validated_at": "2026-07-12T00:26:43+08:00"
+  "validated_at": "2026-07-12T00:33:45+08:00"
 }

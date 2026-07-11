@@ -480,6 +480,8 @@ def _dispatch_one(chunk: dict[str, Any], model: str, print_timeout: str) -> dict
     result = subprocess.run(
         [
             binary,
+            "--add-dir",
+            str(ROOT),
             "--model",
             model,
             "--mode",
@@ -733,7 +735,7 @@ def _dispatch_generic(item: dict[str, Any], model: str, print_timeout: str) -> d
     response_path = runtime_path(item["response_path"])
     response_path.parent.mkdir(parents=True, exist_ok=True)
     result = subprocess.run(
-        [binary, "--model", model, "--mode", "plan", "--sandbox", "--print-timeout", print_timeout, "-p", request_path.read_text(encoding="utf-8")],
+        [binary, "--add-dir", str(ROOT), "--model", model, "--mode", "plan", "--sandbox", "--print-timeout", print_timeout, "-p", request_path.read_text(encoding="utf-8")],
         cwd=ROOT, text=True, capture_output=True, check=False,
     )
     if result.stdout.strip():

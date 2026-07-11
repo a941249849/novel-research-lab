@@ -254,7 +254,7 @@ def dispatch_project_reconciliation(
     if not binary:
         raise RuntimeError("agy binary is missing")
     result = subprocess.run(
-        [binary, "--model", model, "--mode", "plan", "--sandbox", "--print-timeout", print_timeout, "-p", PACKET_PATH.read_text(encoding="utf-8")],
+        [binary, "--add-dir", str(ROOT), "--model", model, "--mode", "plan", "--sandbox", "--print-timeout", print_timeout, "-p", PACKET_PATH.read_text(encoding="utf-8")],
         cwd=ROOT, text=True, capture_output=True, check=False,
     )
     RESPONSE_PATH.parent.mkdir(parents=True, exist_ok=True)

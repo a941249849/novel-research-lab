@@ -531,7 +531,7 @@ def dispatch_chapter_audit(chapter_id: str, model: str = "Gemini 3.5 Flash (High
         raise RuntimeError("agy binary is missing")
     packet_path = runtime_path(packet["packet_path"])
     result = subprocess.run(
-        [binary, "--model", model, "--mode", "plan", "--sandbox", "--print-timeout", "12m0s", "-p", packet_path.read_text(encoding="utf-8")],
+        [binary, "--add-dir", str(ROOT), "--model", model, "--mode", "plan", "--sandbox", "--print-timeout", "12m0s", "-p", packet_path.read_text(encoding="utf-8")],
         cwd=ROOT, text=True, capture_output=True, check=False,
     )
     try:

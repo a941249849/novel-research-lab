@@ -57,6 +57,8 @@ class VerifiableDeepReadingV018Tests(unittest.TestCase):
             "start_byte": chunk["start_byte"],
             "end_byte": chunk["end_byte"],
             "chunk_sha256": "bad" if bad_hash else chunk["chunk_sha256"],
+            "source_encoding": chunk["source_encoding"],
+            "bounded_chunk_utf8_sha256": chunk["bounded_chunk_utf8_sha256"],
             "analysis": {
                 "chapter_span": chunk["chapter_headings"],
                 "major_events": ["事件推进"],
@@ -83,6 +85,20 @@ class VerifiableDeepReadingV018Tests(unittest.TestCase):
             self.assertEqual(left["end_byte"], right["start_byte"])
         self.assertEqual(plan["coverage_bytes"], plan["total_size_bytes"])
         self.assertEqual(plan["coverage_ratio"], 1.0)
+
+    def test_plan_normalizes_gb18030_chunks_to_hash_bound_utf8_reading_files(self):
+        self.book.write_bytes(("第一章 起点\n凡人踏上修行路。\n" * 80).encode("gb18030"))
+        plan = self.plan()
+        book = plan["books"][0]
+        self.assertEqual(book["source_encoding"], "gb18030")
+        chunk = book["chunks"][0]
+        bounded = self.root / chunk["bounded_chunk_file"]
+        text = bounded.read_text(encoding="utf-8")
+        self.assertIn("凡人踏上修行路", text)
+        self.assertEqual(
+            hashlib.sha256(bounded.read_bytes()).hexdigest(),
+            chunk["bounded_chunk_utf8_sha256"],
+        )
 
     def test_status_never_treats_legacy_sample_proof_as_deep_read(self):
         validation = self.root / "system/agent_ops/validation/full_corpus_proof_v0.8.json"

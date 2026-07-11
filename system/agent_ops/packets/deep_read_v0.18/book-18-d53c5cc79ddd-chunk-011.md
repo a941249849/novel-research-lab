@@ -9,6 +9,8 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - start_byte: 15000739
 - end_byte: 16500898
 - chunk_sha256: `fff6dc5d87a95bb7648e28c7ffc4cc094828890e91ea89870a5a61d9f657386a`
+- source_encoding: `utf-8`
+- bounded_chunk_utf8_sha256: `fff6dc5d87a95bb7648e28c7ffc4cc094828890e91ea89870a5a61d9f657386a`
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-18-d53c5cc79ddd-chunk-011.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that
@@ -21,6 +23,10 @@ The analysis must contain non-empty arrays named `major_events`,
 `continuity_observations`, `style_observations`, and `originality_risks`;
 `chapter_span` as an array; and `creation_family_evidence` as a non-empty object.
 Use chapter titles or abstract event labels as evidence anchors, never raw prose.
+For million-byte chunks, provide at least 16 major events, 10 character-state
+transitions, 8 long-form mechanisms, 8 continuity observations, 6 style
+observations, and 4 originality risks. Cite at least 8 exact chapter headings
+from the bounded UTF-8 file when that many headings exist.
 The job_id is `job-v018-verifiable-deep-reading` and contract_version is `0.18`. Copy every
 binding field exactly from this template and replace only the analysis values:
 
@@ -34,6 +40,8 @@ binding field exactly from this template and replace only the analysis values:
   "start_byte": 15000739,
   "end_byte": 16500898,
   "chunk_sha256": "fff6dc5d87a95bb7648e28c7ffc4cc094828890e91ea89870a5a61d9f657386a",
+  "source_encoding": "utf-8",
+  "bounded_chunk_utf8_sha256": "fff6dc5d87a95bb7648e28c7ffc4cc094828890e91ea89870a5a61d9f657386a",
   "analysis": {
     "chapter_span": [],
     "major_events": [],

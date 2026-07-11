@@ -11,6 +11,8 @@ layer.
 
 1. A saved deep-reading result is invalid if the protected corpus inventory,
    source hashes, byte ranges, or bounded chunk hashes drift.
+   GB18030/GBK sources are decoded explicitly into UTF-8 reading copies while
+   preserving and binding both the original byte hash and normalized copy hash.
 2. Per-book syntheses bind the hashes of every chunk analysis; cross-book
    distillation binds the hashes of every per-book synthesis.
 3. Reconciliation output cannot alter project assets directly. Full replacement

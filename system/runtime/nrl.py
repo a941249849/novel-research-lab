@@ -888,6 +888,8 @@ def cmd_owner_gate_record(args: argparse.Namespace) -> int:
         "expires_after_mission": args.expires_after_mission,
         "owner_note": args.owner_note,
     }
+    if args.bound_response_sha256:
+        decision["bound_response_sha256"] = args.bound_response_sha256
     print_json(record_owner_decision(decision, now_iso()))
     return 0
 
@@ -1458,6 +1460,7 @@ def build_parser() -> argparse.ArgumentParser:
     owner_record.add_argument("--forbidden-scope", action="append", required=True)
     owner_record.add_argument("--expires-after-mission", required=True)
     owner_record.add_argument("--owner-note", default="")
+    owner_record.add_argument("--bound-response-sha256")
     owner_record.set_defaults(func=cmd_owner_gate_record)
     owner_sub.add_parser("list").set_defaults(func=cmd_owner_gate_list)
     compile_context = sub.add_parser("compile-context")

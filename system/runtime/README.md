@@ -788,6 +788,10 @@ The v0.18 pipeline creates contiguous bounded files under the Git-ignored
 `.nrl-work/` directory. Every corpus byte belongs to exactly one chunk, every
 Antigravity response is hash-bound to that chunk, and per-book plus cross-book
 synthesis gates are required before `deep_read_verified`.
+Seventeen protected sources are GB18030 and one is UTF-8. The runtime preserves
+raw byte-range hashes while generating UTF-8 reading copies with a second hash;
+responses must bind both, preventing mojibake summaries from passing as deep
+reading.
 
 ```bash
 python3 system/runtime/nrl.py deep-read-plan --target-bytes 1500000

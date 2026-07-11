@@ -76,9 +76,22 @@ def _safe_boundary(data: bytes, proposed: int) -> int:
     return newline + 1 if newline >= 0 else proposed
 
 
-def _headings(data: bytes) -> list[str]:
-    text = data.decode("utf-8", errors="ignore")
-    return [match.group(1).strip() for match in CHAPTER_PATTERN.finditer(text)][:200]
+def _detect_encoding(data: bytes) -> str:
+    try:
+        data.decode("utf-8")
+        return "utf-8"
+    except UnicodeDecodeError:
+        data.decode("gb18030")
+        return "gb18030"
+
+
+def _headings(data: bytes, encoding: str) -> list[str]:
+    text = data.decode(encoding)
+    headings = [match.group(1).strip() for match in CHAPTER_PATTERN.finditer(text)]
+    if len(headings) <= 24:
+        return headings
+    indexes = sorted({round(index * (len(headings) - 1) / 23) for index in range(24)})
+    return [headings[index] for index in indexes]
 
 
 def _request_text(chunk: dict[str, Any]) -> str:
@@ -91,6 +104,8 @@ def _request_text(chunk: dict[str, Any]) -> str:
         "start_byte": chunk["start_byte"],
         "end_byte": chunk["end_byte"],
         "chunk_sha256": chunk["chunk_sha256"],
+        "source_encoding": chunk["source_encoding"],
+        "bounded_chunk_utf8_sha256": chunk["bounded_chunk_utf8_sha256"],
         "analysis": {
             "chapter_span": [],
             "major_events": [],
@@ -113,6 +128,8 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - start_byte: {chunk['start_byte']}
 - end_byte: {chunk['end_byte']}
 - chunk_sha256: `{chunk['chunk_sha256']}`
+- source_encoding: `{chunk['source_encoding']}`
+- bounded_chunk_utf8_sha256: `{chunk['bounded_chunk_utf8_sha256']}`
 - bounded_chunk_file: `{chunk['bounded_chunk_file']}`
 
 The bounded chunk file contains exactly the bytes identified above. Read that
@@ -125,6 +142,10 @@ The analysis must contain non-empty arrays named `major_events`,
 `continuity_observations`, `style_observations`, and `originality_risks`;
 `chapter_span` as an array; and `creation_family_evidence` as a non-empty object.
 Use chapter titles or abstract event labels as evidence anchors, never raw prose.
+For million-byte chunks, provide at least 16 major events, 10 character-state
+transitions, 8 long-form mechanisms, 8 continuity observations, 6 style
+observations, and 4 originality risks. Cite at least 8 exact chapter headings
+from the bounded UTF-8 file when that many headings exist.
 The job_id is `{JOB_ID}` and contract_version is `{VERSION}`. Copy every
 binding field exactly from this template and replace only the analysis values:
 
@@ -144,6 +165,7 @@ def build_deep_read_plan(target_bytes: int = DEFAULT_TARGET_BYTES) -> dict[str, 
     WORK_CHUNK_DIR.mkdir(parents=True, exist_ok=True)
     for book_index, path in enumerate(_corpus_files(), start=1):
         data = path.read_bytes()
+        source_encoding = _detect_encoding(data)
         source_hash = _sha256(data)
         source_file = _relative(path)
         chunks: list[dict[str, Any]] = []
@@ -154,11 +176,13 @@ def build_deep_read_plan(target_bytes: int = DEFAULT_TARGET_BYTES) -> dict[str, 
             if end <= start:
                 end = len(data)
             chunk_data = data[start:end]
+            chunk_text = chunk_data.decode(source_encoding)
+            utf8_data = chunk_text.encode("utf-8")
             chunk_id = f"book-{book_index:02d}-{source_hash[:12]}-chunk-{ordinal:03d}"
             response_path = RESPONSE_DIR / f"{chunk_id}.json"
             request_path = REQUEST_DIR / f"{chunk_id}.md"
             bounded_chunk_path = WORK_CHUNK_DIR / f"{chunk_id}.txt"
-            bounded_chunk_path.write_bytes(chunk_data)
+            bounded_chunk_path.write_bytes(utf8_data)
             chunk = {
                 "chunk_id": chunk_id,
                 "book_index": book_index,
@@ -169,7 +193,9 @@ def build_deep_read_plan(target_bytes: int = DEFAULT_TARGET_BYTES) -> dict[str, 
                 "end_byte": end,
                 "size_bytes": end - start,
                 "chunk_sha256": _sha256(chunk_data),
-                "chapter_headings": _headings(chunk_data),
+                "source_encoding": source_encoding,
+                "bounded_chunk_utf8_sha256": _sha256(utf8_data),
+                "chapter_headings": _headings(chunk_data, source_encoding),
                 "bounded_chunk_file": _relative(bounded_chunk_path),
                 "request_path": _relative(request_path),
                 "response_path": _relative(response_path),
@@ -186,6 +212,7 @@ def build_deep_read_plan(target_bytes: int = DEFAULT_TARGET_BYTES) -> dict[str, 
                 "book_title": path.stem,
                 "source_file": source_file,
                 "source_file_sha256": source_hash,
+                "source_encoding": source_encoding,
                 "size_bytes": len(data),
                 "chunk_count": len(chunks),
                 "chunks": chunks,
@@ -294,6 +321,8 @@ def validate_chunk_response(chunk_id: str) -> dict[str, Any]:
         "start_byte",
         "end_byte",
         "chunk_sha256",
+        "source_encoding",
+        "bounded_chunk_utf8_sha256",
     )
     for field in expected_fields:
         if response.get(field) != chunk.get(field):
@@ -312,6 +341,18 @@ def validate_chunk_response(chunk_id: str) -> dict[str, Any]:
             value = analysis.get(field)
             if not isinstance(value, list) or not value:
                 errors.append(f"analysis.{field} must be a non-empty array")
+        if int(chunk.get("size_bytes", 0)) >= 1_000_000:
+            minimums = {
+                "major_events": 16,
+                "character_state_transitions": 10,
+                "long_form_mechanisms": 8,
+                "continuity_observations": 8,
+                "style_observations": 6,
+                "originality_risks": 4,
+            }
+            for field, minimum in minimums.items():
+                if isinstance(analysis.get(field), list) and len(analysis[field]) < minimum:
+                    errors.append(f"analysis.{field} requires at least {minimum} items")
         family_evidence = analysis.get("creation_family_evidence")
         if not isinstance(family_evidence, dict) or not family_evidence:
             errors.append("analysis.creation_family_evidence must be a non-empty object")
@@ -319,7 +360,7 @@ def validate_chunk_response(chunk_id: str) -> dict[str, Any]:
         if known_headings:
             encoded_analysis = json.dumps(analysis, ensure_ascii=False)
             heading_matches = sum(1 for heading in known_headings if heading in encoded_analysis)
-            required_matches = min(2, len(known_headings))
+            required_matches = min(8, len(known_headings))
             if heading_matches < required_matches:
                 errors.append(
                     f"analysis must cite at least {required_matches} detected chapter headings"
@@ -361,6 +402,7 @@ def validate_all_chunks() -> dict[str, Any]:
         if not source or _sha256(source.read_bytes()) != book.get("source_file_sha256"):
             integrity_errors.append(f"source hash mismatch: {book.get('source_file')}")
             continue
+        source_data = source.read_bytes()
         if source.stat().st_size != book.get("size_bytes"):
             integrity_errors.append(f"source size mismatch: {book.get('source_file')}")
         expected_start = 0
@@ -369,7 +411,10 @@ def validate_all_chunks() -> dict[str, Any]:
                 integrity_errors.append(f"chunk range gap or overlap: {chunk.get('chunk_id')}")
             expected_start = int(chunk.get("end_byte", 0))
             bounded = runtime_path(str(chunk.get("bounded_chunk_file", "")))
-            if not bounded.is_file() or _sha256(bounded.read_bytes()) != chunk.get("chunk_sha256"):
+            raw_slice = source_data[int(chunk["start_byte"]):int(chunk["end_byte"])]
+            if _sha256(raw_slice) != chunk.get("chunk_sha256"):
+                integrity_errors.append(f"raw chunk hash mismatch: {chunk.get('chunk_id')}")
+            if not bounded.is_file() or _sha256(bounded.read_bytes()) != chunk.get("bounded_chunk_utf8_sha256"):
                 integrity_errors.append(f"bounded chunk hash mismatch: {chunk.get('chunk_id')}")
         if expected_start != book.get("size_bytes"):
             integrity_errors.append(f"chunk coverage mismatch: {book.get('source_file')}")

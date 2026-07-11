@@ -531,8 +531,14 @@ def _dispatch_one_agy(chunk: dict[str, Any], model: str, print_timeout: str) -> 
     except subprocess.TimeoutExpired:
         response_path.unlink(missing_ok=True)
         return {"chunk_id": chunk["chunk_id"], "valid": False, "errors": [f"agy timed out after {AGY_RUN_TIMEOUT_SECONDS} seconds"], "returncode": None}
-    if result.stdout.strip():
-        response_path.write_text(result.stdout, encoding="utf-8")
+    if result.returncode == 0:
+        try:
+            payload = extract_bound_response_json(result.stdout, str(chunk["chunk_id"]))
+            _normalize_chapter_span(chunk, payload)
+            _write_json(response_path, payload)
+        except ValueError as error:
+            response_path.unlink(missing_ok=True)
+            return {"chunk_id": chunk["chunk_id"], "valid": False, "errors": [str(error)]}
     else:
         response_path.unlink(missing_ok=True)
     validation = validate_chunk_response(str(chunk["chunk_id"]))
@@ -560,7 +566,9 @@ def _dispatch_one_opencode_go(chunk: dict[str, Any], model: str) -> dict[str, An
         return {"chunk_id": chunk["chunk_id"], "valid": False, "errors": ["OpenCode direct runtime timed out"]}
     if result.returncode == 0:
         try:
-            _write_json(response_path, extract_bound_response_json(result.stdout, str(chunk["chunk_id"])))
+            payload = extract_bound_response_json(result.stdout, str(chunk["chunk_id"]))
+            _normalize_chapter_span(chunk, payload)
+            _write_json(response_path, payload)
         except ValueError as error:
             response_path.unlink(missing_ok=True)
             return {"chunk_id": chunk["chunk_id"], "valid": False, "errors": [str(error)]}
@@ -568,6 +576,16 @@ def _dispatch_one_opencode_go(chunk: dict[str, Any], model: str) -> dict[str, An
         response_path.unlink(missing_ok=True)
         return {"chunk_id": chunk["chunk_id"], "valid": False, "errors": [result.stderr.strip() or f"OpenCode exited with {result.returncode}"]}
     return validate_chunk_response(str(chunk["chunk_id"]))
+
+
+def _normalize_chapter_span(chunk: dict[str, Any], payload: dict[str, Any]) -> None:
+    """Bind model analysis to the exact headings detected in the hash-bound source."""
+    analysis = payload.get("analysis")
+    bounded = runtime_path(str(chunk["bounded_chunk_file"]))
+    if isinstance(analysis, dict) and bounded.is_file():
+        headings = _all_headings(bounded.read_bytes(), "utf-8")
+        if headings:
+            analysis["chapter_span"] = headings
 
 
 def _dispatch_one(
@@ -594,13 +612,19 @@ def dispatch_pending_chunks(
     model: str = "Gemini 3.5 Flash (High)",
     print_timeout: str = "10m0s",
     runner: str = "agy",
+    skip_chunk_ids: tuple[str, ...] = (),
 ) -> dict[str, Any]:
     if not PLAN_PATH.exists():
         raise RuntimeError("deep-read plan is missing")
     validate_dispatch_options(runner, workers)
     plan = _read_json(PLAN_PATH)
     chunks = [chunk for book in plan["books"] for chunk in book["chunks"]]
-    pending = [chunk for chunk in chunks if not validate_chunk_response(chunk["chunk_id"])["valid"]]
+    skipped = set(skip_chunk_ids)
+    pending = [
+        chunk for chunk in chunks
+        if chunk["chunk_id"] not in skipped
+        and not validate_chunk_response(chunk["chunk_id"])["valid"]
+    ]
     if limit > 0:
         pending = pending[:limit]
     results: list[dict[str, Any]] = []

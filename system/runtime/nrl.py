@@ -712,6 +712,7 @@ def cmd_deep_read_dispatch(args: argparse.Namespace) -> int:
         model=args.model,
         print_timeout=args.print_timeout,
         runner=args.runner,
+        skip_chunk_ids=tuple(args.skip_chunk_id),
     )
     print_json(result)
     return 0 if not result["failed"] else 1
@@ -1379,6 +1380,7 @@ def build_parser() -> argparse.ArgumentParser:
     deep_read_dispatch.add_argument("--model", default="Gemini 3.5 Flash (High)")
     deep_read_dispatch.add_argument("--print-timeout", default="10m0s")
     deep_read_dispatch.add_argument("--runner", choices=("agy", "opencode-go"), default="agy")
+    deep_read_dispatch.add_argument("--skip-chunk-id", action="append", default=[])
     deep_read_dispatch.set_defaults(func=cmd_deep_read_dispatch)
     sub.add_parser("deep-read-synthesis-pack").set_defaults(func=cmd_deep_read_synthesis_pack)
     deep_read_synth_dispatch = sub.add_parser("deep-read-synthesis-dispatch")

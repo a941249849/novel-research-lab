@@ -109,6 +109,18 @@ class VerifiableDeepReadingV018Tests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "workers=1"):
             nrl_deep_read.validate_dispatch_options("opencode-go", 2)
 
+    def test_opencode_normalization_binds_exact_detected_chapter_span(self):
+        plan = self.plan()
+        chunk = plan["books"][0]["chunks"][0]
+        payload = {"analysis": {"chapter_span": ["概括标题"]}}
+        original_runtime_path = nrl_deep_read.runtime_path
+        nrl_deep_read.runtime_path = lambda value: self.root / value
+        try:
+            nrl_deep_read._normalize_chapter_span(chunk, payload)
+        finally:
+            nrl_deep_read.runtime_path = original_runtime_path
+        self.assertEqual(payload["analysis"]["chapter_span"], chunk["chapter_headings"])
+
     def test_plan_normalizes_gb18030_chunks_to_hash_bound_utf8_reading_files(self):
         self.book.write_bytes(("第一章 起点\n凡人踏上修行路。\n" * 80).encode("gb18030"))
         plan = self.plan()

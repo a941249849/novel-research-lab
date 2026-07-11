@@ -4,22 +4,12 @@
   "status": "in_progress",
   "deep_read_verified": false,
   "book_count": 18,
-  "validated_chunk_count": 54,
+  "validated_chunk_count": 55,
   "required_chunk_count": 143,
-  "validated_bytes": 74654071,
+  "validated_bytes": 76154121,
   "required_bytes": 197294465,
-  "validated_byte_ratio": 0.378389,
+  "validated_byte_ratio": 0.385992,
   "invalid_chunks": [
-    {
-      "chunk_id": "book-08-322e84872b22-chunk-002",
-      "valid": false,
-      "errors": [
-        "analysis must cite at least 6 detected chapter headings"
-      ],
-      "response_path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-08-322e84872b22-chunk-002.json",
-      "size_bytes": 1500050,
-      "evidence_heading_matches": 3
-    },
     {
       "chunk_id": "book-08-322e84872b22-chunk-004",
       "valid": false,
@@ -641,5 +631,5 @@
     "valid": true,
     "errors": []
   },
-  "validated_at": "2026-07-12T00:18:09+08:00"
+  "validated_at": "2026-07-12T00:21:17+08:00"
 }

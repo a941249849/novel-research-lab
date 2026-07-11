@@ -1,0 +1,132 @@
+```json
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "chunk_id": "book-08-322e84872b22-chunk-003",
+  "source_file": "novel_training_set/《完美世界》（校对版全本）作者：辰东.txt",
+  "source_file_sha256": "322e84872b2259d9210f84de63efd70d901a412dfefbe9bb9d52168eea56d481",
+  "start_byte": 3000082,
+  "end_byte": 4500109,
+  "chunk_sha256": "fa337216fc785cbb5d15067e6717a9d438b16dcbabb0fd0284adfd87e0538926",
+  "source_encoding": "gb18030",
+  "bounded_chunk_utf8_sha256": "aa52b77208c9abb5c59a2c4e3d0f52f847231f071b411f80c74aaed902689e72",
+  "analysis": {
+    "chapter_span": [
+      "第0403章 禽兽大发神威",
+      "第0614章 横推天下"
+    ],
+    "major_events": [
+      "In [第0405章 小石再现], Shi Hao publicly reappears after his legendary duel with Shi Yi, displaying his recovery and easily defeating new challengers to assert his presence.",
+      "In [第0419章 肉身金丹], Shi Hao utilizes a thousand-year-old cauldron and rare herbs such as Snow Jade Ginseng in the Medicine Capital to prepare for a dangerous physical refining process.",
+      "In [第0420章 蜕变功成], Shi Hao successfully completes his violent breakthrough to the middle stage of the Array Stage (列阵境) and heals his cracked body.",
+      "In [第0421章 灰衣女子的来历], Shi Hao visits the sacred ground of the Shenyao Sect and meets a mysterious grey-clothed woman who is revealed to be an ancient double-pupil user.",
+      "In [第0431章 可怕的真相], Yun Xi reveals the horrifying truth about the cyclical Great Tribulation of the lower realm, where mature deities are harvested like crops in a medicine garden.",
+      "In [第0444章 大劫], the predicted cataclysm begins in the Desolate Domain as boundary walls tear open and celestial phenomena announce the arrival of upper-realm harvesters.",
+      "In [第0454章 人皇石昊], Shi Hao enters a crumbling small world left by the old Stone Emperor, obtains the imperial jade seal, and formally ascends the throne as the new Stone Emperor.",
+      "In [第0458章 三教大败], Shi Hao successfully defends the imperial palace and defeats the combined forces of the Western Sect, Heaven Sect, and Mount Bulao.",
+      "In [第0460章 擒拿仙子], Shi Hao uses the World Treasure Box to capture the second body (次身) of the Heaven Sect's holy maiden, Yue Chan, after overcoming her time-bending Heaven Patching Art.",
+      "In [第0480章 上界巨头之战], colossal entities from the upper realm engage in a devastating battle over the First Spiritual Root and the World Mountain in the Desolate Domain.",
+      "In [第0486章 驾临不老山], Shi Hao travels to Mount Bulao to search for his parents and encounters powerful elite disciples who have descended from the upper realm.",
+      "In [第0498章 不灭的生灵], Shi Hao and the Small Pagoda battle the Five Elements Mountain to release the legendary Immortal Creature suppressed beneath it for eons.",
+      "In [第0501章 团聚], Shi Hao is reunited with his parents, Shi Ziling and Qin Yi'ning, in the depths of Mount Bulao and meets his younger brother Qin Hao.",
+      "In [第0513章 世界山], Shi Hao enters the Primordial Treasure Realm (太古宝界) and climbs the floating World Mountain, witnessing cultivators fighting over a golden flower.",
+      "In [第0527章 成亲], Shi Hao marries Yue Chan's captured second body in a small ceremony in the Stone Kingdom's imperial palace, witnessed by his parents.",
+      "In [第0531章 一身两面], Yue Chan's main body appears to rescue her second body, resulting in a fierce battle where Shi Hao carries the captive on his back to mock the main body.",
+      "In [第0541章 巨头之战], the Willow Deity kills the ancient giant Yin-Yang Daoist, prompting a chaotic brawl among upper-realm leaders over the detached layers of the Small Pagoda.",
+      "In [第0576章 七神下界], seven deities from the upper realm descend to the lower domains, causing widespread destruction and initiating a hunt to eliminate local powerhouses.",
+      "In [第0589章 最后一战], Shi Hao engages in a desperate final confrontation with the strongest of the seven deities from the Bronze Immortal Palace, defeating him at a fatal cost.",
+      "In [第0600章 绝路斩骨], Shi Hao, dying from the bronze rust curse, cuts out his newly regenerated Supreme Bone to transplant it into his younger brother Qin Hao.",
+      "In [第0606章 复活], after being buried for over a year and preserved by the roots of the Non-decay Grass, Shi Hao's heart beats again and he successfully revives.",
+      "In [第0614章 横推天下], the revived Shi Hao leads his forces to wipe out the remaining strongholds of the hostile sects (including the Qin Clan and Budian Sect) in the lower realm."
+    ],
+    "character_state_transitions": [
+      "Shi Hao: A bottlenecked Array Stage cultivator in [第0419章 肉身金丹] -> A breakthrough cultivator with a rebuilt, flawless body in [第0420章 蜕变功成].",
+      "Shi Hao: A wandering youth avoiding enemy sects in [第0451章 威压诸王] -> The crowned sovereign (Stone Emperor) of the Stone Kingdom in [第0454章 人皇石昊].",
+      "Shi Hao: A dying victim of the fatal Bronze Immortal Palace curse in [第0593章 小石殇] -> A deceased figure buried underground in [第0602章 逝去].",
+      "Shi Hao: A buried corpse under the ground in [第0602章 逝去] -> A revived supreme hero returning to conquer the lower realm in [第0610章 小石再现].",
+      "Yue Chan (Second Body): An elusive and aloof goddess of the Heaven Sect planning to trap Shi Hao in [第0458章 三教大败] -> A captured prisoner held by Shi Hao in [第0460章 擒拿仙子].",
+      "Yue Chan (Second Body): A hostile captive resisting cooperation in [第0525章 婆媳] -> The wedded wife of Shi Hao after their palace ceremony in [第0527章 成亲].",
+      "Qin Hao: A distant brother suspicious of Shi Hao's intentions in [第0488章 小石怒] -> A double-boned recipient of Shi Hao's transplanted Supreme Bone in [第0600章 绝路斩骨].",
+      "Willow Deity (柳神): A protective guardian spirit residing in Stone Village in [第0433章 惊动柳神] -> An active combatant departing through the primordial gate after the giant battle in [第0541章 巨头之战].",
+      "Small Pagoda (小塔): A four-layered entity seeking its lost body segments in [第0479章 上界大人物] -> A six-layered entity after retrieving two lost segments in [第0541章 巨头之战].",
+      "Immortal Creature (不灭的生灵): A dry, skeletal prisoner suppressed under the Five Elements Mountain in [第0498章 不灭的生灵] -> A freed powerhouse who escapes to the upper realm in [第0501章 团聚].",
+      "Qin Yi'ning: A grieving mother separated from her eldest son and monitored by the Qin clan in [第0483章 寻父母] -> A relieved mother reunited with Shi Hao in Stone Village in [第0501章 团聚].",
+      "Rain Clan (雨族): A proud, noble imperial clan conspiring with external sects in [第0456章 皇宫大战] -> A completely obliterated clan whose ancestral grounds are destroyed in [第0466章 雨族灭]."
+    ],
+    "long_form_mechanisms": [
+      {
+        "name": "Flesh Dan Cauldrons Transformation (肉身金丹)",
+        "description": "A brutal physical refinement process where the cultivator enters a cauldron filled with spring water, silver地脉灵焰 (Earth Vein Spirit Flame), and rare herbs. By applying internal Dao fire, the cultivator forces open their physical treasure-house portals to break through to the middle stage of the Array Stage, risking body disintegration in exchange for immense potential release. [第0419章 肉身金丹]"
+      },
+      {
+        "name": "Heaven Patching Art (补天术)",
+        "description": "The signature divine magic of the Heaven Sect. It allows the caster to warp or briefly reverse time in a localized area, granting them a chance to undo mistakes, evade fatal traps, or escape from secure physical grips. [第0460章 擒拿仙子]"
+      },
+      {
+        "name": "Medicine Garden Theory of the Great Tribulation (药田理论与大劫)",
+        "description": "The cosmic cycle governing the lower domains. The domains are treated by upper-realm giants as a 'medicine garden' where high-level cultivators (尊者) are the 'mature herbs'. During the cyclical Great Tribulation, these giants descend to harvest (kill/capture) them, leaving lower-stage cultivators untouched to seed the next cycle. [第0431章 可怕的真相]"
+      },
+      {
+        "name": "Supreme Bone Regeneration and Transplantation (至尊骨再生与斩骨)",
+        "description": "A biological-magical process where a stolen Supreme Bone can grow back stronger if the host survives the initial loss. Furthermore, a dying host can cut out their regenerated bone and transplant it into a blood relative, passing on its unique runes and powers, though the extraction is fatal to the donor. [第0600章 绝路斩骨]"
+      },
+      {
+        "name": "One Body, Two Faces Soul Splitting (一身两面)",
+        "description": "A cultivation technique of the Heaven Sect where a cultivator splits their soul and energy to cultivate a main body (主身) and a second body (次身) independently, doubling training efficiency. However, if the second body is compromised, captured, or forced to marry, it inflicts a flaw in the main body's Dao heart. [第0522章 次身]"
+      },
+      {
+        "name": "Non-decay Grass Preservation (不腐草与死后觉醒)",
+        "description": "A vegetative preservation and revival method. The roots of the Non-decay Grass wrap around the coffin of a deceased cultivator like a silver cocoon, emitting a cyclical reincarnation energy that prevents decomposition and slowly stores life-force until the soul gathers and revives. [第0605章 不腐草]"
+      },
+      {
+        "name": "Five Elements Mountain先天封印 (五行山封印)",
+        "description": "A sealing construct utilizing the innate five-elements root (五行道根) of a chaotic mountain, reinforced by Five Elements Divine Chains. The laws engraved by the Heavenly Deity grind away the body and soul of the suppressed prisoner over millions of years. [第0498章 不灭的生灵]"
+      },
+      {
+        "name": "Imperial Seal Fortunes Connection (皇道气运)",
+        "description": "The link between the Stone Emperor, the country's sacred seal (made from通灵打神石), and the nation's ancestral fortune. This allows the ruler to draw upon the collective strength of the country's land and people to form invincible barriers and enhance combat power. [第0454章 人皇石昊]"
+      }
+    ],
+    "continuity_observations": [
+      "The mystery of the First Spiritual Root (第一灵根), first encountered and collected in the Medicine Capital in [第0418章 荒域第一灵根], is resolved when the upper-realm giants descend to fight over and harvest it in [第0480章 上界巨头之战].",
+      "The long-standing mystery of Shi Hao's parents' whereabouts after leaving Stone Village is resolved when he travels to Mount Bulao in [第0486章 驾临不老山] and locates them in [第0500章 相见父母].",
+      "The legend of the Immortal Creature (不灭的生灵), referenced in earlier myths, is brought to fruition when Shi Hao releases him from his ancient seal beneath the Five Elements Mountain in [第0498章 不灭的生灵].",
+      "Yue Chan's second body, captured by Shi Hao in the capital in [第0460章 擒拿仙子], remains a persistent plot thread as she is taken to Stone Village, forced into a wedding in [第0527章 成亲], and used as bait in [第0531章 一身两面].",
+      "Shi Ziling's deep guilt and affection for Shi Hao are maintained consistently from early backstories to their emotional reunion in the depths of Mount Bulao in [第0500章 相见父母].",
+      "The Bronze Immortal Palace (仙殿) is introduced as a supreme antagonistic force, culminating in their deity descending in [第0576章 七神下界] and cursing Shi Hao with the fatal bronze rust curse in [第0589章 最后一战].",
+      "The dynamic stone spirit (打神石) companion found by Shi Hao in earlier chapters is revealed to have a historic connection to the first dynamic stone spirit which became the Stone Kingdom's first guardian in [第0454章 人皇石昊].",
+      "The lore of the Non-decay Grass (不腐草), which resembles the legendary还魂草 (Soul Returning Grass), is utilized as the key mechanism to preserve Shi Hao's body and facilitate his resurrection in [第0605章 不腐草] and [第0606章 复活]."
+    ],
+    "style_observations": [
+      "Gradual Escalation of Cosmic Stakes: The narrative scope shifts from localized royal succession conflicts within the Stone Kingdom in [第0454章 人皇石昊] to domain-shattering cataclysms fought by upper-realm gods in [第0480章 上界巨头之战].",
+      "Sarcastic Banter in High-Tension Scenes: The protagonist uses informal, teasing language during serious encounters, such as mocking Yue Chan's 'thick skin' while fighting her in [第0531章 一身两面] or describing kidnapping girls as 'carrying fat women' in [第0432章 扛媳妇回村].",
+      "Hyperbolic Cosmological Combat Imagery: The author employs extreme astronomical metaphors to depict power, such as sword beams slicing down stars from the sky in [第0541章 巨头之战] or blood rain crying from the heavens in [第0576章 七神下界].",
+      "Contrast of Public Lamentation and Private Hope: During the chapters surrounding Shi Hao's death in [第0600章 绝路斩骨] and [第0605章 不腐草], the author contrasts the public grief of the Desolate Domain with the quiet, persistent hope and efforts of Stone Village.",
+      "Detailed Explanations of Magical Alchemy: breakthroughs and refining processes are paused to explain the exact elemental transformations and chemical-like herb combinations, such as the Flesh Dan process in [第0419章 肉身金丹].",
+      "Serialized Cliffhangers and Slogans: Chapters regularly end with dramatic warnings of impending doom or proclamations of the protagonist's status, designed to maintain reader interest in serial form, as seen in [第0576章 七神下界] and [第0600章 绝路斩骨]."
+    ],
+    "creation_family_evidence": {
+      "author": "辰东 (Chen Dong)",
+      "protagonist": "石昊 (Shi Hao)",
+      "key_concepts": [
+        "至尊骨 (Supreme Bone)",
+        "列阵境 (Array Stage)",
+        "不老山 (Mount Bulao)",
+        "柳神 (Willow Deity)",
+        "小塔 (Small Pagoda)",
+        "不腐草 (Non-decay Grass)",
+        "仙殿 (Bronze Immortal Palace)",
+        "原始真解 (Raw True Primordial Record)"
+      ],
+      "stylistic_signature": "Features cosmological-scale battles, high-stakes family drama, comedic banter mixed with brutal violence, and the prominent integration of traditional mythological beasts (Kunpeng, True Dragon) adapted into high-level combat arts.",
+      "compilation_indicators": "The chapter headers utilize a uniform Chinese numbering format followed by a space and the title (e.g., '第0403章 禽兽大发神威', '第0614章 横推天下') and double-byte spacing at paragraph starts, indicating standard Zhi Xuan Cang Shu (知轩藏书) web serialization compilation formatting."
+    },
+    "originality_risks": [
+      "The noble sacrifice and subsequent resurrection of the protagonist (dying from the curse in [第0602章 逝去] and returning in [第0606章 复活]) is a highly common trope in xianxia that can reduce the finality and emotional weight of death in the story.",
+      "Splitting a female antagonist/deity into a cold main body and a vulnerable second body who is captured and married to the protagonist in [第0527章 成亲] is a standard harem-genre cliché in web novels.",
+      "The structure where the protagonist's home region is revealed to be a low-level cage or 'medicine garden' in [第0431章 可怕的真相] and they must ascend to the 'Upper Realm' to continue their growth is a highly standardized progression template.",
+      "The motif of a dying prodigy cutting out their unique talent source (至尊骨 in [第0600章 绝路斩骨]) to transplant it to their younger sibling is a highly dramatic self-sacrifice trope typical of family-centric fantasy works."
+    ]
+  }
+}
+```

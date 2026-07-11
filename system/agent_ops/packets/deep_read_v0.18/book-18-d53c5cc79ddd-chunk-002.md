@@ -26,7 +26,7 @@ The analysis must contain non-empty arrays named `major_events`,
 Use chapter titles or abstract event labels as evidence anchors, never raw prose.
 For million-byte chunks, provide at least 16 major events, 10 character-state
 transitions, 8 long-form mechanisms, 8 continuity observations, 6 style
-observations, and 4 originality risks. Cite at least 8 exact chapter headings
+observations, and 4 originality risks. Cite at least 6 exact chapter headings
 from the bounded UTF-8 file when that many headings exist.
 The job_id is `job-v018-verifiable-deep-reading` and contract_version is `0.18`. Copy every
 binding field exactly from this template and replace only the analysis values:

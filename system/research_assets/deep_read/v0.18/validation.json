@@ -4,145 +4,12 @@
   "status": "in_progress",
   "deep_read_verified": false,
   "book_count": 18,
-  "validated_chunk_count": 28,
+  "validated_chunk_count": 47,
   "required_chunk_count": 143,
-  "validated_bytes": 37549257,
+  "validated_bytes": 64244576,
   "required_bytes": 197294465,
-  "validated_byte_ratio": 0.190321,
+  "validated_byte_ratio": 0.325628,
   "invalid_chunks": [
-    {
-      "chunk_id": "book-05-11dd686b8b15-chunk-004",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
-    {
-      "chunk_id": "book-05-11dd686b8b15-chunk-005",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
-    {
-      "chunk_id": "book-05-11dd686b8b15-chunk-006",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
-    {
-      "chunk_id": "book-05-11dd686b8b15-chunk-007",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
-    {
-      "chunk_id": "book-05-11dd686b8b15-chunk-008",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
-    {
-      "chunk_id": "book-05-11dd686b8b15-chunk-009",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
-    {
-      "chunk_id": "book-05-11dd686b8b15-chunk-010",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
-    {
-      "chunk_id": "book-05-11dd686b8b15-chunk-011",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
-    {
-      "chunk_id": "book-06-b1b7934bf892-chunk-001",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
-    {
-      "chunk_id": "book-06-b1b7934bf892-chunk-002",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
-    {
-      "chunk_id": "book-06-b1b7934bf892-chunk-003",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
-    {
-      "chunk_id": "book-06-b1b7934bf892-chunk-004",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
-    {
-      "chunk_id": "book-06-b1b7934bf892-chunk-005",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
-    {
-      "chunk_id": "book-06-b1b7934bf892-chunk-006",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
-    {
-      "chunk_id": "book-06-b1b7934bf892-chunk-007",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
-    {
-      "chunk_id": "book-06-b1b7934bf892-chunk-008",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
-    {
-      "chunk_id": "book-06-b1b7934bf892-chunk-009",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
-    {
-      "chunk_id": "book-07-f82ccdb9a2b3-chunk-001",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
-    {
-      "chunk_id": "book-07-f82ccdb9a2b3-chunk-002",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
     {
       "chunk_id": "book-07-f82ccdb9a2b3-chunk-003",
       "valid": false,
@@ -820,5 +687,5 @@
     "valid": true,
     "errors": []
   },
-  "validated_at": "2026-07-11T13:44:15+08:00"
+  "validated_at": "2026-07-11T19:43:21+08:00"
 }

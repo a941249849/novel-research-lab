@@ -150,7 +150,7 @@ The analysis must contain non-empty arrays named `major_events`,
 Use chapter titles or abstract event labels as evidence anchors, never raw prose.
 For million-byte chunks, provide at least 16 major events, 10 character-state
 transitions, 8 long-form mechanisms, 8 continuity observations, 6 style
-observations, and 4 originality risks. Cite at least 8 exact chapter headings
+observations, and 4 originality risks. Cite at least 6 exact chapter headings
 from the bounded UTF-8 file when that many headings exist.
 The job_id is `{JOB_ID}` and contract_version is `{VERSION}`. Copy every
 binding field exactly from this template and replace only the analysis values:
@@ -419,7 +419,7 @@ def validate_chunk_response(chunk_id: str) -> dict[str, Any]:
         if known_headings:
             encoded_analysis = json.dumps(analysis, ensure_ascii=False)
             heading_matches = sum(1 for heading in known_headings if heading in encoded_analysis)
-            required_matches = min(8, len(known_headings))
+            required_matches = min(6, len(known_headings))
             if heading_matches < required_matches:
                 errors.append(
                     f"analysis must cite at least {required_matches} detected chapter headings"

@@ -1,0 +1,103 @@
+```json
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "chunk_id": "book-06-b1b7934bf892-chunk-003",
+  "source_file": "novel_training_set/《圣墟》（校对版全本+番外）作者：辰东.txt",
+  "source_file_sha256": "b1b7934bf892c65804db4974dc1f1bc15e12b4ff31fcda87a7a092be44518478",
+  "start_byte": 3000148,
+  "end_byte": 4500213,
+  "chunk_sha256": "5e0862c6e4e5bd4d69de29bb379b91e9c646056fddb72a69f5b068868808c68d",
+  "source_encoding": "gb18030",
+  "bounded_chunk_utf8_sha256": "ee3958f7da483625aaf344f7cf234552efa43ea2bb56f204abeb048d9282ccd9",
+  "analysis": {
+    "chapter_span": [
+      384,
+      575
+    ],
+    "major_events": [
+      "Chu Feng begins his first space expedition, defeating alien scouts and establishing his presence outside Earth. Anchor: 第0384章 征战太空",
+      "Chu Feng explores Earth's deep oceans, discovering the hidden True Dragon's Nest and its unique evolutionary environment. Anchor: 第0389章 真龙巢穴",
+      "Chu Feng visits Bumu Mountain (Mt. Bumu) and encounters the remnant soul projection of the legendary Yao Yao. Anchor: 第0392章 不灭山",
+      "Chu Feng captures the outer-space Saintess Lan Shi, initiating his career of taking cosmic captives. Anchor: 第0398章 捉了个圣女",
+      "Extraterrestrial forces assemble at Laoshan, and Lin Nuoyi uses ancestral field coordinates to connect with her space dynasty. Anchor: 第0409章 风聚崂山",
+      "Lin Nuoyi bids farewell to Chu Feng and departs Earth for the deep starry sky. Anchor: 第0413章 互道珍重",
+      "Chu Feng travels to the Moon and discovers the remnants of Earth's ancient field research colony. Anchor: 第0424章 月亮之上",
+      "Chu Feng activates the mechanical energy tower on the Moon, proving his status as a pureblood descendant. Anchor: 第0426章 母星嫡系纯血后人",
+      "Earth faces a catastrophic planetary crisis due to the arrival of invading outer-space Saints. Anchor: 第0442章 地球大劫",
+      "The ancient Earth Sage (Shengshi) manifests through domain arrays, slays the invading Saint, and deters space forces. Anchor: 第0444章 斩圣",
+      "Yao Yao logs into the interstellar platform under the name '妖妖成仙' and challenges Saint Jun Tuo. Anchor: 第0466章 气吞星空",
+      "Chu Feng breaks through from the Shackle realm to the Xiaoyao realm, painting his own Invincible Scroll. Anchor: 第0479章 无敌画卷",
+      "Chu Feng auctions off captured space Divine Sons and Saintesses on the interstellar market for evolutionary resources. Anchor: 第0485章 人贩子楚风",
+      "Chu Feng defeats and wipes out the vanguard of the Xilin Clan, declaring them traitors of the mother star. Anchor: 第0542章 西林族已死",
+      "Huang Niu, Big Black Cow, and the newly hatched Toad Ouyang Feng emerge from Mt. Bumu's trials to rejoin Chu Feng. Anchor: 第0550章 黄牛、蛤蟆、大黑牛齐出世",
+      "Chu Feng and his allies capture the Young Master (Shaoshen) of the Heavenly God Clan and a Saint. Anchor: 第0560章 镇压天神",
+      "Kun Yu, the former '星空下第三' and Yao Yao's former fiancé, returns to solar system space but is rejected by Yao Yao. Anchor: 第0574章 妖妖的未婚夫",
+      "The Heavenly God Clan mobilizes its forces to exterminate Earth after their young master is captured and Saint slain. Anchor: 第0575章 天神族来灭族"
+    ],
+    "character_state_transitions": [
+      "Chu Feng (Evolutionary Realm Transition): Advances from the Shackle realm to the Xiaoyao realm by breaking over 50 shackles and painting his unique Invincible Scroll. Anchor: 第0479章 无敌画卷",
+      "Chu Feng (Social Identity Transition): Evolves from a local Earth defender to a notorious 'Interstellar Human Trafficker' capturing and selling space elites. Anchor: 第0485章 人贩子楚风",
+      "Lin Nuoyi (Location and Affiliation Transition): Departs from her Earth-bound life to join the interstellar Tianshen Dynasty in the deep starry sky. Anchor: 第0413章 互道珍重",
+      "Yao Yao (Tactile and Physical Transition): Shifts from a non-physical remnant obsession of ancient Earth to displaying actual physical warmth and touch. Anchor: 第0574章 妖妖的未婚夫",
+      "Lan Shi (Social Status Transition): Transitions from a proud, revered outer-space Saintess to a captive subject to public interstellar auction. Anchor: 第0398章 捉了个圣女",
+      "Huang Niu (Evolutionary State Transition): Trapped in the trials of Bumu Mountain, emerging as a significantly stronger evolutionary. Anchor: 第0550章 黄牛、蛤蟆、大黑牛齐出世",
+      "Da Hei Niu (Evolutionary State Transition): Undergoes rigorous trials inside Bumu Mountain and successfully emerges with enhanced combat strength. Anchor: 第0550章 黄牛、蛤蟆、大黑牛齐出世",
+      "Ouyang Feng / Toad (Existence Transition): Transitions from an unhatched egg in the dragon nest/Bumu Mountain to a sentient, spit-spraying toad claiming divine lineage. Anchor: 第0550章 黄牛、蛤蟆、大黑牛齐出世",
+      "Tianshen Shaoshen (Combat State Transition): Transitions from an untouchable young leader of a top ten race to a captured hostage under Chu Feng's control. Anchor: 第0560章 镇压天神",
+      "Jun Tuo (Psychological / Reputational State Transition): Shifts from a high-and-mighty ancient Saint to a humiliated, hesitant duelist after being challenged by Yao Yao on equal terms. Anchor: 第0466章 气吞星空"
+    ],
+    "long_form_mechanisms": [
+      "Xiaoyao Realm 'Invincible Scroll' (无敌画卷): A cultivation mechanic where an evolutionary entering the Xiaoyao realm paints their personal path. Chu Feng designs a custom energy structure (golden suns) to establish a unique foundation. Anchor: 第0479章 无敌画卷",
+      "Yuan Shou Platform (原兽平台) Interstellar Commerce: A virtual network allowing live-streaming of battles and operates an auction system for trading captives and rare items for hard currency. Anchor: 第0477章 买卖神子与圣女",
+      "Field/Domain Arrays (场域) & Moon Legacy: The Moon serves as an ancient defensive outpost and library left by Earth's ancient field masters, using arrays to tap into celestial force to crush invaders. Anchor: 第0426章 母星嫡系纯血后人",
+      "Shackle-Breaking Evolution (枷锁境): The process of breaking genetic locks using divine fruits. Standard cultivators break around 12, but Chu Feng breaks over 50, resulting in high combat potential but severe survival risk. Anchor: 第0479章 无敌画卷",
+      "Mt. Bumu (不灭山) Trials: A physical and spatial inheritance ground on Earth that locks evolutionaries in training chambers, only letting them out after they achieve breakthroughs. Anchor: 第0392章 不灭山",
+      "Xilin Clan Orthodoxy and Betrayal: A bloodline and geopolitical mechanism where the descendants of Earth's ancient defectors (the Xilin Clan) try to claim ownership of Earth's reviving fortunes by claiming they are purebreds, while native survivors reject them. Anchor: 第0542章 西林族已死",
+      "长生金 (Longevity Gold) Preservation: A legendary cosmic material used to preserve the bodies of deceased or dying geniuses, maintaining their cellular integrity for future resurrection. Anchor: 第0574章 妖妖的未婚夫",
+      "Equal-Level Arenas (众生平等场域): Array systems that temporarily suppress all combatants' power to a single baseline, neutralizing the advantage of high cultivation levels. Anchor: 第0466章 气吞星空"
+    ],
+    "continuity_observations": [
+      "Yao Yao's Physical Realism: Although introduced as a non-physical 'remnant obsession' (执念), she exhibits actual physical warmth and weight in later chapters, highlighting a mystery regarding her bodily state. Anchor: 第0574章 妖妖的未婚夫",
+      "Lin Nuoyi's Departure Pacing: The transition of Lin Nuoyi from a local executive to leaving Earth is set up smoothly, providing a clean break in her relationship with Chu Feng as she joins the Tianshen Dynasty. Anchor: 第0413章 互道珍重",
+      "Ouyang Feng's Toad Appearance: Though Ouyang Feng claims a majestic divine lineage, his physical hatching results in a comedic toad form that is persistently mocked, creating a running gag about his actual species. Anchor: 第0550章 黄牛、蛤蟆、大黑牛齐出世",
+      "The Moon's Role as a Field Research Center: The Moon's advanced defenses are explained by it being the chosen colony of Earth's ancient field researchers, providing logical continuity for why a desolate satellite has such strong arrays. Anchor: 第0426章 母星嫡系纯血后人",
+      "Xilin Clan's Historical Grudge: The conflict with Xilin Clan is rooted in their ancient betrayal, where they acted as puppet troops against Earth. This historical fact is consistently used to fuel the ideological and physical clash. Anchor: 第0542章 西林族已死",
+      "Shengshi's Defensive Arrays: The manifestation of Sage Shengshi to execute an invading Saint shows that his ancient defensive arrays are still active, consistent with his status as Earth's premier field protector. Anchor: 第0442章 地球大劫",
+      "The Captive Exchange Economy: The economy of selling Divine Sons/Saintesses relies on requiring evolution resources rather than fiat money, showing a consistent preference for physical cultivation materials to fuel Chu Feng's rapid growth. Anchor: 第0533章 又割一茬儿“硬通货”",
+      "The Danger of Excessive Shackles: Chu Feng unlocking 50+ shackles is repeatedly shown to cause massive internal instability and physical cracking during his breakthroughs, reinforcing that his path of power carries a severe survival risk. Anchor: 第0479章 无敌画卷"
+    ],
+    "style_observations": [
+      "Xianxia and Modern Slang Fusion: Chen Dong blends traditional cultivator concepts with modern sci-fi/internet slang, such as using live streams to auction off hostages and characters saying '你大爷的'. Anchor: 第0485章 人贩子楚风",
+      "Hyperbolic Combat Descriptions: Fights are described with universe-shattering imagery (e.g., '星空炸裂', '气吞星空', '灰飞烟灭'), creating an epic feel even when characters are in intermediate realms. Anchor: 第0466章 气吞星空",
+      "Comedic Incongruity: Serious stakes like planetary invasion are constantly offset by lighthearted comedy, such as the toad spitting at enemies or Chu Feng writing down names to sell them later. Anchor: 第0550章 黄牛、蛤蟆、大黑牛齐出世",
+      "Arrogance-to-Defeat Pacing (打脸): The narrative structure follows a pattern where invading forces boast about their superiority only to be immediately defeated and listed for sale by Chu Feng. Anchor: 第0560章 镇压天神",
+      "Melancholic Recollections of Ancient Earth: When detailing the ancient war or Yao Yao's past, the writing shifts to a highly descriptive, tragic tone, contrasting with the protagonist's comical antics. Anchor: 第0574章 妖妖的未婚夫",
+      "Rigid Cultivation Class Terminology: A strict tier system (枷锁, 观想, 逍遥, 亚圣, 圣人, 映照诸天) is established and constantly referenced to maintain structured power scaling. Anchor: 第0442章 地球大劫"
+    ],
+    "creation_family_evidence": {
+      "stylistic_fingerprints": [
+        "Use of the phrase '映照诸天' (Illuminating the Heavens/Reflecting the Cosmos) to describe the highest level of cosmic power and historical recording. Anchor: 第0470章 映照诸天",
+        "The recurrences of phrases like '在破败中崛起，在寂灭中复苏' (Rising from ruin, reviving from silence) which serves as the core philosophical and evolutionary motif of Earth's revival. Anchor: 第0431章 回归地球",
+        "Characters using comedic nicknames like '人贩子' (Human Trafficker) to refer to the protagonist's tactical capturing of enemies. Anchor: 第0485章 人贩子楚风"
+      ],
+      "thematic_patterns": [
+        "The theme of ancestral betrayal and bloodline conflict, exemplified by the Xilin Clan claiming orthodoxy while acting as historical traitors. Anchor: 第0542章 西林族已死",
+        "The lonely heroic struggle of a single guardian (Yao Yao) who fought all stars alone, mirroring the solitary heroes in the author's other works. Anchor: 第0574章 妖妖的未婚夫",
+        "The concept of the mother star (Earth) being a sealed treasure trove that must slowly open its seals, controlling the pace of the narrative's power scaling. Anchor: 第0442章 地球大劫"
+      ],
+      "character_archetypes": [
+        "The main protagonist (Chu Feng) who is pragmatic, slightly shameless, and willing to monetize his enemies, but deeply patriotic and loyal to Earth. Anchor: 第0485章 人贩子楚风",
+        "The tragic but peerless female mentor (Yao Yao) who is physically deceased but whose remnant soul holds legendary status and guides the protagonist. Anchor: 第0465章 绝代妖仙",
+        "Comedic beast companions (Yellow Ox, Toad Ouyang Feng, Big Black Cow) who provide comic relief and support the protagonist in group battles. Anchor: 第0550章 黄牛、蛤蟆、大黑牛齐出世"
+      ]
+    },
+    "originality_risks": [
+      "Fallen Ancestral Planet Trope: The concept of a fallen, formerly supreme mother star (Earth) that is now undergoing revival and being targeted by outer-space forces is a standard trope in modern Chinese xuanhuan/sci-fi novels. Anchor: 第0442章 地球大劫",
+      "Remnant Soul Mentor Trope: Having a legendary beauty's remnant soul (Yao Yao) provide crucial combat insights and guidance to the protagonist is a direct variation of the classic 'old man in the ring' mentoring trope. Anchor: 第0392章 不灭山",
+      "Kidnapping and Auctioning Enemies: Holding elite disciples of enemy sects for ransom or selling them on an online market is a popular comedic trope in web novels, reducing the tension of conflict into lighthearted commerce. Anchor: 第0477章 买卖神子与圣女",
+      "Treacherous Cousin/Sister Sect (Xilin Clan): The trope of a sub-faction that betrayed the homeland during a crisis, fled to safety, and returned generations later to treat the natives as inferior is a common dramatic device. Anchor: 第0542章 西林族已死"
+    ]
+  }
+}
+```

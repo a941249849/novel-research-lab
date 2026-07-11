@@ -1,0 +1,91 @@
+```json
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "chunk_id": "book-05-11dd686b8b15-chunk-008",
+  "source_file": "novel_training_set/《凡人修仙传》（校对版全本+番外）作者：忘语.txt",
+  "source_file_sha256": "11dd686b8b151694b37460b52991a4f00eda8f5fabe86b507e74f321e10a7428",
+  "start_byte": 10500450,
+  "end_byte": 12000492,
+  "chunk_sha256": "0c12975362f564c38ffc8bc0dec0047d18f1ecf9c92efc680f1a125238aaff35",
+  "source_encoding": "gb18030",
+  "bounded_chunk_utf8_sha256": "6b38b382aaa4352fe1f82bbebb042445650815c2fdd82ee26ab0d18e67a4e79a",
+  "analysis": {
+    "chapter_span": [
+      "第一千七百四十九章 虚灵宝鼎",
+      "第一千九百七十五章 意外麻烦"
+    ],
+    "major_events": [
+      "In chapter 第一千七百四十九章 虚灵宝鼎 (Leiming), Han Li meets the Tianqi race Mahayana grand elder Weng Xingzi, who gives him a mission to deliver the prototype Xuling Cauldron (Xutian Cauldron) to Ice Soul Fairy (冰魄仙子) or her descendants in Fengyuan Continent. Han Li is required to swear a heart demon oath to seal this agreement.",
+      "In chapter 第一千七百五十章 偶遇 (Leiming), Han Li unexpectedly meets a sick elder in Fujiao City who looks exactly like his old friend Xiang Zhili (向之礼), but the elder displays suspicious behaviors.",
+      "In chapter 第一千七百五十四章 离开雷鸣, Han Li goes to the meeting at Qingjiao Peak, where Xiang Zhili is exposed as a Blood Shadow demon that possessed Xiang Zhili's corpse and merged the souls of Xiang Zhili and Hu Laomo. Han Li defeats and incinerates the demon using his Heaven Demon Armor and physical transformation.",
+      "At the end of chapter 第一千七百五十四章 离开雷鸣 and start of 第一千七百四十七章 雷阵 (second series), Han Li uses the super teleportation array in Fujiao City to return to Fengyuan Continent. However, due to Leiyunzi's flaws in the design of the Thunder Light Magic Array, Han Li is teleported into a violent wilderness storm.",
+      "In chapter 第一千七百四十七章 雷阵 (second series), Han Li encounters and rescues a group of four human cultivators trapped by a Spatial Tempering stage Stone Turtle (石元龟) in the wilderness near Tianyuan Castle.",
+      "In chapters 第一千七百五十六章 进阶合体（上） and 第一千七百五十七章 进阶合体（下）, Han Li successfully breaks through to the Combined/Integration stage at Xuri Peak, summoning his Mountain-associated Giant Ape form, absorbing the elemental clouds, and overcoming the heart demon tribulation.",
+      "In chapter 第一千七百七十九章 三对三, Han Li and his low-level traveling companions, Hai Dashao and Qi Lingzi, intervene to rescue a young girl named Bai Guo'er and her father from the Nanshan Three Evils.",
+      "In chapter 第一千七百八十五章 记名弟子, Han Li reveals his Combined stage cultivation to Yue Hua Xianzi, diagnoses Bai Guo'er's deadly cold poison as the rare Ice Marrow Physique (冰髓之体), and accepts her as his registered disciple to guide her cultivation.",
+      "In chapters 第一千八百零一章 万骨之邀 and 第一千八百零二章 附心丝, Han Li's disciple Qi Lingzi is kidnapped by an old woman serving Wanguyan Ancestor (万骨老祖). The abductor leaves a deadly parasite in Hai Dashao's body, which Han Li extracts.",
+      "In chapters 第一千八百零五章 一抓，一拳，一掌 and 第一千八百零六章 巨猿战老祖, Han Li tracks the kidnappers, confronts the Yao race Combined stage master Wanguyan Ancestor, matches him in battle, and successfully rescues Qi Lingzi.",
+      "In chapters 第一千八百二一章 聚灵桩 and 第一千八百二六章 盘算, Han Li is invited to assist the Gu family (a True Spirit family with giant ape bloodline) as a guest fighter in the upcoming True Spirit Grand Ceremony (真灵大典) due to the absence of their ancestor Tianli Xianzi.",
+      "In chapter 第一千八百三一章 劳家的挑战, the Lao family challenges the Gu family. During the conflict, the Long family ancestor (陇家老祖) tests Han Li with three powerful blows, which Han Li successfully blocks using his Wood-element second avatar.",
+      "In chapter 第一千八百五十二章 化灵之战（下） and surrounding chapters, the Demon Tribulation begins. Han Li migrates his cave dwelling and disciples to the secure fortress of Tianyuan Castle to prepare for the massive demon beast invasion.",
+      "In chapters 第一千九百一十四章 倚天之战（五） to 第一千九百三十四章 退敌, Han Li joins the defense of Yitian City, fighting high-level demons and protecting the city from being overrun by the invading demon army.",
+      "In chapters 第一千九百三十八章 黑雨上人 to 第一千九百四十二章 围攻石灵, Han Li collaborates with senior human cultivators like Black Rain Daoist to trap and defeat the Huangliang Stone Spirit (黄粱石灵) in order to obtain precious materials.",
+      "In chapters 第一千九百六十章 神弓伤敌 to 第一千九百六十二章 炼化之术, Han Li is ambushed by the clone of Sacred Ancestor Yuancha (元刹化身) and uses the Xutian Bow (驚天弓) to wound the avatar and escape.",
+      "In chapters 第一千九百六十八章 敖啸现身 and 第一千九百七十章 银月与七星月体, Han Li reunites with Yinyue (Linglong) and her grandfather Ancestor Ao Xiao, discussing Yinyue's Seven Star Moon Body and the defense strategies of the human-yao alliance.",
+      "In chapter 第一千九百七十五章 意外麻烦, Han Li returns to his tower in Tianyuan Castle, learns from his disciples that Bing Feng (冰凤) is being harassed by a powerful external cultivator, and prepares to intervene."
+    ],
+    "character_state_transitions": [
+      "Han Li: Transitions from Spatial Tempering (炼虚) peak stage to Combined/Integration (合体) stage, gaining massive power, a larger law manifestation, and enhanced divine sense (chapters 第一千七百五十六章 进阶合体（上） and 第一千七百五十七章 进阶合体（下）).",
+      "Han Li: Transitions from traveling incognito (disguised as a low-level cultivator) to revealing his true Combined stage status to Yue Hua Xianzi and others (chapters 第一千七百八十一章 天元圣皇 to 第一千七百八十五章 记名弟子).",
+      "Xiang Zhili: Transitions from a deceased human cultivator to a puppet body possessed by a Blood Shadow demon, and finally to complete ash/destruction by Han Li's flames (chapter 第一千七百五十四章 离开雷鸣).",
+      "Bai Guo'er: Transitions from a young girl dying of fatal cold poison to a protected registered disciple of Han Li with her rare Ice Marrow Physique identified and stabilized (chapter 第一千七百八十五章 记名弟子).",
+      "Hai Dashao: Transitions from a healthy low-level disciple to being poisoned by a deadly Heart-Attaching Thread parasite, and then cured by Han Li (chapter 第一千八百零二章 附心丝).",
+      "Qi Lingzi: Transitions from a free low-level disciple to an abducted captive of Wanguyan Ancestor's subordinate, and then rescued by Han Li (chapters 第一千八百零二章 附心丝 to 第一千八百零六章 巨猿战老祖).",
+      "Yinyue (Linglong): Transitions from being trapped in the lower realm to returning to the spirit realm, recovering under Ancestor Ao Xiao's guidance, and reaching the Spatial Tempering middle-stage peak (chapters 第一千七百六十六章 两族大乘 and 第一千七百六十七章 许家).",
+      "Ancestor Ao Xiao: Transitions from undergoing the dangerous 21st Grand Heavenly Tribulation to surviving it with severe injuries, entering a state of recovery and seclusion (chapter 第一千七百六十六章 两族大乘).",
+      "Gu Family Branch Leader: Transitions from a suspicious local manager to a respectful and fearful informant who reports Han Li's giant ape bloodline and breakthrough to the Gu family main branch (chapters 第一千七百五十六章 进阶合体（上） and 第一千七百五十七章 进阶合体（下）).",
+      "Lao Family Ancestor: Transitions from a confident schemer plotting to usurp the Gu family's True Spirit benefits to a defeated challenger realizing the immense gap in strength when Han Li represents the Gu family (chapters 第一千八百二六章 盘算 to 第一千八百三十一章 劳家的挑战).",
+      "Sacred Ancestor Yuancha's Clone: Transitions from a powerful hunter pursuing Han Li to being wounded by Han Li's sacred bow and forced to retreat (chapters 第一千九百六十章 神弓伤敌 and 第一千九百六十一章 脱身)."
+    ],
+    "long_form_mechanisms": [
+      "Heart Demon Oath (心魔誓言): A binding oath sworn upon one's own inner demons. In the Spirit Realm, high-level cultivators (炼虚 and above) are highly vulnerable to heart demons during breakthroughs. Breaking a heart demon oath guarantees that the heart demon will manifest with extreme strength during their next breakthrough attempt, leading to madness or death. This is why Weng Xingzi uses it to ensure Han Li's compliance in chapter 第一千七百四十九章 虚灵宝鼎 (Leiming).",
+      "Flawed Thunder Light Magic Array (雷光法阵): A teleportation and combat array created by Leiyunzi of the Ming race. Because Han Li and Leiyunzi each withheld crucial details during their exchange of techniques, Han Li's application of the array is slightly unstable, leading to a large coordinate deviation that teleports him into a wilderness storm instead of a precise location as shown in chapter 第一千七百四十八章 雷云子与雷光法阵.",
+      "Spirit Refinement Technique (炼神术): An ancient, soul-enhancing technique that strengthens the user's divine sense and soul. Han Li practices the first tier of this technique in chapter 第一千七百五十二章 炼神一层 (second series), which greatly increases his mental resilience, allowing him to easily overcome heart demons during his Combined stage breakthrough.",
+      "Integration Stage Breakthrough and Law Manifestation: The process of advancing to the Combined stage requires absorbing vast amounts of regional Heaven and Earth energy, which forms a giant law manifestation (法相) representing the cultivator's bloodline or technique. The cultivator must ingest the elemental clouds and withstand heart demon hallucinations before the energy can merge with their physical body and soul (chapters 第一千七百五十六章 进阶合体（上） and 第一千七百五十七章 进阶合体（下）).",
+      "Ice Marrow Physique (冰髓之体): A rare constitutional trait in female cultivators where the body naturally gathers extreme ice-cold spiritual energy. Without cultivation, this energy manifests as a fatal cold poison that kills the person within years. With proper cold-attribute methods, it converts into a supreme cultivation talent (chapter 第一千七百八十四章 冰髓之体).",
+      "Heart-Attaching Thread (附心丝): An alchemically refined insect parasite. It is microscopically small and can be implanted into a victim's body undetected. At midnight, it travels to the heart and pierces it, causing instant death with no trace of poison or murder, making it a perfect assassination tool (chapter 第一千八百零二章 附心丝).",
+      "True Spirit Grand Ceremony (真灵大典) and Wanling Platform (万灵台): A ritualistic gathering where clans inheriting ancient True Spirit bloodlines compete. The families test their bloodline purity and combat strength on the Wanling Platform to allocate resources and rankings (chapters 第一千八百二五章 万灵台 and 第一千八百二六章 盘算).",
+      "Sacred Ancestor Avatar descent and temporary power boost (锁龙丹): High-level Demon ancestors (Mahayanas of the Demon Realm) cannot easily cross the boundary into the Spirit Realm. They send clones/avatars which are limited in power. By consuming pills like the Lock Dragon Pill (锁龙丹), these clones can temporarily restore 80-90% of their true power, but at the cost of requiring a thousand-year recovery seclusion afterward (chapter 第一千九百六十四章 再入木族)."
+    ],
+    "continuity_observations": [
+      "Xiang Zhili and Hu Laomo's Fate: Resolves the mystery of the human world's peak cultivators (Xiang Zhili and Hu Laomo) who entered a spatial node to ascend. Their possession by a Blood Shadow demon shows the brutal dangers of the spatial node and their tragic end in the Spirit Realm (chapter 第一千七百五十四章 离开雷鸣).",
+      "The Prototype of Xuling Cauldron: Connects the Xutian Cauldron (obtained by Han Li in the human world's Xutian Palace) to the history of Bingpo Xianzi (who founded the Luo Valley/Heaven Mending Sect in the human world), revealing it as a prototype for her Xuling Cauldron (chapter 第一千七百四十九章 虚灵宝鼎 - Leiming).",
+      "Leiyunzi's Exchange: Follows up on Han Li's transaction with Leiyunzi in Leiming Continent. The mutual modifications/tricks they played on their exchanged techniques explain both Han Li's teleportation mishap and Leiyunzi's difficulties in condensing thunder beads (chapter 第一千七百四十八章 雷云子与雷光法阵).",
+      "Yuancha's Avatar Grudge: Han Li remembers his conflict in Kunwu Mountain (human world) where Yinyue's soul swallowed Yuancha's divine sense avatar. This grudge drives Han Li's urgency to reach the Combined stage before Yuancha's main body descends in the Demon Tribulation (chapter 第一千七百九四章 忧心).",
+      "Yinyue's Separation from Tiankui Langwang: References the unresolved marital conflict between Yinyue (玲珑) and Tiankui Langwang in the Spirit Realm, explaining why Ancestor Ao Xiao took her away and guided her to cultivate in isolation (chapter 第一千七百六十六章 两族大乘 and 第一千七百六十七章 许家).",
+      "Mountain-associated Giant Ape form: Reflects Han Li's previous cultivation of the Vanquishing Devil Art (梵圣真魔功) and his ingestion of giant ape blood in the lower realm, which manifests as his giant ape law manifestation during his Combined stage breakthrough (chapters 第一千七百五十六章 进阶合体（上） and 第一千七百五十七章 进阶合体（下）).",
+      "Tianyuan Castle's Strategic Importance: Reinforces the earlier description of Tianyuan Castle as the sole gate between the Human-Yao territory and the savage wilderness, making it the central defense post when the Demon Tribulation begins (chapter 第一千七百四十七章 雷阵 - second series).",
+      "Disciples' Loyalty and Status: Continues the storyline of Han Li's disciples Qi Lingzi and Hai Dashao, showing their development and their role in managing Han Li's affairs (such as finding the target妖族 elder) while he was away (chapter 第一千八百零二章 附心丝 and 第一千九百七十五章 意外麻烦)."
+    ],
+    "style_observations": [
+      "Overlapping chapter numbers: The transition between Volume 9 and Volume 10 resets the chapter numbers from 1754 (离开雷鸣) to 1747 (雷阵), resulting in an overlapping set of chapter numbers in the manuscript.",
+      "Highly detailed cultivation logs: The narrative devotes multiple chapters to step-by-step descriptions of spiritual energy flows, body transformations, and law manifestations during breakthroughs, creating a sense of realism (chapters 第一千七百五十六章 进阶合体（上） and 第一千七百五十七章 进阶合体（下）).",
+      "Incognito travel as a pacing tool: The author frequently places the high-level protagonist in a low-level environment travelling under a disguised identity to build suspense before a dramatic power reveal (chapters 第一千七百七十九章 三对三 to 第一千七百八十五章 记名弟子).",
+      "Contrast of power scales: Tragic characters like Xiang Zhili are used to highlight the massive power gap and unforgiving environment of the Spirit Realm compared to the lower human world (chapter 第一千七百五十四章 离开雷鸣).",
+      "Evocative Daoist naming conventions: Cultivation paths, medicines, and treasures are given complex, alchemical names (e.g., 梵圣真魔功, 锁龙丹, 附心丝) that build a consistent fantasy aesthetic.",
+      "Pre-combat tactical internal dialogue: Characters spend considerable narrative time calculating odds, evaluating potential consequences, and estimating enemy strengths before committing to a fight (e.g. Han Li analyzing the blood shadow's threat in chapter 第一千七百五十四章 离开雷鸣)."
+    ],
+    "creation_family_evidence": {
+      "author_signature": "At the end of chapter 第一千七百七十八章 白果儿, just before chapter 第一千七百七十九章 三对三, there is a parenthesized message: （呵呵，高考开始了。忘语祝愿参加高考的凡人读者们，高考顺利哦）. This signature directly names the author as 忘语 (Wang Yu), addresses A Record of a Mortal's Journey to Immortality readers as 凡人读者, and anchors the writing/serialisation of this chapter to the annual Chinese College Entrance Examination period in early June.",
+      "serialisation_evidence_anchor": "第一千七百七十九章 三对三"
+    },
+    "originality_risks": [
+      "Generic heart demon tribulation: The concept of facing illusions or heart demons (心魔) during a major breakthrough is a standard xianxia trope that the text follows closely without subversion (chapters 第一千七百五十六章 进阶合体（上） and 第一千七百五十七章 进阶合体（下）).",
+      "Disguised master saving low-level characters: Travelling incognito and suddenly revealing Combined stage power to save weak characters (like Bai Guo'er) from generic villains is a highly common and predictable web novel trope (chapters 第一千七百七十九章 三对三 to 第一千七百八十五章 记名弟子).",
+      "True Spirit bloodline ranking tournament: The clan competition system based on True Spirit bloodlines competing on a platform (万灵台) to allocate resources mirrors standard family-tournament arcs in martial arts novels (chapters 第一千八百二五章 万灵台 and 第一千八百二六章 盘算).",
+      "Demon invasion to raise narrative stakes: Using a sudden boundary-crossing demon invasion (魔族入侵) to force characters to unite and relocate to a fortress city is a standard plot device to shift the novel from individual cultivation to military conflict (chapter 第一千八百五十二章 化灵之战（下）)."
+    ]
+  }
+}
+```

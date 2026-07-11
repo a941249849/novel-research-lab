@@ -1,0 +1,135 @@
+```json
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "chunk_id": "book-07-f82ccdb9a2b3-chunk-001",
+  "source_file": "novel_training_set/《大主宰》（校对版全本）作者：天蚕土豆.txt",
+  "source_file_sha256": "f82ccdb9a2b36141b806691150a118cddfbc5db40f1c81a70df79a4786aeeceb",
+  "start_byte": 0,
+  "end_byte": 1500181,
+  "chunk_sha256": "1cee0ef3db58fec1f684f35bc8a7b44bdea3af443cdf7fab621c933da373d9f3",
+  "source_encoding": "gb18030",
+  "bounded_chunk_utf8_sha256": "6fbb7f124e754951cfef46ccaaab688a5ebc353f90d8ce272e3ee53f5521b4b2",
+  "analysis": {
+    "chapter_span": [
+      "第一章 北灵院",
+      "第两百三十一章 白轩"
+    ],
+    "major_events": [
+      "In [第一章 北灵院], Mu Chen returns to the Northern Spiritual Academy after his sudden expulsion from the Spiritual Road, resuming his studies at the Earth Branch and showing a calm demeanor.",
+      "In [第十三章 战柳阳], Mu Chen defeats Liu Yang in a public academy battle, demonstrating his tactical resourcefulness and solid spiritual energy control.",
+      "In [第十九章 森罗死印], Mu Chen begins his training of the high-level spiritual art Senluo Dead Seal, successfully condensing his first Dead Seal stamp through arduous palm training.",
+      "In [第二十一章 训练场风波], Mu Chen uses the newly mastered Senluo Dead Seal to overwhelm and deter senior Heaven Branch students who initiated a conflict on the training ground.",
+      "In [第三十一章 驱虎吞狼], during the Northern Spiritual Fields trial, Mu Chen designs a plan to drive a horde of spiritual beasts against the Liu Territory's hunting party to secure the Jade Spiritual Fruits.",
+      "In [第四十一章 作弊], the Liu Territory falsely accuses Mu Chen of cheating in the academy evaluations, sparking a confrontation between the Mu and Liu domain leaders.",
+      "In [第四十五章 九幽雀], Mu Chen and his father discover the legendary Nine Netherworld Bird trying to evolve via thunder tribulation in the Black Underworld Abyss.",
+      "In [第六十一章 神秘黑蛋], the Nine Netherworld Bird, having failed its evolution and being heavily injured, retreats into a black egg shape inside Mu Chen's body, sealed by the Great Pagoda Art.",
+      "In [第七十一章 联合布阵], Mu Chen works alongside Teacher Ye to set up a combined spiritual array, showcasing his innate genius as a spiritual array master.",
+      "In [第八十一章 名额争夺战], the youths of the Northern Spiritual Realm compete in the Entry Contest for the Northern Heavens Academy spots, with Mu Chen utilizing spiritual arrays to win.",
+      "In [第一百章 柳惊山], the retired lord of the Liu Domain, Liu Jingshan, appears at the nine-domain assembly, revealing that he has secretly broken through to the Three Heavens Stage.",
+      "In [第一百零一章 融天境], Liu Jingshan releases his Fusion Heaven Stage aura to suppress the alliance, prompting Mu Chen to prepare a desperate counterattack.",
+      "In [第一百一十一章 北苍界], after defeating Liu Jingshan, Mu Chen enters the Northern Heavens Realm for the academy entrance trial, meeting the mysterious swordswoman Luo Li.",
+      "In [第一百二十一章 曾经，现在，依旧强大], Mu Chen defeats the hunter Ge Hai, proving that despite his Spiritual Road setback, his combat capability remains exceptionally powerful.",
+      "In [第一百四十一章 血脉链接], Mu Chen establishes a mutual bloodline connection with the Nine Netherworld Bird inside his body, allowing them to share spiritual energy and enhance their combat power.",
+      "In [第一百五十一章 最后的挑战], Mu Chen overcomes the final gatekeeper in the Northern Heavens Realm, securing his high-ranking entry into the Northern Heavens Spiritual Academy.",
+      "In [第一百八十一章 牧尘战杨弘], during the Newborn Assembly at the academy, Mu Chen battles his Spiritual Road rival, Yang Hong, and emerges victorious in a fierce showdown.",
+      "In [第一百九十一章 灵诀殿], Mu Chen visits the academy's Spiritual Art Hall, where he outwits the ancient guardian to obtain the Four God Constellation Sutra and a mysterious black page.",
+      "In [第两百零一章 突破], Mu Chen goes into seclusion at the bottom of the academy lake, successfully breaking through to the Fusion Heaven Stage after resolving a conflict with Su Ling'er.",
+      "In [第两百三十一章 白轩], Mu Chen's squad arrives at White Dragon City for a Heaven-level task, encountering the city lord Bai Xuan who is secretly plotting with the Dragon Demon Palace to retrieve a至尊灵藏."
+    ],
+    "character_state_transitions": [
+      "Mu Chen: Expelled and disheartened ex-prodigy of the Spiritual Road in [第二章 被踢出灵路的少年] -> Restored to prominence and leading member of the Northern Spiritual Academy in [第十六章 天届].",
+      "Mu Chen: Standard Spiritual Movement Stage (灵动境) cultivator in [第一章 北灵院] -> Breakthrough to Spiritual Wheel Stage (灵轮境) in [第九十六章 压制与突破].",
+      "Mu Chen: Spiritual Wheel Stage (灵轮境) cultivator in [第九十六章 压制与突破] -> Breakthrough to Fusion Heaven Stage (融天境) after lake-bottom cultivation in [第两百零一章 突破].",
+      "Nine Netherworld Bird: A wild, hostile legendary beast attempting a fatal evolution in the abyss in [第四十五章 九幽雀] -> Sealed partner inside Mu Chen's body, establishing a mutual bloodline connection in [第一百四十一章 血脉链接].",
+      "Liu Yang: Domineering bully of the Earth Branch in [第八章 柳阳] -> Defeated rival who loses his confidence and authority after the academy duel in [第十三章 战柳阳].",
+      "Tan Qingshan: Ordinary Earth Branch student lacking confidence in [第十一章 谭青山] -> Confident Heaven Branch member striving to keep up with Mu Chen after academy trials in [第十六章 天届].",
+      "Liu Jingshan: Reclusive retired domain lord rumored to be dead or incapacitated in [第八十章] -> Awakened Fusion Heaven Stage powerhouse attempting to subjugate the Northern Spiritual Realm in [第一百章 柳惊山].",
+      "Luo Li: Mysterious solitary swordswoman wandering the Northern Heavens Realm in [第一百一十二章 黑裙少女] -> Close companion and co-founder of the Luoshen Association at the academy in [第一百七十一章 洛神会].",
+      "Yang Hong: Arrogant candidate of the Spiritual Road claiming the title of newborn king in [第一百七十八章 石台] -> Humiliated loser defeated by Mu Chen in the Newborn Assembly in [第一百八十六章 谁是新生第一？].",
+      "Su Ling'er: Arrogant girl bullying newcomers in the lake-bottom cultivation area in [第一百九十八章 苏灵儿] -> Respectful rival who retreats after being outsmarted by Mu Chen in [第两百零一章 突破].",
+      "Ge Hai: Bully of the Ge Territory hunting down weaker candidates in the Northern Heavens Realm in [第一百一十九章 葛海] -> Defeated and stripped of his points/token by Mu Chen in [第一百二十一章 曾经，现在，依旧强大]."
+    ],
+    "long_form_mechanisms": [
+      {
+        "name": "The Spiritual Road Selection (灵路选拔)",
+        "description": "A trial ground created by the Five Great Academies to select the most talented youths. Entrants are stripped of their spiritual energy and must rely purely on physical body, intelligence, and survival instincts. [第二章 被踢出灵路的少年]"
+      },
+      {
+        "name": "Great Pagoda Art (大浮屠诀)",
+        "description": "A mysterious cultivation method left to Mu Chen by his mother. It allows him to condense a dark, pagoda-like structure in his body, which has supreme sealing power and can suppress other spiritual energies, including ancient beast spirits. [四章 大浮屠诀]"
+      },
+      {
+        "name": "Senluo Dead Seal (森罗死印)",
+        "description": "A high-level spiritual art where the cultivator refines spiritual energy to form dark seal stamps in their palm. The power increases exponentially with the number of seals condensed, but it puts massive physical strain on the cultivator's arms and channels. [第十九章 森罗死印]"
+      },
+      {
+        "name": "Spiritual Array Formation and Spiritual Seals (灵阵与灵印)",
+        "description": "The mechanism of creating arrays by condensing spiritual energy into seals and connecting them in specific patterns in the air. The rank of a spiritual array master is determined by the number of spiritual seals they can control simultaneously. [第四十七章 灵阵]"
+      },
+      {
+        "name": "Beast Spirit Refining (灵兽精魄炼化)",
+        "description": "A process where a cultivator kills a spiritual beast, extracts its core spirit, and refines it into their own spiritual sea to gain its unique elemental or physical traits, which is crucial for breaking through to the Shenpo Stage. [第二十五章 灵兽精魄]"
+      },
+      {
+        "name": "Nine Netherworld Bird Evolution (九幽雀进化)",
+        "description": "A divine beast's evolution process where it must endure the Black Underworld Tribulation Fire. If it fails, it faces death or regression, forcing it to seek a host body to preserve its spark of life. [第四十五章 九幽雀]"
+      },
+      {
+        "name": "Three Heavens Stage Division (三天之境)",
+        "description": "The advanced cultivation stages above the Spiritual Soul Stage, comprising the Fusion Heaven Stage (融天境) which integrates with the environment to control nature, the Transformation Heaven Stage (化天境), and the Heavenly Pass Stage (通天境). [第一百零一章 融天境]"
+      },
+      {
+        "name": "Bloodline Connection (血脉链接)",
+        "description": "A forbidden contract established between a human cultivator and a divine beast, allowing both parties to share spiritual energy, life force, and sensory inputs, but binding their fates together in case of death. [第一百四十一章 血脉链接]"
+      },
+      {
+        "name": "Spiritual Art Hall Trial (灵诀殿考验)",
+        "description": "A defensive mechanism in the academy where the collections are guarded by ancient stone spirits. Cultivators must either defeat the guardian or use clever maneuvers to grab the desired scroll before being ejected. [第一百九十二章 挑选灵诀]"
+      }
+    ],
+    "continuity_observations": [
+      "The mystery of Mu Chen's mother's identity and her connection to the Great Pagoda Art is established early in [第四章 大浮屠诀] and remains a driving force for his cultivation throughout the Academy arc.",
+      "The rivalry between the Mu Domain and the Liu Domain is maintained consistently from the academy disputes in [第八章 柳阳] to the life-and-death battle with Liu Jingshan in [第一百章 柳惊山].",
+      "Mu Chen's mysterious expulsion from the Spiritual Road due to a bloodbath incident is referenced repeatedly in [第二章 被踢出灵路的少年], [第一百一十二章 黑裙少女], and [第一百八十一章 牧尘战杨弘], building anticipation for the full reveal.",
+      "The Nine Netherworld Bird's presence in Mu Chen's body is developed continuously, starting as a hostile force in [第四十六章 封印], turning into a dormant egg in [第六十一章 神秘黑蛋], and finally becoming an active combat ally in [第一百四十一章 血脉链接].",
+      "Luo Li's unique black sword and her connection to the Luoshen Clan are introduced during her entry in [第一百一十二章 黑裙少女] and later detailed in the discussion of the clan's crisis in [第两百二十一章 洛神族].",
+      "The Senluo Dead Seal remains Mu Chen's signature physical combat art, progressing from a single seal in [第二十章 成印] to multiple seals in his battles against Ge Hai and Yang Hong.",
+      "The character of Ge Hai, defeated by Mu Chen in the Northern Heavens Realm in [第一百二十一章 曾经，现在，依旧强大], serves to connect Mu Chen's past on the Spiritual Road to the current candidates who hold grudges against him.",
+      "The Western Heaven Realm and the Flame Emperor are introduced in [第两百二十二章 西天界] as part of the broader universe backdrop, linking the localized Academy events to the ultimate cosmic setting of the novel.",
+      "The White Dragon Jade Pillar auctioned in [第两百二十九章 白龙玉柱] serves as the key to the至尊灵藏, driving the entire squad's expedition to the White Dragon Hills."
+    ],
+    "style_observations": [
+      "Gradual Escalation of Antagonists: The author structures conflict by introducing minor rivals (Liu Yang) that escalate to domain-level powerhouses (Liu Jingshan), followed by academy rivals (Yang Hong) and continent-level enemies (Bai Xuan), maintaining a steady growth pace. [第八章 柳阳], [第一百章 柳惊山], [第两百三十一章 白轩]",
+      "Exclamatory and Visual Combat Descriptions: Heavy use of descriptors depicting light, sound, and geological destruction to convey the intensity of spiritual energy collisions. [第十三章 战柳阳], [第一百八十二章 大炎魔之阵]",
+      "Contrast between Protagonist's Calmness and Crowds' Disbelief: A common prose formula where onlookers express shock at Mu Chen's victory while Mu Chen remains detached and focused on recovery. [第二十二章 死印之威], [第一百八十六章 谁是新生第一？]",
+      "Introspective Analysis of Battle Mechanics: The text often pauses during fights to explain the tactical reasoning, energy allocation, and psychological states of the combatants, making battles feel calculated rather than random. [第一百二十一章 曾经，现在，依旧强大], [第两百一十九章 换我来进攻]",
+      "Incorporation of Chinese Mythological Beasts: The lore uses names and traits of traditional Chinese mythological creatures like the White Tiger (白虎), Black Tortoise (玄武), and Azure Dragon (青龙) as core elements of spiritual arts. [第一百九十三章 四神星宿经], [第两百一十一章 感悟]",
+      "Repetitive Formatting of Dialogue Defiance: Standardized exchanges where villains boast of their absolute superiority, only for the protagonist to respond with a calm, sarcastic one-liner before unleashing a hidden technique. [第一百八十一章 牧尘战杨弘], [第两百一十七章 新生第一VS天榜第二]",
+      "Use of Environmental Metaphors for Cultivation States: Describing spiritual energy breakthrough as a turbulent ocean or a volcanic eruption inside the body to emphasize the physical sensation of leveling up. [第九十六章 压制与突破], [第两百零一章 突破]",
+      "Serialized Suspense Hooks: Ending chapters with a dramatic declaration or the sudden appearance of a new threat, ensuring high reader retention for serial reading. [第一百章 柳惊山], [第两百三十章 竞争]"
+    ],
+    "creation_family_evidence": {
+      "author": "天蚕土豆 (Tiancan Tudou)",
+      "protagonist": "牧尘 (Mu Chen)",
+      "key_concepts": [
+        "大浮屠诀 (Great Pagoda Art)",
+        "九幽雀 (Nine Netherworld Bird)",
+        "灵路 (Spiritual Road)",
+        "森罗死印 (Senluo Dead Seal)",
+        "北灵院 (Northern Spiritual Academy)",
+        "北苍灵院 (Northern Heavens Spiritual Academy)"
+      ],
+      "stylistic_signature": "Features the typical escalation patterns and energy-based combat naming systems characteristic of Tiancan Tudou's broader franchise (including Battle Through the Heavens and Wu Dong Qian Kun), such as ranking tournaments, spiritual beast companions, and mysterious mothers with hidden noble bloodlines.",
+      "compilation_indicators": "The chapter headers utilize uniform Chinese numbering format followed by a space and the title (e.g., '第一章 北灵院', '第两百三十一章 白轩') and double-byte spacing at paragraph starts, indicating standard Zhi Xuan Cang Shu (知轩藏书) web serialization compilation formatting."
+    },
+    "originality_risks": [
+      "Typical Xianxia Academy Setting: The transition from local family disputes to a grand cultivation academy (Northern Heavens Spiritual Academy) with ranking boards and task systems follows a highly standardized template popularized by novels like Battle Through the Heavens. [第一百一十一章 北苍界], [第一百七十一章 洛神会]",
+      "The Expelled Prodigy Trope: Starting the story with a protagonist who was kicked out of a prestigious selection (Spiritual Road) but possesses hidden potential and a unique cheat item (Great Pagoda Art) is a standard trope to generate early underdog appeal. [第二章 被踢出灵路的少年], [四章 大浮屠诀]",
+      "Beast-in-the-Body Cheat: Having a legendary, powerful beast (Nine Netherworld Bird) residing in the protagonist's body to provide emergency energy boosts and tactical advice is a highly common element in xianxia and shonen-adjacent stories. [第四十六章 封印], [第一百四十一章 血脉链接]",
+      "Standard Power Scaling Gaps: The dramatic gap between cultivation realms (e.g. 神魄境 vs 融天境) which is described as impassable, yet repeatedly bypassed by the protagonist using unique techniques, is a recurring narrative shorthand that can reduce structural tension. [第一百零一章 融天境], [第两百一十七章 新生第一VS天榜第二]",
+      "Damsel in Distress of a Noble Clan: Luo Li's character arc being tied to a major clan crisis that the protagonist must eventually resolve by becoming strong enough to face their enemies is a common romantic motivation trope in web novels. [第两百执行章 洛神族], [第两百二十二章 西天界]"
+    ]
+  }
+}
+```

@@ -1,0 +1,310 @@
+```json
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "chunk_id": "book-05-11dd686b8b15-chunk-005",
+  "source_file": "novel_training_set/《凡人修仙传》（校对版全本+番外）作者：忘语.txt",
+  "source_file_sha256": "11dd686b8b151694b37460b52991a4f00eda8f5fabe86b507e74f321e10a7428",
+  "start_byte": 6000341,
+  "end_byte": 7500346,
+  "chunk_sha256": "79a435699ef6d78ad4ef50c10709558c826d5e99c9a0442da0fa3e08bb2ba7cb",
+  "source_encoding": "gb18030",
+  "bounded_chunk_utf8_sha256": "8f32fb4f1c3d2b4634d6f621ef71638848834e1d618259161de2c1a8b3bb4969",
+  "analysis": {
+    "chapter_span": [
+      "第一千五十三章 灵禽与元婴",
+      "第一千二百八十四章 狂兽之潮（五）"
+    ],
+    "major_events": [
+      {
+        "event": "Escape from the collapsing Kunwu Mountain seal.",
+        "anchor": "第一千五十三章 灵禽与元婴"
+      },
+      {
+        "event": "Silver Moon and the Silver Wolf Princess (Linglong) merge souls, restoring her memories and prepare to return to the Spirit Realm.",
+        "anchor": "第一千七十一章 封灵大法"
+      },
+      {
+        "event": "Silver Moon bids farewell to Han Li and ascends to the Spirit Realm with Linglong.",
+        "anchor": "第一千七十四章 脱困"
+      },
+      {
+        "event": "Han Li arrives at Anyuan city / Xiaojigong to seek materials and meets the Grand Elder, Han Li Shangren.",
+        "anchor": "第一千八十四章 寒骊上人"
+      },
+      {
+        "event": "A massive beast tide of Ice Sea beasts led by the Ice Phoenix besieges Xiaojigong.",
+        "anchor": "第一千九十五章 群妖压境"
+      },
+      {
+        "event": "Han Li Shangren attempts the Cold Flame Wash Marrow for Deification, but the ritual is sabotaged by the beasts.",
+        "anchor": "第一千一百零三章 反目"
+      },
+      {
+        "event": "The battle of Xiaojigong reaches the Temple of Void Spirit, resulting in Han Li Shangren's death.",
+        "anchor": "第一千一百零四章 战起"
+      },
+      {
+        "event": "Han Li uses a teleportation array to flee Xiaojigong but is pursued by the Ice Phoenix, causing them to be teleported together.",
+        "anchor": "第一千一百二十四章 传送之战"
+      },
+      {
+        "event": "Han Li and the Ice Phoenix establish a temporary truce to survive and cultivate in an isolated pocket space.",
+        "anchor": "第一千一百二十开章 联手"
+      },
+      {
+        "event": "Han Li successfully breaks through to the late Nascent Soul stage (元婴后期) after eighty years of seclusion.",
+        "anchor": "第一千一百二十九章 后期初成"
+      },
+      {
+        "event": "Han Li slays the level-10 Golden Dragon King (金蛟王) in the Outer Sea.",
+        "anchor": "第一千一百五十二章 金蛟王"
+      },
+      {
+        "event": "Han Li obtains a page of the immortal-grade Golden Palace Jade Book (金阙玉书).",
+        "anchor": "第一千一百六十六章 金阙玉书"
+      },
+      {
+        "event": "Han Li returns to Luo Yun Sect in the Heavenly South and reunites with fellow cultivators.",
+        "anchor": "第一千一百六十八章 回归天南"
+      },
+      {
+        "event": "Han Li recaptures and re-assimilates his rebellious second Nascent Soul in the Devil Fall Valley.",
+        "anchor": "第一千一百七十七章 第二元婴与天煞魔尸"
+      },
+      {
+        "event": "Han Li and Nangong Wan celebrate their grand double cultivation ceremony, officially marrying.",
+        "anchor": "第一千一百九十七章 终成眷属"
+      },
+      {
+        "event": "Han Li acquires the Magnet Mountain to cultivate the Magnet Divine Light.",
+        "anchor": "第一千二百又二十一章 元磁山"
+      },
+      {
+        "event": "The long-dead Xuantian Wisteria is revived and yields the supreme Xuantian Fruit (gourd).",
+        "anchor": "第一千二百五十二章 玄天之宝"
+      },
+      {
+        "event": "Han Li successfully breaks through the bottleneck to the Deification stage (化神期) on a deserted island.",
+        "anchor": "第一千二百五十七章 进阶化神"
+      },
+      {
+        "event": "Han Li and the Ice Phoenix use the Virtual Heaven Cauldron to navigate the spatial node and ascend.",
+        "anchor": "第一千二百六十五章 进入节点"
+      },
+      {
+        "event": "Han Li arrives in a strange region of the Spirit Realm, discovering his magic power is sealed.",
+        "anchor": "第一千二百六十六章 陌生之地"
+      },
+      {
+        "event": "Han Li, working for Tiandong Merchant House, defends Anyuan City against a massive beast tide.",
+        "anchor": "第一千二百八十章 狂兽之潮（一）"
+      }
+    ],
+    "character_state_transitions": [
+      {
+        "character": "Xu-named Youth (徐姓青年)",
+        "transition": "From a human Nascent Soul cultivator to a soul-merged entity inside the Lingxi Peacock after his physical body is destroyed by the blood blade.",
+        "anchor": "第一千五十三章 灵禽与元婴"
+      },
+      {
+        "character": "Lin Yinping (林银屏)",
+        "transition": "From a hostile leader of the Mutu tribe to a captive of Han Li, forced to negotiate and share secrets.",
+        "anchor": "第一千五十三章 灵禽与元婴"
+      },
+      {
+        "character": "Silver Moon (银月)",
+        "transition": "From a subordinate artifact spirit bound to Han Li to a fully restored Silver Wolf Princess of the Spirit Realm, leading to her departure.",
+        "anchor": "第一千七十一章 封灵大法"
+      },
+      {
+        "character": "Han Li (韩立)",
+        "transition": "From the mid Nascent Soul stage to the late Nascent Soul stage after eighty years of secluded cultivation in a pocket space.",
+        "anchor": "第一千一百二十九章 后期初成"
+      },
+      {
+        "character": "Han Li Shangren (寒骊上人)",
+        "transition": "From the peak late Nascent Soul Grand Elder of Xiaojigong to a failed Deification candidate who dies during the beast raid.",
+        "anchor": "第一千一百零三章 反目"
+      },
+      {
+        "character": "Ice Phoenix (冰凤)",
+        "transition": "From a hostile ten-level beast queen to Han Li's temporary captive and co-cultivator, and eventually his ascension partner.",
+        "anchor": "第一千一百二十四章 传送之战"
+      },
+      {
+        "character": "Second Nascent Soul (第二元婴)",
+        "transition": "From a subservient clone to an autonomous, rebellious entity in Devil Fall Valley before being re-subjugated and absorbed.",
+        "anchor": "第一千一百推七十七章 第二元婴与天煞魔尸"
+      },
+      {
+        "character": "Nangong Wan (南宫婉)",
+        "transition": "From a comatose victim locked in the Soul Sealing Curse to a cured, active cultivator who marries Han Li.",
+        "anchor": "第一千一百六十八章 回归天南"
+      },
+      {
+        "character": "Han Li (韩立)",
+        "transition": "From a late Nascent Soul cultivator to a Deification stage (化神) grand master.",
+        "anchor": "第一千二百五十七章 进阶化神"
+      },
+      {
+        "character": "Han Li (韩立)",
+        "transition": "From a supreme Deification cultivator in the human world to a vulnerable newcomer with sealed magic power in the Spirit Realm.",
+        "anchor": "第一千二百六十六章 陌生之地"
+      },
+      {
+        "character": "Tianlan Sacred Beast (天澜兽)",
+        "transition": "From a hostile spirit of the Mutu tribe to a tamed auxiliary spirit guide bound to Han Li's Virtual Heaven Cauldron.",
+        "anchor": "第一千一百六十六章 金阙玉书"
+      }
+    ],
+    "long_form_mechanisms": [
+      {
+        "mechanism": "Sacred Beast Soul Integration: Merging a dying cultivator's Nascent Soul into a compatible spiritual beast to preserve life and consciousness.",
+        "anchor": "第一千五十三章 灵禽与元婴"
+      },
+      {
+        "mechanism": "Reverse Spirit Channel: A dangerous spatial path connecting the human world and the Spirit Realm that requires Deification-level power to survive.",
+        "anchor": "第一千六十章 真魔之气"
+      },
+      {
+        "mechanism": "Cold Flame Wash Marrow: A high-risk Xiaojigong refinement method fusing three cold flames to cleanse a cultivator's body and break Deification bottlenecks.",
+        "anchor": "第一千九十八章 寒焰洗髓"
+      },
+      {
+        "mechanism": "Late Nascent Soul Spiritual Tribulation: The phenomenon of breaking through to the late Nascent Soul stage, causing elemental tempests and projecting mirages.",
+        "anchor": "第一千一百二十八章 天兆"
+      },
+      {
+        "mechanism": "Jade Book Decryption: Deciphering the immortal-grade Golden Palace Jade Book using the celestial silver tadpole script taught by high-level spirits.",
+        "anchor": "第一千一百六十六章 金阙玉书"
+      },
+      {
+        "mechanism": "Second Nascent Soul Autonomy: The process by which an independent clone infant develops its own consciousness and seeks to devour its original host if separated too long.",
+        "anchor": "第一千一百七十七章 第二元婴与天煞魔尸"
+      },
+      {
+        "mechanism": "Magnet Mountain Cultivation: Refining a magnetic mountain to master Magnet Divine Light, which requires possessing all five spiritual roots and suppresses five-element spells.",
+        "anchor": "第一千二百又二十一章 元磁山"
+      },
+      {
+        "mechanism": "Xuantian Treasure Growth: Reviving the ancient Xuantian Wisteria with specialized green liquid to yield a law-bearing Xuantian Gourd.",
+        "anchor": "第一千二百五十二章 玄天之宝"
+      },
+      {
+        "mechanism": "Spatial Node Traversal: The physical mechanics of ascending via spatial nodes, where boundary pressures seal the traveler's magic power upon entry to the upper world.",
+        "anchor": "第一千二百六十五章 进入节点"
+      }
+    ],
+    "continuity_observations": [
+      {
+        "observation": "The mysterious green liquid (produced by the Green Vial/掌天瓶) is consistently used to revive and mature the long-dead Xuantian Wisteria.",
+        "anchor": "第一千二百五十一章 仙藤复活"
+      },
+      {
+        "observation": "The Virtual Heaven Cauldron (虚天鼎), acquired by Han Li in the Outer Sea years ago, remains central as the home of the Tianlan beast and the key to the spatial node.",
+        "anchor": "第一千一百六十六章 金阙玉书"
+      },
+      {
+        "observation": "The Wind Thunder Wings (风雷翅) refined in the Outer Sea are upgraded using the Kunpeng feather (鲲鹏之羽) obtained from the spatial rip.",
+        "anchor": "第一千一百七十九章 炼翅"
+      },
+      {
+        "observation": "The Second Nascent Soul's origin is tracked to the 至木灵婴 (Wood Spirit Infant) separated from Han Li during his frozen drift to the Great Jin.",
+        "anchor": "第一千一百七十七章 第二元婴与天煞魔尸"
+      },
+      {
+        "observation": "Nangong Wan's Soul Sealing Curse (封魂咒) is cured using the Xuanbing pill made of Xuanbing flowers, linking the Great Jin search back to her condition.",
+        "anchor": "第一千一百六十八章 回归天南"
+      },
+      {
+        "observation": "Xiang Zhili's disappearance at Kunwu Mountain is resolved by showing he was trapped in the illusion dimension (幻妙天象) and subsequently released.",
+        "anchor": "第一千五十七章 第九层"
+      },
+      {
+        "observation": "The Great G庚 Sword Formation (大庚剑阵) is consistently utilized by Han Li using his signature Gold Bamboo Bee Cloud Swords during the defense of Xiaojigong.",
+        "anchor": "第一千一百一十一章 剑阵重现"
+      },
+      {
+        "observation": "The maturation method of the Gold-devouring Beetles promised by the Xu youth is later utilized by Han Li to advance his beetle swarm.",
+        "anchor": "第一千五十三章 灵禽与元婴"
+      },
+      {
+        "observation": "The human-headed snake monster in Anyuan City is identified as the same entity that attacked Han Li in the Qinglu Desert of the human world.",
+        "anchor": "第一千二百八十四章 狂兽之潮（五）"
+      }
+    ],
+    "style_observations": [
+      {
+        "observation": "Dampened Pace of Cultivation: The narrative uses temporal compression sentences (e.g. '一转眼，整整八十年过去了') to bypass decades of solitary training between action arcs.",
+        "anchor": "第一千一百又二十八章 天兆"
+      },
+      {
+        "observation": "Formulaic Combat Escalation: Fights steadily progress from minor magic tools, to large-scale formations/talismans, and finally to ultimate trump cards.",
+        "anchor": "第一千一百一十一章 剑阵重现"
+      },
+      {
+        "observation": "Internal Monologue of Caution: Han Li's character is characterized by meticulous cost-benefit assessments and a preference for strategic retreats, which are detailed in long internal monologues.",
+        "anchor": "第一千八十四章 寒骊上人"
+      },
+      {
+        "observation": "Sensory Metaphors of Force: The author uses distinct auditory and visual descriptions (e.g. sound of breaking mirrors, 万鸟齐鸣) to portray high-level spatial manipulation.",
+        "anchor": "第一千五十六章 空间碎裂"
+      },
+      {
+        "observation": "Technical Explanations of Magic Items: Heavy expository passages explain the specific lore, origin, and functional attributes of new magical items or formulas.",
+        "anchor": "第一千一百六十六章 金阙玉书"
+      },
+      {
+        "observation": "Detailed Battle Choreography: Fights track the specific elemental interactions, colors, and trajectories of tools and spells rather than abstract martial actions.",
+        "anchor": "第一千一百零四章 战起"
+      }
+    ],
+    "originality_risks": [
+      {
+        "risk": "The 'Sealed Power' New Region Reset: Depriving the newly ascended Deification protagonist of his magic power upon entering the Spirit Realm to reset power scales.",
+        "anchor": "第一千二百六十六章 陌生之地"
+      },
+      {
+        "risk": "Coerced Cooperation with Hostile Female: Forcing Han Li and a powerful female adversary (the Ice Phoenix) to share close quarters and cooperate to survive.",
+        "anchor": "第一千一百二十六章 联手"
+      },
+      {
+        "risk": "The 'Great Elder's Hidden Agenda': The trope of a senior sect leader pretending to assist the protagonist while plotting to exploit or betray him.",
+        "anchor": "第一千八十四章 寒骊上人"
+      },
+      {
+        "risk": "Convenient Tribulation Interruption: Disrupting a major NPC's breakthrough attempt with a sudden beast invasion to prevent them from overshadowing the protagonist.",
+        "anchor": "第一千一百零三章 反目"
+      },
+      {
+        "risk": "The Autonomous Clone Rebellion: Using a sentient clone clone that rebels against its master as a temporary hurdle for a quick power upgrade.",
+        "anchor": "第一千一百七十七章 第二元婴与天煞魔尸"
+      }
+    ],
+    "creation_family_evidence": {
+      "signature_terminology": [
+        "辟邪神雷",
+        "青竹蜂云剑",
+        "大庚剑阵",
+        "噬金虫",
+        "虚天鼎",
+        "元磁山",
+        "玄天之宝"
+      ],
+      "protagonist_behavioral_patterns": [
+        "Meticulous planning and extreme risk aversion ('韩立一向小心谨慎').",
+        "Prioritizing escape routes ('见势妙走为上策') over heroic stands.",
+        "Maintaining hidden cultivation levels and Trump card magic tools in combat."
+      ],
+      "narrative_structural_loops": [
+        "The classic zone-progression loop: Arriving in a new location (e.g., Great Jin, Northern Plains, Spirit Realm), keeping a low profile, gathering resources, facing a major crisis (beast tide/siege), and escaping/breaking through."
+      ],
+      "worldbuilding_mechanics": [
+        "Continuous auxiliary item upgrading (e.g. wind-thunder wings, gold-devouring beetles).",
+        "bottlenecks and heavenly phenomena (天兆) tied to distinct levels of Nascent Soul and Deification stages."
+      ]
+    }
+  }
+}
+```

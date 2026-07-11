@@ -86,9 +86,13 @@ def _detect_encoding(data: bytes) -> str:
         return "gb18030"
 
 
-def _headings(data: bytes, encoding: str) -> list[str]:
+def _all_headings(data: bytes, encoding: str) -> list[str]:
     text = data.decode(encoding)
-    headings = [match.group(1).strip() for match in CHAPTER_PATTERN.finditer(text)]
+    return [match.group(1).strip() for match in CHAPTER_PATTERN.finditer(text)]
+
+
+def _headings(data: bytes, encoding: str) -> list[str]:
+    headings = _all_headings(data, encoding)
     if len(headings) <= 24:
         return headings
     indexes = sorted({round(index * (len(headings) - 1) / 23) for index in range(24)})
@@ -406,7 +410,12 @@ def validate_chunk_response(chunk_id: str) -> dict[str, Any]:
         family_evidence = analysis.get("creation_family_evidence")
         if not isinstance(family_evidence, dict) or not family_evidence:
             errors.append("analysis.creation_family_evidence must be a non-empty object")
-        known_headings = [str(item) for item in chunk.get("chapter_headings", [])]
+        bounded_path = runtime_path(str(chunk.get("bounded_chunk_file", "")))
+        known_headings = (
+            _all_headings(bounded_path.read_bytes(), "utf-8")
+            if bounded_path.is_file()
+            else [str(item) for item in chunk.get("chapter_headings", [])]
+        )
         if known_headings:
             encoded_analysis = json.dumps(analysis, ensure_ascii=False)
             heading_matches = sum(1 for heading in known_headings if heading in encoded_analysis)

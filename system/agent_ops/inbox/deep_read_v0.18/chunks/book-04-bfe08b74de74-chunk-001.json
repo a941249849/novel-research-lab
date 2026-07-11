@@ -1,0 +1,117 @@
+```json
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "chunk_id": "book-04-bfe08b74de74-chunk-001",
+  "source_file": "novel_training_set/《仙逆》（校对版全本）作者：耳根.txt",
+  "source_file_sha256": "bfe08b74de74bea1f5979eadb2e98f8a699473d565974582cf6629583278bc82",
+  "start_byte": 0,
+  "end_byte": 1500136,
+  "chunk_sha256": "f736023dccec3821cc2f57462ac6a5e3a7478a5eb0cf266b3877aa897b2e197a",
+  "source_encoding": "gb18030",
+  "bounded_chunk_utf8_sha256": "3f0b3001e1c3ce6a369ab516787f83606af6251656b433526ba06a3d9572492e",
+  "analysis": {
+    "chapter_span": [
+      "第一卷 平庸少年",
+      "第226章 离开楚国"
+    ],
+    "major_events": [
+      "In 第一章 离乡, Wang Lin leaves his village and fails the Heng Yue Sect talent selection, setting up his path of cultivation.",
+      "In 第八章 石珠, Wang Lin falls off a cliff and discovers the mysterious stone bead (Heaven Defying Bead) that has cloud patterns and can condense high-quality spiritual liquid.",
+      "In 第九章 下崖, Wang Lin attempts to climb down the cliff to recover the stone bead, gets injured but uses the bead's spiritual dew to rapidly heal.",
+      "In 第十章 入门, due to his family's effort, Wang Lin is accepted as a nominal/honorary disciple of the Heng Yue Sect.",
+      "In 第十九章 逐门, Wang Lin is expelled from Sun Dazhu's lineage due to his slow cultivation, which was secretly sabotaged by Sun's medicine.",
+      "In 第四十六章 老怪, Wang Lin uses his divine sense to inspect the stone bead, awakening Situ Nan, a powerful ancient cultivator's soul sealed within.",
+      "In 第六十四章-第七十章, Heng Yue Sect is annexed by Xuan Dao Zong after their defeat. Wang Lin returns to his village to visit his parents with his newly acquired power.",
+      "In 第七十八章 藤家城, Wang Lin meets his old friend Zhang Hu and kills White Exhibit, which triggers a conflict with the Teng family.",
+      "In 第八十八章 蓝肤怪人, Wang Lin retreats in the jungle ruins to cultivate the Huangquan Ascension Art, using the yin dew from the stone bead.",
+      "In 第九十七章 巨变, the conflict escalates as Teng Huayuan massacres Wang Lin's family, prompting Wang Lin to seek revenge.",
+      "In 第一百一十六章, the Outer Battlefield channel is opened, and Wang Lin faces off against Teng Huayuan's projection in the Decisive Valley.",
+      "In 第一百一十七章 王林身亡, Wang Lin is killed by Teng Huayuan, but his soul is protected and escapes into the Outer Battlefield.",
+      "In 第一百一十九章 神识苏醒, Wang Lin's soul wakes up in the Outer Battlefield, devours other souls, and refines his first devil.",
+      "In 第一百二十章 王林回归, Wang Lin possesses Ma Liang's body and returns to the mortal realm.",
+      "In 第一百二十五章 极境神识, Wang Lin survives the defensive screen of the spatial teleportation array using his extreme state divine sense.",
+      "In 第一百二十七章 火山闭关, Wang Lin isolates himself in a volcano in the Fire Burning Country to rebuild his physical body.",
+      "In 第一百三十五章 风云变色, the Fire Burning Country is overrun by fire beasts, forcing the entire cultivator population to migrate.",
+      "In 第一百四十四章 结丹（一）, Wang Lin achieves Core Formation using the three-core method of the Huangquan Ascension Art.",
+      "In 第一百五十三章 扬威南斗, Wang Lin slaughters dozens of pursuing cultivators under the Ten-Thousand Devil Kill Order to protect Li Muwan.",
+      "In 第一百六十三章 神道之术, Wang Lin reads the ancient Shendao Art on the jade wall of the War God Temple.",
+      "In 第一百七十二章 土行之地, Wang Lin travels through the giant vortex into the Land of Ancient Gods.",
+      "In 第一百八十一章 禁制大爆发, Wang Lin spends a decade studying restrictions on the Restriction Mountain, outwitting Gudi and escaping an outbreak.",
+      "In 第一百九十一章 神识死海, Wang Lin explores the split consciousness of Ancient God Tu Si and accesses the Death Sea of Divine Sense.",
+      "In 第200章 有女云妃, Wang Lin escapes the ancient god land after 200 years and encounters Yun Fei in the Sea of Devils.",
+      "In 第217章 碰撞, Wang Lin returns to Chu Country, merges his avatar with his original body, and prepares for Nascent Soul breakthrough.",
+      "In 第226章 离开楚国, Wang Lin achieves Nascent Soul stage and successfully escapes Chu Country with Li Muwan after confronting Yun Tian Sect's founders."
+    ],
+    "character_state_transitions": [
+      "Wang Lin transitions from an ordinary village boy to a Heng Yue Sect cultivator after being accepted as a nominal disciple in 第十章 入门.",
+      "Wang Lin transitions from a living human to a wandering soul in the Outer Battlefield after being killed by Teng Huayuan in 第一百一十七章 王林身亡.",
+      "Wang Lin transitions from a wandering soul to a resurrected cultivator by possessing Ma Liang's body in 第一百一十九章 神识苏醒.",
+      "Wang Lin transitions from a Qi Condensation cultivator to a Core Formation expert by merging three cold cores in 第一百四十四章 结丹（一）.",
+      "Wang Lin transitions to an Ancient God-like body after receiving Tu Si's physical reconstruction in 第一百九温八章 身体重组.",
+      "Wang Lin transitions from a single entity to having an independent avatar/clone to bypass the Extreme State bottleneck in 第210章 凝练分身.",
+      "Wang Lin transitions from Core Formation to the Nascent Soul stage in 第224章 结婴.",
+      "Situ Nan transitions from a sealed, sleeping soul to an active mentor for Wang Lin after being awakened in 第四十六章 老怪.",
+      "Li Muwan transitions from a helpless captive alchemist to Wang Lin's partner and companion starting in 第一百二八章 焚金山脉.",
+      "Zhang Hu transitions from a poisoned slave of White Exhibit to a free cultivator after Wang Lin kills his master in 第七十八章 藤家城."
+    ],
+    "long_form_mechanisms": [
+      "The Heaven Defying Bead's time dilation dream space allows Wang Lin to train for decades while only a few years pass in the real world, accelerated by absorbing wood, water, and fire elemental dew (第八章 石珠).",
+      "The Extreme State (极境) divine sense allows a cultivator to easily kill enemies at or below their level, but it forms an insurmountable boundary at each major realm, making traditional breakthroughs fatal (第一百二十五章 极境神识).",
+      "Soul refining and Devil Creation (自制魔头) in the Outer Battlefield requires binding wandering souls with restriction arrays to form loyal, soul-devouring entities (第一百一十九章 神识苏醒).",
+      "The Three Cores Consolidation (三丹合一) method in Huangquan Ascension Art requires the cultivator to form cold cores in their three major acupoints and merge them under extreme pain to achieve Core Formation (第一百四十四章 结丹（一）).",
+      "The Ten-Thousand Devil Kill Order (万魔百日诛杀令) is a blood-mark tracking mechanism that broadcasts the target's location to all demonic cultivators in the Sea of Devils for a 100-day hunt (第一百五十一章 万魔百日诛杀令).",
+      "The Restriction Mountain arrays operate on combining basic restriction runes (残影) to create complex illusions, spatial traps, or defensive walls (第一百七十八章 禁制山).",
+      "The Ancient God's Inheritance is split into Memory (忆之传承) and Power (力之传承), requiring visitors to navigate distinct trials in the Land of Ancient Gods to claim them (第一百八十七章 古神传承（一）).",
+      "The Clone Cultivation mechanism allows Wang Lin to split his soul to cultivate a clone that is free from the Extreme State's bottleneck, letting the clone reach Nascent Soul first to pull the original body forward (第210章 凝练分身).",
+      "Cultivator Country Grading represents a system where a nation's cultivation level is determined by the highest stage achieved by its native cultivators, from level 1 (Qi Condensation) to level 5 (Infant Change) and level 6 (planet-owning) (第一百零六章 等级)."
+    ],
+    "continuity_observations": [
+      "The cloud patterns on the Heaven Defying Bead consistently track Wang Lin's progression, increasing to ten clouds as he feeds it water and wood energy (第八章 石珠 / 第二十三章 十云).",
+      "Teng Huayuan's vengeful hunt for Wang Lin is tracked through the curse of his relatives' souls bound to Teng's black soul flag (第一百一十六章).",
+      "Ma Liang's past identity as a disciple of the War God Temple dictates Wang Lin's relationships with other characters like Yun Fei and his senior brother (第一百一十八章 域外战场 / 第200章 有女云妃).",
+      "Li Muwan's commitment to refining pills for Wang Lin's core and soul development is maintained as a narrative thread across different nations and centuries (第一百二十八章 焚金山脉 / 第220章 丹药).",
+      "Situ Nan's energy consumption and subsequent deep slumber explains why Wang Lin must survive the Outer Battlefield and later trials on his own (第一百一十七章 王林身亡 / 第一百二十五章 极境神识).",
+      "The division of Ancient God Tu Si's consciousness into a Blood Sea and a Death Sea of Divine Sense explains why the memories and power are separated (第一百九十一章 神识死海).",
+      "The clone utilizes Ma Liang's physical shell and face, creating a consistent disguise for Wang Lin while his original body remains hidden (第216章 本尊，现).",
+      "The exact time passage of 200 years inside the Land of Ancient Gods aligns with the changes in the outside world, such as the fall of the Fire Burning Country and the rise of new powers in Chu Country (第201章 二百年)."
+    ],
+    "style_observations": [
+      "The narrative maintains a highly pragmatic and ruthless tone (魔道风格), emphasizing that cultivation is a heartless path of survival where enemies must be eliminated (第四十六章 老怪 / 第七十八章 藤家城).",
+      "The author describes repetitive and monotonous training sessions in detail to build a sense of arduous progress (第三十六章 是非 / 第一百七十九章 学习禁制).",
+      "The text uses graphic descriptions of physical pain to emphasize the cost of breaking cultivation limits (第一百四十四章 结丹（一）).",
+      "Major plot breakthroughs are paired with large-scale meteorological and spatial disruptions, such as red lightning, black clouds, and giant hands (第一百一十六章 / 第一百三十五章 风云变色).",
+      "Combat sequences focus heavily on tactical planning, array mechanics, and temporal counts rather than abstract power scaling (第一百二十五章 极境神识).",
+      "Understated romantic subplots provide emotional contrast to the otherwise cold and violent cultivation world (第一百五十七章 凄美的容颜 / 第一百七十一章 李慕婉留下的玉简)."
+    ],
+    "creation_family_evidence": {
+      "author": "耳根",
+      "book_title": "仙逆",
+      "distributor": "知轩藏书",
+      "protagonist": "王林",
+      "first_volume": "第一卷 平庸少年",
+      "core_artifacts": [
+        "天逆珠",
+        "毒王鼎",
+        "禁幡"
+      ],
+      "key_techniques": [
+        "黄泉升窍决",
+        "引力术",
+        "极境神识",
+        "古神诀"
+      ],
+      "mythology": [
+        "古神涂司",
+        "域外战场"
+      ]
+    },
+    "originality_risks": [
+      "The underdog protagonist starting with zero talent but finding a supreme time-dilation artifact is a classic trope in Chinese xianxia novels (第一章 离乡 / 第三章 测试 / 第八章 石珠).",
+      "The direct family massacre by a powerful local villain (Teng Huayuan) to spark a long-term revenge and training arc is a highly recycled motive (第九百一十七章 巨变 / 第一百一十七章 王林身亡).",
+      "Body possession (夺舍) as a get-out-of-death free card to transition into a new map or restart cultivation is a common web novel resurrection device (第一百一十九章 神识苏醒 / 第一百二十章 王林回归).",
+      "Exploring a legendary ancient tomb/god's remains with a group of scheming senior cultivators, where the protagonist outsmarts them all, is a formulaic structure (第一百六十八章 古神之地 / 第一百七十八章 禁制山)."
+    ]
+  }
+}
+```

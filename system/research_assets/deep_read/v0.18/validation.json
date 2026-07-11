@@ -1,0 +1,901 @@
+{
+  "version": "0.18",
+  "job_id": "job-v018-verifiable-deep-reading",
+  "status": "in_progress",
+  "deep_read_verified": false,
+  "book_count": 18,
+  "validated_chunk_count": 17,
+  "required_chunk_count": 143,
+  "validated_bytes": 22761879,
+  "required_bytes": 197294465,
+  "validated_byte_ratio": 0.11537,
+  "invalid_chunks": [
+    {
+      "chunk_id": "book-03-0bc4648bf63c-chunk-007",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-04-bfe08b74de74-chunk-002",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-04-bfe08b74de74-chunk-005",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-04-bfe08b74de74-chunk-006",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-04-bfe08b74de74-chunk-007",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-04-bfe08b74de74-chunk-008",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-04-bfe08b74de74-chunk-009",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-04-bfe08b74de74-chunk-010",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-05-11dd686b8b15-chunk-001",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-05-11dd686b8b15-chunk-002",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-05-11dd686b8b15-chunk-003",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-05-11dd686b8b15-chunk-004",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-05-11dd686b8b15-chunk-005",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-05-11dd686b8b15-chunk-006",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-05-11dd686b8b15-chunk-007",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-05-11dd686b8b15-chunk-008",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-05-11dd686b8b15-chunk-009",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-05-11dd686b8b15-chunk-010",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-05-11dd686b8b15-chunk-011",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-06-b1b7934bf892-chunk-001",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-06-b1b7934bf892-chunk-002",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-06-b1b7934bf892-chunk-003",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-06-b1b7934bf892-chunk-004",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-06-b1b7934bf892-chunk-005",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-06-b1b7934bf892-chunk-006",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-06-b1b7934bf892-chunk-007",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-06-b1b7934bf892-chunk-008",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-06-b1b7934bf892-chunk-009",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-07-f82ccdb9a2b3-chunk-001",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-07-f82ccdb9a2b3-chunk-002",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-07-f82ccdb9a2b3-chunk-003",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-07-f82ccdb9a2b3-chunk-004",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-07-f82ccdb9a2b3-chunk-005",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-07-f82ccdb9a2b3-chunk-006",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-07-f82ccdb9a2b3-chunk-007",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-08-322e84872b22-chunk-001",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-08-322e84872b22-chunk-002",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-08-322e84872b22-chunk-003",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-08-322e84872b22-chunk-004",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-08-322e84872b22-chunk-005",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-08-322e84872b22-chunk-006",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-08-322e84872b22-chunk-007",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-08-322e84872b22-chunk-008",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-08-322e84872b22-chunk-009",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-08-322e84872b22-chunk-010",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-09-4f463d84ee63-chunk-001",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-09-4f463d84ee63-chunk-002",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-09-4f463d84ee63-chunk-003",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-09-4f463d84ee63-chunk-004",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-09-4f463d84ee63-chunk-005",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-09-4f463d84ee63-chunk-006",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-10-e27891938d93-chunk-001",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-10-e27891938d93-chunk-002",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-10-e27891938d93-chunk-003",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-10-e27891938d93-chunk-004",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-10-e27891938d93-chunk-005",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-10-e27891938d93-chunk-006",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-10-e27891938d93-chunk-007",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-10-e27891938d93-chunk-008",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-11-61b03727048f-chunk-001",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-11-61b03727048f-chunk-002",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-11-61b03727048f-chunk-003",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-11-61b03727048f-chunk-004",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-11-61b03727048f-chunk-005",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-11-61b03727048f-chunk-006",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-12-7dd95a828fbe-chunk-001",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-12-7dd95a828fbe-chunk-002",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-12-7dd95a828fbe-chunk-003",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-12-7dd95a828fbe-chunk-004",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-12-7dd95a828fbe-chunk-005",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-12-7dd95a828fbe-chunk-006",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-12-7dd95a828fbe-chunk-007",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-12-7dd95a828fbe-chunk-008",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-13-210acebeef12-chunk-001",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-13-210acebeef12-chunk-002",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-13-210acebeef12-chunk-003",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-13-210acebeef12-chunk-004",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-13-210acebeef12-chunk-005",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-13-210acebeef12-chunk-006",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-13-210acebeef12-chunk-007",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-14-1ba978345f70-chunk-001",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-14-1ba978345f70-chunk-002",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-14-1ba978345f70-chunk-003",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-14-1ba978345f70-chunk-004",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-14-1ba978345f70-chunk-005",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-14-1ba978345f70-chunk-006",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-14-1ba978345f70-chunk-007",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-14-1ba978345f70-chunk-008",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-14-1ba978345f70-chunk-009",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-15-04e1a336e29d-chunk-001",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-15-04e1a336e29d-chunk-002",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-15-04e1a336e29d-chunk-003",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-15-04e1a336e29d-chunk-004",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-15-04e1a336e29d-chunk-005",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-15-04e1a336e29d-chunk-006",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-15-04e1a336e29d-chunk-007",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-16-9cbf8da97dac-chunk-001",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-16-9cbf8da97dac-chunk-002",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-16-9cbf8da97dac-chunk-003",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-16-9cbf8da97dac-chunk-004",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-16-9cbf8da97dac-chunk-005",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-16-9cbf8da97dac-chunk-006",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-16-9cbf8da97dac-chunk-007",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-16-9cbf8da97dac-chunk-008",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-16-9cbf8da97dac-chunk-009",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-17-3089d9aab05c-chunk-001",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-17-3089d9aab05c-chunk-002",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-17-3089d9aab05c-chunk-003",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-17-3089d9aab05c-chunk-004",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-17-3089d9aab05c-chunk-005",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-17-3089d9aab05c-chunk-006",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-17-3089d9aab05c-chunk-007",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-18-d53c5cc79ddd-chunk-001",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-18-d53c5cc79ddd-chunk-002",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-18-d53c5cc79ddd-chunk-003",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-18-d53c5cc79ddd-chunk-004",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-18-d53c5cc79ddd-chunk-005",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-18-d53c5cc79ddd-chunk-006",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-18-d53c5cc79ddd-chunk-007",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-18-d53c5cc79ddd-chunk-008",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-18-d53c5cc79ddd-chunk-009",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-18-d53c5cc79ddd-chunk-010",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-18-d53c5cc79ddd-chunk-011",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-18-d53c5cc79ddd-chunk-012",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-18-d53c5cc79ddd-chunk-013",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    },
+    {
+      "chunk_id": "book-18-d53c5cc79ddd-chunk-014",
+      "valid": false,
+      "errors": [
+        "response file is missing"
+      ]
+    }
+  ],
+  "plan_integrity": {
+    "valid": true,
+    "errors": []
+  },
+  "validated_at": "2026-07-11T12:14:32+08:00"
+}

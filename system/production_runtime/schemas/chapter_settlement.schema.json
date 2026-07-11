@@ -6,7 +6,22 @@
   "properties": {
     "chapter_id": {"type": "string", "pattern": "^chapter-[0-9]{4}$"},
     "accepted_revision_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
-    "state_deltas": {"type": "array", "items": {"type": "object"}},
+    "state_deltas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["fact_id", "asset_id", "field_path", "operation", "before", "after"],
+        "properties": {
+          "fact_id": {"type": "string", "minLength": 1},
+          "asset_id": {"type": "string", "minLength": 1},
+          "field_path": {"type": "string", "minLength": 1},
+          "operation": {"enum": ["set", "increment", "append", "remove"]},
+          "before": {},
+          "after": {}
+        },
+        "additionalProperties": false
+      }
+    },
     "resolved_audit_ids": {"type": "array", "items": {"type": "string"}}
   },
   "additionalProperties": false

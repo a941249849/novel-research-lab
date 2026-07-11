@@ -121,6 +121,17 @@ class VerifiableDeepReadingV018Tests(unittest.TestCase):
         self.assertFalse(validation["valid"])
         self.assertIn("chunk_sha256 mismatch", validation["errors"])
 
+    def test_corpus_drift_invalidates_saved_plan_before_promotion(self):
+        plan = self.plan()
+        for chunk in plan["books"][0]["chunks"]:
+            self.write_response(chunk)
+        self.book.write_bytes(self.book.read_bytes() + b"changed")
+        result = self.run_cli("deep-read-validate-all")
+        self.assertEqual(result.returncode, 1)
+        validation = json.loads(result.stdout)
+        self.assertFalse(validation["plan_integrity"]["valid"])
+        self.assertIn("source hash mismatch", " ".join(validation["plan_integrity"]["errors"]))
+
     def test_full_chunk_set_reaches_chunk_coverage_verified_only(self):
         plan = self.plan()
         chunks = plan["books"][0]["chunks"]
@@ -141,6 +152,11 @@ class VerifiableDeepReadingV018Tests(unittest.TestCase):
         packed = self.run_cli("deep-read-synthesis-pack")
         self.assertEqual(packed.returncode, 0, packed.stderr)
         request = json.loads(packed.stdout)["requests"][0]
+        self.assertEqual(len(request["covered_chunk_hashes"]), len(chunks))
+        self.assertEqual(
+            [item["chunk_id"] for item in request["covered_chunk_hashes"]],
+            request["covered_chunk_ids"],
+        )
         response_path = self.root / request["response_path"]
         response_path.parent.mkdir(parents=True, exist_ok=True)
         families = {
@@ -158,6 +174,7 @@ class VerifiableDeepReadingV018Tests(unittest.TestCase):
                     "book_id": request["book_id"],
                     "book_title": "测试长篇",
                     "covered_chunk_ids": request["covered_chunk_ids"],
+                    "covered_chunk_hashes": request["covered_chunk_hashes"],
                     "synthesis": {
                         "narrative_spine": ["spine"],
                         "character_arcs": ["arc"],
@@ -179,6 +196,11 @@ class VerifiableDeepReadingV018Tests(unittest.TestCase):
         result = json.loads(validated.stdout)
         self.assertTrue(result["valid"])
         self.assertEqual(result["validated_book_count"], 1)
+        cross = self.run_cli("deep-read-cross-pack")
+        self.assertEqual(cross.returncode, 0, cross.stderr)
+        cross_packet = json.loads(cross.stdout)
+        self.assertEqual(len(cross_packet["book_synthesis_hashes"]), 1)
+        self.assertEqual(cross_packet["book_synthesis_hashes"][0]["book_id"], request["book_id"])
 
 
 if __name__ == "__main__":

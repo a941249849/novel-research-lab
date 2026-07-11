@@ -79,3 +79,11 @@ Production prose remains blocked until v0.18 is `deep_read_verified`, v0.19 is
 accepted, creation assets validate, and the v0.20 runtime passes a multi-scene
 stress test. Passing one sample scene is not sufficient evidence for serial
 production.
+
+## v0.21 Independent Review Closure
+
+The production release gate additionally requires live corpus re-attestation,
+hash-bound hierarchical synthesis, governed reconciliation application,
+strict chapter chronology, separate draft/revision audits, observed-fact-bound
+state settlement, and atomic state writes. These are implementation hardening
+requirements under the existing v0.4 architecture, not new architecture layers.

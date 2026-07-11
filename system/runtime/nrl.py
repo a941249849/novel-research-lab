@@ -107,16 +107,25 @@ from nrl_phase2e import (
     prepare_phase2e_planning_package,
 )
 from nrl_project_reconciliation import (
+    apply_project_reconciliation,
     build_project_reconciliation_packet,
     dispatch_project_reconciliation,
     validate_project_reconciliation,
 )
 from nrl_production_runtime import (
+    accept_chapter,
     analyze_prose_metrics,
     build_production_readiness,
     compile_chapter_context,
+    dispatch_chapter_audit,
+    dispatch_chapter_draft,
+    dispatch_chapter_observation,
+    dispatch_chapter_revision,
+    ingest_chapter_observation,
+    ingest_chapter_revision,
     initialize_chapter,
     load_chapter_runtime_status,
+    settle_chapter_state,
 )
 from nrl_registry import (
     find_active_attempt,
@@ -758,6 +767,11 @@ def cmd_project_reconciliation_validate(_: argparse.Namespace) -> int:
     return 0 if result["valid"] else 1
 
 
+def cmd_project_reconciliation_apply(_: argparse.Namespace) -> int:
+    print_json(apply_project_reconciliation())
+    return 0
+
+
 def cmd_production_readiness(_: argparse.Namespace) -> int:
     result = build_production_readiness()
     print_json(result)
@@ -786,6 +800,49 @@ def cmd_chapter_init(args: argparse.Namespace) -> int:
 
 def cmd_chapter_compile(args: argparse.Namespace) -> int:
     print_json(compile_chapter_context(args.chapter_id))
+    return 0
+
+
+def cmd_chapter_draft(args: argparse.Namespace) -> int:
+    result = dispatch_chapter_draft(args.chapter_id)
+    print_json(result)
+    return 0 if result["valid"] else 1
+
+
+def cmd_chapter_observe_ingest(args: argparse.Namespace) -> int:
+    print_json(ingest_chapter_observation(args.chapter_id, args.file))
+    return 0
+
+
+def cmd_chapter_observe(args: argparse.Namespace) -> int:
+    print_json(dispatch_chapter_observation(args.chapter_id))
+    return 0
+
+
+def cmd_chapter_audit(args: argparse.Namespace) -> int:
+    result = dispatch_chapter_audit(args.chapter_id, model=args.model)
+    print_json(result)
+    return 0 if result["valid"] else 1
+
+
+def cmd_chapter_revision_ingest(args: argparse.Namespace) -> int:
+    print_json(ingest_chapter_revision(args.chapter_id, args.file))
+    return 0
+
+
+def cmd_chapter_revision(args: argparse.Namespace) -> int:
+    result = dispatch_chapter_revision(args.chapter_id)
+    print_json(result)
+    return 0 if result["valid"] else 1
+
+
+def cmd_chapter_settle(args: argparse.Namespace) -> int:
+    print_json(settle_chapter_state(args.chapter_id, args.file))
+    return 0
+
+
+def cmd_chapter_accept(args: argparse.Namespace) -> int:
+    print_json(accept_chapter(args.chapter_id))
     return 0
 
 
@@ -1338,6 +1395,7 @@ def build_parser() -> argparse.ArgumentParser:
     project_reconciliation_dispatch.add_argument("--print-timeout", default="15m0s")
     project_reconciliation_dispatch.set_defaults(func=cmd_project_reconciliation_dispatch)
     sub.add_parser("project-reconciliation-validate").set_defaults(func=cmd_project_reconciliation_validate)
+    sub.add_parser("project-reconciliation-apply").set_defaults(func=cmd_project_reconciliation_apply)
     sub.add_parser("production-readiness").set_defaults(func=cmd_production_readiness)
     sub.add_parser("chapter-runtime-status").set_defaults(func=cmd_chapter_runtime_status)
     prose_metrics = sub.add_parser("prose-metrics")
@@ -1349,6 +1407,34 @@ def build_parser() -> argparse.ArgumentParser:
     chapter_compile = sub.add_parser("chapter-compile")
     chapter_compile.add_argument("--chapter-id", required=True)
     chapter_compile.set_defaults(func=cmd_chapter_compile)
+    chapter_draft = sub.add_parser("chapter-draft")
+    chapter_draft.add_argument("--chapter-id", required=True)
+    chapter_draft.set_defaults(func=cmd_chapter_draft)
+    chapter_observe = sub.add_parser("chapter-observation-ingest")
+    chapter_observe.add_argument("--chapter-id", required=True)
+    chapter_observe.add_argument("--file", required=True)
+    chapter_observe.set_defaults(func=cmd_chapter_observe_ingest)
+    chapter_observe_dispatch = sub.add_parser("chapter-observe")
+    chapter_observe_dispatch.add_argument("--chapter-id", required=True)
+    chapter_observe_dispatch.set_defaults(func=cmd_chapter_observe)
+    chapter_audit = sub.add_parser("chapter-audit")
+    chapter_audit.add_argument("--chapter-id", required=True)
+    chapter_audit.add_argument("--model", default="Gemini 3.5 Flash (High)")
+    chapter_audit.set_defaults(func=cmd_chapter_audit)
+    chapter_revision = sub.add_parser("chapter-revision-ingest")
+    chapter_revision.add_argument("--chapter-id", required=True)
+    chapter_revision.add_argument("--file", required=True)
+    chapter_revision.set_defaults(func=cmd_chapter_revision_ingest)
+    chapter_revision_dispatch = sub.add_parser("chapter-revise")
+    chapter_revision_dispatch.add_argument("--chapter-id", required=True)
+    chapter_revision_dispatch.set_defaults(func=cmd_chapter_revision)
+    chapter_settle = sub.add_parser("chapter-settle")
+    chapter_settle.add_argument("--chapter-id", required=True)
+    chapter_settle.add_argument("--file", required=True)
+    chapter_settle.set_defaults(func=cmd_chapter_settle)
+    chapter_accept = sub.add_parser("chapter-accept")
+    chapter_accept.add_argument("--chapter-id", required=True)
+    chapter_accept.set_defaults(func=cmd_chapter_accept)
     sub.add_parser("antigravity-bridge-status").set_defaults(
         func=cmd_antigravity_bridge_status
     )

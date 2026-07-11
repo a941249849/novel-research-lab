@@ -13,7 +13,7 @@
         "required": ["chapter_id", "stage", "artifacts", "source_hashes"],
         "properties": {
           "chapter_id": {"type": "string", "pattern": "^chapter-[0-9]{4}$"},
-          "stage": {"enum": ["chapter_intent", "context_compiled", "draft_generated", "facts_observed", "continuity_audited", "revision_generated", "state_settled", "chapter_accepted"]},
+          "stage": {"enum": ["chapter_intent", "context_compiled", "draft_generated", "facts_observed", "continuity_audited", "revision_generated", "revision_audited", "state_settled", "chapter_accepted"]},
           "artifacts": {"type": "object"},
           "source_hashes": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}
         },

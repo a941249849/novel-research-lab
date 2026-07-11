@@ -55,7 +55,9 @@ def _relative(path: Path) -> str:
 
 def _write_json(path: Path, data: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    temporary.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    temporary.replace(path)
 
 
 def _read_json(path: Path) -> dict[str, Any]:
@@ -349,13 +351,36 @@ def validate_all_chunks() -> dict[str, Any]:
         _write_json(VALIDATION_PATH, result)
         return result
     plan = _read_json(PLAN_PATH)
+    integrity_errors = []
+    current_sources = {_relative(path): path for path in _corpus_files()}
+    planned_sources = {str(book["source_file"]) for book in plan.get("books", [])}
+    if set(current_sources) != planned_sources:
+        integrity_errors.append("corpus inventory mismatch")
+    for book in plan.get("books", []):
+        source = current_sources.get(str(book["source_file"]))
+        if not source or _sha256(source.read_bytes()) != book.get("source_file_sha256"):
+            integrity_errors.append(f"source hash mismatch: {book.get('source_file')}")
+            continue
+        if source.stat().st_size != book.get("size_bytes"):
+            integrity_errors.append(f"source size mismatch: {book.get('source_file')}")
+        expected_start = 0
+        for chunk in book.get("chunks", []):
+            if chunk.get("start_byte") != expected_start:
+                integrity_errors.append(f"chunk range gap or overlap: {chunk.get('chunk_id')}")
+            expected_start = int(chunk.get("end_byte", 0))
+            bounded = runtime_path(str(chunk.get("bounded_chunk_file", "")))
+            if not bounded.is_file() or _sha256(bounded.read_bytes()) != chunk.get("chunk_sha256"):
+                integrity_errors.append(f"bounded chunk hash mismatch: {chunk.get('chunk_id')}")
+        if expected_start != book.get("size_bytes"):
+            integrity_errors.append(f"chunk coverage mismatch: {book.get('source_file')}")
+    plan_integrity = {"valid": not integrity_errors, "errors": integrity_errors}
     chunks = [chunk for book in plan["books"] for chunk in book["chunks"]]
     validations = [validate_chunk_response(str(chunk["chunk_id"])) for chunk in chunks]
     valid_ids = {item["chunk_id"] for item in validations if item["valid"]}
     validated_bytes = sum(chunk["size_bytes"] for chunk in chunks if chunk["chunk_id"] in valid_ids)
     required_bytes = int(plan["total_size_bytes"])
     valid_count = len(valid_ids)
-    all_valid = bool(chunks) and valid_count == len(chunks)
+    all_valid = bool(chunks) and valid_count == len(chunks) and plan_integrity["valid"]
     result = {
         "version": VERSION,
         "job_id": JOB_ID,
@@ -368,6 +393,7 @@ def validate_all_chunks() -> dict[str, Any]:
         "required_bytes": required_bytes,
         "validated_byte_ratio": round(validated_bytes / required_bytes, 6) if required_bytes else 0.0,
         "invalid_chunks": [item for item in validations if not item["valid"]],
+        "plan_integrity": plan_integrity,
         "validated_at": _now_iso(),
     }
     _write_json(VALIDATION_PATH, result)
@@ -400,7 +426,10 @@ def _dispatch_one(chunk: dict[str, Any], model: str, print_timeout: str) -> dict
         capture_output=True,
         check=False,
     )
-    response_path.write_text(result.stdout, encoding="utf-8")
+    if result.stdout.strip():
+        response_path.write_text(result.stdout, encoding="utf-8")
+    else:
+        response_path.unlink(missing_ok=True)
     validation = validate_chunk_response(str(chunk["chunk_id"]))
     validation["returncode"] = result.returncode
     if result.returncode != 0:
@@ -454,6 +483,10 @@ def dispatch_pending_chunks(
                     results.append(
                         {"chunk_id": chunk["chunk_id"], "valid": False, "errors": [str(error)]}
                     )
+        quota_blocked = any(
+            "quota reached" in " ".join(str(error) for error in item.get("errors", [])).casefold()
+            for item in results
+        )
     coverage = validate_all_chunks()
     return {
         "version": VERSION,
@@ -483,6 +516,13 @@ def build_book_synthesis_packets() -> dict[str, Any]:
         book_id = _book_id(book)
         chunk_ids = [chunk["chunk_id"] for chunk in book["chunks"]]
         response_paths = [chunk["response_path"] for chunk in book["chunks"]]
+        chunk_hashes = [
+            {
+                "chunk_id": chunk["chunk_id"],
+                "response_sha256": _sha256(runtime_path(chunk["response_path"]).read_bytes()),
+            }
+            for chunk in book["chunks"]
+        ]
         output_path = SYNTHESIS_RESPONSE_DIR / f"{book_id}.json"
         template = {
             "job_id": JOB_ID,
@@ -490,6 +530,7 @@ def build_book_synthesis_packets() -> dict[str, Any]:
             "book_id": book_id,
             "book_title": book["book_title"],
             "covered_chunk_ids": chunk_ids,
+            "covered_chunk_hashes": chunk_hashes,
             "synthesis": {
                 "narrative_spine": [],
                 "character_arcs": [],
@@ -530,6 +571,7 @@ def build_book_synthesis_packets() -> dict[str, Any]:
                 "request_path": _relative(request_path),
                 "response_path": _relative(output_path),
                 "covered_chunk_ids": chunk_ids,
+                "covered_chunk_hashes": chunk_hashes,
             }
         )
     return {"version": VERSION, "job_id": JOB_ID, "request_count": len(requests), "requests": requests}
@@ -552,6 +594,8 @@ def _validate_book_synthesis(request: dict[str, Any]) -> dict[str, Any]:
         errors.append("book_id mismatch")
     if data.get("covered_chunk_ids") != request["covered_chunk_ids"]:
         errors.append("covered_chunk_ids mismatch")
+    if data.get("covered_chunk_hashes") != request["covered_chunk_hashes"]:
+        errors.append("covered_chunk_hashes mismatch")
     synthesis = data.get("synthesis")
     required = (
         "narrative_spine", "character_arcs", "mechanism_evolution", "world_expansion",
@@ -623,7 +667,10 @@ def _dispatch_generic(item: dict[str, Any], model: str, print_timeout: str) -> d
         [binary, "--model", model, "--mode", "plan", "--sandbox", "--print-timeout", print_timeout, "-p", request_path.read_text(encoding="utf-8")],
         cwd=ROOT, text=True, capture_output=True, check=False,
     )
-    response_path.write_text(result.stdout, encoding="utf-8")
+    if result.stdout.strip():
+        response_path.write_text(result.stdout, encoding="utf-8")
+    else:
+        response_path.unlink(missing_ok=True)
     return {"id": item["chunk_id"], "returncode": result.returncode, "stderr": result.stderr.strip()}
 
 
@@ -633,11 +680,19 @@ def build_cross_book_packet() -> dict[str, Any]:
         raise RuntimeError("all book syntheses must validate before cross-book distillation")
     packet = build_book_synthesis_packets()
     book_ids = [item["book_id"] for item in packet["requests"]]
+    book_synthesis_hashes = [
+        {
+            "book_id": item["book_id"],
+            "response_sha256": _sha256(runtime_path(item["response_path"]).read_bytes()),
+        }
+        for item in packet["requests"]
+    ]
     all_chunk_ids = [chunk_id for item in packet["requests"] for chunk_id in item["covered_chunk_ids"]]
     template = {
         "job_id": JOB_ID,
         "contract_version": VERSION,
         "covered_book_ids": book_ids,
+        "book_synthesis_hashes": book_synthesis_hashes,
         "cross_book_mechanisms": [
             {
                 "mechanism_id": "CB18-M01",
@@ -673,7 +728,13 @@ def build_cross_book_packet() -> dict[str, Any]:
             ]
         ), encoding="utf-8",
     )
-    return {"request_path": _relative(CROSS_REQUEST_PATH), "response_path": _relative(CROSS_RESPONSE_PATH), "book_ids": book_ids, "chunk_ids": all_chunk_ids}
+    return {
+        "request_path": _relative(CROSS_REQUEST_PATH),
+        "response_path": _relative(CROSS_RESPONSE_PATH),
+        "book_ids": book_ids,
+        "book_synthesis_hashes": book_synthesis_hashes,
+        "chunk_ids": all_chunk_ids,
+    }
 
 
 def validate_cross_book_distillation() -> dict[str, Any]:
@@ -694,6 +755,8 @@ def validate_cross_book_distillation() -> dict[str, Any]:
         errors.append("contract_version mismatch")
     if data.get("covered_book_ids") != packet["book_ids"]:
         errors.append("covered_book_ids mismatch")
+    if data.get("book_synthesis_hashes") != packet["book_synthesis_hashes"]:
+        errors.append("book_synthesis_hashes mismatch")
     mechanisms = data.get("cross_book_mechanisms")
     if not isinstance(mechanisms, list) or len(mechanisms) < 12:
         errors.append("at least 12 cross-book mechanisms are required")

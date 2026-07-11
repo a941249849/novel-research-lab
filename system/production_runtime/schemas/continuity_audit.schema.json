@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "nrl://production/continuity-audit-v0.20",
+  "type": "object",
+  "required": ["chapter_id", "artifact_kind", "artifact_sha256", "context_sha256", "verdict", "dimensions", "issues"],
+  "properties": {
+    "chapter_id": {"type": "string", "pattern": "^chapter-[0-9]{4}$"},
+    "artifact_kind": {"enum": ["draft", "revision"]},
+    "artifact_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "context_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "verdict": {"enum": ["ACCEPT", "ACCEPT_WITH_WARNINGS", "REWORK_REQUIRED"]},
+    "dimensions": {
+      "type": "object",
+      "required": ["canon", "character", "state", "causality", "pacing", "life_force", "anti_ai_taste", "originality"],
+      "additionalProperties": {"type": "array"}
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["issue_id", "severity", "evidence", "required_fix"],
+        "properties": {
+          "issue_id": {"type": "string"},
+          "severity": {"enum": ["blocking", "major", "minor"]},
+          "evidence": {"type": "string"},
+          "required_fix": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

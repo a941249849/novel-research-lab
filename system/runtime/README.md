@@ -816,13 +816,20 @@ create prose until corpus depth and project reconciliation gates pass.
 python3 system/runtime/nrl.py project-reconciliation-pack
 python3 system/runtime/nrl.py project-reconciliation-dispatch
 python3 system/runtime/nrl.py project-reconciliation-validate
+python3 system/runtime/nrl.py project-reconciliation-apply
 python3 system/runtime/nrl.py production-readiness
 python3 system/runtime/nrl.py chapter-runtime-status
 python3 system/runtime/nrl.py prose-metrics --file <draft-or-revision.md>
 ```
 
-The eight stages are chapter intent, context compilation, draft generation,
-fact observation, continuity audit, revision, state settlement, and acceptance.
+The nine stages are chapter intent, context compilation, draft generation,
+fact observation, draft continuity audit, revision, revision audit, state
+settlement, and acceptance. Normal bounded execution uses `chapter-init`,
+`chapter-compile`, `chapter-draft`, `chapter-observe`, `chapter-audit`,
+`chapter-revise`, `chapter-audit`, `chapter-settle`, and `chapter-accept`.
+Reconciliation application requires a matching Owner decision bound to the
+validated response SHA-256. Chapter settlement accepts only state deltas that
+match schema-valid observed facts.
 Accepted chapters are immutable; later corrections create explicit revision and
 settlement artifacts rather than rewriting history silently.
 

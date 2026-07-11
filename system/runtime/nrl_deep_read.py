@@ -19,6 +19,7 @@ VERSION = "0.18"
 JOB_ID = "job-v018-verifiable-deep-reading"
 DEFAULT_TARGET_BYTES = 1_500_000
 OPENCODE_RUN_TIMEOUT_SECONDS = 600
+AGY_RUN_TIMEOUT_SECONDS = 900
 PLAN_PATH = runtime_path("system/research_assets/deep_read/v0.18/plan.json")
 VALIDATION_PATH = runtime_path("system/research_assets/deep_read/v0.18/validation.json")
 REQUEST_DIR = runtime_path("system/agent_ops/packets/deep_read_v0.18")
@@ -505,7 +506,8 @@ def _dispatch_one_agy(chunk: dict[str, Any], model: str, print_timeout: str) -> 
     response_path = runtime_path(str(chunk["response_path"]))
     response_path.parent.mkdir(parents=True, exist_ok=True)
     prompt = request_path.read_text(encoding="utf-8")
-    result = subprocess.run(
+    try:
+        result = subprocess.run(
         [
             binary,
             "--add-dir",
@@ -523,8 +525,12 @@ def _dispatch_one_agy(chunk: dict[str, Any], model: str, print_timeout: str) -> 
         cwd=ROOT,
         text=True,
         capture_output=True,
-        check=False,
-    )
+            check=False,
+            timeout=AGY_RUN_TIMEOUT_SECONDS,
+        )
+    except subprocess.TimeoutExpired:
+        response_path.unlink(missing_ok=True)
+        return {"chunk_id": chunk["chunk_id"], "valid": False, "errors": [f"agy timed out after {AGY_RUN_TIMEOUT_SECONDS} seconds"], "returncode": None}
     if result.stdout.strip():
         response_path.write_text(result.stdout, encoding="utf-8")
     else:
@@ -719,6 +725,7 @@ def build_book_synthesis_packets() -> dict[str, Any]:
                 "long_term_reader_hooks": [],
                 "style_and_life_force": [],
                 "continuity_failures": [],
+                "evidence_map": [],
                 "creation_family_evidence": {},
                 "originality_red_lines": [],
             },
@@ -736,6 +743,7 @@ def build_book_synthesis_packets() -> dict[str, Any]:
                     "",
                     "Return one JSON object only. Copy binding fields and covered_chunk_ids exactly.",
                     "All synthesis arrays and all nine creation-family keys must be non-empty.",
+                    "Add evidence_map entries with claim, chunk_id, and exact chapter_heading for every synthesis family.",
                     "",
                     "```json",
                     json.dumps(template, ensure_ascii=False, indent=2),
@@ -788,6 +796,24 @@ def _validate_book_synthesis(request: dict[str, Any]) -> dict[str, Any]:
         for field in required:
             if not isinstance(synthesis.get(field), list) or not synthesis[field]:
                 errors.append(f"synthesis.{field} must be a non-empty array")
+        evidence_map = synthesis.get("evidence_map")
+        plan = _read_json(PLAN_PATH)
+        chunk_headings = {
+            chunk["chunk_id"]: set(_all_headings(runtime_path(chunk["bounded_chunk_file"]).read_bytes(), "utf-8"))
+            for book in plan["books"] for chunk in book["chunks"]
+            if chunk["chunk_id"] in request["covered_chunk_ids"]
+        }
+        if not isinstance(evidence_map, list) or not evidence_map:
+            errors.append("synthesis.evidence_map must be a non-empty array")
+        else:
+            for index, evidence in enumerate(evidence_map):
+                if not isinstance(evidence, dict) or not evidence.get("claim"):
+                    errors.append(f"evidence_map[{index}].claim is required")
+                    continue
+                chunk_id = evidence.get("chunk_id")
+                heading = evidence.get("chapter_heading")
+                if chunk_id not in chunk_headings or heading not in chunk_headings[chunk_id]:
+                    errors.append(f"evidence_map[{index}] must bind a valid chunk_id and chapter_heading")
         families = synthesis.get("creation_family_evidence")
         expected_families = {
             "characters", "npcs", "factions", "artifacts", "techniques", "naming",

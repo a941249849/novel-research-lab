@@ -223,6 +223,11 @@ class VerifiableDeepReadingV018Tests(unittest.TestCase):
                         "long_term_reader_hooks": ["hook"],
                         "style_and_life_force": ["style"],
                         "continuity_failures": ["risk"],
+                        "evidence_map": [{
+                            "claim": "spine",
+                            "chunk_id": request["covered_chunk_ids"][0],
+                            "chapter_heading": plan["books"][0]["chunks"][0]["chapter_headings"][0],
+                        }],
                         "creation_family_evidence": families,
                         "originality_red_lines": ["boundary"],
                     },

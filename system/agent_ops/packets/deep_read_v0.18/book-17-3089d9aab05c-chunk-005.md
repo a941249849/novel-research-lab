@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `c2069bb870178b7fd741b04384c89eb58d713122c5ee197d76362156c2825da5`
 - source_encoding: `gb18030`
 - bounded_chunk_utf8_sha256: `4bcbbfb60f87051d27849f18e8252a7efee15a74543b81c719ac061dfff0e885`
+- sampled_evidence_headings: ["第一百五十四章 草蛇灰线", "第一百五十九章 就在那里！", "第一百六十四章 骨灰", "第一百六十九章 珠帘，铁甲（中）", "第一百七十四章 今年清明无苦雨", "第一百七十九章 想不想坐那张椅子", "第一百八十四章 两人之战，两国之战（三）", "第一百八十九章 两人之战，两国之战（八）", "第一百九十四章 一桩买卖", "第一百九十九章 六两三", "第二百零四章 南北共分天下", "第二百零九章 我从山中来，山风翻我书", "第二百一十五章 于无声处听惊雷", "第二百二十章 北凉四战（二）", "第二百二十五章 北凉四战（七）", "第二百三十章 痛痛快快", "第二百三十五章 百无一用是（三）", "第二百四十章 噤若寒蝉（三）", "第二百四十五章 噤若寒蝉（八）", "第二百五十章 一位位仙人在前", "第二百五十五章 大胆吕洞玄", "第二百六十章 事了拂衣（三）", "第二百六十五章 侠客行（一）", "第二百七十章 楼外日头正暖"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-17-3089d9aab05c-chunk-005.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

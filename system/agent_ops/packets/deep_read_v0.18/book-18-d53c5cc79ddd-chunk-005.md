@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `7e03e48f6524e09fac4b008cad38d5ed96678695db503c7a903047cc0c5f7103`
 - source_encoding: `utf-8`
 - bounded_chunk_utf8_sha256: `7e03e48f6524e09fac4b008cad38d5ed96678695db503c7a903047cc0c5f7103`
+- sampled_evidence_headings: ["第一百七十七节：战飞熊，狼王独得五成", "第一百八十三节：互有阴谋各算计", "第一百八十九节：计划发动！", "第一百九十五节：无上真传！", "第二百零一节：苏醒", "第二百零七节：蒙蔽地灵", "第二百一十三节：大力真武体", "第二百二十节：还有后手", "第二百二十六节：发财", "第二百三十二节 大惊变", "第二百三十八节：最后的底牌", "第二百四十四节：双魔", "第七节：我要大义灭亲", "第十三节：墨人王", "第十九节：星罗小仙", "第二十五节：磐石气运", "第三十一节：芝林、地马", "第三十七节：方源师从狂蛮魔尊！", "第四十三节：难以对付的黑家父女", "第四十九节：进攻狐仙福地（上）", "第五十五节：小九", "第六十二节：放弃夺舍", "第六十八节：斩杀星魔蝠", "第七十三节：尸龙"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-18-d53c5cc79ddd-chunk-005.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

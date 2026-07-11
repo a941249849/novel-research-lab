@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `06e516dd43786a4b9885bf46c798afba246b955f74082be194482e3f853c5544`
 - source_encoding: `gb18030`
 - bounded_chunk_utf8_sha256: `7e897b267c8b62fad2ae22ceb5dc841c52b4d26806d02fd480a4e1b7efd27a70`
+- sampled_evidence_headings: ["第742章 别开生面", "第753章 蛮荒克我啊", "第765章 本大人喜欢养花", "第776章 坑死你……", "第788章 众恩令！", "第799章 白浩，你骗我！", "第810章 我舍不得你们啊", "第822章 小纯出手！", "第833章 啊……啊……", "第845章 震撼蛮荒", "第856章 骨舟歌声", "第867章 斩肉身！", "第879章 缺儿也在啊", "第890章 强悍！", "第901章 陈贺天：#￥%@#……", "第913章 半神归来", "第924章 吸收岳父一根头发……", "第936章 闻风丧胆", "第947章 缘由", "第958章 我卖药！", "第970章 小纯翻天！", "第981章 我还有一口气", "第993章 焦急！！", "第1004章 你的命运！"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-01-45bcee82acba-chunk-004.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

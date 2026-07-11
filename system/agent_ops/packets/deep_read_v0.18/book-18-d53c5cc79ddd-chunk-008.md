@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `73007111a63f89ec7fcd88ccc5d995be866958fdef1e389387ddb99a071a7562`
 - source_encoding: `utf-8`
 - bounded_chunk_utf8_sha256: `73007111a63f89ec7fcd88ccc5d995be866958fdef1e389387ddb99a071a7562`
+- sampled_evidence_headings: ["第三百六十一节：巨手！", "第三百六十七节：幕幕往昔", "第一节：一切都是天意", "第七节：九五至尊仙窍（下）", "第十二节：如今迈步从头越", "第十九节：方源vs戚灾", "第二十四节：是机缘还是麻烦？", "第三十节：三道无上真传", "第三十六节：方源渡劫（结）", "第四十二节：变化道！", "第四十八节：天庭！", "第五十四节：话本平常蛇龙变", "第六十一节：贵精不贵多?", "第六十七节：猴获功成", "第七十三节：天大地大我最大", "第七十八节：变化道宗师！：<!--80txt.com-ouoou-->", "第八十四节：黑家大战（上）", "第八十九节：八转蛊仙岂容算", "第九十五节：一颗死蛋", "第一百零二节：此蛊何名？", "第一百零七节：黑凡四珍（上）", "第一百一十三节：对战落星犬", "第一百二十节：不听不信", "第一百二十六节：策反楚度？"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-18-d53c5cc79ddd-chunk-008.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

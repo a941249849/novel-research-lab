@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `77fe81f2f1b28719770ca687642052017a6046101f6d5fdc25033a861a7fc9fc`
 - source_encoding: `gb18030`
 - bounded_chunk_utf8_sha256: `f3e31a7cb898772820f17d663b9a2ea669581044daf0fd45474f2bd05ed90450`
+- sampled_evidence_headings: ["第1393章 华天都再现", "第1403章 天君的报复", "第1413章 前往丹界（上）", "第1423章 斩杀天君（上）", "第1433章 起源皇城", "第1443章 贪狼之主", "第1453章 释迦天君，再临！", "第1463章 绝对强势", "第1473章 祭祀位面的大手笔", "第1483章 圣品无天", "第1493章 去神界", "第1503章 始祖圣王", "第1513章 抓捕", "第1523章 镜世界", "第1533章 降魔", "第1543章 认栽", "第1553章 危险位面", "第1563章 偷鸡不成（下）", "第1573章 太虚神铁", "第1583章 华天都拜师", "第1593章 太皇天再现", "第1603章 乾坤之死", "第1613章 准备好了", "第1623章 喷射神物"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-12-7dd95a828fbe-chunk-007.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

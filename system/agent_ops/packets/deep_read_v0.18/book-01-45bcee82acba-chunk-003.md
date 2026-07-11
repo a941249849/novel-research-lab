@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `4cf484406f34a9a9ba0ffac3e2f3ceed040afd43af882d7c095b6b23e0b9e6e2`
 - source_encoding: `gb18030`
 - bounded_chunk_utf8_sha256: `54f32f7b2b74f8f91eba27eaf44db2d05e08a316902b2a8a5da8aeb1b0099a78`
+- sampled_evidence_headings: ["第483章 他的丹炉，将成为历史！", "第494章 死不足惜", "第505章 金丹大圆满！", "第517章 他莫非是天人？", "第528章 他还是个孩子", "第539章 来者不善", "第550章 我背后……有人！", "第562章 兽爪撕天！", "第573章 白道友救命！", "第584章 发现端倪！", "第595章 要忍住", "第606章 收获天人魂", "第618章 再战天人！", "第629章 横扫丁区……", "第640章 自信的巨鬼王！", "第651章 老祖英明~", "第662章 老哥，我是为了救你啊", "第674章 彻底轰动", "第685章 鬼王花开", "第696章 不灭帝拳！", "第707章 你我相遇，是缘分……", "第719章 师尊，你看那里……", "第730章 世子出手", "第741章 融火境界！"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-01-45bcee82acba-chunk-003.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

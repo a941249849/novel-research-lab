@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `3db5c99255a60b7b13a741d61cf8f3ca034d60bb0f0cc1ef04d6d14f24189f68`
 - source_encoding: `gb18030`
 - bounded_chunk_utf8_sha256: `80f370d4d94db458bb60e0848a53efbdb3d6c9ffc89e2d490f1f9e04a84b893a`
+- sampled_evidence_headings: ["第二百七十一章 君只见独不见", "第二百七十七章 死结和理由", "第二百八十四章 风雪铁骑下江南（六）", "第二百九十章 中原和北凉", "第二百九十六章 灯火阑珊处，独坐城头人", "第三百零二章 西楚霸王（三）", "第三百零九章 野花", "第三百一十五章 收尸", "第三百二十一章 再见如初见", "第三百二十七章 秋风扶起春风", "第三百三十四章 秋天的阳光里", "第三百四十章 衮衮诸公，滚滚黄沙（六）", "第三百四十六章 不曾下雨", "第三百五十二章 有杀气", "第三百五十九章 姑娘好刀法", "第三百六十五章 立地成佛", "第三百七十一章 一气呵成", "第三百七十七章 天门洞开", "第三百八十四章 大戟横江", "第三百九十章 流州铁骑", "第三百九十六章 生气歌", "第四百零二章 快哉快哉", "第四百零九章 豪赌", "第四百一十五章 谪仙如雨落"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-17-3089d9aab05c-chunk-006.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

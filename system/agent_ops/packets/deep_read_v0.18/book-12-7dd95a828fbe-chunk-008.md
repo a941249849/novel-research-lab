@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `e9941a42dbb8cc94c823dff366d90692c3cd77624728a2e8b494c426240894c6`
 - source_encoding: `gb18030`
 - bounded_chunk_utf8_sha256: `b894721a8696fccdb1450ac554a4357aa9a9b2fad19f4a1ecb0a59d46007c8fe`
+- sampled_evidence_headings: ["第1624章 情义仙王", "第1625章 击杀应天情", "第1626章 最后较量", "第1627章 毒瘤转世", "第1228章 仙王脱困", "第1629章 八大仙王", "第1630章 我无所不能", "第1631章 击杀华天都", "第1632章 最后的因缘", "第1633章 给你们一个机会", "第1634章 永生（大结局）"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-12-7dd95a828fbe-chunk-008.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

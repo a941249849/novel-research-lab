@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `408775416ac34837468dc97ba39ebe800e9e9346935cdbada27f62b23c4b1c1c`
 - source_encoding: `gb18030`
 - bounded_chunk_utf8_sha256: `fdea35c7c9685e470f46df273887f287cf018c57284dd26e7dabb63a31c3dc0a`
+- sampled_evidence_headings: ["第1章 他叫白小纯", "第11章 侯小妹", "第21章 小纯哥哥……", "第31章 耻辱啊！", "第41章 炼灵之效", "第51章 冯师兄是个好人啊", "第60章 生死激战", "第70章 嗨，李师兄", "第80章 张大胖的天赋", "第90章 北岸公敌", "第99章 找上门来", "第109章 紫鼎山的小雨……", "第119章 春天，我埋下了育兽种", "第129章 一根骨刺！", "第139章 不是我干的呀", "第149章 只看白师叔想不想了", "第159章 不死金皮！", "第168章 微服私访……", "第177章 通天法眼！", "第187章 宋缺有个小姑……", "第197章 中峰秘术！", "第207章 夜魔远播……", "第217章 王兽之威！", "第227章 神秘的黑气……"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-01-45bcee82acba-chunk-001.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

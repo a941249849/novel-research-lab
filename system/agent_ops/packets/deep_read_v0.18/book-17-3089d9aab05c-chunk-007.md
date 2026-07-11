@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `a86e9702f6b3660add2397538d763cd4e9366fcee1d4a445d17bbdfcdf6560df`
 - source_encoding: `gb18030`
 - bounded_chunk_utf8_sha256: `3cc914cad836325c9db7e2f4e951a0bccd4816ffc5178981eb05142bd162dcf9`
+- sampled_evidence_headings: ["第四百一十六章 北凉不敢一战", "第四百一十八章 天道镇压", "第四百二十一章 十二神仙联袂登场", "第四百二十三章 衣衫如雪徐凤年", "第四百二十六章 且待我伸伸懒腰", "第一章", "第四章", "第六章", "第九章", "第十一章", "第十四章", "第十六章", "第十九章", "第二十一章", "第二十四章", "第二十六章", "第二十九章", "第三十一章", "第三十四章", "第三十六章", "第三十九章", "第四十一章", "第四十四章", "第四十七章"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-17-3089d9aab05c-chunk-007.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

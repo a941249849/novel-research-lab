@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `6f7f96ef536d9ea556d3c463c156cecfbe5bb3c715e02ce64cd32e0ea02a2169`
 - source_encoding: `utf-8`
 - bounded_chunk_utf8_sha256: `6f7f96ef536d9ea556d3c463c156cecfbe5bb3c715e02ce64cd32e0ea02a2169`
+- sampled_evidence_headings: ["第二百七十五节：东海交易会", "第二百八十二节：卜卦龟变化", "第二百八十八节：无赖！可耻！", "第二百九十四节：收购神鹿果", "第三百节：请你“赏析”", "第三百零七节：给池伤的挑战信", "第三百一十三节：掠影", "第三百二十节：死鬼快来铁面神", "第三百二十七节：柴家有人烟", "第三百三十三节：菟舔", "第三百四十节：方源绝境", "第三百四十六节：龙公苏醒", "第三百五十二节：紫陨（下）", "第三百五十八节：武庸追击", "第三百六十五节：方源的判断", "第三百七十一节：一曲离歌退武庸！", "第三百七十八节：千变老祖", "第三百八十五节：燃魂爆运！", "第三百九十一节：青爪鬼翼狮", "第三百九十八节：暗算成功！", "第四百零四节：再炼净魂仙蛊", "第四百一十节：入河", "第四百一十七节：回来", "第四百二十四节：净魂终成！"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-18-d53c5cc79ddd-chunk-010.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

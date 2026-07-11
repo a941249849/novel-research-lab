@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `0fa467ffe1684441fd5bccbff6f63c2b69e6b7d814393ef7888daab27c18f854`
 - source_encoding: `gb18030`
 - bounded_chunk_utf8_sha256: `0c4ce88439fb573d7f3f2c06a15a3fdbf7b22910e87148e20e52fb41ecba8e2f`
+- sampled_evidence_headings: ["第2082章 惊变", "第2083章 踏入的资格", "第2084章 那女子，东梅", "第2085章 缺的一个", "第2086章 轮回就在那里", "第2087章 婉儿，醒来吧", "第2088章 蓦然回首"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-04-bfe08b74de74-chunk-010.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

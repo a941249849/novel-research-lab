@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `07c7405f37468bf1185309e8a97be4c81aab8c97ee64ca94cbcf8ba1c6ae4bd8`
 - source_encoding: `gb18030`
 - bounded_chunk_utf8_sha256: `4e32779dd7080c728090a9169485ee65902f22639f760b21fe268133a79d67cb`
+- sampled_evidence_headings: ["第228章 请问……你也是仙草么？", "第239章 要不要截留呢……", "第250章 杀！", "第261章 杜血梅，你出来！", "第272章 铁蛋在手，灵溪我有", "第283章 现在，可以听我说话了么！", "第294章 踏入前线", "第305章 斩林墓", "第316章 真灵开眼！", "第327章 修为突破！", "第338章 天道金丹！", "第349章 一封情书……", "第361章 只有一个？", "第372章 他们在喊我", "第383章 引起关注", "第394章 空域彩虹", "第405章 送你上天……", "第416章 星空道极榜", "第427章 欺负人啊！", "第438章 修为突破！", "第449章 原来你是这种人……", "第460章 有本事啊", "第471章 你真想加入剥皮军么？", "第482章 季风"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-01-45bcee82acba-chunk-002.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

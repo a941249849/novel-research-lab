@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `fff6dc5d87a95bb7648e28c7ffc4cc094828890e91ea89870a5a61d9f657386a`
 - source_encoding: `utf-8`
 - bounded_chunk_utf8_sha256: `fff6dc5d87a95bb7648e28c7ffc4cc094828890e91ea89870a5a61d9f657386a`
+- sampled_evidence_headings: ["第四百二十五节：青丝成空", "第四百三十二节：年蛊商战", "第四百三十九节：光照菌生意", "第四百四十六节：实力井喷", "第四百五十四节：万金妙华体", "第四百六十一节：一抹微笑", "第四百六十七节：香消玉殒：<!--80txt.com-ouoou-->", "第四百七十三节：盗天机缘？", "第四百七十九节：想输", "第四百八十六节：直接就动手", "第四百九十三节：落英馆", "第五百节：算计了人还要发难", "第五百零八节：房家八转", "第五百一十六节：方源至", "第五百二十三节：方源爱情", "第五百三十节：乐土传人", "第五百三十六节：位置暴露", "第五百四十三节：巅峰盛景", "第五百五十节：睡姑吐血", "第五百五十七节：方源动手", "第五百六十五节：牛魔花子", "第五百七十二节：云竹山脉", "第五百七十九节：宙道宗师", "第五百八十六节：俘虏"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-18-d53c5cc79ddd-chunk-011.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

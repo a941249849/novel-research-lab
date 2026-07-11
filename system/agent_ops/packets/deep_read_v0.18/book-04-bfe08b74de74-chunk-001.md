@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `f736023dccec3821cc2f57462ac6a5e3a7478a5eb0cf266b3877aa897b2e197a`
 - source_encoding: `gb18030`
 - bounded_chunk_utf8_sha256: `3f0b3001e1c3ce6a369ab516787f83606af6251656b433526ba06a3d9572492e`
+- sampled_evidence_headings: ["第一卷 平庸少年", "第九章 下崖", "第十九章 逐门", "第二层开启的口诀，他这期间也多次尝试，可惜全部失败。", "第三十六章 是非", "第四十六章 老怪", "第六十四章-第七十章", "第七十八章 藤家城", "第八十八章 蓝肤怪人", "第九十七章 巨变", "第一百零六章 等级", "第一百一十六章", "第一百二十五章 极境神识", "第一百三十五章 风云变色", "第一百四十四章 结丹（一）", "第一百五十三章 扬威南斗", "第一百六十三章 神道之术", "第一百七十二章 土行之地", "第一百八十一章 禁制大爆发", "第一百九十一章 神识死海", "第200章 有女云妃", "第二魔头，早在见势不好之后，便立刻迅速回撤，王林通过此魔，清楚的看到了如此震撼的一幕。", "第217章 碰撞", "第226章 离开楚国"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-04-bfe08b74de74-chunk-001.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

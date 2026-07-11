@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `afcd0971e2ad1ecc7b617cc19ac8e42c7310d3519e915dec083a8f9a6df97ad9`
 - source_encoding: `gb18030`
 - bounded_chunk_utf8_sha256: `22ded40fa91b89a288c1fc2edc0ae9db38b3f01c016a88e7afa0bfb100e2c663`
+- sampled_evidence_headings: ["第0222章 只拔一毛", "第0232章 月色真美", "第0241章 蜕变", "第0251章 布阵", "第0260章 夺日", "第0270章 肉身成神", "第0279章 三绝阵", "第0289章 文无第一武无第二", "第0299章 元神不死", "第0308章 大赢家", "第0318章 魂归来兮", "第0327章 性命双修", "第0337章 大日天魔真经", "第0346章 摩罗波旬", "第0356章 初次交锋", "第0365章 刑天", "第0374章 无路可退", "第0384章 双岳合璧", "第0393章 破局之战", "第0403章 冰封古城", "第0412章 变化玄功", "第0422章 钟祸祸下山", "第0431章 单挑", "第0441章 神异果"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-03-0bc4648bf63c-chunk-002.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

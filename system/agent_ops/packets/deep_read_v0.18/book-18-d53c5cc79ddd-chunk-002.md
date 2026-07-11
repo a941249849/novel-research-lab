@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `38705d7dab34a28227616a927e001784c80eefc82085d5eb942dce6d98d614cf`
 - source_encoding: `utf-8`
 - bounded_chunk_utf8_sha256: `38705d7dab34a28227616a927e001784c80eefc82085d5eb942dce6d98d614cf`
+- sampled_evidence_headings: ["第一百五十六节：照影秘方，花酒迷离", "第一百六十三节：雷冠头狼", "第一百七十节：铁面无私血可冷？", "第一百七十六节：牺牲的觉悟", "第一百八十二节：血湖墓地", "第一百八十七节：时间长河唯一条，春秋蝉做舟来渡", "第一百九十三节：神捕后手", "第一百九十七节：改命！", "第一节：黄龙江上竹筏倾", "第六节：夜宿树冠", "第十节：遭遇魔道蛊师", "第十七节：青铜舍利蛊", "第二十三节：白骨传承（上）", "第三十节：村庄休整（第二更）", "第三十七节：好人会有好报？", "第四十三节：聪明人的默契", "第五十节：滴水之恩，当涌泉相报！", "第五十六节：丁浩，你给我出来！", "第六十三节：卖不出去", "第七十节：家宴", "第七十七节：星辰石", "第八十三节：灵光一闪蛊", "第九十节：不能阻挡我", "第九十七节：拍卖会"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-18-d53c5cc79ddd-chunk-002.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

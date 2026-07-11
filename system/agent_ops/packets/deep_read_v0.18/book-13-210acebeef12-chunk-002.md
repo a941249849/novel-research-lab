@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `93e8949167486ea3a33255315d7c4ebcc4b7b2b90ce6c4ce7e915be90c564f0f`
 - source_encoding: `gb18030`
 - bounded_chunk_utf8_sha256: `f07489fc128132fbf8179782ac9b16a74ce15dfde608c3ba371482e18b704820`
+- sampled_evidence_headings: ["第二卷 风起天寒 第234章 不是白灵！", "第二卷 风起天寒 第244章 以情为种！", "第二卷 风起天寒 第254章 征兆", "第二卷 风起天寒 第264章 三个方法", "第九峰的山顶上，天邪子也迈步而回，重新选择了闭关，他身上的衣着，颜色渐渐改变。", "第二卷 风起天寒 第283章 鬼！", "第二卷 风起天寒 第294章 鬼方！", "第二卷 风起天寒 第304章 拍卖", "第二卷 风起天寒 第314章 又一物！", "第二卷 风起天寒 第324章 不服气？", "第二卷 风起天寒 第334章 那声音……", "第二卷 风起天寒 第344章 子车！", "第二卷 风起天寒 第355章 碎片起幽！", "第二卷 风起天寒 第365章 蛮神之力！", "第二卷 风起天寒 第375章 开山立府！", "第二卷 风起天寒 第385章 姬夫人的夫君", "第二卷 风起天寒 第395章 我为她来！", "第二卷 风起天寒 第405章 哥哥", "第三卷 名震东荒 第416章 三头玄龟！", "第三卷 名震东荒 第425章 巫城", "第三卷 名震东荒 第435章 阴灵", "第三卷 名震东荒 第445章 赌宝大会！", "第三卷 名震东荒 第457章 鲁莽？", "第三卷 名震东荒 第467章 九阴九婴！"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-13-210acebeef12-chunk-002.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

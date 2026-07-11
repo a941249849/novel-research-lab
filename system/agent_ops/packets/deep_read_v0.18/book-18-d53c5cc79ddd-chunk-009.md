@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `4b262214fd33f2ab2d401a466e4dfa31c4fa222518936a030d48e39384abbd43`
 - source_encoding: `utf-8`
 - bounded_chunk_utf8_sha256: `4b262214fd33f2ab2d401a466e4dfa31c4fa222518936a030d48e39384abbd43`
+- sampled_evidence_headings: ["第一百二十七节：暂时的休整", "第一百三十四节：夺蚌", "第一百四十节：试用道可道仙蛊", "第一百四十七节：电炼马鸿运", "第一百五十四节：不在乎", "第一百六十节：风云突变利益心", "第一百六十六节：方源的修行契机", "第一百七十三节：不跪", "第一百七十九节：仙蛊龙息", "第一百八十六节：干点坏事", "第一百九十二节：仙缘生意", "第一百九十九节：登场南疆", "第二百零六节：龙人", "第二百一十三节：中洲蛊仙集结", "第二百二十节：境界之妙", "第二百二十七节：水道宗师", "第二百三十三节：自找死路", "第二百四十节：引魂入梦", "第二百四十六节：我爱他！", "第二百五十二节：什么东西？", "第二百五十七节：马赵相会", "第二百六十三节：逆流河太古秘辛：<!--80txt.com-ouoou-->", "第二百六十九节：逆流护身印", "第二百七十四节：楚瀛再现"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-18-d53c5cc79ddd-chunk-009.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

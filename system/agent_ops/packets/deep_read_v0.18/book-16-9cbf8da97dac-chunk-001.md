@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `2a67047eed6192b24e1412a8309c32930072b518bb3dd47c6a25dc58c3899af3`
 - source_encoding: `gb18030`
 - bounded_chunk_utf8_sha256: `28fb37b9b4b378f2d8041076262ff7a5a39b3f7a0c5b9606a7f8f7ef31339993`
+- sampled_evidence_headings: ["第001章 星空中的青铜巨棺", "第010章 苍茫大地", "第019章 从容", "第029章 怒", "第038章 什么是修行", "第047章 艰难", "第056章 心动", "第065章 神秘绿铜", "第074章 四大境界", "第084章 强势", "第093章 炼人为药", "第102章 预言成真", "第111章 神桥境界", "第120章 东荒神体", "第129章 联姻", "第139章 慑", "第148章 捅破天", "第157章 名传南域", "第166章 暴风雨（中）", "第175章 各自逃命", "第184章 源天师", "第194章 源中有女", "第203章 圣子圣女", "第212章 昆云"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-16-9cbf8da97dac-chunk-001.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

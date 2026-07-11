@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `504a39c675f4185bbb6feb32fcf421f5d6152cda47f93e128d5019e7037358c5`
 - source_encoding: `gb18030`
 - bounded_chunk_utf8_sha256: `ae0af7908a9ca8776ed34dc49e50861660c4f3c94aa5291274080a7e295b75a7`
+- sampled_evidence_headings: ["第一百六十七章 跟天下百姓要了一壶酒", "第四卷 共逐鹿", "第七章 真像", "第十四章 高树露的体魄", "第二十一章 道士下山挑山", "第二十八章 春秋之尾，草席之旁", "第三十五章 十分之争，将死之人", "第四十二章 一张帘子一字请", "第四十九章 武林新木", "第五十六章 秋愁煞人更杀人", "第六十三章 得道", "第七十章 不外乎人情", "第七十六章 井中月", "第八十三章 霜杀百草（一）", "第九十章 青灯", "第九十七章 为他人作嫁衣裳", "第一百零四章 旧账", "第一百一十一章 天无雪", "第一百一十八章 离阳失其鹿（下）", "第一百二十五章 仙人落子", "第一百三十二章 八方雷动", "第一百三十九章 天下动静（上）", "第一百四十六章 山中无虎", "第一百五十三章 死在更南，死于更北"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-17-3089d9aab05c-chunk-004.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

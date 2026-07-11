@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `42efa3c0fe6bdf7613c4195ad90b8825400324809e49813d0093bc5b44b943a0`
 - source_encoding: `gb18030`
 - bounded_chunk_utf8_sha256: `5db58b327bc7fe6333e0c7251acb49440ae387d6f7c4172bdf5008df9c48983f`
+- sampled_evidence_headings: ["第249章 水火双猿", "第259章 恐怖大手", "第269章 太诡诈了", "第279章 霸道嚣张", "第288章 封魔岭？", "第298章 青羊老祖", "第308章 天龙骸骨", "第318章 八部浮屠", "第228章 元神星光体", "第338章 来硬的", "第348章 百万天魔", "第358章 须弥金山", "第367章 玲珑真身", "第377章 强悍无匹", "第387章 轮转圣王", "第397章 神话破灭", "第407章 太清玉液大还丹", "第417章 封印破裂", "第427章 谁给你的胆子？", "第437章 先天大帝", "第446章 给我报仇", "第456章 忌都法王", "第466章 抓捕龙道人", "第476章 断绝"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-12-7dd95a828fbe-chunk-002.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

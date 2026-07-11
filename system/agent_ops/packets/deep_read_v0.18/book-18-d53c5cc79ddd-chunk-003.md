@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `0632b1cad388419950dfd8119258a3d0918b6b95f37d3a5689d15be12d2d05ed`
 - source_encoding: `utf-8`
 - bounded_chunk_utf8_sha256: `0632b1cad388419950dfd8119258a3d0918b6b95f37d3a5689d15be12d2d05ed`
+- sampled_evidence_headings: ["第九十八节：一蹴而就蛊", "第一百零四节：真想扼杀掉", "第一百一十节：心慈之志", "第一百一十七节：必胜魔心", "第一百二十三节：竞争压力", "第一百二十九节：都是吃", "第一百三十五节：仙鹤门，方正", "第一百四十二节：何等的穷凶极恶！", "第一百四十八节：何等的奴道造诣！", "第一百五十四节：雷猪、岩鳄", "第一百六十节：拦截", "第一百六十六节：狐仙福地开启", "第一百七十三节：地灵——蛊仙之殇", "第一百七十九节：他死了", "第一百八十五节：狡诈鬼医，生死秘门", "第一百九十一节：魔无天", "第一百九十七节：白凝冰！", "第二百零四节：白凝冰，你演够了吗？", "第四节：执掌福地", "第十节：为了明天！", "第十六节：石人族大发展", "第二十三节：鬼脸葵海", "第二十九节：常山阴，做我的丈夫吧！", "第三十五节：十年风雪两茫茫"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-18-d53c5cc79ddd-chunk-003.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

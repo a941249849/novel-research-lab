@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `ff5a866f8079c4bf31cb138b7c560ca6db676d2c001650677586de8fc7daa4d2`
 - source_encoding: `gb18030`
 - bounded_chunk_utf8_sha256: `b6be9bc881e7e07bc3cf3e83a5b92861b43666e4d9bdf758ec3494fb8c883d8c`
+- sampled_evidence_headings: ["第683章 惊退千葵子", "第693章 青宜", "第704章 一世轮回，结束……", "第714章 望月苏醒", "第724章 看到了第三步！", "第734章 占了大便宜", "第744章 剑尖", "第755章 惊变", "第765章 血星", "第776章 千丈禁地，入者死！", "第786章 “谁，也不能离去！”", "第796章 师兄？", "第807章 传送小阵", "第817章 避天棺（1）", "第827章 姚冰云", "第838章 冰云", "第848章 姚冰云的道", "第858章 目标，一百零八仙", "第868章 不合格（2）", "第878章 第三目", "第八卷 联盟隐秘", "第898章 雷吉", "第909章 给你一场奇迹", "第919章 周天（2）"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-04-bfe08b74de74-chunk-004.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

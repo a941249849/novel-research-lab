@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `2ee8be9f754c65758d19c3a7649700e1824c5d942b9e0a6cff8f4d2494744b35`
 - source_encoding: `utf-8`
 - bounded_chunk_utf8_sha256: `2ee8be9f754c65758d19c3a7649700e1824c5d942b9e0a6cff8f4d2494744b35`
+- sampled_evidence_headings: ["第七十四节 惊现星宿仙尊", "第八十节：分赃", "第八十七节：好一桩大买卖", "第九十三节：地沟黑油", "第九十九节：拍卖大会（中上）", "第一百零六节：方源vs楚度", "第一百一十二节：拍卖马赵二人", "第一百一十八节：仙蛊时运", "第一百二十五节：解梦成功", "第一百三十一节：仙蛊宿命", "第一百三十七节：以一敌二战七转", "第一百四十四节：万星飞萤战群雄", "第一百五十节：取舍进退见真雄", "第一百五十七节：终定局扬长而去！", "第一百六十三节：八转对抗风云荡", "第一百六十九节：消仙散元玄冰屋", "第一百七十六节：建福地楼兰醒悟", "第一百八十二节：依旧第一", "第一百八十八节：生意做到西漠去", "第一百九十四节：仙蛊变形", "第一百九十八节：血道魔威", "第二百零四节：赌斗凤金煌（上）", "第二百一十二节：自然炼蛊法", "第二百一十八节：设计羽民，羽飞的无力"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-18-d53c5cc79ddd-chunk-006.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

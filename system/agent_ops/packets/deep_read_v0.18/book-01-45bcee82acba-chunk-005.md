@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `1f35317e3598a79f7fac45c87822c8c5864449eb650408c96780a965ac304121`
 - source_encoding: `gb18030`
 - bounded_chunk_utf8_sha256: `63cab654dc0bc39229f59ce893b7f3c3df010cfb87f9be4452571e4757a1f21b`
+- sampled_evidence_headings: ["第1005章 第二次", "第1017章 我还是恨你！", "第1029章 白秀才", "第1040章 莫非蝗虫来过？", "第1052章 来者不善", "第1064章 你们一定会后悔……", "第1076章 自创道路！", "第1087章 挤进去了……", "第1099章 一把钥匙", "第1111章 天师三策", "第1123章 我们造了什么孽", "第1135章 玄九郡", "第1146章 我要弄死你！", "第1158章 小器灵，和我斗？", "第1170章 大皇子，请自重！", "第1182章 你准备好了么！", "第1194章 达成所愿", "第1205章 撼邪皇！！", "第1217章 乐极生悲", "第1229章 纸婆婆", "第1241章 逆凡", "第1252章 白浩复活！", "第1264章 胜祖！", "第1276章 苏醒！"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-01-45bcee82acba-chunk-005.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `bd3fd1bef924fac92bbeb28f24290d6191775a80a446f698131d0f7cac38b42a`
 - source_encoding: `gb18030`
 - bounded_chunk_utf8_sha256: `a8ff2f11c901652a53e83e8dbb6914608ab196234cd10a3ee31349bf0ccd0770`
+- sampled_evidence_headings: ["第一卷 人间世", "第0010章 剑门魔墟", "第0019章 生死之间", "第0029章 雷中少女", "第0038章 阵杀炼气士", "第0048章 剑门蜃龙", "第0058章 有点儿疼", "第0067章 河边种人", "第0077章 大日无疆", "第0086章 狼狈与鬣狗", "第0096章 武道防御", "第0106章 剑斩美人头", "第0115章 大吹法螺", "第0125章 六翼金蜈", "第0135章 神魔宝藏", "第0144章 蛟龙真传", "第0154章 其心可诛", "第0163章 雷池", "第0173章 逆开五轮", "第0183章 忠奸莫辨", "第0192章 神兵金船", "第0202章 闭门思过", "第0211章 是非之地", "第0221章 祖血"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-03-0bc4648bf63c-chunk-001.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

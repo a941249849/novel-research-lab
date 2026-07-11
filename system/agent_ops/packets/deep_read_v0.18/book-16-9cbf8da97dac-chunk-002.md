@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `4b550b5cecfa29a566ac8fe237d3dfa559d6ec3ec188c404339075972a40ff6c`
 - source_encoding: `gb18030`
 - bounded_chunk_utf8_sha256: `53d3bdf42c04e4345b5c105edcd38a0504ea2bf4f424c807267cb6ee4a1b24f1`
+- sampled_evidence_headings: ["第213章 禽兽", "第221章 衣不染血道茫茫", "第230章 真龙拉棺", "第238章 黑太狼", "第246章 云断", "第255章 天鹏极速", "第263章 不老殿", "第271章 九秘之“皆”", "第279章 丽城九秘风云起", "第288章 亵渎", "第296章 剖开源天师留下的石器", "第304章 独抗天下", "第313章 横扫四极", "第321章 北域震动", "第329章 人元果", "第338章 无始钟又响", "第346章 神源出世", "第354章 太阴之体", "第362章 太古王族", "第371章 风云中心", "第379章 齐天大圣", "第387章 齐杀神王", "第396章 暗夜君王", "第九日，绝代神王回归，再现神城中！"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-16-9cbf8da97dac-chunk-002.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `313cf544b54d287224fb9bde34ca83504ee5e31895de3dc689ebfc6dc238223e`
 - source_encoding: `utf-8`
 - bounded_chunk_utf8_sha256: `313cf544b54d287224fb9bde34ca83504ee5e31895de3dc689ebfc6dc238223e`
+- sampled_evidence_headings: ["第五百八十七节：囚禁人质", "第五百九十三节：紫薇的不安", "第六百节：你信命吗？", "第六百零六节：这是陷阱！", "第六百一十四节：阳莽背火衣", "第六百二十节：他作弊！", "第六百二十六节：洞天易主", "第六百三十三节：楚瀛身亡", "第六百三十九节：方源被救", "第六百四十六节：方源，你是好人", "第六百五十二节：我拒绝", "第六百五十七节：悔蛊异变", "第六百六十四节：进展", "第六百七十节：怪兽肆虐", "第六百七十六节：紫薇借蛊", "第六百八十四节：三人成虎", "第六百九十节：南仙众志", "第六百九十七节：尊者对决", "第七百零三节：阵中亡", "第七百零九节：四大龙将", "第七百一十六节：劫运坛反击", "第七百二十二节：元始天庭！", "第七百二十九节：陆畏因叛变", "第七百三十五节：我心里有数"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-18-d53c5cc79ddd-chunk-012.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

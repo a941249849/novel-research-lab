@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `54ec3983aaf56c125617ca1c525a9ae2853eec259acbb1db161a3d0385895ac4`
 - source_encoding: `gb18030`
 - bounded_chunk_utf8_sha256: `cdf1b41aeb26108eebf9dc02c2c28d264974844e02858098dccdef064e68a9cc`
+- sampled_evidence_headings: ["第934章 再次变化仙器", "第944章 生生世世", "第954章 金仙符", "第964章 十万道大仙术", "第974章 诸天轮回", "第984章 大人物的愤怒", "第993章 飞升", "第1003章 恢复实力", "第1013章 刺客", "第1023章 夺丹（上）", "第1033章 二阶灵脉", "第1043章 疯狂赚取", "第1053章 白衣儒雅男子", "第1063章 神的国", "第1073章 全部留下", "第1083章 两虎相争", "第1093章 金仙老龟", "第1103章 领悟天地一体", "第1112章 全部收取", "第1122章 吞", "第1132章 欧阳老祖", "第1142章 怎么不去吃屎", "第1152章 乔装杀人（下）", "第1162章 圣人出现"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-12-7dd95a828fbe-chunk-005.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

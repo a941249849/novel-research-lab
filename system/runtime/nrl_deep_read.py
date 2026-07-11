@@ -131,6 +131,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `{chunk['chunk_sha256']}`
 - source_encoding: `{chunk['source_encoding']}`
 - bounded_chunk_utf8_sha256: `{chunk['bounded_chunk_utf8_sha256']}`
+- sampled_evidence_headings: {json.dumps(chunk['chapter_headings'], ensure_ascii=False)}
 - bounded_chunk_file: `{chunk['bounded_chunk_file']}`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

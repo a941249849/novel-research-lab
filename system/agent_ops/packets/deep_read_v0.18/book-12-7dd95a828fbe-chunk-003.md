@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `6ae8bc60215ebe7bd7c35462e986af26479e384fe34215483d558cb5670bc95d`
 - source_encoding: `gb18030`
 - bounded_chunk_utf8_sha256: `ab57c15254757f13aa6f65c24b24798048cb0aa881b4e8af8a2cf5dbf655ef22`
+- sampled_evidence_headings: ["第477章 神通十重", "第487章 各施阴谋", "第497章 宿命成", "第507章 解救方清雪（上）", "第517章 元元老祖", "第527章 决胜负（上）", "第536章 混乱天君", "第546章 扮猪吃虎（上）", "第556章 圣女的检查", "第566章 乘乱掠夺", "第576章 千亿", "第586章 七公主", "第596章 屠魔大仙", "第606章 宝根菩萨", "第616章 雷城出现", "第626章 翻天覆地", "第636章 天位境", "第646章 黑衣女子", "第655章 汲取", "第665章 忘忧仙丹", "第675章 大杀四方（上）", "第685章 三皇子", "第695章 天人五衰", "第705章 隐瞒"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-12-7dd95a828fbe-chunk-003.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `64e9cb05424dac45aac38a32042c06db736a4b6b1726dd4dc00f149d3126b42d`
 - source_encoding: `gb18030`
 - bounded_chunk_utf8_sha256: `13c91e6b4db142fc1de09cfa0678a816336c763f19e4089cd46c9356ec6a1cee`
+- sampled_evidence_headings: ["第1152章 山谷之内", "第1162章 伤人者，人恒伤之", "第1172章 碎涅的圈子", "第1183章 不要动", "第1193章 血战苍松子！", "第1203章 道髓", "第1213章 道术！", "第1223章 惊变", "第1233章 风动", "第1244章 流月", "第1254章 叱咤无极（五）", "第1264章 知晓", "第1274章 色变", "第1284章 天逆的来历", "第1294章 道术", "第1302章 只手遮天", "第1312章 宿命第一战", "第1322章 异变！", "第1332章 劲敌", "第1342章 雷修大能之路！", "第1352章 闪雷之战！（六）", "第1362章 遁尘炼雷", "第1372章 是他……伤你的么？", "第1381章 少帝"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-04-bfe08b74de74-chunk-006.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

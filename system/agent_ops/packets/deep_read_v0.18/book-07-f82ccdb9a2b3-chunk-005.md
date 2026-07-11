@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `eea0ee21889555e202ecf7d4a667b60f0f1c8ae3a1a959b9f9e395c9c43f2e96`
 - source_encoding: `gb18030`
 - bounded_chunk_utf8_sha256: `5e069fd07a1b2414588b639b3d754f67a0b7fd3ac03670a0ac528e82e0dd1cfb`
+- sampled_evidence_headings: ["第九百零九章 战阵师之间的对决", "第九百一十九章 融化符文", "第九百二十八章 十凶兽，天龙虎", "第九百三十八章 三座至尊法身", "第九百四十七章 隐忧", "第九百五十七章 壮大的九幽宫", "第九百六十七章 天品灵阵", "第九百七十六章 血灵泥", "第九百八十六章 天山神印", "第九百九十五章 残酷淘汰", "第一千零五章 牧尘出手", "第一千一十五章 赶路", "第一千二十四章 金裂", "第一千三十四章 多宝湖", "第一千三十四章 八品兽灵", "第一千四十三章 三道传承精血", "第一千五十三章 三兽尊", "第一千六十二章 半步九品", "第一千七十二章 一拳夺皇", "第一千八十二章 神秘女孩", "第一千零九十二章 八阳天轮，攻防一体", "第一千一百零一章 苏轻吟", "第一千一百一十章 前往内域", "第一千一百二十章 龙岛"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-07-f82ccdb9a2b3-chunk-005.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

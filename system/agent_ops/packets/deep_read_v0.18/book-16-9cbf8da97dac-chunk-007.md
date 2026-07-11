@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `93eed021930d8685893e047f0cea2dc0e847fa39e8533e45e3c7c7e5c2040466`
 - source_encoding: `gb18030`
 - bounded_chunk_utf8_sha256: `08b20636ba03f0a6a6a18314d7f94bec3cba38b8d69bed7602ccd1fe5c46a461`
+- sampled_evidence_headings: ["第1201章 人世间", "第1210章 金身强势", "第1219章 钓鱼", "第1228章 神", "第1238章 道一杀局", "第1247章 针对", "第1256章 禁区", "第1265章 道源洗脚", "第1274章 元磁仙洞", "第1283章 杀无赦", "第1292章 问心求道", "第1300章 遇祖", "第1310章 出世", "第1319章 太凶残了", "第1328章 没落的圣体家族", "第1337章 原来是他", "第1346章 谁与争雄", "第1355章 神明恶念", "第1364章 俯视星空", "第1373章 出动", "第1383章 帝天", "第1392章 帝尊", "第1401章 黄金七城", "第1410章 初拼金蛇郎君"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-16-9cbf8da97dac-chunk-007.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

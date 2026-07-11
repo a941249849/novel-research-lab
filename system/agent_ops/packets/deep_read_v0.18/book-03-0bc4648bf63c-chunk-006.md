@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `1ea801fc753ce34cde3ff06b66d3d9eddef40b26498b8466dbe151aed56a1deb`
 - source_encoding: `gb18030`
 - bounded_chunk_utf8_sha256: `bad6b2f3b8a2273bdbafb09696673dd6db615cb152d5a4f3c5baad0dfd906c76`
+- sampled_evidence_headings: ["第1104章 天道神通", "第1114章 华胥娘娘", "第1123章 有损英名", "第1132章 两日踏平", "第1142章 先天玄牝", "第1152章 海底针，心难测", "第1161章 性命相托", "第1171章 恐怖的圣器", "第1181章 吃掉快乐", "第1191章 身在其中，道在其外", "第1200章 夺取灵根", "第1210章 轰然落地", "第1220章 噩梦将至", "第1230章 白帝", "第1238章 男人", "第1248章 吊诡", "第1258章 亵渎", "第1268章 一意孤行", "第1277章 诡", "第1287章 祭刀", "第1297章 斩落帝境", "第1307章 族人", "第1316章 黑暗星空", "第1326章 当做大司命"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-03-0bc4648bf63c-chunk-006.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `ff70445e95531586830a727273be021da8471dba07e1c6790783d6af27c10198`
 - source_encoding: `gb18030`
 - bounded_chunk_utf8_sha256: `00859d20931eb27ebe5a18bd141074b51a83c4095abeb385fa1c8a36795d62d3`
+- sampled_evidence_headings: ["第1277章 反之，亦主宰！", "第1279章 逆凡门徒", "第1280章 啃一口……", "第1282章 传奇人生", "第1283章 白小纯的道", "第1285章 圣皇出关", "第1287章 枭雄", "第1288章 永恒之眼", "第1290章 值得吗", "第1291章 逆凡苏醒！", "第1293章 睁开眼！", "第1295章 至宝沙漏", "第1296章 星空为炉", "第1298章 时光之战", "第1300章 未央龟！", "第1301章 结束了？", "第1303章 惨烈", "第1304章 罗天指！", "第1306章 罗天无情", "第1308章 引导与开启", "第1309章 见神", "第1311章 一念，永恒", "第1312章 左岸", "第1314章 你的选择（终）"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-01-45bcee82acba-chunk-006.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

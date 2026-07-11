@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `eb5b6e80d1a6fa00059ee3b40a1d09c2114d763969524c33586e51c57840f20f`
 - source_encoding: `gb18030`
 - bounded_chunk_utf8_sha256: `bc641a4f107eaba6ad9495e7aae60c9a8d6c617d527c9d7f9f25df2c466f5eb7`
+- sampled_evidence_headings: ["第227章 再遇故人", "第237章 王……王林？", "第246章 灭藤（终）", "第256章 寒冷", "第266章 雪域修士", "第276章 抢土灵！", "第285章 处化", "第295章 破碎的仙界", "第305章 游魂荡威", "第315章 抢尸", "第324章 法术的仙意，无法遮盖你千年的痴迷", "第334章 拔山", "第344章 还记得巨富么", "第354章 断你后路", "第363章 昆极鞭", "第373章 蚊兽", "第383章 炼魂宗内门", "第393章 一字之威", "第402章 老祖灭", "第411章 故人", "第421章 婴变（终）", "第431章 鸠占鹊巢", "第439章 道不同", "第449章 最后一幻"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-04-bfe08b74de74-chunk-002.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

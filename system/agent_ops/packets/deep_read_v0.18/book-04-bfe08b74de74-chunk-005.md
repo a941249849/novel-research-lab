@@ -11,6 +11,7 @@ range itself; do not rely on existing summaries. Do not quote source prose.
 - chunk_sha256: `57944e8a9d2628f6cedee5d6985db141f8844f0c5f297c506162a6e0efdd1050`
 - source_encoding: `gb18030`
 - bounded_chunk_utf8_sha256: `aed075c9043b77c052e66a0e9554b1d60d1ad410c0acc4edbc30f2e0794df09a`
+- sampled_evidence_headings: ["第920章 周天（3）", "第930章 联盟长老团", "第940章 四星王族古神", "第950章 杀域界", "第960章 初窥本源", "第970章 破指", "第981章 可还记得灵儿", "第991章 重逢（1）", "第1001章 第二分身（上）", "第1011章 仙灵天境", "第1021章 朱雀觉醒", "第1031章 枯符", "第1041章 深坑之下", "第1051章 周佚再现", "第1061章 苏醒", "第1071章 来临", "第1081章 梦回远古", "第1091章 三世火元之威", "第1102章 你们找死！", "第1112章 雨界呼救", "第1122章 周茹", "第1132章 无极子", "第1141章 吕烟菲", "第1151章 来的好快！"]
 - bounded_chunk_file: `.nrl-work/deep_read_v0.18/chunks/book-04-bfe08b74de74-chunk-005.txt`
 
 The bounded chunk file contains exactly the bytes identified above. Read that

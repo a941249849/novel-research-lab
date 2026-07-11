@@ -19,6 +19,7 @@ VERSION = "0.18"
 JOB_ID = "job-v018-verifiable-deep-reading"
 DEFAULT_TARGET_BYTES = 1_500_000
 OPENCODE_RUN_TIMEOUT_SECONDS = 600
+OPENCODE_DEEP_READ_AGENT = "nrl-deep-reader"
 AGY_RUN_TIMEOUT_SECONDS = 900
 PLAN_PATH = runtime_path("system/research_assets/deep_read/v0.18/plan.json")
 VALIDATION_PATH = runtime_path("system/research_assets/deep_read/v0.18/validation.json")
@@ -565,6 +566,8 @@ def _dispatch_one_opencode_go(
             [
                 binary,
                 "run",
+                "--agent",
+                OPENCODE_DEEP_READ_AGENT,
                 "--model",
                 model_id,
                 "--variant",

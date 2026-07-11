@@ -110,6 +110,15 @@ class VerifiableDeepReadingV018Tests(unittest.TestCase):
     def test_opencode_go_runner_has_a_bounded_timeout(self):
         self.assertEqual(nrl_deep_read.OPENCODE_RUN_TIMEOUT_SECONDS, 600)
 
+    def test_opencode_go_runner_uses_the_bounded_reader_agent(self):
+        self.assertEqual(nrl_deep_read.OPENCODE_DEEP_READ_AGENT, "nrl-deep-reader")
+        agent_path = REPO_ROOT / ".opencode" / "agents" / "nrl-deep-reader.md"
+        self.assertTrue(agent_path.is_file())
+        agent = agent_path.read_text(encoding="utf-8")
+        self.assertIn("steps: 2", agent)
+        self.assertIn("doom_loop", agent)
+        self.assertIn("effect: deny", agent)
+
     def test_plan_normalizes_gb18030_chunks_to_hash_bound_utf8_reading_files(self):
         self.book.write_bytes(("第一章 起点\n凡人踏上修行路。\n" * 80).encode("gb18030"))
         plan = self.plan()

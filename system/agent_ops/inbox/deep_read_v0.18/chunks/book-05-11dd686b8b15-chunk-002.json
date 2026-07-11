@@ -1,0 +1,95 @@
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "chunk_id": "book-05-11dd686b8b15-chunk-002",
+  "source_file": "novel_training_set/《凡人修仙传》（校对版全本+番外）作者：忘语.txt",
+  "source_file_sha256": "11dd686b8b151694b37460b52991a4f00eda8f5fabe86b507e74f321e10a7428",
+  "start_byte": 1500003,
+  "end_byte": 3000153,
+  "chunk_sha256": "75bb653b8245017de9687aceebb4d32a427cffcf9283507b023d9fb9976137a0",
+  "source_encoding": "gb18030",
+  "bounded_chunk_utf8_sha256": "f9bad32ace62ea6091667f52baf9a6ffe003ce6079f27bdd4242c1d16cff46fe",
+  "analysis": {
+    "chapter_span": [
+      "第三百零二章 对策",
+      "第五百六十六章 还魂术"
+    ],
+    "major_events": [
+      "Yue Palace Blood Servants Battle: Han Li and his fellow disciples battle the Four Blood Acolytes of the Black Fiend Sect in the Yue Kingdom Imperial Palace to dismantle the sect's core structure [第三百二十章 破茧].",
+      "Defeating the Black Fiend Sect Master: Han Li and his companions corner and defeat the Black Fiend Sect Master, acquiring the Blood Condensation Beads and the Fiend Pill [第三百二十九章 灭敌].",
+      "Crooked Soul's Possession Discovery: Han Li tracks down the mutated Crooked Soul to the mountains west of Jiayuan City using the 引魂钟 and discovers he has been possessed by a rogue cultivator [第三百三十七章 暗手、曲魂].",
+      "Exposing the Seven Sects Betrayal: The possessed Crooked Soul reveals to Han Li that Spirit Beast Mountain is secretly collaborating with the Demonic Dao's Yuling Sect to betray the Seven Sects [第三百三十九章 震惊].",
+      "Giant Mantis Battle in the Cavern: Han Li is trapped and attacked by a high-speed giant mantis in a mountain cavern, eventually capturing it using the Five Elements Reversal Formation [第三百四十一章 狼狈].",
+      "Sect Retreat and Bait Assignment: Ancestor Linghu of the Yellow Maple Valley plans the evacuation of the sect, leaving Han Li and other low-level disciples behind as sacrificial bait [第三百四十六章 令狐老祖].",
+      "Xin Ruyin's Revenge Promise: Han Li finds that Qi Yunxiao has died, visits Xin Ruyin, and promises to avenge him in exchange for the incomplete layout of the ancient teleportation array [第三百五十二章 承诺].",
+      "Rescuing Nangong Ping by Mistake: Han Li intercepts a Ghost Spirit Sect carriage to rescue a masked woman whom he mistakes for Nangong Wan, but who is actually her cousin Nangong Ping [第三百六十章 半路劫人].",
+      "Ancient Teleportation to Chaos Star Seas: Han Li activates the repaired Ancient Teleportation Array under attack from Wang Chan and escapes to the Chaos Star Seas with Crooked Soul [第三百六十三章 传送].",
+      "Infant Carp Beast Ambush: Han Li and other cultivators hunt the Infant Carp Beast but are ambushed by Wu Chou, leading to a clash with a Core Formation cultivator [第三百八十二章 乌丑].",
+      "Han Li's Core Formation: After four years of solitary cultivation on Small Green Island, Han Li successfully breakthroughs to the Core Formation stage [第三百八十六章 四年结丹].",
+      "Acquiring the Heaven-Lightning Bamboo: Han Li participates in the Wonderful Sound Sect exchange and acquires the dry three-thousand-year-old Heaven-Lightning Bamboo as a reward [第四百零一章 天雷竹].",
+      "Refining the Bamboo Cloud Bee-Decline Swords: Han Li uses his Dan-fire to refine the matured Golden-Lightning Bamboo into twelve Bamboo Cloud Bee-Decline Swords [第四百一十四章 成形].",
+      "Entering the Virtual Sky Hall: Using the residual map of the Virtual Sky Hall, Han Li enters the ancient dungeon alongside Nascent Soul eccentrics [第四百三一章 虚天殿].",
+      "Xuan Gu's Possession of Crooked Soul: A green spectral entity (Xuan Gu) attempts to possess Han Li, fails, and seizes control of Crooked Soul's body due to its Fiend Pill nature [第四百二七章 玄魂炼妖].",
+      "Retrieving the Virtual Sky Cauldron: Under the direction of Nascent Soul cultivators, Han Li uses his Blood Jade Spiders to pull the Virtual Sky Cauldron from the cold well [第四百七十八章 金蚕取宝].",
+      "Slaying Xuan Gu: Han Li uses the Golden-Lightning Bamboo's Evil-Resisting Divine Lightning to destroy Xuan Gu and retrieves the Virtual Sky Cauldron and other treasures [第四百关十三章 玄骨之死].",
+      "Acquiring Silver Eye/Yinyue: Han Li discovers a wolf-shaped weapon spirit (Yinyue) inside the wolf-head jade rubee ancient treasure and escapes the inner hall [第四百九十九章 狼形器灵].",
+      "Bargaining with Ling Yuling: To escape the war between the Star Palace and the Anti-Star Alliance, Han Li negotiates with Ling Yuling for access to the teleportation array [第五百零六章 传送与条件].",
+      "Refining the Wind Thunder Wings: The level 9 demon cultivator Rift Wind Beast captures Han Li to force him to help refine the Wind Thunder Wings, which Han Li eventually steals [第五百四十五章 风雷翅].",
+      "Yuan Yao's Soul Return Ritual: Han Li runs into Yuan Yao in the inner seas and helps her defend against attackers while she performs the forbidden Soul Return Technique [第五百六十六章 还魂术]."
+    ],
+    "character_state_transitions": [
+      "Han Li's Cultivation Stage: Foundation Establishment stage [第三百零二章 对策] -> Core Formation stage [第三百八十六章 四年结丹].",
+      "Han Li's Location: Yue Kingdom, Heavenly Star Sect [第三百三十二章 旧地] -> Chaos Star Seas, Small Green Island [第三百七十二章 小寰岛] -> Heavenly Star City [第三百八十九章 天星城与星宫] -> Outer Seas, Black Stone City [第五百一十二章 黑石城].",
+      "Crooked Soul's Possession State: Under the control of a rogue Yu Ling Sect cultivator [第三百三十七章 暗手、曲魂] -> Refined into a Blood Incarnation under Han Li's control [第三百七十三章 身外化身] -> Possessed by the ancient Nascent Soul cultivator Xuan Gu [第四百二七章 玄魂炼妖].",
+      "Yuan Yao's Cultivation Stage: Foundation Establishment cultivator in the Wonderful Sound Sect [第三百七五章 双娇] -> Core Formation stage cultivator seeking to perform the Soul Return Technique [第五百六十六章 还魂术].",
+      "Xuan Gu's Form: Trapped as a green spectral remnant/soul [第四百二七章 玄魂炼妖] -> Seizes Crooked Soul's body and achieves pseudo-Nascent Soul power [第四百二八章 萧诧] -> Destroyed completely by Han Li's Evil-Resisting Divine Lightning [第四百九十三章 玄骨之死].",
+      "Dong Xuan'er's Sect Affiliation: Yellow Maple Valley disciple [第三百零二章 对策] -> Captured and converted into a demon cultivator of the Ghost Spirit Sect [第三百六十章 半路劫人].",
+      "Blood Jade Spiders' Age State: Unhatched eggs found in the Yue Kingdom [第三百零八章 大展身手] -> Newly hatched beasts under a blood-control contract [第三百四五章 小老头与钟声] -> Mature, powerful level-matching beasts capable of pulling the Virtual Sky Cauldron [第四百七十八章 金蚕取宝].",
+      "Rift Wind Beast's Cultivation State: Level 9 demon cultivator in the deep seas [第五百四十二章 九级妖修] -> Injured and lose their refined Wind Thunder Wings to Han Li [第五百五十三章 雷遁之术].",
+      "Heaven-Lightning Bamboo's Maturity State: A dry, three-thousand-year-old dead root [第四百零一章 天雷竹] -> Matured using the green bottle's liquid into a ten-thousand-year-old Golden-Lightning Bamboo [第四百一十一章 培竹] -> Refined into Han Li's life-bound Bamboo Cloud Bee-Decline Swords [第四百一十四章 成形].",
+      "Silver Eye (Yinyue)'s Vessel State: Sealed inside the wolf-head jade rubee ancient treasure [第四百九十九章 狼形器灵] -> Becomes Han Li's sentient helper/器灵 after Han Li partially refines the rubee [第五百章 逆星盟]."
+    ],
+    "long_form_mechanisms": [
+      "Ancient Teleportation Array Operation: Requires restoring the physical frame and inserting medium-to-high-grade spirit stones to power the spatial transport, while the traveler must hold a Great Transfer Medallion to shield their body from being shredded by spatial storms [第三百六十三章 传送].",
+      "Neon Grass (霓裳草) Maturation and Beast Hunting: Han Li uses the green bottle's liquid to accelerate Neon Grass growth. The maturing grass releases a unique aroma that acts as a pheromone to sea beasts. By varying the maturity level (e.g. number of leaves), Han Li can attract specific grades of beasts into pre-set formations to kill them for their cores [第三百九十三章 凝翠岛].",
+      "Bamboo Cloud Bee-Decline Swords (青竹蜂云剑) Refining: The refining process uses matured Golden-Lightning Bamboo, which is liquefied through months of Dan-fire refinement in a specialized magic array. The resulting swords are kept inside the cultivator's body to nurture, and they can unleash the golden Evil-Resisting Divine Lightning, which suppresses evil magic and destroys demonic entities [第四百一十四章 成形].",
+      "Blood Condensation Bead (血凝五色珠) & Fiend Pill (煞丹) System: A Blood Condensation Bead is refined through blood sacrifice of cultivators. A Foundation Establishment cultivator can fuse this bead into their core to force Core Formation, producing a Fiend Pill. This allows a shortcut to the Core Formation stage but prevents further advancement and leaves the body vulnerable to external possession [第三百三十章 煞丹].",
+      "Gold-Eating Beetles (噬金虫) Cannibalistic Evolution: Feeding Neon Grass to Gold-Eating Beetles triggers a state of frenzy, causing them to breed, lay eggs, and engage in cannibalistic fights. The survivors absorb the energy of the defeated, causing their golden spots to expand. A swarm of evolved beetles is impervious to most magic attacks and can consume spiritual energy and artifacts [第四百一十四章 成形].",
+      "Virtual Sky Cauldron (虚天鼎) Extraction: The cauldron is located in a deep pit in the Inner Hall, protected by the extreme cold of the Blue Dry Ice Flame. Nascent Soul telekinesis is useless against its weight. To extract it, cultivators must employ beasts like Gold-Thread Silkworms or Blood Jade Spiders that are resistant to the flame, pulling it up along the pit while enduring the backlash of the blue fire [第四百七十八章 金蚕取宝].",
+      "Wind Thunder Wings (风雷翅) Grafting & Thunder Escape (雷遁之术): Refined from the wings of a level 9 Rift Wind Beast and the spiritual skeleton of a Thunder Peng, fused with wind and thunder power. Once refined and merged with the cultivator's back, it enables the Thunder Escape, allowing the cultivator to teleport short distances instantaneously by converting their body into a bolt of lightning [第五百四十五章 风雷翅].",
+      "还魂术 (Soul Return Technique) Forbidden Ritual: Requires a soul that has been preserved and nourished in Soul-Nourishing Wood to maintain its memories and strength. The caster must set up a ritual array and sacrifice a massive portion of their own cultivation base (resulting in dropping a cultivation realm or shattering their core) to force the soul into a freshly deceased body [第五百六十六章 还魂术].",
+      "Great Development Technique (大衍诀) Split-Mind Control: Splits the cultivator's spiritual sense into dozens or hundreds of independent threads, allowing them to simultaneously direct a large army of puppets or coordinate multiple flying swords without experiencing mental exhaustion or feedback [第三百四十四章 大阵灭妖]."
+    ],
+    "continuity_observations": [
+      "Han Li's Cultivation Stage Continuation: The progression of Han Li's power from Foundation Establishment (during the Yue Kingdom arc) to his breakthrough to the Core Formation stage (in the Chaos Star Seas), which is detailed across multiple chapters where he prepares auxiliary pills and finds a quiet island [第三百八十六章 四年结丹].",
+      "Crooked Soul's (曲魂) Narrative Thread: Follows his trajectory from a mindless puppet, to his possession by a rogue Yuling Sect cultivator, to Han Li's reclamation and refinement of his body into a Blood Incarnation, and finally to Xuan Gu's hostile takeover of his body in the Virtual Sky Hall [第四百二七章 玄魂炼妖].",
+      "The Green Bottle (神秘小瓶) Usage: Although kept secret, the bottle's liquid is the underlying catalyst for Han Li's major breakthroughs, enabling the cultivation of Neon Grass to hunt beasts and the maturation of Heaven-Lightning Bamboo to refine his life-bound weapons [第四百一十一章 培竹].",
+      "Blood Jade Spiders' (血玉蜘蛛) Role: Obtained as eggs in the Yue Kingdom, they hatch in Han Li's cave and are bound to him via a blood contract. They reappear hundreds of chapters later in the Virtual Sky Hall as the only creatures capable of pulling the Virtual Sky Cauldron, bridging two major story arcs [第四百七十八章 金蚕取宝].",
+      "The Ancient Teleportation Array (古传送阵): Han Li obtains the layout from Xin Ruyin and the Great Transfer Medallion from a cave skeleton. The actual repair and activation of this array serve as his escape hatch to the Chaos Star Seas when the Seven Sects collapse [第三百六十三章 传送].",
+      "Heaven-Lightning Bamboo (天雷竹) Acquisition: Han Li receives the dry three-thousand-year-old bamboo from the Wonderful Sound Sect as a reward. He subsequently uses his green bottle's liquid to mature it into Golden-Lightning Bamboo for his Bamboo Cloud Bee-Decline Swords [第四百零一章 天雷竹].",
+      "Relationship with Nangong Wan (南宫婉): Mistaking Nangong Ping for Nangong Wan in Chapter 360 keeps Nangong Wan's character relevant in the story, providing a narrative thread that connects Han Li's past romantic interest in the Yue Kingdom to his new life in the Chaos Star Seas [第三百六十章 半路劫人].",
+      "Virtual Sky Hall Residual Maps (虚天殿残图): The residual map obtained by Han Li from a defeated Core Formation opponent serves as his entry key to the Virtual Sky Hall, linking his past combat achievements directly to his progression into the dungeon [第四百二九章 残图再现].",
+      "Soul-Nourishing Wood (养魂木) and Yuan Yao's Companion: The Soul-Nourishing Wood obtained by Han Li in the Virtual Sky Hall is later used by Yuan Yao to nourish the soul of her companion Yan Li, triggering the Soul Return Technique questline [第五百六十六章 还魂术]."
+    ],
+    "style_observations": [
+      "Cautious and Pragmatic Pacing (Mortal Flow / 凡人流): The prose depicts a protagonist who is extremely cautious, planning escapes before entering any danger, setting up multiple layers of arrays, and prioritizing self-preservation over heroism [第三百零二章 对策].",
+      "Dense, Technical Explanations of Magic Systems: The author dedicates extensive paragraphs to describing the precise steps of item refinement, the biological traits of beasts, and the structural design of magic formations [第四百一十四章 成形].",
+      "Transactional, Self-Interested Character Dynamics: Characters in the novel, whether rogue cultivators, sect leaders, or demons, interact primarily based on power and mutual self-interest. Trust is rare and always backed by binding contracts or mutual leverage [第四百五十六章 极阴门徒].",
+      "Seamless Transition of World Settings: The novel shifts from a land-bound, sect-war setting in the Yue Kingdom to a vast, sea-based island cultivation setting in the Chaos Star Seas, completely changing the cultivation environment and resources without disrupting the narrative tone [第三百六十四章 孤岛、巨舟].",
+      "Calm, Matter-of-Fact Narrative Voice: The narrative describes breakthroughs, narrow escapes, and brutal battles in a sober, resource-focused tone, avoiding overly flowery language and keeping the focus on Han Li's tactical calculations [第三百八十六章 四年结丹].",
+      "Foreshadowing and Delayed Payoffs: Minor items or creatures obtained early in the story (like the Blood Jade Spiders or the Great Transfer Medallion) are kept in the background for long periods before suddenly becoming central to resolving major plot conflicts [第四百七十八章 金蚕取宝]."
+    ],
+    "creation_family_evidence": {
+      "title_and_edition": "The source file name '《凡人修仙传》（校对版全本+番外）作者：忘语.txt' indicates it is a proofread ('校对版') and completed edition of the web novel by author Wang Yu ('忘语').",
+      "chapter_heading_regularity": "The text features uniform chapter division formatting using Chinese numerals ('第三百零二章' to '第五百六十六章') followed by a space and a title. This represents the typical structure of a cleaned web novel compilation.",
+      "textual_content_and_universe": "The story revolves around Han Li ('韩立') and specific unique terminology created by Wang Yu, such as the Bamboo Cloud Bee-Decline Swords ('青竹蜂云剑'), Golden-Lightning Bamboo ('金雷竹'), Gold-Eating Beetles ('噬金虫'), and the Chaos Star Seas ('乱星海') setting.",
+      "cleanliness_of_source": "The text has been heavily edited to remove typical web serialization artifacts such as editor notes, advertisements for votes/tickets, and 'to be continued' placeholders, confirming its nature as a '校对版' (proofread version)."
+    },
+    "originality_risks": [
+      "Derivative Xianxia Progression System: The novel relies heavily on the standard stages of cultivation (Foundation Establishment, Core Formation, Nascent Soul) and standard xianxia items (bells, cauldrons, swords) that are highly derivative of traditional Chinese folklore and earlier martial arts/immortality novels [第三百八十六章 四年结丹].",
+      "Plotted Conveniences and Coincidences: The story frequently aligns Han Li's immediate needs with highly convenient discoveries, such as finding a rare ten-thousand-year-old Heaven-Lightning Bamboo right when he needs to refine a life-bound weapon, or having the exact breed of spider needed to pull the Virtual Sky Cauldron [第四百零一章 天雷竹].",
+      "Repetitive Combat and Escape Cycle: Many action sequences follow a predictable rhythm where Han Li is confronted by stronger opponents, deploys a hidden trump card (such as a defensive array or a pocket beast), and escapes using high-speed flying items or teleportation [第三百四十一章 狼狈].",
+      "Instrumentalization of Female and Secondary Characters: Secondary characters like Dong Xuan'er, Chen Qiaoqian, or Yuan Yao often exist primarily to prompt side quests, provide exposition, or serve as comparison points to highlight Han Li's pragmatic and solitary nature, rather than possessing fully independent, evolving story arcs [第三百六十章 半路劫人]."
+    ]
+  }
+}

@@ -4,89 +4,12 @@
   "status": "in_progress",
   "deep_read_verified": false,
   "book_count": 18,
-  "validated_chunk_count": 17,
+  "validated_chunk_count": 28,
   "required_chunk_count": 143,
-  "validated_bytes": 22761879,
+  "validated_bytes": 37549257,
   "required_bytes": 197294465,
-  "validated_byte_ratio": 0.11537,
+  "validated_byte_ratio": 0.190321,
   "invalid_chunks": [
-    {
-      "chunk_id": "book-03-0bc4648bf63c-chunk-007",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
-    {
-      "chunk_id": "book-04-bfe08b74de74-chunk-002",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
-    {
-      "chunk_id": "book-04-bfe08b74de74-chunk-005",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
-    {
-      "chunk_id": "book-04-bfe08b74de74-chunk-006",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
-    {
-      "chunk_id": "book-04-bfe08b74de74-chunk-007",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
-    {
-      "chunk_id": "book-04-bfe08b74de74-chunk-008",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
-    {
-      "chunk_id": "book-04-bfe08b74de74-chunk-009",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
-    {
-      "chunk_id": "book-04-bfe08b74de74-chunk-010",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
-    {
-      "chunk_id": "book-05-11dd686b8b15-chunk-001",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
-    {
-      "chunk_id": "book-05-11dd686b8b15-chunk-002",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
-    {
-      "chunk_id": "book-05-11dd686b8b15-chunk-003",
-      "valid": false,
-      "errors": [
-        "response file is missing"
-      ]
-    },
     {
       "chunk_id": "book-05-11dd686b8b15-chunk-004",
       "valid": false,
@@ -897,5 +820,5 @@
     "valid": true,
     "errors": []
   },
-  "validated_at": "2026-07-11T12:14:32+08:00"
+  "validated_at": "2026-07-11T13:44:15+08:00"
 }

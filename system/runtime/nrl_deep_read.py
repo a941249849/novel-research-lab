@@ -247,14 +247,48 @@ def _legacy_status() -> str:
     return str(legacy.get("status", "unknown"))
 
 
+def validate_plan_integrity(plan: dict[str, Any]) -> dict[str, Any]:
+    errors = []
+    current_sources = {_relative(path): path for path in _corpus_files()}
+    planned_sources = {str(book["source_file"]) for book in plan.get("books", [])}
+    if set(current_sources) != planned_sources:
+        errors.append("corpus inventory mismatch")
+    for book in plan.get("books", []):
+        source = current_sources.get(str(book["source_file"]))
+        if not source:
+            errors.append(f"source is missing: {book.get('source_file')}")
+            continue
+        source_data = source.read_bytes()
+        if _sha256(source_data) != book.get("source_file_sha256"):
+            errors.append(f"source hash mismatch: {book.get('source_file')}")
+            continue
+        if source.stat().st_size != book.get("size_bytes"):
+            errors.append(f"source size mismatch: {book.get('source_file')}")
+        expected_start = 0
+        for chunk in book.get("chunks", []):
+            if chunk.get("start_byte") != expected_start:
+                errors.append(f"chunk range gap or overlap: {chunk.get('chunk_id')}")
+            expected_start = int(chunk.get("end_byte", 0))
+            raw_slice = source_data[int(chunk["start_byte"]):int(chunk["end_byte"])]
+            if _sha256(raw_slice) != chunk.get("chunk_sha256"):
+                errors.append(f"raw chunk hash mismatch: {chunk.get('chunk_id')}")
+            bounded = runtime_path(str(chunk.get("bounded_chunk_file", "")))
+            if not bounded.is_file() or _sha256(bounded.read_bytes()) != chunk.get("bounded_chunk_utf8_sha256"):
+                errors.append(f"bounded chunk hash mismatch: {chunk.get('chunk_id')}")
+        if expected_start != book.get("size_bytes"):
+            errors.append(f"chunk coverage mismatch: {book.get('source_file')}")
+    return {"valid": not errors, "errors": errors}
+
+
 def build_deep_read_status() -> dict[str, Any]:
     plan = _read_json(PLAN_PATH) if PLAN_PATH.exists() else None
     validation = _read_json(VALIDATION_PATH) if VALIDATION_PATH.exists() else None
     synthesis = _read_json(SYNTHESIS_VALIDATION_PATH) if SYNTHESIS_VALIDATION_PATH.exists() else None
     cross = _read_json(CROSS_VALIDATION_PATH) if CROSS_VALIDATION_PATH.exists() else None
-    if cross and cross.get("valid"):
+    plan_integrity = validate_plan_integrity(plan) if plan else {"valid": False, "errors": ["plan missing"]}
+    if cross and cross.get("valid") and plan_integrity["valid"]:
         status = "deep_read_verified"
-    elif synthesis and synthesis.get("valid"):
+    elif synthesis and synthesis.get("valid") and plan_integrity["valid"]:
         status = "book_synthesis_verified"
     else:
         status = str(validation.get("status")) if validation else ("planned" if plan else "missing")
@@ -271,6 +305,7 @@ def build_deep_read_status() -> dict[str, Any]:
         "validation": validation,
         "synthesis_validation": synthesis,
         "cross_validation": cross,
+        "plan_integrity": plan_integrity,
         "next_action": (
             "Create a contiguous deep-read plan."
             if not plan
@@ -392,33 +427,7 @@ def validate_all_chunks() -> dict[str, Any]:
         _write_json(VALIDATION_PATH, result)
         return result
     plan = _read_json(PLAN_PATH)
-    integrity_errors = []
-    current_sources = {_relative(path): path for path in _corpus_files()}
-    planned_sources = {str(book["source_file"]) for book in plan.get("books", [])}
-    if set(current_sources) != planned_sources:
-        integrity_errors.append("corpus inventory mismatch")
-    for book in plan.get("books", []):
-        source = current_sources.get(str(book["source_file"]))
-        if not source or _sha256(source.read_bytes()) != book.get("source_file_sha256"):
-            integrity_errors.append(f"source hash mismatch: {book.get('source_file')}")
-            continue
-        source_data = source.read_bytes()
-        if source.stat().st_size != book.get("size_bytes"):
-            integrity_errors.append(f"source size mismatch: {book.get('source_file')}")
-        expected_start = 0
-        for chunk in book.get("chunks", []):
-            if chunk.get("start_byte") != expected_start:
-                integrity_errors.append(f"chunk range gap or overlap: {chunk.get('chunk_id')}")
-            expected_start = int(chunk.get("end_byte", 0))
-            bounded = runtime_path(str(chunk.get("bounded_chunk_file", "")))
-            raw_slice = source_data[int(chunk["start_byte"]):int(chunk["end_byte"])]
-            if _sha256(raw_slice) != chunk.get("chunk_sha256"):
-                integrity_errors.append(f"raw chunk hash mismatch: {chunk.get('chunk_id')}")
-            if not bounded.is_file() or _sha256(bounded.read_bytes()) != chunk.get("bounded_chunk_utf8_sha256"):
-                integrity_errors.append(f"bounded chunk hash mismatch: {chunk.get('chunk_id')}")
-        if expected_start != book.get("size_bytes"):
-            integrity_errors.append(f"chunk coverage mismatch: {book.get('source_file')}")
-    plan_integrity = {"valid": not integrity_errors, "errors": integrity_errors}
+    plan_integrity = validate_plan_integrity(plan)
     chunks = [chunk for book in plan["books"] for chunk in book["chunks"]]
     validations = [validate_chunk_response(str(chunk["chunk_id"])) for chunk in chunks]
     valid_ids = {item["chunk_id"] for item in validations if item["valid"]}

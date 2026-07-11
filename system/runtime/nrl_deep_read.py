@@ -5,6 +5,7 @@ import json
 import re
 import shutil
 import subprocess
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
@@ -280,7 +281,20 @@ def validate_plan_integrity(plan: dict[str, Any]) -> dict[str, Any]:
     return {"valid": not errors, "errors": errors}
 
 
+_STATUS_CACHE: tuple[float, dict[str, Any]] | None = None
+
+
 def build_deep_read_status() -> dict[str, Any]:
+    global _STATUS_CACHE
+    now = time.monotonic()
+    if _STATUS_CACHE and now - _STATUS_CACHE[0] < 30:
+        return _STATUS_CACHE[1]
+    status = _build_deep_read_status_uncached()
+    _STATUS_CACHE = (now, status)
+    return status
+
+
+def _build_deep_read_status_uncached() -> dict[str, Any]:
     plan = _read_json(PLAN_PATH) if PLAN_PATH.exists() else None
     validation = _read_json(VALIDATION_PATH) if VALIDATION_PATH.exists() else None
     synthesis = _read_json(SYNTHESIS_VALIDATION_PATH) if SYNTHESIS_VALIDATION_PATH.exists() else None

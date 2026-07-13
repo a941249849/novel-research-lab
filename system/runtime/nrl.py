@@ -166,7 +166,7 @@ from nrl_longform_plan import (
 )
 from nrl_longform_cluster1 import write_cluster1_intents
 from nrl_volume1_longform import write_volume1_intents, build_volume1_manifest, validate_volume1_manifest
-from nrl_volume1_release import build_release_readiness, build_fanqie_upload_package, build_window_review_packet, record_window_review
+from nrl_volume1_release import build_release_readiness, build_fanqie_upload_package, build_window_review_packet, record_window_review, dispatch_window_review, dispatch_release_edit, record_external_release_edit
 from nrl_registry import (
     find_active_attempt,
     load_registry,
@@ -942,6 +942,45 @@ def cmd_volume1_window_review_record(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_volume1_window_review(args: argparse.Namespace) -> int:
+    result = dispatch_window_review(args.start, args.end, model=args.model)
+    print_json(result)
+    return 0 if result["valid"] else 1
+
+
+def cmd_volume1_release_edit(args: argparse.Namespace) -> int:
+    print_json(dispatch_release_edit(args.chapter_id, args.repair_direction))
+    return 0
+
+
+def cmd_volume1_release_edit_record(args: argparse.Namespace) -> int:
+    source_file = Path(args.file)
+    if not source_file.is_absolute():
+        source_file = ROOT / source_file
+    print_json(record_external_release_edit(args.chapter_id, source_file, args.repair_direction, args.provider))
+    return 0
+
+
+def cmd_volume1_batch_run(args: argparse.Namespace) -> int:
+    if not 12 <= args.start <= args.end <= 100:
+        raise RuntimeError("Volume 1 batch range must be within chapters 12-100")
+    completed = []
+    for ordinal in range(args.start, args.end + 1):
+        intent = f"system/production_runtime/intents/longform_volume1_v025/chapter-{ordinal:04d}.v0.25.json"
+        result = run_controlled_chapter_pipeline(intent, audit_model=args.audit_model)
+        completed.append(result)
+        if not result["valid"]:
+            print_json({"valid": False, "completed": completed, "failed_chapter": f"chapter-{ordinal:04d}"})
+            return 1
+    if args.end % 10 == 0:
+        review = dispatch_window_review(args.end - 9, args.end, model=args.audit_model)
+        if not review["valid"]:
+            print_json({"valid": False, "completed": completed, "window_review": review})
+            return 1
+    print_json({"valid": True, "completed": completed})
+    return 0
+
+
 def cmd_volume1_fanqie_package(_: argparse.Namespace) -> int:
     print_json(build_fanqie_upload_package())
     return 0
@@ -1652,6 +1691,26 @@ def build_parser() -> argparse.ArgumentParser:
     window_record = sub.add_parser("volume1-window-review-record")
     window_record.add_argument("--file", required=True)
     window_record.set_defaults(func=cmd_volume1_window_review_record)
+    window_review = sub.add_parser("volume1-window-review")
+    window_review.add_argument("--start", type=int, required=True)
+    window_review.add_argument("--end", type=int, required=True)
+    window_review.add_argument("--model", default="Gemini 3.5 Flash (High)")
+    window_review.set_defaults(func=cmd_volume1_window_review)
+    release_edit = sub.add_parser("volume1-release-edit")
+    release_edit.add_argument("--chapter-id", required=True)
+    release_edit.add_argument("--repair-direction", required=True)
+    release_edit.set_defaults(func=cmd_volume1_release_edit)
+    release_edit_record = sub.add_parser("volume1-release-edit-record")
+    release_edit_record.add_argument("--chapter-id", required=True)
+    release_edit_record.add_argument("--file", required=True)
+    release_edit_record.add_argument("--repair-direction", required=True)
+    release_edit_record.add_argument("--provider", required=True)
+    release_edit_record.set_defaults(func=cmd_volume1_release_edit_record)
+    batch_run = sub.add_parser("volume1-batch-run")
+    batch_run.add_argument("--start", type=int, required=True)
+    batch_run.add_argument("--end", type=int, required=True)
+    batch_run.add_argument("--audit-model", default="Gemini 3.5 Flash (High)")
+    batch_run.set_defaults(func=cmd_volume1_batch_run)
     sub.add_parser("volume1-fanqie-package").set_defaults(func=cmd_volume1_fanqie_package)
     chapter_quarantine = sub.add_parser("chapter-quarantine")
     chapter_quarantine.add_argument("--chapter-id", required=True)

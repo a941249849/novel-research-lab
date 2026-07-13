@@ -25,6 +25,7 @@ from nrl_owner_gate import load_decisions
 from nrl_paths import ROOT, runtime_path
 from nrl_volume1_plan import build_volume1_dry_run
 from nrl_volume1_longform import build_volume1_manifest as build_longform_volume1_manifest, validate_volume1_manifest as validate_longform_volume1_manifest
+from nrl_volume1_release import prior_window_review_required
 from nrl_agent_canaries import validate_agent_protocol_canaries
 from nrl_longform_plan import ACTIVE_BLUEPRINT_PATH, build_longform_first100_dry_run, build_longform_readiness
 
@@ -511,6 +512,8 @@ def build_chapter_writer_prompt(chapter_id: str) -> str:
         raise RuntimeError("production readiness gate is blocked")
     if not has_bounded_prose_authorization(load_decisions(), chapter_id):
         raise RuntimeError(f"controlled prose authorization is blocked for {chapter_id}")
+    if prior_window_review_required(chapter_id):
+        raise RuntimeError(f"prior ten-chapter window review is required before {chapter_id}")
     registry = _load_registry()
     record = _chapter_record(registry, chapter_id)
     if record["stage"] != "context_compiled":

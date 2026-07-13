@@ -1,0 +1,10 @@
+{
+  "version": "0.25",
+  "chapter_id": "chapter-0003",
+  "source_revision": "system/production_runtime/chapters/chapter-0003/revision.md",
+  "source_sha256": "8167366cd6811f13f63105eb5e0644bccb5c069e6081e29e4a66150554158b3f",
+  "release_edit": "system/production_runtime/release_edits/chapter-0003.md",
+  "release_edit_sha256": "4e6cd365c1d23c571d400f301f4d06fac23ba9430dc9cae55d79c4a5f2b409b7",
+  "repair_direction": "补齐第2章已约定的辰时复核为何推迟到午后，确保时间、证据与人物行动因果连续；保留本章已登记结果。",
+  "status": "pending_window_re_review"
+}

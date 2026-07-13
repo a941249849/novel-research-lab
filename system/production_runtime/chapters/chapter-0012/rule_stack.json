@@ -1,0 +1,39 @@
+{
+  "version": "0.22",
+  "chapter_id": "chapter-0012",
+  "canonical_baseline": {
+    "path": "system/creation_assets/baselines/borrowed_heaven_canonical_baseline_v0.22.json",
+    "version": "0.22",
+    "sha256": "402c923d3dbc19bcccc353856a605388170ab3d1410550b8fb2620e48fa8ea27"
+  },
+  "priority_order": [
+    "safety_and_originality",
+    "canonical_story_bible",
+    "volume_outline",
+    "accepted_state_settlements",
+    "creation_asset_constraints",
+    "chapter_must_keep_and_must_avoid",
+    "anti_ai_style_evidence"
+  ],
+  "hard_rules": [
+    "no source-work names, scenes, signature systems, or prose imitation",
+    "no untracked power, relationship, location, item, or timeline changes",
+    "all benefits carry an embodied, relational, or systemic cost",
+    "reader-facing prose contains no runtime or database vocabulary",
+    "不得引入未登记人物、势力、器物、地点、能力或地图结论。",
+    "不得将审查建议、推测或叙事解释写成已经发生的状态变化。",
+    "不得以越级胜利、永久清偿、无代价升级或共同体牺牲解决冲突。",
+    "不得复制语料作品的名称、场景、签名系统、情节或语言风格。"
+  ],
+  "chapter_rules": [
+    "陆沉渊仍只能在已验证的本地权限内识账；任何收益都必须付出身体、关系、身份或程序代价。",
+    "苏晚、街坊与见证者均有拒绝权，不得把共同体信任、住户命火或第三方寿火作为资源。",
+    "监督下仅允许一次有行动代价的有限遮掩；共同体可拒绝。",
+    "每项可写状态变化必须能由正文观察绑定到既有资产、返还对象、承担方与可观察后果。"
+  ],
+  "scene_constraints": [
+    "本章只推进第 11-20 章窗口“护阵、住户与共同体证据”中的一个可观察步骤。",
+    "至少呈现一项具体动作、感官后果或关系选择；禁止用设定说明替代场景。",
+    "结尾必须留下下一次程序追缴、见证选择或证据复核，不得跳过窗口节奏。"
+  ]
+}

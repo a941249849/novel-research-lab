@@ -21,6 +21,21 @@ class Volume1ReleaseTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             release.build_window_review_packet(12, 21)
 
+    def test_next_window_is_blocked_until_the_previous_window_review_exists(self):
+        self.assertTrue(release.prior_window_review_required("chapter-0021"))
+        self.assertFalse(release.prior_window_review_required("chapter-0022"))
+
+    def test_external_release_edit_rejects_short_content(self):
+        source = Path(self.id().replace(".", "_"))
+        source.write_text("短文本", encoding="utf-8")
+        registry = {"chapters": [{"chapter_id": "chapter-0001", "stage": "chapter_accepted", "artifacts": {"revision": "x.md"}}]}
+        try:
+            with mock.patch.object(release, "_read_json", return_value=registry):
+                with self.assertRaisesRegex(RuntimeError, "2600-4200"):
+                    release.record_external_release_edit("chapter-0001", source, "test", "external")
+        finally:
+            source.unlink(missing_ok=True)
+
 
 if __name__ == "__main__":
     unittest.main()

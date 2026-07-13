@@ -242,6 +242,31 @@
         "borrowed_heaven_volume1_outline_tree": "1f12fe8ad3262876eb533d40c94ad02abb90b95b38de387d339917fce9184648",
         "project_assets.v0.2": "90dbcf17d769e8a985fc87880a4382018c30133a2a53f82c3826636c8ed1dc61"
       }
+    },
+    {
+      "chapter_id": "chapter-0011",
+      "stage": "chapter_accepted",
+      "artifacts": {
+        "intent": "system/production_runtime/chapters/chapter-0011/intent.json",
+        "context": "system/production_runtime/chapters/chapter-0011/context.json",
+        "rule_stack": "system/production_runtime/chapters/chapter-0011/rule_stack.json",
+        "trace": "system/production_runtime/chapters/chapter-0011/trace.json",
+        "draft_attempt": "system/production_runtime/chapters/chapter-0011/draft.attempt.json",
+        "draft": "system/production_runtime/chapters/chapter-0011/draft.md",
+        "draft_metrics": "system/production_runtime/chapters/chapter-0011/draft.metrics.json",
+        "continuity_audit": "system/production_runtime/chapters/chapter-0011/continuity_audit.json",
+        "revision": "system/production_runtime/chapters/chapter-0011/revision.md",
+        "revision_metrics": "system/production_runtime/chapters/chapter-0011/revision.metrics.json",
+        "observation": "system/production_runtime/chapters/chapter-0011/observation.json",
+        "final_audit": "system/production_runtime/chapters/chapter-0011/final_audit.json",
+        "settlement": "system/production_runtime/chapters/chapter-0011/settlement.json",
+        "acceptance": "system/production_runtime/chapters/chapter-0011/acceptance.json"
+      },
+      "source_hashes": {
+        "borrowed_heaven_life_account_bible": "81575478a441852f18d451e9967245bbfce11d60cddd3af24e9b6565955e0604",
+        "borrowed_heaven_volume1_outline_tree": "1f12fe8ad3262876eb533d40c94ad02abb90b95b38de387d339917fce9184648",
+        "project_assets.v0.2": "90dbcf17d769e8a985fc87880a4382018c30133a2a53f82c3826636c8ed1dc61"
+      }
     }
   ]
 }

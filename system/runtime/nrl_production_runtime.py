@@ -24,6 +24,7 @@ from nrl_production_calibration import build_direct_writer_calibration_status
 from nrl_owner_gate import load_decisions
 from nrl_paths import ROOT, runtime_path
 from nrl_volume1_plan import build_volume1_dry_run
+from nrl_volume1_longform import build_volume1_manifest as build_longform_volume1_manifest, validate_volume1_manifest as validate_longform_volume1_manifest
 from nrl_agent_canaries import validate_agent_protocol_canaries
 from nrl_longform_plan import ACTIVE_BLUEPRINT_PATH, build_longform_first100_dry_run, build_longform_readiness
 
@@ -380,7 +381,8 @@ def build_production_preflight(
         for item in load_decisions()
     )
     longform_active = ACTIVE_BLUEPRINT_PATH.exists()
-    volume1_dry_run = build_volume1_dry_run()
+    legacy_volume1_dry_run = build_volume1_dry_run()
+    longform_volume1_manifest = validate_longform_volume1_manifest(build_longform_volume1_manifest())
     longform_readiness = build_longform_readiness() if longform_active else None
     longform_dry_run = build_longform_first100_dry_run() if longform_active else None
     canaries = validate_agent_protocol_canaries()
@@ -398,14 +400,15 @@ def build_production_preflight(
         checks.update({
             "active_longform_blueprint_ready": bool(longform_readiness and longform_readiness["valid"]),
             "longform_first100_non_prose_dry_run_valid": bool(longform_dry_run and longform_dry_run["valid"]),
+            "longform_volume1_intents_valid": longform_volume1_manifest["valid"],
         })
     else:
         checks.update({
             "production_blueprint_present": PRODUCTION_BLUEPRINT_PATH.exists(),
             "production_blueprint_owner_accepted": blueprint_accepted,
-            "volume1_non_prose_dry_run_valid": volume1_dry_run["valid"],
+            "volume1_non_prose_dry_run_valid": legacy_volume1_dry_run["valid"],
         })
-    return {"valid": all(checks.values()), "checks": checks, "volume1_dry_run": volume1_dry_run, "longform_readiness": longform_readiness, "longform_dry_run": longform_dry_run, "agent_protocol_canaries": canaries, "direct_codex_calibration": calibration, "pending_chapters": pending, "allowed_pending_chapter_id": allowed_pending_chapter_id, "accepted_chapters": [item["chapter_id"] for item in registry["chapters"] if item["stage"] == "chapter_accepted"]}
+    return {"valid": all(checks.values()), "checks": checks, "legacy_volume1_dry_run": legacy_volume1_dry_run if not longform_active else {"deprecated": True, "reason": "The active 6M-character route uses the 100-chapter Volume 1 contract."}, "longform_volume1_manifest": longform_volume1_manifest if longform_active else None, "longform_readiness": longform_readiness, "longform_dry_run": longform_dry_run, "agent_protocol_canaries": canaries, "direct_codex_calibration": calibration, "pending_chapters": pending, "allowed_pending_chapter_id": allowed_pending_chapter_id, "accepted_chapters": [item["chapter_id"] for item in registry["chapters"] if item["stage"] == "chapter_accepted"]}
 
 
 def initialize_chapter(intent_file: str) -> dict[str, Any]:
@@ -529,7 +532,7 @@ def build_chapter_writer_prompt(chapter_id: str) -> str:
             f"你已获得 Owner Gate 对 {chapter_id} 的一次性受控正文测试授权。",
             "你是 Novel Research Lab 的 Hermes 正文写手。现在直接输出本章正文，不要回复确认、计划、说明、工具调用或元评论。",
             "本次授权仅覆盖非正文意图阶段留下的临时正文禁令；其余规则栈全部保持生效。",
-            "目标 2600-4200 个中文字符。严格服从上下文与规则栈；不得引入未登记资产或状态变化。",
+            "目标 3200-3800 个中文字符。严格服从上下文与规则栈；不得引入未登记资产或状态变化。",
             "避免工整段落、总结句、抽象议论堆叠、重复转折词和‘不是因为…而是因为…’模板。",
             "抽象机制必须落成动作、感官、物件、关系选择和后果。",
             "",
@@ -567,6 +570,20 @@ def _compact_chapter_context(context: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def _record_writer_attempt(chapter_id: str, payload: dict[str, Any]) -> str:
+    """Keep failed direct-writer attempts inspectable without advancing chapter state."""
+    target = runtime_path(
+        f"system/production_runtime/chapters/{chapter_id}/draft.attempt.json"
+    )
+    _write_json(target, payload)
+    registry = _load_registry()
+    record = _chapter_record(registry, chapter_id)
+    if record["stage"] != "chapter_accepted":
+        record["artifacts"]["draft_attempt"] = str(target.relative_to(ROOT))
+        _save_registry(registry)
+    return str(target.relative_to(ROOT))
+
+
 def dispatch_chapter_draft(chapter_id: str) -> dict[str, Any]:
     prompt = build_chapter_writer_prompt(chapter_id)
     attempts = []
@@ -577,31 +594,47 @@ def dispatch_chapter_draft(chapter_id: str) -> dict[str, Any]:
     for model in dict.fromkeys(
         (route_model("writer")["model"], route_model("showrunner")["model"])
     ):
-        try:
-            text = ask_codex_writer(prompt, model=model)
-        except RuntimeError as error:
-            attempts.append({"model": model, "valid": False, "error": str(error)})
-            errors = ["writer provider failed"]
-            continue
-        metrics = analyze_prose_metrics(text)
-        errors = []
-        if not 2600 <= metrics["chinese_character_count"] <= 4200:
-            errors.append("draft must contain 2600-4200 Chinese characters")
-        if re.search(r"(?m)^\s*#|第.{0,8}章", text):
-            errors.append("draft must not contain a chapter heading")
-        attempts.append(
-            {
-                "model": model,
-                "valid": not errors,
-                "metrics": metrics,
-                "response_preview": text[:500],
-            }
-        )
-        if not errors:
-            selected_model = model
+        for generation in range(1, 3):
+            retry_prompt = prompt
+            if generation == 2:
+                retry_prompt += "\n\n上一版未达到最小长度。请从头完整重写，不要续写；必须交付 3200-3800 个中文字符，并保持全部约束。"
+            try:
+                text = ask_codex_writer(retry_prompt, model=model)
+            except RuntimeError as error:
+                attempts.append({"model": model, "generation": generation, "valid": False, "error": str(error)})
+                errors = ["writer provider failed"]
+                continue
+            metrics = analyze_prose_metrics(text)
+            errors = []
+            if not 2600 <= metrics["chinese_character_count"] <= 4200:
+                errors.append("draft must contain 2600-4200 Chinese characters")
+            if re.search(r"(?m)^\s*#|第.{0,8}章", text):
+                errors.append("draft must not contain a chapter heading")
+            attempts.append(
+                {
+                    "model": model,
+                    "generation": generation,
+                    "valid": not errors,
+                    "metrics": metrics,
+                    "response_preview": text[:500],
+                }
+            )
+            if not errors:
+                selected_model = model
+                break
+        if selected_model:
             break
     if errors:
-        return {"valid": False, "errors": errors, "metrics": metrics, "attempts": attempts}
+        attempt_path = _record_writer_attempt(
+            chapter_id,
+            {
+                "chapter_id": chapter_id,
+                "status": "writer_failed",
+                "errors": errors,
+                "attempts": attempts,
+            },
+        )
+        return {"valid": False, "errors": errors, "metrics": metrics, "attempts": attempts, "attempt_path": attempt_path}
     registry = _load_registry()
     record = _chapter_record(registry, chapter_id)
     transition = validate_stage_transition(record, "draft_generated", "draft.md")
@@ -1192,11 +1225,15 @@ def _has_longform_cluster1_scope(
         ordinal = int(chapter_id.removeprefix("chapter-"))
     except ValueError:
         return False
-    if not 1 <= ordinal <= 10:
-        return False
+    scope_ranges = (
+        ("longform_cluster1_v024", 1, 10),
+        ("longform_volume1_v025", 1, 100),
+    )
     return any(
-        item.get("decision_type") == decision_type
-        and f"longform_cluster1_v024:{chapter_id}" in item.get("authorized_scope", [])
+        start <= ordinal <= end
+        and item.get("decision_type") == decision_type
+        and f"{prefix}:{chapter_id}" in item.get("authorized_scope", [])
+        for prefix, start, end in scope_ranges
         for item in decisions
     )
 

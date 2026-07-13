@@ -1,0 +1,78 @@
+{
+  "chapter_id": "chapter-0011",
+  "status": "writer_failed",
+  "errors": [
+    "draft must contain 2600-4200 Chinese characters"
+  ],
+  "attempts": [
+    {
+      "model": "gpt-5.6-sol",
+      "valid": false,
+      "metrics": {
+        "chinese_character_count": 2402,
+        "sentence_count": 166,
+        "paragraph_count": 84,
+        "average_sentence_length": 14.47,
+        "sentence_length_stddev": 8.13,
+        "average_paragraph_length": 28.6,
+        "paragraph_length_stddev": 22.73,
+        "dialogue_ratio": 0.3697,
+        "transition_word_hits": 0,
+        "rhetorical_template_hits": 0,
+        "abstract_word_hits": 0,
+        "sensory_word_hits": 84,
+        "repeated_sentence_starters": [
+          {
+            "starter": "”\n",
+            "count": 28
+          },
+          {
+            "starter": "陆沉",
+            "count": 8
+          },
+          {
+            "starter": "”她",
+            "count": 7
+          },
+          {
+            "starter": "苏晚",
+            "count": 7
+          },
+          {
+            "starter": "”仇",
+            "count": 6
+          },
+          {
+            "starter": "顾婶",
+            "count": 6
+          },
+          {
+            "starter": "仇慎",
+            "count": 5
+          },
+          {
+            "starter": "莫井",
+            "count": 4
+          },
+          {
+            "starter": "冷金",
+            "count": 3
+          },
+          {
+            "starter": "顾家",
+            "count": 3
+          },
+          {
+            "starter": "异常",
+            "count": 3
+          }
+        ],
+        "flags": [
+          "sentence_opening_repetition"
+        ],
+        "policy": "metrics_are_audit_evidence_not_a_literary_verdict"
+      },
+      "response_preview": "申时未到，命审台上的顾家户灯先响了一声。\n\n灯腹那道新白痕没有扩开，焰尖却向异常残页偏了偏，像被一根看不见的线拽住。仇慎把返还附录压在台左，异常残页压在台右，中间空出一掌宽。冷金小印搁在空处，大半圈已经失色，映得他两根僵硬的手指发青。\n\n陆沉渊站在台前，左眼仍被焦壳封着。右眼只能分出灯焰与纸影，仇慎的脸在他眼里只剩一团晃动的白。\n\n“昨日退的是错压一笔。”仇慎道，“今日验的是退后各处还认不认原位。顾家折记不动，户灯不归，苏晚拒验照旧。”\n\n苏晚的掌背贴着衣袖，裂口里的冷光仍透出一线。\n\n“照旧可以。”她说，“别拿退回来的那一点温度说旧债轻了，也别拿顾家的灯试我。”\n\n仇慎没接这句话。他将异常残页推近半寸，顾家户灯的焰尖随之歪下去。灯腹里传出极细的刮擦声，像一粒砂在空壳中缓慢转动。\n\n莫井兰抱着陶片站在台边，没有解开包布。\n\n“陶片不入台。”她先说，“我只看纸、灯和你们的手。若要我按别的话，我现在就走。”\n\n顾婶也没有靠近户灯。她盯着灯腹白痕，道：“那是我家的灯。你们要动焰、落印，我不同意。只看，我留；要取火，我带着我这双眼出去。”\n\n仇慎屈了屈手指，第二指节上的冷金痕绷得发白，终究没碰"
+    }
+  ]
+}

@@ -1,4 +1,7 @@
-# 《借天改命账》生产蓝图 v0.1
+# 《借天改命账》生产蓝图 v0.1（已废止）
+
+> 此文件记录早期 8 卷、卷一 60 章方案，不能再作为正文、授权或发布依据。
+> 当前唯一生产事实源为 `system/production_runtime/plans/borrowed_heaven_longform_contract.v0.1.json`、`system/production_runtime/plans/borrowed_heaven_first100_manifest.v0.1.json` 和 `system/production_runtime/plans/borrowed_heaven_volume1_production_manifest.v0.25.json`：18 卷、1,800 章、600–680 万中文字符，卷一固定 100 章。
 
 ## 定位与规模
 

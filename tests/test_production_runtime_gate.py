@@ -56,6 +56,15 @@ class ProductionRuntimeGateTests(unittest.TestCase):
         self.assertTrue(has_bounded_prose_authorization([decision], "chapter-0003"))
         self.assertFalse(has_bounded_prose_authorization([decision], "chapter-0011"))
 
+    def test_volume_one_longform_scope_allows_only_the_authorized_chapter(self):
+        decision = {
+            "decision_type": "authorize_controlled_prose_test",
+            "authorized_scope": ["longform_volume1_v025:chapter-0011"],
+        }
+        self.assertTrue(has_bounded_prose_authorization([decision], "chapter-0011"))
+        self.assertFalse(has_bounded_prose_authorization([decision], "chapter-0012"))
+        self.assertFalse(has_bounded_prose_authorization([decision], "chapter-0101"))
+
     def test_intent_authorization_is_not_prose_authorization(self):
         decision = {
             "decision_type": "authorize_next_phase",

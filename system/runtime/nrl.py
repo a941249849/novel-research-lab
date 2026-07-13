@@ -165,6 +165,7 @@ from nrl_longform_plan import (
     build_longform_first100_dry_run,
 )
 from nrl_longform_cluster1 import write_cluster1_intents
+from nrl_volume1_longform import write_volume1_intents, build_volume1_manifest, validate_volume1_manifest
 from nrl_registry import (
     find_active_attempt,
     load_registry,
@@ -908,6 +909,18 @@ def cmd_longform_cluster1_intents_build(_: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_volume1_longform_intents_build(_: argparse.Namespace) -> int:
+    result = write_volume1_intents()
+    print_json(result)
+    return 0 if result["valid"] else 1
+
+
+def cmd_volume1_longform_intents_validate(_: argparse.Namespace) -> int:
+    result = validate_volume1_manifest(build_volume1_manifest())
+    print_json(result)
+    return 0 if result["valid"] else 1
+
+
 def cmd_prose_metrics(args: argparse.Namespace) -> int:
     path = Path(args.file)
     if not path.is_absolute():
@@ -1603,6 +1616,8 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("longform-promote").set_defaults(func=cmd_longform_promote)
     sub.add_parser("longform-first100-dry-run").set_defaults(func=cmd_longform_first100_dry_run)
     sub.add_parser("longform-cluster1-intents-build").set_defaults(func=cmd_longform_cluster1_intents_build)
+    sub.add_parser("volume1-longform-intents-build").set_defaults(func=cmd_volume1_longform_intents_build)
+    sub.add_parser("volume1-longform-intents-validate").set_defaults(func=cmd_volume1_longform_intents_validate)
     chapter_quarantine = sub.add_parser("chapter-quarantine")
     chapter_quarantine.add_argument("--chapter-id", required=True)
     chapter_quarantine.add_argument("--reason", required=True)

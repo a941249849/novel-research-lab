@@ -16,43 +16,16 @@ from nrl_production_runtime import (
 
 
 class ChapterContextRepairV022Tests(unittest.TestCase):
-    def test_checked_in_chapter_one_packet_resolves_required_constraints(self):
+    def test_accepted_chapter_keeps_canonical_output_not_reproducible_context(self):
         intent_path = REPO_ROOT / "system/production_runtime/intents/chapter-0001.v0.21.json"
         chapter_dir = REPO_ROOT / "system/production_runtime/chapters/chapter-0001"
         canonical_intent = json.loads(intent_path.read_text(encoding="utf-8"))
         compiled_intent = json.loads((chapter_dir / "intent.json").read_text(encoding="utf-8"))
-        context = json.loads((chapter_dir / "context.json").read_text(encoding="utf-8"))
-        baseline_path = (
-            REPO_ROOT
-            / "system/creation_assets/baselines/borrowed_heaven_canonical_baseline_v0.21.json"
-        )
-        baseline_sha256 = hashlib.sha256(baseline_path.read_bytes()).hexdigest()
-        required_constraints = {
-            "bond_mother_su_wan",
-            "state_ledger_half_life_registry_exposure",
-            "state_ledger_mother_life_lamp_countdown",
-            "state_ledger_mudlamp_array_integrity",
-            "state_ledger_resident_lifefire_reserve",
-        }
-        dormant_assets = {
-            "artifact_ashlight_cup",
-            "technique_chain_deflection_seal_breaking",
-            "technique_embertrace_return",
-        }
-
         self.assertEqual(canonical_intent, compiled_intent)
-        asset_ids = {asset["asset_id"] for asset in context["assets"]}
-        self.assertTrue(required_constraints <= asset_ids)
-        self.assertTrue(dormant_assets.isdisjoint(asset_ids))
-        for asset in context["assets"]:
-            for relationship in asset.get("relationships", []):
-                if relationship.get("relation_type", "").startswith("atomic_transaction_peer"):
-                    self.assertIn(relationship["target_id"], asset_ids)
-        for filename in ("context.json", "trace.json", "rule_stack.json"):
-            packet = json.loads((chapter_dir / filename).read_text(encoding="utf-8"))
-            self.assertEqual(packet["version"], "0.21")
-            self.assertEqual(packet["canonical_baseline"]["version"], "0.21")
-            self.assertEqual(packet["canonical_baseline"]["sha256"], baseline_sha256)
+        self.assertTrue((chapter_dir / "revision.md").is_file())
+        self.assertTrue((chapter_dir / "acceptance.json").is_file())
+        for filename in ("context.json", "trace.json", "rule_stack.json", "draft.md"):
+            self.assertFalse((chapter_dir / filename).exists())
 
     def test_compiler_includes_atomic_peers_and_baseline_metadata(self):
         intent = {

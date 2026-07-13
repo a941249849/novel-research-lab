@@ -202,7 +202,7 @@ class ProductionChapterRuntimeV020Tests(unittest.TestCase):
             "stage": "draft_generated",
             "artifacts": {
                 "context": "context.json", "rule_stack": "rules.json", "trace": "trace.json",
-                "draft": "draft.md",
+                "draft": "revision.md",
             },
         }
         with mock.patch.object(runtime, "_load_registry", return_value={"chapters": [record]}), mock.patch.object(runtime, "_chapter_record", return_value=record), mock.patch.object(runtime, "runtime_path", side_effect=lambda value: REPO_ROOT / "system/production_runtime/chapters/chapter-0001" / Path(value).name), mock.patch.object(runtime, "_read_json", side_effect=[context, rules, trace, observation]), mock.patch.object(runtime, "_sha256", return_value="a" * 64):

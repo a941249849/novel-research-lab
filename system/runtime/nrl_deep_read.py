@@ -299,8 +299,18 @@ def validate_plan_integrity(plan: dict[str, Any]) -> dict[str, Any]:
             raw_slice = source_data[int(chunk["start_byte"]):int(chunk["end_byte"])]
             if _sha256(raw_slice) != chunk.get("chunk_sha256"):
                 errors.append(f"raw chunk hash mismatch: {chunk.get('chunk_id')}")
+            try:
+                reconstructed_utf8 = raw_slice.decode(str(chunk.get("source_encoding"))).encode("utf-8")
+            except (LookupError, UnicodeDecodeError):
+                errors.append(f"bounded chunk decoding failed: {chunk.get('chunk_id')}")
+                reconstructed_utf8 = b""
+            if _sha256(reconstructed_utf8) != chunk.get("bounded_chunk_utf8_sha256"):
+                errors.append(f"bounded chunk hash mismatch: {chunk.get('chunk_id')}")
             bounded = runtime_path(str(chunk.get("bounded_chunk_file", "")))
-            if not bounded.is_file() or _sha256(bounded.read_bytes()) != chunk.get("bounded_chunk_utf8_sha256"):
+            # The UTF-8 reading file is a dispatch cache, not a durable fact.
+            # When present it must match; when absent the same bytes are proven
+            # deterministically from the hash-bound source slice above.
+            if bounded.is_file() and _sha256(bounded.read_bytes()) != chunk.get("bounded_chunk_utf8_sha256"):
                 errors.append(f"bounded chunk hash mismatch: {chunk.get('chunk_id')}")
         if expected_start != book.get("size_bytes"):
             errors.append(f"chunk coverage mismatch: {book.get('source_file')}")

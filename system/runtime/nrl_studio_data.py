@@ -20,6 +20,8 @@ from nrl_hermes_gate import build_hermes_readiness
 from nrl_rag_index import load_or_build_creation_context_index
 from nrl_research_assets import build_research_asset_catalog
 from nrl_production_runtime import load_chapter_runtime_status
+from nrl_production_operator import build_operator_status
+from nrl_paths import runtime_path
 from nrl_system_status import build_system_status
 
 
@@ -118,6 +120,35 @@ def build_studio_data(
     creation_context_index = load_or_build_creation_context_index(state, adapters)
     hermes_readiness = build_hermes_readiness(state, adapters)
     chapter_runtime = load_chapter_runtime_status()
+    production_operator = build_operator_status(
+        runtime_path("system/production_runtime/chapter_registry.v0.20.json")
+    )
+    owner_gate_required = bool(state.get("owner_gate_required", False))
+    next_safe_action = (
+        {
+            "recommended": "Keep content progression frozen and continue Studio/system hardening.",
+            "runtime_command": "python3 system/runtime/nrl.py system-status",
+            "blocked_next_action": "Do not advance story content while Owner Gate is pending.",
+            "safe_commands": [
+                "python3 system/runtime/nrl.py system-status",
+                "python3 system/runtime/nrl.py studio-data",
+                "python3 system/runtime/nrl.py studio-build",
+                "python3 system/runtime/nrl.py validate-state",
+            ],
+        }
+        if owner_gate_required
+        else {
+            "recommended": state.get("next_recommended_mission", "Resume governed production."),
+            "runtime_command": production_operator["resume_command"] or "python3 system/runtime/nrl.py production-status",
+            "blocked_next_action": "Publishing remains blocked until all 100 chapters pass volume review.",
+            "safe_commands": [
+                "python3 system/runtime/nrl.py production-status",
+                "python3 system/runtime/nrl.py produce --until 100",
+                "python3 system/runtime/nrl.py system-check",
+                "python3 system/runtime/nrl.py production-preflight",
+            ],
+        }
+    )
 
     return {
         "control_plane": {
@@ -157,6 +188,7 @@ def build_studio_data(
         "creation_context_index": creation_context_index,
         "hermes_readiness": hermes_readiness,
         "chapter_runtime": chapter_runtime,
+        "production_operator": production_operator,
         "system_identity": {
             "name": "Novel Research Lab",
             "positioning": "Corpus-to-Creation engine for Chinese long-form web novel creation.",
@@ -261,6 +293,7 @@ def build_studio_data(
                 "python3 system/runtime/nrl.py evidence-pack-validate --next",
                 "python3 system/runtime/nrl.py system-check",
                 "python3 system/runtime/nrl.py validate-state",
+                "python3 system/runtime/nrl.py production-status",
             ],
             "state_validity_command": "python3 system/runtime/nrl.py validate-state",
             "status_command": "python3 system/runtime/nrl.py system-status",
@@ -273,26 +306,16 @@ def build_studio_data(
             "expected_outputs": expected_outputs,
             "blocked_actions": state.get("blocked_actions", []),
         },
-        "next_safe_action": {
-            "recommended": "Keep content progression frozen and continue Studio/system hardening.",
-            "runtime_command": "python3 system/runtime/nrl.py system-status",
-            "blocked_next_action": "Do not advance story content while Owner Gate is pending.",
-            "safe_commands": [
-                "python3 system/runtime/nrl.py system-status",
-                "python3 system/runtime/nrl.py studio-data",
-                "python3 system/runtime/nrl.py studio-build",
-                "python3 system/runtime/nrl.py pipeline-status",
-                "python3 system/runtime/nrl.py pipeline-plan --next",
-                "python3 system/runtime/nrl.py evidence-pack --next",
-                "python3 system/runtime/nrl.py evidence-pack-validate --next",
-                "python3 system/runtime/nrl.py validate-state",
-            ],
-        },
+        "next_safe_action": next_safe_action,
         "owner_gate": {
-            "required": bool(state.get("owner_gate_required", False)),
+            "required": owner_gate_required,
             "status": state.get("owner_gate_status", "UNKNOWN"),
             "review_status": state.get("review_status", "UNKNOWN"),
-            "authorization_scope": ["status read", "studio build", "runtime validation", "system hardening"],
+            "authorization_scope": (
+                ["status read", "studio build", "runtime validation", "system hardening"]
+                if owner_gate_required
+                else ["governed Volume 1 production through chapter-0100", "runtime validation", "literary review"]
+            ),
             "forbidden_scope": state.get("blocked_actions", []),
             "decision_boundary": "No stale Owner Gate decision may authorize a later gate.",
             "expires_after_mission": "current Owner Gate only",

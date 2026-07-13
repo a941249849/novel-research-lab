@@ -42,6 +42,8 @@ SECTION_LABELS = [
     "Runtime Health",
     "Next Safe Action",
     "Owner Gate",
+    "Hermes: ready",
+    "CLI 协作文学审查",
 ]
 
 
@@ -101,12 +103,13 @@ def _copy_frontend_dist(app_root: Path, out_dir: Path) -> Path:
     return out
 
 
-def _inject_runtime_data(index_path: Path, data: dict) -> None:
+def _inject_runtime_data(index_path: Path, data: dict | None = None) -> None:
     injection = (
         "\n"
         f"  <script type=\"application/json\" id=\"nrl-studio-labels\">{_json_for_html(SECTION_LABELS)}</script>\n"
-        f"  <script>window.__NRL_STUDIO_DATA__ = {_json_for_html(data)};</script>\n"
     )
+    if data is not None:
+        injection += f"  <script>window.__NRL_STUDIO_DATA__ = {_json_for_html(data)};</script>\n"
     index = index_path.read_text(encoding="utf-8")
     if "</body>" not in index:
         raise RuntimeError(f"Studio frontend index has no closing body tag: {index_path}")
@@ -192,9 +195,15 @@ def render_studio() -> Path:
     if not (APP_ROOT / "package.json").exists():
         return _fallback_studio(out_dir, data, state, adapters)
     # Fixture roots must not overwrite the source workspace's static snapshot.
-    if ROOT == APP_ROOT.parents[1]:
+    is_source_workspace = ROOT == APP_ROOT.parents[1]
+    if is_source_workspace:
         _write_frontend_data(APP_ROOT, data)
     _run_frontend_build(APP_ROOT)
     out = _copy_frontend_dist(APP_ROOT, out_dir)
-    _inject_runtime_data(out, data)
+    # Fixture builds embed their isolated data. The real Studio loads the one
+    # copied JSON snapshot and does not duplicate it inside index.html.
+    _inject_runtime_data(out, None if is_source_workspace else data)
+    if is_source_workspace:
+        (APP_ROOT / "public/nrl-studio-data.json").unlink(missing_ok=True)
+        shutil.rmtree(APP_ROOT / "dist", ignore_errors=True)
     return out

@@ -43,20 +43,27 @@ Codex 是工程主控、故事编译器、正文写手、事实观察器和状�
 ## 运行
 
 ```bash
-python3 system/runtime/nrl.py system-status
-python3 system/runtime/nrl.py story-window-status
-python3 system/runtime/nrl.py production-preflight
+python3 system/runtime/nrl.py production-status
+python3 system/runtime/nrl.py produce --until 100
+```
+
+`production-status` 是日常状态入口；`produce` 会从首个未接受章节恢复，自动编译缺失的十章窗口，并在章节门禁、十章复审或外部模型失败时停止。诊断和只读控制台仍可使用：
+
+```bash
 python3 system/runtime/nrl.py system-check
-python3 system/runtime/nrl.py chapter-runtime-status
+python3 system/runtime/nrl.py production-preflight
 python3 system/runtime/nrl.py studio-serve --port 4173
 ```
 
-受控生产单章：
+系统只允许严格顺序生产。每章必须经过：意图、上下文编译、正文、审查、修订、事实观察、终审、状态结算、接受。每 5 章触发独立文学深审，每 10 章必须完成窗口复审；没有下一十章故事窗口时自动停止。
+
+## 产物保留
+
+章节执行中的上下文、规则栈、草稿、审查包和失败回执属于可再生工作缓存。章节接受后只长期保留意图、终稿、终稿指标、事实观察、终审、状态结算和验收记录。可先预览、再执行压缩：
 
 ```bash
-python3 system/runtime/nrl.py story-window-build --start 21
-python3 system/runtime/nrl.py chapter-run \
-  --intent-file system/production_runtime/intents/longform_volume1_v025/chapter-0021.v0.25.json
+python3 system/runtime/nrl.py production-compact
+python3 system/runtime/nrl.py production-compact --apply
 ```
 
-系统只允许严格顺序生产。每章必须经过：意图、上下文编译、正文、审查、修订、事实观察、终审、状态结算、接受。每 5 章触发独立文学深审，每 10 章必须完成窗口复审；没有下一十章故事窗口时自动停止。
+`system/runtime/studio/`、`apps/studio/dist/`、`.nrl-work/` 和依赖目录均为可再生产物，不进入 Git。历史 `phase*` 文件只承担研究谱系，不参与日常生产。

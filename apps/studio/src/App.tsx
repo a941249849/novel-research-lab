@@ -422,7 +422,11 @@ function OverviewView({data, compact}: {data: StudioData; compact: boolean}) {
           <SummaryCard label="当前项目" value={data.current_project.selected_project} />
           <SummaryCard label="当前阶段" value={data.current_project.current_phase} status={data.current_project.phase_status} />
           <SummaryCard label="系统模式" value={data.control_plane.mode} />
-          <SummaryCard label="内容推进" value="Owner Gate 冻结" status="blocked" />
+          <SummaryCard
+            label="内容推进"
+            value={data.owner_gate.required ? 'Owner Gate 冻结' : data.current_project.content_progression}
+            status={data.owner_gate.required ? 'blocked' : 'runnable'}
+          />
         </Grid>
         <Grid columns={{minWidth: 220, max: 4, repeat: 'fit'}} gap={3}>
           <SummaryCard
@@ -1155,7 +1159,18 @@ function App() {
         setData(nextData);
         setLive(true);
       })
-      .catch(() => setLive(false));
+      .catch(() => {
+        setLive(false);
+        if (!window.__NRL_STUDIO_DATA__) {
+          fetch('./nrl-studio-data.json')
+            .then((response) => {
+              if (!response.ok) throw new Error('static snapshot unavailable');
+              return response.json();
+            })
+            .then((nextData: StudioData) => setData(nextData))
+            .catch(() => undefined);
+        }
+      });
   }, []);
 
   useEffect(() => {
@@ -1178,8 +1193,8 @@ function App() {
       collapsible={{defaultIsCollapsed: false, buttonLabel: '收起导航'}}
       footer={
         <SideNavSection title="系统边界">
-          <SideNavItem label="Owner Gate 生效" icon="warning" isDisabled />
-          <SideNavItem label="Hermes 已暂停" icon="stop" isDisabled />
+          <SideNavItem label={data.owner_gate.required ? 'Owner Gate 待确认' : '第一卷生产已授权'} icon={data.owner_gate.required ? 'warning' : 'info'} isDisabled />
+          <SideNavItem label={`Hermes ${data.runtime_status.adapter_modes.hermes?.can_execute ? '可用' : '非生产依赖'}`} icon="stop" isDisabled />
         </SideNavSection>
       }
     >
@@ -1221,11 +1236,11 @@ function App() {
         sideNav={sideNav}
         banner={
           <Banner
-            status="warning"
+            status={data.owner_gate.required ? 'warning' : 'success'}
             container="section"
-            title="Phase 2E Owner Gate 等待确认"
-            description="内容推进保持冻结；当前只允许系统硬化、状态读取和验证。"
-            endContent={<Token label="内容冻结" color="red" size="sm" />}
+            title={data.owner_gate.required ? 'Owner Gate 等待确认' : '第一卷受控生产已授权'}
+            description={data.owner_gate.required ? '内容推进保持冻结；当前只允许系统硬化、状态读取和验证。' : data.next_safe_action.recommended}
+            endContent={<Token label={data.owner_gate.required ? '内容冻结' : '生产可恢复'} color={data.owner_gate.required ? 'red' : 'green'} size="sm" />}
           />
         }
         contentPadding={0}

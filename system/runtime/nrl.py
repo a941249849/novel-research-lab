@@ -135,6 +135,8 @@ from nrl_production_runtime import (
     build_observed_settlement_candidate,
     run_controlled_chapter_pipeline,
 )
+from nrl_artifact_retention import build_compaction_plan, compact_accepted_chapters
+from nrl_production_operator import build_operator_status
 from nrl_volume1_plan import (
     build_volume1_dry_run,
     validate_initial_state_contract,
@@ -200,6 +202,7 @@ RULES_PATH = runtime_path("system/mission_controller/next_mission_rules.md")
 CONTRACT_PATH = runtime_path("system/mission_controller/agent_task_contract.md")
 ADAPTERS_PATH = runtime_path("system/runtime/agent_adapters.json")
 REGISTRY_PATH = runtime_path("system/runtime/mission_registry.json")
+PRODUCTION_REGISTRY_PATH = runtime_path("system/production_runtime/chapter_registry.v0.20.json")
 
 SUPPORTED_AGENTS = {"codex", "hermes", "antigravity"}
 
@@ -1003,6 +1006,10 @@ def cmd_volume1_batch_run(args: argparse.Namespace) -> int:
         if not result["valid"]:
             print_json({"valid": False, "completed": completed, "failed_chapter": f"chapter-{ordinal:04d}"})
             return 1
+        # Accepted chapters immediately leave the working set. This keeps
+        # prompts, draft packets and compiled context from accumulating across
+        # a long volume while preserving every release and state artifact.
+        compact_accepted_chapters(ROOT, PRODUCTION_REGISTRY_PATH)
         if ordinal % 10 == 0:
             review = dispatch_window_review(ordinal - 9, ordinal, model=args.audit_model)
             completed.append({"window_review": review})
@@ -1011,6 +1018,41 @@ def cmd_volume1_batch_run(args: argparse.Namespace) -> int:
                 return 1
     print_json({"valid": True, "completed": completed})
     return 0
+
+
+def cmd_production_status(args: argparse.Namespace) -> int:
+    result = build_operator_status(PRODUCTION_REGISTRY_PATH, target=args.until)
+    print_json(result)
+    return 0 if result["valid"] else 1
+
+
+def cmd_production_compact(args: argparse.Namespace) -> int:
+    result = (
+        compact_accepted_chapters(ROOT, PRODUCTION_REGISTRY_PATH)
+        if args.apply
+        else build_compaction_plan(ROOT, PRODUCTION_REGISTRY_PATH)
+    )
+    print_json({key: value for key, value in result.items() if key != "compact_artifacts"})
+    return 0 if result["valid"] else 1
+
+
+def cmd_produce(args: argparse.Namespace) -> int:
+    if not 1 <= args.until <= 100:
+        raise RuntimeError("produce target must be within Volume 1 chapters 1-100")
+    status = build_operator_status(PRODUCTION_REGISTRY_PATH, target=args.until)
+    if not status["valid"]:
+        print_json(status)
+        return 1
+    if status["next_chapter"] is None:
+        print_json({"valid": True, "status": status, "completed": []})
+        return 0
+    preflight = build_production_preflight(load_adapters())
+    if not preflight["valid"]:
+        print_json({"valid": False, "status": status, "preflight": preflight})
+        return 1
+    start = int(status["next_chapter"].removeprefix("chapter-"))
+    batch_args = argparse.Namespace(start=start, end=args.until, audit_model=args.audit_model)
+    return cmd_volume1_batch_run(batch_args)
 
 
 def cmd_volume1_fanqie_package(_: argparse.Namespace) -> int:
@@ -1756,6 +1798,16 @@ def build_parser() -> argparse.ArgumentParser:
     batch_run.add_argument("--end", type=int, required=True)
     batch_run.add_argument("--audit-model", default="Gemini 3.5 Flash (High)")
     batch_run.set_defaults(func=cmd_volume1_batch_run)
+    production_status = sub.add_parser("production-status")
+    production_status.add_argument("--until", type=int, default=100)
+    production_status.set_defaults(func=cmd_production_status)
+    production_compact = sub.add_parser("production-compact")
+    production_compact.add_argument("--apply", action="store_true")
+    production_compact.set_defaults(func=cmd_production_compact)
+    produce = sub.add_parser("produce")
+    produce.add_argument("--until", type=int, default=100)
+    produce.add_argument("--audit-model", default="Gemini 3.5 Flash (High)")
+    produce.set_defaults(func=cmd_produce)
     sub.add_parser("volume1-fanqie-package").set_defaults(func=cmd_volume1_fanqie_package)
     review_package = sub.add_parser("volume1-review-package")
     review_package.add_argument("--end", type=int, default=20)

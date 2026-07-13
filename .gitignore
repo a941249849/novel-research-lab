@@ -30,6 +30,8 @@ novel_training_set/
 apps/*/node_modules/
 apps/*/dist/
 apps/*/*.tsbuildinfo
+apps/studio/public/nrl-studio-data.json
+system/runtime/studio/
 
 # Local editor and OS metadata.
 .vscode/

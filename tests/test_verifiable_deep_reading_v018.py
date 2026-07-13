@@ -6,6 +6,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -15,6 +16,25 @@ import nrl_deep_read
 
 
 class VerifiableDeepReadingV018Tests(unittest.TestCase):
+    def test_missing_bounded_dispatch_cache_does_not_invalidate_hash_bound_plan(self):
+        raw = self.book.read_bytes()
+        relative = "novel_training_set/《测试长篇》作者：测试.txt"
+        plan = {"books": [{
+            "source_file": relative,
+            "source_file_sha256": hashlib.sha256(raw).hexdigest(),
+            "size_bytes": len(raw),
+            "chunks": [{
+                "chunk_id": "test-chunk-001", "start_byte": 0, "end_byte": len(raw),
+                "chunk_sha256": hashlib.sha256(raw).hexdigest(), "source_encoding": "utf-8",
+                "bounded_chunk_utf8_sha256": hashlib.sha256(raw).hexdigest(),
+                "bounded_chunk_file": ".nrl-work/missing.txt",
+            }],
+        }]}
+        with mock.patch.object(nrl_deep_read, "_corpus_files", return_value=[self.book]), mock.patch.object(
+            nrl_deep_read, "_relative", side_effect=lambda path: relative if path == self.book else str(path)
+        ), mock.patch.object(nrl_deep_read, "runtime_path", side_effect=lambda value: self.root / value):
+            self.assertTrue(nrl_deep_read.validate_plan_integrity(plan)["valid"])
+
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
         self.root = Path(self.tmp.name)

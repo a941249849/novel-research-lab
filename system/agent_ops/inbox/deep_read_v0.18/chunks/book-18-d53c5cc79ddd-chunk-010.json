@@ -1,0 +1,502 @@
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "chunk_id": "book-18-d53c5cc79ddd-chunk-010",
+  "source_file": "novel_training_set/蛊真人.txt",
+  "source_file_sha256": "d53c5cc79ddd02c45ad8e6ad334a3f8feac558c67726486d9f41417cfd718d88",
+  "start_byte": 13500564,
+  "end_byte": 15000739,
+  "chunk_sha256": "6f7f96ef536d9ea556d3c463c156cecfbe5bb3c715e02ce64cd32e0ea02a2169",
+  "source_encoding": "utf-8",
+  "bounded_chunk_utf8_sha256": "6f7f96ef536d9ea556d3c463c156cecfbe5bb3c715e02ce64cd32e0ea02a2169",
+  "analysis": {
+    "chapter_span": [
+      "第二百七十五节：东海交易会",
+      "第二百七十六节：光照菌",
+      "第二百七十七节：卜卦龟背仙蛊",
+      "第二百七十八节：换蛊",
+      "第二百七十九节：再换",
+      "第二百八十节：炼化态度蛊",
+      "第二百八十一节：大时代将临",
+      "第二百八十二节：卜卦龟变化",
+      "第二百八十三节：卜卦龟显威",
+      "第二百八十四节：喜获仙蛊",
+      "第二百八十五节：金刚念",
+      "第二百八十六节：仙蛊名缰",
+      "第二百八十七节：四季茶",
+      "第二百八十八节：无赖！可耻！",
+      "第二百八十九节：切磋",
+      "第二百九十节：好尴尬啊",
+      "第二百九十一节：夏家撤退",
+      "第六次闪，上千颗念头毁灭，外部的龟壳念头纷纷摇晃，有不支的迹象。",
+      "第二百九十二节：搜刮广寒峰",
+      "第二百九十三节：龙鳞海域",
+      "第二百九十四节：收购神鹿果",
+      "第二百九十五节：说服老怪",
+      "第二百九十六节：月亮节",
+      "第二百九十七节：斗茶",
+      "第二百九十八节：月亮节的故事",
+      "第二百九十九节：斗茶",
+      "第三百节：请你“赏析”",
+      "第三百零一节：可借不可靠",
+      "第三百零二节：正道的束缚",
+      "第三百零三节：阵道涵万道",
+      "第三百零四节：方源的两大利器",
+      "第三百零五节：四元思潮",
+      "第三百零六节：阵道境界飙升",
+      "第三百零七节：给池伤的挑战信",
+      "第三百零八节：方源赖皮",
+      "第三百零九节：方源承认失败",
+      "第三百一十节：原来无解",
+      "第三百一十一节：宴请池伤",
+      "第三百一十二节：宾主尽欢",
+      "第三百一十三节：掠影",
+      "第三百一十四节：与天意同化",
+      "第三百一十五节：天庭对策",
+      "第三百一十六节：似人似兽左夜灰",
+      "第三百一十七节：菇人乐土暗宗师",
+      "第三百一十八节：七幻真传脉轮瓜",
+      "第三百一十九节：栽赃嫁祸血潮坑",
+      "第三百二十节：死鬼快来铁面神",
+      "第三百二十三节：紫血先河陷武庸",
+      "第三百二十二节：兄去弟继掌权柄",
+      "第三百二十三节：未动身已掌武家权",
+      "第三百二十四节：心思沉玉清滴风楼",
+      "第三百二十五节：局势恶方源欲动身",
+      "第三百二十六节：乔家有难兔娘情深",
+      "第三百二十七节：柴家有人烟",
+      "第三百二十八节：局势骤缓",
+      "第三百二十九节：方源要杀白兔",
+      "第三百三十节：夜灰破阵",
+      "第三百三十一节：混战",
+      "第三百三十二节：方源战黑莬",
+      "第三百三十三节：菟舔",
+      "第三百三十四节：黑白威风",
+      "第三百三十五节：关键内应",
+      "第三百三十六节：方源救场！",
+      "第三百三十七节：控制正道",
+      "第三百三十八节：纯梦求真再现",
+      "第三百三十九节：天庭插手",
+      "第三百四十节：方源绝境",
+      "第三百四十一节：紫山真君战龙公",
+      "第三百四十二节：暂且……合作",
+      "第三百四十三节：南疆正道最大的叛徒",
+      "第三百四十四节：龙公入梦",
+      "第三百四十五节：星宿天意显化",
+      "第三百四十六节：龙公苏醒",
+      "第三百四十七节：三气归来",
+      "第三百四十八节：活捉幽魂",
+      "第三百四十九节：兄长，快借我仙蛊",
+      "第三百五十节：影宗新主？！",
+      "第三百五十一节：紫陨（上）",
+      "第三百五十二节：紫陨（下）",
+      "第三百五十二节：紫陨（下）",
+      "第三百五十三节：认方源为主",
+      "第三百五十四节：鸿飞冥冥",
+      "第三百五十五节：战罢",
+      "第三百五十六节：静思战力",
+      "第三百五十七节：群仙战仙屋",
+      "第三百五十八节：武庸追击",
+      "第三百五十九节：星宿手段",
+      "第三百六十节：位置暴露",
+      "第三百六十一节：天庭来信",
+      "第三百六十二节：武庸的恨与怒",
+      "第三百六十三节：暗里交锋",
+      "第三百六十四节：各自的窘困",
+      "第三百六十五节：方源的判断",
+      "第三百六十六节：武庸杀至！",
+      "第三百六十七节：天鹰逃窜",
+      "第三百六十八节：这便是凤九歌！",
+      "第三百六十九节：方凤战武庸",
+      "第三百七十节：四清四变风",
+      "第三百七十一节：一曲离歌退武庸！",
+      "第三百七十二节：原是天意谋划",
+      "第三百七十三节：方源吃人",
+      "第三百七十四节：收取西漠僵盟遗藏",
+      "第三百七十五节：吓跑三位七转",
+      "第三百七十六节：斗志昂扬",
+      "第三百七十七节：影无邪换魂",
+      "第三百七十八节：千变老祖",
+      "第三百七十九节：贩卖年兽",
+      "第三百八十节：年兽军团",
+      "第三百八十一节：斗战胜伏奴",
+      "第三百八十二节：凤九歌，永别了",
+      "第三百八十三节：自爱仙蛊",
+      "第三百八十四节：紫薇控局",
+      "第三百八十五节：燃魂爆运！",
+      "第三百八十六节：自爱炼成",
+      "第三百八十七节：彻底脱离武家",
+      "第三百八十八节：不灭星标",
+      "第三百八十九节：陆畏因",
+      "第三百九十节：阵道仙蛊和真传",
+      "第三百九十一节：青爪鬼翼狮",
+      "第三百九十二节：红云舞娘",
+      "第三百九十三节：八转变异仙蛊",
+      "第三百九十四节：真传易主",
+      "第三百九十五节：固运",
+      "第三百九十六节：红云追来",
+      "第三百九十七节：与千变合作",
+      "第三百九十八节：暗算成功！",
+      "第三百九十九节：纯梦求真立功",
+      "第四百节：影宗群仙战九歌",
+      "第四百零一节：万蛟！",
+      "第四百零二节：战后成果",
+      "第四百零三节：全新万我",
+      "第四百零四节：再炼净魂仙蛊",
+      "第四百零五节：打得凤九歌吐血！",
+      "第四百零六节：凤九歌主动撤退",
+      "第一记万蛟还有大部分残存，第二记万蛟再次催动，形成充斥天地的蛟龙银海。",
+      "第四百零七节：谋取红莲真意",
+      "第四百零八节：钓年兽",
+      "第四百零九节：再添八转战力",
+      "第四百一十节：入河",
+      "第四百一十二节：野蛊来投",
+      "第四百一十三节：黄史追击",
+      "第四百一十四节：怎么可以这样赖皮？！",
+      "第四百一十五节：黄史阵亡",
+      "第四百一十六节：幽魂真传！",
+      "第四百一十七节：回来",
+      "第四百一十八节：这个男人与天作对",
+      "第四百一十九节：天庭震撼五域",
+      "第四百二十节：赵怜云升仙",
+      "第四百二十一节：大梦仙尊凤金煌",
+      "第四百二十二节：雪莲花精",
+      "第四百二十三节：龙公之徒",
+      "第四百二十四节：净魂终成！"
+    ],
+    "major_events": [
+      {
+        "label": "protagonist_disguise_rescues_immortal_couple",
+        "evidence": "第二百七十四节-ish opening where protagonist as Chu Ying uses transformed sea-dragon form to drive off Ge Wen and save Flower Butterfly Immortal and Bee General"
+      },
+      {
+        "label": "east_sea_exchange_meeting_acquires_key_gu",
+        "evidence": "第二百七十五节：东海交易会 and 第二百七十七节：卜卦龟背仙蛊 where protagonist obtains Divination Turtle Shell Gu and 6-transformation Sun Gu via trades"
+      },
+      {
+        "label": "attitude_gu_refined",
+        "evidence": "第二百八十节：炼化态度蛊 completing refinement of the eight-transformation Attitude Gu"
+      },
+      {
+        "label": "grand_era_prophecy_revealed",
+        "evidence": "第二百八十一节：大时代将临 with Dragon Duke waking and borrowing lifespan from imprisoned Di Cangsheng"
+      },
+      {
+        "label": "divination_turtle_transformation_debut",
+        "evidence": "第二百八十二节：卜卦龟变化 protagonist perfects new bloodline-mimicking killer move"
+      },
+      {
+        "label": "widow_peak_confrontation_political_maneuver",
+        "evidence": "第二百八十八节：无赖！可耻！ and 第二百八十九节：切磋 where protagonist stalls Xia clan envoys through delaying tactics and duel"
+      },
+      {
+        "label": "moon_festival_poetry_contest",
+        "evidence": "第二百九十六节：月亮节 and 第二百九十八节：月亮节的故事 protagonist mocks refined poetry culture with crude verse"
+      },
+      {
+        "label": "chi_shang_challenge_and_alliance",
+        "evidence": "第三百零七节：给池伤的挑战信 through 第三百一十二节：宾主尽欢 where protagonist manipulates Chi Shang via array-dao challenges"
+      },
+      {
+        "label": "wu_yong_ambush_at_purple_blood_first_river",
+        "evidence": "第三百二十节：死鬼快来铁面神 through 第三百二十四节：心思沉玉清滴风楼 with Zi Shan Zhenjun trapping Wu Yong et al."
+      },
+      {
+        "label": "super_dream_realm_battle_erupts",
+        "evidence": "第三百二十九节：局势恶方源欲动身 through 第三百三十八节：纯梦求真再现 involving Left Night Ash awakening and dream-cocoon strategy"
+      },
+      {
+        "label": "protagonist_becomes_shadow_sect_master",
+        "evidence": "第三百五十二节：紫陨（下） and 第三百五十三节：认方源为主 where dying Zi Shan Zhenjun bequeaths sect legacy"
+      },
+      {
+        "label": "upper_pole_hawk_matured_and_lost",
+        "evidence": "第三百五十五节：战罢 protagonist accelerates growth of the eight-transformation Upper Pole Hawk which later escapes"
+      },
+      {
+        "label": "wu_yong_pursues_across_south_borderlands",
+        "evidence": "第三百六十五节：方源的判断 through 第三百七十一节：一曲离歌退武庸！ with Feng Jiuge's离歌 dismantling four-clear-four-changing-wind"
+      },
+      {
+        "label": "feng_jiuge_recruited_by_heavenly_court",
+        "evidence": "第三百七十三节：方源承认失败 where Feng vows to hunt protagonist as天庭's護道人"
+      },
+      {
+        "label": "upper_pole_hawk_rescued_by_luyinyin",
+        "evidence": "第三百八十三节：鸿飞冥冥 and 第三百九十节：陆畏因 with Ye Fan's mysterious master intervening"
+      },
+      {
+        "label": "annual_beast_market_manipulation",
+        "evidence": "第三百七十八节：千变老祖 and 第三百八十一节：斗战胜伏奴 with Qianbian Old Ancestor selling year-beasts, protagonist buying hawks"
+      },
+      {
+        "label": "trap_and_execution_of_qingzhaoguiyi_lion",
+        "evidence": "第三百九十一节：青爪鬼翼狮 and 第三百九十二节：红云舞娘 involving Han Li's inheritance being hijacked by Red Cloud Dancing Girl"
+      },
+      {
+        "label": "ambush_of_qianbian_will_and_hongyun",
+        "evidence": "第三百九十七节：与千变合作 through 第三百九十八节：暗算成功！ trapping Qianbian's will and Red Cloud in dream"
+      },
+      {
+        "label": "protagonist_defeats_feng_jiuge_using_new_wanwo",
+        "evidence": "第四百零六节：打得凤九歌吐血！ and 第四百零七节：凤九歌主动撤退 forcing Feng to retreat"
+      },
+      {
+        "label": "tai_gu_year_monkey_subjugated",
+        "evidence": "第四百零八节：钓年兽 and 第四百零九节：再添八转战力 using 太古年兽钓来阵"
+      },
+      {
+        "label": "invasion_of_time_river_and_kill_of_huangshi",
+        "evidence": "第四百一十节：入河 through 第四百一十五节：黄史阵亡 slaying eight-transformation Huang Shi via red lotus true legacy"
+      },
+      {
+        "label": "escape_to_west_desert_via_tang_family",
+        "evidence": "第四百一十七节：回来 and 第四百一十八节：这个男人与天作对 secret alliance with Tang clan for future dream-dao cooperation"
+      },
+      {
+        "label": "feng_jinhuang_designated_dream_lord_seed",
+        "evidence": "第四百二十一节：大梦仙尊凤金煌 and 第四百二十三节：龙公之徒 with Long Gong personally taking her as disciple"
+      },
+      {
+        "label": "pure_soul_gu_refinement_completed",
+        "evidence": "第四百二十四节：净魂终成！ using snow lotus flower essence and ice-refining method"
+      }
+    ],
+    "character_state_transitions": [
+      {
+        "character": "protagonist_fangyuan",
+        "from": "disguised as Wu Yihai embedded in Wu clan",
+        "to": "exposed as天外之魔, becomes Shadow Sect Master with full Youhun inheritance",
+        "evidence": "span from 东海交易会 through 紫陨（下）"
+      },
+      {
+        "character": "zishan_zhenjun",
+        "from": "eight-transformation智道 leader of Shadow Sect remnants",
+        "to": "killed by Dragon Duke after entrusting all legacy to protagonist",
+        "evidence": "第三百五十二节：紫陨（下）"
+      },
+      {
+        "character": "youhun_benti_remnant_soul",
+        "from": "hiding within soul-beast horde in Shadow Sect blessed land",
+        "to": "captured alive by Dragon Duke and imprisoned in天庭 Zhen Hun Dian",
+        "evidence": "第三百四十七节：三气归来 arc and 第四百一十九节：天庭震撼五域"
+      },
+      {
+        "character": "long_gong",
+        "from": "withered准九转 sleeper borrowing lifespan",
+        "to": "resurgent准九转 taking Feng Jinhuang as disciple",
+        "evidence": "第二百八十一节：大时代将临 and 第四百二十三节：龙公之徒"
+      },
+      {
+        "character": "wu_yong",
+        "from": "newly-installed eight-transformation太上大长老 hiding玉清滴风小竹楼",
+        "to": "acknowledged南疆 hegemon after玉清滴风小竹楼 reveal but failed to catch protagonist",
+        "evidence": "第三百二十四节：心思沉玉清滴风楼 and 第四百一十九节 aftermath"
+      },
+      {
+        "character": "feng_jiuge",
+        "from": "neutral七转 traveler chasing盗天 clue",
+        "to": "sworn南疆 protector then天庭 hunter of protagonist",
+        "evidence": "第三百七十一节 through 第四百二十三节：龙公之徒"
+      },
+      {
+        "character": "ying_wuxie",
+        "from": "despairing after benti's capture in dream war",
+        "to": "soul-rekindled via燃魂爆运 and换魂 into Cui Bo仙子 body",
+        "evidence": "第三百五十三节 through 第三百八十七节：影无邪换魂"
+      },
+      {
+        "character": "hei_tu_baitu",
+        "from": "六转 subordinate innocent White Rabbit",
+        "to": "revealed seven-transformation split personality Hei Tu attacking Wu An",
+        "evidence": "第三百三十节：夜灰破阵 and 第三百三十三节：菟舔"
+      },
+      {
+        "character": "upper_pole_hawk",
+        "from": "controlled八转战力 via百八十奴",
+        "to": "broken free during Wu Yong duel then rescued by陆畏因 for Ye Fan",
+        "evidence": "第三百七十节：四清四变风 and 第三百九十节：陆畏因"
+      },
+      {
+        "character": "cui_bo_immortal",
+        "from": "seven-transformation千变 concubine seeking僵盟 remains",
+        "to": "soul-swapped into ying wuxie's vessel, spirit imprisoned",
+        "evidence": "第三百七十四节：收取西漠僵盟遗藏"
+      },
+      {
+        "character": "hei_lourlan",
+        "from": "reluctant Shadow Sect bondswoman",
+        "to": "acknowledging protagonist as her only path forward while nursing ambitions",
+        "evidence": "scenes across 战罢 and 静思战力"
+      },
+      {
+        "character": "tang_fangming",
+        "from": "outcast returned son of Tang clan",
+        "to": "secret ally of Shadow Sect seeding future唐家盛世",
+        "evidence": "第四百一十八节：这个男人与天作对"
+      },
+      {
+        "character": "feng_jinhuang",
+        "from": "grieving mortal daughter of Feng Jiuge",
+        "to": "designated大梦仙尊 disciple ascending to天庭",
+        "evidence": "第四百二十一节：大梦仙尊凤金煌"
+      }
+    ],
+    "long_form_mechanisms": [
+      {
+        "name": "eight_transformation_year_gu_shishuiliunian",
+        "description": "Ancient Rank八转 sui-shui-liu-nian gu used as anchor for spatial-year-beast summoning arrays and time-flow manipulation",
+        "evidence": "第三百四十九节 and 第四百零八节：钓年兽"
+      },
+      {
+        "name": "upgraded_wanwo_via_selflove_loveintent_gu",
+        "description": "Reforge of ten-thousand-me killer move by generating we-intent巨人 that shard into thinking clones, achieved through jointly-driven爱意 and自爱 fairy gu",
+        "evidence": "第三百九十六节：红云追来 and 第四百零六节 combat display"
+      },
+      {
+        "name": "purify_self_immortal_array_qingshenzhihao",
+        "description": "Portable seven-transformation gu array with array-flag gu and array-spirit that persistently strips hostile dao痕, built from lucky-refined自爱 gu",
+        "evidence": "第三百八十七节 preparation and 第三百九十五节：固运"
+      },
+      {
+        "name": "balanced_year_beast_hooking_array",
+        "description": "Bait array using seven-transformation年 gu and eight-transformation sui-shui-liu-nian gu to lure Tai Gu year beasts through仙窍 rivers of time",
+        "evidence": "第四百零八节：钓年兽"
+      },
+      {
+        "name": "reverse_current_shield_seal_limits",
+        "description": "Reflective逆流护身印 costs enormous heart/energy so must be maintained separately; upgraded万我 lets protagonist stack it with additional killer moves simultaneously",
+        "evidence": "第三百四十节 and 第四百零六节 fight against Feng Jiuge"
+      },
+      {
+        "name": "lunar_bind_and_soul_lantern_gu_governance",
+        "description": "Wu clan uses命理相位 array with命牌蛊 and魂灯蛊 to track and remotely strike defectors like the disguised Wu Yihai",
+        "evidence": "第三百三十五节：方源救场！ and 第三百六十六节：武庸杀至！"
+      },
+      {
+        "name": "unfading_star_mark_surveillance",
+        "description": "Zi Wei's star-palace board embeds indelible tracking dao痕 that regenerates faster the more it is stripped, tethering targets to天庭 command",
+        "evidence": "第三百八十八节：不灭星标 explanation"
+      },
+      {
+        "name": "burning_soul_burst_luck_technique",
+        "description": "Yansu bao yun killer move consumes permanent soul dao痕 to spike luck for connected group, used repeatedly to trigger auspicious refinements",
+        "evidence": "第三百八十四节：燃魂爆运！"
+      },
+      {
+        "name": "soul_swap_via_换魂仙蛊",
+        "description": "Legacy of Mo Yao/Bo Qing enabling swapping ying wuxie's soul into Cui Bo仙子 body while keeping her spirit imprisoned",
+        "evidence": "第三百八十七节：影无邪换魂"
+      },
+      {
+        "name": "three_qi_return_and_solid_luck_manipulation",
+        "description": "Yuanshi immortal legacy killer move extracting ren-di-tian qi from仙窍, plus固运 counter to protect protagonist's connected luck",
+        "evidence": "第三百四十七节：三气归来 and 第三百九十五节：固运"
+      }
+    ],
+    "continuity_observations": [
+      {
+        "note": "upper_pole_hawk_arc_bridges_west_desert_and_north",
+        "evidence": "escape scene in 第三百五十四节 arc mirrored by 陆畏因 rescuing hawk in 第三百九十节 leading into future Ye Fan link"
+      },
+      {
+        "note": "reverse_current_shield_seal_ties_to_bei_yuan_battle",
+        "evidence": "references back to 逆流河 victory and Liu Guanyi identity leaking during Wu Yong duel"
+      },
+      {
+        "note": "consistent_tracking_of_wu_family_borrowed_treasures",
+        "evidence": "six borrowed仙蛊 and 十万仙元石 recur through Wu Yong obsession and eventual命牌蛊 shattering"
+      },
+      {
+        "note": "chi_shang_relationship_persists_into_later_arcs",
+        "evidence": "array-dao mentorship influences protagonist's later塑造 of洁身自爱 array"
+      },
+      {
+        "note": "lezoutu_and_pengfei_meng_境 stay_bounded",
+        "evidence": "protagonist repeatedly notes that外显 dreams are being侵蚀 by天意, informing his later avoidance of dream exploration"
+      },
+      {
+        "note": "blackrabbit_dual_persona_survives_across_arcs",
+        "evidence": "白兔/黑菟 duality re-emerges in later battles alongside影无邪 change of身"
+      },
+      {
+        "note": "southern_borderlands_grand_alliance_reset",
+        "evidence": "武家 loss and reclamation of territories tracked through 尸皇芋顶天 and 尸皇 return in 第四百一十九节"
+      },
+      {
+        "note": "south_border_geo_disturbance_signals_grand_era",
+        "evidence": "地脉震动 in 第三百八十六节 and 第三百八十七节 explicitly tied to 大时代 opening, referenced again in 第四百一十九节"
+      },
+      {
+        "note": "shadow_sect_inheritance_deepens_over_arcs",
+        "evidence": "protagonist gradually unlocks Yuhun真传, 红莲真传 fragments, and春秋蝉 recipes across 紫陨 through 石莲岛"
+      }
+    ],
+    "style_observations": [
+      {
+        "note": "long_political_dialogues_and_multi_faction_pov",
+        "evidence": "武家 crisis chapters shift between武庸, 乔志材, and 池曲由 councils"
+      },
+      {
+        "note": "heavy_use_of_ally_letters_and_信道蛊虫",
+        "evidence": "武庸 diplomacy via信蛊 across 第三百六十六节 and after"
+      },
+      {
+        "note": "combat_scenes_layer_named_杀招_and_内心独白",
+        "evidence": "battle vs Feng Jiuge weaves碧玉歌, 天地歌, 万我 with introspective analysis"
+      },
+      {
+        "note": "foreshadowing_via_narrator_asides",
+        "evidence": "repeated author-voice references to future 500-year memories informing decisions"
+      },
+      {
+        "note": "mercantile_negotiation_scenes",
+        "evidence": "bargaining chapters at宝黄天 with 千变老祖 and 唐家 emphasize commercial rhetoric"
+      },
+      {
+        "note": "myth_history_expositions",
+        "evidence": "origin stories of 万像沙漠, 掠影地沟, 尸皇芋顶天 delivered in narrator voice"
+      }
+    ],
+    "creation_family_evidence": {
+      "family": "anti_fate_immortal_wuxia",
+      "subgenre": "gu_cultivation_political_intrigue",
+      "tropes": [
+        "revived_protagonist_manipulates_sects",
+        "secret_sect_master_takeover",
+        "engineered_dream_realm_farming",
+        "artifact_grade_gu_bidding_wars",
+        "fated_disciple_of_heavenly_court"
+      ],
+      "markers": [
+        "蛊虫/仙蛊/凡蛊 taxonomy",
+        "真传/传承 inheritance chains",
+        "超级家族 politics",
+        "五域 界壁 geography",
+        "天意 vs 主角 struggle"
+      ]
+    },
+    "originality_risks": [
+      {
+        "risk": "dense_terminology_may_be_impenetrable_without_prior_context",
+        "mitigation": "introduce recurring 杀招 and家族 with succinct in-scene glossary reminders"
+      },
+      {
+        "risk": "heavy_reuse_of_kill_and_loot_pattern",
+        "mitigation": "vary emotional stakes such as Feng Jinhuang thread to break monotony"
+      },
+      {
+        "risk": "protagonist_curbstomp_moments_undercut_tension",
+        "mitigation": "emphasize resource/soul cost as in燃魂爆运 to preserve consequence"
+      },
+      {
+        "risk": "exposition_dumps_during_inheritance_scenes",
+        "mitigation": "interleave sensory imagery of 石莲岛 and 光阴长河 to keep prose kinetic"
+      },
+      {
+        "risk": "overreliance_on_dream_manipulation_deus_ex",
+        "mitigation": "balance with fair-play foreshadowing like 天意 corrupting梦境"
+      }
+    ]
+  }
+}

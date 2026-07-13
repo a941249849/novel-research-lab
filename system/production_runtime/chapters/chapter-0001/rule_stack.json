@@ -1,0 +1,41 @@
+{
+  "version": "0.21",
+  "chapter_id": "chapter-0001",
+  "canonical_baseline": {
+    "path": "system/creation_assets/baselines/borrowed_heaven_canonical_baseline_v0.21.json",
+    "version": "0.21",
+    "sha256": "a58bf7f8295a67da5a542017b0d6153d8de3ef5322391787277ba67fd239b5f5"
+  },
+  "priority_order": [
+    "safety_and_originality",
+    "canonical_story_bible",
+    "volume_outline",
+    "accepted_state_settlements",
+    "creation_asset_constraints",
+    "chapter_must_keep_and_must_avoid",
+    "anti_ai_style_evidence"
+  ],
+  "hard_rules": [
+    "no source-work names, scenes, signature systems, or prose imitation",
+    "no untracked power, relationship, location, item, or timeline changes",
+    "all benefits carry an embodied, relational, or systemic cost",
+    "reader-facing prose contains no runtime or database vocabulary",
+    "不得生成章节正文、场景草稿或对话。",
+    "不得取得、唤醒、持有或激活残命灯盏。",
+    "不得使用余烬回照、锁链偏转或任何高级识账能力。",
+    "不得推进空寿状态、府级转运、黑市交易或 Arc Cluster 2 之后的事件。",
+    "不得改变寿命债、账册暴露、阵基完整度或母亲倒计时等状态账本。"
+  ],
+  "chapter_rules": [
+    "陆沉渊固定处于燃命境初成，不得获得识账境能力。",
+    "叙事焦点限于泥灯巷、寿籍司的本地压力与可见账目错位。",
+    "母亲寿命债是克制和选择压力，不得被即时解决。",
+    "灰烬异痕只能作为可见的本地线索，不得揭示古债契约或府级真相。"
+  ],
+  "scene_constraints": [
+    "This artifact is intent metadata only; it must not be rendered as prose.",
+    "Keep all dormant assets absent from the chapter scope.",
+    "No irreversible state transition, combat resolution, artifact acquisition, or life-debt payment is permitted.",
+    "The only allowed capability signal is ordinary life-mark recognition and local ash-trace mismatch identification."
+  ]
+}

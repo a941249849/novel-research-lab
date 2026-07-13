@@ -1,0 +1,76 @@
+{
+  "chinese_character_count": 3757,
+  "sentence_count": 275,
+  "paragraph_count": 198,
+  "average_sentence_length": 13.66,
+  "sentence_length_stddev": 10.05,
+  "average_paragraph_length": 18.97,
+  "paragraph_length_stddev": 20.65,
+  "dialogue_ratio": 0.2986,
+  "transition_word_hits": 0,
+  "rhetorical_template_hits": 0,
+  "abstract_word_hits": 0,
+  "sensory_word_hits": 124,
+  "repeated_sentence_starters": [
+    {
+      "starter": "”\n",
+      "count": 81
+    },
+    {
+      "starter": "仇慎",
+      "count": 12
+    },
+    {
+      "starter": "陆沉",
+      "count": 11
+    },
+    {
+      "starter": "“我",
+      "count": 6
+    },
+    {
+      "starter": "“你",
+      "count": 5
+    },
+    {
+      "starter": "苏晚",
+      "count": 4
+    },
+    {
+      "starter": "”她",
+      "count": 4
+    },
+    {
+      "starter": "顾婶",
+      "count": 4
+    },
+    {
+      "starter": "莫井",
+      "count": 4
+    },
+    {
+      "starter": "左眼",
+      "count": 3
+    },
+    {
+      "starter": "有人",
+      "count": 3
+    },
+    {
+      "starter": "巷外",
+      "count": 3
+    },
+    {
+      "starter": "”他",
+      "count": 3
+    },
+    {
+      "starter": "不是",
+      "count": 3
+    }
+  ],
+  "flags": [
+    "sentence_opening_repetition"
+  ],
+  "policy": "metrics_are_audit_evidence_not_a_literary_verdict"
+}

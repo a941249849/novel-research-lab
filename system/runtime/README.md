@@ -2,18 +2,20 @@
 
 ## What This Runtime Does
 
-`system/runtime/nrl.py` is a minimal local Mission Runtime. It can:
+`system/runtime/nrl.py` is a local Mission Runtime. It can:
 
 - Read `system/mission_controller/current_phase_state.json`.
 - Report current status and the next recommended mission.
 - Prepare bounded handoff task files and dispatch registered Antigravity review jobs through the local CLI bridge.
-- Register externally produced Hermes or Antigravity outputs.
+- Register externally produced review outputs.
 - Update Mission Controller state after ingest.
 - Validate current phase state against `phase_state.schema.json`.
+- Run non-prose Volume 1 planning, dry-runs, and provider protocol canaries.
+- Route bounded production work through the current Codex client after the
+  direct-writer calibration and Owner authorization both pass.
 
 ## What This Runtime Does Not Do
 
-- It does not call Hermes.
 - It does not operate the Antigravity GUI.
 - It can call Antigravity CLI only for registered structural-review jobs through the guarded `agent-dispatch` command.
 - It does not generate novel prose.
@@ -22,15 +24,16 @@
 - It does not read `novel_training_set/`.
 - It does not replace Codex validation, Antigravity review, or Owner Gate.
 
-## Why Hermes Remains Manual And Antigravity Is Guarded
+## Direct Codex, Hermes, And Antigravity Boundaries
 
-No Hermes CLI/API adapter is currently configured. Antigravity has a local CLI
-bridge, but its Runtime adapter is restricted to registered review jobs. The
-runtime therefore uses:
+Codex is the primary local runtime and controlled production writer.
+Antigravity remains restricted to registered independent review jobs. Hermes
+is optional literary enrichment only; it is not on the default production
+path. The runtime therefore uses:
 
-- Hermes adapter: `manual_handoff`
+- Codex adapter: `local`, primary runtime and direct writer
+- Hermes adapter: `cli_bridge`, optional enrichment only
 - Antigravity adapter: `cli_bridge`
-- Codex adapter: `local`
 
 Antigravity dispatch copies the registered packet, calls `agy -p`, captures the
 response in the controlled inbox, and leaves validation and promotion as
@@ -38,6 +41,36 @@ explicit later commands.
 
 The effective state is checked with `agy --version` at runtime. If the bridge is
 unavailable, dispatch is blocked without changing the job state.
+
+## Production Preflight
+
+No new prose may be generated until every command below passes:
+
+```bash
+python3 system/runtime/nrl.py volume1-plan-build
+python3 system/runtime/nrl.py volume1-plan-validate
+python3 system/runtime/nrl.py volume1-dry-run
+python3 system/runtime/nrl.py agent-canaries-validate
+python3 system/runtime/nrl.py direct-writer-calibration-status
+python3 system/runtime/nrl.py production-preflight
+```
+
+`direct-writer-calibration-status` remains blocking until nine blinded runs
+cover Sol, Terra, and Luna and an accepted routing decision is recorded.
+`production-preflight` also requires an explicit Owner acceptance of the
+production blueprint and a separate bounded prose authorization. Planning and
+canary commands never read `novel_training_set/`.
+
+Generate the isolated calibration set and its anonymous review packets:
+
+```bash
+python3 system/runtime/nrl.py direct-writer-calibration-run
+python3 system/runtime/nrl.py direct-writer-calibration-review-packet
+python3 system/runtime/nrl.py direct-writer-calibration-internal-screen
+```
+
+The internal screen is evidence only. It never replaces the independent review
+required to open production.
 
 ## Commands
 
@@ -811,12 +844,15 @@ All dispatch commands are resumable and retry only missing or invalid outputs.
 Hermes serial prose remains blocked until v0.18, project impact review, and
 creation-asset validation complete.
 
-## Production chapter runtime v0.20
+## Direct Codex Production Runtime v0.21
 
 The chapter runtime is an ordered, artifact-backed state machine. It does not
-create prose until corpus depth and project reconciliation gates pass.
+create prose until corpus depth, project reconciliation, direct-writer
+calibration, and Owner gates pass.
 
 ```bash
+python3 system/runtime/nrl.py model-routing-status
+python3 system/runtime/nrl.py direct-writer-calibration-status
 python3 system/runtime/nrl.py project-reconciliation-pack
 python3 system/runtime/nrl.py project-reconciliation-dispatch
 python3 system/runtime/nrl.py project-reconciliation-validate
@@ -826,11 +862,22 @@ python3 system/runtime/nrl.py chapter-runtime-status
 python3 system/runtime/nrl.py prose-metrics --file <draft-or-revision.md>
 ```
 
-The nine stages are chapter intent, context compilation, draft generation,
-fact observation, draft continuity audit, revision, revision audit, state
-settlement, and acceptance. Normal bounded execution uses `chapter-init`,
-`chapter-compile`, `chapter-draft`, `chapter-observe`, `chapter-audit`,
-`chapter-revise`, `chapter-audit`, `chapter-settle`, and `chapter-accept`.
+The routing policy is fixed by responsibility and calibration evidence, not by
+an imaginary model personality: Sol is the showrunner and current controlled
+draft/revision writer; Terra remains a non-default experimental route until a
+later calibration clears it; Luna is the low-cost observer and mechanical
+checker. The nine stages are chapter intent, context compilation,
+draft generation, initial continuity audit, revision generation, final fact
+observation, final audit, state settlement, and acceptance. Normal bounded
+execution uses `chapter-init`, `chapter-compile`, `chapter-draft`,
+`chapter-audit`, `chapter-revise`, `chapter-observe`, `chapter-audit`,
+`chapter-settle`, and `chapter-accept`.
+
+The initial audit evaluates the draft before any revision. Observation and
+settlement only consume the final revision, so no state ledger can be built
+from text that is later replaced. Hermes is not needed for this path; it may
+only be introduced as an explicitly authorized enrichment experiment after
+the direct path is calibrated.
 Reconciliation application requires a matching Owner decision bound to the
 validated response SHA-256. Chapter settlement accepts only state deltas that
 match schema-valid observed facts.

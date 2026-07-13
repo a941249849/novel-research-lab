@@ -1,0 +1,115 @@
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "book_id": "book-08-322e84872b22",
+  "book_title": "《完美世界》（校对版全本）作者：辰东",
+  "covered_chunk_ids": [
+    "book-08-322e84872b22-chunk-001",
+    "book-08-322e84872b22-chunk-002",
+    "book-08-322e84872b22-chunk-003",
+    "book-08-322e84872b22-chunk-004",
+    "book-08-322e84872b22-chunk-005",
+    "book-08-322e84872b22-chunk-006",
+    "book-08-322e84872b22-chunk-007",
+    "book-08-322e84872b22-chunk-008",
+    "book-08-322e84872b22-chunk-009",
+    "book-08-322e84872b22-chunk-010"
+  ],
+  "covered_chunk_hashes": [
+    {"chunk_id": "book-08-322e84872b22-chunk-001", "response_sha256": "ef7549780e13f288fbe943f7e96dbc4dd1d74791917d3d3abd83b48bfde1c6cd"},
+    {"chunk_id": "book-08-322e84872b22-chunk-002", "response_sha256": "0e54400b5590d5e3614babb40f3191291e6513819e02cb742e4ed8ff3ffb1216"},
+    {"chunk_id": "book-08-322e84872b22-chunk-003", "response_sha256": "235c43812dd9f87f101502c712a3741204e3a0c00137f3afbff96f665d8bfcc7"},
+    {"chunk_id": "book-08-322e84872b22-chunk-004", "response_sha256": "8e267e8a4cbd8acdd3d165c64e183e1b86c0b00c5045c0bbff731695dd0c48e9"},
+    {"chunk_id": "book-08-322e84872b22-chunk-005", "response_sha256": "cd4241856059a3b6aa655b148207cf2827daf7af1a13dc603c0eb1c528db085f"},
+    {"chunk_id": "book-08-322e84872b22-chunk-006", "response_sha256": "8483248a74a02f427da1b6c8871415b2dc87cecc2ba492a3c6c445bea3dfccea"},
+    {"chunk_id": "book-08-322e84872b22-chunk-007", "response_sha256": "2ef7e09d4e1771ca7a4ffabf1b227a80b4e1640ccffec0a009d50d80fde421e3"},
+    {"chunk_id": "book-08-322e84872b22-chunk-008", "response_sha256": "526089bdf1c4a6b4ac0a9eed993f256c266b0f6335b3201407f3e9cd63bc4012"},
+    {"chunk_id": "book-08-322e84872b22-chunk-009", "response_sha256": "ad7b9db29b54f510d0857087255f5e3928e211757aa8856bf584e1cfc9f8c70c"},
+    {"chunk_id": "book-08-322e84872b22-chunk-010", "response_sha256": "1a4b15bddba55359979f68e6485eee9da0f2fc74b683eb74cc155621ae141111"}
+  ],
+  "synthesis": {
+    "narrative_spine": [
+      "Shi Hao grows from Stone Village's protected child into a record-breaking young cultivator whose stolen Supreme Bone establishes the central personal debt.",
+      "The lower-realm vendetta expands through the Kunpeng inheritance, the Rain Clan and Shi Yi reckoning, then reveals the lower realm as a harvested medicine garden.",
+      "After becoming Stone Emperor, losing and regaining his bone, family, and life, Shi Hao enters the Upper Realm where each academy, secret realm, and border crisis tests a self-made path.",
+      "The body-as-a-seed path turns private cultivation into an answer to decaying cosmic order, carrying Shi Hao through the Imperial Pass war, the Folded Immortal Curse, and the establishment of Huang Heavenly Court.",
+      "The final movement converts repeated loss into imperial-scale responsibility: Shi Hao returns as an Immortal King, defeats dark-source rulers, and isolates the wider battle beyond the Boundary Sea."
+    ],
+    "character_arcs": [
+      "Shi Hao moves from orphaned village child to public heir, emperor, exile, creator of a new cultivation path, and finally Huang Heavenly Emperor; each identity loss is answered by a rebuilt body or wider obligation.",
+      "Qin Hao and Shi Yi move from bloodline rivals shaped by the Supreme Bone conflict into kin who return their debt through sacrifice during the final war.",
+      "Willow Deity evolves from Stone Village guardian into trans-realm guide and ultimate battlefield sacrifice, keeping protection linked to an unreachable cosmic origin.",
+      "Yun Xi changes from a Celestial Clan connection damaged by betrayal into Shi Hao's steadfast domestic partner during his curse-driven mortal interval.",
+      "Huo Ling'er provides a long-running bond whose reunion, separation, corruption, rescue, and final departure make romance subordinate to the war's temporal cost.",
+      "Meng Tianzheng progresses from harsh mentor to border defender and fallen guardian whose darkened return preserves the tragedy of the Nine Heavens' defense."
+    ],
+    "mechanism_evolution": [
+      "Early bone runes, medicinal tempering, Cave-Heavens, and the Void God Realm establish power as embodied talent plus public record.",
+      "Kunpeng inheritance, regenerated Supreme Bone, divine decrees, and guardian artifacts convert inheritance into a contested political resource.",
+      "Immortal Qi, unique Cave-Heaven, thunder liquid, and the Sacred Sacrifice transition make survival through self-destruction the route to higher potential.",
+      "Body-as-a-seed, the Indestructible Scripture, reincarnation marks, and the sixth secret realm shift the system away from external seeds toward internally authored law.",
+      "Hehua Zizai, time causality, Origin Artifacts, and Immortal Emperor breakthroughs finally make technique a response to world-scale corruption and multi-epoch war."
+    ],
+    "world_expansion": [
+      "Stone Village and the Wasteland introduce guardian-spirit society, clan conflict, beast resources, and a local cultivation hierarchy.",
+      "The Void God Realm, imperial capital, Kunpeng Nest, and upper-realm medicine-garden revelation connect local reputation to a deliberately unequal cosmology.",
+      "The Upper Realm's clans, academies, Immortal Ancient trials, and border academies expand conflict into institutions that rank, exploit, or recruit exceptional bloodlines.",
+      "Burial lands, the Imperial Pass, the Foreign Realm, and the collapsing Sky Barrier redefine the world as a long defensive front shaped by prior epochs.",
+      "The Immortal Realm, Boundary Sea, dark source, and Above the Heavens reposition the finale beyond a single universe while preserving the lower realms as what must be shielded."
+    ],
+    "long_term_reader_hooks": [
+      "The stolen and regenerated Supreme Bone turns early family injustice into a recurring question about blood, legitimacy, and earned power.",
+      "The Willow Deity, Small Pagoda, Daluo Sword Embryo, and three-life copper-coffin line carry unanswered origin history across escalating settings.",
+      "The medicine-garden revelation and the foreign border create a persistent question of who benefits from each realm's cultivation order.",
+      "Reincarnation marks, temporal glimpses, future figures, and Hehua Zizai keep later eras active as causal pressure rather than decorative lore.",
+      "Huo Ling'er's capture and corruption, Gu Zu's hidden loyalty, and Meng Tianzheng's dark return retain emotional stakes after personal revenge has been settled."
+    ],
+    "style_and_life_force": [
+      "Brutal breakthroughs and enormous combat imagery are repeatedly offset by food, bickering companions, irreverent nicknames, and domestic pauses.",
+      "Spectator reaction, short declarative chapter titles, public records, and repeated declarations of defiance create serialized momentum and recognition-driven payoff.",
+      "The work continually contrasts mythic scale with intimate losses: family reunions, village life, marriage, mentorship, and graves keep escalation emotionally legible.",
+      "Color-coded runes, chaos imagery, cosmic battle metaphors, and temporal echoes make mechanics visually immediate while signaling each new scale of threat."
+    ],
+    "continuity_failures": [
+      "Repeated death, resurrection, rebirth, and time displacement raise a continuity risk: permanent loss can be softened when later mechanisms restore bodies or souls.",
+      "The recurring progression from underestimated outsider to overwhelming public victor risks flattening institutional opponents despite the changing realm scale.",
+      "Power escalation from village cultivation to Immortal Emperor conflict can compress earlier achievements unless inherited artifacts and emotional debts remain active anchors.",
+      "The split-body romance thread and delayed Huo Ling'er resolution require careful state tracking because multiple identities, separations, and temporal jumps overlap."
+    ],
+    "evidence_map": [
+      {"claim": "Narrative spine: Stone Village origin and the first guardian-centered cultivation world.", "chunk_id": "book-08-322e84872b22-chunk-001", "chapter_heading": "第0001章 朝气蓬勃"},
+      {"claim": "Narrative spine: public settling of the early Supreme Bone conflict.", "chunk_id": "book-08-322e84872b22-chunk-002", "chapter_heading": "第0313章 击败"},
+      {"claim": "Character arcs: family reunion and the Supreme Bone sacrifice alter Shi Hao's private obligations.", "chunk_id": "book-08-322e84872b22-chunk-003", "chapter_heading": "第0605章 不腐草"},
+      {"claim": "Character arcs: Huo Ling'er reunion and the Upper Realm relationship continuation.", "chunk_id": "book-08-322e84872b22-chunk-004", "chapter_heading": "第0804章 没有杂质的情分"},
+      {"claim": "Mechanism evolution: Immortal Ancient trial logic and divine-fire competition broaden cultivation routes.", "chunk_id": "book-08-322e84872b22-chunk-005", "chapter_heading": "第0822章 纷纷成神"},
+      {"claim": "Mechanism evolution: body-as-a-seed becomes an explicit self-authored path.", "chunk_id": "book-08-322e84872b22-chunk-006", "chapter_heading": "第1237章 选择"},
+      {"claim": "Mechanism evolution: the internal-seed path defeats external-seed assumptions.", "chunk_id": "book-08-322e84872b22-chunk-007", "chapter_heading": "第1277章 身即是种"},
+      {"claim": "World expansion: the Imperial Pass breaks and the border war becomes irreversible.", "chunk_id": "book-08-322e84872b22-chunk-008", "chapter_heading": "第1656章 最后一战的机会"},
+      {"claim": "Long-term hook: the Folded Immortal Curse forces a mortal interval before a new system emerges.", "chunk_id": "book-08-322e84872b22-chunk-009", "chapter_heading": "第1750章 缺陷"},
+      {"claim": "World expansion: the final conflict resolves at the level of dark-source rulers and the Boundary Sea.", "chunk_id": "book-08-322e84872b22-chunk-010", "chapter_heading": "第2012章 他化自在者"},
+      {"claim": "Style and life force: comic companion and artifact dynamics are already active in the early adventure mode.", "chunk_id": "book-08-322e84872b22-chunk-001", "chapter_heading": "第0155章 打神石"},
+      {"claim": "Continuity risk: Upper Realm identity exposure depends on prior aliases and public records.", "chunk_id": "book-08-322e84872b22-chunk-004", "chapter_heading": "第0726章 如此报答"},
+      {"claim": "Creation family characters: Shi Hao's transition into the book's defining identity is staged through public naming.", "chunk_id": "book-08-322e84872b22-chunk-002", "chapter_heading": "第0322章 凶残少年"},
+      {"claim": "Creation family factions: academy and border institutions make factional competition systemic.", "chunk_id": "book-08-322e84872b22-chunk-006", "chapter_heading": "第1227章 来势汹汹"},
+      {"claim": "Creation family artifacts: Daluo Sword Embryo and inherited objects remain active at the final scale.", "chunk_id": "book-08-322e84872b22-chunk-010", "chapter_heading": "第1983章 荒的兵器"},
+      {"claim": "Creation family techniques: Hehua Zizai binds temporal projection to final combat resolution.", "chunk_id": "book-08-322e84872b22-chunk-010", "chapter_heading": "第2012章 他化自在者"}
+    ],
+    "creation_family_evidence": {
+      "characters": ["Shi Hao's state changes link orphan, heir, emperor, exile, path-founder, and Huang Heavenly Emperor."],
+      "npcs": ["Willow Deity, Meng Tianzheng, Qi Daolin, Gu Zu, and the comic companion set each retain distinct long-horizon functions."],
+      "factions": ["Stone Village, Rain Clan, Celestial Clan, academies, Imperial Pass defenders, Foreign Realm, and Immortal Realm form an escalating institutional map."],
+      "artifacts": ["Supreme Bone, Small Pagoda, Daluo Sword Embryo, Origin Artifacts, Boundary Sea relics, and Law Pool carry both power and historical memory."],
+      "techniques": ["Bone runes, Cave-Heavens, Immortal Qi, body-as-a-seed, reincarnation marks, and Hehua Zizai form a progression from inheritance to authored law."],
+      "naming": ["Xiao Budian, Shi Hao, Huang, and Huang Heavenly Emperor mark different public meanings of the same protagonist."],
+      "emotional_bonds": ["Family debt, Willow Deity's guardianship, Yun Xi's fidelity, Huo Ling'er's separation, and mentor sacrifice repeatedly constrain victory."],
+      "foreshadowing": ["The medicine-garden cosmology, foreign-border threat, ancient artifacts, time echoes, and dark source are planted before their final explanations."],
+      "state_ledger": ["Major states track cultivation realm, physical integrity, bloodline ownership, public identity, factional standing, and relationship availability across eras."]
+    },
+    "originality_red_lines": [
+      "Do not treat stolen innate talent, extreme-realm breakthroughs, sect destruction, or public face-slapping as sufficient story engines without specific relational and institutional consequences.",
+      "Do not resolve every death with revival, sacrifice, or time travel; preserve irreversible costs when using rebirth mechanisms.",
+      "Do not collapse split identities or multiple romantic bonds into interchangeable harem functions; maintain independent agency and state continuity.",
+      "Do not use higher-realm reveals as automatic escalation; each new cosmological layer must alter the protagonist's ethical or strategic problem."
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "version": "0.21",
+  "baseline_id": "borrowed-heaven-canonical-baseline-v021",
+  "project": "《借天改命账》",
+  "status": "frozen_for_bounded_intent_only",
+  "canonical_inputs": [
+    {
+      "path": "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md",
+      "sha256": "81575478a441852f18d451e9967245bbfce11d60cddd3af24e9b6565955e0604"
+    },
+    {
+      "path": "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md",
+      "sha256": "1f12fe8ad3262876eb533d40c94ad02abb90b95b38de387d339917fce9184648"
+    },
+    {
+      "path": "system/creation_assets/project_assets.v0.2.json",
+      "sha256": "415ea1feba1376df7ebca6334e494db28b1b034e27a787c495a6e50d31b1bc98",
+      "asset_count": 43
+    }
+  ],
+  "remediation": {
+    "path": "system/agent_ops/validation/borrowed_heaven_canonical_remediation_v0.21.json",
+    "sha256": "1a96b50ee26b23c340a453cc964f87a61d2db8904c5ad42f97ee6c61455556e6"
+  },
+  "antigravity_rereview": {
+    "path": ".agent-handoff/antigravity/responses/nrl-v021-canonical-remediation-rereview.md",
+    "sha256": "715e5bb5140bf66af4b0713b4f32d8328d56bdc22fef16d26c42d91b514d5832",
+    "verdict": "ACCEPT"
+  },
+  "allowed_next_action": "Create and validate a non-prose Chapter 1 intent within the accepted scope.",
+  "forbidden_actions": [
+    "generate chapter prose",
+    "run Hermes writer",
+    "activate or acquire dormant lamp and advanced techniques in Chapter 1",
+    "bypass a separate Owner prose authorization"
+  ]
+}

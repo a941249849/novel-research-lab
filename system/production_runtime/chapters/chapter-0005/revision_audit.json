@@ -1,0 +1,27 @@
+{
+  "chapter_id": "chapter-0005",
+  "artifact_kind": "revision",
+  "artifact_sha256": "f627dd586df7aa3238d6722148adf34f5bf1c4efaf29f254344d138e31525aaa",
+  "context_sha256": "a7322e4ef7e95dc834d21769f142ef4d1a8d1e61f88d10a9ac3c073561d3eccb",
+  "verdict": "ACCEPT_WITH_WARNINGS",
+  "dimensions": {
+    "canon": [],
+    "character": [],
+    "state": [
+      "state-evidence-text-mismatch"
+    ],
+    "causality": [],
+    "pacing": [],
+    "life_force": [],
+    "anti_ai_taste": [],
+    "originality": []
+  },
+  "issues": [
+    {
+      "issue_id": "state-evidence-text-mismatch",
+      "severity": "minor",
+      "evidence": "Observed fact chapter-0005-physical-state-protagonist-strain-001 cites the evidence '识账后焦纹“沿颧骨又绽开一小截”，黑屑落台', but the revised prose changed this description to '左眼下的焦纹沿颧骨裂开' and removed the reference to black flakes falling.",
+      "required_fix": "Update the evidence field in observation.json to match the revised prose: '左眼下的焦纹沿颧骨裂开'."
+    }
+  ]
+}

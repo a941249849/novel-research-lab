@@ -40,7 +40,10 @@ from nrl_asset_producers import (
     produce_technique_candidates,
 )
 from nrl_capabilities import build_hardening_status
-from nrl_creation_assets import load_creation_asset_registry
+from nrl_creation_assets import (
+    build_creation_asset_graph_status,
+    load_creation_asset_registry,
+)
 from nrl_creation_schemas import (
     build_creation_schema_registry,
     validate_creation_asset_store,
@@ -116,17 +119,52 @@ from nrl_production_runtime import (
     accept_chapter,
     analyze_prose_metrics,
     build_production_readiness,
+    build_production_preflight,
     compile_chapter_context,
     dispatch_chapter_audit,
     dispatch_chapter_draft,
     dispatch_chapter_observation,
     dispatch_chapter_revision,
     ingest_chapter_observation,
+    ingest_chapter_audit,
     ingest_chapter_revision,
     initialize_chapter,
     load_chapter_runtime_status,
+    quarantine_unaccepted_chapter,
     settle_chapter_state,
+    build_observed_settlement_candidate,
+    run_controlled_chapter_pipeline,
 )
+from nrl_volume1_plan import (
+    build_volume1_dry_run,
+    validate_initial_state_contract,
+    validate_volume1_manifest,
+    write_volume1_production_contracts,
+)
+from nrl_agent_canaries import run_agent_protocol_canaries, validate_agent_protocol_canaries
+from nrl_model_router import build_model_routing_status
+from nrl_production_calibration import (
+    build_blind_review_packet,
+    build_calibration_routing_decision_packet,
+    build_direct_writer_calibration_status,
+    record_external_review_blocked,
+    record_calibration_routing_decision,
+    run_direct_writer_calibration,
+    run_internal_calibration_screen,
+)
+from nrl_longform_plan import (
+    write_longform_candidate_contracts,
+    build_longform_contract,
+    build_first100_manifest,
+    validate_longform_contract,
+    validate_first100_manifest,
+    build_first100_guard_config,
+    validate_first100_guard_config,
+    build_longform_readiness,
+    promote_longform_blueprint,
+    build_longform_first100_dry_run,
+)
+from nrl_longform_cluster1 import write_cluster1_intents
 from nrl_registry import (
     find_active_attempt,
     load_registry,
@@ -340,6 +378,12 @@ def cmd_creation_assets(_: argparse.Namespace) -> int:
         )
     )
     return 0
+
+
+def cmd_asset_graph_status(_: argparse.Namespace) -> int:
+    result = build_creation_asset_graph_status()
+    print_json(result)
+    return 0 if result["graph_valid"] else 1
 
 
 def cmd_hardening_status(_: argparse.Namespace) -> int:
@@ -785,6 +829,85 @@ def cmd_chapter_runtime_status(_: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_production_preflight(_: argparse.Namespace) -> int:
+    result = build_production_preflight(load_adapters())
+    print_json(result)
+    return 0 if result["valid"] else 1
+
+
+def cmd_chapter_quarantine(args: argparse.Namespace) -> int:
+    print_json(quarantine_unaccepted_chapter(args.chapter_id, args.reason))
+    return 0
+
+
+def cmd_volume1_plan_build(_: argparse.Namespace) -> int:
+    result = write_volume1_production_contracts()
+    print_json(result)
+    return 0 if result["valid"] else 1
+
+
+def cmd_volume1_plan_validate(_: argparse.Namespace) -> int:
+    from nrl_volume1_plan import LEDGER_PATH, PLAN_PATH, _read_json
+    result = {"manifest": validate_volume1_manifest(_read_json(PLAN_PATH) if PLAN_PATH.exists() else {}), "state_contract": validate_initial_state_contract(_read_json(LEDGER_PATH) if LEDGER_PATH.exists() else {})}
+    result["valid"] = result["manifest"]["valid"] and result["state_contract"]["valid"]
+    print_json(result)
+    return 0 if result["valid"] else 1
+
+
+def cmd_volume1_dry_run(_: argparse.Namespace) -> int:
+    result = build_volume1_dry_run()
+    print_json(result)
+    return 0 if result["valid"] else 1
+
+
+def cmd_agent_canaries_run(args: argparse.Namespace) -> int:
+    case_ids = tuple(f"protocol-{index:02d}" for index in range(args.from_index, args.to_index + 1))
+    result = run_agent_protocol_canaries(agent=args.agent, case_ids=case_ids)
+    print_json(result)
+    return 0 if result["valid"] else 1
+
+
+def cmd_agent_canaries_validate(_: argparse.Namespace) -> int:
+    result = validate_agent_protocol_canaries()
+    print_json(result)
+    return 0 if result["valid"] else 1
+
+
+def cmd_longform_candidate_build(_: argparse.Namespace) -> int:
+    result = write_longform_candidate_contracts()
+    print_json(result)
+    return 0 if result["valid"] else 1
+
+
+def cmd_longform_candidate_validate(_: argparse.Namespace) -> int:
+    result = {"contract": validate_longform_contract(build_longform_contract()), "first100": validate_first100_manifest(build_first100_manifest()), "guards": validate_first100_guard_config(build_first100_guard_config())}
+    result["valid"] = result["contract"]["valid"] and result["first100"]["valid"] and result["guards"]["valid"]
+    print_json(result)
+    return 0 if result["valid"] else 1
+
+
+def cmd_longform_readiness(_: argparse.Namespace) -> int:
+    result = build_longform_readiness()
+    print_json(result)
+    return 0 if result["valid"] else 1
+
+
+def cmd_longform_promote(_: argparse.Namespace) -> int:
+    print_json(promote_longform_blueprint())
+    return 0
+
+
+def cmd_longform_first100_dry_run(_: argparse.Namespace) -> int:
+    result = build_longform_first100_dry_run()
+    print_json(result)
+    return 0 if result["valid"] else 1
+
+
+def cmd_longform_cluster1_intents_build(_: argparse.Namespace) -> int:
+    print_json(write_cluster1_intents())
+    return 0
+
+
 def cmd_prose_metrics(args: argparse.Namespace) -> int:
     path = Path(args.file)
     if not path.is_absolute():
@@ -827,6 +950,11 @@ def cmd_chapter_audit(args: argparse.Namespace) -> int:
     return 0 if result["valid"] else 1
 
 
+def cmd_chapter_audit_ingest(args: argparse.Namespace) -> int:
+    print_json(ingest_chapter_audit(args.chapter_id, args.file))
+    return 0
+
+
 def cmd_chapter_revision_ingest(args: argparse.Namespace) -> int:
     print_json(ingest_chapter_revision(args.chapter_id, args.file))
     return 0
@@ -841,6 +969,59 @@ def cmd_chapter_revision(args: argparse.Namespace) -> int:
 def cmd_chapter_settle(args: argparse.Namespace) -> int:
     print_json(settle_chapter_state(args.chapter_id, args.file))
     return 0
+
+
+def cmd_chapter_settlement_candidate(args: argparse.Namespace) -> int:
+    print_json(build_observed_settlement_candidate(args.chapter_id))
+    return 0
+
+
+def cmd_chapter_run(args: argparse.Namespace) -> int:
+    result = run_controlled_chapter_pipeline(args.intent_file, audit_model=args.audit_model)
+    print_json(result)
+    return 0 if result["valid"] else 1
+
+
+def cmd_model_routing_status(_: argparse.Namespace) -> int:
+    print_json(build_model_routing_status())
+    return 0
+
+
+def cmd_direct_writer_calibration_status(_: argparse.Namespace) -> int:
+    print_json(build_direct_writer_calibration_status())
+    return 0
+
+
+def cmd_direct_writer_calibration_run(args: argparse.Namespace) -> int:
+    result = run_direct_writer_calibration(timeout_seconds=args.timeout_seconds)
+    print_json(result)
+    return 0 if result["valid"] else 1
+
+
+def cmd_direct_writer_calibration_review_packet(_: argparse.Namespace) -> int:
+    print_json(build_blind_review_packet())
+    return 0
+
+
+def cmd_direct_writer_calibration_internal_screen(args: argparse.Namespace) -> int:
+    print_json(run_internal_calibration_screen(timeout_seconds=args.timeout_seconds))
+    return 0
+
+
+def cmd_direct_writer_calibration_external_blocked(args: argparse.Namespace) -> int:
+    print_json(record_external_review_blocked(args.reason))
+    return 0
+
+
+def cmd_direct_writer_calibration_decision_packet(_: argparse.Namespace) -> int:
+    print_json(build_calibration_routing_decision_packet())
+    return 0
+
+
+def cmd_direct_writer_calibration_decision_record(args: argparse.Namespace) -> int:
+    result = record_calibration_routing_decision(args.file)
+    print_json(result)
+    return 0 if result["valid"] else 1
 
 
 def cmd_chapter_accept(args: argparse.Namespace) -> int:
@@ -858,6 +1039,7 @@ def cmd_antigravity_bridge_ask(args: argparse.Namespace) -> int:
         args.request_file,
         output_file=args.output_file,
         print_timeout=args.print_timeout,
+        model=args.model,
     )
     print_json(result)
     return 0
@@ -1224,6 +1406,7 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("system-status").set_defaults(func=cmd_system_status)
     sub.add_parser("studio-data").set_defaults(func=cmd_studio_data)
     sub.add_parser("creation-assets").set_defaults(func=cmd_creation_assets)
+    sub.add_parser("asset-graph-status").set_defaults(func=cmd_asset_graph_status)
     sub.add_parser("hardening-status").set_defaults(func=cmd_hardening_status)
     research = sub.add_parser("research-assets")
     research.add_argument("--title")
@@ -1379,7 +1562,7 @@ def build_parser() -> argparse.ArgumentParser:
     deep_read_dispatch.add_argument("--workers", type=int, default=2)
     deep_read_dispatch.add_argument("--model", default="Gemini 3.5 Flash (High)")
     deep_read_dispatch.add_argument("--print-timeout", default="10m0s")
-    deep_read_dispatch.add_argument("--runner", choices=("agy", "opencode-go"), default="agy")
+    deep_read_dispatch.add_argument("--runner", choices=("agy", "opencode-go", "ccdan-anthropic"), default="agy")
     deep_read_dispatch.add_argument("--skip-chunk-id", action="append", default=[])
     deep_read_dispatch.set_defaults(func=cmd_deep_read_dispatch)
     sub.add_parser("deep-read-synthesis-pack").set_defaults(func=cmd_deep_read_synthesis_pack)
@@ -1404,6 +1587,26 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("project-reconciliation-apply").set_defaults(func=cmd_project_reconciliation_apply)
     sub.add_parser("production-readiness").set_defaults(func=cmd_production_readiness)
     sub.add_parser("chapter-runtime-status").set_defaults(func=cmd_chapter_runtime_status)
+    sub.add_parser("production-preflight").set_defaults(func=cmd_production_preflight)
+    sub.add_parser("volume1-plan-build").set_defaults(func=cmd_volume1_plan_build)
+    sub.add_parser("volume1-plan-validate").set_defaults(func=cmd_volume1_plan_validate)
+    sub.add_parser("volume1-dry-run").set_defaults(func=cmd_volume1_dry_run)
+    agent_canaries_run = sub.add_parser("agent-canaries-run")
+    agent_canaries_run.add_argument("--agent", choices=("hermes", "antigravity"))
+    agent_canaries_run.add_argument("--from-index", type=int, default=1)
+    agent_canaries_run.add_argument("--to-index", type=int, default=10)
+    agent_canaries_run.set_defaults(func=cmd_agent_canaries_run)
+    sub.add_parser("agent-canaries-validate").set_defaults(func=cmd_agent_canaries_validate)
+    sub.add_parser("longform-candidate-build").set_defaults(func=cmd_longform_candidate_build)
+    sub.add_parser("longform-candidate-validate").set_defaults(func=cmd_longform_candidate_validate)
+    sub.add_parser("longform-readiness").set_defaults(func=cmd_longform_readiness)
+    sub.add_parser("longform-promote").set_defaults(func=cmd_longform_promote)
+    sub.add_parser("longform-first100-dry-run").set_defaults(func=cmd_longform_first100_dry_run)
+    sub.add_parser("longform-cluster1-intents-build").set_defaults(func=cmd_longform_cluster1_intents_build)
+    chapter_quarantine = sub.add_parser("chapter-quarantine")
+    chapter_quarantine.add_argument("--chapter-id", required=True)
+    chapter_quarantine.add_argument("--reason", required=True)
+    chapter_quarantine.set_defaults(func=cmd_chapter_quarantine)
     prose_metrics = sub.add_parser("prose-metrics")
     prose_metrics.add_argument("--file", required=True)
     prose_metrics.set_defaults(func=cmd_prose_metrics)
@@ -1427,6 +1630,10 @@ def build_parser() -> argparse.ArgumentParser:
     chapter_audit.add_argument("--chapter-id", required=True)
     chapter_audit.add_argument("--model", default="Gemini 3.5 Flash (High)")
     chapter_audit.set_defaults(func=cmd_chapter_audit)
+    chapter_audit_ingest = sub.add_parser("chapter-audit-ingest")
+    chapter_audit_ingest.add_argument("--chapter-id", required=True)
+    chapter_audit_ingest.add_argument("--file", required=True)
+    chapter_audit_ingest.set_defaults(func=cmd_chapter_audit_ingest)
     chapter_revision = sub.add_parser("chapter-revision-ingest")
     chapter_revision.add_argument("--chapter-id", required=True)
     chapter_revision.add_argument("--file", required=True)
@@ -1438,6 +1645,33 @@ def build_parser() -> argparse.ArgumentParser:
     chapter_settle.add_argument("--chapter-id", required=True)
     chapter_settle.add_argument("--file", required=True)
     chapter_settle.set_defaults(func=cmd_chapter_settle)
+    chapter_settlement_candidate = sub.add_parser("chapter-settlement-candidate")
+    chapter_settlement_candidate.add_argument("--chapter-id", required=True)
+    chapter_settlement_candidate.set_defaults(func=cmd_chapter_settlement_candidate)
+    chapter_run = sub.add_parser("chapter-run")
+    chapter_run.add_argument("--intent-file", required=True)
+    chapter_run.add_argument("--audit-model", default="Gemini 3.5 Flash (High)")
+    chapter_run.set_defaults(func=cmd_chapter_run)
+    sub.add_parser("model-routing-status").set_defaults(func=cmd_model_routing_status)
+    sub.add_parser("direct-writer-calibration-status").set_defaults(func=cmd_direct_writer_calibration_status)
+    direct_calibration = sub.add_parser("direct-writer-calibration-run")
+    direct_calibration.add_argument("--timeout-seconds", type=int, default=240)
+    direct_calibration.set_defaults(func=cmd_direct_writer_calibration_run)
+    sub.add_parser("direct-writer-calibration-review-packet").set_defaults(
+        func=cmd_direct_writer_calibration_review_packet
+    )
+    direct_internal_screen = sub.add_parser("direct-writer-calibration-internal-screen")
+    direct_internal_screen.add_argument("--timeout-seconds", type=int, default=240)
+    direct_internal_screen.set_defaults(func=cmd_direct_writer_calibration_internal_screen)
+    direct_external_blocked = sub.add_parser("direct-writer-calibration-external-blocked")
+    direct_external_blocked.add_argument("--reason", required=True)
+    direct_external_blocked.set_defaults(func=cmd_direct_writer_calibration_external_blocked)
+    sub.add_parser("direct-writer-calibration-decision-packet").set_defaults(
+        func=cmd_direct_writer_calibration_decision_packet
+    )
+    direct_decision_record = sub.add_parser("direct-writer-calibration-decision-record")
+    direct_decision_record.add_argument("--file", required=True)
+    direct_decision_record.set_defaults(func=cmd_direct_writer_calibration_decision_record)
     chapter_accept = sub.add_parser("chapter-accept")
     chapter_accept.add_argument("--chapter-id", required=True)
     chapter_accept.set_defaults(func=cmd_chapter_accept)
@@ -1448,6 +1682,7 @@ def build_parser() -> argparse.ArgumentParser:
     antigravity_bridge_ask.add_argument("--request-file", required=True)
     antigravity_bridge_ask.add_argument("--output-file")
     antigravity_bridge_ask.add_argument("--print-timeout", default="5m0s")
+    antigravity_bridge_ask.add_argument("--model")
     antigravity_bridge_ask.set_defaults(func=cmd_antigravity_bridge_ask)
     sub.add_parser("doctor").set_defaults(func=cmd_doctor)
     sub.add_parser("advance").set_defaults(func=cmd_advance)

@@ -1,0 +1,166 @@
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "book_id": "book-02-7624374abf2e",
+  "book_title": "《不死不灭》（校对版全本）作者：辰东",
+  "covered_chunk_ids": [
+    "book-02-7624374abf2e-chunk-001",
+    "book-02-7624374abf2e-chunk-002"
+  ],
+  "covered_chunk_hashes": [
+    {
+      "chunk_id": "book-02-7624374abf2e-chunk-001",
+      "response_sha256": "57b79cffefa99d452a387575822e076d4976cdd6f067447859bb7045407a44d7"
+    },
+    {
+      "chunk_id": "book-02-7624374abf2e-chunk-002",
+      "response_sha256": "23a51bf0907b014899bc9b8a3fe5490af59d5c92491af7206593cfe267b284c8"
+    }
+  ],
+  "synthesis": {
+    "narrative_spine": [
+      {
+        "phase": "Origin and deviation",
+        "summary": "Dugu Baitian begins as a martial-arts-obsessed youth judged to lack talent, then survives a forbidden demonic awakening and death-like recovery that place him outside ordinary cultivation and social judgment.",
+        "chapter_headings": ["第一章 横空出世", "第十一章 舍身成魔", "第十五章 魔死身生"]
+      },
+      {
+        "phase": "Escalation from sect conflict to ancient history",
+        "summary": "Personal persecution and combat reputation grow into contact with sealed palaces, demonic powers, and evidence that ancient sages and Dugu's own past identities remain active forces.",
+        "chapter_headings": ["大战云山之巅（中）", "恐怖绝地", "魔祖出世"]
+      },
+      {
+        "phase": "Cosmic war and provisional ending",
+        "summary": "After reaching Saint level, Dugu joins awakened ancient powers against the Other Shore; the war exposes the life-and-death balance and Heaven-scale threat, before divine bloodlines and the Houyi Bow end the immediate antagonist and leave the larger conflict open.",
+        "chapter_headings": ["第二十二章 进军彼岸", "第二十四章 生死平衡", "第二十五章 颠峰之战", "第二十六章 结局"]
+      }
+    ],
+    "character_arcs": [
+      {
+        "character": "独孤败天",
+        "arc": "He progresses from dismissed aspirant to demonized survivor, publicly feared Demon Emperor, ninth-life ancient power, and Saint-level war leader; physical destruction at the climax is followed by bodily reconstitution.",
+        "chapter_headings": ["舍身成魔", "魔死身生", "威震天下", "魔祖出世", "进军彼岸", "结局"]
+      },
+      {
+        "character": "萱萱",
+        "arc": "Her early playful, disruptive role is repeatedly interrupted by vulnerability and culminates in revelation of a sealed ancient divine bloodline that gives her decisive battlefield agency.",
+        "chapter_headings": ["让往事飞", "魔女重伤", "颠峰之战"]
+      },
+      {
+        "character": "司徒明月",
+        "arc": "Dugu's formative love and later loss become a long-running motivation; she returns from the Moon God Palace as a divine inheritor whose action determines the climax.",
+        "chapter_headings": ["难忘初恋", "魔祖出世", "颠峰之战"]
+      },
+      {
+        "character": "魔祖与大魔天王",
+        "arc": "The awakened Demon Ancestor is revealed as the hidden ruler's brother, while Great Demon Heavenly King shifts from concealed mastermind to Heaven-defying opponent; the conflict retains a protective sibling dimension when the Demon Ancestor is sealed.",
+        "chapter_headings": ["魔祖出世", "大魔天王", "颠峰之战", "结局"]
+      }
+    ],
+    "mechanism_evolution": [
+      {
+        "mechanism": "Demonic cultivation and Undying recovery",
+        "evolution": "The early power system establishes forbidden conversion and death-like regeneration as the protagonist's exceptional survival route.",
+        "chapter_headings": ["舍身成魔", "魔死身生"]
+      },
+      {
+        "mechanism": "Seals, suspended sages, and reincarnated identity",
+        "evolution": "Ancient formations preserve rather than simply kill powerful beings, enlarging the story's time scale and supporting the later release of old combatants and Dugu's nine-life identity.",
+        "chapter_headings": ["恐怖绝地", "血魔？第一美女？", "魔祖出世"]
+      },
+      {
+        "mechanism": "Saint-level immortality and its countermeasure",
+        "evolution": "Life and Death Balance makes direct destruction insufficient, so the climax introduces awakened divine bloodline and the Houyi Bow as a means to permanently resolve an otherwise immortal opponent.",
+        "chapter_headings": ["生死平衡", "颠峰之战", "结局"]
+      }
+    ],
+    "world_expansion": [
+      {
+        "expansion": "The initial martial-world contest broadens through Tongzhou's sealed underground palace and the Demonic Region into a history of ancient sages and demonic rulers.",
+        "chapter_headings": ["恐怖绝地", "呼唤", "魔祖出世"]
+      },
+      {
+        "expansion": "The final movement crosses into the Other Shore, reframes the conflict around Heaven's cyclical punishments, and explicitly connects the setting to a later merged-continent sequel world.",
+        "chapter_headings": ["进军彼岸", "大战", "结局", "后记"]
+      }
+    ],
+    "long_term_reader_hooks": [
+      {
+        "hook": "The sealed Tongzhou palace, Moon God Palace, and mysterious jade stone promise that local early anomalies are entries into much older history.",
+        "chapter_headings": ["恐怖绝地", "舍身成魔", "魔祖出世"]
+      },
+      {
+        "hook": "Dugu's nine incarnations and the persistence of sealed sages shift the central question from winning a rivalry to recovering an erased past.",
+        "chapter_headings": ["魔祖出世", "进军彼岸"]
+      },
+      {
+        "hook": "The defeat of Great Demon Heavenly King does not close the Heaven-scale danger; the postscript directs unresolved mythology and geography into the sequel.",
+        "chapter_headings": ["结局", "后记"]
+      }
+    ],
+    "style_and_life_force": [
+      {
+        "observation": "The narrative drives status escalation through grand environmental destruction, rapid combat motion, and frightened witness reactions, while comic technique names puncture the solemnity.",
+        "chapter_headings": ["舍身成魔", "大战云山之巅（中）", "威震天下"]
+      },
+      {
+        "observation": "Emotional sacrifice, philosophical debate about sainthood and good versus evil, weather-linked tragedy, and direct postscript commentary create an openly melodramatic serial voice.",
+        "chapter_headings": ["徘徊于神魔之间", "大战", "颠峰之战", "后记"]
+      }
+    ],
+    "continuity_failures": [
+      {
+        "issue": "No internal contradiction is explicitly established by the supplied analyses; the observable continuity pressure is a deliberately accelerated final resolution, which the postscript attributes to publishing and sales pressure.",
+        "chapter_headings": ["后记"]
+      },
+      {
+        "issue": "The final divine-bloodline and Houyi Bow solution is identified by the chunk analysis as abrupt relative to the prior immortal-stalemate mechanism, creating a setup-to-payoff strain rather than a verified factual contradiction.",
+        "chapter_headings": ["生死平衡", "颠峰之战"]
+      }
+    ],
+    "evidence_map": [
+      {"claim": "narrative_spine: Dugu's exception begins with demonic transformation and recovery.", "chunk_id": "book-02-7624374abf2e-chunk-001", "chapter_heading": "第十一章 舍身成魔"},
+      {"claim": "character_arcs: Xuanxuan's divine-power transition culminates in the final war.", "chunk_id": "book-02-7624374abf2e-chunk-002", "chapter_heading": "第二十五章 颠峰之战"},
+      {"claim": "mechanism_evolution: Life and Death Balance establishes saintly immortality.", "chunk_id": "book-02-7624374abf2e-chunk-002", "chapter_heading": "第二十四章 生死平衡"},
+      {"claim": "world_expansion: the Other Shore is entered by the Tianyu force.", "chunk_id": "book-02-7624374abf2e-chunk-002", "chapter_heading": "第二十二章 进军彼岸"},
+      {"claim": "long_term_reader_hooks: the sequel connection is directly stated in the postscript.", "chunk_id": "book-02-7624374abf2e-chunk-002", "chapter_heading": "第二十六章 结局"},
+      {"claim": "style_and_life_force: philosophical reflection is embedded in the Hundred Saints battle.", "chunk_id": "book-02-7624374abf2e-chunk-002", "chapter_heading": "第二十三章 大战"},
+      {"claim": "continuity_failures: the supplied analysis records a rushed ending linked to editorial pressure.", "chunk_id": "book-02-7624374abf2e-chunk-002", "chapter_heading": "第二十六章 结局"},
+      {"claim": "creation_family_evidence.characters: the ninth-incarnation identity underwrites Dugu's character construction.", "chunk_id": "book-02-7624374abf2e-chunk-001", "chapter_heading": "第五章 魔祖出世"},
+      {"claim": "creation_family_evidence.npcs: the Old Scammer recurs as a hidden watcher rather than a one-scene comic figure.", "chunk_id": "book-02-7624374abf2e-chunk-001", "chapter_heading": "第三章 老骗子"},
+      {"claim": "creation_family_evidence.factions: orthodox labeling drives Dugu's persecution.", "chunk_id": "book-02-7624374abf2e-chunk-001", "chapter_heading": "第五章 大战云山之巅（中）"},
+      {"claim": "creation_family_evidence.artifacts: the Houyi Bow is the climactic divine instrument.", "chunk_id": "book-02-7624374abf2e-chunk-002", "chapter_heading": "第二十五章 颠峰之战"},
+      {"claim": "creation_family_evidence.techniques: the comic-named sword ultimate functions as a signature technique.", "chunk_id": "book-02-7624374abf2e-chunk-001", "chapter_heading": "第五章 大战云山之巅（中）"},
+      {"claim": "creation_family_evidence.naming: the volume-and-chapter serial format is explicitly identified as a creation pattern.", "chunk_id": "book-02-7624374abf2e-chunk-001", "chapter_heading": "第一章 横空出世"},
+      {"claim": "creation_family_evidence.emotional_bonds: Mingyue's loss and return organize Dugu's emotional motivation.", "chunk_id": "book-02-7624374abf2e-chunk-002", "chapter_heading": "第二十五章 颠峰之战"},
+      {"claim": "creation_family_evidence.foreshadowing: early seals lead to the awakening of ancient powers.", "chunk_id": "book-02-7624374abf2e-chunk-001", "chapter_heading": "第二十二章 恐怖绝地"},
+      {"claim": "creation_family_evidence.state_ledger: Dugu reforms after bodily obliteration.", "chunk_id": "book-02-7624374abf2e-chunk-002", "chapter_heading": "第二十六章 结局"},
+      {"claim": "originality_red_lines: the final solution is assessed as a deus-ex-machina risk by the chunk analysis.", "chunk_id": "book-02-7624374abf2e-chunk-002", "chapter_heading": "第二十五章 颠峰之战"}
+    ],
+    "creation_family_evidence": {
+      "characters": [{"claim": "Construct the lead through visible stages of failure, demonization, recovery, public legend, and recovered prior lives rather than a static chosen-one reveal.", "chapter_heading": "魔祖出世"}],
+      "npcs": [{"claim": "Use apparently comic or marginal figures such as the Old Scammer as recurrent historical observers whose later appearances revise their narrative weight.", "chapter_heading": "老骗子"}],
+      "factions": [{"claim": "Build conflict by making orthodox institutions politically self-serving and capable of defining the protagonist as demonic.", "chapter_heading": "大战云山之巅（中）"}],
+      "artifacts": [{"claim": "Give artifacts distinct narrative jobs: the jade stone transfers survival knowledge, while the Houyi Bow supplies the rare force that can settle an immortal stalemate.", "chapter_heading": "第二十五章 颠峰之战"}],
+      "techniques": [{"claim": "Stage techniques as rule-bearing escalation: demonic conversion, regeneration, ancient seals, and Saint-level balance each alter what counts as a survivable conflict.", "chapter_heading": "第二十四章 生死平衡"}],
+      "naming": [{"claim": "Pair solemn cultivation labels and cosmic epithets with deliberately comic attack naming, preserving serial readability amid high-power escalation.", "chapter_heading": "大战云山之巅（中）"}],
+      "emotional_bonds": [{"claim": "Anchor power escalation in Dugu's bonds with Mingyue and Xuanxuan, allowing their later divine agency to become an emotional as well as tactical resolution.", "chapter_heading": "第二十五章 颠峰之战"}],
+      "foreshadowing": [{"claim": "Plant restricted spaces and dormant entities early, then reclassify them as the infrastructure for the final ancient-war plot.", "chapter_heading": "恐怖绝地"}],
+      "state_ledger": [{"claim": "Track irreversible-seeming states explicitly: presumed death becomes recovery, sealed potential becomes awakened bloodline, and bodily annihilation becomes slow reconstruction.", "chapter_heading": "第二十六章 结局"}]
+    },
+    "originality_red_lines": [
+      {
+        "risk": "Avoid resolving an established immortality mechanism with an insufficiently prepared bloodline-and-relic intervention.",
+        "chapter_headings": ["生死平衡", "颠峰之战"]
+      },
+      {
+        "risk": "Avoid relying on golden-finger memory transfer, uniformly hypocritical orthodox institutions, polarized female archetypes, or a predestined reincarnated savior without countervailing agency and causality.",
+        "chapter_headings": ["舍身成魔", "大战云山之巅（中）", "天使的欲望", "大魔天王"]
+      },
+      {
+        "risk": "Avoid a compressed finale whose causal resolution depends on external publication pressure rather than earned in-story setup.",
+        "chapter_headings": ["后记"]
+      }
+    ]
+  }
+}

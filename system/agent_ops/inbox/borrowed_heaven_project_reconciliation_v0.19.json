@@ -1,0 +1,168 @@
+{
+  "job_id": "job-v019-borrowed-heaven-project-reconciliation",
+  "contract_version": "0.19",
+  "project": "《借天改命账》",
+  "input_hashes": [
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/cross_book_distillation.json",
+      "sha256": "981ccf2ceebaa4616e6a3c29896e525100981813fcc5d0aaf27d0684997ed87b"
+    },
+    {
+      "path": "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md",
+      "sha256": "5cab7816be272af5c6a3794092c6387c9b09af521c245c2ce9a3f22f1c02c383"
+    },
+    {
+      "path": "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md",
+      "sha256": "511b0ab58a48f2f553874075e5fa84be25a815bbf4578ad8a3ccf99a8ae1f48b"
+    },
+    {
+      "path": "system/creation_assets/project_assets.v0.2.json",
+      "sha256": "bff5b1e3ba6f4902f550f54b774a74c89bb1e18650b7ca268ea42fef1d82e5d0"
+    },
+    {
+      "path": "system/agent_ops/inbox/hermes-controlled-prose-test-v016.md",
+      "sha256": "517335359af62612fe27cf3579517f18f7e78b58caf26a4fff8dbbd9b433dcc7"
+    },
+    {
+      "path": "system/agent_ops/inbox/antigravity-controlled-prose-audit-v016.md",
+      "sha256": "a78941d648fc08dd6b81cc8b0e75266c1b8a334b655d962ecb5cfc1c96b63e74"
+    },
+    {
+      "path": "system/agent_ops/inbox/antigravity-volume1-assets-audit-v017.md",
+      "sha256": "673757dc86b6166073da994710413c085fa28027ff2d3e88da59e5ac98811a27"
+    }
+  ],
+  "verdict": "ACCEPT_WITH_WARNINGS",
+  "assessments": {
+    "long_form_vitality": [
+      "KEEP — The bible binds the mother debt, half-life identity, poor-city duplicate levy, and eventual challenge to the celestial account into one obligation that can survive map expansion; this matches CB18-M07's deferred-promise spine without importing a source relationship or payoff.",
+      "KEEP — The outline preserves earlier costs and evidence while widening from Mudlamp Lane and the local registry office to the prefecture treasury edge; the transfer seal remains a bounded clue rather than opening the whole upper map, consistent with CB18-M04 and CB18-M08.",
+      "GAP — All six Volume 1 clusters reuse evidence gathering, visible spell conflict, public reversal, backlash, and higher pursuit in nearly the same order. Without different decision types, failed attempts, recovery intervals, or opponent adaptation, the satisfaction loop can become predictable rather than cumulative.",
+      "GAP — The bible promises a long-form move from personal debt to public fate-law, but the active asset bundle mainly covers the protagonist, his mother, two enforcement layers, and one neighborhood. Independent offices, successor capacity, dissent, and durable supporting-character trajectories required by CB18-M05 and CB18-M10 are not yet represented beyond role functions."
+    ],
+    "plot_logic": [
+      "KEEP — Volume 1 has a legible causal ladder: the mother's lamp and the protection array are threatened by the same duplicate levy; residual fire exposes an erroneous chain; public proof triggers local suppression; the transport seal then establishes prefecture involvement without resolving the ancient debt.",
+      "GAP — Arc Cluster 2 uses the core lamp to collect residual fire, but the outline does not stage its acquisition or activation proof. The asset registry says the lamp must fall from the Mudlamp Lane array base and be awakened by voluntarily offered watch-fire, so the first decisive use currently lacks its required causal transition.",
+      "GAP — Arc Cluster 5 states that the empty-life state increases combat power while lifespan drains, whereas `state_ledger_protagonist_strain` requires overload to remove a casting window or require intervention rather than grant a cost-free burst. Leaving both rules active makes the same threshold produce incompatible outcomes.",
+      "GAP — Arc Cluster 6 combines escape, the mother debt, and the array into the first local rewrite, but the outline does not yet bind that outcome to the registered preconditions for verified residual fire, resident witness, array integrity, and the protagonist's remaining casting capacity. The climax can therefore read as declared convergence instead of CB18-M11/CB18-M16 procedural convergence.",
+      "GAP — The black-market merchant or fugitive is required to enable the abandoned-life-site route and provide a moral temptation in Cluster 5, but no active NPC, faction, bond, or transaction asset defines that role's information limit, price, red line, or exit condition."
+    ],
+    "character_and_emotional_life": [
+      "KEEP — Su Wan is an active moral constraint in the bible, `npc_su_wan`, `bond_mother_su_wan`, and the controlled scene: she recognizes the old mark and refuses any rescue funded by neighbors or children. Her unresolved cracked lamp changes the protagonist's available choices rather than serving as a passive reward.",
+      "KEEP — `bond_mudlamp_lane_trust` gives residents the right to question, refuse, and withdraw testimony, and the controlled scene shows residents guarding children, bracing the array, and identifying returned fire. This realizes CB18-M09 and CB18-M13 through costly communal practice.",
+      "GAP — Qiu Shen, Gu Xun, and Wen Zhaowei have bounded authority and knowledge, but their active cards primarily specify enforcement function, scaling, and retirement. They lack independent personal obligations or competing loyalties that could cause adaptation, refusal, bargaining, or divergence across repeated encounters.",
+      "GAP — The outline depends on an array craftsperson, a low-level clerk, and recurring mutual-aid witnesses, but only Mo Jinglan is active as a noncombatant witness asset. The controlled scene's vendor, child, craftsperson, and lamp-bearing residents demonstrate useful life but remain untracked, raising the risk that later appearances become interchangeable crowd functions.",
+      "GAP — The controlled prose audit approves the physical and communal layers but explicitly identifies missing cognitive or sensory evidence for declining sanity. Without this, the registered `sanity_level` and memory-risk costs do not yet alter relationships or decisions on the page."
+    ],
+    "anti_ai_prose": [
+      "KEEP — The controlled scene translates extraction into gray rain, red bone-marks, dimmed lamps, chain sound, cold ash, and bodily rupture; the prose audit confirms that engineering ledger terminology does not leak into reader-facing text.",
+      "KEEP — Viewpoint-scale actions carry exposition: Mo Jinglan recognizes a dead child's residual years, Su Wan sets a moral boundary, and residents protect one another. This follows the corpus instruction to ground systems in operations, material consequences, and relationship-specific attention.",
+      "GAP — White hair, split skin, cold-ash coughing, dimmed lamps, public witnesses, and an approaching stronger collector are mandated across several active assets and outline clusters. Repeating the full package at every payoff would create a recognizable generated-scene template even though the single test scene succeeds.",
+      "GAP — The outline's repeated `pressure -> evidence -> combat -> public reversal -> backlash -> map escalation` cadence can produce uniform reversals and summary-like scene endings. Production needs variation through failed proof, negotiation, repair, ordinary labor, partial withdrawal, and aftermath while preserving causal cost.",
+      "GAP — The prose audit's approval is explicitly bounded to one scene and does not authorize full serialization. Treating it as a global style pass would leave voice asymmetry, quiet aftermath, opponent-specific diction, and cognitive strain untested."
+    ],
+    "asset_and_state_consistency": [
+      "KEEP — Active artifacts and techniques generally expose narrow verbs, activation conditions, witnessed evidence, bodily cost, pursuit exposure, dormancy, and retirement, closely matching CB18-M01, CB18-M02, and CB18-M11 without making one object a universal answer.",
+      "GAP — The bible and outline call the core object `残命灯盏`, while the active registry and controlled scene call it `灰烬回灯盏`. No canonical rename or alias mapping connects the terms, so identity, references, and future state updates can split across two apparent artifacts.",
+      "GAP — The Volume 1 asset audit identifies overlapping ownership of `caster_lifefire_stability`, `half_life_registry_exposure`, and `mother_life_lamp_cracks` between `state_ledger_protagonist_strain` and `state_ledger_poorcity_returnfire`. The current registry has no single-writer or synchronization rule, so one action can produce divergent balances.",
+      "GAP — `character_lu_chenyuan` is at `燃命境初成`, while active `technique_ledger_recognition` can inspect pages, chains, residual fire direction, and glimpse the ancient covenant; the bible assigns personal-page reading to `识账境`. The permitted subset at the current growth stage is not reconciled.",
+      "GAP — `technique_embertrace_return` lists `artifact_ashlight_cup` under `counter_ids` even though its relationships and constraints describe that artifact as a required tool. This reverses the dependency's semantics and can break counter validation.",
+      "GAP — Several required state keys, including array integrity, mother-lamp cracks, half-life exposure, public reputation, faction pressure, map unlocks, and unresolved mysteries, appear only as metric strings or outline seeds rather than independently owned active state assets. Their value types, writers, thresholds, and cross-ledger transaction boundaries are therefore incomplete.",
+      "GAP — Multiple active assets cite Phase 2E material or a v0.17 readiness audit that is not among this reconciliation's bound inputs; `naming_lifefire_local_style` also cites the asset file itself. These references may be valid elsewhere, but this packet cannot verify their provenance, so promotion evidence is not fully auditable from the bound corpus."
+    ],
+    "originality": [
+      "KEEP — The project's combination of half-life legal personhood, communal life-fire collateral, duplicate celestial extraction, embodied account proof, and public fate-law challenge grows coherently from its own life-finance engine rather than from a copied scene chain.",
+      "KEEP — The bible's explicit red lines, both naming policies, and each active asset's originality boundary prohibit source names, iconic objects, realm ladders, relationship configurations, and surface diction. The controlled scene contains none of the listed forbidden elements.",
+      "KEEP — The most relevant corpus mechanisms are already transformed into native constraints: debt-bearing advantage (CB18-M02), deferred obligation (CB18-M07), anomaly reclassification (CB18-M08), relationship-limited victory (CB18-M09), procedural counterplay (CB18-M11), and ordinary-life counterpressure (CB18-M13).",
+      "GAP — Life as tax, debt, account, scale, collector, and public judgment is a deliberately concentrated semantic field. Without more culture-specific labor, family practice, local disagreement, and non-account forms of attention, the project can feel like a single abstract metaphor repeatedly reskinned rather than a lived world.",
+      "GAP — The corpus offers sixteen reusable mechanisms, but importing operational identities, unstable-identity transitions, inheritance systems, coalitions, or additional persistent artifacts without a native causal need would dilute the project's stronger half-life and communal-return identity. Selective rejection must remain explicit."
+    ]
+  },
+  "keep": [
+    "Keep the mother debt, half-life identity, poor-city duplicate levy, and communal array as the project's central non-substitutable obligation chain.",
+    "Keep Mudlamp Lane residents as consenting actors with the right to refuse costs and withdraw testimony; do not convert trust or resident life-fire into protagonist inventory.",
+    "Keep the core lamp limited to identifying and returning verified mistaken extraction, with witnessed source, bodily backlash, and pursuit exposure on every activation.",
+    "Keep the local-to-prefecture boundary: the transport seal may prove direction and higher authorization but must not disclose the complete benefit chain, celestial account, or ancient covenant in Volume 1.",
+    "Keep public proof as a fusion of visible evidence, supernatural counterplay, witness agency, and irreversible cost rather than an administrative debate or solitary deduction.",
+    "Keep the controlled prose scene as a bounded benchmark for sensory translation, communal agency, and embodied cost, not as authorization for automatic full-volume generation.",
+    "Keep the originality red lines and the rule that source mechanisms may inform abstract validation only, never names, imagery, relationship packages, scene order, or signature abilities."
+  ],
+  "required_changes": [
+    "Before scene production, establish one canonical name and alias policy for `残命灯盏` / `灰烬回灯盏`, then use the canonical asset ID consistently in outline references and state transactions.",
+    "Add or bind the lamp's acquisition and voluntary watch-fire awakening before its first residual-fire collection in Arc Cluster 2; do not treat the active asset as pre-owned without a transition.",
+    "Resolve the empty-life contradiction: define overload as a bounded, prepaid window with explicit lost capability and recovery requirements, or remove the outline's combat-power increase so it matches the protagonist-strain policy.",
+    "Assign single ownership for individual strain, communal return, mother-lamp countdown, half-life exposure, and array integrity; define one atomic transaction that records each spell's evidence gain, return destination, bodily debit, exposure increase, and community consequence.",
+    "Gate `technique_ledger_recognition` by the protagonist's current `燃命境初成` state. Separate basic ash-trace recognition from later personal-page reading, chain tracing, and ancient-covenant glimpses, each with a validated advancement proof.",
+    "Correct `technique_embertrace_return.counter_ids` so the lamp is represented as a prerequisite or amplifier, not a counter, and preserve actual counter paths from enforcement seals, damaged array conditions, and caster overload.",
+    "Specify the first local rewrite's registered preconditions and failure states before Arc Cluster 6: verified mistaken fire, resident consent and witness, sufficient array integrity, bounded caster strain, and a result that cannot erase true debt or the mother's unresolved countdown.",
+    "Activate a bounded black-market merchant or fugitive transaction role for Cluster 5, including information limits, price, moral red line, exposure cost, and exit condition; do not create a broad new faction unless the route causally requires it.",
+    "Give recurring opponents and at least two noncombatant witnesses independent obligations, knowledge limits, and choices that can alter later access or tactics; preserve their ability to refuse, adapt, bargain, or withdraw rather than serving one repeated loop function.",
+    "Create a scene-level variation control that prevents consecutive clusters from resolving with the same full package of public reversal, white hair, split skin, cold-ash cough, crowd confirmation, and stronger pursuer arrival; include quiet aftermath and cognitive strain as causal consequences.",
+    "Audit and either verify or downgrade active assets whose promotion depends on source references outside the packet-bound corpus; remove self-referential provenance as promotion evidence."
+  ],
+  "rejected_source_influences": [
+    "Reject every source-specific name, artifact, realm ladder, ritual, faction, geography, relationship configuration, signature image, prose cadence, and scene sequence; retain only abstract mechanisms within each CB18 originality boundary.",
+    "Reject expanding CB18-M01 into a universal lamp that also transports, archives, adjudicates, upgrades cultivation, or reveals world history. The core lamp must remain a bounded mistaken-fire witness and return instrument.",
+    "Reject adding CB18-M06 operational aliases or CB18-M15 possession, reincarnation, split embodiment, or memory-reset systems to Volume 1; the current half-life identity already carries the necessary exposure problem and needs clearer state gating, not another identity engine.",
+    "Reject importing CB18-M05 institution-building or CB18-M10 coalition scale as early spectacle. Mudlamp Lane may develop delegated capacity only from existing resident needs, dissent, logistics, and consent after the local obligation is established.",
+    "Reject any threshold or map reset that only renames ranks or enlarges opponents. CB18-M03 and CB18-M04 may be used only when proof type, jurisdiction, logistics, ethical constraint, and retained local relationships all change causally.",
+    "Reject recognizable genre collisions already named by the bible and naming assets, including broken-engagement duel structures, massacre revenge displays, iconic coffin arrivals, universal green-bottle artifacts, source-castle societies, fixed pathway systems, and all prohibited Phase 2A naming or route material."
+  ],
+  "asset_patch_candidates": [
+    {
+      "asset_id": "artifact_ashlight_cup",
+      "family": "artifacts",
+      "display_name": "灰烬回灯盏",
+      "lifecycle_state": "active",
+      "source_refs": [
+        "system/agent_ops/inbox/deep_read_v0.18/cross_book_distillation.json",
+        "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md",
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md",
+        "system/creation_assets/project_assets.v0.2.json"
+      ],
+      "relationships": [
+        {
+          "target_id": "technique_embertrace_return",
+          "relation_type": "amplifies"
+        },
+        {
+          "target_id": "foreshadowing_cinder_seal_rain",
+          "relation_type": "reveals_traces_of"
+        },
+        {
+          "target_id": "state_ledger_poorcity_returnfire",
+          "relation_type": "updates"
+        }
+      ],
+      "constraints": [
+        "`残命灯盏` is an outline-stage alias for this same canonical asset, not a second artifact.",
+        "It stores only mistakenly taken residual fire, never fresh life directly stolen from a person.",
+        "Activation visibly cracks the user's skin with ember lines and alerts pursuit through the lamp's smoke.",
+        "Its acquisition from the Mudlamp Lane array base and awakening by voluntarily offered watch-fire must be recorded before first use."
+      ],
+      "artifact": {
+        "cost": "每次让错寿残火回照，持盏者心口都会熄暗一瞬；若连续三次，半寿命火将出现不可逆裂纹。",
+        "upgrade_stage": "裂陶初醒",
+        "lifecycle_policy": {
+          "acquisition": "由泥灯巷护阵基座掉落，须以一段自愿守夜的残火唤醒；该转变必须先于第一次错寿残火收纳。",
+          "activation": "只在现场有灰化寿痕、且持盏者愿承担回流反噬时启用。",
+          "dormancy": "护阵濒毁或灯盏吸入无辜命火时立即沉寂。",
+          "retirement": "若器内残火全部归还原主或其受益街坊，灯盏化为普通陶盏。"
+        },
+        "cost_and_limitation_rules": {
+          "usage_cost": "消耗持有者的命火稳定度，并在mudlamp_array_integrity低于安全线时加剧护阵裂响。",
+          "backlash": "灯焰会从掌纹钻入胸骨，留下灰红灼纹；其烟味可被收债者循到。",
+          "exposure_state_key": "half_life_registry_exposure"
+        },
+        "upgrade_path": {
+          "criteria": "每一阶段须先返还一组可辨认的错寿残火，并经巷民共同见证。",
+          "materials": "错征灰烬、护阵裂屑与持有者自担的一缕命火，不能以掠夺寿数替代。",
+          "state_transition": "裂陶初醒 -> 铜胎凝光 -> 归火长明"
+        },
+        "visual_symbol_ledger": "粗陶盏腹布满像干涸河床的裂纹，点亮时裂缝流出银灰火屑，照见骨上缠绕的债痕。",
+        "originality_policy": "仅采用CB18-M01的阶段性揭示原则；器物持续限定于错寿回照、共同见证与反噬追踪，不扩展为运输、档案、裁决或万能解谜工具。"
+      }
+    }
+  ],
+  "volume1_production_recommendation": "Proceed only with controlled, bounded Volume 1 scene production after the canonical lamp identity/acquisition, state-ledger ownership, progression gating, empty-life rule, counter semantics, and Cluster 5 transaction-role patches validate together. Preserve the approved scene as a sensory and communal-agency benchmark, but require varied conflict resolutions, cognitive as well as bodily consequences, opponent adaptation, and ordinary aftermath before any serial or bulk production; do not promote the project to unrestricted full-volume generation on the current asset bundle alone."
+}

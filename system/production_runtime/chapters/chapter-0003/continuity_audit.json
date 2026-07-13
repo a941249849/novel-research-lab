@@ -1,0 +1,60 @@
+{
+  "chapter_id": "chapter-0003",
+  "artifact_kind": "draft",
+  "artifact_sha256": "cb75a467d08b6e6c0b382b9e4a6bb53bb58a87ac4c386aa6eca633ddc1352022",
+  "context_sha256": "2f0b64f42c16cecccac386afb8086bff999488fff8f303ddb34fbfed5d494903",
+  "verdict": "ACCEPT_WITH_WARNINGS",
+  "dimensions": {
+    "canon": [
+      "陆沉渊的修为表现严格限制在燃命境初成，仅使用普通识账与本地灰痕辨认，无任何越级术法或非法能力施展。",
+      "残命灯盏未被取得、唤醒、持有、激活或使用，严格遵守了剧情与器物限制。",
+      "州府命库仅作为远端背景压力，没有展开全貌或发生人物交锋，且情节与角色动作皆限制在命籍衙的本地权限内。",
+      "可见灰痕与莫井兰、顾婶等人口述校验进行了严密的现场对证，识账所见也局限在眼前普通本地错位。"
+    ],
+    "character": [
+      "陆沉渊在保护母亲命灯与保留错位证据之间做出了痛苦但符合人物逻辑的选择，其隐忍且自担反噬的抄录吏形象立得极稳。",
+      "苏晚以积极的道德主体在场，绝不接受无辜命火替死，并在现场通过冷光溢出和呈灰阻截来实施对仇慎的道德质询与实际保护。",
+      "仇慎作为基层官吏，以自我免责与合规保印为行动第一动机，在公开见证和实体错位的压力下做出封存附录、留待三日再验的妥协，极具逻辑合理性。",
+      "莫井兰作为守灯人既提供了有力的嗅觉、视觉佐证，又严格限缩自身口述边界（声称不知来源），完美展现了挣扎求生的真实人物弧光。"
+    ],
+    "state": [
+      "识账术的反噬结果（左眼焦纹开裂至颧骨、掌心骨裂细响、咳冷灰）和在场的程序性锁定（衙印沾灰）在文字上均有清晰的客观显形。",
+      "全章未引入任何未登记的人物、势力、器物、地点或能力，与 Compact Context 的资产列表一致。",
+      "存在记账缺失：使用识账术应产生的 sanity_level 扣减以及严重的暴露事件应带来的 half_life_registry_exposure 数值增量，在 observation.json 中均未见数值层面的登记变动。"
+    ],
+    "causality": [
+      "陆沉渊识账辨认册角空白 -> 咳冷灰沾衙印 -> 暴露风险加重被程序性锁定，因果关系层层递进。",
+      "顾婶自述、莫井兰对证与册角、户灯灰痕的物理校验构成铁证 -> 强行按印盖棺风险剧增 -> 仇慎拖延暂缓并暂带灰物，行动因果有极强的说服力。",
+      "苏晚验灯缩线、手背红点裂开渗冷光 -> 提示命灯濒死风险 -> 逼迫陆沉渊在签传核与熄灯中做抉择，强力推动局部利益交换。"
+    ],
+    "pacing": [
+      "场景始终限制在命籍衙后院，情节全部聚焦于午后复核附录的拉锯谈判，空间与时间均高度内聚。",
+      "结尾只推演到明日辰时顾家与守灯口述的下一次程序复核，悬念和压力均顺延保留，没有换图或剧情暴走。"
+    ],
+    "life_force": [
+      "发白的盐碱墙头、粗糙的砂眼陶片、针尖红点、咳出的冷灰片以及喉咙中的沙哑声，物理与感官细节饱满，质感极佳。",
+      "门外的顾婶拽紧围裙、莫井兰攥紧旧布等极度克制的微小身体动作，将小人物在衙印与官家印威下的恐惧和抗争展现得淋漓尽致。"
+    ],
+    "anti_ai_taste": [
+      "完全放弃了‘矛盾、感慨、命运捉弄’等抽象的心理解释，所有情绪和人物张力都通过灰雨、衙印移动、身体颤抖和对白留白等物象化细节传达。",
+      "台词精炼留白，如‘你认什么？’‘我认。’‘至于是谁落的，我不知道。’等对话，没有反派宣教和自我辩白。"
+    ],
+    "originality": [
+      "充分利用《借天改命账》自有的命籍、错账、寿印、冷灰、共灯、避嫌等自洽的原创概念，以极其粗粝且充满泥沼感的‘合规性/程序性博弈’展开，跳出了常规仙侠斗法套路。"
+    ]
+  },
+  "issues": [
+    {
+      "issue_id": "chapter-0003-state-sanity-decrement-missing",
+      "severity": "minor",
+      "evidence": "在 chapter-0003 的 context.json 中，识账术（technique_ledger_recognition）的使用规定了'measurable_decrement': 0.08 的 sanity_level 扣减。然而在 observation.json 的 facts 中，未能检测到对陆沉渊 sanity_level（初始值为 0.72）的数值扣减登记。",
+      "required_fix": "在 observation.json 的 physical_state 中追加一条对 state_ledger_protagonist_strain 的 sanity_level 变动，将其从 0.72 更新为 0.64。"
+    },
+    {
+      "issue_id": "chapter-0003-state-exposure-numeric-missing",
+      "severity": "minor",
+      "evidence": "在 chapter-0003 正文中，陆沉渊咳出的冷灰沾住已签传核纸衙印使印痕泛暗红，仇慎要求留下该纸，属于明显的暴露风险提升。但 observation.json 中对 state_ledger_half_life_registry_exposure 的修改仅记录了 state_ledger.registry_locking_sign 的定性锁定状态，未登记 numeric 暴露值（half_life_registry_exposure / exposure_rate）的具体数值增量变化。",
+      "required_fix": "在 observation.json 的 physical_state 中对 state_ledger_half_life_registry_exposure 追加 numeric 暴露值的数值增量变化登记，以符合 validation_rule 关于‘增减方向与跨越的追缴值’的审计要求。"
+    }
+  ]
+}

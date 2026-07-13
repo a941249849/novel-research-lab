@@ -1,0 +1,124 @@
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "book_id": "book-05-11dd686b8b15",
+  "book_title": "《凡人修仙传》（校对版全本+番外）作者：忘语",
+  "covered_chunk_ids": [
+    "book-05-11dd686b8b15-chunk-001",
+    "book-05-11dd686b8b15-chunk-002",
+    "book-05-11dd686b8b15-chunk-003",
+    "book-05-11dd686b8b15-chunk-004",
+    "book-05-11dd686b8b15-chunk-005",
+    "book-05-11dd686b8b15-chunk-006",
+    "book-05-11dd686b8b15-chunk-007",
+    "book-05-11dd686b8b15-chunk-008",
+    "book-05-11dd686b8b15-chunk-009",
+    "book-05-11dd686b8b15-chunk-010",
+    "book-05-11dd686b8b15-chunk-011"
+  ],
+  "covered_chunk_hashes": [
+    {"chunk_id": "book-05-11dd686b8b15-chunk-001", "response_sha256": "e5f3b0475be00973b49e8594766be2b35bf0f2b0f4685974e8ef6c1f70aed52e"},
+    {"chunk_id": "book-05-11dd686b8b15-chunk-002", "response_sha256": "49feae2ce404f8630cd7de68bb37cb96c0b7ef53dd615c878a364836c0bc4ef6"},
+    {"chunk_id": "book-05-11dd686b8b15-chunk-003", "response_sha256": "9709a26a777e396d14808d6377627267292375fb12df6dfa2d357003bb989dd9"},
+    {"chunk_id": "book-05-11dd686b8b15-chunk-004", "response_sha256": "fa58952c4019b6ab9d5d252aea6423a8419f51ada6b9f0358da33b60702fc4be"},
+    {"chunk_id": "book-05-11dd686b8b15-chunk-005", "response_sha256": "21a8f8c8c9431ed82f02ba28f78bc935e2150cf82097d0c94cca28ccdada59fa"},
+    {"chunk_id": "book-05-11dd686b8b15-chunk-006", "response_sha256": "e989e04cf591a1975afd511d9bb15a8ed3cc1385361f2c71a5cdd87f9c6ae9fa"},
+    {"chunk_id": "book-05-11dd686b8b15-chunk-007", "response_sha256": "ed71474953076af48447bb0f6ee79ea8bcf80b376530555214dbb962bc29d9ca"},
+    {"chunk_id": "book-05-11dd686b8b15-chunk-008", "response_sha256": "925922c662885db2fd23689c741023e3fe2a8039c69e7977c0dd7e676a433a6c"},
+    {"chunk_id": "book-05-11dd686b8b15-chunk-009", "response_sha256": "f26c10b8550794fe6a33690f85a64529d9137e3b9ddd6a555c25b19f93781681"},
+    {"chunk_id": "book-05-11dd686b8b15-chunk-010", "response_sha256": "0b7fa4f45ad1fbdac3b6946e7b8493ec5c414dc3e3d5a6f56ca260ee99b59283"},
+    {"chunk_id": "book-05-11dd686b8b15-chunk-011", "response_sha256": "25b564a465f2db4b8723cd46f6edcc7c1634abe006ada091e08ca0fb380689fa"}
+  ],
+  "synthesis": {
+    "narrative_spine": [
+      {"phase": "mortal-to-foundation", "summary": "Han Li enters sect cultivation, survives predatory mentors and sect war, then reaches Foundation Establishment while preserving a low-profile resource strategy."},
+      {"phase": "sea-expansion-and-core", "summary": "The collapse of the Yue setting sends Han Li through an ancient teleportation array to the Chaos Star Seas, where Core Formation, the Virtual Sky Hall, and long-held assets expand his reach."},
+      {"phase": "nascent-soul-and-human-realm-scale", "summary": "Nether exile, a return to the Heavenly South, Nascent Soul advancement, wars, Devil Fall Valley, Great Jin, and Kunwu Mountain elevate the conflict from sect survival to regional seals and Spirit-Realm lore."},
+      {"phase": "deification-and-ascension", "summary": "Late Nascent Soul advancement, marriage, Deification, and traversal of a spatial node convert the human-realm progression loop into a vulnerable Spirit-Realm restart."},
+      {"phase": "spirit-realm-power-climb", "summary": "Han Li moves through Spirit-Realm cities, races, trials, demon incursions, Mahayana conflict, and True Immortal threats while repeatedly turning bounded artifacts, beasts, and techniques into scalable leverage."},
+      {"phase": "closure-and-next-realm", "summary": "After resolving soul instability, revisiting lower-realm legacies, and completing the ascension tribulation, Han Li reaches the Beihan Immortal Domain; the epilogue preserves both lineage closure and a further hierarchy."}
+    ],
+    "character_arcs": [
+      {"character": "Han Li", "arc": "A cautious mortal becomes a Foundation, Core, Nascent Soul, Deification, Refined Void, Integration, Mahayana, and finally ascended cultivator; each advancement is paired with resource preparation, tactical retreat, or a mechanism that carries forward."},
+      {"character": "Nangong Wan", "arc": "Her accidental early bond becomes a delayed relationship, then a politically constrained reunion, curse resolution, and formal marriage to Han Li."},
+      {"character": "Silver Moon/Linglong", "arc": "A weapon spirit becomes a split-soul mystery, recovers her Spirit-Realm identity, departs, and later returns as an independent high-level ally constrained by the Forget Emotion Art."},
+      {"character": "Yuan Yao and Yan Li", "arc": "A soul-return attempt imposes lasting costs, then the pair reappear in the Spirit Realm and gain protection and placement under Qing Yuanzi."},
+      {"character": "Han Li's companions and disciples", "arc": "Crooked Soul, Dayan Monarch, spirit beasts, Bai Guo'er, Qi Lingzi, and Hai Dashao provide continuity through possession, completion of old promises, beast evolution, mentorship, and delegated obligations."}
+    ],
+    "mechanism_evolution": [
+      {"mechanism": "Green bottle", "evolution": "It begins as herb acceleration, then matures bamboo and bait plants, revives Xuantian material, connects to pseudo-immortal energy, and remains central to endgame Dao-fruit and artifact actions."},
+      {"mechanism": "cultivation thresholds", "evolution": "Foundation Establishment, Core Formation, Nascent Soul, Deification, Refined Void, Integration, Mahayana, and ascension are each framed as material, bodily, soul, or tribulation-gated transitions."},
+      {"mechanism": "weapons-and-arrays", "evolution": "The Bamboo Cloud Bee-Decline Swords, Great Geng Sword Formation, Virtual Sky Cauldron, Magnetic Mountains, replica spirit treasures, and Xuantian sword convert earlier acquisitions into later countermeasures."},
+      {"mechanism": "soul-and-clone-systems", "evolution": "Body snatching, puppet possession, split consciousness, second Nascent Soul autonomy, Refine Soul Art, and the Heavenly Demon Pact keep identity, control, and soul cost active across realms."},
+      {"mechanism": "cross-realm-travel", "evolution": "Teleportation arrays, Ghost Mist, spatial nodes, pocket realms, demon passages, and the final tribulation progressively widen the setting while imposing coordinate, power-sealing, oath, and survival costs."}
+    ],
+    "world_expansion": [
+      {"layer": "human-realm institutions", "summary": "Qi Xuan Sect, Yellow Maple Valley, the Seven Sects, Devil Dao, and regional clans establish a hierarchy of local martial, sect, and war pressures."},
+      {"layer": "maritime-and-ruin-space", "summary": "Chaos Star Seas, Star Palace, Outer Sea beast hunting, the Virtual Sky Hall, and ancient teleportation systems open a resource and relic economy beyond the first kingdom."},
+      {"layer": "human-realm macro-politics", "summary": "Heavenly South, Mulan, Great Jin, Kunwu Mountain, and Devil Fall Valley combine war, sealed calamities, hidden high-stage cultivators, and multi-faction treasure expeditions."},
+      {"layer": "spirit-realm pluralism", "summary": "Human, demon, Tianpeng, Jiao Chi, Cloud, Wood, True Dragon, and other races compete through city defense, trials, auctions, bloodlines, and Xuantian treasures."},
+      {"layer": "upper-realm horizon", "summary": "Demon Realm, True Immortals, ascension restrictions, Beihan Immortal Domain, and Dao Ancestor-scale governance establish an ordered but much larger continuation space."}
+    ],
+    "long_term_reader_hooks": [
+      {"hook": "The green bottle's origin and escalating capabilities remain unresolved even as its effects reach pseudo-immortal and Dao-fruit contexts."},
+      {"hook": "Xuantian objects, the Chaos Spirit Map, and higher-realm interest turn a personal weapon into an inter-racial strategic liability."},
+      {"hook": "Soul liabilities persist: Refine Soul Art instability, split souls, creature contracts, and the Heavenly Demon Pact all reserve future costs."},
+      {"hook": "Relationships retain deferred pressure through Silver Moon's Forget Emotion Art, the fate of old companions, and lower-realm descendants and sects."},
+      {"hook": "The ascension ending closes the human-realm arc but immediately opens Beihan institutions, rank ladders, and immortal-domain conflict."}
+    ],
+    "style_and_life_force": [
+      {"trait": "cautious progression", "summary": "Third-person focus repeatedly privileges risk calculation, escape planning, hidden strength, and delayed commitment over heroic impulse."},
+      {"trait": "procedural magic", "summary": "Breakthroughs, refining, arrays, beast cultivation, and treasure activation are explained through constraints, materials, and countermeasures."},
+      {"trait": "transactional ecology", "summary": "Sects, clans, cultivators, beasts, and allies connect through oaths, leverage, exchanges, favors, resource claims, and asymmetric power."},
+      {"trait": "serial escalation", "summary": "Quiet accumulation alternates with discrete combat or disaster peaks; old items and minor acquisitions later return as decisive tools."},
+      {"trait": "late reflective turn", "summary": "The lower-realm return shifts the otherwise technical progression register toward historical aftermath, memory, lineage, and the cost of elapsed millennia."}
+    ],
+    "continuity_failures": [
+      {"issue": "Response serialization is inconsistent", "impact": "Several hashed chunk responses are not standalone JSON because they contain Markdown fences, planning narration, or post-JSON summaries; synthesis used the embedded analysis objects rather than treating source responses as machine-parseable JSON."},
+      {"issue": "Character corruption and heading anomalies", "impact": "The response evidence identifies systematic mojibake such as 罗T for 罗睺, plus malformed chapter numerals and occasional heading typos; exact anchors are retained only where the reported heading is internally stable."},
+      {"issue": "Overlapping or reset chapter numbering", "impact": "The transition around the later Spirit-Realm volumes duplicates the 1747-1754 range, so chapter heading alone is not globally unique without the associated chunk."},
+      {"issue": "Early internal continuity tensions", "impact": "The analyses flag issues including the green bottle's untracked weight, sword-talisman charge handling, and the practical weakness of the Sheng Xian Command guarantee."}
+    ],
+    "evidence_map": [
+      {"claim": "The story moves from Han Li's sect entry to Foundation Establishment under an early low-profile survival model.", "chunk_id": "book-05-11dd686b8b15-chunk-001", "chapter_heading": "第二百一十五章 炼丹与筑基"},
+      {"claim": "Ancient teleportation shifts the setting to the Chaos Star Seas and enables the next cultivation phase.", "chunk_id": "book-05-11dd686b8b15-chunk-002", "chapter_heading": "第三百六十三章 传送"},
+      {"claim": "Nascent Soul advancement marks the human-realm scaling shift.", "chunk_id": "book-05-11dd686b8b15-chunk-003", "chapter_heading": "第六百三十七章 结婴（上）"},
+      {"claim": "Kunwu Mountain reveals the Spirit-Realm origin behind Silver Moon's split-soul identity.", "chunk_id": "book-05-11dd686b8b15-chunk-004", "chapter_heading": "第一千四十章 银月、雪玲、珑梦"},
+      {"claim": "Deification and spatial-node traversal end the core human-realm progression.", "chunk_id": "book-05-11dd686b8b15-chunk-005", "chapter_heading": "第一千二百六十五章 进入节点"},
+      {"claim": "The Spirit Realm converts prior tools into new city, race, trial, and abyss obligations.", "chunk_id": "book-05-11dd686b8b15-chunk-006", "chapter_heading": "第一千四百八十章 冥河禁制和八门引雷阵"},
+      {"claim": "Refined Void progression is tied to Qing Yuanzi's sword formula and a later pocket-realm forced breakthrough.", "chunk_id": "book-05-11dd686b8b15-chunk-007", "chapter_heading": "第一千七百二十五章 进阶"},
+      {"claim": "Integration advancement is framed through an explicit law-manifestation and heart-demon sequence.", "chunk_id": "book-05-11dd686b8b15-chunk-008", "chapter_heading": "第一千七百五十七章 进阶合体（下）"},
+      {"claim": "Mahayana progression and the Demon-Realm arc convert Han Li into a cross-realm strategic actor.", "chunk_id": "book-05-11dd686b8b15-chunk-009", "chapter_heading": "第两千一百八十六章 进阶大乘"},
+      {"claim": "A True Immortal confrontation makes the Xuantian sword and higher-realm pact consequences explicit.", "chunk_id": "book-05-11dd686b8b15-chunk-010", "chapter_heading": "第两千四百三十九章 交易、大会"},
+      {"claim": "The final ascension supplies closure while opening an immortal-domain hierarchy.", "chunk_id": "book-05-11dd686b8b15-chunk-011", "chapter_heading": "第两千四百四十六章 飞升仙界（大结局）"},
+      {"claim": "Creation evidence: recurring Han Li, bottle, sword, and stage terminology support a coherent named universe.", "chunk_id": "book-05-11dd686b8b15-chunk-011", "chapter_heading": "第两千四百四十二章 重回人界"},
+      {"claim": "Originality risk: forced cross-realm and secret-realm progression can compress advancement and reduce travel friction.", "chunk_id": "book-05-11dd686b8b15-chunk-009", "chapter_heading": "第两千一十八章 魔源海"},
+      {"claim": "character_arcs: Nangong Wan's delayed relationship reaches formal resolution through marriage.", "chunk_id": "book-05-11dd686b8b15-chunk-005", "chapter_heading": "第一千一百九十七章 终成眷属"},
+      {"claim": "mechanism_evolution: the green bottle's initial herb function becomes a Xuantian-growth mechanism.", "chunk_id": "book-05-11dd686b8b15-chunk-005", "chapter_heading": "第一千二百五十二章 玄天之宝"},
+      {"claim": "world_expansion: the Demon Realm introduces a new inter-realm conflict field after the Spirit-Realm arc.", "chunk_id": "book-05-11dd686b8b15-chunk-009", "chapter_heading": "第两千一十八章 魔源海"},
+      {"claim": "long_term_reader_hooks: ascension reaches the Beihan Immortal Domain but immediately establishes a new rank hierarchy.", "chunk_id": "book-05-11dd686b8b15-chunk-011", "chapter_heading": "第两千四百四十六章 飞升仙界（大结局）"},
+      {"claim": "style_and_life_force: the resource-focused, sober account of breakthrough remains central to the cultivation voice.", "chunk_id": "book-05-11dd686b8b15-chunk-002", "chapter_heading": "第三百八十六章 四年结丹"},
+      {"claim": "continuity_failures: the analysis identifies systematic mojibake affecting terms and characters in this response family.", "chunk_id": "book-05-11dd686b8b15-chunk-003", "chapter_heading": "第七百章 瓜分"},
+      {"claim": "creation_family_evidence: an explicit author message names 忘语 and addresses 凡人 readers.", "chunk_id": "book-05-11dd686b8b15-chunk-008", "chapter_heading": "第一千七百七十九章 三对三"},
+      {"claim": "originality_red_lines: the dual-cultivation bottleneck bypass is identified as a reusable trope risk.", "chunk_id": "book-05-11dd686b8b15-chunk-009", "chapter_heading": "第一千九百八十二章 斩草除根"}
+    ],
+    "creation_family_evidence": {
+      "characters": [{"evidence": "韩立 is continuously named as the protagonist across the source-family analyses, with recurring companions including 南宫婉, 银月, 元瑶, and 紫灵.", "chunk_id": "book-05-11dd686b8b15-chunk-011", "chapter_heading": "第两千四百四十三章 人界众象"}],
+      "npcs": [{"evidence": "Dayan Monarch's long-running mentor function reaches a defined completion after the humanoid puppet is refined.", "chunk_id": "book-05-11dd686b8b15-chunk-004", "chapter_heading": "第九百六十八章 傀儡大成"}],
+      "factions": [{"evidence": "The world expands from human sect warfare to named inter-racial and city-defense alignments, including Cloud City and the Jiao Chi threat.", "chunk_id": "book-05-11dd686b8b15-chunk-007", "chapter_heading": "第一千七百四十八章 云城之乱"}],
+      "artifacts": [{"evidence": "The Virtual Sky Cauldron is carried from early maritime acquisition into later spatial-node and inheritance functions.", "chunk_id": "book-05-11dd686b8b15-chunk-005", "chapter_heading": "第一千一百六十六章 金阙玉书"}],
+      "techniques": [{"evidence": "The New Qing Yuan Sword Formula formalizes the recurring sword-and-array progression at high Spirit-Realm tiers.", "chunk_id": "book-05-11dd686b8b15-chunk-007", "chapter_heading": "第一千五百二十章 新青元剑诀"}],
+      "naming": [{"evidence": "Chapter headings consistently use numbered Chinese serialization titles, while terms such as 玄天之宝, 炼神术, and 元合五极山 mark the same xianxia vocabulary family.", "chunk_id": "book-05-11dd686b8b15-chunk-011", "chapter_heading": "第两千四百四十五章 飞升之劫"}],
+      "emotional_bonds": [{"evidence": "Han Li and Nangong Wan's interrupted relationship is eventually restored through reunion, cure, and marriage.", "chunk_id": "book-05-11dd686b8b15-chunk-005", "chapter_heading": "第一千一百九十七章 终成眷属"}],
+      "foreshadowing": [{"evidence": "Early Blood Jade Spiders become the means to retrieve the Virtual Sky Cauldron long after their acquisition.", "chunk_id": "book-05-11dd686b8b15-chunk-002", "chapter_heading": "第四百七十八章 金蚕取宝"}],
+      "state_ledger": [{"evidence": "The final sequence records Han Li's shift from Mahayana to an ascended True Immortal, preserving the next realm as a formal new state.", "chunk_id": "book-05-11dd686b8b15-chunk-011", "chapter_heading": "凡人外传·仙界篇 一"}]
+    },
+    "originality_red_lines": [
+      "Do not reproduce the green-bottle growth engine, artifact escalation chain, or its exact staged payoff structure in a new work.",
+      "Do not reuse the low-profile sect entry, resource hoarding, hidden-trump-card escape cycle as the defining protagonist loop without substantial structural change.",
+      "Do not recreate the specific progression ladder, named weapon-beast inventory, ancient-ruin seal releases, and cross-realm reset sequence as a bundled world model.",
+      "Avoid using female characters chiefly as dual-cultivation catalysts, political marriage stakes, or rescue triggers; preserve independent agency and durable goals.",
+      "Avoid direct reuse of the named families, chapter-title cadence, terminology clusters, or the human-realm-to-spirit-realm-to-immortal-domain trajectory."
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "chapter_id": "chapter-0003",
+  "dramatic_purpose": "承接三日复核期限：让陆沉渊在被程序性盯防的压力下确认顾家错位线索不能仅靠一户自述维持，并把泥灯巷是否继续作证的选择留给共同体。",
+  "must_keep": [
+    "陆沉渊仍为燃命境初成，只能使用普通寿痕辨认与本地灰痕错位识别。",
+    "顾家折记仍处于三日内再次复核的暂缓状态，不得改账、清债或回流寿火。",
+    "共同体证词必须可撤回，任何住户都有拒绝出面或拒绝献灯的权利。",
+    "母亲寿债、灰雨印痕与程序性锁定继续构成压力，不得揭示其高阶真相。"
+  ],
+  "must_avoid": [
+    "不得取得、唤醒、持有或激活残命灯盏。",
+    "不得使用烬痕归火术、反账命印、锁链偏转或任何高阶能力。",
+    "不得引入顾巡、州府、古债、黑市、战斗、公开审判或更高地图。",
+    "不得新增未登记资产或不可结算状态变化。"
+  ],
+  "expected_state_deltas": [],
+  "required_asset_ids": ["character_lu_chenyuan", "npc_su_wan", "npc_mo_jinglan", "npc_registrar_qiu_shen", "bond_mother_su_wan", "bond_mudlamp_lane_trust", "faction_mudlamp_lane", "faction_life_registry_office", "technique_ledger_recognition", "foreshadowing_cinder_seal_rain", "state_ledger_protagonist_strain", "state_ledger_half_life_registry_exposure", "state_ledger_mother_life_lamp_countdown", "state_ledger_revealed_account_errors", "state_ledger_faction_pressure", "state_ledger_unresolved_mysteries"],
+  "active_hook_ids": ["foreshadowing_cinder_seal_rain"],
+  "scene_constraints": ["焦点限于泥灯巷与复核前的本地准备。", "每一次识账都要有可见反噬和独立见证。", "结尾只能形成下一次复核前的局部选择与压力，不得解决主线矛盾。"]
+}

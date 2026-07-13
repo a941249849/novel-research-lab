@@ -40,7 +40,9 @@ class ArchitectureReconciliationCliTests(unittest.TestCase):
             {item["mismatch_id"] for item in data["current_mismatch_report"]},
         )
         self.assertEqual(data["agent_role_contract"][2]["agent"], "Hermes")
-        self.assertEqual(data["agent_role_contract"][2]["status"], "ready")
+        self.assertEqual(
+            data["agent_role_contract"][2]["status"], "optional_enrichment"
+        )
         self.assertEqual(data["agent_role_contract"][1]["agent"], "Antigravity")
         self.assertEqual(data["agent_role_contract"][1]["status"], "ready")
         self.assertNotIn("novel_training_set/", json.dumps(data, ensure_ascii=False))

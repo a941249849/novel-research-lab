@@ -1,0 +1,74 @@
+{
+  "chapter_id": "chapter-0007",
+  "artifact_kind": "draft",
+  "artifact_sha256": "098bda98b2f595429a2166fe690978a14324a3cb362c27c11138e8c3f1062f4a",
+  "context_sha256": "9d8e5db9fddcde2d205997b10a07e266907837128da6263075ebce51e1b4e101",
+  "verdict": "ACCEPT_WITH_WARNINGS",
+  "dimensions": {
+    "canon": [
+      "All registered assets used consistently with constraints and prior settlements across six chapters.",
+      "Minor: an unnamed 本地执行者 accompanies 仇慎 as silent entourage—no name, dialogue, or independent action—but technically constitutes an unregistered figure under the strict reading of '不得引入未登记人物'.",
+      "残命灯盏 not acquired, awakened, held, activated, or used.",
+      "州府命库 referenced only as distant pressure (钟声, 州府追问); no full view, character interaction, or map expansion."
+    ],
+    "character": [
+      "陆沉渊 remains at 燃命境初成; explicitly refrains from casting 识账术 throughout the chapter, relying solely on 肉眼 observation. Power-level ceiling respected.",
+      "苏晚 actively refuses 验灯 and forbids use of residents' lamps ('别动巷里人的灯'), embodying her moral-boundary and action-agent constraints. She accepts the 续记 consequence rather than comply.",
+      "莫井兰 maintains strict epistemic boundaries: refuses to conflate 听见 with 看见, limits testimony to two personally witnessed ash traces, and retains custody of 陶片 without surrendering it. Partial-oral-memory constraint honored.",
+      "仇慎 acts from concrete self-interest (preserving 落印资格 against 州府 review) rather than motiveless malice; his fear is shown through physical detail (拇指血口, 手腕微抖) and logical reasoning. Constraint '不得把敌人写成无理由恶意' satisfied.",
+      "顾婶 limits testimony to the single fact she can verify (灯被带走前焰尖为细线), refuses to acknowledge anything beyond her observation."
+    ],
+    "state": [
+      "protagonist_strain: eye burn progresses to 眉骨 and 焦黑屑 falls onto brick (producing smoke) as residual from accumulated prior casting. No new casting performed, so no new cost trigger required. bone_fissure_severity persists at chest/palm level. Sole-writer rule respected; no unauthorized recovery.",
+      "half_life_registry_exposure: locking sign evolves (暗红细线 wraps from皮下 around 指根, forming incomplete circle). No decrease. Sole-writer rule respected.",
+      "mother_life_lamp_countdown: 苏晚's lamp consequence persists (暗冷光 through cloth when contacting 追缴薄纸). No healing or crack repair. Sole-writer rule respected.",
+      "revealed_account_errors: evidence status transitions to '可复核但不完整的本地错账链'—the cold-ash blank on the paper traces from 仇慎's seal mark through '顾家户灯留衙' to '陶片在场' then breaks. This is explicitly incomplete and not treated as改账依据. Atomic-transaction requirement met through paired exposure and pressure consequences.",
+      "resident_lifefire_reserve: zero debits. 苏晚 explicitly forbids it; no resident life-fire is consumed, offered, or extracted.",
+      "mudlamp_array_integrity: protection array degrades further (火星几乎熄灭, 黑线牵出半寸后缩回) but no repair or emergency power is granted. Fail-closed behavior honored.",
+      "All sole-writer constraints across the 11 active state ledgers appear respected in observed facts."
+    ],
+    "causality": [
+      "莫井兰's refusal to surrender 陶片 → 仇慎 cannot seal evidence → forces deferral and rescheduling to 明日午前. Clean causal chain.",
+      "仇慎's attempt to expand 莫井兰's testimony from 2 to 3 ash-points is precisely motivated: if the third point (灯座断痕) enters only through 陆沉渊's solo testimony, the local残页's sequential consistency remains vulnerable, threatening his stamp qualification. Her refusal ('听见不等于看见') blocks the maneuver.",
+      "陆沉渊's three-point ash observation is causally honest: each point is physically distinct (灯座灰断在护阵纹前/薄纸灰压在字墨上/陶片灰浮于旧墨边), and his conclusion ('至少没有从同一处一路拖过来') is a negation rather than an attribution. The chain is incomplete by design.",
+      "追缴薄纸 cold-ash pattern (绕开印落点, extending toward顾家户灯留衙, breaking at 陶片在场) provides observable physical evidence without authorial explanation of its cause. Causally planted, not resolved.",
+      "仇慎's 折返 at the chapter's end is causally grounded: the 命籍衙 enforcement cycle has not fully closed (新的追缴纸还没贴上门), and the returning footsteps come from the same institutional pressure that drove the chapter's confrontation.",
+      "The residents' refusal logic is internally consistent: they protect what they can verify (their own lamps, their own observations) and refuse to underwrite conclusions they cannot."
+    ],
+    "pacing": [
+      "Single continuous scene at 泥灯巷 during卯前 delivery window. No location change; stage remains within 贫城/泥灯巷/命籍衙 local pressure range.",
+      "No 识账 is performed, so the scene constraint '每次识账都必须带来可见代价或程序性暴露' is not triggered but remains respected—陆沉渊's decision not to cast is itself dramatically significant.",
+      "Ending advances strictly to the next local procedure (明日午前 at 命籍衙 with three named participants and specified materials). No map change.",
+      "The 折返 cliffhanger stays within the same enforcement cycle and geographic boundary; it intensifies pressure without opening a new procedural stage or introducing new actors.",
+      "Dramatic purpose fulfilled: 本地执行者 (仇慎) and 街坊 each expose their fears and interests; protagonist obtains one verifiable but incomplete error chain."
+    ],
+    "life_force": [
+      "No community trust extracted as protagonist resource. Residents maintain and exercise rights to refuse, limit, and withdraw testimony throughout.",
+      "No children's, residents', or third-party life-fire consumed, debited, or offered.",
+      "苏晚's explicit prohibition ('别动巷里人的灯') is voiced and stands unchallenged.",
+      "Each resident's participation is individually bounded: 莫井兰 testifies only to what she saw; 顾婶 recognizes only her own lamp state; the unnamed resident distinguishes 记 from 认; one household removes its own lamp to safety. No collective sacrifice or extraction occurs.",
+      "The chapter generates no positive归火 or return; the survival-pressure ledger remains unrelieved."
+    ],
+    "anti_ai_taste": [
+      "Prose is sensorily grounded and emotionally restrained; fear is shown through 门闩 being pushed shut, 灯盏 withdrawn into houses, 窗纸 peeled open and released—never named as 'fear'.",
+      "Character voices are sharply distinct: 苏晚 speaks in bare imperatives; 莫井兰 is epistemologically precise; 仇慎 is procedural and calculating; 顾婶 is reciprocally blunt ('你也一样'); the unnamed resident coins '可记，不可认' as a communal legal norm.",
+      "'识账不是替死人开口' functions as character thesis and thematic statement without authorial underlining.",
+      "The final image—a cold-ash blank stopping beside '陶片在场' like an error chain that only reaches the local threshold—is concrete, visual, and avoids the abstraction trap.",
+      "The钟声 simile ('像有人在很远的地方合上了一册厚账') is the chapter's one extended metaphor; it works because it echoes the ledger-world without naming any system term.",
+      "Slight density in ash/cold/burn sensory clusters, but each instance is tied to a specific physical source or prior-settlement progression rather than decorative variation.",
+      "No summarizing narrator, no emotional labels, no motivational speeches, no 'he realized' constructions."
+    ],
+    "originality": [
+      "No source-work names, scenes, signature systems, or prose imitation detected.",
+      "World-building elements (命籍衙, 冷金小印, 追缴薄纸, 护阵纹, 残页) remain internally consistent with the established canonical baseline and prior six chapters of settlement."
+    ]
+  },
+  "issues": [
+    {
+      "issue_id": "chapter-0007-warn-001",
+      "severity": "minor",
+      "evidence": "An unnamed 本地执行者 accompanies 仇慎 into the lane. This figure has no name, no dialogue, and no independent action—functioning purely as institutional entourage—but technically introduces an unregistered person under '不得引入未登记人物'. The figure's 折返 at the chapter's end carries narrative weight (creating the cliffhanger), which edges it beyond pure scenery.",
+      "required_fix": "If this执行者 appears in chapter-0008 with dialogue, action, or any plot-bearing role, register as a named NPC under faction_life_registry_office before that chapter's settlement. If the figure remains a voiceless institutional instrument, consider replacing individual reference with impersonal institutional presence (e.g., 命籍衙方向的脚步声) to avoid accumulating unregistered-character risk across chapters."
+    }
+  ]
+}

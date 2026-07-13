@@ -1,0 +1,49 @@
+{
+  "chapter_id": "chapter-0007",
+  "dramatic_purpose": "让本地执行者与街坊各自暴露恐惧和利益，主角取得一条可复核但不完整的错账链。",
+  "must_keep": [
+    "陆沉渊仍处于燃命境初成，只能使用普通识账与本地灰痕辨认。",
+    "残命灯盏不得取得、唤醒、持有、激活或使用。",
+    "州府命库只可作为远端压力，不得出现全貌、人物交锋或地图展开。",
+    "不得把敌人写成无理由恶意；证据只覆盖本地一段。"
+  ],
+  "must_avoid": [
+    "不得引入未登记人物、势力、器物、地点或能力。",
+    "不得以共同体信任、孩童命火、住户命火或第三方寿火作为可消耗资源。",
+    "不得进行公开审判、高阶斗法、永久清偿或越级胜利。",
+    "不得把审查建议、推测或未观察事实写成状态变化。"
+  ],
+  "expected_state_deltas": [],
+  "required_asset_ids": [
+    "character_lu_chenyuan",
+    "npc_su_wan",
+    "npc_registrar_qiu_shen",
+    "npc_mo_jinglan",
+    "bond_mother_su_wan",
+    "bond_mudlamp_lane_trust",
+    "faction_mudlamp_lane",
+    "faction_life_registry_office",
+    "technique_ledger_recognition",
+    "foreshadowing_cinder_seal_rain",
+    "state_ledger_protagonist_strain",
+    "state_ledger_half_life_registry_exposure",
+    "state_ledger_mother_life_lamp_countdown",
+    "state_ledger_mudlamp_array_integrity",
+    "state_ledger_resident_lifefire_reserve",
+    "state_ledger_poorcity_returnfire",
+    "state_ledger_revealed_account_errors",
+    "state_ledger_faction_pressure",
+    "state_ledger_public_reputation",
+    "state_ledger_unresolved_mysteries",
+    "state_ledger_map_unlock_status"
+  ],
+  "active_hook_ids": [
+    "foreshadowing_cinder_seal_rain"
+  ],
+  "scene_constraints": [
+    "舞台限于贫城、泥灯巷与命籍衙的本地压力范围。",
+    "每项收益都必须能在后续观察中绑定返还对象、承担方与可观察后果。",
+    "每次识账都必须带来可见代价或程序性暴露。",
+    "结尾只推进到下一次本地程序追缴或监督，不得换图。"
+  ]
+}

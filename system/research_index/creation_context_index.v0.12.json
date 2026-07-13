@@ -22,7 +22,7 @@
         "artifacts",
         "naming"
       ],
-      "retrieval_text": "artifacts | 一念永恒 | full_corpus_book_review | formal | promoted | characters, artifacts, naming",
+      "retrieval_text": "artifacts | 一念永恒 | full_corpus_book_review | legacy_unverified | legacy_candidate | characters, artifacts, naming",
       "content_generation_allowed": false
     },
     {
@@ -40,7 +40,7 @@
         "artifacts",
         "techniques"
       ],
-      "retrieval_text": "artifacts | 仙逆 | full_corpus_book_review | formal | promoted | emotional_bonds, artifacts, techniques",
+      "retrieval_text": "artifacts | 仙逆 | full_corpus_book_review | legacy_unverified | legacy_candidate | emotional_bonds, artifacts, techniques",
       "content_generation_allowed": false
     },
     {
@@ -58,7 +58,7 @@
         "techniques",
         "naming"
       ],
-      "retrieval_text": "artifacts | 凡人修仙传 | full_corpus_book_review | formal | promoted | artifacts, techniques, naming",
+      "retrieval_text": "artifacts | 凡人修仙传 | full_corpus_book_review | legacy_unverified | legacy_candidate | artifacts, techniques, naming",
       "content_generation_allowed": false
     },
     {
@@ -76,7 +76,7 @@
         "foreshadowing",
         "techniques"
       ],
-      "retrieval_text": "artifacts | 圣墟 | full_corpus_book_review | formal | promoted | artifacts, foreshadowing, techniques",
+      "retrieval_text": "artifacts | 圣墟 | full_corpus_book_review | legacy_unverified | legacy_candidate | artifacts, foreshadowing, techniques",
       "content_generation_allowed": false
     },
     {
@@ -94,7 +94,7 @@
         "factions",
         "techniques"
       ],
-      "retrieval_text": "artifacts | 武动乾坤 | full_corpus_book_review | formal | promoted | artifacts, factions, techniques",
+      "retrieval_text": "artifacts | 武动乾坤 | full_corpus_book_review | legacy_unverified | legacy_candidate | artifacts, factions, techniques",
       "content_generation_allowed": false
     },
     {
@@ -112,7 +112,7 @@
         "artifacts",
         "factions"
       ],
-      "retrieval_text": "artifacts | 永生 | full_corpus_book_review | formal | promoted | techniques, artifacts, factions",
+      "retrieval_text": "artifacts | 永生 | full_corpus_book_review | legacy_unverified | legacy_candidate | techniques, artifacts, factions",
       "content_generation_allowed": false
     },
     {
@@ -130,7 +130,7 @@
         "artifacts",
         "state_ledger"
       ],
-      "retrieval_text": "artifacts | 诡秘之主 | full_corpus_book_review | formal | promoted | foreshadowing, artifacts, state_ledger",
+      "retrieval_text": "artifacts | 诡秘之主 | full_corpus_book_review | legacy_unverified | legacy_candidate | foreshadowing, artifacts, state_ledger",
       "content_generation_allowed": false
     },
     {
@@ -147,7 +147,7 @@
         "artifacts",
         "创作资产证据"
       ],
-      "retrieval_text": "artifacts | artifacts | creation_family_evidence | covered | promoted | artifacts, 创作资产证据",
+      "retrieval_text": "artifacts | artifacts | creation_family_evidence | covered | legacy_candidate | artifacts, 创作资产证据",
       "content_generation_allowed": false
     },
     {
@@ -163,7 +163,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "artifacts | CB-M1 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "artifacts | CB-M1 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -179,7 +179,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "artifacts | CB-M10 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "artifacts | CB-M10 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -195,7 +195,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "artifacts | CB-M11 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "artifacts | CB-M11 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -211,7 +211,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "artifacts | CB-M12 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "artifacts | CB-M12 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -227,7 +227,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "artifacts | CB-M2 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "artifacts | CB-M2 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -243,7 +243,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "artifacts | CB-M3 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "artifacts | CB-M3 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -259,7 +259,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "artifacts | CB-M4 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "artifacts | CB-M4 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -275,7 +275,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "artifacts | CB-M5 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "artifacts | CB-M5 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -291,7 +291,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "artifacts | CB-M6 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "artifacts | CB-M6 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -307,7 +307,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "artifacts | CB-M7 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "artifacts | CB-M7 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -325,7 +325,7 @@
         "artifacts",
         "naming"
       ],
-      "retrieval_text": "characters | 一念永恒 | full_corpus_book_review | formal | promoted | characters, artifacts, naming",
+      "retrieval_text": "characters | 一念永恒 | full_corpus_book_review | legacy_unverified | legacy_candidate | characters, artifacts, naming",
       "content_generation_allowed": false
     },
     {
@@ -343,7 +343,7 @@
         "emotional_bonds",
         "techniques"
       ],
-      "retrieval_text": "characters | 完美世界 | full_corpus_book_review | formal | promoted | characters, emotional_bonds, techniques",
+      "retrieval_text": "characters | 完美世界 | full_corpus_book_review | legacy_unverified | legacy_candidate | characters, emotional_bonds, techniques",
       "content_generation_allowed": false
     },
     {
@@ -361,7 +361,7 @@
         "characters",
         "factions"
       ],
-      "retrieval_text": "characters | 蛊真人 | full_corpus_book_review | formal | promoted | techniques, characters, factions",
+      "retrieval_text": "characters | 蛊真人 | full_corpus_book_review | legacy_unverified | legacy_candidate | techniques, characters, factions",
       "content_generation_allowed": false
     },
     {
@@ -378,7 +378,7 @@
         "characters",
         "创作资产证据"
       ],
-      "retrieval_text": "characters | characters | creation_family_evidence | covered | promoted | characters, 创作资产证据",
+      "retrieval_text": "characters | characters | creation_family_evidence | covered | legacy_candidate | characters, 创作资产证据",
       "content_generation_allowed": false
     },
     {
@@ -394,7 +394,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "characters | CB-M1 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "characters | CB-M1 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -410,7 +410,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "characters | CB-M10 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "characters | CB-M10 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -426,7 +426,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "characters | CB-M11 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "characters | CB-M11 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -442,7 +442,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "characters | CB-M12 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "characters | CB-M12 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -458,7 +458,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "characters | CB-M2 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "characters | CB-M2 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -474,7 +474,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "characters | CB-M3 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "characters | CB-M3 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -490,7 +490,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "characters | CB-M4 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "characters | CB-M4 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -506,7 +506,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "characters | CB-M5 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "characters | CB-M5 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -522,7 +522,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "characters | CB-M6 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "characters | CB-M6 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -538,7 +538,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "characters | CB-M7 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "characters | CB-M7 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -554,7 +554,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "characters | CB-M8 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "characters | CB-M8 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -570,7 +570,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "characters | CB-M9 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "characters | CB-M9 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -620,7 +620,7 @@
         "npcs",
         "emotional_bonds"
       ],
-      "retrieval_text": "emotional_bonds | 人道至尊 | full_corpus_book_review | formal | promoted | factions, npcs, emotional_bonds",
+      "retrieval_text": "emotional_bonds | 人道至尊 | full_corpus_book_review | legacy_unverified | legacy_candidate | factions, npcs, emotional_bonds",
       "content_generation_allowed": false
     },
     {
@@ -638,7 +638,7 @@
         "artifacts",
         "techniques"
       ],
-      "retrieval_text": "emotional_bonds | 仙逆 | full_corpus_book_review | formal | promoted | emotional_bonds, artifacts, techniques",
+      "retrieval_text": "emotional_bonds | 仙逆 | full_corpus_book_review | legacy_unverified | legacy_candidate | emotional_bonds, artifacts, techniques",
       "content_generation_allowed": false
     },
     {
@@ -656,7 +656,7 @@
         "emotional_bonds",
         "techniques"
       ],
-      "retrieval_text": "emotional_bonds | 完美世界 | full_corpus_book_review | formal | promoted | characters, emotional_bonds, techniques",
+      "retrieval_text": "emotional_bonds | 完美世界 | full_corpus_book_review | legacy_unverified | legacy_candidate | characters, emotional_bonds, techniques",
       "content_generation_allowed": false
     },
     {
@@ -674,7 +674,7 @@
         "factions",
         "emotional_bonds"
       ],
-      "retrieval_text": "emotional_bonds | 将夜 | full_corpus_book_review | formal | promoted | foreshadowing, factions, emotional_bonds",
+      "retrieval_text": "emotional_bonds | 将夜 | full_corpus_book_review | legacy_unverified | legacy_candidate | foreshadowing, factions, emotional_bonds",
       "content_generation_allowed": false
     },
     {
@@ -692,7 +692,7 @@
         "npcs",
         "foreshadowing"
       ],
-      "retrieval_text": "emotional_bonds | 求魔 | full_corpus_book_review | formal | promoted | emotional_bonds, npcs, foreshadowing",
+      "retrieval_text": "emotional_bonds | 求魔 | full_corpus_book_review | legacy_unverified | legacy_candidate | emotional_bonds, npcs, foreshadowing",
       "content_generation_allowed": false
     },
     {
@@ -710,7 +710,7 @@
         "npcs",
         "factions"
       ],
-      "retrieval_text": "emotional_bonds | 雪中悍刀行 | full_corpus_book_review | formal | promoted | emotional_bonds, npcs, factions",
+      "retrieval_text": "emotional_bonds | 雪中悍刀行 | full_corpus_book_review | legacy_unverified | legacy_candidate | emotional_bonds, npcs, factions",
       "content_generation_allowed": false
     },
     {
@@ -727,7 +727,7 @@
         "emotional_bonds",
         "创作资产证据"
       ],
-      "retrieval_text": "emotional_bonds | emotional_bonds | creation_family_evidence | covered | promoted | emotional_bonds, 创作资产证据",
+      "retrieval_text": "emotional_bonds | emotional_bonds | creation_family_evidence | covered | legacy_candidate | emotional_bonds, 创作资产证据",
       "content_generation_allowed": false
     },
     {
@@ -743,7 +743,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "emotional_bonds | CB-M1 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "emotional_bonds | CB-M1 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -759,7 +759,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "emotional_bonds | CB-M10 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "emotional_bonds | CB-M10 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -775,7 +775,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "emotional_bonds | CB-M11 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "emotional_bonds | CB-M11 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -791,7 +791,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "emotional_bonds | CB-M12 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "emotional_bonds | CB-M12 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -807,7 +807,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "emotional_bonds | CB-M2 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "emotional_bonds | CB-M2 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -823,7 +823,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "emotional_bonds | CB-M3 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "emotional_bonds | CB-M3 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -839,7 +839,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "emotional_bonds | CB-M4 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "emotional_bonds | CB-M4 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -855,7 +855,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "emotional_bonds | CB-M5 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "emotional_bonds | CB-M5 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -871,7 +871,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "emotional_bonds | CB-M6 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "emotional_bonds | CB-M6 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -887,7 +887,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "emotional_bonds | CB-M7 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "emotional_bonds | CB-M7 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -903,7 +903,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "emotional_bonds | CB-M8 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "emotional_bonds | CB-M8 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -921,7 +921,7 @@
         "factions",
         "techniques"
       ],
-      "retrieval_text": "factions | 不死不灭 | full_corpus_book_review | formal | promoted | foreshadowing, factions, techniques",
+      "retrieval_text": "factions | 不死不灭 | full_corpus_book_review | legacy_unverified | legacy_candidate | foreshadowing, factions, techniques",
       "content_generation_allowed": false
     },
     {
@@ -939,7 +939,7 @@
         "npcs",
         "emotional_bonds"
       ],
-      "retrieval_text": "factions | 人道至尊 | full_corpus_book_review | formal | promoted | factions, npcs, emotional_bonds",
+      "retrieval_text": "factions | 人道至尊 | full_corpus_book_review | legacy_unverified | legacy_candidate | factions, npcs, emotional_bonds",
       "content_generation_allowed": false
     },
     {
@@ -957,7 +957,7 @@
         "naming",
         "techniques"
       ],
-      "retrieval_text": "factions | 大主宰 | full_corpus_book_review | formal | promoted | factions, naming, techniques",
+      "retrieval_text": "factions | 大主宰 | full_corpus_book_review | legacy_unverified | legacy_candidate | factions, naming, techniques",
       "content_generation_allowed": false
     },
     {
@@ -975,7 +975,7 @@
         "factions",
         "emotional_bonds"
       ],
-      "retrieval_text": "factions | 将夜 | full_corpus_book_review | formal | promoted | foreshadowing, factions, emotional_bonds",
+      "retrieval_text": "factions | 将夜 | full_corpus_book_review | legacy_unverified | legacy_candidate | foreshadowing, factions, emotional_bonds",
       "content_generation_allowed": false
     },
     {
@@ -993,7 +993,7 @@
         "factions",
         "techniques"
       ],
-      "retrieval_text": "factions | 武动乾坤 | full_corpus_book_review | formal | promoted | artifacts, factions, techniques",
+      "retrieval_text": "factions | 武动乾坤 | full_corpus_book_review | legacy_unverified | legacy_candidate | artifacts, factions, techniques",
       "content_generation_allowed": false
     },
     {
@@ -1011,7 +1011,7 @@
         "artifacts",
         "factions"
       ],
-      "retrieval_text": "factions | 永生 | full_corpus_book_review | formal | promoted | techniques, artifacts, factions",
+      "retrieval_text": "factions | 永生 | full_corpus_book_review | legacy_unverified | legacy_candidate | techniques, artifacts, factions",
       "content_generation_allowed": false
     },
     {
@@ -1029,7 +1029,7 @@
         "factions",
         "naming"
       ],
-      "retrieval_text": "factions | 牧神记 | full_corpus_book_review | formal | promoted | npcs, factions, naming",
+      "retrieval_text": "factions | 牧神记 | full_corpus_book_review | legacy_unverified | legacy_candidate | npcs, factions, naming",
       "content_generation_allowed": false
     },
     {
@@ -1047,7 +1047,7 @@
         "characters",
         "factions"
       ],
-      "retrieval_text": "factions | 蛊真人 | full_corpus_book_review | formal | promoted | techniques, characters, factions",
+      "retrieval_text": "factions | 蛊真人 | full_corpus_book_review | legacy_unverified | legacy_candidate | techniques, characters, factions",
       "content_generation_allowed": false
     },
     {
@@ -1065,7 +1065,7 @@
         "npcs",
         "factions"
       ],
-      "retrieval_text": "factions | 遮天 | full_corpus_book_review | formal | promoted | foreshadowing, npcs, factions",
+      "retrieval_text": "factions | 遮天 | full_corpus_book_review | legacy_unverified | legacy_candidate | foreshadowing, npcs, factions",
       "content_generation_allowed": false
     },
     {
@@ -1083,7 +1083,7 @@
         "npcs",
         "factions"
       ],
-      "retrieval_text": "factions | 雪中悍刀行 | full_corpus_book_review | formal | promoted | emotional_bonds, npcs, factions",
+      "retrieval_text": "factions | 雪中悍刀行 | full_corpus_book_review | legacy_unverified | legacy_candidate | emotional_bonds, npcs, factions",
       "content_generation_allowed": false
     },
     {
@@ -1100,7 +1100,7 @@
         "factions",
         "创作资产证据"
       ],
-      "retrieval_text": "factions | factions | creation_family_evidence | covered | promoted | factions, 创作资产证据",
+      "retrieval_text": "factions | factions | creation_family_evidence | covered | legacy_candidate | factions, 创作资产证据",
       "content_generation_allowed": false
     },
     {
@@ -1116,7 +1116,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "factions | CB-M1 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "factions | CB-M1 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -1132,7 +1132,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "factions | CB-M10 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "factions | CB-M10 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -1148,7 +1148,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "factions | CB-M11 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "factions | CB-M11 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -1164,7 +1164,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "factions | CB-M12 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "factions | CB-M12 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -1180,7 +1180,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "factions | CB-M2 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "factions | CB-M2 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -1196,7 +1196,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "factions | CB-M3 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "factions | CB-M3 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -1212,7 +1212,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "factions | CB-M4 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "factions | CB-M4 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -1230,7 +1230,7 @@
         "factions",
         "techniques"
       ],
-      "retrieval_text": "foreshadowing | 不死不灭 | full_corpus_book_review | formal | promoted | foreshadowing, factions, techniques",
+      "retrieval_text": "foreshadowing | 不死不灭 | full_corpus_book_review | legacy_unverified | legacy_candidate | foreshadowing, factions, techniques",
       "content_generation_allowed": false
     },
     {
@@ -1248,7 +1248,7 @@
         "foreshadowing",
         "techniques"
       ],
-      "retrieval_text": "foreshadowing | 圣墟 | full_corpus_book_review | formal | promoted | artifacts, foreshadowing, techniques",
+      "retrieval_text": "foreshadowing | 圣墟 | full_corpus_book_review | legacy_unverified | legacy_candidate | artifacts, foreshadowing, techniques",
       "content_generation_allowed": false
     },
     {
@@ -1266,7 +1266,7 @@
         "factions",
         "emotional_bonds"
       ],
-      "retrieval_text": "foreshadowing | 将夜 | full_corpus_book_review | formal | promoted | foreshadowing, factions, emotional_bonds",
+      "retrieval_text": "foreshadowing | 将夜 | full_corpus_book_review | legacy_unverified | legacy_candidate | foreshadowing, factions, emotional_bonds",
       "content_generation_allowed": false
     },
     {
@@ -1284,7 +1284,7 @@
         "npcs",
         "foreshadowing"
       ],
-      "retrieval_text": "foreshadowing | 求魔 | full_corpus_book_review | formal | promoted | emotional_bonds, npcs, foreshadowing",
+      "retrieval_text": "foreshadowing | 求魔 | full_corpus_book_review | legacy_unverified | legacy_candidate | emotional_bonds, npcs, foreshadowing",
       "content_generation_allowed": false
     },
     {
@@ -1302,7 +1302,7 @@
         "artifacts",
         "state_ledger"
       ],
-      "retrieval_text": "foreshadowing | 诡秘之主 | full_corpus_book_review | formal | promoted | foreshadowing, artifacts, state_ledger",
+      "retrieval_text": "foreshadowing | 诡秘之主 | full_corpus_book_review | legacy_unverified | legacy_candidate | foreshadowing, artifacts, state_ledger",
       "content_generation_allowed": false
     },
     {
@@ -1320,7 +1320,7 @@
         "npcs",
         "factions"
       ],
-      "retrieval_text": "foreshadowing | 遮天 | full_corpus_book_review | formal | promoted | foreshadowing, npcs, factions",
+      "retrieval_text": "foreshadowing | 遮天 | full_corpus_book_review | legacy_unverified | legacy_candidate | foreshadowing, npcs, factions",
       "content_generation_allowed": false
     },
     {
@@ -1337,7 +1337,7 @@
         "foreshadowing",
         "创作资产证据"
       ],
-      "retrieval_text": "foreshadowing | foreshadowing | creation_family_evidence | covered | promoted | foreshadowing, 创作资产证据",
+      "retrieval_text": "foreshadowing | foreshadowing | creation_family_evidence | covered | legacy_candidate | foreshadowing, 创作资产证据",
       "content_generation_allowed": false
     },
     {
@@ -1353,7 +1353,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "foreshadowing | CB-M1 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "foreshadowing | CB-M1 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -1369,7 +1369,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "foreshadowing | CB-M10 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "foreshadowing | CB-M10 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -1385,7 +1385,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "foreshadowing | CB-M11 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "foreshadowing | CB-M11 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -1401,7 +1401,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "foreshadowing | CB-M12 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "foreshadowing | CB-M12 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -1417,7 +1417,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "foreshadowing | CB-M2 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "foreshadowing | CB-M2 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -1433,7 +1433,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "foreshadowing | CB-M3 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "foreshadowing | CB-M3 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -1449,7 +1449,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "foreshadowing | CB-M4 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "foreshadowing | CB-M4 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -1465,7 +1465,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "foreshadowing | CB-M5 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "foreshadowing | CB-M5 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -1481,7 +1481,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "foreshadowing | CB-M6 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "foreshadowing | CB-M6 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -1497,7 +1497,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "foreshadowing | CB-M7 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "foreshadowing | CB-M7 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -1513,7 +1513,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "foreshadowing | CB-M8 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "foreshadowing | CB-M8 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -1531,7 +1531,7 @@
         "artifacts",
         "naming"
       ],
-      "retrieval_text": "naming | 一念永恒 | full_corpus_book_review | formal | promoted | characters, artifacts, naming",
+      "retrieval_text": "naming | 一念永恒 | full_corpus_book_review | legacy_unverified | legacy_candidate | characters, artifacts, naming",
       "content_generation_allowed": false
     },
     {
@@ -1549,7 +1549,7 @@
         "techniques",
         "naming"
       ],
-      "retrieval_text": "naming | 凡人修仙传 | full_corpus_book_review | formal | promoted | artifacts, techniques, naming",
+      "retrieval_text": "naming | 凡人修仙传 | full_corpus_book_review | legacy_unverified | legacy_candidate | artifacts, techniques, naming",
       "content_generation_allowed": false
     },
     {
@@ -1567,7 +1567,7 @@
         "naming",
         "techniques"
       ],
-      "retrieval_text": "naming | 大主宰 | full_corpus_book_review | formal | promoted | factions, naming, techniques",
+      "retrieval_text": "naming | 大主宰 | full_corpus_book_review | legacy_unverified | legacy_candidate | factions, naming, techniques",
       "content_generation_allowed": false
     },
     {
@@ -1585,7 +1585,7 @@
         "techniques",
         "naming"
       ],
-      "retrieval_text": "naming | 斗破苍穹 | full_corpus_book_review | formal | promoted | npcs, techniques, naming",
+      "retrieval_text": "naming | 斗破苍穹 | full_corpus_book_review | legacy_unverified | legacy_candidate | npcs, techniques, naming",
       "content_generation_allowed": false
     },
     {
@@ -1603,7 +1603,7 @@
         "factions",
         "naming"
       ],
-      "retrieval_text": "naming | 牧神记 | full_corpus_book_review | formal | promoted | npcs, factions, naming",
+      "retrieval_text": "naming | 牧神记 | full_corpus_book_review | legacy_unverified | legacy_candidate | npcs, factions, naming",
       "content_generation_allowed": false
     },
     {
@@ -1620,7 +1620,7 @@
         "naming",
         "创作资产证据"
       ],
-      "retrieval_text": "naming | naming | creation_family_evidence | covered | promoted | naming, 创作资产证据",
+      "retrieval_text": "naming | naming | creation_family_evidence | covered | legacy_candidate | naming, 创作资产证据",
       "content_generation_allowed": false
     },
     {
@@ -1636,7 +1636,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "naming | CB-M1 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "naming | CB-M1 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -1652,7 +1652,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "naming | CB-M10 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "naming | CB-M10 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -1668,7 +1668,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "naming | CB-M11 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "naming | CB-M11 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -1684,7 +1684,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "naming | CB-M12 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "naming | CB-M12 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -1700,7 +1700,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "naming | CB-M2 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "naming | CB-M2 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -1716,7 +1716,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "naming | CB-M3 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "naming | CB-M3 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -1732,7 +1732,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "naming | CB-M4 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "naming | CB-M4 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -1748,7 +1748,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "naming | CB-M5 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "naming | CB-M5 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -1764,7 +1764,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "naming | CB-M6 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "naming | CB-M6 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -1780,7 +1780,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "naming | CB-M7 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "naming | CB-M7 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -1796,7 +1796,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "naming | CB-M8 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "naming | CB-M8 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -1812,7 +1812,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "naming | CB-M9 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "naming | CB-M9 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -1830,7 +1830,7 @@
         "npcs",
         "emotional_bonds"
       ],
-      "retrieval_text": "npcs | 人道至尊 | full_corpus_book_review | formal | promoted | factions, npcs, emotional_bonds",
+      "retrieval_text": "npcs | 人道至尊 | full_corpus_book_review | legacy_unverified | legacy_candidate | factions, npcs, emotional_bonds",
       "content_generation_allowed": false
     },
     {
@@ -1848,7 +1848,7 @@
         "techniques",
         "naming"
       ],
-      "retrieval_text": "npcs | 斗破苍穹 | full_corpus_book_review | formal | promoted | npcs, techniques, naming",
+      "retrieval_text": "npcs | 斗破苍穹 | full_corpus_book_review | legacy_unverified | legacy_candidate | npcs, techniques, naming",
       "content_generation_allowed": false
     },
     {
@@ -1866,7 +1866,7 @@
         "npcs",
         "foreshadowing"
       ],
-      "retrieval_text": "npcs | 求魔 | full_corpus_book_review | formal | promoted | emotional_bonds, npcs, foreshadowing",
+      "retrieval_text": "npcs | 求魔 | full_corpus_book_review | legacy_unverified | legacy_candidate | emotional_bonds, npcs, foreshadowing",
       "content_generation_allowed": false
     },
     {
@@ -1884,7 +1884,7 @@
         "factions",
         "naming"
       ],
-      "retrieval_text": "npcs | 牧神记 | full_corpus_book_review | formal | promoted | npcs, factions, naming",
+      "retrieval_text": "npcs | 牧神记 | full_corpus_book_review | legacy_unverified | legacy_candidate | npcs, factions, naming",
       "content_generation_allowed": false
     },
     {
@@ -1902,7 +1902,7 @@
         "npcs",
         "factions"
       ],
-      "retrieval_text": "npcs | 遮天 | full_corpus_book_review | formal | promoted | foreshadowing, npcs, factions",
+      "retrieval_text": "npcs | 遮天 | full_corpus_book_review | legacy_unverified | legacy_candidate | foreshadowing, npcs, factions",
       "content_generation_allowed": false
     },
     {
@@ -1920,7 +1920,7 @@
         "npcs",
         "factions"
       ],
-      "retrieval_text": "npcs | 雪中悍刀行 | full_corpus_book_review | formal | promoted | emotional_bonds, npcs, factions",
+      "retrieval_text": "npcs | 雪中悍刀行 | full_corpus_book_review | legacy_unverified | legacy_candidate | emotional_bonds, npcs, factions",
       "content_generation_allowed": false
     },
     {
@@ -1937,7 +1937,7 @@
         "npcs",
         "创作资产证据"
       ],
-      "retrieval_text": "npcs | npcs | creation_family_evidence | covered | promoted | npcs, 创作资产证据",
+      "retrieval_text": "npcs | npcs | creation_family_evidence | covered | legacy_candidate | npcs, 创作资产证据",
       "content_generation_allowed": false
     },
     {
@@ -1953,7 +1953,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "npcs | CB-M1 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "npcs | CB-M1 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -1969,7 +1969,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "npcs | CB-M10 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "npcs | CB-M10 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -1985,7 +1985,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "npcs | CB-M11 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "npcs | CB-M11 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -2001,7 +2001,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "npcs | CB-M12 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "npcs | CB-M12 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -2017,7 +2017,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "npcs | CB-M2 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "npcs | CB-M2 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -2033,7 +2033,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "npcs | CB-M3 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "npcs | CB-M3 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -2049,7 +2049,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "npcs | CB-M4 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "npcs | CB-M4 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -2065,7 +2065,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "npcs | CB-M5 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "npcs | CB-M5 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -2081,7 +2081,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "npcs | CB-M6 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "npcs | CB-M6 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -2097,7 +2097,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "npcs | CB-M7 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "npcs | CB-M7 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -2113,7 +2113,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "npcs | CB-M8 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "npcs | CB-M8 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -2131,7 +2131,7 @@
         "artifacts",
         "state_ledger"
       ],
-      "retrieval_text": "state_ledger | 诡秘之主 | full_corpus_book_review | formal | promoted | foreshadowing, artifacts, state_ledger",
+      "retrieval_text": "state_ledger | 诡秘之主 | full_corpus_book_review | legacy_unverified | legacy_candidate | foreshadowing, artifacts, state_ledger",
       "content_generation_allowed": false
     },
     {
@@ -2148,7 +2148,7 @@
         "state_ledger",
         "创作资产证据"
       ],
-      "retrieval_text": "state_ledger | state_ledger | creation_family_evidence | covered | promoted | state_ledger, 创作资产证据",
+      "retrieval_text": "state_ledger | state_ledger | creation_family_evidence | covered | legacy_candidate | state_ledger, 创作资产证据",
       "content_generation_allowed": false
     },
     {
@@ -2164,7 +2164,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "state_ledger | CB-M1 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "state_ledger | CB-M1 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -2180,7 +2180,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "state_ledger | CB-M10 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "state_ledger | CB-M10 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -2196,7 +2196,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "state_ledger | CB-M11 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "state_ledger | CB-M11 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -2212,7 +2212,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "state_ledger | CB-M12 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "state_ledger | CB-M12 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -2228,7 +2228,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "state_ledger | CB-M2 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "state_ledger | CB-M2 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -2244,7 +2244,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "state_ledger | CB-M3 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "state_ledger | CB-M3 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -2260,7 +2260,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "state_ledger | CB-M4 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "state_ledger | CB-M4 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -2276,7 +2276,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "state_ledger | CB-M5 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "state_ledger | CB-M5 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -2292,7 +2292,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "state_ledger | CB-M6 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "state_ledger | CB-M6 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -2308,7 +2308,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "state_ledger | CB-M7 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "state_ledger | CB-M7 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -2324,7 +2324,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "state_ledger | CB-M8 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "state_ledger | CB-M8 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -2340,7 +2340,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "state_ledger | CB-M9 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "state_ledger | CB-M9 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -2422,7 +2422,7 @@
         "factions",
         "techniques"
       ],
-      "retrieval_text": "techniques | 不死不灭 | full_corpus_book_review | formal | promoted | foreshadowing, factions, techniques",
+      "retrieval_text": "techniques | 不死不灭 | full_corpus_book_review | legacy_unverified | legacy_candidate | foreshadowing, factions, techniques",
       "content_generation_allowed": false
     },
     {
@@ -2440,7 +2440,7 @@
         "artifacts",
         "techniques"
       ],
-      "retrieval_text": "techniques | 仙逆 | full_corpus_book_review | formal | promoted | emotional_bonds, artifacts, techniques",
+      "retrieval_text": "techniques | 仙逆 | full_corpus_book_review | legacy_unverified | legacy_candidate | emotional_bonds, artifacts, techniques",
       "content_generation_allowed": false
     },
     {
@@ -2458,7 +2458,7 @@
         "techniques",
         "naming"
       ],
-      "retrieval_text": "techniques | 凡人修仙传 | full_corpus_book_review | formal | promoted | artifacts, techniques, naming",
+      "retrieval_text": "techniques | 凡人修仙传 | full_corpus_book_review | legacy_unverified | legacy_candidate | artifacts, techniques, naming",
       "content_generation_allowed": false
     },
     {
@@ -2476,7 +2476,7 @@
         "foreshadowing",
         "techniques"
       ],
-      "retrieval_text": "techniques | 圣墟 | full_corpus_book_review | formal | promoted | artifacts, foreshadowing, techniques",
+      "retrieval_text": "techniques | 圣墟 | full_corpus_book_review | legacy_unverified | legacy_candidate | artifacts, foreshadowing, techniques",
       "content_generation_allowed": false
     },
     {
@@ -2494,7 +2494,7 @@
         "naming",
         "techniques"
       ],
-      "retrieval_text": "techniques | 大主宰 | full_corpus_book_review | formal | promoted | factions, naming, techniques",
+      "retrieval_text": "techniques | 大主宰 | full_corpus_book_review | legacy_unverified | legacy_candidate | factions, naming, techniques",
       "content_generation_allowed": false
     },
     {
@@ -2512,7 +2512,7 @@
         "emotional_bonds",
         "techniques"
       ],
-      "retrieval_text": "techniques | 完美世界 | full_corpus_book_review | formal | promoted | characters, emotional_bonds, techniques",
+      "retrieval_text": "techniques | 完美世界 | full_corpus_book_review | legacy_unverified | legacy_candidate | characters, emotional_bonds, techniques",
       "content_generation_allowed": false
     },
     {
@@ -2530,7 +2530,7 @@
         "techniques",
         "naming"
       ],
-      "retrieval_text": "techniques | 斗破苍穹 | full_corpus_book_review | formal | promoted | npcs, techniques, naming",
+      "retrieval_text": "techniques | 斗破苍穹 | full_corpus_book_review | legacy_unverified | legacy_candidate | npcs, techniques, naming",
       "content_generation_allowed": false
     },
     {
@@ -2548,7 +2548,7 @@
         "factions",
         "techniques"
       ],
-      "retrieval_text": "techniques | 武动乾坤 | full_corpus_book_review | formal | promoted | artifacts, factions, techniques",
+      "retrieval_text": "techniques | 武动乾坤 | full_corpus_book_review | legacy_unverified | legacy_candidate | artifacts, factions, techniques",
       "content_generation_allowed": false
     },
     {
@@ -2566,7 +2566,7 @@
         "artifacts",
         "factions"
       ],
-      "retrieval_text": "techniques | 永生 | full_corpus_book_review | formal | promoted | techniques, artifacts, factions",
+      "retrieval_text": "techniques | 永生 | full_corpus_book_review | legacy_unverified | legacy_candidate | techniques, artifacts, factions",
       "content_generation_allowed": false
     },
     {
@@ -2584,7 +2584,7 @@
         "characters",
         "factions"
       ],
-      "retrieval_text": "techniques | 蛊真人 | full_corpus_book_review | formal | promoted | techniques, characters, factions",
+      "retrieval_text": "techniques | 蛊真人 | full_corpus_book_review | legacy_unverified | legacy_candidate | techniques, characters, factions",
       "content_generation_allowed": false
     },
     {
@@ -2601,7 +2601,7 @@
         "techniques",
         "创作资产证据"
       ],
-      "retrieval_text": "techniques | techniques | creation_family_evidence | covered | promoted | techniques, 创作资产证据",
+      "retrieval_text": "techniques | techniques | creation_family_evidence | covered | legacy_candidate | techniques, 创作资产证据",
       "content_generation_allowed": false
     },
     {
@@ -2617,7 +2617,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "techniques | CB-M1 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "techniques | CB-M1 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -2633,7 +2633,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "techniques | CB-M10 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "techniques | CB-M10 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -2649,7 +2649,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "techniques | CB-M11 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "techniques | CB-M11 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -2665,7 +2665,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "techniques | CB-M12 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "techniques | CB-M12 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -2681,7 +2681,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "techniques | CB-M2 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "techniques | CB-M2 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -2697,7 +2697,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "techniques | CB-M3 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "techniques | CB-M3 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     },
     {
@@ -2713,7 +2713,7 @@
       "categories": [
         "跨书机制蒸馏"
       ],
-      "retrieval_text": "techniques | CB-M4 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+      "retrieval_text": "techniques | CB-M4 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
       "content_generation_allowed": false
     }
   ],

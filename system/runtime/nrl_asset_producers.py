@@ -324,13 +324,15 @@ def _artifact_seed_assets(source_refs: list[str]) -> list[dict[str, Any]]:
 
 
 def _upsert_assets(store: dict[str, Any], produced: list[dict[str, Any]]) -> dict[str, Any]:
-    owned = {asset["asset_id"] for asset in produced}
-    preserved = [
-        asset
-        for asset in store.get("assets", [])
-        if asset.get("asset_id") not in owned
+    """Add missing seed assets without overwriting frozen project-level refinements."""
+    existing = {str(asset.get("asset_id")): asset for asset in store.get("assets", [])}
+    additions = [
+        asset for asset in produced if str(asset["asset_id"]) not in existing
     ]
-    updated = {**store, "assets": sorted([*preserved, *produced], key=lambda item: item["asset_id"])}
+    updated = {
+        **store,
+        "assets": sorted([*store.get("assets", []), *additions], key=lambda item: item["asset_id"]),
+    }
     return updated
 
 
@@ -365,7 +367,9 @@ def produce_technique_candidates(state: dict[str, Any], job_id: str) -> dict[str
             "store_validation": validation,
             "store_path": "system/creation_assets/project_assets.v0.2.json",
         }
-    _assert_no_forbidden_text(updated_store)
+    # Validate the producer-owned payload, not historical chapter evidence that
+    # may legitimately coexist in the shared project asset store.
+    _assert_no_forbidden_text({"assets": produced})
     _write_json(PROJECT_ASSET_STORE_PATH, updated_store)
     return {
         "producer": "technique_asset_producer",

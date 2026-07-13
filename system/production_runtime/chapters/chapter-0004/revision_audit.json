@@ -1,0 +1,27 @@
+{
+  "chapter_id": "chapter-0004",
+  "artifact_kind": "revision",
+  "artifact_sha256": "e3ed91078715d2b3540da38987cb7db63bcd559ea1e320fb0b07a550d091b6f7",
+  "context_sha256": "65a8bf61104cfa25dfc2014d94f290aea7569588c654883bc378a26688f135d3",
+  "verdict": "ACCEPT_WITH_WARNINGS",
+  "dimensions": {
+    "canon": [],
+    "character": [],
+    "state": [
+      "state-evidence-text-mismatch"
+    ],
+    "causality": [],
+    "pacing": [],
+    "life_force": [],
+    "anti_ai_taste": [],
+    "originality": []
+  },
+  "issues": [
+    {
+      "issue_id": "state-evidence-text-mismatch",
+      "severity": "minor",
+      "evidence": "Observed fact chapter-0004-physical-state-protagonist-strain-003 cites the evidence '“呼吸撞在裂口上”', but the revised prose changed this description to '胸骨深处随呼吸错了一下'.",
+      "required_fix": "Update the evidence field in observation.json or settlement.json to match the revised prose: '胸骨深处随呼吸错了一下'."
+    }
+  ]
+}

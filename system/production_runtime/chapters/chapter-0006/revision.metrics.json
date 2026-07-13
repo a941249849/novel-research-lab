@@ -1,0 +1,76 @@
+{
+  "chinese_character_count": 2813,
+  "sentence_count": 209,
+  "paragraph_count": 122,
+  "average_sentence_length": 13.46,
+  "sentence_length_stddev": 9.06,
+  "average_paragraph_length": 23.06,
+  "paragraph_length_stddev": 22.45,
+  "dialogue_ratio": 0.3004,
+  "transition_word_hits": 2,
+  "rhetorical_template_hits": 0,
+  "abstract_word_hits": 0,
+  "sensory_word_hits": 100,
+  "repeated_sentence_starters": [
+    {
+      "starter": "”\n",
+      "count": 41
+    },
+    {
+      "starter": "仇慎",
+      "count": 11
+    },
+    {
+      "starter": "陆沉",
+      "count": 9
+    },
+    {
+      "starter": "苏晚",
+      "count": 8
+    },
+    {
+      "starter": "”她",
+      "count": 7
+    },
+    {
+      "starter": "莫井",
+      "count": 6
+    },
+    {
+      "starter": "“你",
+      "count": 6
+    },
+    {
+      "starter": "“我",
+      "count": 5
+    },
+    {
+      "starter": "”仇",
+      "count": 5
+    },
+    {
+      "starter": "”他",
+      "count": 5
+    },
+    {
+      "starter": "”陆",
+      "count": 5
+    },
+    {
+      "starter": "门缝",
+      "count": 4
+    },
+    {
+      "starter": "顾家",
+      "count": 3
+    },
+    {
+      "starter": "那道",
+      "count": 3
+    }
+  ],
+  "flags": [
+    "sentence_opening_repetition"
+  ],
+  "policy": "metrics_are_audit_evidence_not_a_literary_verdict"
+}

@@ -117,11 +117,14 @@ printf 'FAKE_ANTIGRAVITY_RESPONSE:%s\\n' "$prompt"
             str(response_path.relative_to(self.root)),
             "--print-timeout",
             "10s",
+            "--model",
+            "Claude Opus 4.6 (Thinking)",
         )
         self.assertEqual(result.returncode, 0, result.stderr)
         data = json.loads(result.stdout)
         self.assertEqual(data["request_file"], str(request_path.relative_to(self.root)))
         self.assertEqual(data["output_file"], str(response_path.relative_to(self.root)))
+        self.assertEqual(data["model"], "Claude Opus 4.6 (Thinking)")
         self.assertTrue(response_path.exists())
         response = response_path.read_text(encoding="utf-8")
         self.assertIn("FAKE_ANTIGRAVITY_RESPONSE:NRL bridge contract", response)

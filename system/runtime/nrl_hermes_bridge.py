@@ -10,6 +10,7 @@ from typing import Any
 
 MODEL = "gpt-5.6-terra"
 PROVIDER = "openai-codex"
+DEFAULT_ONESHOT_TIMEOUT_SECONDS = 120
 
 
 def find_hermes_binary() -> str | None:
@@ -57,16 +58,22 @@ def build_hermes_execution_status(adapter: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def ask_hermes(prompt: str) -> str:
+def ask_hermes(
+    prompt: str, *, model: str = MODEL, timeout_seconds: int = DEFAULT_ONESHOT_TIMEOUT_SECONDS
+) -> str:
     binary = find_hermes_binary()
     if not binary:
         raise RuntimeError("hermes binary not found")
-    result = subprocess.run(
-        [binary, "--provider", PROVIDER, "--model", MODEL, "--oneshot", prompt],
-        text=True,
-        capture_output=True,
-        check=False,
-    )
+    try:
+        result = subprocess.run(
+            [binary, "--provider", PROVIDER, "--model", model, "--oneshot", prompt],
+            text=True,
+            capture_output=True,
+            check=False,
+            timeout=timeout_seconds,
+        )
+    except subprocess.TimeoutExpired as error:
+        raise RuntimeError(f"Hermes CLI timed out after {timeout_seconds}s for model {model}") from error
     if result.returncode != 0:
         raise RuntimeError(f"Hermes CLI failed with exit code {result.returncode}: {result.stderr}")
     return result.stdout.strip()

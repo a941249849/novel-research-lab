@@ -112,8 +112,8 @@ def _agent_roles(system_status: dict[str, Any]) -> list[dict[str, Any]]:
         {
             "agent": "Codex",
             "status": "local_runtime_host",
-            "role": "本地系统宿主 / Runtime / 工程 / 校验 / 编排",
-            "execution_boundary": "supervisor, compiler, validator, observer, and state settler",
+            "role": "本地系统宿主 / 直连写手 / Runtime / 工程 / 校验 / 编排",
+            "execution_boundary": "supervisor, direct writer, compiler, validator, observer, and state settler",
         },
         {
             "agent": "Antigravity",
@@ -123,10 +123,10 @@ def _agent_roles(system_status: dict[str, Any]) -> list[dict[str, Any]]:
         },
         {
             "agent": "Hermes",
-            "status": system_status["hermes_execution_status"],
+            "status": "optional_enrichment",
             "display_status": f"Hermes: {system_status['hermes_execution_status']}",
-            "role": "后期写手 / 文学增强 / 受控创意生成",
-            "execution_boundary": "writer and bounded reviser after production readiness",
+            "role": "可选后期文学增强，不参与主生产链",
+            "execution_boundary": "never required for drafting, observation, or state settlement",
         },
         {
             "agent": "Web GPT",

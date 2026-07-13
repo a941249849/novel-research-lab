@@ -6,6 +6,20 @@ __pycache__/
 novel_training_set/
 .nrl-work/
 
+# One-off corpus exploration artifacts are archived outside the production tree.
+/scratch_*
+/scratch/
+/test_output*.json
+/own_test_output.json
+/output.json
+/result.json
+/headers_debug.txt
+/ch_*.txt
+/chapter_details.txt
+/chapters.txt
+/ditian_battle.txt
+/tianxiezi_secret.txt
+
 # Local generated caches and review bundles.
 .pytest_cache/
 .mypy_cache/

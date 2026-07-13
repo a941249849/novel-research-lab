@@ -50,14 +50,14 @@ class ControlPlaneCliTests(unittest.TestCase):
         self.assertEqual(corpus["status"], "data_ready")
         self.assertTrue(corpus["evidence_complete"])
 
-    def test_hardening_status_does_not_promote_sampled_assets_as_deep_decomposition(self):
+    def test_hardening_status_promotes_verified_deep_reading(self):
         result = self.run_cli("hardening-status")
         self.assertEqual(result.returncode, 0, result.stderr)
         capabilities = {
             item["capability_id"]: item for item in json.loads(result.stdout)["capabilities"]
         }
-        self.assertEqual(capabilities["single_book_decomposition"]["status"], "missing")
-        self.assertEqual(capabilities["cross_book_mechanism_distillation"]["status"], "blocked")
+        self.assertEqual(capabilities["single_book_decomposition"]["status"], "data_ready")
+        self.assertEqual(capabilities["cross_book_mechanism_distillation"]["status"], "data_ready")
 
     def test_research_assets_indexes_reviewed_phase1_assets(self):
         result = self.run_cli("research-assets", "--title", "遮天")

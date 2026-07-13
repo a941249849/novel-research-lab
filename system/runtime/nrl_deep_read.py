@@ -20,6 +20,7 @@ DEFAULT_TARGET_BYTES = 1_500_000
 AGY_RUN_TIMEOUT_SECONDS = 900
 OPENCODE_RUN_TIMEOUT_SECONDS = 900
 OPENCODE_DIRECT_SCRIPT = runtime_path("system/runtime/opencode_direct.mjs")
+CCDAN_ANTHROPIC_DIRECT_SCRIPT = runtime_path("system/runtime/ccdan_anthropic_direct.mjs")
 PLAN_PATH = runtime_path("system/research_assets/deep_read/v0.18/plan.json")
 VALIDATION_PATH = runtime_path("system/research_assets/deep_read/v0.18/validation.json")
 REQUEST_DIR = runtime_path("system/agent_ops/packets/deep_read_v0.18")
@@ -578,6 +579,32 @@ def _dispatch_one_opencode_go(chunk: dict[str, Any], model: str) -> dict[str, An
     return validate_chunk_response(str(chunk["chunk_id"]))
 
 
+def _dispatch_one_ccdan_anthropic(chunk: dict[str, Any], model: str) -> dict[str, Any]:
+    node = shutil.which("node")
+    if not node or not CCDAN_ANTHROPIC_DIRECT_SCRIPT.is_file():
+        return {"chunk_id": chunk["chunk_id"], "valid": False, "errors": ["CCDAN Anthropic runtime is unavailable"]}
+    response_path = runtime_path(str(chunk["response_path"]))
+    try:
+        result = subprocess.run(
+            [node, str(CCDAN_ANTHROPIC_DIRECT_SCRIPT), str(runtime_path(chunk["request_path"])), str(runtime_path(chunk["bounded_chunk_file"])), model],
+            cwd=ROOT, text=True, capture_output=True, check=False, timeout=960,
+        )
+    except subprocess.TimeoutExpired:
+        response_path.unlink(missing_ok=True)
+        return {"chunk_id": chunk["chunk_id"], "valid": False, "errors": ["CCDAN Anthropic runtime timed out"]}
+    if result.returncode != 0:
+        response_path.unlink(missing_ok=True)
+        return {"chunk_id": chunk["chunk_id"], "valid": False, "errors": [result.stderr.strip() or "CCDAN Anthropic exited with an error"]}
+    try:
+        payload = extract_bound_response_json(result.stdout, str(chunk["chunk_id"]))
+        _normalize_chapter_span(chunk, payload)
+        _write_json(response_path, payload)
+    except ValueError as error:
+        response_path.unlink(missing_ok=True)
+        return {"chunk_id": chunk["chunk_id"], "valid": False, "errors": [str(error)]}
+    return validate_chunk_response(str(chunk["chunk_id"]))
+
+
 def _normalize_chapter_span(chunk: dict[str, Any], payload: dict[str, Any]) -> None:
     """Bind model analysis to the exact headings detected in the hash-bound source."""
     analysis = payload.get("analysis")
@@ -595,14 +622,16 @@ def _dispatch_one(
         return _dispatch_one_agy(chunk, model, print_timeout)
     if runner == "opencode-go":
         return _dispatch_one_opencode_go(chunk, model)
+    if runner == "ccdan-anthropic":
+        return _dispatch_one_ccdan_anthropic(chunk, model)
     raise RuntimeError(f"unknown deep-read runner: {runner}")
 
 
 def validate_dispatch_options(runner: str, workers: int) -> None:
     if workers < 1 or workers > 8:
         raise ValueError("workers must be between 1 and 8")
-    if runner == "opencode-go" and workers != 1:
-        raise ValueError("opencode-go requires workers=1")
+    if runner in {"opencode-go", "ccdan-anthropic"} and workers != 1:
+        raise ValueError(f"{runner} requires workers=1")
 
 
 def dispatch_pending_chunks(
@@ -637,7 +666,7 @@ def dispatch_pending_chunks(
                 item = {"chunk_id": chunk["chunk_id"], "valid": False, "errors": [str(error)]}
             results.append(item)
             error_text = " ".join(str(error) for error in item.get("errors", []))
-            if "quota reached" in error_text.casefold():
+            if _is_quota_error(error_text):
                 quota_blocked = True
                 break
     else:
@@ -654,10 +683,7 @@ def dispatch_pending_chunks(
                     results.append(
                         {"chunk_id": chunk["chunk_id"], "valid": False, "errors": [str(error)]}
                     )
-        quota_blocked = any(
-            "quota reached" in " ".join(str(error) for error in item.get("errors", [])).casefold()
-            for item in results
-        )
+        quota_blocked = any(_is_quota_error(" ".join(str(error) for error in item.get("errors", []))) for item in results)
     coverage = validate_all_chunks()
     return {
         "version": VERSION,
@@ -671,6 +697,11 @@ def dispatch_pending_chunks(
         "quota_blocked": quota_blocked,
         "coverage": coverage,
     }
+
+
+def _is_quota_error(error_text: str) -> bool:
+    normalized = error_text.casefold()
+    return "quota reached" in normalized or "api_key_quota_exhausted" in normalized or "额度已用完" in normalized
 
 
 def _book_id(book: dict[str, Any]) -> str:

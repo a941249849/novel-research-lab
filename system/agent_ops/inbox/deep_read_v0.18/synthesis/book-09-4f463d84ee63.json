@@ -1,0 +1,142 @@
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "book_id": "book-09-4f463d84ee63",
+  "book_title": "《将夜》（校对版全本）作者：猫腻",
+  "covered_chunk_ids": [
+    "book-09-4f463d84ee63-chunk-001",
+    "book-09-4f463d84ee63-chunk-002",
+    "book-09-4f463d84ee63-chunk-003",
+    "book-09-4f463d84ee63-chunk-004",
+    "book-09-4f463d84ee63-chunk-005",
+    "book-09-4f463d84ee63-chunk-006"
+  ],
+  "covered_chunk_hashes": [
+    {
+      "chunk_id": "book-09-4f463d84ee63-chunk-001",
+      "response_sha256": "15eaf71f5688fd3990b60d5402c5e0f958cb32785684f4b7135798249467c29e"
+    },
+    {
+      "chunk_id": "book-09-4f463d84ee63-chunk-002",
+      "response_sha256": "4cbcfb496fa5646198afa441ed49952990bd2c3212cd07de6c5824e7bf83257b"
+    },
+    {
+      "chunk_id": "book-09-4f463d84ee63-chunk-003",
+      "response_sha256": "5223ec2ee6c1b0f4c6b91f59d5ee0f756ee6a407033b00cb6b09e298650feb47"
+    },
+    {
+      "chunk_id": "book-09-4f463d84ee63-chunk-004",
+      "response_sha256": "33b515922728797cee9eab6e98ccc2505332ee2a575c6007f62eb43a82107bf4"
+    },
+    {
+      "chunk_id": "book-09-4f463d84ee63-chunk-005",
+      "response_sha256": "74171735d4034ec8739c24ae7a68b9352ada309ace355b5d211d37be2af42c76"
+    },
+    {
+      "chunk_id": "book-09-4f463d84ee63-chunk-006",
+      "response_sha256": "b6fa58e03ea040ed201de69fc80eb67b39b22ca8b6dc4ac41bd8666906a99ed0"
+    }
+  ],
+  "synthesis": {
+    "narrative_spine": [
+      "A border survivor enters Chang'an, turns the Xuanwei massacre into a disciplined private revenge campaign, and earns a place in the Academy.",
+      "The revenge plot expands into a contest with Xiling and Haotian when Ning Que chooses Sang Sang over every institutional demand for sacrifice.",
+      "The final campaign converts private loyalty into a human-world answer: Tang and the Academy defeat divine absolutism and Ning Que writes the Human talisman to remake the world."
+    ],
+    "character_arcs": [
+      "Ning Que moves from calculating survivor and blocked cultivator to Academy disciple, avenger, Sang Sang's defender, and the agent of a human-made future.",
+      "Sang Sang moves from Ning Que's domestic partner and protector to the feared center of the Haotian and Pluto prophecies, then back toward vulnerable human attachment and motherhood.",
+      "Long Qing's repeated defeats turn public genius into an absorbing, heretical rival whose final death closes the earliest Academy competition.",
+      "The Academy's elders turn ideals into costly action: Fu Zi becomes the Moon, Jun Mo sacrifices an arm, and Yu Lian destroys the Xiling power center."
+    ],
+    "mechanism_evolution": [
+      "Blocked Qi Ocean and Snow Mountain gives way to perception, Haoran Qi, talisman practice, and increasingly explicit systems that join calligraphy, array logic, and combat.",
+      "The Great Black Umbrella grows from domestic equipment into a defensive relic that conceals and protects Sang Sang against divine-scale attacks.",
+      "High-end cultivation enlarges the action space from five-realm advancement to Wuju, the Jingshen Array, Heaven Books, Haotian replacement, and the Human talisman."
+    ],
+    "world_expansion": [
+      "Chang'an, the Academy, Xiling, the Desolate plain, Lanke Temple, the Golden Horde, and Peach Mountain become linked arenas of religion, state power, warfare, and daily life.",
+      "The cosmology moves from local cultivation rules to Eternal Night, Haotian, the manufactured Moon, the divine kingdom, and a remade round world.",
+      "Institutional conflict is concrete: Tang law regulates revenge, Xiling controls faith, the Academy protects secular choice, and the New Sect breaks a religious monopoly."
+    ],
+    "long_term_reader_hooks": [
+      "The Xuanwei massacre list and Ning Que's revenge establish the original durable engine, whose Xia Hou reckoning pays off in the Yanming Lake duel.",
+      "Sang Sang's cold illness, white feet, inherited Light role, and Pluto accusation repeatedly reframe her identity before resolving it through Haotian's humanization.",
+      "The mystery of the black umbrella, the Heaven Books, Ke Haoran's legacy, and the approaching Eternal Night continually expand the stakes beyond the immediate duel."
+    ],
+    "style_and_life_force": [
+      "Cosmic debates and violent action are grounded by food, money, household chores, travel, stitching, and the shared home of Ning Que and Sang Sang.",
+      "Dry dialogue, anti-heroic problem solving, and abrupt practical violence keep grand cultivation scenes from becoming uniformly solemn.",
+      "Calligraphy, weather, seasonal change, and stark visual contrasts make metaphysical systems legible through lived physical detail."
+    ],
+    "continuity_failures": [
+      "Power escalation from early cultivation ranks to world-remaking talismans requires careful causal staging so later divine mechanisms do not flatten the earlier survival stakes.",
+      "The Academy's decisive rescues and sanctuary can reduce uncertainty unless their costs, limits, and counterpressures remain visible.",
+      "Sang Sang's identity shifts across servant, Light successor, Pluto figure, Haotian, and human mother need explicit transition anchors to avoid feeling like successive replacements."
+    ],
+    "evidence_map": [
+      {
+        "claim": "The narrative spine turns a local survivor's ascent into an Academy-backed political and cosmic struggle.",
+        "chunk_id": "book-09-4f463d84ee63-chunk-001",
+        "chapter_heading": "第一百五十八章 咔嚓！咔嚓！"
+      },
+      {
+        "claim": "The character arc of Sang Sang becomes a world-level identity conflict rather than a domestic subplot.",
+        "chunk_id": "book-09-4f463d84ee63-chunk-003",
+        "chapter_heading": "第九十章 冥王的女儿（上）"
+      },
+      {
+        "claim": "Mechanism evolution reaches distance-defying high-level cultivation through Li Manman's Wuju.",
+        "chunk_id": "book-09-4f463d84ee63-chunk-002",
+        "chapter_heading": "第一百一十四章 书院大师兄"
+      },
+      {
+        "claim": "World expansion is marked by Fu Zi's transformation, which adds the Moon to the cosmology.",
+        "chunk_id": "book-09-4f463d84ee63-chunk-004",
+        "chapter_heading": "第八十一章 故事新编（下）"
+      },
+      {
+        "claim": "The long-term hook of Haotian's humanization is renewed by Sang Sang's failed return and pregnancy.",
+        "chunk_id": "book-09-4f463d84ee63-chunk-005",
+        "chapter_heading": "第一章 昊天留给人间的礼物（上）"
+      },
+      {
+        "claim": "Domestic realism remains active during the final conflict through childbirth and protection rather than disappearing under the cosmic climax.",
+        "chunk_id": "book-09-4f463d84ee63-chunk-006",
+        "chapter_heading": "第一百一十五章 天生一对（下）"
+      },
+      {
+        "claim": "The accumulated Xia Hou feud receives its explicit public reckoning in the Yanming Lake duel.",
+        "chunk_id": "book-09-4f463d84ee63-chunk-003",
+        "chapter_heading": "第二百八十九章 将军一战白头"
+      },
+      {
+        "claim": "Creation-family evidence includes embedded authorial commentary and volume-level self-reference alongside the serialized chapter structure.",
+        "chunk_id": "book-09-4f463d84ee63-chunk-004",
+        "chapter_heading": "第四卷 垂幕之年"
+      },
+      {
+        "claim": "The martyr-reformer pattern is a recognizable originality red line in the New Sect plot.",
+        "chunk_id": "book-09-4f463d84ee63-chunk-005",
+        "chapter_heading": "第四十九章 一道白烟"
+      }
+    ],
+    "creation_family_evidence": {
+      "characters": "Ning Que and Sang Sang form the central paired trajectory: survival, domestic interdependence, separation under divine identity, and a human-scale reunion.",
+      "npcs": "Fu Zi, Li Manman, Jun Mo, Yu Lian, Chao Xiaoshu, Mo Shanshan, Ye Hongyu, Long Qing, and the Abbey Dean each carry distinct institutional and ideological pressures into the central pair's choices.",
+      "factions": "The Academy and Tang defend secular human agency against Xiling and the Abbey Dean, while the Desolate, Golden Horde, Buddhism, Zhishou Temple, and New Sect enlarge the conflict across faith and state.",
+      "artifacts": "The Great Black Umbrella, Yuan Thirteen Bow, Heaven Books, Jingshen Array, black carriage, and Human talisman connect personal survival tools to world-order mechanisms.",
+      "techniques": "Calligraphy-derived talismans, Haoran Qi, Wuju, runic arrays, Zen handprints, Grey Eye absorption, and the Human character turn writing, cognition, and spatial control into escalating action systems.",
+      "naming": "Chapter and volume headings use serial Chinese numbering and compact evocative titles, while key names such as Haotian, Eternal Night, Jingshen Array, and Human talisman bind metaphysics to recurring concrete terms.",
+      "emotional_bonds": "Ning Que's refusal to abandon Sang Sang is the decisive emotional rule; parallel bonds between Academy disciples, Mo Shanshan, Chao Xiaoshu, and Tang allies give the war its human cost.",
+      "foreshadowing": "The black umbrella, blocked meridians, Vermilion Bird reaction, Sang Sang's illness, Ke Haoran's traces, and dimming stars begin as anomalies and mature into the ending's decisive premises.",
+      "state_ledger": "Ning Que: border survivor to world-maker; Sang Sang: servant to Haotian to mother; Long Qing: favored genius to dead rival; Fu Zi: master to Moon; Xiling: world authority to destroyed power center."
+    },
+    "originality_red_lines": [
+      "Do not resolve core danger solely through untouchable senior Academy intervention; preserve visible costs and agency for the central pair.",
+      "Do not treat Sang Sang's identity changes as surprise labels; seed each shift through behavior, body, faith, and relationship consequences.",
+      "Do not let the final Human-talisman solution replace the accumulated tactical and emotional causality that makes its scale earned.",
+      "Keep the domestic material consequential rather than decorative, because food, care, money, and repair are the work's counterweight to divine abstraction."
+    ]
+  }
+}

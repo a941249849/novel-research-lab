@@ -4,7 +4,9 @@
     "supported_modes": [
       "local"
     ],
-    "can_execute": true
+    "can_execute": true,
+    "execution_policy": "primary_runtime_and_direct_writer",
+    "writer_adapter": "codex_direct"
   },
   "hermes": {
     "mode": "cli_bridge",
@@ -15,8 +17,8 @@
       "cli",
       "cli_bridge"
     ],
-    "can_execute": true,
-    "execution_policy": "controlled_prose_test_only",
+    "can_execute": false,
+    "execution_policy": "optional_literary_enrichment_only",
     "handoff_dir": "handoff/hermes",
     "expected_output_dir": "handoff/hermes/outputs"
   },

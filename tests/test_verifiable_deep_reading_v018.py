@@ -102,6 +102,7 @@ class VerifiableDeepReadingV018Tests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn("--runner", result.stdout)
         self.assertIn("opencode-go", result.stdout)
+        self.assertIn("ccdan-anthropic", result.stdout)
         self.assertNotIn("--variant", result.stdout)
 
     def test_opencode_go_runner_requires_single_worker(self):

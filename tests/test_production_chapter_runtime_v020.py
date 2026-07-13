@@ -1,9 +1,11 @@
 import sys
 import unittest
 from pathlib import Path
+from unittest import mock
 
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "system/runtime"))
+REPO_ROOT = Path(__file__).resolve().parents[1]
 
 from nrl_production_runtime import (
     STAGES,
@@ -18,6 +20,44 @@ from nrl_production_runtime import (
 
 
 class ProductionChapterRuntimeV020Tests(unittest.TestCase):
+
+    def test_audit_output_parser_accepts_fenced_json_from_stderr(self):
+        import nrl_production_runtime as runtime
+
+        record = {"stage": "draft_generated", "artifacts": {"context": "context.json", "rule_stack": "rules.json", "trace": "trace.json", "draft": "draft.md"}}
+        audit = {"chapter_id": "chapter-0001", "artifact_kind": "draft", "artifact_sha256": "a" * 64, "context_sha256": "b" * 64, "verdict": "ACCEPT", "dimensions": {key: [] for key in ("canon", "character", "state", "causality", "pacing", "life_force", "anti_ai_taste", "originality")}, "issues": []}
+        packet = REPO_ROOT / "system/production_runtime/chapters/chapter-0001/test-audit-packet.md"
+        packet.write_text("packet", encoding="utf-8")
+        with mock.patch.object(runtime, "build_chapter_audit_packet", return_value={"template": audit, "packet_path": str(packet.relative_to(REPO_ROOT))}), mock.patch.object(runtime, "find_agy_binary", return_value="agy"), mock.patch.object(runtime, "_load_registry", return_value={"chapters": [record]}), mock.patch.object(runtime, "_chapter_record", return_value=record), mock.patch.object(runtime, "validate_stage_transition", return_value={"valid": True, "errors": []}), mock.patch.object(runtime, "_save_registry"), mock.patch.object(runtime, "_write_json"), mock.patch("nrl_production_runtime.subprocess.run", return_value=mock.Mock(returncode=0, stdout="", stderr="```json\n" + __import__("json").dumps(audit) + "\n```")):
+            result = runtime.dispatch_chapter_audit("chapter-0001")
+        packet.unlink()
+        self.assertTrue(result["valid"])
+
+    def test_audit_normalizer_maps_compatible_agent_issue_labels(self):
+        import nrl_production_runtime as runtime
+
+        result = runtime.normalize_continuity_audit_payload({"issues": [{
+            "issue_id": "W-1", "severity": "WARN", "description": "evidence", "recommendation": "fix",
+            "dimension": "anti_ai_taste",
+        }]})
+        self.assertEqual(result["issues"], [{
+            "issue_id": "W-1", "severity": "minor", "evidence": "evidence", "required_fix": "fix",
+        }])
+
+    def test_audit_normalizer_supplies_only_a_deterministic_missing_issue_id(self):
+        import nrl_production_runtime as runtime
+
+        result = runtime.normalize_continuity_audit_payload({"issues": [{
+            "severity": "minor", "evidence": "evidence", "required_fix": "fix",
+        }]})
+        self.assertEqual(result["issues"][0]["issue_id"], "agent-issue-001")
+
+    def test_audit_normalizer_supplies_neutral_missing_optional_text(self):
+        import nrl_production_runtime as runtime
+
+        result = runtime.normalize_continuity_audit_payload({"issues": [{"severity": "minor"}]})
+        self.assertIn("No evidence", result["issues"][0]["evidence"])
+        self.assertIn("No corrective action", result["issues"][0]["required_fix"])
     def test_stage_transition_requires_exact_next_stage_and_artifact(self):
         record = {"stage": "chapter_intent", "artifacts": {"intent": "intent.json"}}
         valid = validate_stage_transition(record, "context_compiled", "context.json")
@@ -28,7 +68,7 @@ class ProductionChapterRuntimeV020Tests(unittest.TestCase):
         self.assertFalse(missing["valid"])
         revision = {"stage": "revision_generated", "artifacts": {"revision": "revision.md"}}
         self.assertTrue(
-            validate_stage_transition(revision, "revision_audited", "revision_audit.json")["valid"]
+            validate_stage_transition(revision, "final_observed", "observation.json")["valid"]
         )
         self.assertFalse(
             validate_stage_transition(revision, "state_settled", "settlement.json")["valid"]
@@ -88,6 +128,28 @@ class ProductionChapterRuntimeV020Tests(unittest.TestCase):
         self.assertIn("a" * 64, payload)
         self.assertIn("chapter-0001", payload)
         self.assertNotIn("novel_training_set", payload)
+
+    def test_audit_packet_inlines_bound_artifacts_without_raw_corpus(self):
+        import nrl_production_runtime as runtime
+
+        context = {"chapter_id": "chapter-0001", "assets": [], "must_keep": ["cost"]}
+        rules = {"hard_rules": ["do not invent assets"]}
+        trace = {"chapter_id": "chapter-0001"}
+        observation = {"chapter_id": "chapter-0001", "facts": {}}
+        record = {
+            "stage": "draft_generated",
+            "artifacts": {
+                "context": "context.json", "rule_stack": "rules.json", "trace": "trace.json",
+                "draft": "draft.md",
+            },
+        }
+        with mock.patch.object(runtime, "_load_registry", return_value={"chapters": [record]}), mock.patch.object(runtime, "_chapter_record", return_value=record), mock.patch.object(runtime, "runtime_path", side_effect=lambda value: REPO_ROOT / "system/production_runtime/chapters/chapter-0001" / Path(value).name), mock.patch.object(runtime, "_read_json", side_effect=[context, rules, trace, observation]), mock.patch.object(runtime, "_sha256", return_value="a" * 64):
+            packet = runtime.build_chapter_audit_packet("chapter-0001")
+        text = (REPO_ROOT / packet["packet_path"]).read_text(encoding="utf-8")
+        (REPO_ROOT / packet["packet_path"]).unlink()
+        self.assertIn("Compact Context", text)
+        self.assertIn("Observed Facts", text)
+        self.assertNotIn("novel_training_set", text)
 
     def test_settlement_must_bind_revision_and_resolve_blocking_audit_issues(self):
         revision_hash = "a" * 64
@@ -179,6 +241,34 @@ class ProductionChapterRuntimeV020Tests(unittest.TestCase):
                 settlement, "chapter-0001", "a" * 64, audit, observation=observation
             )["valid"]
         )
+
+    def test_observed_settlement_candidate_uses_only_observed_facts(self):
+        import nrl_production_runtime as runtime
+
+        record = {
+            "stage": "final_audited",
+            "artifacts": {"observation": "observation.json", "revision": "revision.md"},
+        }
+        observation = {"facts": {"characters": [{
+            "fact_id": "fact-1", "asset_id": "character-a", "field_path": "character.status",
+            "before": "before", "after": "after", "evidence": "text",
+        }]}}
+        with mock.patch.object(runtime, "_load_registry", return_value={"chapters": [record]}), mock.patch.object(runtime, "_chapter_record", return_value=record), mock.patch.object(runtime, "_read_json", return_value=observation), mock.patch.object(runtime, "_sha256", return_value="a" * 64), mock.patch.object(runtime, "_write_json") as write_json:
+            result = runtime.build_observed_settlement_candidate("chapter-0001")
+        candidate = write_json.call_args.args[1]
+        self.assertEqual(result["state_delta_count"], 1)
+        self.assertEqual(candidate["state_deltas"][0]["fact_id"], "fact-1")
+        self.assertEqual(candidate["state_deltas"][0]["after"], "after")
+
+    def test_controlled_pipeline_is_idempotent_for_an_accepted_chapter(self):
+        import nrl_production_runtime as runtime
+
+        intent = {"chapter_id": "chapter-0001"}
+        record = {"chapter_id": "chapter-0001", "stage": "chapter_accepted"}
+        with mock.patch.object(runtime, "_read_json", return_value=intent), mock.patch.object(runtime, "_load_registry", return_value={"chapters": [record]}):
+            result = runtime.run_controlled_chapter_pipeline("intent.json")
+        self.assertTrue(result["valid"])
+        self.assertEqual(result["completed"], [])
 
 
 if __name__ == "__main__":

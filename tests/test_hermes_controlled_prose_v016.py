@@ -1,9 +1,11 @@
 import json
 import os
 import stat
+import subprocess
 import sys
 import tempfile
 import unittest
+from unittest import mock
 from pathlib import Path
 
 
@@ -75,6 +77,13 @@ class HermesControlledProseV016Tests(unittest.TestCase):
                     os.environ["NRL_FAKE_HERMES_ARGS"] = old_args
             self.assertIn("--provider", args_path.read_text(encoding="utf-8"))
             self.assertIn("openai-codex", args_path.read_text(encoding="utf-8"))
+
+    def test_bridge_reports_oneshot_timeout(self):
+        with mock.patch("nrl_hermes_bridge.find_hermes_binary", return_value="hermes"), mock.patch(
+            "nrl_hermes_bridge.subprocess.run", side_effect=subprocess.TimeoutExpired("hermes", 1)
+        ):
+            with self.assertRaisesRegex(RuntimeError, "timed out after 1s"):
+                ask_hermes("test", timeout_seconds=1)
 
     def test_readiness_requires_audited_matching_owner_decision(self):
         blocked = build_controlled_prose_readiness([], self.audit)

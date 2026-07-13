@@ -1,0 +1,229 @@
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "book_id": "book-11-61b03727048f",
+  "book_title": "《武动乾坤》（精校版全本）作者：天蚕土豆",
+  "covered_chunk_ids": [
+    "book-11-61b03727048f-chunk-001",
+    "book-11-61b03727048f-chunk-002",
+    "book-11-61b03727048f-chunk-003",
+    "book-11-61b03727048f-chunk-004",
+    "book-11-61b03727048f-chunk-005",
+    "book-11-61b03727048f-chunk-006"
+  ],
+  "covered_chunk_hashes": [
+    {
+      "chunk_id": "book-11-61b03727048f-chunk-001",
+      "response_sha256": "9f7da5c55c8aa4396626163cb212002200b0ecfaf56575c2ff893a2489e15f30"
+    },
+    {
+      "chunk_id": "book-11-61b03727048f-chunk-002",
+      "response_sha256": "e67d6a2e3f3451afe3eee6964e98b551f2bb90ba27580c8c4eccab6a8f53b196"
+    },
+    {
+      "chunk_id": "book-11-61b03727048f-chunk-003",
+      "response_sha256": "009779a777ed0f0431287c4ec9aeaaa962ea9b221f729f40652a676fe80220a4"
+    },
+    {
+      "chunk_id": "book-11-61b03727048f-chunk-004",
+      "response_sha256": "bc1577c5f403d7e6b8197f3b21147d2fb8d52d0d0280a3542de1e42d4839f9c8"
+    },
+    {
+      "chunk_id": "book-11-61b03727048f-chunk-005",
+      "response_sha256": "c3434691fcfe358e9a1ec2332734168f5382142c693e37dcec0511f54e6e7ee5"
+    },
+    {
+      "chunk_id": "book-11-61b03727048f-chunk-006",
+      "response_sha256": "c65b7ca2e7efebf0f59c86d2188fae6a3233ec4c7111570e1cc19fc7487d93f9"
+    }
+  ],
+  "synthesis": {
+    "narrative_spine": [
+      "A local underdog arc begins with Lin Dong using the stone talisman to repair family decline, gain dual cultivation tracks, and turn successive local conflicts into credible stepping stones.",
+      "The middle movement expands the initial feud into a relic-and-sect progression: the Devouring Ancestral Symbol, ancient inheritances, tournament selection, and Dao Sect membership convert private revenge into participation in regional power structures.",
+      "After the Yuan Gate catastrophe, exile to the Chaotic Demon Sea changes the protagonist from a sect champion into an independent actor assembling ancestral symbols, allies, and historical knowledge.",
+      "The late movement reframes every regional dispute as preparation for the extraterrestrial demon war; recovery of companions, creation of alliances, and the return to Eastern Xuan form the bridge from personal debt to collective defense.",
+      "The ending resolves the demon-emperor threat by making emotional sacrifice and self-realization prerequisites for the final realm, then deliberately leaves the search for Ying Huanhuan open beyond the plane."
+    ],
+    "character_arcs": [
+      "Lin Dong progresses from a physically weak branch-family youth to a dual-path cultivator, relic bearer, sect disciple, regional leader, and finally plane master; each status increase is tied to a new responsibility rather than only a numerical realm.",
+      "Little Marten evolves from a hidden adviser dependent on the stone talisman into a restored Tianyao Marten leader and Lin Dong's strategic equal; Little Flame similarly changes from beast companion to transformed brother and military leader.",
+      "Qing Tan's early body-constitution crisis becomes an independent Black Darkness Hall leadership line, then a continental alliance mandate and an endgame departure alongside Lin Dong.",
+      "Ying Huanhuan moves from Dao Sect intimacy and latent anomaly to Ice Master's awakening; her increasingly irreversible loss of ordinary self raises the cost of the finale and motivates Lin Dong's postwar search.",
+      "Ling Qingzhu shifts from distant benchmark to reciprocal partner: her Tai Shang route becomes structurally necessary to sense the plane embryo, while her decision to travel onward closes the relationship as a chosen alliance.",
+      "Lin Langtian's family grievance is first resolved at the Hundred Dynasties contest, but his reused image in the demon-emperor climax turns the private antagonist into an emblem of the larger corruption."
+    ],
+    "mechanism_evolution": [
+      "The stone talisman is introduced as a practical enhancement device, then accumulates functions for martial inference, medicine refinement, energy handling, mental training, and ancestral-symbol resonance, making early utility become cosmological access.",
+      "Dual cultivation keeps escalation legible: Yuan force, body training, spiritual-symbol mastery, ancestral symbols, and fusion methods each supply distinct constraints and tactical roles instead of replacing one another immediately.",
+      "The Devouring Ancestral Symbol expands from a hidden advantage into the system that can absorb power, balance multiple ancestral symbols, expose demon contamination, and ultimately support world-scale conflict.",
+      "Relic progression is staged through equipment and institutions: Heavenly Scale Ancient Halberd, talisman puppets, Heavy Prison Peak, Ancient Heaven and Earth Array, Burning Heaven Cauldron, and divine objects make advancement materially traceable.",
+      "Realm escalation changes its proof standard from defeating local enemies, to surviving layered calamities and tournaments, to surviving reincarnation insight and mastering the plane embryo.",
+      "The demon system supplies a counter-mechanism: possession, magic locks, demon corpses, demon kings, and the emperor require ancestral symbols, ancient masters, coalition tactics, and sacrifice rather than a single combat solution."
+    ],
+    "world_expansion": [
+      "The route grows in clear concentric stages from Qingyang Town and Flame City through Great Desolation County, the Ancient Battlefield, Eastern Xuan Region, Chaotic Demon Sea, Beast Domain, and finally plane-scale war zones.",
+      "Local clans and commercial organizations give way to ancient sect remains, super sects, the Yuan Gate, sea-domain factions, beast clans, and finally three anti-demon alliances, increasing the social scale with the power scale.",
+      "Ancient ruins repeatedly reveal a deeper historical layer: the Black Pupil elder, Qing Zhi, Yan Master, Devouring Master, Eight Masters, Symbol Ancestor, and the sealed demon war explain why present tools matter.",
+      "The four hegemonic beast clans, eight royal clans, Dragon Clan hierarchy, and Four Symbols Palace add a nonhuman political sphere rather than treating beasts only as resources or mounts.",
+      "The final plane boundary establishes the shared-universe bridge and makes the main world's salvation a threshold rather than a closed cosmology."
+    ],
+    "long_term_reader_hooks": [
+      "The talisman's source, growing function set, and resonance with ancestral symbols sustain curiosity from the opening chapters until its role in the final divine-object network.",
+      "Lin Xiao's injury and the Lin Langtian grievance create an early revenge deadline that later pays off at the Hundred Dynasties contest, while Lin Langtian's inner presence preserves a broader danger signal.",
+      "Qing Tan's yin affliction, Little Flame's bloodline evolution, and Little Marten's restoration produce long-running companion objectives that become separate leadership arcs.",
+      "The ancient symbol map and later named ancestral symbols provide a collectible but lore-bearing quest structure, with each acquisition also exposing more of the demon-war history.",
+      "Ying Huanhuan's reincarnator signs and Ling Qingzhu's Tai Shang path plant two different emotional-cost trajectories long before the final use of their powers.",
+      "Zhou Tong's legend, the Yuan Gate's hidden demon role, and the Demon Emperor's remaining hand build a delayed payoff chain from sect history to the terminal war."
+    ],
+    "style_and_life_force": [
+      "Chapters use concise event-centered titles and frequent end-of-chapter reversals to preserve serialized forward pull across training, relic, and tournament arcs.",
+      "Combat commonly follows pressure, apparent disadvantage, hidden tool reveal, and public reversal; the recurrence creates reliable payoff but can make outcomes predictable.",
+      "Power is rendered through visible quantities such as pills, calamities, realm tiers, dragon-pattern counts, and treasure grades, allowing scale changes to be immediately legible.",
+      "Exposition is usually delegated to mentors, relic spirits, and conversations, so cosmology is uncovered alongside a current objective rather than delivered as isolated setting blocks.",
+      "The story alternates severe escalations with Little Marten's teasing and brotherly exchanges, giving the central trio a durable domestic texture amid high fantasy stakes.",
+      "Romance is predominantly indirect and contrastive: Ying Huanhuan is built through daily proximity and later sacrifice, while Ling Qingzhu is built through distance, parity, and shared cultivation purpose."
+    ],
+    "continuity_failures": [
+      "The talisman acquires many functions across the book; its staged revelations preserve momentum, but the breadth of later capabilities can make early constraints feel retroactively loose.",
+      "Repeated inheritance, relic, auction, and contest structures are usually connected to the next realm or faction, yet their recurrence risks flattening the distinction between locations.",
+      "Lin Dong's victories consistently receive a new tool, fusion, or calamity rationale, but frequent cross-realm reversals require careful cost tracking to retain threat credibility.",
+      "The Yuan Gate conflict pays off the early family feud, then the demon-emperor's use of Lin Langtian's appearance extends the image after its personal arc is already resolved; this is thematically useful but risks diminishing the earlier closure.",
+      "Ying Huanhuan's sacrifice is positioned as devastating and irreversible inside the plane, while the immediate cross-plane search hook partially redirects finality into sequel-facing momentum.",
+      "Some chapter-span metadata contains duplicated or irregular chapter numbering; synthesis claims therefore rely on the supplied validated chunk analyses and exact validated headings rather than inferred sequence numbers."
+    ],
+    "evidence_map": [
+      {
+        "claim": "The stone talisman launches Lin Dong's local rise by enabling martial learning and physical enhancement.",
+        "chunk_id": "book-11-61b03727048f-chunk-001",
+        "chapter_heading": "第五章 神秘石符"
+      },
+      {
+        "claim": "The Devouring Ancestral Symbol becomes the pivotal inheritance that turns relic pursuit into a new power track.",
+        "chunk_id": "book-11-61b03727048f-chunk-002",
+        "chapter_heading": "第三百二十二章 祖符认可"
+      },
+      {
+        "claim": "Lin Dong resolves the Lin Langtian conflict at the Hundred Dynasties contest.",
+        "chunk_id": "book-11-61b03727048f-chunk-003",
+        "chapter_heading": "第六百二十二章 斩杀林琅天"
+      },
+      {
+        "claim": "The Yuan Gate massacre and flight force the trio out of Eastern Xuan and into a wider world.",
+        "chunk_id": "book-11-61b03727048f-chunk-004",
+        "chapter_heading": "第八百二十九章 逃离"
+      },
+      {
+        "claim": "The demon conflict becomes an Eastern Xuan-wide war through the formation of the Yuan-annihilation alliance.",
+        "chunk_id": "book-11-61b03727048f-chunk-005",
+        "chapter_heading": "第一千两百零三章 诛元盟"
+      },
+      {
+        "claim": "Ying Huanhuan's sacrifice opens Lin Dong's final path and fixes the emotional cost of victory.",
+        "chunk_id": "book-11-61b03727048f-chunk-006",
+        "chapter_heading": "第一千三百零二章 祈愿"
+      },
+      {
+        "claim": "The core artifact progression starts with the Heavenly Scale Ancient Halberd as a named, upgradeable weapon.",
+        "chunk_id": "book-11-61b03727048f-chunk-001",
+        "chapter_heading": "第一百七十三章 天鳞古戟"
+      },
+      {
+        "claim": "Layered calamities demonstrate the book's dual Yuan-force and spiritual-power advancement logic.",
+        "chunk_id": "book-11-61b03727048f-chunk-003",
+        "chapter_heading": "第四百九十五章 双劫齐至"
+      },
+      {
+        "claim": "Ying Huanhuan's reincarnator status begins surfacing as a long-term emotional and cosmological hook.",
+        "chunk_id": "book-11-61b03727048f-chunk-004",
+        "chapter_heading": "第七百四十六章 轮回者"
+      },
+      {
+        "claim": "The three brothers repeatedly reunite as a political and emotional unit before taking on larger factions.",
+        "chunk_id": "book-11-61b03727048f-chunk-004",
+        "chapter_heading": "第七百三十二章 三人再聚"
+      },
+      {
+        "claim": "The three-alliance structure scales personal allies into an organized anti-demon coalition.",
+        "chunk_id": "book-11-61b03727048f-chunk-006",
+        "chapter_heading": "第一千两百八十章 三大联盟"
+      },
+      {
+        "claim": "Ling Qingzhu's Tai Shang route becomes a direct requirement for endgame perception and partnership.",
+        "chunk_id": "book-11-61b03727048f-chunk-006",
+        "chapter_heading": "第一千两百二十四章 太上感应诀"
+      },
+      {
+        "claim": "The ancestral-symbol system is explicitly established as a counter to demon contamination and cosmic threat.",
+        "chunk_id": "book-11-61b03727048f-chunk-005",
+        "chapter_heading": "第一千两百零一章 第八道祖符"
+      },
+      {
+        "claim": "The final conflict reaches a plane-scale threshold that requires Lin Dong to enter the ancestral realm.",
+        "chunk_id": "book-11-61b03727048f-chunk-006",
+        "chapter_heading": "第一千三百零五章 晋入祖境"
+      },
+      {
+        "claim": "Lin Dong reaches ancestral realm status by completing the self-recognition test of reincarnation.",
+        "chunk_id": "book-11-61b03727048f-chunk-006",
+        "chapter_heading": "第一千三百零五章 晋入祖境"
+      },
+      {
+        "claim": "The ending preserves a cross-plane reader hook instead of closing Ying Huanhuan's fate in the home world.",
+        "chunk_id": "book-11-61b03727048f-chunk-006",
+        "chapter_heading": "第一千三百零七章 我要把你找回来"
+      },
+      {
+        "claim": "The early naming of the cultivation hierarchy establishes the numerical escalation vocabulary used throughout the book.",
+        "chunk_id": "book-11-61b03727048f-chunk-001",
+        "chapter_heading": "第九十章 小元丹境"
+      }
+    ],
+    "creation_family_evidence": {
+      "characters": [
+        "Lin Dong's trajectory joins dual cultivation, leadership, and plane-scale responsibility rather than remaining a single revenge arc.",
+        "Ying Huanhuan, Ling Qingzhu, Qing Tan, Little Marten, and Little Flame retain distinct transformations tied to the main escalation."
+      ],
+      "npcs": [
+        "Mentor and relic figures such as Rock, Qing Zhi, Yan Master, Devouring Master, and Zhou Tong reveal history while also supplying bounded interventions.",
+        "Antagonists scale from Lin Langtian and Yuan Gate to demon kings and the Demon Emperor, keeping named opposition attached to each world tier."
+      ],
+      "factions": [
+        "The setting evolves from family and town factions to super sects, Yuan Gate, sea-domain organizations, beast clans, and the three anti-demon alliances.",
+        "The Four Symbols Palace and later alliance structures let companion arcs generate institutions rather than merely supporting Lin Dong."
+      ],
+      "artifacts": [
+        "The stone talisman, ancestral symbols, Heavenly Scale Ancient Halberd, Heavy Prison Peak, Burning Heaven Cauldron, and divine objects connect material rewards to later systems.",
+        "Artifacts require recognition, materials, energy, or compatible cultivation, which gives later power a visible inventory and operation history."
+      ],
+      "techniques": [
+        "Mental-symbol methods, body techniques, fusion power, Dragon Transformation Art, Great Desolation Scripture, Tai Shang perception, and reincarnation all evolve as separate but converging paths.",
+        "The final victory depends on combining techniques, symbols, sacrifice, and plane perception rather than simply adding attack strength."
+      ],
+      "naming": [
+        "Realm labels, calamity counts, ancestor-symbol names, ranked divine objects, beast bloodlines, and concise event chapter titles create a consistent escalation lexicon.",
+        "Names use ancient, celestial, beast, elemental, and desolation imagery to distinguish institutions and high-tier tools."
+      ],
+      "emotional_bonds": [
+        "The Lin Dong-Little Marten-Little Flame brotherhood repeatedly converts reunion and mutual rescue into operational strength.",
+        "Ying Huanhuan's sacrifice and Ling Qingzhu's shared Tai Shang path give the final power threshold personal cost and mutual choice."
+      ],
+      "foreshadowing": [
+        "The stone talisman, Qing Tan's constitution, Lin Langtian's hidden presence, Zhou Tong's legend, the ancestral-symbol map, and Ying Huanhuan's abnormality receive delayed payoffs.",
+        "The Demon Emperor's hand and demon infiltration preserve a threat chain beyond the resolution of the immediate Yuan Gate conflict."
+      ],
+      "state_ledger": [
+        "Lin Dong's realm, spiritual rank, symbols, relics, and affiliations change in linked stages from local branch youth to plane master.",
+        "Companion states track Little Marten's body restoration, Little Flame's bloodline and rank, Qing Tan's hall leadership, and the heroine paths toward their endgame roles."
+      ]
+    },
+    "originality_red_lines": [
+      "Avoid reproducing the stone-talisman pattern as an unrestricted convenience artifact that repairs skills, refines resources, stores power, and reveals cosmic destiny without a distinct cost model.",
+      "Avoid a beat-for-beat underdog ladder of clan humiliation, relic acquisition, auction, tournament, sect admission, exile, return, and ultimate revenge.",
+      "Avoid a collectible set of supreme elemental symbols whose acquisition simultaneously grants combat escalation and the canonical answer to a demon invasion.",
+      "Avoid treating a companion beast's repeated bloodline upgrades and eventual humanoid transformation as a direct substitute for the trio's relationship architecture.",
+      "Avoid resolving a childhood-family antagonist and then reusing that antagonist's appearance as the end-boss reveal without a materially different thematic function.",
+      "Avoid converting a heroine's irreversible sacrifice immediately into a sequel-travel search premise unless the new story independently earns its consequences."
+    ]
+  }
+}

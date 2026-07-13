@@ -1,0 +1,225 @@
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "book_id": "book-13-210acebeef12",
+  "book_title": "《求魔》（校对版全本）作者：耳根",
+  "covered_chunk_ids": [
+    "book-13-210acebeef12-chunk-001",
+    "book-13-210acebeef12-chunk-002",
+    "book-13-210acebeef12-chunk-003",
+    "book-13-210acebeef12-chunk-004",
+    "book-13-210acebeef12-chunk-005",
+    "book-13-210acebeef12-chunk-006",
+    "book-13-210acebeef12-chunk-007"
+  ],
+  "covered_chunk_hashes": [
+    {
+      "chunk_id": "book-13-210acebeef12-chunk-001",
+      "response_sha256": "dd6e62749c978b0b7a29d1999271d42ba0859bf05280ecbfbf6673818caad831"
+    },
+    {
+      "chunk_id": "book-13-210acebeef12-chunk-002",
+      "response_sha256": "0e1279933c6063a710516bf998f5f41ab1021f6871929f7d7eed5376a8bed485"
+    },
+    {
+      "chunk_id": "book-13-210acebeef12-chunk-003",
+      "response_sha256": "9607824e0926bbb79bcf1ad3ca685d6495aca1f5e9990bb5efd2a1acec32f024"
+    },
+    {
+      "chunk_id": "book-13-210acebeef12-chunk-004",
+      "response_sha256": "d220ca090acb7f363c15cee20aa4bb433508e9e66c535cff20f9de6d3f6d833a"
+    },
+    {
+      "chunk_id": "book-13-210acebeef12-chunk-005",
+      "response_sha256": "3dee6ce1c6f3bf25e8cb39a5f0184aaf3645b7adaa07668cb3c8edc5a3551c1b"
+    },
+    {
+      "chunk_id": "book-13-210acebeef12-chunk-006",
+      "response_sha256": "f0fddbe6466d4b7710f099824f597d5d1c6565d1781312cb809a4f68e597c085"
+    },
+    {
+      "chunk_id": "book-13-210acebeef12-chunk-007",
+      "response_sha256": "add472f8146f6f0d6bce94a498e55f53a3e0e608a574c76ecd0339c414ab8df0"
+    }
+  ],
+  "synthesis": {
+    "narrative_spine": [
+      "Su Ming begins as a Wushan youth defined by an apparent absence of Barbarian aptitude, then builds agency through medicine refinement, hidden identity, and attachment to home.",
+      "The destruction of Wushan turns the local coming-of-age story into a displacement narrative: Su Ming enters Nanchen, joins the Ninth Summit, and advances while pursuing the truth of altered memory and Di Tian's control.",
+      "Successive wars, inheritances, realm escapes, and identity infiltrations expand the conflict from tribal survival to world-scale possession, destiny, and the Sang Xiang butterfly cosmology.",
+      "The final Ancient Zang memory-world arc resolves the central obsession by making Su Ming choose memory, companions, and a self-defined demonic path over submission to an imposed immortal order; he restores his companions through his internal world at the cost of solitude."
+    ],
+    "character_arcs": [
+      "Su Ming changes from an apparently powerless, inward-looking Wushan youth into a cultivator whose Wushan tattoo, soul, and later cosmological authority preserve a chosen identity against memory seals and possession.",
+      "Su Ming's social posture evolves from concealed alias-holder Mo Su to planner, protector, infiltrator, and ultimately a solitary rebuilder who treats home and remembered relationships as the highest stakes.",
+      "Bai Ling and Bai Su establish the recurring lost-beloved / resemblance wound; Bai Su's later bond with Su Ming supplies temporary warmth but keeps the memory-and-identity tension active.",
+      "The Ninth Summit changes from an eccentric sect refuge into Su Ming's enduring family, while Second Brother, Hu Zi, Bald Crane, and the others carry both comic relief and the cost of repeated separations.",
+      "Lei Chen's movement from childhood companion to a butterfly-linked, enemy-adjacent tragic figure makes the childhood Wushan loss persist into the final political conflict."
+    ],
+    "mechanism_evolution": [
+      "Cultivation starts with Blood Condensation, bloodlines, medicine refinement, and the Desolate Stone Bead's dream-workspace; it then reaches Dust Opening through a self-authored Barbarian tattoo.",
+      "The system broadens through soul takeover, Barbarian Bone and Soul stages, Undying Soul trials, destiny and boundary fragments, and tactical artifacts such as the Fiend Bow and Barbarian God Needle.",
+      "Later mechanisms make identity itself contestable: fate-thread severance, masks that simulate worlds, cultivation clones, Suming possession, double-world souls, and time reversal all turn memory and embodiment into combat terrain.",
+      "The final scale uses Dao Spirit Sound, Dao Deity levels, dream-possession, and world re-creation, retaining a throughline in which personal will and remembered attachments are the decisive cultivation resource."
+    ],
+    "world_expansion": [
+      "The opening Wushan, Heishan, Wind Ridge, and Hanshan geography establishes a Barbarian local world before Nanchen sect society and the Hunt-Wu war introduce organized regional conflict.",
+      "Dead Sea, Jiu Yin, the Destiny Clan, and the East Wastelands convert the story into a multi-realm travel narrative whose sealed spaces, clans, and ancient inheritances expose Di Tian's wider manipulation.",
+      "Divine Source, Daochen, Fifth Furnace, and the Hall of All Spirits carry the setting into star-ocean institutions, possession struggles, and cosmic-scale sect politics.",
+      "Sang Xiang's paired-wing cosmology and the Ancient Zang dreamworld reveal that worlds can be nested memories or vessels, reframing earlier territorial conflicts as pieces of a much larger cycle."
+    ],
+    "long_term_reader_hooks": [
+      "Su Ming's missing or altered memories and Di Tian's Destiny Seal remain the central explanatory mystery from the early Wushan anomaly through later breakthroughs.",
+      "The Desolate Stone Bead, Hantuo Clock, Barbarian God Needle, black shard, and other inherited objects repeatedly return with expanded functions, rewarding artifact continuity.",
+      "The identity and consequences of Bai Ling/Bai Su, Lei Chen, Bald Crane, the boatman/Deshun, and the First Prince persist across separated arcs rather than ending at their first appearance.",
+      "The progression from Barbarian systems to destiny, butterfly cosmology, and Xuan Zang possession continually opens a larger explanation for why Su Ming's life and world have been controlled.",
+      "The ending's restoration of Ninth Summit companions answers the emotional homecoming promise while retaining Su Ming's isolation as its final cost."
+    ],
+    "style_and_life_force": [
+      "A melancholic, philosophical register repeatedly joins fate, memory, loneliness, and refusal into the emotional meaning of cultivation.",
+      "Power scenes externalize inner state through weather, color, spatial obstacles, chants, and world-scale visual transformations rather than relying only on numeric advancement.",
+      "The serial form uses volume labels, numbered chapter continuations, ritualized breakthroughs, and long-running object callbacks to make escalation legible across a large span.",
+      "Solemn grief and philosophical reflection are repeatedly punctured by Bald Crane, Tian Xie Zi, and absurd side-character comedy, preserving tonal movement alongside the tragedy."
+    ],
+    "continuity_failures": [
+      "Yu Xuan's emergence as a long-term tracker is reported as insufficiently seeded before Chapter 721.",
+      "A 100-year drift in the cosmic void receives little account of Su Ming's action or psychological development.",
+      "Qian Chen disappears without a resolved status as the foreign-land arc begins.",
+      "The Shaman Great Priest's final-reincarnation age changes from the prior remembered presentation.",
+      "Tian Xie Zi's projection at the Shaman god image lacks an explained route from the Land of Yin Death to the Divine Source Star Sea.",
+      "The Treasure Gourd's stated control limits are not clearly reconciled with its later killing use, and Bald Crane's knowledge of Ea Cangs arrives after an earlier lack of recognition."
+    ],
+    "evidence_map": [
+      {
+        "claim": "narrative_spine: Wushan loss and the later return-to-home objective structure Su Ming's book-long trajectory.",
+        "chunk_id": "book-13-210acebeef12-chunk-005",
+        "chapter_heading": "第五卷 我的道晨界 第1036章 我要，回家"
+      },
+      {
+        "claim": "character_arcs: Su Ming's self-defined Wushan tattoo binds identity, soul, and home.",
+        "chunk_id": "book-13-210acebeef12-chunk-001",
+        "chapter_heading": "第二卷 风起天寒 第210章 此山，名乌！"
+      },
+      {
+        "claim": "mechanism_evolution: Undying Soul refinement turns repeated destruction into a durable soul-stage breakthrough.",
+        "chunk_id": "book-13-210acebeef12-chunk-003",
+        "chapter_heading": "第三卷 名震东荒 第478章 不死不灭……开！"
+      },
+      {
+        "claim": "world_expansion: the paired Sang Xiang wings supply the book's macrocosmic architecture.",
+        "chunk_id": "book-13-210acebeef12-chunk-006",
+        "chapter_heading": "第六卷 三荒劫 第1279章 他的名字，叫……三荒！"
+      },
+      {
+        "claim": "long_term_reader_hooks: the First Prince, Miesheng, and Lei Chen identity thread remains active into the Ancient Zang conflict.",
+        "chunk_id": "book-13-210acebeef12-chunk-006",
+        "chapter_heading": "第七卷 几多轮回少一人 第1414章 我已知你是谁！"
+      },
+      {
+        "claim": "style_and_life_force: philosophy of memory, fate, and not becoming an Immortal frames conflict beyond direct combat.",
+        "chunk_id": "book-13-210acebeef12-chunk-002",
+        "chapter_heading": "第二卷 风起天寒 第406章 虚无之门"
+      },
+      {
+        "claim": "continuity_failures: Yu Xuan's long-term-tracker role is assessed as insufficiently foreshadowed.",
+        "chunk_id": "book-13-210acebeef12-chunk-004",
+        "chapter_heading": "第三卷 名震东荒 第721章 婚事……"
+      },
+      {
+        "claim": "originality_red_lines: the Treasure Gourd activation closely risks direct resemblance to a classic mythic weapon pattern.",
+        "chunk_id": "book-13-210acebeef12-chunk-004",
+        "chapter_heading": "第四卷 崛起神源 第777章 请宝葫芦杀人"
+      },
+      {
+        "claim": "characters: Su Ming's early apparent lack of a Barbarian body establishes the underdog identity premise.",
+        "chunk_id": "book-13-210acebeef12-chunk-001",
+        "chapter_heading": "第一卷 人生若只如初见 第1章 苏铭"
+      },
+      {
+        "claim": "npcs: Gu Hong becomes Su Ming's second master and a new high-level guide in the final arc.",
+        "chunk_id": "book-13-210acebeef12-chunk-007",
+        "chapter_heading": "第七卷 几多轮回少一人 第1430章 修罗！"
+      },
+      {
+        "claim": "factions: Daochen Sect's catastrophic destruction resets the institutional conflict around Su Ming.",
+        "chunk_id": "book-13-210acebeef12-chunk-005",
+        "chapter_heading": "第五卷 我的道晨界 第1142章 道晨宗劫！"
+      },
+      {
+        "claim": "artifacts: the Barbarian God Needle becomes the climax tool in Su Ming's layered ambush of Di Tian's avatar.",
+        "chunk_id": "book-13-210acebeef12-chunk-003",
+        "chapter_heading": "第三卷 名震东荒 第590章 第九道大礼！"
+      },
+      {
+        "claim": "techniques: Zhan Sansha develops into a Fate Master method rather than remaining only an early battle technique.",
+        "chunk_id": "book-13-210acebeef12-chunk-005",
+        "chapter_heading": "第四卷 崛起神源 第956章 斩缘！"
+      },
+      {
+        "claim": "naming: the series preserves continuous numbered chapters while explicit volume boundaries segment major arcs.",
+        "chunk_id": "book-13-210acebeef12-chunk-004",
+        "chapter_heading": "第四卷 崛起神源 第750章 神源废地"
+      },
+      {
+        "claim": "emotional_bonds: Bai Su's resemblance to Bai Ling is deliberately used to make Su Ming emotionally vulnerable.",
+        "chunk_id": "book-13-210acebeef12-chunk-002",
+        "chapter_heading": "第二卷 风起天寒 第234章 不是白灵！"
+      },
+      {
+        "claim": "foreshadowing: the early memory seal persists as an opposition between Su Ming's self-awareness and Di Tian's control.",
+        "chunk_id": "book-13-210acebeef12-chunk-003",
+        "chapter_heading": "第三卷 名震东荒 第670章 蛮神誓歌！"
+      },
+      {
+        "claim": "state_ledger: Bald Crane's transformation into the Seventh Reverse Spirit resolves a long-running identity mystery.",
+        "chunk_id": "book-13-210acebeef12-chunk-006",
+        "chapter_heading": "第六卷 三荒劫 第1380章 秃毛鹤的选择"
+      }
+    ],
+    "creation_family_evidence": {
+      "characters": [
+        "Su Ming is the protagonist whose Wushan-rooted identity persists through aliases, seals, possession, and final world re-creation.",
+        "Bai Ling/Bai Su, Lei Chen, Xu Hui, and Bald Crane each carry durable identity and memory threads across separated arcs."
+      ],
+      "npcs": [
+        "Mo Sang, Tian Xie Zi, Gu Tai, and Gu Hong form successive guidance figures tied to different stages of Su Ming's cultivation and self-definition.",
+        "Di Tian, Sima Xin, Su Xuanyi, Xuan Zang, and Miesheng function as different scales of manipulation, rivalry, or possession pressure."
+      ],
+      "factions": [
+        "Wushan, Heishan, Tianhan Sect's Ninth Summit, the Destiny Clan, Daochen Sect, July Sect, Yi Dao Sect, and the Ancient Zang royal contest provide a progression from tribe to cosmic institution.",
+        "Barbarian, Shaman, Immortal, Destiny, Suming, and Reverse Spirit systems are positioned as competing or overlapping lineages rather than a single flat cultivation culture."
+      ],
+      "artifacts": [
+        "The Desolate Stone Bead, Hantuo Clock, Fiend Bow, Barbarian God Needle, black shard, Treasure Gourd, Jue Mask, missing-corner compass, Star Whip, and Niling Beads recur as stateful assets with expanded functions.",
+        "Artifacts connect early Wushan and later cosmic arcs by carrying stored inheritance, identity evidence, access rules, or tactical leverage."
+      ],
+      "techniques": [
+        "Medicine refinement, Slash Three Pranas, Barbarian tattoos, fate severance, Destiny Cultivation, soul possession, time reversal, Dao Spirit Sound, and world re-creation show escalating but thematically connected systems.",
+        "Breakthroughs regularly require memory, will, grief, or a chosen attachment instead of functioning as purely numerical rank increases."
+      ],
+      "naming": [
+        "Volume headers and continuous chapter numbering organize the narrative from 第一卷 人生若只如初见 to 第七卷 几多轮回少一人.",
+        "Aliases such as 墨苏 and identity names such as 苏铭 are plot mechanisms that make public reputation and private selfhood diverge."
+      ],
+      "emotional_bonds": [
+        "Wushan, Bai Ling/Bai Su, Lei Chen, Xu Hui, and the Ninth Summit make remembered companionship the counterweight to fate, amnesia, and imposed identity.",
+        "The ending treats the restoration of the Ninth Summit as the completion of Su Ming's homeward obsession, while preserving the price he pays."
+      ],
+      "foreshadowing": [
+        "Su Ming's missing memories, Di Tian's seal, the black shard, hidden lineage, Bald Crane's origin, and Lei Chen's altered fate are seeded as recurring questions before later reinterpretation.",
+        "The escalation from local Wushan myth to Sang Xiang and Xuan Zang reframes rather than discards earlier objects and wounds."
+      ],
+      "state_ledger": [
+        "Su Ming progresses from apparent non-cultivator to Blood Condensation, Dust Opening, Sacrificial Bone, Barbarian Soul, World Realm, Lingxian, Dao Spirit/Dao Deity, and final Xuan Zang possession authority.",
+        "Key persistent state changes include his Wushan tattoo, Undying Soul, expanded artifacts and clones, Dao Kong identity, restored true-world wills, and the final internal world sustaining revived companions."
+      ]
+    },
+    "originality_red_lines": [
+      "Avoid relying on the mysterious-cheat-item, secret-alias, destroyed-home-tribe, eccentric-master, and publicly humiliated genius-rival templates without the book's memory-and-home stakes.",
+      "Avoid treating the recurring dream, possession, reincarnation, or memory-world turns as reversals that erase prior consequences; their emotional and continuity costs must remain durable.",
+      "Avoid direct use of recognizable mythic weapon structures such as the verbally activated Treasure Gourd / Immortal-Slaying-Dagger pattern.",
+      "Avoid interchangeable trial arcs in which a disguised protagonist shocks an institution; advance the identity, cosmology, or emotional ledger with each trial.",
+      "Avoid scale inflation that introduces realms or cosmic terms without preserving comprehensible relationships to the earlier cultivation and artifact systems."
+    ]
+  }
+}

@@ -79,5 +79,152 @@
     "expires_after_mission": "phase2h_volume1_asset_expansion",
     "owner_note": "Owner authorized continued production; Antigravity v0.17 accepted the thirteen-asset Volume 1 expansion with a state-ledger ownership warning.",
     "created_at": "2026-07-10T23:50:09+08:00"
+  },
+  {
+    "decision_id": "owner-v019-reconciliation-apply-20260713",
+    "decision_type": "authorize_final_asset_generation",
+    "authorized_scope": [
+      "apply_project_reconciliation_v0.19"
+    ],
+    "forbidden_scope": [
+      "prose_generation,chapter_drafting,hermes_writer_execution"
+    ],
+    "expires_after_mission": "job-v019-borrowed-heaven-project-reconciliation",
+    "owner_note": "批准 v0.19 项目重审应用，并授权进入最终创作资产生成门禁；禁止正文生产，直至下一次单独授权。",
+    "bound_response_sha256": "4344828f74d2dadf33f5ce9e8b353451533660c248eb59e46d7293acda441284",
+    "created_at": "2026-07-13T06:32:13+08:00"
+  },
+  {
+    "decision_id": "owner-final-asset-registry-v020-20260713",
+    "decision_type": "authorize_final_asset_generation",
+    "authorized_scope": [
+      "final_creation_asset_registry_v0.20"
+    ],
+    "forbidden_scope": [
+      "prose_generation",
+      "chapter_drafting",
+      "hermes_writer_execution"
+    ],
+    "expires_after_mission": "job-v019-borrowed-heaven-project-reconciliation",
+    "owner_note": "授权最终创作资产库进入可用状态；正文生产、章节草案与 Hermes 写作仍需单独授权。",
+    "bound_response_sha256": "4344828f74d2dadf33f5ce9e8b353451533660c248eb59e46d7293acda441284",
+    "created_at": "2026-07-13T06:34:54+08:00"
+  },
+  {
+    "decision_id": "owner-bounded-intent-v020-20260713",
+    "decision_type": "authorize_next_phase",
+    "authorized_scope": [
+      "bounded_chapter_intent_v0.20"
+    ],
+    "forbidden_scope": [
+      "chapter_prose",
+      "hermes_writer_execution",
+      "dormant_asset_activation"
+    ],
+    "expires_after_mission": "nrl-v021-canonical-remediation",
+    "owner_note": "依据 v0.21 Canonical 基线继续推进：仅授权创建并校验非正文 Chapter 1 意图；禁止正文、Hermes 写作及 dormant 资产激活。",
+    "bound_response_sha256": "715e5bb5140bf66af4b0713b4f32d8328d56bdc22fef16d26c42d91b514d5832",
+    "created_at": "2026-07-13T07:42:59+08:00"
+  },
+  {
+    "decision_id": "owner-chapter0001-controlled-prose-20260713",
+    "decision_type": "authorize_controlled_prose_test",
+    "authorized_scope": [
+      "bounded_chapter_runtime_v0.20"
+    ],
+    "forbidden_scope": [
+      "serial_prose",
+      "dormant_asset_activation",
+      "chapter_0002_or_later"
+    ],
+    "expires_after_mission": "chapter-0001",
+    "owner_note": "批准 Chapter 1 受控正文测试：仅调用 Hermes 生成 chapter-0001 单章草稿；不得连载、不得激活 dormant 资产；草稿必须经过事实观察、Antigravity 连续性审查、Codex 修订与状态结算后才可提交。",
+    "bound_response_sha256": "7b21c456995262928d2f975021def922c6c30e0a0661e4d318ff292460787d2f",
+    "created_at": "2026-07-13T09:19:44+08:00"
+  },
+  {
+    "decision_id": "owner-chapter0002-0003-intent-20260713",
+    "decision_type": "authorize_next_phase",
+    "authorized_scope": [
+      "bounded_chapter_intent_v0.20:chapter-0002",
+      "bounded_chapter_intent_v0.20:chapter-0003"
+    ],
+    "forbidden_scope": [
+      "chapter-0004-or-later",
+      "dormant_asset_activation",
+      "unreviewed-prose"
+    ],
+    "expires_after_mission": "chapter-0003",
+    "owner_note": "确认授权：第2至第3章小批量测试，仅允许受控意图、上下文与审查链路。",
+    "created_at": "2026-07-13T10:29:03+08:00"
+  },
+  {
+    "decision_id": "owner-chapter0002-0003-prose-20260713",
+    "decision_type": "authorize_controlled_prose_test",
+    "authorized_scope": [
+      "bounded_chapter_runtime_v0.20:chapter-0002",
+      "bounded_chapter_runtime_v0.20:chapter-0003"
+    ],
+    "forbidden_scope": [
+      "chapter-0004-or-later",
+      "serial-prose-beyond-chapter-0003",
+      "dormant_asset_activation"
+    ],
+    "expires_after_mission": "chapter-0003",
+    "owner_note": "确认授权：第2至第3章小批量正文测试，每章必须完成观察、外部审查、状态结算与验收。",
+    "created_at": "2026-07-13T10:29:04+08:00"
+  },
+  {
+    "decision_id": "owner-longform-v024-20260713",
+    "decision_type": "accept_review",
+    "authorized_scope": [
+      "borrowed-heaven-longform-v024"
+    ],
+    "forbidden_scope": [
+      "prose_generation_before_longform_preflight"
+    ],
+    "expires_after_mission": "borrowed-heaven-longform-preproduction-v024",
+    "owner_note": "Owner grants full authority to proceed with the accepted 600万字 longform direction; production remains governed by the longform preflight before prose.",
+    "created_at": "2026-07-13T18:07:48+08:00"
+  },
+  {
+    "decision_id": "owner-longform-cluster1-intents-20260713",
+    "decision_type": "authorize_next_phase",
+    "authorized_scope": [
+      "longform_cluster1_v024:chapter-0003",
+      "longform_cluster1_v024:chapter-0004",
+      "longform_cluster1_v024:chapter-0005",
+      "longform_cluster1_v024:chapter-0006",
+      "longform_cluster1_v024:chapter-0007",
+      "longform_cluster1_v024:chapter-0008",
+      "longform_cluster1_v024:chapter-0009",
+      "longform_cluster1_v024:chapter-0010"
+    ],
+    "forbidden_scope": [
+      "chapter-0011-or-later"
+    ],
+    "expires_after_mission": "longform-cluster1-v024",
+    "owner_note": "Owner full authority: authorize non-prose intents for the remaining chapters in the bounded first ten-chapter production batch.",
+    "created_at": "2026-07-13T18:12:51+08:00"
+  },
+  {
+    "decision_id": "owner-longform-cluster1-prose-20260713",
+    "decision_type": "authorize_controlled_prose_test",
+    "authorized_scope": [
+      "longform_cluster1_v024:chapter-0003",
+      "longform_cluster1_v024:chapter-0004",
+      "longform_cluster1_v024:chapter-0005",
+      "longform_cluster1_v024:chapter-0006",
+      "longform_cluster1_v024:chapter-0007",
+      "longform_cluster1_v024:chapter-0008",
+      "longform_cluster1_v024:chapter-0009",
+      "longform_cluster1_v024:chapter-0010"
+    ],
+    "forbidden_scope": [
+      "chapter-0011-or-later"
+    ],
+    "expires_after_mission": "longform-cluster1-v024",
+    "owner_note": "Owner full authority: authorize the bounded first ten-chapter production batch. Each chapter remains independently subject to the complete runtime, audit, settlement, and acceptance pipeline.",
+    "created_at": "2026-07-13T18:13:05+08:00"
   }
 ]

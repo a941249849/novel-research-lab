@@ -1,0 +1,50 @@
+{
+  "version": "0.21",
+  "chapter_id": "chapter-0001",
+  "selected_asset_ids": [
+    "character_lu_chenyuan",
+    "npc_su_wan",
+    "bond_mother_su_wan",
+    "npc_registrar_qiu_shen",
+    "faction_mudlamp_lane",
+    "faction_life_registry_office",
+    "technique_ledger_recognition",
+    "foreshadowing_cinder_seal_rain",
+    "state_ledger_protagonist_strain",
+    "state_ledger_poorcity_returnfire",
+    "state_ledger_half_life_registry_exposure",
+    "state_ledger_mother_life_lamp_countdown",
+    "state_ledger_mudlamp_array_integrity",
+    "state_ledger_resident_lifefire_reserve"
+  ],
+  "explicit_asset_ids": [
+    "character_lu_chenyuan",
+    "npc_su_wan",
+    "bond_mother_su_wan",
+    "npc_registrar_qiu_shen",
+    "faction_mudlamp_lane",
+    "faction_life_registry_office",
+    "technique_ledger_recognition",
+    "foreshadowing_cinder_seal_rain",
+    "state_ledger_protagonist_strain",
+    "state_ledger_poorcity_returnfire",
+    "state_ledger_half_life_registry_exposure",
+    "state_ledger_mother_life_lamp_countdown",
+    "state_ledger_mudlamp_array_integrity",
+    "state_ledger_resident_lifefire_reserve"
+  ],
+  "dependency_asset_ids": [],
+  "excluded_asset_count": 29,
+  "selection_reason": "explicit chapter intent requirements plus atomic transaction peers",
+  "canonical_hashes": {
+    "borrowed_heaven_life_account_bible": "81575478a441852f18d451e9967245bbfce11d60cddd3af24e9b6565955e0604",
+    "borrowed_heaven_volume1_outline_tree": "1f12fe8ad3262876eb533d40c94ad02abb90b95b38de387d339917fce9184648",
+    "project_assets.v0.2": "415ea1feba1376df7ebca6334e494db28b1b034e27a787c495a6e50d31b1bc98"
+  },
+  "canonical_baseline": {
+    "path": "system/creation_assets/baselines/borrowed_heaven_canonical_baseline_v0.21.json",
+    "version": "0.21",
+    "sha256": "a58bf7f8295a67da5a542017b0d6153d8de3ef5322391787277ba67fd239b5f5"
+  },
+  "prior_settlement_count": 0
+}

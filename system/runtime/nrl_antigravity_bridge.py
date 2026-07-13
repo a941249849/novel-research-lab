@@ -119,6 +119,7 @@ def ask_antigravity(
     request_file: str,
     output_file: str | None = None,
     print_timeout: str = "5m0s",
+    model: str | None = None,
 ) -> dict[str, Any]:
     binary = find_agy_binary()
     if not binary:
@@ -145,17 +146,19 @@ packet. Do not include a preamble, plan, progress log, file links, or postscript
         )
     response_path.parent.mkdir(parents=True, exist_ok=True)
     started_at = now_iso()
+    command = [
+        binary,
+        "--mode",
+        "plan",
+        "--sandbox",
+        "--print-timeout",
+        print_timeout,
+    ]
+    if model:
+        command.extend(["--model", model])
+    command.extend(["-p", bridge_contract + prompt])
     result = subprocess.run(
-        [
-            binary,
-            "--mode",
-            "plan",
-            "--sandbox",
-            "--print-timeout",
-            print_timeout,
-            "-p",
-            bridge_contract + prompt,
-        ],
+        command,
         cwd=ROOT,
         text=True,
         capture_output=True,
@@ -172,6 +175,7 @@ packet. Do not include a preamble, plan, progress log, file links, or postscript
         "request_file": _relative_to_root(request_path),
         "output_file": _relative_to_root(response_path),
         "returncode": result.returncode,
+        "model": model,
         "started_at": started_at,
         "finished_at": now_iso(),
         "bridge_log_path": str(BRIDGE_LOG_PATH.relative_to(ROOT)),

@@ -1,0 +1,39 @@
+{
+  "version": "0.22",
+  "chapter_id": "chapter-0003",
+  "canonical_baseline": {
+    "path": "system/creation_assets/baselines/borrowed_heaven_canonical_baseline_v0.22.json",
+    "version": "0.22",
+    "sha256": "402c923d3dbc19bcccc353856a605388170ab3d1410550b8fb2620e48fa8ea27"
+  },
+  "priority_order": [
+    "safety_and_originality",
+    "canonical_story_bible",
+    "volume_outline",
+    "accepted_state_settlements",
+    "creation_asset_constraints",
+    "chapter_must_keep_and_must_avoid",
+    "anti_ai_style_evidence"
+  ],
+  "hard_rules": [
+    "no source-work names, scenes, signature systems, or prose imitation",
+    "no untracked power, relationship, location, item, or timeline changes",
+    "all benefits carry an embodied, relational, or systemic cost",
+    "reader-facing prose contains no runtime or database vocabulary",
+    "不得取得、唤醒、持有或激活残命灯盏。",
+    "不得使用烬痕归火术、反账命印、锁链偏转或任何高阶能力。",
+    "不得引入顾巡、州府、古债、黑市、战斗、公开审判或更高地图。",
+    "不得新增未登记资产或不可结算状态变化。"
+  ],
+  "chapter_rules": [
+    "陆沉渊仍为燃命境初成，只能使用普通寿痕辨认与本地灰痕错位识别。",
+    "顾家折记仍处于三日内再次复核的暂缓状态，不得改账、清债或回流寿火。",
+    "共同体证词必须可撤回，任何住户都有拒绝出面或拒绝献灯的权利。",
+    "母亲寿债、灰雨印痕与程序性锁定继续构成压力，不得揭示其高阶真相。"
+  ],
+  "scene_constraints": [
+    "焦点限于泥灯巷与复核前的本地准备。",
+    "每一次识账都要有可见反噬和独立见证。",
+    "结尾只能形成下一次复核前的局部选择与压力，不得解决主线矛盾。"
+  ]
+}

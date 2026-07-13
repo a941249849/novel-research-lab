@@ -1,0 +1,108 @@
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "book_id": "book-06-b1b7934bf892",
+  "book_title": "《圣墟》（校对版全本+番外）作者：辰东",
+  "covered_chunk_ids": [
+    "book-06-b1b7934bf892-chunk-001",
+    "book-06-b1b7934bf892-chunk-002",
+    "book-06-b1b7934bf892-chunk-003",
+    "book-06-b1b7934bf892-chunk-004",
+    "book-06-b1b7934bf892-chunk-005",
+    "book-06-b1b7934bf892-chunk-006",
+    "book-06-b1b7934bf892-chunk-007",
+    "book-06-b1b7934bf892-chunk-008",
+    "book-06-b1b7934bf892-chunk-009"
+  ],
+  "covered_chunk_hashes": [
+    {"chunk_id": "book-06-b1b7934bf892-chunk-001", "response_sha256": "fe4b1d39cf3d3980b18a7d96d8e798e59b9723939119830441086afc9b1b709b"},
+    {"chunk_id": "book-06-b1b7934bf892-chunk-002", "response_sha256": "11101fc04eb0ef0dfdaf508fed3b77940a76b5e05a8767964ad2b194a73b0a04"},
+    {"chunk_id": "book-06-b1b7934bf892-chunk-003", "response_sha256": "e4ad6b1361f23a69c45064e93ddcca59158dcaf4625900e025bcc588b922b2ea"},
+    {"chunk_id": "book-06-b1b7934bf892-chunk-004", "response_sha256": "4d21aec7b1a1d2563075943021e9dc2af402c3ffdc317801f16e34000fa962f8"},
+    {"chunk_id": "book-06-b1b7934bf892-chunk-005", "response_sha256": "a33d698e311e8825622c75f31f60046b7846f23d3adc9820b5234428d35847c4"},
+    {"chunk_id": "book-06-b1b7934bf892-chunk-006", "response_sha256": "96af7c9e187e7b6aeb9ac074fd7a592a0b6fb5c14c448970ab83da27479deb6c"},
+    {"chunk_id": "book-06-b1b7934bf892-chunk-007", "response_sha256": "873eab9e81af33b74140d68c1f92db872d0325b15aa775161ca1bc8f79f9a744"},
+    {"chunk_id": "book-06-b1b7934bf892-chunk-008", "response_sha256": "f24cdeea33c4432ff2248c190b97ff2f876eba4f1344dc3bc30a0d3e2c6e17c1"},
+    {"chunk_id": "book-06-b1b7934bf892-chunk-009", "response_sha256": "4fb7189c09bb97434c1bba5ab0aff3140c8783e8b2b2b30f2a8e8a977c3a81f3"}
+  ],
+  "synthesis": {
+    "narrative_spine": [
+      "Earth's expansion and the awakening of sacred mountains turn a graduate into a local evolver and defender, while mutant fruits, breathing methods, and broken shackles establish the first progression loop.",
+      "The conflict scales from terrestrial factions and beast kings to extraterrestrial invaders, planetary rankings, and Earth's inherited defensive fields; Chu Feng becomes both a public defender and a cosmic hostage trader.",
+      "Crossing purgatory, dream trials, and reincarnation converts personal survival into a multirealm campaign, with the Stone Box preserving a route through otherwise destructive systems.",
+      "The Yang Realm phase combines identity aliases, cultivation breakthroughs, inherited mountain mysteries, and the return of trilogy-scale guardians into a preparation for the final catastrophe.",
+      "The conclusion resolves the strange source and the coffin mysteries through cosmic war, sacrifice, reconstruction, and a reunion of the three emperor-level protagonists."
+    ],
+    "character_arcs": [
+      "Chu Feng progresses from newly awakened Earth practitioner to interstellar defender, reincarnated Yang Realm cultivator, Dao Ancestor, and eventual pioneer of a new path; aliases repeatedly let him operate across hostile factions.",
+      "Yao Yao develops from a legendary remnant and guide into an active combat presence, then becomes the object of an explicit later resurrection thread.",
+      "Qin Luoyin moves from adversarial Great Dream Pure Land saintess to mother and spouse, while her relationship with Chu Feng is repeatedly tested by the dream and invasion arcs.",
+      "The animal and elder companion network shifts from comic local allies to martyrs, ancient guardians, and links to the broader trilogy history."
+    ],
+    "mechanism_evolution": [
+      "Early progression joins mutant fruits, breathing methods, shackles, sacred soil, and named mountains into a bodily-evolution system.",
+      "Field arrays, planetary seals, interstellar exchange, dream projection, and reincarnation make advancement dependent on geography, factional access, and survivable passage through layered worlds.",
+      "Late progression turns Yin-Yang balance, seed cultivation, coffin and jar resonance, remembrance, sacrifice, and plateau immortality into the rules of endgame conflict."
+    ],
+    "world_expansion": [
+      "The setting expands from an altered Earth with severed infrastructure and contested famous mountains to a ranked star system exposed to outside sects.",
+      "Earth's former status, defensive arrays, Moon legacy, and traitor lineages recast local battles as the aftermath of an older cosmic defeat.",
+      "The underworld, Yang Realm, Upper Heaven, Samsara path, and plateau widen the story into a trilogy-spanning cosmology whose final conflict concerns eras and memory itself."
+    ],
+    "long_term_reader_hooks": [
+      "The Stone Box and its three seeds remain a persistent concealed resource from the first discovery through reincarnation and Yang Realm flowering.",
+      "The truth of reincarnation remains unstable: memory retention, replication, the millstone, hunters, and the final denial of simple rebirth keep its costs narratively active.",
+      "Yao Yao's incomplete condition, the Empress and ancient guardian network, and the origin of the stone jar and bronze coffin carry unresolved stakes into the late climax."
+    ],
+    "style_and_life_force": [
+      "High-scale cultivation rhetoric, heavy combat impact language, and named realm terminology coexist with modern slang, public reactions, livestreams, and marketplace logic.",
+      "Threat and grief are repeatedly offset by food jokes, impudent aliases, family banter, and companion commentary, giving the serial a fast tonal alternation.",
+      "The text uses recurrent escalation-and-reversal patterns: contempt, danger, unexpected breakthrough, public shock, and material gain."
+    ],
+    "continuity_failures": [
+      "The analysis flags a tension between Yao Yao's original remnant status and later physical warmth and weight, leaving her bodily state deliberately uncertain.",
+      "The narrative reclassifies the previously central underworld as a lesser space relative to the Great Underworld, shifting the earlier setting's cosmic importance.",
+      "Chu Feng's long off-world movements and Qin Luoyin's pregnancy operate on stretched or compressed parallel timing, creating a stated plausibility pressure.",
+      "The Stone Box repeatedly survives and conceals material through reincarnation systems while its provenance stays vague, making it a durable but under-explained exception."
+    ],
+    "evidence_map": [
+      {"claim": "Earth's sudden expansion starts the local-to-cosmic trajectory.", "chunk_id": "book-06-b1b7934bf892-chunk-001", "chapter_heading": "第0008章 世界变了"},
+      {"claim": "Chu Feng's Dao Ancestor achievement anchors his late arc.", "chunk_id": "book-06-b1b7934bf892-chunk-009", "chapter_heading": "第1600章 最强姿态"},
+      {"claim": "Breathing methods establish the early stable cultivation foundation.", "chunk_id": "book-06-b1b7934bf892-chunk-001", "chapter_heading": "第0015章 神秘呼吸法"},
+      {"claim": "The Yang Realm is reached through a memory-preserving reincarnation route.", "chunk_id": "book-06-b1b7934bf892-chunk-006", "chapter_heading": "第1026章 胎中迷真相"},
+      {"claim": "Earth's old ranking and seal define its renewed cosmic importance.", "chunk_id": "book-06-b1b7934bf892-chunk-002", "chapter_heading": "第0366章 成功降临"},
+      {"claim": "The final world scale includes the source of the unholy strange substances.", "chunk_id": "book-06-b1b7934bf892-chunk-009", "chapter_heading": "第1659章 不祥力量的源头"},
+      {"claim": "The Stone Box and seeds persist as a long-running concealed resource.", "chunk_id": "book-06-b1b7934bf892-chunk-008", "chapter_heading": "第1430章 三颗种子于阳间生根开花"},
+      {"claim": "The serial's characteristic tension relief uses comic naming inside high stakes.", "chunk_id": "book-06-b1b7934bf892-chunk-008", "chapter_heading": "第1427章 楚黑手名动天下"},
+      {"claim": "Yao Yao's remnant state has a documented physical-state tension.", "chunk_id": "book-06-b1b7934bf892-chunk-003", "chapter_heading": "第0574章 妖妖的未婚夫"},
+      {"claim": "The underworld's hierarchy is explicitly revised by comparison with the Great Underworld.", "chunk_id": "book-06-b1b7934bf892-chunk-006", "chapter_heading": "第0966章 此阴间不是真正的大阴间"},
+      {"claim": "Chu Feng's identity trajectory is defined by advancement to a recognized Dao Ancestor.", "chunk_id": "book-06-b1b7934bf892-chunk-009", "chapter_heading": "第1600章 最强姿态"},
+      {"claim": "Ancient guardians remain active as non-protagonist strategic forces.", "chunk_id": "book-06-b1b7934bf892-chunk-007", "chapter_heading": "第1295章 当传说中那人已被遗忘时"},
+      {"claim": "Earth's defenders and outside sects form the book's central factional conflict.", "chunk_id": "book-06-b1b7934bf892-chunk-003", "chapter_heading": "第0542章 西林族已死"},
+      {"claim": "The stone jar and bronze coffin unify the central artifact history.", "chunk_id": "book-06-b1b7934bf892-chunk-009", "chapter_heading": "第1659章 不祥力量的源头"},
+      {"claim": "Body-as-cauldron refinement exemplifies the later high-risk technique layer.", "chunk_id": "book-06-b1b7934bf892-chunk-007", "chapter_heading": "第1227章 身为鼎，魂为药"},
+      {"claim": "Chu Feng's public aliases are a recurring naming and plot-access device.", "chunk_id": "book-06-b1b7934bf892-chunk-007", "chapter_heading": "第1388章 逆乱了古今时空"},
+      {"claim": "Family loss and reincarnation frame an emotional bond that motivates the late conflict.", "chunk_id": "book-06-b1b7934bf892-chunk-005", "chapter_heading": "第0951章 若有来生还是兄弟"},
+      {"claim": "The delayed flowering of the three seeds pays off an early planted mystery.", "chunk_id": "book-06-b1b7934bf892-chunk-008", "chapter_heading": "第1431章 真的种出了天仙子"},
+      {"claim": "Reincarnation and alias use provide an explicit state ledger for Chu Feng's transition between realms.", "chunk_id": "book-06-b1b7934bf892-chunk-006", "chapter_heading": "第1019章 阳间再生"},
+      {"claim": "Power escalation beyond established maxima is a stated originality risk.", "chunk_id": "book-06-b1b7934bf892-chunk-009", "chapter_heading": "第1651章 世间确有祭道之上的生灵"}
+    ],
+    "creation_family_evidence": {
+      "characters": ["Chu Feng's progression from Earth evolver to Dao Ancestor is tied to recurrent public identities and realm transitions."],
+      "npcs": ["Yao Yao, Nine, the Black Dog, and the Little Daoist supply mentorship, guardian history, comedy, and trilogy continuity."],
+      "factions": ["Earth defenders, extraterrestrial sects, traitor lineages, forbidden-land forces, and the strange race structure escalating opposition."],
+      "artifacts": ["The Stone Box, three seeds, stone jar, bronze coffin, and reincarnation millstone connect progression to the trilogy's oldest mysteries."],
+      "techniques": ["Breathing methods, field arrays, dangerous refinement, reincarnation passage, and sacrifice-based transcendence define the technical ladder."],
+      "naming": ["Cao De, Ji Dade, Ji Quede, and Zhou Zhengde make changing identity a repeatable operational tactic."],
+      "emotional_bonds": ["Family reunion and loss, Qin Luoyin's marriage and motherhood, Yao Yao's recovery thread, and companion martyrs give the cosmic war personal stakes."],
+      "foreshadowing": ["The three seeds and concealed Stone Box are planted early and later yield breakthrough resources and origin revelations."],
+      "state_ledger": ["Chu Feng's transitions are tracked through Earth cultivation, cosmic travel, reincarnation into the Yang Realm, Dao Ancestor status, and final path reconstruction."]
+    },
+    "originality_red_lines": [
+      "Avoid letting the Stone Box, stone jar, or bronze coffin resolve hazards without a stated cost, limit, or causal rule.",
+      "Avoid relying on crossover recognition, inherited protagonists, and legacy artifacts as substitutes for Chu Feng-specific stakes.",
+      "Avoid repeating the contempt-to-breakthrough-to-public-humiliation loop when it displaces consequences or conflict variety.",
+      "Avoid late power tiers and resurrection reversals that erase the weight of prior sacrifices."
+    ]
+  }
+}

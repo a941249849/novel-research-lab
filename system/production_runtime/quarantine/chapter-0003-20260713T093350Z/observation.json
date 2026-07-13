@@ -1,0 +1,89 @@
+{
+  "chapter_id": "chapter-0003",
+  "draft_sha256": "9c7c786fee822e3b11e123e88a82d342787f1c10cd50561ec7d1581815f4f32f",
+  "facts": {
+    "characters": [],
+    "npcs": [],
+    "locations": [],
+    "factions": [],
+    "artifacts": [],
+    "techniques": [
+      {
+        "fact_id": "chapter-0003-technique-ledger-recognition-001",
+        "asset_id": "technique_ledger_recognition",
+        "field_path": "technique.current_local_ash_trace_observation",
+        "before": "在顾家户灯寿纹、折册补墨灰痕及莫井兰守灯见证相互比对下，形成“补墨灰痕与户灯寿纹错位”的本地复核附录内容",
+        "after": "顾家旧灯灰中显出的断纹与顾婶户灯不合，且更接近折册“折三”补墨旁的灰线；陆沉渊未继续追看断纹尽头",
+        "evidence": "陆沉渊在顾家旧灯灰中看见浅灰断纹，判断其“不像顾婶户灯上那种细直的寿痕”，而“和折册补墨旁那道灰更近”，随后停止识账。"
+      }
+    ],
+    "relationships": [
+      {
+        "fact_id": "chapter-0003-relationship-mudlamp-lane-trust-001",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_witness_commitment",
+        "before": "莫井兰以可撤回口述作证，拒绝献灯或抵命；顾婶以自身所见备录",
+        "after": "莫井兰愿将旧口述与顾家旧灯灰并置但不献灯、不替他人按手印；顾婶仅同意提供旧灯灰供查看，并保留复核日是否开门、是否出面作证的选择",
+        "evidence": "苏晚明确莫井兰可撤回口述；莫井兰说口述可与陶碟放在一处但“不献灯，也不替旁人按手印”；顾婶说三日后是否开门到时再定。"
+      }
+    ],
+    "emotions": [],
+    "information": [
+      {
+        "fact_id": "chapter-0003-information-revealed-account-errors-001",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_local_evidence_status",
+        "before": "错位线索被记为本地复核附录，但不作为改账依据",
+        "after": "顾家旧灯灰新增与折册补墨灰线相近、且与顾婶户灯不合的本地复核线索；仍不作为改账依据",
+        "evidence": "顾家陶碟内的断纹经陆沉渊识账显出与户灯不合、与补墨灰更近；莫井兰仅确认“两道灰像”，强调不能据此定罪。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "chapter-0003-hook-cinder-seal-rain-001",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "foreshadowing.current_manifestation",
+        "before": "灰粒再次落在苏晚失温的手背，留下针尖大的红点",
+        "after": "灰粒落在陆沉渊手背留下暗红印，又落在包着顾家旧灯灰的旧布上，渗出一圈浅红",
+        "evidence": "檐角灰粒贴着陆沉渊手背滚过，留下暗红；结尾另一粒灰落在旧布包着的陶碟上，渗出浅红。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "chapter-0003-timeline-local-enforcement-001",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.next_local_review_schedule",
+        "before": "顾家折记三日内再次复核",
+        "after": "顾家折记距再次复核尚余两日多",
+        "evidence": "苏晚在收下陶碟后对陆沉渊说：“还有两日多。”"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "chapter-0003-physical-state-protagonist-strain-001",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.eye_pattern_burn",
+        "before": "识账后焦黑纹路自眼尾向下爬，眼角皮肤焦裂并蹭下黑屑",
+        "after": "焦黑纹路裂口更深，识认顾家旧灯灰时骤然灼痛并向下猛跳",
+        "evidence": "苏晚看见陆沉渊眼尾黑纹“裂口更深”；他识账时焦纹骤然发烫，焦黑纹路往下猛跳。"
+      },
+      {
+        "fact_id": "chapter-0003-physical-state-protagonist-strain-002",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.cold_ash_cough_frequency",
+        "before": "识账后当场咳出一小片冷灰",
+        "after": "本章内先后咳出两次冷灰，其中一次在识认顾家旧灯灰后肩背发颤",
+        "evidence": "陆沉渊清晨咳出薄灰；识账后冷灰再从胸口顶出，落入陶碟。"
+      },
+      {
+        "fact_id": "chapter-0003-physical-state-registry-exposure-001",
+        "asset_id": "state_ledger_half_life_registry_exposure",
+        "field_path": "state_ledger.registry_locking_sign",
+        "before": "陆沉渊咳出的灰已被衙印沾认，成为传核与拒验记的程序性锁定迹象",
+        "after": "顾家门框冷金印痕对陆沉渊当日识账与咳灰出现远距响应，冷灰中泛出细小金光",
+        "evidence": "巷尾传来金属颤响，顾家门框冷金印痕亮灭；陆沉渊掌心咳出的冷灰泛出细小金光，如被远处记下。"
+      }
+    ],
+    "naming": []
+  }
+}

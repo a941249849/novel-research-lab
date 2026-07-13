@@ -67,7 +67,7 @@
             "exists": true
           }
         ],
-        "next_action": "通过研究资产目录检索已审核拆解结果。",
+        "next_action": "完成 v0.18 的 143 个连续全文分块、18 本单书综合及哈希验证。",
         "evidence_complete": true,
         "declared_status": "data_ready",
         "blocked_dependencies": [],
@@ -86,7 +86,7 @@
             "exists": true
           }
         ],
-        "next_action": "保持机制来源与原创性红线可追溯。",
+        "next_action": "在 18 本单书综合通过后完成跨书机制蒸馏，并绑定全部输入哈希。",
         "evidence_complete": true,
         "declared_status": "data_ready",
         "blocked_dependencies": [],
@@ -219,17 +219,589 @@
     "filters": {},
     "items": [
       {
+        "asset_id": "deep-read-CB18-M01",
+        "title": "Progressive Reclassification of a Persistent Asset",
+        "asset_type": "verified_cross_book_mechanism",
+        "source_path": "system/agent_ops/inbox/deep_read_v0.18/cross_book_distillation.json",
+        "review_state": "verified",
+        "provenance": "v0.18_hash_bound",
+        "categories": [
+          "跨书机制蒸馏"
+        ],
+        "source_book_ids": [
+          "book-05-11dd686b8b15",
+          "book-11-61b03727048f",
+          "book-15-04e1a336e29d",
+          "book-16-9cbf8da97dac"
+        ],
+        "deep_read_claim_allowed": true,
+        "exists": true
+      },
+      {
+        "asset_id": "deep-read-CB18-M02",
+        "title": "Advantage as a Debt-Bearing Contract",
+        "asset_type": "verified_cross_book_mechanism",
+        "source_path": "system/agent_ops/inbox/deep_read_v0.18/cross_book_distillation.json",
+        "review_state": "verified",
+        "provenance": "v0.18_hash_bound",
+        "categories": [
+          "跨书机制蒸馏"
+        ],
+        "source_book_ids": [
+          "book-12-7dd95a828fbe",
+          "book-15-04e1a336e29d",
+          "book-18-d53c5cc79ddd"
+        ],
+        "deep_read_claim_allowed": true,
+        "exists": true
+      },
+      {
+        "asset_id": "deep-read-CB18-M03",
+        "title": "Thresholds That Change the Proof of Mastery",
+        "asset_type": "verified_cross_book_mechanism",
+        "source_path": "system/agent_ops/inbox/deep_read_v0.18/cross_book_distillation.json",
+        "review_state": "verified",
+        "provenance": "v0.18_hash_bound",
+        "categories": [
+          "跨书机制蒸馏"
+        ],
+        "source_book_ids": [
+          "book-05-11dd686b8b15",
+          "book-11-61b03727048f",
+          "book-15-04e1a336e29d"
+        ],
+        "deep_read_claim_allowed": true,
+        "exists": true
+      },
+      {
+        "asset_id": "deep-read-CB18-M04",
+        "title": "Scope Expansion Through Constrained Rank Reset",
+        "asset_type": "verified_cross_book_mechanism",
+        "source_path": "system/agent_ops/inbox/deep_read_v0.18/cross_book_distillation.json",
+        "review_state": "verified",
+        "provenance": "v0.18_hash_bound",
+        "categories": [
+          "跨书机制蒸馏"
+        ],
+        "source_book_ids": [
+          "book-01-45bcee82acba",
+          "book-03-0bc4648bf63c",
+          "book-05-11dd686b8b15",
+          "book-16-9cbf8da97dac"
+        ],
+        "deep_read_claim_allowed": true,
+        "exists": true
+      },
+      {
+        "asset_id": "deep-read-CB18-M05",
+        "title": "Private Obligation Becomes Institutional Responsibility",
+        "asset_type": "verified_cross_book_mechanism",
+        "source_path": "system/agent_ops/inbox/deep_read_v0.18/cross_book_distillation.json",
+        "review_state": "verified",
+        "provenance": "v0.18_hash_bound",
+        "categories": [
+          "跨书机制蒸馏"
+        ],
+        "source_book_ids": [
+          "book-01-45bcee82acba",
+          "book-07-f82ccdb9a2b3",
+          "book-11-61b03727048f",
+          "book-14-1ba978345f70",
+          "book-17-3089d9aab05c"
+        ],
+        "deep_read_claim_allowed": true,
+        "exists": true
+      },
+      {
+        "asset_id": "deep-read-CB18-M06",
+        "title": "Operational Identity With Cumulative Exposure",
+        "asset_type": "verified_cross_book_mechanism",
+        "source_path": "system/agent_ops/inbox/deep_read_v0.18/cross_book_distillation.json",
+        "review_state": "verified",
+        "provenance": "v0.18_hash_bound",
+        "categories": [
+          "跨书机制蒸馏"
+        ],
+        "source_book_ids": [
+          "book-06-b1b7934bf892",
+          "book-13-210acebeef12",
+          "book-15-04e1a336e29d",
+          "book-18-d53c5cc79ddd"
+        ],
+        "deep_read_claim_allowed": true,
+        "exists": true
+      },
+      {
+        "asset_id": "deep-read-CB18-M07",
+        "title": "Deferred Promise as a Structural Spine",
+        "asset_type": "verified_cross_book_mechanism",
+        "source_path": "system/agent_ops/inbox/deep_read_v0.18/cross_book_distillation.json",
+        "review_state": "verified",
+        "provenance": "v0.18_hash_bound",
+        "categories": [
+          "跨书机制蒸馏"
+        ],
+        "source_book_ids": [
+          "book-04-bfe08b74de74",
+          "book-10-e27891938d93",
+          "book-11-61b03727048f"
+        ],
+        "deep_read_claim_allowed": true,
+        "exists": true
+      },
+      {
+        "asset_id": "deep-read-CB18-M08",
+        "title": "Early Anomaly Reframed as Systemic History",
+        "asset_type": "verified_cross_book_mechanism",
+        "source_path": "system/agent_ops/inbox/deep_read_v0.18/cross_book_distillation.json",
+        "review_state": "verified",
+        "provenance": "v0.18_hash_bound",
+        "categories": [
+          "跨书机制蒸馏"
+        ],
+        "source_book_ids": [
+          "book-02-7624374abf2e",
+          "book-03-0bc4648bf63c",
+          "book-09-4f463d84ee63",
+          "book-10-e27891938d93"
+        ],
+        "deep_read_claim_allowed": true,
+        "exists": true
+      },
+      {
+        "asset_id": "deep-read-CB18-M09",
+        "title": "Relationship State as a Constraint on Victory",
+        "asset_type": "verified_cross_book_mechanism",
+        "source_path": "system/agent_ops/inbox/deep_read_v0.18/cross_book_distillation.json",
+        "review_state": "verified",
+        "provenance": "v0.18_hash_bound",
+        "categories": [
+          "跨书机制蒸馏"
+        ],
+        "source_book_ids": [
+          "book-08-322e84872b22",
+          "book-09-4f463d84ee63",
+          "book-15-04e1a336e29d",
+          "book-17-3089d9aab05c"
+        ],
+        "deep_read_claim_allowed": true,
+        "exists": true
+      },
+      {
+        "asset_id": "deep-read-CB18-M10",
+        "title": "Coalition Capability From Independent Arcs",
+        "asset_type": "verified_cross_book_mechanism",
+        "source_path": "system/agent_ops/inbox/deep_read_v0.18/cross_book_distillation.json",
+        "review_state": "verified",
+        "provenance": "v0.18_hash_bound",
+        "categories": [
+          "跨书机制蒸馏"
+        ],
+        "source_book_ids": [
+          "book-07-f82ccdb9a2b3",
+          "book-11-61b03727048f",
+          "book-17-3089d9aab05c",
+          "book-18-d53c5cc79ddd"
+        ],
+        "deep_read_claim_allowed": true,
+        "exists": true
+      },
+      {
+        "asset_id": "deep-read-CB18-M11",
+        "title": "Procedural Counterplay Over Raw Magnitude",
+        "asset_type": "verified_cross_book_mechanism",
+        "source_path": "system/agent_ops/inbox/deep_read_v0.18/cross_book_distillation.json",
+        "review_state": "verified",
+        "provenance": "v0.18_hash_bound",
+        "categories": [
+          "跨书机制蒸馏"
+        ],
+        "source_book_ids": [
+          "book-14-1ba978345f70",
+          "book-15-04e1a336e29d",
+          "book-18-d53c5cc79ddd"
+        ],
+        "deep_read_claim_allowed": true,
+        "exists": true
+      },
+      {
+        "asset_id": "deep-read-CB18-M12",
+        "title": "Material and Economic Substrate for Progression",
+        "asset_type": "verified_cross_book_mechanism",
+        "source_path": "system/agent_ops/inbox/deep_read_v0.18/cross_book_distillation.json",
+        "review_state": "verified",
+        "provenance": "v0.18_hash_bound",
+        "categories": [
+          "跨书机制蒸馏"
+        ],
+        "source_book_ids": [
+          "book-05-11dd686b8b15",
+          "book-14-1ba978345f70",
+          "book-18-d53c5cc79ddd"
+        ],
+        "deep_read_claim_allowed": true,
+        "exists": true
+      },
+      {
+        "asset_id": "deep-read-CB18-M13",
+        "title": "Ordinary-Life Counterpressure on Epic Scale",
+        "asset_type": "verified_cross_book_mechanism",
+        "source_path": "system/agent_ops/inbox/deep_read_v0.18/cross_book_distillation.json",
+        "review_state": "verified",
+        "provenance": "v0.18_hash_bound",
+        "categories": [
+          "跨书机制蒸馏"
+        ],
+        "source_book_ids": [
+          "book-06-b1b7934bf892",
+          "book-09-4f463d84ee63",
+          "book-17-3089d9aab05c"
+        ],
+        "deep_read_claim_allowed": true,
+        "exists": true
+      },
+      {
+        "asset_id": "deep-read-CB18-M14",
+        "title": "Legacy Transfer as Role Reassignment",
+        "asset_type": "verified_cross_book_mechanism",
+        "source_path": "system/agent_ops/inbox/deep_read_v0.18/cross_book_distillation.json",
+        "review_state": "verified",
+        "provenance": "v0.18_hash_bound",
+        "categories": [
+          "跨书机制蒸馏"
+        ],
+        "source_book_ids": [
+          "book-10-e27891938d93",
+          "book-14-1ba978345f70",
+          "book-17-3089d9aab05c"
+        ],
+        "deep_read_claim_allowed": true,
+        "exists": true
+      },
+      {
+        "asset_id": "deep-read-CB18-M15",
+        "title": "Typed State Transitions for Unstable Identity",
+        "asset_type": "verified_cross_book_mechanism",
+        "source_path": "system/agent_ops/inbox/deep_read_v0.18/cross_book_distillation.json",
+        "review_state": "verified",
+        "provenance": "v0.18_hash_bound",
+        "categories": [
+          "跨书机制蒸馏"
+        ],
+        "source_book_ids": [
+          "book-06-b1b7934bf892",
+          "book-08-322e84872b22",
+          "book-13-210acebeef12",
+          "book-15-04e1a336e29d",
+          "book-18-d53c5cc79ddd"
+        ],
+        "deep_read_claim_allowed": true,
+        "exists": true
+      },
+      {
+        "asset_id": "deep-read-CB18-M16",
+        "title": "Climactic Convergence of Previously Independent Systems",
+        "asset_type": "verified_cross_book_mechanism",
+        "source_path": "system/agent_ops/inbox/deep_read_v0.18/cross_book_distillation.json",
+        "review_state": "verified",
+        "provenance": "v0.18_hash_bound",
+        "categories": [
+          "跨书机制蒸馏"
+        ],
+        "source_book_ids": [
+          "book-10-e27891938d93",
+          "book-11-61b03727048f",
+          "book-14-1ba978345f70",
+          "book-17-3089d9aab05c"
+        ],
+        "deep_read_claim_allowed": true,
+        "exists": true
+      },
+      {
+        "asset_id": "deep-read-book-01-45bcee82acba",
+        "title": "《一念永恒》（校对版全本）作者：耳根",
+        "asset_type": "verified_book_synthesis",
+        "source_path": "system/agent_ops/inbox/deep_read_v0.18/synthesis/book-01-45bcee82acba.json",
+        "review_state": "verified",
+        "provenance": "v0.18_hash_bound",
+        "categories": [
+          "单书深读",
+          "九类创作资产证据"
+        ],
+        "read_scope": "contiguous_full_text_verified",
+        "deep_read_claim_allowed": true,
+        "exists": true
+      },
+      {
+        "asset_id": "deep-read-book-02-7624374abf2e",
+        "title": "《不死不灭》（校对版全本）作者：辰东",
+        "asset_type": "verified_book_synthesis",
+        "source_path": "system/agent_ops/inbox/deep_read_v0.18/synthesis/book-02-7624374abf2e.json",
+        "review_state": "verified",
+        "provenance": "v0.18_hash_bound",
+        "categories": [
+          "单书深读",
+          "九类创作资产证据"
+        ],
+        "read_scope": "contiguous_full_text_verified",
+        "deep_read_claim_allowed": true,
+        "exists": true
+      },
+      {
+        "asset_id": "deep-read-book-03-0bc4648bf63c",
+        "title": "《人道至尊》（校对版全本）作者：宅猪",
+        "asset_type": "verified_book_synthesis",
+        "source_path": "system/agent_ops/inbox/deep_read_v0.18/synthesis/book-03-0bc4648bf63c.json",
+        "review_state": "verified",
+        "provenance": "v0.18_hash_bound",
+        "categories": [
+          "单书深读",
+          "九类创作资产证据"
+        ],
+        "read_scope": "contiguous_full_text_verified",
+        "deep_read_claim_allowed": true,
+        "exists": true
+      },
+      {
+        "asset_id": "deep-read-book-04-bfe08b74de74",
+        "title": "《仙逆》（校对版全本）作者：耳根",
+        "asset_type": "verified_book_synthesis",
+        "source_path": "system/agent_ops/inbox/deep_read_v0.18/synthesis/book-04-bfe08b74de74.json",
+        "review_state": "verified",
+        "provenance": "v0.18_hash_bound",
+        "categories": [
+          "单书深读",
+          "九类创作资产证据"
+        ],
+        "read_scope": "contiguous_full_text_verified",
+        "deep_read_claim_allowed": true,
+        "exists": true
+      },
+      {
+        "asset_id": "deep-read-book-05-11dd686b8b15",
+        "title": "《凡人修仙传》（校对版全本+番外）作者：忘语",
+        "asset_type": "verified_book_synthesis",
+        "source_path": "system/agent_ops/inbox/deep_read_v0.18/synthesis/book-05-11dd686b8b15.json",
+        "review_state": "verified",
+        "provenance": "v0.18_hash_bound",
+        "categories": [
+          "单书深读",
+          "九类创作资产证据"
+        ],
+        "read_scope": "contiguous_full_text_verified",
+        "deep_read_claim_allowed": true,
+        "exists": true
+      },
+      {
+        "asset_id": "deep-read-book-06-b1b7934bf892",
+        "title": "《圣墟》（校对版全本+番外）作者：辰东",
+        "asset_type": "verified_book_synthesis",
+        "source_path": "system/agent_ops/inbox/deep_read_v0.18/synthesis/book-06-b1b7934bf892.json",
+        "review_state": "verified",
+        "provenance": "v0.18_hash_bound",
+        "categories": [
+          "单书深读",
+          "九类创作资产证据"
+        ],
+        "read_scope": "contiguous_full_text_verified",
+        "deep_read_claim_allowed": true,
+        "exists": true
+      },
+      {
+        "asset_id": "deep-read-book-07-f82ccdb9a2b3",
+        "title": "《大主宰》（校对版全本）作者：天蚕土豆",
+        "asset_type": "verified_book_synthesis",
+        "source_path": "system/agent_ops/inbox/deep_read_v0.18/synthesis/book-07-f82ccdb9a2b3.json",
+        "review_state": "verified",
+        "provenance": "v0.18_hash_bound",
+        "categories": [
+          "单书深读",
+          "九类创作资产证据"
+        ],
+        "read_scope": "contiguous_full_text_verified",
+        "deep_read_claim_allowed": true,
+        "exists": true
+      },
+      {
+        "asset_id": "deep-read-book-08-322e84872b22",
+        "title": "《完美世界》（校对版全本）作者：辰东",
+        "asset_type": "verified_book_synthesis",
+        "source_path": "system/agent_ops/inbox/deep_read_v0.18/synthesis/book-08-322e84872b22.json",
+        "review_state": "verified",
+        "provenance": "v0.18_hash_bound",
+        "categories": [
+          "单书深读",
+          "九类创作资产证据"
+        ],
+        "read_scope": "contiguous_full_text_verified",
+        "deep_read_claim_allowed": true,
+        "exists": true
+      },
+      {
+        "asset_id": "deep-read-book-09-4f463d84ee63",
+        "title": "《将夜》（校对版全本）作者：猫腻",
+        "asset_type": "verified_book_synthesis",
+        "source_path": "system/agent_ops/inbox/deep_read_v0.18/synthesis/book-09-4f463d84ee63.json",
+        "review_state": "verified",
+        "provenance": "v0.18_hash_bound",
+        "categories": [
+          "单书深读",
+          "九类创作资产证据"
+        ],
+        "read_scope": "contiguous_full_text_verified",
+        "deep_read_claim_allowed": true,
+        "exists": true
+      },
+      {
+        "asset_id": "deep-read-book-10-e27891938d93",
+        "title": "《斗破苍穹》（校对版全本）作者：天蚕土豆",
+        "asset_type": "verified_book_synthesis",
+        "source_path": "system/agent_ops/inbox/deep_read_v0.18/synthesis/book-10-e27891938d93.json",
+        "review_state": "verified",
+        "provenance": "v0.18_hash_bound",
+        "categories": [
+          "单书深读",
+          "九类创作资产证据"
+        ],
+        "read_scope": "contiguous_full_text_verified",
+        "deep_read_claim_allowed": true,
+        "exists": true
+      },
+      {
+        "asset_id": "deep-read-book-11-61b03727048f",
+        "title": "《武动乾坤》（精校版全本）作者：天蚕土豆",
+        "asset_type": "verified_book_synthesis",
+        "source_path": "system/agent_ops/inbox/deep_read_v0.18/synthesis/book-11-61b03727048f.json",
+        "review_state": "verified",
+        "provenance": "v0.18_hash_bound",
+        "categories": [
+          "单书深读",
+          "九类创作资产证据"
+        ],
+        "read_scope": "contiguous_full_text_verified",
+        "deep_read_claim_allowed": true,
+        "exists": true
+      },
+      {
+        "asset_id": "deep-read-book-12-7dd95a828fbe",
+        "title": "《永生》（校对版全本）作者：梦入神机",
+        "asset_type": "verified_book_synthesis",
+        "source_path": "system/agent_ops/inbox/deep_read_v0.18/synthesis/book-12-7dd95a828fbe.json",
+        "review_state": "verified",
+        "provenance": "v0.18_hash_bound",
+        "categories": [
+          "单书深读",
+          "九类创作资产证据"
+        ],
+        "read_scope": "contiguous_full_text_verified",
+        "deep_read_claim_allowed": true,
+        "exists": true
+      },
+      {
+        "asset_id": "deep-read-book-13-210acebeef12",
+        "title": "《求魔》（校对版全本）作者：耳根",
+        "asset_type": "verified_book_synthesis",
+        "source_path": "system/agent_ops/inbox/deep_read_v0.18/synthesis/book-13-210acebeef12.json",
+        "review_state": "verified",
+        "provenance": "v0.18_hash_bound",
+        "categories": [
+          "单书深读",
+          "九类创作资产证据"
+        ],
+        "read_scope": "contiguous_full_text_verified",
+        "deep_read_claim_allowed": true,
+        "exists": true
+      },
+      {
+        "asset_id": "deep-read-book-14-1ba978345f70",
+        "title": "《牧神记》（校对版全本）作者：宅猪",
+        "asset_type": "verified_book_synthesis",
+        "source_path": "system/agent_ops/inbox/deep_read_v0.18/synthesis/book-14-1ba978345f70.json",
+        "review_state": "verified",
+        "provenance": "v0.18_hash_bound",
+        "categories": [
+          "单书深读",
+          "九类创作资产证据"
+        ],
+        "read_scope": "contiguous_full_text_verified",
+        "deep_read_claim_allowed": true,
+        "exists": true
+      },
+      {
+        "asset_id": "deep-read-book-15-04e1a336e29d",
+        "title": "《诡秘之主》（精校版全本）作者：爱潜水的乌贼",
+        "asset_type": "verified_book_synthesis",
+        "source_path": "system/agent_ops/inbox/deep_read_v0.18/synthesis/book-15-04e1a336e29d.json",
+        "review_state": "verified",
+        "provenance": "v0.18_hash_bound",
+        "categories": [
+          "单书深读",
+          "九类创作资产证据"
+        ],
+        "read_scope": "contiguous_full_text_verified",
+        "deep_read_claim_allowed": true,
+        "exists": true
+      },
+      {
+        "asset_id": "deep-read-book-16-9cbf8da97dac",
+        "title": "《遮天》（精校版全本）作者：辰东",
+        "asset_type": "verified_book_synthesis",
+        "source_path": "system/agent_ops/inbox/deep_read_v0.18/synthesis/book-16-9cbf8da97dac.json",
+        "review_state": "verified",
+        "provenance": "v0.18_hash_bound",
+        "categories": [
+          "单书深读",
+          "九类创作资产证据"
+        ],
+        "read_scope": "contiguous_full_text_verified",
+        "deep_read_claim_allowed": true,
+        "exists": true
+      },
+      {
+        "asset_id": "deep-read-book-17-3089d9aab05c",
+        "title": "《雪中悍刀行》（校对版全本）作者：烽火戏诸侯",
+        "asset_type": "verified_book_synthesis",
+        "source_path": "system/agent_ops/inbox/deep_read_v0.18/synthesis/book-17-3089d9aab05c.json",
+        "review_state": "verified",
+        "provenance": "v0.18_hash_bound",
+        "categories": [
+          "单书深读",
+          "九类创作资产证据"
+        ],
+        "read_scope": "contiguous_full_text_verified",
+        "deep_read_claim_allowed": true,
+        "exists": true
+      },
+      {
+        "asset_id": "deep-read-book-18-d53c5cc79ddd",
+        "title": "蛊真人",
+        "asset_type": "verified_book_synthesis",
+        "source_path": "system/agent_ops/inbox/deep_read_v0.18/synthesis/book-18-d53c5cc79ddd.json",
+        "review_state": "verified",
+        "provenance": "v0.18_hash_bound",
+        "categories": [
+          "单书深读",
+          "九类创作资产证据"
+        ],
+        "read_scope": "contiguous_full_text_verified",
+        "deep_read_claim_allowed": true,
+        "exists": true
+      },
+      {
         "asset_id": "full-corpus-proof-v08",
-        "title": "全量小说集阅读证明",
+        "title": "全量小说集抽样访问证明（历史）",
         "asset_type": "corpus_proof",
         "source_path": "system/agent_ops/inbox/full_corpus_proof_v0.8/master.md",
         "validation_path": "system/agent_ops/validation/full_corpus_proof_v0.8.json",
         "review_state": "proof_verified",
         "provenance": "promotable_research_asset",
         "categories": [
-          "全文深读证明",
-          "语料工程"
+          "抽样访问证明",
+          "语料工程",
+          "历史证据"
         ],
+        "evidence_scope": "sampled_access_only",
+        "deep_read_claim_allowed": false,
         "exists": true,
         "verified_receipts": 18,
         "required_receipts": 18,
@@ -241,15 +813,16 @@
         "title": "一念永恒",
         "asset_type": "full_corpus_book_review",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-        "review_state": "formal",
-        "provenance": "promoted",
+        "review_state": "legacy_unverified",
+        "provenance": "legacy_candidate",
         "categories": [
           "characters",
           "artifacts",
           "naming"
         ],
         "author": "耳根",
-        "read_scope": "full_text_reviewed",
+        "read_scope": "legacy_unverified_summary",
+        "deep_read_claim_allowed": false,
         "reusable_mechanisms": [
           "怕死人设驱动修行",
           "搞笑炼丹辅助副职业声望"
@@ -261,15 +834,16 @@
         "title": "不死不灭",
         "asset_type": "full_corpus_book_review",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-        "review_state": "formal",
-        "provenance": "promoted",
+        "review_state": "legacy_unverified",
+        "provenance": "legacy_candidate",
         "categories": [
           "foreshadowing",
           "factions",
           "techniques"
         ],
         "author": "辰东",
-        "read_scope": "full_text_reviewed",
+        "read_scope": "legacy_unverified_summary",
+        "deep_read_claim_allowed": false,
         "reusable_mechanisms": [
           "古战场英灵觉醒引导",
           "肉身损毁自愈进阶功法"
@@ -281,15 +855,16 @@
         "title": "人道至尊",
         "asset_type": "full_corpus_book_review",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-        "review_state": "formal",
-        "provenance": "promoted",
+        "review_state": "legacy_unverified",
+        "provenance": "legacy_candidate",
         "categories": [
           "factions",
           "npcs",
           "emotional_bonds"
         ],
         "author": "宅猪",
-        "read_scope": "full_text_reviewed",
+        "read_scope": "legacy_unverified_summary",
+        "deep_read_claim_allowed": false,
         "reusable_mechanisms": [
           "薪火相传的历史解封模式",
           "种族生存博弈而非私人恩怨"
@@ -301,15 +876,16 @@
         "title": "仙逆",
         "asset_type": "full_corpus_book_review",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-        "review_state": "formal",
-        "provenance": "promoted",
+        "review_state": "legacy_unverified",
+        "provenance": "legacy_candidate",
         "categories": [
           "emotional_bonds",
           "artifacts",
           "techniques"
         ],
         "author": "耳根",
-        "read_scope": "full_text_reviewed",
+        "read_scope": "legacy_unverified_summary",
+        "deep_read_claim_allowed": false,
         "reusable_mechanisms": [
           "珠子梦境空间时间差",
           "分身凡尘化凡感悟法则"
@@ -321,15 +897,16 @@
         "title": "凡人修仙传",
         "asset_type": "full_corpus_book_review",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-        "review_state": "formal",
-        "provenance": "promoted",
+        "review_state": "legacy_unverified",
+        "provenance": "legacy_candidate",
         "categories": [
           "artifacts",
           "techniques",
           "naming"
         ],
         "author": "忘语",
-        "read_scope": "full_text_reviewed",
+        "read_scope": "legacy_unverified_summary",
+        "deep_read_claim_allowed": false,
         "reusable_mechanisms": [
           "催熟瓶的缓慢成长收益",
           "厉飞雨式马甲代偿机制"
@@ -341,15 +918,16 @@
         "title": "圣墟",
         "asset_type": "full_corpus_book_review",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-        "review_state": "formal",
-        "provenance": "promoted",
+        "review_state": "legacy_unverified",
+        "provenance": "legacy_candidate",
         "categories": [
           "artifacts",
           "foreshadowing",
           "techniques"
         ],
         "author": "辰东",
-        "read_scope": "full_text_reviewed",
+        "read_scope": "legacy_unverified_summary",
+        "deep_read_claim_allowed": false,
         "reusable_mechanisms": [
           "隔绝天道注视的神秘容器",
           "神话遗迹种子催化成长"
@@ -361,15 +939,16 @@
         "title": "大主宰",
         "asset_type": "full_corpus_book_review",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-        "review_state": "formal",
-        "provenance": "promoted",
+        "review_state": "legacy_unverified",
+        "provenance": "legacy_candidate",
         "categories": [
           "factions",
           "naming",
           "techniques"
         ],
         "author": "天蚕土豆",
-        "read_scope": "full_text_reviewed",
+        "read_scope": "legacy_unverified_summary",
+        "deep_read_claim_allowed": false,
         "reusable_mechanisms": [
           "在世界天道碑留名获取因果伟力",
           "契约兽共享生命演化成长"
@@ -381,15 +960,16 @@
         "title": "完美世界",
         "asset_type": "full_corpus_book_review",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-        "review_state": "formal",
-        "provenance": "promoted",
+        "review_state": "legacy_unverified",
+        "provenance": "legacy_candidate",
         "categories": [
           "characters",
           "emotional_bonds",
           "techniques"
         ],
         "author": "辰东",
-        "read_scope": "full_text_reviewed",
+        "read_scope": "legacy_unverified_summary",
+        "deep_read_claim_allowed": false,
         "reusable_mechanisms": [
           "以自身为容器取代外部法理道种",
           "献祭至亲换取境界突围的悲情阀"
@@ -401,15 +981,16 @@
         "title": "将夜",
         "asset_type": "full_corpus_book_review",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-        "review_state": "formal",
-        "provenance": "promoted",
+        "review_state": "legacy_unverified",
+        "provenance": "legacy_candidate",
         "categories": [
           "foreshadowing",
           "factions",
           "emotional_bonds"
         ],
         "author": "猫腻",
-        "read_scope": "full_text_reviewed",
+        "read_scope": "legacy_unverified_summary",
+        "deep_read_claim_allowed": false,
         "reusable_mechanisms": [
           "以平凡凡尘烟火气构建惊神大阵",
           "大黑伞隔绝因果的质朴道具设计"
@@ -421,15 +1002,16 @@
         "title": "斗破苍穹",
         "asset_type": "full_corpus_book_review",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-        "review_state": "formal",
-        "provenance": "promoted",
+        "review_state": "legacy_unverified",
+        "provenance": "legacy_candidate",
         "categories": [
           "npcs",
           "techniques",
           "naming"
         ],
         "author": "天蚕土豆",
-        "read_scope": "full_text_reviewed",
+        "read_scope": "legacy_unverified_summary",
+        "deep_read_claim_allowed": false,
         "reusable_mechanisms": [
           "戒指老爷爷的初期负增益与后期大补偿",
           "吞噬同源变异能量升级功法"
@@ -441,15 +1023,16 @@
         "title": "武动乾坤",
         "asset_type": "full_corpus_book_review",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-        "review_state": "formal",
-        "provenance": "promoted",
+        "review_state": "legacy_unverified",
+        "provenance": "legacy_candidate",
         "categories": [
           "artifacts",
           "factions",
           "techniques"
         ],
         "author": "天蚕土豆",
-        "read_scope": "full_text_reviewed",
+        "read_scope": "legacy_unverified_summary",
+        "deep_read_claim_allowed": false,
         "reusable_mechanisms": [
           "辅助推演武学的石符功能",
           "异魔级灭世危机的分层抵抗"
@@ -461,15 +1044,16 @@
         "title": "永生",
         "asset_type": "full_corpus_book_review",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-        "review_state": "formal",
-        "provenance": "promoted",
+        "review_state": "legacy_unverified",
+        "provenance": "legacy_candidate",
         "categories": [
           "techniques",
           "artifacts",
           "factions"
         ],
         "author": "梦入神机",
-        "read_scope": "full_text_reviewed",
+        "read_scope": "legacy_unverified_summary",
+        "deep_read_claim_allowed": false,
         "reusable_mechanisms": [
           "大范围洗涤灵魂/规则的法宝忘情水",
           "极速因果抢夺与越级吞噬反馈"
@@ -481,15 +1065,16 @@
         "title": "求魔",
         "asset_type": "full_corpus_book_review",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-        "review_state": "formal",
-        "provenance": "promoted",
+        "review_state": "legacy_unverified",
+        "provenance": "legacy_candidate",
         "categories": [
           "emotional_bonds",
           "npcs",
           "foreshadowing"
         ],
         "author": "耳根",
-        "read_scope": "full_text_reviewed",
+        "read_scope": "legacy_unverified_summary",
+        "deep_read_claim_allowed": false,
         "reusable_mechanisms": [
           "人生虚无幻境认知反转",
           "自我缺席的终极奉献闭环"
@@ -501,15 +1086,16 @@
         "title": "牧神记",
         "asset_type": "full_corpus_book_review",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-        "review_state": "formal",
-        "provenance": "promoted",
+        "review_state": "legacy_unverified",
+        "provenance": "legacy_candidate",
         "categories": [
           "npcs",
           "factions",
           "naming"
         ],
         "author": "宅猪",
-        "read_scope": "full_text_reviewed",
+        "read_scope": "legacy_unverified_summary",
+        "deep_read_claim_allowed": false,
         "reusable_mechanisms": [
           "残疾老人村的导师避风港",
           "科技变法将修行化为民生设施"
@@ -521,15 +1107,16 @@
         "title": "蛊真人",
         "asset_type": "full_corpus_book_review",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-        "review_state": "formal",
-        "provenance": "promoted",
+        "review_state": "legacy_unverified",
+        "provenance": "legacy_candidate",
         "categories": [
           "techniques",
           "characters",
           "factions"
         ],
         "author": "蛊真人",
-        "read_scope": "full_text_reviewed",
+        "read_scope": "legacy_unverified_summary",
+        "deep_read_claim_allowed": false,
         "reusable_mechanisms": [
           "绝对理性工具决策模型",
           "春秋蝉式牺牲能量回切时间差"
@@ -541,15 +1128,16 @@
         "title": "诡秘之主",
         "asset_type": "full_corpus_book_review",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-        "review_state": "formal",
-        "provenance": "promoted",
+        "review_state": "legacy_unverified",
+        "provenance": "legacy_candidate",
         "categories": [
           "foreshadowing",
           "artifacts",
           "state_ledger"
         ],
         "author": "爱潜水的乌贼",
-        "read_scope": "full_text_reviewed",
+        "read_scope": "legacy_unverified_summary",
+        "deep_read_claim_allowed": false,
         "reusable_mechanisms": [
           "负效益约束型命器设计",
           "扮演社会角色消化超凡能量"
@@ -561,15 +1149,16 @@
         "title": "遮天",
         "asset_type": "full_corpus_book_review",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-        "review_state": "formal",
-        "provenance": "promoted",
+        "review_state": "legacy_unverified",
+        "provenance": "legacy_candidate",
         "categories": [
           "foreshadowing",
           "npcs",
           "factions"
         ],
         "author": "辰东",
-        "read_scope": "full_text_reviewed",
+        "read_scope": "legacy_unverified_summary",
+        "deep_read_claim_allowed": false,
         "reusable_mechanisms": [
           "大纪元遗迹淘金源术石坊",
           "带全体旧部与故人共同飞升"
@@ -581,15 +1170,16 @@
         "title": "雪中悍刀行",
         "asset_type": "full_corpus_book_review",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-        "review_state": "formal",
-        "provenance": "promoted",
+        "review_state": "legacy_unverified",
+        "provenance": "legacy_candidate",
         "categories": [
           "emotional_bonds",
           "npcs",
           "factions"
         ],
         "author": "烽火戏诸侯",
-        "read_scope": "full_text_reviewed",
+        "read_scope": "legacy_unverified_summary",
+        "deep_read_claim_allowed": false,
         "reusable_mechanisms": [
           "庙堂阴谋与江湖义气双向拉扯",
           "平凡老兵英烈战死沙场的悲情共鸣"
@@ -602,12 +1192,13 @@
         "asset_type": "creation_family_evidence",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
         "review_state": "covered",
-        "provenance": "promoted",
+        "provenance": "legacy_candidate",
         "categories": [
           "artifacts",
           "创作资产证据"
         ],
         "evidence_count": 6,
+        "deep_read_claim_allowed": false,
         "exists": true
       },
       {
@@ -616,12 +1207,13 @@
         "asset_type": "creation_family_evidence",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
         "review_state": "covered",
-        "provenance": "promoted",
+        "provenance": "legacy_candidate",
         "categories": [
           "characters",
           "创作资产证据"
         ],
         "evidence_count": 6,
+        "deep_read_claim_allowed": false,
         "exists": true
       },
       {
@@ -630,12 +1222,13 @@
         "asset_type": "creation_family_evidence",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
         "review_state": "covered",
-        "provenance": "promoted",
+        "provenance": "legacy_candidate",
         "categories": [
           "emotional_bonds",
           "创作资产证据"
         ],
         "evidence_count": 6,
+        "deep_read_claim_allowed": false,
         "exists": true
       },
       {
@@ -644,12 +1237,13 @@
         "asset_type": "creation_family_evidence",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
         "review_state": "covered",
-        "provenance": "promoted",
+        "provenance": "legacy_candidate",
         "categories": [
           "factions",
           "创作资产证据"
         ],
         "evidence_count": 6,
+        "deep_read_claim_allowed": false,
         "exists": true
       },
       {
@@ -658,12 +1252,13 @@
         "asset_type": "creation_family_evidence",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
         "review_state": "covered",
-        "provenance": "promoted",
+        "provenance": "legacy_candidate",
         "categories": [
           "foreshadowing",
           "创作资产证据"
         ],
         "evidence_count": 6,
+        "deep_read_claim_allowed": false,
         "exists": true
       },
       {
@@ -672,12 +1267,13 @@
         "asset_type": "creation_family_evidence",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
         "review_state": "covered",
-        "provenance": "promoted",
+        "provenance": "legacy_candidate",
         "categories": [
           "naming",
           "创作资产证据"
         ],
         "evidence_count": 6,
+        "deep_read_claim_allowed": false,
         "exists": true
       },
       {
@@ -686,12 +1282,13 @@
         "asset_type": "creation_family_evidence",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
         "review_state": "covered",
-        "provenance": "promoted",
+        "provenance": "legacy_candidate",
         "categories": [
           "npcs",
           "创作资产证据"
         ],
         "evidence_count": 6,
+        "deep_read_claim_allowed": false,
         "exists": true
       },
       {
@@ -700,12 +1297,13 @@
         "asset_type": "creation_family_evidence",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
         "review_state": "covered",
-        "provenance": "promoted",
+        "provenance": "legacy_candidate",
         "categories": [
           "state_ledger",
           "创作资产证据"
         ],
         "evidence_count": 6,
+        "deep_read_claim_allowed": false,
         "exists": true
       },
       {
@@ -714,12 +1312,13 @@
         "asset_type": "creation_family_evidence",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
         "review_state": "covered",
-        "provenance": "promoted",
+        "provenance": "legacy_candidate",
         "categories": [
           "techniques",
           "创作资产证据"
         ],
         "evidence_count": 6,
+        "deep_read_claim_allowed": false,
         "exists": true
       },
       {
@@ -727,8 +1326,8 @@
         "title": "CB-M1",
         "asset_type": "cross_book_mechanism",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-        "review_state": "formal",
-        "provenance": "promoted",
+        "review_state": "legacy_unverified",
+        "provenance": "legacy_candidate",
         "categories": [
           "跨书机制蒸馏"
         ],
@@ -742,6 +1341,7 @@
           "雪中悍刀行"
         ],
         "reusable_for_nrl": true,
+        "deep_read_claim_allowed": false,
         "exists": true
       },
       {
@@ -749,8 +1349,8 @@
         "title": "CB-M10",
         "asset_type": "cross_book_mechanism",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-        "review_state": "formal",
-        "provenance": "promoted",
+        "review_state": "legacy_unverified",
+        "provenance": "legacy_candidate",
         "categories": [
           "跨书机制蒸馏"
         ],
@@ -764,6 +1364,7 @@
           "雪中悍刀行"
         ],
         "reusable_for_nrl": true,
+        "deep_read_claim_allowed": false,
         "exists": true
       },
       {
@@ -771,8 +1372,8 @@
         "title": "CB-M11",
         "asset_type": "cross_book_mechanism",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-        "review_state": "formal",
-        "provenance": "promoted",
+        "review_state": "legacy_unverified",
+        "provenance": "legacy_candidate",
         "categories": [
           "跨书机制蒸馏"
         ],
@@ -786,6 +1387,7 @@
           "求魔"
         ],
         "reusable_for_nrl": true,
+        "deep_read_claim_allowed": false,
         "exists": true
       },
       {
@@ -793,8 +1395,8 @@
         "title": "CB-M12",
         "asset_type": "cross_book_mechanism",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-        "review_state": "formal",
-        "provenance": "promoted",
+        "review_state": "legacy_unverified",
+        "provenance": "legacy_candidate",
         "categories": [
           "跨书机制蒸馏"
         ],
@@ -808,6 +1410,7 @@
           "将夜"
         ],
         "reusable_for_nrl": true,
+        "deep_read_claim_allowed": false,
         "exists": true
       },
       {
@@ -815,8 +1418,8 @@
         "title": "CB-M2",
         "asset_type": "cross_book_mechanism",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-        "review_state": "formal",
-        "provenance": "promoted",
+        "review_state": "legacy_unverified",
+        "provenance": "legacy_candidate",
         "categories": [
           "跨书机制蒸馏"
         ],
@@ -830,6 +1433,7 @@
           "诡秘之主"
         ],
         "reusable_for_nrl": true,
+        "deep_read_claim_allowed": false,
         "exists": true
       },
       {
@@ -837,8 +1441,8 @@
         "title": "CB-M3",
         "asset_type": "cross_book_mechanism",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-        "review_state": "formal",
-        "provenance": "promoted",
+        "review_state": "legacy_unverified",
+        "provenance": "legacy_candidate",
         "categories": [
           "跨书机制蒸馏"
         ],
@@ -852,6 +1456,7 @@
           "将夜"
         ],
         "reusable_for_nrl": true,
+        "deep_read_claim_allowed": false,
         "exists": true
       },
       {
@@ -859,8 +1464,8 @@
         "title": "CB-M4",
         "asset_type": "cross_book_mechanism",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-        "review_state": "formal",
-        "provenance": "promoted",
+        "review_state": "legacy_unverified",
+        "provenance": "legacy_candidate",
         "categories": [
           "跨书机制蒸馏"
         ],
@@ -874,6 +1479,7 @@
           "雪中悍刀行"
         ],
         "reusable_for_nrl": true,
+        "deep_read_claim_allowed": false,
         "exists": true
       },
       {
@@ -881,8 +1487,8 @@
         "title": "CB-M5",
         "asset_type": "cross_book_mechanism",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-        "review_state": "formal",
-        "provenance": "promoted",
+        "review_state": "legacy_unverified",
+        "provenance": "legacy_candidate",
         "categories": [
           "跨书机制蒸馏"
         ],
@@ -896,6 +1502,7 @@
           "完美世界"
         ],
         "reusable_for_nrl": true,
+        "deep_read_claim_allowed": false,
         "exists": true
       },
       {
@@ -903,8 +1510,8 @@
         "title": "CB-M6",
         "asset_type": "cross_book_mechanism",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-        "review_state": "formal",
-        "provenance": "promoted",
+        "review_state": "legacy_unverified",
+        "provenance": "legacy_candidate",
         "categories": [
           "跨书机制蒸馏"
         ],
@@ -918,6 +1525,7 @@
           "牧神记"
         ],
         "reusable_for_nrl": true,
+        "deep_read_claim_allowed": false,
         "exists": true
       },
       {
@@ -925,8 +1533,8 @@
         "title": "CB-M7",
         "asset_type": "cross_book_mechanism",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-        "review_state": "formal",
-        "provenance": "promoted",
+        "review_state": "legacy_unverified",
+        "provenance": "legacy_candidate",
         "categories": [
           "跨书机制蒸馏"
         ],
@@ -940,6 +1548,7 @@
           "遮天"
         ],
         "reusable_for_nrl": true,
+        "deep_read_claim_allowed": false,
         "exists": true
       },
       {
@@ -947,8 +1556,8 @@
         "title": "CB-M8",
         "asset_type": "cross_book_mechanism",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-        "review_state": "formal",
-        "provenance": "promoted",
+        "review_state": "legacy_unverified",
+        "provenance": "legacy_candidate",
         "categories": [
           "跨书机制蒸馏"
         ],
@@ -962,6 +1571,7 @@
           "仙逆"
         ],
         "reusable_for_nrl": true,
+        "deep_read_claim_allowed": false,
         "exists": true
       },
       {
@@ -969,8 +1579,8 @@
         "title": "CB-M9",
         "asset_type": "cross_book_mechanism",
         "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-        "review_state": "formal",
-        "provenance": "promoted",
+        "review_state": "legacy_unverified",
+        "provenance": "legacy_candidate",
         "categories": [
           "跨书机制蒸馏"
         ],
@@ -984,6 +1594,7 @@
           "求魔"
         ],
         "reusable_for_nrl": true,
+        "deep_read_claim_allowed": false,
         "exists": true
       },
       {
@@ -2088,8 +2699,8 @@
       }
     ],
     "summary": {
-      "total_indexed": 136,
-      "returned": 136,
+      "total_indexed": 170,
+      "returned": 170,
       "by_type": {
         "book_dna": 18,
         "corpus_proof": 1,
@@ -2099,7 +2710,9 @@
         "mechanism": 35,
         "mechanism_notes": 7,
         "narrative_dna": 18,
-        "state_ledger": 18
+        "state_ledger": 18,
+        "verified_book_synthesis": 18,
+        "verified_cross_book_mechanism": 16
       }
     },
     "guardrails": [
@@ -2111,7 +2724,10 @@
   "full_corpus_proof": {
     "version": "0.8",
     "job_id": "job-v08-full-corpus-proof-review",
-    "status": "proof_gate_ready",
+    "status": "legacy_sample_access_gate",
+    "evidence_scope": "sampled_access_only",
+    "deep_read_claim_allowed": false,
+    "superseded_by": "verifiable_deep_reading_v0.18",
     "corpus_inventory": {
       "file_count": 18,
       "total_size_bytes": 197294465,
@@ -2248,6 +2864,57 @@
       "promote": "python3 system/runtime/nrl.py full-corpus-proof-promote"
     }
   },
+  "verifiable_deep_reading": {
+    "version": "0.18",
+    "job_id": "job-v018-verifiable-deep-reading",
+    "status": "deep_read_verified",
+    "deep_read_verified": true,
+    "legacy_v08_effective_status": "access_sample_verified",
+    "plan_path": "system/research_assets/deep_read/v0.18/plan.json",
+    "validation_path": "system/research_assets/deep_read/v0.18/validation.json",
+    "book_count": 18,
+    "required_chunk_count": 143,
+    "validation": {
+      "version": "0.18",
+      "job_id": "job-v018-verifiable-deep-reading",
+      "status": "chunk_coverage_verified",
+      "deep_read_verified": false,
+      "book_count": 18,
+      "validated_chunk_count": 143,
+      "required_chunk_count": 143,
+      "validated_bytes": 197294465,
+      "required_bytes": 197294465,
+      "validated_byte_ratio": 1.0,
+      "invalid_chunks": [],
+      "plan_integrity": {
+        "valid": true,
+        "errors": []
+      },
+      "validated_at": "2026-07-13T06:21:40+08:00"
+    },
+    "synthesis_validation": {
+      "version": "0.18",
+      "job_id": "job-v018-verifiable-deep-reading",
+      "valid": true,
+      "validated_book_count": 18,
+      "required_book_count": 18,
+      "invalid_books": [],
+      "validated_at": "2026-07-13T06:21:37+08:00"
+    },
+    "cross_validation": {
+      "version": "0.18",
+      "job_id": "job-v018-verifiable-deep-reading",
+      "valid": true,
+      "errors": [],
+      "mechanism_count": 16,
+      "validated_at": "2026-07-13T06:21:39+08:00"
+    },
+    "plan_integrity": {
+      "valid": true,
+      "errors": []
+    },
+    "next_action": "Run project impact review before production promotion."
+  },
   "creation_schema_registry": {
     "registry_name": "NRL Creation Schema Registry",
     "version": "0.2",
@@ -2346,6 +3013,7 @@
   },
   "architecture_reconciliation": {
     "version": "0.4",
+    "implementation_revision": "0.20",
     "source_context": {
       "conversation_title": "中文玄幻小说汇总",
       "accepted_on": "2026-07-09",
@@ -2380,7 +3048,7 @@
         "order": 1,
         "layer_id": "corpus_layer",
         "label_zh": "语料层",
-        "status": "protected_input",
+        "status": "deep_read_verified",
         "purpose": "raw corpus is protected; normal runtime uses structured derivatives",
         "child_implementation": null
       },
@@ -2388,7 +3056,7 @@
         "order": 2,
         "layer_id": "single_book_decomposition",
         "label_zh": "单书拆解层",
-        "status": "partial_data",
+        "status": "data_ready",
         "purpose": "Book DNA / Narrative DNA / State Ledger derivatives exist with Core7 promoted assets",
         "child_implementation": null
       },
@@ -2396,7 +3064,7 @@
         "order": 3,
         "layer_id": "cross_book_distillation",
         "label_zh": "跨书蒸馏层",
-        "status": "partial_engine",
+        "status": "data_ready",
         "purpose": "mechanism notes and synthesis exist but are not a full mechanism engine",
         "child_implementation": null
       },
@@ -2420,7 +3088,7 @@
         "order": 6,
         "layer_id": "long_form_creation_asset_os",
         "label_zh": "长篇创作资产系统",
-        "status": "contract_ready",
+        "status": "data_ready",
         "purpose": "nine asset families exist as contracts; operating registries are incomplete",
         "child_implementation": null
       },
@@ -2436,9 +3104,9 @@
         "order": 8,
         "layer_id": "agent_review_and_production",
         "label_zh": "Agent 审查与生产层",
-        "status": "blocked",
+        "status": "runnable",
         "purpose": "Codex validates locally; Antigravity uses guarded CLI review; Hermes is paused",
-        "child_implementation": null
+        "child_implementation": "production_chapter_runtime_v0.20"
       },
       {
         "order": 9,
@@ -2452,7 +3120,7 @@
         "order": 10,
         "layer_id": "studio_cockpit",
         "label_zh": "Studio 驾驶舱层",
-        "status": "partial",
+        "status": "runnable",
         "purpose": "Studio exposes system state and must now expose architecture reconciliation",
         "child_implementation": null
       }
@@ -2468,27 +3136,30 @@
       "pipeline_id": "corpus-to-creation",
       "pipeline_layer": "planning_pipeline",
       "classification": "child_implementation_not_full_architecture",
-      "next_family": "npcs"
+      "next_family": "npcs",
+      "deep_read_runtime": "verifiable_deep_reading_v0.18",
+      "project_reconciliation": "borrowed_heaven_project_reconciliation_v0.19",
+      "chapter_runtime": "production_chapter_runtime_v0.20"
     },
     "agent_role_contract": [
       {
         "agent": "Codex",
         "status": "local_runtime_host",
-        "role": "本地系统宿主 / Runtime / 工程 / 校验 / 编排",
-        "execution_boundary": "may execute local runtime and validation only"
+        "role": "本地系统宿主 / 直连写手 / Runtime / 工程 / 校验 / 编排",
+        "execution_boundary": "supervisor, direct writer, compiler, validator, observer, and state settler"
       },
       {
         "agent": "Antigravity",
         "status": "ready",
         "role": "CLI 协作文学审查 / 长篇生命力评估",
-        "execution_boundary": "registered structural-review jobs only"
+        "execution_boundary": "registered deep-reading, continuity, and literary-review jobs only"
       },
       {
         "agent": "Hermes",
-        "status": "ready",
+        "status": "optional_enrichment",
         "display_status": "Hermes: ready",
-        "role": "后期写手 / 文学增强 / 受控创意生成",
-        "execution_boundary": "paused until explicit Owner authorization"
+        "role": "可选后期文学增强，不参与主生产链",
+        "execution_boundary": "never required for drafting, observation, or state settlement"
       },
       {
         "agent": "Web GPT",
@@ -2507,14 +3178,26 @@
       {
         "mismatch_id": "runtime_pipeline_ahead_of_architecture",
         "severity": "high",
-        "summary": "Runtime and pipeline work advanced before source architecture reconciliation was locked.",
-        "correction": "Classify v0.3 as planning_pipeline and expose the ten-layer architecture in runtime and Studio."
+        "summary": "Resolved: v0.3 is classified as the planning child layer and the ten-layer architecture remains canonical.",
+        "correction": "No further architecture fork; new runtimes remain child implementations."
       },
       {
         "mismatch_id": "product_visibility_gap",
         "severity": "high",
-        "summary": "The Owner could not see how research assets, agents, runtime, and creation assets form one system.",
-        "correction": "Studio must expose architecture layers, Core7 calibration, mismatch report, and next architecture action."
+        "summary": "Resolved: Studio reads the same runtime status and now exposes truthful deep-reading and production gates.",
+        "correction": "Keep Studio generated and read-only; do not create UI-owned state."
+      },
+      {
+        "mismatch_id": "legacy_proof_overclaim",
+        "severity": "high",
+        "summary": "v0.8 sampled-access evidence was previously presented as full deep reading.",
+        "correction": "v0.18 requires contiguous byte coverage, per-book synthesis, and cross-book distillation."
+      },
+      {
+        "mismatch_id": "missing_chapter_runtime",
+        "severity": "high",
+        "summary": "Research and asset layers existed without a traceable chapter production lifecycle.",
+        "correction": "v0.20 adds intent, compiled context, rule stack, draft, observation, audit, revision, and settlement stages."
       }
     ],
     "production_readiness": {
@@ -2523,22 +3206,19 @@
       "owner_gate_required": true,
       "owner_gate_status": "REQUIRED_PENDING_ACKNOWLEDGEMENT",
       "content_generation_allowed": false,
-      "hermes_execution_status": "ready"
+      "hermes_execution_status": "ready",
+      "deep_read_status": "deep_read_verified",
+      "production_ready": true
     },
     "next_architecture_action": {
-      "action_id": "architecture_reconciliation_v0_4",
-      "label_zh": "锁定系统架构并把 v0.3 归位为规划管线层",
-      "safe_command": "python3 system/runtime/nrl.py architecture-status",
+      "action_id": "verifiable_deep_reading_v0_18",
+      "label_zh": "完成连续深读、项目重审与正文运行门禁",
+      "safe_command": "python3 system/runtime/nrl.py deep-read-status",
       "blocked_actions": [
-        "bypass Phase 2E planning constraints",
-        "execute-antigravity",
-        "execute-hermes",
-        "freely read novel_training_set",
-        "generate final creative assets",
-        "generate full character cards",
-        "ignore Antigravity required fixes",
-        "write first chapter",
-        "write novel prose"
+        "generate chapter prose before production readiness",
+        "call Hermes writer before v0.18 and v0.19 gates",
+        "promote unvalidated Agent output",
+        "treat historical v0.8 proof as full deep reading"
       ]
     }
   },
@@ -2604,7 +3284,7 @@
           "generate final NPC sheets",
           "write NPC dialogue scenes"
         ],
-        "project_asset_count": 2,
+        "project_asset_count": 7,
         "priority": 1,
         "is_next": true
       },
@@ -2619,7 +3299,7 @@
           "generate final item catalog",
           "write artifact reveal scenes"
         ],
-        "project_asset_count": 2,
+        "project_asset_count": 3,
         "priority": 3,
         "is_next": false
       },
@@ -2634,7 +3314,7 @@
           "generate final technique tree",
           "write combat scenes"
         ],
-        "project_asset_count": 4,
+        "project_asset_count": 6,
         "priority": 4,
         "is_next": false
       },
@@ -2649,7 +3329,7 @@
           "generate final naming dictionary",
           "rename existing content artifacts"
         ],
-        "project_asset_count": 2,
+        "project_asset_count": 3,
         "priority": 5,
         "is_next": false
       },
@@ -2664,7 +3344,7 @@
           "invent chapter-by-chapter events",
           "advance content state"
         ],
-        "project_asset_count": 2,
+        "project_asset_count": 12,
         "priority": 8,
         "is_next": false
       },
@@ -2679,7 +3359,7 @@
           "write emotional prose",
           "generate full relationship arcs"
         ],
-        "project_asset_count": 2,
+        "project_asset_count": 3,
         "priority": 6,
         "is_next": false
       },
@@ -2694,7 +3374,7 @@
           "add new plot hooks",
           "write reveal scenes"
         ],
-        "project_asset_count": 2,
+        "project_asset_count": 3,
         "priority": 7,
         "is_next": false
       },
@@ -2724,7 +3404,7 @@
           "generate final faction dossiers",
           "advance faction plotlines"
         ],
-        "project_asset_count": 2,
+        "project_asset_count": 4,
         "priority": 2,
         "is_next": false
       }
@@ -2740,7 +3420,7 @@
         "generate final NPC sheets",
         "write NPC dialogue scenes"
       ],
-      "project_asset_count": 2,
+      "project_asset_count": 7,
       "priority": 1,
       "is_next": true
     },
@@ -2774,7 +3454,7 @@
           "generate final NPC sheets",
           "write NPC dialogue scenes"
         ],
-        "project_asset_count": 2,
+        "project_asset_count": 7,
         "priority": 1,
         "is_next": true
       },
@@ -2845,15 +3525,16 @@
           "title": "人道至尊",
           "asset_type": "full_corpus_book_review",
           "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-          "review_state": "formal",
-          "provenance": "promoted",
+          "review_state": "legacy_unverified",
+          "provenance": "legacy_candidate",
           "categories": [
             "factions",
             "npcs",
             "emotional_bonds"
           ],
           "author": "宅猪",
-          "read_scope": "full_text_reviewed",
+          "read_scope": "legacy_unverified_summary",
+          "deep_read_claim_allowed": false,
           "reusable_mechanisms": [
             "薪火相传的历史解封模式",
             "种族生存博弈而非私人恩怨"
@@ -2865,15 +3546,16 @@
           "title": "斗破苍穹",
           "asset_type": "full_corpus_book_review",
           "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-          "review_state": "formal",
-          "provenance": "promoted",
+          "review_state": "legacy_unverified",
+          "provenance": "legacy_candidate",
           "categories": [
             "npcs",
             "techniques",
             "naming"
           ],
           "author": "天蚕土豆",
-          "read_scope": "full_text_reviewed",
+          "read_scope": "legacy_unverified_summary",
+          "deep_read_claim_allowed": false,
           "reusable_mechanisms": [
             "戒指老爷爷的初期负增益与后期大补偿",
             "吞噬同源变异能量升级功法"
@@ -2885,15 +3567,16 @@
           "title": "求魔",
           "asset_type": "full_corpus_book_review",
           "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-          "review_state": "formal",
-          "provenance": "promoted",
+          "review_state": "legacy_unverified",
+          "provenance": "legacy_candidate",
           "categories": [
             "emotional_bonds",
             "npcs",
             "foreshadowing"
           ],
           "author": "耳根",
-          "read_scope": "full_text_reviewed",
+          "read_scope": "legacy_unverified_summary",
+          "deep_read_claim_allowed": false,
           "reusable_mechanisms": [
             "人生虚无幻境认知反转",
             "自我缺席的终极奉献闭环"
@@ -2905,15 +3588,16 @@
           "title": "牧神记",
           "asset_type": "full_corpus_book_review",
           "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-          "review_state": "formal",
-          "provenance": "promoted",
+          "review_state": "legacy_unverified",
+          "provenance": "legacy_candidate",
           "categories": [
             "npcs",
             "factions",
             "naming"
           ],
           "author": "宅猪",
-          "read_scope": "full_text_reviewed",
+          "read_scope": "legacy_unverified_summary",
+          "deep_read_claim_allowed": false,
           "reusable_mechanisms": [
             "残疾老人村的导师避风港",
             "科技变法将修行化为民生设施"
@@ -2925,15 +3609,16 @@
           "title": "遮天",
           "asset_type": "full_corpus_book_review",
           "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-          "review_state": "formal",
-          "provenance": "promoted",
+          "review_state": "legacy_unverified",
+          "provenance": "legacy_candidate",
           "categories": [
             "foreshadowing",
             "npcs",
             "factions"
           ],
           "author": "辰东",
-          "read_scope": "full_text_reviewed",
+          "read_scope": "legacy_unverified_summary",
+          "deep_read_claim_allowed": false,
           "reusable_mechanisms": [
             "大纪元遗迹淘金源术石坊",
             "带全体旧部与故人共同飞升"
@@ -2945,15 +3630,16 @@
           "title": "雪中悍刀行",
           "asset_type": "full_corpus_book_review",
           "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-          "review_state": "formal",
-          "provenance": "promoted",
+          "review_state": "legacy_unverified",
+          "provenance": "legacy_candidate",
           "categories": [
             "emotional_bonds",
             "npcs",
             "factions"
           ],
           "author": "烽火戏诸侯",
-          "read_scope": "full_text_reviewed",
+          "read_scope": "legacy_unverified_summary",
+          "deep_read_claim_allowed": false,
           "reusable_mechanisms": [
             "庙堂阴谋与江湖义气双向拉扯",
             "平凡老兵英烈战死沙场的悲情共鸣"
@@ -2966,12 +3652,13 @@
           "asset_type": "creation_family_evidence",
           "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
           "review_state": "covered",
-          "provenance": "promoted",
+          "provenance": "legacy_candidate",
           "categories": [
             "npcs",
             "创作资产证据"
           ],
           "evidence_count": 6,
+          "deep_read_claim_allowed": false,
           "exists": true
         },
         {
@@ -2979,8 +3666,8 @@
           "title": "CB-M1",
           "asset_type": "cross_book_mechanism",
           "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-          "review_state": "formal",
-          "provenance": "promoted",
+          "review_state": "legacy_unverified",
+          "provenance": "legacy_candidate",
           "categories": [
             "跨书机制蒸馏"
           ],
@@ -2994,6 +3681,7 @@
             "雪中悍刀行"
           ],
           "reusable_for_nrl": true,
+          "deep_read_claim_allowed": false,
           "exists": true
         },
         {
@@ -3001,8 +3689,8 @@
           "title": "CB-M10",
           "asset_type": "cross_book_mechanism",
           "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-          "review_state": "formal",
-          "provenance": "promoted",
+          "review_state": "legacy_unverified",
+          "provenance": "legacy_candidate",
           "categories": [
             "跨书机制蒸馏"
           ],
@@ -3016,6 +3704,7 @@
             "雪中悍刀行"
           ],
           "reusable_for_nrl": true,
+          "deep_read_claim_allowed": false,
           "exists": true
         },
         {
@@ -3023,8 +3712,8 @@
           "title": "CB-M11",
           "asset_type": "cross_book_mechanism",
           "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-          "review_state": "formal",
-          "provenance": "promoted",
+          "review_state": "legacy_unverified",
+          "provenance": "legacy_candidate",
           "categories": [
             "跨书机制蒸馏"
           ],
@@ -3038,6 +3727,7 @@
             "求魔"
           ],
           "reusable_for_nrl": true,
+          "deep_read_claim_allowed": false,
           "exists": true
         },
         {
@@ -3045,8 +3735,8 @@
           "title": "CB-M12",
           "asset_type": "cross_book_mechanism",
           "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-          "review_state": "formal",
-          "provenance": "promoted",
+          "review_state": "legacy_unverified",
+          "provenance": "legacy_candidate",
           "categories": [
             "跨书机制蒸馏"
           ],
@@ -3060,6 +3750,7 @@
             "将夜"
           ],
           "reusable_for_nrl": true,
+          "deep_read_claim_allowed": false,
           "exists": true
         },
         {
@@ -3067,8 +3758,8 @@
           "title": "CB-M2",
           "asset_type": "cross_book_mechanism",
           "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-          "review_state": "formal",
-          "provenance": "promoted",
+          "review_state": "legacy_unverified",
+          "provenance": "legacy_candidate",
           "categories": [
             "跨书机制蒸馏"
           ],
@@ -3082,6 +3773,7 @@
             "诡秘之主"
           ],
           "reusable_for_nrl": true,
+          "deep_read_claim_allowed": false,
           "exists": true
         },
         {
@@ -3089,8 +3781,8 @@
           "title": "CB-M3",
           "asset_type": "cross_book_mechanism",
           "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-          "review_state": "formal",
-          "provenance": "promoted",
+          "review_state": "legacy_unverified",
+          "provenance": "legacy_candidate",
           "categories": [
             "跨书机制蒸馏"
           ],
@@ -3104,6 +3796,7 @@
             "将夜"
           ],
           "reusable_for_nrl": true,
+          "deep_read_claim_allowed": false,
           "exists": true
         },
         {
@@ -3111,8 +3804,8 @@
           "title": "CB-M4",
           "asset_type": "cross_book_mechanism",
           "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-          "review_state": "formal",
-          "provenance": "promoted",
+          "review_state": "legacy_unverified",
+          "provenance": "legacy_candidate",
           "categories": [
             "跨书机制蒸馏"
           ],
@@ -3126,6 +3819,7 @@
             "雪中悍刀行"
           ],
           "reusable_for_nrl": true,
+          "deep_read_claim_allowed": false,
           "exists": true
         },
         {
@@ -3133,8 +3827,8 @@
           "title": "CB-M5",
           "asset_type": "cross_book_mechanism",
           "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-          "review_state": "formal",
-          "provenance": "promoted",
+          "review_state": "legacy_unverified",
+          "provenance": "legacy_candidate",
           "categories": [
             "跨书机制蒸馏"
           ],
@@ -3148,6 +3842,7 @@
             "完美世界"
           ],
           "reusable_for_nrl": true,
+          "deep_read_claim_allowed": false,
           "exists": true
         },
         {
@@ -3155,8 +3850,8 @@
           "title": "CB-M6",
           "asset_type": "cross_book_mechanism",
           "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-          "review_state": "formal",
-          "provenance": "promoted",
+          "review_state": "legacy_unverified",
+          "provenance": "legacy_candidate",
           "categories": [
             "跨书机制蒸馏"
           ],
@@ -3170,6 +3865,7 @@
             "牧神记"
           ],
           "reusable_for_nrl": true,
+          "deep_read_claim_allowed": false,
           "exists": true
         },
         {
@@ -3177,8 +3873,8 @@
           "title": "CB-M7",
           "asset_type": "cross_book_mechanism",
           "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-          "review_state": "formal",
-          "provenance": "promoted",
+          "review_state": "legacy_unverified",
+          "provenance": "legacy_candidate",
           "categories": [
             "跨书机制蒸馏"
           ],
@@ -3192,6 +3888,7 @@
             "遮天"
           ],
           "reusable_for_nrl": true,
+          "deep_read_claim_allowed": false,
           "exists": true
         },
         {
@@ -3199,8 +3896,8 @@
           "title": "CB-M8",
           "asset_type": "cross_book_mechanism",
           "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-          "review_state": "formal",
-          "provenance": "promoted",
+          "review_state": "legacy_unverified",
+          "provenance": "legacy_candidate",
           "categories": [
             "跨书机制蒸馏"
           ],
@@ -3214,6 +3911,7 @@
             "仙逆"
           ],
           "reusable_for_nrl": true,
+          "deep_read_claim_allowed": false,
           "exists": true
         }
       ],
@@ -3322,15 +4020,16 @@
           "title": "人道至尊",
           "asset_type": "full_corpus_book_review",
           "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-          "review_state": "formal",
-          "provenance": "promoted",
+          "review_state": "legacy_unverified",
+          "provenance": "legacy_candidate",
           "categories": [
             "factions",
             "npcs",
             "emotional_bonds"
           ],
           "author": "宅猪",
-          "read_scope": "full_text_reviewed",
+          "read_scope": "legacy_unverified_summary",
+          "deep_read_claim_allowed": false,
           "reusable_mechanisms": [
             "薪火相传的历史解封模式",
             "种族生存博弈而非私人恩怨"
@@ -3342,15 +4041,16 @@
           "title": "斗破苍穹",
           "asset_type": "full_corpus_book_review",
           "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-          "review_state": "formal",
-          "provenance": "promoted",
+          "review_state": "legacy_unverified",
+          "provenance": "legacy_candidate",
           "categories": [
             "npcs",
             "techniques",
             "naming"
           ],
           "author": "天蚕土豆",
-          "read_scope": "full_text_reviewed",
+          "read_scope": "legacy_unverified_summary",
+          "deep_read_claim_allowed": false,
           "reusable_mechanisms": [
             "戒指老爷爷的初期负增益与后期大补偿",
             "吞噬同源变异能量升级功法"
@@ -3362,15 +4062,16 @@
           "title": "求魔",
           "asset_type": "full_corpus_book_review",
           "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-          "review_state": "formal",
-          "provenance": "promoted",
+          "review_state": "legacy_unverified",
+          "provenance": "legacy_candidate",
           "categories": [
             "emotional_bonds",
             "npcs",
             "foreshadowing"
           ],
           "author": "耳根",
-          "read_scope": "full_text_reviewed",
+          "read_scope": "legacy_unverified_summary",
+          "deep_read_claim_allowed": false,
           "reusable_mechanisms": [
             "人生虚无幻境认知反转",
             "自我缺席的终极奉献闭环"
@@ -3382,15 +4083,16 @@
           "title": "牧神记",
           "asset_type": "full_corpus_book_review",
           "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-          "review_state": "formal",
-          "provenance": "promoted",
+          "review_state": "legacy_unverified",
+          "provenance": "legacy_candidate",
           "categories": [
             "npcs",
             "factions",
             "naming"
           ],
           "author": "宅猪",
-          "read_scope": "full_text_reviewed",
+          "read_scope": "legacy_unverified_summary",
+          "deep_read_claim_allowed": false,
           "reusable_mechanisms": [
             "残疾老人村的导师避风港",
             "科技变法将修行化为民生设施"
@@ -3402,15 +4104,16 @@
           "title": "遮天",
           "asset_type": "full_corpus_book_review",
           "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-          "review_state": "formal",
-          "provenance": "promoted",
+          "review_state": "legacy_unverified",
+          "provenance": "legacy_candidate",
           "categories": [
             "foreshadowing",
             "npcs",
             "factions"
           ],
           "author": "辰东",
-          "read_scope": "full_text_reviewed",
+          "read_scope": "legacy_unverified_summary",
+          "deep_read_claim_allowed": false,
           "reusable_mechanisms": [
             "大纪元遗迹淘金源术石坊",
             "带全体旧部与故人共同飞升"
@@ -3422,15 +4125,16 @@
           "title": "雪中悍刀行",
           "asset_type": "full_corpus_book_review",
           "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-          "review_state": "formal",
-          "provenance": "promoted",
+          "review_state": "legacy_unverified",
+          "provenance": "legacy_candidate",
           "categories": [
             "emotional_bonds",
             "npcs",
             "factions"
           ],
           "author": "烽火戏诸侯",
-          "read_scope": "full_text_reviewed",
+          "read_scope": "legacy_unverified_summary",
+          "deep_read_claim_allowed": false,
           "reusable_mechanisms": [
             "庙堂阴谋与江湖义气双向拉扯",
             "平凡老兵英烈战死沙场的悲情共鸣"
@@ -3443,12 +4147,13 @@
           "asset_type": "creation_family_evidence",
           "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
           "review_state": "covered",
-          "provenance": "promoted",
+          "provenance": "legacy_candidate",
           "categories": [
             "npcs",
             "创作资产证据"
           ],
           "evidence_count": 6,
+          "deep_read_claim_allowed": false,
           "exists": true
         },
         {
@@ -3456,8 +4161,8 @@
           "title": "CB-M1",
           "asset_type": "cross_book_mechanism",
           "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-          "review_state": "formal",
-          "provenance": "promoted",
+          "review_state": "legacy_unverified",
+          "provenance": "legacy_candidate",
           "categories": [
             "跨书机制蒸馏"
           ],
@@ -3471,6 +4176,7 @@
             "雪中悍刀行"
           ],
           "reusable_for_nrl": true,
+          "deep_read_claim_allowed": false,
           "exists": true
         },
         {
@@ -3478,8 +4184,8 @@
           "title": "CB-M10",
           "asset_type": "cross_book_mechanism",
           "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-          "review_state": "formal",
-          "provenance": "promoted",
+          "review_state": "legacy_unverified",
+          "provenance": "legacy_candidate",
           "categories": [
             "跨书机制蒸馏"
           ],
@@ -3493,6 +4199,7 @@
             "雪中悍刀行"
           ],
           "reusable_for_nrl": true,
+          "deep_read_claim_allowed": false,
           "exists": true
         },
         {
@@ -3500,8 +4207,8 @@
           "title": "CB-M11",
           "asset_type": "cross_book_mechanism",
           "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-          "review_state": "formal",
-          "provenance": "promoted",
+          "review_state": "legacy_unverified",
+          "provenance": "legacy_candidate",
           "categories": [
             "跨书机制蒸馏"
           ],
@@ -3515,6 +4222,7 @@
             "求魔"
           ],
           "reusable_for_nrl": true,
+          "deep_read_claim_allowed": false,
           "exists": true
         },
         {
@@ -3522,8 +4230,8 @@
           "title": "CB-M12",
           "asset_type": "cross_book_mechanism",
           "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-          "review_state": "formal",
-          "provenance": "promoted",
+          "review_state": "legacy_unverified",
+          "provenance": "legacy_candidate",
           "categories": [
             "跨书机制蒸馏"
           ],
@@ -3537,6 +4245,7 @@
             "将夜"
           ],
           "reusable_for_nrl": true,
+          "deep_read_claim_allowed": false,
           "exists": true
         },
         {
@@ -3544,8 +4253,8 @@
           "title": "CB-M2",
           "asset_type": "cross_book_mechanism",
           "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-          "review_state": "formal",
-          "provenance": "promoted",
+          "review_state": "legacy_unverified",
+          "provenance": "legacy_candidate",
           "categories": [
             "跨书机制蒸馏"
           ],
@@ -3559,6 +4268,7 @@
             "诡秘之主"
           ],
           "reusable_for_nrl": true,
+          "deep_read_claim_allowed": false,
           "exists": true
         },
         {
@@ -3566,8 +4276,8 @@
           "title": "CB-M3",
           "asset_type": "cross_book_mechanism",
           "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-          "review_state": "formal",
-          "provenance": "promoted",
+          "review_state": "legacy_unverified",
+          "provenance": "legacy_candidate",
           "categories": [
             "跨书机制蒸馏"
           ],
@@ -3581,6 +4291,7 @@
             "将夜"
           ],
           "reusable_for_nrl": true,
+          "deep_read_claim_allowed": false,
           "exists": true
         },
         {
@@ -3588,8 +4299,8 @@
           "title": "CB-M4",
           "asset_type": "cross_book_mechanism",
           "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-          "review_state": "formal",
-          "provenance": "promoted",
+          "review_state": "legacy_unverified",
+          "provenance": "legacy_candidate",
           "categories": [
             "跨书机制蒸馏"
           ],
@@ -3603,6 +4314,7 @@
             "雪中悍刀行"
           ],
           "reusable_for_nrl": true,
+          "deep_read_claim_allowed": false,
           "exists": true
         },
         {
@@ -3610,8 +4322,8 @@
           "title": "CB-M5",
           "asset_type": "cross_book_mechanism",
           "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-          "review_state": "formal",
-          "provenance": "promoted",
+          "review_state": "legacy_unverified",
+          "provenance": "legacy_candidate",
           "categories": [
             "跨书机制蒸馏"
           ],
@@ -3625,6 +4337,7 @@
             "完美世界"
           ],
           "reusable_for_nrl": true,
+          "deep_read_claim_allowed": false,
           "exists": true
         },
         {
@@ -3632,8 +4345,8 @@
           "title": "CB-M6",
           "asset_type": "cross_book_mechanism",
           "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-          "review_state": "formal",
-          "provenance": "promoted",
+          "review_state": "legacy_unverified",
+          "provenance": "legacy_candidate",
           "categories": [
             "跨书机制蒸馏"
           ],
@@ -3647,6 +4360,7 @@
             "牧神记"
           ],
           "reusable_for_nrl": true,
+          "deep_read_claim_allowed": false,
           "exists": true
         },
         {
@@ -3654,8 +4368,8 @@
           "title": "CB-M7",
           "asset_type": "cross_book_mechanism",
           "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-          "review_state": "formal",
-          "provenance": "promoted",
+          "review_state": "legacy_unverified",
+          "provenance": "legacy_candidate",
           "categories": [
             "跨书机制蒸馏"
           ],
@@ -3669,6 +4383,7 @@
             "遮天"
           ],
           "reusable_for_nrl": true,
+          "deep_read_claim_allowed": false,
           "exists": true
         },
         {
@@ -3676,8 +4391,8 @@
           "title": "CB-M8",
           "asset_type": "cross_book_mechanism",
           "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
-          "review_state": "formal",
-          "provenance": "promoted",
+          "review_state": "legacy_unverified",
+          "provenance": "legacy_candidate",
           "categories": [
             "跨书机制蒸馏"
           ],
@@ -3691,6 +4406,7 @@
             "仙逆"
           ],
           "reusable_for_nrl": true,
+          "deep_read_claim_allowed": false,
           "exists": true
         }
       ],
@@ -3953,8 +4669,12 @@
     "current_packets": [
       "system/agent_ops/packets/antigravity-controlled-prose-audit-v016.md",
       "system/agent_ops/packets/antigravity-final-assets-audit-v016.md",
+      "system/agent_ops/packets/antigravity-volume1-assets-audit-v017.md",
+      "system/agent_ops/packets/antigravity-volume1-readiness-audit-v017.md",
+      "system/agent_ops/packets/borrowed_heaven_project_reconciliation_v0.19.md",
       "system/agent_ops/packets/hermes-controlled-prose-test-v016.md",
       "system/agent_ops/packets/hermes-final-asset-generation-v015.md",
+      "system/agent_ops/packets/hermes-volume1-asset-expansion-v017.md",
       "system/agent_ops/packets/job-v05-artifacts-antigravity-review.md",
       "system/agent_ops/packets/job-v05-characters-antigravity-review.md",
       "system/agent_ops/packets/job-v05-emotional_bonds-antigravity-review.md",
@@ -3970,7 +4690,7 @@
     "agent_io": {
       "inbox_dir": "system/agent_ops/inbox",
       "outbox_dir": "system/agent_ops/outbox",
-      "inbox_count": 15,
+      "inbox_count": 19,
       "outbox_count": 10
     },
     "antigravity": {
@@ -4003,7 +4723,7 @@
       "job_validated": true,
       "validated_outbox_path": "system/agent_ops/outbox/job-v05-techniques-antigravity-review_validated.md",
       "validated_outbox_exists": true,
-      "candidate_count": 4,
+      "candidate_count": 6,
       "owned_candidate_count": 3,
       "positive_evidence_count": 96
     },
@@ -4018,31 +4738,31 @@
     "project_asset_store": {
       "path": "system/creation_assets/project_assets.v0.2.json",
       "family_counts": {
-        "artifacts": 2,
+        "artifacts": 3,
         "characters": 2,
-        "emotional_bonds": 2,
-        "factions": 2,
-        "foreshadowing": 2,
-        "naming": 2,
-        "npcs": 2,
-        "state_ledger": 2,
-        "techniques": 4
+        "emotional_bonds": 3,
+        "factions": 4,
+        "foreshadowing": 3,
+        "naming": 3,
+        "npcs": 7,
+        "state_ledger": 12,
+        "techniques": 6
       },
       "validation": {
         "valid": true,
         "errors": [],
         "summary": {
-          "asset_count": 20,
+          "asset_count": 43,
           "family_counts": {
-            "artifacts": 2,
+            "artifacts": 3,
             "characters": 2,
-            "emotional_bonds": 2,
-            "factions": 2,
-            "foreshadowing": 2,
-            "naming": 2,
-            "npcs": 2,
-            "state_ledger": 2,
-            "techniques": 4
+            "emotional_bonds": 3,
+            "factions": 4,
+            "foreshadowing": 3,
+            "naming": 3,
+            "npcs": 7,
+            "state_ledger": 12,
+            "techniques": 6
           }
         },
         "store_path": "system/creation_assets/project_assets.v0.2.json"
@@ -4082,7 +4802,7 @@
           "artifacts",
           "naming"
         ],
-        "retrieval_text": "artifacts | 一念永恒 | full_corpus_book_review | formal | promoted | characters, artifacts, naming",
+        "retrieval_text": "artifacts | 一念永恒 | full_corpus_book_review | legacy_unverified | legacy_candidate | characters, artifacts, naming",
         "content_generation_allowed": false
       },
       {
@@ -4100,7 +4820,7 @@
           "artifacts",
           "techniques"
         ],
-        "retrieval_text": "artifacts | 仙逆 | full_corpus_book_review | formal | promoted | emotional_bonds, artifacts, techniques",
+        "retrieval_text": "artifacts | 仙逆 | full_corpus_book_review | legacy_unverified | legacy_candidate | emotional_bonds, artifacts, techniques",
         "content_generation_allowed": false
       },
       {
@@ -4118,7 +4838,7 @@
           "techniques",
           "naming"
         ],
-        "retrieval_text": "artifacts | 凡人修仙传 | full_corpus_book_review | formal | promoted | artifacts, techniques, naming",
+        "retrieval_text": "artifacts | 凡人修仙传 | full_corpus_book_review | legacy_unverified | legacy_candidate | artifacts, techniques, naming",
         "content_generation_allowed": false
       },
       {
@@ -4136,7 +4856,7 @@
           "foreshadowing",
           "techniques"
         ],
-        "retrieval_text": "artifacts | 圣墟 | full_corpus_book_review | formal | promoted | artifacts, foreshadowing, techniques",
+        "retrieval_text": "artifacts | 圣墟 | full_corpus_book_review | legacy_unverified | legacy_candidate | artifacts, foreshadowing, techniques",
         "content_generation_allowed": false
       },
       {
@@ -4154,7 +4874,7 @@
           "factions",
           "techniques"
         ],
-        "retrieval_text": "artifacts | 武动乾坤 | full_corpus_book_review | formal | promoted | artifacts, factions, techniques",
+        "retrieval_text": "artifacts | 武动乾坤 | full_corpus_book_review | legacy_unverified | legacy_candidate | artifacts, factions, techniques",
         "content_generation_allowed": false
       },
       {
@@ -4172,7 +4892,7 @@
           "artifacts",
           "factions"
         ],
-        "retrieval_text": "artifacts | 永生 | full_corpus_book_review | formal | promoted | techniques, artifacts, factions",
+        "retrieval_text": "artifacts | 永生 | full_corpus_book_review | legacy_unverified | legacy_candidate | techniques, artifacts, factions",
         "content_generation_allowed": false
       },
       {
@@ -4190,7 +4910,7 @@
           "artifacts",
           "state_ledger"
         ],
-        "retrieval_text": "artifacts | 诡秘之主 | full_corpus_book_review | formal | promoted | foreshadowing, artifacts, state_ledger",
+        "retrieval_text": "artifacts | 诡秘之主 | full_corpus_book_review | legacy_unverified | legacy_candidate | foreshadowing, artifacts, state_ledger",
         "content_generation_allowed": false
       },
       {
@@ -4207,7 +4927,7 @@
           "artifacts",
           "创作资产证据"
         ],
-        "retrieval_text": "artifacts | artifacts | creation_family_evidence | covered | promoted | artifacts, 创作资产证据",
+        "retrieval_text": "artifacts | artifacts | creation_family_evidence | covered | legacy_candidate | artifacts, 创作资产证据",
         "content_generation_allowed": false
       },
       {
@@ -4223,7 +4943,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "artifacts | CB-M1 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "artifacts | CB-M1 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -4239,7 +4959,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "artifacts | CB-M10 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "artifacts | CB-M10 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -4255,7 +4975,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "artifacts | CB-M11 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "artifacts | CB-M11 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -4271,7 +4991,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "artifacts | CB-M12 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "artifacts | CB-M12 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -4287,7 +5007,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "artifacts | CB-M2 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "artifacts | CB-M2 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -4303,7 +5023,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "artifacts | CB-M3 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "artifacts | CB-M3 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -4319,7 +5039,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "artifacts | CB-M4 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "artifacts | CB-M4 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -4335,7 +5055,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "artifacts | CB-M5 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "artifacts | CB-M5 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -4351,7 +5071,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "artifacts | CB-M6 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "artifacts | CB-M6 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -4367,7 +5087,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "artifacts | CB-M7 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "artifacts | CB-M7 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -4385,7 +5105,7 @@
           "artifacts",
           "naming"
         ],
-        "retrieval_text": "characters | 一念永恒 | full_corpus_book_review | formal | promoted | characters, artifacts, naming",
+        "retrieval_text": "characters | 一念永恒 | full_corpus_book_review | legacy_unverified | legacy_candidate | characters, artifacts, naming",
         "content_generation_allowed": false
       },
       {
@@ -4403,7 +5123,7 @@
           "emotional_bonds",
           "techniques"
         ],
-        "retrieval_text": "characters | 完美世界 | full_corpus_book_review | formal | promoted | characters, emotional_bonds, techniques",
+        "retrieval_text": "characters | 完美世界 | full_corpus_book_review | legacy_unverified | legacy_candidate | characters, emotional_bonds, techniques",
         "content_generation_allowed": false
       },
       {
@@ -4421,7 +5141,7 @@
           "characters",
           "factions"
         ],
-        "retrieval_text": "characters | 蛊真人 | full_corpus_book_review | formal | promoted | techniques, characters, factions",
+        "retrieval_text": "characters | 蛊真人 | full_corpus_book_review | legacy_unverified | legacy_candidate | techniques, characters, factions",
         "content_generation_allowed": false
       },
       {
@@ -4438,7 +5158,7 @@
           "characters",
           "创作资产证据"
         ],
-        "retrieval_text": "characters | characters | creation_family_evidence | covered | promoted | characters, 创作资产证据",
+        "retrieval_text": "characters | characters | creation_family_evidence | covered | legacy_candidate | characters, 创作资产证据",
         "content_generation_allowed": false
       },
       {
@@ -4454,7 +5174,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "characters | CB-M1 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "characters | CB-M1 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -4470,7 +5190,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "characters | CB-M10 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "characters | CB-M10 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -4486,7 +5206,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "characters | CB-M11 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "characters | CB-M11 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -4502,7 +5222,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "characters | CB-M12 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "characters | CB-M12 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -4518,7 +5238,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "characters | CB-M2 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "characters | CB-M2 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -4534,7 +5254,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "characters | CB-M3 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "characters | CB-M3 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -4550,7 +5270,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "characters | CB-M4 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "characters | CB-M4 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -4566,7 +5286,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "characters | CB-M5 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "characters | CB-M5 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -4582,7 +5302,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "characters | CB-M6 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "characters | CB-M6 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -4598,7 +5318,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "characters | CB-M7 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "characters | CB-M7 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -4614,7 +5334,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "characters | CB-M8 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "characters | CB-M8 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -4630,7 +5350,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "characters | CB-M9 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "characters | CB-M9 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -4680,7 +5400,7 @@
           "npcs",
           "emotional_bonds"
         ],
-        "retrieval_text": "emotional_bonds | 人道至尊 | full_corpus_book_review | formal | promoted | factions, npcs, emotional_bonds",
+        "retrieval_text": "emotional_bonds | 人道至尊 | full_corpus_book_review | legacy_unverified | legacy_candidate | factions, npcs, emotional_bonds",
         "content_generation_allowed": false
       },
       {
@@ -4698,7 +5418,7 @@
           "artifacts",
           "techniques"
         ],
-        "retrieval_text": "emotional_bonds | 仙逆 | full_corpus_book_review | formal | promoted | emotional_bonds, artifacts, techniques",
+        "retrieval_text": "emotional_bonds | 仙逆 | full_corpus_book_review | legacy_unverified | legacy_candidate | emotional_bonds, artifacts, techniques",
         "content_generation_allowed": false
       },
       {
@@ -4716,7 +5436,7 @@
           "emotional_bonds",
           "techniques"
         ],
-        "retrieval_text": "emotional_bonds | 完美世界 | full_corpus_book_review | formal | promoted | characters, emotional_bonds, techniques",
+        "retrieval_text": "emotional_bonds | 完美世界 | full_corpus_book_review | legacy_unverified | legacy_candidate | characters, emotional_bonds, techniques",
         "content_generation_allowed": false
       },
       {
@@ -4734,7 +5454,7 @@
           "factions",
           "emotional_bonds"
         ],
-        "retrieval_text": "emotional_bonds | 将夜 | full_corpus_book_review | formal | promoted | foreshadowing, factions, emotional_bonds",
+        "retrieval_text": "emotional_bonds | 将夜 | full_corpus_book_review | legacy_unverified | legacy_candidate | foreshadowing, factions, emotional_bonds",
         "content_generation_allowed": false
       },
       {
@@ -4752,7 +5472,7 @@
           "npcs",
           "foreshadowing"
         ],
-        "retrieval_text": "emotional_bonds | 求魔 | full_corpus_book_review | formal | promoted | emotional_bonds, npcs, foreshadowing",
+        "retrieval_text": "emotional_bonds | 求魔 | full_corpus_book_review | legacy_unverified | legacy_candidate | emotional_bonds, npcs, foreshadowing",
         "content_generation_allowed": false
       },
       {
@@ -4770,7 +5490,7 @@
           "npcs",
           "factions"
         ],
-        "retrieval_text": "emotional_bonds | 雪中悍刀行 | full_corpus_book_review | formal | promoted | emotional_bonds, npcs, factions",
+        "retrieval_text": "emotional_bonds | 雪中悍刀行 | full_corpus_book_review | legacy_unverified | legacy_candidate | emotional_bonds, npcs, factions",
         "content_generation_allowed": false
       },
       {
@@ -4787,7 +5507,7 @@
           "emotional_bonds",
           "创作资产证据"
         ],
-        "retrieval_text": "emotional_bonds | emotional_bonds | creation_family_evidence | covered | promoted | emotional_bonds, 创作资产证据",
+        "retrieval_text": "emotional_bonds | emotional_bonds | creation_family_evidence | covered | legacy_candidate | emotional_bonds, 创作资产证据",
         "content_generation_allowed": false
       },
       {
@@ -4803,7 +5523,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "emotional_bonds | CB-M1 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "emotional_bonds | CB-M1 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -4819,7 +5539,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "emotional_bonds | CB-M10 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "emotional_bonds | CB-M10 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -4835,7 +5555,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "emotional_bonds | CB-M11 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "emotional_bonds | CB-M11 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -4851,7 +5571,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "emotional_bonds | CB-M12 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "emotional_bonds | CB-M12 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -4867,7 +5587,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "emotional_bonds | CB-M2 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "emotional_bonds | CB-M2 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -4883,7 +5603,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "emotional_bonds | CB-M3 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "emotional_bonds | CB-M3 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -4899,7 +5619,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "emotional_bonds | CB-M4 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "emotional_bonds | CB-M4 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -4915,7 +5635,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "emotional_bonds | CB-M5 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "emotional_bonds | CB-M5 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -4931,7 +5651,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "emotional_bonds | CB-M6 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "emotional_bonds | CB-M6 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -4947,7 +5667,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "emotional_bonds | CB-M7 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "emotional_bonds | CB-M7 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -4963,7 +5683,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "emotional_bonds | CB-M8 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "emotional_bonds | CB-M8 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -4981,7 +5701,7 @@
           "factions",
           "techniques"
         ],
-        "retrieval_text": "factions | 不死不灭 | full_corpus_book_review | formal | promoted | foreshadowing, factions, techniques",
+        "retrieval_text": "factions | 不死不灭 | full_corpus_book_review | legacy_unverified | legacy_candidate | foreshadowing, factions, techniques",
         "content_generation_allowed": false
       },
       {
@@ -4999,7 +5719,7 @@
           "npcs",
           "emotional_bonds"
         ],
-        "retrieval_text": "factions | 人道至尊 | full_corpus_book_review | formal | promoted | factions, npcs, emotional_bonds",
+        "retrieval_text": "factions | 人道至尊 | full_corpus_book_review | legacy_unverified | legacy_candidate | factions, npcs, emotional_bonds",
         "content_generation_allowed": false
       },
       {
@@ -5017,7 +5737,7 @@
           "naming",
           "techniques"
         ],
-        "retrieval_text": "factions | 大主宰 | full_corpus_book_review | formal | promoted | factions, naming, techniques",
+        "retrieval_text": "factions | 大主宰 | full_corpus_book_review | legacy_unverified | legacy_candidate | factions, naming, techniques",
         "content_generation_allowed": false
       },
       {
@@ -5035,7 +5755,7 @@
           "factions",
           "emotional_bonds"
         ],
-        "retrieval_text": "factions | 将夜 | full_corpus_book_review | formal | promoted | foreshadowing, factions, emotional_bonds",
+        "retrieval_text": "factions | 将夜 | full_corpus_book_review | legacy_unverified | legacy_candidate | foreshadowing, factions, emotional_bonds",
         "content_generation_allowed": false
       },
       {
@@ -5053,7 +5773,7 @@
           "factions",
           "techniques"
         ],
-        "retrieval_text": "factions | 武动乾坤 | full_corpus_book_review | formal | promoted | artifacts, factions, techniques",
+        "retrieval_text": "factions | 武动乾坤 | full_corpus_book_review | legacy_unverified | legacy_candidate | artifacts, factions, techniques",
         "content_generation_allowed": false
       },
       {
@@ -5071,7 +5791,7 @@
           "artifacts",
           "factions"
         ],
-        "retrieval_text": "factions | 永生 | full_corpus_book_review | formal | promoted | techniques, artifacts, factions",
+        "retrieval_text": "factions | 永生 | full_corpus_book_review | legacy_unverified | legacy_candidate | techniques, artifacts, factions",
         "content_generation_allowed": false
       },
       {
@@ -5089,7 +5809,7 @@
           "factions",
           "naming"
         ],
-        "retrieval_text": "factions | 牧神记 | full_corpus_book_review | formal | promoted | npcs, factions, naming",
+        "retrieval_text": "factions | 牧神记 | full_corpus_book_review | legacy_unverified | legacy_candidate | npcs, factions, naming",
         "content_generation_allowed": false
       },
       {
@@ -5107,7 +5827,7 @@
           "characters",
           "factions"
         ],
-        "retrieval_text": "factions | 蛊真人 | full_corpus_book_review | formal | promoted | techniques, characters, factions",
+        "retrieval_text": "factions | 蛊真人 | full_corpus_book_review | legacy_unverified | legacy_candidate | techniques, characters, factions",
         "content_generation_allowed": false
       },
       {
@@ -5125,7 +5845,7 @@
           "npcs",
           "factions"
         ],
-        "retrieval_text": "factions | 遮天 | full_corpus_book_review | formal | promoted | foreshadowing, npcs, factions",
+        "retrieval_text": "factions | 遮天 | full_corpus_book_review | legacy_unverified | legacy_candidate | foreshadowing, npcs, factions",
         "content_generation_allowed": false
       },
       {
@@ -5143,7 +5863,7 @@
           "npcs",
           "factions"
         ],
-        "retrieval_text": "factions | 雪中悍刀行 | full_corpus_book_review | formal | promoted | emotional_bonds, npcs, factions",
+        "retrieval_text": "factions | 雪中悍刀行 | full_corpus_book_review | legacy_unverified | legacy_candidate | emotional_bonds, npcs, factions",
         "content_generation_allowed": false
       },
       {
@@ -5160,7 +5880,7 @@
           "factions",
           "创作资产证据"
         ],
-        "retrieval_text": "factions | factions | creation_family_evidence | covered | promoted | factions, 创作资产证据",
+        "retrieval_text": "factions | factions | creation_family_evidence | covered | legacy_candidate | factions, 创作资产证据",
         "content_generation_allowed": false
       },
       {
@@ -5176,7 +5896,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "factions | CB-M1 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "factions | CB-M1 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -5192,7 +5912,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "factions | CB-M10 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "factions | CB-M10 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -5208,7 +5928,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "factions | CB-M11 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "factions | CB-M11 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -5224,7 +5944,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "factions | CB-M12 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "factions | CB-M12 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -5240,7 +5960,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "factions | CB-M2 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "factions | CB-M2 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -5256,7 +5976,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "factions | CB-M3 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "factions | CB-M3 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -5272,7 +5992,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "factions | CB-M4 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "factions | CB-M4 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -5290,7 +6010,7 @@
           "factions",
           "techniques"
         ],
-        "retrieval_text": "foreshadowing | 不死不灭 | full_corpus_book_review | formal | promoted | foreshadowing, factions, techniques",
+        "retrieval_text": "foreshadowing | 不死不灭 | full_corpus_book_review | legacy_unverified | legacy_candidate | foreshadowing, factions, techniques",
         "content_generation_allowed": false
       },
       {
@@ -5308,7 +6028,7 @@
           "foreshadowing",
           "techniques"
         ],
-        "retrieval_text": "foreshadowing | 圣墟 | full_corpus_book_review | formal | promoted | artifacts, foreshadowing, techniques",
+        "retrieval_text": "foreshadowing | 圣墟 | full_corpus_book_review | legacy_unverified | legacy_candidate | artifacts, foreshadowing, techniques",
         "content_generation_allowed": false
       },
       {
@@ -5326,7 +6046,7 @@
           "factions",
           "emotional_bonds"
         ],
-        "retrieval_text": "foreshadowing | 将夜 | full_corpus_book_review | formal | promoted | foreshadowing, factions, emotional_bonds",
+        "retrieval_text": "foreshadowing | 将夜 | full_corpus_book_review | legacy_unverified | legacy_candidate | foreshadowing, factions, emotional_bonds",
         "content_generation_allowed": false
       },
       {
@@ -5344,7 +6064,7 @@
           "npcs",
           "foreshadowing"
         ],
-        "retrieval_text": "foreshadowing | 求魔 | full_corpus_book_review | formal | promoted | emotional_bonds, npcs, foreshadowing",
+        "retrieval_text": "foreshadowing | 求魔 | full_corpus_book_review | legacy_unverified | legacy_candidate | emotional_bonds, npcs, foreshadowing",
         "content_generation_allowed": false
       },
       {
@@ -5362,7 +6082,7 @@
           "artifacts",
           "state_ledger"
         ],
-        "retrieval_text": "foreshadowing | 诡秘之主 | full_corpus_book_review | formal | promoted | foreshadowing, artifacts, state_ledger",
+        "retrieval_text": "foreshadowing | 诡秘之主 | full_corpus_book_review | legacy_unverified | legacy_candidate | foreshadowing, artifacts, state_ledger",
         "content_generation_allowed": false
       },
       {
@@ -5380,7 +6100,7 @@
           "npcs",
           "factions"
         ],
-        "retrieval_text": "foreshadowing | 遮天 | full_corpus_book_review | formal | promoted | foreshadowing, npcs, factions",
+        "retrieval_text": "foreshadowing | 遮天 | full_corpus_book_review | legacy_unverified | legacy_candidate | foreshadowing, npcs, factions",
         "content_generation_allowed": false
       },
       {
@@ -5397,7 +6117,7 @@
           "foreshadowing",
           "创作资产证据"
         ],
-        "retrieval_text": "foreshadowing | foreshadowing | creation_family_evidence | covered | promoted | foreshadowing, 创作资产证据",
+        "retrieval_text": "foreshadowing | foreshadowing | creation_family_evidence | covered | legacy_candidate | foreshadowing, 创作资产证据",
         "content_generation_allowed": false
       },
       {
@@ -5413,7 +6133,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "foreshadowing | CB-M1 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "foreshadowing | CB-M1 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -5429,7 +6149,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "foreshadowing | CB-M10 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "foreshadowing | CB-M10 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -5445,7 +6165,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "foreshadowing | CB-M11 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "foreshadowing | CB-M11 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -5461,7 +6181,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "foreshadowing | CB-M12 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "foreshadowing | CB-M12 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -5477,7 +6197,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "foreshadowing | CB-M2 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "foreshadowing | CB-M2 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -5493,7 +6213,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "foreshadowing | CB-M3 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "foreshadowing | CB-M3 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -5509,7 +6229,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "foreshadowing | CB-M4 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "foreshadowing | CB-M4 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -5525,7 +6245,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "foreshadowing | CB-M5 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "foreshadowing | CB-M5 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -5541,7 +6261,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "foreshadowing | CB-M6 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "foreshadowing | CB-M6 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -5557,7 +6277,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "foreshadowing | CB-M7 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "foreshadowing | CB-M7 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -5573,7 +6293,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "foreshadowing | CB-M8 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "foreshadowing | CB-M8 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -5591,7 +6311,7 @@
           "artifacts",
           "naming"
         ],
-        "retrieval_text": "naming | 一念永恒 | full_corpus_book_review | formal | promoted | characters, artifacts, naming",
+        "retrieval_text": "naming | 一念永恒 | full_corpus_book_review | legacy_unverified | legacy_candidate | characters, artifacts, naming",
         "content_generation_allowed": false
       },
       {
@@ -5609,7 +6329,7 @@
           "techniques",
           "naming"
         ],
-        "retrieval_text": "naming | 凡人修仙传 | full_corpus_book_review | formal | promoted | artifacts, techniques, naming",
+        "retrieval_text": "naming | 凡人修仙传 | full_corpus_book_review | legacy_unverified | legacy_candidate | artifacts, techniques, naming",
         "content_generation_allowed": false
       },
       {
@@ -5627,7 +6347,7 @@
           "naming",
           "techniques"
         ],
-        "retrieval_text": "naming | 大主宰 | full_corpus_book_review | formal | promoted | factions, naming, techniques",
+        "retrieval_text": "naming | 大主宰 | full_corpus_book_review | legacy_unverified | legacy_candidate | factions, naming, techniques",
         "content_generation_allowed": false
       },
       {
@@ -5645,7 +6365,7 @@
           "techniques",
           "naming"
         ],
-        "retrieval_text": "naming | 斗破苍穹 | full_corpus_book_review | formal | promoted | npcs, techniques, naming",
+        "retrieval_text": "naming | 斗破苍穹 | full_corpus_book_review | legacy_unverified | legacy_candidate | npcs, techniques, naming",
         "content_generation_allowed": false
       },
       {
@@ -5663,7 +6383,7 @@
           "factions",
           "naming"
         ],
-        "retrieval_text": "naming | 牧神记 | full_corpus_book_review | formal | promoted | npcs, factions, naming",
+        "retrieval_text": "naming | 牧神记 | full_corpus_book_review | legacy_unverified | legacy_candidate | npcs, factions, naming",
         "content_generation_allowed": false
       },
       {
@@ -5680,7 +6400,7 @@
           "naming",
           "创作资产证据"
         ],
-        "retrieval_text": "naming | naming | creation_family_evidence | covered | promoted | naming, 创作资产证据",
+        "retrieval_text": "naming | naming | creation_family_evidence | covered | legacy_candidate | naming, 创作资产证据",
         "content_generation_allowed": false
       },
       {
@@ -5696,7 +6416,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "naming | CB-M1 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "naming | CB-M1 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -5712,7 +6432,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "naming | CB-M10 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "naming | CB-M10 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -5728,7 +6448,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "naming | CB-M11 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "naming | CB-M11 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -5744,7 +6464,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "naming | CB-M12 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "naming | CB-M12 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -5760,7 +6480,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "naming | CB-M2 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "naming | CB-M2 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -5776,7 +6496,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "naming | CB-M3 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "naming | CB-M3 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -5792,7 +6512,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "naming | CB-M4 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "naming | CB-M4 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -5808,7 +6528,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "naming | CB-M5 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "naming | CB-M5 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -5824,7 +6544,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "naming | CB-M6 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "naming | CB-M6 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -5840,7 +6560,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "naming | CB-M7 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "naming | CB-M7 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -5856,7 +6576,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "naming | CB-M8 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "naming | CB-M8 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -5872,7 +6592,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "naming | CB-M9 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "naming | CB-M9 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -5890,7 +6610,7 @@
           "npcs",
           "emotional_bonds"
         ],
-        "retrieval_text": "npcs | 人道至尊 | full_corpus_book_review | formal | promoted | factions, npcs, emotional_bonds",
+        "retrieval_text": "npcs | 人道至尊 | full_corpus_book_review | legacy_unverified | legacy_candidate | factions, npcs, emotional_bonds",
         "content_generation_allowed": false
       },
       {
@@ -5908,7 +6628,7 @@
           "techniques",
           "naming"
         ],
-        "retrieval_text": "npcs | 斗破苍穹 | full_corpus_book_review | formal | promoted | npcs, techniques, naming",
+        "retrieval_text": "npcs | 斗破苍穹 | full_corpus_book_review | legacy_unverified | legacy_candidate | npcs, techniques, naming",
         "content_generation_allowed": false
       },
       {
@@ -5926,7 +6646,7 @@
           "npcs",
           "foreshadowing"
         ],
-        "retrieval_text": "npcs | 求魔 | full_corpus_book_review | formal | promoted | emotional_bonds, npcs, foreshadowing",
+        "retrieval_text": "npcs | 求魔 | full_corpus_book_review | legacy_unverified | legacy_candidate | emotional_bonds, npcs, foreshadowing",
         "content_generation_allowed": false
       },
       {
@@ -5944,7 +6664,7 @@
           "factions",
           "naming"
         ],
-        "retrieval_text": "npcs | 牧神记 | full_corpus_book_review | formal | promoted | npcs, factions, naming",
+        "retrieval_text": "npcs | 牧神记 | full_corpus_book_review | legacy_unverified | legacy_candidate | npcs, factions, naming",
         "content_generation_allowed": false
       },
       {
@@ -5962,7 +6682,7 @@
           "npcs",
           "factions"
         ],
-        "retrieval_text": "npcs | 遮天 | full_corpus_book_review | formal | promoted | foreshadowing, npcs, factions",
+        "retrieval_text": "npcs | 遮天 | full_corpus_book_review | legacy_unverified | legacy_candidate | foreshadowing, npcs, factions",
         "content_generation_allowed": false
       },
       {
@@ -5980,7 +6700,7 @@
           "npcs",
           "factions"
         ],
-        "retrieval_text": "npcs | 雪中悍刀行 | full_corpus_book_review | formal | promoted | emotional_bonds, npcs, factions",
+        "retrieval_text": "npcs | 雪中悍刀行 | full_corpus_book_review | legacy_unverified | legacy_candidate | emotional_bonds, npcs, factions",
         "content_generation_allowed": false
       },
       {
@@ -5997,7 +6717,7 @@
           "npcs",
           "创作资产证据"
         ],
-        "retrieval_text": "npcs | npcs | creation_family_evidence | covered | promoted | npcs, 创作资产证据",
+        "retrieval_text": "npcs | npcs | creation_family_evidence | covered | legacy_candidate | npcs, 创作资产证据",
         "content_generation_allowed": false
       },
       {
@@ -6013,7 +6733,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "npcs | CB-M1 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "npcs | CB-M1 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -6029,7 +6749,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "npcs | CB-M10 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "npcs | CB-M10 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -6045,7 +6765,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "npcs | CB-M11 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "npcs | CB-M11 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -6061,7 +6781,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "npcs | CB-M12 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "npcs | CB-M12 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -6077,7 +6797,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "npcs | CB-M2 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "npcs | CB-M2 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -6093,7 +6813,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "npcs | CB-M3 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "npcs | CB-M3 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -6109,7 +6829,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "npcs | CB-M4 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "npcs | CB-M4 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -6125,7 +6845,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "npcs | CB-M5 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "npcs | CB-M5 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -6141,7 +6861,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "npcs | CB-M6 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "npcs | CB-M6 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -6157,7 +6877,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "npcs | CB-M7 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "npcs | CB-M7 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -6173,7 +6893,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "npcs | CB-M8 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "npcs | CB-M8 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -6191,7 +6911,7 @@
           "artifacts",
           "state_ledger"
         ],
-        "retrieval_text": "state_ledger | 诡秘之主 | full_corpus_book_review | formal | promoted | foreshadowing, artifacts, state_ledger",
+        "retrieval_text": "state_ledger | 诡秘之主 | full_corpus_book_review | legacy_unverified | legacy_candidate | foreshadowing, artifacts, state_ledger",
         "content_generation_allowed": false
       },
       {
@@ -6208,7 +6928,7 @@
           "state_ledger",
           "创作资产证据"
         ],
-        "retrieval_text": "state_ledger | state_ledger | creation_family_evidence | covered | promoted | state_ledger, 创作资产证据",
+        "retrieval_text": "state_ledger | state_ledger | creation_family_evidence | covered | legacy_candidate | state_ledger, 创作资产证据",
         "content_generation_allowed": false
       },
       {
@@ -6224,7 +6944,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "state_ledger | CB-M1 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "state_ledger | CB-M1 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -6240,7 +6960,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "state_ledger | CB-M10 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "state_ledger | CB-M10 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -6256,7 +6976,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "state_ledger | CB-M11 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "state_ledger | CB-M11 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -6272,7 +6992,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "state_ledger | CB-M12 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "state_ledger | CB-M12 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -6288,7 +7008,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "state_ledger | CB-M2 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "state_ledger | CB-M2 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -6304,7 +7024,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "state_ledger | CB-M3 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "state_ledger | CB-M3 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -6320,7 +7040,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "state_ledger | CB-M4 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "state_ledger | CB-M4 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -6336,7 +7056,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "state_ledger | CB-M5 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "state_ledger | CB-M5 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -6352,7 +7072,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "state_ledger | CB-M6 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "state_ledger | CB-M6 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -6368,7 +7088,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "state_ledger | CB-M7 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "state_ledger | CB-M7 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -6384,7 +7104,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "state_ledger | CB-M8 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "state_ledger | CB-M8 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -6400,7 +7120,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "state_ledger | CB-M9 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "state_ledger | CB-M9 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -6482,7 +7202,7 @@
           "factions",
           "techniques"
         ],
-        "retrieval_text": "techniques | 不死不灭 | full_corpus_book_review | formal | promoted | foreshadowing, factions, techniques",
+        "retrieval_text": "techniques | 不死不灭 | full_corpus_book_review | legacy_unverified | legacy_candidate | foreshadowing, factions, techniques",
         "content_generation_allowed": false
       },
       {
@@ -6500,7 +7220,7 @@
           "artifacts",
           "techniques"
         ],
-        "retrieval_text": "techniques | 仙逆 | full_corpus_book_review | formal | promoted | emotional_bonds, artifacts, techniques",
+        "retrieval_text": "techniques | 仙逆 | full_corpus_book_review | legacy_unverified | legacy_candidate | emotional_bonds, artifacts, techniques",
         "content_generation_allowed": false
       },
       {
@@ -6518,7 +7238,7 @@
           "techniques",
           "naming"
         ],
-        "retrieval_text": "techniques | 凡人修仙传 | full_corpus_book_review | formal | promoted | artifacts, techniques, naming",
+        "retrieval_text": "techniques | 凡人修仙传 | full_corpus_book_review | legacy_unverified | legacy_candidate | artifacts, techniques, naming",
         "content_generation_allowed": false
       },
       {
@@ -6536,7 +7256,7 @@
           "foreshadowing",
           "techniques"
         ],
-        "retrieval_text": "techniques | 圣墟 | full_corpus_book_review | formal | promoted | artifacts, foreshadowing, techniques",
+        "retrieval_text": "techniques | 圣墟 | full_corpus_book_review | legacy_unverified | legacy_candidate | artifacts, foreshadowing, techniques",
         "content_generation_allowed": false
       },
       {
@@ -6554,7 +7274,7 @@
           "naming",
           "techniques"
         ],
-        "retrieval_text": "techniques | 大主宰 | full_corpus_book_review | formal | promoted | factions, naming, techniques",
+        "retrieval_text": "techniques | 大主宰 | full_corpus_book_review | legacy_unverified | legacy_candidate | factions, naming, techniques",
         "content_generation_allowed": false
       },
       {
@@ -6572,7 +7292,7 @@
           "emotional_bonds",
           "techniques"
         ],
-        "retrieval_text": "techniques | 完美世界 | full_corpus_book_review | formal | promoted | characters, emotional_bonds, techniques",
+        "retrieval_text": "techniques | 完美世界 | full_corpus_book_review | legacy_unverified | legacy_candidate | characters, emotional_bonds, techniques",
         "content_generation_allowed": false
       },
       {
@@ -6590,7 +7310,7 @@
           "techniques",
           "naming"
         ],
-        "retrieval_text": "techniques | 斗破苍穹 | full_corpus_book_review | formal | promoted | npcs, techniques, naming",
+        "retrieval_text": "techniques | 斗破苍穹 | full_corpus_book_review | legacy_unverified | legacy_candidate | npcs, techniques, naming",
         "content_generation_allowed": false
       },
       {
@@ -6608,7 +7328,7 @@
           "factions",
           "techniques"
         ],
-        "retrieval_text": "techniques | 武动乾坤 | full_corpus_book_review | formal | promoted | artifacts, factions, techniques",
+        "retrieval_text": "techniques | 武动乾坤 | full_corpus_book_review | legacy_unverified | legacy_candidate | artifacts, factions, techniques",
         "content_generation_allowed": false
       },
       {
@@ -6626,7 +7346,7 @@
           "artifacts",
           "factions"
         ],
-        "retrieval_text": "techniques | 永生 | full_corpus_book_review | formal | promoted | techniques, artifacts, factions",
+        "retrieval_text": "techniques | 永生 | full_corpus_book_review | legacy_unverified | legacy_candidate | techniques, artifacts, factions",
         "content_generation_allowed": false
       },
       {
@@ -6644,7 +7364,7 @@
           "characters",
           "factions"
         ],
-        "retrieval_text": "techniques | 蛊真人 | full_corpus_book_review | formal | promoted | techniques, characters, factions",
+        "retrieval_text": "techniques | 蛊真人 | full_corpus_book_review | legacy_unverified | legacy_candidate | techniques, characters, factions",
         "content_generation_allowed": false
       },
       {
@@ -6661,7 +7381,7 @@
           "techniques",
           "创作资产证据"
         ],
-        "retrieval_text": "techniques | techniques | creation_family_evidence | covered | promoted | techniques, 创作资产证据",
+        "retrieval_text": "techniques | techniques | creation_family_evidence | covered | legacy_candidate | techniques, 创作资产证据",
         "content_generation_allowed": false
       },
       {
@@ -6677,7 +7397,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "techniques | CB-M1 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "techniques | CB-M1 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -6693,7 +7413,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "techniques | CB-M10 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "techniques | CB-M10 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -6709,7 +7429,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "techniques | CB-M11 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "techniques | CB-M11 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -6725,7 +7445,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "techniques | CB-M12 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "techniques | CB-M12 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -6741,7 +7461,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "techniques | CB-M2 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "techniques | CB-M2 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -6757,7 +7477,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "techniques | CB-M3 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "techniques | CB-M3 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       },
       {
@@ -6773,7 +7493,7 @@
         "categories": [
           "跨书机制蒸馏"
         ],
-        "retrieval_text": "techniques | CB-M4 | cross_book_mechanism | formal | promoted | 跨书机制蒸馏",
+        "retrieval_text": "techniques | CB-M4 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
         "content_generation_allowed": false
       }
     ],
@@ -6808,6 +7528,7 @@
     "project": "《借天改命账》",
     "checks": {
       "research_review_promoted": true,
+      "verifiable_deep_reading_complete": true,
       "creation_store_valid": true,
       "all_creation_families_seeded": true,
       "evidence_packs_valid": true,
@@ -6833,14 +7554,14 @@
     },
     "creation_families": {
       "characters": 2,
-      "npcs": 2,
-      "factions": 2,
-      "artifacts": 2,
-      "techniques": 4,
-      "naming": 2,
-      "emotional_bonds": 2,
-      "foreshadowing": 2,
-      "state_ledger": 2
+      "npcs": 7,
+      "factions": 4,
+      "artifacts": 3,
+      "techniques": 6,
+      "naming": 3,
+      "emotional_bonds": 3,
+      "foreshadowing": 3,
+      "state_ledger": 12
     },
     "hermes": {
       "declared_mode": "cli_bridge",
@@ -6855,6 +7576,265 @@
       "read_raw_novel_training_set",
       "execute_hermes",
       "generate_final_creation_assets"
+    ]
+  },
+  "chapter_runtime": {
+    "version": "0.21",
+    "readiness": {
+      "version": "0.21",
+      "status": "ready_for_bounded_chapter_runtime",
+      "ready": true,
+      "bounded_intent_ready": true,
+      "checks": {
+        "deep_read_verified": true,
+        "project_reconciliation_accepted": true,
+        "project_reconciliation_applied": true,
+        "creation_assets_valid": true,
+        "canonical_inputs_locked": true,
+        "chapter_runtime_contract_ready": true,
+        "bounded_intent_authorized": true,
+        "bounded_prose_authorized": true
+      },
+      "canonical_inputs": [
+        {
+          "path": "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md",
+          "exists": true,
+          "sha256": "81575478a441852f18d451e9967245bbfce11d60cddd3af24e9b6565955e0604"
+        },
+        {
+          "path": "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md",
+          "exists": true,
+          "sha256": "1f12fe8ad3262876eb533d40c94ad02abb90b95b38de387d339917fce9184648"
+        },
+        {
+          "path": "system/creation_assets/project_assets.v0.2.json",
+          "exists": true,
+          "sha256": "90dbcf17d769e8a985fc87880a4382018c30133a2a53f82c3826636c8ed1dc61"
+        }
+      ],
+      "schema_checks": [
+        {
+          "path": "system/production_runtime/schemas/chapter_intent.schema.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "path": "system/production_runtime/schemas/chapter_observation.schema.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "path": "system/production_runtime/schemas/chapter_settlement.schema.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "path": "system/production_runtime/schemas/chapter_registry.schema.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "path": "system/production_runtime/schemas/continuity_audit.schema.json",
+          "valid": true,
+          "error": null
+        }
+      ],
+      "stage_order": [
+        "chapter_intent",
+        "context_compiled",
+        "draft_generated",
+        "continuity_audited",
+        "revision_generated",
+        "final_observed",
+        "final_audited",
+        "state_settled",
+        "chapter_accepted"
+      ],
+      "blocked_actions": [],
+      "next_action": "Create a bounded Chapter 1 intent."
+    },
+    "registry_path": "system/production_runtime/chapter_registry.v0.20.json",
+    "chapter_count": 7,
+    "chapters": [
+      {
+        "chapter_id": "chapter-0001",
+        "stage": "chapter_accepted",
+        "artifacts": {
+          "intent": "system/production_runtime/chapters/chapter-0001/intent.json",
+          "context": "system/production_runtime/chapters/chapter-0001/context.json",
+          "rule_stack": "system/production_runtime/chapters/chapter-0001/rule_stack.json",
+          "trace": "system/production_runtime/chapters/chapter-0001/trace.json",
+          "draft": "system/production_runtime/chapters/chapter-0001/draft.md",
+          "draft_metrics": "system/production_runtime/chapters/chapter-0001/draft.metrics.json",
+          "observation": "system/production_runtime/chapters/chapter-0001/observation.json",
+          "continuity_audit": "system/production_runtime/chapters/chapter-0001/continuity_audit.json",
+          "revision": "system/production_runtime/chapters/chapter-0001/revision.md",
+          "revision_metrics": "system/production_runtime/chapters/chapter-0001/revision.metrics.json",
+          "revision_audit": "system/production_runtime/chapters/chapter-0001/revision_audit.json",
+          "settlement": "system/production_runtime/chapters/chapter-0001/settlement.json",
+          "acceptance": "system/production_runtime/chapters/chapter-0001/acceptance.json"
+        },
+        "source_hashes": {
+          "borrowed_heaven_life_account_bible": "81575478a441852f18d451e9967245bbfce11d60cddd3af24e9b6565955e0604",
+          "borrowed_heaven_volume1_outline_tree": "1f12fe8ad3262876eb533d40c94ad02abb90b95b38de387d339917fce9184648",
+          "project_assets.v0.2": "415ea1feba1376df7ebca6334e494db28b1b034e27a787c495a6e50d31b1bc98"
+        }
+      },
+      {
+        "chapter_id": "chapter-0002",
+        "stage": "chapter_accepted",
+        "artifacts": {
+          "intent": "system/production_runtime/chapters/chapter-0002/intent.json",
+          "context": "system/production_runtime/chapters/chapter-0002/context.json",
+          "rule_stack": "system/production_runtime/chapters/chapter-0002/rule_stack.json",
+          "trace": "system/production_runtime/chapters/chapter-0002/trace.json",
+          "draft": "system/production_runtime/chapters/chapter-0002/draft.md",
+          "draft_metrics": "system/production_runtime/chapters/chapter-0002/draft.metrics.json",
+          "observation": "system/production_runtime/chapters/chapter-0002/observation.json",
+          "continuity_audit": "system/production_runtime/chapters/chapter-0002/continuity_audit.json",
+          "revision": "system/production_runtime/chapters/chapter-0002/revision.md",
+          "revision_metrics": "system/production_runtime/chapters/chapter-0002/revision.metrics.json",
+          "revision_audit": "system/production_runtime/chapters/chapter-0002/revision_audit.json",
+          "settlement": "system/production_runtime/chapters/chapter-0002/settlement.json",
+          "acceptance": "system/production_runtime/chapters/chapter-0002/acceptance.json"
+        },
+        "source_hashes": {
+          "borrowed_heaven_life_account_bible": "81575478a441852f18d451e9967245bbfce11d60cddd3af24e9b6565955e0604",
+          "borrowed_heaven_volume1_outline_tree": "1f12fe8ad3262876eb533d40c94ad02abb90b95b38de387d339917fce9184648",
+          "project_assets.v0.2": "90dbcf17d769e8a985fc87880a4382018c30133a2a53f82c3826636c8ed1dc61"
+        }
+      },
+      {
+        "chapter_id": "chapter-0003",
+        "stage": "chapter_accepted",
+        "artifacts": {
+          "intent": "system/production_runtime/chapters/chapter-0003/intent.json",
+          "context": "system/production_runtime/chapters/chapter-0003/context.json",
+          "rule_stack": "system/production_runtime/chapters/chapter-0003/rule_stack.json",
+          "trace": "system/production_runtime/chapters/chapter-0003/trace.json",
+          "draft": "system/production_runtime/chapters/chapter-0003/draft.md",
+          "draft_metrics": "system/production_runtime/chapters/chapter-0003/draft.metrics.json",
+          "observation": "system/production_runtime/chapters/chapter-0003/observation.json",
+          "continuity_audit": "system/production_runtime/chapters/chapter-0003/continuity_audit.json",
+          "revision": "system/production_runtime/chapters/chapter-0003/revision.md",
+          "revision_metrics": "system/production_runtime/chapters/chapter-0003/revision.metrics.json",
+          "revision_audit": "system/production_runtime/chapters/chapter-0003/revision_audit.json",
+          "settlement": "system/production_runtime/chapters/chapter-0003/settlement.json",
+          "acceptance": "system/production_runtime/chapters/chapter-0003/acceptance.json"
+        },
+        "source_hashes": {
+          "borrowed_heaven_life_account_bible": "81575478a441852f18d451e9967245bbfce11d60cddd3af24e9b6565955e0604",
+          "borrowed_heaven_volume1_outline_tree": "1f12fe8ad3262876eb533d40c94ad02abb90b95b38de387d339917fce9184648",
+          "project_assets.v0.2": "90dbcf17d769e8a985fc87880a4382018c30133a2a53f82c3826636c8ed1dc61"
+        }
+      },
+      {
+        "chapter_id": "chapter-0004",
+        "stage": "chapter_accepted",
+        "artifacts": {
+          "intent": "system/production_runtime/chapters/chapter-0004/intent.json",
+          "context": "system/production_runtime/chapters/chapter-0004/context.json",
+          "rule_stack": "system/production_runtime/chapters/chapter-0004/rule_stack.json",
+          "trace": "system/production_runtime/chapters/chapter-0004/trace.json",
+          "draft": "system/production_runtime/chapters/chapter-0004/draft.md",
+          "draft_metrics": "system/production_runtime/chapters/chapter-0004/draft.metrics.json",
+          "observation": "system/production_runtime/chapters/chapter-0004/observation.json",
+          "continuity_audit": "system/production_runtime/chapters/chapter-0004/continuity_audit.json",
+          "revision": "system/production_runtime/chapters/chapter-0004/revision.md",
+          "revision_metrics": "system/production_runtime/chapters/chapter-0004/revision.metrics.json",
+          "revision_audit": "system/production_runtime/chapters/chapter-0004/revision_audit.json",
+          "settlement": "system/production_runtime/chapters/chapter-0004/settlement.json",
+          "acceptance": "system/production_runtime/chapters/chapter-0004/acceptance.json"
+        },
+        "source_hashes": {
+          "borrowed_heaven_life_account_bible": "81575478a441852f18d451e9967245bbfce11d60cddd3af24e9b6565955e0604",
+          "borrowed_heaven_volume1_outline_tree": "1f12fe8ad3262876eb533d40c94ad02abb90b95b38de387d339917fce9184648",
+          "project_assets.v0.2": "90dbcf17d769e8a985fc87880a4382018c30133a2a53f82c3826636c8ed1dc61"
+        }
+      },
+      {
+        "chapter_id": "chapter-0005",
+        "stage": "chapter_accepted",
+        "artifacts": {
+          "intent": "system/production_runtime/chapters/chapter-0005/intent.json",
+          "context": "system/production_runtime/chapters/chapter-0005/context.json",
+          "rule_stack": "system/production_runtime/chapters/chapter-0005/rule_stack.json",
+          "trace": "system/production_runtime/chapters/chapter-0005/trace.json",
+          "draft": "system/production_runtime/chapters/chapter-0005/draft.md",
+          "draft_metrics": "system/production_runtime/chapters/chapter-0005/draft.metrics.json",
+          "observation": "system/production_runtime/chapters/chapter-0005/observation.json",
+          "continuity_audit": "system/production_runtime/chapters/chapter-0005/continuity_audit.json",
+          "revision": "system/production_runtime/chapters/chapter-0005/revision.md",
+          "revision_metrics": "system/production_runtime/chapters/chapter-0005/revision.metrics.json",
+          "revision_audit": "system/production_runtime/chapters/chapter-0005/revision_audit.json",
+          "settlement": "system/production_runtime/chapters/chapter-0005/settlement.json",
+          "acceptance": "system/production_runtime/chapters/chapter-0005/acceptance.json"
+        },
+        "source_hashes": {
+          "borrowed_heaven_life_account_bible": "81575478a441852f18d451e9967245bbfce11d60cddd3af24e9b6565955e0604",
+          "borrowed_heaven_volume1_outline_tree": "1f12fe8ad3262876eb533d40c94ad02abb90b95b38de387d339917fce9184648",
+          "project_assets.v0.2": "90dbcf17d769e8a985fc87880a4382018c30133a2a53f82c3826636c8ed1dc61"
+        }
+      },
+      {
+        "chapter_id": "chapter-0006",
+        "stage": "chapter_accepted",
+        "artifacts": {
+          "intent": "system/production_runtime/chapters/chapter-0006/intent.json",
+          "context": "system/production_runtime/chapters/chapter-0006/context.json",
+          "rule_stack": "system/production_runtime/chapters/chapter-0006/rule_stack.json",
+          "trace": "system/production_runtime/chapters/chapter-0006/trace.json",
+          "draft": "system/production_runtime/chapters/chapter-0006/draft.md",
+          "draft_metrics": "system/production_runtime/chapters/chapter-0006/draft.metrics.json",
+          "observation": "system/production_runtime/chapters/chapter-0006/observation.json",
+          "continuity_audit": "system/production_runtime/chapters/chapter-0006/continuity_audit.json",
+          "revision": "system/production_runtime/chapters/chapter-0006/revision.md",
+          "revision_metrics": "system/production_runtime/chapters/chapter-0006/revision.metrics.json",
+          "revision_audit": "system/production_runtime/chapters/chapter-0006/revision_audit.json",
+          "settlement": "system/production_runtime/chapters/chapter-0006/settlement.json",
+          "acceptance": "system/production_runtime/chapters/chapter-0006/acceptance.json"
+        },
+        "source_hashes": {
+          "borrowed_heaven_life_account_bible": "81575478a441852f18d451e9967245bbfce11d60cddd3af24e9b6565955e0604",
+          "borrowed_heaven_volume1_outline_tree": "1f12fe8ad3262876eb533d40c94ad02abb90b95b38de387d339917fce9184648",
+          "project_assets.v0.2": "90dbcf17d769e8a985fc87880a4382018c30133a2a53f82c3826636c8ed1dc61"
+        }
+      },
+      {
+        "chapter_id": "chapter-0007",
+        "stage": "chapter_accepted",
+        "artifacts": {
+          "intent": "system/production_runtime/chapters/chapter-0007/intent.json",
+          "context": "system/production_runtime/chapters/chapter-0007/context.json",
+          "rule_stack": "system/production_runtime/chapters/chapter-0007/rule_stack.json",
+          "trace": "system/production_runtime/chapters/chapter-0007/trace.json",
+          "draft": "system/production_runtime/chapters/chapter-0007/draft.md",
+          "draft_metrics": "system/production_runtime/chapters/chapter-0007/draft.metrics.json",
+          "observation": "system/production_runtime/chapters/chapter-0007/observation.json",
+          "continuity_audit": "system/production_runtime/chapters/chapter-0007/continuity_audit.json",
+          "revision": "system/production_runtime/chapters/chapter-0007/revision.md",
+          "revision_metrics": "system/production_runtime/chapters/chapter-0007/revision.metrics.json",
+          "final_audit": "system/production_runtime/chapters/chapter-0007/final_audit.json",
+          "settlement": "system/production_runtime/chapters/chapter-0007/settlement.json",
+          "acceptance": "system/production_runtime/chapters/chapter-0007/acceptance.json"
+        },
+        "source_hashes": {
+          "borrowed_heaven_life_account_bible": "81575478a441852f18d451e9967245bbfce11d60cddd3af24e9b6565955e0604",
+          "borrowed_heaven_volume1_outline_tree": "1f12fe8ad3262876eb533d40c94ad02abb90b95b38de387d339917fce9184648",
+          "project_assets.v0.2": "90dbcf17d769e8a985fc87880a4382018c30133a2a53f82c3826636c8ed1dc61"
+        }
+      }
+    ],
+    "stage_order": [
+      "chapter_intent",
+      "context_compiled",
+      "draft_generated",
+      "continuity_audited",
+      "revision_generated",
+      "final_observed",
+      "final_audited",
+      "state_settled",
+      "chapter_accepted"
     ]
   },
   "system_identity": {
@@ -6909,7 +7889,7 @@
         "status": "ready",
         "display_status": "Hermes: ready",
         "mode": "cli_bridge",
-        "can_execute": true,
+        "can_execute": false,
         "role": "paused, not removed; later writer / literary enrichment after explicit authorization"
       },
       {
@@ -7092,7 +8072,7 @@
         "known_support": [
           "The world premise implies many NPC classes.",
           "Studio v0.1 identifies NPC coverage as missing.",
-          "Project asset store contains 2 schema-bound seed asset(s)."
+          "Project asset store contains 7 schema-bound seed asset(s)."
         ],
         "missing_capabilities": [
           "NPC class taxonomy",
@@ -7109,7 +8089,7 @@
           "generate final NPC sheets",
           "write NPC dialogue scenes"
         ],
-        "project_asset_count": 2
+        "project_asset_count": 7
       },
       {
         "asset_id": "factions",
@@ -7136,7 +8116,7 @@
           "generate final faction dossiers",
           "advance faction plotlines"
         ],
-        "project_asset_count": 2
+        "project_asset_count": 4
       },
       {
         "asset_id": "artifacts",
@@ -7163,7 +8143,7 @@
           "generate final item catalog",
           "write artifact reveal scenes"
         ],
-        "project_asset_count": 2
+        "project_asset_count": 3
       },
       {
         "asset_id": "techniques",
@@ -7192,7 +8172,7 @@
           "generate final technique tree",
           "write combat scenes"
         ],
-        "project_asset_count": 4
+        "project_asset_count": 6
       },
       {
         "asset_id": "naming",
@@ -7203,7 +8183,7 @@
         "known_support": [
           "Studio v0.1 identifies naming coverage as missing.",
           "The current project has a strong account/life/debt semantic field that can later seed naming rules.",
-          "Project asset store contains 2 schema-bound seed asset(s)."
+          "Project asset store contains 3 schema-bound seed asset(s)."
         ],
         "missing_capabilities": [
           "root word taxonomy",
@@ -7220,7 +8200,7 @@
           "generate final naming dictionary",
           "rename existing content artifacts"
         ],
-        "project_asset_count": 2
+        "project_asset_count": 3
       },
       {
         "asset_id": "emotional_bonds",
@@ -7247,7 +8227,7 @@
           "write emotional prose",
           "generate full relationship arcs"
         ],
-        "project_asset_count": 2
+        "project_asset_count": 3
       },
       {
         "asset_id": "foreshadowing",
@@ -7274,7 +8254,7 @@
           "add new plot hooks",
           "write reveal scenes"
         ],
-        "project_asset_count": 2
+        "project_asset_count": 3
       },
       {
         "asset_id": "state_ledger",
@@ -7301,7 +8281,7 @@
           "invent chapter-by-chapter events",
           "advance content state"
         ],
-        "project_asset_count": 2
+        "project_asset_count": 12
       }
     ],
     "coverage_summary": {
@@ -7353,7 +8333,7 @@
       },
       "hermes": {
         "mode": "cli_bridge",
-        "can_execute": true
+        "can_execute": false
       },
       "antigravity": {
         "mode": "cli_bridge",

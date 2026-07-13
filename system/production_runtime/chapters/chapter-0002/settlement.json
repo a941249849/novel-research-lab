@@ -1,0 +1,95 @@
+{
+  "chapter_id": "chapter-0002",
+  "accepted_revision_sha256": "356320d82944a61555f663908889d71d0afff3c35b5fa3c0ede592ef0ecfaeaf",
+  "state_deltas": [
+    {
+      "fact_id": "chapter-0002-npc-registrar-qiu-shen-001",
+      "asset_id": "npc_registrar_qiu_shen",
+      "field_path": "npc.local_review_decision",
+      "before": "顾家的折记暂缓，午后再核",
+      "after": "顾家折记继续暂缓，三日内再次复核",
+      "operation": "set"
+    },
+    {
+      "fact_id": "chapter-0002-faction-life-registry-office-001",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_local_enforcement_phase",
+      "before": "寿籍司完成本次到巷核验并离开，顾家复核被排至午后",
+      "after": "完成顾家午后复核并留存本地复核附录，顾家折记维持暂缓",
+      "operation": "set"
+    },
+    {
+      "fact_id": "chapter-0002-faction-life-registry-office-002",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.procedural_observation_of_lu_chenyuan",
+      "before": null,
+      "after": "陆沉渊被要求往后残籍复核在场；传核缺席按拒验记",
+      "operation": "set"
+    },
+    {
+      "fact_id": "chapter-0002-technique-ledger-recognition-001",
+      "asset_id": "technique_ledger_recognition",
+      "field_path": "technique.current_local_ash_trace_observation",
+      "before": "识别出顾家“折三”补墨处的灰痕与顾婶命灯寿痕不属同源，属本地账目错位线索",
+      "after": "在顾家户灯寿纹、折册补墨灰痕及莫井兰守灯见证相互比对下，形成“补墨灰痕与户灯寿纹错位”的本地复核附录内容",
+      "operation": "set"
+    },
+    {
+      "fact_id": "chapter-0002-relationship-mudlamp-lane-trust-001",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_witness_commitment",
+      "before": null,
+      "after": "莫井兰以可撤回口述作证，拒绝献灯或抵命；顾婶以自身所见备录",
+      "operation": "set"
+    },
+    {
+      "fact_id": "chapter-0002-information-revealed-account-errors-001",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_local_evidence_status",
+      "before": "顾家“折三”补墨与顾婶命灯寿痕不属同源，属本地账目错位线索",
+      "after": "错位线索被记为本地复核附录，但不作为改账依据",
+      "operation": "set"
+    },
+    {
+      "fact_id": "chapter-0002-hook-cinder-seal-rain-001",
+      "asset_id": "foreshadowing_cinder_seal_rain",
+      "field_path": "foreshadowing.current_manifestation",
+      "before": "灰雨落在陆沉渊与顾婶皮肤上，形成暗红骨上印痕，并使旧阵纹残暖缩小",
+      "after": "灰粒再次落在苏晚失温的手背，留下针尖大的红点",
+      "operation": "set"
+    },
+    {
+      "fact_id": "chapter-0002-timeline-local-enforcement-001",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.next_local_review_schedule",
+      "before": null,
+      "after": "顾家折记三日内再次复核",
+      "operation": "set"
+    },
+    {
+      "fact_id": "chapter-0002-physical-state-protagonist-strain-001",
+      "asset_id": "state_ledger_protagonist_strain",
+      "field_path": "state_ledger.eye_pattern_burn",
+      "before": "眼角焦黑细纹因辨认册页灰痕而加重至无法遮掩",
+      "after": "识账后焦黑纹路自眼尾向下爬，眼角皮肤焦裂并蹭下黑屑",
+      "operation": "set"
+    },
+    {
+      "fact_id": "chapter-0002-physical-state-protagonist-strain-002",
+      "asset_id": "state_ledger_protagonist_strain",
+      "field_path": "state_ledger.cold_ash_cough_frequency",
+      "before": null,
+      "after": "识账后当场咳出一小片冷灰",
+      "operation": "set"
+    },
+    {
+      "fact_id": "chapter-0002-physical-state-registry-exposure-001",
+      "asset_id": "state_ledger_half_life_registry_exposure",
+      "field_path": "state_ledger.registry_locking_sign",
+      "before": null,
+      "after": "陆沉渊咳出的灰已被衙印沾认，成为传核与拒验记的程序性锁定迹象",
+      "operation": "set"
+    }
+  ],
+  "resolved_audit_ids": []
+}

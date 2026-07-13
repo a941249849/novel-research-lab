@@ -2,10 +2,11 @@
   "version": "0.8",
   "mode": "cli",
   "binary_path": "/Users/liuneng/.local/bin/agy",
-  "request_file": "system/agent_ops/packets/antigravity-volume1-assets-audit-v017.md",
-  "output_file": "system/agent_ops/inbox/antigravity-volume1-assets-audit-v017.md",
+  "request_file": ".agent-handoff/antigravity/requests/nrl-v021-direct-writer-calibration-routing-decision.md",
+  "output_file": ".agent-handoff/antigravity/responses/nrl-v021-direct-writer-calibration-routing-decision-opus.md",
   "returncode": 0,
-  "started_at": "2026-07-10T23:48:20+08:00",
-  "finished_at": "2026-07-10T23:49:38+08:00",
+  "model": "Claude Opus 4.6 (Thinking)",
+  "started_at": "2026-07-13T22:22:43+08:00",
+  "finished_at": "2026-07-13T22:23:37+08:00",
   "bridge_log_path": "system/agent_ops/antigravity_bridge_last_run.v0.8.json"
 }

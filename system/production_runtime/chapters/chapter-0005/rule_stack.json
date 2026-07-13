@@ -1,0 +1,40 @@
+{
+  "version": "0.22",
+  "chapter_id": "chapter-0005",
+  "canonical_baseline": {
+    "path": "system/creation_assets/baselines/borrowed_heaven_canonical_baseline_v0.22.json",
+    "version": "0.22",
+    "sha256": "402c923d3dbc19bcccc353856a605388170ab3d1410550b8fb2620e48fa8ea27"
+  },
+  "priority_order": [
+    "safety_and_originality",
+    "canonical_story_bible",
+    "volume_outline",
+    "accepted_state_settlements",
+    "creation_asset_constraints",
+    "chapter_must_keep_and_must_avoid",
+    "anti_ai_style_evidence"
+  ],
+  "hard_rules": [
+    "no source-work names, scenes, signature systems, or prose imitation",
+    "no untracked power, relationship, location, item, or timeline changes",
+    "all benefits carry an embodied, relational, or systemic cost",
+    "reader-facing prose contains no runtime or database vocabulary",
+    "不得引入未登记人物、势力、器物、地点或能力。",
+    "不得以共同体信任、孩童命火、住户命火或第三方寿火作为可消耗资源。",
+    "不得进行公开审判、高阶斗法、永久清偿或越级胜利。",
+    "不得把审查建议、推测或未观察事实写成状态变化。"
+  ],
+  "chapter_rules": [
+    "陆沉渊仍处于燃命境初成，只能使用普通识账与本地灰痕辨认。",
+    "残命灯盏不得取得、唤醒、持有、激活或使用。",
+    "州府命库只可作为远端压力，不得出现全貌、人物交锋或地图展开。",
+    "不能把程序漏洞直接等同于完整真相；必须留下追查后果。"
+  ],
+  "scene_constraints": [
+    "舞台限于贫城、泥灯巷与命籍衙的本地压力范围。",
+    "每项收益都必须能在后续观察中绑定返还对象、承担方与可观察后果。",
+    "每次识账都必须带来可见代价或程序性暴露。",
+    "结尾只推进到下一次本地程序追缴或监督，不得换图。"
+  ]
+}

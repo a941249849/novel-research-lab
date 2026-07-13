@@ -1,0 +1,301 @@
+{
+  "version": "0.1",
+  "mode": "no-prose protocol verification",
+  "started_at": "2026-07-13T09:43:17.980624+00:00",
+  "hermes": [
+    {
+      "case_id": "protocol-01",
+      "valid": true,
+      "selected_model": "gpt-5.6-terra",
+      "attempts": [
+        {
+          "model": "gpt-5.6-terra",
+          "valid": true,
+          "payload": {
+            "protocol_version": "0.1",
+            "agent": "hermes",
+            "case_id": "protocol-01",
+            "status": "ok",
+            "no_prose": true
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "protocol-02",
+      "valid": true,
+      "selected_model": "gpt-5.6-terra",
+      "attempts": [
+        {
+          "model": "gpt-5.6-terra",
+          "valid": true,
+          "payload": {
+            "protocol_version": "0.1",
+            "agent": "hermes",
+            "case_id": "protocol-02",
+            "status": "ok",
+            "no_prose": true
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "protocol-03",
+      "valid": true,
+      "selected_model": "gpt-5.6-terra",
+      "attempts": [
+        {
+          "model": "gpt-5.6-terra",
+          "valid": true,
+          "payload": {
+            "protocol_version": "0.1",
+            "agent": "hermes",
+            "case_id": "protocol-03",
+            "status": "ok",
+            "no_prose": true
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "protocol-04",
+      "valid": true,
+      "selected_model": "gpt-5.6-terra",
+      "attempts": [
+        {
+          "model": "gpt-5.6-terra",
+          "valid": true,
+          "payload": {
+            "protocol_version": "0.1",
+            "agent": "hermes",
+            "case_id": "protocol-04",
+            "status": "ok",
+            "no_prose": true
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "protocol-05",
+      "valid": true,
+      "selected_model": "gpt-5.6-terra",
+      "attempts": [
+        {
+          "model": "gpt-5.6-terra",
+          "valid": true,
+          "payload": {
+            "protocol_version": "0.1",
+            "agent": "hermes",
+            "case_id": "protocol-05",
+            "status": "ok",
+            "no_prose": true
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "protocol-06",
+      "valid": true,
+      "selected_model": "gpt-5.6-terra",
+      "attempts": [
+        {
+          "model": "gpt-5.6-terra",
+          "valid": true,
+          "payload": {
+            "protocol_version": "0.1",
+            "agent": "hermes",
+            "case_id": "protocol-06",
+            "status": "ok",
+            "no_prose": true
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "protocol-07",
+      "valid": true,
+      "selected_model": "gpt-5.6-terra",
+      "attempts": [
+        {
+          "model": "gpt-5.6-terra",
+          "valid": true,
+          "payload": {
+            "protocol_version": "0.1",
+            "agent": "hermes",
+            "case_id": "protocol-07",
+            "status": "ok",
+            "no_prose": true
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "protocol-08",
+      "valid": true,
+      "selected_model": "gpt-5.6-terra",
+      "attempts": [
+        {
+          "model": "gpt-5.6-terra",
+          "valid": true,
+          "payload": {
+            "protocol_version": "0.1",
+            "agent": "hermes",
+            "case_id": "protocol-08",
+            "status": "ok",
+            "no_prose": true
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "protocol-09",
+      "valid": true,
+      "selected_model": "gpt-5.6-terra",
+      "attempts": [
+        {
+          "model": "gpt-5.6-terra",
+          "valid": true,
+          "payload": {
+            "protocol_version": "0.1",
+            "agent": "hermes",
+            "case_id": "protocol-09",
+            "status": "ok",
+            "no_prose": true
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "protocol-10",
+      "valid": true,
+      "selected_model": "gpt-5.6-terra",
+      "attempts": [
+        {
+          "model": "gpt-5.6-terra",
+          "valid": true,
+          "payload": {
+            "protocol_version": "0.1",
+            "agent": "hermes",
+            "case_id": "protocol-10",
+            "status": "ok",
+            "no_prose": true
+          }
+        }
+      ]
+    }
+  ],
+  "antigravity": [
+    {
+      "case_id": "protocol-01",
+      "valid": true,
+      "payload": {
+        "protocol_version": "0.1",
+        "agent": "antigravity",
+        "case_id": "protocol-01",
+        "status": "ok",
+        "no_prose": true
+      }
+    },
+    {
+      "case_id": "protocol-02",
+      "valid": true,
+      "payload": {
+        "protocol_version": "0.1",
+        "agent": "antigravity",
+        "case_id": "protocol-02",
+        "status": "ok",
+        "no_prose": true
+      }
+    },
+    {
+      "case_id": "protocol-03",
+      "valid": true,
+      "payload": {
+        "protocol_version": "0.1",
+        "agent": "antigravity",
+        "case_id": "protocol-03",
+        "status": "ok",
+        "no_prose": true
+      }
+    },
+    {
+      "case_id": "protocol-04",
+      "valid": true,
+      "payload": {
+        "protocol_version": "0.1",
+        "agent": "antigravity",
+        "case_id": "protocol-04",
+        "status": "ok",
+        "no_prose": true
+      }
+    },
+    {
+      "case_id": "protocol-05",
+      "valid": true,
+      "payload": {
+        "protocol_version": "0.1",
+        "agent": "antigravity",
+        "case_id": "protocol-05",
+        "status": "ok",
+        "no_prose": true
+      }
+    },
+    {
+      "case_id": "protocol-06",
+      "valid": true,
+      "payload": {
+        "protocol_version": "0.1",
+        "agent": "antigravity",
+        "case_id": "protocol-06",
+        "status": "ok",
+        "no_prose": true
+      }
+    },
+    {
+      "case_id": "protocol-07",
+      "valid": true,
+      "payload": {
+        "protocol_version": "0.1",
+        "agent": "antigravity",
+        "case_id": "protocol-07",
+        "status": "ok",
+        "no_prose": true
+      }
+    },
+    {
+      "case_id": "protocol-08",
+      "valid": true,
+      "payload": {
+        "protocol_version": "0.1",
+        "agent": "antigravity",
+        "case_id": "protocol-08",
+        "status": "ok",
+        "no_prose": true
+      }
+    },
+    {
+      "case_id": "protocol-09",
+      "valid": true,
+      "payload": {
+        "protocol_version": "0.1",
+        "agent": "antigravity",
+        "case_id": "protocol-09",
+        "status": "ok",
+        "no_prose": true
+      }
+    },
+    {
+      "case_id": "protocol-10",
+      "valid": true,
+      "payload": {
+        "protocol_version": "0.1",
+        "agent": "antigravity",
+        "case_id": "protocol-10",
+        "status": "ok",
+        "no_prose": true
+      }
+    }
+  ],
+  "finished_at": "2026-07-13T09:46:12.357236+00:00",
+  "valid": true
+}

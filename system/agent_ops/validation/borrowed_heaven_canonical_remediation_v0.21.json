@@ -1,0 +1,206 @@
+{
+  "manifest_version": "0.21",
+  "manifest_id": "borrowed-heaven-canonical-remediation-v0.21",
+  "project": "《借天改命账》",
+  "scope": "metadata_and_contract_corrections_only",
+  "status": "validated_with_prose_gates_remaining",
+  "input_files": [
+    {
+      "role": "canonical_remediation_plan",
+      "path": ".agent-handoff/antigravity/responses/nrl-v021-canonical-remediation-plan.md",
+      "sha256": "dd95a3d1fa11f5fe39144836e4d63287f367a8b3bf7e34e09bc5ea3a4e6528b7"
+    },
+    {
+      "role": "frozen_v020_asset_baseline",
+      "path": "system/creation_assets/baselines/borrowed_heaven_asset_baseline_v0.20.json",
+      "sha256": "86de6fee7103695e996532b9f16714d86e9f9623d74cad7a74726e1bb6176783"
+    },
+    {
+      "role": "v020_initial_review",
+      "path": ".agent-handoff/antigravity/responses/nrl-v020-asset-graph-review.md",
+      "sha256": "4b6ca639ae6bff78e1a8370903877122da7004caffdc534cfcabe034b94e0047"
+    },
+    {
+      "role": "v020_rereview",
+      "path": ".agent-handoff/antigravity/responses/nrl-v020-asset-graph-rereview.md",
+      "sha256": "9532b5f186bf0d31abbf424a71248df28e36cc21f8f121a64fc27a98f0ca3830"
+    },
+    {
+      "role": "v020_remediation_manifest",
+      "path": "system/agent_ops/validation/borrowed_heaven_asset_graph_remediation_v0.20.json",
+      "sha256": "126a3a938c308e7002ceb9589b3cc5d07618ec61e89673fc69ba67f2573de782"
+    }
+  ],
+  "canonical_preimages": [
+    {
+      "role": "pre_remediation_canonical_bible",
+      "path": "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md",
+      "sha256": "5cab7816be272af5c6a3794092c6387c9b09af521c245c2ce9a3f22f1c02c383"
+    },
+    {
+      "role": "pre_remediation_canonical_outline",
+      "path": "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md",
+      "sha256": "511b0ab58a48f2f553874075e5fa84be25a815bbf4578ad8a3ccf99a8ae1f48b"
+    },
+    {
+      "role": "pre_remediation_canonical_asset_store",
+      "path": "system/creation_assets/project_assets.v0.2.json",
+      "sha256": "87d128be710a53a2c999faa2bb955594bda047aa80c2a1090721ed4e1f188903"
+    }
+  ],
+  "output_files": [
+    {
+      "role": "remediated_canonical_bible",
+      "path": "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md",
+      "sha256": "81575478a441852f18d451e9967245bbfce11d60cddd3af24e9b6565955e0604"
+    },
+    {
+      "role": "remediated_canonical_outline",
+      "path": "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md",
+      "sha256": "1f12fe8ad3262876eb533d40c94ad02abb90b95b38de387d339917fce9184648"
+    },
+    {
+      "role": "remediated_canonical_asset_store",
+      "path": "system/creation_assets/project_assets.v0.2.json",
+      "sha256": "415ea1feba1376df7ebca6334e494db28b1b034e27a787c495a6e50d31b1bc98"
+    }
+  ],
+  "changed_semantics": [
+    {
+      "change_id": "lamp_acquisition_precedes_use",
+      "targets": [
+        "artifact_ashlight_cup",
+        "faction_mudlamp_lane"
+      ],
+      "result": "Arc Cluster 1 now records post-Chapter-1 acquisition from the Mudlamp Lane array base and consented watch-fire awakening as mandatory validated prerequisites for any Arc Cluster 2 use; Chapter 1 remains dormant."
+    },
+    {
+      "change_id": "empty_life_is_lock_not_boost",
+      "targets": [
+        "character_lu_chenyuan",
+        "state_ledger_protagonist_strain"
+      ],
+      "result": "Empty-life exclusively locks casting and cognition windows, preserves prepaid life-fire loss, grants no combat increase, and requires stopped casting plus external care for recovery."
+    },
+    {
+      "change_id": "cluster5_bounded_evidence_exchange",
+      "targets": [
+        "npc_cluster5_black_market_transaction_role",
+        "state_ledger_half_life_registry_exposure"
+      ],
+      "result": "The Cluster 5 contract accepts only a pre-registered protagonist-owned evidence or research record, atomically requests exactly +10 percentage points of bounded registry exposure, rejects child/resident/third-party life-fire, authorizes no scene, and retires the role immediately after exchange or refusal."
+    },
+    {
+      "change_id": "deferred_metrics_single_writer_atomic_ownership",
+      "targets": [
+        "state_ledger_public_reputation",
+        "state_ledger_faction_pressure",
+        "state_ledger_map_unlock_status",
+        "state_ledger_unresolved_mysteries",
+        "state_ledger_revealed_account_errors"
+      ],
+      "result": "All five deferred metrics are active ledgers promoted from seed, each with one machine-readable writer and atomic-only mutations requiring a transaction ID and independently owned peer-ledger consequence."
+    },
+    {
+      "change_id": "seed_provenance_sanitized_without_promotion",
+      "targets": [
+        "artifacts_project_contract_seed",
+        "characters_project_contract_seed",
+        "emotional_bonds_project_contract_seed",
+        "factions_project_contract_seed",
+        "foreshadowing_project_contract_seed",
+        "naming_project_contract_seed",
+        "npcs_project_contract_seed",
+        "state_ledger_project_contract_seed"
+      ],
+      "result": "Each named contract seed remains in the seed lifecycle and now references only the canonical Hermes Bible and Volume 1 Outline Tree."
+    },
+    {
+      "change_id": "active_asset_provenance_packet_bound",
+      "targets": [
+        "all_active_assets"
+      ],
+      "result": "Every active asset source reference is restricted to the canonical Hermes Bible and Volume 1 Outline Tree."
+    }
+  ],
+  "contract_assertions": [
+    "artifact_ashlight_cup, technique_embertrace_return, and technique_chain_deflection_seal_breaking remain dormant and are explicitly blocked in Chapter 1.",
+    "No active state-ledger tracking metric has more than one writer asset.",
+    "Every promoted deferred metric mutation is atomic-only and requires an independently owned peer-ledger consequence.",
+    "The Cluster 5 strict validator is deny-by-default and rejects child_lifefire, resident_lifefire, and third_party_lifefire.",
+    "The Cluster 5 exchange closes only when the protagonist-owned record debit, bounded route-information credit, and +10-point exposure consequence share one transaction ID.",
+    "All named project contract seeds remain seed and have canonical-only provenance."
+  ],
+  "remaining_prose_gates": [
+    {
+      "gate_id": "serial_prose_authorization",
+      "status": "blocked",
+      "condition": "A separate explicit Owner authorization is still required before any chapter prose or Hermes prose operation."
+    },
+    {
+      "gate_id": "chapter1_lamp_and_advanced_techniques",
+      "status": "blocked",
+      "condition": "Chapter 1 may not acquire, awaken, possess, practice, cast, or use artifact_ashlight_cup, technique_embertrace_return, or technique_chain_deflection_seal_breaking."
+    },
+    {
+      "gate_id": "cluster5_scene_or_role_expansion",
+      "status": "blocked",
+      "condition": "The transaction contract authorizes no scene, dialogue, name, backstory, affiliation, recurrence, or prose expansion."
+    },
+    {
+      "gate_id": "new_creative_canon",
+      "status": "blocked",
+      "condition": "No new location, faction, character identity, merchant history, or plot event is authorized by this remediation."
+    },
+    {
+      "gate_id": "chapter_drafts_and_dialogue",
+      "status": "blocked",
+      "condition": "Scenes, dialogue, chapter drafts, and detailed prose-level planning remain outside scope."
+    }
+  ],
+  "validation_results": [
+    {
+      "command": "python3 system/runtime/nrl.py validate-creation-assets",
+      "result": "PASS",
+      "details": "43 assets; 9 families; 0 errors"
+    },
+    {
+      "command": "python3 system/runtime/nrl.py validate-state",
+      "result": "PASS",
+      "details": "state_valid_against_schema=true"
+    },
+    {
+      "command": "python3 -m unittest tests/test_creation_asset_graph_v020.py",
+      "result": "PASS",
+      "details": "4 tests passed"
+    },
+    {
+      "command": "python3 -m unittest tests/test_production_runtime_gate.py",
+      "result": "PASS",
+      "details": "2 prose-gate tests passed"
+    },
+    {
+      "command": "jq semantic ownership/provenance/transaction/dormancy audit",
+      "result": "PASS",
+      "details": "all v0.21 contract assertions evaluated true"
+    },
+    {
+      "command": "awk empty-life combat-boost contradiction scan",
+      "result": "PASS",
+      "details": "no positive combat-boost reading remains in the canonical Bible or outline"
+    },
+    {
+      "command": "manifest SHA-256 verification against v0.20 source snapshots and current canonical outputs",
+      "result": "PASS",
+      "details": "5 immutable inputs, 3 canonical preimages, and 3 canonical outputs verified"
+    }
+  ],
+  "non_scope_check_observations": [
+    {
+      "command": "python3 -m unittest tests/test_creation_asset_graph_v020.py tests/test_control_plane_v02.py",
+      "result": "25_PASS_1_FAIL",
+      "failure": "test_hardening_status_does_not_promote_sampled_assets_as_deep_decomposition expected single_book_decomposition status missing but current unrelated runtime state reports data_ready",
+      "blocking_this_remediation": false
+    }
+  ]
+}

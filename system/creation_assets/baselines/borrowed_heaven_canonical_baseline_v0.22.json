@@ -1,0 +1,33 @@
+{
+  "version": "0.22",
+  "baseline_id": "borrowed-heaven-canonical-baseline-v022",
+  "project": "《借天改命账》",
+  "status": "frozen_for_bounded_chapter_runtime",
+  "predecessor_baseline": {
+    "path": "system/creation_assets/baselines/borrowed_heaven_canonical_baseline_v0.21.json",
+    "sha256": "a58bf7f8295a67da5a542017b0d6153d8de3ef5322391787277ba67fd239b5f5"
+  },
+  "canonical_inputs": [
+    {
+      "path": "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md",
+      "sha256": "81575478a441852f18d451e9967245bbfce11d60cddd3af24e9b6565955e0604"
+    },
+    {
+      "path": "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md",
+      "sha256": "1f12fe8ad3262876eb533d40c94ad02abb90b95b38de387d339917fce9184648"
+    },
+    {
+      "path": "system/creation_assets/project_assets.v0.2.json",
+      "sha256": "90dbcf17d769e8a985fc87880a4382018c30133a2a53f82c3826636c8ed1dc61",
+      "asset_count": 43
+    }
+  ],
+  "change_scope": "Baseline successor after producer idempotency repair. No new narrative asset, lifecycle transition, or chapter state is authorized by this baseline.",
+  "allowed_next_action": "Execute the explicitly authorized bounded Chapter 2 and Chapter 3 runtime only.",
+  "forbidden_actions": [
+    "chapter-0004-or-later prose",
+    "dormant asset activation",
+    "unbounded serial prose",
+    "raw corpus reads"
+  ]
+}

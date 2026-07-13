@@ -1,0 +1,164 @@
+{
+  "chapter_id": "chapter-0003",
+  "draft_sha256": "cb75a467d08b6e6c0b382b9e4a6bb53bb58a87ac4c386aa6eca633ddc1352022",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "chapter-0003-character-lu-chenyuan-001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_procedural_status",
+        "before": "被要求往后残籍复核在场；传核缺席按拒验记",
+        "after": "已签传核纸认定在场，并被要求明日辰时携顾家与守灯口述再来",
+        "evidence": "陆沉渊在传核纸上写下名字；仇慎随后命他明日辰时再来。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "chapter-0003-npc-registrar-qiu-shen-001",
+        "asset_id": "npc_registrar_qiu_shen",
+        "field_path": "npc.local_review_decision",
+        "before": "顾家折记继续暂缓，三日内再次复核",
+        "after": "顾家附录暂封，灰物由莫井兰暂带，三日内随顾家复核再验；苏晚验灯不熄",
+        "evidence": "仇慎放下印后明确作出封存附录、守灯人暂带灰物、三日内再验及验灯不熄的决定。"
+      },
+      {
+        "fact_id": "chapter-0003-npc-mo-jinglan-001",
+        "asset_id": "npc_mo_jinglan",
+        "field_path": "npc.current_custody_of_witness_material",
+        "before": null,
+        "after": "暂带顾家补墨灰屑陶片作为守灯见证物",
+        "evidence": "陆沉渊将陶片推到莫井兰手边，莫井兰将其塞进旧布夹层；仇慎准其暂带。"
+      },
+      {
+        "fact_id": "chapter-0003-npc-su-wan-001",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_local_lamp_assessment",
+        "before": "灰粒再次落在苏晚失温的手背，留下针尖大的红点",
+        "after": "验灯显示命灯失温、焰尖缩成细线，手背红点裂开并渗出暗冷光",
+        "evidence": "薄铜验灯在苏晚指骨上缩成细线；其手背红点裂开，渗出的不是血而是一点暗暗冷光。"
+      }
+    ],
+    "locations": [],
+    "factions": [
+      {
+        "fact_id": "chapter-0003-faction-life-registry-office-001",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_local_enforcement_phase",
+        "before": "完成顾家午后复核并留存本地复核附录，顾家折记维持暂缓",
+        "after": "顾家附录暂封并列入三日内再验，苏晚户灯旁证暂不作改账凭据",
+        "evidence": "仇慎宣布附录封存、三日内再验，并称苏晚户灯旁证暂不作改账凭据。"
+      },
+      {
+        "fact_id": "chapter-0003-faction-life-registry-office-002",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.next_local_review_schedule",
+        "before": "顾家折记三日内再次复核",
+        "after": "明日辰时顾家与守灯口述须到场，缺一人按拒验续记；灰物有损视同毁证",
+        "evidence": "仇慎规定明日辰时携顾家与守灯口述再来，并说明缺人及灰物受损的程序后果。"
+      }
+    ],
+    "artifacts": [],
+    "techniques": [
+      {
+        "fact_id": "chapter-0003-technique-ledger-recognition-001",
+        "asset_id": "technique_ledger_recognition",
+        "field_path": "technique.current_local_ash_trace_observation",
+        "before": "在顾家户灯寿纹、折册补墨灰痕及莫井兰守灯见证相互比对下，形成“补墨灰痕与户灯寿纹错位”的本地复核附录内容",
+        "after": "新落灰、顾婶验灯红痕与册角补墨灰痕之间存在半指宽冷灰空白；验灯红痕仅在靠近命籍衙印处留下完整一笔",
+        "evidence": "陆沉渊以识账只辨眼前灰痕，看见两边纹路中隔着无寿火的冷灰空白，并见验灯红痕靠近衙印处完整。"
+      }
+    ],
+    "relationships": [
+      {
+        "fact_id": "chapter-0003-relationship-mudlamp-lane-trust-001",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_witness_commitment",
+        "before": "莫井兰以可撤回口述作证，拒绝献灯或抵命；顾婶以自身所见备录",
+        "after": "顾婶同意莫井兰仅记录其所见；莫井兰确认灰与顾家户灯旧灰同味、补墨灰凉而无油且断纹相反，并保留不知来源的口述边界",
+        "evidence": "莫井兰先询问顾婶是否愿意代记，随后逐项说出可认灰痕，并明确“至于是谁落的，我不知道”。"
+      },
+      {
+        "fact_id": "chapter-0003-relationship-mother-su-wan-001",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_visibility_of_lu_chenyuan_backlash",
+        "before": "陆沉渊每次施术的反噬尚未被苏晚在本次复核中当场看见",
+        "after": "苏晚看见陆沉渊掌心的青白印和左眼下无法遮掩的焦黑裂纹",
+        "evidence": "正文明确写苏晚看见他掌心青白印和左眼下再也遮不住的焦黑裂纹。"
+      }
+    ],
+    "emotions": [],
+    "information": [
+      {
+        "fact_id": "chapter-0003-information-revealed-account-errors-001",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_local_evidence_status",
+        "before": "错位线索被记为本地复核附录，但不作为改账依据",
+        "after": "附录已并列保有冷灰、顾婶掌背红点及莫井兰限于所见的口述，仍未成为改账依据",
+        "evidence": "灰落在附录上，顾婶红点与莫井兰口述被要求记入；仇慎仍称户灯旁证暂不作改账凭据。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "chapter-0003-hook-cinder-seal-rain-001",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "foreshadowing.current_manifestation",
+        "before": "灰粒再次落在苏晚失温的手背，留下针尖大的红点",
+        "after": "灰雨落入命籍衙后院，并有一粒嵌进冷金小印缝里，随仇慎离开拖出暗红细线",
+        "evidence": "灰雨蒙住院内；结尾明确一粒灰嵌进冷金印缝，随仇慎转身拖出暗红线。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "chapter-0003-timeline-local-enforcement-001",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_local_enforcement_phase",
+        "before": "顾家折记继续暂缓，三日内再次复核",
+        "after": "午后复核结束，顾家附录及传核纸进入归档/封存程序，下一次本地监督定于明日辰时",
+        "evidence": "仇慎收走传核纸并宣布附录暂封，命明日辰时带顾家与守灯口述再来。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "chapter-0003-physical-state-protagonist-strain-001",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.eye_pattern_burn",
+        "before": "识账后焦黑纹路自眼尾向下爬，眼角皮肤焦裂并蹭下黑屑",
+        "after": "再次识账后左眼下焦纹裂至颧骨，签传核时又向下裂一寸并掉落黑屑",
+        "evidence": "识账后焦纹裂到颧骨；落笔签名时焦纹又往下裂一寸，黑屑掉在纸边。"
+      },
+      {
+        "fact_id": "chapter-0003-physical-state-protagonist-strain-002",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.bone_fissure_severity",
+        "before": null,
+        "after": "冷金小印擦过掌心后，掌骨深处发出细响，胸骨随呼吸摩擦出裂口感",
+        "evidence": "印面擦过掌心后掌骨如干木掰裂；其后陆沉渊听见胸骨裂口随呼吸摩擦。"
+      },
+      {
+        "fact_id": "chapter-0003-physical-state-protagonist-strain-003",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.cold_ash_cough_frequency",
+        "before": "识账后当场咳出一小片冷灰",
+        "after": "本次再次识账后先咳出冷灰盖住“未详”，随后又咳出一片冷灰沾住传核纸衙印",
+        "evidence": "陆沉渊识账后冷灰落在附录“未详”上；后又咳出冷灰，沾住传核纸边的衙印。"
+      },
+      {
+        "fact_id": "chapter-0003-physical-state-registry-exposure-001",
+        "asset_id": "state_ledger_half_life_registry_exposure",
+        "field_path": "state_ledger.registry_locking_sign",
+        "before": "陆沉渊咳出的灰已被衙印沾认，成为传核与拒验记的程序性锁定迹象",
+        "after": "新咳出的冷灰沾住已签传核纸衙印，使印痕泛出暗红；仇慎当场要求留下该纸",
+        "evidence": "灰沾住传核纸衙印后印痕泛暗红，仇慎随即要求把那张纸留下。"
+      },
+      {
+        "fact_id": "chapter-0003-physical-state-mother-lamp-001",
+        "asset_id": "state_ledger_mother_life_lamp_countdown",
+        "field_path": "state_ledger.current_visible_lamp_consequence",
+        "before": "灰粒落在苏晚失温的手背，留下针尖大的红点",
+        "after": "灰雨中苏晚命灯验焰缩成细线，手背红点裂开渗出暗冷光；验灯未被暂熄",
+        "evidence": "验灯焰尖缩成细线，红点裂开渗冷光；仇慎最终明言“苏晚验灯不熄”。"
+      }
+    ],
+    "naming": []
+  }
+}

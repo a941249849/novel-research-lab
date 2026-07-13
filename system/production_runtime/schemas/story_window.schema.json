@@ -4,7 +4,7 @@
   "type": "object",
   "required": ["version", "project", "volume", "window", "status", "start_snapshot", "end_target", "chapters"],
   "properties": {
-    "version": {"const": "1.0"},
+    "version": {"type": "string", "const": "1.0"},
     "project": {"type": "string", "minLength": 1},
     "volume": {"type": "integer", "minimum": 1},
     "window": {
@@ -17,7 +17,7 @@
       },
       "additionalProperties": false
     },
-    "status": {"enum": ["candidate", "reviewed", "production_ready", "frozen"]},
+    "status": {"type": "string", "enum": ["candidate", "reviewed", "production_ready", "frozen"]},
     "start_snapshot": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 1}},
     "end_target": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 1}},
     "chapters": {
@@ -38,8 +38,8 @@
           "emotional_turn": {"type": "string", "minLength": 8},
           "hook_out": {"type": "string", "minLength": 8},
           "expected_state_deltas": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
-          "required_asset_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
-          "source_status": {"enum": ["accepted_calibration", "planned"]}
+          "required_asset_ids": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+          "source_status": {"type": "string", "enum": ["accepted_calibration", "planned"]}
         },
         "additionalProperties": false
       }

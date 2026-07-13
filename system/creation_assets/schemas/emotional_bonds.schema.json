@@ -6,7 +6,7 @@
     {"$ref": "https://nrl.local/schemas/common.schema.json"},
     {
       "properties": {
-        "family": {"const": "emotional_bonds"},
+        "family": {"type": "string", "const": "emotional_bonds"},
         "emotional_bond": {
           "type": "object",
           "required": [

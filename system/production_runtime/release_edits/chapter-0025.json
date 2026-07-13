@@ -1,0 +1,12 @@
+{
+  "version": "0.25",
+  "chapter_id": "chapter-0025",
+  "source_revision": "system/production_runtime/chapters/chapter-0025/revision.md",
+  "source_sha256": "cfb623545ea575a048a677e6e4385ab0d76eb5a2872232beb5bcd63983a60bdb",
+  "release_edit": "system/production_runtime/release_edits/chapter-0025.md",
+  "release_edit_sha256": "4eac2e81ea111021d5807c7bd9d4c9ca1912416e31683d6caf7ce4805eb342aa",
+  "repair_direction": "重写与第24章高度雷同的结尾动作和感官落点；不得再复用苏晚一臂外送肘、陆沉渊吐灰后用袖包住、仇慎推回记录与锁链声这一组组合。统一官员姓名为仇慎。保持本章错误转运留档、停印和追缴压力等状态结果。",
+  "provider": "codex",
+  "model": "gpt-5.6-sol",
+  "status": "pending_window_re_review"
+}

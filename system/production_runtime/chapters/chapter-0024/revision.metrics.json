@@ -1,0 +1,24 @@
+{
+  "chinese_character_count": 3334,
+  "sentence_count": 181,
+  "paragraph_count": 85,
+  "average_sentence_length": 18.42,
+  "sentence_length_stddev": 11.01,
+  "average_paragraph_length": 39.22,
+  "paragraph_length_stddev": 45.35,
+  "dialogue_ratio": 0.243,
+  "transition_word_hits": 2,
+  "rhetorical_template_hits": 0,
+  "abstract_word_hits": 1,
+  "sensory_word_hits": 146,
+  "repeated_sentence_starters": [
+    {
+      "starter": "陆沉渊",
+      "count": 19
+    }
+  ],
+  "flags": [
+    "sentence_opening_repetition"
+  ],
+  "policy": "metrics_are_audit_evidence_not_a_literary_verdict"
+}

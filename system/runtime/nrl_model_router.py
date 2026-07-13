@@ -5,11 +5,20 @@ from __future__ import annotations
 from typing import Any
 
 
-VERSION = "0.21"
+VERSION = "0.22"
 ROUTES: dict[str, dict[str, Any]] = {
     "showrunner": {"model": "gpt-5.6-sol", "effort": "max", "reason": "high-risk long-range planning and adjudication"},
-    "writer": {"model": "gpt-5.6-sol", "effort": "max", "reason": "primary prose route after the blind calibration's positive Sol controls"},
-    "observer": {"model": "gpt-5.6-luna", "effort": "medium", "reason": "schema-bound fact extraction from final text"},
+    "writer": {
+        "model": "gpt-5.6-sol", "effort": "max",
+        "fallback_provider": "antigravity", "fallback_model": "Claude Opus 4.6 (Thinking)",
+        "secondary_fallback_model": "Claude Sonnet 4.6 (Thinking)",
+        "reason": "Sol is primary; isolated literary fallback prevents quota from stopping a registered batch",
+    },
+    "observer": {
+        "model": "gpt-5.6-luna", "effort": "medium",
+        "fallback_provider": "antigravity", "fallback_model": "Gemini 3.5 Flash (High)",
+        "reason": "schema-bound fact extraction from final text with an independently validated fallback",
+    },
     "mechanical": {"model": "gpt-5.6-luna", "effort": "low", "reason": "low-risk structured candidates only"},
 }
 

@@ -1046,7 +1046,9 @@ def cmd_produce(args: argparse.Namespace) -> int:
     if status["next_chapter"] is None:
         print_json({"valid": True, "status": status, "completed": []})
         return 0
-    preflight = build_production_preflight(load_adapters())
+    preflight = build_production_preflight(
+        load_adapters(), allowed_pending_chapter_id=status["next_chapter"]
+    )
     if not preflight["valid"]:
         print_json({"valid": False, "status": status, "preflight": preflight})
         return 1

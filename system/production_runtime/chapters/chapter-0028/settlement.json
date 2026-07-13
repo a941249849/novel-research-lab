@@ -1,0 +1,95 @@
+{
+  "chapter_id": "chapter-0028",
+  "accepted_revision_sha256": "0df92be81012160c1ab6b9f8f2cabe6058c5ec1492b9a1aad90abfcff6dcc454",
+  "state_deltas": [
+    {
+      "fact_id": "fact-0028-001",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_observed_choice",
+      "operation": "set",
+      "before": "遵守三户先救人的共同决定，远离共同保管箱并拒绝补写相关见证",
+      "after": "在废弃命址只确认现场压痕纹理方向以复核转运起点，不追索转运终点与完整获利链"
+    },
+    {
+      "fact_id": "fact-0028-002",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_visible_condition",
+      "operation": "set",
+      "before": "左膝继续失力，胸骨旧裂再次作响，额头撞门框并咳出夹细血丝的冷灰",
+      "after": "左膝在窄缝处磕碰，胸骨再次闷响，咳出冷灰并咽回，手腕留下一圈被冻过的灰白色冷痕"
+    },
+    {
+      "fact_id": "fact-0028-003",
+      "asset_id": "npc_debt_collector_gu_xun",
+      "field_path": "npc.current_procedural_decision",
+      "operation": "set",
+      "before": "以债链支撑斜梁并将链力扣回自身，不抽取住户命火；旧追缴与半寿送审继续有效",
+      "after": "确认追缴令残印与现场压痕同型后将现行追缴令标为归属断裂并退回复核，声明旧追缴与半寿送审继续存在"
+    },
+    {
+      "fact_id": "fact-0028-004",
+      "asset_id": "npc_debt_collector_gu_xun",
+      "field_path": "npc.current_visible_injury",
+      "operation": "set",
+      "before": "债链反噬使腕骨僵硬、腕侧灰痕加深并勒入骨节，膝盖撞地",
+      "after": "左手腕关节僵硬到只能发出干涩摩擦声，通过窄缝时铁环磕碰石壁"
+    },
+    {
+      "fact_id": "fact-0028-005",
+      "asset_id": "npc_debt_collector_gu_xun",
+      "field_path": "npc.current_procedural_arrival",
+      "operation": "set",
+      "before": "顾巡在救援现场完成一次以自身承担链力的支撑，并留下需次日复核的梁上压痕证据",
+      "after": "完成废弃命址比对，与陆沉渊约定明日各自携带木屑与退回的令分开比对复核"
+    },
+    {
+      "fact_id": "fact-0028-006",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_local_enforcement_phase",
+      "operation": "set",
+      "before": "救援未改变旧追缴与半寿送审；新增断梁银灰压痕进入州府转运记录复核",
+      "after": "现行追缴令因归属断裂退回复核，但旧追缴与半寿送审继续，且州府影印从暗金固化为深铜色封锁入口"
+    },
+    {
+      "fact_id": "fact-0028-011",
+      "asset_id": "technique_ledger_recognition",
+      "field_path": "technique.current_use_status",
+      "operation": "set",
+      "before": "继续未施展识账术，仅凭掌下震动和现场可见痕迹参与救援与判断",
+      "after": "继续未施展识账术，仅凭肉眼和现场可见痕迹确认压痕与旧灯回声"
+    },
+    {
+      "fact_id": "fact-0028-007",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_next_review_hook",
+      "operation": "set",
+      "before": "获得一块由顾巡债链从断梁刮下的银灰压痕木屑；明日需与州府转运残印分开比对，来源和时间仍未确认",
+      "after": "证实废弃命址存在与木屑同型的一取一放两段转运压痕，明日需将木屑与退回的追缴令分开比对复核"
+    },
+    {
+      "fact_id": "fact-0028-009",
+      "asset_id": "state_ledger_map_unlock_status",
+      "field_path": "state_ledger.current_boundary_status",
+      "operation": "set",
+      "before": "废弃命址外沿获得有限路线解锁；第一处断口、路线外范围及入口之后仍未解锁",
+      "after": "完成废弃命址长廊有限路线的压痕确认，深处及路线外范围仍未解锁，且入口下半截被州府影印固化封锁"
+    },
+    {
+      "fact_id": "fact-0028-008",
+      "asset_id": "foreshadowing_cinder_seal_rain",
+      "field_path": "foreshadowing.next_review_hook",
+      "operation": "set",
+      "before": "新增断梁木屑上的银灰压痕与州府转运残印同色但未合一，等待有人到场并按各自亲见复核",
+      "after": "确认空灯槽两段压痕宽度与木屑一致，旧灯回声闪过四指断裂手印与倒流银灰火碎影"
+    },
+    {
+      "fact_id": "fact-0028-010",
+      "asset_id": "state_ledger_protagonist_strain",
+      "field_path": "state_ledger.current_visible_condition",
+      "operation": "set",
+      "before": "救援中左膝再次失力，胸骨旧裂作响，额头撞门框并咳出带细血丝的冷灰；随后退出施术和判断位置",
+      "after": "左膝在窄缝处磕碰，胸骨再次闷响，咳出冷灰并咽回，手腕留下一圈被冻过的灰白色冷痕"
+    }
+  ],
+  "resolved_audit_ids": []
+}

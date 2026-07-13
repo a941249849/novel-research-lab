@@ -32,7 +32,9 @@
       "cli_bridge"
     ],
     "can_execute": true,
-    "execution_policy": "registered_review_jobs_only",
+    "execution_policy": "registered_reviews_and_quota_fallback_production",
+    "fallback_writer_model": "Claude Opus 4.6 (Thinking)",
+    "fallback_observer_model": "Gemini 3.5 Flash (High)",
     "handoff_dir": "handoff/antigravity",
     "expected_output_dir": "handoff/antigravity/outputs"
   }

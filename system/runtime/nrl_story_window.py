@@ -50,6 +50,13 @@ def validate_story_window(payload: dict[str, Any]) -> dict[str, Any]:
         values = [str(item[field]).strip() for item in chapters]
         if len(values) != len(set(values)):
             errors.append(f"story window requires unique {field} values")
+    duplicate_asset_chapters = [
+        item["chapter_id"]
+        for item in chapters
+        if len(item.get("required_asset_ids", [])) != len(set(item.get("required_asset_ids", [])))
+    ]
+    if duplicate_asset_chapters:
+        errors.append("required_asset_ids must be unique within chapters: " + ", ".join(duplicate_asset_chapters))
     if len({item["scene_anchor"].split("，")[0] for item in chapters}) < 5:
         errors.append("story window requires at least five distinct scene anchors")
     known_assets = {

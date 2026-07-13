@@ -1,0 +1,11 @@
+{
+  "version": "0.25",
+  "chapter_id": "chapter-0029",
+  "source_revision": "system/production_runtime/chapters/chapter-0029/revision.md",
+  "source_sha256": "909ce03481194f06189ed6d7063a05f549fa5f3cb1490a512f06495c55a93d28",
+  "release_edit": "system/production_runtime/release_edits/chapter-0029.md",
+  "release_edit_sha256": "cf2fb6d15e6de53ed6ce75ef4d7e684c577aa38569e88132fcaefdb70a37789b",
+  "repair_direction": "用按印选择与命灯观察替代不替代口号和固定站位。",
+  "provider": "deterministic_editor",
+  "status": "pending_window_re_review"
+}

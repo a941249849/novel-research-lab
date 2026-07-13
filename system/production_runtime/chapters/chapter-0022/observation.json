@@ -1,0 +1,223 @@
+{
+  "chapter_id": "chapter-0022",
+  "draft_sha256": "aa30aeebeae6516e29118ae82627804c879f0ce693a4b8746c0c0ccec09b9bcf",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "f-0022-001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_observed_choice",
+        "before": "接受州府回执分项处理，登记为半寿送审单独到场责任人，并拒绝替共同保管人承担送审",
+        "after": "按住送审木牌接受债链锁定，明确只认自己的到场，不替三户处分撤回或保管选择",
+        "evidence": "陆沉渊说“我认我的到场”，并按住自己的送审木牌，拒绝认领残命灯盏。"
+      },
+      {
+        "fact_id": "f-0022-002",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_action_limit",
+        "before": "承担三日内到命审台",
+        "after": "行动范围被锁定为前往命审台、核验后按原路返回，中途离线将按拒审记",
+        "evidence": "顾巡明确告知锁成后只能往命审台，核验毕后按原路返，中途离线按拒审记。"
+      },
+      {
+        "fact_id": "f-0022-003",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_visible_condition",
+        "before": "按印后血口再裂、咳出冷灰、视野晃成数层，需外部支撑",
+        "after": "债链锁住送审木牌后左腿麻木、胸腔气息断裂、需扶墙站立，随后仍咳出冷灰并由苏晚短暂托肘",
+        "evidence": "木牌被铁扣咬住后，陆沉渊左腿彻底麻了，扶墙未跪下；后段再次咳灰并由苏晚托住肘部。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "f-0022-004",
+        "asset_id": "npc_debt_collector_gu_xun",
+        "field_path": "npc.current_procedural_decision",
+        "before": "将在巷口核对可被带走的对象",
+        "after": "按断续灰痕暂停居民执行，仅将陆沉渊作为人证与纸证送审对象",
+        "evidence": "顾巡确认“共同保管签不入送审对象”，并宣布居民不押，纸证与人证随他。"
+      },
+      {
+        "fact_id": "f-0022-005",
+        "asset_id": "npc_debt_collector_gu_xun",
+        "field_path": "npc.information_state",
+        "before": "知道令上归属有缺口，却将核验责任推回命籍衙",
+        "after": "确认三户共同保管签存在可复核断痕，无法并作陆沉渊私产",
+        "evidence": "债链触及三张轮守纸时灰痕分别在“可退”“只保管”等位置断开，顾巡随后保留断痕并记录不得并作私产。"
+      },
+      {
+        "fact_id": "f-0022-006",
+        "asset_id": "npc_mo_jinglan",
+        "field_path": "npc.current_witness_participation",
+        "before": "只确认亲眼看过的交接，并拒绝填入未见事项",
+        "after": "公开保留退出住户的退回纸张，并继续将剩余见证限定为各自亲见与限时保管",
+        "evidence": "莫井兰把第三张退出纸压在泥圈外，并协助保留两户分开的轮守纸。"
+      },
+      {
+        "fact_id": "f-0022-007",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_procedural_limit",
+        "before": "拒绝家属随审及替陆沉渊补足回执，仅在其承压后托住肘部",
+        "after": "拒绝随审和补寿债，只在陆沉渊失稳时短暂托住肘部后收手",
+        "evidence": "苏晚说“我不随审，也不替你补寿债”，并只托住陆沉渊一下。"
+      }
+    ],
+    "locations": [
+      {
+        "fact_id": "f-0022-008",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_boundary_condition",
+        "before": "残命灯盏由三户轮守保管",
+        "after": "一户退出并取回其轮守纸，残命灯盏仍留在泥圈内，由另外两户分开继续守物",
+        "evidence": "第三户声明退出后，纸被移至圈外；另外两户重新压紧各自保管签，灯盏未被移动。"
+      }
+    ],
+    "factions": [
+      {
+        "fact_id": "f-0022-009",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_communal_response",
+        "before": "共同体拒绝连带作证，保留逐人亲见、拒验和撤回边界",
+        "after": "共同体实际执行住户退出与限时保管：一户退回，另两户只守物、不送火、不认主",
+        "evidence": "一户明确“这一轮我退”，另两户声明“只守物，不送火，不认主；再问再答”。"
+      },
+      {
+        "fact_id": "f-0022-010",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_enforcement_phase",
+        "before": "州府回执转为有效送审令，陆沉渊三日内到命审台，居民未被并入",
+        "after": "顾巡执行送审木牌锁定，居民不押，异物封档原项保留并进入断痕复核",
+        "evidence": "顾巡逐项记录“共同保管签不入送审对象”“异物封档原项保留，断痕随令复核”。"
+      }
+    ],
+    "artifacts": [
+      {
+        "fact_id": "f-0022-011",
+        "asset_id": "artifact_ashlight_cup",
+        "field_path": "artifact.current_custody_status",
+        "before": "残命灯盏留在三户共同保管圈内，封口完整且未使用",
+        "after": "残命灯盏继续留在原泥圈共同保管链中，未被债链带走、点火或移动",
+        "evidence": "债链试图收紧时断痕跨不过保管空白；正文明确灯盏封口仍白、无人点火、无人移物。"
+      },
+      {
+        "fact_id": "f-0022-012",
+        "asset_id": "artifact_ashlight_cup",
+        "field_path": "artifact.current_lifecycle_state",
+        "before": "dormant",
+        "after": "dormant",
+        "evidence": "灯盏始终冷、封口完整，没有守火同意、点火或唤醒行为。"
+      }
+    ],
+    "techniques": [
+      {
+        "fact_id": "f-0022-013",
+        "asset_id": "technique_ledger_recognition",
+        "field_path": "technique.current_use_status",
+        "before": "仍未施展识账术，仅凭肉眼确认异物封档与半寿送审两项之间没有银灰线相连",
+        "after": "继续未施展识账术，仅凭肉眼观察债链与保管纸的断痕",
+        "evidence": "正文两次明确陆沉渊没有启用识账术或动用识账术。"
+      }
+    ],
+    "relationships": [
+      {
+        "fact_id": "f-0022-014",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_procedural_boundary",
+        "before": "共同体保留逐人亲见、拒验和撤回边界",
+        "after": "边界被实际执行为住户可退出、限时见证、只守物不送火不认主",
+        "evidence": "一户退出并收回纸张，另两户分别限定昨夜或今晨，并拒绝送火和认主。"
+      },
+      {
+        "fact_id": "f-0022-015",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_collective_choice",
+        "before": "共同体在程序压力下谨慎互保",
+        "after": "住户拒绝将共同物证并入陆沉渊私产，同时承担各自保管或退出的后果",
+        "evidence": "无人认定灯盏归陆沉渊；两户继续守物，一户明确承担退出后果。"
+      },
+      {
+        "fact_id": "f-0022-016",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_visible_support",
+        "before": "苏晚仅在陆沉渊承压后托住肘部，未答应陪同送审",
+        "after": "苏晚继续不替他走、不替他补债，只在两次失稳时提供短暂身体支撑后收回",
+        "evidence": "她明确说“我不替你走”，并在陆沉渊失稳时只托住肘部一下。"
+      }
+    ],
+    "emotions": [
+      {
+        "fact_id": "f-0022-017",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_collective_emotion",
+        "before": "州府程序落地后的寒意与谨慎互保",
+        "after": "住户在恐惧中坚持各自见证边界，停止回避并明确表达退出、限时和不认主选择",
+        "evidence": "住户先沉默，随后分别说出“今日另答”“这一轮我退”“只守物，不送火，不认主”。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "f-0022-018",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_local_evidence_status",
+        "before": "已记录分项封口、轮守次序与拒验范围，但未确认归属",
+        "after": "新增债链与三处保管签断痕的可复核记录，确认不能将共同保管物并作陆沉渊私产",
+        "evidence": "顾巡逐张核验并将退出空位、三处断痕及“不得并作陆沉渊私产”记入随令纸证。"
+      },
+      {
+        "fact_id": "f-0022-019",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_local_procedure_result",
+        "before": "旧追缴仍存续，异物封档与半寿送审已分列",
+        "after": "居民不押、异物封档原项保留，断痕随令复核；陆沉渊单独承担送审",
+        "evidence": "顾巡明示“居民不押”，并将纸证、人证与陆沉渊分别纳入后续复核。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "f-0022-020",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "foreshadowing.next_review_hook",
+        "before": "州府残印缺角与送审追缴核对等待下一次程序复核",
+        "after": "送审木牌靠近州府残印时出现与泥圈灯盏位置矛盾的旧灯回响，余颤沿债链传向命审台",
+        "evidence": "木牌贴近残印时传出旧灯叩响；泥圈灯盏未动，第二声未响但余颤继续向命审台传去。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "f-0022-021",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_procedural_event",
+        "before": "顾巡携有效送审令抵达巷口，准备核对可被带走对象",
+        "after": "清晨完成债链核验、陆沉渊送审锁定及居民不押的断痕复核，随后押送方向转向命审台",
+        "evidence": "正文从巷口债链核验推进至陆沉渊过界，顾巡明确其只能前往命审台。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "f-0022-022",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.current_visible_condition",
+        "before": "送审指印后血口再裂、咳出冷灰、视野晃成数层，需外部支撑",
+        "after": "债链锁定后髋骨受冷意、左腿麻木、胸腔气息断裂、眼前分层，血口再裂并咳出冷灰",
+        "evidence": "债链锁住木牌后陆沉渊左腿彻底麻了，扶墙站立，随后染血指尖崩裂并咳出冷灰。"
+      },
+      {
+        "fact_id": "f-0022-023",
+        "asset_id": "state_ledger_mudlamp_array_integrity",
+        "field_path": "state_ledger.current_visible_integrity_consequence",
+        "before": "护阵两截暗红火痕隔着焦黑一线，继续未修复",
+        "after": "冷铁气压使其中一截暗红火痕更短并落下一撮干灰，护阵仍未修复",
+        "evidence": "顾巡核验时护阵裂口旁一截火痕被冷铁气压得更短，边缘落灰。"
+      },
+      {
+        "fact_id": "f-0022-024",
+        "asset_id": "state_ledger_half_life_registry_exposure",
+        "field_path": "state_ledger.registry_locking_sign",
+        "before": "送审令转追缴时暗红线绷直，追缴锁定增强",
+        "after": "陆沉渊过界后暗红线再次骤然绷直，远处完成一次核对，锁定继续增强",
+        "evidence": "结尾暗红线隔布骤然绷直，远处完成一次核对，陆沉渊腕骨下暗冷光又缩了一寸。"
+      }
+    ],
+    "naming": []
+  }
+}

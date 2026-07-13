@@ -1,12 +1,12 @@
 {
   "project_name": "Novel Research Lab",
   "current_phase": "Production v1",
-  "current_subphase": "Volume 1 Window 021-030 Compilation",
+  "current_subphase": "第一卷 031-040 章窗口规划边界",
   "previous_story_phase": "Phase 2E",
   "selected_project": "《借天改命账》",
-  "phase_status": "production_authorized_window_011_020_accepted",
-  "last_completed_mission": "Volume 1 Chapters 1-20 Accepted and Window 011-020 Reviewed",
-  "next_recommended_mission": "Compile Story Window 021-030 and resume at Chapter 21",
+  "phase_status": "production_authorized_window_021_030_accepted",
+  "last_completed_mission": "第一卷第 21-30 章已验收，021-030 窗口复审通过",
+  "next_recommended_mission": "编译 031-040 故事窗口并从第 31 章恢复受控生产",
   "owner_gate_required": false,
   "owner_gate_status": "AUTHORIZED_VOLUME1_V025",
   "allowed_next_agents": [
@@ -36,14 +36,14 @@
       "status": "owner_accepted_active"
     },
     {
-      "name": "Story Window 011-020",
-      "path": "system/production_runtime/story_windows/window-011-020.v1.json",
+      "name": "Story Window 021-030",
+      "path": "system/production_runtime/story_windows/window-021-030.v1.json",
       "status": "production_ready"
     },
     {
       "name": "Chapter Registry",
       "path": "system/production_runtime/chapter_registry.v0.20.json",
-      "status": "chapters_001-020_accepted"
+      "status": "chapters_001-030_accepted"
     },
     {
       "name": "Owner Decisions",
@@ -51,8 +51,8 @@
       "status": "volume1_chapters_011-100_intent_and_prose_authorized"
     },
     {
-      "name": "Window Review 011-020",
-      "path": "system/production_runtime/window_reviews/window-011-020.json",
+      "name": "Window Review 021-030",
+      "path": "system/production_runtime/window_reviews/window-021-030.json",
       "status": "ACCEPT"
     }
   ],
@@ -65,7 +65,7 @@
     "Chapters 1-15 are calibration output, not a release-ready volume.",
     "Chapter 16 was quarantined because it was generated before the story-window and bounded-context corrections.",
     "Every new chapter from chapter 11 onward requires a validated ten-chapter story window.",
-    "Window 011-020 completed with five new governed chapters and an ACCEPT window review.",
+    "Window 021-030 completed with ten governed chapters, release edits, and an ACCEPT window review.",
     "Publication remains blocked until Volume 1 release acceptance."
   ],
   "updated_at": "2026-07-14T00:00:00+08:00"

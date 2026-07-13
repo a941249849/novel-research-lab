@@ -1,0 +1,103 @@
+{
+  "chapter_id": "chapter-0026",
+  "accepted_revision_sha256": "08e278745761b4f6b284af43aba63f453ba352e4424becf0ab3b5806e6dd1fe8",
+  "state_deltas": [
+    {
+      "fact_id": "chapter-0026-character-001",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_personal_research_record",
+      "operation": "set",
+      "before": "陆沉渊仍持有完整的个人灰痕方向研究记录",
+      "after": "研究记录已交出且不可追回，仅剩被割下的封面纸角"
+    },
+    {
+      "fact_id": "chapter-0026-character-002",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_observed_choice",
+      "operation": "set",
+      "before": "等待以实物压痕复核转运起点",
+      "after": "交出自己的研究记录，换取有限路线与假命页风险提示"
+    },
+    {
+      "fact_id": "chapter-0026-character-003",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_visible_condition",
+      "operation": "set",
+      "before": "左膝麻木、胸骨旧裂、咳出冷灰与掌血混合物",
+      "after": "左膝撞地后支撑失稳，膝侧新增十段暗红细纹，并咳出夹血冷灰"
+    },
+    {
+      "fact_id": "chapter-0026-faction-001",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_next_procedural_hook",
+      "operation": "set",
+      "before": "两日内围绕缺角残印、旧灰和现有见证复核转运起点",
+      "after": "下一次复核需提交入口缺角的实物尺寸与不得越界、不得拾取假命页的有限路线"
+    },
+    {
+      "fact_id": "chapter-0026-information-001",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_next_review_hook",
+      "operation": "set",
+      "before": "须以缺角残印最初落下时的实物压痕复核转运起点",
+      "after": "获得一条指向废弃命址外沿的有限路线，并取得入口标记与州府残印缺角尺寸相合的可复核线索"
+    },
+    {
+      "fact_id": "chapter-0026-information-002",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_inference_limit",
+      "operation": "set",
+      "before": "不能确定州府残印从何处起压、压过何物或完整获利链",
+      "after": "仍不能认定入口由州府残印所留、残印曾在那里起压，或废弃命址内存有泥灯巷被记作转运的东西"
+    },
+    {
+      "fact_id": "chapter-0026-information-003",
+      "asset_id": "foreshadowing_cinder_seal_rain",
+      "field_path": "foreshadowing.next_review_hook",
+      "operation": "set",
+      "before": "复核焦点为残印背面旧灰中的实物压痕及其起点",
+      "after": "新增入口缺角尺寸与残印缺角尺寸相合的待复核线索，来源与转运事实仍未确认"
+    },
+    {
+      "fact_id": "chapter-0026-hook-001",
+      "asset_id": "state_ledger_map_unlock_status",
+      "field_path": "state_ledger.current_boundary_status",
+      "operation": "set",
+      "before": "废弃命址边界尚未取得可用路线",
+      "after": "废弃命址外沿获得有限路线解锁；第一处断口、路线外范围及入口之后仍未解锁"
+    },
+    {
+      "fact_id": "chapter-0026-hook-002",
+      "asset_id": "npc_debt_collector_gu_xun",
+      "field_path": "npc.next_procedural_hook",
+      "operation": "set",
+      "before": "以缺角残印背面的旧灰实物压痕复核转运起点",
+      "after": "下一次复核将面对入口缺角尺寸与残印缺角相合的证据，同时旧追缴继续存在"
+    },
+    {
+      "fact_id": "chapter-0026-physical-001",
+      "asset_id": "state_ledger_half_life_registry_exposure",
+      "field_path": "state_ledger.registry_locking_sign",
+      "operation": "set",
+      "before": "暗红寿印已绷紧，追缴约束持续加重",
+      "after": "交易落定后半寿残籍显露精确增加十个百分点，膝侧出现十段可见新纹，债链声更近"
+    },
+    {
+      "fact_id": "chapter-0026-physical-002",
+      "asset_id": "state_ledger_protagonist_strain",
+      "field_path": "state_ledger.bone_fissure_severity",
+      "operation": "set",
+      "before": "胸骨旧裂，左膝麻木且行动受限",
+      "after": "膝盖撞地并使胸口旧裂震开，起身时左腿再次失稳"
+    },
+    {
+      "fact_id": "chapter-0026-physical-003",
+      "asset_id": "state_ledger_protagonist_strain",
+      "field_path": "state_ledger.cold_ash_cough_frequency",
+      "operation": "set",
+      "before": "此前已出现咳出冷灰与掌血混合物",
+      "after": "交易后再次咳出夹细血丝的冷灰"
+    }
+  ],
+  "resolved_audit_ids": []
+}

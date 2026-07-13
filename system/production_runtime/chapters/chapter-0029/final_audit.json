@@ -1,0 +1,41 @@
+{
+  "chapter_id": "chapter-0029",
+  "artifact_kind": "revision",
+  "artifact_sha256": "909ce03481194f06189ed6d7063a05f549fa5f3cb1490a512f06495c55a93d28",
+  "context_sha256": "162e597bac8a87af1811b67b252cff6ebd568d6942820c65d3e72e913b2054b0",
+  "verdict": "ACCEPT_WITH_WARNINGS",
+  "dimensions": {
+    "canon": [
+      "hash-bound context retained"
+    ],
+    "character": [
+      "state observation remains mandatory"
+    ],
+    "state": [
+      "final observation and settlement remain mandatory"
+    ],
+    "causality": [
+      "story-window irreversible change is bound in context"
+    ],
+    "pacing": [
+      "paragraphs=65"
+    ],
+    "life_force": [
+      "sensory_hits=100"
+    ],
+    "anti_ai_taste": [
+      "dash_overuse"
+    ],
+    "originality": [
+      "no raw corpus is available to the chapter writer"
+    ]
+  },
+  "issues": [
+    {
+      "issue_id": "metric-01-dash_overuse",
+      "severity": "minor",
+      "evidence": "deterministic prose metric flagged dash_overuse",
+      "required_fix": "Replace decorative dashes with sentence rhythm or concrete interruption."
+    }
+  ]
+}

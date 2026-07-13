@@ -71,7 +71,7 @@
         "system/production_runtime/story_windows/window-011-020.v1.json",
         "system/production_runtime/chapter_registry.v0.20.json"
       ],
-      "next_action": "编译 021-030 故事窗口后，从第 21 章恢复受控正文生产。"
+      "next_action": "根据章节注册表、十章故事窗口与窗口审查结果恢复下一章受控正文生产。"
     }
   ]
 }

@@ -4,8 +4,8 @@
   "type": "object",
   "required": ["version", "project", "chapters"],
   "properties": {
-    "version": {"const": "0.20"},
-    "project": {"const": "《借天改命账》"},
+    "version": {"type": "string", "const": "0.20"},
+    "project": {"type": "string", "const": "《借天改命账》"},
     "chapters": {
       "type": "array",
       "items": {

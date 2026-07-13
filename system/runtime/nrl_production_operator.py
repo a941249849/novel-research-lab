@@ -9,6 +9,23 @@ from pathlib import Path
 from typing import Any
 
 
+def describe_next_production_action(status: dict[str, Any]) -> dict[str, str]:
+    if status.get("accepted_contiguous", 0) >= status.get("target_chapters", 100):
+        return {
+            "action_id": "volume_release_review",
+            "label_zh": "执行第一卷全卷发布审查与遗留章节发布编辑",
+            "safe_command": "python3 system/runtime/nrl.py volume1-release-status",
+        }
+    window = str(status.get("active_window") or "")
+    chapter_id = str(status.get("next_chapter") or "")
+    chapter = int(chapter_id.removeprefix("chapter-")) if chapter_id else 1
+    return {
+        "action_id": f"story_window_{window.replace('-', '_')}",
+        "label_zh": f"编译 {window} 故事窗口并从第 {chapter} 章恢复受控生产",
+        "safe_command": status.get("resume_command") or "python3 system/runtime/nrl.py production-status",
+    }
+
+
 def build_operator_status(registry_path: Path, target: int = 100) -> dict[str, Any]:
     if not registry_path.is_file():
         return {

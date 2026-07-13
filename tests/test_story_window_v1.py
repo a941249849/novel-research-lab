@@ -11,6 +11,13 @@ from nrl_story_window import build_story_window_prompt, story_beat_for, validate
 
 
 class StoryWindowV1Tests(unittest.TestCase):
+    def test_duplicate_required_assets_are_rejected(self):
+        payload = json.loads(self.path.read_text(encoding="utf-8"))
+        payload["chapters"][0]["required_asset_ids"] *= 2
+        result = validate_story_window(payload)
+        self.assertFalse(result["valid"])
+        self.assertIn("required_asset_ids must be unique", " ".join(result["errors"]))
+
     def setUp(self):
         self.path = ROOT / "system/production_runtime/story_windows/window-011-020.v1.json"
         self.payload = json.loads(self.path.read_text(encoding="utf-8"))

@@ -6,7 +6,7 @@
     {"$ref": "https://nrl.local/schemas/common.schema.json"},
     {
       "properties": {
-        "family": {"const": "state_ledger"},
+        "family": {"type": "string", "const": "state_ledger"},
         "state_ledger": {
           "type": "object",
           "required": [

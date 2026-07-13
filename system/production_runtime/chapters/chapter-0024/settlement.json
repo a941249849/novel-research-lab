@@ -1,0 +1,199 @@
+{
+  "chapter_id": "chapter-0024",
+  "accepted_revision_sha256": "7b33ecf3cf92c0dd76528fd8bae20147868df3d1f13cb70c79d0dedbc8a2abdc",
+  "state_deltas": [
+    {
+      "fact_id": "chapter-0024-f001",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_observed_choice",
+      "operation": "set",
+      "before": "施展一次受限识账并接受双痕留档，未替住户处分选择",
+      "after": "接受苏晚撤回母债佐证并同意将母债与泥灯巷物证分案，不以亲缘代证"
+    },
+    {
+      "fact_id": "chapter-0024-f002",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_procedural_boundary",
+      "operation": "set",
+      "before": "母债仍可能作为转运错账的受害后果随案复验",
+      "after": "不再借用苏晚寿债作本案证明、交换或临时并入追缴"
+    },
+    {
+      "fact_id": "chapter-0024-f003",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_action_limit",
+      "operation": "set",
+      "before": "当日识账窗口已关闭，只能按原路返回",
+      "after": "继续不得识账，只能沿命审台原路返回；两日内需补交转运起点实证"
+    },
+    {
+      "fact_id": "chapter-0024-f004",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_visible_condition",
+      "operation": "set",
+      "before": "双眼灼伤、右眼模糊、左腿麻木并需支撑返回",
+      "after": "左膝因债链骤沉、掌心血重新洇出并在黑石留下血印，仍受暗红寿印和左腿麻木限制"
+    },
+    {
+      "fact_id": "chapter-0024-f005",
+      "asset_id": "npc_su_wan",
+      "field_path": "npc.current_procedural_limit",
+      "operation": "set",
+      "before": "拒绝随审和补寿债，只在陆沉渊失稳时短暂托住肘部",
+      "after": "正式撤回以自身寿债佐证转运错账的许可，并保留本案复验拒绝权"
+    },
+    {
+      "fact_id": "chapter-0024-f006",
+      "asset_id": "npc_su_wan",
+      "field_path": "npc.current_visible_lamp_consequence",
+      "operation": "set",
+      "before": "命灯失温、暗冷光缩向腕骨，未显示恢复",
+      "after": "掌背暗光分岔并新增一格裂纹，最后一点血色退去，命灯裂纹继续恶化"
+    },
+    {
+      "fact_id": "chapter-0024-f007",
+      "asset_id": "npc_registrar_qiu_shen",
+      "field_path": "npc.local_review_decision",
+      "operation": "set",
+      "before": "将物证在巷记录与残印转运记录并列待核",
+      "after": "拆分母债佐证与泥灯巷物证两案，母债仅保留原有寿债与命灯裂纹"
+    },
+    {
+      "fact_id": "chapter-0024-f008",
+      "asset_id": "npc_registrar_qiu_shen",
+      "field_path": "npc.current_local_notice",
+      "operation": "set",
+      "before": "命审台保留保管人拒来、撤回或只认亲见的权利",
+      "after": "分案记录明确苏晚可拒绝本案复验，保管人仍可来、可拒、可撤且只认亲见"
+    },
+    {
+      "fact_id": "chapter-0024-f009",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_local_enforcement_phase",
+      "operation": "set",
+      "before": "命审台完成双痕复核，错误归属待核，旧追缴与半寿送审继续",
+      "after": "母债与泥灯巷物证正式分案；旧追缴、半寿送审与异物封档继续执行"
+    },
+    {
+      "fact_id": "chapter-0024-f010",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_deadline",
+      "operation": "set",
+      "before": "陆沉渊三日内到命审台",
+      "after": "自今夜起两日内补交转运起点实证，否则冲突烙痕按伪造封档"
+    },
+    {
+      "fact_id": "chapter-0024-f011",
+      "asset_id": "technique_ledger_recognition",
+      "field_path": "technique.current_use_status",
+      "operation": "set",
+      "before": "受限识账已施展一次，当日因眼部灼伤停术",
+      "after": "继续停术，陆沉渊明确不再辨认两道留档"
+    },
+    {
+      "fact_id": "chapter-0024-f012",
+      "asset_id": "bond_mother_su_wan",
+      "field_path": "emotional_bond.current_procedural_boundary",
+      "operation": "set",
+      "before": "苏晚拒绝替陆沉渊补债或随审",
+      "after": "母债不得再作为本案证明、交换或追缴临时并入项；苏晚亲自保留拒验权"
+    },
+    {
+      "fact_id": "chapter-0024-f013",
+      "asset_id": "bond_mother_su_wan",
+      "field_path": "emotional_bond.current_visible_support",
+      "operation": "set",
+      "before": "苏晚只在陆沉渊失稳时短暂托住肘部后收手",
+      "after": "陆沉渊接受不代她按印；苏晚仅在其失稳时提供可自行选择的肘部支撑"
+    },
+    {
+      "fact_id": "chapter-0024-f014",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_procedural_boundary",
+      "operation": "set",
+      "before": "保管人可拒来、撤回或只认亲见",
+      "after": "该见证边界被写入两日期限：不得调用住户命火，保管人仍可来、可拒、可撤、只认亲见"
+    },
+    {
+      "fact_id": "chapter-0024-f015",
+      "asset_id": "bond_mother_su_wan",
+      "field_path": "emotional_bond.current_trust_state",
+      "operation": "set",
+      "before": "相护而隐忧",
+      "after": "母子关系形成“可扶持但不得代证、不得代按”的明确边界"
+    },
+    {
+      "fact_id": "chapter-0024-f016",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_local_procedure_result",
+      "operation": "set",
+      "before": "物证在巷记录与残印已转运记录并列待核，不构成退债或清偿",
+      "after": "两案分开留档；本案仍只有三项可认材料，转运起点继续缺失"
+    },
+    {
+      "fact_id": "chapter-0024-f017",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_local_inference_limit",
+      "operation": "set",
+      "before": "断口可见，但不能确认物证去向、接收或转运起点",
+      "after": "仍不能证明谁转、从何处转，也不能证明残印所记之物就是泥灯巷现存之物"
+    },
+    {
+      "fact_id": "chapter-0024-f018",
+      "asset_id": "state_ledger_resident_lifefire_reserve",
+      "field_path": "state_ledger.current_resident_lifefire_callability",
+      "operation": "set",
+      "before": "仍未调用住户命灯，未发生命火扣减",
+      "after": "本案期限内明确禁止调用泥灯巷住户命火"
+    },
+    {
+      "fact_id": "chapter-0024-f019",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_next_review_hook",
+      "operation": "set",
+      "before": "等待州府残印缺角与旧灰进一步复核",
+      "after": "两日内补交转运起点实证；否则现存冲突烙痕按伪造封档"
+    },
+    {
+      "fact_id": "chapter-0024-f020",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_next_procedural_hook",
+      "operation": "set",
+      "before": "旧追缴、半寿送审与异物封档继续，相关物证待核",
+      "after": "下一次程序复核围绕缺角残印、旧灰和现有见证展开，期限为两日"
+    },
+    {
+      "fact_id": "chapter-0024-f021",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_deadline_start",
+      "operation": "set",
+      "before": "未开始新的补证期限",
+      "after": "两日补交转运起点实证期限自今夜起算"
+    },
+    {
+      "fact_id": "chapter-0024-f022",
+      "asset_id": "state_ledger_mother_life_lamp_countdown",
+      "field_path": "state_ledger.current_visible_lamp_consequence",
+      "operation": "set",
+      "before": "命灯裂纹未合拢且未获得缓冲",
+      "after": "裂纹在苏晚亲自分案按印时又加深一格，母债未被撤销"
+    },
+    {
+      "fact_id": "chapter-0024-f023",
+      "asset_id": "state_ledger_protagonist_strain",
+      "field_path": "state_ledger.current_visible_condition",
+      "operation": "set",
+      "before": "双眼灼伤、右眼模糊、左腿麻木并需靠黑石返回",
+      "after": "债链再收紧导致左膝骤沉、胸骨钝响，掌心血重新洇出并留下血印"
+    },
+    {
+      "fact_id": "chapter-0024-f024",
+      "asset_id": "state_ledger_half_life_registry_exposure",
+      "field_path": "state_ledger.registry_locking_sign",
+      "operation": "set",
+      "before": "识账后暗红线沿腕骨上方攀附，暴露继续上升",
+      "after": "暗红线进一步绷紧，顾巡将债链向前收半尺，追缴约束继续加重"
+    }
+  ],
+  "resolved_audit_ids": []
+}

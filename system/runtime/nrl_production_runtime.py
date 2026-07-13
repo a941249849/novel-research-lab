@@ -19,7 +19,13 @@ from nrl_creation_schemas import validate_creation_asset_store
 from nrl_antigravity_bridge import find_agy_binary
 from nrl_antigravity_bridge import build_antigravity_bridge_status
 from nrl_deep_read import build_deep_read_status
-from nrl_codex_writer import ask_codex_writer, find_codex_binary
+from nrl_codex_writer import (
+    ask_antigravity_writer,
+    ask_codex_writer,
+    codex_usage_limited,
+    extract_json_object,
+    find_codex_binary,
+)
 from nrl_model_router import route_model
 from nrl_production_calibration import build_direct_writer_calibration_status
 from nrl_owner_gate import load_decisions
@@ -32,8 +38,8 @@ from nrl_agent_canaries import validate_agent_protocol_canaries
 from nrl_longform_plan import ACTIVE_BLUEPRINT_PATH, build_longform_first100_dry_run, build_longform_readiness
 
 
-VERSION = "0.21"
-CONTEXT_PACKET_VERSION = "0.21"
+VERSION = "0.22"
+CONTEXT_PACKET_VERSION = "0.22"
 MIN_CHAPTER_CHINESE_CHARS = 3000
 MAX_CHAPTER_CHINESE_CHARS = 4200
 STAGES = (
@@ -658,27 +664,76 @@ def _insert_length_recovery(draft: str, insert: str) -> str:
     return "\n\n".join([*paragraphs[:-2], insert.strip(), *closing])
 
 
+CHAPTER_HEADING_RE = re.compile(
+    r"^\s*(?:#{1,6}\s*)?(?:第[零〇一二三四五六七八九十百0-9]{1,8}章(?:\s+.*)?|chapter\s+[0-9]+(?:\s+.*)?)\s*$",
+    re.IGNORECASE,
+)
+
+
+def _strip_leading_chapter_heading(text: str) -> str:
+    """Remove a provider-added title line without touching narrative prose."""
+    lines = text.strip().splitlines()
+    first_content = next((index for index, line in enumerate(lines) if line.strip()), None)
+    if first_content is not None and CHAPTER_HEADING_RE.fullmatch(lines[first_content]):
+        del lines[first_content]
+    return "\n".join(lines).strip()
+
+
+def _contains_chapter_heading(text: str) -> bool:
+    return any(CHAPTER_HEADING_RE.fullmatch(line) for line in text.splitlines())
+
+
+def _ask_prose_writer(prompt: str, model: str) -> tuple[str, str, str]:
+    """Use Codex first, then an isolated literary provider when Codex is quota-bound."""
+    primary_error = None
+    if not codex_usage_limited():
+        try:
+            return ask_codex_writer(prompt, model=model), "codex", model
+        except RuntimeError as error:
+            primary_error = str(error)
+    route = route_model("writer")
+    fallback_models = (
+        route["fallback_model"],
+        route.get("secondary_fallback_model"),
+    )
+    fallback_errors = []
+    for fallback_model in filter(None, fallback_models):
+        try:
+            return (
+                ask_antigravity_writer(prompt, model=fallback_model),
+                "antigravity",
+                fallback_model,
+            )
+        except RuntimeError as error:
+            fallback_errors.append(f"{fallback_model}: {error}")
+    details = "; ".join(filter(None, (primary_error, *fallback_errors)))
+    raise RuntimeError(f"all prose providers failed: {details}")
+
+
 def _recover_short_draft(chapter_id: str, prompt: str, draft: str) -> tuple[str, dict[str, Any] | None]:
     """Request a bounded bridge when a valid scene is cut short by provider output limits."""
     metrics = analyze_prose_metrics(draft)
     if metrics["chinese_character_count"] >= MIN_CHAPTER_CHINESE_CHARS:
         return draft, None
+    deficit = MIN_CHAPTER_CHINESE_CHARS - metrics["chinese_character_count"]
+    requested_min = min(max(deficit + 150, 300), 900)
+    requested_max = min(requested_min + 400, 1200)
     closing = "\n\n".join(part for part in draft.strip().split("\n\n")[-3:] if part.strip())
     recovery_prompt = "\n".join([
-        f"你是《借天改命账》{chapter_id} 的受控编辑。只输出一段 300-700 个中文字符的场景桥段，不要标题、解释或总结。",
+        f"你是《借天改命账》{chapter_id} 的受控编辑。只输出一段 {requested_min}-{requested_max} 个中文字符的场景桥段，不要标题、解释或总结。",
         "这段将插入既有正文的结尾前，必须保持人物、资产、时间和状态约束；用动作、感官和选择补足冲突，不能解决结尾悬念或新增事实。",
         "原有写作规则：", prompt[-5000:],
         "既有结尾前的片段：", closing,
     ])
     try:
-        insert = ask_codex_writer(recovery_prompt, model=route_model("writer")["model"])
+        insert, provider, model = _ask_prose_writer(recovery_prompt, route_model("writer")["model"])
     except RuntimeError as error:
         return draft, {"valid": False, "error": str(error)}
     insert_metrics = analyze_prose_metrics(insert)
-    if not 180 <= insert_metrics["chinese_character_count"] <= 1000:
+    if not 180 <= insert_metrics["chinese_character_count"] <= 1400:
         return draft, {"valid": False, "metrics": insert_metrics, "error": "length recovery bridge out of range"}
     recovered = _insert_length_recovery(draft, insert)
-    return recovered, {"valid": True, "metrics": insert_metrics}
+    return recovered, {"valid": True, "metrics": insert_metrics, "provider": provider, "model": model}
 
 
 def dispatch_chapter_draft(chapter_id: str) -> dict[str, Any]:
@@ -696,7 +751,8 @@ def dispatch_chapter_draft(chapter_id: str) -> dict[str, Any]:
             if generation == 2:
                 retry_prompt += "\n\n上一版未达到最小长度。请从头完整重写，不要续写；必须交付 3200-3800 个中文字符，并保持全部约束。"
             try:
-                text = ask_codex_writer(retry_prompt, model=model)
+                raw_text, provider, used_model = _ask_prose_writer(retry_prompt, model)
+                text = _strip_leading_chapter_heading(raw_text)
             except RuntimeError as error:
                 attempts.append({"model": model, "generation": generation, "valid": False, "error": str(error)})
                 errors = ["writer provider failed"]
@@ -705,11 +761,12 @@ def dispatch_chapter_draft(chapter_id: str) -> dict[str, Any]:
             errors = []
             if not MIN_CHAPTER_CHINESE_CHARS <= metrics["chinese_character_count"] <= MAX_CHAPTER_CHINESE_CHARS:
                 errors.append("draft must contain 3000-4200 Chinese characters")
-            if re.search(r"(?m)^\s*#|第.{0,8}章", text):
+            if _contains_chapter_heading(text):
                 errors.append("draft must not contain a chapter heading")
             attempts.append(
                 {
-                    "model": model,
+                    "model": used_model,
+                    "provider": provider,
                     "generation": generation,
                     "valid": not errors,
                     "metrics": metrics,
@@ -717,20 +774,26 @@ def dispatch_chapter_draft(chapter_id: str) -> dict[str, Any]:
                 }
             )
             if not errors:
-                selected_model = model
+                selected_model = used_model
                 break
         if selected_model:
             break
-    recovery = None
+    recoveries = []
     if errors and text:
-        text, recovery = _recover_short_draft(chapter_id, prompt, text)
+        for _ in range(3):
+            if analyze_prose_metrics(text)["chinese_character_count"] >= MIN_CHAPTER_CHINESE_CHARS:
+                break
+            text, recovery = _recover_short_draft(chapter_id, prompt, text)
+            recoveries.append(recovery)
+            if not recovery or not recovery.get("valid"):
+                break
         metrics = analyze_prose_metrics(text)
         errors = []
         if not MIN_CHAPTER_CHINESE_CHARS <= metrics["chinese_character_count"] <= MAX_CHAPTER_CHINESE_CHARS:
             errors.append("draft must contain 3000-4200 Chinese characters")
-        if re.search(r"(?m)^\s*#|第.{0,8}章", text):
+        if _contains_chapter_heading(text):
             errors.append("draft must not contain a chapter heading")
-        attempts.append({"model": route_model("writer")["model"], "generation": "length_recovery", "valid": not errors, "metrics": metrics, "recovery": recovery})
+        attempts.append({"model": route_model("writer")["model"], "generation": "length_recovery", "valid": not errors, "metrics": metrics, "recoveries": recoveries})
         if not errors:
             selected_model = route_model("writer")["model"]
     if errors:
@@ -808,14 +871,55 @@ def build_observer_prompt_payload(
     )
 
 
+OBSERVATION_FACT_CATEGORIES = (
+    "characters", "npcs", "locations", "factions", "artifacts", "techniques",
+    "relationships", "emotions", "information", "hooks", "timeline",
+    "physical_state", "naming",
+)
+
+
+def normalize_observation_payload(payload: dict[str, Any]) -> dict[str, Any]:
+    """Normalize an equivalent flat fact list without weakening the stored contract."""
+    if isinstance(payload.get("facts"), dict):
+        return payload
+    facts = payload.get("facts", payload.get("changes"))
+    if not isinstance(facts, list):
+        return payload
+    grouped: dict[str, list[dict[str, Any]]] = {key: [] for key in OBSERVATION_FACT_CATEGORIES}
+    prefix_categories = (
+        ("character_", "characters"),
+        ("npc_", "npcs"),
+        ("location_", "locations"),
+        ("faction_", "factions"),
+        ("artifact_", "artifacts"),
+        ("technique_", "techniques"),
+        ("bond_", "relationships"),
+        ("foreshadowing_", "hooks"),
+        ("naming_", "naming"),
+    )
+    for fact in facts:
+        asset_id = str(fact.get("asset_id", "")) if isinstance(fact, dict) else ""
+        field_path = str(fact.get("field_path", "")) if isinstance(fact, dict) else ""
+        category = next((value for prefix, value in prefix_categories if asset_id.startswith(prefix)), None)
+        if category is None and asset_id.startswith("state_ledger_"):
+            if any(token in field_path for token in ("emotion", "trust", "bond")):
+                category = "emotions"
+            elif any(token in field_path for token in ("timeline", "deadline", "countdown")):
+                category = "timeline"
+            elif any(token in field_path for token in ("physical", "condition", "strain", "injury", "wound")):
+                category = "physical_state"
+            else:
+                category = "information"
+        grouped[category or "information"].append(fact)
+    normalized = {key: value for key, value in payload.items() if key != "changes"}
+    return {**normalized, "facts": grouped}
+
+
 def dispatch_chapter_observation(chapter_id: str) -> dict[str, Any]:
     registry = _load_registry()
     record = _chapter_record(registry, chapter_id)
     if record["stage"] != "revision_generated":
         raise RuntimeError("chapter must be revision_generated before final observation")
-    binary = shutil.which("codex")
-    if not binary:
-        raise RuntimeError("codex CLI is missing")
     final_text = runtime_path(record["artifacts"]["revision"])
     context = _read_json(runtime_path(record["artifacts"]["context"]))
     prompt = build_observer_prompt_payload(
@@ -823,20 +927,37 @@ def dispatch_chapter_observation(chapter_id: str) -> dict[str, Any]:
     )
     output = runtime_path(f"system/production_runtime/chapters/{chapter_id}/observation.candidate.json")
     schema = runtime_path("system/production_runtime/schemas/chapter_observation.schema.json")
-    result = subprocess.run(
-        [
-            binary, "--ask-for-approval", "never", "exec", "--ephemeral",
-            "--sandbox", "read-only", "-m", route_model("observer")["model"],
-            "--output-schema", str(schema), "-o", str(output), prompt,
-        ],
-        cwd=ROOT, text=True, capture_output=True, check=False,
-    )
-    if result.returncode != 0 or not output.is_file():
-        output.unlink(missing_ok=True)
-        raise RuntimeError(f"Codex observer failed: {result.stderr.strip()}")
+    observer = route_model("observer")
+    provider = "codex"
+    if not codex_usage_limited() and (binary := shutil.which("codex")):
+        result = subprocess.run(
+            [
+                binary, "--ask-for-approval", "never", "exec", "--ephemeral",
+                "--sandbox", "read-only", "-m", observer["model"],
+                "--output-schema", str(schema), "-o", str(output), prompt,
+            ],
+            cwd=ROOT, text=True, capture_output=True, check=False,
+        )
+        if result.returncode != 0 or not output.is_file():
+            output.unlink(missing_ok=True)
+            if "usage limit" not in result.stderr.lower() and "hit your usage" not in result.stderr.lower():
+                raise RuntimeError(f"Codex observer failed: {result.stderr.strip()}")
+    if not output.is_file():
+        provider = "antigravity"
+        response = ask_antigravity_writer(
+            prompt + "\n只返回一个 JSON 对象，所有 required 字段都必须存在，空类别使用空数组。",
+            model=observer["fallback_model"],
+        )
+        payload = normalize_observation_payload(extract_json_object(response))
+        jsonschema.validate(payload, _read_json(schema))
+        _write_json(output, payload)
     ingested = ingest_chapter_observation(chapter_id, str(output))
     output.unlink(missing_ok=True)
-    return {**ingested, "observer_model": route_model("observer")["model"]}
+    return {
+        **ingested,
+        "observer_provider": provider,
+        "observer_model": observer["model"] if provider == "codex" else observer["fallback_model"],
+    }
 
 
 def build_chapter_audit_packet(chapter_id: str) -> dict[str, Any]:
@@ -890,7 +1011,13 @@ def normalize_continuity_audit_payload(data: dict[str, Any]) -> dict[str, Any]:
     """Adapt equivalent review-agent issue labels without loosening the audit schema."""
     normalized = dict(data)
     issues = []
-    severity_map = {"WARN": "minor", "WARNING": "minor", "MAJOR": "major", "BLOCKING": "blocking"}
+    severity_map = {
+        "MINOR": "minor",
+        "WARN": "minor",
+        "WARNING": "minor",
+        "MAJOR": "major",
+        "BLOCKING": "blocking",
+    }
     for index, issue in enumerate(data.get("issues", []), start=1):
         if not isinstance(issue, dict):
             issues.append(issue)
@@ -1209,13 +1336,14 @@ def dispatch_chapter_revision(chapter_id: str) -> dict[str, Any]:
         (route_model("writer")["model"], route_model("showrunner")["model"])
     ):
         try:
-            text = ask_codex_writer(prompt, model=model)
+            raw_text, provider, used_model = _ask_prose_writer(prompt, model)
+            text = _strip_leading_chapter_heading(raw_text)
         except RuntimeError as error:
             attempts.append({"model": model, "valid": False, "error": str(error)})
             continue
         metrics = analyze_prose_metrics(text)
         valid = MIN_CHAPTER_CHINESE_CHARS <= metrics["chinese_character_count"] <= MAX_CHAPTER_CHINESE_CHARS
-        attempts.append({"model": model, "valid": valid, "metrics": metrics, "response_preview": text[:500]})
+        attempts.append({"model": used_model, "provider": provider, "valid": valid, "metrics": metrics, "response_preview": text[:500]})
         if valid:
             break
     if not MIN_CHAPTER_CHINESE_CHARS <= metrics.get("chinese_character_count", 0) <= MAX_CHAPTER_CHINESE_CHARS:

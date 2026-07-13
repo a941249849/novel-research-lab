@@ -6,7 +6,7 @@
     {"$ref": "https://nrl.local/schemas/common.schema.json"},
     {
       "properties": {
-        "family": {"const": "factions"},
+        "family": {"type": "string", "const": "factions"},
         "faction": {
           "type": "object",
           "required": [

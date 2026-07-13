@@ -23,6 +23,42 @@ import nrl_production_runtime as runtime
 
 
 class ProductionChapterRuntimeV020Tests(unittest.TestCase):
+    def test_flat_observer_facts_are_grouped_before_schema_validation(self):
+        payload = runtime.normalize_observation_payload(
+            {
+                "chapter_id": "chapter-0028",
+                "draft_sha256": "a" * 64,
+                "facts": [
+                    {"asset_id": "character_lu_chenyuan", "field_path": "character.choice"},
+                    {"asset_id": "state_ledger_revealed_account_errors", "field_path": "state_ledger.result"},
+                    {"asset_id": "foreshadowing_cinder_seal_rain", "field_path": "foreshadowing.hook"},
+                ],
+            }
+        )
+        self.assertEqual(len(payload["facts"]["characters"]), 1)
+        self.assertEqual(len(payload["facts"]["information"]), 1)
+        self.assertEqual(len(payload["facts"]["hooks"]), 1)
+        self.assertEqual(set(payload["facts"]), set(runtime.OBSERVATION_FACT_CATEGORIES))
+
+    def test_observer_changes_alias_is_normalized_without_extra_property(self):
+        payload = runtime.normalize_observation_payload(
+            {"chapter_id": "chapter-0029", "draft_sha256": "b" * 64, "changes": []}
+        )
+        self.assertNotIn("changes", payload)
+        self.assertEqual(set(payload["facts"]), set(runtime.OBSERVATION_FACT_CATEGORIES))
+
+    def test_provider_added_heading_is_stripped_without_touching_prose(self):
+        text = "第二十五章 纸背留痕\n\n门外有人说这是第二十五章旧契。"
+        self.assertEqual(runtime._strip_leading_chapter_heading(text), "门外有人说这是第二十五章旧契。")
+        self.assertFalse(runtime._contains_chapter_heading("门外有人说这是第二十五章旧契。"))
+
+    def test_short_draft_recovery_requests_enough_text_to_cross_minimum(self):
+        draft = "\n\n".join(("前" * 1000, "中" * 1000, "后" * 600))
+        with mock.patch.object(runtime, "ask_codex_writer", return_value="补" * 500):
+            recovered, evidence = runtime._recover_short_draft("chapter-0025", "rules", draft)
+        self.assertTrue(evidence["valid"])
+        self.assertGreaterEqual(analyze_prose_metrics(recovered)["chinese_character_count"], 3000)
+
     def test_length_recovery_inserts_before_closing_beat(self):
         draft = "开头\n\n中段\n\n收束一\n\n收束二"
         result = runtime._insert_length_recovery(draft, "补足场景")
@@ -63,6 +99,10 @@ class ProductionChapterRuntimeV020Tests(unittest.TestCase):
         self.assertEqual(result["issues"], [{
             "issue_id": "W-1", "severity": "minor", "evidence": "evidence", "required_fix": "fix",
         }])
+        self.assertEqual(
+            runtime.normalize_continuity_audit_payload({"issues": [{"severity": "MINOR"}]})["issues"][0]["severity"],
+            "minor",
+        )
 
     def test_audit_normalizer_supplies_only_a_deterministic_missing_issue_id(self):
         import nrl_production_runtime as runtime

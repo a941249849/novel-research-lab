@@ -7,10 +7,17 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "system/runtime"))
 
-from nrl_production_operator import build_operator_status
+from nrl_production_operator import build_operator_status, describe_next_production_action
 
 
 class ProductionOperatorTests(unittest.TestCase):
+    def test_next_action_is_derived_from_current_window(self):
+        action = describe_next_production_action(
+            {"accepted_contiguous": 30, "target_chapters": 100, "active_window": "031-040", "next_chapter": "chapter-0031", "resume_command": "produce"}
+        )
+        self.assertIn("031-040", action["label_zh"])
+        self.assertIn("第 31 章", action["label_zh"])
+
     def test_status_exposes_one_resume_command(self):
         with tempfile.TemporaryDirectory() as tmp:
             registry = Path(tmp) / "registry.json"

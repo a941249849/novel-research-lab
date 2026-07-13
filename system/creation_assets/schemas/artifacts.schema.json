@@ -6,7 +6,7 @@
     {"$ref": "https://nrl.local/schemas/common.schema.json"},
     {
       "properties": {
-        "family": {"const": "artifacts"},
+        "family": {"type": "string", "const": "artifacts"},
         "artifact": {
           "type": "object",
           "required": [

@@ -3,6 +3,8 @@ from __future__ import annotations
 from typing import Any
 
 from nrl_corpus_pipeline import build_pipeline_status
+from nrl_paths import runtime_path
+from nrl_production_operator import build_operator_status, describe_next_production_action
 from nrl_system_status import build_system_status
 
 
@@ -150,6 +152,9 @@ def build_architecture_reconciliation(
 ) -> dict[str, Any]:
     system_status = build_system_status(state, adapters)
     pipeline = pipeline_status or build_pipeline_status(state, adapters)
+    production_action = describe_next_production_action(
+        build_operator_status(runtime_path("system/production_runtime/chapter_registry.v0.20.json"))
+    )
     return {
         "version": VERSION,
         "implementation_revision": "1.0",
@@ -236,9 +241,7 @@ def build_architecture_reconciliation(
             "production_ready": system_status["production_ready"],
         },
         "next_architecture_action": {
-            "action_id": "story_window_021_030",
-            "label_zh": "编译 021-030 故事窗口并从第 21 章恢复受控生产",
-            "safe_command": "python3 system/runtime/nrl.py story-window-status",
+            **production_action,
             "blocked_actions": [
                 "generate chapter prose without a validated story window",
                 "publish before Volume 1 release acceptance",

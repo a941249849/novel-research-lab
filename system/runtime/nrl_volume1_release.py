@@ -13,7 +13,8 @@ from typing import Any
 
 from nrl_paths import ROOT, runtime_path
 from nrl_antigravity_bridge import find_agy_binary
-from nrl_codex_writer import ask_codex_writer
+from nrl_codex_writer import ask_antigravity_writer, ask_codex_writer
+from nrl_model_router import route_model
 
 
 VERSION = "0.25"
@@ -116,8 +117,67 @@ def dispatch_release_edit(chapter_id: str, repair_direction: str) -> dict[str, A
         "目标 3200-3800 个中文字符。用不同于相邻章节的场景动作、冲突手段和感官落点，避免模板化的识账/咳灰/口述闭环。",
         "原始章节：", original,
     ])
-    text = ask_codex_writer(prompt, model="gpt-5.6-sol")
+    provider = "codex"
+    model = "gpt-5.6-sol"
+    try:
+        text = ask_codex_writer(prompt, model=model)
+    except RuntimeError:
+        provider = "antigravity"
+        model = route_model("writer")["fallback_model"]
+        text = ask_antigravity_writer(prompt, model=model)
+    text = re.sub(
+        r"^\s*(?:#{1,6}\s*)?第[零〇一二三四五六七八九十百0-9]{1,8}章(?:\s+[^\n]*)?\s*\n+",
+        "",
+        text.strip(),
+        count=1,
+    )
     chinese_count = len(re.findall(r"[\u4e00-\u9fff]", text))
+    if not MIN_RELEASE_CHINESE_CHARS <= chinese_count <= MAX_RELEASE_CHINESE_CHARS:
+        retry_prompt = prompt + (
+            f"\n\n上一版只有 {chinese_count} 个中文字符，不合格。请从头输出完整修订稿，"
+            "不得续写或解释，正文必须达到 3200-3800 个中文字符。"
+        )
+        try:
+            text = ask_codex_writer(retry_prompt, model="gpt-5.6-sol")
+            provider = "codex"
+            model = "gpt-5.6-sol"
+            text = re.sub(
+                r"^\s*(?:#{1,6}\s*)?第[零〇一二三四五六七八九十百0-9]{1,8}章(?:\s+[^\n]*)?\s*\n+",
+                "",
+                text.strip(),
+                count=1,
+            )
+            chinese_count = len(re.findall(r"[\u4e00-\u9fff]", text))
+        except RuntimeError:
+            pass
+    if not MIN_RELEASE_CHINESE_CHARS <= chinese_count <= MAX_RELEASE_CHINESE_CHARS:
+        provider = "antigravity"
+        retry_prompt = prompt + (
+            f"\n\n此前版本只有 {chinese_count} 个中文字符，不合格。请从头输出完整修订稿，"
+            "不得续写或解释，正文必须达到 3200-3800 个中文字符。"
+        )
+        route = route_model("writer")
+        fallback_errors = []
+        for model in (route["fallback_model"], route.get("secondary_fallback_model")):
+            if not model:
+                continue
+            try:
+                text = ask_antigravity_writer(retry_prompt, model=model)
+            except RuntimeError as error:
+                fallback_errors.append(str(error))
+                continue
+            text = re.sub(
+                r"^\s*(?:#{1,6}\s*)?第[零〇一二三四五六七八九十百0-9]{1,8}章(?:\s+[^\n]*)?\s*\n+",
+                "",
+                text.strip(),
+                count=1,
+            )
+            chinese_count = len(re.findall(r"[\u4e00-\u9fff]", text))
+            if MIN_RELEASE_CHINESE_CHARS <= chinese_count <= MAX_RELEASE_CHINESE_CHARS:
+                break
+        else:
+            if fallback_errors:
+                raise RuntimeError("release edit fallback providers failed: " + "; ".join(fallback_errors))
     if not MIN_RELEASE_CHINESE_CHARS <= chinese_count <= MAX_RELEASE_CHINESE_CHARS:
         raise RuntimeError("release edit must contain 3000-4200 Chinese characters")
     target = EDIT_ROOT / f"{chapter_id}.md"
@@ -131,10 +191,19 @@ def dispatch_release_edit(chapter_id: str, repair_direction: str) -> dict[str, A
         "release_edit": str(target.relative_to(ROOT)),
         "release_edit_sha256": _sha256(target),
         "repair_direction": repair_direction,
+        "provider": provider,
+        "model": model,
         "status": "pending_window_re_review",
     }
     _edit_manifest_path(chapter_id).write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    return {"valid": True, "chapter_id": chapter_id, "release_edit": manifest["release_edit"], "chinese_character_count": chinese_count}
+    return {
+        "valid": True,
+        "chapter_id": chapter_id,
+        "release_edit": manifest["release_edit"],
+        "chinese_character_count": chinese_count,
+        "provider": provider,
+        "model": model,
+    }
 
 
 def record_external_release_edit(

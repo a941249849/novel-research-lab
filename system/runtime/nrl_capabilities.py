@@ -108,6 +108,16 @@ def build_hardening_status(
 
     if next_id is None:
         next_id = "prose_production"
+    if live_runtime:
+        from nrl_production_operator import build_operator_status, describe_next_production_action
+
+        operator = build_operator_status(
+            runtime_path("system/production_runtime/chapter_registry.v0.20.json")
+        )
+        action = describe_next_production_action(operator)
+        for capability in capabilities:
+            if capability["capability_id"] == "prose_production":
+                capability["next_action"] = action["label_zh"]
     for capability in capabilities:
         capability["is_next_safe_action"] = capability["capability_id"] == next_id
 

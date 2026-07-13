@@ -1,0 +1,263 @@
+{
+  "chapter_id": "chapter-0021",
+  "draft_sha256": "8d51365bab6481ef4a25f23a3dbd088ce4e4f8d310184a86ca9d88bf7b8f1858",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "chapter-0021-character-lu-procedural-choice",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_observed_choice",
+        "before": "接受本地封存暂停、残命灯盏留原圈，并在自己的纸上承担不启灯选择",
+        "after": "接受州府回执分项处理，登记为半寿送审单独到场责任人，并拒绝替共同保管人承担送审",
+        "evidence": "陆沉渊明确要求“半寿送审，写我单独到场”，并按下单独到场栏指印。"
+      },
+      {
+        "fact_id": "chapter-0021-character-lu-action-limit",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_action_limit",
+        "before": "未施展识账术，接受残命灯盏继续不得点火，且不替三户补验未亲见事项",
+        "after": "仍未施展识账术，仅凭肉眼承认回执分列两项；不补验、不替他人作保，并承担三日内到命审台",
+        "evidence": "他声明“肉眼看见两项。再多的，我不认”，并将手压回自己的页面。"
+      },
+      {
+        "fact_id": "chapter-0021-character-lu-visible-condition",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_visible_condition",
+        "before": "半印施压和按印后胸骨钝响、旧伤出血浸透布条，需苏晚托扶站直",
+        "after": "按下送审指印后旧血口再次裂开、血滴落在自己脚边，咳出冷灰并出现多层视影，需苏晚托住肘部",
+        "evidence": "正文写明血沿布条滴落、陆沉渊咳出一撮冷灰，苏晚随后托住他的肘。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "chapter-0021-qiu-public-receipt-choice",
+        "asset_id": "npc_registrar_qiu_shen",
+        "field_path": "npc.local_review_decision",
+        "before": "宣布本地封存暂停，残命灯盏留原圈，由现愿保管户继续守物",
+        "after": "当厅公开呈验州府回执原件，将异物封档与半寿送审分列，不再续写共同保管人为送审对象",
+        "evidence": "仇慎竖起州府原件公开缺角残印，并分别放置异物封档页与半寿送审页。"
+      },
+      {
+        "fact_id": "chapter-0021-qiu-report-status",
+        "asset_id": "npc_registrar_qiu_shen",
+        "field_path": "npc.current_report_status",
+        "before": "已整理上报纸，等待州府命库回执位落印",
+        "after": "州府回执原件已当厅呈验并由本地半印接收，原件保留缺角与斜痕，记录明确本地不得撤回",
+        "evidence": "原件浮出“已呈原印，本地不得撤回”，仇慎随后封住本地记录。"
+      },
+      {
+        "fact_id": "chapter-0021-qiu-visible-consequence",
+        "asset_id": "npc_registrar_qiu_shen",
+        "field_path": "npc.current_visible_fear",
+        "before": "持续出汗、左手僵硬，以逐句记录和保留空位控制程序风险",
+        "after": "为公开原件按下本地半印，左腕青紫、左手从腕至指尖僵住，越权痕迹留在原件上",
+        "evidence": "半印压下后仇慎左腕骤然歪斜，半印脱手，正文明确其越权痕迹被保留。"
+      },
+      {
+        "fact_id": "chapter-0021-mo-witness-boundary",
+        "asset_id": "npc_mo_jinglan",
+        "field_path": "npc.current_witness_participation",
+        "before": "逐字复述各页页首和拒绝处，保留可撤回、限今日和仅亲见边界",
+        "after": "再次只确认亲眼看过的交接，并拒绝把未见过的命债或陪审承诺填入回执；部分见证者收回纸张",
+        "evidence": "莫井兰说“我只见过交接”，并照原话复述；正文还写有人把纸往怀里收回半寸。"
+      },
+      {
+        "fact_id": "chapter-0021-su-procedural-boundary",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_procedural_limit",
+        "before": "自行选择站位并只验住户命灯未列调用，未以自身命火替代承担",
+        "after": "拒绝被并入家属随审，也拒绝以自身寿债替陆沉渊补足州府回执；仅在其承压后托住肘部",
+        "evidence": "苏晚明确说“我的灯也不并”，并在陆沉渊咳灰后只托住他的肘。"
+      }
+    ],
+    "locations": [],
+    "factions": [
+      {
+        "fact_id": "chapter-0021-life-registry-procedure",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_local_enforcement_phase",
+        "before": "本地封存程序正式暂停，旧追缴未撤，等待州府复核",
+        "after": "本地封存案被州府回执拆为异物封档与半寿送审两项，本地失去自行撤回权限，三日送审期限开始",
+        "evidence": "回执写明分项办理、不得由本地撤封移档销记，以及半寿送审限三日到命审台。"
+      },
+      {
+        "fact_id": "chapter-0021-life-registry-pressure-source",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_procedural_event",
+        "before": "清晨本地封存程序暂停并转入州府复核等待阶段",
+        "after": "州府回执实体落印并转为有效送审令，旧追缴继续存续，顾巡携令抵达巷口",
+        "evidence": "正文末写“送审令已转追缴”，随后巷口铁节声响起并确认顾巡到了。"
+      },
+      {
+        "fact_id": "chapter-0021-mudlamp-communal-response",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_communal_response",
+        "before": "三户及见证者以分立指印和可撤回陈述共同证明交接链，拒绝承认未亲见事项",
+        "after": "共同体继续分离亲见与拒验记录，个别见证者收回纸张，拒绝被并入半寿送审；残命灯盏仍由轮守保管",
+        "evidence": "众人各自保留纸张边界，莫井兰不添字，陆沉渊确认不把共同保管人并入送审。"
+      }
+    ],
+    "artifacts": [
+      {
+        "fact_id": "chapter-0021-ashlight-seal-maintained",
+        "asset_id": "artifact_ashlight_cup",
+        "field_path": "artifact.current_seal_status",
+        "before": "清晨复验确认湿泥发白、轮守纸角未翘起，封口继续完整",
+        "after": "回执落印后残命灯盏仍留在泥圈内，封口发白、轮守纸角平整，未点火、未移出、未被使用",
+        "evidence": "结尾明确写残命灯盏封口发白、轮守纸角仍压得平整，且陆沉渊声明不启灯。"
+      }
+    ],
+    "techniques": [
+      {
+        "fact_id": "chapter-0021-recognition-not-used",
+        "asset_id": "technique_ledger_recognition",
+        "field_path": "technique.current_use_status",
+        "before": "本章继续未施展识账术，仅凭肉眼辨认半印缺角未覆盖见证位",
+        "after": "仍未施展识账术，仅凭肉眼确认异物封档与半寿送审两项之间没有银灰线相连",
+        "evidence": "正文明确写陆沉渊没有运识账术，只观察两项文字与缺角印痕。"
+      }
+    ],
+    "relationships": [
+      {
+        "fact_id": "chapter-0021-lu-su-support-boundary",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_visible_support",
+        "before": "苏晚在陆沉渊按印后仅以自身力气托他站直，未把命火或程序责任转给住户",
+        "after": "苏晚继续拒绝替他承担送审与按印，只在他咳灰、视野晃动后托住肘部，未答应陪同送审",
+        "evidence": "她没有替他按印或承诺同去，只问“站得住吗”，并在他承压后托住肘。"
+      },
+      {
+        "fact_id": "chapter-0021-lane-trust-choice",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_procedural_boundary",
+        "before": "共同体要求接物但不替他人补验，每次新询问重新取得具名同意",
+        "after": "共同体在州府分项送审后仍拒绝连带作证，保留逐人亲见、拒验和撤回边界",
+        "evidence": "仇慎逐个询问时，住户分别保留或收回自己的纸，未形成全程无缺证明。"
+      }
+    ],
+    "emotions": [
+      {
+        "fact_id": "chapter-0021-lane-emotional-turn",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_collective_emotion",
+        "before": "零散拒绝汇成共同体的程序性站立，保留拒验与撤回权",
+        "after": "州府程序落地后的寒意取代暂停期喘息；众人仍各自守纸退开，为下一道命令留出空间",
+        "evidence": "前厅失温、命灯失色，众人守着各自的纸退开一步，等待下一道命令。"
+      },
+      {
+        "fact_id": "chapter-0021-su-emotional-choice",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_procedural_boundary",
+        "before": "与陆沉渊共同承担一息遮印的行动代价，同时未替他答复持有选择",
+        "after": "明确拒绝以自身寿债替陆沉渊补齐回执，也拒绝被列入家属随审",
+        "evidence": "苏晚说“我的寿债还在，别拿它替你补这张回执”。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "chapter-0021-receipt-information",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_report_scope",
+        "before": "上报内容包括本地权限不足、封口、轮守次序、拒验范围和护阵裂口，等待州府回执",
+        "after": "州府回执确认原封存对象分项办理：残命灯盏异物封档，陆沉渊半寿送审，三日内到命审台，旧追缴不撤",
+        "evidence": "回执逐行显示“异物封档”“半寿送审”，并列出不得本地撤封、三日到场和旧追缴存续。"
+      },
+      {
+        "fact_id": "chapter-0021-gu-xun-arrival",
+        "asset_id": "npc_debt_collector_gu_xun",
+        "field_path": "npc.current_procedural_arrival",
+        "before": null,
+        "after": "顾巡携有效送审令抵达泥灯巷口，追缴核对即将开始",
+        "evidence": "结尾以铁节相撞声和“顾巡到了”确认其抵达。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "chapter-0021-hook-next-collection",
+        "asset_id": "npc_debt_collector_gu_xun",
+        "field_path": "npc.next_procedural_hook",
+        "before": "旧追缴未撤，等待州府复核",
+        "after": "有效送审令已转追缴，顾巡将在巷口核对可被带走的对象",
+        "evidence": "回执旁浮出“送审令已转追缴”，随后顾巡抵达巷口。"
+      },
+      {
+        "fact_id": "chapter-0021-hook-evidence-review",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "foreshadowing.next_review_hook",
+        "before": "下一窗口增加州府命库复核，回执印位出现但尚未落印",
+        "after": "州府残印已实体落定但缺角未补，分项送审与追缴核对留下下一次程序复核",
+        "evidence": "缺角半印和两道断痕公开可见，结尾又出现送审令转追缴。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "chapter-0021-three-day-deadline",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_deadline",
+        "before": null,
+        "after": "自州府回执本地半印落定起，陆沉渊三日内到命审台",
+        "evidence": "仇慎当厅宣布“三日期限，自此印落定起计”。"
+      },
+      {
+        "fact_id": "chapter-0021-procedure-irreversible",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_withdrawal_authority",
+        "before": "本地封存暂停，等待州府复核",
+        "after": "本地不得撤回州府回执，原件已呈印并完成分项接收",
+        "evidence": "回执新字写明“已呈原印，本地不得撤回”，仇慎未再将暂停改成撤销。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "chapter-0021-lu-bodily-backlash",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.current_visible_condition",
+        "before": "半印施压和按印后胸骨钝响、旧伤出血浸透布条，需苏晚托扶站直",
+        "after": "送审指印后血口再裂、血渗至指节，咳出冷灰，视野晃成数层，仍需外部支撑",
+        "evidence": "正文连续描写掌心暗红线勒紧、血滴落、咳灰和苏晚托住肘部。"
+      },
+      {
+        "fact_id": "chapter-0021-lu-cold-ash",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.cold_ash_cough_frequency",
+        "before": "雨中再次咳出一口冷灰，落在衣襟",
+        "after": "按印后再次咳出一撮冷灰，灰被陆沉渊包在自己袖内，未波及他人或案面",
+        "evidence": "正文写明咳出的不是血而是一撮冷灰，并被他用左手包住。"
+      },
+      {
+        "fact_id": "chapter-0021-half-life-exposure",
+        "asset_id": "state_ledger_half_life_registry_exposure",
+        "field_path": "state_ledger.registry_locking_sign",
+        "before": "纸展开时暗红线沿腕内拖行，远离后略松，旧追缴与血口证据保留",
+        "after": "送审令转追缴时暗红线隔布骤然绷直，远处债链完成一次核对，追缴锁定继续增强",
+        "evidence": "结尾写明铁节声推进冷铁气味，掌心暗红线骤然绷直，像被远处某物核了一次。"
+      },
+      {
+        "fact_id": "chapter-0021-mother-lamp-pressure",
+        "asset_id": "state_ledger_mother_life_lamp_countdown",
+        "field_path": "state_ledger.current_visible_lamp_consequence",
+        "before": "半印悬起时暗冷光贴向腕骨，收印后未退回，命灯裂纹与寿债未缓解",
+        "after": "州府残印与本地呈印过程中暗冷光再次缩向腕骨，命灯裂纹仍未合拢且未获得缓冲",
+        "evidence": "苏晚腕下暗光先缩成细线，后在公开呈验时猛地缩向腕骨，正文明确裂纹未合拢。"
+      },
+      {
+        "fact_id": "chapter-0021-array-condition",
+        "asset_id": "state_ledger_mudlamp_array_integrity",
+        "field_path": "state_ledger.current_visible_integrity_consequence",
+        "before": "裂口中两截暗红火痕时明时灭，未因本章行动修复",
+        "after": "结尾两截暗红火痕仍隔着一线焦黑时明时灭，护阵继续未修复",
+        "evidence": "正文结尾明确写护阵裂口两截暗红火痕隔着焦黑，谁也未拨动新落干灰。"
+      }
+    ],
+    "naming": [
+      {
+        "fact_id": "chapter-0021-artifact-reader-name",
+        "asset_id": "artifact_ashlight_cup",
+        "field_path": "artifact.reader_facing_name",
+        "before": "统一使用登记名“残命灯盏”",
+        "after": "州府回执继续以“残命灯盏”登记，并将其归入异物封档",
+        "evidence": "回执“异物封档”一行紧随登记名“残命灯盏”。"
+      }
+    ]
+  }
+}

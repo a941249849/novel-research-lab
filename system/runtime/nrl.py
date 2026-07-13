@@ -166,6 +166,7 @@ from nrl_longform_plan import (
 )
 from nrl_longform_cluster1 import write_cluster1_intents
 from nrl_volume1_longform import write_volume1_intents, build_volume1_manifest, validate_volume1_manifest
+from nrl_volume1_release import build_release_readiness, build_fanqie_upload_package, build_window_review_packet, record_window_review
 from nrl_registry import (
     find_active_attempt,
     load_registry,
@@ -921,6 +922,31 @@ def cmd_volume1_longform_intents_validate(_: argparse.Namespace) -> int:
     return 0 if result["valid"] else 1
 
 
+def cmd_volume1_release_status(_: argparse.Namespace) -> int:
+    result = build_release_readiness()
+    print_json(result)
+    return 0 if result["valid"] else 1
+
+
+def cmd_volume1_window_review_packet(args: argparse.Namespace) -> int:
+    result = build_window_review_packet(args.start, args.end)
+    print_json(result)
+    return 0 if result["valid"] else 1
+
+
+def cmd_volume1_window_review_record(args: argparse.Namespace) -> int:
+    path = Path(args.file)
+    if not path.is_absolute():
+        path = ROOT / path
+    print_json(record_window_review(json.loads(path.read_text(encoding="utf-8"))))
+    return 0
+
+
+def cmd_volume1_fanqie_package(_: argparse.Namespace) -> int:
+    print_json(build_fanqie_upload_package())
+    return 0
+
+
 def cmd_prose_metrics(args: argparse.Namespace) -> int:
     path = Path(args.file)
     if not path.is_absolute():
@@ -1618,6 +1644,15 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("longform-cluster1-intents-build").set_defaults(func=cmd_longform_cluster1_intents_build)
     sub.add_parser("volume1-longform-intents-build").set_defaults(func=cmd_volume1_longform_intents_build)
     sub.add_parser("volume1-longform-intents-validate").set_defaults(func=cmd_volume1_longform_intents_validate)
+    sub.add_parser("volume1-release-status").set_defaults(func=cmd_volume1_release_status)
+    window_packet = sub.add_parser("volume1-window-review-packet")
+    window_packet.add_argument("--start", type=int, required=True)
+    window_packet.add_argument("--end", type=int, required=True)
+    window_packet.set_defaults(func=cmd_volume1_window_review_packet)
+    window_record = sub.add_parser("volume1-window-review-record")
+    window_record.add_argument("--file", required=True)
+    window_record.set_defaults(func=cmd_volume1_window_review_record)
+    sub.add_parser("volume1-fanqie-package").set_defaults(func=cmd_volume1_fanqie_package)
     chapter_quarantine = sub.add_parser("chapter-quarantine")
     chapter_quarantine.add_argument("--chapter-id", required=True)
     chapter_quarantine.add_argument("--reason", required=True)

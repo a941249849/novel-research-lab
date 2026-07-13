@@ -1,0 +1,18 @@
+{
+  "chapter_id": "chapter-0009",
+  "artifact_kind": "revision",
+  "artifact_sha256": "2d3ca41ccd5746015409177f5bdb67f55ef4a8a9205b46cf9f40ceb52deb36a2",
+  "context_sha256": "824d3083b7a32871bd8309bd4d7d756195d64601ee36c3198e9a6d52bbcb464d",
+  "verdict": "ACCEPT",
+  "dimensions": {
+    "canon": [],
+    "character": [],
+    "state": [],
+    "causality": [],
+    "pacing": [],
+    "life_force": [],
+    "anti_ai_taste": [],
+    "originality": []
+  },
+  "issues": []
+}

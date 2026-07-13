@@ -1,0 +1,76 @@
+{
+  "chinese_character_count": 2625,
+  "sentence_count": 187,
+  "paragraph_count": 99,
+  "average_sentence_length": 14.04,
+  "sentence_length_stddev": 9.27,
+  "average_paragraph_length": 26.52,
+  "paragraph_length_stddev": 26.29,
+  "dialogue_ratio": 0.3413,
+  "transition_word_hits": 1,
+  "rhetorical_template_hits": 0,
+  "abstract_word_hits": 0,
+  "sensory_word_hits": 114,
+  "repeated_sentence_starters": [
+    {
+      "starter": "”\n",
+      "count": 54
+    },
+    {
+      "starter": "陆沉",
+      "count": 9
+    },
+    {
+      "starter": "苏晚",
+      "count": 7
+    },
+    {
+      "starter": "仇慎",
+      "count": 7
+    },
+    {
+      "starter": "莫井",
+      "count": 6
+    },
+    {
+      "starter": "顾婶",
+      "count": 6
+    },
+    {
+      "starter": "顾家",
+      "count": 4
+    },
+    {
+      "starter": "残页",
+      "count": 4
+    },
+    {
+      "starter": "左眼",
+      "count": 3
+    },
+    {
+      "starter": "陶片",
+      "count": 3
+    },
+    {
+      "starter": "他把",
+      "count": 3
+    },
+    {
+      "starter": "”陆",
+      "count": 3
+    },
+    {
+      "starter": "“我",
+      "count": 3
+    },
+    {
+      "starter": "”仇",
+      "count": 3
+    }
+  ],
+  "flags": [
+    "sentence_opening_repetition"
+  ],
+  "policy": "metrics_are_audit_evidence_not_a_literary_verdict"
+}

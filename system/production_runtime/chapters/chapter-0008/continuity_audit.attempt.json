@@ -1,0 +1,9 @@
+{
+  "chapter_id": "chapter-0008",
+  "audit_kind": "initial",
+  "model": "Claude Opus 4.6 (Thinking)",
+  "status": "provider_failed",
+  "returncode": 1,
+  "stderr": "Error: Agent execution terminated due to error.",
+  "stdout": ""
+}

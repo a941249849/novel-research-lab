@@ -33,6 +33,20 @@ class ProductionChapterRuntimeV020Tests(unittest.TestCase):
         packet.unlink()
         self.assertTrue(result["valid"])
 
+    def test_failed_external_audit_persists_a_recoverable_attempt_record(self):
+        import nrl_production_runtime as runtime
+
+        record = {"stage": "draft_generated", "artifacts": {}}
+        packet = REPO_ROOT / "system/production_runtime/chapters/chapter-0001/test-failed-audit-packet.md"
+        packet.write_text("packet", encoding="utf-8")
+        with mock.patch.object(runtime, "build_chapter_audit_packet", return_value={"template": {}, "packet_path": str(packet.relative_to(REPO_ROOT))}), mock.patch.object(runtime, "find_agy_binary", return_value="agy"), mock.patch.object(runtime, "_load_registry", return_value={"chapters": [record]}), mock.patch.object(runtime, "_chapter_record", return_value=record), mock.patch.object(runtime, "_save_registry"), mock.patch.object(runtime, "_write_json") as write_json, mock.patch("nrl_production_runtime.subprocess.run", return_value=mock.Mock(returncode=1, stdout="", stderr="provider unavailable")):
+            result = runtime.dispatch_chapter_audit("chapter-0001")
+        packet.unlink()
+        self.assertFalse(result["valid"])
+        self.assertIn("attempt_path", result)
+        self.assertEqual(write_json.call_args.args[1]["status"], "provider_failed")
+        self.assertIn("continuity_audit_attempt", record["artifacts"])
+
     def test_audit_normalizer_maps_compatible_agent_issue_labels(self):
         import nrl_production_runtime as runtime
 

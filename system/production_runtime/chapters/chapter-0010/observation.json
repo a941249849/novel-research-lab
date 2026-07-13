@@ -1,0 +1,230 @@
+{
+  "chapter_id": "chapter-0010",
+  "draft_sha256": "e4bbb161eefe11071cb77cf2538813057c41885348acd90909a164f6ef7bcfa8",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "chapter-0010-character-lu-chenyuan-001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_procedural_status",
+        "before": "已在命籍衙完成今日在场认痕与异常残页复验；明日午后仍须复验",
+        "after": "返还后获得暂时在场窗口；明日申前须复验返还附录、异常残页及在场认痕，缺席则断处仅作未复验并继续收紧",
+        "evidence": "仇慎明确返还附带的在场窗口仅持续到下一次复验落印前，并将明日申前复验事项钉在门上。"
+      },
+      {
+        "fact_id": "chapter-0010-character-lu-chenyuan-002",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_local_evidence_statement",
+        "before": "确认残页灰与追缴纸灰方向相反、不能认定同源，不判断来源、时间或个人归属",
+        "after": "确认在场认痕与残页下灰之间存在一线断口，不能据此认定其碰过残页、认定接触者、断裂时间或灰的来源",
+        "evidence": "陆沉渊识账后指出纸上两段暗线中间断开，并逐项回答四个问题均为不能。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "chapter-0010-npc-registrar-qiu-shen-001",
+        "asset_id": "npc_registrar_qiu_shen",
+        "field_path": "npc.local_review_decision",
+        "before": "顾家折记不改，顾家户灯不归；异常残页暂扣命审台中央；残页空缺不按普通破损记",
+        "after": "确认错压的一笔从苏晚拒验记中退回苏晚命灯；顾家折记不改、顾家户灯继续留衙；异常残页与返还附录分别封记",
+        "evidence": "仇慎写明受返者、撤印承担方、顾家户灯不代偿，并在结尾将返还附录、异常残页与在场认痕列入明日复验。"
+      },
+      {
+        "fact_id": "chapter-0010-npc-registrar-qiu-shen-002",
+        "asset_id": "npc_registrar_qiu_shen",
+        "field_path": "npc.current_local_notice",
+        "before": "明日午后复验异常残页与陆沉渊今日在场认痕",
+        "after": "明日申前复验返还附录、异常残页及陆沉渊在场认痕；苏晚错压一笔已退，原债照追",
+        "evidence": "门框新钉监督纸写明明日申前复验事项，末尾注明错压一笔已退而原债继续追缴。"
+      },
+      {
+        "fact_id": "chapter-0010-npc-registrar-qiu-shen-003",
+        "asset_id": "npc_registrar_qiu_shen",
+        "field_path": "npc.current_seal_condition",
+        "before": "冷金小印失色并出现暗红印缘",
+        "after": "冷金小印再失去大半圈光；仇慎指腹冷金痕延至第二指节，两根手指僵硬弯不下去",
+        "evidence": "返还落印时印缘又暗一块，冷金色漫到第二指节；结尾写明印失去大半圈光且仇慎手指僵硬。"
+      },
+      {
+        "fact_id": "chapter-0010-npc-mo_jinglan-001",
+        "asset_id": "npc_mo_jinglan",
+        "field_path": "npc.current_witness_participation",
+        "before": "继续携带陶片且拒绝接触命审台或冷金印，按亲见作证",
+        "after": "确认纸上灰线中间有白处、未见陆沉渊碰残页；明日仍携陶片到场且陶片不入台",
+        "evidence": "莫井兰当场限定自己只认所见，并在仇慎安排明日复验后确认陶片仍带但不入台。"
+      },
+      {
+        "fact_id": "chapter-0010-npc_su-wan-001",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_procedural_limit",
+        "before": "继续拒绝验灯及动用巷中任何人的灯",
+        "after": "继续拒绝验灯和代验；明确要求返还只退本次错压、不消旧债、不改裂纹",
+        "evidence": "苏晚先声明不用旁人的灯，返还前后又分别追问债与裂纹，接受的仅是本次错压返还。"
+      }
+    ],
+    "locations": [
+      {
+        "fact_id": "chapter-0010-location-mudlamp-lane-001",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_protection_array_condition",
+        "before": "本章前护阵状态未在现场推进，压力通过留衙户灯失色与偏焰显现",
+        "after": "本章未动用泥灯巷住户命火；泥灯巷无人出灯，顾家户灯承担的错压被撤回但巷中护阵未被修复",
+        "evidence": "仇慎书面记载泥灯巷无人出灯、顾家户灯不代偿；正文未出现护阵修补。"
+      }
+    ],
+    "factions": [
+      {
+        "fact_id": "chapter-0010-faction-life-registry-office-001",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_local_enforcement_phase",
+        "before": "今日完成异常残页与在场认痕复验，明日午后继续复验",
+        "after": "完成一次本地有限返还并留下返还附录；程序推进至明日申前复验返还附录、异常残页与在场认痕",
+        "evidence": "返还落印后仇慎收回附录，并钉下明日申前的监督复验纸。"
+      },
+      {
+        "fact_id": "chapter-0010-faction-life-registry-office-002",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.next_local_review_schedule",
+        "before": "明日午后复验异常残页与陆沉渊在场认痕",
+        "after": "明日申前复验返还附录、异常残页及陆沉渊在场认痕；顾家户灯继续留衙，莫井兰携陶片，苏晚拒验续记",
+        "evidence": "仇慎在结尾明确写下明日申前的复验对象与继续追缴条件。"
+      }
+    ],
+    "artifacts": [],
+    "techniques": [
+      {
+        "fact_id": "chapter-0010-technique-ledger-recognition-001",
+        "asset_id": "technique_ledger_recognition",
+        "field_path": "technique.current_local_ash_trace_observation",
+        "before": "确认残页灰在旧冷金痕下、追缴纸灰在新字下；两处方向相反，不能认定同源",
+        "after": "确认陆沉渊在场认痕对应的纸上暗线分成两段，其中一段绕过印角牵向残页下方，中间存在干净纸色断口；结论止于不能认定碰过残页",
+        "evidence": "陆沉渊只识账纸面，不追银灰火屑去处，并指出两段暗线之间的断口。"
+      }
+    ],
+    "relationships": [
+      {
+        "fact_id": "chapter-0010-relationship-mother-su-wan-001",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_visibility_of_lu_chenyuan_backlash",
+        "before": "苏晚看见陆沉渊右眼模糊、左眼焦壳崩裂、咳灰及膝撞台沿，并扶他退出",
+        "after": "苏晚继续公开扶持陆沉渊；返还后亲手感到他暂时不再被暗线拖向命审台，但确认这只是一会儿的暂止",
+        "evidence": "返还后陆沉渊能自行站住，苏晚说明仅这一会儿；仇慎记载认痕牵引暂止而旧印与伤势仍在。"
+      },
+      {
+        "fact_id": "chapter-0010-relationship-mudlamp-lane_trust-001",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_witness_commitment",
+        "before": "见证者按人分句限定所见，苏晚拒绝以巷中任何人的灯代验",
+        "after": "莫井兰、顾婶、苏晚继续分别限定见证范围；三段证言未合成为单一结论，且泥灯巷无人出灯",
+        "evidence": "正文将三人的证言分别写入三处空白，并明确返还记录排除泥灯巷住户命火。"
+      }
+    ],
+    "emotions": [
+      {
+        "fact_id": "chapter-0010-emotion-registrar-qiu-shen-001",
+        "asset_id": "npc_registrar_qiu_shen",
+        "field_path": "npc.current_visible_fear",
+        "before": "仇慎因程序资格受问责而恐惧，曾停止继续落印",
+        "after": "仇慎在确认印色少承一笔后额角渗汗、脸色发白，并以有限返还和后续复验控制程序风险",
+        "evidence": "他发现顾家户灯两次失色而附录只承一次后额角渗汗，随后低声限定返还范围。"
+      },
+      {
+        "fact_id": "chapter-0010-emotion-mudlamp-lane-001",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_collective_emotion",
+        "before": "见证者保持谨慎互保，不交陶片、不代认来源、不以他人灯代验",
+        "after": "见证者继续谨慎互保；顾婶在焰退半分后仍只确认该项，莫井兰只确认苏晚手能弯且冷光仍在",
+        "evidence": "顾婶与莫井兰均在返还后重复限定各自亲见，没有扩大结论。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "chapter-0010-information-revealed-account-errors-001",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_local_evidence_status",
+        "before": "异常残页被记录为灰痕方向相反、空缺不按普通破损记，但未改账或归属",
+        "after": "经本地程序确认：顾家户灯两次失色而附录只承一次，存在一笔误压承接；该笔可从苏晚拒验记撤下，但顾家折记仍不改、来源仍不认定",
+        "evidence": "仇慎依据灯失色、附录印色和印底白痕完成有限错压认定，并明确不认来源、不改顾家折记。"
+      },
+      {
+        "fact_id": "chapter-0010-information-return-transaction-001",
+        "asset_id": "state_ledger_poorcity_returnfire",
+        "field_path": "state_ledger.current_return_transaction",
+        "before": "尚未形成本章经见证的错征寿火正向结余",
+        "after": "完成一笔绑定苏晚为受益者、命籍衙为承担方的有限错压返还；返还仅限昨日拒验记中误承的一笔命火",
+        "evidence": "仇慎将受返者、撤印承担方、返还范围及不消旧债逐项写入附录。"
+      },
+      {
+        "fact_id": "chapter-0010-information-mother-debt-001",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_debt_status",
+        "before": "苏晚原有寿债与命灯裂纹持续追缴",
+        "after": "本次返还形成短暂缓冲，但苏晚原有寿债与命灯裂纹均未解除或合拢",
+        "evidence": "返还后她掌背获得微弱温度、裂纹仍亮且未合拢；仇慎明确“原债照追”。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "chapter-0010-hook-cinder-seal-rain-001",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "foreshadowing.current_manifestation",
+        "before": "户灯在残页移动后失色、出现新白痕并持续偏向残页，冷金印暗红线持续收紧",
+        "after": "顾家户灯在返还后焰尖退回半分，白痕未消且未继续上裂；返还落印时冷金印缘进一步失色，门外新监督纸贴在旧痕旁",
+        "evidence": "顾婶见证焰退半分与白痕仍在；结尾显示印缘失光及新的监督纸落门。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "chapter-0010-timeline-local-enforcement-001",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_local_enforcement_phase",
+        "before": "明日午后复验异常残页及陆沉渊在场认痕",
+        "after": "午后完成一次有限错压返还；下一次本地程序监督定于明日申前",
+        "evidence": "仇慎完成返还落印后，将明日申前复验事项写在新监督纸上。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "chapter-0010-physical-state-protagonist-strain-001",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.eye_pattern_burn",
+        "before": "右眼施术后仅剩一线模糊，左眼死闭并持续掉落黑屑",
+        "after": "右眼返还后仍看不清人脸，左眼焦壳下继续掉黑屑；目伤未恢复",
+        "evidence": "正文写明返还后右眼仍看不清人脸，左眼焦壳下不断掉出黑屑。"
+      },
+      {
+        "fact_id": "chapter-0010-physical-state-protagonist-strain-002",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.bone_fissure_severity",
+        "before": "掌骨连续摩擦、胸骨承压未缓解，需苏晚扶持",
+        "after": "返还后胸骨每次起伏仍疼，但陆沉渊能扶着苏晚站稳；骨裂未恢复",
+        "evidence": "正文同时保留胸骨疼痛，并写明返还后他能自己站住。"
+      },
+      {
+        "fact_id": "chapter-0010-physical-state-protagonist-strain-003",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.cold_ash_cough_frequency",
+        "before": "再次识账后咳出腥冷灰，灰落在命审台角",
+        "after": "本次识账后咳出一小撮冷灰，落在鞋面、未靠近纸张或越过台脚",
+        "evidence": "陆沉渊在回答后咳灰，仇慎将其记录为台外新灰，不纳入本次比对。"
+      },
+      {
+        "fact_id": "chapter-0010-physical-state-registry-exposure-001",
+        "asset_id": "state_ledger_half_life_registry_exposure",
+        "field_path": "state_ledger.registry_locking_sign",
+        "before": "掌心暗红印线收紧，追缴锁定持续并以异常残页与在场认痕作为后续复验对象",
+        "after": "返还后绕向残页的掌心暗线暂时松开，认痕牵引暂止；旧印未退，且下一次复验与缺席后果仍被保留",
+        "evidence": "正文写明返还落印时暗线松开、拖拽力停止；仇慎同时明确旧印未退且缺席会使认痕继续收紧。"
+      },
+      {
+        "fact_id": "chapter-0010-physical-state-mother-lamp-001",
+        "asset_id": "state_ledger_mother_life_lamp_countdown",
+        "field_path": "state_ledger.current_visible_lamp_consequence",
+        "before": "苏晚掌背裂口冷光未消，命灯裂纹未缓解",
+        "after": "错压一笔返还后掌背获得短暂温度，冷光与裂纹仍在，裂纹未合拢",
+        "evidence": "返还后苏晚腕骨慢慢有温度、手指能弯起，但掌背裂口仍亮且裂纹边缘没有合拢。"
+      }
+    ],
+    "naming": []
+  }
+}

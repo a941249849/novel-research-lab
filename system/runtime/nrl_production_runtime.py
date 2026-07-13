@@ -766,12 +766,29 @@ def normalize_continuity_audit_payload(data: dict[str, Any]) -> dict[str, Any]:
     return normalized
 
 
+def _record_audit_attempt(
+    chapter_id: str, artifact_key: str, payload: dict[str, Any]
+) -> str:
+    """Persist non-gating reviewer evidence so a failed external call is diagnosable."""
+    target = runtime_path(
+        f"system/production_runtime/chapters/{chapter_id}/{artifact_key}.attempt.json"
+    )
+    _write_json(target, payload)
+    registry = _load_registry()
+    record = _chapter_record(registry, chapter_id)
+    if record["stage"] != "chapter_accepted":
+        record["artifacts"][f"{artifact_key}_attempt"] = str(target.relative_to(ROOT))
+        _save_registry(registry)
+    return str(target.relative_to(ROOT))
+
+
 def dispatch_chapter_audit(chapter_id: str, model: str = "Gemini 3.5 Flash (High)") -> dict[str, Any]:
     packet = build_chapter_audit_packet(chapter_id)
     binary = find_agy_binary()
     if not binary:
         raise RuntimeError("agy binary is missing")
     packet_path = runtime_path(packet["packet_path"])
+    artifact_key = "final_audit" if packet.get("audit_kind", "initial") == "final" else "continuity_audit"
     try:
         # The packet is fully inline. An isolated cwd makes Antigravity a reviewer,
         # not an accidental second runtime operator with access to project files.
@@ -781,8 +798,38 @@ def dispatch_chapter_audit(chapter_id: str, model: str = "Gemini 3.5 Flash (High
                 cwd=isolated_cwd, text=True, capture_output=True, check=False, timeout=780,
             )
     except subprocess.TimeoutExpired:
-        return {"valid": False, "errors": ["Antigravity audit timed out after 780s"], "returncode": None, "stderr": ""}
+        attempt_path = _record_audit_attempt(
+            chapter_id,
+            artifact_key,
+            {
+                "chapter_id": chapter_id,
+                "audit_kind": packet.get("audit_kind", "initial"),
+                "model": model,
+                "status": "timed_out",
+                "timeout_seconds": 780,
+            },
+        )
+        return {"valid": False, "errors": ["Antigravity audit timed out after 780s"], "attempt_path": attempt_path}
     response_text = (result.stdout or result.stderr).strip()
+    if result.returncode != 0:
+        attempt_path = _record_audit_attempt(
+            chapter_id,
+            artifact_key,
+            {
+                "chapter_id": chapter_id,
+                "audit_kind": packet.get("audit_kind", "initial"),
+                "model": model,
+                "status": "provider_failed",
+                "returncode": result.returncode,
+                "stderr": result.stderr.strip()[:4000],
+                "stdout": result.stdout.strip()[:4000],
+            },
+        )
+        return {
+            "valid": False,
+            "errors": [f"Antigravity audit failed with exit code {result.returncode}"],
+            "attempt_path": attempt_path,
+        }
     try:
         match = re.search(r"```json\s*(\{.*?\})\s*```", response_text, re.DOTALL)
         payload = match.group(1) if match else response_text
@@ -790,7 +837,21 @@ def dispatch_chapter_audit(chapter_id: str, model: str = "Gemini 3.5 Flash (High
         schema = _read_json(runtime_path("system/production_runtime/schemas/continuity_audit.schema.json"))
         jsonschema.validate(data, schema)
     except (json.JSONDecodeError, jsonschema.ValidationError) as error:
-        return {"valid": False, "errors": [str(error)], "returncode": result.returncode, "stderr": result.stderr.strip(), "response_preview": response_text[:500]}
+        attempt_path = _record_audit_attempt(
+            chapter_id,
+            artifact_key,
+            {
+                "chapter_id": chapter_id,
+                "audit_kind": packet.get("audit_kind", "initial"),
+                "model": model,
+                "status": "invalid_response",
+                "returncode": result.returncode,
+                "error": str(error),
+                "stderr": result.stderr.strip()[:4000],
+                "response_preview": response_text[:4000],
+            },
+        )
+        return {"valid": False, "errors": [str(error)], "attempt_path": attempt_path}
     expected = packet["template"]
     if data["artifact_kind"] != expected["artifact_kind"] or data["artifact_sha256"] != expected["artifact_sha256"] or data["context_sha256"] != expected["context_sha256"]:
         return {"valid": False, "errors": ["audit binding hash mismatch"]}

@@ -74,7 +74,7 @@ def build_longform_contract() -> dict[str, Any]:
         })
     return {
         "version": VERSION,
-        "status": "candidate_not_owner_accepted",
+        "status": "owner_accepted_active",
         "project": "《借天改命账》",
         "target_chapters": 1800,
         "target_chinese_characters": [6000000, 6800000],
@@ -90,7 +90,7 @@ def build_longform_contract() -> dict[str, Any]:
         "cross_city_witness_medium": ["local_trace", "independent_relay", "destination_review_seal"],
         "high_rank_backlash": "removes_at_least_one_of_jurisdiction_supply_or_subordinate_contract",
         "mother_debt_echo_windows": ["volumes_3_6", "volumes_10_13"],
-        "production_boundary": "No prose authorization. Only Volume 1 chapters 1-100 may receive non-prose planning detail after Owner acceptance.",
+        "production_boundary": "Owner-authorized controlled prose is limited to Volume 1 chapters 11-100 and remains subject to story-window, chapter-state, and release gates.",
     }
 
 
@@ -136,13 +136,13 @@ def build_first100_manifest() -> dict[str, Any]:
                 "lifecycle_constraints": lifecycle,
                 "non_prose_only": True,
             })
-    return {"version": VERSION, "status": "candidate_not_owner_accepted", "chapter_count": 100, "chapters": chapters}
+    return {"version": VERSION, "status": "owner_accepted_active", "chapter_count": 100, "chapters": chapters}
 
 
 def build_first100_guard_config() -> dict[str, Any]:
     return {
         "version": VERSION,
-        "status": "candidate_not_owner_accepted",
+        "status": "owner_accepted_active",
         "benefit_triad": ["return_recipient", "liable_party", "observable_consequence"],
         "community_trust": {"resource_pool_forbidden": True},
         "concealment_period": {"chapter_range": [11, 20], "max_uses": 1, "requires": ["supervision", "action_cost"], "does_not_reduce_exposure": True},
@@ -163,8 +163,8 @@ def validate_longform_contract(contract: dict[str, Any]) -> dict[str, Any]:
         errors.append("volume chapter targets must total 1800")
     if contract.get("target_chinese_characters") != [6000000, 6800000]:
         errors.append("character target must remain 6.0M-6.8M")
-    if contract.get("status") != "candidate_not_owner_accepted":
-        errors.append("candidate contract may not claim Owner acceptance")
+    if contract.get("status") != "owner_accepted_active":
+        errors.append("active contract must record Owner acceptance")
     if contract.get("price_engine") != "cost_conserved_with_verified_liability_migration":
         errors.append("contract must preserve a cost-conserved price engine")
     if contract.get("witness_network_evolution") != ["local_causal_anchor", "cross_city_reviewability", "public_right_of_appeal"]:
@@ -198,8 +198,8 @@ def validate_first100_manifest(manifest: dict[str, Any]) -> dict[str, Any]:
     known_assets = {item["asset_id"] for item in _read(runtime_path("system/creation_assets/project_assets.v0.2.json")).get("assets", [])}
     if any(set(item.get("required_asset_ids", [])) - known_assets for item in chapters):
         errors.append("first100 references unknown assets")
-    if manifest.get("status") != "candidate_not_owner_accepted":
-        errors.append("candidate manifest may not claim Owner acceptance")
+    if manifest.get("status") != "owner_accepted_active":
+        errors.append("active manifest must record Owner acceptance")
     return {"valid": not errors, "errors": errors}
 
 
@@ -258,9 +258,13 @@ def build_longform_first100_dry_run() -> dict[str, Any]:
     checks = {
         "first100_manifest_valid": validate_first100_manifest(manifest)["valid"],
         "guard_config_valid": validate_first100_guard_config(guards)["valid"],
-        "active_blueprint_preproduction_only": active.get("status") == "active_preproduction_only" and active.get("prose_allowed") is False,
+        "active_blueprint_governed": (
+            active.get("status") == "active_production_governed"
+            and active.get("prose_allowed") is True
+            and active.get("story_window_contract_required") is True
+        ),
     }
-    return {"valid": all(checks.values()), "checks": checks, "mode": "no prose, no model invocation, no chapter runtime mutation"}
+    return {"valid": all(checks.values()), "checks": checks, "mode": "governed prose; dry run performs no model invocation or chapter mutation"}
 
 
 def promote_longform_blueprint() -> dict[str, Any]:
@@ -271,12 +275,15 @@ def promote_longform_blueprint() -> dict[str, Any]:
     payload = {
         "version": "0.24",
         "project": "《借天改命账》",
-        "status": "active_preproduction_only",
+        "status": "active_production_governed",
         "contract_path": str(CONTRACT_PATH.relative_to(runtime_path("."))),
         "first100_manifest_path": str(FIRST100_PATH.relative_to(runtime_path("."))),
         "owner_scope": "borrowed-heaven-longform-v024",
-        "prose_allowed": False,
-        "next_required_gate": "first100_detailed_intent_and_state_dry_run",
+        "prose_allowed": True,
+        "authorized_chapter_range": [11, 100],
+        "accepted_calibration_range": [1, 15],
+        "story_window_contract_required": True,
+        "next_required_gate": "story_window_011_020_validation",
     }
     _write(ACTIVE_BLUEPRINT_PATH, payload)
     return {"valid": True, "active_blueprint_path": str(ACTIVE_BLUEPRINT_PATH), "payload": payload}

@@ -36,7 +36,7 @@ class ArchitectureReconciliationCliTests(unittest.TestCase):
         )
         self.assertIn("Core7 小批量试验", data["experiment_calibration"]["label_zh"])
         self.assertIn(
-            "runtime_pipeline_ahead_of_architecture",
+            "control_plane_split_brain",
             {item["mismatch_id"] for item in data["current_mismatch_report"]},
         )
         self.assertEqual(data["agent_role_contract"][2]["agent"], "Hermes")
@@ -57,17 +57,17 @@ class ArchitectureReconciliationContractTests(unittest.TestCase):
         self.adapters = load_adapters()
         self.build_architecture = build_architecture_reconciliation
 
-    def test_architecture_status_is_deterministic_and_preserves_owner_gate(self):
+    def test_architecture_status_is_deterministic_and_reflects_authorized_runtime(self):
         first = self.build_architecture(self.state, self.adapters)
         second = self.build_architecture(self.state, self.adapters)
         self.assertEqual(first, second)
-        self.assertEqual(first["production_readiness"]["system_mode"], "SYSTEM_HARDENING")
+        self.assertEqual(first["production_readiness"]["system_mode"], "CONTROLLED_RUNTIME")
         self.assertEqual(
             first["production_readiness"]["content_progression"],
-            "FROZEN_AT_OWNER_GATE",
+            "RUNTIME_CONTROLLED",
         )
-        self.assertTrue(first["production_readiness"]["owner_gate_required"])
-        self.assertFalse(first["production_readiness"]["content_generation_allowed"])
+        self.assertFalse(first["production_readiness"]["owner_gate_required"])
+        self.assertTrue(first["production_readiness"]["content_generation_allowed"])
 
 
 class ArchitectureReconciliationIntegrationTests(unittest.TestCase):

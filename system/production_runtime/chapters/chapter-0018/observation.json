@@ -1,0 +1,255 @@
+{
+  "chapter_id": "chapter-0018",
+  "draft_sha256": "a6d3b891d64d57120a90e5b3baa61dfd3330c19572ee0b6c9d7f313662a7a1e1",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "ch18_char_001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_observed_choice",
+        "before": "未取得陶沿，未跨门槛接近灯座",
+        "after": "放弃个人持有残命灯盏，接受三户轮流保管与随时退出规则",
+        "evidence": "陆沉渊明确说“我不持有”，并指出个人拿取会把共同见证变成私取。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "ch18_npc_001",
+        "asset_id": "npc_mo_jinglan",
+        "field_path": "npc.current_witness_participation",
+        "before": "确认雨痕、刻痕和一次回火，未确认取得归属",
+        "after": "在住户监督下完成取盏，并将见证范围限定为各自亲见内容",
+        "evidence": "莫井兰逐层报告手的位置与取出步骤，并允许第三户撤回此前未看清的见证。"
+      },
+      {
+        "fact_id": "ch18_npc_002",
+        "asset_id": "npc_mo_jinglan",
+        "field_path": "npc.current_custody_of_artifact",
+        "before": "未取得残命灯盏，仅见陶沿留在灯座裂口下",
+        "after": "负责第一回交接，将残命灯盏交给第一户轮守",
+        "evidence": "莫井兰托出浅盏，声明只守第一回交接，随后等第一户自行开门接物。"
+      },
+      {
+        "fact_id": "ch18_npc_003",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_procedural_limit",
+        "before": "门帘只遮苏家门槛，不遮灯座",
+        "after": "与陆沉渊共同遮住仇慎袖口冷金印光一息，未越泥圈且未代他承担全部重量",
+        "evidence": "苏晚与陆沉渊各执湿帘一角，帘布没有越过泥圈；她拒绝把帘角交给旁人。"
+      },
+      {
+        "fact_id": "ch18_npc_004",
+        "asset_id": "npc_registrar_qiu_shen",
+        "field_path": "npc.local_review_decision",
+        "before": "旧追缴不撤，等待陶沿与雨痕复核",
+        "after": "暂停带回封存，改记原位取出、三户轮守、随时退还，并登记未点火、未认主、住户命灯不列调用",
+        "evidence": "仇慎划去“带回封存”，改写三户轮守规则及相关限制。"
+      }
+    ],
+    "locations": [
+      {
+        "fact_id": "ch18_loc_001",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_protection_array_condition",
+        "before": "积水灌入裂口，火星再暗一截，护阵未修复",
+        "after": "取盏后灯座失去一处旧撑，裂口向下塌了半指，暗红火星断开一处，仅剩两截微弱红痕",
+        "evidence": "浅盏脱出旧沟时灯座外角崩壳，裂口下塌，墙根火星断开。"
+      }
+    ],
+    "factions": [
+      {
+        "fact_id": "ch18_fac_001",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_communal_response",
+        "before": "住户无人出灯、无人应声，未提供命火",
+        "after": "三户在公开监督下允许取盏，但分别保留拒绝、撤回见证和退出保管的权利，未提供命火",
+        "evidence": "三户逐一同意只看取出、不认物；有人声明若取命火即退出，取盏后又分别限定见证与保管条件。"
+      },
+      {
+        "fact_id": "ch18_fac_002",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_local_enforcement_phase",
+        "before": "明日申前复核拒验指印、陶沿原位与一次回火，旧追缴不撤",
+        "after": "一项带回封存程序被暂停，改为明日申前先验第一户保管意愿与盏底泥痕；异物、阵裂和拒绝单独封存被上报",
+        "evidence": "仇慎宣布“封存暂止”，并写明下一次先验保管次序与盏底泥痕，同时在纸背标注一并上报。"
+      }
+    ],
+    "artifacts": [
+      {
+        "fact_id": "ch18_art_001",
+        "asset_id": "artifact_ashlight_cup",
+        "field_path": "artifact.current_acquisition_status",
+        "before": "陶沿留在灯座裂口下方，仍未取得",
+        "after": "残命灯盏已从灯座基部取出并完成可追溯取得",
+        "evidence": "莫井兰将埋在灯座基部的浅盏完整托出，仇慎逐处记录裂线与泥痕。"
+      },
+      {
+        "fact_id": "ch18_art_002",
+        "asset_id": "artifact_ashlight_cup",
+        "field_path": "artifact.lifecycle_state",
+        "before": "dormant",
+        "after": "dormant",
+        "evidence": "取出后浅盏无焰、无热气；莫井兰明确昨夜只算亮过，不能算醒，正文未发生点火。"
+      },
+      {
+        "fact_id": "ch18_art_003",
+        "asset_id": "artifact_ashlight_cup",
+        "field_path": "artifact.current_naming_status",
+        "before": "正文称其为陶沿、灯座下陶沿",
+        "after": "莫井兰以“残命灯盏”称呼它，但仍不认用途、认主或已唤醒",
+        "evidence": "莫井兰说旧时候有人叫它“残命灯盏”，同时声明怎么用、谁做的并不知道。"
+      },
+      {
+        "fact_id": "ch18_art_004",
+        "asset_id": "artifact_ashlight_cup",
+        "field_path": "artifact.current_visible_trace",
+        "before": "陶沿外角有新裂，仍埋在灯座裂口下",
+        "after": "浅盏灰黑冰冷，外壁有灰黑斑痕，盏底带泥痕；内壁仅映出顾家一线余火",
+        "evidence": "取出后的浅盏被描述为灰黑、冰冷且带雨水冲不掉的灰黑斑痕；纸上顾家错压旁注靠近时才映出一线余火。"
+      }
+    ],
+    "techniques": [],
+    "relationships": [
+      {
+        "fact_id": "ch18_rel_001",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_custody_rule",
+        "before": "物证尚未取得，住户仅保留可拒、可撤见证权",
+        "after": "建立三户轮流保管、交接只记亲见、任一户可退出并公开退回的共同保管规则",
+        "evidence": "莫井兰提出今日第一户、明日第二户、后日第三户轮守，并规定退出时交回公开圈。"
+      },
+      {
+        "fact_id": "ch18_rel_002",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_collective_emotion",
+        "before": "谨慎互保，拒绝出灯和作证",
+        "after": "在共同监督下形成有限的物证协作，但仍拒绝把共同体变成命火或无条件见证资源",
+        "evidence": "三户允许取盏却分别限定只看、不认、可撤回，并明确不接受点火要求。"
+      },
+      {
+        "fact_id": "ch18_rel_003",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_procedural_boundary",
+        "before": "苏晚承担门槛保护，不替陆沉渊承担裂口后果",
+        "after": "与陆沉渊共同承担一息遮印的行动代价，同时未替他答复持有选择",
+        "evidence": "苏晚说“那就一起担”，但陆沉渊是否持有由自己回答，她未替他决定。"
+      }
+    ],
+    "emotions": [
+      {
+        "fact_id": "ch18_emo_001",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_witness_commitment",
+        "before": "莫井兰只确认雨痕、刻痕与一次回火，见证可撤或不到",
+        "after": "见证被拆分为各户亲见范围；第三户撤回未看清的第二步，三户分别保留后续撤回或退出权",
+        "evidence": "第三户明确第二下不算其见证，取出后又分别声明只保留自己看见的部分。"
+      },
+      {
+        "fact_id": "ch18_emo_002",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_visible_support",
+        "before": "苏晚扶持陆沉渊并保护门槛",
+        "after": "苏晚在陆沉渊几乎跪下时仍抓住帘角并未把责任转给旁人，随后抱回湿帘",
+        "evidence": "遮印结束后苏晚手指冻得蜷不拢，仍没有把帘角塞给旁人。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "ch18_info_001",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_local_evidence_status",
+        "before": "已确认陶沿与灯座旧沟相接，但未确认取得归属",
+        "after": "新增可追溯取得记录：残命灯盏从灯座基部取出，盏底泥痕与裂线由在场者分面复述；用途、来处和认主仍未确认",
+        "evidence": "仇慎逐处报告裂线与泥痕，第二户、第三户各自复述所见；莫井兰仍声明不认主。"
+      },
+      {
+        "fact_id": "ch18_info_002",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "foreshadowing.current_manifestation",
+        "before": "陶沿内侧曾有一次微弱回火，未认来处",
+        "after": "盏内只映出顾家错压旁注对应的一线余火，其他位置无第二点光；该线暂不认定为归属结论",
+        "evidence": "盏靠近顾家旁注时映出一线余火，移开纸后缩回；靠近纸上别处则没有第二点光，莫井兰称明日另验、今日不认。"
+      },
+      {
+        "fact_id": "ch18_info_003",
+        "asset_id": "state_ledger_poorcity_returnfire",
+        "field_path": "state_ledger.current_return_transaction",
+        "before": "已有一笔绑定苏晚受益、命籍衙承担方的有限错压返还",
+        "after": "本章未发生新的归火或住户命火转移，既有返还状态保持",
+        "evidence": "正文明确没有任何门内命灯亮起，也没有一缕火被牵出填补护阵。"
+      },
+      {
+        "fact_id": "ch18_info_004",
+        "asset_id": "state_ledger_resident_lifefire_reserve",
+        "field_path": "state_ledger.current_resident_lifefire_callability",
+        "before": "未调用任何住户命灯",
+        "after": "仍未调用住户命灯，未发生命火扣减；三户同意仅限物证取出与轮守",
+        "evidence": "莫井兰明确“今日不点火。谁的都不要”，取盏过程中没有命灯回应或火被牵出。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "ch18_hook_001",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.next_local_notice",
+        "before": "明日申前复核陶沿原位、雨痕与一次回火",
+        "after": "明日申前先验第一户是否仍愿保管、再验盏底泥痕；任一户退出即在圈内交还，离开三户轮守则旧追缴续行",
+        "evidence": "仇慎在纸上写明新的保管复核顺序与退出后果。"
+      },
+      {
+        "fact_id": "ch18_hook_002",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "foreshadowing.next_review_hook",
+        "before": "继续复核陶沿原位、雨痕和一次回火",
+        "after": "下一次复核集中于残命灯盏为何只映出顾家一笔错压，且该映照尚未被认定为归属",
+        "evidence": "仇慎结尾要求明日申前先验它为何只照顾家这一笔。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "ch18_time_001",
+        "asset_id": "artifact_ashlight_cup",
+        "field_path": "artifact.current_chapter_step",
+        "before": "雨夜观察陶沿，等待公开复核",
+        "after": "雨停后在三户公开监督圈内取出残命灯盏，并转入三户轮守",
+        "evidence": "正文从雨停后的公开取证圈开始，经过分步取泥、托盏、记录和交接完成本章动作。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "ch18_phys_001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_visible_condition",
+        "before": "胸骨磨响、右眼重影、咳出冷灰，无法安全继续接近灯座",
+        "after": "遮印后胸骨剧烈抽痛，右眼压成漆黑，咳出冷灰并短时无法站立",
+        "evidence": "湿帘遮住冷金光后，陆沉渊半边身子几乎跪下，随后扶墙坐下，短时内再站不起来。"
+      },
+      {
+        "fact_id": "ch18_phys_002",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_visible_lamp_consequence",
+        "before": "掌背暗冷光贴近腕骨，手指冻僵",
+        "after": "共同遮印后暗冷光仍贴近腕骨，五指抖到抓不住布，命灯未显示恢复",
+        "evidence": "苏晚掌背暗冷光被水面映得发硬，手指冻得蜷不拢，正文未写命灯恢复。"
+      },
+      {
+        "fact_id": "ch18_phys_003",
+        "asset_id": "npc_mo_jinglan",
+        "field_path": "npc.current_visible_injury",
+        "before": "未记录本章取盏伤口",
+        "after": "取盏时手背被旧砖粗边磨开一道口子，流血但未让血落入泥中",
+        "evidence": "莫井兰手背受伤后将手翻向外，避免血珠落进泥里。"
+      }
+    ],
+    "naming": [
+      {
+        "fact_id": "ch18_name_001",
+        "asset_id": "artifact_ashlight_cup",
+        "field_path": "artifact.reader_facing_name",
+        "before": "正文继续称其为陶沿",
+        "after": "正文首次出现“残命灯盏”这一登记资产名，但未发生认主或唤醒",
+        "evidence": "莫井兰明确说旧时候有人叫它“残命灯盏”，随后物证仍按三户轮守处理。"
+      }
+    ]
+  }
+}

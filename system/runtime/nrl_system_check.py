@@ -15,6 +15,8 @@ from nrl_corpus_pipeline import build_evidence_pack_matrix, build_pipeline_statu
 from nrl_deep_read import build_deep_read_status
 from nrl_paths import runtime_path
 from nrl_production_runtime import build_production_readiness
+from nrl_story_window import build_story_window_status
+from nrl_system_status import build_system_status
 from nrl_rag_index import load_or_build_creation_context_index
 from nrl_research_assets import build_research_asset_catalog
 
@@ -62,6 +64,8 @@ def run_system_check() -> dict[str, Any]:
     )
     deep_read = build_deep_read_status()
     production_runtime = build_production_readiness()
+    system_status = build_system_status(state, adapters)
+    story_windows = build_story_window_status()
     source_ownership = _load_json(SOURCE_OWNERSHIP_PATH)
     ownership_domains = [item.get("domain") for item in source_ownership.get("domains", [])]
     architecture_payload = json.dumps(architecture, ensure_ascii=False)
@@ -71,7 +75,8 @@ def run_system_check() -> dict[str, Any]:
         and architecture["architecture_layers"][6]["layer_id"] == "planning_pipeline"
         and architecture["architecture_layers"][6]["child_implementation"]
         == "corpus_pipeline_v0.3"
-        and architecture["production_readiness"]["owner_gate_required"]
+        and not architecture["production_readiness"]["owner_gate_required"]
+        and architecture["production_readiness"]["content_generation_allowed"]
         and architecture["production_readiness"]["hermes_execution_status"]
         == "ready"
         and "novel_training_set/" not in architecture_payload
@@ -146,7 +151,7 @@ def run_system_check() -> dict[str, Any]:
         {
             "check_id": "source_ownership",
             "passed": (
-                source_ownership.get("version") == "0.20"
+                source_ownership.get("version") == "1.0"
                 and len(ownership_domains) == len(set(ownership_domains)) == 9
             ),
             "detail": {
@@ -159,11 +164,30 @@ def run_system_check() -> dict[str, Any]:
         },
         {
             "check_id": "production_chapter_runtime",
-            "passed": production_runtime["checks"]["chapter_runtime_contract_ready"],
+            "passed": (
+                production_runtime["checks"]["chapter_runtime_contract_ready"]
+                and story_windows["valid"]
+            ),
             "detail": {
                 "status": production_runtime["status"],
                 "ready": production_runtime["ready"],
                 "stage_count": len(production_runtime["stage_order"]),
+                "story_windows": story_windows,
+            },
+        },
+        {
+            "check_id": "cross_domain_invariants",
+            "passed": (
+                system_status["production_ready"]
+                and not system_status["production_blockers"]
+                and state.get("owner_gate_required") is False
+                and "write novel prose" not in state.get("blocked_actions", [])
+                and story_windows["valid"]
+            ),
+            "detail": {
+                "production_checks": system_status["production_checks"],
+                "production_blockers": system_status["production_blockers"],
+                "story_window_count": story_windows["window_count"],
             },
         },
         {

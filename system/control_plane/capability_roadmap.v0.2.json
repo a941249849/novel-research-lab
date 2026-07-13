@@ -40,10 +40,10 @@
     {
       "capability_id": "creation_asset_contracts",
       "label_zh": "创作资产契约",
-      "status": "contract_ready",
+      "status": "data_ready",
       "dependencies": ["research_asset_retrieval"],
       "evidence": ["system/creation_assets/schemas", "system/creation_assets/project_assets.v0.2.json"],
-      "next_action": "验证空项目资产库并准备 Corpus-to-Creation 接口。"
+      "next_action": "维持九类创作资产的 Schema、引用和生命周期校验。"
     },
     {
       "capability_id": "consistency_validation",
@@ -56,18 +56,22 @@
     {
       "capability_id": "agent_orchestration",
       "label_zh": "Agent 编排",
-      "status": "contract_ready",
+      "status": "runnable",
       "dependencies": ["consistency_validation"],
       "evidence": ["system/runtime/agent_adapters.json", "system/runtime/mission_registry.json"],
-      "next_action": "通过 cli_bridge 派发已登记的 Antigravity 结构审查任务；回执必须显式验证。"
+      "next_action": "按风险分层调用 Codex、Antigravity 与可选 Hermes，并验证所有回执。"
     },
     {
       "capability_id": "prose_production",
       "label_zh": "正文生产",
-      "status": "blocked",
+      "status": "runnable",
       "dependencies": ["agent_orchestration"],
-      "evidence": ["system/mission_controller/current_phase_state.json"],
-      "next_action": "Owner Gate 未解除前禁止正文生产。"
+      "evidence": [
+        "system/mission_controller/current_phase_state.json",
+        "system/production_runtime/story_windows/window-011-020.v1.json",
+        "system/production_runtime/chapter_registry.v0.20.json"
+      ],
+      "next_action": "编译 021-030 故事窗口后，从第 21 章恢复受控正文生产。"
     }
   ]
 }

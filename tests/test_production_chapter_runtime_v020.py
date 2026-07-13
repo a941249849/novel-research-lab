@@ -10,20 +10,26 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 from nrl_production_runtime import (
     STAGES,
     analyze_prose_metrics,
+    build_rolling_state_snapshot,
     build_observer_prompt_payload,
     compile_chapter_context_payload,
+    requires_external_chapter_audit,
     validate_acceptance,
     validate_chapter_sequence,
     validate_settlement_payload,
     validate_stage_transition,
 )
+import nrl_production_runtime as runtime
 
 
 class ProductionChapterRuntimeV020Tests(unittest.TestCase):
+    def test_length_recovery_inserts_before_closing_beat(self):
+        draft = "开头\n\n中段\n\n收束一\n\n收束二"
+        result = runtime._insert_length_recovery(draft, "补足场景")
+        self.assertEqual(result, "开头\n\n中段\n\n补足场景\n\n收束一\n\n收束二")
+
 
     def test_audit_output_parser_accepts_fenced_json_from_stderr(self):
-        import nrl_production_runtime as runtime
-
         record = {"stage": "draft_generated", "artifacts": {"context": "context.json", "rule_stack": "rules.json", "trace": "trace.json", "draft": "draft.md"}}
         audit = {"chapter_id": "chapter-0001", "artifact_kind": "draft", "artifact_sha256": "a" * 64, "context_sha256": "b" * 64, "verdict": "ACCEPT", "dimensions": {key: [] for key in ("canon", "character", "state", "causality", "pacing", "life_force", "anti_ai_taste", "originality")}, "issues": []}
         packet = REPO_ROOT / "system/production_runtime/chapters/chapter-0001/test-audit-packet.md"
@@ -106,6 +112,16 @@ class ProductionChapterRuntimeV020Tests(unittest.TestCase):
         self.assertTrue(result["flags"])
         self.assertNotIn("literary_verdict", result)
 
+    def test_prose_metrics_do_not_treat_closing_quotes_as_sentence_starters(self):
+        text = "“先关门。”\n\n“把灯递来。”\n\n“雨已经停了。”\n\n“账页还在。”"
+        result = analyze_prose_metrics(text)
+        self.assertNotIn("sentence_opening_repetition", result["flags"])
+
+    def test_external_literary_audit_runs_only_at_five_chapter_checkpoints(self):
+        self.assertFalse(requires_external_chapter_audit("chapter-0016", "initial"))
+        self.assertTrue(requires_external_chapter_audit("chapter-0020", "initial"))
+        self.assertFalse(requires_external_chapter_audit("chapter-0020", "final"))
+
     def test_context_compiler_selects_only_requested_assets_and_emits_trace(self):
         intent = {
             "chapter_id": "chapter-0001",
@@ -134,6 +150,38 @@ class ProductionChapterRuntimeV020Tests(unittest.TestCase):
         self.assertFalse(
             compile_chapter_context_payload(intent, assets, {}, [])["valid"]
         )
+
+    def test_rolling_state_replaces_full_settlement_history(self):
+        settlements = [
+            {
+                "chapter_id": f"chapter-{number:04d}",
+                "accepted_revision_sha256": str(number) * 64,
+                "state_deltas": [{
+                    "asset_id": "character-a",
+                    "field_path": "character.health",
+                    "before": number - 1,
+                    "after": number,
+                    "evidence": f"evidence-{number}",
+                }],
+            }
+            for number in range(1, 6)
+        ]
+        snapshot = build_rolling_state_snapshot(settlements)
+        self.assertEqual(snapshot["source_chapter_count"], 5)
+        self.assertEqual(snapshot["latest_fields"][0]["value"], 5)
+        self.assertEqual([item["chapter_id"] for item in snapshot["recent_chapters"]], ["chapter-0004", "chapter-0005"])
+        compiled = compile_chapter_context_payload(
+            {
+                "chapter_id": "chapter-0006", "dramatic_purpose": "test",
+                "must_keep": ["state"], "must_avoid": ["drift"],
+                "required_asset_ids": ["character-a"], "active_hook_ids": [],
+                "scene_constraints": ["bounded"],
+            },
+            [{"asset_id": "character-a", "family": "characters"}],
+            {}, settlements,
+        )
+        self.assertNotIn("prior_settlements", compiled["context"])
+        self.assertEqual(compiled["context"]["rolling_state"]["source_chapter_count"], 5)
 
     def test_observer_prompt_is_hash_bound_and_excludes_raw_corpus(self):
         payload = build_observer_prompt_payload(

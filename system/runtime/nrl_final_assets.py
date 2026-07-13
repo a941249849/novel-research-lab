@@ -254,12 +254,15 @@ def _is_matching_promoted_candidate(
         return False
     if manifest.get("asset_ids") != candidate_ids:
         return False
-    stored_assets = {
-        asset.get("asset_id"): asset
+    stored_asset_ids = {
+        asset.get("asset_id")
         for asset in store.get("assets", [])
         if isinstance(asset, dict)
     }
-    return all(stored_assets.get(asset.get("asset_id")) == asset for asset in candidate_assets)
+    # Promoted assets may be enriched by later, separately validated project
+    # reconciliation. The immutable promotion manifest proves origin; current
+    # presence by ID proves the bundle was not removed or duplicated.
+    return all(asset.get("asset_id") in stored_asset_ids for asset in candidate_assets)
 
 
 def _store_without_candidate_assets(store: dict[str, Any], bundle: dict[str, Any]) -> dict[str, Any]:

@@ -1,0 +1,256 @@
+{
+  "chapter_id": "chapter-0017",
+  "draft_sha256": "6f4413587ec9919b9999484cffd81e197c18e97e6b3f4deba9ea5c7636604d88",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "chapter-0017-character-lu-chenyuan-001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_action_limit",
+        "before": "公开支持住户撤灯；未识账、未碰阵、未借灰辨认陶沿，继续只看并承担护阵余量下降",
+        "after": "未催动识账，只以肉眼跟随黑灰回流与陶沿刻痕；未取得陶沿，未跨门槛接近灯座",
+        "evidence": "陆沉渊闭上右眼观察黑灰移动，明确“没有催动识账”，并在雨停后没有跨出门槛。"
+      },
+      {
+        "fact_id": "chapter-0017-character-lu-chenyuan-002",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_observed_choice",
+        "before": "公开支持住户撤灯并承担护阵余量下降",
+        "after": "接受灯座继续淋雨以保留两道灰痕，明确将裂口继续浸水的后果归于自己的观察选择",
+        "evidence": "他说要留住水痕就必须让灯座继续淋，并要求记录“今晚不取”。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "chapter-0017-npc-su-wan-001",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_procedural_limit",
+        "before": "阻止陆沉渊继续靠近裂口，拒绝取灯、验他或以他的血遮纸",
+        "after": "拆下自家门帘只遮住苏家门槛，不遮灯座，并拒绝让陆沉渊替她持帘",
+        "evidence": "苏晚把门帘斜挂在门框与檐柱之间，明确“挡门”，并将布角收回说“你别碰”。"
+      },
+      {
+        "fact_id": "chapter-0017-npc-su-wan-002",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_visible_lamp_consequence",
+        "before": "掌背暗冷光仍在皮下明灭并贴近腕骨；未显示命灯缓解",
+        "after": "掌背暗冷光被水汽映得发青，手冻得弯不拢，仍未显示命灯恢复",
+        "evidence": "她持帘期间掌背冷光缩成一点并发青，手指冻僵，正文明确她的命灯没有好。"
+      },
+      {
+        "fact_id": "chapter-0017-npc-mo-jinglan-001",
+        "asset_id": "npc_mo_jinglan",
+        "field_path": "npc.current_witness_participation",
+        "before": "确认陶沿原先压在旧砖下、裂口张开后露出；不认推断，明日未必到场",
+        "after": "确认黑灰沿刻槽内收、白灰随沟水外行，并确认刻痕与灯座旧沟相接、接缝有陈泥与磨痕；仍不确认用途、年月或来处",
+        "evidence": "莫井兰逐项声明“我只认这个”，并要求删去“旧构”，只保留她亲见的刻痕、陈泥与磨痕。"
+      },
+      {
+        "fact_id": "chapter-0017-npc-mo-jinglan-002",
+        "asset_id": "npc_mo_jinglan",
+        "field_path": "npc.current_returnfire_witness",
+        "before": "未见回火事件",
+        "after": "只确认陶沿内侧亮过一次，未确认取走任何住户命火或回火来处",
+        "evidence": "她说“我只认它亮过一次。没看见它取谁的火。”"
+      },
+      {
+        "fact_id": "chapter-0017-npc-registrar-qiu-shen-001",
+        "asset_id": "npc_registrar_qiu_shen",
+        "field_path": "npc.local_review_decision",
+        "before": "程序停在明日申前纸先到、半印后到的在场次序复核",
+        "after": "完成一次雨痕与陶沿现场记录；记录两类灰的相反流向、门帘边界、陶沿刻痕连接及外角新裂，仍不认用途、年月、来处或归属",
+        "evidence": "仇慎分列记录并在收纸时念出各项事实，明确“用途、年月、灰之来处，均不认”。"
+      },
+      {
+        "fact_id": "chapter-0017-npc-registrar-qiu-shen-002",
+        "asset_id": "npc_registrar_qiu_shen",
+        "field_path": "npc.next_local_notice",
+        "before": "明日申前复核三枚拒验指印；陶沿与裂口另验",
+        "after": "明日申前复核三枚拒验指印、陶沿原位、雨痕及仅一次回火；旧追缴不撤，阵裂另验，见证仍可撤回或不到",
+        "evidence": "雨停后仇慎在空白处补记明日复核内容，并保留旧追缴不撤和阵裂另验。"
+      }
+    ],
+    "locations": [
+      {
+        "fact_id": "chapter-0017-location-mudlamp-lane-001",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_protection_array_condition",
+        "before": "墙根细红火星断成数截，最暗一截沉入泥中；裂口可纳一根草茎，护阵纹未亮且未修复",
+        "after": "积水灌入裂口，靠近裂口的火星再暗一截；陶沿外角出现新白裂线，裂口继续受浸且未修复",
+        "evidence": "正文写明积水灌入裂口、最靠近裂口的火星沉入泥中，陶沿外角新裂延长，墙根余火只剩两点。"
+      },
+      {
+        "fact_id": "chapter-0017-location-mudlamp-lane-002",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_communal_response",
+        "before": "三户公开拒绝出灯并保留拒认、撤回和不出席权利，未提供命火",
+        "after": "巷中继续无人出灯、无人应声；住户保持不出门、不作证的选择，未提供命火",
+        "evidence": "雨中紧闭的门后没有灯移出或应声，正文再次确认住户保有不出门、不作证的选择。"
+      }
+    ],
+    "factions": [
+      {
+        "fact_id": "chapter-0017-faction-mudlamp-lane-001",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_chapter_step",
+        "before": "完成三户撤灯与拒验指印登记，暴露灯座下灰黑陶沿并留下明日复核",
+        "after": "雨夜复核陶沿雨痕与刻痕连接；确认两股灰的相反流向、陶沿外角新裂及一次无住户牵动的微弱回火",
+        "evidence": "整场现场观察围绕灯座排水沟、陶沿、两股灰、裂口和末尾一次回火展开。"
+      },
+      {
+        "fact_id": "chapter-0017-faction-mudlamp-lane-002",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_collective_emotion",
+        "before": "恐惧转为公开、分户且可撤回的拒绝；住户仍不把陆沉渊视为可调用命火的替代者",
+        "after": "住户继续以不出灯、不作证维护拒绝边界；苏晚公开划分门槛保护与护阵风险，未把共同体转为承担方",
+        "evidence": "苏晚明确谁不愿开门无需出来拉布，且灯座不由任何住户命灯替其挡雨。"
+      }
+    ],
+    "artifacts": [
+      {
+        "fact_id": "chapter-0017-artifact-ashlight-cup-001",
+        "asset_id": "artifact_ashlight_cup",
+        "field_path": "artifact.current_visible_trace",
+        "before": "灯座下露出灰黑陶沿，原先压在旧砖下；未确认取得或唤醒",
+        "after": "陶沿在雨中露出更多；其旧刻痕与灯座旧沟相接，接缝可见陈泥与长期磨痕，外角新增裂线；仍未取得",
+        "evidence": "雨水冲去表层泥后，正文描述三道旧刻痕、与旧沟相接的接缝、陈泥、暗亮磨痕及外角新裂。"
+      },
+      {
+        "fact_id": "chapter-0017-artifact-ashlight-cup-002",
+        "asset_id": "artifact_ashlight_cup",
+        "field_path": "artifact.lifecycle_state",
+        "before": "dormant",
+        "after": "dormant",
+        "evidence": "仇慎记录“今晚不取”，陆沉渊确认陶沿仍留原处，正文没有取得、唤醒或使用残命灯盏。"
+      }
+    ],
+    "techniques": [
+      {
+        "fact_id": "chapter-0017-technique-ledger-recognition-001",
+        "asset_id": "technique_ledger_recognition",
+        "field_path": "technique.current_use_status",
+        "before": "本章仍未施展识账；仅以现场肉眼观察纸、印、黑点和血口",
+        "after": "仍未施展识账；仅以模糊肉眼观察灰流、刻痕和回火，不形成来源、用途或归属判断",
+        "evidence": "正文明确“没有催动识账”，并多次以‘只认所见’限制结论。"
+      }
+    ],
+    "relationships": [
+      {
+        "fact_id": "chapter-0017-relationship-mother-son-001",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_procedural_boundary",
+        "before": "苏晚阻止陆沉渊靠近裂口，并不替他站到纸前",
+        "after": "苏晚从单纯阻止行动转为承担门槛保护，同时明确不替陆沉渊承担裂口后果；两人的代价被分开记录",
+        "evidence": "她说门帘护的是住户门槛，裂口继续淋雨是陆沉渊留下看的后果；陆沉渊要求不要把两人的承担并成一句。"
+      },
+      {
+        "fact_id": "chapter-0017-relationship-lane-trust-001",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_witness_commitment",
+        "before": "莫井兰仅认亲见内容，明日可到、可拒、可撤回",
+        "after": "莫井兰对雨痕、刻痕、陈泥和磨痕作有限亲见确认，明确明日不到场则不能用今夜话补指印；回火只认亮过一次",
+        "evidence": "莫井兰要求空着指印位置，并声明明早到不到仍不答应；她对回火只确认亮过一次。"
+      }
+    ],
+    "emotions": [
+      {
+        "fact_id": "chapter-0017-emotion-lu-chenyuan-001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_visible_condition",
+        "before": "胸骨裂处发紧，站立不稳；右眼重影加重，咳出冷灰，左眼焦壳掉屑",
+        "after": "湿气中胸骨持续磨响；再次咳出冷灰落在衣襟，左眼焦壳掉屑，雨停后起身时右眼重影骤然压黑并未继续接近灯座",
+        "evidence": "正文描写湿气引发胸骨钝响、冷灰落衣襟、左眼掉屑，末尾起身时右眼重影压黑。"
+      },
+      {
+        "fact_id": "chapter-0017-emotion-su-wan-001",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_emotional_choice",
+        "before": "拒绝以住户命火填补自身裂纹",
+        "after": "以自身手臂和命灯承受持帘负担，同时拒绝用陆沉渊的身体代替自己的承担",
+        "evidence": "她手臂被湿布往下坠、手指冻僵，却拒绝陆沉渊接布，并说不能拿一个去换另一个。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "chapter-0017-information-flow-001",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "foreshadowing.current_manifestation",
+        "before": "灰黑陶沿覆冷灰，上方黑点停在空白边，未完成进一步揭示",
+        "after": "冷灰分为两股可复核流向：黑灰沿陶面刻槽向内收，白灰随沟水向外行；两者之间留下清水缝",
+        "evidence": "雨水冲开灰壳后，正文逐段记录两股灰的方向、颜色、路径和中间清水缝。"
+      },
+      {
+        "fact_id": "chapter-0017-information-flow-002",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_local_evidence_status",
+        "before": "纸、黑点、血口同场但未认定缘故、同源或归属",
+        "after": "确认陶沿刻痕与灯座旧沟相接，接缝有陈泥与磨痕；仍未确认用途、年月、灰的来处或取得归属",
+        "evidence": "莫井兰和陆沉渊均要求只记录相接、陈泥与磨痕，不记录用途、年月或灰的来源。"
+      },
+      {
+        "fact_id": "chapter-0017-information-flow-003",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_local_procedure_result",
+        "before": "纸与半印分开封记，旧追缴不撤，未形成归属或改账结论",
+        "after": "雨痕、门帘边界、陶沿结构和一次回火被分列记录；旧追缴仍不撤，未形成灰之来处、用途或归属结论",
+        "evidence": "仇慎念出分列记录，并在末尾写明回火只记一次、不认来处，旧追缴不撤。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "chapter-0017-hook-001",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "foreshadowing.next_review_hook",
+        "before": "明日申前复核纸、半印、拒验指印与陶沿雨痕",
+        "after": "明日申前继续复核三枚拒验指印、陶沿原位、雨痕及一次回火；见证可撤或不到，回火不认来处",
+        "evidence": "仇慎在窄纸空白处补记明日申前复核项目，并保留见证撤回、不到和旧追缴不撤。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "chapter-0017-timeline-001",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_scene_sequence",
+        "before": "白日陶沿已露出，等待明日复核",
+        "after": "戌后密雨冲开灰壳并分流；随后积水加剧裂口；子夜后雨缓，陶沿内侧发生一次微弱回火；结尾等待明日复核",
+        "evidence": "正文按戌后、檐水加重、子夜过后、雨停尽后顺序记录现场变化。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "chapter-0017-physical-lu-chenyuan-001",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.cold_ash_cough_frequency",
+        "before": "纸展平后咳出冷灰，落在衣摆",
+        "after": "雨中再次咳出一口冷灰，全部落在衣襟，未越过墙根、纸张或灯座",
+        "evidence": "陆沉渊起身时喉间涌出冷灰，正文明确灰全落在衣襟。"
+      },
+      {
+        "fact_id": "chapter-0017-physical-array-001",
+        "asset_id": "state_ledger_mudlamp_array_integrity",
+        "field_path": "state_ledger.current_visible_integrity_consequence",
+        "before": "护阵裂口张开，火星断裂并沉入泥中，护阵未修复",
+        "after": "积水继续灌入裂口，靠近裂口的火星再暗一截，陶沿外角新裂延长，护阵仍未修复",
+        "evidence": "积水漫过旧砖并灌入裂口，墙根火星再暗，外角裂线延长。"
+      },
+      {
+        "fact_id": "chapter-0017-physical-resident-reserve-001",
+        "asset_id": "state_ledger_resident_lifefire_reserve",
+        "field_path": "state_ledger.current_resident_lifefire_callability",
+        "before": "三户命灯登记为不可调用，没有命火扣减",
+        "after": "仍未调用任何住户命灯；紧闭门后无灯焰应和，微弱回火也未牵动墙根或住户门槛",
+        "evidence": "正文明确巷中无灯移出，末尾一点红未朝任何住户门槛伸去。"
+      }
+    ],
+    "naming": [
+      {
+        "fact_id": "chapter-0017-naming-001",
+        "asset_id": "artifact_ashlight_cup",
+        "field_path": "artifact.current_naming_status",
+        "before": "残命灯盏仍未取得，现场仅称灰黑陶沿",
+        "after": "正文继续称其为陶沿、灯座下陶沿，未将其认作已取得或已启用的残命灯盏",
+        "evidence": "陆沉渊要求记录“今晚不取”，仇慎最终记录陶沿原位，正文未出现取得或唤醒命名。"
+      }
+    ]
+  }
+}

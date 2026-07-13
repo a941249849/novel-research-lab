@@ -3,8 +3,8 @@
   "evidence_pack_id": "evidence-pack-npcs-v0.10",
   "pipeline_id": "corpus-to-creation-npcs",
   "project": "《借天改命账》",
-  "mode": "SYSTEM_HARDENING",
-  "content_progression": "FROZEN_AT_OWNER_GATE",
+  "mode": "CONTROLLED_RUNTIME",
+  "content_progression": "RUNTIME_CONTROLLED",
   "family": "npcs",
   "label": "NPCs",
   "status": "ready_for_contract_planning",
@@ -481,26 +481,24 @@
     "web_gpt": "architecture_review_only"
   },
   "owner_gate": {
-    "required": true,
-    "status": "REQUIRED_PENDING_ACKNOWLEDGEMENT"
+    "required": false,
+    "status": "AUTHORIZED_VOLUME1_V025"
   },
   "blocked_actions": [
-    "bypass Phase 2E planning constraints",
+    "advance beyond chapter-0100 without a new Owner authorization",
     "execute-antigravity",
     "execute-hermes",
     "execute_antigravity",
     "execute_hermes",
-    "freely read novel_training_set",
     "generate final NPC sheets",
     "generate final creative assets",
-    "generate full character cards",
     "generate_final_creation_assets",
     "generate_novel_prose",
-    "ignore Antigravity required fixes",
+    "produce prose without a validated story window contract",
+    "publish prose before Volume 1 release acceptance",
+    "read novel_training_set from the chapter production runtime",
     "read_raw_novel_training_set",
-    "write NPC dialogue scenes",
-    "write first chapter",
-    "write novel prose"
+    "write NPC dialogue scenes"
   ],
   "content_generation_allowed": false,
   "external_agent_execution_allowed": false

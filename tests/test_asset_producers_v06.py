@@ -33,8 +33,8 @@ class ProducerStatusCliTests(RuntimeCliCase):
         self.assertIn("techniques", data["supported_families"])
         self.assertIn("naming", data["supported_families"])
         self.assertTrue(data["techniques"]["job_validated"])
-        self.assertEqual(data["system_mode"], "SYSTEM_HARDENING")
-        self.assertEqual(data["content_progression"], "FROZEN_AT_OWNER_GATE")
+        self.assertEqual(data["system_mode"], "CONTROLLED_RUNTIME")
+        self.assertEqual(data["content_progression"], "RUNTIME_CONTROLLED")
         self.assertFalse(data["hermes_allowed"])
 
 

@@ -1,0 +1,72 @@
+{
+  "chinese_character_count": 2614,
+  "sentence_count": 188,
+  "paragraph_count": 102,
+  "average_sentence_length": 13.9,
+  "sentence_length_stddev": 8.67,
+  "average_paragraph_length": 25.63,
+  "paragraph_length_stddev": 20.21,
+  "dialogue_ratio": 0.3053,
+  "transition_word_hits": 1,
+  "rhetorical_template_hits": 0,
+  "abstract_word_hits": 0,
+  "sensory_word_hits": 95,
+  "repeated_sentence_starters": [
+    {
+      "starter": "”\n",
+      "count": 51
+    },
+    {
+      "starter": "陆沉",
+      "count": 10
+    },
+    {
+      "starter": "仇慎",
+      "count": 7
+    },
+    {
+      "starter": "”他",
+      "count": 5
+    },
+    {
+      "starter": "他没",
+      "count": 5
+    },
+    {
+      "starter": "莫井",
+      "count": 4
+    },
+    {
+      "starter": "”苏",
+      "count": 4
+    },
+    {
+      "starter": "他把",
+      "count": 3
+    },
+    {
+      "starter": "罩壁",
+      "count": 3
+    },
+    {
+      "starter": "苏晚",
+      "count": 3
+    },
+    {
+      "starter": "”她",
+      "count": 3
+    },
+    {
+      "starter": "“今",
+      "count": 3
+    },
+    {
+      "starter": "“我",
+      "count": 3
+    }
+  ],
+  "flags": [
+    "sentence_opening_repetition"
+  ],
+  "policy": "metrics_are_audit_evidence_not_a_literary_verdict"
+}

@@ -41,8 +41,8 @@ class CorpusPipelineCliTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         data = json.loads(result.stdout)
         self.assertEqual(data["version"], "0.3")
-        self.assertEqual(data["mode"], "SYSTEM_HARDENING")
-        self.assertEqual(data["content_progression"], "FROZEN_AT_OWNER_GATE")
+        self.assertEqual(data["mode"], "CONTROLLED_RUNTIME")
+        self.assertEqual(data["content_progression"], "RUNTIME_CONTROLLED")
         self.assertEqual(data["next_family"]["family"], "npcs")
         self.assertEqual(
             len([family for family in data["families"] if family["is_next"]]),
@@ -50,9 +50,9 @@ class CorpusPipelineCliTests(unittest.TestCase):
         )
         self.assertGreaterEqual(len(data["stages"]), 7)
         self.assertIn("prose_generation", {stage["stage_id"] for stage in data["stages"]})
-        self.assertIn("write novel prose", data["forbidden_actions"])
+        self.assertIn("produce prose without a validated story window contract", data["forbidden_actions"])
         self.assertTrue(data["creation_contract_seed_matrix_ready"])
-        self.assertIn("hermes-readiness", data["next_safe_action"])
+        self.assertIn("章节 Runtime", data["next_safe_action"])
         self.assertNotIn("novel_training_set/", json.dumps(data, ensure_ascii=False))
 
     def test_pipeline_plan_next_matches_status(self):
@@ -243,7 +243,7 @@ class CorpusPipelineContractTests(unittest.TestCase):
                 self.assertTrue(required_gates <= {gate["gate_id"] for gate in plan["validation_gates"]})
                 self.assertEqual(plan["agent_review_policy"]["hermes"], "ready")
                 self.assertEqual(plan["agent_review_policy"]["antigravity"], "ready")
-                self.assertTrue(plan["owner_gate"]["required"])
+                self.assertFalse(plan["owner_gate"]["required"])
                 self.assertFalse(plan["content_generation_allowed"])
 
 

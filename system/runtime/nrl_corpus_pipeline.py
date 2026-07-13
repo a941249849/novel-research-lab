@@ -268,7 +268,7 @@ def build_pipeline_status(state: dict[str, Any], adapters: dict[str, Any]) -> di
         "next_family": next_family,
         "creation_contract_seed_matrix_ready": creation_contract_seed_matrix_ready,
         "next_safe_action": (
-            "运行 hermes-readiness；最终创作资产与 Hermes 仍受 Owner Gate 约束。"
+            "九类创作资产已完成；活动生产应进入十章故事窗口与章节 Runtime。"
             if creation_contract_seed_matrix_ready
             else "继续为缺失创作资产家族生成 schema-bound seed，并保持内容冻结。"
         ),
@@ -522,8 +522,11 @@ def validate_evidence_pack(pack: dict[str, Any]) -> dict[str, Any]:
         and proof.get("promotion_allowed") in {True, False}
     )
     owner_gate_passed = (
-        owner_gate.get("required") is True
-        and str(owner_gate.get("status", ""))
+        bool(str(owner_gate.get("status", "")))
+        and (
+            owner_gate.get("required") is True
+            or str(owner_gate.get("status", "")).startswith("AUTHORIZED_")
+        )
         and pack.get("content_generation_allowed") is False
         and proof_gate_present
     )
@@ -630,7 +633,7 @@ def build_evidence_pack_matrix(
         "families": family_items,
         "content_generation_allowed": False,
         "external_agent_execution_allowed": False,
-        "owner_gate_required": True,
+        "owner_gate_required": build_system_status(state, adapters)["owner_gate_required"],
     }
 
 

@@ -17,11 +17,14 @@ from nrl_codex_writer import ask_codex_writer
 
 
 VERSION = "0.25"
+MIN_RELEASE_CHINESE_CHARS = 3000
+MAX_RELEASE_CHINESE_CHARS = 4200
 CHAPTER_IDS = tuple(f"chapter-{number:04d}" for number in range(1, 101))
 WINDOWS = tuple((start, start + 9) for start in range(1, 101, 10))
 REGISTRY_PATH = runtime_path("system/production_runtime/chapter_registry.v0.20.json")
 REVIEW_ROOT = runtime_path("system/production_runtime/window_reviews")
 RELEASE_ROOT = runtime_path("system/releases/fanqie/borrowed-heaven-volume1")
+MANUSCRIPT_REVIEW_ROOT = runtime_path("system/releases/review")
 EDIT_ROOT = runtime_path("system/production_runtime/release_edits")
 
 
@@ -115,8 +118,8 @@ def dispatch_release_edit(chapter_id: str, repair_direction: str) -> dict[str, A
     ])
     text = ask_codex_writer(prompt, model="gpt-5.6-sol")
     chinese_count = len(re.findall(r"[\u4e00-\u9fff]", text))
-    if not 2600 <= chinese_count <= 4200:
-        raise RuntimeError("release edit must contain 2600-4200 Chinese characters")
+    if not MIN_RELEASE_CHINESE_CHARS <= chinese_count <= MAX_RELEASE_CHINESE_CHARS:
+        raise RuntimeError("release edit must contain 3000-4200 Chinese characters")
     target = EDIT_ROOT / f"{chapter_id}.md"
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(text.strip() + "\n", encoding="utf-8")
@@ -149,8 +152,8 @@ def record_external_release_edit(
         raise RuntimeError("external release edit file is missing")
     text = source_file.read_text(encoding="utf-8").strip()
     chinese_count = len(re.findall(r"[\u4e00-\u9fff]", text))
-    if not 2600 <= chinese_count <= 4200:
-        raise RuntimeError("external release edit must contain 2600-4200 Chinese characters")
+    if not MIN_RELEASE_CHINESE_CHARS <= chinese_count <= MAX_RELEASE_CHINESE_CHARS:
+        raise RuntimeError("external release edit must contain 3000-4200 Chinese characters")
     source = runtime_path(record["artifacts"]["revision"])
     target = EDIT_ROOT / f"{chapter_id}.md"
     target.parent.mkdir(parents=True, exist_ok=True)
@@ -257,7 +260,11 @@ def build_release_readiness() -> dict[str, Any]:
     registry = _read_json(REGISTRY_PATH)
     records = {item["chapter_id"]: item for item in registry.get("chapters", [])}
     chapter_errors: list[str] = []
+    accepted_registry_count = sum(
+        1 for chapter_id in CHAPTER_IDS if records.get(chapter_id, {}).get("stage") == "chapter_accepted"
+    )
     character_total = 0
+    accepted_character_total = 0
     for chapter_id in CHAPTER_IDS:
         record = records.get(chapter_id, {})
         artifacts = record.get("artifacts", {})
@@ -276,7 +283,8 @@ def build_release_readiness() -> dict[str, Any]:
             count = int(metrics.get("chinese_character_count", 0))
         else:
             count = len(re.findall(r"[\u4e00-\u9fff]", effective.read_text(encoding="utf-8")))
-        if not 2600 <= count <= 4200:
+        accepted_character_total += count
+        if not MIN_RELEASE_CHINESE_CHARS <= count <= MAX_RELEASE_CHINESE_CHARS:
             chapter_errors.append(chapter_id)
             continue
         character_total += count
@@ -292,18 +300,57 @@ def build_release_readiness() -> dict[str, Any]:
     checks = {
         "all_100_chapters_accepted": not chapter_errors,
         "all_window_reviews_accepted": not window_errors,
-        "volume_character_count_plausible": 260000 <= character_total <= 420000 if not chapter_errors else False,
+        "volume_character_count_plausible": 300000 <= character_total <= 420000 if not chapter_errors else False,
     }
     return {
         "version": VERSION,
         "valid": all(checks.values()),
         "checks": checks,
-        "accepted_chapter_count": 100 - len(chapter_errors),
-        "character_total": character_total,
+        "accepted_chapter_count": accepted_registry_count,
+        "release_ready_chapter_count": 100 - len(chapter_errors),
+        "character_total": accepted_character_total,
+        "release_ready_character_total": character_total,
         "missing_or_invalid_chapters": chapter_errors,
         "missing_or_rejected_windows": window_errors,
         "release_root": str(RELEASE_ROOT.relative_to(ROOT)),
     }
+
+
+def build_review_manuscript(end: int = 20) -> dict[str, Any]:
+    """Materialize accepted chapters for human reading without claiming release readiness."""
+    if not 1 <= end <= 100:
+        raise ValueError("review manuscript end must be within 1-100")
+    registry = _read_json(REGISTRY_PATH)
+    records = {item["chapter_id"]: item for item in registry.get("chapters", [])}
+    sections = [f"# 《借天改命账》第 1-{end} 章审阅稿", ""]
+    hashes = {}
+    character_total = 0
+    for ordinal in range(1, end + 1):
+        chapter_id = f"chapter-{ordinal:04d}"
+        record = records.get(chapter_id)
+        if not record or record.get("stage") != "chapter_accepted":
+            raise RuntimeError(f"review manuscript requires accepted chapter: {chapter_id}")
+        revision, source_kind = _effective_revision(record)
+        text = revision.read_text(encoding="utf-8").strip()
+        character_total += len(re.findall(r"[\u4e00-\u9fff]", text))
+        hashes[chapter_id] = {"sha256": _sha256(revision), "source_kind": source_kind}
+        sections.extend([f"## 第 {ordinal} 章", "", text, ""])
+    MANUSCRIPT_REVIEW_ROOT.mkdir(parents=True, exist_ok=True)
+    manuscript = MANUSCRIPT_REVIEW_ROOT / f"borrowed-heaven-chapters-001-{end:03d}.md"
+    manuscript.write_text("\n".join(sections).rstrip() + "\n", encoding="utf-8")
+    manifest = MANUSCRIPT_REVIEW_ROOT / f"borrowed-heaven-chapters-001-{end:03d}.json"
+    payload = {
+        "version": VERSION,
+        "status": "human_review_only_not_release_ready",
+        "chapter_range": [1, end],
+        "chapter_count": end,
+        "chinese_character_total": character_total,
+        "manuscript": str(manuscript.relative_to(ROOT)),
+        "manuscript_sha256": _sha256(manuscript),
+        "chapters": hashes,
+    }
+    manifest.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return {**payload, "manifest": str(manifest.relative_to(ROOT))}
 
 
 def build_fanqie_upload_package() -> dict[str, Any]:

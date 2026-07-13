@@ -1,0 +1,181 @@
+{
+  "chapter_id": "chapter-0019",
+  "draft_sha256": "cae97de0053c2b76c51b03d9479818f22a7459fc2be831ccdaae94bd65600555",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "chapter-0019-f001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_observed_choice",
+        "before": "接受三户轮流保管残命灯盏及随时退出规则",
+        "after": "亲手封住灯盏点火口，并规定重新开启必须召集三户重新询问同意",
+        "evidence": "陆沉渊用旧泥和轮守纸角封住点火口，明确有人不到或改口就不开。"
+      },
+      {
+        "fact_id": "chapter-0019-f002",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_action_limit",
+        "before": "可在三户轮守框架内继续等待复核",
+        "after": "接受本轮无法继续借守火显现更多灰痕",
+        "evidence": "他确认封口后不再刮第二块泥，放弃继续点火查验。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "chapter-0019-f003",
+        "asset_id": "npc_mo_jinglan",
+        "field_path": "npc.current_witness_participation",
+        "before": "见证范围限于各户亲见内容，残命灯盏由三户轮守",
+        "after": "逐项记录三户拒绝守火，并确认封口完整作为后续交接依据",
+        "evidence": "莫井兰逐户听取拒绝，随后检查折角压痕，并说明交接只记封口完整。"
+      },
+      {
+        "fact_id": "chapter-0019-f004",
+        "asset_id": "npc_registrar_qiu_shen",
+        "field_path": "npc.next_local_notice",
+        "before": "明日申前复核三枚拒验指印、陶沿原位、雨痕及一次回火",
+        "after": "发布本地最后一次封存令：残命灯盏不得点火、移出泥灯巷或毁去封口，明日申前复核顾家余火口述及三户拒绝是否维持",
+        "evidence": "仇慎将冷金小印落在窄纸上，现场宣读封存限制和下一次复核内容。"
+      },
+      {
+        "fact_id": "chapter-0019-f005",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_visible_lamp_consequence",
+        "before": "暗冷光贴近腕骨，五指失温并难以弯曲",
+        "after": "冷金印出现时暗冷光向腕骨下缩，五指攥紧桌沿；未显示命灯恢复",
+        "evidence": "封存令纸上的冷金小印露出后，苏晚掌背冷光缩下一寸，五指猛然攥住桌沿。"
+      }
+    ],
+    "locations": [],
+    "factions": [
+      {
+        "fact_id": "chapter-0019-f006",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_communal_response",
+        "before": "三户允许物证取出与轮守，保留拒绝、撤回见证和退出权，未提供命火",
+        "after": "三户逐一公开拒绝守火，但仍接受器物轮守；共同体把器物保管与命火提供明确分开",
+        "evidence": "三户分别表示接物、不接火，第三户还声明若两者不能分则退出轮守。"
+      },
+      {
+        "fact_id": "chapter-0019-f007",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_local_enforcement_phase",
+        "before": "带回封存程序暂停，等待明日复核；旧追缴未撤",
+        "after": "旧追缴暂停至复核结束但不撤销，仇慎将异常上报州府",
+        "evidence": "仇慎明确表示旧追缴只暂停到复核结束，之后上报州府。"
+      }
+    ],
+    "artifacts": [
+      {
+        "fact_id": "chapter-0019-f008",
+        "asset_id": "artifact_ashlight_cup",
+        "field_path": "artifact.current_awakening_status",
+        "before": "尚未唤醒，等待自愿守火",
+        "after": "三户拒绝提供守火，残命灯盏继续保持未唤醒状态",
+        "evidence": "三户均拒绝守火；正文明确残命灯盏仍冷、没有火和烟。"
+      },
+      {
+        "fact_id": "chapter-0019-f009",
+        "asset_id": "artifact_ashlight_cup",
+        "field_path": "artifact.current_seal_status",
+        "before": "点火口尚未封闭",
+        "after": "点火口被湿泥与轮守纸角封死，封口完整成为交接记录条件",
+        "evidence": "陆沉渊把湿泥抹入点火口，再将沾泥纸角压进剩余半孔；莫井兰确认折角压痕。"
+      }
+    ],
+    "techniques": [],
+    "relationships": [
+      {
+        "fact_id": "chapter-0019-f010",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_refusal_boundary",
+        "before": "共同体允许三户轮守，同时保留拒绝和退出权",
+        "after": "共同体公开形成“接物、不接火”的拒绝边界，并要求未来开启重新征询三户",
+        "evidence": "三户逐一拒绝守火；陆沉渊承诺重新召集三户询问，第三户表示已听见。"
+      },
+      {
+        "fact_id": "chapter-0019-f011",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_visible_support",
+        "before": "苏晚在共同遮印后扶持陆沉渊，但不替他承担全部重量",
+        "after": "苏晚只压稳桌面阻止陆沉渊继续取泥，未扶他本人，也未让自己的命火承担点火代价",
+        "evidence": "陆沉渊胸骨骤缩撞上桌角时，苏晚扶住桌而不扶他，并直接要求停下。"
+      }
+    ],
+    "emotions": [
+      {
+        "fact_id": "chapter-0019-f012",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_collective_emotion",
+        "before": "有限物证协作中仍保持谨慎互保",
+        "after": "住户将对守火的拒绝公开化，陆沉渊因守住拒绝权而失去继续追查的兴奋",
+        "evidence": "三户拒绝守火；封口后陆沉渊意识到本可再看一层，却承认这个念头已无处落下。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "chapter-0019-f013",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_local_evidence_status",
+        "before": "残命灯盏内映出顾家一线余火，但尚未确认归属",
+        "after": "顾婶仅同意核对顾家余火仍在；记录明确未点、未认归属、未作调用",
+        "evidence": "顾婶允许只看顾家余火是否存在，仇慎据此写下“顾家所指余火仍见，未点，不认归属，不作调用”。"
+      },
+      {
+        "fact_id": "chapter-0019-f014",
+        "asset_id": "state_ledger_poorcity_returnfire",
+        "field_path": "state_ledger.current_return_transaction",
+        "before": "未发生新的归火或住户命火转移",
+        "after": "仍未发生命火转移；顾家余火只被确认尚存，未被调用或归还",
+        "evidence": "顾婶拒绝守火与调用，灯内余火未牵动任何住户墙根或门槛。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "chapter-0019-f015",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "foreshadowing.current_manifestation",
+        "before": "盏内顾家一线余火仍可见，尚未形成归属结论",
+        "after": "暮光中余火线彻底隐没但未熄灭，且未向任何住户墙根延伸",
+        "evidence": "正文写明红丝在最后暮光中消失，却没有熄灭前的跳动，也没有向住户墙根伸去。"
+      },
+      {
+        "fact_id": "chapter-0019-f016",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "foreshadowing.next_review_hook",
+        "before": "下一次集中复核残命灯盏为何只映出顾家一笔错压",
+        "after": "下一次程序复核扩展为顾家余火口述、三户拒绝是否维持及封口完整性",
+        "evidence": "仇慎发布明日申前复核令，要求复核顾家余火仍存的口述和三户是否维持拒绝。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "chapter-0019-f017",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_scene_sequence",
+        "before": "三户轮守已建立，等待进一步复核",
+        "after": "黄昏轮值桌公开询问守火；三户拒绝后顾婶限定核火；陆沉渊封口；仇慎发布最后一次本地封存令",
+        "evidence": "正文按轮值询问、逐户拒绝、顾家余火核对、封口和封存令的顺序展开。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "chapter-0019-f018",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.current_visible_condition",
+        "before": "胸骨持续磨响，右眼重影，咳出冷灰，站立不稳",
+        "after": "封口时胸骨猛然收缩，旧血口再次张开并沿掌纹流至腕内；身体代价继续存在",
+        "evidence": "湿泥压入点火口时胸骨一缩、陆沉渊撞上桌角；随后焦裂血口再次张开，血流到腕内。"
+      },
+      {
+        "fact_id": "chapter-0019-f019",
+        "asset_id": "state_ledger_mudlamp_array_integrity",
+        "field_path": "state_ledger.current_visible_integrity_consequence",
+        "before": "护阵裂口向下塌半指，暗红火星仅剩两截，仍未修复",
+        "after": "裂口处两截暗红火痕继续时明时灭，未因本章行动获得修复",
+        "evidence": "三户轮值期间墙根两截暗红火痕隔着裂口时明时灭，正文未出现修补或恢复。"
+      }
+    ],
+    "naming": []
+  }
+}

@@ -166,7 +166,13 @@ from nrl_longform_plan import (
 )
 from nrl_longform_cluster1 import write_cluster1_intents
 from nrl_volume1_longform import write_volume1_intents, build_volume1_manifest, validate_volume1_manifest
-from nrl_volume1_release import build_release_readiness, build_fanqie_upload_package, build_window_review_packet, record_window_review, dispatch_window_review, dispatch_release_edit, record_external_release_edit
+from nrl_volume1_release import build_release_readiness, build_fanqie_upload_package, build_review_manuscript, build_window_review_packet, record_window_review, dispatch_window_review, dispatch_release_edit, record_external_release_edit
+from nrl_story_window import (
+    build_story_window_status,
+    generate_story_window,
+    story_beat_for,
+    validate_story_window,
+)
 from nrl_registry import (
     find_active_attempt,
     load_registry,
@@ -905,6 +911,27 @@ def cmd_longform_first100_dry_run(_: argparse.Namespace) -> int:
     return 0 if result["valid"] else 1
 
 
+def cmd_story_window_status(_: argparse.Namespace) -> int:
+    result = build_story_window_status()
+    print_json(result)
+    return 0 if result["valid"] else 1
+
+
+def cmd_story_window_validate(args: argparse.Namespace) -> int:
+    path = Path(args.file)
+    if not path.is_absolute():
+        path = ROOT / path
+    result = validate_story_window(json.loads(path.read_text(encoding="utf-8")))
+    result["path"] = str(path.relative_to(ROOT)) if path.is_relative_to(ROOT) else str(path)
+    print_json(result)
+    return 0 if result["valid"] else 1
+
+
+def cmd_story_window_build(args: argparse.Namespace) -> int:
+    print_json(generate_story_window(args.start, timeout_seconds=args.timeout_seconds))
+    return 0
+
+
 def cmd_longform_cluster1_intents_build(_: argparse.Namespace) -> int:
     print_json(write_cluster1_intents())
     return 0
@@ -966,23 +993,33 @@ def cmd_volume1_batch_run(args: argparse.Namespace) -> int:
         raise RuntimeError("Volume 1 batch range must be within chapters 12-100")
     completed = []
     for ordinal in range(args.start, args.end + 1):
+        chapter_id = f"chapter-{ordinal:04d}"
+        if ordinal >= 21 and story_beat_for(chapter_id) is None:
+            generated = generate_story_window(((ordinal - 1) // 10) * 10 + 1)
+            completed.append({"story_window": generated})
         intent = f"system/production_runtime/intents/longform_volume1_v025/chapter-{ordinal:04d}.v0.25.json"
         result = run_controlled_chapter_pipeline(intent, audit_model=args.audit_model)
         completed.append(result)
         if not result["valid"]:
             print_json({"valid": False, "completed": completed, "failed_chapter": f"chapter-{ordinal:04d}"})
             return 1
-    if args.end % 10 == 0:
-        review = dispatch_window_review(args.end - 9, args.end, model=args.audit_model)
-        if not review["valid"]:
-            print_json({"valid": False, "completed": completed, "window_review": review})
-            return 1
+        if ordinal % 10 == 0:
+            review = dispatch_window_review(ordinal - 9, ordinal, model=args.audit_model)
+            completed.append({"window_review": review})
+            if not review["valid"]:
+                print_json({"valid": False, "completed": completed, "window_review": review})
+                return 1
     print_json({"valid": True, "completed": completed})
     return 0
 
 
 def cmd_volume1_fanqie_package(_: argparse.Namespace) -> int:
     print_json(build_fanqie_upload_package())
+    return 0
+
+
+def cmd_volume1_review_package(args: argparse.Namespace) -> int:
+    print_json(build_review_manuscript(args.end))
     return 0
 
 
@@ -1680,6 +1717,14 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("longform-readiness").set_defaults(func=cmd_longform_readiness)
     sub.add_parser("longform-promote").set_defaults(func=cmd_longform_promote)
     sub.add_parser("longform-first100-dry-run").set_defaults(func=cmd_longform_first100_dry_run)
+    sub.add_parser("story-window-status").set_defaults(func=cmd_story_window_status)
+    story_window_validate = sub.add_parser("story-window-validate")
+    story_window_validate.add_argument("--file", required=True)
+    story_window_validate.set_defaults(func=cmd_story_window_validate)
+    story_window_build = sub.add_parser("story-window-build")
+    story_window_build.add_argument("--start", type=int, required=True)
+    story_window_build.add_argument("--timeout-seconds", type=int, default=600)
+    story_window_build.set_defaults(func=cmd_story_window_build)
     sub.add_parser("longform-cluster1-intents-build").set_defaults(func=cmd_longform_cluster1_intents_build)
     sub.add_parser("volume1-longform-intents-build").set_defaults(func=cmd_volume1_longform_intents_build)
     sub.add_parser("volume1-longform-intents-validate").set_defaults(func=cmd_volume1_longform_intents_validate)
@@ -1712,6 +1757,9 @@ def build_parser() -> argparse.ArgumentParser:
     batch_run.add_argument("--audit-model", default="Gemini 3.5 Flash (High)")
     batch_run.set_defaults(func=cmd_volume1_batch_run)
     sub.add_parser("volume1-fanqie-package").set_defaults(func=cmd_volume1_fanqie_package)
+    review_package = sub.add_parser("volume1-review-package")
+    review_package.add_argument("--end", type=int, default=20)
+    review_package.set_defaults(func=cmd_volume1_review_package)
     chapter_quarantine = sub.add_parser("chapter-quarantine")
     chapter_quarantine.add_argument("--chapter-id", required=True)
     chapter_quarantine.add_argument("--reason", required=True)

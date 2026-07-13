@@ -67,6 +67,7 @@ def _entry_from_research_item(item: dict[str, Any]) -> dict[str, Any]:
 
 def _project_entry(state: dict[str, Any]) -> dict[str, Any]:
     project = str(state.get("selected_project", "UNKNOWN_PROJECT"))
+    production_authorized = not bool(state.get("owner_gate_required", True))
     return {
         "dna_id": "dna-v05-project-current",
         "family": "project_dna",
@@ -74,13 +75,13 @@ def _project_entry(state: dict[str, Any]) -> dict[str, Any]:
         "source_path": "system/mission_controller/current_phase_state.json",
         "review_state": str(state.get("phase_status", "unknown")),
         "provenance": "runtime_state",
-        "promotion_state": "blocked",
+        "promotion_state": "production_authorized" if production_authorized else "blocked",
         "evidence_tags": [
             "current_project",
             str(state.get("current_phase", "unknown")),
             str(state.get("content_progression", state.get("phase_status", "unknown"))),
         ],
-        "blocked_for_generation": True,
+        "blocked_for_generation": not production_authorized,
     }
 
 
@@ -119,7 +120,7 @@ def build_dna_registry(state: dict[str, Any]) -> dict[str, Any]:
         "guardrails": [
             "Structured derivatives only",
             "No raw corpus reads",
-            "All entries blocked for generation until promotion workflow authorizes use",
+            "Research DNA is evidence-only; only an Owner-authorized project DNA entry may drive generation",
         ],
     }
 

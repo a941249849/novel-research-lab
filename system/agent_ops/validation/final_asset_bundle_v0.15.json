@@ -1,206 +1,7 @@
 {
   "version": "0.15",
-  "valid": false,
-  "errors": [
-    {
-      "code": "existing_asset_id",
-      "message": "candidate asset ID already exists",
-      "asset_id": "character_lu_chenyuan"
-    },
-    {
-      "code": "existing_asset_id",
-      "message": "candidate asset ID already exists",
-      "asset_id": "npc_mo_jinglan"
-    },
-    {
-      "code": "existing_asset_id",
-      "message": "candidate asset ID already exists",
-      "asset_id": "faction_mudlamp_lane"
-    },
-    {
-      "code": "existing_asset_id",
-      "message": "candidate asset ID already exists",
-      "asset_id": "artifact_ashlight_cup"
-    },
-    {
-      "code": "existing_asset_id",
-      "message": "candidate asset ID already exists",
-      "asset_id": "technique_embertrace_return"
-    },
-    {
-      "code": "existing_asset_id",
-      "message": "candidate asset ID already exists",
-      "asset_id": "naming_lifefire_local_style"
-    },
-    {
-      "code": "existing_asset_id",
-      "message": "candidate asset ID already exists",
-      "asset_id": "bond_mother_su_wan"
-    },
-    {
-      "code": "existing_asset_id",
-      "message": "candidate asset ID already exists",
-      "asset_id": "foreshadowing_cinder_seal_rain"
-    },
-    {
-      "code": "existing_asset_id",
-      "message": "candidate asset ID already exists",
-      "asset_id": "state_ledger_poorcity_returnfire"
-    },
-    {
-      "code": "creation_schema",
-      "message": "duplicate asset_id: character_lu_chenyuan",
-      "detail": {
-        "code": "duplicate_asset_id",
-        "asset_id": "character_lu_chenyuan",
-        "message": "duplicate asset_id: character_lu_chenyuan"
-      }
-    },
-    {
-      "code": "creation_schema",
-      "message": "name collides with character_lu_chenyuan",
-      "detail": {
-        "code": "name_collision",
-        "asset_id": "character_lu_chenyuan",
-        "message": "name collides with character_lu_chenyuan"
-      }
-    },
-    {
-      "code": "creation_schema",
-      "message": "duplicate asset_id: npc_mo_jinglan",
-      "detail": {
-        "code": "duplicate_asset_id",
-        "asset_id": "npc_mo_jinglan",
-        "message": "duplicate asset_id: npc_mo_jinglan"
-      }
-    },
-    {
-      "code": "creation_schema",
-      "message": "name collides with npc_mo_jinglan",
-      "detail": {
-        "code": "name_collision",
-        "asset_id": "npc_mo_jinglan",
-        "message": "name collides with npc_mo_jinglan"
-      }
-    },
-    {
-      "code": "creation_schema",
-      "message": "duplicate asset_id: faction_mudlamp_lane",
-      "detail": {
-        "code": "duplicate_asset_id",
-        "asset_id": "faction_mudlamp_lane",
-        "message": "duplicate asset_id: faction_mudlamp_lane"
-      }
-    },
-    {
-      "code": "creation_schema",
-      "message": "name collides with faction_mudlamp_lane",
-      "detail": {
-        "code": "name_collision",
-        "asset_id": "faction_mudlamp_lane",
-        "message": "name collides with faction_mudlamp_lane"
-      }
-    },
-    {
-      "code": "creation_schema",
-      "message": "duplicate asset_id: artifact_ashlight_cup",
-      "detail": {
-        "code": "duplicate_asset_id",
-        "asset_id": "artifact_ashlight_cup",
-        "message": "duplicate asset_id: artifact_ashlight_cup"
-      }
-    },
-    {
-      "code": "creation_schema",
-      "message": "duplicate asset_id: technique_embertrace_return",
-      "detail": {
-        "code": "duplicate_asset_id",
-        "asset_id": "technique_embertrace_return",
-        "message": "duplicate asset_id: technique_embertrace_return"
-      }
-    },
-    {
-      "code": "creation_schema",
-      "message": "name collides with technique_embertrace_return",
-      "detail": {
-        "code": "name_collision",
-        "asset_id": "technique_embertrace_return",
-        "message": "name collides with technique_embertrace_return"
-      }
-    },
-    {
-      "code": "creation_schema",
-      "message": "duplicate asset_id: naming_lifefire_local_style",
-      "detail": {
-        "code": "duplicate_asset_id",
-        "asset_id": "naming_lifefire_local_style",
-        "message": "duplicate asset_id: naming_lifefire_local_style"
-      }
-    },
-    {
-      "code": "creation_schema",
-      "message": "name collides with naming_lifefire_local_style",
-      "detail": {
-        "code": "name_collision",
-        "asset_id": "naming_lifefire_local_style",
-        "message": "name collides with naming_lifefire_local_style"
-      }
-    },
-    {
-      "code": "creation_schema",
-      "message": "duplicate asset_id: bond_mother_su_wan",
-      "detail": {
-        "code": "duplicate_asset_id",
-        "asset_id": "bond_mother_su_wan",
-        "message": "duplicate asset_id: bond_mother_su_wan"
-      }
-    },
-    {
-      "code": "creation_schema",
-      "message": "name collides with bond_mother_su_wan",
-      "detail": {
-        "code": "name_collision",
-        "asset_id": "bond_mother_su_wan",
-        "message": "name collides with bond_mother_su_wan"
-      }
-    },
-    {
-      "code": "creation_schema",
-      "message": "duplicate asset_id: foreshadowing_cinder_seal_rain",
-      "detail": {
-        "code": "duplicate_asset_id",
-        "asset_id": "foreshadowing_cinder_seal_rain",
-        "message": "duplicate asset_id: foreshadowing_cinder_seal_rain"
-      }
-    },
-    {
-      "code": "creation_schema",
-      "message": "name collides with foreshadowing_cinder_seal_rain",
-      "detail": {
-        "code": "name_collision",
-        "asset_id": "foreshadowing_cinder_seal_rain",
-        "message": "name collides with foreshadowing_cinder_seal_rain"
-      }
-    },
-    {
-      "code": "creation_schema",
-      "message": "duplicate asset_id: state_ledger_poorcity_returnfire",
-      "detail": {
-        "code": "duplicate_asset_id",
-        "asset_id": "state_ledger_poorcity_returnfire",
-        "message": "duplicate asset_id: state_ledger_poorcity_returnfire"
-      }
-    },
-    {
-      "code": "creation_schema",
-      "message": "name collides with state_ledger_poorcity_returnfire",
-      "detail": {
-        "code": "name_collision",
-        "asset_id": "state_ledger_poorcity_returnfire",
-        "message": "name collides with state_ledger_poorcity_returnfire"
-      }
-    }
-  ],
+  "valid": true,
+  "errors": [],
   "candidate_asset_count": 9,
   "candidate_family_counts": {
     "artifacts": 1,
@@ -213,108 +14,22 @@
     "state_ledger": 1,
     "techniques": 1
   },
-  "combined_asset_count": 52,
+  "combined_asset_count": 43,
   "combined_store_validation": {
-    "valid": false,
-    "errors": [
-      {
-        "code": "duplicate_asset_id",
-        "asset_id": "character_lu_chenyuan",
-        "message": "duplicate asset_id: character_lu_chenyuan"
-      },
-      {
-        "code": "name_collision",
-        "asset_id": "character_lu_chenyuan",
-        "message": "name collides with character_lu_chenyuan"
-      },
-      {
-        "code": "duplicate_asset_id",
-        "asset_id": "npc_mo_jinglan",
-        "message": "duplicate asset_id: npc_mo_jinglan"
-      },
-      {
-        "code": "name_collision",
-        "asset_id": "npc_mo_jinglan",
-        "message": "name collides with npc_mo_jinglan"
-      },
-      {
-        "code": "duplicate_asset_id",
-        "asset_id": "faction_mudlamp_lane",
-        "message": "duplicate asset_id: faction_mudlamp_lane"
-      },
-      {
-        "code": "name_collision",
-        "asset_id": "faction_mudlamp_lane",
-        "message": "name collides with faction_mudlamp_lane"
-      },
-      {
-        "code": "duplicate_asset_id",
-        "asset_id": "artifact_ashlight_cup",
-        "message": "duplicate asset_id: artifact_ashlight_cup"
-      },
-      {
-        "code": "duplicate_asset_id",
-        "asset_id": "technique_embertrace_return",
-        "message": "duplicate asset_id: technique_embertrace_return"
-      },
-      {
-        "code": "name_collision",
-        "asset_id": "technique_embertrace_return",
-        "message": "name collides with technique_embertrace_return"
-      },
-      {
-        "code": "duplicate_asset_id",
-        "asset_id": "naming_lifefire_local_style",
-        "message": "duplicate asset_id: naming_lifefire_local_style"
-      },
-      {
-        "code": "name_collision",
-        "asset_id": "naming_lifefire_local_style",
-        "message": "name collides with naming_lifefire_local_style"
-      },
-      {
-        "code": "duplicate_asset_id",
-        "asset_id": "bond_mother_su_wan",
-        "message": "duplicate asset_id: bond_mother_su_wan"
-      },
-      {
-        "code": "name_collision",
-        "asset_id": "bond_mother_su_wan",
-        "message": "name collides with bond_mother_su_wan"
-      },
-      {
-        "code": "duplicate_asset_id",
-        "asset_id": "foreshadowing_cinder_seal_rain",
-        "message": "duplicate asset_id: foreshadowing_cinder_seal_rain"
-      },
-      {
-        "code": "name_collision",
-        "asset_id": "foreshadowing_cinder_seal_rain",
-        "message": "name collides with foreshadowing_cinder_seal_rain"
-      },
-      {
-        "code": "duplicate_asset_id",
-        "asset_id": "state_ledger_poorcity_returnfire",
-        "message": "duplicate asset_id: state_ledger_poorcity_returnfire"
-      },
-      {
-        "code": "name_collision",
-        "asset_id": "state_ledger_poorcity_returnfire",
-        "message": "name collides with state_ledger_poorcity_returnfire"
-      }
-    ],
+    "valid": true,
+    "errors": [],
     "summary": {
-      "asset_count": 52,
+      "asset_count": 43,
       "family_counts": {
-        "artifacts": 4,
-        "characters": 3,
-        "emotional_bonds": 4,
-        "factions": 5,
-        "foreshadowing": 4,
-        "naming": 4,
-        "npcs": 8,
-        "state_ledger": 13,
-        "techniques": 7
+        "artifacts": 3,
+        "characters": 2,
+        "emotional_bonds": 3,
+        "factions": 4,
+        "foreshadowing": 3,
+        "naming": 3,
+        "npcs": 7,
+        "state_ledger": 12,
+        "techniques": 6
       }
     },
     "store_path": "system/creation_assets/project_assets.v0.2.json"
@@ -324,6 +39,6 @@
     "generate_novel_prose",
     "generate_full_chapter"
   ],
-  "already_promoted": false,
+  "already_promoted": true,
   "candidate_path": "system/agent_ops/inbox/hermes-final-asset-bundle-v015.json"
 }

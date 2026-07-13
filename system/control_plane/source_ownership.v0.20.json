@@ -1,5 +1,5 @@
 {
-  "version": "0.20",
+  "version": "1.0",
   "policy": "one mutable source of truth per runtime domain",
   "domains": [
     {
@@ -27,7 +27,9 @@
       "domain": "project_canon",
       "source_of_truth": [
         "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md",
-        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md"
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md",
+        "system/production_runtime/plans/borrowed_heaven_longform_contract.v0.1.json",
+        "system/production_runtime/story_windows/"
       ],
       "owner": "owner_gate",
       "mode": "hash_locked_inputs"
@@ -72,5 +74,6 @@
     "Agent prose claims used as completion state",
     "historical proof promoted as current corpus depth",
     "chapter state written outside validated settlement"
+    ,"chapter prose compiled without a validated story window"
   ]
 }

@@ -28,7 +28,7 @@ class ControlPlaneCliTests(unittest.TestCase):
         result = self.run_cli("hardening-status")
         self.assertEqual(result.returncode, 0, result.stderr)
         data = json.loads(result.stdout)
-        self.assertEqual(data["mode"], "SYSTEM_HARDENING")
+        self.assertEqual(data["mode"], "CONTROLLED_RUNTIME")
         self.assertEqual(len(data["capabilities"]), 8)
         self.assertEqual(
             len([item for item in data["capabilities"] if item["is_next_safe_action"]]),
@@ -175,6 +175,7 @@ class ControlPlaneCliTests(unittest.TestCase):
                 "evidence_pack_matrix",
                 "creation_context_index",
                 "production_chapter_runtime",
+                "cross_domain_invariants",
                 "source_ownership",
                 "verifiable_deep_reading",
                 "architecture_reconciliation",

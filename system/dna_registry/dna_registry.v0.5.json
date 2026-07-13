@@ -1195,15 +1195,15 @@
       "family": "project_dna",
       "title": "《借天改命账》",
       "source_path": "system/mission_controller/current_phase_state.json",
-      "review_state": "review_received_pending_owner_gate",
+      "review_state": "production_authorized_window_011_020_accepted",
       "provenance": "runtime_state",
-      "promotion_state": "blocked",
+      "promotion_state": "production_authorized",
       "evidence_tags": [
         "current_project",
-        "Phase 2E",
-        "review_received_pending_owner_gate"
+        "Production v1",
+        "production_authorized_window_011_020_accepted"
       ],
-      "blocked_for_generation": true
+      "blocked_for_generation": false
     },
     {
       "dna_id": "dna-v05-state_dna-phase1-state-ledger-003",
@@ -1475,7 +1475,7 @@
       "state_dna": 18
     },
     "by_promotion_state": {
-      "blocked": 1,
+      "production_authorized": 1,
       "promoted": 63,
       "stub": 33
     }
@@ -1483,6 +1483,6 @@
   "guardrails": [
     "Structured derivatives only",
     "No raw corpus reads",
-    "All entries blocked for generation until promotion workflow authorizes use"
+    "Research DNA is evidence-only; only an Owner-authorized project DNA entry may drive generation"
   ]
 }

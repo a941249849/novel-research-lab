@@ -2,8 +2,8 @@
   "control_plane": {
     "version": "0.2",
     "locale": "zh-CN",
-    "mode": "SYSTEM_HARDENING",
-    "content_progression": "FROZEN_AT_OWNER_GATE",
+    "mode": "CONTROLLED_RUNTIME",
+    "content_progression": "RUNTIME_CONTROLLED",
     "live_server_command": "python3 system/runtime/nrl.py studio-serve --port 4173"
   },
   "antigravity_execution": {
@@ -18,8 +18,8 @@
   },
   "capability_roadmap": {
     "version": "0.2",
-    "mode": "SYSTEM_HARDENING",
-    "content_progression": "FROZEN_AT_OWNER_GATE",
+    "mode": "CONTROLLED_RUNTIME",
+    "content_progression": "RUNTIME_CONTROLLED",
     "capabilities": [
       {
         "capability_id": "corpus_engineering",
@@ -118,7 +118,7 @@
       {
         "capability_id": "creation_asset_contracts",
         "label_zh": "创作资产契约",
-        "status": "contract_ready",
+        "status": "data_ready",
         "dependencies": [
           "research_asset_retrieval"
         ],
@@ -132,11 +132,11 @@
             "exists": true
           }
         ],
-        "next_action": "验证空项目资产库并准备 Corpus-to-Creation 接口。",
+        "next_action": "维持九类创作资产的 Schema、引用和生命周期校验。",
         "evidence_complete": true,
-        "declared_status": "contract_ready",
+        "declared_status": "data_ready",
         "blocked_dependencies": [],
-        "is_next_safe_action": true
+        "is_next_safe_action": false
       },
       {
         "capability_id": "consistency_validation",
@@ -160,7 +160,7 @@
       {
         "capability_id": "agent_orchestration",
         "label_zh": "Agent 编排",
-        "status": "contract_ready",
+        "status": "runnable",
         "dependencies": [
           "consistency_validation"
         ],
@@ -174,16 +174,16 @@
             "exists": true
           }
         ],
-        "next_action": "通过 cli_bridge 派发已登记的 Antigravity 结构审查任务；回执必须显式验证。",
+        "next_action": "按风险分层调用 Codex、Antigravity 与可选 Hermes，并验证所有回执。",
         "evidence_complete": true,
-        "declared_status": "contract_ready",
+        "declared_status": "runnable",
         "blocked_dependencies": [],
         "is_next_safe_action": false
       },
       {
         "capability_id": "prose_production",
         "label_zh": "正文生产",
-        "status": "blocked",
+        "status": "runnable",
         "dependencies": [
           "agent_orchestration"
         ],
@@ -191,19 +191,27 @@
           {
             "path": "system/mission_controller/current_phase_state.json",
             "exists": true
+          },
+          {
+            "path": "system/production_runtime/story_windows/window-011-020.v1.json",
+            "exists": true
+          },
+          {
+            "path": "system/production_runtime/chapter_registry.v0.20.json",
+            "exists": true
           }
         ],
-        "next_action": "Owner Gate 未解除前禁止正文生产。",
+        "next_action": "编译 021-030 故事窗口后，从第 21 章恢复受控正文生产。",
         "evidence_complete": true,
-        "declared_status": "blocked",
+        "declared_status": "runnable",
         "blocked_dependencies": [],
-        "is_next_safe_action": false
+        "is_next_safe_action": true
       }
     ],
     "next_safe_action": {
-      "capability_id": "creation_asset_contracts",
-      "label_zh": "创作资产契约",
-      "action": "验证空项目资产库并准备 Corpus-to-Creation 接口。"
+      "capability_id": "prose_production",
+      "label_zh": "正文生产",
+      "action": "编译 021-030 故事窗口后，从第 21 章恢复受控正文生产。"
     }
   },
   "research_asset_catalog": {
@@ -3013,7 +3021,7 @@
   },
   "architecture_reconciliation": {
     "version": "0.4",
-    "implementation_revision": "0.20",
+    "implementation_revision": "1.0",
     "source_context": {
       "conversation_title": "中文玄幻小说汇总",
       "accepted_on": "2026-07-09",
@@ -3128,8 +3136,8 @@
     "experiment_calibration": {
       "label_zh": "Core7 小批量试验",
       "status": "accepted_as_calibration_basis",
-      "scope": "Core7 promoted assets are real calibration data; remaining corpus is not assumed complete.",
-      "production_meaning": "small-batch validation supports architecture convergence before full production execution"
+      "scope": "Core7 established the calibration method; v0.18 then verified all 18 books, 143 contiguous chunks, 18 syntheses, and cross-book distillation.",
+      "production_meaning": "the small-batch architecture was retained and the full corpus was materialized through the same evidence contract"
     },
     "implementation_alignment": {
       "pipeline_version": "0.3",
@@ -3139,7 +3147,10 @@
       "next_family": "npcs",
       "deep_read_runtime": "verifiable_deep_reading_v0.18",
       "project_reconciliation": "borrowed_heaven_project_reconciliation_v0.19",
-      "chapter_runtime": "production_chapter_runtime_v0.20"
+      "chapter_runtime": "production_chapter_runtime_v0.20",
+      "story_compiler": "ten_chapter_story_window_v1",
+      "context_memory": "bounded_rolling_state_v1",
+      "audit_policy": "deterministic_each_chapter_external_each_five_window_each_ten"
     },
     "agent_role_contract": [
       {
@@ -3176,57 +3187,57 @@
     ],
     "current_mismatch_report": [
       {
-        "mismatch_id": "runtime_pipeline_ahead_of_architecture",
+        "mismatch_id": "control_plane_split_brain",
         "severity": "high",
-        "summary": "Resolved: v0.3 is classified as the planning child layer and the ten-layer architecture remains canonical.",
-        "correction": "No further architecture fork; new runtimes remain child implementations."
+        "summary": "Resolved: historical Phase 2E freeze no longer contradicts the later Volume 1 Owner authorization.",
+        "correction": "The current phase, active blueprint, capability roadmap, and chapter registry now resolve to one production state."
       },
       {
-        "mismatch_id": "product_visibility_gap",
+        "mismatch_id": "generic_intent_repetition",
         "severity": "high",
-        "summary": "Resolved: Studio reads the same runtime status and now exposes truthful deep-reading and production gates.",
-        "correction": "Keep Studio generated and read-only; do not create UI-owned state."
+        "summary": "Resolved for active production: chapters 11-20 are compiled from unique event, conflict, choice, state delta, and hook contracts.",
+        "correction": "No chapter from 11 onward can compile without a validated ten-chapter story window."
       },
       {
-        "mismatch_id": "legacy_proof_overclaim",
+        "mismatch_id": "unbounded_context_growth",
         "severity": "high",
-        "summary": "v0.8 sampled-access evidence was previously presented as full deep reading.",
-        "correction": "v0.18 requires contiguous byte coverage, per-book synthesis, and cross-book distillation."
+        "summary": "Resolved: chapter prompts no longer embed the complete settlement history.",
+        "correction": "A rolling state snapshot plus the latest two settlements bounds prompt size while retaining active facts."
       },
       {
-        "mismatch_id": "missing_chapter_runtime",
+        "mismatch_id": "audit_cost_and_false_acceptance",
         "severity": "high",
-        "summary": "Research and asset layers existed without a traceable chapter production lifecycle.",
-        "correction": "v0.20 adds intent, compiled context, rule stack, draft, observation, audit, revision, and settlement stages."
+        "summary": "Resolved: deterministic anti-template checks run every chapter and external literary review is reserved for five-chapter checkpoints.",
+        "correction": "Final metric failures block settlement; ten-chapter window review and full-volume release review remain mandatory."
       }
     ],
     "production_readiness": {
-      "system_mode": "SYSTEM_HARDENING",
-      "content_progression": "FROZEN_AT_OWNER_GATE",
-      "owner_gate_required": true,
-      "owner_gate_status": "REQUIRED_PENDING_ACKNOWLEDGEMENT",
-      "content_generation_allowed": false,
+      "system_mode": "CONTROLLED_RUNTIME",
+      "content_progression": "RUNTIME_CONTROLLED",
+      "owner_gate_required": false,
+      "owner_gate_status": "AUTHORIZED_VOLUME1_V025",
+      "content_generation_allowed": true,
       "hermes_execution_status": "ready",
       "deep_read_status": "deep_read_verified",
       "production_ready": true
     },
     "next_architecture_action": {
-      "action_id": "verifiable_deep_reading_v0_18",
-      "label_zh": "完成连续深读、项目重审与正文运行门禁",
-      "safe_command": "python3 system/runtime/nrl.py deep-read-status",
+      "action_id": "story_window_021_030",
+      "label_zh": "编译 021-030 故事窗口并从第 21 章恢复受控生产",
+      "safe_command": "python3 system/runtime/nrl.py story-window-status",
       "blocked_actions": [
-        "generate chapter prose before production readiness",
-        "call Hermes writer before v0.18 and v0.19 gates",
+        "generate chapter prose without a validated story window",
+        "publish before Volume 1 release acceptance",
         "promote unvalidated Agent output",
-        "treat historical v0.8 proof as full deep reading"
+        "treat historical Phase 2E state as the active production gate"
       ]
     }
   },
   "corpus_pipeline": {
     "version": "0.3",
     "pipeline_id": "corpus-to-creation",
-    "mode": "SYSTEM_HARDENING",
-    "content_progression": "FROZEN_AT_OWNER_GATE",
+    "mode": "CONTROLLED_RUNTIME",
+    "content_progression": "RUNTIME_CONTROLLED",
     "project": "《借天改命账》",
     "stages": [
       {
@@ -3262,7 +3273,7 @@
       {
         "stage_id": "owner_gate",
         "label_zh": "Owner Gate",
-        "status": "blocked",
+        "status": "contract_ready",
         "description": "Owner Gate 未解除前禁止内容推进。"
       },
       {
@@ -3425,24 +3436,22 @@
       "is_next": true
     },
     "creation_contract_seed_matrix_ready": true,
-    "next_safe_action": "运行 hermes-readiness；最终创作资产与 Hermes 仍受 Owner Gate 约束。",
+    "next_safe_action": "九类创作资产已完成；活动生产应进入十章故事窗口与章节 Runtime。",
     "forbidden_actions": [
-      "bypass Phase 2E planning constraints",
+      "advance beyond chapter-0100 without a new Owner authorization",
       "execute-antigravity",
       "execute-hermes",
-      "freely read novel_training_set",
       "generate final creative assets",
-      "generate full character cards",
-      "ignore Antigravity required fixes",
-      "write first chapter",
-      "write novel prose"
+      "produce prose without a validated story window contract",
+      "publish prose before Volume 1 release acceptance",
+      "read novel_training_set from the chapter production runtime"
     ],
     "next_plan": {
       "version": "0.3",
       "pipeline_id": "corpus-to-creation-npcs",
       "project": "《借天改命账》",
-      "mode": "SYSTEM_HARDENING",
-      "content_progression": "FROZEN_AT_OWNER_GATE",
+      "mode": "CONTROLLED_RUNTIME",
+      "content_progression": "RUNTIME_CONTROLLED",
       "target_family": {
         "family": "npcs",
         "label": "NPCs",
@@ -3492,7 +3501,7 @@
         {
           "stage_id": "owner_gate",
           "label_zh": "Owner Gate",
-          "status": "blocked",
+          "status": "contract_ready",
           "description": "Owner Gate 未解除前禁止内容推进。"
         },
         {
@@ -3955,19 +3964,17 @@
         "web_gpt": "architecture_review_only"
       },
       "owner_gate": {
-        "required": true,
-        "status": "REQUIRED_PENDING_ACKNOWLEDGEMENT"
+        "required": false,
+        "status": "AUTHORIZED_VOLUME1_V025"
       },
       "forbidden_actions": [
-        "bypass Phase 2E planning constraints",
+        "advance beyond chapter-0100 without a new Owner authorization",
         "execute-antigravity",
         "execute-hermes",
-        "freely read novel_training_set",
         "generate final creative assets",
-        "generate full character cards",
-        "ignore Antigravity required fixes",
-        "write first chapter",
-        "write novel prose"
+        "produce prose without a validated story window contract",
+        "publish prose before Volume 1 release acceptance",
+        "read novel_training_set from the chapter production runtime"
       ],
       "content_generation_allowed": false
     },
@@ -3976,8 +3983,8 @@
       "evidence_pack_id": "evidence-pack-npcs-v0.10",
       "pipeline_id": "corpus-to-creation-npcs",
       "project": "《借天改命账》",
-      "mode": "SYSTEM_HARDENING",
-      "content_progression": "FROZEN_AT_OWNER_GATE",
+      "mode": "CONTROLLED_RUNTIME",
+      "content_progression": "RUNTIME_CONTROLLED",
       "family": "npcs",
       "label": "NPCs",
       "status": "ready_for_contract_planning",
@@ -4454,26 +4461,24 @@
         "web_gpt": "architecture_review_only"
       },
       "owner_gate": {
-        "required": true,
-        "status": "REQUIRED_PENDING_ACKNOWLEDGEMENT"
+        "required": false,
+        "status": "AUTHORIZED_VOLUME1_V025"
       },
       "blocked_actions": [
-        "bypass Phase 2E planning constraints",
+        "advance beyond chapter-0100 without a new Owner authorization",
         "execute-antigravity",
         "execute-hermes",
         "execute_antigravity",
         "execute_hermes",
-        "freely read novel_training_set",
         "generate final NPC sheets",
         "generate final creative assets",
-        "generate full character cards",
         "generate_final_creation_assets",
         "generate_novel_prose",
-        "ignore Antigravity required fixes",
+        "produce prose without a validated story window contract",
+        "publish prose before Volume 1 release acceptance",
+        "read novel_training_set from the chapter production runtime",
         "read_raw_novel_training_set",
-        "write NPC dialogue scenes",
-        "write first chapter",
-        "write novel prose"
+        "write NPC dialogue scenes"
       ],
       "content_generation_allowed": false,
       "external_agent_execution_allowed": false
@@ -4483,8 +4488,8 @@
       "matrix_id": "evidence-pack-matrix-v0.11",
       "pipeline_id": "corpus-to-creation",
       "project": "《借天改命账》",
-      "mode": "SYSTEM_HARDENING",
-      "content_progression": "FROZEN_AT_OWNER_GATE",
+      "mode": "CONTROLLED_RUNTIME",
+      "content_progression": "RUNTIME_CONTROLLED",
       "output_path": "system/research_assets/evidence_packs/manifest.v0.11.json",
       "family_count": 9,
       "valid_family_count": 9,
@@ -4610,16 +4615,16 @@
       },
       "content_generation_allowed": false,
       "external_agent_execution_allowed": false,
-      "owner_gate_required": true
+      "owner_gate_required": false
     }
   },
   "dna_production_runtime": {
     "version": "0.5",
-    "system_mode": "SYSTEM_HARDENING",
-    "content_progression": "FROZEN_AT_OWNER_GATE",
+    "system_mode": "CONTROLLED_RUNTIME",
+    "content_progression": "RUNTIME_CONTROLLED",
     "owner_gate": {
-      "required": true,
-      "status": "REQUIRED_PENDING_ACKNOWLEDGEMENT"
+      "required": false,
+      "status": "AUTHORIZED_VOLUME1_V025"
     },
     "dna_registry": {
       "total_entries": 97,
@@ -4631,7 +4636,7 @@
         "state_dna": 18
       },
       "by_promotion_state": {
-        "blocked": 1,
+        "production_authorized": 1,
         "promoted": 63,
         "stub": 33
       }
@@ -4706,16 +4711,16 @@
   },
   "asset_producers": {
     "version": "0.6",
-    "system_mode": "SYSTEM_HARDENING",
-    "content_progression": "FROZEN_AT_OWNER_GATE",
+    "system_mode": "CONTROLLED_RUNTIME",
+    "content_progression": "RUNTIME_CONTROLLED",
     "supported_families": [
       "techniques",
       "naming"
     ],
     "hermes_allowed": false,
     "owner_gate": {
-      "required": true,
-      "status": "REQUIRED_PENDING_ACKNOWLEDGEMENT"
+      "required": false,
+      "status": "AUTHORIZED_VOLUME1_V025"
     },
     "techniques": {
       "job_id": "job-v05-techniques-antigravity-review",
@@ -7535,7 +7540,7 @@
       "final_asset_generation_authorized": true,
       "final_assets_promoted": true,
       "content_generation_authorized": false,
-      "owner_gate_required": true,
+      "owner_gate_required": false,
       "hermes_paused": true
     },
     "owner_authorization": {
@@ -7654,7 +7659,7 @@
       "next_action": "Create a bounded Chapter 1 intent."
     },
     "registry_path": "system/production_runtime/chapter_registry.v0.20.json",
-    "chapter_count": 10,
+    "chapter_count": 20,
     "chapters": [
       {
         "chapter_id": "chapter-0001",
@@ -7896,6 +7901,248 @@
           "borrowed_heaven_volume1_outline_tree": "1f12fe8ad3262876eb533d40c94ad02abb90b95b38de387d339917fce9184648",
           "project_assets.v0.2": "90dbcf17d769e8a985fc87880a4382018c30133a2a53f82c3826636c8ed1dc61"
         }
+      },
+      {
+        "chapter_id": "chapter-0011",
+        "stage": "chapter_accepted",
+        "artifacts": {
+          "intent": "system/production_runtime/chapters/chapter-0011/intent.json",
+          "context": "system/production_runtime/chapters/chapter-0011/context.json",
+          "rule_stack": "system/production_runtime/chapters/chapter-0011/rule_stack.json",
+          "trace": "system/production_runtime/chapters/chapter-0011/trace.json",
+          "draft_attempt": "system/production_runtime/chapters/chapter-0011/draft.attempt.json",
+          "draft": "system/production_runtime/chapters/chapter-0011/draft.md",
+          "draft_metrics": "system/production_runtime/chapters/chapter-0011/draft.metrics.json",
+          "continuity_audit": "system/production_runtime/chapters/chapter-0011/continuity_audit.json",
+          "revision": "system/production_runtime/chapters/chapter-0011/revision.md",
+          "revision_metrics": "system/production_runtime/chapters/chapter-0011/revision.metrics.json",
+          "observation": "system/production_runtime/chapters/chapter-0011/observation.json",
+          "final_audit": "system/production_runtime/chapters/chapter-0011/final_audit.json",
+          "settlement": "system/production_runtime/chapters/chapter-0011/settlement.json",
+          "acceptance": "system/production_runtime/chapters/chapter-0011/acceptance.json"
+        },
+        "source_hashes": {
+          "borrowed_heaven_life_account_bible": "81575478a441852f18d451e9967245bbfce11d60cddd3af24e9b6565955e0604",
+          "borrowed_heaven_volume1_outline_tree": "1f12fe8ad3262876eb533d40c94ad02abb90b95b38de387d339917fce9184648",
+          "project_assets.v0.2": "90dbcf17d769e8a985fc87880a4382018c30133a2a53f82c3826636c8ed1dc61"
+        }
+      },
+      {
+        "chapter_id": "chapter-0012",
+        "stage": "chapter_accepted",
+        "artifacts": {
+          "intent": "system/production_runtime/chapters/chapter-0012/intent.json",
+          "context": "system/production_runtime/chapters/chapter-0012/context.json",
+          "rule_stack": "system/production_runtime/chapters/chapter-0012/rule_stack.json",
+          "trace": "system/production_runtime/chapters/chapter-0012/trace.json",
+          "draft": "system/production_runtime/chapters/chapter-0012/draft.md",
+          "draft_metrics": "system/production_runtime/chapters/chapter-0012/draft.metrics.json",
+          "continuity_audit": "system/production_runtime/chapters/chapter-0012/continuity_audit.json",
+          "revision": "system/production_runtime/chapters/chapter-0012/revision.md",
+          "revision_metrics": "system/production_runtime/chapters/chapter-0012/revision.metrics.json",
+          "observation": "system/production_runtime/chapters/chapter-0012/observation.json",
+          "final_audit": "system/production_runtime/chapters/chapter-0012/final_audit.json",
+          "settlement": "system/production_runtime/chapters/chapter-0012/settlement.json",
+          "acceptance": "system/production_runtime/chapters/chapter-0012/acceptance.json"
+        },
+        "source_hashes": {
+          "borrowed_heaven_life_account_bible": "81575478a441852f18d451e9967245bbfce11d60cddd3af24e9b6565955e0604",
+          "borrowed_heaven_volume1_outline_tree": "1f12fe8ad3262876eb533d40c94ad02abb90b95b38de387d339917fce9184648",
+          "project_assets.v0.2": "90dbcf17d769e8a985fc87880a4382018c30133a2a53f82c3826636c8ed1dc61"
+        }
+      },
+      {
+        "chapter_id": "chapter-0013",
+        "stage": "chapter_accepted",
+        "artifacts": {
+          "intent": "system/production_runtime/chapters/chapter-0013/intent.json",
+          "context": "system/production_runtime/chapters/chapter-0013/context.json",
+          "rule_stack": "system/production_runtime/chapters/chapter-0013/rule_stack.json",
+          "trace": "system/production_runtime/chapters/chapter-0013/trace.json",
+          "draft": "system/production_runtime/chapters/chapter-0013/draft.md",
+          "draft_metrics": "system/production_runtime/chapters/chapter-0013/draft.metrics.json",
+          "continuity_audit": "system/production_runtime/chapters/chapter-0013/continuity_audit.json",
+          "revision": "system/production_runtime/chapters/chapter-0013/revision.md",
+          "revision_metrics": "system/production_runtime/chapters/chapter-0013/revision.metrics.json",
+          "observation": "system/production_runtime/chapters/chapter-0013/observation.json",
+          "final_audit": "system/production_runtime/chapters/chapter-0013/final_audit.json",
+          "settlement": "system/production_runtime/chapters/chapter-0013/settlement.json",
+          "acceptance": "system/production_runtime/chapters/chapter-0013/acceptance.json"
+        },
+        "source_hashes": {
+          "borrowed_heaven_life_account_bible": "81575478a441852f18d451e9967245bbfce11d60cddd3af24e9b6565955e0604",
+          "borrowed_heaven_volume1_outline_tree": "1f12fe8ad3262876eb533d40c94ad02abb90b95b38de387d339917fce9184648",
+          "project_assets.v0.2": "90dbcf17d769e8a985fc87880a4382018c30133a2a53f82c3826636c8ed1dc61"
+        }
+      },
+      {
+        "chapter_id": "chapter-0014",
+        "stage": "chapter_accepted",
+        "artifacts": {
+          "intent": "system/production_runtime/chapters/chapter-0014/intent.json",
+          "context": "system/production_runtime/chapters/chapter-0014/context.json",
+          "rule_stack": "system/production_runtime/chapters/chapter-0014/rule_stack.json",
+          "trace": "system/production_runtime/chapters/chapter-0014/trace.json",
+          "draft_attempt": "system/production_runtime/chapters/chapter-0014/draft.attempt.json",
+          "draft": "system/production_runtime/chapters/chapter-0014/draft.md",
+          "draft_metrics": "system/production_runtime/chapters/chapter-0014/draft.metrics.json",
+          "continuity_audit": "system/production_runtime/chapters/chapter-0014/continuity_audit.json",
+          "revision": "system/production_runtime/chapters/chapter-0014/revision.md",
+          "revision_metrics": "system/production_runtime/chapters/chapter-0014/revision.metrics.json",
+          "observation": "system/production_runtime/chapters/chapter-0014/observation.json",
+          "final_audit": "system/production_runtime/chapters/chapter-0014/final_audit.json",
+          "settlement": "system/production_runtime/chapters/chapter-0014/settlement.json",
+          "acceptance": "system/production_runtime/chapters/chapter-0014/acceptance.json"
+        },
+        "source_hashes": {
+          "borrowed_heaven_life_account_bible": "81575478a441852f18d451e9967245bbfce11d60cddd3af24e9b6565955e0604",
+          "borrowed_heaven_volume1_outline_tree": "1f12fe8ad3262876eb533d40c94ad02abb90b95b38de387d339917fce9184648",
+          "project_assets.v0.2": "90dbcf17d769e8a985fc87880a4382018c30133a2a53f82c3826636c8ed1dc61"
+        }
+      },
+      {
+        "chapter_id": "chapter-0015",
+        "stage": "chapter_accepted",
+        "artifacts": {
+          "intent": "system/production_runtime/chapters/chapter-0015/intent.json",
+          "context": "system/production_runtime/chapters/chapter-0015/context.json",
+          "rule_stack": "system/production_runtime/chapters/chapter-0015/rule_stack.json",
+          "trace": "system/production_runtime/chapters/chapter-0015/trace.json",
+          "draft": "system/production_runtime/chapters/chapter-0015/draft.md",
+          "draft_metrics": "system/production_runtime/chapters/chapter-0015/draft.metrics.json",
+          "continuity_audit": "system/production_runtime/chapters/chapter-0015/continuity_audit.json",
+          "revision": "system/production_runtime/chapters/chapter-0015/revision.md",
+          "revision_metrics": "system/production_runtime/chapters/chapter-0015/revision.metrics.json",
+          "observation": "system/production_runtime/chapters/chapter-0015/observation.json",
+          "final_audit": "system/production_runtime/chapters/chapter-0015/final_audit.json",
+          "settlement": "system/production_runtime/chapters/chapter-0015/settlement.json",
+          "acceptance": "system/production_runtime/chapters/chapter-0015/acceptance.json"
+        },
+        "source_hashes": {
+          "borrowed_heaven_life_account_bible": "81575478a441852f18d451e9967245bbfce11d60cddd3af24e9b6565955e0604",
+          "borrowed_heaven_volume1_outline_tree": "1f12fe8ad3262876eb533d40c94ad02abb90b95b38de387d339917fce9184648",
+          "project_assets.v0.2": "90dbcf17d769e8a985fc87880a4382018c30133a2a53f82c3826636c8ed1dc61"
+        }
+      },
+      {
+        "chapter_id": "chapter-0016",
+        "stage": "chapter_accepted",
+        "artifacts": {
+          "intent": "system/production_runtime/chapters/chapter-0016/intent.json",
+          "context": "system/production_runtime/chapters/chapter-0016/context.json",
+          "rule_stack": "system/production_runtime/chapters/chapter-0016/rule_stack.json",
+          "trace": "system/production_runtime/chapters/chapter-0016/trace.json",
+          "draft": "system/production_runtime/chapters/chapter-0016/draft.md",
+          "draft_metrics": "system/production_runtime/chapters/chapter-0016/draft.metrics.json",
+          "continuity_audit": "system/production_runtime/chapters/chapter-0016/continuity_audit.json",
+          "revision": "system/production_runtime/chapters/chapter-0016/revision.md",
+          "revision_metrics": "system/production_runtime/chapters/chapter-0016/revision.metrics.json",
+          "observation": "system/production_runtime/chapters/chapter-0016/observation.json",
+          "final_audit": "system/production_runtime/chapters/chapter-0016/final_audit.json",
+          "settlement": "system/production_runtime/chapters/chapter-0016/settlement.json",
+          "acceptance": "system/production_runtime/chapters/chapter-0016/acceptance.json"
+        },
+        "source_hashes": {
+          "borrowed_heaven_life_account_bible": "81575478a441852f18d451e9967245bbfce11d60cddd3af24e9b6565955e0604",
+          "borrowed_heaven_volume1_outline_tree": "1f12fe8ad3262876eb533d40c94ad02abb90b95b38de387d339917fce9184648",
+          "project_assets.v0.2": "90dbcf17d769e8a985fc87880a4382018c30133a2a53f82c3826636c8ed1dc61"
+        }
+      },
+      {
+        "chapter_id": "chapter-0017",
+        "stage": "chapter_accepted",
+        "artifacts": {
+          "intent": "system/production_runtime/chapters/chapter-0017/intent.json",
+          "context": "system/production_runtime/chapters/chapter-0017/context.json",
+          "rule_stack": "system/production_runtime/chapters/chapter-0017/rule_stack.json",
+          "trace": "system/production_runtime/chapters/chapter-0017/trace.json",
+          "draft": "system/production_runtime/chapters/chapter-0017/draft.md",
+          "draft_metrics": "system/production_runtime/chapters/chapter-0017/draft.metrics.json",
+          "continuity_audit": "system/production_runtime/chapters/chapter-0017/continuity_audit.json",
+          "revision": "system/production_runtime/chapters/chapter-0017/revision.md",
+          "revision_metrics": "system/production_runtime/chapters/chapter-0017/revision.metrics.json",
+          "observation": "system/production_runtime/chapters/chapter-0017/observation.json",
+          "final_audit": "system/production_runtime/chapters/chapter-0017/final_audit.json",
+          "settlement": "system/production_runtime/chapters/chapter-0017/settlement.json",
+          "acceptance": "system/production_runtime/chapters/chapter-0017/acceptance.json"
+        },
+        "source_hashes": {
+          "borrowed_heaven_life_account_bible": "81575478a441852f18d451e9967245bbfce11d60cddd3af24e9b6565955e0604",
+          "borrowed_heaven_volume1_outline_tree": "1f12fe8ad3262876eb533d40c94ad02abb90b95b38de387d339917fce9184648",
+          "project_assets.v0.2": "90dbcf17d769e8a985fc87880a4382018c30133a2a53f82c3826636c8ed1dc61"
+        }
+      },
+      {
+        "chapter_id": "chapter-0018",
+        "stage": "chapter_accepted",
+        "artifacts": {
+          "intent": "system/production_runtime/chapters/chapter-0018/intent.json",
+          "context": "system/production_runtime/chapters/chapter-0018/context.json",
+          "rule_stack": "system/production_runtime/chapters/chapter-0018/rule_stack.json",
+          "trace": "system/production_runtime/chapters/chapter-0018/trace.json",
+          "draft": "system/production_runtime/chapters/chapter-0018/draft.md",
+          "draft_metrics": "system/production_runtime/chapters/chapter-0018/draft.metrics.json",
+          "continuity_audit": "system/production_runtime/chapters/chapter-0018/continuity_audit.json",
+          "revision": "system/production_runtime/chapters/chapter-0018/revision.md",
+          "revision_metrics": "system/production_runtime/chapters/chapter-0018/revision.metrics.json",
+          "observation": "system/production_runtime/chapters/chapter-0018/observation.json",
+          "final_audit": "system/production_runtime/chapters/chapter-0018/final_audit.json",
+          "settlement": "system/production_runtime/chapters/chapter-0018/settlement.json",
+          "acceptance": "system/production_runtime/chapters/chapter-0018/acceptance.json"
+        },
+        "source_hashes": {
+          "borrowed_heaven_life_account_bible": "81575478a441852f18d451e9967245bbfce11d60cddd3af24e9b6565955e0604",
+          "borrowed_heaven_volume1_outline_tree": "1f12fe8ad3262876eb533d40c94ad02abb90b95b38de387d339917fce9184648",
+          "project_assets.v0.2": "90dbcf17d769e8a985fc87880a4382018c30133a2a53f82c3826636c8ed1dc61"
+        }
+      },
+      {
+        "chapter_id": "chapter-0019",
+        "stage": "chapter_accepted",
+        "artifacts": {
+          "intent": "system/production_runtime/chapters/chapter-0019/intent.json",
+          "context": "system/production_runtime/chapters/chapter-0019/context.json",
+          "rule_stack": "system/production_runtime/chapters/chapter-0019/rule_stack.json",
+          "trace": "system/production_runtime/chapters/chapter-0019/trace.json",
+          "draft": "system/production_runtime/chapters/chapter-0019/draft.md",
+          "draft_metrics": "system/production_runtime/chapters/chapter-0019/draft.metrics.json",
+          "continuity_audit": "system/production_runtime/chapters/chapter-0019/continuity_audit.json",
+          "revision": "system/production_runtime/chapters/chapter-0019/revision.md",
+          "revision_metrics": "system/production_runtime/chapters/chapter-0019/revision.metrics.json",
+          "observation": "system/production_runtime/chapters/chapter-0019/observation.json",
+          "final_audit": "system/production_runtime/chapters/chapter-0019/final_audit.json",
+          "settlement": "system/production_runtime/chapters/chapter-0019/settlement.json",
+          "acceptance": "system/production_runtime/chapters/chapter-0019/acceptance.json"
+        },
+        "source_hashes": {
+          "borrowed_heaven_life_account_bible": "81575478a441852f18d451e9967245bbfce11d60cddd3af24e9b6565955e0604",
+          "borrowed_heaven_volume1_outline_tree": "1f12fe8ad3262876eb533d40c94ad02abb90b95b38de387d339917fce9184648",
+          "project_assets.v0.2": "90dbcf17d769e8a985fc87880a4382018c30133a2a53f82c3826636c8ed1dc61"
+        }
+      },
+      {
+        "chapter_id": "chapter-0020",
+        "stage": "chapter_accepted",
+        "artifacts": {
+          "intent": "system/production_runtime/chapters/chapter-0020/intent.json",
+          "context": "system/production_runtime/chapters/chapter-0020/context.json",
+          "rule_stack": "system/production_runtime/chapters/chapter-0020/rule_stack.json",
+          "trace": "system/production_runtime/chapters/chapter-0020/trace.json",
+          "draft": "system/production_runtime/chapters/chapter-0020/draft.md",
+          "draft_metrics": "system/production_runtime/chapters/chapter-0020/draft.metrics.json",
+          "continuity_audit": "system/production_runtime/chapters/chapter-0020/continuity_audit.json",
+          "revision": "system/production_runtime/chapters/chapter-0020/revision.md",
+          "revision_metrics": "system/production_runtime/chapters/chapter-0020/revision.metrics.json",
+          "observation": "system/production_runtime/chapters/chapter-0020/observation.json",
+          "final_audit": "system/production_runtime/chapters/chapter-0020/final_audit.json",
+          "settlement": "system/production_runtime/chapters/chapter-0020/settlement.json",
+          "acceptance": "system/production_runtime/chapters/chapter-0020/acceptance.json"
+        },
+        "source_hashes": {
+          "borrowed_heaven_life_account_bible": "81575478a441852f18d451e9967245bbfce11d60cddd3af24e9b6565955e0604",
+          "borrowed_heaven_volume1_outline_tree": "1f12fe8ad3262876eb533d40c94ad02abb90b95b38de387d339917fce9184648",
+          "project_assets.v0.2": "90dbcf17d769e8a985fc87880a4382018c30133a2a53f82c3826636c8ed1dc61"
+        }
       }
     ],
     "stage_order": [
@@ -7934,12 +8181,12 @@
   "current_project": {
     "project_name": "Novel Research Lab",
     "selected_project": "《借天改命账》",
-    "current_phase": "Phase 2E",
-    "current_subphase": "Controlled Planning Validation",
-    "phase_status": "review_received_pending_owner_gate",
-    "system_mode": "SYSTEM_HARDENING",
-    "content_progression": "FROZEN_AT_OWNER_GATE",
-    "last_completed_mission": "Phase 2E Controlled Planning Validation"
+    "current_phase": "Production v1",
+    "current_subphase": "Volume 1 Window 021-030 Compilation",
+    "phase_status": "production_authorized_window_011_020_accepted",
+    "system_mode": "CONTROLLED_RUNTIME",
+    "content_progression": "RUNTIME_CONTROLLED",
+    "last_completed_mission": "Volume 1 Chapters 1-20 Accepted and Window 011-020 Reviewed"
   },
   "agent_panel": {
     "items": [
@@ -8000,17 +8247,17 @@
       },
       {
         "area": "Story Bible",
-        "status": "completed",
+        "status": "not_registered",
         "note": "current project bible asset"
       },
       {
         "area": "Outline Tree",
-        "status": "completed",
+        "status": "not_registered",
         "note": "Phase 2D outline tree asset"
       },
       {
         "area": "Planning Pack",
-        "status": "prepared",
+        "status": "not_registered",
         "note": "Phase 2E planning control asset"
       },
       {
@@ -8020,7 +8267,7 @@
       },
       {
         "area": "Review Reports",
-        "status": "REVIEW_RECEIVED_PENDING_OWNER_GATE",
+        "status": "PRODUCTION_AUTHORIZED",
         "note": "Antigravity review status"
       },
       {
@@ -8102,7 +8349,7 @@
     "registry_name": "Creation Asset Registry",
     "version": "0.1",
     "project": "《借天改命账》",
-    "mode": "SYSTEM_HARDENING",
+    "mode": "CONTROLLED_RUNTIME",
     "source_of_truth": [
       "system/creation_assets/creation_asset_registry.v0.1.json",
       "system/mission_controller/current_phase_state.json",
@@ -8396,8 +8643,8 @@
     "state_validity_command": "python3 system/runtime/nrl.py validate-state",
     "status_command": "python3 system/runtime/nrl.py system-status",
     "studio_data_command": "python3 system/runtime/nrl.py studio-data",
-    "current_mission": "Phase 2E Antigravity Controlled Planning Review",
-    "responsible_agent": "antigravity",
+    "current_mission": "Compile Story Window 021-030 and resume at Chapter 21",
+    "responsible_agent": "codex",
     "registry_status": "output_detected",
     "adapter_modes": {
       "codex": {
@@ -8454,12 +8701,10 @@
       "handoff/antigravity/outputs/phase2e_antigravity_controlled_planning_review.md"
     ],
     "blocked_actions": [
-      "write novel prose",
-      "write first chapter",
-      "generate full character cards",
-      "bypass Phase 2E planning constraints",
-      "ignore Antigravity required fixes",
-      "freely read novel_training_set"
+      "publish prose before Volume 1 release acceptance",
+      "produce prose without a validated story window contract",
+      "read novel_training_set from the chapter production runtime",
+      "advance beyond chapter-0100 without a new Owner authorization"
     ]
   },
   "next_safe_action": {
@@ -8478,9 +8723,9 @@
     ]
   },
   "owner_gate": {
-    "required": true,
-    "status": "REQUIRED_PENDING_ACKNOWLEDGEMENT",
-    "review_status": "REVIEW_RECEIVED_PENDING_OWNER_GATE",
+    "required": false,
+    "status": "AUTHORIZED_VOLUME1_V025",
+    "review_status": "PRODUCTION_AUTHORIZED",
     "authorization_scope": [
       "status read",
       "studio build",
@@ -8488,12 +8733,10 @@
       "system hardening"
     ],
     "forbidden_scope": [
-      "write novel prose",
-      "write first chapter",
-      "generate full character cards",
-      "bypass Phase 2E planning constraints",
-      "ignore Antigravity required fixes",
-      "freely read novel_training_set"
+      "publish prose before Volume 1 release acceptance",
+      "produce prose without a validated story window contract",
+      "read novel_training_set from the chapter production runtime",
+      "advance beyond chapter-0100 without a new Owner authorization"
     ],
     "decision_boundary": "No stale Owner Gate decision may authorize a later gate.",
     "expires_after_mission": "current Owner Gate only"

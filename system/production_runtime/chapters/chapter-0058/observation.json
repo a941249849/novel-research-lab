@@ -1,0 +1,71 @@
+{
+  "chapter_id": "chapter-0058",
+  "draft_sha256": "fae839b7a0bff2931261bed6f7efcb46d4ea62a47cec25162a09565057699866",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "chapter-0058-lu-remained-auxiliary-witness",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_procedural_choice",
+        "before": "陆沉渊实际执行第三名持令人的撤回权，原样交还其令牌、执行令与留印木片，不抄录户名，也不以旁观者记忆补证",
+        "after": "陆沉渊退出两名持令人的陈述次序，仅承担此前位号、尾灰与压缺的识痕结论，不代认归属、不补第三令，也未在辨痕断绝后继续识账",
+        "evidence": "陆沉渊要求谁持令谁自己说，随后让开视线；两次落链期间他只观察公开的链、灯与算盘结果，右眼银灰未恢复，最终明确接受自己的识痕只作辅助。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "chapter-0058-gu-xun-returned-duplicate-orders",
+        "asset_id": "npc_debt_collector_gu_xun",
+        "field_path": "npc.current_procedural_decision",
+        "before": "顾巡携重新核验、仍显断续灰痕的债链抵达泥灯巷，只对现场两份自愿留下的具名执行令启动归属复验",
+        "after": "顾巡分别实落两条债链，确认两令同时咬入同一配额位后逐份封链退令，并刻录两次执行失败送交命审台；其仍声明有效旧追缴继续执行",
+        "evidence": "两名持令人依次陈述同一位号，两道债链从分开的灰槽汇入中央同槽，寿算盘两列珠子挤入同一格；顾巡逐份退链、封住追缴印并刻下执行失败记录。"
+      }
+    ],
+    "locations": [],
+    "factions": [
+      {
+        "fact_id": "chapter-0058-office-orders-entered-review",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_enforcement_record",
+        "before": "拆令申请被收录；共同空额总数与期限保留，三份具名执行令因共享同一配额位而在领取前进入归属复核",
+        "after": "两份具名执行令因实际执行时重复占位而被封链退回，不能记作住户拒缴，退令记录须由命审台处理；裁定前共同担保锁定三处共用灯龛",
+        "evidence": "两份令的追缴印均凝成灰白封圈，顾巡明确答复持令人不能记作拒缴，并把记录送往命审台；随后共同担保寿印转黑并锁死三处灯龛。"
+      }
+    ],
+    "artifacts": [],
+    "techniques": [],
+    "relationships": [],
+    "emotions": [],
+    "information": [
+      {
+        "fact_id": "chapter-0058-account-error-became-enforcement-failure",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_procedure_result",
+        "before": "同一配额位确实被做成三份具名执行令，三令不能再按三个彼此独立的空额处理；来源与先后仍未确认",
+        "after": "两份自愿留下的具名执行令经实际落链后均指向同一配额位，重复占位已形成两次可复核的执行失败；来源与先后仍未确认",
+        "evidence": "顾巡分别启动两次扣取，两条链均进入同一冷灰槽，寿算盘显示同格，随后两份令背均留下位号、同槽、同格与执行未成的刻录。"
+      },
+      {
+        "fact_id": "chapter-0058-pressure-shifted-to-guarantee-lock",
+        "asset_id": "state_ledger_faction_pressure",
+        "field_path": "state_ledger.faction_pressure",
+        "before": "共同空额被拆成三份不同户名的执行令，但三令共享同一配额位，领取前归属核验被锁定，追踪继续落在陆沉渊身上",
+        "after": "两份重复占位令失去现场追缴效力并送交命审台，压力转为裁定前锁死三处共用灯龛的共同担保寿印",
+        "evidence": "退令记录送出后，三处共用灯龛的共同担保寿印由灰转黑，灯龛暖气与微光断开，顾巡明确宣告命审台裁定前谁也不能使用。"
+      },
+      {
+        "fact_id": "chapter-0058-public-recognition-enforcement-requires-attribution",
+        "asset_id": "state_ledger_public_reputation",
+        "field_path": "state_ledger.current_audience_direction",
+        "before": "在场者亲见公开反照不以强迫全部持令人留名为前提；撤回者可带走原纸且不被代证，留下的材料只代表各持有人自己的同意",
+        "after": "在场者亲见持令人可各自陈述并拒绝代证，执行者也必须核对唯一归属；总额与命令文字不能替代实际落链失败的归属核验",
+        "evidence": "两名持令人只确认各自原纸与命灯，拒绝补足第三令；顾巡两次落链失败后说明令写得再满也须有可落下的归属，并将失败刻录公开给二人查看。"
+      }
+    ],
+    "hooks": [],
+    "timeline": [],
+    "physical_state": [],
+    "naming": []
+  }
+}

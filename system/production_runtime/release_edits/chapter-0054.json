@@ -1,0 +1,12 @@
+{
+  "version": "0.25",
+  "chapter_id": "chapter-0054",
+  "source_revision": "system/production_runtime/chapters/chapter-0054/revision.md",
+  "source_sha256": "1017af27279ac4cb1582629fc3dfeab93a8fa9fc7ea42cf3a2fa3a65d67f2495",
+  "release_edit": "system/production_runtime/release_edits/chapter-0054.md",
+  "release_edit_sha256": "410b6a37c966314bf8c83ac90696cb2a7b08e01397cddc9bd9d9c3ba6d112cdd",
+  "repair_direction": "删除结尾所有“钩子成立、立即收束、结束、完、终、停止”重复填充；保留苏晚自主移灯至暖界外、拒绝邻里命火补偿、陆沉渊服从其决定、护阵暖墙继续受损以及三枚同尾灰具名令牌出现的状态结果。正文在“下一次核验将从这三枚牌开始”附近立即结束，不得出现元评论。",
+  "provider": "codex",
+  "model": "gpt-5.6-sol",
+  "status": "pending_window_re_review"
+}

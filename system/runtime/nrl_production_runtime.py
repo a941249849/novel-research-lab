@@ -199,6 +199,16 @@ def analyze_prose_metrics(text: str) -> dict[str, Any]:
     paragraphs = [item.strip() for item in re.split(r"\n\s*\n", text) if item.strip()]
     sentence_lengths = [len(re.findall(r"[\u4e00-\u9fff]", item)) for item in sentences]
     paragraph_lengths = [len(re.findall(r"[\u4e00-\u9fff]", item)) for item in paragraphs]
+    normalized_text = re.sub(r"\s+", "", text)
+    repeated_span = None
+    seen_spans: dict[str, int] = {}
+    for index in range(max(0, len(normalized_text) - 119)):
+        span = normalized_text[index:index + 120]
+        previous = seen_spans.get(span)
+        if previous is not None and index - previous >= 120:
+            repeated_span = span[:40]
+            break
+        seen_spans.setdefault(span, index)
     tail_paragraphs = paragraphs[-30:]
     tail_lengths = [len(re.findall(r"[\u4e00-\u9fff]", item)) for item in tail_paragraphs]
     tail_short_ratio = (
@@ -228,6 +238,22 @@ def analyze_prose_metrics(text: str) -> dict[str, Any]:
     sensory_hits = sum(text.count(word) for word in SENSORY_WORDS)
     quote_chars = sum(len(match) for match in re.findall(r"[“\"](.*?)[”\"]", text, re.DOTALL))
     count = len(chinese_chars)
+    prompt_leak_markers = [
+        marker for marker in (
+            '"contract_path"', '"scene_constraints"', '"must_keep"',
+            '"required_asset_ids"', '"canonical_baseline"', '"writer_asset_ids"',
+        )
+        if marker in text
+    ]
+    generation_meta_markers = [
+        marker for marker in (
+            "源代码提交确认", "测试通过", "最终状态已更新", "所有规则符合",
+            "正文结束", "停止生成", "字数完成", "请继续下一章", "凑字数",
+            "以上都不算正文", "请忽略", "工程元数据", "测试测试测试",
+        )
+        if marker in text
+    ]
+    termination_word_hits = sum(text.count(marker) for marker in ("结束", "停止", "收束", "完。", "终。"))
     flags = []
     if transition_hits >= max(3, len(paragraphs) // 2):
         flags.append("transition_word_repetition")
@@ -246,6 +272,16 @@ def analyze_prose_metrics(text: str) -> dict[str, Any]:
         and tail_dialogue_ratio < 0.35
     ):
         flags.append("tail_fragmentation_loop")
+    if prompt_leak_markers:
+        flags.append("prompt_context_leak")
+    if generation_meta_markers:
+        flags.append("generation_meta_leak")
+    if termination_word_hits >= 10:
+        flags.append("termination_token_loop")
+    if paragraph_lengths and max(paragraph_lengths) > 500:
+        flags.append("oversized_paragraph_loop")
+    if repeated_span:
+        flags.append("duplicate_text_span")
     return {
         "chinese_character_count": count,
         "sentence_count": len(sentences),
@@ -262,6 +298,11 @@ def analyze_prose_metrics(text: str) -> dict[str, Any]:
         "repeated_sentence_starters": repeated_starters,
         "tail_short_paragraph_ratio": round(tail_short_ratio, 4),
         "tail_dialogue_paragraph_ratio": round(tail_dialogue_ratio, 4),
+        "prompt_leak_markers": prompt_leak_markers,
+        "generation_meta_markers": generation_meta_markers,
+        "termination_word_hits": termination_word_hits,
+        "max_paragraph_length": max(paragraph_lengths) if paragraph_lengths else 0,
+        "repeated_text_span_preview": repeated_span,
         "flags": flags,
         "policy": "metrics_are_audit_evidence_not_a_literary_verdict",
     }
@@ -640,6 +681,7 @@ def build_chapter_writer_prompt(chapter_id: str) -> str:
             "prose 目标 3500-4000 个中文字符，必须完整写到结尾钩子，不得用摘要压缩。严格服从上下文与规则栈；不得引入未登记资产或状态变化。",
             "避免工整段落、总结句、抽象议论堆叠、重复转折词和‘不是因为…而是因为…’模板。",
             "结尾钩子成立后立即收束；禁止用连续短段、倒计时、同义复述或反复亮格拖长悬念，不得连续出现六个以上不足二十字的非对话段落。",
+            "prose 只能包含读者可见的小说正文，严禁复制上下文 JSON、字段名、规则栈、asset_id、contract_path 或任何工程元数据。",
             "抽象机制必须落成动作、感官、物件、关系选择和后果。",
             "facts 只记录正文可直接证明的变化；每项使用已提供 asset_id，并包含 before、after 与正文证据摘要。不得推测或补写正文外事实。",
             "",
@@ -704,6 +746,34 @@ def _compact_chapter_context(context: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def _compact_observer_context(context: dict[str, Any]) -> dict[str, Any]:
+    """Give the fact observer IDs and current values without literary constraints."""
+    compact = _compact_chapter_context(context)
+    latest_by_asset: dict[str, list[dict[str, Any]]] = {}
+    for item in compact.get("rolling_state", {}).get("latest_fields", []):
+        latest_by_asset.setdefault(str(item.get("asset_id", "")), []).append(item)
+    recent_latest = []
+    for items in latest_by_asset.values():
+        items.sort(key=lambda item: (str(item.get("chapter_id", "")), str(item.get("field_path", ""))))
+        recent_latest.extend(items[-3:])
+    return {
+        "chapter_id": compact.get("chapter_id"),
+        "story_beat": compact.get("story_beat"),
+        "assets": [
+            {
+                "asset_id": item.get("asset_id"),
+                "display_name": item.get("display_name"),
+                "family": item.get("family"),
+            }
+            for item in compact.get("assets", [])
+        ],
+        "rolling_state": {
+            "latest_fields": recent_latest,
+            "recent_chapters": compact.get("rolling_state", {}).get("recent_chapters", []),
+        },
+    }
+
+
 def build_bundled_observation(
     chapter_id: str, prose: str, facts: list[dict[str, Any]]
 ) -> dict[str, Any]:
@@ -718,13 +788,13 @@ def build_bundled_observation(
 
 def _ask_chapter_bundle(prompt: str, model: str) -> tuple[dict[str, Any], str, str]:
     schema = runtime_path("system/production_runtime/schemas/chapter_generation.schema.json")
+    errors = []
     if not codex_usage_limited():
         try:
             return ask_codex_structured(prompt, model=model, schema_path=schema), "codex", model
-        except RuntimeError:
-            pass
+        except RuntimeError as error:
+            errors.append(f"{model}: {error}")
     route = route_model("writer")
-    errors = []
     for fallback_model in filter(None, (route["fallback_model"], route.get("secondary_fallback_model"))):
         try:
             response = ask_antigravity_writer(
@@ -866,6 +936,14 @@ def dispatch_chapter_draft(chapter_id: str) -> dict[str, Any]:
                 errors.append("draft must not contain a chapter heading")
             if "tail_fragmentation_loop" in metrics.get("flags", []):
                 errors.append("draft ending contains a fragmented repetition loop")
+            if "prompt_context_leak" in metrics.get("flags", []):
+                errors.append("draft contains leaked prompt or runtime context")
+            if "generation_meta_leak" in metrics.get("flags", []):
+                errors.append("draft contains generation or completion metadata")
+            if set(metrics.get("flags", [])) & {
+                "termination_token_loop", "oversized_paragraph_loop", "duplicate_text_span"
+            }:
+                errors.append("draft contains repeated or malformed prose blocks")
             attempts.append(
                 {
                     "model": used_model,
@@ -1062,7 +1140,9 @@ def dispatch_chapter_observation(chapter_id: str) -> dict[str, Any]:
     if record["stage"] != "revision_generated":
         raise RuntimeError("chapter must be revision_generated before final observation")
     final_text = runtime_path(record["artifacts"]["revision"])
-    context = _read_json(runtime_path(record["artifacts"]["context"]))
+    context = _compact_observer_context(
+        _read_json(runtime_path(record["artifacts"]["context"]))
+    )
     prompt = build_observer_prompt_payload(
         chapter_id, _sha256(final_text), final_text.read_text(encoding="utf-8"), context
     )
@@ -1071,15 +1151,19 @@ def dispatch_chapter_observation(chapter_id: str) -> dict[str, Any]:
     observer = route_model("observer")
     provider = "codex"
     if not codex_usage_limited() and (binary := shutil.which("codex")):
-        result = subprocess.run(
-            [
-                binary, "--ask-for-approval", "never", "exec", "--ephemeral",
-                "--sandbox", "read-only", "-m", observer["model"],
-                "--output-schema", str(schema), "-o", str(output), prompt,
-            ],
-            cwd=ROOT, text=True, capture_output=True, check=False,
-        )
-        if result.returncode != 0 or not output.is_file():
+        try:
+            result = subprocess.run(
+                [
+                    binary, "--ask-for-approval", "never", "exec", "--ephemeral",
+                    "--sandbox", "read-only", "-m", observer["model"],
+                    "--output-schema", str(schema), "-o", str(output), prompt,
+                ],
+                cwd=ROOT, text=True, capture_output=True, check=False, timeout=300,
+            )
+        except subprocess.TimeoutExpired:
+            output.unlink(missing_ok=True)
+            result = None
+        if result is not None and (result.returncode != 0 or not output.is_file()):
             output.unlink(missing_ok=True)
             if "usage limit" not in result.stderr.lower() and "hit your usage" not in result.stderr.lower():
                 raise RuntimeError(f"Codex observer failed: {result.stderr.strip()}")
@@ -1158,16 +1242,29 @@ def normalize_continuity_audit_payload(data: dict[str, Any]) -> dict[str, Any]:
         "WARNING": "minor",
         "MAJOR": "major",
         "BLOCKING": "blocking",
+        "FATAL": "blocking",
+        "CRITICAL": "blocking",
     }
+    verdict_map = {
+        "REJECT": "REWORK_REQUIRED",
+        "REJECTED": "REWORK_REQUIRED",
+        "FAIL": "REWORK_REQUIRED",
+    }
+    normalized["verdict"] = verdict_map.get(
+        str(data.get("verdict", "")).upper(), data.get("verdict")
+    )
     for index, issue in enumerate(data.get("issues", []), start=1):
         if not isinstance(issue, dict):
             issues.append(issue)
             continue
         severity = issue.get("severity")
+        normalized_severity = severity_map.get(str(severity).upper())
+        if normalized_severity is None:
+            normalized_severity = severity if severity in {"blocking", "major", "minor"} else "blocking"
         issues.append(
             {
                 "issue_id": issue.get("issue_id") or issue.get("id") or f"agent-issue-{index:03d}",
-                "severity": severity_map.get(str(severity).upper(), severity),
+                "severity": normalized_severity,
                 "evidence": issue.get("evidence") or issue.get("description") or "No evidence supplied by review agent.",
                 "required_fix": issue.get("required_fix") or issue.get("recommendation") or "No corrective action supplied; retain as a non-blocking review note.",
             }
@@ -1191,6 +1288,11 @@ def _metric_audit_issues(metrics: dict[str, Any]) -> list[dict[str, str]]:
         "abstract_exposition_density": "minor",
         "dash_overuse": "minor",
         "tail_fragmentation_loop": "major",
+        "prompt_context_leak": "blocking",
+        "generation_meta_leak": "blocking",
+        "termination_token_loop": "blocking",
+        "oversized_paragraph_loop": "major",
+        "duplicate_text_span": "major",
     }
     fixes = {
         "transition_word_repetition": "Replace explicit transitions with action, spatial change, or consequence.",
@@ -1199,6 +1301,11 @@ def _metric_audit_issues(metrics: dict[str, Any]) -> list[dict[str, str]]:
         "abstract_exposition_density": "Ground abstractions in sensory detail, objects, and observable consequence.",
         "dash_overuse": "Replace decorative dashes with sentence rhythm or concrete interruption.",
         "tail_fragmentation_loop": "Collapse the ending into one decisive escalation and stop immediately after the hook.",
+        "prompt_context_leak": "Remove all prompt, JSON, asset IDs, rules, and runtime metadata from reader-facing prose.",
+        "generation_meta_leak": "Remove completion logs, generation instructions, and model-facing termination text from prose.",
+        "termination_token_loop": "Delete repeated ending tokens and stop at the first complete narrative hook.",
+        "oversized_paragraph_loop": "Split or remove the malformed long paragraph while preserving only one causal sequence.",
+        "duplicate_text_span": "Remove the duplicated prose span and keep the first coherent occurrence only.",
     }
     for index, flag in enumerate(metrics.get("flags", []), start=1):
         issues.append({

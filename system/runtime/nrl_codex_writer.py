@@ -11,7 +11,7 @@ from pathlib import Path
 from typing import Any
 
 
-DEFAULT_TIMEOUT_SECONDS = 180
+DEFAULT_TIMEOUT_SECONDS = 300
 DEFAULT_ANTIGRAVITY_TIMEOUT_SECONDS = 600
 _CODEX_USAGE_LIMITED = False
 
@@ -40,17 +40,20 @@ def ask_codex_writer(prompt: str, *, model: str, timeout_seconds: int = DEFAULT_
         raise RuntimeError("codex CLI is missing")
     with tempfile.TemporaryDirectory(prefix="nrl-codex-writer-") as temp_dir:
         output = Path(temp_dir) / "writer-output.md"
-        result = subprocess.run(
-            [
-                binary, "--ask-for-approval", "never", "exec", "--ephemeral", "--skip-git-repo-check",
-                "--sandbox", "read-only", "-m", model, "-o", str(output), prompt,
-            ],
-            cwd=temp_dir,
-            text=True,
-            capture_output=True,
-            check=False,
-            timeout=timeout_seconds,
-        )
+        try:
+            result = subprocess.run(
+                [
+                    binary, "--ask-for-approval", "never", "exec", "--ephemeral", "--skip-git-repo-check",
+                    "--sandbox", "read-only", "-m", model, "-o", str(output), prompt,
+                ],
+                cwd=temp_dir,
+                text=True,
+                capture_output=True,
+                check=False,
+                timeout=timeout_seconds,
+            )
+        except subprocess.TimeoutExpired as error:
+            raise RuntimeError(f"Codex writer timed out after {timeout_seconds} seconds") from error
         if result.returncode != 0 or not output.is_file():
             error = f"Codex writer failed with exit code {result.returncode}: {result.stderr.strip()}"
             if _is_usage_limit_error(error):
@@ -76,18 +79,21 @@ def ask_codex_structured(
         raise RuntimeError("codex CLI is missing")
     with tempfile.TemporaryDirectory(prefix="nrl-codex-structured-") as temp_dir:
         output = Path(temp_dir) / "output.json"
-        result = subprocess.run(
-            [
-                binary, "--ask-for-approval", "never", "exec", "--ephemeral",
-                "--skip-git-repo-check", "--sandbox", "read-only", "-m", model,
-                "--output-schema", str(schema_path), "-o", str(output), prompt,
-            ],
-            cwd=temp_dir,
-            text=True,
-            capture_output=True,
-            check=False,
-            timeout=timeout_seconds,
-        )
+        try:
+            result = subprocess.run(
+                [
+                    binary, "--ask-for-approval", "never", "exec", "--ephemeral",
+                    "--skip-git-repo-check", "--sandbox", "read-only", "-m", model,
+                    "--output-schema", str(schema_path), "-o", str(output), prompt,
+                ],
+                cwd=temp_dir,
+                text=True,
+                capture_output=True,
+                check=False,
+                timeout=timeout_seconds,
+            )
+        except subprocess.TimeoutExpired as error:
+            raise RuntimeError(f"Codex structured call timed out after {timeout_seconds} seconds") from error
         if result.returncode != 0 or not output.is_file():
             error = f"Codex structured call failed with exit code {result.returncode}: {result.stderr.strip()}"
             if _is_usage_limit_error(error):

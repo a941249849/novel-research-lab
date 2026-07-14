@@ -1,0 +1,12 @@
+{
+  "version": "0.25",
+  "chapter_id": "chapter-0059",
+  "source_revision": "system/production_runtime/chapters/chapter-0059/revision.md",
+  "source_sha256": "7ec4977155b39abd7b300ab6ceb1f3b78a8118f9594fb7941e2499f162ec509c",
+  "release_edit": "system/production_runtime/release_edits/chapter-0059.md",
+  "release_edit_sha256": "ff3494d1e7ea01c99ff2592a5a3419bee2c6db87295951cf691e86cd38204822",
+  "repair_direction": "承接第58章物证链：两名具名持令人亲自把各自保管、已加盖退令待审印的原纸带回泥灯巷，在门槛干板上展开清点；原纸不是顾巡遗落或被风凭空吹来。风只能掀动由持令人放下的纸角。两人继续保有撤回权，次日自行送入命审台；顾巡持有的是刻录与拓印。保持灯龛锁定、护阵失温、命审只裁连额归属不免旧债。减少否定排比。",
+  "provider": "codex",
+  "model": "gpt-5.6-sol",
+  "status": "pending_window_re_review"
+}

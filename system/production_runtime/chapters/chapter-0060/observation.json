@@ -1,0 +1,158 @@
+{
+  "chapter_id": "chapter-0060",
+  "draft_sha256": "c5427201b17def50a98fe3b08aa538325e8e9e35c5217564fe6f12d236c827f3",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "chapter-0060-fact-001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_procedural_choice",
+        "before": "命审受理范围限定为连额归属，陆沉渊未代替住户确认归属",
+        "after": "陆沉渊正式请求撤销无具名共同空额、两份重复执行令并解封灯龛，同时明确苏晚旧债不在本案",
+        "evidence": "陆沉渊面对执行槽提出“请求不变”，明确列出三项窄裁请求，并声明苏晚旧债不在本案。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "chapter-0060-fact-002",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_procedural_boundary",
+        "before": "苏晚的旧寿债、命灯裂纹与本次连额裁定分开处理",
+        "after": "苏晚亲自确认母债另审，拒绝以错误连额裁定替换或免除自己的旧债",
+        "evidence": "苏晚明确表示“我的裂纹是我的裂纹，母债另审”，并拒绝将其写入本案。"
+      },
+      {
+        "fact_id": "chapter-0060-fact-003",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_visible_lamp_consequence",
+        "before": "命灯裂纹持续，冷灰从裂口落下",
+        "after": "裂灯期限逼近最末一格，斜纹渗出冷白，命灯未因窄裁修复",
+        "evidence": "正文写明斜裂仍钉在陶胎上，最终裂灯期限刻痕逼近最末一格。"
+      },
+      {
+        "fact_id": "chapter-0060-fact-004",
+        "asset_id": "npc_debt_collector_gu_xun",
+        "field_path": "npc.current_procedural_decision",
+        "before": "顾巡已封链退回两份重复占位令，并声明有效旧追缴继续执行",
+        "after": "顾巡接收归属清楚且写有苏晚名字的旧追缴令，继续执行该有效追缴",
+        "evidence": "第三处灯龛解封后，顾巡接住刻有苏晚名字的追缴令，并说明该令不在方才裁定之内。"
+      }
+    ],
+    "locations": [
+      {
+        "fact_id": "chapter-0060-fact-005",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_chapter_step",
+        "before": "安置区收缩，最外侧房间冻裂停用，住户失去部分床位",
+        "after": "三处灯龛恢复原持有人接触，但冻裂安置屋、失温与迁位损失仍保留",
+        "evidence": "正文写明灯龛依次解封，同时最外侧安置屋地缝、墙面阵纹和冷水损坏均未恢复。"
+      }
+    ],
+    "factions": [
+      {
+        "fact_id": "chapter-0060-fact-006",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_enforcement_record",
+        "before": "两份重复占位令被封链退回，等待命审台裁定；三处共用灯龛被共同担保锁定",
+        "after": "两份执行令正式失去执行效力并退还原持有人，三处共用灯龛解封；归属清楚的旧追缴仍可继续执行",
+        "evidence": "裁字规定两令退还、灯龛即刻解封；顾巡随后接收苏晚名下的有效追缴令。"
+      },
+      {
+        "fact_id": "chapter-0060-fact-007",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_witness_boundary",
+        "before": "本轮材料限于两份自愿留下的具名执行令及现场可核验痕迹",
+        "after": "两巷完成窄裁，不补名、不补证、不交住户命灯，以两份执行令和两次执行失败作为裁定材料",
+        "evidence": "正文明确写出没有人被叫来补名、没有住户命灯入槽，留下的仅是两张自愿执行令、两次失败和同位压痕。"
+      }
+    ],
+    "artifacts": [
+      {
+        "fact_id": "chapter-0060-fact-008",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_procedure_result",
+        "before": "两份执行令实际落链至同一配额位，形成两次可复核执行失败",
+        "after": "命审台据同位压痕正式认定两令重复追缴同一配额位，两令失去执行效力，且无额外寿火返还",
+        "evidence": "裁字确认同一配额位不得由两份执行令重复追缴；两令执行寿印裂解退回，正文明确没有寿火返还。"
+      }
+    ],
+    "techniques": [],
+    "relationships": [
+      {
+        "fact_id": "chapter-0060-fact-009",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_trust_state",
+        "before": "苏晚允许陆沉渊扶持，但不允许他替她决定灯位或代她承担命火选择",
+        "after": "苏晚在窄裁后主动搭手并允许陆沉渊扶她站起；陆沉渊继续不替她开口、不替她交火",
+        "evidence": "苏晚主动将手搭上陆沉渊肩旁，随后明确应如何应由自己作答；陆沉渊收住脚步并保持沉默。"
+      }
+    ],
+    "emotions": [],
+    "information": [
+      {
+        "fact_id": "chapter-0060-fact-010",
+        "asset_id": "state_ledger_public_reputation",
+        "field_path": "state_ledger.current_audience_direction",
+        "before": "实际落链失败必须核验唯一归属，总额不能替代归属核验",
+        "after": "贫城公开形成新规则：跨巷债链不得只凭共同总额执行，必须先具名并核验实际落处",
+        "evidence": "裁字规定逐户追缴须有姓名、归属及可核验实际落处；正文总结往后债链跨巷必须先举出要锁住的名字。"
+      },
+      {
+        "fact_id": "chapter-0060-fact-011",
+        "asset_id": "state_ledger_faction_pressure",
+        "field_path": "state_ledger.faction_pressure",
+        "before": "压力集中在共同担保寿印锁死三处共用灯龛，重复占位令等待裁定",
+        "after": "无具名共同空额和锁龛执行被撤销，压力转向归属清楚的苏晚旧追缴令",
+        "evidence": "银冷线断开、三处灯龛解封后，顾巡立即接收并执行刻有苏晚名字的追缴令。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "chapter-0060-fact-012",
+        "asset_id": "state_ledger_mother_life_lamp_countdown",
+        "field_path": "state_ledger.current_visible_lamp_consequence",
+        "before": "苏晚命灯裂纹存在并持续散出冷灰",
+        "after": "裂灯期限进入逼近最末一格的阶段，下一次有效追缴已抵达",
+        "evidence": "正文末尾写明苏晚名字下方的裂灯期限一格格泛白，且有效追缴已经抵达。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "chapter-0060-fact-013",
+        "asset_id": "state_ledger_faction_pressure",
+        "field_path": "state_ledger.current_chapter_sequence",
+        "before": "命审台尚未裁定，三处灯龛处于锁死状态",
+        "after": "命审台完成窄裁，撤销共同空额与重复令，解封三处灯龛；随后苏晚名下有效旧追缴进入现场",
+        "evidence": "裁字落稳后两令退回、灯龛依次弹开；第三处解封并熄灭共同空额后，新的追缴令转向苏晚。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "chapter-0060-fact-014",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_visible_condition",
+        "before": "右臂麻木、胸骨旧裂、左膝受损、右眼失去辨痕能力",
+        "after": "上述伤势和失去辨痕状态持续，今日无法辨认新的痕迹；命审台追照继续沿袖口上行",
+        "evidence": "正文写明陆沉渊右臂无知觉、胸骨闷响、左膝无力、右眼只能看见模糊光团，且今日不能再辨新痕。"
+      },
+      {
+        "fact_id": "chapter-0060-fact-015",
+        "asset_id": "npc_debt_collector_gu_xun",
+        "field_path": "npc.current_visible_condition",
+        "before": "顾巡左腕受伤，铁环压住肿青骨节",
+        "after": "接收新追缴令后铁环再次收紧，伤口重新渗血",
+        "evidence": "正文写明完整冷印亮起时铁环重新压入顾巡受伤的左腕，后续伤口又涌出血。"
+      }
+    ],
+    "naming": [
+      {
+        "fact_id": "chapter-0060-fact-016",
+        "asset_id": "state_ledger_public_reputation",
+        "field_path": "state_ledger.current_public_rule",
+        "before": "共同空额仍可锁定两巷共用灯龛，归属规则尚待裁定",
+        "after": "共同总额不得越过巷界落链；逐户追缴必须具备姓名、归属和可核验实际落处",
+        "evidence": "命审台最终裁字明确写出跨巷共同空额不得落链及逐户追缴的三项核验要求。"
+      }
+    ]
+  }
+}

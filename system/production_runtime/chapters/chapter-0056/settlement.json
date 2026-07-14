@@ -1,0 +1,135 @@
+{
+  "chapter_id": "chapter-0056",
+  "accepted_revision_sha256": "7f6d2320414012bc3a751ac60d64736756bda64713d594cfbb53657c08a493a5",
+  "state_deltas": [
+    {
+      "fact_id": "chapter-0056-f001",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_observed_choice",
+      "operation": "set",
+      "before": "右眼辨痕窗口已接近关闭，仍可触摸令面公开位号，未继续追查灰线",
+      "after": "陆沉渊主动止步于三令同位、同尾灰与同一处压缺，不追索抄压先后、来源链或第四张令"
+    },
+    {
+      "fact_id": "chapter-0056-f002",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_procedural_statement",
+      "operation": "set",
+      "before": null,
+      "after": "确认三令不能同时代表三笔彼此独立的欠额，同时拒绝确认抄压者、拆分来源、先后及是否存在第四张令"
+    },
+    {
+      "fact_id": "chapter-0056-f003",
+      "asset_id": "npc_debt_collector_gu_xun",
+      "field_path": "npc.next_procedural_hook",
+      "operation": "set",
+      "before": "下一次开槽须核验三份执行令的归属，申请人必须在场，缺席按拒验并续行追缴",
+      "after": "下一次复核仍须三张原纸重新到场，且已有一名持有人拒绝将自己的名字带上命审台"
+    },
+    {
+      "fact_id": "chapter-0056-f004",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_witness_boundary",
+      "operation": "set",
+      "before": "住户保留各自退出、拒答和撤回后续见证的权利，不替第三户认领配额位",
+      "after": "三名执行令持有人各自保留原纸与见证边界，第三人拒绝将个人姓名并入命审台见证"
+    },
+    {
+      "fact_id": "chapter-0056-f005",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_witness_boundary",
+      "operation": "set",
+      "before": "住户在命籍衙前槽不交灯、不替他人答复、不替第三户认领配额位",
+      "after": "现场继续维持不代证、不合并担保的边界，三份令分别归还持有人，未形成共同担保"
+    },
+    {
+      "fact_id": "chapter-0056-f006",
+      "asset_id": "technique_ledger_recognition",
+      "field_path": "technique.current_use_status",
+      "operation": "set",
+      "before": "施展一次局部识账术，仅确认残印与户灯缺角的三处同类咬合，未读取完整印文或转运起点",
+      "after": "完成一次局部识账术，仅辨认三份执行令的同位号、同一压痕缺口与同尾灰对应，未读取完整来源链"
+    },
+    {
+      "fact_id": "chapter-0056-f007",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_collective_choice",
+      "operation": "set",
+      "before": "泥灯巷允许各自见证陆沉渊交付的事实，但不把见证合并为共同担保",
+      "after": "现场继续执行各自认痕、不代证；持有人可拒扣，但不必把个人姓名交给共同程序"
+    },
+    {
+      "fact_id": "chapter-0056-f008",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_observation_label",
+      "operation": "set",
+      "before": "“同位三令”已作为待复核的公开依据",
+      "after": "三份具名执行令被三名持有人分别以指甲摸实同一压缺，并由令尾灰缺角在日影中对齐核实"
+    },
+    {
+      "fact_id": "chapter-0056-f009",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_procedure_result",
+      "operation": "set",
+      "before": "三令共享同一配额位号，领取前进入归属复核，问题未被解释",
+      "after": "同一配额位确实被做成三份具名执行令，三令不能再按三个彼此独立的空额处理；来源与先后仍未确认"
+    },
+    {
+      "fact_id": "chapter-0056-f010",
+      "asset_id": "state_ledger_public_reputation",
+      "field_path": "state_ledger.current_audience_direction",
+      "operation": "set",
+      "before": "现场将“同位三令”作为待复核公开依据",
+      "after": "公开认知进一步转为：三令同位可由持有人各自触摸压痕并以原纸复核，不依赖陆沉渊单方面判断"
+    },
+    {
+      "fact_id": "chapter-0056-f011",
+      "asset_id": "state_ledger_faction_pressure",
+      "field_path": "state_ledger.current_next_procedural_hook",
+      "operation": "set",
+      "before": "下一次开槽必须核验三份同位执行令归属，陆沉渊须在场",
+      "after": "下一次复核仍需三张原纸重新到场，但愿意把姓名带上命审台的持有人当场少了一人"
+    },
+    {
+      "fact_id": "chapter-0056-f012",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_verified_event",
+      "operation": "set",
+      "before": "三令同位在领取前被锁定复核，尚未完成现场核实",
+      "after": "白昼石面现场完成三令同位、同尾灰与同一压缺的持有人交叉复核，三令随后各自收回"
+    },
+    {
+      "fact_id": "chapter-0056-f013",
+      "asset_id": "state_ledger_protagonist_strain",
+      "field_path": "state_ledger.eye_pattern_burn",
+      "operation": "set",
+      "before": "右眼银灰铺满视野，识账窗口进一步关闭",
+      "after": "右眼焦黑纹路从眼角重新烧向太阳穴，热泪沿焦纹流下，右眼无法继续辨认令面"
+    },
+    {
+      "fact_id": "chapter-0056-f014",
+      "asset_id": "state_ledger_protagonist_strain",
+      "field_path": "state_ledger.cold_ash_cough_frequency",
+      "operation": "set",
+      "before": "冷意压入胸骨旧裂，右眼银灰铺满视野",
+      "after": "识账后咳出带血丝的灰沫，银灰火屑连成沉幕，当日失去继续辨痕能力"
+    },
+    {
+      "fact_id": "chapter-0056-f015",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_visible_condition",
+      "operation": "set",
+      "before": "十道锁痕勒深、右臂麻木，胸骨旧裂受压，右眼银灰铺满视野",
+      "after": "右臂仍麻木，胸骨旧裂随起身闷响，左膝晃动，右眼焦纹重新裂开并彻底失去辨痕窗口"
+    },
+    {
+      "fact_id": "chapter-0056-f016",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_observation_label",
+      "operation": "set",
+      "before": "现场已有“同位三令”观察标签",
+      "after": "“同一配额位被做成三份具名执行令”成为不可退回的现场事实表述"
+    }
+  ],
+  "resolved_audit_ids": []
+}

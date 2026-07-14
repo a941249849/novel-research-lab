@@ -3,13 +3,15 @@ import stat
 import sys
 import tempfile
 import unittest
+import subprocess
 from pathlib import Path
+from unittest.mock import patch
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT / "system/runtime"))
 
-from nrl_codex_writer import ask_antigravity_writer, ask_codex_writer, extract_json_object
+from nrl_codex_writer import ask_antigravity_writer, ask_codex_structured, ask_codex_writer, extract_json_object
 from nrl_model_router import build_model_routing_status, route_model
 
 
@@ -74,6 +76,16 @@ class CodexDirectWriterTests(unittest.TestCase):
 
     def test_extract_json_object_accepts_fenced_payload(self):
         self.assertEqual(extract_json_object('```json\n{"ok": true}\n```'), {"ok": True})
+
+    def test_structured_timeout_is_a_recoverable_runtime_error(self):
+        with patch("nrl_codex_writer.find_codex_binary", return_value="codex"), patch(
+            "nrl_codex_writer.subprocess.run",
+            side_effect=subprocess.TimeoutExpired(cmd="codex", timeout=1),
+        ):
+            with self.assertRaisesRegex(RuntimeError, "timed out"):
+                ask_codex_structured(
+                    "prompt", model="gpt-5.6-sol", schema_path=REPO_ROOT / "missing.json", timeout_seconds=1
+                )
 
 
 if __name__ == "__main__":

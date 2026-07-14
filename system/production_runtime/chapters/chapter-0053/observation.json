@@ -1,0 +1,63 @@
+{
+  "chapter_id": "chapter-0053",
+  "draft_sha256": "477d9dc7436e2f1a38c53d2919b0a4ef193843ad8aab1b8fa860ad9a945aa565",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "chapter-0053-lu-restraint",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_observed_choice",
+        "before": "公开拒绝替两巷点出代填户，也不接管住户命灯，将留下、拒绝和撤回交还各户当场决定",
+        "after": "在债链显出断续灰痕时克制夺链与施术，只限定亲见的链节断痕及归属无法承接共同空额，不把执行中止解释为顾巡倒戈",
+        "evidence": "陆沉渊按住袖口后主动垂手，明确说“不碰链”；他只陈述可见断痕及无法判断之处，并在顾巡退令时仅让出道路，未道谢、未称其为同路人。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "chapter-0053-gu-xun-suspends-first-order",
+        "asset_id": "npc_debt_collector_gu_xun",
+        "field_path": "npc.current_procedural_decision",
+        "before": "只核验受封户灯源覆印、州府转运残印及二者咬合，拒绝把异物回收、旧址或古债并入本次反照",
+        "after": "在首份连坐追缴令的链节闭合前确认断续灰痕，正式中止执行并将命令连同断痕退回重新核验；有效命令到达后仍将继续执行",
+        "evidence": "顾巡横转链尾、卡住第三枚链节，宣告“执行中止”；令上留下横向灰线，随后明确首份命令退回核验、中止痕不消不补，且有效令到仍会回来执行。"
+      },
+      {
+        "fact_id": "chapter-0053-gu-xun-wrist-worsens",
+        "asset_id": "npc_debt_collector_gu_xun",
+        "field_path": "npc.current_visible_injury",
+        "before": "左手腕关节僵硬到只能发出干涩摩擦声，通过窄缝时铁环磕碰石壁",
+        "after": "左腕被债链连续回弹扯歪并由执行铁环进一步收紧，关节肿胀泛青、环下渗血，五指仅拇指还能微动",
+        "evidence": "链节断痕引发多次回弹，铁环撞击并扭扯顾巡旧伤；寿算回拨后环下渗血，退尽链节时左手五指只剩拇指可动。"
+      }
+    ],
+    "locations": [],
+    "factions": [
+      {
+        "fact_id": "chapter-0053-office-first-order-stop-record",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_enforcement_record",
+        "before": "追缴纸旁注记录原位灰痕在下、次序待核，未撤销追缴",
+        "after": "第一份连坐追缴令形成不可消除的执行中止痕并退回核验，首户当场未完成夺寿，共同空额及其期限仍未撤销",
+        "evidence": "命令归属下方出现停在未完成额度前的横向灰线；顾巡退链后卷令退核，并当场说明共同空额期限照旧。"
+      }
+    ],
+    "artifacts": [],
+    "techniques": [],
+    "relationships": [],
+    "emotions": [],
+    "information": [
+      {
+        "fact_id": "chapter-0053-pressure-shifts-to-common-collateral",
+        "asset_id": "state_ledger_faction_pressure",
+        "field_path": "state_ledger.faction_pressure",
+        "before": "共同空额仍未具名填补，冷线绕过未交出的住户灯位，转而锁住泥灯巷三处共用灯龛并在共用灯龛边沿刻下新刻度",
+        "after": "首户追缴因断续灰痕中止后，共同空额期限继续；三处共用灯龛的冷线汇成“共同担保物”寿印，悬在泥灯巷护阵外沿并向护阵裂口垂线",
+        "evidence": "顾巡尚未离巷，三处共用灯龛的冷线便在护阵外汇成寿印；印面显出“共同担保物”，第一缕冷线贴向护阵裂口。"
+      }
+    ],
+    "hooks": [],
+    "timeline": [],
+    "physical_state": [],
+    "naming": []
+  }
+}

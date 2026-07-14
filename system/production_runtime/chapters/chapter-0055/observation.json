@@ -1,0 +1,166 @@
+{
+  "chapter_id": "chapter-0055",
+  "draft_sha256": "dd338a6c941c79a5ea202397c07a6ef451a87e665d02e77659d7d0328a915abc",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "chapter-0055-fact-001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_procedural_choice",
+        "before": "共同空额由三枚带相同尾灰的令牌承接，泥灯巷名下归属仍空缺",
+        "after": "陆沉渊以半寿残籍在册者和残印持有记录担保提交拆令申请，拒绝把苏晚、住户命火或未同意见证写入关联对象",
+        "evidence": "他将十道冷金锁痕置于登记火下，明确要求总额和期限不变、每笔追缴具名归属，并声明苏晚寿债、住户命火和未同意见证不入此案。"
+      },
+      {
+        "fact_id": "chapter-0055-fact-002",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_action_limit",
+        "before": "局部识账后右眼无法再分辨户灯缺角与封源缺痕，当日识账窗口关闭",
+        "after": "右眼银灰铺满视野，明确承认当日辨痕已经断了，只能触摸令面公开位号，未继续追查灰线",
+        "evidence": "他在复核三份执行令时表示今日辨痕已经断了，随后仅凭指腹确认公开压出的配额位号。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "chapter-0055-fact-003",
+        "asset_id": "npc_debt_collector_gu_xun",
+        "field_path": "npc.next_procedural_hook",
+        "before": "铁环拖石声沿来路逼近，下一次复核即将到达外沿，须处理残印响应与见证记录",
+        "after": "下一次开槽须核验三份执行令的归属，申请人必须在场，缺席按拒验并续行追缴",
+        "evidence": "封槽前命籍衙明确催告：下一次开槽核验归属，申请人须在场，缺席按拒验并续行追缴。"
+      }
+    ],
+    "locations": [
+      {
+        "fact_id": "chapter-0055-fact-004",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_witness_boundary",
+        "before": "持灯人亲自确认外沿对应并保留独立答复权，不替断裂手印补写归属或时间",
+        "after": "住户在命籍衙前槽保留各自退出、拒答和撤回后续见证的权利，不交灯、不替苏晚答复、不替第三户认领配额位",
+        "evidence": "住户彼此留出可退出的空路，明确不替陆沉渊担保半寿、不借灯补额，并在离开时保留下一次亲见后再决定是否作证。"
+      }
+    ],
+    "factions": [
+      {
+        "fact_id": "chapter-0055-fact-005",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_enforcement_record",
+        "before": "第一份连坐追缴令形成不可消除的执行中止痕并退回核验，共同空额及其期限仍未撤销",
+        "after": "拆令申请被收录；共同空额总数与期限保留，三份具名执行令因共享同一配额位而在领取前进入归属复核",
+        "evidence": "悬印石记录拆令申请收录并声明总额期限保留，随后显示“同位三令，领取前须核归属”，三令被复核锁光拖回槽内。"
+      },
+      {
+        "fact_id": "chapter-0055-fact-006",
+        "asset_id": "state_ledger_faction_pressure",
+        "field_path": "state_ledger.faction_pressure",
+        "before": "共同担保寿印裂成三枚令牌，分别显出陆沉渊、苏晚与泥灯巷，泥灯巷名下归属仍空缺",
+        "after": "共同空额被拆成三份不同户名的执行令，但三令共享同一配额位，领取前归属核验被锁定，追踪继续落在陆沉渊身上",
+        "evidence": "三份令分别显出不同户名，却都压着完全相同的配额位号；复核锁光启动，悬印石同时声明追踪归拆令申请人。"
+      }
+    ],
+    "artifacts": [],
+    "techniques": [],
+    "relationships": [
+      {
+        "fact_id": "chapter-0055-fact-007",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_trust_state",
+        "before": "谨慎互保，允许各户拒绝、质询和撤回见证",
+        "after": "部分住户因陆沉渊拒绝推出具体户名而承认其未把任何人推出去，但信任同时保留对追踪进巷和后续见证的明确保留",
+        "evidence": "住户表示只认他拒填户名，也有人指出追踪可能核到巷门；众人坚持后续见证各自决定。"
+      },
+      {
+        "fact_id": "chapter-0055-fact-008",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_collective_choice",
+        "before": "两巷逐户拒绝以替罪户填补共同空额，保留沉默、拒绝和撤回权",
+        "after": "泥灯巷共同拒绝成为拆令申请的具名承担者，允许各自见证陆沉渊交付的事实，但不把见证合并为共同担保",
+        "evidence": "住户明确不替他担保半寿、不借灯补空额，并分别限定只见证拒填户名、保留撤回后续见证。"
+      }
+    ],
+    "emotions": [
+      {
+        "fact_id": "chapter-0055-fact-009",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_collective_emotion",
+        "before": "持灯人面对追缴保持谨慎互保并保留退出权",
+        "after": "现场出现分化：部分住户靠近查看时刻印和同位三令，部分住户退入阴影或拒绝把所见计入自身见证",
+        "evidence": "有人靠近辨认三令底号，有人明确不靠前、不承担所见，留下者也未宣称胜负。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "chapter-0055-fact-010",
+        "asset_id": "state_ledger_public_reputation",
+        "field_path": "state_ledger.current_audience_direction",
+        "before": "两巷公开认知开始转向总额成立不等于每份执行归属成立，并保留亲自标记和撤回见证",
+        "after": "现场可见地确认总额、期限与具体执行归属并非同一事项；“同位三令”成为待复核的公开依据",
+        "evidence": "住户围绕三份不同户名却相同配额位号争执，并明确说总额能立不等于令落到谁家无需说明。"
+      },
+      {
+        "fact_id": "chapter-0055-fact-011",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_procedure_result",
+        "before": "后加来源覆印进入实际执行，相关灯源补报暂停且封槽解除",
+        "after": "新增可观察的程序疑点：三份具名执行令共享同一配额位号，领取前被命令核验归属；三令未被领取，问题未被解释",
+        "evidence": "陆沉渊逐份触摸确认相同位号，悬印石随后显示“同位三令，领取前须核归属”，并保留下一次开槽复核。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "chapter-0055-fact-012",
+        "asset_id": "state_ledger_faction_pressure",
+        "field_path": "state_ledger.current_next_procedural_hook",
+        "before": "下一次核验改为残印交验与受封户灯源栏亲自指认同时到场",
+        "after": "下一次开槽必须核验三份同位执行令的归属；陆沉渊须在场，否则按拒验并续行追缴",
+        "evidence": "封槽前催告明确规定下一次开槽核验归属、申请人必须在场，缺席按拒验并续行追缴。"
+      },
+      {
+        "fact_id": "chapter-0055-fact-013",
+        "asset_id": "state_ledger_half_life_registry_exposure",
+        "field_path": "state_ledger.registry_locking_sign",
+        "before": "外沿开启后的追踪沿十道锁痕回攀并在结尾同时绷直，触路暴露继续上升",
+        "after": "拆令申请被永久并入本轮连额争议追踪，追缠纹从半寿登记痕分向三道令槽，追踪责任明确落在陆沉渊身上；暴露未下降",
+        "evidence": "十道锁痕收紧并形成追缠纹，悬印石登记“申请人与本轮连额争议合并追踪”，结尾暗金细线仍缠在其袖上。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "chapter-0055-fact-014",
+        "asset_id": "state_ledger_faction_pressure",
+        "field_path": "state_ledger.current_chapter_sequence",
+        "before": "共同担保寿印裂成三枚令牌并指向下一次复核",
+        "after": "三令投入前槽，拆令申请收录；三份不同户名的执行令被剖出但因同位号在领取前锁定复核，最终退回槽内等待下一次开槽",
+        "evidence": "正文按顺序写出三令入槽、拆令申请、三份执行令吐出、同位号确认、复核锁光启动及封槽催告。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "chapter-0055-fact-015",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.current_visible_condition",
+        "before": "右眼无法辨痕，承受残缺旧誓后有冷灰咳、重影与短暂失明",
+        "after": "十道锁痕勒深并造成右臂麻木，冷意压入胸骨旧裂；右眼银灰铺满视野，热泪冷汗流下，识账窗口进一步关闭",
+        "evidence": "登记火使锁痕从腕亮到肘，陆沉渊吸不进气、膝伤撞台，随后右臂失去知觉，右眼被银灰覆盖并无法继续辨痕。"
+      },
+      {
+        "fact_id": "chapter-0055-fact-016",
+        "asset_id": "state_ledger_half_life_registry_exposure",
+        "field_path": "state_ledger.current_exchange_exposure_delta",
+        "before": "研究记录永久失去持有权，半寿残籍暴露已增加十个百分点并记录为残印持有者",
+        "after": "未发生暴露降低；新增拆令申请、拒领共同令责任和三令同位复核均绑定陆沉渊半寿登记追踪",
+        "evidence": "追缠纹扣住半寿登记痕并分向三道槽，石面留下不可擦除的时刻印，且明确记录拒领责任归申请人。"
+      }
+    ],
+    "naming": [
+      {
+        "fact_id": "chapter-0055-fact-017",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_observation_label",
+        "before": "共同空额作为未拆分的共同执行要求存在",
+        "after": "现场形成“同位三令”的明确观察标签：三份不同户名、不同执行对象的令底具有完全相同的配额位号",
+        "evidence": "陆沉渊触摸三份令底确认凹口深浅和间距分毫不差，住户随后公开辨认同号。"
+      }
+    ]
+  }
+}

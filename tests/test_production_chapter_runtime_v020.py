@@ -103,6 +103,15 @@ class ProductionChapterRuntimeV020Tests(unittest.TestCase):
             runtime.normalize_continuity_audit_payload({"issues": [{"severity": "MINOR"}]})["issues"][0]["severity"],
             "minor",
         )
+        rejected = runtime.normalize_continuity_audit_payload({
+            "verdict": "REJECT", "issues": [{"severity": "FATAL"}]
+        })
+        self.assertEqual(rejected["verdict"], "REWORK_REQUIRED")
+        self.assertEqual(rejected["issues"][0]["severity"], "blocking")
+        unknown = runtime.normalize_continuity_audit_payload({
+            "issues": [{"severity": "SEVERE"}]
+        })
+        self.assertEqual(unknown["issues"][0]["severity"], "blocking")
 
     def test_audit_normalizer_supplies_only_a_deterministic_missing_issue_id(self):
         import nrl_production_runtime as runtime
@@ -163,6 +172,27 @@ class ProductionChapterRuntimeV020Tests(unittest.TestCase):
         result = analyze_prose_metrics(body + "\n\n" + tail)
         self.assertIn("tail_fragmentation_loop", result["flags"])
         self.assertGreaterEqual(result["tail_short_paragraph_ratio"], 0.7)
+
+    def test_prose_metrics_block_prompt_context_leak(self):
+        text = "巷口的灯火被冷风压低。\n\n" + '{"contract_path":"runtime.json","required_asset_ids":["asset-a"]}'
+        result = analyze_prose_metrics(text)
+        self.assertIn("prompt_context_leak", result["flags"])
+        self.assertIn('"contract_path"', result["prompt_leak_markers"])
+
+    def test_prose_metrics_block_generation_completion_leak(self):
+        result = analyze_prose_metrics("灯火落进槽中。源代码提交确认完毕。测试通过。正文结束。")
+        self.assertIn("generation_meta_leak", result["flags"])
+        self.assertIn("测试通过", result["generation_meta_markers"])
+
+    def test_prose_metrics_block_repeated_and_oversized_blocks(self):
+        repeated = "灯火压低，债链落在石面，持灯人拒绝替另一户开口。" * 25
+        result = analyze_prose_metrics(repeated + "\n\n" + repeated)
+        self.assertIn("duplicate_text_span", result["flags"])
+        self.assertIn("oversized_paragraph_loop", result["flags"])
+
+    def test_prose_metrics_block_termination_token_loop(self):
+        result = analyze_prose_metrics("结束。停止。收束。完。终。" * 4)
+        self.assertIn("termination_token_loop", result["flags"])
 
     def test_external_literary_audit_runs_only_at_five_chapter_checkpoints(self):
         self.assertFalse(requires_external_chapter_audit("chapter-0016", "initial"))
@@ -278,6 +308,21 @@ class ProductionChapterRuntimeV020Tests(unittest.TestCase):
         compact = runtime._compact_chapter_context(context)
         self.assertEqual([item["asset_id"] for item in compact["rolling_state"]["latest_fields"]], ["character-a"])
         self.assertEqual(len(compact["rolling_state"]["recent_chapters"][0]["changes"]), 1)
+
+    def test_observer_context_drops_literary_constraints_but_keeps_asset_ids(self):
+        context = {
+            "chapter_id": "chapter-0002",
+            "writer_asset_ids": ["character-a"],
+            "story_beat": {"expected_state_deltas": ["character-a changes"]},
+            "assets": [{
+                "asset_id": "character-a", "display_name": "甲", "family": "characters",
+                "constraints": ["very long literary constraint"],
+            }],
+            "rolling_state": {"latest_fields": [], "recent_chapters": []},
+        }
+        compact = runtime._compact_observer_context(context)
+        self.assertEqual(compact["assets"][0]["asset_id"], "character-a")
+        self.assertNotIn("constraints", compact["assets"][0])
 
     def test_bundled_writer_observation_is_hash_bound_locally(self):
         facts = [{

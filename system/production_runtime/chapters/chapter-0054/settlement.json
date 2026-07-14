@@ -1,0 +1,63 @@
+{
+  "chapter_id": "chapter-0054",
+  "accepted_revision_sha256": "1017af27279ac4cb1582629fc3dfeab93a8fa9fc7ea42cf3a2fa3a65d67f2495",
+  "state_deltas": [
+    {
+      "fact_id": "chapter0054_fact_03",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_observed_choice",
+      "operation": "set",
+      "before": "陆沉渊克制夺链与施术，只限定亲见断痕及归属缺口",
+      "after": "陆沉渊停止替苏晚争抢暖位，不碰她的裂灯，不向住户命灯开口，转而在暖界外侧以自身挡冷照看"
+    },
+    {
+      "fact_id": "chapter0054_fact_05",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_chapter_step",
+      "operation": "set",
+      "before": "两巷撤销两处临时铺位并重排灶位，暖墙安置容量已缩减",
+      "after": "暖墙末段进一步失去照护能力；两名住户保住体温与指节活动，却只能挤坐末端窄位，无法回到已被霜封的原铺位"
+    },
+    {
+      "fact_id": "chapter0054_fact_02",
+      "asset_id": "bond_mother_su_wan",
+      "field_path": "emotional_bond.current_autonomy_boundary",
+      "operation": "set",
+      "before": "苏晚决定自身寿债与裂灯是否进入交换，陆沉渊接受其拒绝被并入他案",
+      "after": "苏晚亲自决定将自己的裂灯移出余暖，并明确陆沉渊只能扶她、不能替她决定灯位；陆沉渊完整服从"
+    },
+    {
+      "fact_id": "chapter0054_fact_01",
+      "asset_id": "state_ledger_mother_life_lamp_countdown",
+      "field_path": "state_ledger.current_visible_lamp_consequence",
+      "operation": "set",
+      "before": "苏晚命灯旧裂未合，冷灰与暗冷光持续外透",
+      "after": "苏晚将命灯移至更冷外侧后，旧裂旁新增一条斜落灯底、当场吃入陶胎且未能恢复的细裂，掌背持续散出冷灰"
+    },
+    {
+      "fact_id": "chapter0054_fact_04",
+      "asset_id": "state_ledger_mudlamp_array_integrity",
+      "field_path": "state_ledger.current_visible_integrity_consequence",
+      "operation": "set",
+      "before": "护阵外沿已有折向撤空铺位的裂口，持续吐出冷雾与冰刺",
+      "after": "共同担保寿印压住三处共用灯龛，暖墙末段完全失去稳定送暖能力，龛沿裂纹继续张开并封去大半安置位置"
+    },
+    {
+      "fact_id": "chapter0054_fact_06",
+      "asset_id": "state_ledger_resident_lifefire_reserve",
+      "field_path": "state_ledger.current_resident_lifefire_callability",
+      "operation": "set",
+      "before": "住户命火未被调用、转移或扣减，且不可由陆沉渊或泥灯巷统一调用",
+      "after": "本次移灯与暖墙失温期间仍未调用、转移或扣减任何住户命火；住户继续各自持灯并保留拒绝权"
+    },
+    {
+      "fact_id": "chapter0054_fact_07",
+      "asset_id": "state_ledger_faction_pressure",
+      "field_path": "state_ledger.faction_pressure",
+      "operation": "set",
+      "before": "共同空额期限继续，共同担保物寿印悬在护阵外沿并向裂口垂线",
+      "after": "共同担保寿印未吞下命火补额，转而裂成三枚带相同尾灰的令牌，分别显出陆沉渊、苏晚与泥灯巷，其中泥灯巷名下归属仍空缺并指向下一次复核"
+    }
+  ],
+  "resolved_audit_ids": []
+}

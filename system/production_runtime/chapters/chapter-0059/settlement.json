@@ -1,0 +1,63 @@
+{
+  "chapter_id": "chapter-0059",
+  "accepted_revision_sha256": "7ec4977155b39abd7b300ab6ceb1f3b78a8118f9594fb7941e2499f162ec509c",
+  "state_deltas": [
+    {
+      "fact_id": "chapter-0059-lu-outer-watch",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_procedural_choice",
+      "operation": "set",
+      "before": "陆沉渊退出两名持令人的陈述次序，仅承担此前位号、尾灰与压缺的识痕结论，不代认归属、不补第三令，也未在辨痕断绝后继续识账",
+      "after": "陆沉渊在辨痕仍断绝的情况下不查龛印、不启残命灯盏、不抽住户命火，只组织撤离最冷房间并整夜留守外沿；其胸骨旧裂、左膝与失去知觉的右臂持续承受搬运和寒冷"
+    },
+    {
+      "fact_id": "chapter-0059-lane-contraction",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_chapter_step",
+      "operation": "set",
+      "before": "暖墙末段进一步失去照护能力；两名住户保住体温与指节活动，却只能挤坐末端窄位，无法回到已被霜封的原铺位",
+      "after": "泥灯巷安置区进一步向内墙收缩，最外侧房间撤空停用；部分住户失去床位，只能在内墙窄带屈膝挤坐，已发生的铺位与房屋损失未获返还"
+    },
+    {
+      "fact_id": "chapter-0059-cup-remains-dormant",
+      "asset_id": "artifact_ashlight_cup",
+      "field_path": "artifact.current_custody_status",
+      "operation": "set",
+      "before": "共同保管箱仍被旧梁与碎壁遮住，残命灯盏未取出、未开启、未移动或使用",
+      "after": "锁龛整夜期间残命灯盏仍在旧梁与碎壁后的共同保管处，封口未动，未开启、未唤醒、未移动或使用"
+    },
+    {
+      "fact_id": "chapter-0059-trust-cost",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_trust_state",
+      "operation": "set",
+      "before": "撤回权在会削弱反打胜算的情况下仍获实际执行；两名留下者确认其同意可随时撤回，并各自承担少一份证据可能败诉和续追的风险",
+      "after": "住户因失去床位与房间公开责怪陆沉渊及两名留令者；异议未被压制，两名留令者让出自身铺位并承担迁位、守门与逐户核对后果，但未要求住户原谅"
+    },
+    {
+      "fact_id": "chapter-0059-array-freeze-damage",
+      "asset_id": "state_ledger_mudlamp_array_integrity",
+      "field_path": "state_ledger.current_visible_integrity_consequence",
+      "operation": "set",
+      "before": "共同担保寿印压住三处共用灯龛，暖墙末段完全失去稳定送暖能力，龛沿裂纹继续张开并封去大半安置位置",
+      "after": "三处共用灯位全部熄暗，护阵白裂贯穿外沿墙面；最外侧安置屋墙面与地面冻裂、阵纹脱落，房间暂时失去使用条件且未随天明恢复"
+    },
+    {
+      "fact_id": "chapter-0059-resident-fire-untouched",
+      "asset_id": "state_ledger_resident_lifefire_reserve",
+      "field_path": "state_ledger.current_resident_lifefire_callability",
+      "operation": "set",
+      "before": "本次移灯与暖墙失温期间仍未调用、转移或扣减任何住户命火；住户继续各自持灯并保留拒绝权",
+      "after": "锁龛寒夜与安置收缩期间仍未调用、转移或扣减住户命火；各户全程自行持灯，并可拒绝贴墙或随时抱走"
+    },
+    {
+      "fact_id": "chapter-0059-review-boundary",
+      "asset_id": "state_ledger_faction_pressure",
+      "field_path": "state_ledger.current_next_procedural_hook",
+      "operation": "set",
+      "before": "三令完整展示缩减为两份具名原纸；两份执行令已进入顾巡的实际追缴复验，第三份不得补入，归属核定压力直接落到两名自愿持有人",
+      "after": "命审受理范围被限定为裁定连额归属，不得在本次裁定中一并免除归属清楚的旧寿债"
+    }
+  ],
+  "resolved_audit_ids": []
+}

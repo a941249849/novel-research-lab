@@ -922,6 +922,177 @@
         "borrowed_heaven_volume1_outline_tree": "1f12fe8ad3262876eb533d40c94ad02abb90b95b38de387d339917fce9184648",
         "project_assets.v0.2": "90dbcf17d769e8a985fc87880a4382018c30133a2a53f82c3826636c8ed1dc61"
       }
+    },
+    {
+      "chapter_id": "chapter-0052",
+      "stage": "chapter_accepted",
+      "artifacts": {
+        "intent": "system/production_runtime/chapters/chapter-0052/intent.json",
+        "generation_cost": "system/production_runtime/chapters/chapter-0052/generation_cost.json",
+        "revision": "system/production_runtime/chapters/chapter-0052/revision.md",
+        "revision_metrics": "system/production_runtime/chapters/chapter-0052/revision.metrics.json",
+        "observation": "system/production_runtime/chapters/chapter-0052/observation.json",
+        "final_audit": "system/production_runtime/chapters/chapter-0052/final_audit.json",
+        "settlement": "system/production_runtime/chapters/chapter-0052/settlement.json",
+        "acceptance": "system/production_runtime/chapters/chapter-0052/acceptance.json"
+      },
+      "source_hashes": {
+        "borrowed_heaven_life_account_bible": "81575478a441852f18d451e9967245bbfce11d60cddd3af24e9b6565955e0604",
+        "borrowed_heaven_volume1_outline_tree": "1f12fe8ad3262876eb533d40c94ad02abb90b95b38de387d339917fce9184648",
+        "project_assets.v0.2": "90dbcf17d769e8a985fc87880a4382018c30133a2a53f82c3826636c8ed1dc61"
+      }
+    },
+    {
+      "chapter_id": "chapter-0053",
+      "stage": "chapter_accepted",
+      "artifacts": {
+        "intent": "system/production_runtime/chapters/chapter-0053/intent.json",
+        "generation_cost": "system/production_runtime/chapters/chapter-0053/generation_cost.json",
+        "revision": "system/production_runtime/chapters/chapter-0053/revision.md",
+        "revision_metrics": "system/production_runtime/chapters/chapter-0053/revision.metrics.json",
+        "observation": "system/production_runtime/chapters/chapter-0053/observation.json",
+        "final_audit": "system/production_runtime/chapters/chapter-0053/final_audit.json",
+        "settlement": "system/production_runtime/chapters/chapter-0053/settlement.json",
+        "acceptance": "system/production_runtime/chapters/chapter-0053/acceptance.json"
+      },
+      "source_hashes": {
+        "borrowed_heaven_life_account_bible": "81575478a441852f18d451e9967245bbfce11d60cddd3af24e9b6565955e0604",
+        "borrowed_heaven_volume1_outline_tree": "1f12fe8ad3262876eb533d40c94ad02abb90b95b38de387d339917fce9184648",
+        "project_assets.v0.2": "90dbcf17d769e8a985fc87880a4382018c30133a2a53f82c3826636c8ed1dc61"
+      }
+    },
+    {
+      "chapter_id": "chapter-0054",
+      "stage": "chapter_accepted",
+      "artifacts": {
+        "intent": "system/production_runtime/chapters/chapter-0054/intent.json",
+        "generation_cost": "system/production_runtime/chapters/chapter-0054/generation_cost.json",
+        "revision": "system/production_runtime/chapters/chapter-0054/revision.md",
+        "revision_metrics": "system/production_runtime/chapters/chapter-0054/revision.metrics.json",
+        "observation": "system/production_runtime/chapters/chapter-0054/observation.json",
+        "final_audit": "system/production_runtime/chapters/chapter-0054/final_audit.json",
+        "settlement": "system/production_runtime/chapters/chapter-0054/settlement.json",
+        "acceptance": "system/production_runtime/chapters/chapter-0054/acceptance.json"
+      },
+      "source_hashes": {
+        "borrowed_heaven_life_account_bible": "81575478a441852f18d451e9967245bbfce11d60cddd3af24e9b6565955e0604",
+        "borrowed_heaven_volume1_outline_tree": "1f12fe8ad3262876eb533d40c94ad02abb90b95b38de387d339917fce9184648",
+        "project_assets.v0.2": "90dbcf17d769e8a985fc87880a4382018c30133a2a53f82c3826636c8ed1dc61"
+      }
+    },
+    {
+      "chapter_id": "chapter-0055",
+      "stage": "chapter_accepted",
+      "artifacts": {
+        "intent": "system/production_runtime/chapters/chapter-0055/intent.json",
+        "generation_cost": "system/production_runtime/chapters/chapter-0055/generation_cost.json",
+        "revision": "system/production_runtime/chapters/chapter-0055/revision.md",
+        "revision_metrics": "system/production_runtime/chapters/chapter-0055/revision.metrics.json",
+        "observation": "system/production_runtime/chapters/chapter-0055/observation.json",
+        "final_audit": "system/production_runtime/chapters/chapter-0055/final_audit.json",
+        "settlement": "system/production_runtime/chapters/chapter-0055/settlement.json",
+        "acceptance": "system/production_runtime/chapters/chapter-0055/acceptance.json"
+      },
+      "source_hashes": {
+        "borrowed_heaven_life_account_bible": "81575478a441852f18d451e9967245bbfce11d60cddd3af24e9b6565955e0604",
+        "borrowed_heaven_volume1_outline_tree": "1f12fe8ad3262876eb533d40c94ad02abb90b95b38de387d339917fce9184648",
+        "project_assets.v0.2": "90dbcf17d769e8a985fc87880a4382018c30133a2a53f82c3826636c8ed1dc61"
+      }
+    },
+    {
+      "chapter_id": "chapter-0056",
+      "stage": "chapter_accepted",
+      "artifacts": {
+        "intent": "system/production_runtime/chapters/chapter-0056/intent.json",
+        "generation_cost": "system/production_runtime/chapters/chapter-0056/generation_cost.json",
+        "revision": "system/production_runtime/chapters/chapter-0056/revision.md",
+        "revision_metrics": "system/production_runtime/chapters/chapter-0056/revision.metrics.json",
+        "observation": "system/production_runtime/chapters/chapter-0056/observation.json",
+        "final_audit": "system/production_runtime/chapters/chapter-0056/final_audit.json",
+        "settlement": "system/production_runtime/chapters/chapter-0056/settlement.json",
+        "acceptance": "system/production_runtime/chapters/chapter-0056/acceptance.json"
+      },
+      "source_hashes": {
+        "borrowed_heaven_life_account_bible": "81575478a441852f18d451e9967245bbfce11d60cddd3af24e9b6565955e0604",
+        "borrowed_heaven_volume1_outline_tree": "1f12fe8ad3262876eb533d40c94ad02abb90b95b38de387d339917fce9184648",
+        "project_assets.v0.2": "90dbcf17d769e8a985fc87880a4382018c30133a2a53f82c3826636c8ed1dc61"
+      }
+    },
+    {
+      "chapter_id": "chapter-0057",
+      "stage": "chapter_accepted",
+      "artifacts": {
+        "intent": "system/production_runtime/chapters/chapter-0057/intent.json",
+        "generation_cost": "system/production_runtime/chapters/chapter-0057/generation_cost.json",
+        "revision": "system/production_runtime/chapters/chapter-0057/revision.md",
+        "revision_metrics": "system/production_runtime/chapters/chapter-0057/revision.metrics.json",
+        "observation": "system/production_runtime/chapters/chapter-0057/observation.json",
+        "final_audit": "system/production_runtime/chapters/chapter-0057/final_audit.json",
+        "settlement": "system/production_runtime/chapters/chapter-0057/settlement.json",
+        "acceptance": "system/production_runtime/chapters/chapter-0057/acceptance.json"
+      },
+      "source_hashes": {
+        "borrowed_heaven_life_account_bible": "81575478a441852f18d451e9967245bbfce11d60cddd3af24e9b6565955e0604",
+        "borrowed_heaven_volume1_outline_tree": "1f12fe8ad3262876eb533d40c94ad02abb90b95b38de387d339917fce9184648",
+        "project_assets.v0.2": "90dbcf17d769e8a985fc87880a4382018c30133a2a53f82c3826636c8ed1dc61"
+      }
+    },
+    {
+      "chapter_id": "chapter-0058",
+      "stage": "chapter_accepted",
+      "artifacts": {
+        "intent": "system/production_runtime/chapters/chapter-0058/intent.json",
+        "generation_cost": "system/production_runtime/chapters/chapter-0058/generation_cost.json",
+        "revision": "system/production_runtime/chapters/chapter-0058/revision.md",
+        "revision_metrics": "system/production_runtime/chapters/chapter-0058/revision.metrics.json",
+        "observation": "system/production_runtime/chapters/chapter-0058/observation.json",
+        "final_audit": "system/production_runtime/chapters/chapter-0058/final_audit.json",
+        "settlement": "system/production_runtime/chapters/chapter-0058/settlement.json",
+        "acceptance": "system/production_runtime/chapters/chapter-0058/acceptance.json"
+      },
+      "source_hashes": {
+        "borrowed_heaven_life_account_bible": "81575478a441852f18d451e9967245bbfce11d60cddd3af24e9b6565955e0604",
+        "borrowed_heaven_volume1_outline_tree": "1f12fe8ad3262876eb533d40c94ad02abb90b95b38de387d339917fce9184648",
+        "project_assets.v0.2": "90dbcf17d769e8a985fc87880a4382018c30133a2a53f82c3826636c8ed1dc61"
+      }
+    },
+    {
+      "chapter_id": "chapter-0059",
+      "stage": "chapter_accepted",
+      "artifacts": {
+        "intent": "system/production_runtime/chapters/chapter-0059/intent.json",
+        "generation_cost": "system/production_runtime/chapters/chapter-0059/generation_cost.json",
+        "revision": "system/production_runtime/chapters/chapter-0059/revision.md",
+        "revision_metrics": "system/production_runtime/chapters/chapter-0059/revision.metrics.json",
+        "observation": "system/production_runtime/chapters/chapter-0059/observation.json",
+        "final_audit": "system/production_runtime/chapters/chapter-0059/final_audit.json",
+        "settlement": "system/production_runtime/chapters/chapter-0059/settlement.json",
+        "acceptance": "system/production_runtime/chapters/chapter-0059/acceptance.json"
+      },
+      "source_hashes": {
+        "borrowed_heaven_life_account_bible": "81575478a441852f18d451e9967245bbfce11d60cddd3af24e9b6565955e0604",
+        "borrowed_heaven_volume1_outline_tree": "1f12fe8ad3262876eb533d40c94ad02abb90b95b38de387d339917fce9184648",
+        "project_assets.v0.2": "90dbcf17d769e8a985fc87880a4382018c30133a2a53f82c3826636c8ed1dc61"
+      }
+    },
+    {
+      "chapter_id": "chapter-0060",
+      "stage": "chapter_accepted",
+      "artifacts": {
+        "intent": "system/production_runtime/chapters/chapter-0060/intent.json",
+        "generation_cost": "system/production_runtime/chapters/chapter-0060/generation_cost.json",
+        "revision": "system/production_runtime/chapters/chapter-0060/revision.md",
+        "revision_metrics": "system/production_runtime/chapters/chapter-0060/revision.metrics.json",
+        "observation": "system/production_runtime/chapters/chapter-0060/observation.json",
+        "final_audit": "system/production_runtime/chapters/chapter-0060/final_audit.json",
+        "settlement": "system/production_runtime/chapters/chapter-0060/settlement.json",
+        "acceptance": "system/production_runtime/chapters/chapter-0060/acceptance.json"
+      },
+      "source_hashes": {
+        "borrowed_heaven_life_account_bible": "81575478a441852f18d451e9967245bbfce11d60cddd3af24e9b6565955e0604",
+        "borrowed_heaven_volume1_outline_tree": "1f12fe8ad3262876eb533d40c94ad02abb90b95b38de387d339917fce9184648",
+        "project_assets.v0.2": "90dbcf17d769e8a985fc87880a4382018c30133a2a53f82c3826636c8ed1dc61"
+      }
     }
   ]
 }

@@ -1,0 +1,55 @@
+{
+  "chapter_id": "chapter-0058",
+  "accepted_revision_sha256": "fae839b7a0bff2931261bed6f7efcb46d4ea62a47cec25162a09565057699866",
+  "state_deltas": [
+    {
+      "fact_id": "chapter-0058-lu-remained-auxiliary-witness",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_procedural_choice",
+      "operation": "set",
+      "before": "陆沉渊实际执行第三名持令人的撤回权，原样交还其令牌、执行令与留印木片，不抄录户名，也不以旁观者记忆补证",
+      "after": "陆沉渊退出两名持令人的陈述次序，仅承担此前位号、尾灰与压缺的识痕结论，不代认归属、不补第三令，也未在辨痕断绝后继续识账"
+    },
+    {
+      "fact_id": "chapter-0058-gu-xun-returned-duplicate-orders",
+      "asset_id": "npc_debt_collector_gu_xun",
+      "field_path": "npc.current_procedural_decision",
+      "operation": "set",
+      "before": "顾巡携重新核验、仍显断续灰痕的债链抵达泥灯巷，只对现场两份自愿留下的具名执行令启动归属复验",
+      "after": "顾巡分别实落两条债链，确认两令同时咬入同一配额位后逐份封链退令，并刻录两次执行失败送交命审台；其仍声明有效旧追缴继续执行"
+    },
+    {
+      "fact_id": "chapter-0058-office-orders-entered-review",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_enforcement_record",
+      "operation": "set",
+      "before": "拆令申请被收录；共同空额总数与期限保留，三份具名执行令因共享同一配额位而在领取前进入归属复核",
+      "after": "两份具名执行令因实际执行时重复占位而被封链退回，不能记作住户拒缴，退令记录须由命审台处理；裁定前共同担保锁定三处共用灯龛"
+    },
+    {
+      "fact_id": "chapter-0058-account-error-became-enforcement-failure",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_procedure_result",
+      "operation": "set",
+      "before": "同一配额位确实被做成三份具名执行令，三令不能再按三个彼此独立的空额处理；来源与先后仍未确认",
+      "after": "两份自愿留下的具名执行令经实际落链后均指向同一配额位，重复占位已形成两次可复核的执行失败；来源与先后仍未确认"
+    },
+    {
+      "fact_id": "chapter-0058-pressure-shifted-to-guarantee-lock",
+      "asset_id": "state_ledger_faction_pressure",
+      "field_path": "state_ledger.faction_pressure",
+      "operation": "set",
+      "before": "共同空额被拆成三份不同户名的执行令，但三令共享同一配额位，领取前归属核验被锁定，追踪继续落在陆沉渊身上",
+      "after": "两份重复占位令失去现场追缴效力并送交命审台，压力转为裁定前锁死三处共用灯龛的共同担保寿印"
+    },
+    {
+      "fact_id": "chapter-0058-public-recognition-enforcement-requires-attribution",
+      "asset_id": "state_ledger_public_reputation",
+      "field_path": "state_ledger.current_audience_direction",
+      "operation": "set",
+      "before": "在场者亲见公开反照不以强迫全部持令人留名为前提；撤回者可带走原纸且不被代证，留下的材料只代表各持有人自己的同意",
+      "after": "在场者亲见持令人可各自陈述并拒绝代证，执行者也必须核对唯一归属；总额与命令文字不能替代实际落链失败的归属核验"
+    }
+  ],
+  "resolved_audit_ids": []
+}

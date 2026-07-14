@@ -1,0 +1,159 @@
+{
+  "chapter_id": "chapter-0043",
+  "accepted_revision_sha256": "e4467e6effc21f296c849c5807335a97e441ab4e1fb2798e4fc0b252e1d4436b",
+  "state_deltas": [
+    {
+      "fact_id": "chapter-0043-character_lu_chenyuan-procedural-status-001",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_procedural_status",
+      "operation": "set",
+      "before": "公开步骤中明确只可比照可见灰痕，不能读取命页、判断转运者或解释州府印源；在命籍衙外槽只记录未按、未代答与空白来源",
+      "after": "在持灯人明确授权且限定纸面与槽口范围后，仅确认外槽要求提交州府转运批印、印影不完整及本地无权开批；将“必须提交”与“无权查阅”作为同一闭锁现场送入命审台，不作来源补全"
+    },
+    {
+      "fact_id": "chapter-0043-character_lu_chenyuan-observed-choice-001",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_observed_choice",
+      "operation": "set",
+      "before": "拒绝接触灯绳与冷边，只按已有亲见和可见位置记录封槽收紧，不替任何持灯人代答或补写来源",
+      "after": "在持灯人自行授权后只查看纸面与槽口，不碰灯绳、不看命灯；持灯人拒绝虚填后，陆沉渊不替其补写来源"
+    },
+    {
+      "fact_id": "chapter-0043-character_lu_chenyuan-visible-condition-001",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_visible_condition",
+      "operation": "set",
+      "before": "左膝受力再次内错，掌心裂口被墙砖磨开出血，胸骨钝响并反复咳出夹血灰沫，重影仍在",
+      "after": "受限识账后焦纹烧至眼角与太阳穴，右眼几乎不能睁开；咳出混血冷灰，左膝彻底失力并撞墙，重影与银灰缺角残留未退"
+    },
+    {
+      "fact_id": "chapter-0043-npc_debt_collector_gu_xun-procedural-record-001",
+      "asset_id": "npc_debt_collector_gu_xun",
+      "field_path": "npc.current_procedural_record",
+      "operation": "set",
+      "before": "分别确认三户由持有人亲手取灯、各户只拆获许可木榫、未许可处无人触碰，且州府影印仍封住空架原位",
+      "after": "记录持灯人拒绝虚填、来源栏因无可接触材料保持空白，并将外槽续封及闭锁现场送入命审台，不申请本地补印"
+    },
+    {
+      "fact_id": "chapter-0043-npc_debt_collector_gu_xun-visible-consequence-001",
+      "asset_id": "npc_debt_collector_gu_xun",
+      "field_path": "npc.current_visible_consequence",
+      "operation": "set",
+      "before": "锁链反力使左腕一颤，铁环收紧并勒得皮肉泛白",
+      "after": "送审记录石时左腕被槽边向后扯折，铁环勒破皮肉并显出断续灰痕"
+    },
+    {
+      "fact_id": "chapter-0043-faction_life_registry_office-procedural-event-001",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_procedural_event",
+      "operation": "set",
+      "before": "首批公开反照步骤被州府影印照走并形成传播源冷边；外槽随后要求持灯人补入州府转运批印",
+      "after": "外槽将来源栏锁定为“须录转运批印”，持灯人拒绝虚填后继续续封；闭锁现场被送入命审台，本地不补印、不接受自述替代"
+    },
+    {
+      "fact_id": "chapter-0043-faction_life_registry_office-next-procedural-hook-001",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_next_procedural_hook",
+      "operation": "set",
+      "before": "首批受封户在明日天亮前接受命审台灯源空栏复核，缺席者继续封档，补报者必须承担现场归属指认",
+      "after": "首名持灯人的空白来源与本地无权开批被送入命审台；后续开档须以州府转运残印核验，且只限这一户这一栏，开档不等于解封"
+    },
+    {
+      "fact_id": "chapter-0043-faction_mudlamp_lane-boundary-001",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_boundary_condition",
+      "operation": "set",
+      "before": "共同公开“借法，不借灯；认痕，不代证”的边界，允许持有人删去经历、停灯、撤回自己的见证，但不替他人撤回或补证",
+      "after": "首名持灯人自行确认拒绝虚填并承担续封记录；其空栏与灯绳仍由本人保留，未被共同体代填或代认"
+    },
+    {
+      "fact_id": "chapter-0043-technique_ledger_recognition-use-status-001",
+      "asset_id": "technique_ledger_recognition",
+      "field_path": "technique.current_use_status",
+      "operation": "set",
+      "before": "本章未催动识账术，仅依据既有位置、边角和时刻记录；陆沉渊明确当前不能替他人辨认或读取命页",
+      "after": "经持灯人限定授权后进行一次受限识账，仅辨认纸面擦痕、空栏无落笔痕、印影来自槽内侧及斜边缺角，未读出完整批印或转运来源"
+    },
+    {
+      "fact_id": "chapter-0043-bond_mudlamp_lane_trust-refusal-001",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_refusal_boundary",
+      "operation": "set",
+      "before": "拒绝边界扩大为不集中收灯、不代填经历、不代证来源，并保留持有人自行停灯和撤回的权利",
+      "after": "首名持灯人实际拒绝虚填未知批印，并确认续封是外槽施加的后果，不将其写成主动拒报或共同体代为承担"
+    },
+    {
+      "fact_id": "chapter-0043-bond_mudlamp_lane_trust-collective-emotion-001",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_collective_emotion",
+      "operation": "set",
+      "before": "对泥灯巷独占胜法的戒备转为有限协作，同时众人意识到公开步骤会使泥灯巷成为封档传播源",
+      "after": "旁观持灯人开始意识到来源要求并非个人遗忘，而是要求证明无法接触的内容；众人仍保持不代填、不代扶持的谨慎距离"
+    },
+    {
+      "fact_id": "chapter-0043-revealed-errors-procedure-001",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_procedure_result",
+      "operation": "set",
+      "before": "命审台确认三项局部事实并据此裁定顾家重复占用；第二层、来源及既往损耗仍未纳入认定",
+      "after": "首名持灯人的来源空栏被确认并送审：外槽要求提交州府转运批印，但本地无权开启封批，且不接受持有人自述替代；完整批印、转运全程与归属仍未确认"
+    },
+    {
+      "fact_id": "chapter-0043-revealed-errors-inference-limit-001",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_inference_limit",
+      "operation": "set",
+      "before": "确认首个外槽灯源栏要求填写一枚州府转运批印；仍未确认批印来源、转运链或实际取得途径",
+      "after": "进一步确认该印影从外槽内侧投出且与昨日银灰缺角形状相合但灰层不能全合；仍不能确认完整印文、具体转运次数、来源归属或盖印者"
+    },
+    {
+      "fact_id": "chapter-0043-faction_pressure-hook-001",
+      "asset_id": "state_ledger_faction_pressure",
+      "field_path": "state_ledger.current_procedural_label",
+      "operation": "set",
+      "before": "首批受封户实体封档与命审台灯源复核期限启动",
+      "after": "来源空栏形成可复核闭锁：不补则续封，补入未知批印才显示转送解封；首份现场记录已送命审台，后续等待残印核验或继续封灯"
+    },
+    {
+      "fact_id": "chapter-0043-foreshadowing-cinder-seal-rain-manifestation-001",
+      "asset_id": "foreshadowing_cinder_seal_rain",
+      "field_path": "foreshadowing.current_manifestation",
+      "operation": "set",
+      "before": "州府影印沿墙面逐行照过公开步骤，在墙脚形成一道平直冷边，并在外槽前向里收紧一寸",
+      "after": "平直冷边继续向内收至陆沉渊鞋尖，并在送审与闻照微回应时短暂向外弹过众人鞋面后重新贴回石槽"
+    },
+    {
+      "fact_id": "chapter-0043-timeline-procedural-sequence-001",
+      "asset_id": "state_ledger_faction_pressure",
+      "field_path": "state_ledger.current_chapter_sequence",
+      "operation": "set",
+      "before": "天未亮公开步骤；天色发白墙面完成共同定句；首名持灯人随后前往命籍衙外槽并遭遇转运批印补报要求",
+      "after": "外槽三次弹回并显示转运批印要求；持灯人拒绝虚填；陆沉渊完成一次受限识账；顾巡记录续封与本地无权开批并送审；闻照微提出残印换单户单栏开档"
+    },
+    {
+      "fact_id": "chapter-0043-protagonist-strain-001",
+      "asset_id": "state_ledger_protagonist_strain",
+      "field_path": "state_ledger.current_visible_condition",
+      "operation": "set",
+      "before": "持续承压导致左膝再次内错、掌心被墙砖磨裂，胸骨抽痛加剧并反复咳出夹血灰沫；重影未消，仍不能识账",
+      "after": "受限识账新增眼角至太阳穴焦黑灼纹与右眼近乎失明，胸骨闷响并咳出混血冷灰；左膝彻底失力，需持灯人搀扶移离外槽"
+    },
+    {
+      "fact_id": "chapter-0043-npc_holder-lamp-condition-001",
+      "asset_id": "npc_debt_collector_gu_xun",
+      "field_path": "npc.current_visible_consequence",
+      "operation": "set",
+      "before": "锁链反力使左腕一颤，铁环收紧并勒得皮肉泛白",
+      "after": "记录石送审时左腕被铁环与窄槽扯伤，链身显出断续灰痕；其仍完成送审刻录"
+    },
+    {
+      "fact_id": "chapter-0043-procedure-naming-001",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_observation_label",
+      "operation": "set",
+      "before": "已验证：州府影印把错征撤销后留下的顾家旧灯位当作空额，冷额与顾家灯位局部相合；仍未认定重复扣火、修改者或州府记载原因",
+      "after": "现场新增闭锁表述：外槽要求“须录转运批印”，未补则“续封”，本地记录为“无权开批”且不以持有人自述替代"
+    }
+  ],
+  "resolved_audit_ids": []
+}

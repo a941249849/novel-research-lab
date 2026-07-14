@@ -1,0 +1,167 @@
+{
+  "chapter_id": "chapter-0033",
+  "accepted_revision_sha256": "121f77b69ae1e7ced0057ae54b278aa8710bff83c5c77b0d18443fad474521d2",
+  "state_deltas": [
+    {
+      "fact_id": "chapter-0033-character-lu-chenyuan-action-001",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_observed_choice",
+      "operation": "set",
+      "before": "仍未施展识账术，只凭肉眼和现场可见痕迹确认压痕与旧灯回声",
+      "after": "在顾家及相邻两户分别许可的范围内完成一次局部灰痕比对，确认重叠后立即停术，不追读冷额来源或债链"
+    },
+    {
+      "fact_id": "chapter-0033-character-lu-chenyuan-limit-002",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_action_limit",
+      "operation": "set",
+      "before": "仍不得识账，只能等待以缺角残印最初落下时的实物压痕复核转运起点",
+      "after": "当日两眼仅剩暗灰，失去继续辨认任何账痕的能力；下一次只能依靠分项位置、时刻与黑边记录复核"
+    },
+    {
+      "fact_id": "chapter-0033-npc-gu-xun-review-003",
+      "asset_id": "npc_debt_collector_gu_xun",
+      "field_path": "npc.next_procedural_hook",
+      "operation": "set",
+      "before": "下一次复核将围绕三盏灯的分开放置、移入时刻、暖墙前后位置及黑边增处展开，并保留见证撤回；旧追缴和第二道冷影继续有效",
+      "after": "已完成三盏灯当前位置标记，并将旧位、移入时刻及暖墙前后窄线作为后续分项复核项目；旧追缴未撤"
+    },
+    {
+      "fact_id": "chapter-0033-npc-mo-jinglan-witness-004",
+      "asset_id": "npc_mo_jinglan",
+      "field_path": "npc.current_witness_participation",
+      "operation": "set",
+      "before": "逐户询问进入、让位和退出条件，并参与分开记录三盏灯移入位置、时刻及黑边继续增长的亲见范围",
+      "after": "继续限定亲见范围，只记录黑边此刻到灯腹中央，不记录其增长时间或原因；阻止门外人员补充见证"
+    },
+    {
+      "fact_id": "chapter-0033-npc-su-wan-boundary-005",
+      "asset_id": "npc_su_wan",
+      "field_path": "npc.current_visible_support",
+      "operation": "set",
+      "before": "陆沉渊失衡时仅停肘供其自行借力，待他站稳后立即松开，未替他承担或代作选择",
+      "after": "未替陆沉渊遮眼或承担识账后果，只允许其自行借助袖边稳定；继续明确共用屋可借、命火不借，住户可带灯退出"
+    },
+    {
+      "fact_id": "chapter-0033-npc-registrar-qiu-shen-command-006",
+      "asset_id": "npc_registrar_qiu_shen",
+      "field_path": "npc.current_authority_status",
+      "operation": "set",
+      "before": "本地呈印资格暂停，原件不得撤、不得补写、不得再施印转送",
+      "after": "本地呈印资格仍未恢复，但影印越过巷墙直接要求在黑边位置补落本地配额印；正文尚未写成实际落印"
+    },
+    {
+      "fact_id": "chapter-0033-faction-mudlamp-boundary-007",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_boundary_condition",
+      "operation": "set",
+      "before": "三户全部进入共用屋并各自保留带灯退出权；屋内仍不取住户命火，临时避冷仅依靠空间让渡，护阵与冷额状态未被安置行为解除",
+      "after": "三户仍保留各自带灯退出权，且局部微温未解除三户失温；共用屋继续承担拥挤、封灶和半扇门的安置代价，未调用住户命火"
+    },
+    {
+      "fact_id": "chapter-0033-faction-life-registry-hook-008",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_next_procedural_hook",
+      "operation": "set",
+      "before": "州府第一道配额已实体执行；仇慎确认本地无权划掉该配额，且只能将其送回复核，不能以本地记录撤销",
+      "after": "州府影印绕过仇慎当前冻结状态，要求在顾家黑边位置补落本地配额印；命令已出现，执行结果尚未发生"
+    },
+    {
+      "fact_id": "chapter-0033-technique-recognition-use-009",
+      "asset_id": "technique_ledger_recognition",
+      "field_path": "technique.current_use_status",
+      "operation": "set",
+      "before": "继续未施展识账术，仅凭肉眼和现场可见痕迹确认压痕与旧灯回声",
+      "after": "完成一次受限识账：仅确认顾家新黑边与已撤销错征旧灰缺口在局部重叠，未读取灯内寿数、来源或债链"
+    },
+    {
+      "fact_id": "chapter-0033-relationship-witness-consent-010",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_procedural_boundary",
+      "operation": "set",
+      "before": "见证边界实际被保留：退出者未被补证，拒按者未被代按，缺席者无人代保",
+      "after": "顾家许可仅限旧灰边缘，左邻和右邻分别限定表面比对；各户亲自确认、可撤回，门外人员不得补入见证"
+    },
+    {
+      "fact_id": "chapter-0033-relationship-witness-record-011",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_witness_commitment",
+      "operation": "set",
+      "before": "见证被落实为十张纸上的分项亲见与拒绝记录；撤回、限今和不验范围均被保留，未合并为全程无缺证明",
+      "after": "本次记录进一步分开保存局部重叠、顾家亲验微温、相邻两户无温变和三户失温未解；未将局部证据合并为完整因果证明"
+    },
+    {
+      "fact_id": "chapter-0033-emotion-collective-012",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_collective_emotion",
+      "operation": "set",
+      "before": "受冷三户的羞惭转为接受邻里让屋的谨慎信任，同时未受冷住户保留对拥挤、失灶和失去议事空间的真实不满",
+      "after": "共同体在未解除失温、未取得完整因果证明的情况下，转为围绕狭窄可复核异常进行谨慎配合，并保留退出与拒绝压力"
+    },
+    {
+      "fact_id": "chapter-0033-information-overlap-013",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_next_review_hook",
+      "operation": "set",
+      "before": "下一次复核新增第一道冷影的落点、实际扣除内容，以及顾家灯上新黑边是否与已撤销错征位置重合；仍不得直接认定为州府重复征收",
+      "after": "顾家灯新黑边与已撤销错征旧灰缺口的局部重叠已由识账和顾家亲验记录为待核异常；仍不能认定州府重复征收或完整因果链"
+    },
+    {
+      "fact_id": "chapter-0033-information-public-014",
+      "asset_id": "state_ledger_public_reputation",
+      "field_path": "state_ledger.current_audience_direction",
+      "operation": "set",
+      "before": "命审台现场公开见证陆沉渊拒绝代三户填名、三户分别拒名，以及第一道配额执行造成三户失温；顾巡仅确认亲见后果，不确认因果归属",
+      "after": "公开记录新增顾家局部重叠、顾家亲验重叠处微温、相邻两户无温变和三户失温未解；见证范围按户分开，因果归属仍未公开确认"
+    },
+    {
+      "fact_id": "chapter-0033-hook-015",
+      "asset_id": "state_ledger_half_life_registry_exposure",
+      "field_path": "state_ledger.registry_locking_sign",
+      "operation": "set",
+      "before": "交易落定后半寿残籍显露精确增加十个百分点，膝侧出现十段可见新纹，债链声更近",
+      "after": "识账灼痕触发新的锁定迹象：陆沉渊掌下浮起冷金色并沿血口爬行半寸，巷门槛冷痕亮起，债链声比上午更近；暴露继续上升，未登记具体百分点"
+    },
+    {
+      "fact_id": "chapter-0033-hook-016",
+      "asset_id": "state_ledger_faction_pressure",
+      "field_path": "state_ledger.faction_pressure",
+      "operation": "set",
+      "before": "第一道冷影已闭合，州府配额完成一次实体执行，顾家与相邻两户失温并全巷落下封档标记；第二道仍悬置未闭合",
+      "after": "在既有第一道冷影压力未解除的基础上，出现要求于顾家黑边位置补落本地配额印的下一次程序追缴；该命令尚未完成施印，第二道压力仍未闭合"
+    },
+    {
+      "fact_id": "chapter-0033-timeline-procedure-017",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_procedure_result",
+      "operation": "set",
+      "before": "顾家一笔重复征收被正式改作错征退回，被扣押的五盏户灯当场归还，完成本窗口的局部改账兑现",
+      "after": "局部异常被登记为待核证据，顾家局部微温出现但三户失温未解；本章未撤销州府配额或旧追缴"
+    },
+    {
+      "fact_id": "chapter-0033-physical-lu-018",
+      "asset_id": "state_ledger_protagonist_strain",
+      "field_path": "state_ledger.eye_pattern_burn",
+      "operation": "set",
+      "before": "右眼仍仅见浑光并最终闭眼，陆沉渊放弃主动辨认以避免追加施术风险",
+      "after": "一次受限识账后焦黑纹路从眼角烧至太阳穴；结束时双眼仅剩暗灰，无法继续辨认账痕"
+    },
+    {
+      "fact_id": "chapter-0033-physical-lu-019",
+      "asset_id": "state_ledger_protagonist_strain",
+      "field_path": "state_ledger.cold_ash_cough_frequency",
+      "operation": "set",
+      "before": "搬梁与铺板后左膝再次错动、胸骨旧裂加剧并咳出冷灰，掌纹冷灰混血嵌入木纹；仍未施展识账术",
+      "after": "识账后咳出夹细血丝的灰沫，左膝无法撑直，胸骨旧裂闷响，掌中血口再次被木刺撑开"
+    },
+    {
+      "fact_id": "chapter-0033-physical-lamp-020",
+      "asset_id": "foreshadowing_cinder_seal_rain",
+      "field_path": "foreshadowing.current_manifestation",
+      "operation": "set",
+      "before": "顾家灯移近暖墙后黑边仍从旧封处向上爬至灯腹中央并暂时停住，边缘保持湿亮；来源与形成时间仍未确认",
+      "after": "识账确认黑边与旧错征灰痕缺口在拇指甲大小范围内叠合；顾家亲验重叠处旁陶面恢复极微弱温意，但黑边和三户失温仍在"
+    }
+  ],
+  "resolved_audit_ids": []
+}

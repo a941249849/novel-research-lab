@@ -1,0 +1,11 @@
+{
+  "version": "0.25",
+  "chapter_id": "chapter-0040",
+  "source_revision": "system/production_runtime/chapters/chapter-0040/revision.md",
+  "source_sha256": "28722956089061a4a75ee2c7f34d5fbb4f32f56879d69d6ea08f16b6adc32cab",
+  "release_edit": "system/production_runtime/release_edits/chapter-0040.md",
+  "release_edit_sha256": "12bb36bdbd85a2755e820060f12819246b2bc7c58501bd0426564c2b66386a1f",
+  "repair_direction": "删除章节序号元文本泄露，改为故事内时间与程序表述",
+  "provider": "codex-deterministic-editor",
+  "status": "pending_window_re_review"
+}

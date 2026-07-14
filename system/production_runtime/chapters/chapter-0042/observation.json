@@ -1,0 +1,198 @@
+{
+  "chapter_id": "chapter-0042",
+  "draft_sha256": "7b6058debb2215b02bde8a15bc6540f63ea17962cc609c838e9416e1c4e90765",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "chapter-0042-f001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_procedural_status",
+        "before": "公开承认不能破除封槽影印，只记录封槽时刻、灯绳归属、灯源空栏与持有人失温，不冒充能够救灯",
+        "after": "公开步骤中明确只可比照可见灰痕，不能读取命页、判断转运者或解释州府印源；在命籍衙外槽只记录未按、未代答与空白来源",
+        "evidence": "陆沉渊逐项说明只能比位置、边角、先后，不能读命页或判断转印者；外槽前持灯人未按，他记录“未按、未代答”并保留来源栏空白。"
+      },
+      {
+        "fact_id": "chapter-0042-f002",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_observed_choice",
+        "before": "不催动识账术、不接触封槽，只按受封户各自限定的亲见记录银灰缺角及封档事实",
+        "after": "拒绝接触灯绳与冷边，只按已有亲见和可见位置记录封槽收紧，不替任何持灯人代答或补写来源",
+        "evidence": "他先要求持灯人收回灯绳，说明自己不能替人看；外槽冷边收紧时，他没有伸手碰，只记下时刻。"
+      },
+      {
+        "fact_id": "chapter-0042-f003",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_visible_condition",
+        "before": "左膝再次失稳并磕上湿地，掌心伤口重新裂开出血，胸骨受牵动，视野重影未散",
+        "after": "左膝受力再次内错，掌心裂口被墙砖磨开出血，胸骨钝响并反复咳出夹血灰沫，重影仍在",
+        "evidence": "他撑起时左膝内错撞上残木；靠近外槽时掌心被墙砖磨裂，胸骨抽痛，咳出混血灰沫，字迹叠成两层。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "chapter-0042-f004",
+        "asset_id": "npc_mo_jinglan",
+        "field_path": "npc.current_witness_participation",
+        "before": "仅确认灰雨从空架封额落下并折回顾家旧位，仍不确认更早来源",
+        "after": "公开说明反照步骤、停灯界限和撤回条件，但不替外巷持灯人保管灯具、填写经历或承担见证",
+        "evidence": "莫井兰让众人看墙上的步骤，明确“谁家的灯，谁自己带”，并拒绝接收灯绳或替持有人填空。"
+      },
+      {
+        "fact_id": "chapter-0042-f005",
+        "asset_id": "npc_mo_jinglan",
+        "field_path": "npc.current_visible_injury",
+        "before": "手背伤口持续出血，血沿手腕爬向肘弯；冷边进入追缴视野并沿手腕向袖内加深",
+        "after": "被州府影印扫过公开步骤后，腕上伤口猛然渗血，血珠落地即冷透",
+        "evidence": "影印逐行照走公开步骤并形成冷边后，莫井兰挡墙时腕上伤口猛地渗血，血珠落地已经凉透。"
+      },
+      {
+        "fact_id": "chapter-0042-f006",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_visible_support",
+        "before": "仍以铺板挡住寒气，并拒绝替各户补写灯源或以自身命火代答",
+        "after": "继续用铺板挡住涌入寒气，拒绝代写来源、替旁户开口或以自身命火换回灯芯",
+        "evidence": "外槽前苏晚把铺板压向寒气方向；有人望向她时，她摇头拒绝代写来源和拿命火换灯芯。"
+      }
+    ],
+    "locations": [],
+    "factions": [
+      {
+        "fact_id": "chapter-0042-f007",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_chapter_step",
+        "before": "第二道冷影实体化封闭多户灯槽；首批受封户仍持有各自灯绳，但失去接触户灯灯芯的现实权利并出现掌背失温、寿裂",
+        "after": "泥灯巷在被拆毁的回灯架旁公开可复制的反照步骤，外巷持灯人各自带灯并自行核验，未有外巷户灯被集中收管",
+        "evidence": "旧墙写明认绳、认时刻、看空栏、比灰痕和可删可停可撤；全文明确没有一盏外巷户灯被抬进断架内。"
+      },
+      {
+        "fact_id": "chapter-0042-f008",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_boundary_condition",
+        "before": "受封户拒绝虚填灯源，各自保留灯绳和亲见范围；不替他户补证，也不把泥灯巷作为无证灯源",
+        "after": "共同公开“借法，不借灯；认痕，不代证”的边界，允许持有人删去经历、停灯、撤回自己的见证，但不替他人撤回或补证",
+        "evidence": "墙面新增最后一行；莫井兰和苏晚分别说明删、停、撤的条件与限制，持灯人按自身亲见复述或留白。"
+      },
+      {
+        "fact_id": "chapter-0042-f009",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_next_procedural_hook",
+        "before": "明日天亮前受封各户须亲持灯绳到命审台复核灯源空栏；缺席续封，补报须当场指出来源归属",
+        "after": "首名持灯人在命籍衙外槽复核时遭遇要求填写州府转运批印；未按与来源留白成为后续复核节点",
+        "evidence": "外槽灯源栏浮出“填入一枚转运批印”，持灯人未按并拒绝用别人的来源补填。"
+      }
+    ],
+    "artifacts": [],
+    "techniques": [
+      {
+        "fact_id": "chapter-0042-f010",
+        "asset_id": "technique_ledger_recognition",
+        "field_path": "technique.current_use_status",
+        "before": "仍未催动识账术；本次只凭掌背固定的灰痕、旧位记号与顾家灯腹黑边完成局部比照，随后失去继续辨认账痕能力",
+        "after": "本章未催动识账术，仅依据既有位置、边角和时刻记录；陆沉渊明确当前不能替他人辨认或读取命页",
+        "evidence": "陆沉渊说明今日连灰痕比照也不能替持灯人完成，只能依昨夜位置、边角和时刻记录，且直接否认能读命页。"
+      }
+    ],
+    "relationships": [
+      {
+        "fact_id": "chapter-0042-f011",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_collective_choice",
+        "before": "受封户共同拒绝以虚假灯源换取接触权，各户只保留自身灯绳与归属痕迹，不替他户承担来源",
+        "after": "泥灯巷与外巷持灯人共同选择公开办法而不集中保管户灯；各持有人保留独立拒绝、删改和撤回权",
+        "evidence": "外巷人最终抄走步骤或复述自身经历，却无人交灯；有人删去经历、有人退出、有人只抄停灯界限。"
+      },
+      {
+        "fact_id": "chapter-0042-f012",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_collective_emotion",
+        "before": "实体封槽造成持续失温与灯火不可触的恐惧，但受封户仍维持各自拒报和互不代答",
+        "after": "对泥灯巷独占胜法的戒备转为有限协作，同时众人意识到公开步骤会使泥灯巷成为封档传播源",
+        "evidence": "人群开始按墙上次序逐项核对并自行记录，但仍没人说信了泥灯巷；影印照走墙字后众人看见泥灯巷被推到封档传播前面。"
+      }
+    ],
+    "emotions": [
+      {
+        "fact_id": "chapter-0042-f013",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_refusal_boundary",
+        "before": "受封户共同拒绝以虚假灯源换取接触权，各户只保留自身灯绳与归属痕迹，不替他户承担来源",
+        "after": "拒绝边界扩大为不集中收灯、不代填经历、不代证来源，并保留持有人自行停灯和撤回的权利",
+        "evidence": "莫井兰拒绝接收第一盏灯，苏晚说明停灯和撤回只作用于本人，持灯人现场保留各自灯绳与亲见。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "chapter-0042-f014",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_inference_limit",
+        "before": "首道封槽灯源格出现带平直缺角的银灰残痕，只能记录其与本地冷金痕不合及受封户各自所见，未证明来源、出现时间或完整转运链",
+        "after": "确认首个外槽灯源栏要求填写一枚州府转运批印；仍未确认批印来源、转运链或实际取得途径",
+        "evidence": "持灯人亲见灯源栏浮出要求填写转运批印的冷字，正文未给出批印来源，只记录其未按。"
+      },
+      {
+        "fact_id": "chapter-0042-f015",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "foreshadowing.current_manifestation",
+        "before": "灰火从灯座下挤出并沿顾家灯耳、旧裂和灯芯焦痕逐处归位，形成可见局部返还",
+        "after": "州府影印沿墙面逐行照过公开步骤，在墙脚形成一道平直冷边，并在外槽前向里收紧一寸",
+        "evidence": "薄灰映出每行公开文字的银白轮廓，随后合成平直冷边；外槽复核时该冷边同步向里收紧。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "chapter-0042-f016",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_procedural_event",
+        "before": "州府影印转入逐户实体封档，首批受封户的灯源空栏、接触权和拒报后果被现场固定",
+        "after": "首批公开反照步骤被州府影印照走并形成传播源冷边；外槽随后要求持灯人补入州府转运批印",
+        "evidence": "影印把墙上步骤逐行映入灰中；第一名持灯人到外槽时，灯源栏浮出转运批印要求。"
+      },
+      {
+        "fact_id": "chapter-0042-f017",
+        "asset_id": "state_ledger_faction_pressure",
+        "field_path": "state_ledger.faction_pressure",
+        "before": "逐巷封档压力落实为首批实体封槽：户灯仍归原户但接触权被隔离，拒报与缺席将触发续封",
+        "after": "压力新增对泥灯巷公开反照办法的影印标记，并以转运批印补报要求继续约束持灯人",
+        "evidence": "公开步骤被州府影印并留下冷边；外槽以州府转运批印作为新的灯源栏要求，持灯人未按。"
+      },
+      {
+        "fact_id": "chapter-0042-f018",
+        "asset_id": "state_ledger_public_reputation",
+        "field_path": "state_ledger.current_audience_direction",
+        "before": "公开可见范围新增：三户自主取灯、州府影印留在空架、空架封额与仇慎未落本地印并列可见",
+        "after": "公开可见范围扩展为泥灯巷公开反照步骤、持灯人自行删停撤及州府影印传播冷边；外巷出现有限协作但未形成统一代证",
+        "evidence": "墙面被多户共同补写并公开抄录，众人亲见影印照走步骤；多人仍各自持灯、各自留白。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "chapter-0042-f019",
+        "asset_id": "state_ledger_faction_pressure",
+        "field_path": "state_ledger.current_chapter_sequence",
+        "before": "首批受封户实体封档与命审台灯源复核期限启动",
+        "after": "天未亮公开步骤；天色发白墙面完成共同定句；首名持灯人随后前往命籍衙外槽并遭遇转运批印补报要求",
+        "evidence": "正文按时间顺序写明回灯架旁公开步骤、天色发白时墙面定句、随后首名持灯人走到命籍衙外槽。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "chapter-0042-f020",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.current_visible_condition",
+        "before": "左膝再次向内错开并磕地，掌心旧伤重新裂开出血，胸骨受牵动咳出夹血灰沫，双眼重影未散且未恢复识账能力",
+        "after": "持续承压导致左膝再次内错、掌心被墙砖磨裂，胸骨抽痛加剧并反复咳出夹血灰沫；重影未消，仍不能识账",
+        "evidence": "陆沉渊起身和挪近外槽时两次膝软，掌心出血，胸骨抽动，咳嗽带血丝灰沫，字迹叠成两层。"
+      }
+    ],
+    "naming": [
+      {
+        "fact_id": "chapter-0042-f021",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_shared_rule_name",
+        "before": "受封户各自拒报、互不代答，尚无本章共同定下的公开规则句",
+        "after": "几户当面定下“借法，不借灯；认痕，不代证”作为公开反照办法的边界句",
+        "evidence": "正文明确写出最后一行由几户人当面定下该句，并称其落稳。"
+      }
+    ]
+  }
+}

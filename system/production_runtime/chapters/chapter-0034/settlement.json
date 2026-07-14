@@ -1,0 +1,151 @@
+{
+  "chapter_id": "chapter-0034",
+  "accepted_revision_sha256": "21c1c7f0f8784ff0a82e9c865de8da097b23056365c6c60d1f21b9722ac906f7",
+  "state_deltas": [
+    {
+      "fact_id": "chapter-0034-f001",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_observed_choice",
+      "operation": "set",
+      "before": "不再借用苏晚寿债作本案证明、交换或临时并入追缴",
+      "after": "陆沉渊撤回将苏晚新裂纹列为顾家冷额后果的提议，并明确不替苏晚解释拒绝原因"
+    },
+    {
+      "fact_id": "chapter-0034-f002",
+      "asset_id": "npc_su_wan",
+      "field_path": "npc.current_lamp_position",
+      "operation": "set",
+      "before": "命灯仍处于顾家物证范围及暖墙附近的可关联位置",
+      "after": "苏晚亲手将命灯移过灰线，置于暖墙外、顾家灯与相邻灯位置标记之外"
+    },
+    {
+      "fact_id": "chapter-0034-f003",
+      "asset_id": "npc_su_wan",
+      "field_path": "npc.current_procedural_limit",
+      "operation": "set",
+      "before": "母债不得再作为本案证明、交换或追缴临时并入项",
+      "after": "苏晚进一步拒绝将移灯后的裂纹并入顾家冷额后果，只允许记录移出后的亲见变化"
+    },
+    {
+      "fact_id": "chapter-0034-f004",
+      "asset_id": "npc_mo_jinglan",
+      "field_path": "npc.current_witness_participation",
+      "operation": "set",
+      "before": "只记录黑边到灯腹中央，不记录增长时间或原因",
+      "after": "莫井兰记录苏晚移灯、跨线分离及移出后裂纹加深，并截断门外未亲见补述"
+    },
+    {
+      "fact_id": "chapter-0034-f005",
+      "asset_id": "npc_debt_collector_gu_xun",
+      "field_path": "npc.current_procedural_record",
+      "operation": "set",
+      "before": "后续按三盏灯位置、时刻与黑边增处分项复核",
+      "after": "顾巡将苏晚命灯与顾家物证分开记录，仅保留顾家局部重叠、陶面微温及相邻两户无温变"
+    },
+    {
+      "fact_id": "chapter-0034-f006",
+      "asset_id": "npc_registrar_qiu_shen",
+      "field_path": "npc.current_visible_consequence",
+      "operation": "set",
+      "before": "本地呈印资格仍被冻结，影印要求尚未实际落印",
+      "after": "仇慎携冷金小印到顾家灯前，强行落印时冻结痕倒卷并锁住其手，印面仍未接触灯面"
+    },
+    {
+      "fact_id": "chapter-0034-f007",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_next_procedural_hook",
+      "operation": "set",
+      "before": "州府影印要求在顾家黑边位置补落本地配额印，执行结果尚未发生",
+      "after": "仇慎已携印到顾家灯前并悬印未落；越过冻结呈印资格施印的现场追责风险形成"
+    },
+    {
+      "fact_id": "chapter-0034-f008",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_boundary_condition",
+      "operation": "set",
+      "before": "三户保留带灯退出权，共用屋安置不调用住户命火",
+      "after": "住户继续各自持灯守在原位，拒绝向苏晚渡火；安置与看护未转化为命火支出"
+    },
+    {
+      "fact_id": "chapter-0034-f009",
+      "asset_id": "bond_mother_su_wan",
+      "field_path": "emotional_bond.current_autonomy_boundary",
+      "operation": "set",
+      "before": "母子关系形成可扶持但不得代证、不得代按的边界",
+      "after": "苏晚亲自决定母债裂灯的证据分离，陆沉渊停止代为解释并接受其拒绝被并入本案"
+    },
+    {
+      "fact_id": "chapter-0034-f010",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_refusal_boundary",
+      "operation": "set",
+      "before": "共同体坚持接物、不接火，住户命火不得自动调用",
+      "after": "共同体在苏晚明确拒绝后提供可见守护与安全位置，但仍不渡火、不记欠火并保留带灯退出权"
+    },
+    {
+      "fact_id": "chapter-0034-f011",
+      "asset_id": "npc_su_wan",
+      "field_path": "npc.current_emotional_choice",
+      "operation": "set",
+      "before": "拒绝以邻里命火补温，并允许住户带灯退出",
+      "after": "苏晚主动承受移出后的更冷位置，拒绝让自己的裂纹成为顾家申诉筹码"
+    },
+    {
+      "fact_id": "chapter-0034-f012",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_procedural_intent",
+      "operation": "set",
+      "before": "急于利用可见后果增强顾家申诉分量",
+      "after": "陆沉渊承认苏晚有权决定自身风险如何被使用，放弃借母亲裂纹扩大顾家证据"
+    },
+    {
+      "fact_id": "chapter-0034-f013",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_next_review_hook",
+      "operation": "set",
+      "before": "顾家黑边与旧灰缺口局部重叠为待核异常，不能认定完整因果链",
+      "after": "待核记录进一步区分为顾家局部重叠、苏晚移出后裂纹加深及两者不可合并；顾家因果缺口更明确"
+    },
+    {
+      "fact_id": "chapter-0034-f014",
+      "asset_id": "state_ledger_public_reputation",
+      "field_path": "state_ledger.current_audience_direction",
+      "operation": "set",
+      "before": "公开记录按户分开保存顾家局部重叠、顾家微温、相邻两户无温变和三户失温未解",
+      "after": "公开见证新增苏晚亲自移灯、拒绝并证及仇慎悬印未落；母债裂纹未被列入顾家损害"
+    },
+    {
+      "fact_id": "chapter-0034-f015",
+      "asset_id": "npc_registrar_qiu_shen",
+      "field_path": "npc.next_procedural_hook",
+      "operation": "set",
+      "before": "影印要求补落本地配额印，结果待发生",
+      "after": "冷金印悬在顾家黑边上方仍未落下，越权施印与见证记录成为下一次程序追缴复核点"
+    },
+    {
+      "fact_id": "chapter-0034-f016",
+      "asset_id": "npc_su_wan",
+      "field_path": "npc.current_event_sequence",
+      "operation": "set",
+      "before": "苏晚命灯与顾家灯仍处于可被同时观察的范围",
+      "after": "苏晚先移灯跨过灰线，随后裂纹在墙外受风后加深，最后仇慎携印到场并悬印"
+    },
+    {
+      "fact_id": "chapter-0034-f017",
+      "asset_id": "state_ledger_mother_life_lamp_countdown",
+      "field_path": "state_ledger.current_visible_lamp_consequence",
+      "operation": "set",
+      "before": "苏晚命灯失温，掌背暗光退缩，既有裂纹继续存在",
+      "after": "苏晚移灯后命灯裂纹新增一格并连过指根，焰尖进一步缩短；母灯倒计时恶化一格"
+    },
+    {
+      "fact_id": "chapter-0034-f018",
+      "asset_id": "state_ledger_protagonist_strain",
+      "field_path": "state_ledger.current_visible_condition",
+      "operation": "set",
+      "before": "双眼暗灰、膝伤与胸骨旧裂限制行动，掌中有未愈血口",
+      "after": "陆沉渊因试图扶助苏晚再次膝弯内错，掌心血沿腕侧流下并咳出夹血灰沫，仍未继续识账"
+    }
+  ],
+  "resolved_audit_ids": []
+}

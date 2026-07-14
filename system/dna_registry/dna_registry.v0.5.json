@@ -1195,13 +1195,13 @@
       "family": "project_dna",
       "title": "《借天改命账》",
       "source_path": "system/mission_controller/current_phase_state.json",
-      "review_state": "production_authorized_window_011_020_accepted",
+      "review_state": "production_authorized_window_021_030_accepted",
       "provenance": "runtime_state",
       "promotion_state": "production_authorized",
       "evidence_tags": [
         "current_project",
         "Production v1",
-        "production_authorized_window_011_020_accepted"
+        "production_authorized_window_021_030_accepted"
       ],
       "blocked_for_generation": false
     },

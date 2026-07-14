@@ -1,0 +1,24 @@
+{
+  "chinese_character_count": 3430,
+  "sentence_count": 207,
+  "paragraph_count": 118,
+  "average_sentence_length": 16.57,
+  "sentence_length_stddev": 9.68,
+  "average_paragraph_length": 29.07,
+  "paragraph_length_stddev": 25.86,
+  "dialogue_ratio": 0.2741,
+  "transition_word_hits": 1,
+  "rhetorical_template_hits": 0,
+  "abstract_word_hits": 0,
+  "sensory_word_hits": 110,
+  "repeated_sentence_starters": [
+    {
+      "starter": "持灯人",
+      "count": 18
+    }
+  ],
+  "flags": [
+    "sentence_opening_repetition"
+  ],
+  "policy": "metrics_are_audit_evidence_not_a_literary_verdict"
+}

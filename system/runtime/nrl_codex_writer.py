@@ -62,6 +62,46 @@ def ask_codex_writer(prompt: str, *, model: str, timeout_seconds: int = DEFAULT_
     return text
 
 
+def ask_codex_structured(
+    prompt: str,
+    *,
+    model: str,
+    schema_path: Path,
+    timeout_seconds: int = DEFAULT_TIMEOUT_SECONDS,
+) -> dict[str, Any]:
+    """Run one schema-bound Codex call and return its JSON object."""
+    global _CODEX_USAGE_LIMITED
+    binary = find_codex_binary()
+    if not binary:
+        raise RuntimeError("codex CLI is missing")
+    with tempfile.TemporaryDirectory(prefix="nrl-codex-structured-") as temp_dir:
+        output = Path(temp_dir) / "output.json"
+        result = subprocess.run(
+            [
+                binary, "--ask-for-approval", "never", "exec", "--ephemeral",
+                "--skip-git-repo-check", "--sandbox", "read-only", "-m", model,
+                "--output-schema", str(schema_path), "-o", str(output), prompt,
+            ],
+            cwd=temp_dir,
+            text=True,
+            capture_output=True,
+            check=False,
+            timeout=timeout_seconds,
+        )
+        if result.returncode != 0 or not output.is_file():
+            error = f"Codex structured call failed with exit code {result.returncode}: {result.stderr.strip()}"
+            if _is_usage_limit_error(error):
+                _CODEX_USAGE_LIMITED = True
+            raise RuntimeError(error)
+        try:
+            payload = json.loads(output.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as error:
+            raise RuntimeError(f"Codex structured call returned invalid JSON: {error}") from error
+    if not isinstance(payload, dict):
+        raise RuntimeError("Codex structured call must return one JSON object")
+    return payload
+
+
 def ask_antigravity_writer(
     prompt: str,
     *,

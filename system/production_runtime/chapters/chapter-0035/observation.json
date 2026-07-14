@@ -1,0 +1,231 @@
+{
+  "chapter_id": "chapter-0035",
+  "draft_sha256": "163300559448ec47b9b217b46fc2470be1f2d56d49d861d4703dc62719a7d302",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "chapter-0035-character-lu-chenyuan-001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_observed_choice",
+        "before": "陆沉渊已因识账反噬失去继续辨认账痕的能力",
+        "after": "陆沉渊未再催动识账术，只要求把未落的本地印与后续州府影印分开记录",
+        "evidence": "他明确没有再催动识账术，并要求分别记录两道印痕。"
+      },
+      {
+        "fact_id": "chapter-0035-character-lu-chenyuan-002",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_procedural_intent",
+        "before": "不替苏晚承担或解释其风险",
+        "after": "不替仇慎洗清昨夜越权意图，也不替州府补写因果，只限定亲见事实",
+        "evidence": "他声明前者不能洗掉仇慎昨夜想落印，后者不能再借仇慎的手藏起来。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "chapter-0035-npc-qiu-shen-001",
+        "asset_id": "npc_registrar_qiu_shen",
+        "field_path": "npc.current_authority_status",
+        "before": "本地呈印资格被冻结，冷金小印悬印未落",
+        "after": "仇慎正式登记自此不再持有本地呈印资格，命籍衙不得以其印补成本地执行",
+        "evidence": "仇慎在记录石旁登记资格终止，记录石留下呈印资格终止痕迹。"
+      },
+      {
+        "fact_id": "chapter-0035-npc-qiu-shen-002",
+        "asset_id": "npc.current_visible_consequence",
+        "field_path": "npc.current_visible_consequence",
+        "before": "冻结痕锁住右手，印面尚未接触顾家灯",
+        "after": "仇慎将裂印从右手中剥出并按在命审台记录石边，右手五指彻底蜷拢，印面未落成印文",
+        "evidence": "冻结痕沉入皮下，右手再也张不开；记录石未形成印文，仅截住半枚断印。"
+      },
+      {
+        "fact_id": "chapter-0035-npc-qiu-shen-003",
+        "asset_id": "npc_registrar_qiu_shen",
+        "field_path": "npc.current_information_state",
+        "before": "知道本地呈印资格冻结及州府压力，但责任缺口未公开完成分列",
+        "after": "公开承认本地补印会把州府冷额伪装成本地执行，并承认不知道冷额来源且无权认定",
+        "evidence": "仇慎当众说明补印会使州府冷额借其名算作命籍衙执行，同时称自己不知道州府命库哪一页来、压过谁。"
+      },
+      {
+        "fact_id": "chapter-0035-npc_mo-jinglan-001",
+        "asset_id": "npc_mo_jinglan",
+        "field_path": "npc.current_witness_participation",
+        "before": "记录局部亲见并保留各户拒绝范围",
+        "after": "将三户关于两层腕痕、未接触顾家灯、影线牵向巷口的陈述分开登记，并记录右邻拒按及后续撤出见证",
+        "evidence": "莫井兰逐一递交记录，保留空白，并补记右邻“拒按，口述止于未接触”；州府影印出现后又记录其撤出后续亲见。"
+      }
+    ],
+    "locations": [
+      {
+        "fact_id": "chapter-0035-location-mudlamp-lane-001",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_protection_array_condition",
+        "before": "灯架已受损但三户灯位仍可维持分项见证",
+        "after": "州府影印收紧回灯架，横木挤住三户灯位并封住两侧空隙，三盏灯焰同时被压成细线",
+        "evidence": "闻照微影印收紧后，受损灯架向内猛收，横木挤住三户灯位，三盏灯被灰白光箍住。"
+      }
+    ],
+    "factions": [
+      {
+        "fact_id": "chapter-0035-faction-life-registry-office-001",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_local_enforcement_phase",
+        "before": "州府第一道配额已执行，仇慎本地停印但资格尚未正式终止",
+        "after": "仇慎本地呈印资格正式终止，州府冷额转为由州府影印直接接续执行",
+        "evidence": "仇慎登记资格终止后，闻照微影印越过断印直接压向顾家灯腹，并宣告州府命库接续冷额。"
+      },
+      {
+        "fact_id": "chapter-0035-faction-life-registry-office-002",
+        "asset_id": "state_ledger_faction_pressure",
+        "field_path": "state_ledger.faction_pressure",
+        "before": "存在要求越过冻结状态补落本地配额印的程序追缴压力",
+        "after": "本地补印责任被公开切断，州府影印直接封向顾家及相邻灯位，执行压力转为州府直接承担",
+        "evidence": "仇慎拒绝补印并留下资格终止痕迹后，州府影印直接显现并收紧三户灯位。"
+      }
+    ],
+    "artifacts": [],
+    "techniques": [
+      {
+        "fact_id": "chapter-0035-technique-ledger-recognition-001",
+        "asset_id": "technique_ledger_recognition",
+        "field_path": "technique.current_use_status",
+        "before": "上一章完成一次受限识账后无法继续辨认账痕",
+        "after": "本章未再次施展识账术，改由分项位置、印痕与亲见记录承接复核",
+        "evidence": "陆沉渊明确没有再催动识账术，并以暗灰视野观察现场。"
+      }
+    ],
+    "relationships": [
+      {
+        "fact_id": "chapter-0035-relationship-lane-trust-001",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_witness_commitment",
+        "before": "各户保留分项见证、拒绝与撤回权",
+        "after": "三户分别限定见证范围；右邻撤出后续亲见并由莫井兰保留其先前口述",
+        "evidence": "右邻声明不回来，只在门后看自己的灯；莫井兰立即划开其原位置并记录撤出。"
+      },
+      {
+        "fact_id": "chapter-0035-relationship-lane-trust-002",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_collective_emotion",
+        "before": "共同体主要将敌意集中于本地施印者",
+        "after": "住户开始区分仇慎本地未落印与州府直接影印，但仍保持警惕并拒绝替他补证",
+        "evidence": "顾家住户承认仇慎资格终止不算替住户偿还，同时要求分开记录州府影印。"
+      },
+      {
+        "fact_id": "chapter-0035-relationship-mother-su-wan-001",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_visible_support",
+        "before": "苏晚不代替陆沉渊承担识账后果，只提供有限借力",
+        "after": "苏晚继续只递袖边供陆沉渊自行借力，未抓住他，也未把自己的灯送入三户范围",
+        "evidence": "她把袖边送到陆沉渊手旁，待他自行扣住后立即松开；同时仍站在墙外护灯。"
+      }
+    ],
+    "emotions": [
+      {
+        "fact_id": "chapter-0035-emotion-qiu-shen-001",
+        "asset_id": "npc_registrar_qiu_shen",
+        "field_path": "npc.current_visible_fear",
+        "before": "仇慎仍在停印与失察后果之间拖延",
+        "after": "仇慎承认自己曾等待冻结痕松动，并公开承担资格终止与右手失能后果",
+        "evidence": "他承认若冻结痕松过一瞬便会落印，并在资格终止后右手彻底蜷拢。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "chapter-0035-information-responsibility-001",
+        "asset_id": "state_ledger_public_reputation",
+        "field_path": "state_ledger.current_audience_direction",
+        "before": "公开记录包含仇慎悬印未落，但州府来源尚被本地印遮蔽",
+        "after": "公开见证新增：本地印始终未接触顾家灯，仇慎资格已终止，州府影印直接压向顾家黑边并继续封灯",
+        "evidence": "三户分别留下未接触、腕上影线和顾家黑边变化；随后闻照微影印直接显形并压向灯腹。"
+      },
+      {
+        "fact_id": "chapter-0035-information-error-001",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_procedure_result",
+        "before": "州府冷额仍可借本地印伪装成本地执行",
+        "after": "责任链被分列为本地未落印与州府直接影印，不能再将州府执行痕迹归入仇慎本地补印",
+        "evidence": "仇慎登记无权补印，陆沉渊要求两道痕分开记录，州府影印随后越过断印直接落向顾家灯。"
+      },
+      {
+        "fact_id": "chapter-0035-information-responsibility-002",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_inference_limit",
+        "before": "不能确认州府冷额的直接执行痕迹",
+        "after": "已能亲见州府影印位于顾家黑边并越过顾家灯位向相邻旧位记号展开；仍不能认定其完整来源或因果链",
+        "evidence": "顾家与左邻分别只认影印当前接触位置，右邻明确不认州府来源。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "chapter-0035-hook-001",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_next_procedural_hook",
+        "before": "等待仇慎悬印未落后的程序复核",
+        "after": "州府直接封住三户灯位，下一次复核需分别处理顾家、左邻与门后右邻的见证和撤回范围",
+        "evidence": "莫井兰当场询问三户是否继续留在原位见证，三户作出不同期限与范围选择。"
+      },
+      {
+        "fact_id": "chapter-0035-hook-002",
+        "asset_id": "state_ledger_faction_pressure",
+        "field_path": "state_ledger.faction_pressure",
+        "before": "本地补印仍是下一次程序追缴风险",
+        "after": "州府影印直接收紧巷口回灯架，并继续向三户灯位施加封灯压力",
+        "evidence": "影印越过仇慎断印后，回灯架断裂收紧，三盏灯焰同时向内弯折。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "chapter-0035-timeline-001",
+        "asset_id": "npc_registrar_qiu_shen",
+        "field_path": "npc.current_event_sequence",
+        "before": "仇慎携印悬在顾家灯前，印面未落",
+        "after": "仇慎公开承认越权风险并收回裂印，登记资格终止；随后州府影印直接接续执行",
+        "evidence": "正文按正午现场顺序记录公开询问、收印、资格终止和闻照微影印接续。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "chapter-0035-physical-qiu-shen-001",
+        "asset_id": "npc_registrar_qiu_shen",
+        "field_path": "npc.current_visible_injury",
+        "before": "右手被冻结痕锁住，手指仍可维持印面悬停",
+        "after": "右手五指彻底蜷拢贴紧掌心，指腹和掌背被印棱及冷金划开",
+        "evidence": "仇慎剥出小印时指腹裂开，冷金沿血口爬上掌背，最后右手再也张不开。"
+      },
+      {
+        "fact_id": "chapter-0035-physical-lu-chenyuan-001",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.current_visible_condition",
+        "before": "陆沉渊左膝不能伸直，双眼仅剩暗灰",
+        "after": "咳出夹细血丝的灰沫，胸骨再次发出钝响，并靠门框借力",
+        "evidence": "他咳出的灰沫落在门槛上带有细血丝，随后扶住门框，胸骨传出钝响。"
+      },
+      {
+        "fact_id": "chapter-0035-physical-su-wan-001",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_visible_support",
+        "before": "苏晚站在墙外护灯，拒绝渡火",
+        "after": "她掌背裂开的暗光再次亮起但仍未把灯送入三户范围",
+        "evidence": "仇慎强行停印时，苏晚掌背暗光亮过一瞬，仍没有把自己的灯送进来。"
+      },
+      {
+        "fact_id": "chapter-0035-physical-lamps-001",
+        "asset_id": "state_ledger_resident_lifefire_reserve",
+        "field_path": "state_ledger.current_resident_lifefire_callability",
+        "before": "三户未向他人转移、调用或代扣命火",
+        "after": "州府影印压低三户灯焰，但正文仍未发生住户命火转移或代扣",
+        "evidence": "三户各自抱紧户灯，右邻撤出后仍只看自己的灯，没有任何住户渡火补给顾家。"
+      }
+    ],
+    "naming": [
+      {
+        "fact_id": "chapter-0035-naming-001",
+        "asset_id": "npc_registrar_qiu_shen",
+        "field_path": "npc.current_record_label",
+        "before": "仇慎的冻结呈印资格及悬印状态分别记录",
+        "after": "记录石明确留下“呈印资格终止”痕迹，并将州府影印与本地断印并列",
+        "evidence": "记录石在仇慎名字之后留下短痕，半枚本地断印旁显现州府影印完整纹路。"
+      }
+    ]
+  }
+}

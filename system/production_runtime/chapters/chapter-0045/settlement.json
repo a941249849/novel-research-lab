@@ -1,0 +1,199 @@
+{
+  "chapter_id": "chapter-0045",
+  "accepted_revision_sha256": "2eb2eedc775f856716ef8e8d6bf115f5207ea7c3d66bd3b9ad39eddc8589e170",
+  "state_deltas": [
+    {
+      "fact_id": "chapter-0045-character-lu-chenyuan-choice-001",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_observed_choice",
+      "operation": "set",
+      "before": "守在门外挡风，不以自身命火补温",
+      "after": "拒绝交出州府转运残印与持印记录；仅同意一次不离手、不越门槛、可由持有人撤回的表面响应"
+    },
+    {
+      "fact_id": "chapter-0045-character-lu-chenyuan-condition-001",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_visible_condition",
+      "operation": "set",
+      "before": "左膝无法弯曲，右眼焦纹受冷风牵紧，咳出冷灰",
+      "after": "残印响应时掌心裂口冻出暗红血珠，右眼焦纹收紧，冷金细线灼缠袖口，左腿继续无法承力"
+    },
+    {
+      "fact_id": "chapter-0045-npc-suwean-boundary-001",
+      "asset_id": "npc_su_wan",
+      "field_path": "npc.current_emotional_choice",
+      "operation": "set",
+      "before": "主动让出暖墙时段并拒绝以命火补温",
+      "after": "拒绝把持印时刻与收人条件混为开灯交换，并在陆沉渊受寒后只扶住他、不以命火压寒"
+    },
+    {
+      "fact_id": "chapter-0045-npc-suwean-lamp-001",
+      "asset_id": "npc_su_wan",
+      "field_path": "npc.current_visible_lamp_consequence",
+      "operation": "set",
+      "before": "掌背霜纹从虎口向腕内延伸，裂纹未合",
+      "after": "霜纹继续存在并有冷灰从裂口落下，未因本次响应恢复"
+    },
+    {
+      "fact_id": "chapter-0045-npc-mojinglan-witness-001",
+      "asset_id": "npc_mo_jinglan",
+      "field_path": "npc.current_witness_participation",
+      "operation": "set",
+      "before": "记录两户靠墙与回温起止时刻，木片交还两户自行确认并保留撤回权",
+      "after": "将两块见证木片分开保留各自划痕，响应停止后扣下木片并未代两户添字；随后要求外沿通路只按见证者与可撤回记录处理"
+    },
+    {
+      "fact_id": "chapter-0045-location-mudlamp-lane-001",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_communal_response",
+      "operation": "set",
+      "before": "共用屋接纳两户受封者轮换暖墙，空间与通行受压",
+      "after": "两户在未交出他人与证物的前提下继续承受失温；各自保留户灯与见证木片，未将拒绝写成泥灯巷代为答应"
+    },
+    {
+      "fact_id": "chapter-0045-location-mudlamp-lane-002",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_refusal_boundary",
+      "operation": "set",
+      "before": "首名持灯人拒绝虚填未知批印，泥灯巷不代填、不代认",
+      "after": "首批两户共同拒绝以交人或交残印换取解封，并坚持各自承担继续失温，不把决定归给泥灯巷"
+    },
+    {
+      "fact_id": "chapter-0045-location-mudlamp-lane-003",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_collective_emotion",
+      "operation": "set",
+      "before": "受助户对不被索取保持有限信任",
+      "after": "受封户从急于求解封转为接受继续失温也不牺牲他人与证物"
+    },
+    {
+      "fact_id": "chapter-0045-faction-life-registry-001",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_tracking_pressure",
+      "operation": "set",
+      "before": "州府转运残印引发冷边向陆沉渊怀中收紧并向巷外延伸",
+      "after": "残印表面响应后，冷金细线追缠陆沉渊袖口；残印被列为限期回收异物，持印者、保管见证与响应所见纳入下一次追缴复核"
+    },
+    {
+      "fact_id": "chapter-0045-faction-pressure-001",
+      "asset_id": "state_ledger_faction_pressure",
+      "field_path": "state_ledger.current_chapter_sequence",
+      "operation": "set",
+      "before": "等待残印核验或继续封灯，闻照微已提出以残印换单户单栏开档",
+      "after": "闻照微撤回开档承诺，残印改列限期回收异物；首批灯源申请继续停留外槽"
+    },
+    {
+      "fact_id": "chapter-0045-faction-pressure-002",
+      "asset_id": "state_ledger_faction_pressure",
+      "field_path": "state_ledger.current_procedural_label",
+      "operation": "set",
+      "before": "残印核验可能换取单户单栏开档，但开档不等于解封",
+      "after": "表面响应未取得封批或解封，州府转为限期回收残印并继续外槽封锁"
+    },
+    {
+      "fact_id": "chapter-0045-artifact-seal-trace-001",
+      "asset_id": "artifact_prefecture_transit_registry_seal",
+      "field_path": "artifact.current_visible_trace",
+      "operation": "set",
+      "before": "封布渗出铁锈冷香，靠近门板时牵动苏晚霜纹与墙脚冷边",
+      "after": "残印隔着封布完成一次表面响应，吐出旧灯回响并使门板结霜、冷金细线追缠持印者；残印仍未交出"
+    },
+    {
+      "fact_id": "chapter-0045-technique-recognition-001",
+      "asset_id": "technique_ledger_recognition",
+      "field_path": "technique.current_use_status",
+      "operation": "set",
+      "before": "本章未使用识账术",
+      "after": "仍未使用识账术；陆沉渊仅进行一次不追索印文的表面响应"
+    },
+    {
+      "fact_id": "chapter-0045-relationship-mother-001",
+      "asset_id": "bond_mother_su_wan",
+      "field_path": "emotional_bond.current_trust_state",
+      "operation": "set",
+      "before": "陆沉渊尊重苏晚自行让出时段，苏晚阻止他以命火补温",
+      "after": "苏晚继续限制代价转嫁：允许陆沉渊自担响应，但不允许以她或邻里命火换取解封"
+    },
+    {
+      "fact_id": "chapter-0045-emotion-housedholds-001",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_collective_emotion",
+      "operation": "set",
+      "before": "受封户在受压下谨慎互保",
+      "after": "受封户明确接受继续失温的代价，也拒绝把共同体或陆沉渊作为解封筹码"
+    },
+    {
+      "fact_id": "chapter-0045-information-seal-demand-001",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_procedure_result",
+      "operation": "set",
+      "before": "外槽要求提交州府转运批印，本地无权开启封批；完整批印、转运全程与归属未确认",
+      "after": "表面响应只确认旧灯回响至弃命旧址外沿，未确认封批内容、完整印文、转运起点或归属"
+    },
+    {
+      "fact_id": "chapter-0045-information-seal-limit-001",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_inference_limit",
+      "operation": "set",
+      "before": "不能确认完整批印、转运全程、来源归属或盖印者",
+      "after": "新增可见边界：残印回响仅指向既有弃命旧址外沿，深处及具体通路方向仍不可认"
+    },
+    {
+      "fact_id": "chapter-0045-hook-recovery-001",
+      "asset_id": "state_ledger_half_life_registry_exposure",
+      "field_path": "state_ledger.registry_locking_sign",
+      "operation": "set",
+      "before": "残印靠近时追踪压力向陆沉渊怀中收紧并向巷外延伸",
+      "after": "响应后冷金灼痕留在陆沉渊袖口，限期回收与下一次追缴复核将继续锁定持印者及半寿残籍关联"
+    },
+    {
+      "fact_id": "chapter-0045-hook-map-001",
+      "asset_id": "state_ledger_map_unlock_status",
+      "field_path": "state_ledger.current_boundary_status",
+      "operation": "set",
+      "before": "废弃命址长廊仅完成有限路线压痕确认，深处和路线外未解锁",
+      "after": "既有废弃命址长廊压痕与一条新显细窄旧痕在弃命旧址外沿相接；仅形成待复核外沿线索，深处仍未解锁"
+    },
+    {
+      "fact_id": "chapter-0045-hook-next-review-001",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_next_procedural_hook",
+      "operation": "set",
+      "before": "后续开档等待残印核验或继续封灯",
+      "after": "下一次追缴将复核残印持印者、保管见证与本次响应所见；首批灯源申请继续停留外槽"
+    },
+    {
+      "fact_id": "chapter-0045-timeline-001",
+      "asset_id": "state_ledger_map_unlock_status",
+      "field_path": "state_ledger.current_boundary_status",
+      "operation": "set",
+      "before": "等待废弃命址长廊后续验证",
+      "after": "本章完成一次只到弃命旧址外沿的表面响应与现场记录，未推进为完整地图解锁"
+    },
+    {
+      "fact_id": "chapter-0045-physical-lu-001",
+      "asset_id": "state_ledger_protagonist_strain",
+      "field_path": "state_ledger.current_visible_condition",
+      "operation": "set",
+      "before": "持续挡风导致左膝无法弯曲、右眼焦纹受冷风牵紧、咳出冷灰",
+      "after": "残印响应进一步造成掌心裂口冻血、胸骨下沉、冷灰落在封布外，左腿无法承力且需要扶住"
+    },
+    {
+      "fact_id": "chapter-0045-physical-suwean-001",
+      "asset_id": "state_ledger_mother_life_lamp_countdown",
+      "field_path": "state_ledger.current_visible_lamp_consequence",
+      "operation": "set",
+      "before": "苏晚让出暖墙时段后裂纹倒计时恶化一格，裂纹向腕内延伸并持续结霜",
+      "after": "本章未出现命灯裂纹恢复；苏晚仍有冷灰落出和暗冷光外透，且未以命火介入响应"
+    },
+    {
+      "fact_id": "chapter-0045-naming-001",
+      "asset_id": "state_ledger_map_unlock_status",
+      "field_path": "state_ledger.current_boundary_status",
+      "operation": "set",
+      "before": "废弃命址长廊有限路线已确认，深处未解锁",
+      "after": "正文将新显旧痕限定为“弃命旧址外沿”，不命名更深处或通路终点"
+    }
+  ],
+  "resolved_audit_ids": []
+}

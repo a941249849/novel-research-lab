@@ -157,6 +157,13 @@ class ProductionChapterRuntimeV020Tests(unittest.TestCase):
         result = analyze_prose_metrics(text)
         self.assertNotIn("sentence_opening_repetition", result["flags"])
 
+    def test_prose_metrics_block_fragmented_ai_tail_loop(self):
+        body = "炉火压住了墙根的寒气，众人依次确认手里的灯仍由本人保管。" * 30
+        tail = "\n\n".join(f"第{index}格又亮了一次。" for index in range(30))
+        result = analyze_prose_metrics(body + "\n\n" + tail)
+        self.assertIn("tail_fragmentation_loop", result["flags"])
+        self.assertGreaterEqual(result["tail_short_paragraph_ratio"], 0.7)
+
     def test_external_literary_audit_runs_only_at_five_chapter_checkpoints(self):
         self.assertFalse(requires_external_chapter_audit("chapter-0016", "initial"))
         self.assertTrue(requires_external_chapter_audit("chapter-0020", "initial"))
@@ -190,6 +197,24 @@ class ProductionChapterRuntimeV020Tests(unittest.TestCase):
         self.assertFalse(
             compile_chapter_context_payload(intent, assets, {}, [])["valid"]
         )
+
+    def test_story_window_assets_override_legacy_volume_wide_asset_list(self):
+        intent = {
+            "chapter_id": "chapter-0048",
+            "required_asset_ids": ["character-a", "unrelated-ledger"],
+            "active_hook_ids": ["hook-a"],
+        }
+        assets = [
+            {"asset_id": "character-a", "relationships": []},
+            {"asset_id": "unrelated-ledger", "relationships": []},
+            {"asset_id": "hook-a", "relationships": []},
+        ]
+        result = compile_chapter_context_payload(
+            intent, assets, {}, [], story_beat={"required_asset_ids": ["character-a"]}
+        )
+        self.assertTrue(result["valid"])
+        self.assertEqual(result["trace"]["selected_asset_ids"], ["character-a", "hook-a"])
+        self.assertEqual(result["trace"]["legacy_intent_asset_count"], 2)
 
     def test_rolling_state_replaces_full_settlement_history(self):
         settlements = [
@@ -230,6 +255,60 @@ class ProductionChapterRuntimeV020Tests(unittest.TestCase):
         self.assertIn("a" * 64, payload)
         self.assertIn("chapter-0001", payload)
         self.assertNotIn("novel_training_set", payload)
+
+    def test_writer_context_keeps_only_selected_asset_state(self):
+        context = {
+            "chapter_id": "chapter-0048",
+            "assets": [{"asset_id": "character-a", "constraints": ["cost"]}],
+            "rolling_state": {
+                "source_chapter_count": 47,
+                "latest_fields": [
+                    {"asset_id": "character-a", "field_path": "health", "value": 2},
+                    {"asset_id": "unrelated-ledger", "field_path": "pressure", "value": 99},
+                ],
+                "recent_chapters": [{
+                    "chapter_id": "chapter-0047",
+                    "changes": [
+                        {"asset_id": "character-a", "field_path": "health", "after": 2},
+                        {"asset_id": "unrelated-ledger", "field_path": "pressure", "after": 99},
+                    ],
+                }],
+            },
+        }
+        compact = runtime._compact_chapter_context(context)
+        self.assertEqual([item["asset_id"] for item in compact["rolling_state"]["latest_fields"]], ["character-a"])
+        self.assertEqual(len(compact["rolling_state"]["recent_chapters"][0]["changes"]), 1)
+
+    def test_bundled_writer_observation_is_hash_bound_locally(self):
+        facts = [{
+            "fact_id": "fact-1", "asset_id": "character_a", "field_path": "health",
+            "before": 3, "after": 2, "evidence": "正文中伤口重新裂开",
+        }]
+        observation = runtime.build_bundled_observation("chapter-0048", "正文", facts)
+        self.assertEqual(observation["chapter_id"], "chapter-0048")
+        self.assertEqual(len(observation["draft_sha256"]), 64)
+        self.assertEqual(observation["facts"]["characters"][0]["fact_id"], "fact-1")
+
+    def test_pipeline_reuses_bundled_observation_without_second_model_call(self):
+        intent = {"chapter_id": "chapter-0001"}
+        records = iter([
+            {"chapter_id": "chapter-0001", "stage": "revision_generated", "artifacts": {"bundled_observation": "candidate.json"}},
+            {"chapter_id": "chapter-0001", "stage": "final_observed", "artifacts": {}},
+            {"chapter_id": "chapter-0001", "stage": "final_audited", "artifacts": {}},
+            {"chapter_id": "chapter-0001", "stage": "state_settled", "artifacts": {}},
+            {"chapter_id": "chapter-0001", "stage": "chapter_accepted", "artifacts": {}},
+        ])
+        with mock.patch.object(runtime, "_read_json", return_value=intent), \
+             mock.patch.object(runtime, "_load_registry", side_effect=lambda: {"chapters": [next(records)]}), \
+             mock.patch.object(runtime, "ingest_bundled_observation", return_value={"valid": True}), \
+             mock.patch.object(runtime, "dispatch_chapter_observation") as observer, \
+             mock.patch.object(runtime, "record_deterministic_chapter_audit", return_value={"valid": True}), \
+             mock.patch.object(runtime, "build_observed_settlement_candidate", return_value={"candidate": "candidate.json"}), \
+             mock.patch.object(runtime, "settle_chapter_state"), \
+             mock.patch.object(runtime, "accept_chapter"):
+            result = runtime.run_controlled_chapter_pipeline("intent.json")
+        self.assertTrue(result["valid"])
+        observer.assert_not_called()
 
     def test_audit_packet_inlines_bound_artifacts_without_raw_corpus(self):
         import nrl_production_runtime as runtime

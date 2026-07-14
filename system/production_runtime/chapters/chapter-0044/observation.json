@@ -1,0 +1,199 @@
+{
+  "chapter_id": "chapter-0044",
+  "draft_sha256": "709282aa3890309e0e7e673d35400bec5a1c811562e250be8fa5cacef71bcb66",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "chapter-0044-fact-001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_observed_choice",
+        "before": "守住既有安置次序，不替持灯人补写来源",
+        "after": "接受苏晚主动让出时段的决定，并守在门外挡风，不以自身命火补温",
+        "evidence": "陆沉渊先提出以自己的命火补苏晚时段，被苏晚拒绝后松手，改为守在门外。"
+      },
+      {
+        "fact_id": "chapter-0044-fact-002",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_visible_condition",
+        "before": "左膝失力、重影与银灰缺角残留，咳出混血冷灰",
+        "after": "左膝骨缝再次错痛并无法弯曲，胸骨受寒闷响，咳出的冷灰被风吹散，右眼焦纹受风发紧",
+        "evidence": "他扶门起身时左膝骨缝错位，接触受封者后咳出混血灰沫，结尾抵门坐下并持续咳出冷灰。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "chapter-0044-fact-003",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_emotional_choice",
+        "before": "留在安置屋看护撤回户，不以自身命火替他人承担",
+        "after": "主动让出自己的半个暖墙时段给两户受封者，并坚持不让陆沉渊或住户以命火补温",
+        "evidence": "苏晚把写着轮次的木片放到铺板中央，明确让出自己的半个时辰；她拒绝陆沉渊以命火补温。"
+      },
+      {
+        "fact_id": "chapter-0044-fact-004",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_visible_lamp_consequence",
+        "before": "掌背有既存裂纹与霜痕，未显示本章新增变化",
+        "after": "掌背霜纹连片，最深裂纹从虎口向腕内新进一截，冷灰从裂口落下；残印靠近时霜纹短暂倒流但裂纹未合",
+        "evidence": "苏晚原本的掌背裂纹在让出时段后继续加深，半轮将尽时出现新裂口；残印靠近后霜纹倒退半寸，裂纹仍更黑。"
+      },
+      {
+        "fact_id": "chapter-0044-fact-005",
+        "asset_id": "npc_mo_jinglan",
+        "field_path": "npc.current_witness_participation",
+        "before": "公开步骤并保留持灯人的独立拒绝、删改和撤回权",
+        "after": "仅记录两户靠墙与回温的起止时刻，并将暖墙见证木片交还两户自行确认、保留撤回权",
+        "evidence": "莫井兰逐户确认不替人做主，随后在木片背面刻下两段时刻，并说明见证可撤回。"
+      }
+    ],
+    "locations": [
+      {
+        "fact_id": "chapter-0044-fact-006",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_communal_response",
+        "before": "共用屋已作为三户临时安置处，长期拥挤并占用灶边炊作空间",
+        "after": "共用屋临时接纳两户受封者轮换取暖；门边铺板无法完全铺平，柴凳竖起，通行与明日炊作空间进一步减少",
+        "evidence": "两户进入后门边铺板无法再放平，住户竖起柴凳并屈腿让位，正文明确明日灶边更难腾出炊作位置。"
+      },
+      {
+        "fact_id": "chapter-0044-fact-007",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_witness_boundary",
+        "before": "共同体不代填、不代证，持有人可自行停灯和撤回见证",
+        "after": "本次照护只记录靠墙与回温，不形成欠火、户灯处分权或强制作证义务；两户可撤回并自行划去姓名位置",
+        "evidence": "苏晚、莫井兰和两户受封者逐项确认不动命灯、不记欠火、不以照护换取作证，最终两户只留下“受封两户”与时刻并保留撤回权。"
+      }
+    ],
+    "factions": [
+      {
+        "fact_id": "chapter-0044-fact-008",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_chapter_step",
+        "before": "共用屋承担既有三户安置，按原次序轮换暖墙",
+        "after": "在不调用住户命火的前提下，按逐户确认后的规则让两户受封者进入共用屋轮换暖墙",
+        "evidence": "屋内依原次序逐户确认，苏晚只让出自己的时段；两户分别进入取暖，未有命灯被移动或点燃。"
+      },
+      {
+        "fact_id": "chapter-0044-fact-009",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_tracking_pressure",
+        "before": "外槽闭锁与州府转运批印要求已形成追缴压力",
+        "after": "州府转运残印在安置屋内被动回应封批，冷边朝陆沉渊怀中收紧并向巷外延伸，追踪压力增强",
+        "evidence": "残印靠近时墙脚平直冷边朝陆沉渊收一寸，冷金斜痕对准木片，铁锈冷香沿墙脚伸向巷外。"
+      }
+    ],
+    "artifacts": [
+      {
+        "fact_id": "chapter-0044-fact-010",
+        "asset_id": "artifact_prefecture_transit_registry_seal",
+        "field_path": "artifact.current_visible_trace",
+        "before": "封布包裹，残印未取出、未使用",
+        "after": "仍未取出或用于识账，但封布渗出铁锈冷香，并在靠近门板时牵动苏晚霜纹与墙脚冷边",
+        "evidence": "陆沉渊确认残印仍隔着封布未取出、未用；随后封布散出冷香，苏晚霜纹倒流，冷边朝残印收紧。"
+      }
+    ],
+    "techniques": [
+      {
+        "fact_id": "chapter-0044-fact-011",
+        "asset_id": "technique_ledger_recognition",
+        "field_path": "technique.current_use_status",
+        "before": "本章前未催动识账术，依靠既有位置、边角和时刻记录",
+        "after": "本章继续未使用识账术，陆沉渊仅凭现场动作、时刻和可见冷边守护与判断",
+        "evidence": "正文没有催动识账或读取命页；残印靠近时他只按住封布并观察霜纹、冷边和木片。"
+      }
+    ],
+    "relationships": [
+      {
+        "fact_id": "chapter-0044-fact-012",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_trust_state",
+        "before": "母子关系为可扶持但不得代证、不得代按",
+        "after": "陆沉渊尊重苏晚自行让出时段且不再替她决定命火去处，苏晚也明确阻止他以自身命火替她补温",
+        "evidence": "苏晚拒绝陆沉渊提供命火，陆沉渊在她要求下停止争辩并守门；她没有替他决定是否继续行动，他也没有替她承担这一轮。"
+      },
+      {
+        "fact_id": "chapter-0044-fact-013",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_procedural_boundary",
+        "before": "共同体边界为借法、不借灯；认痕、不代证，并保留撤回权",
+        "after": "暖墙照护被进一步限定为不欠火、不换户灯处分权、不换未来见证，受助两户只对靠墙与回温作可撤回确认",
+        "evidence": "两户逐项询问并得到苏晚、莫井兰确认，木片背面无欠记，最终只保留受封两户与起止时刻。"
+      }
+    ],
+    "emotions": [
+      {
+        "fact_id": "chapter-0044-fact-014",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_collective_emotion",
+        "before": "旁观持灯人保持不代填、不代扶持的谨慎距离",
+        "after": "受助两户由羞惭转为不被索取的有限信任，但未承诺额外作证或交出灯具",
+        "evidence": "受助者提出交灯照看或以后作证的可能后被拒绝，最终仅确认暖墙事实并自行保留木片；其羞惭不再躲闪。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "chapter-0044-fact-015",
+        "asset_id": "state_ledger_resident_lifefire_reserve",
+        "field_path": "state_ledger.current_resident_lifefire_callability",
+        "before": "本次返还未调用住户命火，既有损耗保留",
+        "after": "本章暖墙照护未调用、转移或扣减任何住户命火；受助两户获得外部余温看护而不形成欠火",
+        "evidence": "屋内未点命火，苏晚明确不许以她或陆沉渊的命火补温，受助者最终只借墙中残存温度。"
+      },
+      {
+        "fact_id": "chapter-0044-fact-016",
+        "asset_id": "state_ledger_mother_life_lamp_countdown",
+        "field_path": "state_ledger.current_visible_lamp_consequence",
+        "before": "正文未显示本章前新增裂纹",
+        "after": "苏晚让出暖墙时段后命灯裂纹倒计时恶化一格，表现为掌背裂纹向腕内延伸并持续结霜",
+        "evidence": "她主动放弃原定暖墙时段后，掌背霜纹连片，最深裂纹新进腕内一截；残印引发的短暂倒流未使裂纹合拢。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "chapter-0044-fact-017",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "foreshadowing.current_manifestation",
+        "before": "平直冷边收至陆沉渊鞋尖并受送审回应影响短暂外弹",
+        "after": "冷边在残印靠近时朝其收紧一寸，并沿墙脚向巷外延伸，冷金斜痕对准只记时刻的木片",
+        "evidence": "残印靠近门板后，墙脚冷边收向陆沉渊怀中；湿石上浮出对准木片的冷金斜痕，冷香沿冷边伸向巷外。"
+      },
+      {
+        "fact_id": "chapter-0044-fact-018",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_next_procedural_hook",
+        "before": "等待后续命审台复核与残印核验",
+        "after": "天亮前两户必须再次选择是否保留暖墙见证；若残印复核到来，只认两户自己留下的字",
+        "evidence": "莫井兰将木片交还两户，并明确要求天亮前再选一次，残印复核只认其自行留下的记录。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "chapter-0044-fact-019",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_event_sequence",
+        "before": "共用屋按原安置次序轮换暖墙",
+        "after": "子时门外两户受封者求暖；苏晚让出末尾时段；逐户确认后两户轮换进入；残印靠近触发冷边与下一次见证选择",
+        "evidence": "正文按子时梆声、门外求助、逐户确认、两户轮换取暖及结尾残印回应依次发生。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "chapter-0044-fact-020",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_visible_lamp_consequence",
+        "before": "掌背裂纹与霜痕仍在，未显示新增延伸",
+        "after": "裂纹向腕内新进一截，霜纹曾因残印短暂倒流后重新结回裂口边缘",
+        "evidence": "半轮将尽时苏晚卷起袖口，掌背霜已连片，裂纹越过食指根向腕内延伸；残印远离后霜纹重新结回。"
+      },
+      {
+        "fact_id": "chapter-0044-fact-021",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.current_visible_condition",
+        "before": "受限识账后右眼近乎失明、左膝失力、胸骨闷响并咳出混血冷灰",
+        "after": "持续在门外挡风使左膝疼痛至无法弯曲，右眼焦纹受冷风牵紧，咳出的冷灰沿墙散开",
+        "evidence": "陆沉渊最终抵门坐下，左膝无法弯曲；右眼焦纹被风吹得发紧，咳出的冷灰被风吹散。"
+      }
+    ],
+    "naming": []
+  }
+}

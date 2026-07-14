@@ -1,0 +1,175 @@
+{
+  "chapter_id": "chapter-0046",
+  "draft_sha256": "a3e980908525c12781bbdad36148a148d05a34bc4bd783431cc5aa2b84192a5a",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "fact-0046-001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_personal_research_record",
+        "before": "仍持有此后由现场木片、灼位旧称、空架灰痕与顾家灯腹黑边重新汇成的灼位研究记录",
+        "after": "研究记录越过交易线并永久失去持有权，只剩各自见证木片与公开记录可供复核",
+        "evidence": "陆沉渊将整叠研究记录推过木板中线；纸页仍在但已不再属于他的持有。"
+      },
+      {
+        "fact_id": "fact-0046-002",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_observed_choice",
+        "before": "保留研究记录并避免本次新增暴露，或接受有限交易仍未决定",
+        "after": "只支付自己持有的研究记录，不以苏晚、受封户、泥灯巷住户命火或未来见证作价，并接受暴露增加十个百分点",
+        "evidence": "他用“不列调用”木片截住价域后，才把研究记录推过中线。"
+      },
+      {
+        "fact_id": "fact-0046-003",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_visible_condition",
+        "before": "掌心裂口冻血、胸骨下沉、冷灰落在封布外，左腿无法承力",
+        "after": "十道新冷金锁痕沿右袖形成，左腿膝盖撞地，胸骨旧裂钝响，右眼焦纹发烫并浮出银灰碎屑",
+        "evidence": "十缕细灰依次扑入右袖；第五缕后左腿失撑，第九缕牵动右眼焦纹，第十缕在肘弯前烙成窄边。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "fact-0046-004",
+        "asset_id": "npc_cluster5_black_market_transaction_role",
+        "field_path": "npc.current_transaction_status",
+        "before": "一次性有界交换尚未完成",
+        "after": "完成研究记录换取有限路序、假命页风险与撤离界限的交易，功能位立即退出且未留下后续带路承诺",
+        "evidence": "研究记录与旧路序分别越过中线后，木板后的手消失，暗角不再有人回应。"
+      }
+    ],
+    "locations": [
+      {
+        "fact_id": "fact-0046-005",
+        "asset_id": "state_ledger_map_unlock_status",
+        "field_path": "state_ledger.current_boundary_status",
+        "before": "弃命旧址外沿仅有待复核线索，未形成完整地图解锁",
+        "after": "有限解锁至弃命旧址外沿转运槽的单次进入次序；更深处、通路终点与完整地图仍未解锁",
+        "evidence": "第一折路序只画到弃命旧址外沿，第三道灰印与外沿路序相接，陆沉渊确认只得到外沿进入次序。"
+      }
+    ],
+    "factions": [
+      {
+        "fact_id": "fact-0046-006",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_witness_boundary",
+        "before": "两块见证木片分别保留，各户拥有独立确认与撤回权",
+        "after": "见证仍不由泥灯巷代证；莫井兰明确天亮前两户可以撤回，陆沉渊不得替任何人选择",
+        "evidence": "莫井兰将两块木片各退半寸并说明见证可以撤，不能替任何人作答。"
+      }
+    ],
+    "artifacts": [
+      {
+        "fact_id": "fact-0046-007",
+        "asset_id": "artifact_prefecture_transit_registry_seal",
+        "field_path": "artifact.current_transaction_relation",
+        "before": "残印回响只指向弃命旧址外沿，尚无可执行进入次序",
+        "after": "真实残印成为外沿转运槽一次性开启的必要条件；交易后仍由陆沉渊持有，未被交出或使用",
+        "evidence": "路序末端明确“外沿转运槽只开一次，须携真实残印，不得有假命页遮蔽”；陆沉渊未碰残印。"
+      }
+    ],
+    "techniques": [
+      {
+        "fact_id": "fact-0046-008",
+        "asset_id": "technique_ledger_recognition",
+        "field_path": "technique.current_use_status",
+        "before": "未使用识账术",
+        "after": "本章交易与路序复核仍未使用识账术",
+        "evidence": "正文结尾明确陆沉渊没有动用识账术，仅复核路序与可见锁痕。"
+      }
+    ],
+    "relationships": [
+      {
+        "fact_id": "fact-0046-009",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_price_boundary",
+        "before": "共同体命火与见证不可被主角自动调用",
+        "after": "交易中明确排除苏晚、受封两户、泥灯巷住户命火及未来见证，边界得到现场执行",
+        "evidence": "陆沉渊以“不列调用”木片挡住价域，并逐项拒绝以住户命火或见证作抵。"
+      }
+    ],
+    "emotions": [],
+    "information": [
+      {
+        "fact_id": "fact-0046-010",
+        "asset_id": "npc_cluster5_black_market_transaction_role",
+        "field_path": "npc.current_bounded_information",
+        "before": "陆沉渊没有弃命旧址外沿的可执行进入次序与撤离规则",
+        "after": "获得三项有界信息：外沿进入先后、假命页三种可见风险、外沿转运槽的撤离界限",
+        "evidence": "旧路序三折分别列出进入次序、假命页风险和撤离条件。"
+      },
+      {
+        "fact_id": "fact-0046-011",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_inference_limit",
+        "before": "残印回响只确认弃命旧址外沿，未确认具体通路",
+        "after": "仍未确认封批内容、完整印文、转运起点、归属、古债双方、数额或州府转运链全貌",
+        "evidence": "陆沉渊逐项复核路序后确认这些内容均未被补出。"
+      },
+      {
+        "fact_id": "fact-0046-012",
+        "asset_id": "state_ledger_resident_lifefire_reserve",
+        "field_path": "state_ledger.current_transaction_debit",
+        "before": "住户命火未列入本次交易扣减",
+        "after": "本次交易完成后住户命火仍未被调用、转移或扣减",
+        "evidence": "陆沉渊以薄木片确认不取受封两户、不取泥灯巷住户命火，木片上的刻痕一处未缺。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "fact-0046-013",
+        "asset_id": "state_ledger_half_life_registry_exposure",
+        "field_path": "state_ledger.registry_locking_sign",
+        "before": "残印响应后的冷金锁痕已锁定持印者与半寿残籍关联",
+        "after": "本次交易新增十道冷金锁痕并形成更高追索层级，下一次复核可直接辨认陆沉渊在封档外触路",
+        "evidence": "十道锁痕在右袖成形，随后冷光扫过并传来封槽摩擦声；正文明确追索层级已经改变。"
+      },
+      {
+        "fact_id": "fact-0046-014",
+        "asset_id": "state_ledger_faction_pressure",
+        "field_path": "state_ledger.current_next_procedural_hook",
+        "before": "下一次追缴复核残印持有人、保管见证与表面响应所见",
+        "after": "除上述内容外，陆沉渊袖上十道新锁痕及真实残印是否先行开启外沿转运槽，成为下一次程序复核压力",
+        "evidence": "结尾明确下一次追缴将复核十道新锁痕，并留下命审台先看或先开启外沿槽的程序选择。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "fact-0046-015",
+        "asset_id": "npc_cluster5_black_market_transaction_role",
+        "field_path": "npc.current_lifecycle_step",
+        "before": "黑市命商功能位处于一次性交易窗口",
+        "after": "交易闭合后功能位退出，正文未发生身份追问或后续带路",
+        "evidence": "陆沉渊没有询问暗中之人身份、去向或是否继续带路；木板与人影随后一并消失。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "fact-0046-016",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.current_visible_condition",
+        "before": "左腿无法承力，掌心裂口冻血，胸骨旧裂受残印响应影响",
+        "after": "膝盖撞上湿地，胸骨旧裂再次钝响，右眼焦纹发烫，掌心裂口再次渗出暗红血珠",
+        "evidence": "十道锁痕落下过程中，陆沉渊膝盖撞地、胸骨发响、右眼浮出银灰碎屑，回程时掌心又渗血。"
+      },
+      {
+        "fact_id": "fact-0046-017",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_visible_lamp_consequence",
+        "before": "霜纹持续存在，冷灰从裂口落下，未因残印响应恢复",
+        "after": "苏晚仍未以命火介入；冷灰继续从灯裂处落下，命灯裂纹未合拢",
+        "evidence": "她扶住陆沉渊却没有渡来命火，正文再次写明冷灰簌簌落下。"
+      }
+    ],
+    "naming": [
+      {
+        "fact_id": "fact-0046-018",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "foreshadowing.current_route_condition_label",
+        "before": "残印回响指向弃命旧址外沿，但没有单次开启条件的文字记录",
+        "after": "外沿转运槽的开启条件被明确为“只开一次”“须携真实残印”“不得有假命页遮蔽”",
+        "evidence": "路序末端被雨气逼出三句细字，陆沉渊逐字确认。"
+      }
+    ]
+  }
+}

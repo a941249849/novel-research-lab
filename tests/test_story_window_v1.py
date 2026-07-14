@@ -48,8 +48,49 @@ class StoryWindowV1Tests(unittest.TestCase):
     def test_next_window_prompt_is_bounded_to_contracts_and_registered_assets(self):
         prompt = build_story_window_prompt(21)
         self.assertIn("第 21-30 章", prompt)
+        # The artifact is referenced by a lifecycle boundary even though it is
+        # not a direct required_asset_id in the legacy manifest.
         self.assertIn("artifact_ashlight_cup", prompt)
+        self.assertIn("artifact.current_acquisition_status", prompt)
+        self.assertIn("已从灯座基部取出", prompt)
         self.assertNotIn("novel_training_set/", prompt)
+        self.assertLessEqual(len(prompt.encode("utf-8")), 36000)
+
+    def test_future_window_rejects_rollback_of_accepted_artifact_acquisition(self):
+        payload = json.loads(
+            (ROOT / "system/production_runtime/story_windows/window-041-050.v1.json").read_text(encoding="utf-8")
+        )
+        payload["window"]["start"] = 51
+        payload["window"]["end"] = 60
+        payload["start_snapshot"] = [
+            "残命灯盏仍处于未取得、未唤醒状态。",
+            "命籍衙压力仍在。",
+            "泥灯巷护阵仍在承压。",
+        ]
+        for index, chapter in enumerate(payload["chapters"], start=51):
+            chapter["chapter_id"] = f"chapter-{index:04d}"
+            chapter["source_status"] = "planned"
+            chapter["required_asset_ids"] = chapter["required_asset_ids"][:12]
+        result = validate_story_window(payload)
+        self.assertFalse(result["valid"])
+        self.assertIn("contradicts accepted acquisition state", " ".join(result["errors"]))
+
+    def test_future_window_rejects_more_than_twelve_assets_per_chapter(self):
+        payload = json.loads(
+            (ROOT / "system/production_runtime/story_windows/window-041-050.v1.json").read_text(encoding="utf-8")
+        )
+        payload["window"]["start"] = 51
+        payload["window"]["end"] = 60
+        for index, chapter in enumerate(payload["chapters"], start=51):
+            chapter["chapter_id"] = f"chapter-{index:04d}"
+            chapter["source_status"] = "planned"
+        payload["chapters"][0]["required_asset_ids"] = [
+            item["asset_id"]
+            for item in json.loads((ROOT / "system/creation_assets/project_assets.v0.2.json").read_text(encoding="utf-8"))["assets"][:13]
+        ]
+        result = validate_story_window(payload)
+        self.assertFalse(result["valid"])
+        self.assertIn("at most 12", " ".join(result["errors"]))
 
 
 if __name__ == "__main__":

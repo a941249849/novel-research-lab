@@ -21,6 +21,7 @@ from nrl_antigravity_bridge import build_antigravity_bridge_status
 from nrl_deep_read import build_deep_read_status
 from nrl_codex_writer import (
     ask_antigravity_writer,
+    ask_codex_structured,
     ask_codex_writer,
     codex_usage_limited,
     extract_json_object,
@@ -38,10 +39,11 @@ from nrl_agent_canaries import validate_agent_protocol_canaries
 from nrl_longform_plan import ACTIVE_BLUEPRINT_PATH, build_longform_first100_dry_run, build_longform_readiness
 
 
-VERSION = "0.22"
-CONTEXT_PACKET_VERSION = "0.22"
+VERSION = "0.23"
+CONTEXT_PACKET_VERSION = "0.23"
 MIN_CHAPTER_CHINESE_CHARS = 3000
 MAX_CHAPTER_CHINESE_CHARS = 4200
+MAX_WRITER_PROMPT_BYTES = 40000
 STAGES = (
     "chapter_intent",
     "context_compiled",
@@ -73,6 +75,7 @@ CANONICAL_INPUTS = (
 RUNTIME_SCHEMAS = (
     "system/production_runtime/schemas/chapter_intent.schema.json",
     "system/production_runtime/schemas/chapter_observation.schema.json",
+    "system/production_runtime/schemas/chapter_generation.schema.json",
     "system/production_runtime/schemas/chapter_settlement.schema.json",
     "system/production_runtime/schemas/chapter_registry.schema.json",
     "system/production_runtime/schemas/continuity_audit.schema.json",
@@ -96,6 +99,10 @@ def _read_json(path: Path) -> dict[str, Any]:
 
 def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def _sha256_text(text: str) -> str:
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
 def validate_stage_transition(
@@ -192,6 +199,17 @@ def analyze_prose_metrics(text: str) -> dict[str, Any]:
     paragraphs = [item.strip() for item in re.split(r"\n\s*\n", text) if item.strip()]
     sentence_lengths = [len(re.findall(r"[\u4e00-\u9fff]", item)) for item in sentences]
     paragraph_lengths = [len(re.findall(r"[\u4e00-\u9fff]", item)) for item in paragraphs]
+    tail_paragraphs = paragraphs[-30:]
+    tail_lengths = [len(re.findall(r"[\u4e00-\u9fff]", item)) for item in tail_paragraphs]
+    tail_short_ratio = (
+        sum(length <= 20 for length in tail_lengths) / len(tail_lengths)
+        if tail_lengths else 0
+    )
+    tail_dialogue_ratio = (
+        sum(item.lstrip().startswith(("“", '"')) for item in tail_paragraphs)
+        / len(tail_paragraphs)
+        if tail_paragraphs else 0
+    )
     starters = []
     for sentence in sentences:
         han = re.findall(r"[\u4e00-\u9fff]", sentence)
@@ -221,6 +239,13 @@ def analyze_prose_metrics(text: str) -> dict[str, Any]:
         flags.append("abstract_exposition_density")
     if text.count("——") > max(3, count // 500):
         flags.append("dash_overuse")
+    if (
+        len(tail_paragraphs) >= 20
+        and tail_short_ratio >= 0.7
+        and statistics.mean(tail_lengths) <= 28
+        and tail_dialogue_ratio < 0.35
+    ):
+        flags.append("tail_fragmentation_loop")
     return {
         "chinese_character_count": count,
         "sentence_count": len(sentences),
@@ -235,6 +260,8 @@ def analyze_prose_metrics(text: str) -> dict[str, Any]:
         "abstract_word_hits": abstract_hits,
         "sensory_word_hits": sensory_hits,
         "repeated_sentence_starters": repeated_starters,
+        "tail_short_paragraph_ratio": round(tail_short_ratio, 4),
+        "tail_dialogue_paragraph_ratio": round(tail_dialogue_ratio, 4),
         "flags": flags,
         "policy": "metrics_are_audit_evidence_not_a_literary_verdict",
     }
@@ -253,7 +280,13 @@ def compile_chapter_context_payload(
         for asset in assets
         if isinstance(asset, dict) and asset.get("asset_id")
     }
-    requested = [str(item) for item in intent.get("required_asset_ids", [])]
+    legacy_requested = [str(item) for item in intent.get("required_asset_ids", [])]
+    if story_beat and story_beat.get("required_asset_ids"):
+        requested = [str(item) for item in story_beat.get("required_asset_ids", [])]
+        requested.extend(str(item) for item in intent.get("active_hook_ids", []))
+        requested = list(dict.fromkeys(requested))
+    else:
+        requested = legacy_requested
     missing = [asset_id for asset_id in requested if asset_id not in asset_map]
     if missing:
         return {"valid": False, "errors": [f"missing required assets: {', '.join(missing)}"]}
@@ -292,6 +325,7 @@ def compile_chapter_context_payload(
         "scene_constraints": list(intent.get("scene_constraints", [])),
         "active_hook_ids": list(intent.get("active_hook_ids", [])),
         "assets": selected,
+        "writer_asset_ids": requested,
         "story_beat": story_beat,
         "rolling_state": rolling_state,
         "canonical_hashes": canonical_hashes,
@@ -302,6 +336,7 @@ def compile_chapter_context_payload(
         "chapter_id": intent.get("chapter_id"),
         "selected_asset_ids": selected_ids,
         "explicit_asset_ids": requested,
+        "legacy_intent_asset_count": len(legacy_requested),
         "dependency_asset_ids": dependency_ids,
         "excluded_asset_count": len(asset_map) - len(selected),
         "selection_reason": "explicit chapter intent requirements plus atomic transaction peers",
@@ -597,14 +632,16 @@ def build_chapter_writer_prompt(chapter_id: str) -> str:
             and "intent metadata only" not in str(rule)
         ],
     }
-    return "\n".join(
+    prompt = "\n".join(
         [
             f"你已获得 Owner Gate 对 {chapter_id} 的一次性受控正文测试授权。",
-            "你是 Novel Research Lab 的 Codex 受控正文写手。现在直接输出本章正文，不要回复确认、计划、说明、工具调用或元评论。",
+            "你是 Novel Research Lab 的受控正文写手。只输出符合指定 JSON Schema 的对象，其中 prose 是完整正文，facts 是正文确实造成的状态变化。",
             "本次授权仅覆盖非正文意图阶段留下的临时正文禁令；其余规则栈全部保持生效。",
-            "目标 3200-3800 个中文字符。严格服从上下文与规则栈；不得引入未登记资产或状态变化。",
+            "prose 目标 3500-4000 个中文字符，必须完整写到结尾钩子，不得用摘要压缩。严格服从上下文与规则栈；不得引入未登记资产或状态变化。",
             "避免工整段落、总结句、抽象议论堆叠、重复转折词和‘不是因为…而是因为…’模板。",
+            "结尾钩子成立后立即收束；禁止用连续短段、倒计时、同义复述或反复亮格拖长悬念，不得连续出现六个以上不足二十字的非对话段落。",
             "抽象机制必须落成动作、感官、物件、关系选择和后果。",
+            "facts 只记录正文可直接证明的变化；每项使用已提供 asset_id，并包含 before、after 与正文证据摘要。不得推测或补写正文外事实。",
             "",
             "上下文：",
             json.dumps(writer_context, ensure_ascii=False),
@@ -613,12 +650,22 @@ def build_chapter_writer_prompt(chapter_id: str) -> str:
             json.dumps(writer_rules, ensure_ascii=False),
         ]
     )
+    if len(prompt.encode("utf-8")) > MAX_WRITER_PROMPT_BYTES:
+        raise RuntimeError(
+            f"writer prompt exceeds {MAX_WRITER_PROMPT_BYTES} bytes; narrow story-window assets before generation"
+        )
+    return prompt
 
 
 def _compact_chapter_context(context: dict[str, Any]) -> dict[str, Any]:
     """Keep model prompts bounded while retaining every enforceable asset constraint."""
+    writer_asset_ids = {
+        str(item) for item in context.get("writer_asset_ids", [])
+    } or {str(item.get("asset_id")) for item in context.get("assets", [])}
     compact_assets = []
     for asset in context.get("assets", []):
+        if str(asset.get("asset_id")) not in writer_asset_ids:
+            continue
         compact_assets.append(
             {
                 "asset_id": asset.get("asset_id"),
@@ -626,9 +673,25 @@ def _compact_chapter_context(context: dict[str, Any]) -> dict[str, Any]:
                 "family": asset.get("family"),
                 "lifecycle_state": asset.get("lifecycle_state"),
                 "constraints": asset.get("constraints", []),
-                "relationships": asset.get("relationships", []),
             }
         )
+    selected_ids = {str(item.get("asset_id")) for item in compact_assets}
+    rolling = context.get("rolling_state", {})
+    compact_rolling = {
+        "source_chapter_count": rolling.get("source_chapter_count", 0),
+        "latest_fields": [
+            item for item in rolling.get("latest_fields", [])
+            if str(item.get("asset_id")) in selected_ids
+        ],
+        "recent_chapters": [],
+    }
+    for chapter in rolling.get("recent_chapters", []):
+        changes = [
+            item for item in chapter.get("changes", [])
+            if str(item.get("asset_id")) in selected_ids
+        ]
+        if changes:
+            compact_rolling["recent_chapters"].append({**chapter, "changes": changes})
     return {
         "chapter_id": context.get("chapter_id"),
         "dramatic_purpose": context.get("dramatic_purpose"),
@@ -637,8 +700,42 @@ def _compact_chapter_context(context: dict[str, Any]) -> dict[str, Any]:
         "must_avoid": context.get("must_avoid", []),
         "scene_constraints": context.get("scene_constraints", []),
         "assets": compact_assets,
-        "rolling_state": context.get("rolling_state", {}),
+        "rolling_state": compact_rolling,
     }
+
+
+def build_bundled_observation(
+    chapter_id: str, prose: str, facts: list[dict[str, Any]]
+) -> dict[str, Any]:
+    """Bind writer-emitted facts to the exact prose without a second model call."""
+    payload = normalize_observation_payload(
+        {"chapter_id": chapter_id, "draft_sha256": _sha256_text(prose), "facts": facts}
+    )
+    schema = _read_json(runtime_path("system/production_runtime/schemas/chapter_observation.schema.json"))
+    jsonschema.validate(payload, schema)
+    return payload
+
+
+def _ask_chapter_bundle(prompt: str, model: str) -> tuple[dict[str, Any], str, str]:
+    schema = runtime_path("system/production_runtime/schemas/chapter_generation.schema.json")
+    if not codex_usage_limited():
+        try:
+            return ask_codex_structured(prompt, model=model, schema_path=schema), "codex", model
+        except RuntimeError:
+            pass
+    route = route_model("writer")
+    errors = []
+    for fallback_model in filter(None, (route["fallback_model"], route.get("secondary_fallback_model"))):
+        try:
+            response = ask_antigravity_writer(
+                prompt + "\n只返回 JSON 对象，字段必须为 prose 和 facts。", model=fallback_model
+            )
+            payload = extract_json_object(response)
+            jsonschema.validate(payload, _read_json(schema))
+            return payload, "antigravity", fallback_model
+        except (RuntimeError, jsonschema.ValidationError) as error:
+            errors.append(f"{fallback_model}: {error}")
+    raise RuntimeError("all bundled chapter providers failed: " + "; ".join(errors))
 
 
 def _record_writer_attempt(chapter_id: str, payload: dict[str, Any]) -> str:
@@ -743,16 +840,20 @@ def dispatch_chapter_draft(chapter_id: str) -> dict[str, Any]:
     metrics: dict[str, Any] = {}
     errors: list[str] = []
     selected_model = None
+    bundled_observation: dict[str, Any] | None = None
+    bundled_facts: list[dict[str, Any]] = []
     for model in dict.fromkeys(
         (route_model("writer")["model"], route_model("showrunner")["model"])
     ):
         for generation in range(1, 3):
             retry_prompt = prompt
             if generation == 2:
-                retry_prompt += "\n\n上一版未达到最小长度。请从头完整重写，不要续写；必须交付 3200-3800 个中文字符，并保持全部约束。"
+                retry_prompt += "\n\n上一版未通过长度或结尾节奏门禁。请从头完整重写，不要续写；必须交付 3200-3800 个中文字符，并在结尾钩子成立后立即收束，禁止连续短段同义复述。"
             try:
-                raw_text, provider, used_model = _ask_prose_writer(retry_prompt, model)
-                text = _strip_leading_chapter_heading(raw_text)
+                bundle, provider, used_model = _ask_chapter_bundle(retry_prompt, model)
+                text = _strip_leading_chapter_heading(str(bundle["prose"]))
+                bundled_facts = list(bundle["facts"])
+                bundled_observation = build_bundled_observation(chapter_id, text, bundled_facts)
             except RuntimeError as error:
                 attempts.append({"model": model, "generation": generation, "valid": False, "error": str(error)})
                 errors = ["writer provider failed"]
@@ -763,6 +864,8 @@ def dispatch_chapter_draft(chapter_id: str) -> dict[str, Any]:
                 errors.append("draft must contain 3000-4200 Chinese characters")
             if _contains_chapter_heading(text):
                 errors.append("draft must not contain a chapter heading")
+            if "tail_fragmentation_loop" in metrics.get("flags", []):
+                errors.append("draft ending contains a fragmented repetition loop")
             attempts.append(
                 {
                     "model": used_model,
@@ -817,7 +920,27 @@ def dispatch_chapter_draft(chapter_id: str) -> dict[str, Any]:
     metrics_path = chapter_dir / "draft.metrics.json"
     draft_path.write_text(text, encoding="utf-8")
     _write_json(metrics_path, metrics)
-    record["artifacts"].update({"draft": str(draft_path.relative_to(ROOT)), "draft_metrics": str(metrics_path.relative_to(ROOT))})
+    observation_path = chapter_dir / "observation.bundled.json"
+    cost_path = chapter_dir / "generation_cost.json"
+    if bundled_observation is None:
+        raise RuntimeError("bundled chapter generation did not produce an observation")
+    bundled_observation = build_bundled_observation(chapter_id, text, bundled_facts)
+    _write_json(observation_path, bundled_observation)
+    _write_json(cost_path, {
+        "version": VERSION,
+        "chapter_id": chapter_id,
+        "prompt_bytes": len(prompt.encode("utf-8")),
+        "writer_asset_count": len(_compact_chapter_context(_read_json(runtime_path(record["artifacts"]["context"]))).get("assets", [])),
+        "provider_calls": len(attempts),
+        "used_length_recovery": bool(recoveries),
+        "writer_model": selected_model,
+    })
+    record["artifacts"].update({
+        "draft": str(draft_path.relative_to(ROOT)),
+        "draft_metrics": str(metrics_path.relative_to(ROOT)),
+        "bundled_observation": str(observation_path.relative_to(ROOT)),
+        "generation_cost": str(cost_path.relative_to(ROOT)),
+    })
     record["stage"] = "draft_generated"
     _save_registry(registry)
     return {
@@ -851,6 +974,24 @@ def ingest_chapter_observation(chapter_id: str, file_arg: str) -> dict[str, Any]
     record["stage"] = "final_observed"
     _save_registry(registry)
     return {"chapter_id": chapter_id, "stage": record["stage"], "observation": record["artifacts"]["observation"]}
+
+
+def ingest_bundled_observation(chapter_id: str) -> dict[str, Any]:
+    """Reuse the writer sidecar when revision content is byte-identical to the draft."""
+    registry = _load_registry()
+    record = _chapter_record(registry, chapter_id)
+    candidate = record.get("artifacts", {}).get("bundled_observation")
+    if not candidate:
+        return {"valid": False, "reason": "bundled observation is missing"}
+    candidate_path = runtime_path(candidate)
+    revision_path = runtime_path(record["artifacts"]["revision"])
+    if not candidate_path.is_file():
+        return {"valid": False, "reason": "bundled observation file is missing"}
+    payload = _read_json(candidate_path)
+    if payload.get("draft_sha256") != _sha256(revision_path):
+        return {"valid": False, "reason": "revision changed after bundled observation"}
+    result = ingest_chapter_observation(chapter_id, str(candidate_path))
+    return {"valid": True, **result}
 
 
 def build_observer_prompt_payload(
@@ -1049,6 +1190,7 @@ def _metric_audit_issues(metrics: dict[str, Any]) -> list[dict[str, str]]:
         "sentence_opening_repetition": "minor",
         "abstract_exposition_density": "minor",
         "dash_overuse": "minor",
+        "tail_fragmentation_loop": "major",
     }
     fixes = {
         "transition_word_repetition": "Replace explicit transitions with action, spatial change, or consequence.",
@@ -1056,6 +1198,7 @@ def _metric_audit_issues(metrics: dict[str, Any]) -> list[dict[str, str]]:
         "sentence_opening_repetition": "Vary sentence subjects and entry points without changing facts.",
         "abstract_exposition_density": "Ground abstractions in sensory detail, objects, and observable consequence.",
         "dash_overuse": "Replace decorative dashes with sentence rhythm or concrete interruption.",
+        "tail_fragmentation_loop": "Collapse the ending into one decisive escalation and stop immediately after the hook.",
     }
     for index, flag in enumerate(metrics.get("flags", []), start=1):
         issues.append({
@@ -1465,7 +1608,9 @@ def run_controlled_chapter_pipeline(
         completed.append("revision_generated")
         record = _chapter_record(_load_registry(), chapter_id)
     if record["stage"] == "revision_generated":
-        dispatch_chapter_observation(chapter_id)
+        bundled = ingest_bundled_observation(chapter_id)
+        if not bundled["valid"]:
+            dispatch_chapter_observation(chapter_id)
         completed.append("final_observed")
         record = _chapter_record(_load_registry(), chapter_id)
     if record["stage"] == "final_observed":

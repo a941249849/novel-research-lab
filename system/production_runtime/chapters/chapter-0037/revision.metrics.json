@@ -1,0 +1,24 @@
+{
+  "chinese_character_count": 3103,
+  "sentence_count": 192,
+  "paragraph_count": 99,
+  "average_sentence_length": 16.16,
+  "sentence_length_stddev": 9.8,
+  "average_paragraph_length": 31.34,
+  "paragraph_length_stddev": 26.37,
+  "dialogue_ratio": 0.2913,
+  "transition_word_hits": 1,
+  "rhetorical_template_hits": 0,
+  "abstract_word_hits": 0,
+  "sensory_word_hits": 82,
+  "repeated_sentence_starters": [
+    {
+      "starter": "莫井兰",
+      "count": 16
+    }
+  ],
+  "flags": [
+    "sentence_opening_repetition"
+  ],
+  "policy": "metrics_are_audit_evidence_not_a_literary_verdict"
+}

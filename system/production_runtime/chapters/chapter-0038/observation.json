@@ -1,0 +1,232 @@
+{
+  "chapter_id": "chapter-0038",
+  "draft_sha256": "ce19366590d3e75dacf35f1e8159d0d830b014b1b63ee3e2c3c03767c86b88c4",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "chapter-0038-f001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_observed_choice",
+        "before": "继续未催动识账术，仅依据灯影、封额亮过的两盏灯和亲见记录行动",
+        "after": "以自己的掌背接触灰雨固定日照前残痕，仅确认空架封额把顾家已撤销错征灯位当作空额，未追认完整因果",
+        "evidence": "陆沉渊明确没有催动识账术，只让掌背承受灰雨并限定判断范围。"
+      },
+      {
+        "fact_id": "chapter-0038-f002",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_procedural_status",
+        "before": "明日申前先验在场次序；须带未愈血口，只看不识账、不碰阵；见证可来、可拒、可撤",
+        "after": "本日停术，后续不得继续辨认账痕；仅跟到命籍衙前厅门外",
+        "evidence": "顾巡宣布“今日停术”，陆沉渊随后视野模糊并承认只到门外。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "chapter-0038-f003",
+        "asset_id": "npc_mo_jinglan",
+        "field_path": "npc.current_witness_participation",
+        "before": "记录顾家与左邻自愿携灯、右邻撤回今日同行及其保留的既有亲见，并将残缺灰痕口述单独留待复核",
+        "after": "仅保存“灼位灰”旧称与出现条件，明确不知道灰雨来源、州府转运及旧债来处",
+        "evidence": "莫井兰逐项回答“不知道”，并要求口述只记录旧称与出现条件。"
+      },
+      {
+        "fact_id": "chapter-0038-f004",
+        "asset_id": "npc_mo_jinglan",
+        "field_path": "npc.current_visible_injury",
+        "before": "手背旧伤被纸角重新磨开，冒出血珠后被她攥住袖口，未让血落到顾家灯上",
+        "after": "手背伤口持续出血，血沿手腕爬向肘弯；冷边进入追缴视野并沿手腕向袖内加深",
+        "evidence": "纸角擦伤后血未止，后文写明莫井兰腕上浮起冷边且深了一分。"
+      },
+      {
+        "fact_id": "chapter-0038-f005",
+        "asset_id": "npc_debt_collector_gu_xun",
+        "field_path": "npc.current_procedural_decision",
+        "before": "拒绝凭灯位认定冷额就是已退错征的重复征收",
+        "after": "确认空架封额下沿、陆沉渊掌背灼痕起点、灼痕折回与顾家旧位轮廓及顾家灯腹第一层黑边的亲见重合，但不认完整因果，也不撤旧追缴令",
+        "evidence": "顾巡逐项核看三处位置，并明确“不认完整因果，也不撤旧追缴令”。"
+      },
+      {
+        "fact_id": "chapter-0038-f006",
+        "asset_id": "npc_debt_collector_gu_xun",
+        "field_path": "npc.current_procedural_arrival",
+        "before": "完成废弃命址比对，与陆沉渊约定明日各自携带木屑与退回的令分开比对复核",
+        "after": "将后续核验改为命籍衙前厅灯槽公开反照，要求顾家户灯入槽后在结果出来前不得带走",
+        "evidence": "顾巡宣布巷中比照到此为止，顾家若继续核验须将户灯送入前厅灯槽。"
+      },
+      {
+        "fact_id": "chapter-0038-f007",
+        "asset_id": "npc_registrar_qiu_shen",
+        "field_path": "npc.current_record_action",
+        "before": "记录石明确留下“呈印资格终止”痕迹，并将州府影印与本地断印并列",
+        "after": "将口述人自限所知、陆沉渊掌背固定残痕、顾家灯位局部相合及左邻后续未答应反照分别写入记录，不补写来源",
+        "evidence": "仇慎连续记录“未指认来源”“其余空白，不补”，并未把左邻列入后续见证。"
+      }
+    ],
+    "locations": [
+      {
+        "fact_id": "chapter-0038-f008",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_chapter_step",
+        "before": "顾家与左邻携各自户灯前往命审台，右邻携灯留在安置屋，三户不再作为整体同行",
+        "after": "顾家独自携灯前往命籍衙前厅接受反照，左邻撤回后续反照并仅保留刚才亲见",
+        "evidence": "左邻明确撤回反照，顾家随后自行托灯前往命籍衙前厅。"
+      }
+    ],
+    "factions": [
+      {
+        "fact_id": "chapter-0038-f009",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_procedural_event",
+        "before": "命审台正式留档本地未转运、州府记已转运，两项不得并真；州府影印与本地断印责任已分列",
+        "after": "敌方停止接受只写旧位的书面申诉，改以前厅灯槽公开反照，并先追查来源格的空额列入来源",
+        "evidence": "顾巡宣布程序改向，要求先核灯位来源；灯入槽后冷影照向空着的来源格。"
+      }
+    ],
+    "artifacts": [
+      {
+        "fact_id": "chapter-0038-f010",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "foreshadowing.current_manifestation",
+        "before": "顾家灯腹出现靠近旧位记号的两层回卷黑边；莫井兰仅确认曾见过相近灼痕，未认定两者同源",
+        "after": "灰雨被掌背固定为两道方向不同的痕，其中折回痕与顾家灯腹第一层回卷黑边在晨光下相合",
+        "evidence": "正文明确写出第一道灰痕直抵顾家旧位，第二道沿不存在的灯槽折回并与第一层黑边相合。"
+      },
+      {
+        "fact_id": "chapter-0038-f011",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "foreshadowing.current_naming_status",
+        "before": "灰雨灼痕尚无本章旧称记录",
+        "after": "莫井兰将其旧称限定为“灼位灰”，并限定出现于灯离位、封痕仍视为有灯且晨湿经过时",
+        "evidence": "莫井兰明确说旧时守灯的人叫它灼位灰，并描述出现条件。"
+      }
+    ],
+    "techniques": [
+      {
+        "fact_id": "chapter-0038-f012",
+        "asset_id": "technique_ledger_recognition",
+        "field_path": "technique.current_use_status",
+        "before": "陆沉渊继续未催动识账术，仅依据灯影、封额亮过的两盏灯和亲见记录行动",
+        "after": "仍未催动识账术；本次只凭掌背固定的灰痕、旧位记号与顾家灯腹黑边完成局部比照，随后失去继续辨认账痕能力",
+        "evidence": "正文两次明确“没有催动识账术”，并写明之后视野只剩模糊灯影、无账痕回应。"
+      }
+    ],
+    "relationships": [
+      {
+        "fact_id": "chapter-0038-f013",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_refusal_boundary",
+        "before": "个人可在命审台前撤回后续见证，撤回不被记作共同拒验或背弃，且留守户获得实际安置保护",
+        "after": "左邻撤回后续反照，仅保留碰灰、顾家移灯和三处对上的亲见，且未被列入后续见证",
+        "evidence": "左邻明确表示只保留刚才亲见，莫井兰划开后续见证栏。"
+      },
+      {
+        "fact_id": "chapter-0038-f014",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_witness_commitment",
+        "before": "顾家与左邻保留在命审台前撤回的选择",
+        "after": "顾家选择将户灯交入前厅灯槽并限定仅认今日灰雨灼位与自家旧位反照；左邻不参与后续反照",
+        "evidence": "顾家在灯槽前声明交付范围，左邻明确撤回。"
+      }
+    ],
+    "emotions": [
+      {
+        "fact_id": "chapter-0038-f015",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_visible_support",
+        "before": "苏晚留在安置屋保护撤回户，继续不转移命火，也不让自己的裂灯替留守户承担追缴",
+        "after": "苏晚本章未到现场，继续留在安置屋守护撤回的右邻，陆沉渊承受灰雨时无人替他按住或缓解",
+        "evidence": "正文明确苏晚不在此处并留在安置屋；现场无人渡火或用命灯替陆沉渊缓痛。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "chapter-0038-f016",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_observation_label",
+        "before": "顾家局部重叠、苏晚移出后裂纹加深及两者不可合并；顾家因果缺口待核",
+        "after": "已验证：州府影印把错征撤销后留下的顾家旧灯位当作空额，冷额与顾家灯位局部相合；仍未认定重复扣火、修改者或州府记载原因",
+        "evidence": "陆沉渊明确确认“撤销后的灯位当成空额”，同时拒绝认定是否再次扣火及完整来源因果。"
+      },
+      {
+        "fact_id": "chapter-0038-f017",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_procedure_result",
+        "before": "待核记录区分为顾家局部重叠与两者不可合并",
+        "after": "顾巡与仇慎共同留档三项局部亲见重合，第二层黑边及完整因果被明确排除在本次认定外",
+        "evidence": "仇慎记录顾家灯腹第一层黑边与折回处相对，并注明第二层不并入。"
+      },
+      {
+        "fact_id": "chapter-0038-f018",
+        "asset_id": "state_ledger_unresolved_mysteries",
+        "field_path": "state_ledger.current_inference_limit",
+        "before": "仍未认定冷额来源、压灯原因或架毁责任",
+        "after": "未解范围保持：灰雨封痕来源、州府转运链、旧债来处及第二层黑边均未被解释；新增程序只追查来源格",
+        "evidence": "莫井兰拒绝补写来源，陆沉渊和顾巡均限定于局部重合，前厅冷影只指向来源格。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "chapter-0038-f019",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_next_procedural_hook",
+        "before": "空架封额和顾家旧位灰雨聚拢成为下一次旧位、封额与腕痕复核对象",
+        "after": "顾家户灯已入命籍衙前厅灯槽，公开反照未结；来源格出现等待补齐的封线，后续先核空额来源再核相邻各户",
+        "evidence": "顾巡宣布反照未结并要求先追来源格，结尾写明空白来源格浮出等待补齐的封线。"
+      },
+      {
+        "fact_id": "chapter-0038-f020",
+        "asset_id": "npc_debt_collector_gu_xun",
+        "field_path": "npc.next_procedural_hook",
+        "before": "天亮复核旧位、空架封额与三户腕痕；三户可来、可拒、可撤，户灯不得再挂回回灯架",
+        "after": "主持命籍衙前厅反照，要求结果完成前顾家不得取灯；来源格成为下一次追缴核验对象",
+        "evidence": "顾巡站在灯槽侧并拦住靠近者，宣布反照未结及来源格优先核验。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "chapter-0038-f021",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_verified_event",
+        "before": "空架封额在三盏灯离架后仍完整留在原位，顾家旧位灰雨待复核",
+        "after": "晨光下完成空架封额、灰雨灼痕与顾家灯腹第一层黑边的现场对应，并将户灯送入前厅等待公开反照",
+        "evidence": "正文按晨光现场比照、记录三项重合、顾家自行将灯放入灯槽的顺序呈现。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "chapter-0038-f022",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.current_visible_condition",
+        "before": "木刺蹭开掌中血口；灰雨接触伤口后出现灼白，胸口再次钝痛，施术窗口仍未恢复",
+        "after": "掌背三道裂口翻开并持续灼烧，冷灰咳出两缕细血；胸骨旧裂震动、左膝失稳，双眼无法继续辨认账痕，施术窗口关闭",
+        "evidence": "正文逐项描写掌纹裂口、灰沫带血、胸骨震动、左膝撑不住及视野只剩模糊灯影。"
+      },
+      {
+        "fact_id": "chapter-0038-f023",
+        "asset_id": "state_ledger_half_life_registry_exposure",
+        "field_path": "state_ledger.registry_locking_sign",
+        "before": "顾家与左邻腕上白痕收紧并浮出亮边，州府封额分别照定两盏灯；右邻留守灯未同亮",
+        "after": "灰雨灼痕被登记到陆沉渊身上，追缴锁转向其袖口；莫井兰腕上冷边加深并进入追缴视野",
+        "evidence": "顾巡指出铁环记住灼位灰落在谁身上，正文随后写明下一次追缴可能先锁陆沉渊，莫井兰冷边亦加深。"
+      },
+      {
+        "fact_id": "chapter-0038-f024",
+        "asset_id": "state_ledger_mother_life_lamp_countdown",
+        "field_path": "state_ledger.current_visible_lamp_consequence",
+        "before": "苏晚移灯后命灯裂纹新增一格并连过指根，焰尖进一步缩短",
+        "after": "本章未发生苏晚命灯新的裂纹或命火转移",
+        "evidence": "苏晚留在安置屋，正文未描写其命灯新增变化，也未发生任何命火转移。"
+      }
+    ],
+    "naming": [
+      {
+        "fact_id": "chapter-0038-f025",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "foreshadowing.current_reader_facing_name",
+        "before": "顾家旧位灰雨仅以相近灼痕描述，未有本章新增旧称",
+        "after": "莫井兰提供并限定旧称“灼位灰”",
+        "evidence": "莫井兰明确说“旧时守灯的人叫它灼位灰”，并同时限制自己只知道称呼与出现条件。"
+      }
+    ]
+  }
+}

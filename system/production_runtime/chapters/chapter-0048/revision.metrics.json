@@ -1,0 +1,28 @@
+{
+  "chinese_character_count": 3164,
+  "sentence_count": 154,
+  "paragraph_count": 52,
+  "average_sentence_length": 20.55,
+  "sentence_length_stddev": 12.94,
+  "average_paragraph_length": 60.85,
+  "paragraph_length_stddev": 117.53,
+  "dialogue_ratio": 0.0932,
+  "transition_word_hits": 1,
+  "rhetorical_template_hits": 0,
+  "abstract_word_hits": 2,
+  "sensory_word_hits": 121,
+  "repeated_sentence_starters": [
+    {
+      "starter": "陆沉渊",
+      "count": 18
+    },
+    {
+      "starter": "持灯人",
+      "count": 12
+    }
+  ],
+  "flags": [
+    "sentence_opening_repetition"
+  ],
+  "policy": "metrics_are_audit_evidence_not_a_literary_verdict"
+}

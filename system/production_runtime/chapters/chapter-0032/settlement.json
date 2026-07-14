@@ -1,0 +1,119 @@
+{
+  "chapter_id": "chapter-0032",
+  "accepted_revision_sha256": "d6f007ae9383f2f85e829f3aa9f772e79b73b2190569e37702228b4fe9d0f9eb",
+  "state_deltas": [
+    {
+      "fact_id": "chapter-0032-character_lu_chenyuan-choice-001",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_observed_choice",
+      "operation": "set",
+      "before": "拒绝在空白名帖上填写自己姓名，不替三户决定交人或拒绝，并要求三户各自承担选择",
+      "after": "只搬梁和铺板，不碰三户户灯、不替住户决定位置；确认只记录亲见的安置、让屋与未取命火事实"
+    },
+    {
+      "fact_id": "chapter-0032-character_lu_chenyuan-condition-001",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_visible_condition",
+      "operation": "set",
+      "before": "按过冰冷名帖后掌纹间留下细冷灰；右眼仍闭着，左膝与胸骨旧裂的既有失稳和疼痛持续",
+      "after": "搬梁时左膝再次内错、胸骨旧裂闷响并咳出冷灰；掌中冷灰被木刺划开，混血嵌入旧木纹，右眼继续闭合未识账"
+    },
+    {
+      "fact_id": "chapter-0032-npc_su_wan-choice-001",
+      "asset_id": "npc_su_wan",
+      "field_path": "npc.current_emotional_choice",
+      "operation": "set",
+      "before": "不把自己的命灯送入救援，也不替陆沉渊承担见证，只提供松砖位置并在他失衡时保留可自行借力的肘部",
+      "after": "主动让出灶位，拒绝顾家独占共用屋；允许三户各自进入或退出，但不以任何住户命火补温"
+    },
+    {
+      "fact_id": "chapter-0032-npc_mo_jinglan-witness-001",
+      "asset_id": "npc_mo_jinglan",
+      "field_path": "npc.current_witness_participation",
+      "operation": "set",
+      "before": "亲见顾家第二盏灯归灯时的黄线在冷影落下后消失，并明确不补写其他事实",
+      "after": "逐户询问进入、让位和退出条件，并参与分开记录三盏灯移入位置、时刻及黑边继续增长的亲见范围"
+    },
+    {
+      "fact_id": "chapter-0032-npc_debt_collector_gu_xun-procedure-001",
+      "asset_id": "npc_debt_collector_gu_xun",
+      "field_path": "npc.next_procedural_hook",
+      "operation": "set",
+      "before": "下一次复核需将断梁带回的银灰压痕与州府转运残印分开比对，且旧追缴继续存在",
+      "after": "下一次复核要求三盏灯分开放置，分别核对暖墙前后位置、移入时刻和黑边增处；撤回见证按撤回记录，旧追缴继续存在"
+    },
+    {
+      "fact_id": "chapter-0032-faction_mudlamp_lane-space-001",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_communal_response",
+      "operation": "set",
+      "before": "三户一致先拆梁救人，并分别承担住屋失用或见证边界后果，不调用住户命火",
+      "after": "共用屋改作三户临时安置处；灶、炊作和围灶议事位置被铺板、桌凳和柴物占去，门无法完全打开，住户实际承担长期拥挤与生活损失"
+    },
+    {
+      "fact_id": "chapter-0032-faction_mudlamp_lane-boundary-001",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_boundary_condition",
+      "operation": "set",
+      "before": "第一道州府冷额闭合，顾家与相邻两户各失去一层可见暖色，全巷门槛出现闭合冷痕并正式落下封档标记；其余住户当刻未继续失温",
+      "after": "三户全部进入共用屋并各自保留带灯退出权；屋内仍不取住户命火，临时避冷仅依靠空间让渡，护阵与冷额状态未被安置行为解除"
+    },
+    {
+      "fact_id": "chapter-0032-relationship_mudlamp_trust-001",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_collective_choice",
+      "operation": "set",
+      "before": "顾家、左邻、右邻分别确认继续拒名；左邻限定为今夜，右邻限定至第一层，三户口述彼此不替代",
+      "after": "三户逐一确认共同安置，同时限定只进人和灯、各自决定退出，互不以邻里命火补温，也不把让出的灶位记作欠债"
+    },
+    {
+      "fact_id": "chapter-0032-relationship_mudlamp_trust-002",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_communal_response",
+      "operation": "set",
+      "before": "共同体提供可撤回、仅安置人的避冷选择；有人接人不接灯，有人不发言，三户自行搬灯并保留决定权",
+      "after": "共同体实际让出灶、议事空间、柴凳与通行余地完成三户安置；损失未被包装成自愿献出，且退出与重新排位规则被保留"
+    },
+    {
+      "fact_id": "chapter-0032-relationship_mudlamp_trust-003",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_collective_emotion",
+      "operation": "set",
+      "before": "短暂归灯后的安全感被三户实际失温取代，恐惧转为在不交人的前提下共同安置受冷者",
+      "after": "受冷三户的羞惭转为接受邻里让屋的谨慎信任，同时未受冷住户保留对拥挤、失灶和失去议事空间的真实不满"
+    },
+    {
+      "fact_id": "chapter-0032-information-cinderblackedge-001",
+      "asset_id": "foreshadowing_cinder_seal_rain",
+      "field_path": "foreshadowing.current_manifestation",
+      "operation": "set",
+      "before": "顾家灯腹已撤销错征位置凝出一条新黑边，黑边沿旧封痕继续加深；其来源和形成时间仍未被确认",
+      "after": "顾家灯移近暖墙后黑边仍从旧封处向上爬至灯腹中央并暂时停住，边缘保持湿亮；来源与形成时间仍未确认"
+    },
+    {
+      "fact_id": "chapter-0032-hook-followup-review-001",
+      "asset_id": "npc_debt_collector_gu_xun",
+      "field_path": "npc.next_procedural_hook",
+      "operation": "set",
+      "before": "下一次复核需将断梁带回的银灰压痕与州府转运残印分开比对，且旧追缴继续存在",
+      "after": "下一次复核将围绕三盏灯的分开放置、移入时刻、暖墙前后位置及黑边增处展开，并保留见证撤回；旧追缴和第二道冷影继续有效"
+    },
+    {
+      "fact_id": "chapter-0032-timeline-commonroom-001",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_chapter_step",
+      "operation": "set",
+      "before": "三户一致先拆梁救人，并分别承担住屋失用或见证边界后果，不调用住户命火",
+      "after": "清晨共用屋完成三户安置，原灶、炊作和议事功能被长期让位，三户户灯移入暖墙前后窄线"
+    },
+    {
+      "fact_id": "chapter-0032-physical-lu-001",
+      "asset_id": "state_ledger_protagonist_strain",
+      "field_path": "state_ledger.current_visible_condition",
+      "operation": "set",
+      "before": "按名帖后掌纹残留细冷灰，左膝失稳、胸骨粗砂般疼痛和右眼浑光闭合状态持续；本章未施展识账术",
+      "after": "搬梁与铺板后左膝再次错动、胸骨旧裂加剧并咳出冷灰，掌纹冷灰混血嵌入木纹；仍未施展识账术"
+    }
+  ],
+  "resolved_audit_ids": []
+}

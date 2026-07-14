@@ -1,0 +1,143 @@
+{
+  "chapter_id": "chapter-0041",
+  "accepted_revision_sha256": "bb58d30de45001837728c1fbf33db606c2f0f176ff0944c0dee5f7b8d5c4bd6d",
+  "state_deltas": [
+    {
+      "fact_id": "chapter-0041-001",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_procedural_status",
+      "operation": "set",
+      "before": "今日继续不能认痕，仅以已登记的亲见范围发言并返回泥灯巷",
+      "after": "公开承认不能破除封槽影印，只记录封槽时刻、灯绳归属、灯源空栏与持有人失温，不冒充能够救灯"
+    },
+    {
+      "fact_id": "chapter-0041-002",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_observed_choice",
+      "operation": "set",
+      "before": "在命审台只确认掌背灼痕起点、折向和顾家旧位轮廓，不为灯槽当日变化作证",
+      "after": "不催动识账术、不接触封槽，只按受封户各自限定的亲见记录银灰缺角及封档事实"
+    },
+    {
+      "fact_id": "chapter-0041-003",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_visible_condition",
+      "operation": "set",
+      "before": "胸骨裂痛持续，左膝再次向内错开；承受追缴冷痕并咳出夹血灰沫",
+      "after": "左膝再次失稳并磕上湿地，掌心伤口重新裂开出血，胸骨受牵动，视野重影未散"
+    },
+    {
+      "fact_id": "chapter-0041-004",
+      "asset_id": "npc_su_wan",
+      "field_path": "npc.current_visible_support",
+      "operation": "set",
+      "before": "继续用铺板挡风，并明确不把自己的命火贴向受影响户灯",
+      "after": "仍以铺板挡住寒气，并拒绝替各户补写灯源或以自身命火代答"
+    },
+    {
+      "fact_id": "chapter-0041-005",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_chapter_step",
+      "operation": "set",
+      "before": "顾家领取局部返还后回巷；三户灯恢复基础温度，巷口出现下一道冷影并转向其他穷巷",
+      "after": "第二道冷影实体化封闭多户灯槽；首批受封户仍持有各自灯绳，但失去接触户灯灯芯的现实权利并出现掌背失温、寿裂"
+    },
+    {
+      "fact_id": "chapter-0041-006",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_boundary_condition",
+      "operation": "set",
+      "before": "继续执行各自答、不得代答、可拒可撤的见证边界",
+      "after": "受封户拒绝虚填灯源，各自保留灯绳和亲见范围；不替他户补证，也不把泥灯巷作为无证灯源"
+    },
+    {
+      "fact_id": "chapter-0041-007",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_next_procedural_hook",
+      "operation": "set",
+      "before": "下一轮到场者须亲持户灯、亲述来源；仍保留可拒可撤，但封档次序不因沉默停止",
+      "after": "明日天亮前受封各户须亲持灯绳到命审台复核灯源空栏；缺席续封，补报须当场指出来源归属"
+    },
+    {
+      "fact_id": "chapter-0041-008",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_procedural_event",
+      "operation": "set",
+      "before": "命审台完成局部裁定：撤销顾家重复冷额段，停止相邻两户继续失温执行，但不裁定州府封档权无效",
+      "after": "州府影印转入逐户实体封档，首批受封户的灯源空栏、接触权和拒报后果被现场固定"
+    },
+    {
+      "fact_id": "chapter-0041-009",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_next_procedural_hook",
+      "operation": "set",
+      "before": "贫城逐巷封档核额，各巷限期提交户灯来源，来源不明、拒交或互证不足者依次封档",
+      "after": "首批受封户在明日天亮前接受命审台灯源空栏复核，缺席者继续封档，补报者必须承担现场归属指认"
+    },
+    {
+      "fact_id": "chapter-0041-010",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_collective_choice",
+      "operation": "set",
+      "before": "顾家只领取自身可核实返还，拒绝替全巷交人或以他人命火换取解封；各户继续自行答复",
+      "after": "受封户共同拒绝以虚假灯源换取接触权，各户只保留自身灯绳与归属痕迹，不替他户承担来源"
+    },
+    {
+      "fact_id": "chapter-0041-011",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_witness_commitment",
+      "operation": "set",
+      "before": "顾家仅认第一层局部返还；相邻两户只获得停止失温，不被写成获得顾家返还",
+      "after": "三户分别限定亲见：只确认自身灯源空栏、失温时序或银灰缺角所见，不替彼此补证"
+    },
+    {
+      "fact_id": "chapter-0041-012",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_collective_emotion",
+      "operation": "set",
+      "before": "局部返还后短暂松弛转为面对逐巷封档的紧张互保",
+      "after": "实体封槽造成持续失温与灯火不可触的恐惧，但受封户仍维持各自拒报和互不代答"
+    },
+    {
+      "fact_id": "chapter-0041-013",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_inference_limit",
+      "operation": "set",
+      "before": "仍不能证明谁转、从何处转，也不能证明残印所记之物就是泥灯巷现存之物",
+      "after": "首道封槽灯源格出现带平直缺角的银灰残痕，只能记录其与本地冷金痕不合及受封户各自所见，未证明来源、出现时间或完整转运链"
+    },
+    {
+      "fact_id": "chapter-0041-014",
+      "asset_id": "foreshadowing_cinder_seal_rain",
+      "field_path": "foreshadowing.next_review_hook",
+      "operation": "set",
+      "before": "命审台需复核顾家灯边、空架封额与旧位灰雨，莫井兰的残缺口述待决定是否交出",
+      "after": "命审台将复核首批受封户的灯源空栏与银灰缺角；缺席续封，补报须现场指认归属"
+    },
+    {
+      "fact_id": "chapter-0041-015",
+      "asset_id": "state_ledger_faction_pressure",
+      "field_path": "state_ledger.faction_pressure",
+      "operation": "set",
+      "before": "压力扩展为贫城逐巷封档核额，并要求各巷提交户灯来源",
+      "after": "逐巷封档压力落实为首批实体封槽：户灯仍归原户但接触权被隔离，拒报与缺席将触发续封"
+    },
+    {
+      "fact_id": "chapter-0041-016",
+      "asset_id": "state_ledger_faction_pressure",
+      "field_path": "state_ledger.current_procedural_label",
+      "operation": "set",
+      "before": "贫城逐巷封档核额",
+      "after": "首批受封户实体封档与命审台灯源复核期限启动"
+    },
+    {
+      "fact_id": "chapter-0041-017",
+      "asset_id": "state_ledger_protagonist_strain",
+      "field_path": "state_ledger.current_visible_condition",
+      "operation": "set",
+      "before": "掌背三道裂口翻开并持续灼烧，冷灰咳出两缕细血；胸骨旧裂震动、左膝失稳，双眼无法继续辨认账痕，施术窗口关闭",
+      "after": "左膝再次向内错开并磕地，掌心旧伤重新裂开出血，胸骨受牵动咳出夹血灰沫，双眼重影未散且未恢复识账能力"
+    }
+  ],
+  "resolved_audit_ids": []
+}

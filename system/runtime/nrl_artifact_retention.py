@@ -22,6 +22,7 @@ RETAINED_ARTIFACT_KEYS = frozenset({
     "revision_audit",
     "settlement",
     "acceptance",
+    "generation_cost",
 })
 REQUIRED_ARTIFACT_KEYS = frozenset({
     "intent",

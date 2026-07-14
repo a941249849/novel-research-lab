@@ -1,0 +1,32 @@
+{
+  "chapter_id": "chapter-0038",
+  "artifact_kind": "revision",
+  "artifact_sha256": "ce19366590d3e75dacf35f1e8159d0d830b014b1b63ee3e2c3c03767c86b88c4",
+  "context_sha256": "0ebf1b66b38ec005cd35fe376660a378699ec1f693c6a63d9921a81c23c47d34",
+  "verdict": "ACCEPT",
+  "dimensions": {
+    "canon": [
+      "hash-bound context retained"
+    ],
+    "character": [
+      "state observation remains mandatory"
+    ],
+    "state": [
+      "final observation and settlement remain mandatory"
+    ],
+    "causality": [
+      "story-window irreversible change is bound in context"
+    ],
+    "pacing": [
+      "paragraphs=114"
+    ],
+    "life_force": [
+      "sensory_hits=121"
+    ],
+    "anti_ai_taste": [],
+    "originality": [
+      "no raw corpus is available to the chapter writer"
+    ]
+  },
+  "issues": []
+}

@@ -1,0 +1,11 @@
+{
+  "version": "0.25",
+  "chapter_id": "chapter-0034",
+  "source_revision": "system/production_runtime/chapters/chapter-0034/revision.md",
+  "source_sha256": "21c1c7f0f8784ff0a82e9c865de8da097b23056365c6c60d1f21b9722ac906f7",
+  "release_edit": "system/production_runtime/release_edits/chapter-0034.md",
+  "release_edit_sha256": "0b2083991828653f75490c3fa5efe1fd32ad724ac292ecff33b306c95106f8b9",
+  "repair_direction": "删除苏晚移灯后错误回到屋内的旧稿倒带，统一莫井兰姓名，并保持悬印对峙线性收尾。",
+  "provider": "deterministic_editor",
+  "status": "pending_window_re_review"
+}

@@ -1,0 +1,135 @@
+{
+  "chapter_id": "chapter-0031",
+  "accepted_revision_sha256": "aa5207134fea395a1bd1d182403aa27c7bdba48c4fe98ab52641cdfc97261f53",
+  "state_deltas": [
+    {
+      "fact_id": "chapter-0031-fact-001",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_observed_choice",
+      "operation": "set",
+      "before": "公开拒绝以自身被州府回收为条件换取泥灯巷 and 苏晚的暂缓待遇，声明不替泥灯巷和苏晚做决定",
+      "after": "拒绝在空白名帖上填写自己姓名，不替三户决定交人或拒绝，并要求三户各自承担选择"
+    },
+    {
+      "fact_id": "chapter-0031-fact-002",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_visible_condition",
+      "operation": "set",
+      "before": "手腕冷痕比昨日更白，胸骨旧裂处因咳嗽震动导致冷灰渗进肋骨衣襟留下一片深色洇痕，起身与行走时左膝持续失稳",
+      "after": "按过冰冷名帖后掌纹间留下细冷灰；右眼仍闭着，左膝与胸骨旧裂的既有失稳和疼痛持续"
+    },
+    {
+      "fact_id": "chapter-0031-fact-003",
+      "asset_id": "npc_su_wan",
+      "field_path": "npc.current_visible_support",
+      "operation": "set",
+      "before": "不把自己的命灯送入救援，也不替陆沉渊承担见证，只提供松砖位置并在他失衡时保留可自行借力的肘部",
+      "after": "陆沉渊失衡时仅停肘供其自行借力，待他站稳后立即松开，未替他承担或代作选择"
+    },
+    {
+      "fact_id": "chapter-0031-fact-004",
+      "asset_id": "npc_mo_jinglan",
+      "field_path": "npc.current_witness_participation",
+      "operation": "set",
+      "before": "确认债链未牵向住户命灯，并只见证木屑从断梁落下，不替银灰压痕认定来源",
+      "after": "亲见顾家第二盏灯归灯时的黄线在冷影落下后消失，并明确不补写其他事实"
+    },
+    {
+      "fact_id": "chapter-0031-fact-005",
+      "asset_id": "npc_debt_collector_gu_xun",
+      "field_path": "npc.current_procedural_decision",
+      "operation": "set",
+      "before": "确认追缴令残印与现场压痕同型后将现行追缴令标为归属断裂并退回复核，声明旧追缴与半寿送审继续存在",
+      "after": "亲见第一道配额已执行、三户失温与封档落下，但拒绝凭灯位认定冷额就是已退错征的重复征收"
+    },
+    {
+      "fact_id": "chapter-0031-fact-006",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_boundary_condition",
+      "operation": "set",
+      "before": "全巷户灯被归还但继续保持无热度淡青色，门槛前与回灯架上均出现闻照微影使霜线，且护阵裂口黑色空洞扩大一指宽",
+      "after": "第一道州府冷额闭合，顾家与相邻两户各失去一层可见暖色，全巷门槛出现闭合冷痕并正式落下封档标记；其余住户当刻未继续失温"
+    },
+    {
+      "fact_id": "chapter-0031-fact-007",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_local_enforcement_phase",
+      "operation": "set",
+      "before": "本地命审台正式记录泥灯巷均拒绝填写交人姓名并确认无权追加本地追缴，但由闻照微冷影刻度固化的三日期限与霜线依然生效",
+      "after": "州府第一道配额已实体执行；仇慎确认本地无权划掉该配额，且只能将其送回复核，不能以本地记录撤销"
+    },
+    {
+      "fact_id": "chapter-0031-fact-008",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_collective_choice",
+      "operation": "set",
+      "before": "到场三户住户在领回顾家户灯后，共同公开拒绝在空白名帖上填写交人姓名",
+      "after": "顾家、左邻、右邻分别确认继续拒名；左邻限定为今夜，右邻限定至第一层，三户口述彼此不替代"
+    },
+    {
+      "fact_id": "chapter-0031-fact-009",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_communal_response",
+      "operation": "set",
+      "before": "三户一致先拆梁救人，并分别承担住屋失用或见证边界后果，不调用住户命火",
+      "after": "共同体提供可撤回、仅安置人的避冷选择；有人接人不接灯，有人不发言，三户自行搬灯并保留决定权"
+    },
+    {
+      "fact_id": "chapter-0031-fact-010",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_collective_emotion",
+      "operation": "set",
+      "before": "共同体在物证受压和住屋失用后确认先保人，继续保持亲见、拒绝和不补证边界",
+      "after": "短暂归灯后的安全感被三户实际失温取代，恐惧转为在不交人的前提下共同安置受冷者"
+    },
+    {
+      "fact_id": "chapter-0031-fact-011",
+      "asset_id": "state_ledger_public_reputation",
+      "field_path": "state_ledger.current_audience_direction",
+      "operation": "set",
+      "before": "见证范围确认陆沉渊和苏晚母子共同拒绝以交人换命，且州府回收需求在废址出口公开",
+      "after": "命审台现场公开见证陆沉渊拒绝代三户填名、三户分别拒名，以及第一道配额执行造成三户失温；顾巡仅确认亲见后果，不确认因果归属"
+    },
+    {
+      "fact_id": "chapter-0031-fact-012",
+      "asset_id": "foreshadowing_cinder_seal_rain",
+      "field_path": "foreshadowing.current_manifestation",
+      "operation": "set",
+      "before": "暮光中余火线彻底隐没但未熄灭，且未向任何住户墙根延伸",
+      "after": "顾家灯腹已撤销错征位置凝出一条新黑边，黑边沿旧封痕继续加深；其来源和形成时间仍未被确认"
+    },
+    {
+      "fact_id": "chapter-0031-fact-013",
+      "asset_id": "state_ledger_faction_pressure",
+      "field_path": "state_ledger.faction_pressure",
+      "operation": "set",
+      "before": "闻照微的冷影刻度在命审台门槛霜线上显现为三道短横，每闭合一道将使户灯进一步失温，逾期未指定交人则全巷永久失温，第一道已隐现合拢趋势",
+      "after": "第一道冷影已闭合，州府配额完成一次实体执行，顾家与相邻两户失温并全巷落下封档标记；第二道仍悬置未闭合"
+    },
+    {
+      "fact_id": "chapter-0031-fact-014",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_next_review_hook",
+      "operation": "set",
+      "before": "证实废弃命址存在与木屑同型的一取一放两段转运压痕，明日需将木屑与退回的追缴令分开比对复核",
+      "after": "下一次复核新增第一道冷影的落点、实际扣除内容，以及顾家灯上新黑边是否与已撤销错征位置重合；仍不得直接认定为州府重复征收"
+    },
+    {
+      "fact_id": "chapter-0031-fact-015",
+      "asset_id": "state_ledger_resident_lifefire_reserve",
+      "field_path": "state_ledger.current_resident_lifefire_callability",
+      "operation": "set",
+      "before": "本次救援中继续未调用任何住户命火，且顾巡主动将债链从住户灯火方向扯回自身",
+      "after": "三户户灯的可见暖色被冷额压低，但正文未出现住户命火向他人转移、调用或代扣；其他住户仅提供可撤回的人身安置"
+    },
+    {
+      "fact_id": "chapter-0031-fact-016",
+      "asset_id": "state_ledger_protagonist_strain",
+      "field_path": "state_ledger.current_visible_condition",
+      "operation": "set",
+      "before": "手腕冷痕比昨日更白，胸骨旧裂处因咳嗽震动导致冷灰渗进肋骨衣襟留下一片深色洇痕，起身与行走时左膝持续失稳",
+      "after": "按名帖后掌纹残留细冷灰，左膝失稳、胸骨粗砂般疼痛和右眼浑光闭合状态持续；本章未施展识账术"
+    }
+  ],
+  "resolved_audit_ids": []
+}

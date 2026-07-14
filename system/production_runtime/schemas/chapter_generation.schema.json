@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "nrl://production/chapter-generation-v0.23",
+  "type": "object",
+  "required": ["prose", "facts"],
+  "definitions": {
+    "fact": {
+      "type": "object",
+      "required": ["fact_id", "asset_id", "field_path", "before", "after", "evidence"],
+      "properties": {
+        "fact_id": {"type": "string", "minLength": 1},
+        "asset_id": {"type": "string", "minLength": 1},
+        "field_path": {"type": "string", "minLength": 1},
+        "before": {"type": ["string", "number", "boolean", "null"]},
+        "after": {"type": ["string", "number", "boolean", "null"]},
+        "evidence": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "prose": {"type": "string", "minLength": 4000, "maxLength": 5600},
+    "facts": {"type": "array", "minItems": 1, "items": {"$ref": "#/definitions/fact"}}
+  },
+  "additionalProperties": false
+}

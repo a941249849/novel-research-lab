@@ -1,0 +1,11 @@
+{
+  "version": "0.25",
+  "chapter_id": "chapter-0032",
+  "source_revision": "system/production_runtime/chapters/chapter-0032/revision.md",
+  "source_sha256": "d6f007ae9383f2f85e829f3aa9f772e79b73b2190569e37702228b4fe9d0f9eb",
+  "release_edit": "system/production_runtime/release_edits/chapter-0032.md",
+  "release_edit_sha256": "a223b17c66db9248a9dd795bf5fb4c511bf0a35b1a9d46e10d33c14e698c073d",
+  "repair_direction": "统一为顾家一盏参验灯加左右邻各一盏，明确其余四盏留存，不改变剧情结果",
+  "provider": "codex-deterministic-editor",
+  "status": "pending_window_re_review"
+}

@@ -8,5 +8,7 @@
   "repair_direction": "删除正文末尾泄漏的上下文JSON、字段名、asset_id和规则栈；保持两巷拒绝推出替罪户、以撤铺与轮灶承受冷线、护阵外沿新增裂口、住户命火未被调用及共同空额继续存在的状态结果。结尾在共用灯龛被冷线锁定后立即收束，禁止连续短段循环。",
   "provider": "codex",
   "model": "gpt-5.6-sol",
-  "status": "pending_window_re_review"
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-051-060.json",
+  "reviewed_release_edit_sha256": "b7c4e2dba2cab0221a93ddf25683f2d64d62df70f459fcbd8557e80363b91ac6"
 }

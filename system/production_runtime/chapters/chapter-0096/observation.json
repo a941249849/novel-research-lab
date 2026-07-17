@@ -1,0 +1,120 @@
+{
+  "chapter_id": "chapter-0096",
+  "draft_sha256": "0bd91d6e7c6ec5e9abaf7ef7f247f07d7a837ca85db40e398ac1c6990939097f",
+  "facts": {
+    "characters": [],
+    "npcs": [
+      {
+        "fact_id": "chapter-0096-f001",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_procedural_boundary",
+        "before": "在强制提验压力下仍只接受对自己旧债与分期的核验，拒绝确认未具名转运接收，并拒绝替泥灯巷承担共同后果",
+        "after": "苏晚只开放既有旧债分期记录的回应，逐笔确认每笔仅用于偿还旧债，拒绝邻里递火或替她作答",
+        "evidence": "苏晚明确说“只问我的分期”“只准照旧债列”，并拒绝邻里递火及代答。"
+      },
+      {
+        "fact_id": "chapter-0096-f002",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_physical_state",
+        "before": "掌背冷灰由腕骨漫至掌根，出现血点；裂灯新增一道从原裂口爬至灯肩的细纹并持续失温，仅勉强稳定",
+        "after": "苏晚掌背血点被挤出暗红，裂灯灯肩新纹继续变长并扩裂，火苗缩成针尖大小，命灯进一步失温",
+        "evidence": "正文写明第二笔亮起时灯肩细纹外裂，最终裂纹比此前长出半指，火苗缩成针尖。"
+      },
+      {
+        "fact_id": "chapter-0096-f003",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_emotional_state",
+        "before": "在掌背失温和命灯受损下仍保持冷静、坚决，主动承担自己的程序回答并拒绝替他人承受后果",
+        "after": "苏晚在命灯进一步失温和护阵熄灭后仍保持自主、克制与坚决，继续独自持灯并拒绝他人代持或代答",
+        "evidence": "她说“我自己拿着”，并继续抱稳裂灯，不向邻里求助或让任何人替她作答。"
+      }
+    ],
+    "locations": [],
+    "factions": [
+      {
+        "fact_id": "chapter-0096-f004",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "information.current_procedural_finding",
+        "before": "正文再次确认提验文书没有具名接收，未具名接收不得被写成已成立落处；缺失的接收行须保留并追查原始交接提交方",
+        "after": "提验所依据的接收行缺失，命籍衙暂不得据此提人",
+        "evidence": "文书最下方明确落字：“提验所据缺接收行，暂不得据此提人。”"
+      },
+      {
+        "fact_id": "chapter-0096-f005",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "information.current_record_scope",
+        "before": "现场再次留下苏晚仅承认旧债与分期、未具名接收不得成立的公开回应；泥灯巷仍无具名接收回应",
+        "after": "苏晚独立分期记录显示：转运入账未见、具名接收未见、相关抵扣未见",
+        "evidence": "影页显出三行可复核记录：“转运入账：未见”“具名接收：未见”“相关抵扣：未见”。"
+      },
+      {
+        "fact_id": "chapter-0096-f006",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "information.current_request_state",
+        "before": "命籍衙提验申请仍未撤回，苏晚被列为疑似接收者并限期强制提验；申请继续留在州府外层复核",
+        "after": "提验文书因缺少接收行出现缺口，暂不得据此提人；拒交者随后被告知将失去阵火遮护",
+        "evidence": "文书在记录回应后从“疑接者苏晚”中间裂开，并落下“暂不得据此提人”；结尾新增“拒交者，失阵火遮护”。"
+      },
+      {
+        "fact_id": "chapter-0096-f007",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "timeline.chapter_event",
+        "before": "命籍衙以疑似接收为由将苏晚分期核验改为限期强制提验，提验未获具名接收支持并继续进入复核",
+        "after": "苏晚以自身旧债分期记录完成回应，证明无转运入账、无具名接收、无相关抵扣，提验依据出现缺口",
+        "evidence": "苏晚逐笔确认“每一笔都只还旧债”后，提验文书裂开并承认缺少接收行。"
+      }
+    ],
+    "artifacts": [],
+    "techniques": [],
+    "relationships": [
+      {
+        "fact_id": "chapter-0096-f008",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_autonomy_boundary",
+        "before": "母子继续严格分账：苏晚只承担并确认自己的旧债与分期，陆沉渊不替她接收或代答，也不把提验压力转给她或巷民",
+        "after": "母子在两地分别守住不牵连无辜的规则；苏晚独自完成分期回应，陆沉渊不碰灯、不替她作答，也未向住户添火",
+        "evidence": "陆沉渊伸手后被苏晚挡回，随后收回手且未添火；苏晚独自完成所有分期回应。"
+      },
+      {
+        "fact_id": "chapter-0096-f009",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_emotional_turn",
+        "before": "苏晚主动以共同守住的分账规则反问州府程序，拒绝用自己的旧债替他人或巷子补写接收关系",
+        "after": "苏晚以自身行动执行自主边界，与陆沉渊分别拒绝代持、代答和牵连住户命火",
+        "evidence": "苏晚拒绝邻里递火并坚持“我自己拿着”；陆沉渊退开、不触碰裂灯，也没有向任何住户要火。"
+      }
+    ],
+    "emotions": [],
+    "information": [],
+    "hooks": [
+      {
+        "fact_id": "chapter-0096-f010",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "hook.current_direction",
+        "before": "提验余字转向整条泥灯巷，要求期限前选择交人或共承拒交后果；原始交接提交方仍是具名接收核查方向",
+        "after": "提验文书缺口暂未闭合，新的明确压力是拒交者将失去护阵阵火遮护",
+        "evidence": "文书缺口持续悬置，结尾垂下新字：“拒交者，失阵火遮护。”"
+      }
+    ],
+    "timeline": [],
+    "physical_state": [
+      {
+        "fact_id": "chapter-0096-f011",
+        "asset_id": "state_ledger_mother_life_lamp_countdown",
+        "field_path": "state_ledger.current_visible_lamp_consequence",
+        "before": "裂灯原裂口旁新增一道细纹，灯火缩至薄弱微光并继续失温；苏晚旧债倒计时持续，未暂停",
+        "after": "裂灯新纹继续向上爬并扩裂，火苗缩成针尖大小，进一步失温且未被修复",
+        "evidence": "正文明确写出裂纹比刚才长出半指，微光被压在灯腹内，寒意顺着指骨上爬。"
+      },
+      {
+        "fact_id": "chapter-0096-f012",
+        "asset_id": "state_ledger_resident_lifefire_reserve",
+        "field_path": "state_ledger.current_transaction_debit",
+        "before": "本次离巷过程中仍为零调用、零扣减，所有泥灯保持在各自门内",
+        "after": "本次回应过程中仍为零调用、零扣减；没有一盏住户灯越过门槛，邻里递火被拒绝",
+        "evidence": "正文反复写明各家暖色停在门内，没有一盏灯越过门槛，苏晚拒绝“半盏灯火”。"
+      }
+    ],
+    "naming": []
+  }
+}

@@ -8,5 +8,7 @@
   "repair_direction": "重写与第24章高度雷同的结尾动作和感官落点；不得再复用苏晚一臂外送肘、陆沉渊吐灰后用袖包住、仇慎推回记录与锁链声这一组组合。统一官员姓名为仇慎。保持本章错误转运留档、停印和追缴压力等状态结果。",
   "provider": "codex",
   "model": "gpt-5.6-sol",
-  "status": "pending_window_re_review"
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-021-030.json",
+  "reviewed_release_edit_sha256": "4eac2e81ea111021d5807c7bd9d4c9ca1912416e31683d6caf7ce4805eb342aa"
 }

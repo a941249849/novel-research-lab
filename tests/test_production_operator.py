@@ -11,12 +11,49 @@ from nrl_production_operator import build_operator_status, describe_next_product
 
 
 class ProductionOperatorTests(unittest.TestCase):
+    def test_status_rejects_an_earlier_stale_window(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            registry = root / "system/production_runtime/chapter_registry.v0.20.json"
+            registry.parent.mkdir(parents=True)
+            reviews = root / "system/production_runtime/window_reviews"
+            reviews.mkdir(parents=True)
+            chapters = []
+            hashes = {}
+            for ordinal in range(1, 21):
+                chapter_id = f"chapter-{ordinal:04d}"
+                revision = root / f"{chapter_id}.md"
+                revision.write_text("字" * 3200, encoding="utf-8")
+                chapters.append({"chapter_id": chapter_id, "stage": "chapter_accepted", "artifacts": {"revision": str(revision.relative_to(root))}})
+                import hashlib
+                hashes[chapter_id] = hashlib.sha256(revision.read_bytes()).hexdigest()
+            registry.write_text(json.dumps({"chapters": chapters}), encoding="utf-8")
+            for start, end in ((1, 10), (11, 20)):
+                ids = [f"chapter-{number:04d}" for number in range(start, end + 1)]
+                payload = {"verdict": "ACCEPT", "chapter_ids": ids, "revision_hashes": {chapter_id: hashes[chapter_id] for chapter_id in ids}}
+                if start == 1:
+                    payload["revision_hashes"]["chapter-0001"] = "stale"
+                (reviews / f"window-{start:03d}-{end:03d}.json").write_text(json.dumps(payload), encoding="utf-8")
+            status = build_operator_status(registry, target=100)
+        self.assertEqual(status["blocking_window_review"], "001-010")
+        self.assertEqual(status["blocking_window_verdict"], "STALE")
+        self.assertIsNone(status["resume_command"])
+
     def test_next_action_is_derived_from_current_window(self):
         action = describe_next_production_action(
             {"accepted_contiguous": 30, "target_chapters": 100, "active_window": "031-040", "next_chapter": "chapter-0031", "resume_command": "produce"}
         )
         self.assertIn("031-040", action["label_zh"])
         self.assertIn("第 31 章", action["label_zh"])
+
+    def test_rejected_window_blocks_next_window_action(self):
+        action = describe_next_production_action({
+            "accepted_contiguous": 70,
+            "target_chapters": 100,
+            "blocking_window_review": "061-070",
+        })
+        self.assertIn("禁止推进", action["label_zh"])
+        self.assertIn("--start 61 --end 70", action["safe_command"])
 
     def test_status_exposes_one_resume_command(self):
         with tempfile.TemporaryDirectory() as tmp:

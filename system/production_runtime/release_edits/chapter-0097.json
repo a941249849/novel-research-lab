@@ -1,0 +1,13 @@
+{
+  "version": "0.25",
+  "chapter_id": "chapter-0097",
+  "source_revision": "system/production_runtime/chapters/chapter-0097/revision.md",
+  "source_sha256": "37a543af42a2a4b9c4cc8745bb33ef731767e2216308dea1317d7562cc6ee571",
+  "release_edit": "system/production_runtime/release_edits/chapter-0097.md",
+  "release_edit_sha256": "1c35cdf5ed79c5c5362c77ed407096dc564d9bab62e737b8af79928956823002",
+  "repair_direction": "隔离双场景，以逐户事实证言重构共同体选择和程序结果。",
+  "provider": "codex-gpt-5.6-sol",
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-091-100.json",
+  "reviewed_release_edit_sha256": "1c35cdf5ed79c5c5362c77ed407096dc564d9bab62e737b8af79928956823002"
+}

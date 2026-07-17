@@ -8,5 +8,7 @@
   "repair_direction": "修复执行令物理流转：拆令后槽口分别吐回三份加盖待核印的原始执行令，由三个具名持令人亲手领回保管；命籍衙只留拆令时刻、同位号记录和陆沉渊拒领共同令的刻录，槽口确认原纸被领回后才闭合。保持三令同位号、陆沉渊承担追踪、下一步进入领取前归属复核。删除任何生成元文本，并减少“没有…也没有…”排比。",
   "provider": "codex",
   "model": "gpt-5.6-sol",
-  "status": "pending_window_re_review"
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-051-060.json",
+  "reviewed_release_edit_sha256": "158e87a0be436db3e0af4a497aca56a3a0d9663f321bc51dc9bc893f752f3de5"
 }

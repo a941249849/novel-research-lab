@@ -7,5 +7,7 @@
   "release_edit_sha256": "a5d407f26e3c5905b6865c4b77c27e2e69aaccd1489e05bc045ed37d192d2745",
   "repair_direction": "补明州府影印将三户所持户灯强制复位到巷口回灯架，消除屋内持灯与架上封灯的空间断层",
   "provider": "codex-deterministic-editor",
-  "status": "pending_window_re_review"
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-031-040.json",
+  "reviewed_release_edit_sha256": "a5d407f26e3c5905b6865c4b77c27e2e69aaccd1489e05bc045ed37d192d2745"
 }

@@ -1,0 +1,246 @@
+{
+  "chapter_id": "chapter-0090",
+  "draft_sha256": "5b6aab5e4b1f37317b3e6c9d1969519417f2cec98320f03582d9af13b54aae00",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "fact-0090-001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_procedural_status",
+        "before": "被留在州府外层候验，分项记录尚待最终裁定",
+        "after": "到案记录正式不得并入苏晚独立追缴，陆沉渊继续带候验锁纹留在外层复核入口",
+        "evidence": "命籍衙落字确认陆沉渊到案记录不得并入苏晚独立追缴；闻照微随后说明外层复核已记并要求其带候验锁纹进入下一层复核。"
+      },
+      {
+        "fact_id": "fact-0090-002",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_physical_state",
+        "before": "右臂麻木，掌心旧口已受伤",
+        "after": "右臂麻意加重，掌心血迹沿石沿拖出暗线，候验锁纹持续收紧",
+        "evidence": "正文写明右臂麻意骤然加重、掌心的血顺着石沿拖出一线暗色，候验锁纹没有松开。"
+      },
+      {
+        "fact_id": "fact-0090-003",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_choice_state",
+        "before": "可继续候验或交出残印换退路",
+        "after": "未交出残印，停止探查黑槽并继续保留候验状态",
+        "evidence": "陆沉渊没有立刻捻银灰，也没有再碰黑槽，最终仍将染血的手背翻到外侧让封布贴在掌下。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "fact-0090-004",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_physical_state",
+        "before": "冷灰沿腕侧向肩臂蔓延，裂灯缩至豆大但未熄灭",
+        "after": "冷灰继续压在腕骨与手背，裂灯被她按住并移到自己脚边，仍未熄灭",
+        "evidence": "正文写明冷灰沿她手背漫过腕骨；她按住裂灯并把灯往自己脚边移，微光只照住自己的旧字。"
+      },
+      {
+        "fact_id": "fact-0090-005",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_public_statement",
+        "before": "只确认自己的旧债，拒绝承认外来附加项",
+        "after": "明确旧债与分期仍由自己承担，不以陆沉渊到案或泥灯巷灯火抵偿",
+        "evidence": "苏晚说“旧债还在，分期也还在。我不拿他的到案抵”，并补充“不拿巷里任何一盏灯抵”。"
+      },
+      {
+        "fact_id": "fact-0090-006",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_procedural_boundary",
+        "before": "未替陆沉渊承接候验记录",
+        "after": "继续拒绝替陆沉渊作认定，守住旧债痕边界并要求其不要代她按印",
+        "evidence": "苏晚说“别替我按”，并将鞋跟抵住自己那行旧痕的边缘，没有跨过旧债痕。"
+      },
+      {
+        "fact_id": "fact-0090-007",
+        "asset_id": "npc_prefecture_shadow_envoy",
+        "field_path": "npc.current_permission_state",
+        "before": "可隔开残印旧影但影手逐渐变薄",
+        "after": "牵引银灰印屑后影手进一步变淡，仍保有外层复核与交接申请权限",
+        "evidence": "闻照微牵引印屑时影手比方才淡了一层；她随后宣布外层复核已记并留下原始转运交接申请口子。"
+      },
+      {
+        "fact_id": "fact-0090-008",
+        "asset_id": "npc_prefecture_shadow_envoy",
+        "field_path": "npc.current_recovery_strategy",
+        "before": "要求陆沉渊继续候验或交印换退路",
+        "after": "明确给出“交出残印退回贫城”或“带候验锁纹进入下一层复核”两项路径",
+        "evidence": "闻照微直接提出交出残印退回贫城，或带着候验锁纹进下一层复核。"
+      }
+    ],
+    "locations": [
+      {
+        "fact_id": "fact-0090-009",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_visible_condition",
+        "before": "护阵白裂受损加剧，灯火齐暗并出现银灰火屑",
+        "after": "阵砖白裂因校时台震动再次崩开一丝，灯火仍暗，巷中无人越过冷线",
+        "evidence": "正文写明阵砖白裂又崩开一丝，几盏灯仍旧暗着；随行者都站在冷线之外。"
+      }
+    ],
+    "factions": [
+      {
+        "fact_id": "fact-0090-010",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_enforcement_record",
+        "before": "按分项记录活体校时与苏晚独立追缴",
+        "after": "正式撤回本轮合并追缴，并禁止将陆沉渊到案记录或泥灯巷列为承接方",
+        "evidence": "命籍衙落字确认“撤回本轮合并追缴”“陆沉渊到案记录，不得并入苏晚独立追缴”“泥灯巷，不得列为连带承接”。"
+      },
+      {
+        "fact_id": "fact-0090-011",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "information.current_record_scope",
+        "before": "已确认活体校时稳定、苏晚原始债印未响应且银灰来自牵引痕迹",
+        "after": "第三次复验将三项事实正式分别落字：活体校时稳定、原始债印未响应自动并入、余屑受残印回收牵引",
+        "evidence": "台侧连续落下命籍衙三行冷字，逐项记录三项复验结果。"
+      }
+    ],
+    "artifacts": [
+      {
+        "fact_id": "fact-0090-012",
+        "asset_id": "artifact_prefecture_transit_registry_seal",
+        "field_path": "artifact.current_visible_trace",
+        "before": "银灰印屑悬在两列记录之间，未落入任何一列",
+        "after": "银灰印屑被牵引偏移并最终停在黑槽交接缺口边缘，仍未落入任一记录",
+        "evidence": "银灰印屑先被细线拽偏，在石台留下方正浅痕；最终从血痕旁掠过，停在黑槽缺口边缘。"
+      },
+      {
+        "fact_id": "fact-0090-013",
+        "asset_id": "artifact_prefecture_transit_registry_seal",
+        "field_path": "artifact.current_holder",
+        "before": "由陆沉渊封布持有，封布与封口未打开",
+        "after": "仍由陆沉渊以染血手掌压住封布持有，未交出残印",
+        "evidence": "闻照微的影手始终停在封布外；陆沉渊最后将手收回原处，令封布仍贴在掌下。"
+      },
+      {
+        "fact_id": "fact-0090-014",
+        "asset_id": "artifact_prefecture_transit_registry_seal",
+        "field_path": "artifact.current_effect",
+        "before": "封布下残印持续震动并产生铁锈冷香",
+        "after": "残印在牵引下与银灰印屑同步震动，冷香加重，印屑停于交接缺口等待核验",
+        "evidence": "牵引细线绷紧时封布内残印猛跳、铁锈冷香陡浓；结尾残印再次震动，印屑停在缺口边缘。"
+      }
+    ],
+    "techniques": [],
+    "relationships": [
+      {
+        "fact_id": "fact-0090-015",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_autonomy_boundary",
+        "before": "母子分别承担候验与追缴，双方不替对方添加或承接记录",
+        "after": "母子以不替对方作认定的方式维持分账，陆沉渊保留候验，苏晚保留旧债与分期",
+        "evidence": "苏晚拒绝以陆沉渊到案抵债并要求他不要替她按；陆沉渊停止探查并继续候验。"
+      },
+      {
+        "fact_id": "fact-0090-016",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_collective_choice",
+        "before": "留下者只重述保管路径与站位，不越线代证",
+        "after": "留下者继续站在冷线外，不越线、不替苏晚接话，泥灯巷不承担连带承接",
+        "evidence": "正文写明留下的人都站在冷线之外，没人越线，也没人替苏晚接话；冷字随后排除泥灯巷连带承接。"
+      }
+    ],
+    "emotions": [
+      {
+        "fact_id": "fact-0090-017",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_emotional_turn",
+        "before": "双方在分隔两端继续承受各自代价",
+        "after": "双方首次以各自承受代价、不互相遮掩的方式确认分账结果",
+        "evidence": "苏晚把本属陆沉渊的代价还给他自己，陆沉渊回应“还能候”；两人影子被裂灯隔开而未互相代偿。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "fact-0090-018",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_verified_result",
+        "before": "活体校时与苏晚旧债分离，自动添加项停留待复核",
+        "after": "三项复验结果正式确认并据此计入局部错账：活体校时稳定、原始债印未响应自动并入、余屑受残印牵引",
+        "evidence": "命籍衙三行冷字落定，随后校时台切断原本拖向泥灯巷的暗灰线。"
+      },
+      {
+        "fact_id": "fact-0090-019",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "naming.current_record_labels",
+        "before": "苏晚保留旧债印痕，陆沉渊一侧形成候验冷圈，银灰项悬空待复核",
+        "after": "两列记录正式分开沉入外层复核槽，苏晚旧债与陆沉渊到案记录各自保留",
+        "evidence": "苏晚名字先沉入槽口，陆沉渊到案记录随后沉入；两列之间未再合并。"
+      },
+      {
+        "fact_id": "fact-0090-020",
+        "asset_id": "state_ledger_public_reputation",
+        "field_path": "state_ledger.current_public_rule",
+        "before": "追时响应须先核验输入方向，不能仅凭同步接触认定持有人为改动者",
+        "after": "现场公开形成母子债务与泥灯巷承接责任必须分列核验的规则",
+        "evidence": "命籍衙明确撤回合并追缴，禁止陆沉渊记录并入苏晚追缴，也禁止泥灯巷列为连带承接。"
+      },
+      {
+        "fact_id": "fact-0090-021",
+        "asset_id": "state_ledger_faction_pressure",
+        "field_path": "state_ledger.faction_pressure",
+        "before": "压力拆为继续候验或交印换退路，母子是否合并待裁定",
+        "after": "合并压力撤回，但陆沉渊继续受候验锁纹限制，闻照微仍追收残印",
+        "evidence": "合并追缴被撤回；候验锁纹反而压得更深，闻照微提出交印退回或带锁纹进入下一层复核。"
+      },
+      {
+        "fact_id": "fact-0090-022",
+        "asset_id": "state_ledger_map_unlock_status",
+        "field_path": "state_ledger.current_boundary_status",
+        "before": "外层校时台获得有限进入权限，州府内部及更深层未开放",
+        "after": "州府外层复核入口有限解锁，并开放原始转运交接申请缺口；后续深层仍不可见",
+        "evidence": "闻照微宣布外层复核已记并称原始转运交接申请留了口子；黑槽缺口内部只有更深黑暗。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "fact-0090-023",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "hook.current_unresolved_scope",
+        "before": "悬空银灰印屑作为待验差异，最终裁定等待两端记录",
+        "after": "银灰印屑停在尚未嵌入印的交接缺口边缘，等待不属于母子的下一道核验声",
+        "evidence": "槽底浮出原本应嵌入一枚印却空着的缺口；末尾印屑停在缺口边缘，仿佛等待他们之外的核验声。"
+      },
+      {
+        "fact_id": "fact-0090-024",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "hook.current_direction",
+        "before": "压力收束为继续候验或交印换退路",
+        "after": "下一层复核入口已出现，但是否交印或携候验锁纹进入仍未决",
+        "evidence": "闻照微给出两条路径后，陆沉渊没有立即选择，继续压住封布，印屑也未完成嵌入。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "fact-0090-025",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "timeline.chapter_event",
+        "before": "期限耗尽后留在州府外层候验，苏晚独立追缴",
+        "after": "第三次复验完成局部分账裁定；陆沉渊未交残印并继续候验，苏晚旧债与分期不变",
+        "evidence": "三项复验结果落字并撤回合并追缴；陆沉渊回答“还能候”，苏晚确认旧债和分期仍在。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "fact-0090-026",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_lamp_state",
+        "before": "裂灯缩至豆大但未熄灭",
+        "after": "裂灯被按稳并移至苏晚脚边，微光只照住她的旧债记录",
+        "evidence": "苏晚按住灯罩，随后把灯往自己脚边移了些，微光只照住那一行旧字。"
+      },
+      {
+        "fact_id": "fact-0090-027",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_injury_state",
+        "before": "掌心旧口被封布磨开并有少量出血",
+        "after": "血迹沿石沿拖出暗线，伤口与候验锁纹收紧共同造成持续疼痛",
+        "evidence": "正文写明掌心血顺着石沿拖出一线暗色，候验锁纹随呼吸收紧并令手臂如浸冰水。"
+      }
+    ],
+    "naming": []
+  }
+}

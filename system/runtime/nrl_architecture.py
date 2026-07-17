@@ -152,8 +152,14 @@ def build_architecture_reconciliation(
 ) -> dict[str, Any]:
     system_status = build_system_status(state, adapters)
     pipeline = pipeline_status or build_pipeline_status(state, adapters)
-    production_action = describe_next_production_action(
-        build_operator_status(runtime_path("system/production_runtime/chapter_registry.v0.20.json"))
+    operator = build_operator_status(
+        runtime_path("system/production_runtime/chapter_registry.v0.20.json")
+    )
+    production_action = describe_next_production_action(operator)
+    production_ready = (
+        system_status["production_ready"]
+        and operator["valid"]
+        and not operator.get("blocking_window_review")
     )
     return {
         "version": VERSION,
@@ -238,7 +244,12 @@ def build_architecture_reconciliation(
             "content_generation_allowed": system_status["production_ready"],
             "hermes_execution_status": system_status["hermes_execution_status"],
             "deep_read_status": system_status["verifiable_deep_reading"]["status"],
-            "production_ready": system_status["production_ready"],
+            "production_ready": production_ready,
+            "release_ready": operator["release_ready"],
+            "blocking_window_review": operator.get("blocking_window_review"),
+            "blocking_window_verdict": operator.get("blocking_window_verdict"),
+            "accepted_contiguous": operator["accepted_contiguous"],
+            "accepted_release_ready_count": operator["accepted_release_ready_count"],
         },
         "next_architecture_action": {
             **production_action,

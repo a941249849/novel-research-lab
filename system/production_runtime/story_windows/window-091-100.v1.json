@@ -1,0 +1,298 @@
+{
+  "version": "1.0",
+  "project": "《借天改命账》",
+  "volume": 1,
+  "window": {
+    "start": 91,
+    "end": 100,
+    "name": "贫城拒提"
+  },
+  "status": "production_ready",
+  "start_snapshot": [
+    "陆沉渊已完成首轮活体校时，半寿暴露增加十个百分点且不得因举证成功下降；他伤势持续加重，并被候验锁纹限制在州府外层复核入口。",
+    "苏晚的旧债、合法分期与命灯裂损保持独立，未并入陆沉渊的到案记录，也未转嫁给泥灯巷住户。",
+    "州府外层程序已记录一项局部错账：陆沉渊到案记录不得并入苏晚追缴，泥灯巷不得作为连带承接方。",
+    "州府转运残印仍由陆沉渊隔着封布持有；它只能证明一段命火曾被转运，不能证明完整债链、获利者或古债真相。",
+    "闻照微保有州府边缘评估与残印回收义务，已提出“交印退出”或“携候验锁纹继续复核”的选择。",
+    "州府复核入口仅开放外层候验和原始转运交接申请缺口，州府内部、转运深层与完整地图仍未开放。",
+    "泥灯巷送行见证已经收窄并允许撤回；住户命火仍为零调用，护阵永久缺口及延伸白裂继续存在。"
+  ],
+  "end_target": [
+    "原始转运交接复核确认：残印能够证明一段命火曾被送出，却没有与苏晚或泥灯巷相匹配的具名接收响应；结论不延伸到完整债链、获利者或古债真相。",
+    "命籍衙以“疑似接收方”为由发出的苏晚提验申请被撤回，州府外层账目补正为“转运未见本地具名接收，不得据此提人或向泥灯巷重复征收”。",
+    "苏晚旧债、合法分期与命灯裂损继续独立存在；本次补正不替她免债，也不修复命灯。",
+    "泥灯巷在护阵无法安全启用、住户命火零调用的条件下公开拒绝交出苏晚，贫城由零散互保转为执行“无具名落处、不交人”的共同规则。",
+    "陆沉渊未交出残印，也未把复核代价转给母亲或住户；伤势与候验锁纹加重，仍被留在州府外层承担后续原始交接核验。",
+    "闻照微以放弃立即回收换取争议证物共持，保住边缘评估权限，却因提验申请被证据反打而受到更严格的权限复核。",
+    "第一卷完成首笔可执行的局部改账与贫城拒绝交人；下一层压力转为追索残印所对应的原始交接提交方，而州府深层仍未向陆沉渊开放。"
+  ],
+  "chapters": [
+    {
+      "chapter_id": "chapter-0091",
+      "working_title": "锁纹入缺",
+      "event": "陆沉渊拒绝以交印换取退路，正式选择启动原始转运交接复核；交接缺口据此接纳他的候验锁纹，却不开放州府深层。",
+      "scene_anchor": "州府外层复核入口已经浮出银灰印屑的交接缺口前。",
+      "conflict": "闻照微要求先解除残印持有，陆沉渊则要求把“核验”与“回收”继续分列；若不作选择，他将以逾候处理并失去申辩入口。",
+      "character_choice": "陆沉渊选择继续候验，只允许程序核验封布外的残印响应，不转移持有权，也不追加苏晚或巷民记录。",
+      "irreversible_change": "候验锁纹转为原始交接复核锁纹，陆沉渊失去自行退出外层入口的资格；原始交接申请被正式立项，但地图边界没有进一步开放。",
+      "emotional_turn": "他不再把留下视为替母亲扛债，而是明确承认这是自己持印所生的责任。",
+      "hook_out": "锁纹闭合后，交接缺口没有索要残印全貌，只吐出一行冷字：先验送出端，再候接收响应。",
+      "expected_state_deltas": [
+        "character_lu_chenyuan.current_choice_state：由普通候验转为主动申请原始交接复核，继续拒绝交印。",
+        "state_ledger_map_unlock_status.current_boundary_status：外层原始交接申请进入可执行状态，州府深层仍保持锁定。",
+        "state_ledger_protagonist_strain.current_visible_condition：候验锁纹压迫右臂旧伤与掌心裂口，行动能力继续下降。"
+      ],
+      "required_asset_ids": [
+        "character_lu_chenyuan",
+        "artifact_prefecture_transit_registry_seal",
+        "npc_prefecture_shadow_envoy",
+        "state_ledger_map_unlock_status",
+        "state_ledger_protagonist_strain"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0092",
+      "working_title": "封布共持",
+      "event": "交接缺口要求残印进入核验位，陆沉渊以染血手掌隔着封布压住残印，使程序形成不移交所有权的临时共持。",
+      "scene_anchor": "州府外层交接缺口的窄石沿与封布边缘。",
+      "conflict": "松手即可由州府单独收走残印，持续按压则锁纹会把核验震力全部传回陆沉渊伤处；闻照微拒绝承诺核验后立即归还。",
+      "character_choice": "陆沉渊不松手，要求闻照微以自己的边缘权限承担另一侧共持，使任何回收动作都留下程序痕迹。",
+      "irreversible_change": "残印从陆沉渊单独保管转为外层程序可核验但不可单方取走的争议共持状态；陆沉渊掌心伤口重新崩开，左腿彻底失去久站能力。",
+      "emotional_turn": "闻照微第一次实际承担了未能立即回收残印的权限风险，双方的议价从口头条件变成彼此受约束的共持。",
+      "hook_out": "封布刚在缺口中稳定，残印便放出铁锈冷香；石沿只亮起送出端的半圈旧光，接收端始终黑着。",
+      "expected_state_deltas": [
+        "artifact_prefecture_transit_registry_seal.current_holder：形成陆沉渊与外层程序的争议共持，未完成移交。",
+        "npc_prefecture_shadow_envoy.npc.current_permission_state：边缘权限被写入共持责任，不能无痕强收残印。",
+        "state_ledger_protagonist_strain.bone_fissure_severity：久站与震力使胸口旧裂、左腿失稳进一步恶化。"
+      ],
+      "required_asset_ids": [
+        "character_lu_chenyuan",
+        "artifact_prefecture_transit_registry_seal",
+        "npc_prefecture_shadow_envoy",
+        "state_ledger_protagonist_strain"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0093",
+      "working_title": "有送无收",
+      "event": "外层交接程序重放残印表层可见的转运响应：送出端连续亮起，接收端却无法从苏晚独立追缴或泥灯巷记录中取得具名回应。",
+      "scene_anchor": "共持残印下方分成送出、接收两侧的外层交接石沿。",
+      "conflict": "命籍衙主张只要送出端成立，就可将苏晚或泥灯巷列为待查接收方；陆沉渊当日已失去继续辨痕能力，不能靠识账术补足结论。",
+      "character_choice": "陆沉渊停止运术，只要求程序分别触碰既有的苏晚独立追缴列与泥灯巷非承接列，以缺失响应本身完成复验。",
+      "irreversible_change": "形成一项新的可复核事实：残印证明转运曾发生，但现有证据不能证明苏晚或泥灯巷接收；两者不得仅因送出端成立而自动成为接收方。",
+      "emotional_turn": "陆沉渊接受自己不能读出答案，转而让此前争得的分账边界替母亲说话。",
+      "hook_out": "接收端第三次熄灭后，命籍衙没有撤回申请，反而把“未能排除接收”改写成一纸苏晚提验请求。",
+      "expected_state_deltas": [
+        "state_ledger_revealed_account_errors.information.current_record_scope：新增“送出响应存在、苏晚与泥灯巷无具名接收响应”的复核事实。",
+        "artifact_prefecture_transit_registry_seal.artifact.current_effect：表层只显送出端旧光，铁锈冷香与银灰印屑增强追踪风险。",
+        "character_lu_chenyuan.character.current_technique_use：继续停用识账术，不越界追读来源或债链。",
+        "state_ledger_unresolved_mysteries.current_inference_limit：残印为何贴近苏晚追缴仍未获得解释。"
+      ],
+      "required_asset_ids": [
+        "artifact_prefecture_transit_registry_seal",
+        "character_lu_chenyuan",
+        "faction_life_registry_office",
+        "npc_su_wan",
+        "faction_mudlamp_lane",
+        "state_ledger_revealed_account_errors",
+        "state_ledger_unresolved_mysteries"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0094",
+      "working_title": "影权限押",
+      "event": "闻照微被迫在“立即回收异物”与“保全争议证据”之间作出权限选择，将残印标为待补接收响应的争议转运物。",
+      "scene_anchor": "州府外层复核入口中逐渐变淡的影手与共持锁纹之间。",
+      "conflict": "若闻照微强行回收，残印会脱离刚形成的复核链；若继续共持，她的边缘评估权限将因回收迟延受到复查。",
+      "character_choice": "闻照微选择保全复核链，暂不夺印，但保留核验完成后的独立回收义务。",
+      "irreversible_change": "闻照微失去以普通回收名义立即带走残印的通道，残印后续处置必须先结清本轮接收响应争议；她本人被绑定为权限责任者。",
+      "emotional_turn": "陆沉渊看见她并非无代价掌控程序，敌对关系中出现一条可利用却不能信任的责任缝隙。",
+      "hook_out": "闻照微的影手淡去一层时，提验请求已经越过入口，朝贫城苏晚的裂灯投下第一道失温影字。",
+      "expected_state_deltas": [
+        "npc_prefecture_shadow_envoy.npc.current_permission_state：即时回收权限暂缓，新增争议证据保全责任。",
+        "artifact_prefecture_transit_registry_seal.lifecycle_state：维持 active 与共持，不转为州府单独持有。",
+        "state_ledger_faction_pressure：以闻照微回收迟延和命籍衙提验申请为来源，程序压力同步上升。"
+      ],
+      "required_asset_ids": [
+        "npc_prefecture_shadow_envoy",
+        "artifact_prefecture_transit_registry_seal",
+        "character_lu_chenyuan",
+        "state_ledger_faction_pressure"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0095",
+      "working_title": "冷字提母",
+      "event": "命籍衙以“疑似接收转运命火”为由，将苏晚的下一次分期核验改为强制提验，并要求泥灯巷在期限内交人。",
+      "scene_anchor": "泥灯巷苏晚脚边持续失温的裂灯前。",
+      "conflict": "提验请求试图绕开已经成立的独立追缴分账，把无法确认的接收关系变成先交人后核验；若无人回应，裂灯将持续承受影字冷压。",
+      "character_choice": "苏晚拒绝在提验请求上留下接收确认，只承认自己的原始旧债与合法分期，并要求命籍衙先出示具名接收落处。",
+      "irreversible_change": "命籍衙将苏晚列入限期提验对象，母债程序压力从独立分期升级为可能被带离贫城核验；她的掌背失温蔓延，裂灯再添一道可见细纹。",
+      "emotional_turn": "苏晚不再只是拒绝儿子代债，而是主动用他们共同守住的分账规则反问州府程序。",
+      "hook_out": "影字索不到她的接收确认，便转向整条泥灯巷，要求巷民在期限前回答：交人，还是共同承担拒交后果。",
+      "expected_state_deltas": [
+        "faction_life_registry_office：发出针对苏晚的限期提验申请，但尚未获得接收事实支持。",
+        "npc_su_wan.npc.current_public_statement：只承认旧债与分期，拒绝承认未具名的转运接收。",
+        "state_ledger_mother_life_lamp_countdown.current_visible_lamp_consequence：裂灯新增细纹并继续失温，旧债倒计时不暂停。",
+        "state_ledger_faction_pressure：以命籍衙提验申请为既有来源，对苏晚与泥灯巷的压力提高。"
+      ],
+      "required_asset_ids": [
+        "faction_life_registry_office",
+        "npc_su_wan",
+        "bond_mother_su_wan",
+        "faction_mudlamp_lane",
+        "state_ledger_mother_life_lamp_countdown",
+        "state_ledger_faction_pressure"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0096",
+      "working_title": "旧债不收火",
+      "event": "苏晚主动让自己的裂灯回应现存分期记录，证明每次合法扣减都记作偿债，记录中从未出现转运命火的接收或抵扣。",
+      "scene_anchor": "泥灯巷内只照住苏晚独立旧债列的裂灯微光。",
+      "conflict": "点亮分期回应会加速裂灯失温，却能检验命籍衙所谓“疑似接收”；邻里提出代她扶灯，被她拒绝以免住户命火被牵入。",
+      "character_choice": "苏晚独自按稳灯匣，只开放既有分期记录的可见回应，不接受邻里递火，也不让任何人替她作答。",
+      "irreversible_change": "苏晚付出一段可见的命灯冷损，换得“旧债记录无转运入账、无接收抵扣”的本地事实；住户命火继续保持零调用。",
+      "emotional_turn": "她用自身行动证明自主边界不是把陆沉渊推开，而是与他在两地分别守住同一条不牵连无辜的规则。",
+      "hook_out": "裂灯回应沉入影字后，提验请求第一次出现缺口；然而巷口护阵恰在此时彻底暗下，拒交者将失去阵火遮护。",
+      "expected_state_deltas": [
+        "state_ledger_revealed_account_errors.information.current_record_scope：新增苏晚分期记录无转运接收、无相关抵扣的可复核事实。",
+        "state_ledger_mother_life_lamp_countdown.current_visible_lamp_consequence：为完成回应而进一步失温，裂纹不愈。",
+        "state_ledger_resident_lifefire_reserve.current_transaction_debit：仍为零调用、零扣减。",
+        "bond_mother_su_wan.current_autonomy_boundary：母子在两地分别举证且不互相代答，边界得到主动执行。"
+      ],
+      "required_asset_ids": [
+        "npc_su_wan",
+        "bond_mother_su_wan",
+        "state_ledger_mother_life_lamp_countdown",
+        "state_ledger_resident_lifefire_reserve",
+        "state_ledger_revealed_account_errors",
+        "faction_life_registry_office"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0097",
+      "working_title": "暗阵拒交",
+      "event": "泥灯巷护阵跌破安全线后依约熄灭；部分住户关门退出，留下者仍在不借灯、不启阵的条件下向提验影字作出拒交答复。",
+      "scene_anchor": "白裂贯到巷口、所有泥灯仍留在各户门内的贫城边界。",
+      "conflict": "没有护阵遮挡，公开拒交会直接吸引命籍衙注意；若交出苏晚，则等于默认巷民可以因无具名落处的转运记录被逐户提验。",
+      "character_choice": "巷民允许恐惧者退出，不追记欠火；留下者只依据公开分账规则拒绝交人，并拒绝调用住户命火补阵。",
+      "irreversible_change": "泥灯巷首次形成可执行的共同拒交：无具名接收落处，便不交出苏晚；护阵进入安全线下的停用状态，贫城失去一层现实保护。",
+      "emotional_turn": "共同体对陆沉渊的信任不再表现为替他作证，而是即使他不在场，也守住不把任何住户先交出去的边界。",
+      "hook_out": "拒交答复抵达州府入口时，交接缺口将它与苏晚的无入账回应叠在一起，原本指向她的接收栏突然反照出一段州府自填灰痕。",
+      "expected_state_deltas": [
+        "faction_mudlamp_lane.faction.current_operational_rule：形成“无具名接收落处、不交人”的共同执行规则，退出权继续保留。",
+        "bond_mudlamp_lane_trust.current_trust_state：信任推进为非代证式拒交，未成为主角可调用资源。",
+        "state_ledger_mudlamp_array_integrity.current_visible_integrity_consequence：护阵跌破安全线并停用，不能以住户命火强启。",
+        "state_ledger_resident_lifefire_reserve.current_transaction_debit：拒交过程中维持零扣减。",
+        "state_ledger_faction_pressure：公开拒交提升命籍衙对泥灯巷的注意与后续送审压力。"
+      ],
+      "required_asset_ids": [
+        "faction_mudlamp_lane",
+        "bond_mudlamp_lane_trust",
+        "npc_su_wan",
+        "state_ledger_mudlamp_array_integrity",
+        "state_ledger_resident_lifefire_reserve",
+        "state_ledger_faction_pressure",
+        "faction_life_registry_office"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0098",
+      "working_title": "接收栏反照",
+      "event": "州府外层程序把残印送出响应、苏晚无入账回应与泥灯巷拒交答复并列，确认提验申请中的本地接收栏来自州府牵引后的自动填入。",
+      "scene_anchor": "州府外层交接缺口前并列亮起的送出端、接收栏与拒交答复。",
+      "conflict": "命籍衙坚持自动填入只是临时待查，不算错征；陆沉渊必须在不使用识账术、不追溯完整债链的前提下证明它已产生实际提人后果。",
+      "character_choice": "陆沉渊放弃追问残印为何贴近苏晚，只要求程序核对时间顺序：先有州府自动填栏，后有提验与交人要求，本地从未给出接收响应。",
+      "irreversible_change": "第二项局部错账达到可裁定标准：无具名接收响应的州府自动填栏被用于提人，已构成程序性错征；疑点从“苏晚是否接收”改列为“原始接收落处缺失”。",
+      "emotional_turn": "陆沉渊克制住寻找全部真相的冲动，第一次把有限证据完整转化为能保护具体人的结论。",
+      "hook_out": "错征记录成立的一刻，外层程序要求有人承担公开更正的暴露代价；闻照微可以撤回投影，陆沉渊也可以把更正封存在入口。",
+      "expected_state_deltas": [
+        "state_ledger_revealed_account_errors：原子记录新增“自动填入本地接收栏并据此提人”的已证实错账。",
+        "state_ledger_unresolved_mysteries：既有疑点重分类为原始接收落处缺失，未生成完整债链答案。",
+        "state_ledger_faction_pressure：命籍衙因已揭示错误承受撤回提验的程序压力。",
+        "character_lu_chenyuan.character.current_technique_use：继续不施展识账术，结论完全来自可见记录顺序。"
+      ],
+      "required_asset_ids": [
+        "character_lu_chenyuan",
+        "artifact_prefecture_transit_registry_seal",
+        "faction_life_registry_office",
+        "npc_prefecture_shadow_envoy",
+        "state_ledger_revealed_account_errors",
+        "state_ledger_unresolved_mysteries",
+        "state_ledger_faction_pressure"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0099",
+      "working_title": "以名担改",
+      "event": "陆沉渊授权将已证实的程序错误与自己的到案姓名一并公开送回贫城，使泥灯巷的拒交从口头答复转为有据可守的公开立场。",
+      "scene_anchor": "州府外层复核槽与贫城提验影字之间的公开回传通道。",
+      "conflict": "封存更正可以减少当下关注，却会让苏晚继续处于限期提验；公开更正则会让陆沉渊与残印的关联更明确，闻照微也会失去悄然撤回投影的余地。",
+      "character_choice": "陆沉渊只公开自己承担的到案姓名、自动填栏错误及不得据此提人的结论，不公开巷民名单、苏晚私人寿数或残印来源。",
+      "irreversible_change": "贫城公开认知从“泥灯巷抗命藏人”改为“州府接收栏未具名仍先行提人”；陆沉渊的持印责任与伤身到案被永久留在公开更正记录中。",
+      "emotional_turn": "苏晚从回传影字里确认儿子没有替她认债，也没有藏在她的拒绝之后；母子关系由彼此分账推进为彼此公开承担各自责任。",
+      "hook_out": "公开回传完成后，泥灯巷再次答复“不交人”；外层复核槽随即落下最终裁定位，要求命籍衙当场决定撤回提验还是否认自己的填栏来源。",
+      "expected_state_deltas": [
+        "state_ledger_public_reputation：原子变更为公众知晓提验依据存在自动填栏错误，并与陆沉渊公开承担的到案记录绑定。",
+        "state_ledger_half_life_registry_exposure：公开更正不会降低既有暴露，并使残印持有人更易被后续锁定。",
+        "bond_mother_su_wan.current_emotional_turn：母子确认各自公开承担、互不代认的关系。",
+        "faction_mudlamp_lane.faction.current_boundary_terms：贫城依据公开更正再次确认拒绝交出苏晚。"
+      ],
+      "required_asset_ids": [
+        "character_lu_chenyuan",
+        "npc_su_wan",
+        "bond_mother_su_wan",
+        "faction_mudlamp_lane",
+        "state_ledger_public_reputation",
+        "state_ledger_half_life_registry_exposure",
+        "state_ledger_revealed_account_errors"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0100",
+      "working_title": "贫城不交人",
+      "event": "州府外层完成补正裁定，删除自动填入的泥灯巷接收栏，撤回苏晚提验申请，并确认本段转运不得作为向贫城重复征收或提人的依据。",
+      "scene_anchor": "州府外层复核槽落定的补正栏，与泥灯巷已经熄暗的巷口同时回应。",
+      "conflict": "命籍衙试图以苏晚旧债仍存为由保留提验，闻照微则要求补正后立即收走残印；陆沉渊必须守住“旧债不等于转运接收、补正不等于交印”的两处分列。",
+      "character_choice": "陆沉渊接受苏晚旧债与分期继续，不索取无证免债；同时拒绝把残印交付写成撤回错征的交换条件。泥灯巷在裁定落字前维持拒交。",
+      "irreversible_change": "第一笔可执行的局部改账完成：转运记录改为“本地未见具名接收”，苏晚提验与对泥灯巷的本轮重复征收撤回；贫城“不具名、不交人”的共同规则经受实际执行。陆沉渊仍与残印共持并被留在入口，下一轮核验转向原始交接提交方。",
+      "emotional_turn": "母子与泥灯巷没有获得无代价解脱，却第一次让州府程序承认：贫城的人不能因为一栏空缺而先被带走。",
+      "hook_out": "补正记录沉入交接缺口后，州府深层仍未开门，只从黑暗中退回一项更窄也更危险的要求：下一次复核，必须回答是谁把这段转运送入原始交接。",
+      "expected_state_deltas": [
+        "state_ledger_revealed_account_errors：已证实错账完成可执行补正，删除泥灯巷自动接收栏并撤回据此产生的提验。",
+        "faction_life_registry_office：撤回本轮苏晚提验与针对泥灯巷的重复征收申请，苏晚原始旧债仍独立有效。",
+        "state_ledger_public_reputation：公开规则固化为“无具名接收落处，不得先提人或重复征收”。",
+        "faction_mudlamp_lane：完成一次不调用住户命火、不牺牲退出者的集体拒交。",
+        "state_ledger_mother_life_lamp_countdown.current_countdown_state：旧债、合法分期与裂灯倒计时继续，不因补正自动治愈或取消。",
+        "artifact_prefecture_transit_registry_seal.current_holder：残印仍处争议共持，未被闻照微回收。",
+        "state_ledger_map_unlock_status.current_boundary_status：原始交接复核进入下一阶段，州府深层与完整地图仍锁定。",
+        "state_ledger_faction_pressure：本轮提验压力解除，但压力转向残印原始交接提交方核验及闻照微权限复查。"
+      ],
+      "required_asset_ids": [
+        "character_lu_chenyuan",
+        "npc_su_wan",
+        "bond_mother_su_wan",
+        "faction_mudlamp_lane",
+        "bond_mudlamp_lane_trust",
+        "faction_life_registry_office",
+        "npc_prefecture_shadow_envoy",
+        "artifact_prefecture_transit_registry_seal",
+        "state_ledger_revealed_account_errors",
+        "state_ledger_public_reputation",
+        "state_ledger_mother_life_lamp_countdown",
+        "state_ledger_map_unlock_status"
+      ],
+      "source_status": "planned"
+    }
+  ]
+}

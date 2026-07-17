@@ -18,10 +18,11 @@ from nrl_model_router import build_model_routing_status, route_model
 class CodexDirectWriterTests(unittest.TestCase):
     def test_routes_assign_models_by_production_risk(self):
         self.assertEqual(route_model("showrunner")["model"], "gpt-5.6-sol")
-        self.assertEqual(route_model("writer")["model"], "gpt-5.6-sol")
+        self.assertEqual(route_model("writer")["model"], "gpt-5.6-terra")
         self.assertEqual(route_model("observer")["model"], "gpt-5.6-luna")
-        self.assertEqual(route_model("writer")["fallback_model"], "Claude Opus 4.6 (Thinking)")
-        self.assertEqual(len(build_model_routing_status()["routes"]), 4)
+        self.assertEqual(route_model("editor")["fallback_model"], "Gemini 3.5 Flash (High)")
+        self.assertEqual(route_model("writer")["fallback_model"], "Gemini 3.1 Pro (High)")
+        self.assertEqual(len(build_model_routing_status()["routes"]), 5)
 
     def test_direct_writer_reads_only_explicit_output_file(self):
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -86,6 +87,25 @@ class CodexDirectWriterTests(unittest.TestCase):
                 ask_codex_structured(
                     "prompt", model="gpt-5.6-sol", schema_path=REPO_ROOT / "missing.json", timeout_seconds=1
                 )
+
+    def test_provider_failure_does_not_persist_prompt_or_warning_flood(self):
+        stderr = "\n".join([
+            "WARN noisy warning",
+            "{\"secret_prompt\": \"must not leak\"}",
+            "ERROR: You've hit your usage limit. Try again tomorrow.",
+        ])
+        with patch("nrl_codex_writer._CODEX_USAGE_LIMITED", False), patch(
+            "nrl_codex_writer.find_codex_binary", return_value="codex"
+        ), patch(
+            "nrl_codex_writer.subprocess.run",
+            return_value=subprocess.CompletedProcess("codex", 1, stdout="", stderr=stderr),
+        ):
+            with self.assertRaises(RuntimeError) as raised:
+                ask_codex_writer("prompt", model="gpt-5.6-terra")
+        message = str(raised.exception)
+        self.assertIn("usage limit", message)
+        self.assertNotIn("secret_prompt", message)
+        self.assertNotIn("noisy warning", message)
 
 
 if __name__ == "__main__":

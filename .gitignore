@@ -25,6 +25,8 @@ novel_training_set/
 .mypy_cache/
 .ruff_cache/
 *.zip
+system/releases/review/
+system/releases/fanqie/
 
 # Frontend dependencies and build outputs.
 apps/*/node_modules/

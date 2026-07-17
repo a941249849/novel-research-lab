@@ -7,5 +7,7 @@
   "release_edit_sha256": "cf2fb6d15e6de53ed6ce75ef4d7e684c577aa38569e88132fcaefdb70a37789b",
   "repair_direction": "用按印选择与命灯观察替代不替代口号和固定站位。",
   "provider": "deterministic_editor",
-  "status": "pending_window_re_review"
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-021-030.json",
+  "reviewed_release_edit_sha256": "cf2fb6d15e6de53ed6ce75ef4d7e684c577aa38569e88132fcaefdb70a37789b"
 }

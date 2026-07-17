@@ -1,0 +1,13 @@
+{
+  "version": "0.25",
+  "chapter_id": "chapter-0078",
+  "source_revision": "system/production_runtime/chapters/chapter-0078/revision.md",
+  "source_sha256": "0d3b416bf7ee995d8d1f6726ef2fb06a49fd32a5e12b14847ad26cee533adb2c",
+  "release_edit": "system/production_runtime/release_edits/chapter-0078.md",
+  "release_edit_sha256": "cbf6af73ea2df90355b4fc271a1723fa454bf56eb597249abce62eebb7273f49",
+  "repair_direction": "清除章节内照搬文本并统一右眼失明、左眼可视但受损，保持三轮响应和交砖压力。",
+  "provider": "codex-editorial-recovery",
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-071-080.json",
+  "reviewed_release_edit_sha256": "cbf6af73ea2df90355b4fc271a1723fa454bf56eb597249abce62eebb7273f49"
+}

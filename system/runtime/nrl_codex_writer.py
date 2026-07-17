@@ -33,6 +33,19 @@ def _is_usage_limit_error(text: str) -> bool:
     return "usage limit" in lowered or "hit your usage" in lowered
 
 
+def _provider_error_detail(stderr: str, stdout: str = "") -> str:
+    """Keep actionable provider errors without persisting prompts or warning floods."""
+    raw = (stderr or stdout).strip()
+    lines = [line.strip() for line in raw.splitlines() if line.strip()]
+    actionable = [
+        line for line in lines
+        if re.search(r"(?:^|\s)(?:ERROR|FATAL):|usage limit|rate limit|timed out|quota", line, re.IGNORECASE)
+    ]
+    selected = actionable[-3:] if actionable else lines[-3:]
+    detail = " | ".join(selected)
+    return detail[:1600] or "provider returned no diagnostic"
+
+
 def ask_codex_writer(prompt: str, *, model: str, timeout_seconds: int = DEFAULT_TIMEOUT_SECONDS) -> str:
     global _CODEX_USAGE_LIMITED
     binary = find_codex_binary()
@@ -55,7 +68,8 @@ def ask_codex_writer(prompt: str, *, model: str, timeout_seconds: int = DEFAULT_
         except subprocess.TimeoutExpired as error:
             raise RuntimeError(f"Codex writer timed out after {timeout_seconds} seconds") from error
         if result.returncode != 0 or not output.is_file():
-            error = f"Codex writer failed with exit code {result.returncode}: {result.stderr.strip()}"
+            detail = _provider_error_detail(result.stderr, result.stdout)
+            error = f"Codex writer failed with exit code {result.returncode}: {detail}"
             if _is_usage_limit_error(error):
                 _CODEX_USAGE_LIMITED = True
             raise RuntimeError(error)
@@ -95,7 +109,8 @@ def ask_codex_structured(
         except subprocess.TimeoutExpired as error:
             raise RuntimeError(f"Codex structured call timed out after {timeout_seconds} seconds") from error
         if result.returncode != 0 or not output.is_file():
-            error = f"Codex structured call failed with exit code {result.returncode}: {result.stderr.strip()}"
+            detail = _provider_error_detail(result.stderr, result.stdout)
+            error = f"Codex structured call failed with exit code {result.returncode}: {detail}"
             if _is_usage_limit_error(error):
                 _CODEX_USAGE_LIMITED = True
             raise RuntimeError(error)
@@ -138,7 +153,7 @@ def ask_antigravity_writer(
             timeout=timeout_seconds + 30,
         )
     if result.returncode != 0:
-        detail = (result.stderr or result.stdout).strip()
+        detail = _provider_error_detail(result.stderr, result.stdout)
         raise RuntimeError(f"Antigravity writer failed with exit code {result.returncode}: {detail}")
     text = result.stdout.strip()
     if not text:

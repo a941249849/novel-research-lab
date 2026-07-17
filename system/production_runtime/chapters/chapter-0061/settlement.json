@@ -1,0 +1,119 @@
+{
+  "chapter_id": "chapter-0061",
+  "accepted_revision_sha256": "e2bcb4e4e24eed4785b96454b2a718a67860db3581275221c1cd75d3155cdf82",
+  "state_deltas": [
+    {
+      "fact_id": "chapter-0061-fact-001",
+      "asset_id": "npc_su_wan",
+      "field_path": "npc.current_procedural_boundary",
+      "operation": "set",
+      "before": "苏晚亲自确认母债另审，拒绝以错误连额裁定替换或免除自己的旧债",
+      "after": "苏晚亲自按下回执完成收讫，确认旧债进入独立封档与限期执行，并拒绝陆沉渊代收、代决或以自身寿命替她承担"
+    },
+    {
+      "fact_id": "chapter-0061-fact-002",
+      "asset_id": "npc_su_wan",
+      "field_path": "npc.current_visible_lamp_consequence",
+      "operation": "set",
+      "before": "裂灯期限逼近最末一格，斜纹渗出冷白，命灯未因窄裁修复",
+      "after": "最后一格正式开始走刻，裂纹与冷白仍在，命灯未被寿印摄走且仍由苏晚持有"
+    },
+    {
+      "fact_id": "chapter-0061-fact-003",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_enforcement_record",
+      "operation": "set",
+      "before": "两份执行令正式失去执行效力并退还原持有人，三处共用灯龛解封；归属清楚的旧追缴仍可继续执行",
+      "after": "命籍衙将苏晚归属清楚的旧追缴由送达转入封档与限期执行，封档压住命档和调取入口但不扣押命灯"
+    },
+    {
+      "fact_id": "chapter-0061-fact-004",
+      "asset_id": "bond_mother_su_wan",
+      "field_path": "emotional_bond.current_autonomy_boundary",
+      "operation": "set",
+      "before": "苏晚亲自决定将自己的裂灯移出余暖，并明确陆沉渊只能扶她、不能替她决定灯位；陆沉渊完整服从",
+      "after": "苏晚进一步明确陆沉渊不得替她收讫、答复、交火或用半寿替她猜测，陆沉渊只在她站不稳时扶持"
+    },
+    {
+      "fact_id": "chapter-0061-fact-005",
+      "asset_id": "bond_mother_su_wan",
+      "field_path": "emotional_bond.current_trust_state",
+      "operation": "set",
+      "before": "苏晚在窄裁后主动搭手并允许陆沉渊扶她站起；陆沉渊继续不替她开口、不替她交火",
+      "after": "苏晚主动允许陆沉渊扶住手肘，但在收讫和决策上保持独立；陆沉渊压住代偿冲动并承认由她先决定"
+    },
+    {
+      "fact_id": "chapter-0061-fact-006",
+      "asset_id": "bond_mother_su_wan",
+      "field_path": "emotional_bond.current_emotional_turn",
+      "operation": "set",
+      "before": "陆沉渊继续不替她开口、不替她交火",
+      "after": "陆沉渊面对母亲主动收下有效追缴，放弃替她交火、代收或用半寿换取调档，转而承认她是决定者"
+    },
+    {
+      "fact_id": "chapter-0061-fact-007",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_enforcement_scope",
+      "operation": "set",
+      "before": "命审受理范围被限定为裁定连额归属，不得在本次裁定中一并免除归属清楚的旧寿债",
+      "after": "苏晚旧寿债被从连额裁定中切出，债名与原始债印仍有效，独立追缴继续执行"
+    },
+    {
+      "fact_id": "chapter-0061-fact-008",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_local_access_restriction",
+      "operation": "set",
+      "before": null,
+      "after": "封档落定后，陆沉渊无法按原有本地识账权限继续调取命档深处内容"
+    },
+    {
+      "fact_id": "chapter-0061-fact-009",
+      "asset_id": "foreshadowing_cinder_seal_rain",
+      "field_path": "foreshadowing.current_manifestation",
+      "operation": "set",
+      "before": "槽闭合前浮出不属于当前封批的断裂手印形，银灰火沿断指倒流向内槽",
+      "after": "封档回执背面显露未宣读的迁籍附条，可在期限耗尽前迁籍以暂缓裂灯"
+    },
+    {
+      "fact_id": "chapter-0061-fact-010",
+      "asset_id": "foreshadowing_cinder_seal_rain",
+      "field_path": "hook.unread_migration_clause",
+      "operation": "set",
+      "before": null,
+      "after": "期限耗尽前可通过迁籍换取暂缓裂灯"
+    },
+    {
+      "fact_id": "chapter-0061-fact-011",
+      "asset_id": "state_ledger_faction_pressure",
+      "field_path": "state_ledger.current_chapter_sequence",
+      "operation": "set",
+      "before": "命审台完成窄裁，撤销共同空额与重复令，解封三处灯龛；随后苏晚名下有效旧追缴进入现场",
+      "after": "苏晚在独立灯位接收封档回执，旧债进入独立限期执行，最后一格开始走刻；回执背面随后暴露迁籍暂缓附条"
+    },
+    {
+      "fact_id": "chapter-0061-fact-012",
+      "asset_id": "state_ledger_mother_life_lamp_countdown",
+      "field_path": "state_ledger.current_countdown_state",
+      "operation": "set",
+      "before": "裂灯期限进入逼近最末一格的阶段，下一次有效追缴已抵达",
+      "after": "最后一格已开始走刻，余刻耗尽后再行执行"
+    },
+    {
+      "fact_id": "chapter-0061-fact-013",
+      "asset_id": "npc_su_wan",
+      "field_path": "npc.current_physical_state",
+      "operation": "set",
+      "before": null,
+      "after": "苏晚掌背持续失温，皮肤近乎透明，仍牢牢护住命灯与回执"
+    },
+    {
+      "fact_id": "chapter-0061-fact-014",
+      "asset_id": "npc_su_wan",
+      "field_path": "naming.current_official_record",
+      "operation": "set",
+      "before": null,
+      "after": "苏晚的姓名、旧债印痕与“独立追缴”被保留在封档外层可见记录中"
+    }
+  ],
+  "resolved_audit_ids": []
+}

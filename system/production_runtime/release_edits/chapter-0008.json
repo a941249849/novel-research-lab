@@ -1,0 +1,13 @@
+{
+  "version": "0.25",
+  "chapter_id": "chapter-0008",
+  "source_revision": "system/production_runtime/chapters/chapter-0008/revision.md",
+  "source_sha256": "679f83c3313973f15f8fc6f6c6f635df836ee40538cf248fd4beb48f06e9cb4f",
+  "release_edit": "system/production_runtime/release_edits/chapter-0008.md",
+  "release_edit_sha256": "e7fd85f14228d206973047323fa52735192e6076f72023f95c0c9dfc21138027",
+  "repair_direction": "发布版篇幅与文气修订，保持既有事件和结算不变",
+  "provider": "codex-terra-recovery",
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-001-010.json",
+  "reviewed_release_edit_sha256": "e7fd85f14228d206973047323fa52735192e6076f72023f95c0c9dfc21138027"
+}

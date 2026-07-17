@@ -1,0 +1,14 @@
+{
+  "version": "0.25",
+  "chapter_id": "chapter-0072",
+  "source_revision": "system/production_runtime/chapters/chapter-0072/revision.md",
+  "source_sha256": "da5ebbfa741a08cae09303f886e484c9c97e36d65965c3c4f00e6ba3130e56a9",
+  "release_edit": "system/production_runtime/release_edits/chapter-0072.md",
+  "release_edit_sha256": "d3db5a4a146394ee501f95cf06a6f85e3ae1a97f14697a616c1baff5222edc8a",
+  "repair_direction": "删除或重写章节内从“苏晚的命灯隔着几步”到“像一根没有被拔走的针”的重复文本块，只保留一次完整事件；保持右眼失明、左眼视物及本章全部状态结果和结尾钩子不变。",
+  "provider": "antigravity",
+  "model": "Gemini 3.5 Flash (High)",
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-071-080.json",
+  "reviewed_release_edit_sha256": "d3db5a4a146394ee501f95cf06a6f85e3ae1a97f14697a616c1baff5222edc8a"
+}

@@ -1,0 +1,47 @@
+{
+  "chapter_id": "chapter-0069",
+  "accepted_revision_sha256": "9078fc6f3bde6c45f3e578ddea9afc740820e5f082b07b4237775a50ab453622",
+  "state_deltas": [
+    {
+      "fact_id": "fact-0069-03",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_procedural_choice",
+      "operation": "set",
+      "before": "撤回代管要求，以自身半寿登记痕为抵押将具名异议木片推入回执槽，成为迁籍异议的唯一认痕责任人",
+      "after": "服从苏晚命令放弃介入干预，将已抬起的手臂收回并保持在见证者位置，未施术且未碰印，避免半寿痕污染现场"
+    },
+    {
+      "fact_id": "fact-0069-01",
+      "asset_id": "npc_su_wan",
+      "field_path": "npc.current_physical_state",
+      "operation": "set",
+      "before": "掌背红点化为无法愈合的创口，冷光如实质黏液拉丝滴落，且命灯因冷热交替冲击新增一条从灯腹蜿蜒至灯口的裂纹",
+      "after": "掌背覆盖实质冰霜白翳，在生命力被强行拉扯一缕命火后呈现无血色的死寂青灰色与深度失温"
+    },
+    {
+      "fact_id": "fact-0069-02",
+      "asset_id": "npc_su_wan",
+      "field_path": "npc.current_visible_lamp_consequence",
+      "operation": "set",
+      "before": "苏晚命灯没有痊愈，新增裂损与掌背失温保留；母债余额、原始成债原因和后续合法分期仍未解决。",
+      "after": "命灯因寿印排斥新增一道贯穿琉璃内外壁并直达青铜底座的深灰色裂纹，且被强行抽离的命火被卡死的寿印钳制悬停于灯罩外"
+    },
+    {
+      "fact_id": "fact-0069-05",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_enforcement_record",
+      "operation": "set",
+      "before": "苏晚旧寿债的债名与原始债印仍被认定有效，但本次追缴所占用的当期寿火位被确认已经执行过，当前追缴令因此失效。",
+      "after": "命籍衙原地启动扣取，执行新寿印与旧压痕重叠冲突形成双圈并强行抽离苏晚一缕命火，程序卡死后向命审台发出“期位已占”的强制复核信号"
+    },
+    {
+      "fact_id": "fact-0069-04",
+      "asset_id": "bond_mother_su_wan",
+      "field_path": "emotional_bond.current_emotional_turn",
+      "operation": "set",
+      "before": "陆沉渊服从苏晚选择，放弃追求一次全胜的翻案机会，通过提供物理支撑陪她承担拒迁风险，苏晚亦虚虚靠其小臂予以回应，体现双方在克制中的亲缘凝聚力",
+      "after": "苏晚决绝命令陆沉渊不要碰印以坚守无污染的证据现场，陆沉渊极度克制保护本能选择服从，两人在痛苦与克制中共同面对扣取后果并守住边界"
+    }
+  ],
+  "resolved_audit_ids": []
+}

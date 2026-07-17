@@ -7,5 +7,7 @@
   "release_edit_sha256": "a223b17c66db9248a9dd795bf5fb4c511bf0a35b1a9d46e10d33c14e698c073d",
   "repair_direction": "统一为顾家一盏参验灯加左右邻各一盏，明确其余四盏留存，不改变剧情结果",
   "provider": "codex-deterministic-editor",
-  "status": "pending_window_re_review"
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-031-040.json",
+  "reviewed_release_edit_sha256": "a223b17c66db9248a9dd795bf5fb4c511bf0a35b1a9d46e10d33c14e698c073d"
 }

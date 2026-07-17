@@ -1,0 +1,47 @@
+{
+  "chapter_id": "chapter-0067",
+  "accepted_revision_sha256": "e88cbb83c3e00161f647fb040387d644ef0d0d28d927563bfa5071f37aecbe19",
+  "state_deltas": [
+    {
+      "fact_id": "fact-0067-001",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_witness_boundary",
+      "operation": "set",
+      "before": "两巷完成窄裁，不补名、不补证、不交住户命灯，以两份执行令和两次执行失败作为裁定材料",
+      "after": "泥灯巷形成“不代债、不交人、允许各户撤守”的共同边界，在允许退出外沿守护的前提下，依然拒绝交出苏晚"
+    },
+    {
+      "fact_id": "fact-0067-002",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_collective_choice",
+      "operation": "set",
+      "before": "现场继续执行各自认痕、不代证；持有人可拒扣，但不必把个人姓名交给共同程序",
+      "after": "住户最终定下“不代债、不交人、允许撤守”的规矩，异议户可选择退出外沿守护且不被记作背叛"
+    },
+    {
+      "fact_id": "fact-0067-003",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_trust_state",
+      "operation": "set",
+      "before": "住户因失去床位与房间公开责怪陆沉渊及两名留令者；异议未被压制，两名留令者让出自身铺位并承担迁位、守门与逐户核对后果，但未要求住户原谅",
+      "after": "共同体信任表现为恐惧与退出被公开承认后，留下的人仍愿意在知晓后果的前提下自愿承担责任"
+    },
+    {
+      "fact_id": "fact-0067-004",
+      "asset_id": "state_ledger_mudlamp_array_integrity",
+      "field_path": "state_ledger.current_visible_integrity_consequence",
+      "operation": "set",
+      "before": "三处共用灯位全部熄暗，护阵白裂贯穿外沿墙面；最外侧安置屋墙面与地面冻裂、阵纹脱落，房间暂时失去使用条件且未随天明恢复",
+      "after": "部分住户撤出外沿守位导致护阵一段白裂失去气机牵引而固定扩大，阵纹彻底暗去且留下难以弥补的豁口"
+    },
+    {
+      "fact_id": "fact-0067-005",
+      "asset_id": "state_ledger_resident_lifefire_reserve",
+      "field_path": "state_ledger.current_resident_lifefire_callability",
+      "operation": "set",
+      "before": "苏晚拒绝调用住户命火保温，墙内各户命灯仍自行持有，本次零调用、零转移、零扣减",
+      "after": "住户命火仍由各户自行持有，在此次对峙及撤守过程中未被调用、转移或扣减"
+    }
+  ],
+  "resolved_audit_ids": []
+}

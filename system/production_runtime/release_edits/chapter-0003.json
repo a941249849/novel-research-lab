@@ -6,5 +6,7 @@
   "release_edit": "system/production_runtime/release_edits/chapter-0003.md",
   "release_edit_sha256": "4e6cd365c1d23c571d400f301f4d06fac23ba9430dc9cae55d79c4a5f2b409b7",
   "repair_direction": "补齐第2章已约定的辰时复核为何推迟到午后，确保时间、证据与人物行动因果连续；保留本章已登记结果。",
-  "status": "pending_window_re_review"
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-001-010.json",
+  "reviewed_release_edit_sha256": "4e6cd365c1d23c571d400f301f4d06fac23ba9430dc9cae55d79c4a5f2b409b7"
 }

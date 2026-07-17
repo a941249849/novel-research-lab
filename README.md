@@ -8,9 +8,10 @@ Novel Research Lab（NRL）是面向中文长篇网文的 **Corpus-to-Creation**
 - 长篇规格：18 卷、约 1,800 章、600–680 万中文字符
 - 语料：18 本、143 个连续分块、18 本综合与跨书蒸馏均已完成哈希和覆盖验证
 - 创作资产：九类 Schema 与项目资产库已可运行
-- 正文：第 1–20 章已接受；`011–020` 窗口独立复审为 `ACCEPT`
-- 当前入口：编译 `021–030` 故事窗口后，从第 21 章恢复受控生产
-- 发布状态：禁止发布，直至第一卷完成整卷复审并通过 Owner Gate
+- 正文：第一卷 100 章均已接受，正文约 32.7 万中文字符
+- 审查：每十章一个哈希绑定审查窗口；任何正文编辑都会使旧审查自动失效
+- 当前入口：`volume1-release-status` 是第一卷发布事实入口
+- 发布包：由已接受正文、发布编辑和独立标题资产按需生成，不作为 Git 事实源
 
 ## 固定架构
 
@@ -37,6 +38,9 @@ Codex 是工程主控、故事编译器、正文写手、事实观察器和状�
 | 长篇契约 | `system/production_runtime/plans/borrowed_heaven_longform_contract.v0.1.json` |
 | 十章故事窗口 | `system/production_runtime/story_windows/` |
 | 章节执行状态 | `system/production_runtime/chapter_registry.v0.20.json` |
+| 发布编辑 | `system/production_runtime/release_edits/` |
+| 十章发布审查 | `system/production_runtime/window_reviews/` |
+| 第一卷章节标题 | `system/production_runtime/chapter_titles.volume1.json` |
 
 `phase0*`、`phase1*`、`phase2*` 和 `docs/superpowers/` 是只读历史谱系，不是活动控制面。章节 Runtime 不得读取 `novel_training_set/` 原文。
 
@@ -45,6 +49,8 @@ Codex 是工程主控、故事编译器、正文写手、事实观察器和状�
 ```bash
 python3 system/runtime/nrl.py production-status
 python3 system/runtime/nrl.py produce --until 100
+python3 system/runtime/nrl.py volume1-release-status
+python3 system/runtime/nrl.py volume1-fanqie-package
 ```
 
 `production-status` 是日常状态入口；`produce` 会从首个未接受章节恢复，自动编译缺失的十章窗口，并在章节门禁、十章复审或外部模型失败时停止。诊断和只读控制台仍可使用：
@@ -66,4 +72,4 @@ python3 system/runtime/nrl.py production-compact
 python3 system/runtime/nrl.py production-compact --apply
 ```
 
-`system/runtime/studio/`、`apps/studio/dist/`、`.nrl-work/` 和依赖目录均为可再生产物，不进入 Git。历史 `phase*` 文件只承担研究谱系，不参与日常生产。
+`system/releases/review/`、`system/releases/fanqie/`、`system/runtime/studio/`、`apps/studio/dist/`、`.nrl-work/` 和依赖目录均为可再生产物，不进入 Git。历史 `phase*` 文件只承担研究谱系，不参与日常生产。

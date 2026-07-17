@@ -6,5 +6,7 @@
   "release_edit": "system/production_runtime/release_edits/chapter-0005.md",
   "release_edit_sha256": "864ea25bd68e02c03ada1ea8335bf37f49ecb9d6c1dd2a5280df47e8634f4354",
   "repair_direction": "保持本章状态与结尾压力，替换左眼焦纹、黑屑落衣领等与第6章重复的伤势描写；用本章独有的程序选择、物件触感和关系动作呈现代价，避免复制句式。",
-  "status": "pending_window_re_review"
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-001-010.json",
+  "reviewed_release_edit_sha256": "864ea25bd68e02c03ada1ea8335bf37f49ecb9d6c1dd2a5280df47e8634f4354"
 }

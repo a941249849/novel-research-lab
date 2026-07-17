@@ -8,5 +8,7 @@
   "repair_direction": "减少连续窗口中反复出现的胸骨旧裂闷响、左腿或左膝麻木、手腕冷痕、咳冷灰等固定组合；伤病状态仍须保留，但每章只选与现场动作直接相关的一两项后果，以呼吸受限、重心选择、触觉失真、动作失败或环境交互等不同方式呈现，不得新增伤势或状态变化。保持送审台前的证据、顾巡程序选择及本章结尾压力不变。",
   "provider": "codex",
   "model": "gpt-5.6-sol",
-  "status": "pending_window_re_review"
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-021-030.json",
+  "reviewed_release_edit_sha256": "2031f59b5e14a5e6d418fbf5594d41017bec7e8e16e1259e8dee3446070e1f94"
 }

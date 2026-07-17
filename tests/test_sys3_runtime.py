@@ -74,6 +74,7 @@ class RuntimeFixture(unittest.TestCase):
         self.assertEqual(data["adapters"]["antigravity"]["mode"], "manual_handoff")
         self.assertEqual(data["gates"]["review_status"], "PENDING")
         self.assertEqual(data["recommended_next_command"], "python3 system/runtime/nrl.py advance")
+        self.assertIsNone(data["active_operation"])
         after = state_path.read_text(encoding="utf-8")
         self.assertEqual(after, before)
 

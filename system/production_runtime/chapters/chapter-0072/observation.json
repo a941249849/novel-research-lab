@@ -1,0 +1,181 @@
+{
+  "chapter_id": "chapter-0072",
+  "draft_sha256": "da5ebbfa741a08cae09303f886e484c9c97e36d65965c3c4f00e6ba3130e56a9",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "fact-0072-001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_procedural_choice",
+        "before": "陆沉渊主动站入追时脉冲认定范围，阻止巷民刮除封记，并要求无人替他按手印或代他陈述见证。",
+        "after": "陆沉渊主动越过白裂缺口，停在暖墙遮护之外，要求泥灯巷保留出入通道但不为他额外续火。",
+        "evidence": "陆沉渊明确说“我不进去”“我退到裂外”，并要求门别封、灯照旧守、不要为他续火。"
+      },
+      {
+        "fact_id": "fact-0072-002",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_procedural_position",
+        "before": "成为追时脉冲直接接触并继续追索后压时刻边缘的现场接触对象。",
+        "after": "离开暖墙遮护后仍是追时脉冲的直接接触对象，但脉冲不再随其身体留在阵内而持续牵动完整暖墙阵纹。",
+        "evidence": "他离墙两丈后，银灰仍停留在白裂与灰浆处，没有追着他散开，墙内灯火也未再被牵得发颤。"
+      },
+      {
+        "fact_id": "fact-0072-003",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_visible_condition",
+        "before": "追缠纹被冷白细痕压紧并绷直至右眼焦黑边缘，右臂短暂失去知觉后出现针扎痛，腕下渗血。",
+        "after": "失去暖墙遮护后胸口旧裂重新震痛，左腿失稳加重，冷灰咳嗽伴极淡血丝，腕下渗血重新裂开。",
+        "evidence": "正文写明胸口旧裂在移动中震开、左腿膝盖折下，并出现灰沫与淡血丝；腕下凝住的血重新裂开沿指骨滑落。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "fact-0072-004",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_procedural_boundary",
+        "before": "泥灯巷形成“不代债、不交人、允许各户撤守”的共同边界；部分住户退出外沿守护后，护阵裂损进一步固定，但住户命火仍未被调用。",
+        "after": "苏晚执行保留出入通道但不为陆沉渊续火的边界，允许他返回但不把暖墙火力延伸到墙外。",
+        "evidence": "苏晚拖出横跨门槛与裂口边缘的窄木板，说明门留着、火不往外添，并表示回来也不欠谁。"
+      },
+      {
+        "fact_id": "fact-0072-005",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_physical_state",
+        "before": "掌背覆盖实质冰霜白翳，在生命力被强行拉扯一缕命火后呈现无血色的死寂青灰色与深度失温。",
+        "after": "掌背白翳仍在，命灯深灰裂纹仍未恢复；苏晚只能隔着衣料短暂替陆沉渊挡冷，未越界扶持或触碰命灯。",
+        "evidence": "正文写明她掌背仍有青白霜翳，命灯深灰裂纹一闪一灭；她的手曾压在陆沉渊左肘外侧，但未去碰灯。"
+      }
+    ],
+    "locations": [
+      {
+        "fact_id": "fact-0072-006",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_witness_boundary",
+        "before": "巷民公开执行“不刮封记、不代陆沉渊按印、不代他作证，同时不交出住户命火”的边界。",
+        "after": "泥灯巷进一步执行“不为陆沉渊续火、保留公共出入通道、各户继续自行守灯”的边界。",
+        "evidence": "有人把漏风缝隙塞紧，却没有递出自家灯；木板只铺到裂口边，墙内灯火始终没有向外延伸。"
+      },
+      {
+        "fact_id": "fact-0072-007",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_communal_response",
+        "before": "泥灯巷拒绝以州府转运残印换取单巷豁免，并保留各见证者独立留印、只认亲见或撤回见证的权利。",
+        "after": "泥灯巷接受陆沉渊停在护阵外，并通过窄木板保留出入路线，不承担其额外取暖与伤势照护。",
+        "evidence": "门内住户没有赶他走，也没有为他添火；木板只作为有人出入或他返回时的通道。"
+      }
+    ],
+    "factions": [
+      {
+        "fact_id": "fact-0072-008",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_chapter_step",
+        "before": "三处灯龛恢复原持有人接触，但冻裂安置屋、失温与迁位损失仍保留。",
+        "after": "泥灯巷在白裂边缘保留一条窄通道，护阵暖火不再向陆沉渊所在的墙外延伸。",
+        "evidence": "苏晚把窄木板横放在门槛与白裂之间，木板没有向陆沉渊脚下延伸，门内灯火也未被推出。"
+      }
+    ],
+    "artifacts": [],
+    "techniques": [],
+    "relationships": [
+      {
+        "fact_id": "fact-0072-009",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_autonomy_boundary",
+        "before": "母子代管与代债边界永久收紧，陆沉渊不得替苏晚收讫/答复/交火/代偿，仅允许其虚虚扶住手肘提供物理支撑。",
+        "after": "苏晚明确不替陆沉渊决定是否回墙内，也不接受他把咳血、断腿、挨冻解释为替她偿债；仅在不越过边界的情况下短暂挡冷。",
+        "evidence": "苏晚说“你出去，是你自己选的”，并要求他别把自伤说成替她偿债；她的扶手停在左肘外侧，随后被陆沉渊挡开。"
+      },
+      {
+        "fact_id": "fact-0072-010",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_collective_choice",
+        "before": "住户不替陆沉渊承担身份和见证后果，维持各户自行守灯、各自决定是否继续燃烧的共同选择。",
+        "after": "住户继续各自守灯，不替陆沉渊续火，同时共同保留一条不封闭的出入通道。",
+        "evidence": "有人说明自家灯不再往外挪，有人抱灯站在阴影里却没有递出；窄木板被保留为出入路线。"
+      }
+    ],
+    "emotions": [
+      {
+        "fact_id": "fact-0072-011",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_emotional_turn",
+        "before": "苏晚右手虚扶陆沉渊手肘，母子俩在痛苦与克制中共同完成局部改账，守住代偿边界并接受残酷现实。",
+        "after": "苏晚不命令陆沉渊返回，只把是否入墙留给他，同时以“不欠谁”和“不替她偿债”收紧情感与代偿边界。",
+        "evidence": "她说“你若撑不住，就回来”“回来也不欠谁”，并要求他记住不要把自伤说成替她偿债。"
+      },
+      {
+        "fact_id": "fact-0072-012",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_collective_emotion",
+        "before": "恐惧在争执中公开显现，但共同体没有因恐惧而刮除封记或替陆沉渊作答。",
+        "after": "共同体在恐惧与谨慎中维持距离，既未赶走陆沉渊，也未为他增加灯火和伤势照护。",
+        "evidence": "门后脚步和低声讨论持续存在，但无人越过木板扶他、替他按住伤处或递出自家灯。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "fact-0072-013",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "hook.current_direction",
+        "before": "第一轮追时脉冲未从陆沉渊返回封档，而是转向护阵白裂。",
+        "after": "陆沉渊退出暖墙后，银灰脉冲仍留在白裂深处并继续沿断口游走，未依赖他的身体留在阵内。",
+        "evidence": "他已离墙两丈，银灰仍浮出并停在暖墙最白的灰浆上；墙内灯火未再发颤，但脉冲没有消失。"
+      },
+      {
+        "fact_id": "fact-0072-014",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "foreshadowing.current_manifestation",
+        "before": "封档外层两道压痕之间浮出新的小印，并留下尚未落稳的浅湿后压印。",
+        "after": "白裂暖墙最白的灰浆上留下浅湿印子，位置在两道旧压痕之间，且未随陆沉渊移动。",
+        "evidence": "银灰回缩后，墙上两道旧压痕之间出现一小截浅湿印子，风吹后边缘泛霜，仍伏在墙上。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "fact-0072-015",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "hook.unread_migration_clause",
+        "before": "命审台限制选择完毕，将程序压力转向原债印与附条在同一块压印石上的重新受压。",
+        "after": "银灰脉冲在陆沉渊离阵后仍独立留存于白裂，继续指向护阵断口而非追随其身体。",
+        "evidence": "末段明确写出银灰仍从裂中浮出，沿断口游走，并像未被拔走的针一样伏在白裂深处。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "fact-0072-016",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "timeline.chapter_event",
+        "before": null,
+        "after": "陆沉渊在泥灯巷外沿经历多次银灰脉冲后越过白裂缺口，停在护阵遮护之外。",
+        "evidence": "正文按第一道、第二道、第三道脉冲展开，并记录他逐步退到白裂外沿及最终离墙两丈。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "fact-0072-017",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.current_visible_condition",
+        "before": "停术旁观承担证据留档代价，右眼留下无法消退的巨大盲斑，半寿暴露程度上升，且因放弃施术导致原有本地识账权限虚线全部崩解，被排除在封档后的本地查阅之外。",
+        "after": "失去暖墙持续遮护后，胸口旧裂重新震痛，左腿持续失稳，冷灰咳嗽伴血丝，右臂追缠纹收紧且腕下重新渗血。",
+        "evidence": "陆沉渊退出后胸口旧裂在第三步震开，左腿折下；咳出带淡血丝的灰沫，腕下凝血也重新裂开。"
+      },
+      {
+        "fact_id": "fact-0072-018",
+        "asset_id": "state_ledger_half_life_registry_exposure",
+        "field_path": "state_ledger.current_exchange_exposure_delta",
+        "before": "因强行将识账记录并入封档，半寿暴露继续上升，在本地程序中彻底成为挂着猩红标记、极高暴露状态的被追踪目标。",
+        "after": "离开暖墙并未降低半寿追踪暴露；银灰脉冲仍在白裂中持续存在。",
+        "evidence": "陆沉渊离墙两丈后银灰仍未消失，且追缠纹继续在右臂上骤然勒紧。"
+      },
+      {
+        "fact_id": "fact-0072-019",
+        "asset_id": "state_ledger_half_life_registry_exposure",
+        "field_path": "state_ledger.registry_locking_sign",
+        "before": "追时脉冲与暗青追缠纹同步锁定，冷白痕迹穿过右臂但未留下新的字。",
+        "after": "冷白细痕继续贴着暗青追缠纹跳动并造成腕下出血，但脉冲最终在白裂内回缩并留下浅湿印。",
+        "evidence": "银灰脉冲擦过脚踝后追缠纹骤然勒紧；陆沉渊挡开苏晚时，冷白细痕仍贴着暗青纹路跳动。"
+      }
+    ],
+    "naming": []
+  }
+}

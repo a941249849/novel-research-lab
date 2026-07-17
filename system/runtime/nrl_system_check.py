@@ -15,6 +15,7 @@ from nrl_corpus_pipeline import build_evidence_pack_matrix, build_pipeline_statu
 from nrl_deep_read import build_deep_read_status
 from nrl_paths import runtime_path
 from nrl_production_runtime import build_production_readiness
+from nrl_production_operator import build_operator_status
 from nrl_story_window import build_story_window_status
 from nrl_system_status import build_system_status
 from nrl_rag_index import load_or_build_creation_context_index
@@ -67,6 +68,9 @@ def run_system_check() -> dict[str, Any]:
     system_status = build_system_status(state, adapters)
     story_windows = build_story_window_status()
     source_ownership = _load_json(SOURCE_OWNERSHIP_PATH)
+    operator = build_operator_status(
+        runtime_path("system/production_runtime/chapter_registry.v0.20.json")
+    )
     ownership_domains = [item.get("domain") for item in source_ownership.get("domains", [])]
     architecture_payload = json.dumps(architecture, ensure_ascii=False)
     architecture_passed = (
@@ -173,6 +177,17 @@ def run_system_check() -> dict[str, Any]:
                 "ready": production_runtime["ready"],
                 "stage_count": len(production_runtime["stage_order"]),
                 "story_windows": story_windows,
+            },
+        },
+        {
+            "check_id": "production_output_gate",
+            "passed": operator["valid"] and not operator.get("blocking_window_review"),
+            "blocking_scope": "production_readiness",
+            "detail": {
+                "accepted_contiguous": operator["accepted_contiguous"],
+                "blocking_window_review": operator.get("blocking_window_review"),
+                "blocking_window_verdict": operator.get("blocking_window_verdict"),
+                "accepted_release_ready_count": operator["accepted_release_ready_count"],
             },
         },
         {

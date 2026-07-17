@@ -1,0 +1,13 @@
+{
+  "version": "0.25",
+  "chapter_id": "chapter-0080",
+  "source_revision": "system/production_runtime/chapters/chapter-0080/revision.md",
+  "source_sha256": "cecf996c9c90174a835277162224916601dc761fb8164f0764f9f691f5e3dad3",
+  "release_edit": "system/production_runtime/release_edits/chapter-0080.md",
+  "release_edit_sha256": "56103eeb92a07a92de19e313014475c565ac30484b1a9a90873b633283385cc3",
+  "repair_direction": "删除内部重复结尾，统一右眼失明、左眼可视但受损，保持命审台第二声锁扣钩子。",
+  "provider": "codex-editorial-recovery",
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-071-080.json",
+  "reviewed_release_edit_sha256": "56103eeb92a07a92de19e313014475c565ac30484b1a9a90873b633283385cc3"
+}

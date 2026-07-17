@@ -7,5 +7,7 @@
   "release_edit_sha256": "a32d43923103670fe85cf873af3a9e0b549e6234a1a26baa602d0806ec342ec0",
   "repair_direction": "统一第一至二章为今晨至同日午后；补足旧灯芯与夹层陶片的收拢承接；维持次日辰时传唤。",
   "provider": "antigravity:Claude Opus 4.6 Thinking",
-  "status": "pending_window_re_review"
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-001-010.json",
+  "reviewed_release_edit_sha256": "a32d43923103670fe85cf873af3a9e0b549e6234a1a26baa602d0806ec342ec0"
 }

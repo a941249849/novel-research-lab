@@ -7,5 +7,7 @@
   "release_edit_sha256": "0b2083991828653f75490c3fa5efe1fd32ad724ac292ecff33b306c95106f8b9",
   "repair_direction": "删除苏晚移灯后错误回到屋内的旧稿倒带，统一莫井兰姓名，并保持悬印对峙线性收尾。",
   "provider": "deterministic_editor",
-  "status": "pending_window_re_review"
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-031-040.json",
+  "reviewed_release_edit_sha256": "0b2083991828653f75490c3fa5efe1fd32ad724ac292ecff33b306c95106f8b9"
 }

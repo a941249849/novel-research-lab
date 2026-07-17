@@ -1,0 +1,183 @@
+{
+  "chapter_id": "chapter-0083",
+  "accepted_revision_sha256": "9c7d1e48eaf2631f782de941d9d1a92fc122d9a79f8bedf1c5aa39e203ac91e4",
+  "state_deltas": [
+    {
+      "fact_id": "fact-0083-001",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_visible_condition",
+      "operation": "set",
+      "before": "右臂仍失去知觉，暗金线继续勒深，封布结头压破掌心并沁血，残印冷意沿腕侧上行",
+      "after": "左腿在湿石上反复失稳并加重，胸口旧裂持续震痛，咳出带血丝灰沫，左眼灼痛且停止辨认灰印"
+    },
+    {
+      "fact_id": "fact-0083-002",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_choice",
+      "operation": "set",
+      "before": "接受有限同行监督并独自承担到案责任",
+      "after": "坚持空灯离巷，拒绝以他人灯火减轻冷压，即使行走速度下降、身体失稳也不提速索取命火"
+    },
+    {
+      "fact_id": "fact-0083-003",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_public_statement",
+      "operation": "set",
+      "before": "再次公开声明同行者不需回答残印来处、命令或寿数问题，州府应直接询问并记录他本人",
+      "after": "公开要求同行者只送路、不替他守灯或答话，并允许灯火变暗者立即回门"
+    },
+    {
+      "fact_id": "fact-0083-004",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_arrival_state",
+      "operation": "set",
+      "before": "尚未抵达城界外层影门",
+      "after": "抵达城界外沿并停在白裂与影门前，未跨过通往城界的石缝"
+    },
+    {
+      "fact_id": "fact-0083-005",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_visible_condition",
+      "operation": "set",
+      "before": "影令冷压使阵皮剥落，白裂穿过断纹并延伸至巷口，护阵裂损加剧",
+      "after": "影令继续压入石缝，巷口白裂向城界方向延伸并压住通路，阵皮与石屑持续脱落"
+    },
+    {
+      "fact_id": "fact-0083-006",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_operational_rule",
+      "operation": "set",
+      "before": "送行只观察封布状态、残印是否更换及沿途是否调取住户灯火；灯火变暗者可自行回门",
+      "after": "同行者继续只送路和观察，不递灯、不替陆沉渊答话；灯火变暗者实际退回门内且不被阻拦"
+    },
+    {
+      "fact_id": "fact-0083-007",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_witness_boundary",
+      "operation": "set",
+      "before": "同行者只确认封布未开、残印未换及沿途无人调取住户灯火；可中途回头，不承担来源、寿数或命令证明",
+      "after": "同行者实际维持不越界见证：只看封布、灯火和行进，不跨白裂、不替本人应答"
+    },
+    {
+      "fact_id": "fact-0083-008",
+      "asset_id": "artifact_prefecture_transit_registry_seal",
+      "field_path": "artifact.current_visible_trace",
+      "operation": "set",
+      "before": "残印在受令时渗出银灰印屑并被影印吸住，仍未交出",
+      "after": "残印持续透出银亮与冷意并反复收紧腕间，仍由陆沉渊隔布按住且未交出"
+    },
+    {
+      "fact_id": "fact-0083-009",
+      "asset_id": "artifact_prefecture_transit_registry_seal",
+      "field_path": "artifact.current_procedural_relation",
+      "operation": "set",
+      "before": "残印仍被列为待验并处于回收范围；陆沉渊继续持有且明确拒绝交出",
+      "after": "残印在入门校时要求出现时仍被陆沉渊持有，未被交给任何人"
+    },
+    {
+      "fact_id": "fact-0083-010",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_trust_state",
+      "operation": "set",
+      "before": "信任转为可撤回、有限度的同行监督；留下者承认陆沉渊的独自责任，不替其补答",
+      "after": "同行者进一步确认“到案是陆沉渊的事、送路是共同体的事”，保持观察与退回权，不替他跨线或应答"
+    },
+    {
+      "fact_id": "fact-0083-011",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_collective_choice",
+      "operation": "set",
+      "before": "共同体选择有限同行：有人送至城界，有人在巷口目送，退出者关门且不被记名",
+      "after": "部分同行者实际退出并回门，剩余者继续保持低灯、远距同行至城界外沿"
+    },
+    {
+      "fact_id": "fact-0083-012",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_collective_emotion",
+      "operation": "set",
+      "before": "在恐惧与后果公开化后仍以克制方式同行，始终保留退回门内的距离",
+      "after": "共同体在担忧和目睹其失稳后仍克制不援手，以沉默观察确认其选择"
+    },
+    {
+      "fact_id": "fact-0083-013",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_collective_emotion",
+      "operation": "set",
+      "before": "共同体对陆沉渊能否撑住保持担忧",
+      "after": "担忧转为对其把共同边界置于自身便利之前的确认"
+    },
+    {
+      "fact_id": "fact-0083-014",
+      "asset_id": "artifact_prefecture_transit_registry_seal",
+      "field_path": "information.current_entry_condition",
+      "operation": "set",
+      "before": "州府复核入口的入门校时条件尚未公开显现",
+      "after": "公开显现“须以本人到案记录，换取入门校时”"
+    },
+    {
+      "fact_id": "fact-0083-015",
+      "asset_id": "state_ledger_resident_lifefire_reserve",
+      "field_path": "state_ledger.current_transaction_debit",
+      "operation": "set",
+      "before": "住户命火储备继续保持零调用、零扣减，退出者不记欠火",
+      "after": "本次离巷过程中仍为零调用、零扣减，所有泥灯保持在各自门内"
+    },
+    {
+      "fact_id": "fact-0083-016",
+      "asset_id": "state_ledger_half_life_registry_exposure",
+      "field_path": "state_ledger.current_exchange_exposure_delta",
+      "operation": "set",
+      "before": "半寿暴露未下降，陆沉渊已被实际施加活体校时拘束并正式要求到案",
+      "after": "正文只确认公开到案记录的要求，未出现指定十个百分点交换的结算"
+    },
+    {
+      "fact_id": "fact-0083-017",
+      "asset_id": "foreshadowing_cinder_seal_rain",
+      "field_path": "hook.current_physical_state",
+      "operation": "set",
+      "before": "影令持续冷压残阵并推动白裂延伸至巷口，残印冷意同时侵入陆沉渊腕间",
+      "after": "影令继续冷压并将白裂推向城界通路，残印冷意持续收紧；影门仍未开启"
+    },
+    {
+      "fact_id": "fact-0083-018",
+      "asset_id": "foreshadowing_cinder_seal_rain",
+      "field_path": "hook.current_unresolved_scope",
+      "operation": "set",
+      "before": "苏晚落名选择只送路，但影令仍保留“只送路，或为残印来源作保”的压力分岔并等待后续落定",
+      "after": "压力分岔收束为“继续送路但不替本人应答”，冷字要求陆沉渊亲自交出下一步到案记录"
+    },
+    {
+      "fact_id": "fact-0083-019",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "timeline.current_progress",
+      "operation": "set",
+      "before": "按原定速度前往城界",
+      "after": "因影令冷压、左腿失稳和胸口疼痛而明显放慢，失去原本可赶上的时间余量"
+    },
+    {
+      "fact_id": "fact-0083-020",
+      "asset_id": "state_ledger_protagonist_strain",
+      "field_path": "state_ledger.current_visible_condition",
+      "operation": "set",
+      "before": "识账承压后胸口被攥紧，咳出带血丝灰沫，左腿发软，左眼当日停术",
+      "after": "胸口旧裂和左腿失稳进一步加重，右臂仍无知觉，咳血丝灰沫，左眼灼痛并停止辨认纹路"
+    },
+    {
+      "fact_id": "fact-0083-021",
+      "asset_id": "state_ledger_resident_lifefire_reserve",
+      "field_path": "state_ledger.current_resident_lifefire_callability",
+      "operation": "set",
+      "before": "住户灯火仍各自在门内，未有火被调取、转移或扣减",
+      "after": "住户灯火仍留在各自门内，未被递出、牵出或调用"
+    },
+    {
+      "fact_id": "fact-0083-022",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_boundary_terms",
+      "operation": "set",
+      "before": "责任边界被明确命名为“只送路”与“为残印来源作保”，泥灯巷选择前者",
+      "after": "边界被再次公开表述为“到案是你的事，送路也是我们的事”，双方责任保持分离"
+    }
+  ],
+  "resolved_audit_ids": []
+}

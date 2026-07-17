@@ -1,0 +1,239 @@
+{
+  "chapter_id": "chapter-0100",
+  "draft_sha256": "7cf3a7e8468b74ac00c2d5c3fb92e7df5fef3c57ea85c8229babd972d57c94a0",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "fact-0100-001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "physical_state.current_condition",
+        "before": "左腿完全失去知觉，撞伤处疼痛加重，掌心压痕被寒意顶得发白",
+        "after": "腕骨寒白进一步收紧，旧伤持续渗血，眩晕与冷汗加重，仍被锁在外层复核槽",
+        "evidence": "陆沉渊腕骨猛然收紧，肩背撞上石沿；后续锁纹继续勒紧并使旧伤疼痛加剧。"
+      },
+      {
+        "fact_id": "fact-0100-002",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "physical_state.current_lock_sign",
+        "before": "候验锁纹继续收紧并将陆沉渊固定在外层复核槽",
+        "after": "锁纹持续收紧并固定其留在外层入口，下一轮核验仍将首先叫到他",
+        "evidence": "闻照微明确说他的到案名、锁纹和血都留在这里，下一轮核验他仍是第一个被叫到的人。"
+      },
+      {
+        "fact_id": "fact-0100-003",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "relationship.with_character_su_wan",
+        "before": "双方公开确认各自承担责任，陆沉渊不替苏晚认债",
+        "after": "陆沉渊继续拒绝用自己的具名到案交换苏晚承担未具名接收，并主动要求苏晚不要替他答复",
+        "evidence": "他对苏晚说不要用自己的名字换她，并要求复核问到交接时她别替他答。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "fact-0100-004",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_procedural_boundary",
+        "before": "公开确认无具名落处、不交人，并要求只认已看见的事实",
+        "after": "继续只认亲眼看见的接收事实，明确表示无具名落处不交人，也不替陆沉渊回答",
+        "evidence": "苏晚说谁看见谁说、谁没看见别补写，并再次表示泥灯巷不交人。"
+      },
+      {
+        "fact_id": "fact-0100-005",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_physical_state",
+        "before": "灯腹裂纹继续下游，针尖火苗几乎伏平但未熄",
+        "after": "裂纹继续拖长至下沿，火苗被夜气压至贴住灯芯，仍未熄灭或修复",
+        "evidence": "正文写明灯腹纹路爬到下沿，火苗伏低、贴住灯芯，未出现熄灭或修复。"
+      },
+      {
+        "fact_id": "fact-0100-006",
+        "asset_id": "npc_prefecture_shadow_envoy",
+        "field_path": "npc.current_recovery_strategy",
+        "before": "继续共持并接受边缘见证权限复核，等待原始交接提交方追缴",
+        "after": "放弃立即强行回收，确认残印进入争议共持与保全复核",
+        "evidence": "闻照微最终宣布“争议共持，保全复核”，未取走残印。"
+      },
+      {
+        "fact_id": "fact-0100-007",
+        "asset_id": "npc_prefecture_shadow_envoy",
+        "field_path": "npc.current_visible_state",
+        "before": "影印已有第二道裂线，影手受锁纹牵制",
+        "after": "影印裂出第三道细缝，影手离开石面后又被锁纹拽回",
+        "evidence": "正文明确写出影印“啪”地裂开第三道细缝，影手被重新拽住。"
+      }
+    ],
+    "locations": [
+      {
+        "fact_id": "fact-0100-008",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "location.boundary_state",
+        "before": "贫城共同执行无具名落处、不交人的拒交边界",
+        "after": "护阵熄灭、巷口维持冷线，拒交规则在无住户命火调用的情况下继续执行",
+        "evidence": "护阵熄灭后冷线亮起，住户未递出自家灯，仍隔着门框响应拒交。"
+      }
+    ],
+    "factions": [
+      {
+        "fact_id": "fact-0100-009",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "information.current_request_state",
+        "before": "苏晚提验被撤回并改为追问原始交接提交方",
+        "after": "提验申请正式从复核槽中脱落，苏晚不再作为疑接者被提验",
+        "evidence": "“疑接者”三字被刮去，裁字明确“据此产生之提验，撤回”。"
+      },
+      {
+        "fact_id": "fact-0100-010",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "information.current_record_scope",
+        "before": "自动填入的本地接收不得用于提人或向泥灯巷追缴",
+        "after": "外层裁定明确记为本地未见具名接收，不得据此向泥灯巷重复征收",
+        "evidence": "槽面依次显出“本地未见具名接收”和不得据此向泥灯巷重复征收。"
+      },
+      {
+        "fact_id": "fact-0100-011",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_boundary_terms",
+        "before": "贫城共同执行无具名落处、不交人，不替任何人补认具名接收",
+        "after": "泥灯巷实际完成一次集体拒交，住户只陈述所见且未交出苏晚或补写接收事实",
+        "evidence": "住户分别说未见苏晚接收，并共同应声“无具名落处，不交人”。"
+      }
+    ],
+    "artifacts": [
+      {
+        "fact_id": "fact-0100-012",
+        "asset_id": "artifact_prefecture_transit_registry_seal",
+        "field_path": "artifact.current_holder",
+        "before": "陆沉渊与闻照微争议共持，未完成回收",
+        "after": "仍由双方争议共持，闻照微未能回收，陆沉渊未交印",
+        "evidence": "陆沉渊明确说“补正不等于交印”，闻照微随后确认“争议共持，保全复核”。"
+      },
+      {
+        "fact_id": "fact-0100-013",
+        "asset_id": "artifact_prefecture_transit_registry_seal",
+        "field_path": "artifact.current_visible_trace",
+        "before": "残印显示送出端亮起，未出现具名接收响应",
+        "after": "残印及复核结果仅确认送出过一段命火，仍未证明苏晚或泥灯巷接收",
+        "evidence": "陆沉渊指出残印只证明送出，未证明苏晚或泥灯巷接过。"
+      }
+    ],
+    "techniques": [],
+    "relationships": [
+      {
+        "fact_id": "fact-0100-014",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_autonomy_boundary",
+        "before": "母子分别承担责任，互不代认",
+        "after": "母子进一步划清答复与承担边界：苏晚不替陆沉渊答，陆沉渊不以自身名字替苏晚换条件",
+        "evidence": "双方分别说“别替我答”和“你也别拿自己的名字，去换我的”。"
+      },
+      {
+        "fact_id": "fact-0100-015",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_collective_choice",
+        "before": "留下者站在冷线外，不越线、不替苏晚接话",
+        "after": "留下者以各自门框、灯架或断砖作回应，集体执行不交人且不代证",
+        "evidence": "住户保持各自距离，只陈述亲见事实，并陆续按住门框等位置应声。"
+      }
+    ],
+    "emotions": [
+      {
+        "fact_id": "fact-0100-016",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_emotional_turn",
+        "before": "母子公开确认各自承担责任、互不代认",
+        "after": "关系转为相互尊重边界而非互相遮挡，苏晚未让陆沉渊进门，陆沉渊主动退开门槛",
+        "evidence": "苏晚只让出门槛内一点位置而未叫他进来，陆沉渊随后退开半步不再压住灯光。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "fact-0100-017",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_verified_result",
+        "before": "自动填入本地接收并据此提人已确认属于错误",
+        "after": "错误完成可执行补正：本地接收栏改为未见具名接收，相关提验撤回",
+        "evidence": "复核槽显出三行裁字，分别确认未见具名接收、撤回提验及禁止重复征收。"
+      },
+      {
+        "fact_id": "fact-0100-018",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "timeline.chapter_event",
+        "before": "局部更正已公开回传并作为贫城再次拒交依据",
+        "after": "第一笔局部改账落定，补正栏沉入原始交接缺口并完成外层裁定",
+        "evidence": "补正栏缓缓沉入原始交接缺口，槽面合拢，仅留下窄缝。"
+      },
+      {
+        "fact_id": "fact-0100-019",
+        "asset_id": "state_ledger_public_reputation",
+        "field_path": "state_ledger.current_public_rule",
+        "before": "未见具名接收时自动填栏并据此提人，泥灯巷可据此拒交",
+        "after": "公开规则被实际执行并固化为：无具名接收不得先提人或向泥灯巷重复征收",
+        "evidence": "裁定明确禁止据未具名接收向泥灯巷重复征收，巷中又共同执行不交人。"
+      },
+      {
+        "fact_id": "fact-0100-020",
+        "asset_id": "state_ledger_map_unlock_status",
+        "field_path": "state_ledger.current_boundary_status",
+        "before": "州府外层复核入口有限解锁，原始转运交接申请缺口开放，深层不可见",
+        "after": "原始交接复核进入下一阶段，州府深层仍锁定，仅退回对原始交接提交方的追问",
+        "evidence": "槽缝中没有门，州府深处仍漆黑，灰纸写明下一次复核追问原始交接提交方何人。"
+      },
+      {
+        "fact_id": "fact-0100-021",
+        "asset_id": "state_ledger_mother_life_lamp_countdown",
+        "field_path": "state_ledger.current_countdown_state",
+        "before": "命灯裂损与倒计时继续运行，未因陆沉渊到案暂停",
+        "after": "旧债与分期继续，命灯裂损和火苗失温持续，未因本次补正取消或修复",
+        "evidence": "苏晚明确认旧债和分期，灯腹裂纹继续延伸，火苗保持将熄未熄状态。"
+      },
+      {
+        "fact_id": "fact-0100-022",
+        "asset_id": "state_ledger_map_unlock_status",
+        "field_path": "state_ledger.current_next_requirement",
+        "before": null,
+        "after": "下一次复核必须回答原始交接提交方为何人",
+        "evidence": "从州府深处滑出的灰纸写明“下一次复核：原始交接提交方，何人”。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "fact-0100-023",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "hook.current_direction",
+        "before": "提验压力转向追问残印对应的原始交接提交方",
+        "after": "下一轮核验明确收窄为追问原始交接提交方身份，州府深层仍未开放",
+        "evidence": "灰纸从缝中滑出，仅留下关于原始交接提交方何人的要求。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "fact-0100-024",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "timeline.chapter_event",
+        "before": "局部更正连同陆沉渊到案姓名公开回传并支持贫城拒交",
+        "after": "外层复核完成补正裁定，自动接收栏删除，苏晚提验和泥灯巷本轮重复征收撤回",
+        "evidence": "正文依次呈现空栏脱落、三行裁字显形及补正栏沉入原始交接缺口。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "fact-0100-025",
+        "asset_id": "artifact_prefecture_transit_registry_seal",
+        "field_path": "artifact.current_effect_risk",
+        "before": "锁纹在腕骨缩紧，寒意加重，残印共持与入口核验继续施压",
+        "after": "锁纹持续收紧并将陆沉渊留在入口，下一轮核验压力继续存在",
+        "evidence": "陆沉渊多次因锁纹牵制无法探入缝隙，闻照微确认其仍留在外层入口。"
+      }
+    ],
+    "naming": [
+      {
+        "fact_id": "fact-0100-026",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "naming.current_record_labels",
+        "before": "公开记录保留陆沉渊到案署名，未恢复“疑接者苏晚”",
+        "after": "“疑接者苏晚”从复核记录中删除，记录改为本地未见具名接收及撤回提验",
+        "evidence": "正文写明“疑接者”三个字先行脱落，随后新的裁字覆盖原栏。"
+      }
+    ]
+  }
+}

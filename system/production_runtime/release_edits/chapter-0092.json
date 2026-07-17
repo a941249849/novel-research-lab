@@ -1,0 +1,13 @@
+{
+  "version": "0.25",
+  "chapter_id": "chapter-0092",
+  "source_revision": "system/production_runtime/chapters/chapter-0092/revision.md",
+  "source_sha256": "732efa7a36ce30de3569a6e4c3c265f0ed82c4ec0611a7c80cb8728658b011ca",
+  "release_edit": "system/production_runtime/release_edits/chapter-0092.md",
+  "release_edit_sha256": "96e4f243e3dec04526e84366328c2d4bb1ec2d6dec399b8be8dccb013eddc5c4",
+  "repair_direction": "共持只成立一次，成立后不再回到未接触封布的谈判阶段。",
+  "provider": "antigravity-gemini-3.5-flash-high+codex-fix",
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-091-100.json",
+  "reviewed_release_edit_sha256": "96e4f243e3dec04526e84366328c2d4bb1ec2d6dec399b8be8dccb013eddc5c4"
+}

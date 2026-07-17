@@ -7,5 +7,7 @@
   "release_edit_sha256": "1f6cf07d993f3c83bda45fb71a3e17c094c5ee746cd4f1f480f499c5e477efaa",
   "repair_direction": "明确五盏归还与三户各一盏参验的道具数量交接，保持后续合验状态一致",
   "provider": "codex-deterministic-editor",
-  "status": "pending_window_re_review"
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-031-040.json",
+  "reviewed_release_edit_sha256": "1f6cf07d993f3c83bda45fb71a3e17c094c5ee746cd4f1f480f499c5e477efaa"
 }

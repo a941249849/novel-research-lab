@@ -1,0 +1,103 @@
+{
+  "chapter_id": "chapter-0071",
+  "accepted_revision_sha256": "bdb1921c047e259ec117dab3a5f55700d47c623b6d64fa8a947a952014f16b04",
+  "state_deltas": [
+    {
+      "fact_id": "fact-0071-001",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_procedural_choice",
+      "operation": "set",
+      "before": "在见证者界限内以自身半寿特征记录强行并入封档，以承受右眼失明与半寿暴露代价保留双圈冲突记录。",
+      "after": "陆沉渊主动站入追时脉冲认定范围，阻止巷民刮除封记，并要求无人替他按手印或代他陈述见证。"
+    },
+    {
+      "fact_id": "fact-0071-002",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_procedural_position",
+      "operation": "set",
+      "before": "本地程序中的高暴露被追踪目标。",
+      "after": "成为追时脉冲直接接触并继续追索后压时刻边缘的现场接触对象。"
+    },
+    {
+      "fact_id": "fact-0071-003",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_enforcement_scope",
+      "operation": "set",
+      "before": "封档最后闭合时州府复核印锁定失效附条的后压时刻，向上层节点追查转运记录改动者。",
+      "after": "追时脉冲沿封档外层、陆沉渊右臂和护阵白裂继续延伸，复核指向后压时刻边缘及相关转运痕迹。"
+    },
+    {
+      "fact_id": "fact-0071-004",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_witness_boundary",
+      "operation": "set",
+      "before": "形成“不代债、不交人、允许各户撤守”的共同边界。",
+      "after": "巷民公开执行“不刮封记、不代陆沉渊按印、不代他作证，同时不交出住户命火”的边界。"
+    },
+    {
+      "fact_id": "fact-0071-005",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_collective_choice",
+      "operation": "set",
+      "before": "住户在知晓后果的前提下自愿承担责任，并保留退出外沿守护的权利。",
+      "after": "住户不替陆沉渊承担身份和见证后果，维持各户自行守灯、各自决定是否继续燃烧的共同选择。"
+    },
+    {
+      "fact_id": "fact-0071-006",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_collective_emotion",
+      "operation": "set",
+      "before": "恐惧与退出被公开承认后，留下者仍自愿承担责任。",
+      "after": "恐惧在争执中公开显现，但共同体没有因恐惧而刮除封记或替陆沉渊作答。"
+    },
+    {
+      "fact_id": "fact-0071-007",
+      "asset_id": "state_ledger_faction_pressure",
+      "field_path": "state_ledger.current_next_procedural_hook",
+      "operation": "set",
+      "before": "州府复核印锁定失效附条的后压时刻，追查转运记录改动者。",
+      "after": "追时脉冲从封档穿过陆沉渊，继续指向护阵白裂及尚未认领的后压时刻边缘。"
+    },
+    {
+      "fact_id": "fact-0071-008",
+      "asset_id": "foreshadowing_cinder_seal_rain",
+      "field_path": "foreshadowing.current_manifestation",
+      "operation": "set",
+      "before": "封档外层浮出带灼烧感的后加覆印灰边。",
+      "after": "封档外层两道压痕之间浮出新的小印，并留下尚未落稳的浅湿后压印。"
+    },
+    {
+      "fact_id": "fact-0071-009",
+      "asset_id": "foreshadowing_cinder_seal_rain",
+      "field_path": "hook.current_direction",
+      "operation": "set",
+      "before": "复核压力集中在封档及失效附条的后压时刻。",
+      "after": "第一轮追时脉冲未从陆沉渊返回封档，而是转向护阵白裂。"
+    },
+    {
+      "fact_id": "fact-0071-010",
+      "asset_id": "state_ledger_faction_pressure",
+      "field_path": "state_ledger.current_chapter_sequence",
+      "operation": "set",
+      "before": "封档最后闭合并锁定失效附条后压时刻。",
+      "after": "追时小印落在封档外层，脉冲完成对陆沉渊的第一轮接触并继续延伸至护阵白裂。"
+    },
+    {
+      "fact_id": "fact-0071-011",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_visible_condition",
+      "operation": "set",
+      "before": "右眼失明，暗青追缠纹与心跳同步并发送位置状态。",
+      "after": "追缠纹被冷白细痕压紧并绷直至右眼焦黑边缘，右臂短暂失去知觉后出现针扎痛，腕下渗血。"
+    },
+    {
+      "fact_id": "fact-0071-012",
+      "asset_id": "state_ledger_half_life_registry_exposure",
+      "field_path": "state_ledger.registry_locking_sign",
+      "operation": "set",
+      "before": "右眼彻底失明，暗青追缠纹暴突并与心跳同步。",
+      "after": "追时脉冲与暗青追缠纹同步锁定，冷白痕迹穿过右臂但未留下新的字。"
+    }
+  ],
+  "resolved_audit_ids": []
+}

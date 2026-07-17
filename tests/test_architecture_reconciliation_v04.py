@@ -68,6 +68,13 @@ class ArchitectureReconciliationContractTests(unittest.TestCase):
         )
         self.assertFalse(first["production_readiness"]["owner_gate_required"])
         self.assertTrue(first["production_readiness"]["content_generation_allowed"])
+        self.assertTrue(first["production_readiness"]["production_ready"])
+        self.assertEqual(
+            first["production_readiness"]["release_ready"],
+            first["production_readiness"]["accepted_release_ready_count"] == 100
+            and first["production_readiness"]["blocking_window_review"] is None,
+        )
+        self.assertIsNone(first["production_readiness"]["blocking_window_review"])
 
 
 class ArchitectureReconciliationIntegrationTests(unittest.TestCase):

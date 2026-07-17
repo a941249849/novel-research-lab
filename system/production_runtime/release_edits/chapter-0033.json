@@ -7,5 +7,7 @@
   "release_edit_sha256": "d25080c56f123cdc622be2a33d96c9f4646b6ef28367e2be0ef338e4d0fb9ff5",
   "repair_direction": "删除结尾冷金回声重复句",
   "provider": "codex-deterministic-editor",
-  "status": "pending_window_re_review"
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-031-040.json",
+  "reviewed_release_edit_sha256": "d25080c56f123cdc622be2a33d96c9f4646b6ef28367e2be0ef338e4d0fb9ff5"
 }

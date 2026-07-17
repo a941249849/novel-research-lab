@@ -1,0 +1,14 @@
+{
+  "version": "0.25",
+  "chapter_id": "chapter-0077",
+  "source_revision": "system/production_runtime/chapters/chapter-0077/revision.md",
+  "source_sha256": "35f5cf517ccadf2fb1a1dba8902650f43d11b51ec1de6de8b89549bf95948f64",
+  "release_edit": "system/production_runtime/release_edits/chapter-0077.md",
+  "release_edit_sha256": "9cf163e006d1e986cbca11eb5c9d90c4c87cca9ed648a48e19e78a6b6a5e0fdc",
+  "repair_direction": "修复两项阻断问题：一，删除或重写与第0076章结尾完全复制的末尾文本块，让结尾只承接本章封档侧灰印冷亮的因果；二，陆沉渊的既定状态是右眼失明、左眼仍可视物但受银灰刺激，全文统一左右眼。保持本章状态结果、见证边界和结尾压力不变。",
+  "provider": "codex",
+  "model": "gpt-5.6-terra",
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-071-080.json",
+  "reviewed_release_edit_sha256": "9cf163e006d1e986cbca11eb5c9d90c4c87cca9ed648a48e19e78a6b6a5e0fdc"
+}

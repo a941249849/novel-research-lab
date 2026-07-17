@@ -1,0 +1,14 @@
+{
+  "version": "0.25",
+  "chapter_id": "chapter-0081",
+  "source_revision": "system/production_runtime/chapters/chapter-0081/revision.md",
+  "source_sha256": "5f17842e8d330a0e5ebdf5feb3d34de9217487e1333694e1a7d37a25ce5cc8ce",
+  "release_edit": "system/production_runtime/release_edits/chapter-0081.md",
+  "release_edit_sha256": "3496e9877888a439bbfdb44607cdfeb661b69d06abec0e5228a803b2e0517113",
+  "repair_direction": "严格3200至3800中文字符。修复擦血动作矛盾并删除结尾重复。全章“残印”最多3次，禁用铁锈冷香及反复触感；用阵砖交付后的影印字迹、站位、选择和见证边界推进。保持苏晚选择钩子、状态结果和无灯边界。",
+  "provider": "antigravity",
+  "model": "Gemini 3.5 Flash (High)",
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-081-090.json",
+  "reviewed_release_edit_sha256": "3496e9877888a439bbfdb44607cdfeb661b69d06abec0e5228a803b2e0517113"
+}

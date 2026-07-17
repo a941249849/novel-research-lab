@@ -7,5 +7,7 @@
   "release_edit_sha256": "12bb36bdbd85a2755e820060f12819246b2bc7c58501bd0426564c2b66386a1f",
   "repair_direction": "删除章节序号元文本泄露，改为故事内时间与程序表述",
   "provider": "codex-deterministic-editor",
-  "status": "pending_window_re_review"
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-031-040.json",
+  "reviewed_release_edit_sha256": "12bb36bdbd85a2755e820060f12819246b2bc7c58501bd0426564c2b66386a1f"
 }

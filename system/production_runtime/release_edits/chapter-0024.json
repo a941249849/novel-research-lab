@@ -7,5 +7,7 @@
   "release_edit_sha256": "585c217b4ff72ea661972e7ceff9a57f8df0c10198c027eaa64966cf990b32b8",
   "repair_direction": "以木尺、石栏和声响替代重复托肘互动。",
   "provider": "deterministic_editor",
-  "status": "pending_window_re_review"
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-021-030.json",
+  "reviewed_release_edit_sha256": "585c217b4ff72ea661972e7ceff9a57f8df0c10198c027eaa64966cf990b32b8"
 }

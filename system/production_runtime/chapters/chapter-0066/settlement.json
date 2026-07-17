@@ -1,0 +1,63 @@
+{
+  "chapter_id": "chapter-0066",
+  "accepted_revision_sha256": "40d2fd55c5999fa2ca77dc0ce76f27136105209c42774b6bd19fd3a5a1e3dd8b",
+  "state_deltas": [
+    {
+      "fact_id": "fact-0066-02",
+      "asset_id": "npc_su_wan",
+      "field_path": "npc.current_procedural_boundary",
+      "operation": "set",
+      "before": "收回灯匣拒绝代管要求以物理阻隔将母债主体与陆沉渊证据责任正式分开，独自持灯应审",
+      "after": "苏晚通过物理阻隔将债务主体与陆沉渊的证据留档责任正式分开，促成泥灯巷“不代债、不交人、允许各户撤守”的共同边界，部分住户退出后护阵裂损进一步固定，但住户命火未被调用"
+    },
+    {
+      "fact_id": "fact-0066-03",
+      "asset_id": "npc_su_wan",
+      "field_path": "npc.current_visible_lamp_consequence",
+      "operation": "set",
+      "before": "最后一格正式开始走刻，裂纹与冷白仍在，命灯未被寿印摄走且仍由苏晚持有",
+      "after": "错取余火倒卷回灯芯且短暂亮起，但既往损耗不予恢复，新增裂损与掌背冷光创口依然保留"
+    },
+    {
+      "fact_id": "fact-0066-05",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_enforcement_scope",
+      "operation": "set",
+      "before": "苏晚旧寿债的债名与原始债印仍有效，但命籍衙不得再以本次无效迁籍附条转移命档，亦不得重新执行已冲突的当期寿火位",
+      "after": "命籍衙不得再以本次无效迁籍附条转移苏晚命档，也不得重新执行已冲突的当期寿火位，且刚被抽离的错取余火返还，但在附条被判定失效后转为申请在泥灯巷原地执行针对苏晚的具名旧债"
+    },
+    {
+      "fact_id": "fact-0066-01",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_procedure_result",
+      "operation": "set",
+      "before": "迁籍附条被标记为后压待审事实且暂时失效，但在接下来的复核程序中被限缩在“债是否有效”与“迁籍是否有效”中选择唯一争点",
+      "after": "迁籍附条被正式确认不能继承原债印效力，本次追缴令失效，已揭示错账增加一项执行附条错误，但原债印仍被认定有效，未产生债额减免"
+    },
+    {
+      "fact_id": "fact-0066-06",
+      "asset_id": "state_ledger_faction_pressure",
+      "field_path": "state_ledger.faction_pressure",
+      "operation": "set",
+      "before": "压力转向迁籍附条与重复执行冲突的州府复核，本地局部改账兑现，更高层追查旧债转运记录",
+      "after": "迁籍附条与重复执行冲突送往州府复核，本地局部改账兑现，更高层开始追查是谁触碰了苏晚旧债的转运记录"
+    },
+    {
+      "fact_id": "fact-0066-07",
+      "asset_id": "state_ledger_faction_pressure",
+      "field_path": "state_ledger.current_next_procedural_hook",
+      "operation": "set",
+      "before": "命审程序争点收窄为迁籍附条的形成与执行效力，且程序压力从选择争点转入不可撤回的实物压印检验",
+      "after": "迁籍附条被判定失效，命籍衙申请转为在泥灯巷原地执行针对苏晚的旧债，程序压力转向原地执行旧债"
+    },
+    {
+      "fact_id": "fact-0066-04",
+      "asset_id": "state_ledger_protagonist_strain",
+      "field_path": "state_ledger.current_visible_condition",
+      "operation": "set",
+      "before": "右眼焦纹再现且几近失明，咳出带血丝灰沫，半寿追缠纹上身，承压与暴露大幅上升且未获得更高阶识账能力",
+      "after": "停术旁观承担证据留档代价，右眼留下无法消退的巨大盲斑，半寿暴露程度上升，且因放弃施术导致原有本地识账权限虚线全部崩解，被排除在封档后的本地查阅之外"
+    }
+  ],
+  "resolved_audit_ids": []
+}

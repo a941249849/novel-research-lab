@@ -13,11 +13,11 @@ from typing import Any
 
 from nrl_paths import ROOT, runtime_path
 from nrl_antigravity_bridge import find_agy_binary
-from nrl_codex_writer import ask_antigravity_writer, ask_codex_writer
+from nrl_codex_writer import ask_antigravity_writer, ask_codex_writer, codex_usage_limited
 from nrl_model_router import route_model
 
 
-VERSION = "0.25"
+VERSION = "0.26"
 MIN_RELEASE_CHINESE_CHARS = 3000
 MAX_RELEASE_CHINESE_CHARS = 4200
 CHAPTER_IDS = tuple(f"chapter-{number:04d}" for number in range(1, 101))
@@ -27,6 +27,11 @@ REVIEW_ROOT = runtime_path("system/production_runtime/window_reviews")
 RELEASE_ROOT = runtime_path("system/releases/fanqie/borrowed-heaven-volume1")
 MANUSCRIPT_REVIEW_ROOT = runtime_path("system/releases/review")
 EDIT_ROOT = runtime_path("system/production_runtime/release_edits")
+TITLE_REGISTRY_PATH = runtime_path("system/production_runtime/chapter_titles.volume1.json")
+
+
+def _latin_token_markers(text: str) -> list[str]:
+    return re.findall(r"(?<![A-Za-z])[A-Za-z]{2,}(?![A-Za-z])", text)
 
 
 def _read_json(path: Path) -> dict[str, Any]:
@@ -35,6 +40,20 @@ def _read_json(path: Path) -> dict[str, Any]:
 
 def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def load_volume1_titles() -> dict[str, str]:
+    payload = _read_json(TITLE_REGISTRY_PATH)
+    entries = payload.get("chapters", [])
+    titles = {str(item.get("chapter_id", "")): str(item.get("title", "")).strip() for item in entries}
+    if set(titles) != set(CHAPTER_IDS) or len(entries) != len(CHAPTER_IDS):
+        raise RuntimeError("Volume 1 title registry must contain each chapter exactly once")
+    if len(set(titles.values())) != len(CHAPTER_IDS):
+        raise RuntimeError("Volume 1 chapter titles must be unique")
+    invalid = [chapter_id for chapter_id, title in titles.items() if not 2 <= len(title) <= 16 or re.search(r"第\s*\d+\s*章", title)]
+    if invalid:
+        raise RuntimeError("invalid Volume 1 chapter titles: " + ", ".join(invalid))
+    return titles
 
 
 def _window_id(start: int, end: int) -> str:
@@ -117,13 +136,16 @@ def dispatch_release_edit(chapter_id: str, repair_direction: str) -> dict[str, A
         "目标 3200-3800 个中文字符。用不同于相邻章节的场景动作、冲突手段和感官落点，避免模板化的识账/咳灰/口述闭环。",
         "原始章节：", original,
     ])
+    editor = route_model("editor")
     provider = "codex"
-    model = "gpt-5.6-sol"
+    model = editor["model"]
     try:
+        if codex_usage_limited():
+            raise RuntimeError("Codex usage limit already detected in this batch")
         text = ask_codex_writer(prompt, model=model)
     except RuntimeError:
         provider = "antigravity"
-        model = route_model("writer")["fallback_model"]
+        model = editor["fallback_model"]
         text = ask_antigravity_writer(prompt, model=model)
     text = re.sub(
         r"^\s*(?:#{1,6}\s*)?第[零〇一二三四五六七八九十百0-9]{1,8}章(?:\s+[^\n]*)?\s*\n+",
@@ -132,54 +154,45 @@ def dispatch_release_edit(chapter_id: str, repair_direction: str) -> dict[str, A
         count=1,
     )
     chinese_count = len(re.findall(r"[\u4e00-\u9fff]", text))
-    if not MIN_RELEASE_CHINESE_CHARS <= chinese_count <= MAX_RELEASE_CHINESE_CHARS:
+    candidates = [(text, chinese_count, provider, model)]
+    if (
+        not MIN_RELEASE_CHINESE_CHARS <= chinese_count <= MAX_RELEASE_CHINESE_CHARS
+        or _latin_token_markers(text)
+    ):
         retry_prompt = prompt + (
             f"\n\n上一版只有 {chinese_count} 个中文字符，不合格。请从头输出完整修订稿，"
             "不得续写或解释，正文必须达到 3200-3800 个中文字符。"
         )
-        try:
-            text = ask_codex_writer(retry_prompt, model="gpt-5.6-sol")
-            provider = "codex"
-            model = "gpt-5.6-sol"
-            text = re.sub(
-                r"^\s*(?:#{1,6}\s*)?第[零〇一二三四五六七八九十百0-9]{1,8}章(?:\s+[^\n]*)?\s*\n+",
-                "",
-                text.strip(),
-                count=1,
-            )
-            chinese_count = len(re.findall(r"[\u4e00-\u9fff]", text))
-        except RuntimeError:
-            pass
-    if not MIN_RELEASE_CHINESE_CHARS <= chinese_count <= MAX_RELEASE_CHINESE_CHARS:
         provider = "antigravity"
-        retry_prompt = prompt + (
-            f"\n\n此前版本只有 {chinese_count} 个中文字符，不合格。请从头输出完整修订稿，"
-            "不得续写或解释，正文必须达到 3200-3800 个中文字符。"
+        model = editor["fallback_model"]
+        text = ask_antigravity_writer(retry_prompt, model=model)
+        text = re.sub(
+            r"^\s*(?:#{1,6}\s*)?第[零〇一二三四五六七八九十百0-9]{1,8}章(?:\s+[^\n]*)?\s*\n+",
+            "", text.strip(), count=1,
         )
-        route = route_model("writer")
-        fallback_errors = []
-        for model in (route["fallback_model"], route.get("secondary_fallback_model")):
-            if not model:
-                continue
-            try:
-                text = ask_antigravity_writer(retry_prompt, model=model)
-            except RuntimeError as error:
-                fallback_errors.append(str(error))
-                continue
-            text = re.sub(
-                r"^\s*(?:#{1,6}\s*)?第[零〇一二三四五六七八九十百0-9]{1,8}章(?:\s+[^\n]*)?\s*\n+",
-                "",
-                text.strip(),
-                count=1,
-            )
-            chinese_count = len(re.findall(r"[\u4e00-\u9fff]", text))
-            if MIN_RELEASE_CHINESE_CHARS <= chinese_count <= MAX_RELEASE_CHINESE_CHARS:
-                break
-        else:
-            if fallback_errors:
-                raise RuntimeError("release edit fallback providers failed: " + "; ".join(fallback_errors))
-    if not MIN_RELEASE_CHINESE_CHARS <= chinese_count <= MAX_RELEASE_CHINESE_CHARS:
-        raise RuntimeError("release edit must contain 3000-4200 Chinese characters")
+        chinese_count = len(re.findall(r"[\u4e00-\u9fff]", text))
+        candidates.append((text, chinese_count, provider, model))
+    if (
+        not MIN_RELEASE_CHINESE_CHARS <= chinese_count <= MAX_RELEASE_CHINESE_CHARS
+        or _latin_token_markers(text)
+    ):
+        def distance(candidate: tuple[str, int, str, str]) -> int:
+            count = candidate[1]
+            if count < MIN_RELEASE_CHINESE_CHARS:
+                return MIN_RELEASE_CHINESE_CHARS - count
+            if count > MAX_RELEASE_CHINESE_CHARS:
+                return count - MAX_RELEASE_CHINESE_CHARS
+            return 0
+
+        text, chinese_count, provider, model = min(candidates, key=distance)
+        recovery = EDIT_ROOT / f"{chapter_id}.recovery_candidate.md"
+        recovery.parent.mkdir(parents=True, exist_ok=True)
+        recovery.write_text(text.strip() + "\n", encoding="utf-8")
+        raise RuntimeError(
+            "release edit must contain 3000-4200 Chinese characters and no leaked Latin tokens; "
+            f"best candidate has {chinese_count} and was saved to "
+            f"{recovery.relative_to(ROOT)}"
+        )
     target = EDIT_ROOT / f"{chapter_id}.md"
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(text.strip() + "\n", encoding="utf-8")
@@ -223,6 +236,12 @@ def record_external_release_edit(
     chinese_count = len(re.findall(r"[\u4e00-\u9fff]", text))
     if not MIN_RELEASE_CHINESE_CHARS <= chinese_count <= MAX_RELEASE_CHINESE_CHARS:
         raise RuntimeError("external release edit must contain 3000-4200 Chinese characters")
+    latin_tokens = _latin_token_markers(text)
+    if latin_tokens:
+        raise RuntimeError(
+            "external release edit contains leaked Latin tokens: "
+            + ", ".join(latin_tokens[:10])
+        )
     source = runtime_path(record["artifacts"]["revision"])
     target = EDIT_ROOT / f"{chapter_id}.md"
     target.parent.mkdir(parents=True, exist_ok=True)
@@ -264,6 +283,24 @@ def record_window_review(payload: dict[str, Any]) -> dict[str, Any]:
     target = _window_path(start, end)
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    for chapter in packet["chapters"]:
+        if chapter["source_kind"] != "release_edit":
+            continue
+        manifest_path = _edit_manifest_path(chapter["chapter_id"])
+        manifest = _read_json(manifest_path)
+        manifest.update({
+            "status": (
+                "approved_by_window_review"
+                if payload["verdict"] == "ACCEPT"
+                else "rework_required_by_window_review"
+            ),
+            "window_review": str(target.relative_to(ROOT)),
+            "reviewed_release_edit_sha256": chapter["revision_sha256"],
+        })
+        manifest_path.write_text(
+            json.dumps(manifest, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
     return {"valid": payload["verdict"] == "ACCEPT", "path": str(target.relative_to(ROOT)), "verdict": payload["verdict"]}
 
 
@@ -321,8 +358,23 @@ def prior_window_review_required(chapter_id: str) -> bool:
         return False
     if ordinal <= 20 or ordinal > 100 or (ordinal - 1) % 10:
         return False
-    path = _window_path(ordinal - 10, ordinal - 1)
-    return not path.is_file() or _read_json(path).get("verdict") != "ACCEPT"
+    start, end = ordinal - 10, ordinal - 1
+    path = _window_path(start, end)
+    if not path.is_file():
+        return True
+    packet = build_window_review_packet(start, end)
+    if not packet["valid"]:
+        return True
+    expected_hashes = {
+        item["chapter_id"]: item["revision_sha256"]
+        for item in packet["packet"]["chapters"]
+    }
+    review = _read_json(path)
+    return (
+        review.get("verdict") != "ACCEPT"
+        or review.get("chapter_ids") != packet["packet"]["chapter_ids"]
+        or review.get("revision_hashes") != expected_hashes
+    )
 
 
 def build_release_readiness() -> dict[str, Any]:
@@ -364,12 +416,34 @@ def build_release_readiness() -> dict[str, Any]:
             window_errors.append(_window_id(start, end))
             continue
         review = _read_json(path)
-        if review.get("verdict") != "ACCEPT":
+        expected_ids = [f"chapter-{number:04d}" for number in range(start, end + 1)]
+        expected_hashes = {}
+        for chapter_id in expected_ids:
+            record = records.get(chapter_id)
+            if (
+                not record
+                or record.get("stage") != "chapter_accepted"
+                or "revision" not in record.get("artifacts", {})
+            ):
+                continue
+            revision, _ = _effective_revision(record)
+            expected_hashes[chapter_id] = _sha256(revision)
+        if (
+            review.get("verdict") != "ACCEPT"
+            or review.get("chapter_ids") != expected_ids
+            or review.get("revision_hashes") != expected_hashes
+        ):
             window_errors.append(_window_id(start, end))
+    try:
+        titles = load_volume1_titles()
+        titles_complete = len(titles) == len(CHAPTER_IDS)
+    except (OSError, RuntimeError, ValueError, json.JSONDecodeError):
+        titles_complete = False
     checks = {
         "all_100_chapters_accepted": not chapter_errors,
         "all_window_reviews_accepted": not window_errors,
         "volume_character_count_plausible": 300000 <= character_total <= 420000 if not chapter_errors else False,
+        "chapter_titles_complete": titles_complete,
     }
     return {
         "version": VERSION,
@@ -432,16 +506,36 @@ def build_fanqie_upload_package() -> dict[str, Any]:
     chapters_root.mkdir(parents=True, exist_ok=True)
     registry = _read_json(REGISTRY_PATH)
     records = {item["chapter_id"]: item for item in registry["chapters"]}
+    titles = load_volume1_titles()
     combined: list[str] = []
     manifest_chapters = []
     for ordinal, chapter_id in enumerate(CHAPTER_IDS, start=1):
         revision, _ = _effective_revision(records[chapter_id])
         text = revision.read_text(encoding="utf-8").strip()
-        filename = f"{ordinal:03d}_{chapter_id}.txt"
-        (chapters_root / filename).write_text(text + "\n", encoding="utf-8")
-        combined.extend([f"第{ordinal}章", "", text, ""])
-        manifest_chapters.append({"ordinal": ordinal, "chapter_id": chapter_id, "file": f"chapters/{filename}", "sha256": _sha256(revision)})
-    (RELEASE_ROOT / "01_volume1_full.txt").write_text("\n".join(combined).strip() + "\n", encoding="utf-8")
-    manifest = {"version": VERSION, "project": "《借天改命账》", "volume": 1, "readiness": readiness, "chapters": manifest_chapters}
+        title = titles[chapter_id]
+        heading = f"第{ordinal}章 {title}"
+        filename = f"{ordinal:03d}_{title}.txt"
+        output_path = chapters_root / filename
+        output_path.write_text(f"{heading}\n\n{text}\n", encoding="utf-8")
+        combined.extend([heading, "", text, ""])
+        manifest_chapters.append({
+            "ordinal": ordinal,
+            "chapter_id": chapter_id,
+            "title": title,
+            "file": f"chapters/{filename}",
+            "body_sha256": _sha256(revision),
+            "file_sha256": _sha256(output_path),
+        })
+    manuscript_path = RELEASE_ROOT / "01_volume1_full.txt"
+    manuscript_path.write_text("\n".join(combined).strip() + "\n", encoding="utf-8")
+    manifest = {
+        "version": VERSION,
+        "project": "《借天改命账》",
+        "volume": 1,
+        "readiness": readiness,
+        "full_manuscript": "01_volume1_full.txt",
+        "full_manuscript_sha256": _sha256(manuscript_path),
+        "chapters": manifest_chapters,
+    }
     (RELEASE_ROOT / "00_submission_manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return {"valid": True, "release_root": str(RELEASE_ROOT.relative_to(ROOT)), "chapter_count": len(manifest_chapters)}

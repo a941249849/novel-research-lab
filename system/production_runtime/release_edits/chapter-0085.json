@@ -1,0 +1,13 @@
+{
+  "version": "0.25",
+  "chapter_id": "chapter-0085",
+  "source_revision": "system/production_runtime/chapters/chapter-0085/revision.md",
+  "source_sha256": "25546a373f6766c53b7faa151c63f81f3e0aad86dc035058d9b4a8f55056bba2",
+  "release_edit": "system/production_runtime/release_edits/chapter-0085.md",
+  "release_edit_sha256": "3190312e9d26a31707ec8187ae95e06b95fb09c9ced8578f177aea9cff8e1a86",
+  "repair_direction": "统一右臂失能连续性：所有主动支撑、按压、精细动作与触觉均由左手完成；右臂保持无知觉垂落。",
+  "provider": "codex-continuity-repair",
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-081-090.json",
+  "reviewed_release_edit_sha256": "3190312e9d26a31707ec8187ae95e06b95fb09c9ced8578f177aea9cff8e1a86"
+}

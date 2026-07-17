@@ -1,0 +1,9 @@
+{
+  "version": "0.23",
+  "chapter_id": "chapter-0065",
+  "prompt_bytes": 29470,
+  "writer_asset_count": 7,
+  "provider_calls": 2,
+  "used_length_recovery": false,
+  "writer_model": "Gemini 3.1 Pro (High)"
+}

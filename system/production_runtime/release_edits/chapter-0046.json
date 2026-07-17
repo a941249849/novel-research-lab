@@ -7,5 +7,7 @@
   "release_edit_sha256": "e9724f72d58d0169824d22dc5f6d93beb12b4b45f435839f6ee73f701613ee62",
   "repair_direction": "统一持灯人性别并分化伤病表现，消除跨章机械复用的左膝胸骨灰沫焦纹模板，同时保留已验收状态结果",
   "provider": "codex-deterministic-editor",
-  "status": "pending_window_re_review"
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-041-050.json",
+  "reviewed_release_edit_sha256": "e9724f72d58d0169824d22dc5f6d93beb12b4b45f435839f6ee73f701613ee62"
 }

@@ -175,6 +175,7 @@ class ControlPlaneCliTests(unittest.TestCase):
                 "evidence_pack_matrix",
                 "creation_context_index",
                 "production_chapter_runtime",
+                "production_output_gate",
                 "cross_domain_invariants",
                 "source_ownership",
                 "verifiable_deep_reading",

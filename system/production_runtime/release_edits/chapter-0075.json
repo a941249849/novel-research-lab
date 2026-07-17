@@ -1,0 +1,14 @@
+{
+  "version": "0.25",
+  "chapter_id": "chapter-0075",
+  "source_revision": "system/production_runtime/chapters/chapter-0075/revision.md",
+  "source_sha256": "c92dff1d53450fb54340aa530ac4268a775d56283ceab8c62d30cb522b6f0f04",
+  "release_edit": "system/production_runtime/release_edits/chapter-0075.md",
+  "release_edit_sha256": "032f24198b9ce85ca08f2313de409496134219d9d05530c1f293a506ae48d20d",
+  "repair_direction": "清除章节中“陆沉渊抬手欲按住封档”至“始终没有向封档方向回流”的两处近重复文本，只保留一次事件并重写后段为自然收尾；不得重复识账、咳灰或口述闭环，保持全部状态结果和钩子不变。",
+  "provider": "antigravity",
+  "model": "Gemini 3.5 Flash (High)",
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-071-080.json",
+  "reviewed_release_edit_sha256": "032f24198b9ce85ca08f2313de409496134219d9d05530c1f293a506ae48d20d"
+}

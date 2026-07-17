@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import json
+import threading
+import time
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -31,6 +33,10 @@ from nrl_system_check import run_system_check, validate_runtime_state
 STATE_PATH = runtime_path("system/mission_controller/current_phase_state.json")
 ADAPTERS_PATH = runtime_path("system/runtime/agent_adapters.json")
 STUDIO_ROOT = runtime_path("system/runtime/studio")
+STUDIO_DATA_CACHE_TTL_SECONDS = 30.0
+_STUDIO_DATA_CACHE: dict[str, Any] | None = None
+_STUDIO_DATA_CACHE_AT = 0.0
+_STUDIO_DATA_CACHE_LOCK = threading.Lock()
 
 
 def _load_json(path: Path) -> dict[str, Any]:
@@ -38,12 +44,25 @@ def _load_json(path: Path) -> dict[str, Any]:
         return json.load(handle)
 
 
-def _studio_data() -> dict[str, Any]:
-    return build_studio_data(
-        _load_json(STATE_PATH),
-        load_registry(),
-        _load_json(ADAPTERS_PATH),
-    )
+def _studio_data(*, force_refresh: bool = False) -> dict[str, Any]:
+    global _STUDIO_DATA_CACHE, _STUDIO_DATA_CACHE_AT
+
+    now = time.monotonic()
+    with _STUDIO_DATA_CACHE_LOCK:
+        if (
+            not force_refresh
+            and _STUDIO_DATA_CACHE is not None
+            and now - _STUDIO_DATA_CACHE_AT < STUDIO_DATA_CACHE_TTL_SECONDS
+        ):
+            return _STUDIO_DATA_CACHE
+        snapshot = build_studio_data(
+            _load_json(STATE_PATH),
+            load_registry(),
+            _load_json(ADAPTERS_PATH),
+        )
+        _STUDIO_DATA_CACHE = snapshot
+        _STUDIO_DATA_CACHE_AT = time.monotonic()
+        return snapshot
 
 
 def _pipeline_status() -> dict[str, Any]:
@@ -198,5 +217,6 @@ def create_studio_server(
     port: int = 4173,
 ) -> ThreadingHTTPServer:
     STUDIO_ROOT.mkdir(parents=True, exist_ok=True)
+    _studio_data(force_refresh=True)
     handler = partial(StudioRequestHandler, directory=str(STUDIO_ROOT))
     return ThreadingHTTPServer((host, port), handler)

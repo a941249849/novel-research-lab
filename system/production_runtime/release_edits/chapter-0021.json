@@ -7,5 +7,7 @@
   "release_edit_sha256": "b2cd130a18e53d0460d9be996b0f939add2f477fcdddb32d9fc8736b29d3304b",
   "repair_direction": "去除托肘和不替代口号，以寿债页与矮凳动作表达边界。",
   "provider": "deterministic_editor",
-  "status": "pending_window_re_review"
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-021-030.json",
+  "reviewed_release_edit_sha256": "b2cd130a18e53d0460d9be996b0f939add2f477fcdddb32d9fc8736b29d3304b"
 }

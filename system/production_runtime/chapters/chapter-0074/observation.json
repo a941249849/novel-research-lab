@@ -1,0 +1,172 @@
+{
+  "chapter_id": "chapter-0074",
+  "draft_sha256": "9e444d7afaef5ee6b6fc5cd1b9d0d31ae18f720c0d0cf6ba37ddade965677ae2",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "chapter-0074-f001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_procedural_choice",
+        "before": "陆沉渊不施展识账术、不越级读取封档内容，只接受现场结论暂记为可疑和待验。",
+        "after": "陆沉渊收回替苏晚按名的手，不触碰回执、不越界读取，并接受“待验”结论。",
+        "evidence": "陆沉渊撤开停在回执上方的手，并说“我不碰”；随后将视线移开灰印与命灯。"
+      },
+      {
+        "fact_id": "chapter-0074-f002",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_visible_condition",
+        "before": "右臂追缠纹收紧、腕下渗血、掌心割伤，咳嗽呛血并有失温与支撑困难。",
+        "after": "陆沉渊失温和支撑困难加重，左腿再次发软，掌心伤口被砂砾碾开，咳出血丝。",
+        "evidence": "他肩背撞上石阶，掌心割伤重新裂开，左腿受力即软，并咳出血丝。"
+      },
+      {
+        "fact_id": "chapter-0074-f003",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_emotional_state",
+        "before": "承认自己看不全、不能定案，并主动移开可能诱发进一步读取的视线。",
+        "after": "接受苏晚亲自陈述及彼此不得代答、代偿的边界，主动避免辩解和读取。",
+        "evidence": "他回答“我记住”，并说“先别拆，别补，也别替我证明”。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "chapter-0074-f004",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_procedural_boundary",
+        "before": "主动组织巷民逐次记录肉眼所见，只记顺序、不替陆沉渊答辩、不补写未见内容。",
+        "after": "苏晚亲自按下姓名，仅陈述肉眼确认的响应顺序，并明确不替陆沉渊答复半寿、承认或否认债务。",
+        "evidence": "她按下黑木回执，陈述第三次脉冲、余火、独立追缴与阵纹的先后，并声明“只记看见的。没看见的，不添”。"
+      },
+      {
+        "fact_id": "chapter-0074-f005",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_physical_state",
+        "before": "掌背白翳与命灯裂纹仍在，冷意已攀上手腕。",
+        "after": "掌背霜白未退并沿腕侧铺开，命灯深灰裂纹未减少，身体失温继续加深。",
+        "evidence": "她按下回执后掌背凝霜沿腕侧扩展，命灯裂纹一条不少，灯焰没有回暖。"
+      },
+      {
+        "fact_id": "chapter-0074-f006",
+        "asset_id": "npc_su_wan",
+        "field_path": "relationship.with_character_lu_chenyuan",
+        "before": "在不代陆沉渊答辩的前提下守住证据边界，并拒绝把命灯或火力送到墙外。",
+        "after": "允许陆沉渊提供站立和挡风等有限协助，但坚持由各自承担自己的陈述、伤势与债务后果。",
+        "evidence": "她允许他挡风和扶持，却说“别替我收讫，别替我答，别替我认债”，并拒绝扶他返回。"
+      }
+    ],
+    "locations": [],
+    "factions": [
+      {
+        "fact_id": "chapter-0074-f007",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_enforcement_record",
+        "before": "命籍衙将现场所见记为待验，保留“同步响应、仍可疑”，未作主动写入定案。",
+        "after": "命籍衙接收苏晚关于响应先后的陈述，不反驳顺序，但在白裂处加盖“保管污染，待验禁修”灰印。",
+        "evidence": "命审台逐字收走陈述且没有改写；随后白裂旁落下八字灰印“保管污染，待验禁修”。"
+      },
+      {
+        "fact_id": "chapter-0074-f008",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_local_access_restriction",
+        "before": "陆沉渊被排除在封档后的本地查阅之外。",
+        "after": "陆沉渊仍未获得本地查阅权，且其半寿暴露和待验状态未被陈述消除。",
+        "evidence": "陈述明确未看见谁写入、未看见陆沉渊改动封档；命审台没有替他洗去“待验”阴影。"
+      }
+    ],
+    "artifacts": [
+      {
+        "fact_id": "chapter-0074-f009",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "foreshadowing.current_manifestation",
+        "before": "白裂暖墙最白灰浆上留有未随陆沉渊移动的浅湿印子。",
+        "after": "白裂旁最细缝聚成方正灰印，印面明确为“保管污染，待验禁修”，并压暗裂口周围阵纹。",
+        "evidence": "灰光在细缝中聚拢成方印，落印后暖墙阵纹暗了一截，灰浆变得发硬。"
+      }
+    ],
+    "techniques": [],
+    "relationships": [
+      {
+        "fact_id": "chapter-0074-f010",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_autonomy_boundary",
+        "before": "苏晚不替陆沉渊决定、不接受其替她偿债，仅在不越界时短暂挡冷。",
+        "after": "母子边界进一步落实为可信协助但不得代答、代收讫、代认债，双方各自承担自己的后果。",
+        "evidence": "苏晚允许他挡风，却要求他不替自己按名、答复或认债；陆沉渊答应并收手。"
+      },
+      {
+        "fact_id": "chapter-0074-f011",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_emotional_turn",
+        "before": "苏晚以“不欠谁”和“不替她偿债”收紧情感与代偿边界。",
+        "after": "陆沉渊接受苏晚宁受寒痛也亲自陈述，信任转为允许彼此承担各自后果。",
+        "evidence": "他承认“我记住”，未替她完成回执；她也不替他承担站立和受伤后果。"
+      }
+    ],
+    "emotions": [],
+    "information": [
+      {
+        "fact_id": "chapter-0074-f012",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "information.current_recorded_sequence",
+        "before": "现场保留“同步响应、仍可疑”的待验判断。",
+        "after": "现场记录锁定为第三次脉冲熄灭后，命灯外层先亮“独立追缴”，随后白裂旁暖墙阵纹亮起；灰印在墙先暗后落印。",
+        "evidence": "苏晚逐字陈述先后顺序，巷民补充“墙先暗。印后来。没挨着他”。"
+      },
+      {
+        "fact_id": "chapter-0074-f013",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "information.current_unresolved_scope",
+        "before": "复核仍指向护阵断口及相关转运痕迹，未确认写入来源。",
+        "after": "写入者、银灰来源及灰印来处仍未确认；记录吏仅暂记污染与待验禁修。",
+        "evidence": "苏晚声明未看见谁写入或银灰从哪里来，记录吏写到“污染”时停笔，未补写来处。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "chapter-0074-f014",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "hook.current_direction",
+        "before": "第三次脉冲熄灭后，白裂余火迟半息亮起，命灯外层先亮“独立追缴”。",
+        "after": "灰印压在白裂处后，银灰仅在第三次脉冲熄灭后迟半息沿细缝缩回，未向陆沉渊或苏晚命灯蔓延。",
+        "evidence": "新渗银灰未向外扩散，沿最白细缝缩回；灰印随后保持不再亮起。"
+      },
+      {
+        "fact_id": "chapter-0074-f015",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "hook.unread_migration_clause",
+        "before": "银灰脉冲在陆沉渊离阵后独立留存于白裂，指向护阵断口而非其身体。",
+        "after": "灰印及新渗银灰仍停留在白裂细缝和旧压痕之间，没有转移到陆沉渊身体或苏晚命灯。",
+        "evidence": "灰光“没有往他身上走，也没有往苏晚的灯里钻”，新渗银灰也未向外蔓延。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "chapter-0074-f016",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "timeline.chapter_event",
+        "before": "陆沉渊停在护阵遮护之外，银灰脉冲独立留存于白裂。",
+        "after": "苏晚完成独立限域陈述；命籍衙随后在白裂处加盖灰印并暂记禁修污染。",
+        "evidence": "章节先完成苏晚按名与顺序陈述，后出现白裂落印及“保管污染，待验禁修”结论。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "chapter-0074-f017",
+        "asset_id": "state_ledger_mother_life_lamp_countdown",
+        "field_path": "state_ledger.current_countdown_state",
+        "before": "倒计时处于极度危险的逼近最末一格阶段。",
+        "after": "倒计时未回升，刻度管液面继续向下滑落一线。",
+        "evidence": "末段明确写出刻度管沸腾的液面“又向下滑了一线”。"
+      },
+      {
+        "fact_id": "chapter-0074-f018",
+        "asset_id": "state_ledger_mother_life_lamp_countdown",
+        "field_path": "state_ledger.current_visible_lamp_consequence",
+        "before": "裂灯期限逼近最末一格，下一次有效追缴已抵达。",
+        "after": "独立追缴持续存在，命灯裂纹未修复，陈述未改变裂损或倒计时。",
+        "evidence": "陈述后命灯裂纹“一条不少”，灯焰没有因陈述回暖，外层字样仍短暂亮起。"
+      }
+    ],
+    "naming": []
+  }
+}

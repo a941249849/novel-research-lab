@@ -8,5 +8,7 @@
   "repair_direction": "删除结尾连续短段、重复亮格和同义悬念循环；保留两巷共同空额显形、第一盏灯被优先追缴、持灯人要求复核及两巷无人代答这一状态结果，并在首次明确复核回鸣后立即收束。不得重复取得或唤醒残命灯盏。",
   "provider": "codex",
   "model": "gpt-5.6-sol",
-  "status": "pending_window_re_review"
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-051-060.json",
+  "reviewed_release_edit_sha256": "3c7e0c399a61598e5f7079699a5e39c4033cd7552d5349d0c7a3d84adae434d5"
 }

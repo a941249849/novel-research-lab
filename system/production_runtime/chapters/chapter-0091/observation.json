@@ -1,0 +1,131 @@
+{
+  "chapter_id": "chapter-0091",
+  "draft_sha256": "358a5ed758bdaa7f3e65537c606ac8257cb01d29533fbef1b6d2ed05484a8493",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "chapter-0091-fact-001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_choice_state",
+        "before": "未交出残印，停止探查黑槽并继续保留候验状态",
+        "after": "主动申请原始转运交接复核，拒绝解除持有并继续候验",
+        "evidence": "陆沉渊明确说“申请原始转运交接复核”，并连续拒绝解除持有及追加旁人记录。"
+      },
+      {
+        "fact_id": "chapter-0091-fact-002",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_procedural_status",
+        "before": "到案记录正式不得并入苏晚独立追缴，陆沉渊继续带候验锁纹留在外层复核入口",
+        "after": "原始交接申请正式立项并接受原始交接锁纹，失去自行退出外层入口的资格",
+        "evidence": "闻照微宣布“原始交接已立”，并说明陆沉渊现在不能自行离开外层。"
+      },
+      {
+        "fact_id": "chapter-0091-fact-003",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_physical_state",
+        "before": "右臂麻意加重，掌心血迹沿石沿拖出暗线，候验锁纹持续收紧",
+        "after": "右臂从肩到指尖失去知觉，左腿失力跪地，掌心重新出血，锁纹贴腕收紧",
+        "evidence": "原始交接锁纹收紧后，他右臂失去知觉、左腿再度失稳，掌心血重新渗出。"
+      },
+      {
+        "fact_id": "chapter-0091-fact-004",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_emotional_state",
+        "before": null,
+        "after": "明确承认持印及到场所生的复核责任应由自己承担，不再将留下解释为替母亲扛债",
+        "evidence": "他意识到“这东西在他手里，他到这里来，他要这份复核。代价也该落在他身上”。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "chapter-0091-fact-005",
+        "asset_id": "npc_prefecture_shadow_envoy",
+        "field_path": "npc.current_permission_state",
+        "before": "牵引银灰印屑后影手进一步变淡，仍保有外层复核与交接申请权限",
+        "after": "作为外层见证完成原始交接立项，影手未夺取残印，州府深层仍未向陆沉渊开放",
+        "evidence": "闻照微确认申请已立，影手始终未越过封布，且明确表示深处尚未开放。"
+      },
+      {
+        "fact_id": "chapter-0091-fact-006",
+        "asset_id": "npc_prefecture_shadow_envoy",
+        "field_path": "npc.current_recovery_strategy",
+        "before": "明确给出“交出残印退回贫城”或“带候验锁纹进入下一层复核”两项路径",
+        "after": "接受核验与回收分列，允许仅核验封布外响应，不再直接夺取持有",
+        "evidence": "她记录“只准封布外的响应入槽”，并确认回收与核验分列。"
+      }
+    ],
+    "locations": [],
+    "factions": [],
+    "artifacts": [
+      {
+        "fact_id": "chapter-0091-fact-007",
+        "asset_id": "artifact_prefecture_transit_registry_seal",
+        "field_path": "artifact.current_effect",
+        "before": "残印在牵引下与银灰印屑同步震动，冷香加重，印屑停于交接缺口等待核验",
+        "after": "残印未被送入黑槽，银灰印屑贴封布外确认边界，交接缺口吐出“先验送出端，再候接收响应”",
+        "evidence": "正文写明银灰印屑没有钻入裹物，也没有夺走残印，最终悬在缺口边并吐出冷字。"
+      },
+      {
+        "fact_id": "chapter-0091-fact-008",
+        "asset_id": "artifact_prefecture_transit_registry_seal",
+        "field_path": "artifact.current_visible_trace",
+        "before": "银灰印屑被牵引偏移并最终停在黑槽交接缺口边缘，仍未落入任一记录",
+        "after": "银灰印屑继续悬停在交接缺口上方，未落入黑槽，等待先验送出端及接收响应",
+        "evidence": "结尾明确写明印屑未落进黑槽，悬在缺口边并等待后续回应。"
+      }
+    ],
+    "techniques": [],
+    "relationships": [],
+    "emotions": [
+      {
+        "fact_id": "chapter-0091-fact-009",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "emotion.current_responsibility_orientation",
+        "before": null,
+        "after": "由替苏晚承担债务的自我解释转为承认自己持印、到场及申请复核所生的责任",
+        "evidence": "陆沉渊明确表示不再把选择推给母亲的债，代价应落在自己身上。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "chapter-0091-fact-010",
+        "asset_id": "artifact_prefecture_transit_registry_seal",
+        "field_path": "information.latest_instruction",
+        "before": null,
+        "after": "先验送出端，再候接收响应",
+        "evidence": "正文结尾出现唯一一行冷字：“先验送出端，再候接收响应。”"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "chapter-0091-fact-011",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "hook.current_direction",
+        "before": "下一层复核入口已出现，但是否交印或携候验锁纹进入仍未决",
+        "after": "原始交接复核已立，后续先追验送出端，再等待接收响应；深层仍未开放",
+        "evidence": "陆沉渊接受原始交接锁纹后，缺口给出先验送出端的后续指令。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "chapter-0091-fact-012",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "timeline.chapter_event",
+        "before": "第三次复验完成局部分账裁定；陆沉渊未交残印并继续候验，苏晚旧债与分期不变",
+        "after": "陆沉渊拒绝交印并正式启动原始转运交接复核，候验锁纹转为原始交接锁纹，苏晚及泥灯巷记录未追加",
+        "evidence": "正文逐项确认申请、拒绝解除持有、拒绝追加苏晚及泥灯巷记录，并接受新锁纹。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "chapter-0091-fact-013",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.current_visible_condition",
+        "before": "左眼灼痛、左腿失力、右臂麻木与掌心出血继续加重，陆沉渊停止辨痕追读",
+        "after": "左眼仍无法辨清纹路，左腿再度失稳，右臂失去知觉，掌心裂口因锁纹与石沿作用重新出血，并咳出带血灰沫",
+        "evidence": "正文描写左眼模糊发痛、左腿跪地、右臂失知觉、掌心渗血及咳出带血灰沫。"
+      }
+    ],
+    "naming": []
+  }
+}

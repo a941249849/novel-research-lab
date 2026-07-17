@@ -253,6 +253,7 @@ def analyze_prose_metrics(text: str) -> dict[str, Any]:
         )
         if marker in text
     ]
+    latin_token_markers = re.findall(r"(?<![A-Za-z])[A-Za-z]{2,}(?![A-Za-z])", text)
     termination_word_hits = sum(text.count(marker) for marker in ("结束", "停止", "收束", "完。", "终。"))
     flags = []
     if transition_hits >= max(3, len(paragraphs) // 2):
@@ -276,6 +277,8 @@ def analyze_prose_metrics(text: str) -> dict[str, Any]:
         flags.append("prompt_context_leak")
     if generation_meta_markers:
         flags.append("generation_meta_leak")
+    if latin_token_markers:
+        flags.append("latin_token_leak")
     if termination_word_hits >= 10:
         flags.append("termination_token_loop")
     if paragraph_lengths and max(paragraph_lengths) > 500:
@@ -300,6 +303,7 @@ def analyze_prose_metrics(text: str) -> dict[str, Any]:
         "tail_dialogue_paragraph_ratio": round(tail_dialogue_ratio, 4),
         "prompt_leak_markers": prompt_leak_markers,
         "generation_meta_markers": generation_meta_markers,
+        "latin_token_markers": latin_token_markers,
         "termination_word_hits": termination_word_hits,
         "max_paragraph_length": max(paragraph_lengths) if paragraph_lengths else 0,
         "repeated_text_span_preview": repeated_span,
@@ -676,14 +680,15 @@ def build_chapter_writer_prompt(chapter_id: str) -> str:
     prompt = "\n".join(
         [
             f"你已获得 Owner Gate 对 {chapter_id} 的一次性受控正文测试授权。",
-            "你是 Novel Research Lab 的受控正文写手。只输出符合指定 JSON Schema 的对象，其中 prose 是完整正文，facts 是正文确实造成的状态变化。",
+            "你是 Novel Research Lab 的受控正文写手。只输出完整小说正文，不要 JSON、标题、说明或确认。",
             "本次授权仅覆盖非正文意图阶段留下的临时正文禁令；其余规则栈全部保持生效。",
-            "prose 目标 3500-4000 个中文字符，必须完整写到结尾钩子，不得用摘要压缩。严格服从上下文与规则栈；不得引入未登记资产或状态变化。",
+            "prose 目标 3200-3500 个中文字符，必须完整写到结尾钩子，不得用摘要压缩。严格服从上下文与规则栈；不得引入未登记资产或状态变化。",
             "避免工整段落、总结句、抽象议论堆叠、重复转折词和‘不是因为…而是因为…’模板。",
+            "不得把残印、封布、胸前冷感作为每章固定反应；同一章‘残印’和‘封布’各不超过三次，优先用规则变化、空间、物证和人物选择推进。",
+            "严格继承伤病与肢体状态：失明眼、失能肢体和既有伤势不得在无明确治疗事件时恢复动作、触觉或精细发力。",
             "结尾钩子成立后立即收束；禁止用连续短段、倒计时、同义复述或反复亮格拖长悬念，不得连续出现六个以上不足二十字的非对话段落。",
             "prose 只能包含读者可见的小说正文，严禁复制上下文 JSON、字段名、规则栈、asset_id、contract_path 或任何工程元数据。",
             "抽象机制必须落成动作、感官、物件、关系选择和后果。",
-            "facts 只记录正文可直接证明的变化；每项使用已提供 asset_id，并包含 before、after 与正文证据摘要。不得推测或补写正文外事实。",
             "",
             "上下文：",
             json.dumps(writer_context, ensure_ascii=False),
@@ -719,21 +724,53 @@ def _compact_chapter_context(context: dict[str, Any]) -> dict[str, Any]:
         )
     selected_ids = {str(item.get("asset_id")) for item in compact_assets}
     rolling = context.get("rolling_state", {})
+    latest_by_asset: dict[str, list[dict[str, Any]]] = {}
+    for item in rolling.get("latest_fields", []):
+        asset_id = str(item.get("asset_id"))
+        if asset_id not in selected_ids:
+            continue
+        latest_by_asset.setdefault(asset_id, []).append(item)
+    compact_latest = []
+    for asset_id in sorted(latest_by_asset):
+        items = latest_by_asset[asset_id]
+        items.sort(
+            key=lambda item: (
+                str(item.get("chapter_id", "")),
+                str(item.get("field_path", "")),
+            )
+        )
+        compact_latest.extend(
+            {
+                "asset_id": item.get("asset_id"),
+                "field_path": item.get("field_path"),
+                "value": item.get("value"),
+                "chapter_id": item.get("chapter_id"),
+            }
+            for item in items[-8:]
+        )
     compact_rolling = {
         "source_chapter_count": rolling.get("source_chapter_count", 0),
-        "latest_fields": [
-            item for item in rolling.get("latest_fields", [])
-            if str(item.get("asset_id")) in selected_ids
-        ],
+        "latest_fields": compact_latest,
         "recent_chapters": [],
     }
-    for chapter in rolling.get("recent_chapters", []):
+    # Latest fields already carry the canonical current value. Keep only a bounded
+    # immediate-transition digest so long-running projects cannot grow prompts
+    # without limit by repeating the same state in settlement history.
+    recent_chapters = rolling.get("recent_chapters", [])[-1:]
+    for chapter in recent_chapters:
         changes = [
-            item for item in chapter.get("changes", [])
+            {
+                "asset_id": item.get("asset_id"),
+                "field_path": item.get("field_path"),
+                "after": item.get("after"),
+            }
+            for item in chapter.get("changes", [])
             if str(item.get("asset_id")) in selected_ids
-        ]
+        ][-12:]
         if changes:
-            compact_rolling["recent_chapters"].append({**chapter, "changes": changes})
+            compact_rolling["recent_chapters"].append(
+                {"chapter_id": chapter.get("chapter_id"), "changes": changes}
+            )
     return {
         "chapter_id": context.get("chapter_id"),
         "dramatic_purpose": context.get("dramatic_purpose"),
@@ -831,6 +868,30 @@ def _insert_length_recovery(draft: str, insert: str) -> str:
     return "\n\n".join([*paragraphs[:-2], insert.strip(), *closing])
 
 
+def _reflow_oversized_paragraphs(text: str, max_chars: int = 500) -> str:
+    """Add paragraph boundaries at sentence endings without changing prose."""
+    output = []
+    for paragraph in (part.strip() for part in text.split("\n\n")):
+        if not paragraph or len(paragraph) <= max_chars:
+            if paragraph:
+                output.append(paragraph)
+            continue
+        sentences = [part for part in re.split(r"(?<=[。！？])", paragraph) if part]
+        if len(sentences) == 1:
+            output.append(paragraph)
+            continue
+        chunk = ""
+        for sentence in sentences:
+            if chunk and len(chunk) + len(sentence) > max_chars:
+                output.append(chunk)
+                chunk = sentence
+            else:
+                chunk += sentence
+        if chunk:
+            output.append(chunk)
+    return "\n\n".join(output)
+
+
 CHAPTER_HEADING_RE = re.compile(
     r"^\s*(?:#{1,6}\s*)?(?:第[零〇一二三四五六七八九十百0-9]{1,8}章(?:\s+.*)?|chapter\s+[0-9]+(?:\s+.*)?)\s*$",
     re.IGNORECASE,
@@ -862,6 +923,7 @@ def _ask_prose_writer(prompt: str, model: str) -> tuple[str, str, str]:
     fallback_models = (
         route["fallback_model"],
         route.get("secondary_fallback_model"),
+        route.get("tertiary_fallback_model"),
     )
     fallback_errors = []
     for fallback_model in filter(None, fallback_models):
@@ -875,6 +937,23 @@ def _ask_prose_writer(prompt: str, model: str) -> tuple[str, str, str]:
             fallback_errors.append(f"{fallback_model}: {error}")
     details = "; ".join(filter(None, (primary_error, *fallback_errors)))
     raise RuntimeError(f"all prose providers failed: {details}")
+
+
+def _ask_prose_editor(prompt: str) -> tuple[str, str, str]:
+    """Use the bounded editor route without spending a literary fallback call."""
+    route = route_model("editor")
+    primary_error = None
+    if not codex_usage_limited():
+        try:
+            return ask_codex_writer(prompt, model=route["model"]), "codex", route["model"]
+        except RuntimeError as error:
+            primary_error = str(error)
+    try:
+        model = route["fallback_model"]
+        return ask_antigravity_writer(prompt, model=model), "antigravity", model
+    except RuntimeError as error:
+        details = "; ".join(filter(None, (primary_error, str(error))))
+        raise RuntimeError(f"all prose editors failed: {details}") from error
 
 
 def _recover_short_draft(chapter_id: str, prompt: str, draft: str) -> tuple[str, dict[str, Any] | None]:
@@ -893,14 +972,53 @@ def _recover_short_draft(chapter_id: str, prompt: str, draft: str) -> tuple[str,
         "既有结尾前的片段：", closing,
     ])
     try:
-        insert, provider, model = _ask_prose_writer(recovery_prompt, route_model("writer")["model"])
+        insert, provider, model = _ask_prose_editor(recovery_prompt)
     except RuntimeError as error:
         return draft, {"valid": False, "error": str(error)}
+    insert = _reflow_oversized_paragraphs(insert)
     insert_metrics = analyze_prose_metrics(insert)
     if not 180 <= insert_metrics["chinese_character_count"] <= 1400:
         return draft, {"valid": False, "metrics": insert_metrics, "error": "length recovery bridge out of range"}
     recovered = _insert_length_recovery(draft, insert)
     return recovered, {"valid": True, "metrics": insert_metrics, "provider": provider, "model": model}
+
+
+def _generated_prose_errors(text: str, metrics: dict[str, Any]) -> list[str]:
+    errors = []
+    if not MIN_CHAPTER_CHINESE_CHARS <= metrics.get("chinese_character_count", 0) <= MAX_CHAPTER_CHINESE_CHARS:
+        errors.append("prose must contain 3000-4200 Chinese characters")
+    if _contains_chapter_heading(text):
+        errors.append("prose must not contain a chapter heading")
+    flags = set(metrics.get("flags", []))
+    if "tail_fragmentation_loop" in flags:
+        errors.append("prose ending contains a fragmented repetition loop")
+    if "prompt_context_leak" in flags:
+        errors.append("prose contains leaked prompt or runtime context")
+    if "generation_meta_leak" in flags:
+        errors.append("prose contains generation or completion metadata")
+    if "latin_token_leak" in flags:
+        errors.append("prose contains leaked Latin-language tokens")
+    if flags & {"termination_token_loop", "oversized_paragraph_loop", "duplicate_text_span"}:
+        errors.append("prose contains repeated or malformed prose blocks")
+    return errors
+
+
+def _best_short_recovery_candidate(current: str, candidate: str) -> str:
+    """Keep the longest structurally clean short draft for bounded recovery."""
+    metrics = analyze_prose_metrics(candidate)
+    count = metrics.get("chinese_character_count", 0)
+    blocking_flags = {
+        "tail_fragmentation_loop", "prompt_context_leak", "generation_meta_leak",
+        "termination_token_loop", "oversized_paragraph_loop", "duplicate_text_span",
+    }
+    if not 1 <= count < MIN_CHAPTER_CHINESE_CHARS:
+        return current
+    if _contains_chapter_heading(candidate) or set(metrics.get("flags", [])) & blocking_flags:
+        return current
+    if not current:
+        return candidate
+    current_count = analyze_prose_metrics(current).get("chinese_character_count", 0)
+    return candidate if count > current_count else current
 
 
 def dispatch_chapter_draft(chapter_id: str) -> dict[str, Any]:
@@ -912,38 +1030,38 @@ def dispatch_chapter_draft(chapter_id: str) -> dict[str, Any]:
     selected_model = None
     bundled_observation: dict[str, Any] | None = None
     bundled_facts: list[dict[str, Any]] = []
-    for model in dict.fromkeys(
-        (route_model("writer")["model"], route_model("showrunner")["model"])
-    ):
+    repair_candidate = ""
+    short_recovery_candidate = ""
+    chapter_dir = runtime_path(f"system/production_runtime/chapters/{chapter_id}")
+    candidate_path = chapter_dir / "draft.recovery_candidate.md"
+    if candidate_path.is_file():
+        cached = candidate_path.read_text(encoding="utf-8")
+        cached_metrics = analyze_prose_metrics(cached)
+        text = cached
+        metrics = cached_metrics
+        errors = _generated_prose_errors(cached, cached_metrics)
+        if cached_metrics.get("chinese_character_count", 0) < MIN_CHAPTER_CHINESE_CHARS:
+            short_recovery_candidate = _best_short_recovery_candidate("", cached)
+        else:
+            repair_candidate = cached
+    # Drafting stays on the sustained-production route. Sol adjudicates windows;
+    # using it as an implicit per-chapter retry multiplies cost without adding a gate.
+    for model in (() if (repair_candidate or short_recovery_candidate) else (route_model("writer")["model"],)):
         for generation in range(1, 3):
             retry_prompt = prompt
             if generation == 2:
-                retry_prompt += "\n\n上一版未通过长度或结尾节奏门禁。请从头完整重写，不要续写；必须交付 3200-3800 个中文字符，并在结尾钩子成立后立即收束，禁止连续短段同义复述。"
+                retry_prompt += "\n\n上一版未通过长度或结尾节奏门禁。请从头完整重写，不要续写；必须交付 3100-3500 个中文字符，并在结尾钩子成立后立即收束，禁止连续短段同义复述。"
             try:
-                bundle, provider, used_model = _ask_chapter_bundle(retry_prompt, model)
-                text = _strip_leading_chapter_heading(str(bundle["prose"]))
-                bundled_facts = list(bundle["facts"])
-                bundled_observation = build_bundled_observation(chapter_id, text, bundled_facts)
+                raw_text, provider, used_model = _ask_prose_writer(retry_prompt, model)
+                text = _strip_leading_chapter_heading(raw_text)
+                bundled_facts = []
+                bundled_observation = None
             except RuntimeError as error:
                 attempts.append({"model": model, "generation": generation, "valid": False, "error": str(error)})
                 errors = ["writer provider failed"]
                 continue
             metrics = analyze_prose_metrics(text)
-            errors = []
-            if not MIN_CHAPTER_CHINESE_CHARS <= metrics["chinese_character_count"] <= MAX_CHAPTER_CHINESE_CHARS:
-                errors.append("draft must contain 3000-4200 Chinese characters")
-            if _contains_chapter_heading(text):
-                errors.append("draft must not contain a chapter heading")
-            if "tail_fragmentation_loop" in metrics.get("flags", []):
-                errors.append("draft ending contains a fragmented repetition loop")
-            if "prompt_context_leak" in metrics.get("flags", []):
-                errors.append("draft contains leaked prompt or runtime context")
-            if "generation_meta_leak" in metrics.get("flags", []):
-                errors.append("draft contains generation or completion metadata")
-            if set(metrics.get("flags", [])) & {
-                "termination_token_loop", "oversized_paragraph_loop", "duplicate_text_span"
-            }:
-                errors.append("draft contains repeated or malformed prose blocks")
+            errors = _generated_prose_errors(text, metrics)
             attempts.append(
                 {
                     "model": used_model,
@@ -957,10 +1075,76 @@ def dispatch_chapter_draft(chapter_id: str) -> dict[str, Any]:
             if not errors:
                 selected_model = used_model
                 break
+            short_recovery_candidate = _best_short_recovery_candidate(
+                short_recovery_candidate, text
+            )
+            count = metrics.get("chinese_character_count", 0)
+            if (
+                MIN_CHAPTER_CHINESE_CHARS <= count <= 6000
+                and not _contains_chapter_heading(text)
+                and not set(metrics.get("flags", [])) & {
+                    "prompt_context_leak", "generation_meta_leak", "termination_token_loop",
+                    "duplicate_text_span",
+                }
+            ):
+                repair_candidate = text
+                candidate_path.write_text(text, encoding="utf-8")
+                break
+            if short_recovery_candidate:
+                candidate_path.write_text(short_recovery_candidate, encoding="utf-8")
+                break
+        if repair_candidate:
+            break
+        if short_recovery_candidate:
+            break
         if selected_model:
             break
+    if not selected_model and not repair_candidate and short_recovery_candidate:
+        text = short_recovery_candidate
+        metrics = analyze_prose_metrics(text)
+        errors = _generated_prose_errors(text, metrics)
+    if repair_candidate and errors:
+        cleanup_prompt = "\n".join([
+            f"你是《借天改命账》{chapter_id} 的受控清稿编辑。只输出清理后的完整小说正文，不要标题、解释或确认。",
+            "保留候选稿已经发生的情节、人物选择、物证流转、状态结果和结尾钩子，不得新增事实。",
+            "删除重复文本、超长粘连段、提示词、工程字段、完成日志、凑字内容和结束词循环；段落适合移动端阅读。",
+            "正文必须为 3100-3500 个中文字符。若候选稿尾部损坏，在最后一个完整叙事钩子处结束。",
+            "原写作约束：", prompt,
+            "候选稿：", repair_candidate,
+        ])
+        for cleanup_generation in range(1, 3):
+            current_prompt = cleanup_prompt
+            if cleanup_generation == 2:
+                current_prompt += "\n\n上一版清稿长度不足或仍有格式故障。请完整重写为 3200-3500 个中文字符，分成自然段并只输出正文。"
+            try:
+                cleaned, provider, used_model = _ask_prose_editor(current_prompt)
+                text = _strip_leading_chapter_heading(cleaned)
+                metrics = analyze_prose_metrics(text)
+                errors = _generated_prose_errors(text, metrics)
+                attempts.append({
+                    "model": used_model, "provider": provider,
+                    "generation": f"quality_repair_{cleanup_generation}",
+                    "valid": not errors, "errors": errors, "metrics": metrics,
+                    "response_preview": text[:500],
+                })
+                if not errors:
+                    selected_model = used_model
+                    bundled_observation = None
+                    bundled_facts = []
+                    break
+            except RuntimeError as error:
+                errors = ["quality repair provider failed"]
+                attempts.append({
+                    "model": route_model("writer")["model"],
+                    "generation": f"quality_repair_{cleanup_generation}",
+                    "valid": False, "error": str(error),
+                })
     recoveries = []
-    if errors and text:
+    if (
+        errors
+        and text
+        and analyze_prose_metrics(text)["chinese_character_count"] < MIN_CHAPTER_CHINESE_CHARS
+    ):
         for _ in range(3):
             if analyze_prose_metrics(text)["chinese_character_count"] >= MIN_CHAPTER_CHINESE_CHARS:
                 break
@@ -969,15 +1153,15 @@ def dispatch_chapter_draft(chapter_id: str) -> dict[str, Any]:
             if not recovery or not recovery.get("valid"):
                 break
         metrics = analyze_prose_metrics(text)
-        errors = []
-        if not MIN_CHAPTER_CHINESE_CHARS <= metrics["chinese_character_count"] <= MAX_CHAPTER_CHINESE_CHARS:
-            errors.append("draft must contain 3000-4200 Chinese characters")
-        if _contains_chapter_heading(text):
-            errors.append("draft must not contain a chapter heading")
+        errors = _generated_prose_errors(text, metrics)
         attempts.append({"model": route_model("writer")["model"], "generation": "length_recovery", "valid": not errors, "metrics": metrics, "recoveries": recoveries})
         if not errors:
             selected_model = route_model("writer")["model"]
     if errors:
+        if text and not set(analyze_prose_metrics(text).get("flags", [])) & {
+            "prompt_context_leak", "generation_meta_leak", "termination_token_loop",
+        }:
+            candidate_path.write_text(text, encoding="utf-8")
         attempt_path = _record_writer_attempt(
             chapter_id,
             {
@@ -993,17 +1177,12 @@ def dispatch_chapter_draft(chapter_id: str) -> dict[str, Any]:
     transition = validate_stage_transition(record, "draft_generated", "draft.md")
     if not transition["valid"]:
         raise RuntimeError("; ".join(transition["errors"]))
-    chapter_dir = runtime_path(f"system/production_runtime/chapters/{chapter_id}")
     draft_path = chapter_dir / "draft.md"
     metrics_path = chapter_dir / "draft.metrics.json"
     draft_path.write_text(text, encoding="utf-8")
+    candidate_path.unlink(missing_ok=True)
     _write_json(metrics_path, metrics)
-    observation_path = chapter_dir / "observation.bundled.json"
     cost_path = chapter_dir / "generation_cost.json"
-    if bundled_observation is None:
-        raise RuntimeError("bundled chapter generation did not produce an observation")
-    bundled_observation = build_bundled_observation(chapter_id, text, bundled_facts)
-    _write_json(observation_path, bundled_observation)
     _write_json(cost_path, {
         "version": VERSION,
         "chapter_id": chapter_id,
@@ -1016,7 +1195,6 @@ def dispatch_chapter_draft(chapter_id: str) -> dict[str, Any]:
     record["artifacts"].update({
         "draft": str(draft_path.relative_to(ROOT)),
         "draft_metrics": str(metrics_path.relative_to(ROOT)),
-        "bundled_observation": str(observation_path.relative_to(ROOT)),
         "generation_cost": str(cost_path.relative_to(ROOT)),
     })
     record["stage"] = "draft_generated"
@@ -1097,13 +1275,23 @@ OBSERVATION_FACT_CATEGORIES = (
 )
 
 
-def normalize_observation_payload(payload: dict[str, Any]) -> dict[str, Any]:
+def normalize_observation_payload(
+    payload: dict[str, Any], *, chapter_id: str | None = None, draft_sha256: str | None = None
+) -> dict[str, Any]:
     """Normalize an equivalent flat fact list without weakening the stored contract."""
+    normalized = {
+        key: value for key, value in payload.items()
+        if key in {"chapter_id", "draft_sha256", "facts"}
+    }
+    if chapter_id is not None:
+        normalized["chapter_id"] = chapter_id
+    if draft_sha256 is not None:
+        normalized["draft_sha256"] = draft_sha256
     if isinstance(payload.get("facts"), dict):
-        return payload
-    facts = payload.get("facts", payload.get("changes"))
+        return normalized
+    facts = payload.get("facts", payload.get("changes", payload.get("fact_deltas")))
     if not isinstance(facts, list):
-        return payload
+        return normalized
     grouped: dict[str, list[dict[str, Any]]] = {key: [] for key in OBSERVATION_FACT_CATEGORIES}
     prefix_categories = (
         ("character_", "characters"),
@@ -1130,7 +1318,6 @@ def normalize_observation_payload(payload: dict[str, Any]) -> dict[str, Any]:
             else:
                 category = "information"
         grouped[category or "information"].append(fact)
-    normalized = {key: value for key, value in payload.items() if key != "changes"}
     return {**normalized, "facts": grouped}
 
 
@@ -1173,7 +1360,18 @@ def dispatch_chapter_observation(chapter_id: str) -> dict[str, Any]:
             prompt + "\n只返回一个 JSON 对象，所有 required 字段都必须存在，空类别使用空数组。",
             model=observer["fallback_model"],
         )
-        payload = normalize_observation_payload(extract_json_object(response))
+        payload = normalize_observation_payload(
+            extract_json_object(response), chapter_id=chapter_id,
+            draft_sha256=_sha256(final_text),
+        )
+        jsonschema.validate(payload, _read_json(schema))
+        _write_json(output, payload)
+    else:
+        payload = normalize_observation_payload(
+            _read_json(output),
+            chapter_id=chapter_id,
+            draft_sha256=_sha256(final_text),
+        )
         jsonschema.validate(payload, _read_json(schema))
         _write_json(output, payload)
     ingested = ingest_chapter_observation(chapter_id, str(output))
@@ -1255,7 +1453,14 @@ def normalize_continuity_audit_payload(data: dict[str, Any]) -> dict[str, Any]:
     )
     for index, issue in enumerate(data.get("issues", []), start=1):
         if not isinstance(issue, dict):
-            issues.append(issue)
+            issues.append(
+                {
+                    "issue_id": f"agent-issue-{index:03d}",
+                    "severity": "major",
+                    "evidence": str(issue),
+                    "required_fix": "Correct the reviewer-described issue while preserving established state.",
+                }
+            )
             continue
         severity = issue.get("severity")
         normalized_severity = severity_map.get(str(severity).upper())
@@ -1290,6 +1495,7 @@ def _metric_audit_issues(metrics: dict[str, Any]) -> list[dict[str, str]]:
         "tail_fragmentation_loop": "major",
         "prompt_context_leak": "blocking",
         "generation_meta_leak": "blocking",
+        "latin_token_leak": "blocking",
         "termination_token_loop": "blocking",
         "oversized_paragraph_loop": "major",
         "duplicate_text_span": "major",
@@ -1303,6 +1509,7 @@ def _metric_audit_issues(metrics: dict[str, Any]) -> list[dict[str, str]]:
         "tail_fragmentation_loop": "Collapse the ending into one decisive escalation and stop immediately after the hook.",
         "prompt_context_leak": "Remove all prompt, JSON, asset IDs, rules, and runtime metadata from reader-facing prose.",
         "generation_meta_leak": "Remove completion logs, generation instructions, and model-facing termination text from prose.",
+        "latin_token_leak": "Remove accidental Latin-language tokens from Chinese reader-facing prose.",
         "termination_token_loop": "Delete repeated ending tokens and stop at the first complete narrative hook.",
         "oversized_paragraph_loop": "Split or remove the malformed long paragraph while preserving only one causal sequence.",
         "duplicate_text_span": "Remove the duplicated prose span and keep the first coherent occurrence only.",
@@ -1574,6 +1781,7 @@ def dispatch_chapter_revision(chapter_id: str) -> dict[str, Any]:
             "本次授权仅覆盖非正文意图阶段留下的临时正文禁令；其余约束保持生效。",
             "解决审查问题但不得改变章节意图、引入未登记资产或无观察依据的状态变化。",
             "目标 3200-3800 个中文字符，硬性范围为 3000-4200；不要为求简洁压缩关键行动、感官与后果。减少模板化转折、抽象总结和 AI 腔。",
+            "只输出读者正文；禁止工程字段、完成日志、凑字提示、重复结束词、超长粘连段或重复文本块。",
             "审查：", json.dumps(audit, ensure_ascii=False),
             "上下文：", json.dumps(writer_context, ensure_ascii=False),
             "原稿：", draft.read_text(encoding="utf-8"),
@@ -1582,26 +1790,70 @@ def dispatch_chapter_revision(chapter_id: str) -> dict[str, Any]:
     attempts = []
     text = ""
     metrics: dict[str, Any] = {}
-    for model in dict.fromkeys(
-        (route_model("writer")["model"], route_model("showrunner")["model"])
-    ):
-        try:
-            raw_text, provider, used_model = _ask_prose_writer(prompt, model)
-            text = _strip_leading_chapter_heading(raw_text)
-        except RuntimeError as error:
-            attempts.append({"model": model, "valid": False, "error": str(error)})
-            continue
+    revision_errors = ["revision was not generated"]
+    recovery_path = runtime_path(
+        f"system/production_runtime/chapters/{chapter_id}/revision.recovery_candidate.md"
+    )
+    if recovery_path.is_file():
+        text = recovery_path.read_text(encoding="utf-8")
         metrics = analyze_prose_metrics(text)
-        valid = MIN_CHAPTER_CHINESE_CHARS <= metrics["chinese_character_count"] <= MAX_CHAPTER_CHINESE_CHARS
-        attempts.append({"model": used_model, "provider": provider, "valid": valid, "metrics": metrics, "response_preview": text[:500]})
-        if valid:
+        revision_errors = _generated_prose_errors(text, metrics)
+    for model in (route_model("writer")["model"],):
+        for generation in (() if not revision_errors else range(1, 3)):
+            revision_prompt = prompt
+            if generation == 2:
+                revision_prompt += "\n\n上一版未通过长度或质量门禁。请从头完整重写为 3200-3800 个中文字符，只保留小说正文。"
+            try:
+                raw_text, provider, used_model = _ask_prose_writer(revision_prompt, model)
+                text = _strip_leading_chapter_heading(raw_text)
+            except RuntimeError as error:
+                attempts.append({"model": model, "generation": generation, "valid": False, "error": str(error)})
+                continue
+            metrics = analyze_prose_metrics(text)
+            revision_errors = _generated_prose_errors(text, metrics)
+            attempts.append({
+                "model": used_model, "provider": provider, "generation": generation,
+                "valid": not revision_errors, "errors": revision_errors,
+                "metrics": metrics, "response_preview": text[:500],
+            })
+            if not revision_errors:
+                break
+        if not revision_errors:
             break
-    if not MIN_CHAPTER_CHINESE_CHARS <= metrics.get("chinese_character_count", 0) <= MAX_CHAPTER_CHINESE_CHARS:
-        return {"valid": False, "errors": ["revision must contain 3000-4200 Chinese characters"], "metrics": metrics, "attempts": attempts}
+    recoveries = []
+    if (
+        revision_errors
+        and text
+        and analyze_prose_metrics(text).get("chinese_character_count", 0)
+        < MIN_CHAPTER_CHINESE_CHARS
+    ):
+        for _ in range(3):
+            if analyze_prose_metrics(text).get("chinese_character_count", 0) >= MIN_CHAPTER_CHINESE_CHARS:
+                break
+            text, recovery = _recover_short_draft(chapter_id, prompt, text)
+            recoveries.append(recovery)
+            if not recovery or not recovery.get("valid"):
+                break
+        metrics = analyze_prose_metrics(text)
+        revision_errors = _generated_prose_errors(text, metrics)
+        attempts.append({
+            "model": route_model("writer")["model"],
+            "generation": "revision_length_recovery",
+            "valid": not revision_errors,
+            "metrics": metrics,
+            "recoveries": recoveries,
+        })
+    if revision_errors:
+        if text and not set(metrics.get("flags", [])) & {
+            "prompt_context_leak", "generation_meta_leak", "termination_token_loop",
+        }:
+            recovery_path.write_text(text, encoding="utf-8")
+        return {"valid": False, "errors": revision_errors, "metrics": metrics, "attempts": attempts}
     candidate = runtime_path(f"system/production_runtime/chapters/{chapter_id}/revision.candidate.md")
     candidate.write_text(text, encoding="utf-8")
     result = ingest_chapter_revision(chapter_id, str(candidate))
     candidate.unlink(missing_ok=True)
+    recovery_path.unlink(missing_ok=True)
     return {"valid": True, **result, "metrics": metrics, "writer_model": attempts[-1]["model"], "attempts": attempts}
 
 

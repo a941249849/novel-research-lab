@@ -1,0 +1,183 @@
+{
+  "chapter_id": "chapter-0093",
+  "accepted_revision_sha256": "3d5596895aac25380510a1b3ac51aff6ee7a6f8d5296762f35d3d6a8ad8c0f59",
+  "state_deltas": [
+    {
+      "fact_id": "chapter-0093-f001",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_physical_state",
+      "operation": "set",
+      "before": "左腿无法久站，右臂无知觉，掌心伤口持续出血",
+      "after": "左腿膝弯彻底失力，右臂仍无助力，掌心被石沿再次擦裂并继续出血"
+    },
+    {
+      "fact_id": "chapter-0093-f002",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_technique_use",
+      "operation": "set",
+      "before": "继续停用识账术，不越界追读来源或债链",
+      "after": "明确不催动任何法子，也不顺着银光追读来源或更深旧账"
+    },
+    {
+      "fact_id": "chapter-0093-f003",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_procedural_status",
+      "operation": "set",
+      "before": "残印处于可核验争议共持位，未经两侧留痕不得单方收走",
+      "after": "停止继续辨痕，要求苏晚独立追缴列与泥灯巷非承接列分槽复验，不同意将两列并成待查接收方"
+    },
+    {
+      "fact_id": "chapter-0093-f004",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "timeline.chapter_event",
+      "operation": "set",
+      "before": "残印进入核验位但未移交",
+      "after": "通过三次分列及并列复验确认送出响应存在、两列均无具名接收回应，但未能阻止命籍衙继续送审"
+    },
+    {
+      "fact_id": "chapter-0093-f005",
+      "asset_id": "npc_su_wan",
+      "field_path": "npc.current_procedural_boundary",
+      "operation": "set",
+      "before": "拒绝替陆沉渊作认定，守住旧债痕边界",
+      "after": "同意仅触碰自己的独立追缴列，并明确无回应不替她免债或认领其他债，也不替泥灯巷答话"
+    },
+    {
+      "fact_id": "chapter-0093-f006",
+      "asset_id": "npc_su_wan",
+      "field_path": "npc.current_physical_state",
+      "operation": "set",
+      "before": "冷灰压在腕骨与手背，裂灯移在脚边且未熄灭",
+      "after": "护住裂灯使其重新稳定，但冷灰继续沿腕骨上爬，裂灯又向自己脚边移动半寸"
+    },
+    {
+      "fact_id": "chapter-0093-f007",
+      "asset_id": "npc_su_wan",
+      "field_path": "npc.current_public_statement",
+      "operation": "set",
+      "before": "旧债与分期仍由自己承担，不以陆沉渊到案或泥灯巷灯火抵偿",
+      "after": "公开重申自己的旧债由自己承担，陆沉渊到案另行记录，不接受以接收疑点合并两者"
+    },
+    {
+      "fact_id": "chapter-0093-f008",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_witness_boundary",
+      "operation": "set",
+      "before": "只见证封布沿途未开、同行站位及是否有人代答，不确认来源、亲缘承接或债务关系",
+      "after": "泥灯巷非承接列经复验仍无具名回应，现场无人越线、代答或提供新的阵火证据"
+    },
+    {
+      "fact_id": "chapter-0093-f009",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_visible_condition",
+      "operation": "set",
+      "before": "灯火仍暗，巷中无人越过冷线",
+      "after": "裂灯被压至几乎熄灭后重新稳定，巷口住户仍未越过冷线或递入灯火、砖屑"
+    },
+    {
+      "fact_id": "chapter-0093-f010",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_enforcement_record",
+      "operation": "set",
+      "before": "已撤回本轮合并追缴，禁止将陆沉渊或泥灯巷列为承接方",
+      "after": "第三次熄灭后未撤回外层复核申请，并将“未能排除接收”改写为苏晚提验请求"
+    },
+    {
+      "fact_id": "chapter-0093-f011",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "information.current_record_scope",
+      "operation": "set",
+      "before": "已记录送出端旧光、接收端无回应，未补写具名接收方",
+      "after": "正式分列记录：苏晚独立追缴列无具名接收回应，泥灯巷非承接列无具名接收回应，并列复验未见接收端存续"
+    },
+    {
+      "fact_id": "chapter-0093-f012",
+      "asset_id": "artifact_prefecture_transit_registry_seal",
+      "field_path": "artifact.current_effect",
+      "operation": "set",
+      "before": "残印可验送出端但接收端无回应",
+      "after": "三次复验确认送出响应存在，但苏晚与泥灯巷均无具名接收回应，接收端仅短暂亮起后熄灭"
+    },
+    {
+      "fact_id": "chapter-0093-f013",
+      "asset_id": "artifact_prefecture_transit_registry_seal",
+      "field_path": "artifact.current_visible_trace",
+      "operation": "set",
+      "before": "银灰印屑形成亮至缺口正中的送出端半圈旧光，接收端保持黑暗",
+      "after": "银灰碎屑沿缺口堆积，接收端短暂显光后重新沉黑，送出端最终暗下并停在缺口前"
+    },
+    {
+      "fact_id": "chapter-0093-f014",
+      "asset_id": "artifact_prefecture_transit_registry_seal",
+      "field_path": "artifact.current_effect_risk",
+      "operation": "set",
+      "before": null,
+      "after": "铁锈冷香增强，银灰印屑接触陆沉渊血后结霜并加重身体不适"
+    },
+    {
+      "fact_id": "chapter-0093-f015",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "emotion.current_responsibility_orientation",
+      "operation": "set",
+      "before": "要求闻照微承担共持责任并留下程序痕迹",
+      "after": "接受自己不能读出答案，转而坚持由分列记录保留苏晚与泥灯巷的边界"
+    },
+    {
+      "fact_id": "chapter-0093-f016",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "information.current_record_scope",
+      "operation": "set",
+      "before": "苏晚原始债印未响应，附加银灰仅来自州府牵引痕迹",
+      "after": "新增可复核事实：送出响应存在，但苏晚独立追缴列与泥灯巷非承接列均无具名接收响应"
+    },
+    {
+      "fact_id": "chapter-0093-f017",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_verified_result",
+      "operation": "set",
+      "before": "活体校时稳定、原始债印未响应自动并入、余屑受残印牵引",
+      "after": "局部错账新增“送出曾发生但未证明苏晚或泥灯巷接收”，两者未因送出端亮起而获得具名接收身份"
+    },
+    {
+      "fact_id": "chapter-0093-f018",
+      "asset_id": "state_ledger_unresolved_mysteries",
+      "field_path": "state_ledger.current_inference_limit",
+      "operation": "set",
+      "before": "残印为何持续贴近苏晚独立追缴仍未确定",
+      "after": "残印为何贴近苏晚追缴、送出响应来自何处仍未解释，复验未延伸至来源、债链或获利者"
+    },
+    {
+      "fact_id": "chapter-0093-f019",
+      "asset_id": "foreshadowing_cinder_seal_rain",
+      "field_path": "hook.current_direction",
+      "operation": "set",
+      "before": "送出端半圈旧光已亮起，接收端持续黑暗，等待未知回应",
+      "after": "接收端第三次熄灭后，命籍衙将未能排除接收改写为苏晚提验请求"
+    },
+    {
+      "fact_id": "chapter-0093-f020",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "timeline.chapter_event",
+      "operation": "set",
+      "before": "第三次复验尚未进行",
+      "after": "完成苏晚独立追缴列、泥灯巷非承接列及两列并列的三次复验"
+    },
+    {
+      "fact_id": "chapter-0093-f021",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "state_ledger.faction_pressure",
+      "operation": "set",
+      "before": "程序压力包含保管污染、待验禁修",
+      "after": "新增外层复核申请压力，且申请文字把苏晚列为疑似接收方"
+    },
+    {
+      "fact_id": "chapter-0093-f022",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "naming.current_record_labels",
+      "operation": "set",
+      "before": "苏晚旧债与陆沉渊到案记录分开，泥灯巷不得列为承接方",
+      "after": "新增“未能排除接收”与苏晚姓名的提验文书标签，三道复验刻痕仍彼此分开"
+    }
+  ],
+  "resolved_audit_ids": []
+}

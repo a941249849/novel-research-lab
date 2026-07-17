@@ -7,5 +7,7 @@
   "release_edit_sha256": "e93cea484cdee85a3ceacc1ceb902bac7ae5ac817f10bcb1acc48d4f241590b3",
   "repair_direction": "将章末动作改为灯座初触槽口且持灯人尚未松手，与下一章完成落槽连续衔接",
   "provider": "codex-deterministic-editor",
-  "status": "pending_window_re_review"
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-031-040.json",
+  "reviewed_release_edit_sha256": "e93cea484cdee85a3ceacc1ceb902bac7ae5ac817f10bcb1acc48d4f241590b3"
 }

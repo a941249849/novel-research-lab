@@ -23,6 +23,11 @@ import nrl_production_runtime as runtime
 
 
 class ProductionChapterRuntimeV020Tests(unittest.TestCase):
+    def test_writer_prompt_guards_repetitive_props_and_injury_continuity(self):
+        source = (REPO_ROOT / "system/runtime/nrl_production_runtime.py").read_text(encoding="utf-8")
+        self.assertIn("同一章‘残印’和‘封布’各不超过三次", source)
+        self.assertIn("失能肢体和既有伤势不得在无明确治疗事件时恢复", source)
+
     def test_flat_observer_facts_are_grouped_before_schema_validation(self):
         payload = runtime.normalize_observation_payload(
             {
@@ -47,6 +52,36 @@ class ProductionChapterRuntimeV020Tests(unittest.TestCase):
         self.assertNotIn("changes", payload)
         self.assertEqual(set(payload["facts"]), set(runtime.OBSERVATION_FACT_CATEGORIES))
 
+    def test_observer_fact_deltas_gain_known_hash_binding(self):
+        payload = runtime.normalize_observation_payload(
+            {"fact_deltas": []}, chapter_id="chapter-0068", draft_sha256="a" * 64
+        )
+        self.assertEqual(payload["chapter_id"], "chapter-0068")
+        self.assertEqual(payload["draft_sha256"], "a" * 64)
+        self.assertNotIn("fact_deltas", payload)
+        self.assertEqual(set(payload["facts"]), set(runtime.OBSERVATION_FACT_CATEGORIES))
+
+    def test_observer_known_bindings_override_provider_typos(self):
+        payload = runtime.normalize_observation_payload(
+            {
+                "chapter_id": "chapter-9999",
+                "draft_sha256": "b" * 64,
+                "facts": {key: [] for key in runtime.OBSERVATION_FACT_CATEGORIES},
+            },
+            chapter_id="chapter-0074",
+            draft_sha256="a" * 64,
+        )
+        self.assertEqual(payload["chapter_id"], "chapter-0074")
+        self.assertEqual(payload["draft_sha256"], "a" * 64)
+
+    def test_observer_normalizer_drops_non_schema_top_level_fields(self):
+        payload = runtime.normalize_observation_payload({
+            "chapter_id": "chapter-0070", "draft_sha256": "a" * 64,
+            "accepted_revision_sha256": "b" * 64,
+            "facts": {key: [] for key in runtime.OBSERVATION_FACT_CATEGORIES},
+        })
+        self.assertEqual(set(payload), {"chapter_id", "draft_sha256", "facts"})
+
     def test_provider_added_heading_is_stripped_without_touching_prose(self):
         text = "第二十五章 纸背留痕\n\n门外有人说这是第二十五章旧契。"
         self.assertEqual(runtime._strip_leading_chapter_heading(text), "门外有人说这是第二十五章旧契。")
@@ -63,6 +98,23 @@ class ProductionChapterRuntimeV020Tests(unittest.TestCase):
         draft = "开头\n\n中段\n\n收束一\n\n收束二"
         result = runtime._insert_length_recovery(draft, "补足场景")
         self.assertEqual(result, "开头\n\n中段\n\n补足场景\n\n收束一\n\n收束二")
+
+    def test_recovery_reflow_changes_only_paragraph_boundaries(self):
+        source = ("动作落定。" * 120) + "钩子留下。"
+        result = runtime._reflow_oversized_paragraphs(source, max_chars=120)
+        self.assertEqual(result.replace("\n", ""), source)
+        self.assertGreater(len(result.split("\n\n")), 1)
+
+    def test_short_recovery_candidate_beats_later_oversized_draft(self):
+        def metrics(text):
+            return {
+                "chinese_character_count": 2292 if text == "short" else 5025,
+                "flags": [],
+            }
+        with mock.patch.object(runtime, "analyze_prose_metrics", side_effect=metrics):
+            selected = runtime._best_short_recovery_candidate("", "short")
+            selected = runtime._best_short_recovery_candidate(selected, "oversized")
+        self.assertEqual(selected, "short")
 
 
     def test_audit_output_parser_accepts_fenced_json_from_stderr(self):
@@ -127,6 +179,20 @@ class ProductionChapterRuntimeV020Tests(unittest.TestCase):
         result = runtime.normalize_continuity_audit_payload({"issues": [{"severity": "minor"}]})
         self.assertIn("No evidence", result["issues"][0]["evidence"])
         self.assertIn("No corrective action", result["issues"][0]["required_fix"])
+
+    def test_audit_normalizer_converts_text_only_issue_to_major_finding(self):
+        import nrl_production_runtime as runtime
+
+        result = runtime.normalize_continuity_audit_payload({
+            "issues": ["The final paragraphs repeat the same scene loop and must be consolidated."]
+        })
+        self.assertEqual(result["issues"], [{
+            "issue_id": "agent-issue-001",
+            "severity": "major",
+            "evidence": "The final paragraphs repeat the same scene loop and must be consolidated.",
+            "required_fix": "Correct the reviewer-described issue while preserving established state.",
+        }])
+
     def test_stage_transition_requires_exact_next_stage_and_artifact(self):
         record = {"stage": "chapter_intent", "artifacts": {"intent": "intent.json"}}
         valid = validate_stage_transition(record, "context_compiled", "context.json")
@@ -184,6 +250,11 @@ class ProductionChapterRuntimeV020Tests(unittest.TestCase):
         self.assertIn("generation_meta_leak", result["flags"])
         self.assertIn("测试通过", result["generation_meta_markers"])
 
+    def test_prose_metrics_block_latin_word_leak_in_chinese_prose(self):
+        result = analyze_prose_metrics("湿滑 of the 石面上，she 仍站在界线外。")
+        self.assertIn("latin_token_leak", result["flags"])
+        self.assertEqual(result["latin_token_markers"], ["of", "the", "she"])
+
     def test_prose_metrics_block_repeated_and_oversized_blocks(self):
         repeated = "灯火压低，债链落在石面，持灯人拒绝替另一户开口。" * 25
         result = analyze_prose_metrics(repeated + "\n\n" + repeated)
@@ -193,6 +264,13 @@ class ProductionChapterRuntimeV020Tests(unittest.TestCase):
     def test_prose_metrics_block_termination_token_loop(self):
         result = analyze_prose_metrics("结束。停止。收束。完。终。" * 4)
         self.assertIn("termination_token_loop", result["flags"])
+
+    def test_generated_prose_errors_are_reapplied_after_recovery(self):
+        import nrl_production_runtime as runtime
+
+        text = ("正常正文" * 1000) + "\n\n测试通过。正文结束。"
+        errors = runtime._generated_prose_errors(text, analyze_prose_metrics(text))
+        self.assertIn("prose contains generation or completion metadata", errors)
 
     def test_external_literary_audit_runs_only_at_five_chapter_checkpoints(self):
         self.assertFalse(requires_external_chapter_audit("chapter-0016", "initial"))
@@ -308,6 +386,66 @@ class ProductionChapterRuntimeV020Tests(unittest.TestCase):
         compact = runtime._compact_chapter_context(context)
         self.assertEqual([item["asset_id"] for item in compact["rolling_state"]["latest_fields"]], ["character-a"])
         self.assertEqual(len(compact["rolling_state"]["recent_chapters"][0]["changes"]), 1)
+
+    def test_writer_context_caps_latest_fields_and_drops_evidence(self):
+        context = {
+            "chapter_id": "chapter-0078",
+            "writer_asset_ids": ["character-a"],
+            "assets": [{"asset_id": "character-a", "constraints": []}],
+            "rolling_state": {
+                "source_chapter_count": 77,
+                "latest_fields": [
+                    {
+                        "asset_id": "character-a",
+                        "field_path": f"field-{index:02d}",
+                        "value": index,
+                        "chapter_id": f"chapter-{index:04d}",
+                        "evidence": "不应进入写作提示" * 100,
+                    }
+                    for index in range(12)
+                ],
+                "recent_chapters": [],
+            },
+        }
+        compact = runtime._compact_chapter_context(context)
+        latest = compact["rolling_state"]["latest_fields"]
+        self.assertEqual(len(latest), 8)
+        self.assertEqual(latest[0]["field_path"], "field-04")
+        self.assertTrue(all("evidence" not in item for item in latest))
+
+    def test_writer_context_bounds_recent_chapter_deltas(self):
+        context = {
+            "chapter_id": "chapter-0080",
+            "writer_asset_ids": ["character-a"],
+            "assets": [{"asset_id": "character-a", "constraints": []}],
+            "rolling_state": {
+                "source_chapter_count": 79,
+                "latest_fields": [],
+                "recent_chapters": [
+                    {
+                        "chapter_id": f"chapter-{chapter:04d}",
+                        "accepted_revision_sha256": "a" * 64,
+                        "changes": [
+                            {
+                                "asset_id": "character-a",
+                                "field_path": f"field-{index:02d}",
+                                "after": "状态" * 100,
+                                "evidence": "不应进入写作提示",
+                            }
+                            for index in range(20)
+                        ],
+                    }
+                    for chapter in (78, 79)
+                ],
+            },
+        }
+        compact = runtime._compact_chapter_context(context)
+        recent = compact["rolling_state"]["recent_chapters"]
+        self.assertEqual(len(recent), 1)
+        self.assertEqual(recent[0]["chapter_id"], "chapter-0079")
+        self.assertEqual(len(recent[0]["changes"]), 12)
+        self.assertTrue(all("evidence" not in item for item in recent[0]["changes"]))
+        self.assertNotIn("accepted_revision_sha256", recent[0])
 
     def test_observer_context_drops_literary_constraints_but_keeps_asset_ids(self):
         context = {

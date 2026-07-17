@@ -1,0 +1,64 @@
+{
+  "chapter_id": "chapter-0062",
+  "draft_sha256": "ca28ae6d2f3be3def597d27cb17ebc16c0adac8da893c224a057c5f50dc2bece",
+  "facts": {
+    "characters": [],
+    "npcs": [
+      {
+        "fact_id": "chapter-0062-su-wan-refuses-migration",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_procedural_boundary",
+        "before": "苏晚亲自按下回执完成收讫，确认旧债进入独立封档与限期执行，并拒绝陆沉渊代收、代决或以自身寿命替她承担",
+        "after": "苏晚明确拒绝在迁籍附条上按印，不以命灯与本人受后续管束换取最后一格暂缓",
+        "evidence": "苏晚将迁籍附条折回并使空白按印处朝下，亲口说“那就不迁”。"
+      }
+    ],
+    "locations": [],
+    "factions": [],
+    "artifacts": [],
+    "techniques": [],
+    "relationships": [
+      {
+        "fact_id": "chapter-0062-mother-son-boundary",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_emotional_turn",
+        "before": "陆沉渊面对母亲主动收下有效追缴，放弃替她交火、代收或用半寿换取调档，转而承认她是决定者",
+        "after": "陆沉渊放弃以暂缓替苏晚避险，只扶灯座和她允许交出的身体重量，转为陪她承担拒迁后的风险",
+        "evidence": "苏晚限定“扶座、灯芯不许碰、也不许替我应”，陆沉渊收回劝说与触芯动作，答应陪她守灯。"
+      }
+    ],
+    "emotions": [],
+    "information": [
+      {
+        "fact_id": "chapter-0062-resident-fire-unchanged",
+        "asset_id": "state_ledger_resident_lifefire_reserve",
+        "field_path": "state_ledger.current_resident_lifefire_callability",
+        "before": "锁龛寒夜与安置收缩期间仍未调用、转移或扣减住户命火；各户全程自行持灯，并可拒绝贴墙或随时抱走",
+        "after": "苏晚拒绝调用住户命火保温，墙内各户命灯仍自行持有，本次零调用、零转移、零扣减",
+        "evidence": "苏晚明确说“墙里的火不出来，谁也不许替我叫”，墙内灯焰没有一盏矮下，墙外也没有借来的暖意。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "chapter-0062-new-grey-edge",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "foreshadowing.current_manifestation",
+        "before": "封档回执背面显露未宣读的迁籍附条，可在期限耗尽前迁籍以暂缓裂灯",
+        "after": "苏晚拒迁且新冷纹越过灯腹后，迁籍附条贴合处浮出一圈比原债印更新的灰边",
+        "evidence": "冷纹经过回执边缘时，附条鼓起，贴合处显出更新的灰边，表明被拒附条仍留下待复核异常。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "chapter-0062-lamp-crack-worsens",
+        "asset_id": "state_ledger_mother_life_lamp_countdown",
+        "field_path": "state_ledger.current_countdown_state",
+        "before": "最后一格已开始走刻，余刻耗尽后再行执行",
+        "after": "最后一格继续缩短；旧裂旁新增一道越过灯腹、向灯座延伸且未合拢的冷纹",
+        "evidence": "苏晚拒迁后最后一格被削短，新冷纹从旧裂边缘生出，越过灯腹最鼓处向灯座落下。"
+      }
+    ],
+    "physical_state": [],
+    "naming": []
+  }
+}

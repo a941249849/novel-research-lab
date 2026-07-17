@@ -7,5 +7,7 @@
   "release_edit_sha256": "7f2948819fbb99026a5a65ab19ad19bbfc99f028d053a12bf691baab20074f34",
   "repair_direction": "债链执行主体统一为顾巡，去除托肘和不替代口号。",
   "provider": "deterministic_editor",
-  "status": "pending_window_re_review"
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-021-030.json",
+  "reviewed_release_edit_sha256": "7f2948819fbb99026a5a65ab19ad19bbfc99f028d053a12bf691baab20074f34"
 }

@@ -21,8 +21,8 @@
   "properties": {
     "prose": {
       "type": "string",
-      "minLength": 4000,
-      "maxLength": 5200,
+      "minLength": 3600,
+      "maxLength": 4800,
       "description": "Reader-facing Chinese novel prose only. Never include JSON, prompt fields, rules, asset IDs, or runtime metadata."
     },
     "facts": {"type": "array", "minItems": 1, "items": {"$ref": "#/definitions/fact"}}

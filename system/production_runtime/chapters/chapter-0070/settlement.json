@@ -1,0 +1,87 @@
+{
+  "chapter_id": "chapter-0070",
+  "accepted_revision_sha256": "7de97df9722b45b03dda2bd45f739846c6b3576d820e14ba05f39870bee0910b",
+  "state_deltas": [
+    {
+      "fact_id": "fact-0070-003",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_procedural_choice",
+      "operation": "set",
+      "before": "服从苏晚命令放弃介入干预，将已抬起的手臂收回并保持在见证者位置，未施术且未碰印，避免半寿痕污染现场",
+      "after": "在见证者界限内以自身半寿特征记录强行并入封档，以承受右眼失明与半寿暴露代价保留双圈冲突记录。"
+    },
+    {
+      "fact_id": "fact-0070-002",
+      "asset_id": "npc_su_wan",
+      "field_path": "npc.current_visible_lamp_consequence",
+      "operation": "set",
+      "before": "命灯因寿印排斥新增一道贯穿琉璃内外壁并直达青铜底座的深灰色裂纹，且被强行抽离的命火被卡死的寿印钳制悬停于灯罩外",
+      "after": "悬在灯外的错取余火退回灯芯，但命灯未痊愈，新增的刺目深灰色裂纹与母债余额等既往损耗全部保留。"
+    },
+    {
+      "fact_id": "fact-0070-001",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_enforcement_record",
+      "operation": "set",
+      "before": "命籍衙原地启动扣取，执行新寿印与旧压痕重叠冲突形成双圈并强行抽离苏晚一缕命火，程序卡死后向命审台发出“期位已占”的强制复核信号",
+      "after": "命审台确认当期寿火位已被占用，撤销本次追缴指令，悬在灯外的错取余火退回苏晚灯芯，封档石面转为州府复核色。"
+    },
+    {
+      "fact_id": "fact-0070-004",
+      "asset_id": "bond_mother_su_wan",
+      "field_path": "emotional_bond.current_emotional_turn",
+      "operation": "set",
+      "before": "苏晚决绝命令陆沉渊不要碰印以坚守无污染的证据现场，陆沉渊极度克制保护本能选择服从，两人在痛苦与克制中共同面对扣取后果并守住边界",
+      "after": "苏晚右手虚扶陆沉渊手肘，母子俩在痛苦与克制中共同完成局部改账，守住代偿边界并接受残酷现实。"
+    },
+    {
+      "fact_id": "fact-0070-005",
+      "asset_id": "state_ledger_half_life_registry_exposure",
+      "field_path": "state_ledger.current_exchange_exposure_delta",
+      "operation": "set",
+      "before": "因具名程序异议，暴露继续上升，成为本地程序视野中挂着红标、处于极高暴露状态下的被追踪物",
+      "after": "因强行将识账记录并入封档，半寿暴露继续上升，在本地程序中彻底成为挂着猩红标记、极高暴露状态的被追踪目标。"
+    },
+    {
+      "fact_id": "fact-0070-006",
+      "asset_id": "state_ledger_half_life_registry_exposure",
+      "field_path": "state_ledger.registry_locking_sign",
+      "operation": "set",
+      "before": "暗青色追缠纹作为无形枷锁锁定并随脉搏发送位置状态，且右眼视线被银灰色完全淹没而失明",
+      "after": "右眼视线被银灰色完全淹没而彻底失明，暗青色追缠纹暴突勒入皮肉并与心跳频率同步发送位置状态。"
+    },
+    {
+      "fact_id": "fact-0070-007",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_procedure_result",
+      "operation": "set",
+      "before": "迁籍附条被正式确认不能继承原债印效力，本次追缴令失效，已揭示错账增加一项执行附条错误，但原债印仍被认定有效，未产生债额减免",
+      "after": "已揭示错账正式新增“具名旧债当期寿火位重复执行”的冲突结果，本次追缴令被撤销且余火退回，但原债印仍认定有效且旧债余额保留。"
+    },
+    {
+      "fact_id": "fact-0070-008",
+      "asset_id": "state_ledger_public_reputation",
+      "field_path": "state_ledger.current_public_rule",
+      "operation": "set",
+      "before": "共同总额不得越过巷界落链；逐户追缴必须具备姓名、归属和可核验实际落处",
+      "after": "在贫城公开认知中，规则推进为跨巷债链不得只凭共同总额执行且逐户追缴须可核验，且具名追缴也绝对不得重复占用已执行过的寿火期位。"
+    },
+    {
+      "fact_id": "fact-0070-010",
+      "asset_id": "state_ledger_faction_pressure",
+      "field_path": "state_ledger.current_next_procedural_hook",
+      "operation": "set",
+      "before": "迁籍附条被判定失效，命籍衙申请转为在泥灯巷原地执行针对苏晚的旧债，程序压力转向原地执行旧债",
+      "after": "封档最后闭合时州府复核印锁定失效附条的后压时刻，向所有相关的上层节点追查是谁改动了这笔旧债的转运记录。"
+    },
+    {
+      "fact_id": "fact-0070-009",
+      "asset_id": "state_ledger_mother_life_lamp_countdown",
+      "field_path": "state_ledger.current_countdown_state",
+      "operation": "set",
+      "before": "最后一格计时液体在沸腾中继续向下滑落",
+      "after": "倒计时依然停留在极度危险的逼近最末一格阶段，刻度管液体在沸腾中继续向下滑落，暗示下一次有效追缴随时可能再次覆盖降临。"
+    }
+  ],
+  "resolved_audit_ids": []
+}

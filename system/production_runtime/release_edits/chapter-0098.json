@@ -1,0 +1,13 @@
+{
+  "version": "0.25",
+  "chapter_id": "chapter-0098",
+  "source_revision": "system/production_runtime/chapters/chapter-0098/revision.md",
+  "source_sha256": "a883e8ce9468934a517414b2f73b5c22ec00c8da670b479595d91b10d72a3877",
+  "release_edit": "system/production_runtime/release_edits/chapter-0098.md",
+  "release_edit_sha256": "a803d46ec1f22d26377d786b60cf68946f916faface7eb4248a90b9815a7646e",
+  "repair_direction": "统一封闭入口角色规则：命籍验证由无实体石台阵枢执行；闻照微本体不在外层，共持锁定的是不可撤回的完整外层投影，影手仅为投影操作形态。",
+  "provider": "codex-continuity-normalization",
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-091-100.json",
+  "reviewed_release_edit_sha256": "a803d46ec1f22d26377d786b60cf68946f916faface7eb4248a90b9815a7646e"
+}

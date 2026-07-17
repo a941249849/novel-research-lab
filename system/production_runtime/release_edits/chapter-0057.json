@@ -8,5 +8,7 @@
   "repair_direction": "删除结尾从“两名留下者也没有躲到灯后”开始的重复核验循环，将其压缩为一次明确动作链：第三名持令人撤回，两名持令人自愿留纸，顾巡将债链落向两份令牌并启动归属复验。保持撤回权、无人替第三户作证、两份令仍在各自持有人控制中。段落适合移动端阅读，不得出现超过五百字的粘连段。",
   "provider": "codex",
   "model": "gpt-5.6-sol",
-  "status": "pending_window_re_review"
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-051-060.json",
+  "reviewed_release_edit_sha256": "72030660e74807cb7e8499404b792ed06449d1c9afef0cc0d705c6df59f88d10"
 }

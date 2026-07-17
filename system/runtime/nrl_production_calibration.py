@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any
 
 from nrl_codex_writer import ask_codex_writer
+from nrl_model_router import ROUTES, validate_model_team_contract
 from nrl_paths import ROOT, runtime_path
 
 
@@ -14,6 +15,7 @@ CALIBRATION_PATH = runtime_path(
     "system/production_runtime/calibration/direct_codex_writer_calibration.v0.21.json"
 )
 CALIBRATION_ROOT = CALIBRATION_PATH.parent
+MODEL_TEAM_ATTESTATION_PATH = CALIBRATION_ROOT / "codex_model_team_attestation.v0.27.json"
 CANDIDATE_ROOT = CALIBRATION_ROOT / "candidates"
 INTERNAL_SCREEN_ROOT = CALIBRATION_ROOT / "internal_screening"
 REVIEW_PACKET_PATH = runtime_path(
@@ -299,4 +301,62 @@ def build_direct_writer_calibration_status() -> dict[str, Any]:
         "reason": None if valid else "calibration requires nine blinded runs, independent acceptance, and an accepted routing decision",
         "run_count": len(runs),
         "external_review_status": data.get("external_review", {}).get("status", "pending"),
+    }
+
+
+def _sha256_path(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def _generation_evidence() -> tuple[list[str], dict[str, int]]:
+    items = []
+    counts: dict[str, int] = {}
+    chapter_root = runtime_path("system/production_runtime/chapters")
+    for path in sorted(chapter_root.glob("chapter-*/generation_cost.json")):
+        try:
+            ordinal = int(path.parent.name.removeprefix("chapter-"))
+        except ValueError:
+            continue
+        if not 1 <= ordinal <= 100:
+            continue
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        model = str(payload.get("writer_model"))
+        counts[model] = counts.get(model, 0) + 1
+        items.append(f"{path.relative_to(ROOT).as_posix()}:{_sha256_path(path)}")
+    return items, counts
+
+
+def build_model_team_attestation_status() -> dict[str, Any]:
+    if not MODEL_TEAM_ATTESTATION_PATH.is_file():
+        return {"valid": False, "status": "missing", "errors": ["v0.27 model-team attestation is missing"]}
+    data = json.loads(MODEL_TEAM_ATTESTATION_PATH.read_text(encoding="utf-8"))
+    errors = []
+    legacy_path = runtime_path(str(data.get("supersedes_for_active_routing", "")))
+    release_path = runtime_path(str(data.get("volume1_submission_manifest", "")))
+    if not legacy_path.is_file() or _sha256_path(legacy_path) != data.get("legacy_calibration_sha256"):
+        errors.append("legacy calibration hash mismatch")
+    if not release_path.is_file() or _sha256_path(release_path) != data.get("volume1_submission_manifest_sha256"):
+        errors.append("Volume 1 submission manifest hash mismatch")
+    items, counts = _generation_evidence()
+    evidence = data.get("generation_evidence", {})
+    root_hash = hashlib.sha256("\n".join(items).encode("utf-8")).hexdigest()
+    if len(items) != evidence.get("artifact_count") or root_hash != evidence.get("artifact_root_sha256"):
+        errors.append("generation evidence root mismatch")
+    if counts != evidence.get("writer_model_counts"):
+        errors.append("generation model counts mismatch")
+    expected_routes = {role: route.get("model") for role, route in ROUTES.items()}
+    if data.get("active_routes") != expected_routes:
+        errors.append("active model routes do not match the attested decision")
+    contract = validate_model_team_contract()
+    errors.extend(contract["errors"])
+    if data.get("status") != "accepted_operational_route":
+        errors.append("model-team attestation is not accepted")
+    return {
+        "valid": not errors,
+        "status": data.get("status"),
+        "errors": errors,
+        "path": str(MODEL_TEAM_ATTESTATION_PATH.relative_to(ROOT)),
+        "generation_artifact_count": len(items),
+        "writer_model_counts": counts,
+        "model_team_contract": contract,
     }

@@ -16,7 +16,6 @@ from nrl_corpus_pipeline import (
 )
 from nrl_deep_read import build_deep_read_status
 from nrl_full_corpus_proof import build_proof_status
-from nrl_hermes_gate import build_hermes_readiness
 from nrl_rag_index import load_or_build_creation_context_index
 from nrl_research_assets import build_research_asset_catalog
 from nrl_production_runtime import load_chapter_runtime_status
@@ -118,7 +117,6 @@ def build_studio_data(
     dna_production_runtime = build_production_runtime_status(state, adapters)
     asset_producers = build_producer_status(state, adapters)
     creation_context_index = load_or_build_creation_context_index(state, adapters)
-    hermes_readiness = build_hermes_readiness(state, adapters)
     chapter_runtime = load_chapter_runtime_status()
     production_operator = build_operator_status(
         runtime_path("system/production_runtime/chapter_registry.v0.20.json")
@@ -179,14 +177,13 @@ def build_studio_data(
                     "path": "/api/actions/validate-state",
                 },
             ],
-            "forbidden_actions": ["advance", "execute-hermes", "execute-antigravity"],
+            "forbidden_actions": ["advance", "direct-external-agent-execution"],
         },
         "architecture_reconciliation": architecture_reconciliation,
         "corpus_pipeline": corpus_pipeline,
         "dna_production_runtime": dna_production_runtime,
         "asset_producers": asset_producers,
         "creation_context_index": creation_context_index,
-        "hermes_readiness": hermes_readiness,
         "chapter_runtime": chapter_runtime,
         "production_operator": production_operator,
         "system_identity": {
@@ -223,26 +220,36 @@ def build_studio_data(
         "agent_panel": {
             "items": [
                 {
-                    "agent": "Codex",
-                    "status": "local_runtime_host",
-                    "mode": _adapter_mode(adapters, "codex"),
+                    "agent": "Codex Sol",
+                    "status": "showrunner_reviewer",
+                    "display_status": "gpt-5.6-sol",
+                    "mode": "model_route",
                     "can_execute": _adapter_can_execute(adapters, "codex"),
-                    "role": "local runtime host / engineering / validation / orchestration",
+                    "role": "long-range planning, causal review, and window adjudication",
+                },
+                {
+                    "agent": "Codex Terra",
+                    "status": "primary_writer_editor",
+                    "display_status": "gpt-5.6-terra",
+                    "mode": "model_route",
+                    "can_execute": _adapter_can_execute(adapters, "codex"),
+                    "role": "chapter drafting, bounded revision, and scene bridging",
+                },
+                {
+                    "agent": "Codex Luna",
+                    "status": "structured_observer",
+                    "display_status": "gpt-5.6-luna",
+                    "mode": "model_route",
+                    "can_execute": _adapter_can_execute(adapters, "codex"),
+                    "role": "fact observation, state extraction, and mechanical checks",
                 },
                 {
                     "agent": "Antigravity",
-                    "status": system_status["antigravity_execution"]["effective_state"],
+                    "status": "backup",
+                    "display_status": system_status["antigravity_execution"]["effective_state"],
                     "mode": _adapter_mode(adapters, "antigravity"),
                     "can_execute": system_status["antigravity_execution"]["can_dispatch_registered_reviews"],
-                    "role": "CLI collaborative literary review",
-                },
-                {
-                    "agent": "Hermes",
-                    "status": system_status["hermes_execution_status"],
-                    "display_status": f"Hermes: {system_status['hermes_execution_status']}",
-                    "mode": _adapter_mode(adapters, "hermes"),
-                    "can_execute": _adapter_can_execute(adapters, "hermes"),
-                    "role": "paused, not removed; later writer / literary enrichment after explicit authorization",
+                    "role": "independent review and provider fallback only",
                 },
                 {
                     "agent": "Web GPT",

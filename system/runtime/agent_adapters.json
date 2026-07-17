@@ -8,20 +8,6 @@
     "execution_policy": "primary_runtime_and_direct_writer",
     "writer_adapter": "codex_direct"
   },
-  "hermes": {
-    "mode": "cli_bridge",
-    "supported_modes": [
-      "manual_handoff",
-      "client_handoff",
-      "api",
-      "cli",
-      "cli_bridge"
-    ],
-    "can_execute": false,
-    "execution_policy": "optional_literary_enrichment_only",
-    "handoff_dir": "handoff/hermes",
-    "expected_output_dir": "handoff/hermes/outputs"
-  },
   "antigravity": {
     "mode": "cli_bridge",
     "supported_modes": [
@@ -32,7 +18,7 @@
       "cli_bridge"
     ],
     "can_execute": true,
-    "execution_policy": "registered_reviews_and_quota_fallback_production",
+    "execution_policy": "independent_review_and_provider_fallback_only",
     "fallback_writer_model": "Claude Opus 4.6 (Thinking)",
     "fallback_observer_model": "Gemini 3.5 Flash (High)",
     "handoff_dir": "handoff/antigravity",

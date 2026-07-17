@@ -7,8 +7,8 @@ from nrl_antigravity_bridge import (
     build_antigravity_bridge_status,
     build_antigravity_execution_status,
 )
-from nrl_hermes_bridge import build_hermes_execution_status
 from nrl_deep_read import build_deep_read_status
+from nrl_model_router import build_model_routing_status, validate_model_team_contract
 from nrl_paths import runtime_path
 from nrl_story_window import build_story_window_status
 
@@ -34,8 +34,9 @@ def operating_mode_for(state: dict[str, Any]) -> str:
 
 def build_system_status(state: dict[str, Any], adapters: dict[str, Any]) -> dict[str, Any]:
     antigravity_execution = build_antigravity_execution_status(adapters)
-    hermes_execution = build_hermes_execution_status(adapters.get("hermes", {}))
     deep_read = build_deep_read_status()
+    model_routing = build_model_routing_status()
+    model_team_contract = validate_model_team_contract()
     blueprint = (
         json.loads(ACTIVE_BLUEPRINT_PATH.read_text(encoding="utf-8"))
         if ACTIVE_BLUEPRINT_PATH.exists()
@@ -48,6 +49,7 @@ def build_system_status(state: dict[str, Any], adapters: dict[str, Any]) -> dict
         "prose_not_globally_blocked": "write novel prose" not in state.get("blocked_actions", []),
         "active_blueprint_allows_governed_prose": bool(blueprint.get("prose_allowed")),
         "story_window_contract_valid": bool(story_windows["valid"]),
+        "codex_model_team_contract_valid": model_team_contract["valid"],
     }
     production_blockers = [name for name, passed in production_checks.items() if not passed]
     hard_rules = [
@@ -56,8 +58,8 @@ def build_system_status(state: dict[str, Any], adapters: dict[str, Any]) -> dict
         "settle chapter state before the next chapter can start",
         "keep raw novel_training_set outside the chapter production runtime",
         "do not publish before the Volume 1 release gate passes",
-        "use Antigravity for bounded literary review, not as the production state owner",
-        "Hermes remains optional and cannot bypass runtime gates",
+        "use Antigravity only for independent review or provider fallback, never as production state owner",
+        "route planning/review to Sol, prose/editing to Terra, and observation/mechanical work to Luna",
     ]
     if state.get("owner_gate_required", False):
         hard_rules.insert(0, "do not advance story phase")
@@ -68,12 +70,9 @@ def build_system_status(state: dict[str, Any], adapters: dict[str, Any]) -> dict
         "phase_status": state.get("phase_status"),
         "owner_gate_required": state.get("owner_gate_required", False),
         "owner_gate_status": state.get("owner_gate_status"),
-        "hermes_role": "later_writer_or_literary_enrichment",
-        "hermes_execution_status": hermes_execution["effective_state"],
         "agent_roles": {
-            "codex": "runtime_engineering_validation_orchestration",
-            "antigravity": "cli_collaborative_literary_review",
-            "hermes": "cli_controlled_literary_enrichment_after_explicit_authorization",
+            "codex": "three_model_runtime_planning_writing_review_observation",
+            "antigravity": "backup_review_and_provider_fallback",
         },
         "adapter_modes": {
             name: {
@@ -84,7 +83,9 @@ def build_system_status(state: dict[str, Any], adapters: dict[str, Any]) -> dict
         },
         "antigravity_bridge": build_antigravity_bridge_status(),
         "antigravity_execution": antigravity_execution,
-        "hermes_execution": hermes_execution,
+        "antigravity_role": "backup_review_and_provider_fallback",
+        "codex_model_team": model_routing["routes"],
+        "model_team_contract": model_team_contract,
         "verifiable_deep_reading": deep_read,
         "production_ready": not production_blockers,
         "production_checks": production_checks,

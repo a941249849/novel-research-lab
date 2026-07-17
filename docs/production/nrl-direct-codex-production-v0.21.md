@@ -2,19 +2,18 @@
 
 ## Decision
 
-Codex is the only production control plane and the direct prose adapter. Hermes is
-optional literary enrichment, not a mandatory forwarding layer for Codex quota.
+Codex is the only production control plane. As of the v0.27 role migration,
+Hermes is retired from active production rather than retained as enrichment.
 
 ## Model Routing
 
-- Sol: showrunner planning, high-risk arc decisions, adjudication, and the
-  current primary prose route. Its three blind controls passed the internal
-  screen.
-- Terra: non-default experimental prose route. It requires focused causal
-  coherence recalibration before it can write production chapters.
+- Sol: showrunner planning, high-risk arc decisions, causal review, and window
+  adjudication.
+- Terra: primary prose, bounded revision, and scene-bridge editing.
 - Luna: schema-bound observation and low-risk mechanical candidates.
-- Antigravity: isolated external literary review only; it receives inline
-  hash-bound packets and has no project directory mounted.
+- Antigravity: isolated backup for independent review or Codex provider
+  failure; it receives inline hash-bound packets and has no project directory
+  mounted.
 
 ## Final-Text Lifecycle
 

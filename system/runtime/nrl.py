@@ -3,7 +3,8 @@
 
 This runtime is intentionally small: it routes missions, prepares bounded
 handoffs, dispatches registered Antigravity review jobs through the local CLI
-bridge, ingests outputs, and validates phase state. It never calls Hermes.
+bridge, ingests outputs, and validates phase state. Active production uses the
+Codex Sol/Terra/Luna model team; the historical Hermes adapter is retired.
 """
 
 from __future__ import annotations
@@ -91,16 +92,7 @@ from nrl_full_corpus_proof import (
 )
 from nrl_final_assets import promote_final_asset_bundle, validate_final_asset_bundle
 from nrl_handoff_packet import write_antigravity_packet
-from nrl_hermes_bridge import build_hermes_execution_status
-from nrl_hermes_controlled_prose import (
-    AUDIT_PATH,
-    OUTPUT_PATH as CONTROLLED_PROSE_OUTPUT_PATH,
-    build_controlled_prose_prompt,
-    build_controlled_prose_readiness,
-    dispatch_controlled_prose_test,
-    validate_controlled_prose_text,
-)
-from nrl_hermes_gate import build_hermes_readiness
+from nrl_hermes_controlled_prose import validate_controlled_prose_text
 from nrl_paths import ROOT, runtime_path
 from nrl_owner_gate import DECISION_TYPES, load_decisions, record_owner_decision
 from nrl_phase2e import (
@@ -150,6 +142,7 @@ from nrl_production_calibration import (
     build_blind_review_packet,
     build_calibration_routing_decision_packet,
     build_direct_writer_calibration_status,
+    build_model_team_attestation_status,
     record_external_review_blocked,
     record_calibration_routing_decision,
     run_direct_writer_calibration,
@@ -441,30 +434,33 @@ def cmd_final_assets_promote(args: argparse.Namespace) -> int:
 
 
 def cmd_hermes_bridge_status(_: argparse.Namespace) -> int:
-    print_json(build_hermes_execution_status(load_adapters().get("hermes", {})))
+    print_json({
+        "status": "retired",
+        "effective_state": "retired_not_callable",
+        "available": False,
+        "can_execute_controlled_prose_test": False,
+        "replacement": "codex_three_model_team",
+    })
     return 0
 
 
 def cmd_controlled_prose_status(_: argparse.Namespace) -> int:
-    audit_text = AUDIT_PATH.read_text(encoding="utf-8") if AUDIT_PATH.exists() else ""
-    print_json(build_controlled_prose_readiness(load_decisions(), audit_text))
+    print_json({
+        "status": "retired",
+        "allowed": False,
+        "replacement": "production chapter runtime with Codex Sol/Terra/Luna routing",
+    })
     return 0
 
 
 def cmd_controlled_prose_test(_: argparse.Namespace) -> int:
-    adapter_status = build_hermes_execution_status(load_adapters().get("hermes", {}))
-    if not adapter_status["can_execute_controlled_prose_test"]:
-        print_json({"valid": False, "error": adapter_status["blocked_reason"]})
-        return 1
-    audit_text = AUDIT_PATH.read_text(encoding="utf-8") if AUDIT_PATH.exists() else ""
-    result = dispatch_controlled_prose_test(
-        build_controlled_prose_prompt(),
-        load_decisions(),
-        audit_text,
-        CONTROLLED_PROSE_OUTPUT_PATH,
-    )
-    print_json(result)
-    return 0 if result["valid"] else 1
+    print_json({
+        "valid": False,
+        "status": "retired",
+        "error": "Hermes writing execution has been removed from the active architecture",
+        "replacement": "python3 system/runtime/nrl.py produce --until <chapter>",
+    })
+    return 1
 
 
 def cmd_controlled_prose_validate(args: argparse.Namespace) -> int:
@@ -680,8 +676,12 @@ def cmd_produce_faction_seed(args: argparse.Namespace) -> int:
 
 
 def cmd_hermes_readiness(_: argparse.Namespace) -> int:
-    result = build_hermes_readiness(load_state(), load_adapters())
-    print_json(result)
+    print_json({
+        "status": "retired",
+        "ready_to_call_hermes": False,
+        "replacement": "codex_three_model_team",
+        "active_models": ["gpt-5.6-sol", "gpt-5.6-terra", "gpt-5.6-luna"],
+    })
     return 0
 
 
@@ -1148,7 +1148,9 @@ def cmd_chapter_run(args: argparse.Namespace) -> int:
 
 
 def cmd_model_routing_status(_: argparse.Namespace) -> int:
-    print_json(build_model_routing_status())
+    status = build_model_routing_status()
+    status["operational_attestation"] = build_model_team_attestation_status()
+    print_json(status)
     return 0
 
 
@@ -1758,7 +1760,7 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("volume1-plan-validate").set_defaults(func=cmd_volume1_plan_validate)
     sub.add_parser("volume1-dry-run").set_defaults(func=cmd_volume1_dry_run)
     agent_canaries_run = sub.add_parser("agent-canaries-run")
-    agent_canaries_run.add_argument("--agent", choices=("hermes", "antigravity"))
+    agent_canaries_run.add_argument("--agent", choices=("antigravity",), required=True)
     agent_canaries_run.add_argument("--from-index", type=int, default=1)
     agent_canaries_run.add_argument("--to-index", type=int, default=10)
     agent_canaries_run.set_defaults(func=cmd_agent_canaries_run)
@@ -1805,7 +1807,7 @@ def build_parser() -> argparse.ArgumentParser:
     batch_run = sub.add_parser("volume1-batch-run")
     batch_run.add_argument("--start", type=int, required=True)
     batch_run.add_argument("--end", type=int, required=True)
-    batch_run.add_argument("--audit-model", default="Gemini 3.5 Flash (High)")
+    batch_run.add_argument("--audit-model", default=None, help="Antigravity fallback model override")
     batch_run.set_defaults(func=cmd_volume1_batch_run)
     production_status = sub.add_parser("production-status")
     production_status.add_argument("--until", type=int, default=100)
@@ -1815,7 +1817,7 @@ def build_parser() -> argparse.ArgumentParser:
     production_compact.set_defaults(func=cmd_production_compact)
     produce = sub.add_parser("produce")
     produce.add_argument("--until", type=int, default=100)
-    produce.add_argument("--audit-model", default="Gemini 3.5 Flash (High)")
+    produce.add_argument("--audit-model", default=None, help="Antigravity fallback model override")
     produce.set_defaults(func=cmd_produce)
     sub.add_parser("volume1-fanqie-package").set_defaults(func=cmd_volume1_fanqie_package)
     review_package = sub.add_parser("volume1-review-package")
@@ -1868,7 +1870,7 @@ def build_parser() -> argparse.ArgumentParser:
     chapter_settlement_candidate.set_defaults(func=cmd_chapter_settlement_candidate)
     chapter_run = sub.add_parser("chapter-run")
     chapter_run.add_argument("--intent-file", required=True)
-    chapter_run.add_argument("--audit-model", default="Gemini 3.5 Flash (High)")
+    chapter_run.add_argument("--audit-model", default=None, help="Antigravity fallback model override")
     chapter_run.set_defaults(func=cmd_chapter_run)
     sub.add_parser("model-routing-status").set_defaults(func=cmd_model_routing_status)
     sub.add_parser("direct-writer-calibration-status").set_defaults(func=cmd_direct_writer_calibration_status)

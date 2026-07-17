@@ -183,7 +183,7 @@ def build_creation_context_index(state: dict[str, Any], adapters: dict[str, Any]
         "guardrails": [
             "Evidence-pack metadata only",
             "No raw novel prose",
-            "No Hermes execution",
+            "No unregistered writer execution",
             "No final creative assets",
         ],
     }

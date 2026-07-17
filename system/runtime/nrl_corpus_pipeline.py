@@ -136,7 +136,7 @@ def _stages(system_status: dict[str, Any]) -> list[dict[str, Any]]:
             "stage_id": "agent_review_policy",
             "label_zh": "Agent 审查策略",
             "status": "contract_ready",
-            "description": "Codex 本地验证；Antigravity/Hermes 保持人工或暂停边界。",
+            "description": "Codex 三模型团队本地执行；Antigravity 保持备用边界。",
         },
         {
             "stage_id": "owner_gate",
@@ -253,7 +253,7 @@ def build_pipeline_status(state: dict[str, Any], adapters: dict[str, Any]) -> di
         {
             *[str(item) for item in state.get("blocked_actions", [])],
             "generate final creative assets",
-            "execute-hermes",
+            "execute-unregistered-writer-adapter",
             "execute-antigravity",
         }
     )
@@ -310,8 +310,8 @@ def build_pipeline_plan(
         "validation_gates": _validation_gates(),
         "agent_review_policy": {
             "codex": "local_validation_orchestration",
+            "codex_model_team": "sol_planning_review__terra_writing_editing__luna_observation_mechanical",
             "antigravity": adapters_policy["antigravity_execution"]["effective_state"],
-            "hermes": adapters_policy["hermes_execution_status"],
             "web_gpt": "architecture_review_only",
         },
         "owner_gate": {
@@ -348,7 +348,7 @@ def build_evidence_pack(
         {
             *[str(item) for item in plan["forbidden_actions"]],
             *[str(item) for item in plan["target_family"]["blocked_actions"]],
-            "execute_hermes",
+            "execute_unregistered_writer_adapter",
             "execute_antigravity",
             "read_raw_novel_training_set",
             "generate_final_creation_assets",
@@ -545,7 +545,7 @@ def validate_evidence_pack(pack: dict[str, Any]) -> dict[str, Any]:
 
     blocked_actions = set(str(item) for item in pack.get("blocked_actions", []))
     required_blocked = {
-        "execute_hermes",
+        "execute_unregistered_writer_adapter",
         "execute_antigravity",
         "generate_novel_prose",
         "read_raw_novel_training_set",

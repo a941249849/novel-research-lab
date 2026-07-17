@@ -110,10 +110,12 @@ metadata. From that copy the system completed:
 - `phase0*`, `phase1*`, and `phase2*` remain historical provenance. They should
   not be consulted by the active writing loop unless a migration explicitly
   promotes an artifact into the current fact sources.
-- Antigravity is an external review adapter; quota or client availability may
-  pause new review work but cannot silently bypass its gate.
-- Hermes remains optional literary enhancement, not a required runtime
-  dependency.
+- Antigravity is an external backup adapter; quota or client availability may
+  pause a requested second opinion or fallback attempt but does not block the
+  primary Codex production loop.
+- Superseded by v0.27: Hermes is retired from active production; Codex
+  Sol/Terra/Luna own the full primary production loop and Antigravity is backup
+  only. The route is bound by the v0.27 operational attestation.
 - Some immutable v0.18 provider receipts under
   `system/agent_ops/inbox/deep_read_v0.18/chunks/` contain raw response framing
   around the bound JSON despite their historical `.json` suffix. The v0.18

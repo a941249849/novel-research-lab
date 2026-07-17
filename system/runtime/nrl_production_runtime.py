@@ -6,7 +6,6 @@ import re
 import shutil
 import statistics
 import subprocess
-import tempfile
 import math
 from datetime import datetime, timezone
 from collections import Counter
@@ -16,7 +15,6 @@ from typing import Any
 import jsonschema
 
 from nrl_creation_schemas import validate_creation_asset_store
-from nrl_antigravity_bridge import find_agy_binary
 from nrl_antigravity_bridge import build_antigravity_bridge_status
 from nrl_deep_read import build_deep_read_status
 from nrl_codex_writer import (
@@ -27,15 +25,14 @@ from nrl_codex_writer import (
     extract_json_object,
     find_codex_binary,
 )
-from nrl_model_router import route_model
-from nrl_production_calibration import build_direct_writer_calibration_status
+from nrl_model_router import route_model, validate_model_team_contract
+from nrl_production_calibration import build_direct_writer_calibration_status, build_model_team_attestation_status
 from nrl_owner_gate import load_decisions
 from nrl_paths import ROOT, runtime_path
 from nrl_volume1_plan import build_volume1_dry_run
 from nrl_volume1_longform import build_volume1_manifest as build_longform_volume1_manifest, validate_volume1_manifest as validate_longform_volume1_manifest
 from nrl_volume1_release import prior_window_review_required
 from nrl_story_window import story_beat_for
-from nrl_agent_canaries import validate_agent_protocol_canaries
 from nrl_longform_plan import ACTIVE_BLUEPRINT_PATH, build_longform_first100_dry_run, build_longform_readiness
 
 
@@ -529,16 +526,21 @@ def build_production_preflight(
     longform_volume1_manifest = validate_longform_volume1_manifest(build_longform_volume1_manifest())
     longform_readiness = build_longform_readiness() if longform_active else None
     longform_dry_run = build_longform_first100_dry_run() if longform_active else None
-    canaries = validate_agent_protocol_canaries()
     calibration = build_direct_writer_calibration_status()
+    model_team_attestation = build_model_team_attestation_status()
+    model_team = validate_model_team_contract()
+    antigravity = adapters.get("antigravity", {})
     checks = {
         "canonical_runtime_ready": readiness["ready"],
-        "legacy_agent_protocol_canaries_valid": canaries["valid"],
-        "direct_codex_calibration_valid": calibration["valid"],
+        "codex_model_team_contract_valid": model_team["valid"],
+        "codex_model_team_attestation_valid": model_team_attestation["valid"],
         "no_unaccepted_chapters": not blocking_pending,
         "creation_assets_valid": validate_creation_asset_store()["valid"],
         "codex_direct_writer_available": bool(adapters.get("codex", {}).get("can_execute")) and bool(find_codex_binary()),
-        "antigravity_bridge_available": build_antigravity_bridge_status()["available"],
+        "antigravity_backup_configured": (
+            antigravity.get("execution_policy")
+            == "independent_review_and_provider_fallback_only"
+        ),
     }
     if longform_active:
         checks.update({
@@ -552,7 +554,7 @@ def build_production_preflight(
             "production_blueprint_owner_accepted": blueprint_accepted,
             "volume1_non_prose_dry_run_valid": legacy_volume1_dry_run["valid"],
         })
-    return {"valid": all(checks.values()), "checks": checks, "legacy_volume1_dry_run": legacy_volume1_dry_run if not longform_active else {"deprecated": True, "reason": "The active 6M-character route uses the 100-chapter Volume 1 contract."}, "longform_volume1_manifest": longform_volume1_manifest if longform_active else None, "longform_readiness": longform_readiness, "longform_dry_run": longform_dry_run, "agent_protocol_canaries": canaries, "direct_codex_calibration": calibration, "pending_chapters": pending, "allowed_pending_chapter_id": allowed_pending_chapter_id, "accepted_chapters": [item["chapter_id"] for item in registry["chapters"] if item["stage"] == "chapter_accepted"]}
+    return {"valid": all(checks.values()), "checks": checks, "legacy_volume1_dry_run": legacy_volume1_dry_run if not longform_active else {"deprecated": True, "reason": "The active 6M-character route uses the 100-chapter Volume 1 contract."}, "longform_volume1_manifest": longform_volume1_manifest if longform_active else None, "longform_readiness": longform_readiness, "longform_dry_run": longform_dry_run, "codex_model_team": model_team, "model_team_attestation": model_team_attestation, "legacy_direct_codex_calibration": calibration, "antigravity_runtime_available": build_antigravity_bridge_status()["available"], "pending_chapters": pending, "allowed_pending_chapter_id": allowed_pending_chapter_id, "accepted_chapters": [item["chapter_id"] for item in registry["chapters"] if item["stage"] == "chapter_accepted"]}
 
 
 def initialize_chapter(intent_file: str) -> dict[str, Any]:
@@ -1415,7 +1417,7 @@ def build_chapter_audit_packet(chapter_id: str) -> dict[str, Any]:
     packet = runtime_path(f"system/production_runtime/chapters/{chapter_id}/{artifact_kind}_audit_packet.md")
     packet.write_text(
         "\n".join([
-            "# NRL Antigravity Chapter Audit v0.20", "",
+            "# NRL Chapter Audit v0.27", "",
             "Judge continuity, causality, long-form vitality and AI-taste independently from the inline, hash-bound artifacts below.",
             "Do not use terminal tools, inspect files, run tests, make a plan, or wait for background work. The complete review packet is inline.",
             "Do not rewrite prose. Return one JSON object only using the exact binding hashes, with no Markdown fence or surrounding text.", "",
@@ -1600,73 +1602,60 @@ def _record_audit_attempt(
     return str(target.relative_to(ROOT))
 
 
-def dispatch_chapter_audit(chapter_id: str, model: str = "Gemini 3.5 Flash (High)") -> dict[str, Any]:
+def dispatch_chapter_audit(chapter_id: str, model: str | None = None) -> dict[str, Any]:
     packet = build_chapter_audit_packet(chapter_id)
-    binary = find_agy_binary()
-    if not binary:
-        raise RuntimeError("agy binary is missing")
     packet_path = runtime_path(packet["packet_path"])
     artifact_key = "final_audit" if packet.get("audit_kind", "initial") == "final" else "continuity_audit"
+    schema_path = runtime_path("system/production_runtime/schemas/continuity_audit.schema.json")
+    reviewer = route_model("reviewer")
+    provider = "codex"
+    used_model = reviewer["model"]
+    errors = []
     try:
-        # The packet is fully inline. An isolated cwd makes Antigravity a reviewer,
-        # not an accidental second runtime operator with access to project files.
-        with tempfile.TemporaryDirectory(prefix="nrl-antigravity-audit-") as isolated_cwd:
-            result = subprocess.run(
-                [binary, "--model", model, "--mode", "plan", "--sandbox", "--print-timeout", "12m0s", "-p", packet_path.read_text(encoding="utf-8")],
-                cwd=isolated_cwd, text=True, capture_output=True, check=False, timeout=780,
+        data = ask_codex_structured(
+            packet_path.read_text(encoding="utf-8"),
+            model=used_model,
+            schema_path=schema_path,
+            timeout_seconds=600,
+        )
+    except RuntimeError as error:
+        errors.append(f"{used_model}: {error}")
+        provider = "antigravity"
+        used_model = model or reviewer["fallback_model"]
+        try:
+            response_text = ask_antigravity_writer(
+                packet_path.read_text(encoding="utf-8"), model=used_model, timeout_seconds=780
             )
-    except subprocess.TimeoutExpired:
-        attempt_path = _record_audit_attempt(
-            chapter_id,
-            artifact_key,
-            {
-                "chapter_id": chapter_id,
-                "audit_kind": packet.get("audit_kind", "initial"),
-                "model": model,
-                "status": "timed_out",
-                "timeout_seconds": 780,
-            },
-        )
-        return {"valid": False, "errors": ["Antigravity audit timed out after 780s"], "attempt_path": attempt_path}
-    response_text = (result.stdout or result.stderr).strip()
-    if result.returncode != 0:
-        attempt_path = _record_audit_attempt(
-            chapter_id,
-            artifact_key,
-            {
-                "chapter_id": chapter_id,
-                "audit_kind": packet.get("audit_kind", "initial"),
-                "model": model,
-                "status": "provider_failed",
-                "returncode": result.returncode,
-                "stderr": result.stderr.strip()[:4000],
-                "stdout": result.stdout.strip()[:4000],
-            },
-        )
-        return {
-            "valid": False,
-            "errors": [f"Antigravity audit failed with exit code {result.returncode}"],
-            "attempt_path": attempt_path,
-        }
+            data = extract_json_object(response_text)
+        except RuntimeError as fallback_error:
+            errors.append(f"{used_model}: {fallback_error}")
+            attempt_path = _record_audit_attempt(
+                chapter_id,
+                artifact_key,
+                {
+                    "chapter_id": chapter_id,
+                    "audit_kind": packet.get("audit_kind", "initial"),
+                    "provider": provider,
+                    "model": used_model,
+                    "status": "provider_failed",
+                    "errors": errors,
+                },
+            )
+            return {"valid": False, "errors": errors, "attempt_path": attempt_path}
     try:
-        match = re.search(r"```json\s*(\{.*?\})\s*```", response_text, re.DOTALL)
-        payload = match.group(1) if match else response_text
-        data = normalize_continuity_audit_payload(json.loads(payload))
-        schema = _read_json(runtime_path("system/production_runtime/schemas/continuity_audit.schema.json"))
-        jsonschema.validate(data, schema)
-    except (json.JSONDecodeError, jsonschema.ValidationError) as error:
+        data = normalize_continuity_audit_payload(data)
+        jsonschema.validate(data, _read_json(schema_path))
+    except jsonschema.ValidationError as error:
         attempt_path = _record_audit_attempt(
             chapter_id,
             artifact_key,
             {
                 "chapter_id": chapter_id,
                 "audit_kind": packet.get("audit_kind", "initial"),
-                "model": model,
+                "provider": provider,
+                "model": used_model,
                 "status": "invalid_response",
-                "returncode": result.returncode,
                 "error": str(error),
-                "stderr": result.stderr.strip()[:4000],
-                "response_preview": response_text[:4000],
             },
         )
         return {"valid": False, "errors": [str(error)], "attempt_path": attempt_path}
@@ -1685,10 +1674,24 @@ def dispatch_chapter_audit(chapter_id: str, model: str = "Gemini 3.5 Flash (High
         raise RuntimeError("; ".join(transition["errors"]))
     target = runtime_path(f"system/production_runtime/chapters/{chapter_id}/{artifact_key}.json")
     _write_json(target, data)
+    execution_target = runtime_path(
+        f"system/production_runtime/chapters/{chapter_id}/{artifact_key}.execution.json"
+    )
+    _write_json(execution_target, {
+        "version": "0.27",
+        "chapter_id": chapter_id,
+        "audit_artifact_sha256": _sha256_text(
+            json.dumps(data, ensure_ascii=False, indent=2) + "\n"
+        ),
+        "provider": provider,
+        "model": used_model,
+        "fallback_used": provider == "antigravity",
+    })
     record["artifacts"][artifact_key] = str(target.relative_to(ROOT))
+    record["artifacts"][f"{artifact_key}_execution"] = str(execution_target.relative_to(ROOT))
     record["stage"] = target_stage
     _save_registry(registry)
-    return {"valid": True, "chapter_id": chapter_id, "stage": record["stage"], "verdict": data["verdict"]}
+    return {"valid": True, "chapter_id": chapter_id, "stage": record["stage"], "verdict": data["verdict"], "review_provider": provider, "review_model": used_model}
 
 
 def ingest_chapter_audit(chapter_id: str, file_arg: str) -> dict[str, Any]:
@@ -1924,7 +1927,7 @@ def build_observed_settlement_candidate(chapter_id: str) -> dict[str, Any]:
 
 
 def run_controlled_chapter_pipeline(
-    intent_file: str, *, audit_model: str = "Gemini 3.5 Flash (High)"
+    intent_file: str, *, audit_model: str | None = None
 ) -> dict[str, Any]:
     """Advance exactly one authorized chapter through every recoverable gate."""
     source = Path(intent_file)

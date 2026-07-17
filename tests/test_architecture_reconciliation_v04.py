@@ -43,15 +43,14 @@ class ArchitectureReconciliationCliTests(unittest.TestCase):
             "control_plane_split_brain",
             {item["mismatch_id"] for item in data["current_mismatch_report"]},
         )
-        self.assertEqual(data["agent_role_contract"][2]["agent"], "Hermes")
         self.assertEqual(
-            data["agent_role_contract"][2]["status"], "optional_enrichment"
+            {item["agent"] for item in data["agent_role_contract"] if item.get("agent_family") == "Codex"},
+            {"Codex Sol", "Codex Terra", "Codex Luna"},
         )
-        self.assertEqual(data["agent_role_contract"][1]["agent"], "Antigravity")
-        self.assertEqual(
-            data["agent_role_contract"][1]["status"],
-            "blocked_bridge_unavailable",
-        )
+        self.assertNotIn("Hermes", {item["agent"] for item in data["agent_role_contract"]})
+        antigravity = next(item for item in data["agent_role_contract"] if item["agent"] == "Antigravity")
+        self.assertEqual(antigravity["status"], "backup")
+        self.assertEqual(antigravity["runtime_status"], "blocked_bridge_unavailable")
         self.assertNotIn("novel_training_set/", json.dumps(data, ensure_ascii=False))
 
 
@@ -143,8 +142,9 @@ class ArchitectureReconciliationStudioTests(unittest.TestCase):
         self.assertIn("#architecture", html)
         self.assertIn("Corpus-to-Creation", html)
         self.assertIn("Core7 小批量试验", html)
-        self.assertIn("Hermes: ready", html)
-        self.assertIn("CLI 协作文学审查", html)
+        self.assertIn("Codex Sol / Terra / Luna", html)
+        self.assertIn("Antigravity 备用复核", html)
+        self.assertNotIn("Hermes: ready", html)
         self.assertNotIn("人工外部文学审查", html)
         self.assertIn("Owner Gate", html)
         self.assertNotIn("/api/actions/execute-hermes", html)

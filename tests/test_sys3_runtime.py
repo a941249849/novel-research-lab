@@ -331,7 +331,8 @@ class RuntimeFixture(unittest.TestCase):
         self.assertEqual(data["operating_mode"], "SYSTEM_HARDENING")
         self.assertEqual(data["content_progression"], "FROZEN_AT_OWNER_GATE")
         self.assertIn("do not advance story phase", data["hard_rules"])
-        self.assertEqual(data["hermes_role"], "later_writer_or_literary_enrichment")
+        self.assertNotIn("hermes_role", data)
+        self.assertTrue(data["model_team_contract"]["valid"])
 
     def test_studio_data_returns_required_dashboard_sections(self):
         result = self.run_cli("studio-data")
@@ -559,7 +560,7 @@ class RuntimeFixture(unittest.TestCase):
         self.assertIn("Current Project", html)
         self.assertIn("SYSTEM_HARDENING", html)
         self.assertIn("FROZEN_AT_OWNER_GATE", html)
-        self.assertIn("Hermes:", html)
+        self.assertIn("Codex Sol / Terra / Luna", html)
 
     def test_readme_documents_sys3_commands(self):
         readme = (REPO_ROOT / "system/runtime/README.md").read_text(encoding="utf-8")

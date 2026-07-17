@@ -35,7 +35,7 @@ class ProducerStatusCliTests(RuntimeCliCase):
         self.assertTrue(data["techniques"]["job_validated"])
         self.assertEqual(data["system_mode"], "CONTROLLED_RUNTIME")
         self.assertEqual(data["content_progression"], "RUNTIME_CONTROLLED")
-        self.assertFalse(data["hermes_allowed"])
+        self.assertFalse(data["unregistered_writer_allowed"])
 
 
 class TechniqueProducerCliTests(RuntimeCliCase):

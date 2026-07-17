@@ -18,11 +18,12 @@ from nrl_model_router import build_model_routing_status, route_model
 class CodexDirectWriterTests(unittest.TestCase):
     def test_routes_assign_models_by_production_risk(self):
         self.assertEqual(route_model("showrunner")["model"], "gpt-5.6-sol")
+        self.assertEqual(route_model("reviewer")["model"], "gpt-5.6-sol")
         self.assertEqual(route_model("writer")["model"], "gpt-5.6-terra")
         self.assertEqual(route_model("observer")["model"], "gpt-5.6-luna")
         self.assertEqual(route_model("editor")["fallback_model"], "Gemini 3.5 Flash (High)")
         self.assertEqual(route_model("writer")["fallback_model"], "Gemini 3.1 Pro (High)")
-        self.assertEqual(len(build_model_routing_status()["routes"]), 5)
+        self.assertEqual(len(build_model_routing_status()["routes"]), 6)
 
     def test_direct_writer_reads_only_explicit_output_file(self):
         with tempfile.TemporaryDirectory() as temp_dir:

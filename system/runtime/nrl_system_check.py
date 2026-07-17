@@ -15,6 +15,7 @@ from nrl_corpus_pipeline import build_evidence_pack_matrix, build_pipeline_statu
 from nrl_deep_read import build_deep_read_status
 from nrl_paths import runtime_path
 from nrl_production_runtime import build_production_readiness
+from nrl_production_calibration import build_model_team_attestation_status
 from nrl_production_operator import build_operator_status
 from nrl_story_window import build_story_window_status
 from nrl_system_status import build_system_status
@@ -65,6 +66,7 @@ def run_system_check() -> dict[str, Any]:
     )
     deep_read = build_deep_read_status()
     production_runtime = build_production_readiness()
+    model_team_attestation = build_model_team_attestation_status()
     system_status = build_system_status(state, adapters)
     story_windows = build_story_window_status()
     source_ownership = _load_json(SOURCE_OWNERSHIP_PATH)
@@ -81,8 +83,7 @@ def run_system_check() -> dict[str, Any]:
         == "corpus_pipeline_v0.3"
         and not architecture["production_readiness"]["owner_gate_required"]
         and architecture["production_readiness"]["content_generation_allowed"]
-        and architecture["production_readiness"]["hermes_execution_status"]
-        == "ready"
+        and architecture["production_readiness"]["codex_model_team_contract_valid"]
         and "novel_training_set/" not in architecture_payload
     )
 
@@ -178,6 +179,12 @@ def run_system_check() -> dict[str, Any]:
                 "stage_count": len(production_runtime["stage_order"]),
                 "story_windows": story_windows,
             },
+        },
+        {
+            "check_id": "codex_model_team_attestation",
+            "passed": model_team_attestation["valid"],
+            "blocking_scope": "production_readiness",
+            "detail": model_team_attestation,
         },
         {
             "check_id": "production_output_gate",

@@ -122,7 +122,7 @@ def load_creation_asset_registry(project: str, mode: str) -> dict[str, Any]:
             "Do not generate full character cards",
             "Do not generate final NPC sheets, faction dossiers, technique trees, naming dictionaries, or item catalogs",
             "Do not read raw novel_training_set/",
-            "Do not call Hermes or dispatch Antigravity outside registered CLI review jobs",
+            "Use only registered Codex model routes; dispatch Antigravity only as a bounded backup",
         ],
         "next_safe_action": "Use the registry to design schemas and validation before any content progression.",
     }

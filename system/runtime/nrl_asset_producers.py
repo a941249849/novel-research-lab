@@ -135,7 +135,7 @@ def build_producer_status(
         "system_mode": system_status["operating_mode"],
         "content_progression": system_status["content_progression"],
         "supported_families": list(SUPPORTED_FAMILIES),
-        "hermes_allowed": False,
+        "unregistered_writer_allowed": False,
         "owner_gate": {
             "required": system_status["owner_gate_required"],
             "status": system_status["owner_gate_status"],
@@ -169,7 +169,7 @@ def build_producer_status(
             "write novel prose",
             "write combat scenes",
             "generate final technique tree",
-            "execute-hermes",
+            "execute-unregistered-writer-adapter",
             "execute-antigravity",
             "read novel_training_set/",
         ],

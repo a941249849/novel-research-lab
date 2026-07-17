@@ -117,15 +117,18 @@ class ProductionChapterRuntimeV020Tests(unittest.TestCase):
         self.assertEqual(selected, "short")
 
 
-    def test_audit_output_parser_accepts_fenced_json_from_stderr(self):
+    def test_sol_reviewer_accepts_schema_bound_audit(self):
         record = {"stage": "draft_generated", "artifacts": {"context": "context.json", "rule_stack": "rules.json", "trace": "trace.json", "draft": "draft.md"}}
         audit = {"chapter_id": "chapter-0001", "artifact_kind": "draft", "artifact_sha256": "a" * 64, "context_sha256": "b" * 64, "verdict": "ACCEPT", "dimensions": {key: [] for key in ("canon", "character", "state", "causality", "pacing", "life_force", "anti_ai_taste", "originality")}, "issues": []}
         packet = REPO_ROOT / "system/production_runtime/chapters/chapter-0001/test-audit-packet.md"
         packet.write_text("packet", encoding="utf-8")
-        with mock.patch.object(runtime, "build_chapter_audit_packet", return_value={"template": audit, "packet_path": str(packet.relative_to(REPO_ROOT))}), mock.patch.object(runtime, "find_agy_binary", return_value="agy"), mock.patch.object(runtime, "_load_registry", return_value={"chapters": [record]}), mock.patch.object(runtime, "_chapter_record", return_value=record), mock.patch.object(runtime, "validate_stage_transition", return_value={"valid": True, "errors": []}), mock.patch.object(runtime, "_save_registry"), mock.patch.object(runtime, "_write_json"), mock.patch("nrl_production_runtime.subprocess.run", return_value=mock.Mock(returncode=0, stdout="", stderr="```json\n" + __import__("json").dumps(audit) + "\n```")):
+        with mock.patch.object(runtime, "build_chapter_audit_packet", return_value={"template": audit, "packet_path": str(packet.relative_to(REPO_ROOT))}), mock.patch.object(runtime, "ask_codex_structured", return_value=audit), mock.patch.object(runtime, "_load_registry", return_value={"chapters": [record]}), mock.patch.object(runtime, "_chapter_record", return_value=record), mock.patch.object(runtime, "validate_stage_transition", return_value={"valid": True, "errors": []}), mock.patch.object(runtime, "_save_registry"), mock.patch.object(runtime, "_write_json"):
             result = runtime.dispatch_chapter_audit("chapter-0001")
         packet.unlink()
         self.assertTrue(result["valid"])
+        self.assertEqual(result["review_provider"], "codex")
+        self.assertEqual(result["review_model"], "gpt-5.6-sol")
+        self.assertIn("continuity_audit_execution", record["artifacts"])
 
     def test_failed_external_audit_persists_a_recoverable_attempt_record(self):
         import nrl_production_runtime as runtime
@@ -133,13 +136,34 @@ class ProductionChapterRuntimeV020Tests(unittest.TestCase):
         record = {"stage": "draft_generated", "artifacts": {}}
         packet = REPO_ROOT / "system/production_runtime/chapters/chapter-0001/test-failed-audit-packet.md"
         packet.write_text("packet", encoding="utf-8")
-        with mock.patch.object(runtime, "build_chapter_audit_packet", return_value={"template": {}, "packet_path": str(packet.relative_to(REPO_ROOT))}), mock.patch.object(runtime, "find_agy_binary", return_value="agy"), mock.patch.object(runtime, "_load_registry", return_value={"chapters": [record]}), mock.patch.object(runtime, "_chapter_record", return_value=record), mock.patch.object(runtime, "_save_registry"), mock.patch.object(runtime, "_write_json") as write_json, mock.patch("nrl_production_runtime.subprocess.run", return_value=mock.Mock(returncode=1, stdout="", stderr="provider unavailable")):
+        with mock.patch.object(runtime, "build_chapter_audit_packet", return_value={"template": {}, "packet_path": str(packet.relative_to(REPO_ROOT))}), mock.patch.object(runtime, "ask_codex_structured", side_effect=RuntimeError("codex unavailable")), mock.patch.object(runtime, "ask_antigravity_writer", side_effect=RuntimeError("provider unavailable")), mock.patch.object(runtime, "_load_registry", return_value={"chapters": [record]}), mock.patch.object(runtime, "_chapter_record", return_value=record), mock.patch.object(runtime, "_save_registry"), mock.patch.object(runtime, "_write_json") as write_json:
             result = runtime.dispatch_chapter_audit("chapter-0001")
         packet.unlink()
         self.assertFalse(result["valid"])
         self.assertIn("attempt_path", result)
         self.assertEqual(write_json.call_args.args[1]["status"], "provider_failed")
         self.assertIn("continuity_audit_attempt", record["artifacts"])
+
+    def test_sol_audit_failure_falls_back_to_antigravity(self):
+        import json
+
+        record = {"stage": "draft_generated", "artifacts": {}}
+        audit = {
+            "chapter_id": "chapter-0005", "artifact_kind": "draft",
+            "artifact_sha256": "a" * 64, "context_sha256": "b" * 64,
+            "verdict": "ACCEPT", "dimensions": {key: [] for key in (
+                "canon", "character", "state", "causality", "pacing",
+                "life_force", "anti_ai_taste", "originality",
+            )}, "issues": [],
+        }
+        packet = REPO_ROOT / "system/production_runtime/chapters/chapter-0001/test-fallback-audit-packet.md"
+        packet.write_text("packet", encoding="utf-8")
+        with mock.patch.object(runtime, "build_chapter_audit_packet", return_value={"template": audit, "packet_path": str(packet.relative_to(REPO_ROOT))}), mock.patch.object(runtime, "ask_codex_structured", side_effect=RuntimeError("usage limit")), mock.patch.object(runtime, "ask_antigravity_writer", return_value=json.dumps(audit)), mock.patch.object(runtime, "_load_registry", return_value={"chapters": [record]}), mock.patch.object(runtime, "_chapter_record", return_value=record), mock.patch.object(runtime, "validate_stage_transition", return_value={"valid": True, "errors": []}), mock.patch.object(runtime, "_save_registry"), mock.patch.object(runtime, "_write_json"):
+            result = runtime.dispatch_chapter_audit("chapter-0005")
+        packet.unlink()
+        self.assertTrue(result["valid"])
+        self.assertEqual(result["review_provider"], "antigravity")
+        self.assertEqual(result["review_model"], "Claude Opus 4.6 (Thinking)")
 
     def test_audit_normalizer_maps_compatible_agent_issue_labels(self):
         import nrl_production_runtime as runtime

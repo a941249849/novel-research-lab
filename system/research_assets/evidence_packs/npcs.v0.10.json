@@ -476,8 +476,8 @@
   },
   "agent_review_policy": {
     "codex": "local_validation_orchestration",
+    "codex_model_team": "sol_planning_review__terra_writing_editing__luna_observation_mechanical",
     "antigravity": "ready",
-    "hermes": "ready",
     "web_gpt": "architecture_review_only"
   },
   "owner_gate": {
@@ -487,9 +487,9 @@
   "blocked_actions": [
     "advance beyond chapter-0100 without a new Owner authorization",
     "execute-antigravity",
-    "execute-hermes",
+    "execute-unregistered-writer-adapter",
     "execute_antigravity",
-    "execute_hermes",
+    "execute_unregistered_writer_adapter",
     "generate final NPC sheets",
     "generate final creative assets",
     "generate_final_creation_assets",

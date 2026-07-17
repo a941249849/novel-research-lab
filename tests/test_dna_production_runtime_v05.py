@@ -178,7 +178,12 @@ class ProductionRuntimeIntegrationTests(RuntimeCliCase):
         self.assertEqual(data["antigravity"]["mode"], "cli_bridge")
         self.assertEqual(data["antigravity"]["status"], "ready")
         self.assertTrue(data["antigravity"]["can_dispatch_registered_reviews"])
-        self.assertEqual(data["hermes"]["status"], "ready")
+        self.assertNotIn("hermes", data)
+        self.assertEqual(
+            {item["model"] for item in data["codex_model_team"]},
+            {"gpt-5.6-sol", "gpt-5.6-terra", "gpt-5.6-luna"},
+        )
+        self.assertFalse(data["antigravity"]["production_dependency"])
         self.assertIn("techniques", data["agent_jobs"]["by_family"])
 
     def test_studio_data_contains_dna_production_runtime(self):

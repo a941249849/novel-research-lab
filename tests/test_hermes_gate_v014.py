@@ -32,7 +32,7 @@ class HermesGateV014Tests(unittest.TestCase):
             matching,
         )
 
-    def test_readiness_reports_promoted_assets_and_keeps_prose_locked(self):
+    def test_legacy_readiness_command_reports_retired_adapter(self):
         result = subprocess.run(
             [sys.executable, str(NRL), "hermes-readiness"],
             cwd=REPO_ROOT,
@@ -43,16 +43,12 @@ class HermesGateV014Tests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         data = json.loads(result.stdout)
         self.assertFalse(data["ready_to_call_hermes"])
-        self.assertEqual(data["status"], "final_assets_promoted_awaiting_prose_owner_gate")
-        self.assertTrue(data["checks"]["research_review_promoted"])
-        self.assertTrue(data["checks"]["all_creation_families_seeded"])
-        self.assertTrue(data["checks"]["final_asset_generation_authorized"])
-        self.assertFalse(data["checks"]["content_generation_authorized"])
-        self.assertFalse(data["hermes"]["allowed"])
-        self.assertEqual(data["hermes"]["allowed_actions"], [])
-        self.assertIn("generate_novel_prose", data["forbidden_actions"])
-        self.assertIn("execute_hermes", data["forbidden_actions"])
-        self.assertEqual(len(data["creation_families"]), 9)
+        self.assertEqual(data["status"], "retired")
+        self.assertEqual(data["replacement"], "codex_three_model_team")
+        self.assertEqual(
+            set(data["active_models"]),
+            {"gpt-5.6-sol", "gpt-5.6-terra", "gpt-5.6-luna"},
+        )
 
 
 if __name__ == "__main__":

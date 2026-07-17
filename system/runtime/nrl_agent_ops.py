@@ -489,9 +489,7 @@ def build_production_runtime_status(
             "status": system_status["antigravity_execution"]["effective_state"],
             "bridge_available": system_status["antigravity_execution"]["bridge_available"],
             "can_dispatch_registered_reviews": system_status["antigravity_execution"]["can_dispatch_registered_reviews"],
+            "production_dependency": False,
         },
-        "hermes": {
-            "status": system_status["hermes_execution_status"],
-            "allowed": False,
-        },
+        "codex_model_team": system_status["codex_model_team"],
     }

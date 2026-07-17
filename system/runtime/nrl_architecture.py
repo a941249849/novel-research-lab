@@ -64,7 +64,7 @@ ARCHITECTURE_LAYERS = [
         "agent_review_and_production",
         "Agent 审查与生产层",
         "blocked",
-        "Codex validates locally; Antigravity uses guarded CLI review; Hermes is paused",
+        "Codex Sol/Terra/Luna own the primary production loop; Antigravity is a guarded backup",
         None,
     ),
     (
@@ -112,23 +112,32 @@ def _layers(system_status: dict[str, Any]) -> list[dict[str, Any]]:
 def _agent_roles(system_status: dict[str, Any]) -> list[dict[str, Any]]:
     return [
         {
-            "agent": "Codex",
+            "agent": "Codex Sol",
+            "agent_family": "Codex",
             "status": "local_runtime_host",
-            "role": "本地系统宿主 / 直连写手 / Runtime / 工程 / 校验 / 编排",
-            "execution_boundary": "supervisor, direct writer, compiler, validator, observer, and state settler",
+            "role": "总控 / 长线规划 / 因果审校 / 窗口与卷级裁决",
+            "execution_boundary": "showrunner and high-risk reviewer; does not replace state validation",
+        },
+        {
+            "agent": "Codex Terra",
+            "agent_family": "Codex",
+            "status": "primary_writer",
+            "role": "正文写作 / 有界修订 / 场景桥接",
+            "execution_boundary": "writes only from compiled context inside an authorized chapter range",
+        },
+        {
+            "agent": "Codex Luna",
+            "agent_family": "Codex",
+            "status": "structured_observer",
+            "role": "事实观察 / 状态抽取 / 机械检查",
+            "execution_boundary": "schema-bound extraction and low-risk deterministic support",
         },
         {
             "agent": "Antigravity",
-            "status": system_status["antigravity_execution"]["effective_state"],
-            "role": "CLI 协作文学审查 / 长篇生命力评估",
-            "execution_boundary": "registered deep-reading, continuity, and literary-review jobs only",
-        },
-        {
-            "agent": "Hermes",
-            "status": "optional_enrichment",
-            "display_status": f"Hermes: {system_status['hermes_execution_status']}",
-            "role": "可选后期文学增强，不参与主生产链",
-            "execution_boundary": "never required for drafting, observation, or state settlement",
+            "status": "backup",
+            "runtime_status": system_status["antigravity_execution"]["effective_state"],
+            "role": "独立复核 / Codex 配额或提供方故障备用",
+            "execution_boundary": "fallback only; cannot own state, gates, or normal production scheduling",
         },
         {
             "agent": "Web GPT",
@@ -242,7 +251,7 @@ def build_architecture_reconciliation(
             "owner_gate_required": system_status["owner_gate_required"],
             "owner_gate_status": system_status["owner_gate_status"],
             "content_generation_allowed": system_status["production_ready"],
-            "hermes_execution_status": system_status["hermes_execution_status"],
+            "codex_model_team_contract_valid": system_status["model_team_contract"]["valid"],
             "deep_read_status": system_status["verifiable_deep_reading"]["status"],
             "production_ready": production_ready,
             "release_ready": operator["release_ready"],

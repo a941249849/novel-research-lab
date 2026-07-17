@@ -160,7 +160,7 @@ const EMPTY_DATA = {
       owner_gate_required: true,
       owner_gate_status: 'UNKNOWN',
       content_generation_allowed: false,
-      hermes_execution_status: 'paused_not_removed',
+      codex_model_team_contract_valid: false,
     },
     next_architecture_action: {
       action_id: 'architecture_reconciliation_v0_4',
@@ -192,7 +192,7 @@ const EMPTY_DATA = {
       research_evidence: [],
       schema_contract: {family: 'unknown', draft: '', path: '', payload_key: '', valid: false},
       validation_gates: [],
-      agent_review_policy: {codex: '', antigravity: '', hermes: '', web_gpt: ''},
+      agent_review_policy: {codex: '', codex_model_team: '', antigravity: '', web_gpt: ''},
       owner_gate: {required: true, status: 'UNKNOWN'},
       forbidden_actions: [],
       content_generation_allowed: false,
@@ -225,7 +225,7 @@ const EMPTY_DATA = {
           next_required_action: '',
         },
       },
-      agent_review_policy: {codex: '', antigravity: '', hermes: '', web_gpt: ''},
+      agent_review_policy: {codex: '', codex_model_team: '', antigravity: '', web_gpt: ''},
       owner_gate: {required: true, status: 'UNKNOWN'},
       blocked_actions: [],
       content_generation_allowed: false,
@@ -602,7 +602,7 @@ function ArchitectureView({data, compact}: {data: StudioData; compact: boolean})
             <MetadataList columns="single">
               <MetadataListItem label="动作">{architecture.next_architecture_action.label_zh}</MetadataListItem>
               <MetadataListItem label="命令">{architecture.next_architecture_action.safe_command}</MetadataListItem>
-              <MetadataListItem label="Hermes">{`Hermes: ${architecture.production_readiness.hermes_execution_status}`}</MetadataListItem>
+              <MetadataListItem label="模型团队">{architecture.production_readiness.codex_model_team_contract_valid ? 'Sol / Terra / Luna 契约有效' : '模型路由异常'}</MetadataListItem>
             </MetadataList>
           </VStack>
         </Grid>
@@ -1027,9 +1027,10 @@ function PipelineView({data, compact}: {data: StudioData; compact: boolean}) {
 }
 
 const roleNames: Record<string, string> = {
-  Codex: '本地运行时、工程实现、验证与编排',
-  Antigravity: 'CLI 协作文学审查，仅限已登记任务',
-  Hermes: '暂停但未移除；授权后承担写作与文学增强',
+  'Codex Sol': '总控、长线规划、因果审校与窗口裁决',
+  'Codex Terra': '正文写作、有界修订与场景桥接',
+  'Codex Luna': '事实观察、状态抽取与机械检查',
+  Antigravity: '独立复核和提供方故障备用，不参与正常调度',
   'Web GPT': '架构审查，不负责派发任务',
   Owner: '阶段和能力变更的最终门禁',
 };
@@ -1059,7 +1060,7 @@ function AgentsView({data}: {data: StudioData}) {
         <Banner
           status="info"
           title="客户端协作边界"
-          description="Antigravity 由 Codex Runtime 通过 CLI 桥接执行已登记的结构审查任务；回执仍需显式验证，Hermes 保持暂停。"
+          description="Sol、Terra、Luna 组成 Codex 主生产团队；Antigravity 仅在独立复核或 Codex 提供方故障时通过受限桥接启用。"
         />
       </VStack>
     </Section>
@@ -1194,7 +1195,8 @@ function App() {
       footer={
         <SideNavSection title="系统边界">
           <SideNavItem label={data.owner_gate.required ? 'Owner Gate 待确认' : '第一卷生产已授权'} icon={data.owner_gate.required ? 'warning' : 'info'} isDisabled />
-          <SideNavItem label={`Hermes ${data.runtime_status.adapter_modes.hermes?.can_execute ? '可用' : '非生产依赖'}`} icon="stop" isDisabled />
+          <SideNavItem label="Codex 三模型主生产" icon="info" isDisabled />
+          <SideNavItem label="Antigravity 备用" icon="stop" isDisabled />
         </SideNavSection>
       }
     >

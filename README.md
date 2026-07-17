@@ -26,7 +26,7 @@ Novel Research Lab（NRL）是面向中文长篇网文的 **Corpus-to-Creation**
 9. Runtime / Control Plane
 10. Studio 只读视图
 
-Codex 是工程主控、故事编译器、正文写手、事实观察器和状态结算器。Antigravity 仅承担关键节点的独立文学审查。Hermes 是可选文学增强器，不是生产链依赖。Owner 保留范围授权与发布权。
+Codex 是唯一主生产平面：Sol 负责长线规划与高风险审校，Terra 负责正文与有界修订，Luna 负责事实观察、状态抽取和机械检查。Antigravity 仅承担独立复核与提供方故障备用。Hermes 已退出当前架构，不再拥有写作或门禁角色。Owner 保留范围授权与发布权。
 
 ## 唯一事实源
 

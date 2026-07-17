@@ -6,14 +6,11 @@ import hashlib
 import json
 import re
 import shutil
-import subprocess
-import tempfile
 from pathlib import Path
 from typing import Any
 
 from nrl_paths import ROOT, runtime_path
-from nrl_antigravity_bridge import find_agy_binary
-from nrl_codex_writer import ask_antigravity_writer, ask_codex_writer, codex_usage_limited
+from nrl_codex_writer import ask_antigravity_writer, ask_codex_writer, codex_usage_limited, extract_json_object
 from nrl_model_router import route_model
 
 
@@ -304,13 +301,10 @@ def record_window_review(payload: dict[str, Any]) -> dict[str, Any]:
     return {"valid": payload["verdict"] == "ACCEPT", "path": str(target.relative_to(ROOT)), "verdict": payload["verdict"]}
 
 
-def dispatch_window_review(start: int, end: int, model: str = "Gemini 3.5 Flash (High)") -> dict[str, Any]:
+def dispatch_window_review(start: int, end: int, model: str | None = None) -> dict[str, Any]:
     packet_result = build_window_review_packet(start, end)
     if not packet_result["valid"]:
         return packet_result
-    binary = find_agy_binary()
-    if not binary:
-        return {"valid": False, "errors": ["agy binary is missing"]}
     packet = packet_result["packet"]
     prose = []
     for chapter in packet["chapters"]:
@@ -329,24 +323,34 @@ def dispatch_window_review(start: int, end: int, model: str = "Gemini 3.5 Flash 
         "窗口元数据：", json.dumps(packet, ensure_ascii=False), "", "章节终稿：", "\n".join(prose),
         "", "输出模板：", json.dumps(template, ensure_ascii=False),
     ])
+    reviewer = route_model("reviewer")
+    provider = "codex"
+    used_model = reviewer["model"]
     try:
-        with tempfile.TemporaryDirectory(prefix="nrl-volume1-window-review-") as cwd:
-            result = subprocess.run(
-                [binary, "--model", model, "--mode", "plan", "--sandbox", "--print-timeout", "12m0s", "-p", prompt],
-                cwd=cwd, text=True, capture_output=True, check=False, timeout=780,
-            )
-    except subprocess.TimeoutExpired:
-        return {"valid": False, "errors": ["window review timed out after 780s"]}
-    if result.returncode != 0:
-        return {"valid": False, "errors": [f"window review provider failed with exit code {result.returncode}"], "stderr": result.stderr.strip()[:1000]}
-    response = (result.stdout or result.stderr).strip()
+        response = ask_codex_writer(prompt, model=used_model, timeout_seconds=600)
+        payload = extract_json_object(response)
+    except RuntimeError as primary_error:
+        provider = "antigravity"
+        used_model = model or reviewer["fallback_model"]
+        try:
+            response = ask_antigravity_writer(prompt, model=used_model, timeout_seconds=780)
+            payload = extract_json_object(response)
+        except RuntimeError as fallback_error:
+            return {
+                "valid": False,
+                "errors": [str(primary_error), str(fallback_error)],
+                "review_provider": provider,
+                "review_model": used_model,
+            }
     try:
-        match = re.search(r"```json\s*(\{.*?\})\s*```", response, re.DOTALL)
-        payload = json.loads(match.group(1) if match else response)
-    except json.JSONDecodeError as error:
-        return {"valid": False, "errors": [f"window review returned invalid JSON: {error}"], "response_preview": response[:1000]}
-    try:
-        return record_window_review(payload)
+        payload = {
+            **payload,
+            "review_provider": provider,
+            "review_model": used_model,
+            "fallback_used": provider == "antigravity",
+        }
+        result = record_window_review(payload)
+        return {**result, "review_provider": provider, "review_model": used_model}
     except RuntimeError as error:
         return {"valid": False, "errors": [str(error)]}
 

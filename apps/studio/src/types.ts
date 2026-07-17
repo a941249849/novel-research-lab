@@ -125,8 +125,8 @@ export type PipelinePlan = {
   validation_gates: Array<{gate_id: string; description: string}>;
   agent_review_policy: {
     codex: string;
+    codex_model_team: string;
     antigravity: string;
-    hermes: string;
     web_gpt: string;
   };
   owner_gate: {
@@ -260,7 +260,7 @@ export type ArchitectureReconciliation = {
     owner_gate_required: boolean;
     owner_gate_status: string;
     content_generation_allowed: boolean;
-    hermes_execution_status: string;
+    codex_model_team_contract_valid: boolean;
   };
   next_architecture_action: {
     action_id: string;

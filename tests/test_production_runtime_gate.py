@@ -84,9 +84,9 @@ class ProductionRuntimeGateTests(unittest.TestCase):
     def test_preflight_only_exempts_the_current_writer_chapter(self):
         import nrl_production_runtime as runtime
         registry = {"chapters": [{"chapter_id": "chapter-0003", "stage": "context_compiled"}, {"chapter_id": "chapter-0004", "stage": "chapter_intent"}]}
-        with mock.patch.object(runtime, "_load_registry", return_value=registry), mock.patch.object(runtime, "build_production_readiness", return_value={"ready": True}), mock.patch.object(runtime, "build_volume1_dry_run", return_value={"valid": True}), mock.patch.object(runtime, "validate_agent_protocol_canaries", return_value={"valid": True}), mock.patch.object(runtime, "validate_creation_asset_store", return_value={"valid": True}), mock.patch.object(runtime, "find_codex_binary", return_value="codex"), mock.patch.object(runtime, "build_antigravity_bridge_status", return_value={"available": True}), mock.patch.object(runtime, "ACTIVE_BLUEPRINT_PATH") as active:
+        with mock.patch.object(runtime, "_load_registry", return_value=registry), mock.patch.object(runtime, "build_production_readiness", return_value={"ready": True}), mock.patch.object(runtime, "build_volume1_dry_run", return_value={"valid": True}), mock.patch.object(runtime, "build_model_team_attestation_status", return_value={"valid": True}), mock.patch.object(runtime, "validate_creation_asset_store", return_value={"valid": True}), mock.patch.object(runtime, "find_codex_binary", return_value="codex"), mock.patch.object(runtime, "build_antigravity_bridge_status", return_value={"available": True}), mock.patch.object(runtime, "ACTIVE_BLUEPRINT_PATH") as active:
             active.exists.return_value = False
-            result = build_production_preflight({"hermes": {}}, allowed_pending_chapter_id="chapter-0003")
+            result = build_production_preflight({"codex": {"can_execute": True}, "antigravity": {"execution_policy": "independent_review_and_provider_fallback_only"}}, allowed_pending_chapter_id="chapter-0003")
         self.assertFalse(result["checks"]["no_unaccepted_chapters"])
 
 

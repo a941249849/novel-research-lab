@@ -42,8 +42,8 @@ SECTION_LABELS = [
     "Runtime Health",
     "Next Safe Action",
     "Owner Gate",
-    "Hermes: ready",
-    "CLI 协作文学审查",
+    "Codex Sol / Terra / Luna",
+    "Antigravity 备用复核",
 ]
 
 
@@ -151,7 +151,8 @@ def _fallback_studio(out_dir: Path, data: dict, state: dict, adapters: dict) -> 
     <ul>
       <li>Operating Mode: <code>{html.escape(str(system_status.get("operating_mode", "unknown")))}</code></li>
       <li>Content Progression: <code>{html.escape(str(system_status.get("content_progression", "unknown")))}</code></li>
-      <li>Hermes: {html.escape(str(system_status.get("hermes_execution_status", "unknown")))}</li>
+      <li>Codex Model Team: {html.escape(str(system_status.get("model_team_contract", {}).get("valid", False)))}</li>
+      <li>Antigravity: backup</li>
     </ul>
   </section>
   <section>

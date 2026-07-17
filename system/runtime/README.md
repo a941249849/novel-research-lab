@@ -13,34 +13,40 @@
 - Run non-prose Volume 1 planning, dry-runs, and provider protocol canaries.
 - Route bounded production work through the current Codex client after the
   direct-writer calibration and Owner authorization both pass.
+- Route Sol to planning/review, Terra to prose/editing, and Luna to
+  observation/mechanical checks.
 
 ## What This Runtime Does Not Do
 
 - It does not operate the Antigravity GUI.
 - It can call Antigravity CLI only for registered structural-review jobs through the guarded `agent-dispatch` command.
-- It does not generate novel prose.
-- It does not generate first chapters.
+- It does not generate prose outside an explicit Owner-authorized chapter range.
 - It does not generate Outline Trees by itself unless Codex is explicitly tasked outside this runtime.
 - It does not read `novel_training_set/`.
-- It does not replace Codex validation, Antigravity review, or Owner Gate.
+- It does not replace schema validation, state settlement, release review, or Owner Gate.
 
-## Direct Codex, Hermes, And Antigravity Boundaries
+## Active Codex And Antigravity Boundaries
 
-Codex is the primary local runtime and controlled production writer.
-Antigravity remains restricted to registered independent review jobs. Hermes
-is optional literary enrichment only; it is not on the default production
-path. The runtime therefore uses:
+Codex is the only primary production plane. Sol handles planning and review,
+Terra handles prose and bounded editing, and Luna handles structured
+observation and mechanical checks. Antigravity is restricted to independent
+review and provider-failure fallback. Hermes is retired from active production.
+The runtime therefore uses:
 
-- Codex adapter: `local`, primary runtime and direct writer
-- Hermes adapter: `cli_bridge`, optional enrichment only
-- Antigravity adapter: `cli_bridge`
+- Codex adapter: `local`, three-model primary production team
+- Antigravity adapter: `cli_bridge`, backup only
 
 Antigravity dispatch copies the registered packet, calls `agy -p`, captures the
 response in the controlled inbox, and leaves validation and promotion as
 explicit later commands.
 
 The effective state is checked with `agy --version` at runtime. If the bridge is
-unavailable, dispatch is blocked without changing the job state.
+unavailable, backup dispatch is blocked without changing the job state; primary
+Codex production readiness is unaffected.
+
+The current contract is [NRL Codex Model Team v0.27](../../docs/production/nrl-codex-model-team-v0.27.md).
+Later sections that describe Hermes handoffs are retained only as historical
+phase-operation documentation and are superseded by v0.27.
 
 ## Production Preflight
 
@@ -50,7 +56,6 @@ No new prose may be generated until every command below passes:
 python3 system/runtime/nrl.py volume1-plan-build
 python3 system/runtime/nrl.py volume1-plan-validate
 python3 system/runtime/nrl.py volume1-dry-run
-python3 system/runtime/nrl.py agent-canaries-validate
 python3 system/runtime/nrl.py direct-writer-calibration-status
 python3 system/runtime/nrl.py production-preflight
 ```

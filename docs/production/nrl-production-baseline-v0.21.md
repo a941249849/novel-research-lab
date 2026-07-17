@@ -14,9 +14,10 @@ chapter production. It is not a content-completion claim.
   long-form blueprint.
 - Accepted chapter artifacts are immutable and must be followed through the
   chapter runtime, not edited directly.
-- Sol is the only production prose writer. Luna is an observer/mechanical
-  checker. Antigravity uses `Claude Opus 4.6 (Thinking)` for independent
-  chapter review. Terra and Hermes are not on the production prose path.
+- The active v0.27 route supersedes the original writer assignment: Sol owns
+  planning and review, Terra owns prose and bounded editing, and Luna owns
+  observation and mechanical checks. Antigravity is a non-blocking backup.
+  Hermes is retired from the production path.
 
 ## Baseline Evidence
 

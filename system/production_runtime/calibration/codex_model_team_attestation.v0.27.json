@@ -1,0 +1,39 @@
+{
+  "version": "0.27",
+  "status": "accepted_operational_route",
+  "decision": "Codex Sol owns planning and review; Terra owns prose and bounded editing; Luna owns observation and mechanical checks; Antigravity is fallback only.",
+  "supersedes_for_active_routing": "system/production_runtime/calibration/direct_codex_writer_calibration.v0.21.json",
+  "legacy_calibration_sha256": "d7e17bae2631962d609df8af5e2c76c507893819c677c296cd2506dc9d9d1919",
+  "volume1_submission_manifest": "system/releases/fanqie/borrowed-heaven-volume1/00_submission_manifest.json",
+  "volume1_submission_manifest_sha256": "2f852b4f9f4aaef02322dfb361d89f9617fed2c2813c6db383694f49f7c15ef3",
+  "generation_evidence": {
+    "scope": "accepted volume1 generation_cost artifacts retained on disk",
+    "artifact_count": 52,
+    "artifact_root_sha256": "c15ff53518dc9cb078ae754eafe1b36fe55b4f97a457332eff409cd1dc6cc2b5",
+    "writer_model_counts": {
+      "gpt-5.6-sol": 14,
+      "gpt-5.6-terra": 29,
+      "Gemini 3.1 Pro (High)": 5,
+      "Gemini 3.5 Flash (High)": 2,
+      "None": 2
+    }
+  },
+  "accepted_release_evidence": {
+    "chapter_count": 100,
+    "window_review_count": 10,
+    "character_total": 326793
+  },
+  "active_routes": {
+    "showrunner": "gpt-5.6-sol",
+    "reviewer": "gpt-5.6-sol",
+    "writer": "gpt-5.6-terra",
+    "editor": "gpt-5.6-terra",
+    "observer": "gpt-5.6-luna",
+    "mechanical": "gpt-5.6-luna"
+  },
+  "limitations": [
+    "The v0.21 blind calibration remains valid evidence for its historical Sol-only decision.",
+    "The v0.27 promotion relies on accepted operational Volume 1 evidence and does not reinterpret the blind scores.",
+    "Future route changes require a new attestation or calibration version."
+  ]
+}

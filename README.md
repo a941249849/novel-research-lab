@@ -6,7 +6,7 @@ Novel Research Lab（NRL）是面向中文长篇网文的 **Corpus-to-Creation**
 
 - 项目：`《借天改命账》`
 - 长篇规格：18 卷、约 1,800 章、600–680 万中文字符
-- 语料：18 本、143 个连续分块、18 本综合与跨书蒸馏均已完成哈希和覆盖验证
+- 语料：18 本、143 个连续分块、18 本综合与跨书蒸馏均已完成哈希和覆盖验证；166 项晋级产物由独立根哈希绑定
 - 创作资产：九类 Schema 与项目资产库已可运行
 - 正文：第一卷 100 章均已接受，正文约 32.7 万中文字符
 - 审查：每十章一个哈希绑定审查窗口；任何正文编辑都会使旧审查自动失效
@@ -33,7 +33,7 @@ Codex 是工程主控、故事编译器、正文写手、事实观察器和状�
 | 领域 | 路径 |
 | --- | --- |
 | 当前阶段与授权 | `system/mission_controller/current_phase_state.json`、`system/runtime/owner_gate_decisions.json` |
-| 研究蒸馏 | `system/research_assets/deep_read/v0.18/`、`system/research_assets/promotions/` |
+| 研究蒸馏 | `system/research_assets/deep_read/v0.18/`、`system/research_assets/promotions/`；`promotion_attestation.json` 支持不挂载原文的只读生产验证 |
 | 项目创作资产 | `system/creation_assets/project_assets.v0.2.json` |
 | 长篇契约 | `system/production_runtime/plans/borrowed_heaven_longform_contract.v0.1.json` |
 | 十章故事窗口 | `system/production_runtime/story_windows/` |
@@ -57,11 +57,14 @@ python3 system/runtime/nrl.py volume1-fanqie-package
 
 ```bash
 python3 system/runtime/nrl.py system-check
+python3 system/runtime/nrl.py deep-read-status
 python3 system/runtime/nrl.py production-preflight
 python3 system/runtime/nrl.py studio-serve --port 4173
 ```
 
 系统只允许严格顺序生产。每章必须经过：意图、上下文编译、正文、审查、修订、事实观察、终审、状态结算、接受。每 5 章触发独立文学深审，每 10 章必须完成窗口复审；没有下一十章故事窗口时自动停止。
+
+受保护原文只在研究重验环境挂载。晋级前用 `deep-read-attest` 重新核对原文与计划并生成哈希凭证；日常生产和 CI 只校验该凭证及 166 项已晋级产物，不要求把原文提交到 Git。
 
 ## 产物保留
 

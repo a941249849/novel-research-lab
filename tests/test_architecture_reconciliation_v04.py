@@ -1,4 +1,5 @@
 import json
+import os
 import subprocess
 import sys
 import unittest
@@ -13,12 +14,15 @@ sys.path.insert(0, str(RUNTIME_DIR))
 
 class ArchitectureReconciliationCliTests(unittest.TestCase):
     def run_cli(self, *args):
+        env = os.environ.copy()
+        env["NRL_AGY_BIN"] = "/definitely/missing/agy"
         return subprocess.run(
             [sys.executable, str(NRL), *args],
             cwd=REPO_ROOT,
             text=True,
             capture_output=True,
             check=False,
+            env=env,
         )
 
     def test_architecture_status_returns_v04_contract_without_raw_corpus(self):
@@ -44,7 +48,10 @@ class ArchitectureReconciliationCliTests(unittest.TestCase):
             data["agent_role_contract"][2]["status"], "optional_enrichment"
         )
         self.assertEqual(data["agent_role_contract"][1]["agent"], "Antigravity")
-        self.assertEqual(data["agent_role_contract"][1]["status"], "ready")
+        self.assertEqual(
+            data["agent_role_contract"][1]["status"],
+            "blocked_bridge_unavailable",
+        )
         self.assertNotIn("novel_training_set/", json.dumps(data, ensure_ascii=False))
 
 

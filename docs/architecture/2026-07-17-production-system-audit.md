@@ -7,9 +7,10 @@ boundary. The first volume proves that the research, creation-asset, planning,
 chapter-runtime, continuity, review, settlement, and release layers can complete
 a 100-chapter production run without reading raw corpus text during writing.
 
-The system is production-capable, but release truth must remain stricter than
-chapter acceptance. A release is valid only when every effective chapter body,
-every ten-chapter review hash, all titles, and the exported package agree.
+The system is production-grade for controlled local production and clean-clone
+deployment. Release truth remains stricter than chapter acceptance: a release
+is valid only when every effective chapter body, every ten-chapter review hash,
+all titles, and the exported package agree.
 
 ## Authoritative Flow
 
@@ -56,6 +57,51 @@ window reviews, and title assets remain versioned.
 
 GitHub Actions now runs the full Python suite, state validation, system health
 check, Studio TypeScript build, and Astryx doctor on pushes and pull requests.
+
+### Fixed: clean-checkout corpus verification
+
+Production validation previously required the protected `novel_training_set/`
+directory even though raw novels must not enter Git. A promotion attestation now
+hash-binds 166 durable artifacts: the plan and validation records, 143 chunk
+responses, 18 book syntheses, and cross-book distillation. Research machines can
+revalidate against protected sources; clean production checkouts verify the
+promoted root without reading or storing raw novels.
+
+### Fixed: environment-dependent tests
+
+Agent tests now inject a bounded fake adapter instead of assuming a locally
+installed `agy` binary. Runtime CI installs the Studio dependencies before tests
+that invoke `studio-build`, server checks allow realistic clean-run latency, and
+the GitHub workflow uses current Node-based action releases.
+
+### Fixed: first-window contract gap
+
+Chapters 1-10 now have a retrospective, settlement-derived Story Window. It
+does not rewrite accepted prose; it records the same event, choice, state-delta,
+and hook contract used by the active runtime. Volume 1 therefore exposes ten
+validated ten-chapter windows rather than one legacy exception plus nine current
+windows.
+
+### Fixed: resumable deep-read dispatch
+
+The deep-read dispatcher now rematerializes an absent UTF-8 bounded chunk from
+the protected source byte range and verifies both raw and normalized hashes
+before dispatch. A provider timeout, permission error, or malformed response no
+longer deletes the previous receipt. Headless Antigravity calls keep the CLI
+sandbox active while approving the bounded file-read tool that print mode cannot
+prompt for interactively.
+
+## Clean-Checkout Verification
+
+The final acceptance copy excluded `novel_training_set/`, `.nrl-work/`, all
+dependency directories, Studio output, release exports, Python caches, and Git
+metadata. From that copy the system completed:
+
+- 271 Python tests;
+- state validation and the complete production system check;
+- promoted deep-read verification over 166 hash-bound artifacts;
+- the Studio TypeScript production build; and
+- Astryx doctor with six passes, zero warnings, and zero failures.
 
 ## Remaining Boundaries
 

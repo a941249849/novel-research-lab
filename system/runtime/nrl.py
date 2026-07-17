@@ -62,6 +62,7 @@ from nrl_corpus_pipeline import (
 from nrl_corpus_ingestion import write_promoted_review_assets
 from nrl_dna_registry import load_or_build_dna_registry, write_dna_registry
 from nrl_deep_read import (
+    build_promotion_attestation,
     build_deep_read_plan,
     build_deep_read_status,
     build_book_synthesis_packets,
@@ -745,6 +746,11 @@ def cmd_deep_read_plan(args: argparse.Namespace) -> int:
 
 def cmd_deep_read_status(_: argparse.Namespace) -> int:
     print_json(build_deep_read_status())
+    return 0
+
+
+def cmd_deep_read_attest(_: argparse.Namespace) -> int:
+    print_json(build_promotion_attestation())
     return 0
 
 
@@ -1710,6 +1716,7 @@ def build_parser() -> argparse.ArgumentParser:
     deep_read_plan.add_argument("--target-bytes", type=int, default=1_500_000)
     deep_read_plan.set_defaults(func=cmd_deep_read_plan)
     sub.add_parser("deep-read-status").set_defaults(func=cmd_deep_read_status)
+    sub.add_parser("deep-read-attest").set_defaults(func=cmd_deep_read_attest)
     deep_read_chunk = sub.add_parser("deep-read-validate-chunk")
     deep_read_chunk.add_argument("--chunk-id", required=True)
     deep_read_chunk.set_defaults(func=cmd_deep_read_validate_chunk)

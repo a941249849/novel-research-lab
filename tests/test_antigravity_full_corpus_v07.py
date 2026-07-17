@@ -17,6 +17,7 @@ class AntigravityFullCorpusCliTests(unittest.TestCase):
     def run_cli(self, *args):
         env = os.environ.copy()
         env["NRL_ROOT"] = str(self.root)
+        env["NRL_AGY_BIN"] = shutil.which("true") or "/usr/bin/true"
         return subprocess.run(
             [sys.executable, str(NRL), *args],
             cwd=REPO_ROOT,

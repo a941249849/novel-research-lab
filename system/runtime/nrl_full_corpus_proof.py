@@ -84,6 +84,17 @@ def build_corpus_inventory(include_hashes: bool = False) -> dict[str, Any]:
 def build_proof_status() -> dict[str, Any]:
     inventory = build_corpus_inventory(include_hashes=False)
     latest_validation = load_latest_validation()
+    if not inventory["file_count"] and latest_validation:
+        inventory = {
+            "file_count": int(latest_validation.get("required_receipts", 0)),
+            "total_size_bytes": None,
+            "files": [],
+            "availability": "protected_corpus_not_mounted",
+            "source": "verified_receipt_manifest",
+        }
+    else:
+        inventory["availability"] = "mounted"
+        inventory["source"] = "live_protected_corpus"
     promotion_readiness = build_promotion_readiness(latest_validation)
     return {
         "version": VERSION,

@@ -16,6 +16,94 @@ import nrl_deep_read
 
 
 class VerifiableDeepReadingV018Tests(unittest.TestCase):
+    def test_promoted_attestation_keeps_verified_status_without_raw_corpus(self):
+        plan = self.plan()
+        for chunk in plan["books"][0]["chunks"]:
+            self.write_response(chunk)
+        validation = self.run_cli("deep-read-validate-all")
+        self.assertEqual(validation.returncode, 0, validation.stderr)
+
+        research_root = self.root / "system/research_assets/deep_read/v0.18"
+        (research_root / "synthesis_validation.json").write_text(
+            json.dumps({"valid": True, "validated_book_count": 1, "required_book_count": 1}),
+            encoding="utf-8",
+        )
+        (research_root / "cross_validation.json").write_text(
+            json.dumps({"valid": True, "mechanism_count": 12}),
+            encoding="utf-8",
+        )
+        synthesis = self.root / "system/agent_ops/inbox/deep_read_v0.18/synthesis/book-01.json"
+        synthesis.parent.mkdir(parents=True, exist_ok=True)
+        synthesis.write_text(json.dumps({"valid": True}), encoding="utf-8")
+        cross = self.root / "system/agent_ops/inbox/deep_read_v0.18/cross_book_distillation.json"
+        cross.write_text(json.dumps({"valid": True}), encoding="utf-8")
+        paths = [
+            research_root / "plan.json",
+            research_root / "validation.json",
+            research_root / "synthesis_validation.json",
+            research_root / "cross_validation.json",
+            *[
+                self.root / chunk["response_path"]
+                for chunk in plan["books"][0]["chunks"]
+            ],
+            synthesis,
+            cross,
+        ]
+        attestation = {
+            "version": "0.18",
+            "job_id": "job-v018-verifiable-deep-reading",
+            "status": "promoted_deep_read_attestation",
+            "book_count": 1,
+            "chunk_count": len(plan["books"][0]["chunks"]),
+            "artifacts": [
+                {
+                    "path": str(path.relative_to(self.root)),
+                    "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+                }
+                for path in paths
+            ],
+        }
+        attestation["artifact_root_sha256"] = nrl_deep_read.attestation_root_hash(
+            attestation["artifacts"]
+        )
+        target = self.root / "system/research_assets/deep_read/v0.18/promotion_attestation.json"
+        target.write_text(json.dumps(attestation), encoding="utf-8")
+        self.book.unlink()
+
+        result = self.run_cli("deep-read-status")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        status = json.loads(result.stdout)
+        self.assertTrue(status["deep_read_verified"])
+        self.assertEqual(status["verification_mode"], "promoted_attestation")
+
+    def test_promoted_attestation_detects_artifact_drift(self):
+        plan = self.plan()
+        plan_path = self.root / "system/research_assets/deep_read/v0.18/plan.json"
+        artifacts = [{
+            "path": str(plan_path.relative_to(self.root)),
+            "sha256": hashlib.sha256(plan_path.read_bytes()).hexdigest(),
+        }]
+        attestation = {
+            "version": "0.18",
+            "job_id": "job-v018-verifiable-deep-reading",
+            "status": "promoted_deep_read_attestation",
+            "book_count": 1,
+            "chunk_count": len(plan["books"][0]["chunks"]),
+            "artifacts": artifacts,
+            "artifact_root_sha256": nrl_deep_read.attestation_root_hash(artifacts),
+        }
+        target = self.root / "system/research_assets/deep_read/v0.18/promotion_attestation.json"
+        target.write_text(json.dumps(attestation), encoding="utf-8")
+        plan_path.write_text(plan_path.read_text() + "\n", encoding="utf-8")
+        with mock.patch.object(nrl_deep_read, "ROOT", self.root), mock.patch.object(
+            nrl_deep_read, "ATTESTATION_PATH", target
+        ), mock.patch.object(
+            nrl_deep_read, "_attested_artifact_paths", return_value=[plan_path]
+        ):
+            result = nrl_deep_read.validate_promotion_attestation(plan)
+        self.assertFalse(result["valid"])
+        self.assertIn("artifact hash mismatch", " ".join(result["errors"]))
+
     def test_missing_bounded_dispatch_cache_does_not_invalidate_hash_bound_plan(self):
         raw = self.book.read_bytes()
         relative = "novel_training_set/《测试长篇》作者：测试.txt"
@@ -34,6 +122,23 @@ class VerifiableDeepReadingV018Tests(unittest.TestCase):
             nrl_deep_read, "_relative", side_effect=lambda path: relative if path == self.book else str(path)
         ), mock.patch.object(nrl_deep_read, "runtime_path", side_effect=lambda value: self.root / value):
             self.assertTrue(nrl_deep_read.validate_plan_integrity(plan)["valid"])
+
+    def test_dispatch_cache_is_rebuilt_from_hash_bound_source_slice(self):
+        plan = self.plan()
+        chunk = plan["books"][0]["chunks"][0]
+        bounded = self.root / chunk["bounded_chunk_file"]
+        bounded.unlink()
+        original_runtime_path = nrl_deep_read.runtime_path
+        nrl_deep_read.runtime_path = lambda value: self.root / value
+        try:
+            rebuilt = nrl_deep_read.materialize_bounded_chunk(chunk)
+        finally:
+            nrl_deep_read.runtime_path = original_runtime_path
+        self.assertEqual(rebuilt, bounded)
+        self.assertEqual(
+            hashlib.sha256(rebuilt.read_bytes()).hexdigest(),
+            chunk["bounded_chunk_utf8_sha256"],
+        )
 
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
@@ -129,6 +234,14 @@ class VerifiableDeepReadingV018Tests(unittest.TestCase):
         nrl_deep_read.validate_dispatch_options("opencode-go", 1)
         with self.assertRaisesRegex(ValueError, "workers=1"):
             nrl_deep_read.validate_dispatch_options("opencode-go", 2)
+
+    def test_headless_agy_command_keeps_sandbox_and_approves_bounded_file_read(self):
+        command = nrl_deep_read.build_agy_deep_read_command(
+            "agy", "Gemini 3.5 Flash (High)", "10m0s", "prompt"
+        )
+        self.assertIn("--sandbox", command)
+        self.assertIn("--dangerously-skip-permissions", command)
+        self.assertIn("--add-dir", command)
 
     def test_opencode_normalization_binds_exact_detected_chapter_span(self):
         plan = self.plan()

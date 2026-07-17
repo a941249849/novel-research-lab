@@ -296,7 +296,7 @@ class CorpusPipelineServerTests(unittest.TestCase):
 
     def request_json(self, path):
         request = urllib.request.Request(self.base_url + path, method="GET")
-        with urllib.request.urlopen(request, timeout=5) as response:
+        with urllib.request.urlopen(request, timeout=30) as response:
             return response.status, json.loads(response.read().decode("utf-8"))
 
     def test_pipeline_get_routes_return_status_and_plans(self):

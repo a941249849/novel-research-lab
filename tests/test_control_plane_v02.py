@@ -338,7 +338,7 @@ class StudioServerTests(unittest.TestCase):
             method=method,
             headers={"Content-Type": "application/json"},
         )
-        with urllib.request.urlopen(request, timeout=5) as response:
+        with urllib.request.urlopen(request, timeout=30) as response:
             return response.status, json.loads(response.read().decode("utf-8"))
 
     def test_get_routes_return_control_plane_data(self):

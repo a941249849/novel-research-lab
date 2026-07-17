@@ -837,10 +837,16 @@ python3 system/runtime/nrl.py deep-read-synthesis-validate
 python3 system/runtime/nrl.py deep-read-cross-pack
 python3 system/runtime/nrl.py deep-read-cross-dispatch
 python3 system/runtime/nrl.py deep-read-cross-validate
+python3 system/runtime/nrl.py deep-read-attest
 ```
 
 Antigravity quota failures and empty responses never count toward coverage.
 All dispatch commands are resumable and retry only missing or invalid outputs.
+`deep-read-attest` requires the protected corpus to be mounted and to match the
+plan. It binds the plan, validation records, 143 chunk responses, 18 book
+syntheses, and cross-book distillation into one promotion root hash. A clean
+production checkout can verify those promoted artifacts without copying the
+protected novels into Git.
 Hermes serial prose remains blocked until v0.18, project impact review, and
 creation-asset validation complete.
 

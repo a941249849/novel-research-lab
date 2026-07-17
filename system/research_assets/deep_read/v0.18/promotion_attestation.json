@@ -1,0 +1,677 @@
+{
+  "version": "0.18",
+  "job_id": "job-v018-verifiable-deep-reading",
+  "status": "promoted_deep_read_attestation",
+  "verification_mode": "protected_source_revalidated",
+  "book_count": 18,
+  "chunk_count": 143,
+  "artifact_count": 166,
+  "artifacts": [
+    {
+      "path": "system/research_assets/deep_read/v0.18/plan.json",
+      "sha256": "2f0fd95fec3133fed15676bf03574f97af76c968e97be947f0455e9207596d16"
+    },
+    {
+      "path": "system/research_assets/deep_read/v0.18/validation.json",
+      "sha256": "d6d48151aefb59ab3258dbd07e2491f92cbb7bc9158a6e771bd0efdfbd566aad"
+    },
+    {
+      "path": "system/research_assets/deep_read/v0.18/synthesis_validation.json",
+      "sha256": "3d46156b9c3e5995415676f9bd55ac77c7319519b063fd7326cc16f178c0c200"
+    },
+    {
+      "path": "system/research_assets/deep_read/v0.18/cross_validation.json",
+      "sha256": "f528e7bd08aa19c15f279812354fd0e39da9386a40f8ff879113421f682da3cd"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-01-45bcee82acba-chunk-001.json",
+      "sha256": "7ae575b08be84988bea725ca488be0aac17bb1619f65e8498b781b971a6684b0"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-01-45bcee82acba-chunk-002.json",
+      "sha256": "11fb59fb7cb78446e20e5b1753031dd5711f7e8813f659b5db346144eaf6b4b7"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-01-45bcee82acba-chunk-003.json",
+      "sha256": "b5f909d528067b7179e8817c1c855f584693c88693f238e9f9844e25867b9cb8"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-01-45bcee82acba-chunk-004.json",
+      "sha256": "8ff9801b64cc6a12eaa45d853788855c32a7649e17a6ac3916489f833eb9795d"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-01-45bcee82acba-chunk-005.json",
+      "sha256": "070c60ea4671c95d820ca9b191d22ead7e1f5c968d60658c822aca593f710228"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-01-45bcee82acba-chunk-006.json",
+      "sha256": "614bcc6ab02128e89c45f7eedf37cc4c1070445fe48a50365b86d5b97aed66a3"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-02-7624374abf2e-chunk-001.json",
+      "sha256": "57b79cffefa99d452a387575822e076d4976cdd6f067447859bb7045407a44d7"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-02-7624374abf2e-chunk-002.json",
+      "sha256": "23a51bf0907b014899bc9b8a3fe5490af59d5c92491af7206593cfe267b284c8"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-03-0bc4648bf63c-chunk-001.json",
+      "sha256": "ffd403dc610863dffd5d2742e0fb2f19cd9feb36b72d4632dc1a8bed03bf2997"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-03-0bc4648bf63c-chunk-002.json",
+      "sha256": "c415061cdc921335d74859aa786b82bd5c76dc40d07ff8970c0645165dfaf037"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-03-0bc4648bf63c-chunk-003.json",
+      "sha256": "2988be118c7c34c9bfed0d90479e9f9edf2452184e63198e4c51a051b7166d39"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-03-0bc4648bf63c-chunk-004.json",
+      "sha256": "5411dc1a73a8bab86ea07eee8213c82a86bc07efe44402df94c94b298cc1d539"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-03-0bc4648bf63c-chunk-005.json",
+      "sha256": "b253771f43b1a778b4478a6bf06f078754d3738383b75ac8f96deb598d331834"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-03-0bc4648bf63c-chunk-006.json",
+      "sha256": "1d636d8401a43d2baad82af6914853f11fe73f96c482a2d0a0b73943ec75be01"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-03-0bc4648bf63c-chunk-007.json",
+      "sha256": "229a4e04a53628dc7db52c1b7f175f55a86ebc5a2079a10ae1742da0d9b26d48"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-04-bfe08b74de74-chunk-001.json",
+      "sha256": "11ea28bf5307e10c57eb96868f2eb63009eef5268866a015524bbfe84fb8bf69"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-04-bfe08b74de74-chunk-002.json",
+      "sha256": "f2aea579f39384a8a2afb47116a1579edd2fef0c0fa6ba12574528dc504d9fac"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-04-bfe08b74de74-chunk-003.json",
+      "sha256": "7f6e60a4f960da23e913260a891ef9e6cb2ba71d66d9f5073a6066b9fc007af4"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-04-bfe08b74de74-chunk-004.json",
+      "sha256": "1227561512b6c7ebdf156f05c1c9e464e0ba900fdfbdddcf0a2f2e0d5c725016"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-04-bfe08b74de74-chunk-005.json",
+      "sha256": "9c0394f870937951ec7fe082b1eb061bf4f392e98abc2fe4674e38bcb0b2b393"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-04-bfe08b74de74-chunk-006.json",
+      "sha256": "ce3af20a1b6df14516680124055cdcb033b8184358ecb73da6048a21f7cac829"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-04-bfe08b74de74-chunk-007.json",
+      "sha256": "33b58048e91598fe32ac774d29b1c9a399f34a5ea6d56e48cabbc3e58cb9d76b"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-04-bfe08b74de74-chunk-008.json",
+      "sha256": "c0b460afbd3ded555712b9f003c908ea609f794544c11d62f81db709e600122f"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-04-bfe08b74de74-chunk-009.json",
+      "sha256": "d1e7d7cc6f7bf4fcc9312b7e1a288116a34ff631246c49df961a3e0164fc3746"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-04-bfe08b74de74-chunk-010.json",
+      "sha256": "f30d712575741e3e29f6bcb261a188373da1fefdb17614d3fa9187846cf4cc58"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-05-11dd686b8b15-chunk-001.json",
+      "sha256": "e5f3b0475be00973b49e8594766be2b35bf0f2b0f4685974e8ef6c1f70aed52e"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-05-11dd686b8b15-chunk-002.json",
+      "sha256": "49feae2ce404f8630cd7de68bb37cb96c0b7ef53dd615c878a364836c0bc4ef6"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-05-11dd686b8b15-chunk-003.json",
+      "sha256": "9709a26a777e396d14808d6377627267292375fb12df6dfa2d357003bb989dd9"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-05-11dd686b8b15-chunk-004.json",
+      "sha256": "fa58952c4019b6ab9d5d252aea6423a8419f51ada6b9f0358da33b60702fc4be"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-05-11dd686b8b15-chunk-005.json",
+      "sha256": "21a8f8c8c9431ed82f02ba28f78bc935e2150cf82097d0c94cca28ccdada59fa"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-05-11dd686b8b15-chunk-006.json",
+      "sha256": "e989e04cf591a1975afd511d9bb15a8ed3cc1385361f2c71a5cdd87f9c6ae9fa"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-05-11dd686b8b15-chunk-007.json",
+      "sha256": "ed71474953076af48447bb0f6ee79ea8bcf80b376530555214dbb962bc29d9ca"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-05-11dd686b8b15-chunk-008.json",
+      "sha256": "925922c662885db2fd23689c741023e3fe2a8039c69e7977c0dd7e676a433a6c"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-05-11dd686b8b15-chunk-009.json",
+      "sha256": "f26c10b8550794fe6a33690f85a64529d9137e3b9ddd6a555c25b19f93781681"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-05-11dd686b8b15-chunk-010.json",
+      "sha256": "0b7fa4f45ad1fbdac3b6946e7b8493ec5c414dc3e3d5a6f56ca260ee99b59283"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-05-11dd686b8b15-chunk-011.json",
+      "sha256": "25b564a465f2db4b8723cd46f6edcc7c1634abe006ada091e08ca0fb380689fa"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-06-b1b7934bf892-chunk-001.json",
+      "sha256": "fe4b1d39cf3d3980b18a7d96d8e798e59b9723939119830441086afc9b1b709b"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-06-b1b7934bf892-chunk-002.json",
+      "sha256": "11101fc04eb0ef0dfdaf508fed3b77940a76b5e05a8767964ad2b194a73b0a04"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-06-b1b7934bf892-chunk-003.json",
+      "sha256": "e4ad6b1361f23a69c45064e93ddcca59158dcaf4625900e025bcc588b922b2ea"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-06-b1b7934bf892-chunk-004.json",
+      "sha256": "4d21aec7b1a1d2563075943021e9dc2af402c3ffdc317801f16e34000fa962f8"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-06-b1b7934bf892-chunk-005.json",
+      "sha256": "a33d698e311e8825622c75f31f60046b7846f23d3adc9820b5234428d35847c4"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-06-b1b7934bf892-chunk-006.json",
+      "sha256": "96af7c9e187e7b6aeb9ac074fd7a592a0b6fb5c14c448970ab83da27479deb6c"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-06-b1b7934bf892-chunk-007.json",
+      "sha256": "873eab9e81af33b74140d68c1f92db872d0325b15aa775161ca1bc8f79f9a744"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-06-b1b7934bf892-chunk-008.json",
+      "sha256": "f24cdeea33c4432ff2248c190b97ff2f876eba4f1344dc3bc30a0d3e2c6e17c1"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-06-b1b7934bf892-chunk-009.json",
+      "sha256": "4fb7189c09bb97434c1bba5ab0aff3140c8783e8b2b2b30f2a8e8a977c3a81f3"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-07-f82ccdb9a2b3-chunk-001.json",
+      "sha256": "3a8f11ae0340bf2c0d8605690b1ba5d028052d912cb2f970ba19ded57060e58d"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-07-f82ccdb9a2b3-chunk-002.json",
+      "sha256": "9e9f6517d5ccef6a965a0e46160dc7160d08b2f8ba7036c4c4c616af3dba3b51"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-07-f82ccdb9a2b3-chunk-003.json",
+      "sha256": "0ec13a8417150d8e13feac4a5163aac572904a30739ad88879829473343e19a4"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-07-f82ccdb9a2b3-chunk-004.json",
+      "sha256": "f0e0aebeb3dc6be55282672916500faa9a420137247ad5d8851973983bca7653"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-07-f82ccdb9a2b3-chunk-005.json",
+      "sha256": "dc278ed37ff85078e2913f74e5d505fe499e34255a594ec9158f1884551a5c47"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-07-f82ccdb9a2b3-chunk-006.json",
+      "sha256": "3b499a4cfc09b2915fa3dc971a49f94687cdd501ae12e051e1479edb78cb327c"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-07-f82ccdb9a2b3-chunk-007.json",
+      "sha256": "e24b488589a1d75ae57e4942c2dc7aa93c16ea8465c6aa3bfc21d513f706f9ba"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-08-322e84872b22-chunk-001.json",
+      "sha256": "ef7549780e13f288fbe943f7e96dbc4dd1d74791917d3d3abd83b48bfde1c6cd"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-08-322e84872b22-chunk-002.json",
+      "sha256": "0e54400b5590d5e3614babb40f3191291e6513819e02cb742e4ed8ff3ffb1216"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-08-322e84872b22-chunk-003.json",
+      "sha256": "235c43812dd9f87f101502c712a3741204e3a0c00137f3afbff96f665d8bfcc7"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-08-322e84872b22-chunk-004.json",
+      "sha256": "8e267e8a4cbd8acdd3d165c64e183e1b86c0b00c5045c0bbff731695dd0c48e9"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-08-322e84872b22-chunk-005.json",
+      "sha256": "cd4241856059a3b6aa655b148207cf2827daf7af1a13dc603c0eb1c528db085f"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-08-322e84872b22-chunk-006.json",
+      "sha256": "8483248a74a02f427da1b6c8871415b2dc87cecc2ba492a3c6c445bea3dfccea"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-08-322e84872b22-chunk-007.json",
+      "sha256": "2ef7e09d4e1771ca7a4ffabf1b227a80b4e1640ccffec0a009d50d80fde421e3"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-08-322e84872b22-chunk-008.json",
+      "sha256": "526089bdf1c4a6b4ac0a9eed993f256c266b0f6335b3201407f3e9cd63bc4012"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-08-322e84872b22-chunk-009.json",
+      "sha256": "ad7b9db29b54f510d0857087255f5e3928e211757aa8856bf584e1cfc9f8c70c"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-08-322e84872b22-chunk-010.json",
+      "sha256": "1a4b15bddba55359979f68e6485eee9da0f2fc74b683eb74cc155621ae141111"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-09-4f463d84ee63-chunk-001.json",
+      "sha256": "15eaf71f5688fd3990b60d5402c5e0f958cb32785684f4b7135798249467c29e"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-09-4f463d84ee63-chunk-002.json",
+      "sha256": "4cbcfb496fa5646198afa441ed49952990bd2c3212cd07de6c5824e7bf83257b"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-09-4f463d84ee63-chunk-003.json",
+      "sha256": "5223ec2ee6c1b0f4c6b91f59d5ee0f756ee6a407033b00cb6b09e298650feb47"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-09-4f463d84ee63-chunk-004.json",
+      "sha256": "33b515922728797cee9eab6e98ccc2505332ee2a575c6007f62eb43a82107bf4"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-09-4f463d84ee63-chunk-005.json",
+      "sha256": "74171735d4034ec8739c24ae7a68b9352ada309ace355b5d211d37be2af42c76"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-09-4f463d84ee63-chunk-006.json",
+      "sha256": "b6fa58e03ea040ed201de69fc80eb67b39b22ca8b6dc4ac41bd8666906a99ed0"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-10-e27891938d93-chunk-001.json",
+      "sha256": "73ad32b9ac83d3f8c41ed3986fd28874474c020ec541b5f3675d8ca23987f8fc"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-10-e27891938d93-chunk-002.json",
+      "sha256": "9f0b3113968effd9a3ae564710bc0f0a1482a8d2c2623df210868cec709433e8"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-10-e27891938d93-chunk-003.json",
+      "sha256": "58fbc2437c04d23feb07758ece4927b92041f281bfd4029aee3611a1971cd9d6"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-10-e27891938d93-chunk-004.json",
+      "sha256": "7f37ad542f642e1e14492599f966c78128d616210e2e8939db9f0fbcdb84978f"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-10-e27891938d93-chunk-005.json",
+      "sha256": "fff59475b9c2589862bf45ddb00a6579455cc8ffbe3619d28d1c177697199fc5"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-10-e27891938d93-chunk-006.json",
+      "sha256": "ad6fa5c6358ef35ae4af24c765a326f43455a4e26710ba376a00ef5e0e58c07b"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-10-e27891938d93-chunk-007.json",
+      "sha256": "a0a833e63d031c08288d840ac7de3cf5c9aed77c55dd3c77e18b5c94dc192b6a"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-10-e27891938d93-chunk-008.json",
+      "sha256": "8512cd7c27aa6fbbeb1b371008d21c96429308be21ffc341d42fd183f1556587"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-11-61b03727048f-chunk-001.json",
+      "sha256": "9f7da5c55c8aa4396626163cb212002200b0ecfaf56575c2ff893a2489e15f30"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-11-61b03727048f-chunk-002.json",
+      "sha256": "e67d6a2e3f3451afe3eee6964e98b551f2bb90ba27580c8c4eccab6a8f53b196"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-11-61b03727048f-chunk-003.json",
+      "sha256": "009779a777ed0f0431287c4ec9aeaaa962ea9b221f729f40652a676fe80220a4"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-11-61b03727048f-chunk-004.json",
+      "sha256": "bc1577c5f403d7e6b8197f3b21147d2fb8d52d0d0280a3542de1e42d4839f9c8"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-11-61b03727048f-chunk-005.json",
+      "sha256": "c3434691fcfe358e9a1ec2332734168f5382142c693e37dcec0511f54e6e7ee5"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-11-61b03727048f-chunk-006.json",
+      "sha256": "c65b7ca2e7efebf0f59c86d2188fae6a3233ec4c7111570e1cc19fc7487d93f9"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-12-7dd95a828fbe-chunk-001.json",
+      "sha256": "a20805bc36b45cbde2da2090080519339a0d8ac780a61effe81610c0a2192580"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-12-7dd95a828fbe-chunk-002.json",
+      "sha256": "672c20b93b9f61593743980352c7d44bcb3e7bf1575eef35ee427273eaa358f8"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-12-7dd95a828fbe-chunk-003.json",
+      "sha256": "d44a0448762db1de0fdac5594d0b7dfe4abcf70d5256c5540a51a7964d406c52"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-12-7dd95a828fbe-chunk-004.json",
+      "sha256": "22e07f59cb47f9300e928fc95149eccab52a99c0ae8c431a9cc6a7bffc248522"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-12-7dd95a828fbe-chunk-005.json",
+      "sha256": "de22e0abffe85625fd120c35876074dca2922b4955387baa7d9cd91d266711f8"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-12-7dd95a828fbe-chunk-006.json",
+      "sha256": "2dbca005ad0de7671e281db28d81cd730e254b1fe57d4061e322357dc5f3c9bf"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-12-7dd95a828fbe-chunk-007.json",
+      "sha256": "59840651b6353a7f1b071909eba8f75d995d8e87b6c177b8c6c4cf493022bb44"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-12-7dd95a828fbe-chunk-008.json",
+      "sha256": "6fdca0ae444cc96d7fe568d219140a84b08ead21536a30be6393c31d2d6c0649"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-13-210acebeef12-chunk-001.json",
+      "sha256": "dd6e62749c978b0b7a29d1999271d42ba0859bf05280ecbfbf6673818caad831"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-13-210acebeef12-chunk-002.json",
+      "sha256": "0e1279933c6063a710516bf998f5f41ab1021f6871929f7d7eed5376a8bed485"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-13-210acebeef12-chunk-003.json",
+      "sha256": "9607824e0926bbb79bcf1ad3ca685d6495aca1f5e9990bb5efd2a1acec32f024"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-13-210acebeef12-chunk-004.json",
+      "sha256": "d220ca090acb7f363c15cee20aa4bb433508e9e66c535cff20f9de6d3f6d833a"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-13-210acebeef12-chunk-005.json",
+      "sha256": "3dee6ce1c6f3bf25e8cb39a5f0184aaf3645b7adaa07668cb3c8edc5a3551c1b"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-13-210acebeef12-chunk-006.json",
+      "sha256": "f0fddbe6466d4b7710f099824f597d5d1c6565d1781312cb809a4f68e597c085"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-13-210acebeef12-chunk-007.json",
+      "sha256": "add472f8146f6f0d6bce94a498e55f53a3e0e608a574c76ecd0339c414ab8df0"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-14-1ba978345f70-chunk-001.json",
+      "sha256": "9c99bd8dc0d12daf902be92cd1dc7b53f5d14ec010dd95d250c12c6f09ee118a"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-14-1ba978345f70-chunk-002.json",
+      "sha256": "09f35af9736220ffd51f86350dbd429e95fdd24468d2bc39b08aacb69d640a74"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-14-1ba978345f70-chunk-003.json",
+      "sha256": "1a84a0f918aa9ebe4d5b429e7df115ee9c683bc882c5ebc4c39897e063dffb2e"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-14-1ba978345f70-chunk-004.json",
+      "sha256": "e182629e75b3d56c2479ed915876f7991a305c20d27b3a9cf8602ee879ab1234"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-14-1ba978345f70-chunk-005.json",
+      "sha256": "8f1264941f5e7d298619d933a4cdd5d87e7e5dc738443a3baef0509d34c51c44"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-14-1ba978345f70-chunk-006.json",
+      "sha256": "ed99d6514880853ed6e0b94f5be166a9310eda1b7bb23938f6ef4ae531c1a451"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-14-1ba978345f70-chunk-007.json",
+      "sha256": "0a739cc73d73e63847c12111091575374fbd94ef1448945b1cc6311fce2f3e8d"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-14-1ba978345f70-chunk-008.json",
+      "sha256": "ce23c00899c8130aa7581c7499dfa8e85516710f2cfdde891778f948f2c3f7c6"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-14-1ba978345f70-chunk-009.json",
+      "sha256": "4bcf9421de4d969a59823c97c3ba420ef1597f80d85a247f0b6fa0ae51c18533"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-15-04e1a336e29d-chunk-001.json",
+      "sha256": "e4942572671bd6aa67f17e96f5f327c1927006601eb3e9434c8b6cda44ff9b18"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-15-04e1a336e29d-chunk-002.json",
+      "sha256": "b30c82a34dcea6b98ac050633ea0bc3f3a8351368c8f8ad85a0a2ed2d99dcf16"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-15-04e1a336e29d-chunk-003.json",
+      "sha256": "e83f3838307edd652e6b2b4c7b2bcbb1bd29369fc6a9f5c2c2492fcab518f0d2"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-15-04e1a336e29d-chunk-004.json",
+      "sha256": "0076c416a3b1c01cf3ff596ab9d023b88b5e41f3f978d87dc59b3349a5d69e00"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-15-04e1a336e29d-chunk-005.json",
+      "sha256": "c5dae94887722af8f95487407a31cfbb55ccff1f38de159f19fba53b26e20536"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-15-04e1a336e29d-chunk-006.json",
+      "sha256": "841691eda6335034c4f69452c226845a0fd34c651dab7355a2d9bb76c184eda4"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-15-04e1a336e29d-chunk-007.json",
+      "sha256": "feb06aa883e28964dc9aebc87bc8ada565470ace10f61a39ca2d941963daa1b9"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-16-9cbf8da97dac-chunk-001.json",
+      "sha256": "6478767f3f5fe7c482f892f9a17133b6ba09b6320d1b7cc8e99845ee9362acbb"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-16-9cbf8da97dac-chunk-002.json",
+      "sha256": "741600f94423bdf914d891a6a99f058c182fe3605d7d439405eb85abfd566e42"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-16-9cbf8da97dac-chunk-003.json",
+      "sha256": "df8a4aea7a17fd9336816df7a769d61586c35cdb860438fa99795add84db92b5"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-16-9cbf8da97dac-chunk-004.json",
+      "sha256": "5dffd4dd39a32fc058230e8c1939c883b04203a4c14a3ddc9d5910bf05eaaea6"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-16-9cbf8da97dac-chunk-005.json",
+      "sha256": "18af9350b5d8c68019fc09de2e007c902f76c2fe582166333a2a5f8faa978b5f"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-16-9cbf8da97dac-chunk-006.json",
+      "sha256": "cfe0028f17833740f1c5d57f8b063e8ac9b7dac8ef88c73c3f2b74702300d966"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-16-9cbf8da97dac-chunk-007.json",
+      "sha256": "bd68b6a895ab3fdef43e2e49013fe07988f08944e9947ec3e0600e09e00ea742"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-16-9cbf8da97dac-chunk-008.json",
+      "sha256": "2ba110b1ecdfcd4f586af3eb307a139679d15d20ef35177cd13d01021e10ae67"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-16-9cbf8da97dac-chunk-009.json",
+      "sha256": "a1ec0727e6ef9749f4e47658a744e15aac11c40cb165693cac0d30a81f0398ed"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-17-3089d9aab05c-chunk-001.json",
+      "sha256": "41448ee2ca3e10bebbe4182f2191658e5427bedc3c04ac1468613b07ab7271e6"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-17-3089d9aab05c-chunk-002.json",
+      "sha256": "ad59eef23632da465d653ad0b18ac10616ce856baf0ff0872e4ada96426af1c3"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-17-3089d9aab05c-chunk-003.json",
+      "sha256": "69a536feaeb1909a743587b3f505ffe5c5b7bb0c6ad3229f58082021f8b2cf68"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-17-3089d9aab05c-chunk-004.json",
+      "sha256": "91a08e4d9350d3e100cf52ed8c5e3647c00cc35acc5a9785f3a1277ccca9b28d"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-17-3089d9aab05c-chunk-005.json",
+      "sha256": "7a63917c883f09fdd00594063d7815502811864e0a53db910429c6d18c2d0e48"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-17-3089d9aab05c-chunk-006.json",
+      "sha256": "39928642679d175529013f8e0fda92a8ced3d69a69403b73a60de7f575338603"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-17-3089d9aab05c-chunk-007.json",
+      "sha256": "96744d8b38218062029910ee22cf515c058b7c3fd48d0795bf4ae80fd6f79e52"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-18-d53c5cc79ddd-chunk-001.json",
+      "sha256": "9183783d39c5af56bcc35cf8ac409c42a4a3964348cf380f7f9813bd1f48f622"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-18-d53c5cc79ddd-chunk-002.json",
+      "sha256": "d390663f180569fc756c05585bbce27655f0b01e4f9b7784708b33e85898f9e3"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-18-d53c5cc79ddd-chunk-003.json",
+      "sha256": "7b34638525ce762154fe1d5b7d376707b949fb5eddd4ecb5c9b8c7d69d530318"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-18-d53c5cc79ddd-chunk-004.json",
+      "sha256": "c395dc9d39cce9ad586eb347010e6a4fb8c2342e7a20735e4cb498676ca3c779"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-18-d53c5cc79ddd-chunk-005.json",
+      "sha256": "c65555f62493336307d4fc353f4e52fc07e6647e1e00dd5e1342044557ecdd70"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-18-d53c5cc79ddd-chunk-006.json",
+      "sha256": "3cdd023d4796fb03e1bed9b7981dad8b6a68e09c62201fc0bbdf5ed39768c7e2"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-18-d53c5cc79ddd-chunk-007.json",
+      "sha256": "6c0c6537aacb4cde5ddaa934a55a89db35eddbeb1c3f2d7b87dc46d6e79d7634"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-18-d53c5cc79ddd-chunk-008.json",
+      "sha256": "9a48239565b2b5b7d9ecafe2effbb7dbe88eec8106ebf2e1b2cbfde326934763"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-18-d53c5cc79ddd-chunk-009.json",
+      "sha256": "deab40e1de42c27e4dc2347cf63eebca35db9036a750de82ae30117efb05c57e"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-18-d53c5cc79ddd-chunk-010.json",
+      "sha256": "77d9287fd41bf08f4fde2a67c41de253c3112cdd950773d5eaca861b87f2552f"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-18-d53c5cc79ddd-chunk-011.json",
+      "sha256": "a602ee47144fb95d3a208f7f9fc56ea017a08d28c5691de33b0d377169617a1f"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-18-d53c5cc79ddd-chunk-012.json",
+      "sha256": "637a121f804860688baf8408a7690e6ba86d7a55e633a88f073c6654f8dc9b48"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-18-d53c5cc79ddd-chunk-013.json",
+      "sha256": "87ee035fd413aee1a0a14beca1a86aa0934e286087421bea6ef77e5a19f9197c"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/chunks/book-18-d53c5cc79ddd-chunk-014.json",
+      "sha256": "9f9fc1e592a1683ff6a755de575bd2ec58dddd51c798382dde4943539690ee0d"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/synthesis/book-01-45bcee82acba.json",
+      "sha256": "80e1246bca7bbbf33523268b4e39c35f66f379a5a455c4b6c449121e05a971a8"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/synthesis/book-02-7624374abf2e.json",
+      "sha256": "2cbd3a149665f627afb7e305d7be02fef17f908c5dd2268fa155366eadebc754"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/synthesis/book-03-0bc4648bf63c.json",
+      "sha256": "00101a6cf81d1e51d4a8c9160032f0a6dd93c7adb30f12a8ca59b196e8ddd631"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/synthesis/book-04-bfe08b74de74.json",
+      "sha256": "44d3a068fa0ac1e866dacc5cc39468bc13f0c71afebfa51804101a03c66453c6"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/synthesis/book-05-11dd686b8b15.json",
+      "sha256": "06a2aae90130a2acb41d28d69434b3c63ed9563c97c2fafcea5bc7d8ac52f248"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/synthesis/book-06-b1b7934bf892.json",
+      "sha256": "8763d2c92c9b25397fa677133db6b0ff691fcdb0fd08a8f873dc9ebd3e1be6fe"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/synthesis/book-07-f82ccdb9a2b3.json",
+      "sha256": "7cefe3b94683cd2fe26ea8be40037e5439377b5747f520d266419851432acc4a"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/synthesis/book-08-322e84872b22.json",
+      "sha256": "6b750bcdb4140fa7d3e7397de940c38c953f44901a4ef970335387d75c4a74d4"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/synthesis/book-09-4f463d84ee63.json",
+      "sha256": "8ec85c5788b2c5720eabb0471120611d161d6f4c1b84a705ec803426f54379e3"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/synthesis/book-10-e27891938d93.json",
+      "sha256": "d1a75715109d4a6c19146542a5254ada81e6c4726acfaae557c98308709149ef"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/synthesis/book-11-61b03727048f.json",
+      "sha256": "e4704dd9b71139f6968ea34ae9d71d635f666e71765af0bdb56657150cd055ec"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/synthesis/book-12-7dd95a828fbe.json",
+      "sha256": "092cd7f5e6ef22a28be7e94bd7d274d56f9138ac5d72c5a5637a17bd3d355459"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/synthesis/book-13-210acebeef12.json",
+      "sha256": "c7acf2acbedf30214dfe4bb57c07bd5aa9ef8f0e5204341fd5f04cfc02d88796"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/synthesis/book-14-1ba978345f70.json",
+      "sha256": "c7e0744c5c85e7db743f5a37653bcb41ddef0699757b7487536fb0d6f07d5cb6"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/synthesis/book-15-04e1a336e29d.json",
+      "sha256": "d6d812a05f9ba6717c650f955d1c71feda7db2b7749af6e8071f33fb3baf6551"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/synthesis/book-16-9cbf8da97dac.json",
+      "sha256": "8c401532a5a1e3e63e14838e89ec10cfcf93c9ad7408626e7d9cd0d3ce85fc41"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/synthesis/book-17-3089d9aab05c.json",
+      "sha256": "dea00147080a4a068fccae8b2e83139fa5af3fa064fb9d8c4afee2038ed18e85"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/synthesis/book-18-d53c5cc79ddd.json",
+      "sha256": "3aae35acc42bde99d42c4db0b9c96328331b708f1a56f10392bb26e6af80404c"
+    },
+    {
+      "path": "system/agent_ops/inbox/deep_read_v0.18/cross_book_distillation.json",
+      "sha256": "981ccf2ceebaa4616e6a3c29896e525100981813fcc5d0aaf27d0684997ed87b"
+    }
+  ],
+  "artifact_root_sha256": "6e809227591962fea74da5248a9c702c8983aecc37f296624c24541278185df7",
+  "created_at": "2026-07-17T15:00:42+08:00"
+}

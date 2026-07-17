@@ -7,10 +7,22 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "system/runtime"))
 
-from nrl_story_window import build_story_window_prompt, story_beat_for, validate_story_window
+from nrl_story_window import (
+    build_story_window_prompt,
+    build_story_window_status,
+    story_beat_for,
+    validate_story_window,
+)
 
 
 class StoryWindowV1Tests(unittest.TestCase):
+    def test_volume_one_has_all_ten_story_windows(self):
+        status = build_story_window_status()
+        self.assertTrue(status["valid"])
+        self.assertEqual(status["window_count"], 10)
+        self.assertEqual(status["windows"][0]["window"], "001-010")
+        self.assertIsNotNone(story_beat_for("chapter-0001"))
+
     def test_duplicate_required_assets_are_rejected(self):
         payload = json.loads(self.path.read_text(encoding="utf-8"))
         payload["chapters"][0]["required_asset_ids"] *= 2

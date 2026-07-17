@@ -125,7 +125,7 @@ def build_studio_data(
     production_operator = build_operator_status(
         runtime_path("system/production_runtime/chapter_registry.v0.20.json")
     )
-    owner_gate_required = bool(state.get("owner_gate_required", False))
+    owner_gate_required = bool(system_status.get("owner_gate_required", False))
     next_safe_action = (
         {
             "recommended": "Keep content progression frozen and continue Studio/system hardening.",

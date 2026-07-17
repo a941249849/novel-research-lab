@@ -22,14 +22,19 @@ ACTIVE_BLUEPRINT_PATH = runtime_path(
 def content_progression_for(state: dict[str, Any]) -> str:
     if state.get("owner_gate_required", False):
         return "FROZEN_AT_OWNER_GATE"
+    if not build_project_status()["ready_for_prose"]:
+        return "BLOCKED_AT_PROJECT_SETUP"
     if "write novel prose" in state.get("blocked_actions", []):
         return "BLOCKED_FROM_PROSE"
     return "RUNTIME_CONTROLLED"
 
 
 def operating_mode_for(state: dict[str, Any]) -> str:
-    if content_progression_for(state) == "FROZEN_AT_OWNER_GATE":
+    progression = content_progression_for(state)
+    if progression == "FROZEN_AT_OWNER_GATE":
         return "SYSTEM_HARDENING"
+    if progression == "BLOCKED_AT_PROJECT_SETUP":
+        return "PROJECT_DESIGN"
     return "CONTROLLED_RUNTIME"
 
 
@@ -48,8 +53,14 @@ def build_system_status(state: dict[str, Any], adapters: dict[str, Any]) -> dict
     project_isolation = validate_project_isolation()
     production_checks = {
         "deep_read_verified": bool(deep_read["deep_read_verified"]),
-        "owner_authorization_active": not state.get("owner_gate_required", False),
-        "prose_not_globally_blocked": "write novel prose" not in state.get("blocked_actions", []),
+        "owner_authorization_active": (
+            project_status["content_authorized"]
+            and not state.get("owner_gate_required", False)
+        ),
+        "prose_not_globally_blocked": (
+            project_status["content_authorized"]
+            and "write novel prose" not in state.get("blocked_actions", [])
+        ),
         "active_blueprint_allows_governed_prose": bool(blueprint.get("prose_allowed")),
         "story_window_contract_valid": bool(story_windows["valid"]),
         "codex_model_team_contract_valid": model_team_contract["valid"],
@@ -72,12 +83,20 @@ def build_system_status(state: dict[str, Any], adapters: dict[str, Any]) -> dict
         "operating_mode": operating_mode_for(state),
         "content_progression": content_progression_for(state),
         "current_phase": state.get("current_phase"),
+        "project_stage": project_status["status"],
         "active_project": project_status,
         "project_registry": list_projects(),
         "project_isolation": project_isolation,
         "phase_status": state.get("phase_status"),
-        "owner_gate_required": state.get("owner_gate_required", False),
-        "owner_gate_status": state.get("owner_gate_status"),
+        "owner_gate_required": (
+            state.get("owner_gate_required", False)
+            or not project_status["content_authorized"]
+        ),
+        "owner_gate_status": (
+            state.get("owner_gate_status")
+            if project_status["content_authorized"]
+            else "PROJECT_SETUP_REQUIRED"
+        ),
         "agent_roles": {
             "codex": "three_model_runtime_planning_writing_review_observation",
             "antigravity": "backup_review_and_provider_fallback",

@@ -6,6 +6,13 @@ import subprocess
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
+
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "system/runtime"))
+
+import nrl_system_status
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -128,6 +135,19 @@ print(json.dumps({
                 if path.is_file()
             )
             self.assertNotIn("借天改命账", workspace_text)
+
+    def test_unprepared_project_cannot_inherit_another_projects_runtime_authorization(self) -> None:
+        project = {
+            "ready_for_prose": False,
+            "content_authorized": False,
+        }
+        state = {"owner_gate_required": False, "blocked_actions": []}
+        with mock.patch.object(nrl_system_status, "build_project_status", return_value=project):
+            self.assertEqual(
+                nrl_system_status.content_progression_for(state),
+                "BLOCKED_AT_PROJECT_SETUP",
+            )
+            self.assertEqual(nrl_system_status.operating_mode_for(state), "PROJECT_DESIGN")
 
 
 if __name__ == "__main__":

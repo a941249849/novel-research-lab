@@ -10,10 +10,10 @@ from nrl_creation_schemas import FAMILIES, validate_creation_asset_store
 from nrl_hermes_gate import latest_final_asset_generation_decision
 from nrl_owner_gate import load_decisions
 from nrl_paths import ROOT, runtime_path
+from nrl_projects import active_project_title, require_planning_profile
 
 
 VERSION = "0.15"
-PROJECT = "《借天改命账》"
 INBOX_DIR = runtime_path("system/agent_ops/inbox")
 STORE_PATH = runtime_path("system/creation_assets/project_assets.v0.2.json")
 VALIDATION_PATH = runtime_path("system/agent_ops/validation/final_asset_bundle_v0.15.json")
@@ -83,8 +83,9 @@ def validate_final_asset_payload(
     assets = bundle.get("assets")
     if bundle.get("version") != VERSION:
         errors.append(_error("bundle_version", f"version must be {VERSION}"))
-    if bundle.get("project") != PROJECT:
-        errors.append(_error("project_mismatch", f"project must be {PROJECT}"))
+    project = active_project_title()
+    if bundle.get("project") != project:
+        errors.append(_error("project_mismatch", f"project must be {project}"))
     if not isinstance(assets, list):
         errors.append(_error("assets_type", "assets must be a list"))
         assets = []
@@ -175,6 +176,7 @@ def validate_final_asset_bundle(
     validation_path: Path | None = VALIDATION_PATH,
     require_inbox: bool = True,
 ) -> dict[str, Any]:
+    require_planning_profile("borrowed_heaven_v1")
     candidate_path = _resolve_candidate_path(file_arg, require_inbox)
     if not candidate_path.exists():
         result = {
@@ -286,6 +288,7 @@ def promote_final_asset_bundle(
     validation_path: Path = VALIDATION_PATH,
     require_inbox: bool = True,
 ) -> dict[str, Any]:
+    require_planning_profile("borrowed_heaven_v1")
     candidate_path = _resolve_candidate_path(file_arg, require_inbox)
     bundle = _load_json(candidate_path)
     store = _load_json(store_path)
@@ -339,7 +342,7 @@ def promote_final_asset_bundle(
     manifest = {
         "version": VERSION,
         "promotion_state": "promoted_final_creation_assets",
-        "project": PROJECT,
+        "project": active_project_title(),
         "candidate_path": _relative_to_root(candidate_path),
         "candidate_sha256": _sha256_file(candidate_path),
         "validation_path": _relative_to_root(validation_path),

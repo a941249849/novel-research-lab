@@ -167,6 +167,7 @@ class ControlPlaneCliTests(unittest.TestCase):
             {check["check_id"] for check in data["checks"]},
             {
                 "runtime_state",
+                "project_isolation",
                 "capability_roadmap",
                 "research_asset_catalog",
                 "creation_schemas",

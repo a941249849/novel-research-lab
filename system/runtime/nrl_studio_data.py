@@ -22,6 +22,7 @@ from nrl_production_runtime import load_chapter_runtime_status
 from nrl_production_operator import build_operator_status
 from nrl_paths import runtime_path
 from nrl_system_status import build_system_status
+from nrl_projects import active_project_id
 
 
 DASHBOARD_SECTION_KEYS = (
@@ -80,6 +81,9 @@ def build_studio_data(
     adapters: dict[str, Any],
 ) -> dict[str, Any]:
     system_status = build_system_status(state, adapters)
+    project_status = system_status["active_project"]
+    project_id = active_project_id()
+    project_arg = f" --project {project_id}"
     latest_mission = _latest_registry_mission(registry)
     current_mission_name = state.get("next_recommended_mission", "UNKNOWN_MISSION")
     current_agent = str(state.get("allowed_next_agents", ["codex"])[0]).lower()
@@ -137,13 +141,17 @@ def build_studio_data(
         if owner_gate_required
         else {
             "recommended": state.get("next_recommended_mission", "Resume governed production."),
-            "runtime_command": production_operator["resume_command"] or "python3 system/runtime/nrl.py production-status",
+            "runtime_command": (
+                f"{production_operator['resume_command']}{project_arg}"
+                if production_operator["resume_command"]
+                else f"python3 system/runtime/nrl.py production-status{project_arg}"
+            ),
             "blocked_next_action": "Publishing remains blocked until all 100 chapters pass volume review.",
             "safe_commands": [
-                "python3 system/runtime/nrl.py production-status",
-                "python3 system/runtime/nrl.py produce --until 100",
-                "python3 system/runtime/nrl.py system-check",
-                "python3 system/runtime/nrl.py production-preflight",
+                f"python3 system/runtime/nrl.py production-status{project_arg}",
+                f"python3 system/runtime/nrl.py produce --until 100{project_arg}",
+                f"python3 system/runtime/nrl.py system-check{project_arg}",
+                f"python3 system/runtime/nrl.py production-preflight{project_arg}",
             ],
         }
     )
@@ -208,8 +216,12 @@ def build_studio_data(
             ],
         },
         "current_project": {
-            "project_name": state.get("project_name", "Novel Research Lab"),
-            "selected_project": state.get("selected_project", "UNKNOWN_PROJECT"),
+            "project_name": project_status["title"],
+            "selected_project": project_status["project_id"],
+            "workspace": project_status["workspace"],
+            "storage_mode": project_status["storage_mode"],
+            "ready_for_prose": project_status["ready_for_prose"],
+            "available_projects": system_status["project_registry"]["projects"],
             "current_phase": state.get("current_phase", "UNKNOWN_PHASE"),
             "current_subphase": state.get("current_subphase", "UNKNOWN_SUBPHASE"),
             "phase_status": state.get("phase_status", "UNKNOWN_STATUS"),

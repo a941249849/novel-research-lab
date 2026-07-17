@@ -10,6 +10,7 @@ import jsonschema
 from referencing import Registry, Resource
 
 from nrl_paths import runtime_path
+from nrl_projects import active_project_id
 
 
 SCHEMA_DIR = runtime_path("system/creation_assets/schemas")
@@ -59,7 +60,7 @@ FORBIDDEN_NAMING_TERMS = (
 def _load_json(path: Path) -> dict[str, Any]:
     if not path.exists() and path.parent == SCHEMA_DIR:
         path = PACKAGE_SCHEMA_DIR / path.name
-    elif not path.exists() and path == STORE_PATH:
+    elif not path.exists() and path == STORE_PATH and active_project_id() == "borrowed-heaven":
         path = PACKAGE_STORE_PATH
     with path.open("r", encoding="utf-8") as handle:
         return json.load(handle)

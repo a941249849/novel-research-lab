@@ -9,6 +9,7 @@ from typing import Any
 import jsonschema
 
 from nrl_paths import runtime_path
+from nrl_projects import require_planning_profile
 
 
 VERSION = "0.25"
@@ -95,6 +96,7 @@ def build_volume1_intent(number: int) -> dict[str, Any]:
 
 
 def build_volume1_manifest() -> dict[str, Any]:
+    require_planning_profile("borrowed_heaven_v1")
     return {
         "version": VERSION,
         "status": "owner_authorization_required_for_prose",

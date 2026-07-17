@@ -8,6 +8,8 @@ import re
 from pathlib import Path
 from typing import Any
 
+from nrl_projects import active_project_title
+
 
 def describe_next_production_action(status: dict[str, Any]) -> dict[str, str]:
     if status.get("blocking_window_review"):
@@ -41,7 +43,7 @@ def build_operator_status(registry_path: Path, target: int = 100) -> dict[str, A
     if not registry_path.is_file():
         return {
             "valid": True,
-            "project": "借天改命账",
+            "project": active_project_title(),
             "volume": 1,
             "target_chapters": target,
             "accepted_contiguous": 0,
@@ -119,7 +121,7 @@ def build_operator_status(registry_path: Path, target: int = 100) -> dict[str, A
             break
     return {
         "valid": not errors,
-        "project": "借天改命账",
+        "project": active_project_title(),
         "volume": 1,
         "target_chapters": target,
         "accepted_contiguous": contiguous,

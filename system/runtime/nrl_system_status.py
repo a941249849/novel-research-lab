@@ -11,6 +11,7 @@ from nrl_deep_read import build_deep_read_status
 from nrl_model_router import build_model_routing_status, validate_model_team_contract
 from nrl_paths import runtime_path
 from nrl_story_window import build_story_window_status
+from nrl_projects import build_project_status, list_projects, validate_project_isolation
 
 
 ACTIVE_BLUEPRINT_PATH = runtime_path(
@@ -43,6 +44,8 @@ def build_system_status(state: dict[str, Any], adapters: dict[str, Any]) -> dict
         else {}
     )
     story_windows = build_story_window_status()
+    project_status = build_project_status()
+    project_isolation = validate_project_isolation()
     production_checks = {
         "deep_read_verified": bool(deep_read["deep_read_verified"]),
         "owner_authorization_active": not state.get("owner_gate_required", False),
@@ -50,6 +53,8 @@ def build_system_status(state: dict[str, Any], adapters: dict[str, Any]) -> dict
         "active_blueprint_allows_governed_prose": bool(blueprint.get("prose_allowed")),
         "story_window_contract_valid": bool(story_windows["valid"]),
         "codex_model_team_contract_valid": model_team_contract["valid"],
+        "project_isolation_valid": project_isolation["valid"],
+        "active_project_ready_for_prose": project_status["ready_for_prose"],
     }
     production_blockers = [name for name, passed in production_checks.items() if not passed]
     hard_rules = [
@@ -67,6 +72,9 @@ def build_system_status(state: dict[str, Any], adapters: dict[str, Any]) -> dict
         "operating_mode": operating_mode_for(state),
         "content_progression": content_progression_for(state),
         "current_phase": state.get("current_phase"),
+        "active_project": project_status,
+        "project_registry": list_projects(),
+        "project_isolation": project_isolation,
         "phase_status": state.get("phase_status"),
         "owner_gate_required": state.get("owner_gate_required", False),
         "owner_gate_status": state.get("owner_gate_status"),

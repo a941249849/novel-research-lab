@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "project_id": "borrowed-heaven",
+  "title": "《借天改命账》",
+  "genre": "中文玄幻长篇",
+  "status": "active_production",
+  "workspace": "projects/borrowed-heaven",
+  "storage_mode": "legacy_v0",
+  "created_at": "2026-07-17T00:00:00+08:00",
+  "engine": "nrl-corpus-to-creation",
+  "shared_research_catalog": "system/research_assets",
+  "model_team": "codex-three-model-team-v0.27",
+  "planning_profile": "borrowed_heaven_v1",
+  "content_authorized": true,
+  "legacy_paths": {
+    "creation_assets": "system/creation_assets/project_assets.v0.2.json",
+    "production_runtime": "system/production_runtime",
+    "release_root": "system/releases/fanqie/borrowed-heaven-volume1"
+  }
+}

@@ -8,6 +8,7 @@ from typing import Any
 
 from nrl_paths import runtime_path
 from nrl_owner_gate import load_decisions
+from nrl_projects import active_project_title, require_planning_profile
 
 
 VERSION = "0.1"
@@ -62,6 +63,7 @@ def _read(path: Path) -> dict[str, Any]:
 
 
 def build_longform_contract() -> dict[str, Any]:
+    require_planning_profile("borrowed_heaven_v1")
     volumes = []
     for number, name, question, outcome in VOLUMES:
         volumes.append({
@@ -75,7 +77,7 @@ def build_longform_contract() -> dict[str, Any]:
     return {
         "version": VERSION,
         "status": "owner_accepted_active",
-        "project": "《借天改命账》",
+        "project": active_project_title(),
         "target_chapters": 1800,
         "target_chinese_characters": [6000000, 6800000],
         "chapter_character_target": [3200, 3800],
@@ -95,6 +97,7 @@ def build_longform_contract() -> dict[str, Any]:
 
 
 def build_first100_manifest() -> dict[str, Any]:
+    require_planning_profile("borrowed_heaven_v1")
     windows = (
         (1, 10, "开局命灯危机与异常残籍"),
         (11, 30, "护阵、住户与共同体证据"),
@@ -224,6 +227,7 @@ def validate_first100_guard_config(config: dict[str, Any]) -> dict[str, Any]:
 
 
 def write_longform_candidate_contracts() -> dict[str, Any]:
+    require_planning_profile("borrowed_heaven_v1")
     contract = build_longform_contract()
     manifest = build_first100_manifest()
     _write(CONTRACT_PATH, contract)
@@ -234,6 +238,7 @@ def write_longform_candidate_contracts() -> dict[str, Any]:
 
 
 def build_longform_readiness() -> dict[str, Any]:
+    require_planning_profile("borrowed_heaven_v1")
     contract = _read(CONTRACT_PATH) if CONTRACT_PATH.exists() else {}
     manifest = _read(FIRST100_PATH) if FIRST100_PATH.exists() else {}
     review_text = FINAL_REVIEW_PATH.read_text(encoding="utf-8") if FINAL_REVIEW_PATH.exists() else ""
@@ -252,6 +257,7 @@ def build_longform_readiness() -> dict[str, Any]:
 
 
 def build_longform_first100_dry_run() -> dict[str, Any]:
+    require_planning_profile("borrowed_heaven_v1")
     manifest = _read(FIRST100_PATH) if FIRST100_PATH.exists() else {}
     guards = _read(GUARD_CONFIG_PATH) if GUARD_CONFIG_PATH.exists() else {}
     active = _read(ACTIVE_BLUEPRINT_PATH) if ACTIVE_BLUEPRINT_PATH.exists() else {}
@@ -268,13 +274,14 @@ def build_longform_first100_dry_run() -> dict[str, Any]:
 
 
 def promote_longform_blueprint() -> dict[str, Any]:
+    require_planning_profile("borrowed_heaven_v1")
     readiness = build_longform_readiness()
     if not readiness["valid"]:
         blocked = [name for name, value in readiness["checks"].items() if not value]
         raise RuntimeError("longform promotion is blocked: " + ", ".join(blocked))
     payload = {
         "version": "0.24",
-        "project": "《借天改命账》",
+        "project": active_project_title(),
         "status": "active_production_governed",
         "contract_path": str(CONTRACT_PATH.relative_to(runtime_path("."))),
         "first100_manifest_path": str(FIRST100_PATH.relative_to(runtime_path("."))),

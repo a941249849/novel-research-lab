@@ -6,6 +6,7 @@ from nrl_corpus_pipeline import build_pipeline_status
 from nrl_paths import runtime_path
 from nrl_production_operator import build_operator_status, describe_next_production_action
 from nrl_system_status import build_system_status
+from nrl_projects import build_project_status
 
 
 VERSION = "0.4"
@@ -160,6 +161,7 @@ def build_architecture_reconciliation(
     pipeline_status: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     system_status = build_system_status(state, adapters)
+    project_status = build_project_status()
     pipeline = pipeline_status or build_pipeline_status(state, adapters)
     operator = build_operator_status(
         runtime_path("system/production_runtime/chapter_registry.v0.20.json")
@@ -206,13 +208,16 @@ def build_architecture_reconciliation(
             "production_meaning": "the small-batch architecture was retained and the full corpus was materialized through the same evidence contract",
         },
         "implementation_alignment": {
+            "project_registry": "multi_project_isolation_v1",
+            "active_project_id": project_status["project_id"],
+            "active_project_storage_mode": project_status["storage_mode"],
             "pipeline_version": pipeline["version"],
             "pipeline_id": pipeline["pipeline_id"],
             "pipeline_layer": "planning_pipeline",
             "classification": "child_implementation_not_full_architecture",
             "next_family": pipeline["next_family"]["family"],
             "deep_read_runtime": "verifiable_deep_reading_v0.18",
-            "project_reconciliation": "borrowed_heaven_project_reconciliation_v0.19",
+            "project_reconciliation": f"{project_status['project_id']}_project_reconciliation",
             "chapter_runtime": "production_chapter_runtime_v0.20",
             "story_compiler": "ten_chapter_story_window_v1",
             "context_memory": "bounded_rolling_state_v1",
@@ -220,6 +225,12 @@ def build_architecture_reconciliation(
         },
         "agent_role_contract": _agent_roles(system_status),
         "current_mismatch_report": [
+            {
+                "mismatch_id": "single_project_runtime_coupling",
+                "severity": "critical",
+                "summary": "Resolved at the control boundary: Novel Research Lab is the engine and Borrowed Heaven is one registered project instance.",
+                "correction": "Mutable assets, plans, chapters, reviews, and releases route by project_id; legacy_v0 is restricted to the hash-bound first project.",
+            },
             {
                 "mismatch_id": "control_plane_split_brain",
                 "severity": "high",

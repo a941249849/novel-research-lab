@@ -5,7 +5,8 @@
   "required": ["version", "project", "chapters"],
   "properties": {
     "version": {"type": "string", "const": "0.20"},
-    "project": {"type": "string", "const": "《借天改命账》"},
+    "project_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "project": {"type": "string", "minLength": 1},
     "chapters": {
       "type": "array",
       "items": {

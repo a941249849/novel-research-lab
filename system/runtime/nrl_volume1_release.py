@@ -12,6 +12,7 @@ from typing import Any
 from nrl_paths import ROOT, runtime_path
 from nrl_codex_writer import ask_antigravity_writer, ask_codex_writer, codex_usage_limited, extract_json_object
 from nrl_model_router import route_model
+from nrl_projects import active_project_id, active_project_title
 
 
 VERSION = "0.26"
@@ -127,7 +128,7 @@ def dispatch_release_edit(chapter_id: str, repair_direction: str) -> dict[str, A
     source = runtime_path(record["artifacts"]["revision"])
     original = source.read_text(encoding="utf-8").strip()
     prompt = "\n".join([
-        "你是《借天改命账》的发布版责任编辑。只输出重修后的完整章节正文，不要标题、说明或元评论。",
+        f"你是{active_project_title()}的发布版责任编辑。只输出重修后的完整章节正文，不要标题、说明或元评论。",
         "这是一项发布版编辑修订：必须保持本章已经发生的状态结果、人物身份、已登记资产和结尾压力，不得新增能力、人物、地点、解决方案或状态变化。",
         "重点修复方向：" + repair_direction,
         "目标 3200-3800 个中文字符。用不同于相邻章节的场景动作、冲突手段和感官落点，避免模板化的识账/咳灰/口述闭环。",
@@ -469,7 +470,7 @@ def build_review_manuscript(end: int = 20) -> dict[str, Any]:
         raise ValueError("review manuscript end must be within 1-100")
     registry = _read_json(REGISTRY_PATH)
     records = {item["chapter_id"]: item for item in registry.get("chapters", [])}
-    sections = [f"# 《借天改命账》第 1-{end} 章审阅稿", ""]
+    sections = [f"# {active_project_title()}第 1-{end} 章审阅稿", ""]
     hashes = {}
     character_total = 0
     for ordinal in range(1, end + 1):
@@ -483,9 +484,9 @@ def build_review_manuscript(end: int = 20) -> dict[str, Any]:
         hashes[chapter_id] = {"sha256": _sha256(revision), "source_kind": source_kind}
         sections.extend([f"## 第 {ordinal} 章", "", text, ""])
     MANUSCRIPT_REVIEW_ROOT.mkdir(parents=True, exist_ok=True)
-    manuscript = MANUSCRIPT_REVIEW_ROOT / f"borrowed-heaven-chapters-001-{end:03d}.md"
+    manuscript = MANUSCRIPT_REVIEW_ROOT / f"{active_project_id()}-chapters-001-{end:03d}.md"
     manuscript.write_text("\n".join(sections).rstrip() + "\n", encoding="utf-8")
-    manifest = MANUSCRIPT_REVIEW_ROOT / f"borrowed-heaven-chapters-001-{end:03d}.json"
+    manifest = MANUSCRIPT_REVIEW_ROOT / f"{active_project_id()}-chapters-001-{end:03d}.json"
     payload = {
         "version": VERSION,
         "status": "human_review_only_not_release_ready",
@@ -534,7 +535,8 @@ def build_fanqie_upload_package() -> dict[str, Any]:
     manuscript_path.write_text("\n".join(combined).strip() + "\n", encoding="utf-8")
     manifest = {
         "version": VERSION,
-        "project": "《借天改命账》",
+        "project_id": active_project_id(),
+        "project": active_project_title(),
         "volume": 1,
         "readiness": readiness,
         "full_manuscript": "01_volume1_full.txt",

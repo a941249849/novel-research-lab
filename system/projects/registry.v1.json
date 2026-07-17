@@ -1,0 +1,12 @@
+{
+  "version": "1.0",
+  "default_project_id": "borrowed-heaven",
+  "projects": [
+    {
+      "project_id": "borrowed-heaven",
+      "title": "《借天改命账》",
+      "status": "active_production",
+      "workspace": "projects/borrowed-heaven"
+    }
+  ]
+}

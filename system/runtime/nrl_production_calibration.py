@@ -311,7 +311,9 @@ def _sha256_path(path: Path) -> str:
 def _generation_evidence() -> tuple[list[str], dict[str, int]]:
     items = []
     counts: dict[str, int] = {}
-    chapter_root = runtime_path("system/production_runtime/chapters")
+    # This is engine-level calibration evidence from the first accepted run,
+    # not mutable state for whichever project is currently selected.
+    chapter_root = ROOT / "system/production_runtime/chapters"
     for path in sorted(chapter_root.glob("chapter-*/generation_cost.json")):
         try:
             ordinal = int(path.parent.name.removeprefix("chapter-"))
@@ -341,7 +343,7 @@ def build_model_team_attestation_status() -> dict[str, Any]:
         errors.append("generation evidence root mismatch")
     if counts != evidence.get("writer_model_counts"):
         errors.append("generation model counts mismatch")
-    registry_path = runtime_path("system/production_runtime/chapter_registry.v0.20.json")
+    registry_path = ROOT / "system/production_runtime/chapter_registry.v0.20.json"
     registry = json.loads(registry_path.read_text(encoding="utf-8")) if registry_path.is_file() else {"chapters": []}
     accepted = {
         str(item.get("chapter_id"))
@@ -352,7 +354,7 @@ def build_model_team_attestation_status() -> dict[str, Any]:
     if not generation_chapters.issubset(accepted):
         errors.append("generation evidence includes an unaccepted chapter")
     window_config = data.get("window_review_evidence", {})
-    window_root = runtime_path(str(window_config.get("path", "")))
+    window_root = ROOT / str(window_config.get("path", ""))
     window_items = []
     window_verdicts = []
     for path in sorted(window_root.glob("*.json")) if window_root.is_dir() else []:

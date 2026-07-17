@@ -10,6 +10,7 @@ import jsonschema
 
 from nrl_creation_schemas import validate_creation_asset_store
 from nrl_paths import ROOT, runtime_path
+from nrl_projects import active_project_title, require_planning_profile
 
 
 PLAN_VERSION = "0.1"
@@ -55,6 +56,7 @@ def _read_json(path: Path) -> dict[str, Any]:
 
 
 def build_volume1_manifest() -> dict[str, Any]:
+    require_planning_profile("borrowed_heaven_v1")
     chapters = []
     for cluster, title, objective, forbidden in CLUSTERS:
         for offset, beat in enumerate(BEATS, start=1):
@@ -86,7 +88,7 @@ def build_volume1_manifest() -> dict[str, Any]:
             })
     return {
         "version": PLAN_VERSION,
-        "project": "《借天改命账》",
+        "project": active_project_title(),
         "scope": "Volume 1 only; non-prose chapter-intent manifest",
         "chapter_count": 60,
         "chapters": chapters,
@@ -94,6 +96,7 @@ def build_volume1_manifest() -> dict[str, Any]:
 
 
 def build_initial_state_contract() -> dict[str, Any]:
+    require_planning_profile("borrowed_heaven_v1")
     # Values are semantic baselines only. They do not invent a numeric debt balance or scene event.
     states = {
         "state_ledger_protagonist_strain": {"initial": "half_life_unstable", "allowed": ["worsen_with_observed_cost", "recover_with_rest_and_care"], "evidence": ["visible_bodily_or_cognitive_consequence"], "peers": ["state_ledger_half_life_registry_exposure", "state_ledger_mother_life_lamp_countdown"]},
@@ -108,7 +111,7 @@ def build_initial_state_contract() -> dict[str, Any]:
         "state_ledger_unresolved_mysteries": {"initial": ["mother_debt_source", "poor_city_old_account", "half_life_anomaly"], "allowed": ["reclassify_only_with_outline_question_and_peer_transaction"], "evidence": ["canonical_outline_question", "verified_peer_change"], "peers": ["state_ledger_revealed_account_errors", "state_ledger_map_unlock_status"]},
         "state_ledger_map_unlock_status": {"initial": "poor_city_only", "allowed": ["advance_only_along_outline_boundaries"], "evidence": ["canonical_boundary_credential", "mystery_or_exposure_peer"], "peers": ["state_ledger_unresolved_mysteries", "state_ledger_half_life_registry_exposure"]},
     }
-    return {"version": PLAN_VERSION, "project": "《借天改命账》", "mode": "non-prose operational state contract", "states": states}
+    return {"version": PLAN_VERSION, "project": active_project_title(), "mode": "non-prose operational state contract", "states": states}
 
 
 def validate_volume1_manifest(manifest: dict[str, Any]) -> dict[str, Any]:

@@ -4,7 +4,8 @@ Novel Research Lab（NRL）是面向中文长篇网文的 **Corpus-to-Creation**
 
 ## 当前状态
 
-- 项目：`《借天改命账》`
+- 系统：支持按 `project_id` 隔离的多项目 Corpus-to-Creation 生产
+- 首个项目实例：`borrowed-heaven` / `《借天改命账》`
 - 长篇规格：18 卷、约 1,800 章、600–680 万中文字符
 - 语料：18 本、143 个连续分块、18 本综合与跨书蒸馏均已完成哈希和覆盖验证；166 项晋级产物由独立根哈希绑定
 - 创作资产：九类 Schema 与项目资产库已可运行
@@ -34,7 +35,9 @@ Codex 是唯一主生产平面：Sol 负责长线规划与高风险审校，Terr
 | --- | --- |
 | 当前阶段与授权 | `system/mission_controller/current_phase_state.json`、`system/runtime/owner_gate_decisions.json` |
 | 研究蒸馏 | `system/research_assets/deep_read/v0.18/`、`system/research_assets/promotions/`；`promotion_attestation.json` 支持不挂载原文的只读生产验证 |
-| 项目创作资产 | `system/creation_assets/project_assets.v0.2.json` |
+| 项目注册表 | `system/projects/registry.v1.json`、`system/projects/<project_id>/project.json` |
+| 新项目工作区 | `projects/<project_id>/` |
+| 首项目创作资产（兼容迁移） | `system/creation_assets/project_assets.v0.2.json` |
 | 长篇契约 | `system/production_runtime/plans/borrowed_heaven_longform_contract.v0.1.json` |
 | 十章故事窗口 | `system/production_runtime/story_windows/` |
 | 章节执行状态 | `system/production_runtime/chapter_registry.v0.20.json` |
@@ -47,10 +50,20 @@ Codex 是唯一主生产平面：Sol 负责长线规划与高风险审校，Terr
 ## 运行
 
 ```bash
-python3 system/runtime/nrl.py production-status
-python3 system/runtime/nrl.py produce --until 100
-python3 system/runtime/nrl.py volume1-release-status
-python3 system/runtime/nrl.py volume1-fanqie-package
+python3 system/runtime/nrl.py projects
+python3 system/runtime/nrl.py project-status --project borrowed-heaven
+python3 system/runtime/nrl.py production-status --project borrowed-heaven
+python3 system/runtime/nrl.py produce --until 100 --project borrowed-heaven
+python3 system/runtime/nrl.py volume1-release-status --project borrowed-heaven
+python3 system/runtime/nrl.py volume1-fanqie-package --project borrowed-heaven
+```
+
+创建另一本原创小说时，先建立完全隔离的项目实例；初始化不会生成正文或复用《借天改命账》的设定：
+
+```bash
+python3 system/runtime/nrl.py project-init --project-id new-book --title '《新书名》' --genre '玄幻'
+python3 system/runtime/nrl.py project-validate --project new-book
+python3 system/runtime/nrl.py project-status --project new-book
 ```
 
 `production-status` 是日常状态入口；`produce` 会从首个未接受章节恢复，自动编译缺失的十章窗口，并在章节门禁、十章复审或外部模型失败时停止。诊断和只读控制台仍可使用：

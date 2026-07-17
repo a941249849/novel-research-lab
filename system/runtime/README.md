@@ -4,6 +4,7 @@
 
 `system/runtime/nrl.py` is a local Mission Runtime. It can:
 
+- Register isolated novel projects and route mutable runtime state by `project_id`.
 - Read `system/mission_controller/current_phase_state.json`.
 - Report current status and the next recommended mission.
 - Prepare bounded handoff task files and dispatch registered Antigravity review jobs through the local CLI bridge.
@@ -53,12 +54,18 @@ phase-operation documentation and are superseded by v0.27.
 No new prose may be generated until every command below passes:
 
 ```bash
-python3 system/runtime/nrl.py volume1-plan-build
-python3 system/runtime/nrl.py volume1-plan-validate
-python3 system/runtime/nrl.py volume1-dry-run
+python3 system/runtime/nrl.py project-validate --project <project_id>
+python3 system/runtime/nrl.py volume1-plan-build --project <project_id>
+python3 system/runtime/nrl.py volume1-plan-validate --project <project_id>
+python3 system/runtime/nrl.py volume1-dry-run --project <project_id>
 python3 system/runtime/nrl.py direct-writer-calibration-status
-python3 system/runtime/nrl.py production-preflight
+python3 system/runtime/nrl.py production-preflight --project <project_id>
 ```
+
+The Volume 1 plan builders above belong to the migrated
+`borrowed_heaven_v1` planning profile. A `generic_v1` project must provide its
+own project-specific Story Bible, assets, long-form contract, and volume plan;
+the runtime rejects use of the Borrowed Heaven planner against another project.
 
 `direct-writer-calibration-status` remains blocking until nine blinded runs
 cover Sol, Terra, and Luna and an accepted routing decision is recorded.

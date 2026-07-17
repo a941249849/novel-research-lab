@@ -11,10 +11,31 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+
+
+def _consume_project_argument(argv: list[str]) -> str | None:
+    for index, value in enumerate(tuple(argv)):
+        if value.startswith("--project="):
+            project_id = value.split("=", 1)[1]
+            argv.remove(value)
+            return project_id
+        if value == "--project":
+            if index + 1 >= len(argv):
+                raise SystemExit("--project requires a project_id")
+            project_id = argv[index + 1]
+            del argv[index : index + 2]
+            return project_id
+    return None
+
+
+BOOTSTRAP_PROJECT_ID = _consume_project_argument(sys.argv)
+if BOOTSTRAP_PROJECT_ID:
+    os.environ["NRL_PROJECT_ID"] = BOOTSTRAP_PROJECT_ID
 
 from nrl_compiler import compile_packet
 from nrl_architecture import build_architecture_reconciliation
@@ -94,6 +115,7 @@ from nrl_final_assets import promote_final_asset_bundle, validate_final_asset_bu
 from nrl_handoff_packet import write_antigravity_packet
 from nrl_hermes_controlled_prose import validate_controlled_prose_text
 from nrl_paths import ROOT, runtime_path
+from nrl_projects import build_project_status, initialize_project, list_projects, validate_project_isolation
 from nrl_owner_gate import DECISION_TYPES, load_decisions, record_owner_decision
 from nrl_phase2e import (
     latest_phase2e_acceptance,
@@ -363,6 +385,28 @@ def cmd_system_status(_: argparse.Namespace) -> int:
     adapters = load_adapters()
     print_json(build_system_status(state, adapters))
     return 0
+
+
+def cmd_projects(_: argparse.Namespace) -> int:
+    print_json(list_projects())
+    return 0
+
+
+def cmd_project_status(_: argparse.Namespace) -> int:
+    print_json(build_project_status())
+    return 0
+
+
+def cmd_project_init(args: argparse.Namespace) -> int:
+    result = initialize_project(args.project_id, args.title, args.genre)
+    print_json(result)
+    return 0
+
+
+def cmd_project_validate(_: argparse.Namespace) -> int:
+    result = validate_project_isolation()
+    print_json(result)
+    return 0 if result["valid"] else 1
 
 
 def cmd_studio_data(_: argparse.Namespace) -> int:
@@ -1564,7 +1608,20 @@ def cmd_validate_state(_: argparse.Namespace) -> int:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Novel Research Lab Mission Runtime MVP")
+    parser.add_argument(
+        "--project",
+        default=BOOTSTRAP_PROJECT_ID or os.environ.get("NRL_PROJECT_ID", "borrowed-heaven"),
+        help="project_id; accepted before or after the command",
+    )
     sub = parser.add_subparsers(dest="command", required=True)
+    sub.add_parser("projects").set_defaults(func=cmd_projects)
+    sub.add_parser("project-status").set_defaults(func=cmd_project_status)
+    sub.add_parser("project-validate").set_defaults(func=cmd_project_validate)
+    project_init = sub.add_parser("project-init")
+    project_init.add_argument("--project-id", required=True)
+    project_init.add_argument("--title", required=True)
+    project_init.add_argument("--genre", default="")
+    project_init.set_defaults(func=cmd_project_init)
     sub.add_parser("status").set_defaults(func=cmd_status)
     sub.add_parser("next").set_defaults(func=cmd_next)
     sub.add_parser("missions").set_defaults(func=cmd_missions)

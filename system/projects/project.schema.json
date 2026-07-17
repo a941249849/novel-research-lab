@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "nrl://projects/project-v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "project_id",
+    "title",
+    "status",
+    "workspace",
+    "engine",
+    "shared_research_catalog",
+    "model_team",
+    "planning_profile",
+    "content_authorized"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "project_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "title": {"type": "string", "minLength": 1},
+    "genre": {"type": "string"},
+    "status": {"enum": ["initialized", "designing", "owner_gate", "production_ready", "active_production", "paused", "archived"]},
+    "workspace": {"type": "string", "pattern": "^projects/[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "storage_mode": {"enum": ["isolated_v1", "legacy_v0"]},
+    "created_at": {"type": "string"},
+    "engine": {"const": "nrl-corpus-to-creation"},
+    "shared_research_catalog": {"const": "system/research_assets"},
+    "model_team": {"const": "codex-three-model-team-v0.27"},
+    "planning_profile": {"enum": ["generic_v1", "borrowed_heaven_v1"]},
+    "content_authorized": {"type": "boolean"},
+    "legacy_paths": {"type": "object"}
+  },
+  "additionalProperties": false
+}

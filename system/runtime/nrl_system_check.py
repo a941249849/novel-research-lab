@@ -94,6 +94,15 @@ def run_system_check() -> dict[str, Any]:
             "detail": runtime_state,
         },
         {
+            "check_id": "project_isolation",
+            "passed": system_status["project_isolation"]["valid"],
+            "detail": {
+                "active_project": system_status["active_project"],
+                "registry": system_status["project_registry"],
+                "isolation": system_status["project_isolation"],
+            },
+        },
+        {
             "check_id": "capability_roadmap",
             "passed": len(hardening["capabilities"]) == 8,
             "detail": hardening["next_safe_action"],

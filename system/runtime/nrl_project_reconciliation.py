@@ -13,6 +13,7 @@ from nrl_creation_schemas import validate_creation_asset_store
 from nrl_deep_read import build_deep_read_status
 from nrl_owner_gate import load_decisions
 from nrl_paths import ROOT, runtime_path
+from nrl_projects import active_project_title, require_planning_profile
 
 
 VERSION = "0.19"
@@ -92,6 +93,7 @@ def build_reconciliation_application_readiness(
 
 
 def apply_project_reconciliation() -> dict[str, Any]:
+    require_planning_profile("borrowed_heaven_v1")
     validation = validate_project_reconciliation()
     if not validation.get("valid"):
         raise RuntimeError("project reconciliation response is not valid")
@@ -141,6 +143,7 @@ def _load_response_json(path: Path) -> dict[str, Any]:
 
 
 def build_project_reconciliation_packet() -> dict[str, Any]:
+    require_planning_profile("borrowed_heaven_v1")
     deep_read = build_deep_read_status()
     if not deep_read["deep_read_verified"]:
         raise RuntimeError("v0.18 deep reading must be verified before project reconciliation")
@@ -153,7 +156,7 @@ def build_project_reconciliation_packet() -> dict[str, Any]:
     template = {
         "job_id": JOB_ID,
         "contract_version": VERSION,
-        "project": "《借天改命账》",
+        "project": active_project_title(),
         "input_hashes": inputs,
         "verdict": "ACCEPT_WITH_WARNINGS",
         "assessments": {
@@ -197,7 +200,7 @@ def validate_project_reconciliation_response(
         errors.append("job_id mismatch")
     if data.get("contract_version") != VERSION:
         errors.append("contract_version mismatch")
-    if data.get("project") != "《借天改命账》":
+    if data.get("project") != active_project_title():
         errors.append("project mismatch")
     if data.get("input_hashes") != expected_inputs:
         errors.append("input_hashes mismatch")
@@ -231,6 +234,7 @@ def validate_project_reconciliation_response(
 
 
 def validate_project_reconciliation() -> dict[str, Any]:
+    require_planning_profile("borrowed_heaven_v1")
     packet = build_project_reconciliation_packet()
     if not RESPONSE_PATH.exists():
         result = {"valid": False, "errors": ["project reconciliation response is missing"]}
@@ -249,6 +253,7 @@ def validate_project_reconciliation() -> dict[str, Any]:
 def dispatch_project_reconciliation(
     model: str = "Gemini 3.5 Flash (High)", print_timeout: str = "15m0s"
 ) -> dict[str, Any]:
+    require_planning_profile("borrowed_heaven_v1")
     packet = build_project_reconciliation_packet()
     binary = find_agy_binary()
     if not binary:

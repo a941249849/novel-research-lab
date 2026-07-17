@@ -14,6 +14,7 @@ import jsonschema
 
 from nrl_paths import ROOT, runtime_path
 from nrl_model_router import route_model
+from nrl_projects import active_project_title
 
 
 VERSION = "1.0"
@@ -277,7 +278,7 @@ def build_story_window_prompt(start: int) -> str:
     prompt = "\n".join(
         [
             "你是 Novel Research Lab 的长篇故事编译器。只输出符合 JSON Schema 的一个对象，不写正文。",
-            f"为《借天改命账》第一卷编译第 {start}-{end} 章的十章故事窗口。",
+            f"为{active_project_title()}第一卷编译第 {start}-{end} 章的十章故事窗口。",
             "十章必须形成一条不可逆因果链，每章必须有不同事件、场景、冲突、人物选择、不可逆变化和尾钩。",
             "不得把同一争执、查账、见证、追兵换词重复；不得凭空新增资产；不得读取或模仿原始语料。",
             "每章至少推进一个人物关系、程序压力或物质后果。第十章必须完成局部兑现，同时打开下一层压力。",

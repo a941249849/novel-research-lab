@@ -29,6 +29,7 @@ from nrl_model_router import route_model, validate_model_team_contract
 from nrl_production_calibration import build_direct_writer_calibration_status, build_model_team_attestation_status
 from nrl_owner_gate import load_decisions
 from nrl_paths import ROOT, runtime_path
+from nrl_projects import active_project, active_project_id, active_project_scope, active_project_title
 from nrl_volume1_plan import build_volume1_dry_run
 from nrl_volume1_longform import build_volume1_manifest as build_longform_volume1_manifest, validate_volume1_manifest as validate_longform_volume1_manifest
 from nrl_volume1_release import prior_window_review_required
@@ -480,7 +481,10 @@ def _write_json(path: Path, data: Any) -> None:
 
 def _load_registry() -> dict[str, Any]:
     return _read_json(REGISTRY_PATH) if REGISTRY_PATH.exists() else {
-        "version": VERSION, "project": "《借天改命账》", "chapters": []
+        "version": "0.20",
+        "project_id": active_project_id(),
+        "project": active_project_title(),
+        "chapters": [],
     }
 
 
@@ -516,14 +520,25 @@ def build_production_preflight(
     readiness = build_production_readiness()
     pending = [item["chapter_id"] for item in registry["chapters"] if item["stage"] != "chapter_accepted"]
     blocking_pending = [item for item in pending if item != allowed_pending_chapter_id]
-    blueprint_accepted = any(
+    project = active_project()
+    authorized_scopes = {
+        active_project_scope(),
+        f"{active_project_id()}-production-blueprint-v01",
+    }
+    if active_project_id() == "borrowed-heaven":
+        authorized_scopes.add("borrowed-heaven-production-blueprint-v01")
+    blueprint_accepted = bool(project.get("content_authorized")) and any(
         item.get("decision_type") == "accept_review"
-        and "borrowed-heaven-production-blueprint-v01" in item.get("authorized_scope", [])
+        and authorized_scopes.intersection(item.get("authorized_scope", []))
         for item in load_decisions()
     )
     longform_active = ACTIVE_BLUEPRINT_PATH.exists()
     legacy_volume1_dry_run = build_volume1_dry_run()
-    longform_volume1_manifest = validate_longform_volume1_manifest(build_longform_volume1_manifest())
+    longform_volume1_manifest = (
+        validate_longform_volume1_manifest(build_longform_volume1_manifest())
+        if longform_active
+        else None
+    )
     longform_readiness = build_longform_readiness() if longform_active else None
     longform_dry_run = build_longform_first100_dry_run() if longform_active else None
     calibration = build_direct_writer_calibration_status()
@@ -546,7 +561,7 @@ def build_production_preflight(
         checks.update({
             "active_longform_blueprint_ready": bool(longform_readiness and longform_readiness["valid"]),
             "longform_first100_non_prose_dry_run_valid": bool(longform_dry_run and longform_dry_run["valid"]),
-            "longform_volume1_intents_valid": longform_volume1_manifest["valid"],
+            "longform_volume1_intents_valid": bool(longform_volume1_manifest and longform_volume1_manifest["valid"]),
         })
     else:
         checks.update({
@@ -968,7 +983,7 @@ def _recover_short_draft(chapter_id: str, prompt: str, draft: str) -> tuple[str,
     requested_max = min(requested_min + 400, 1200)
     closing = "\n\n".join(part for part in draft.strip().split("\n\n")[-3:] if part.strip())
     recovery_prompt = "\n".join([
-        f"你是《借天改命账》{chapter_id} 的受控编辑。只输出一段 {requested_min}-{requested_max} 个中文字符的场景桥段，不要标题、解释或总结。",
+        f"你是{active_project_title()}{chapter_id} 的受控编辑。只输出一段 {requested_min}-{requested_max} 个中文字符的场景桥段，不要标题、解释或总结。",
         "这段将插入既有正文的结尾前，必须保持人物、资产、时间和状态约束；用动作、感官和选择补足冲突，不能解决结尾悬念或新增事实。",
         "原有写作规则：", prompt[-5000:],
         "既有结尾前的片段：", closing,
@@ -1107,7 +1122,7 @@ def dispatch_chapter_draft(chapter_id: str) -> dict[str, Any]:
         errors = _generated_prose_errors(text, metrics)
     if repair_candidate and errors:
         cleanup_prompt = "\n".join([
-            f"你是《借天改命账》{chapter_id} 的受控清稿编辑。只输出清理后的完整小说正文，不要标题、解释或确认。",
+            f"你是{active_project_title()}{chapter_id} 的受控清稿编辑。只输出清理后的完整小说正文，不要标题、解释或确认。",
             "保留候选稿已经发生的情节、人物选择、物证流转、状态结果和结尾钩子，不得新增事实。",
             "删除重复文本、超长粘连段、提示词、工程字段、完成日志、凑字内容和结束词循环；段落适合移动端阅读。",
             "正文必须为 3100-3500 个中文字符。若候选稿尾部损坏，在最后一个完整叙事钩子处结束。",
@@ -2189,7 +2204,12 @@ def load_chapter_runtime_status() -> dict[str, Any]:
     if REGISTRY_PATH.exists():
         registry = _read_json(REGISTRY_PATH)
     else:
-        registry = {"version": VERSION, "project": "《借天改命账》", "chapters": []}
+        registry = {
+            "version": "0.20",
+            "project_id": active_project_id(),
+            "project": active_project_title(),
+            "chapters": [],
+        }
     return {
         "version": VERSION,
         "readiness": build_production_readiness(),

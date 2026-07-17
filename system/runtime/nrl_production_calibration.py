@@ -332,11 +332,8 @@ def build_model_team_attestation_status() -> dict[str, Any]:
     data = json.loads(MODEL_TEAM_ATTESTATION_PATH.read_text(encoding="utf-8"))
     errors = []
     legacy_path = runtime_path(str(data.get("supersedes_for_active_routing", "")))
-    release_path = runtime_path(str(data.get("volume1_submission_manifest", "")))
     if not legacy_path.is_file() or _sha256_path(legacy_path) != data.get("legacy_calibration_sha256"):
         errors.append("legacy calibration hash mismatch")
-    if not release_path.is_file() or _sha256_path(release_path) != data.get("volume1_submission_manifest_sha256"):
-        errors.append("Volume 1 submission manifest hash mismatch")
     items, counts = _generation_evidence()
     evidence = data.get("generation_evidence", {})
     root_hash = hashlib.sha256("\n".join(items).encode("utf-8")).hexdigest()
@@ -344,6 +341,30 @@ def build_model_team_attestation_status() -> dict[str, Any]:
         errors.append("generation evidence root mismatch")
     if counts != evidence.get("writer_model_counts"):
         errors.append("generation model counts mismatch")
+    registry_path = runtime_path("system/production_runtime/chapter_registry.v0.20.json")
+    registry = json.loads(registry_path.read_text(encoding="utf-8")) if registry_path.is_file() else {"chapters": []}
+    accepted = {
+        str(item.get("chapter_id"))
+        for item in registry.get("chapters", [])
+        if item.get("stage") == "chapter_accepted"
+    }
+    generation_chapters = {item.split("/")[-2] for item in items}
+    if not generation_chapters.issubset(accepted):
+        errors.append("generation evidence includes an unaccepted chapter")
+    window_config = data.get("window_review_evidence", {})
+    window_root = runtime_path(str(window_config.get("path", "")))
+    window_items = []
+    window_verdicts = []
+    for path in sorted(window_root.glob("*.json")) if window_root.is_dir() else []:
+        window_items.append(f"{path.relative_to(ROOT).as_posix()}:{_sha256_path(path)}")
+        window_verdicts.append(json.loads(path.read_text(encoding="utf-8")).get("verdict"))
+    window_hash = hashlib.sha256("\n".join(window_items).encode("utf-8")).hexdigest()
+    if len(window_items) != window_config.get("artifact_count") or window_hash != window_config.get("artifact_root_sha256"):
+        errors.append("window review evidence root mismatch")
+    if not window_verdicts or any(
+        verdict != window_config.get("required_verdict") for verdict in window_verdicts
+    ):
+        errors.append("window review evidence is not fully accepted")
     expected_routes = {role: route.get("model") for role, route in ROUTES.items()}
     if data.get("active_routes") != expected_routes:
         errors.append("active model routes do not match the attested decision")

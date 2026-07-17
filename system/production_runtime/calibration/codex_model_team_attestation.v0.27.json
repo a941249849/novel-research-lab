@@ -4,8 +4,12 @@
   "decision": "Codex Sol owns planning and review; Terra owns prose and bounded editing; Luna owns observation and mechanical checks; Antigravity is fallback only.",
   "supersedes_for_active_routing": "system/production_runtime/calibration/direct_codex_writer_calibration.v0.21.json",
   "legacy_calibration_sha256": "d7e17bae2631962d609df8af5e2c76c507893819c677c296cd2506dc9d9d1919",
-  "volume1_submission_manifest": "system/releases/fanqie/borrowed-heaven-volume1/00_submission_manifest.json",
-  "volume1_submission_manifest_sha256": "2f852b4f9f4aaef02322dfb361d89f9617fed2c2813c6db383694f49f7c15ef3",
+  "window_review_evidence": {
+    "path": "system/production_runtime/window_reviews",
+    "artifact_count": 10,
+    "artifact_root_sha256": "1234f74fdcdd59b28c190ef4c6124065092a83d821b37a201a33bfae2f612749",
+    "required_verdict": "ACCEPT"
+  },
   "generation_evidence": {
     "scope": "accepted volume1 generation_cost artifacts retained on disk",
     "artifact_count": 52,

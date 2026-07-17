@@ -22,9 +22,10 @@ All routes execute through the local Codex adapter. The runtime, schemas,
 hashes, Owner Gate, and state settlement remain model-independent authorities.
 The route is promoted by
 `system/production_runtime/calibration/codex_model_team_attestation.v0.27.json`,
-which binds the prior blind calibration, the accepted Volume 1 release
-manifest, and 52 retained generation-cost records. Those records include 14
-accepted Sol generations and 29 accepted Terra generations.
+which binds the prior blind calibration, ten accepted hash-bound Volume 1
+window reviews, and 52 retained generation-cost records whose chapters remain
+accepted. Those records include 14 accepted Sol generations and 29 accepted
+Terra generations.
 
 ## Antigravity Boundary
 

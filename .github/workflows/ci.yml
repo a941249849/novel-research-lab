@@ -11,6 +11,9 @@ permissions:
 jobs:
   runtime:
     runs-on: ubuntu-latest
+    env:
+      # Agent availability is tested separately; integration tests use a stable CLI fixture.
+      NRL_AGY_BIN: /usr/bin/true
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6

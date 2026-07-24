@@ -1,0 +1,32 @@
+{
+  "chapter_id": "chapter-0001",
+  "dramatic_purpose": "地铁工地的旧梁突然失去全部连接，建立退构灾害与父亲旧案。",
+  "must_keep": [
+    "事故记录出现周砺父亲周永直的签名。",
+    "POV 固定为周砺"
+  ],
+  "must_avoid": [
+    "不得引入未登记资产或用旁白代替物质行动",
+    "不得回滚已接受状态"
+  ],
+  "expected_state_deltas": [
+    {
+      "state_id": "v1.ch001.outcome",
+      "asset_id": "char_zhou_li",
+      "field_path": "character.current_state",
+      "after": "事故记录出现周砺父亲周永直的签名。",
+      "before": "active"
+    }
+  ],
+  "required_asset_ids": [
+    "char_zhou_li",
+    "artifact_unnamed_beam",
+    "foreshadow_second_record"
+  ],
+  "active_hook_ids": [
+    "foreshadow_second_record"
+  ],
+  "scene_constraints": [
+    "冲突必须落在具体工艺现场、物证或受影响者选择上"
+  ]
+}

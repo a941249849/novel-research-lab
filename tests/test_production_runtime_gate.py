@@ -1,3 +1,4 @@
+import hashlib
 import sys
 import unittest
 from pathlib import Path
@@ -16,6 +17,22 @@ from nrl_production_runtime import (
 
 
 class ProductionRuntimeGateTests(unittest.TestCase):
+    def bound_legacy_decision(self, decision):
+        baseline = (
+            REPO_ROOT
+            / "system/creation_assets/baselines/borrowed_heaven_canonical_baseline_v0.22.json"
+        )
+        return {
+            **decision,
+            "project_id": "borrowed-heaven",
+            "authorization_contract_version": "0.29",
+            "bound_baseline_sha256": hashlib.sha256(baseline.read_bytes()).hexdigest(),
+            "forbidden_scope": [
+                "borrowed-heaven:raw-corpus-read",
+                "borrowed-heaven:publish",
+            ],
+        }
+
     def test_asset_authorization_does_not_unlock_prose(self):
         self.assertFalse(
             has_bounded_prose_authorization(
@@ -32,6 +49,18 @@ class ProductionRuntimeGateTests(unittest.TestCase):
         self.assertTrue(
             has_bounded_prose_authorization(
                 [
+                    self.bound_legacy_decision({
+                        "decision_type": "authorize_controlled_prose_test",
+                        "authorized_scope": ["bounded_chapter_runtime_v0.20"],
+                    })
+                ]
+            )
+        )
+
+    def test_pre_v029_unbound_prose_authorization_is_retired(self):
+        self.assertFalse(
+            has_bounded_prose_authorization(
+                [
                     {
                         "decision_type": "authorize_controlled_prose_test",
                         "authorized_scope": ["bounded_chapter_runtime_v0.20"],
@@ -41,35 +70,35 @@ class ProductionRuntimeGateTests(unittest.TestCase):
         )
 
     def test_chapter_scope_does_not_unlock_another_chapter(self):
-        decision = {
+        decision = self.bound_legacy_decision({
             "decision_type": "authorize_controlled_prose_test",
             "authorized_scope": ["bounded_chapter_runtime_v0.20:chapter-0002"],
-        }
+        })
         self.assertTrue(has_bounded_prose_authorization([decision], "chapter-0002"))
         self.assertFalse(has_bounded_prose_authorization([decision], "chapter-0003"))
 
     def test_longform_cluster_one_scope_is_bounded_to_first_ten_chapters(self):
-        decision = {
+        decision = self.bound_legacy_decision({
             "decision_type": "authorize_controlled_prose_test",
             "authorized_scope": ["longform_cluster1_v024:chapter-0003"],
-        }
+        })
         self.assertTrue(has_bounded_prose_authorization([decision], "chapter-0003"))
         self.assertFalse(has_bounded_prose_authorization([decision], "chapter-0011"))
 
     def test_volume_one_longform_scope_allows_only_the_authorized_chapter(self):
-        decision = {
+        decision = self.bound_legacy_decision({
             "decision_type": "authorize_controlled_prose_test",
             "authorized_scope": ["longform_volume1_v025:chapter-0011"],
-        }
+        })
         self.assertTrue(has_bounded_prose_authorization([decision], "chapter-0011"))
         self.assertFalse(has_bounded_prose_authorization([decision], "chapter-0012"))
         self.assertFalse(has_bounded_prose_authorization([decision], "chapter-0101"))
 
     def test_intent_authorization_is_not_prose_authorization(self):
-        decision = {
+        decision = self.bound_legacy_decision({
             "decision_type": "authorize_next_phase",
             "authorized_scope": ["bounded_chapter_intent_v0.20"],
-        }
+        })
         self.assertTrue(has_bounded_intent_authorization([decision]))
         self.assertFalse(has_bounded_prose_authorization([decision]))
 

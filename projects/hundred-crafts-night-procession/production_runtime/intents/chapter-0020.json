@@ -1,0 +1,30 @@
+{
+  "chapter_id": "chapter-0020",
+  "dramatic_purpose": "上游新城与下游旧街公开争夺保护顺序。",
+  "must_keep": [
+    "风险分配从技术会议进入公开听证。",
+    "POV 固定为马小满"
+  ],
+  "must_avoid": [
+    "不得引入未登记资产或用旁白代替物质行动",
+    "不得回滚已接受状态"
+  ],
+  "expected_state_deltas": [
+    {
+      "state_id": "v1.ch020.outcome",
+      "asset_id": "char_ma_xiaoman",
+      "field_path": "character.current_state",
+      "after": "风险分配从技术会议进入公开听证。",
+      "before": "旧系统首次因公共异议停止自动执行。"
+    }
+  ],
+  "required_asset_ids": [
+    "char_ma_xiaoman",
+    "faction_old_street_residents",
+    "faction_renewal_bureau"
+  ],
+  "active_hook_ids": [],
+  "scene_constraints": [
+    "冲突必须落在具体工艺现场、物证或受影响者选择上"
+  ]
+}

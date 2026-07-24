@@ -1,0 +1,30 @@
+{
+  "chapter_id": "chapter-0026",
+  "dramatic_purpose": "周砺隐瞒承载上限试图抢回进度。",
+  "must_keep": [
+    "团队在新榫受损前截断流程并暂停其签验权限。",
+    "POV 固定为周砺"
+  ],
+  "must_avoid": [
+    "不得引入未登记资产或用旁白代替物质行动",
+    "不得回滚已接受状态"
+  ],
+  "expected_state_deltas": [
+    {
+      "state_id": "v1.ch026.outcome",
+      "asset_id": "char_zhou_li",
+      "field_path": "character.current_state",
+      "after": "团队在新榫受损前截断流程并暂停其签验权限。",
+      "before": "拒绝者被明确记录为不受惩罚。"
+    }
+  ],
+  "required_asset_ids": [
+    "char_zhou_li",
+    "bond_team_mutual_audit",
+    "ledger_team_authority"
+  ],
+  "active_hook_ids": [],
+  "scene_constraints": [
+    "冲突必须落在具体工艺现场、物证或受影响者选择上"
+  ]
+}

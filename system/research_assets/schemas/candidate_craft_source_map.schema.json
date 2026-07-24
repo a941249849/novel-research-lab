@@ -1,0 +1,88 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "nrl://schemas/candidate-craft-source-map.v0.1",
+  "title": "NRL Candidate Craft Source Map",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "candidate_id",
+    "status",
+    "project_initialization_authorized",
+    "prose_authorized",
+    "research_rules",
+    "domains"
+  ],
+  "properties": {
+    "version": {"const": "0.1"},
+    "candidate_id": {"type": "string", "minLength": 1},
+    "status": {"const": "research_candidate"},
+    "project_initialization_authorized": {"const": false},
+    "prose_authorized": {"const": false},
+    "research_rules": {
+      "type": "array",
+      "minItems": 4,
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    },
+    "domains": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "domain_id",
+          "label",
+          "research_status",
+          "material_scope",
+          "social_scope",
+          "narrative_questions",
+          "sources"
+        ],
+        "properties": {
+          "domain_id": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+          "label": {"type": "string", "minLength": 1},
+          "research_status": {"enum": ["mapped", "pilot_ready", "deep_ready"]},
+          "material_scope": {
+            "type": "array",
+            "minItems": 2,
+            "items": {"type": "string", "minLength": 1}
+          },
+          "social_scope": {
+            "type": "array",
+            "minItems": 2,
+            "items": {"type": "string", "minLength": 1}
+          },
+          "narrative_questions": {
+            "type": "array",
+            "minItems": 2,
+            "items": {"type": "string", "minLength": 1}
+          },
+          "sources": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["source_id", "title", "publisher", "url", "quality", "supports"],
+              "properties": {
+                "source_id": {"type": "string", "pattern": "^[a-z0-9_-]+$"},
+                "title": {"type": "string", "minLength": 1},
+                "publisher": {"type": "string", "minLength": 1},
+                "url": {"type": "string", "pattern": "^https://"},
+                "quality": {"enum": ["primary_institution", "official_catalogue", "museum_research", "scholarly"]},
+                "supports": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {"type": "string", "minLength": 1}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

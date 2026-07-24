@@ -18,6 +18,7 @@
   "combined_store_validation": {
     "valid": true,
     "errors": [],
+    "schema_lane": "legacy_v0.2",
     "summary": {
       "asset_count": 43,
       "family_counts": {

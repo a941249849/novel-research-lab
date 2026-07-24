@@ -19,7 +19,7 @@
     "project_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
     "title": {"type": "string", "minLength": 1},
     "genre": {"type": "string"},
-    "status": {"enum": ["initialized", "designing", "owner_gate", "production_ready", "active_production", "paused", "archived"]},
+    "status": {"enum": ["initialized", "designing", "owner_gate", "controlled_sample_gate", "production_ready", "active_production", "paused", "archived"]},
     "workspace": {"type": "string", "pattern": "^projects/[a-z0-9]+(?:-[a-z0-9]+)*$"},
     "storage_mode": {"enum": ["isolated_v1", "legacy_v0"]},
     "created_at": {"type": "string"},
@@ -28,6 +28,7 @@
     "model_team": {"const": "codex-three-model-team-v0.27"},
     "planning_profile": {"enum": ["generic_v1", "borrowed_heaven_v1"]},
     "content_authorized": {"type": "boolean"},
+    "sample_test_authorized": {"type": "boolean"},
     "legacy_paths": {"type": "object"}
   },
   "additionalProperties": false

@@ -89,3 +89,11 @@ python3 system/runtime/nrl.py production-compact --apply
 ```
 
 `system/releases/review/`、`system/releases/fanqie/`、`system/runtime/studio/`、`apps/studio/dist/`、`.nrl-work/` 和依赖目录均为可再生产物，不进入 Git。历史 `phase*` 文件只承担研究谱系，不参与日常生产。
+候选项目研究可以通过研究资产目录查询，但候选条目不会自动初始化项目或授权正文：
+
+```bash
+python3 system/runtime/nrl.py research-assets --asset-type candidate_craft_research
+python3 system/runtime/nrl.py research-assets --asset-type candidate_source_ecology
+python3 system/runtime/nrl.py research-assets --asset-type candidate_regional_evidence
+python3 system/runtime/nrl.py research-assets --category 木作与古建营造
+```

@@ -7,6 +7,12 @@
       "title": "《借天改命账》",
       "status": "active_production",
       "workspace": "projects/borrowed-heaven"
+    },
+    {
+      "project_id": "hundred-crafts-night-procession",
+      "title": "《百工夜行录》",
+      "status": "owner_gate",
+      "workspace": "projects/hundred-crafts-night-procession"
     }
   ]
 }

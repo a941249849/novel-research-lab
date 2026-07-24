@@ -33,7 +33,7 @@ class MultiProjectRuntimeV028Tests(unittest.TestCase):
         self.assertEqual(result.returncode, expected, result.stderr or result.stdout)
         return result
 
-    def test_default_registry_treats_borrowed_heaven_as_one_project(self) -> None:
+    def test_default_registry_keeps_borrowed_heaven_active_with_isolated_design_project(self) -> None:
         result = subprocess.run(
             ["python3", str(CLI), "projects"],
             cwd=ROOT,
@@ -43,8 +43,12 @@ class MultiProjectRuntimeV028Tests(unittest.TestCase):
         )
         payload = json.loads(result.stdout)
         self.assertEqual(payload["default_project_id"], "borrowed-heaven")
-        self.assertEqual(len(payload["projects"]), 1)
-        self.assertEqual(payload["projects"][0]["title"], "《借天改命账》")
+        self.assertEqual(payload["active_project_id"], "borrowed-heaven")
+        projects = {item["project_id"]: item for item in payload["projects"]}
+        self.assertEqual(set(projects), {"borrowed-heaven", "hundred-crafts-night-procession"})
+        self.assertEqual(projects["borrowed-heaven"]["title"], "《借天改命账》")
+        self.assertEqual(projects["borrowed-heaven"]["status"], "active_production")
+        self.assertEqual(projects["hundred-crafts-night-procession"]["status"], "owner_gate")
 
     def test_new_project_is_initialized_in_an_isolated_workspace(self) -> None:
         with tempfile.TemporaryDirectory(prefix="nrl-multiproject-") as temp:
@@ -71,6 +75,8 @@ class MultiProjectRuntimeV028Tests(unittest.TestCase):
                 self.run_cli(root, "--project", "second-world", "project-validate").stdout
             )
             self.assertTrue(validation["valid"])
+            self.assertTrue(validation["checks"]["creation_assets"]["valid"])
+            self.assertEqual(validation["checks"]["volume_plan"]["status"], "not_present")
             workspace = root / "projects/second-world"
             self.assertTrue((workspace / "project_state.json").is_file())
             self.assertTrue((workspace / "creation_assets/project_assets.json").is_file())

@@ -176,11 +176,13 @@ class ControlPlaneCliTests(unittest.TestCase):
                 "evidence_pack_matrix",
                 "creation_context_index",
                 "production_chapter_runtime",
+                "owner_authorization_gate",
                 "codex_model_team_attestation",
                 "production_output_gate",
                 "cross_domain_invariants",
                 "source_ownership",
                 "verifiable_deep_reading",
+                "literary_semantic_integrity",
                 "architecture_reconciliation",
             },
         )

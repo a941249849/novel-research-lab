@@ -1,0 +1,202 @@
+{
+  "version": "1.0",
+  "project": "《百工夜行录》",
+  "volume": 1,
+  "window": {
+    "start": 61,
+    "end": 66,
+    "name": "正式生产窗口 061-066"
+  },
+  "status": "production_ready",
+  "review_policy": {
+    "sol_window_review_required": true,
+    "independent_antigravity_required": true,
+    "publish_authorized": false
+  },
+  "start_snapshot": [
+    "第61章开始前只承认 canonical initial state 与已接受结算。",
+    "受影响者异议、专业复核和物质后果均不得被摘要覆盖。",
+    "未登记资产、能力、关系和状态变化一律禁止进入正文。"
+  ],
+  "end_target": [
+    "第66章必须完成本窗口不可逆因果链并保留卷级矛盾。",
+    "所有状态变化必须由观察、终审和结算三方绑定同一修订稿。",
+    "下一窗口不得在本窗口审查接受前启动正文。"
+  ],
+  "chapters": [
+    {
+      "chapter_id": "chapter-0061",
+      "working_title": "维护班不是英雄",
+      "event": "围绕维护班不是英雄发生可验证事件：居民决定是否接受五人继续维护。",
+      "scene_anchor": "第61章的具体工艺现场与物证位置",
+      "conflict": "在《维护班不是英雄》现场，马小满必须在专业判断、受影响者异议与现实后果之间作出不可回避的选择。",
+      "character_choice": "面对《维护班不是英雄》的具体后果，马小满选择以可复核的现场行动承担代价，而不是用口头承诺绕过程序。",
+      "irreversible_change": "维护班获得一年试任而非永久授权。",
+      "emotional_turn": "本章选择改变了马小满与共同体之间的信任方向。",
+      "hook_out": "已发生的后果把下一步压力推向《三年表》，且不能回到本章开始状态。",
+      "expected_state_deltas": [
+        "v1.ch061.outcome:char_ma_xiaoman:character.current_state"
+      ],
+      "required_asset_ids": [
+        "char_ma_xiaoman",
+        "faction_maintenance_team",
+        "ledger_team_authority"
+      ],
+      "evidence_refs": [
+        "series-blueprint.v0.3:ma-xiaoman",
+        "series-blueprint.v0.3:narrative-contract",
+        "series-blueprint.v0.3:ensemble-authority"
+      ],
+      "cultural_safety_checks": [
+        "只使用证据卡支持的工艺事实，不把地方知识改写为万能异术",
+        "知识所有权、署名、拒绝和退出必须保留在人物行动中"
+      ],
+      "source_status": "formal_plan"
+    },
+    {
+      "chapter_id": "chapter-0062",
+      "working_title": "三年表",
+      "event": "围绕三年表发生可验证事件：冻结巡检周期、预算、退出与替换条件。",
+      "scene_anchor": "第62章的具体工艺现场与物证位置",
+      "conflict": "在《三年表》现场，程雪青必须在专业判断、受影响者异议与现实后果之间作出不可回避的选择。",
+      "character_choice": "面对《三年表》的具体后果，程雪青选择以可复核的现场行动承担代价，而不是用口头承诺绕过程序。",
+      "irreversible_change": "三年维护期限转为可执行的月度状态表。",
+      "emotional_turn": "本章选择改变了程雪青与共同体之间的信任方向。",
+      "hook_out": "已发生的后果把下一步压力推向《不存在的站》，且不能回到本章开始状态。",
+      "expected_state_deltas": [
+        "v1.ch062.outcome:char_cheng_xueqing:character.current_state"
+      ],
+      "required_asset_ids": [
+        "char_cheng_xueqing",
+        "foreshadow_three_year_limit",
+        "artifact_detachable_joint"
+      ],
+      "evidence_refs": [
+        "series-blueprint.v0.3:cheng-xueqing",
+        "series-blueprint.v0.3:volume1",
+        "civilization-mechanism-library.v0.1:load-distribution"
+      ],
+      "cultural_safety_checks": [
+        "只使用证据卡支持的工艺事实，不把地方知识改写为万能异术",
+        "知识所有权、署名、拒绝和退出必须保留在人物行动中"
+      ],
+      "source_status": "formal_plan"
+    },
+    {
+      "chapter_id": "chapter-0063",
+      "working_title": "不存在的站",
+      "event": "围绕不存在的站发生可验证事件：核对全国异常地图的缺口。",
+      "scene_anchor": "第63章的具体工艺现场与物证位置",
+      "conflict": "在《不存在的站》现场，马小满必须在专业判断、受影响者异议与现实后果之间作出不可回避的选择。",
+      "character_choice": "面对《不存在的站》的具体后果，马小满选择以可复核的现场行动承担代价，而不是用口头承诺绕过程序。",
+      "irreversible_change": "不存在节点向责任账发送一条带真实校时的求援。",
+      "emotional_turn": "本章选择改变了马小满与共同体之间的信任方向。",
+      "hook_out": "已发生的后果把下一步压力推向《新债第一笔》，且不能回到本章开始状态。",
+      "expected_state_deltas": [
+        "v1.ch063.outcome:char_ma_xiaoman:character.current_state"
+      ],
+      "required_asset_ids": [
+        "char_ma_xiaoman",
+        "foreshadow_nonexistent_node",
+        "foreshadow_twelve_nodes"
+      ],
+      "evidence_refs": [
+        "series-blueprint.v0.3:ma-xiaoman",
+        "series-blueprint.v0.3:volume1-hook",
+        "series-blueprint.v0.3:continuous-mainline"
+      ],
+      "cultural_safety_checks": [
+        "只使用证据卡支持的工艺事实，不把地方知识改写为万能异术",
+        "知识所有权、署名、拒绝和退出必须保留在人物行动中"
+      ],
+      "source_status": "formal_plan"
+    },
+    {
+      "chapter_id": "chapter-0064",
+      "working_title": "新债第一笔",
+      "event": "围绕新债第一笔发生可验证事件：首轮巡检发现风险舱仍在向下游转移维护成本。",
+      "scene_anchor": "第64章的具体工艺现场与物证位置",
+      "conflict": "在《新债第一笔》现场，林岱必须在专业判断、受影响者异议与现实后果之间作出不可回避的选择。",
+      "character_choice": "面对《新债第一笔》的具体后果，林岱选择以可复核的现场行动承担代价，而不是用口头承诺绕过程序。",
+      "irreversible_change": "团队记录第一笔自身制造的新债。",
+      "emotional_turn": "本章选择改变了林岱与共同体之间的信任方向。",
+      "hook_out": "已发生的后果把下一步压力推向《各自回家》，且不能回到本章开始状态。",
+      "expected_state_deltas": [
+        "v1.ch064.outcome:char_lin_dai:character.current_state"
+      ],
+      "required_asset_ids": [
+        "char_lin_dai",
+        "technique_compartment_transfer",
+        "artifact_responsibility_ledger"
+      ],
+      "evidence_refs": [
+        "series-blueprint.v0.3:lin-dai",
+        "civilization-mechanism-library.v0.1:risk-compartmentalization",
+        "civilization-mechanism-library.v0.1:record-repair"
+      ],
+      "cultural_safety_checks": [
+        "只使用证据卡支持的工艺事实，不把地方知识改写为万能异术",
+        "知识所有权、署名、拒绝和退出必须保留在人物行动中"
+      ],
+      "source_status": "formal_plan"
+    },
+    {
+      "chapter_id": "chapter-0065",
+      "working_title": "各自回家",
+      "event": "围绕各自回家发生可验证事件：用五人的生计与家庭后果结束案件。",
+      "scene_anchor": "第65章的具体工艺现场与物证位置",
+      "conflict": "在《各自回家》现场，杜承礼必须在专业判断、受影响者异议与现实后果之间作出不可回避的选择。",
+      "character_choice": "面对《各自回家》的具体后果，杜承礼选择以可复核的现场行动承担代价，而不是用口头承诺绕过程序。",
+      "irreversible_change": "五人都保留独立工作和拒绝下一任务的权利。",
+      "emotional_turn": "本章选择改变了杜承礼与共同体之间的信任方向。",
+      "hook_out": "已发生的后果把下一步压力推向《夜行初录》，且不能回到本章开始状态。",
+      "expected_state_deltas": [
+        "v1.ch065.outcome:char_du_chengli:character.current_state"
+      ],
+      "required_asset_ids": [
+        "char_du_chengli",
+        "bond_team_mutual_audit",
+        "faction_maintenance_team"
+      ],
+      "evidence_refs": [
+        "series-blueprint.v0.3:du-chengli",
+        "series-blueprint.v0.3:ensemble",
+        "series-blueprint.v0.3:narrative-contract"
+      ],
+      "cultural_safety_checks": [
+        "只使用证据卡支持的工艺事实，不把地方知识改写为万能异术",
+        "知识所有权、署名、拒绝和退出必须保留在人物行动中"
+      ],
+      "source_status": "formal_plan"
+    },
+    {
+      "chapter_id": "chapter-0066",
+      "working_title": "夜行初录",
+      "event": "围绕夜行初录发生可验证事件：把卷一方法写成有限、可撤回的临时协议。",
+      "scene_anchor": "第66章的具体工艺现场与物证位置",
+      "conflict": "在《夜行初录》现场，周砺必须在专业判断、受影响者异议与现实后果之间作出不可回避的选择。",
+      "character_choice": "面对《夜行初录》的具体后果，周砺选择以可复核的现场行动承担代价，而不是用口头承诺绕过程序。",
+      "irreversible_change": "十二节点中的第二处开始退构，卷二角色授权危机启动。",
+      "emotional_turn": "本章选择改变了周砺与共同体之间的信任方向。",
+      "hook_out": "已发生的后果把下一步压力推向《第二节点退构》，且不能回到本章开始状态。",
+      "expected_state_deltas": [
+        "v1.ch066.outcome:char_zhou_li:character.current_state"
+      ],
+      "required_asset_ids": [
+        "char_zhou_li",
+        "foreshadow_twelve_nodes",
+        "naming_civic_craft_lexicon"
+      ],
+      "evidence_refs": [
+        "series-blueprint.v0.3:zhou-li",
+        "series-blueprint.v0.3:continuous-mainline",
+        "series-blueprint.v0.3:anti-formula"
+      ],
+      "cultural_safety_checks": [
+        "只使用证据卡支持的工艺事实，不把地方知识改写为万能异术",
+        "知识所有权、署名、拒绝和退出必须保留在人物行动中"
+      ],
+      "source_status": "formal_plan"
+    }
+  ]
+}

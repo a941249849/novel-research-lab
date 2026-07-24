@@ -1,0 +1,56 @@
+{
+  "version": "0.1",
+  "mission_id": "hundred-crafts-volume1-controlled-sample-v0.1",
+  "project_id": "hundred-crafts-night-procession",
+  "owner_decision_id": "owner_hundred_crafts_volume1_controlled_samples_20260718",
+  "bound_review_path": ".agent-handoff/antigravity/responses/hundred-crafts-volume1-preprose-review-v01.md",
+  "status": "sample_test_passed",
+  "completed_at": "2026-07-18T22:20:00+08:00",
+  "validation_report": "validation/controlled_sample_validation.v0.1.json",
+  "internal_review": "production_runtime/sample_reviews/sol-literary-review-v0.2.md",
+  "external_review": ".agent-handoff/antigravity/responses/hundred-crafts-controlled-samples-rereview-v02.md",
+  "review_result": {
+    "sample_test_passed": true,
+    "internal_verdict": "ACCEPT_WITH_TEXT_REVISIONS",
+    "external_verdict": "ACCEPT_SAMPLE_TEST",
+    "final_text_blockers_closed": ["STB-01", "STB-02", "STB-03", "008-010-pronoun-clarity"],
+    "next_gate": "owner_authorized_controlled_continuity_validation"
+  },
+  "routes": {
+    "writer": "gpt-5.6-terra",
+    "observer": "gpt-5.6-luna",
+    "reviewer": "gpt-5.6-sol",
+    "external_reviewer": "antigravity:Gemini 3.5 Flash (High)"
+  },
+  "windows": [
+    {
+      "window_id": "sample-008-010",
+      "chapters": [8, 9, 10],
+      "purpose": "档案悬疑、联合加固与团队强制卸载",
+      "output_path": "production_runtime/samples/window-008-010.md",
+      "required_asset_ids": ["char_ma_xiaoman", "char_zhou_li", "char_cheng_xueqing", "char_lin_dai", "artifact_responsibility_ledger", "artifact_unnamed_beam", "foreshadow_second_record", "technique_joint_signoff", "bond_team_mutual_audit", "ledger_team_authority"]
+    },
+    {
+      "window_id": "sample-024-026",
+      "chapters": [24, 25, 26],
+      "purpose": "风险转舱、居民选择与权限暂停",
+      "output_path": "production_runtime/samples/window-024-026.md",
+      "required_asset_ids": ["char_lin_dai", "char_zhou_li", "char_ma_xiaoman", "technique_compartment_transfer", "faction_old_street_residents", "artifact_responsibility_ledger", "bond_team_mutual_audit", "ledger_team_authority"]
+    },
+    {
+      "window_id": "sample-049-051",
+      "chapters": [49, 50, 51],
+      "purpose": "暴雨抢修、公开报废与盔头悬疑",
+      "output_path": "production_runtime/samples/window-049-051.md",
+      "required_asset_ids": ["char_cheng_xueqing", "char_zhou_li", "char_du_chengli", "npc_xiao_bei", "artifact_detachable_joint", "artifact_role_helmet", "faction_renewal_bureau", "technique_load_reading"]
+    }
+  ],
+  "quality_contract": {
+    "chapter_character_range": [2600, 3400],
+    "must_have": ["可观察动作", "生活压力", "人物分歧", "不可逆状态变化", "自然章节收束"],
+    "must_not_have": ["机制说明书口吻", "五人轮流发表观点", "同义概念反复", "固定转折句式", "真实宗教或族群符号挪用", "训练集原文或专名"]
+  },
+  "continuous_prose_authorized": false,
+  "controlled_continuity_validation_authorized": false,
+  "publish_authorized": false
+}

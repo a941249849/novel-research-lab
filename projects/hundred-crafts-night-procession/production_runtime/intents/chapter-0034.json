@@ -1,0 +1,30 @@
+{
+  "chapter_id": "chapter-0034",
+  "dramatic_purpose": "寻找能复核戏楼旧结构的退休工匠。",
+  "must_keep": [
+    "严师傅同意只提供判断，不替团队签字。",
+    "POV 固定为杜承礼"
+  ],
+  "must_avoid": [
+    "不得引入未登记资产或用旁白代替物质行动",
+    "不得回滚已接受状态"
+  ],
+  "expected_state_deltas": [
+    {
+      "state_id": "v1.ch034.outcome",
+      "asset_id": "char_du_chengli",
+      "field_path": "character.current_state",
+      "after": "严师傅同意只提供判断，不替团队签字。",
+      "before": "戏班内部出现支持恢复强制角色的人。"
+    }
+  ],
+  "required_asset_ids": [
+    "char_du_chengli",
+    "npc_yan_shifu",
+    "faction_opera_troupe"
+  ],
+  "active_hook_ids": [],
+  "scene_constraints": [
+    "冲突必须落在具体工艺现场、物证或受影响者选择上"
+  ]
+}

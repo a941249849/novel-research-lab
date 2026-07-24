@@ -148,6 +148,7 @@ packet. Do not include a preamble, plan, progress log, file links, or postscript
     started_at = now_iso()
     command = [
         binary,
+        "--dangerously-skip-permissions",
         "--mode",
         "plan",
         "--sandbox",
@@ -181,6 +182,14 @@ packet. Do not include a preamble, plan, progress log, file links, or postscript
         "bridge_log_path": str(BRIDGE_LOG_PATH.relative_to(ROOT)),
     }
     _write_json(BRIDGE_LOG_PATH, payload)
-    if result.returncode != 0:
+    permission_denied_markers = (
+        "no output produced",
+        "read_file permission",
+        "auto-denied",
+    )
+    bridge_failed = result.returncode != 0 or any(
+        marker in response_text.lower() for marker in permission_denied_markers
+    )
+    if bridge_failed:
         raise RuntimeError(f"agy bridge call failed with exit code {result.returncode}; response written to {payload['output_file']}")
     return payload

@@ -1,0 +1,30 @@
+{
+  "chapter_id": "chapter-0009",
+  "dramatic_purpose": "首次尝试现代支撑与旧榫卯联合。",
+  "must_keep": [
+    "联合结构要求知情承重与双人签验，单方施工被禁止。",
+    "POV 固定为周砺"
+  ],
+  "must_avoid": [
+    "不得引入未登记资产或用旁白代替物质行动",
+    "不得回滚已接受状态"
+  ],
+  "expected_state_deltas": [
+    {
+      "state_id": "v1.ch009.outcome",
+      "asset_id": "char_zhou_li",
+      "field_path": "character.current_state",
+      "after": "联合结构要求知情承重与双人签验，单方施工被禁止。",
+      "before": "团队错过第一次封闭窗口，但保住周砺的身份自主权。"
+    }
+  ],
+  "required_asset_ids": [
+    "char_zhou_li",
+    "char_cheng_xueqing",
+    "technique_joint_signoff"
+  ],
+  "active_hook_ids": [],
+  "scene_constraints": [
+    "冲突必须落在具体工艺现场、物证或受影响者选择上"
+  ]
+}

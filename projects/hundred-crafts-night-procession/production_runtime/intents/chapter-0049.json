@@ -1,0 +1,30 @@
+{
+  "chapter_id": "chapter-0049",
+  "dramatic_purpose": "发现替代件与旧梁存在累积偏差。",
+  "must_keep": [
+    "程雪青主动叫停并废弃已完成构件。",
+    "POV 固定为程雪青"
+  ],
+  "must_avoid": [
+    "不得引入未登记资产或用旁白代替物质行动",
+    "不得回滚已接受状态"
+  ],
+  "expected_state_deltas": [
+    {
+      "state_id": "v1.ch049.outcome",
+      "asset_id": "char_cheng_xueqing",
+      "field_path": "character.current_state",
+      "after": "程雪青主动叫停并废弃已完成构件。",
+      "before": "公开说明必须同时列出受益者与受损者。"
+    }
+  ],
+  "required_asset_ids": [
+    "char_cheng_xueqing",
+    "artifact_detachable_joint",
+    "technique_load_reading"
+  ],
+  "active_hook_ids": [],
+  "scene_constraints": [
+    "冲突必须落在具体工艺现场、物证或受影响者选择上"
+  ]
+}

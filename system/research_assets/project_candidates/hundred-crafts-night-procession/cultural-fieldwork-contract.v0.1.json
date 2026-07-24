@@ -1,0 +1,90 @@
+{
+  "version": "0.1",
+  "candidate_id": "hundred-crafts-night-procession",
+  "gate_scope": "volume_1_yue_opera_backstage_and_headgear",
+  "status": "web_evidence_ready_practitioner_verification_pending",
+  "prose_authorized": false,
+  "evidence_snapshot_date": "2026-07-18",
+  "evidence": [
+    {
+      "evidence_id": "yue-headgear-taxonomy-gz-01",
+      "scope": "yue_opera_specific",
+      "source_tier": "A",
+      "title": "粤剧小百科——盔头",
+      "publisher": "广州市委网信办转载中国粤剧网",
+      "url": "https://igz.gzwxb.gov.cn/context/contextId/200630",
+      "supported_claim": "粤剧盔头名称、构型和角色身份存在剧种内的具体对应，不可把盔头写成无差别的通用冠帽。",
+      "limitations": "分类资料不说明当代后台保管、勒头、维修、演出事故与演员身体经验。"
+    },
+    {
+      "evidence_id": "guangzhou-costume-protection-02",
+      "scope": "guangzhou_costume_ecology",
+      "source_tier": "A",
+      "title": "广州市文化广电旅游局关于市十六届人大五次会议第20252134号建议答复的函",
+      "publisher": "广州市文化广电旅游局",
+      "url": "https://wglj.gz.gov.cn/gkmlpt/content/10/10342/post_10342872.html",
+      "supported_claim": "广州戏服制作具有保护单位、设计与制作工作室、实物展示和专门存放空间，并持续进行图稿与实物建档。",
+      "limitations": "行政答复证明保护生态和建档规模，不提供演出当晚的穿戴、维修、交接和事故流程。"
+    },
+    {
+      "evidence_id": "guangzhou-costume-practitioner-03",
+      "scope": "guangzhou_costume_practitioner",
+      "source_tier": "B",
+      "title": "当新生代碰上新时代：广州戏服制作技艺传承人何凤婷访谈",
+      "publisher": "广州日报大洋网",
+      "url": "https://news.dayoo.com/guangzhou/202410/29/139995_54738927.htm",
+      "supported_claim": "广州戏服制作包含设计、画图、针图、印图、上架、刺绣、裁剪、车缝等连续工序，并同时受舞台灯光、历史元素和服装设计约束。",
+      "limitations": "访谈聚焦制作与传承，尚不能替代粤剧演员、盔箱管理者和现场修补人员口述。"
+    },
+    {
+      "evidence_id": "xiqu-headbox-workflow-04",
+      "scope": "generic_xiqu_transfer_limited",
+      "source_tier": "A",
+      "title": "非遗知识课堂：戏曲舞台上的盔头（四）",
+      "publisher": "中国非物质文化遗产网·中国非物质文化遗产数字博物馆",
+      "url": "https://www.ihchina.cn/ky_zx_detail/22002.html",
+      "supported_claim": "通用戏曲院团中，盔箱由专人管理，盔箱师傅还承担给演员勒头和戴盔头的专业工作；佩戴不牢可能构成舞台事故。",
+      "limitations": "该材料是跨剧种概述，只能支持设置专业岗位和安全复核，禁止直接宣称其全部规矩就是粤剧当代现场惯例。"
+    },
+    {
+      "evidence_id": "yue-costume-stage-history-05",
+      "scope": "yue_opera_costume_stage_context",
+      "source_tier": "B",
+      "title": "粤剧申遗15年：那些惊艳了百年时光的戏服",
+      "publisher": "南方日报南方+",
+      "url": "https://static.nfnews.com/content/202404/14/c8784480.html",
+      "supported_claim": "粤剧戏服用于塑造角色、服务表演和烘托情境；广州戏服制作与广绣工艺、舞台技师设计和具体剧目使用相关。",
+      "limitations": "展览报道不能证明盔箱日常管理、汗湿损耗、应急修补或演员拒绝穿戴的现场程序。"
+    }
+  ],
+  "fiction_boundary": {
+    "artifact_id": "artifact_role_helmet",
+    "rule": "无署名守门盔及其角色覆盖能力是项目原创超凡装置，不得声称来自真实粤剧信仰、仪式或盔头功能。",
+    "required_disclosure_in_design": true,
+    "real_headgear_names_or_sacred_symbols_allowed_without_specific_review": false
+  },
+  "transfer_rules": [
+    "粤剧专属分类可用于角色与造型基线，但不能推导后台管理流程。",
+    "通用戏曲盔箱资料仅可用于提出专业岗位、安全复核与访谈问题，不得无标注迁移为粤剧事实。",
+    "展览和保护报道可证明工艺生态，不能替代演出现场观察。",
+    "项目超凡规则必须在资产中先冻结，再进入情节；不得借真实剧种为虚构能力背书。"
+  ],
+  "required_before_continuous_prose": [
+    "取得至少一份可追溯的粤剧演员穿戴或卸装口述",
+    "取得至少一份可追溯的粤剧盔箱、衣箱或后台管理从业者材料",
+    "取得至少一份粤剧戏服或头饰现场修补、汗湿损耗或演出应急材料",
+    "由独立审查者确认通用戏曲资料未被冒充为粤剧专属事实"
+  ],
+  "approval_record": {
+    "approved": false,
+    "reviewers": [],
+    "approval_date": null,
+    "evidence_paths": [],
+    "remaining_debt": [
+      "粤剧演员穿戴与卸装一手口述",
+      "粤剧盔箱或衣箱管理者一手口述",
+      "粤剧现场修补和演出应急一手记录"
+    ]
+  },
+  "current_effect": "允许返修已授权受控样章中的虚构盔头边界；持续阻断包含粤剧后台细节的连续正文授权。"
+}

@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "project_id": "hundred-crafts-night-procession",
+  "valid": true,
+  "bound_baseline_sha256": "af8fadce1b6d52c1c47f25a5d6f3437a056ee8c201d69625d1f50ab485cb09c4",
+  "sol_verdict": "ACCEPT",
+  "sol_review_path": "projects/hundred-crafts-night-procession/validation/literary-semantic-sol-review.v0.29.md",
+  "sol_review_sha256": "2e27cf1cdd1c77a7625689728aa9a5dd8f92aa1e9979d5b2793fc70f7e5e2fc5",
+  "antigravity_verdict": "ACCEPT",
+  "antigravity_review_path": ".agent-handoff/antigravity/responses/hundred-crafts-literary-semantic-v029.md",
+  "antigravity_review_sha256": "d71839400b0e150fee9c927df23f981a83ffaa570c50d6330c1f2beb9b120062",
+  "review_scope": {
+    "volume": 1,
+    "start_chapter": 1,
+    "end_chapter": 66,
+    "formal_window_count": 7
+  },
+  "authorized_recommendation": {
+    "start_chapter": 1,
+    "end_chapter": 10
+  },
+  "forbidden": [
+    "chapter-0011-or-later",
+    "bulk-or-continuous-production",
+    "release-package",
+    "upload",
+    "publish"
+  ]
+}

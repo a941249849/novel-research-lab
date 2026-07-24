@@ -1,0 +1,399 @@
+{
+  "version": "1.1",
+  "project_id": "hundred-crafts-night-procession",
+  "status": "locked_after_literary_semantic_remediation",
+  "canonical_inputs": [
+    {
+      "path": "projects/hundred-crafts-night-procession/project_state.json",
+      "sha256": "48546fca0353f676e310cce71d311e1220bae782282010c667b3f364c0feb685"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/design/story_bible.md",
+      "sha256": "eaa47f68551d8982eba2566000a2e1046070562ebd683acc79719fe23d2f4a70"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/design/outline_tree.md",
+      "sha256": "f4890b7b8a300deb97fd2ec470e8ed205fbdd4de0fe231d7dee4fac7a4923e43"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/design/production_blueprint.md",
+      "sha256": "2788196e317f44b745faa14e78f7e429ce2da863616541e7292eea2baeedfebe"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/design/character_highlight_matrix.v1.json",
+      "sha256": "b9a85484f89a10fa4dbeb3e087e24013756149a205f08985aa55a3420e20d42f"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/design/world_progression_atlas.v1.json",
+      "sha256": "84eddb0e476c3fa3e46ca6f3cdb72d22806e1e580416e1b33f6d4c08fbfa12ec"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/design/embedded_history_engine.v1.json",
+      "sha256": "edeb003983340d3c0502d93cdf55c57da1af8b69e3ac4492f7ecb0f67c2eb65a"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/plans/volume1_semantic_beat_contract.v1.json",
+      "sha256": "faba9f6b0dd9ed96e91582b0e5a8fe3f42e9a6a277de127d58c73bddf01d8e05"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/creation_assets/project_assets.json",
+      "sha256": "3f6f8cf6af4442b4492a3e7fab0a4bdb98ba95c983da477848f3e56977ce8582"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/plans/volume1_outline.v1.json",
+      "sha256": "7b2813efec593d4f12a3cdf567eaf440e35b9325e32a7b87e2a56fc54f9cf19a"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/plans/volume1_production_manifest.v1.json",
+      "sha256": "8a3df3683edc850553e00ce9224eeae1b0d92e68afcc771c01c0ed695995dc3c"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/state/canonical_initial_state.v1.json",
+      "sha256": "163720128d7313f6ccb5e852844de5c266d75b1cf599b6224ec3449a8ac5569d"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/chapter_titles.volume1.json",
+      "sha256": "185bea0164b78b9abcb26f6e056de210bae8cf9504e48dff27b8116516bd7649"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/production_readiness/audit-contract.v0.1.json",
+      "sha256": "fef5c5d5cc67af88addf6a898c3b910cbdc586dc46c43ab593617cbf61969609"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/quality/first_window_quality_contract.v1.json",
+      "sha256": "4cfd4f4619ef25d2af715a050def47cfaeb96b0855d2ef4b39e640ab2f4c2e54"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/quality/calibration_quality_evidence.v1.json",
+      "sha256": "fc3366e5867c9ee6fb10689ffec3b59f124e43f16a12553dc0d3168a54dc96de"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/validation/project_reconciliation.json",
+      "sha256": "e6ccbcb0dd2fc0019a01a2c587806e63bd85825fec08a0aacfe15f0c2c10b69c"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/validation/project_reconciliation_application.json",
+      "sha256": "348623de5817af6cec674a33a6f3eeb13619b299f20359ebbb515caf4b7c908d"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/validation/literary_semantic_application.v1.json",
+      "sha256": "63a3a13e91597143bab8cdebf2fc5c6443e9fe70c2d9793930e3d0ea23e68297"
+    },
+    {
+      "path": "system/runtime/nrl_literary_semantics.py",
+      "sha256": "359a0c37fdb87354e9abdf3b0cf62bd3b476c4d5a139751d9f886bc61a35e9cd"
+    },
+    {
+      "path": "system/runtime/nrl_production_runtime.py",
+      "sha256": "3c3406634fefb30a1652c06197e0a0f4ad71593445435d5c44c6f1951d2cb174"
+    },
+    {
+      "path": "system/runtime/nrl_project_production.py",
+      "sha256": "d2e5302704877834f6be58508e871f1ff14a0b3d74776e4c239c959ae3ceccd1"
+    },
+    {
+      "path": "system/runtime/nrl_model_router.py",
+      "sha256": "7870d241464d939a0cc1020b2c926e2c6427c4fc5f6624bb742e9b02cb02857d"
+    },
+    {
+      "path": "system/production_runtime/schemas/continuity_audit.schema.json",
+      "sha256": "5fa5ec0f95afaabd0f76934e9e2910e130f605227175710d448aff0bdeb5b90b"
+    },
+    {
+      "path": "system/production_runtime/schemas/story_window.schema.json",
+      "sha256": "40a65d89119f4cf33b8021a316e4761dcf220bb1d214062ea7cf6e04c4004975"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/story_windows/window-001-010.v1.json",
+      "sha256": "ad7fea472aa68999de0130d5a00e4d1f211d409ae41d2b59338773cf39390815"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/story_windows/window-011-020.v1.json",
+      "sha256": "1912ddd576479b13188c529b40a4c88658c599f2c1dbbc470efdf129f5d6e02c"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/story_windows/window-021-030.v1.json",
+      "sha256": "4f5983844ff8c0f80adcddfe00da4222419dc6ee8e4e5fa7066c2b2eb7002308"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/story_windows/window-031-040.v1.json",
+      "sha256": "a54c1c7a477c9be6a527486233f805353ceb555f5404fea2035bcc15197866bc"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/story_windows/window-041-050.v1.json",
+      "sha256": "56c34b90dab59bcaa11e14d6e3074419b0348b981620d845098a0ac0dcf1b81c"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/story_windows/window-051-060.v1.json",
+      "sha256": "145f1cf93b41629c7ed2fbb210884f1552a278256ae48d37d1e6c1603de4f161"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/story_windows/window-061-066.v1.json",
+      "sha256": "e31d7eb3a714ee98b2fea51af0575d051a65d1bdb71572afdabcda935f52eb23"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0001.json",
+      "sha256": "0c6bf07b319adea8173825c553528a2fd9561f6f595edb60c5de3b7519a4803f"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0002.json",
+      "sha256": "b4cf86814ceffd35e0cef0d74970ca94094345bac574fe70b513857706c6b60b"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0003.json",
+      "sha256": "c43bc8be07bf16a5035b16b857c06fa5e77f8a4e20b7aaeea3fc06d00459b009"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0004.json",
+      "sha256": "901d47f97c58e1611410568fda1c2409f36c86fb10f6279b2e45692ce2f43278"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0005.json",
+      "sha256": "eddd7e8d4b42287a5ad3f29b33beca8b59acfce3ef31335aa8183b6674b63790"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0006.json",
+      "sha256": "d467fd09ce9db742c0002599b9bec4ef53c89915175ad407f9357bc44febff65"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0007.json",
+      "sha256": "d312f3b53ddb77f638eb5b8245c4a4629a3df325724a40ef363e4faffda42bec"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0008.json",
+      "sha256": "f17675ec8f9e8b965d6e6cee9a1e0df2d98c563675f49ee49f1de51aa75c9fed"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0009.json",
+      "sha256": "720db048730c0b4c2609350bc61b78caf7c5da413b03cccb3442c8eb47b4cff0"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0010.json",
+      "sha256": "6b8d997bb32e468568a681bb2d50a1103fcb03f87075638ab5c3f743f2199b76"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0011.json",
+      "sha256": "a9a1118481fa57cb2f249198a74d0cf60c25b2529fe79300a07bda04b478a202"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0012.json",
+      "sha256": "58493052895f1743c608551e1dacdb2ade4a8d6802ec68aad0b5516c8b9ccbaf"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0013.json",
+      "sha256": "fe2d556645f829dcbf0ec9d3e01708f60d142b8e7263462ce55f4d39dc50b99f"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0014.json",
+      "sha256": "675013a2a97f24d89975948ef339fa14bb7d0cd835d93dfe1564d17820acb7a6"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0015.json",
+      "sha256": "649331305cddabdede5ecce908d192648d8f74098d826776f747e5d5e65af7b6"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0016.json",
+      "sha256": "d891c1335fba7e9577008b6ba57cd5887519eb70590a94403cddd2f3952aeb28"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0017.json",
+      "sha256": "df2ee1f8004d4e1dc4d568a97c2521df1bb198aeaa0f0dfcc1e24861f42f48d8"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0018.json",
+      "sha256": "1abb0cb055ad726d60e84ba5560c07d0d947c93fea4cb82d9efe692eca565c07"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0019.json",
+      "sha256": "7cbf279cd4bb50f594ae7dd7469f71cac2da83874ff41775b61f6566e0c846e5"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0020.json",
+      "sha256": "fc7f6f087b9b0f157da4420eb29273860ec24c167c0aa3bd4d43edf0dfe148b1"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0021.json",
+      "sha256": "fbfba8bac71387995b2cbe38aa0014926711399d08d0c474653c80ea5d7c769f"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0022.json",
+      "sha256": "db6fe30b8785a4a2b744e8d243b8bb0d713ff575d49e3e7fe6946458e36ed642"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0023.json",
+      "sha256": "8c9a64f1a2088363f59f9648527d8998da67c823ed31e848b0cbc778fdc2e9c4"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0024.json",
+      "sha256": "04d7658f7ba017028b47f6a7b58101491e75235e583e70d68e18f0d50983e1f0"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0025.json",
+      "sha256": "d0060550bedd23afe1aa99f4a13c8c4f85e228945063dd222085f9290a3aefd4"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0026.json",
+      "sha256": "e3995625ea419e96286df826f272cdcac844c4871ac0bf802f8c2d50c02e8554"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0027.json",
+      "sha256": "d60d43e3f65eb53f9dd3b2bf2a260b1eae97f7ad5947c68b737fb1ccc30c1ac3"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0028.json",
+      "sha256": "0434a9c65df7c7ccd0810fe40b7081b22f7aadf31464ae94b03f97abab76f167"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0029.json",
+      "sha256": "11578798bd5d6ea659f175d788ee02894660837a72330226ae28db1e32b2b930"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0030.json",
+      "sha256": "7b9fd26f4621950b40459da41edffc53ede34e7143fb66841c62b1be8dfde1d3"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0031.json",
+      "sha256": "9e6668eea61f223463436013c69a3eb97245cd31238262faef9b6a796e838834"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0032.json",
+      "sha256": "7f38a29270dfa4f6debdb90b1bf125ec7720a7827fbdf829973c912228a33e09"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0033.json",
+      "sha256": "5c8b5fd3d880cc7274981af08725ad531bb16fdbced0a977b37cdf29fb5b66dc"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0034.json",
+      "sha256": "4994664bccbba9ec748056e452c070faa91735a7bf6ff1a045217a9f01df942b"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0035.json",
+      "sha256": "a6831e90466ca46ab4728a26cd14dd089db98ffd9f4770b347848718577cd728"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0036.json",
+      "sha256": "bd673447d6faa343c9e0d93732128d1a312680ded5c668c6ab822893429d7dce"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0037.json",
+      "sha256": "b65f5e27e30cb37dd460a48b9e599754911ee1f94024a1013913a14dc6978bd8"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0038.json",
+      "sha256": "83cd126d23ebc6d36fb0a16d0c28d94bd39b8838b3317c448126269b31cbaa48"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0039.json",
+      "sha256": "358f6bac4d323a4392746e536498e7da77f61ac5f2304ffe8f29ff3c0aacc86a"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0040.json",
+      "sha256": "abed38aa703bdebfc345185a98cfc785b1f5e562e9babb0063cd01941bd458de"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0041.json",
+      "sha256": "1d3a4ec13755258c68f8034e3a70bec631b0728566a4474f1abd7ab9609db972"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0042.json",
+      "sha256": "b0e4bfafdb5ba328b7f0dee32ad987cc5097056767792fcb9301212476433792"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0043.json",
+      "sha256": "dc187872b2c952851b6ac6cf63b0ced21359997cb6e15237770110372d9f9be3"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0044.json",
+      "sha256": "ac479b5070ebfba7d6f90a3158dd649ce2f2c48b2bd850ca39c4b14af4685311"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0045.json",
+      "sha256": "2fafcefb76d47590b0a504d6720d50a384d7d81dc97db053cab61326606ba924"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0046.json",
+      "sha256": "6edb2e3b2805e9ecc9f404ec301a75c1e4f5b7e7b669459a1ef3609c08cb9ff6"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0047.json",
+      "sha256": "e030719134da7d8996cf734fc27f1316ab1305f0074c8087f13b5ec630c08663"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0048.json",
+      "sha256": "7d959424bac09149ead5d81da019d1177b910c7f83bd0ec711ef1cce8ad05f38"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0049.json",
+      "sha256": "b231b23cf834ebbd83faaaa1f6d20beae76714cf9bc026194b444078c9b9b587"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0050.json",
+      "sha256": "4f0c842a7bf25fbed5376d7bee068210536ef7c4b0eeefff9ad32109ba375997"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0051.json",
+      "sha256": "9c732b799968627f3293836477ba94e5a8f10176d98f0b20b3559e2fae9d19cf"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0052.json",
+      "sha256": "c46b8b3c9cd1b537af6e2728d83552a43cebad822e101aec9ccfd80a0f61f04c"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0053.json",
+      "sha256": "c46bfc3592434e62e123ea73c96b3434c8280236641fd6161c60a6f3bbcb3e16"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0054.json",
+      "sha256": "690e7eb02c16dfd1ac4e24f866e78a7e9857f2101e8ff759274d476cace1e9ff"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0055.json",
+      "sha256": "6067a834c2133f61569428f92b5c151b7806f34e774d39bf24c6bb0b276a3876"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0056.json",
+      "sha256": "71a5cd3a176018cd23406e95f86856fad36bd604f26218cd41295507097cc475"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0057.json",
+      "sha256": "f82159b8bfffb28d97eb96fc5777fae1a950fe014def86289ee323be7efe449e"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0058.json",
+      "sha256": "79c5129a4c5497e8f426b529f59a449b1389107e1c34a15ee3599e92bda106aa"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0059.json",
+      "sha256": "c28554eb84eb01c57e85542871b58a4bb415c888077939dcae3c854ad3e4cd6c"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0060.json",
+      "sha256": "148edff29d986276d200badfa73b86ae7863ec1a920ce3dd8234f4ca77dbf478"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0061.json",
+      "sha256": "4962237e78d1bc37e59bc41d16741cfd489f2e6f7ddbeed78b31c9841233db9d"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0062.json",
+      "sha256": "08323cd568e74691bce83d1b3ce5c9fdddbc8b7995e2638ac3648155ec725654"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0063.json",
+      "sha256": "d6b259924e1e7915dbbcbd4b93e6491834d1212cf68fceac33dab08dbd0c0894"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0064.json",
+      "sha256": "2a4bb64961b38bb4593ddb6a96d893b7b93952c587b852b586fefd418a2de684"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0065.json",
+      "sha256": "796ebafdea44250811f9340f94c66d99e137210f52a4644eba17caef8548052b"
+    },
+    {
+      "path": "projects/hundred-crafts-night-procession/production_runtime/intents/chapter-0066.json",
+      "sha256": "678dc2b7e2dd29f9980aef5baa1a18837691011f516db7432ffa5bb2d5a61e02"
+    }
+  ]
+}

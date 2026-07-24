@@ -1,0 +1,35 @@
+{
+  "version": "0.1",
+  "candidate_id": "hundred-crafts-night-procession",
+  "gate_scope": "volume_9_and_any_health_claim",
+  "status": "contract_ready_expert_pending",
+  "prose_authorized": false,
+  "required_specialists": [
+    "具备合法资质且熟悉中药炮制史与药材鉴别的专业人员",
+    "能够审查毒理、不良反应和公共卫生风险的临床或药学专业人员",
+    "熟悉具体产地、社区知识边界与劳动链的在地炮制从业者"
+  ],
+  "hard_prohibitions": [
+    "不得形成现实医疗建议、诊断、剂量、处方或替代治疗暗示",
+    "不得把历史炮制方法包装成已证实疗效",
+    "不得用角色成功个案替代安全性、批次差异与不良结果",
+    "不得公开受限制的社区配方或可识别个人健康资料",
+    "无专家签字时不得生成卷九细纲、样章或正文"
+  ],
+  "review_checklist": [
+    "所有药材与炮制事实均可追溯到来源和适用时期",
+    "虚构材料、现实药物与象征机制在文本中明确分离",
+    "风险、拒绝权、知情和补偿不被疗效叙事覆盖",
+    "任何操作性描述均经过误用风险审查并必要时删减",
+    "在地知识持有者拥有撤回、匿名和用途限制权"
+  ],
+  "approval_record": {
+    "required_before_volume_9_detail_outline": true,
+    "required_before_any_health_related_prose": true,
+    "approved": false,
+    "reviewers": [],
+    "approval_date": null,
+    "evidence_paths": []
+  },
+  "current_effect": "不阻断卷一至卷八的非医疗设计工作；持续阻断卷九细纲与任何现实健康主张。"
+}

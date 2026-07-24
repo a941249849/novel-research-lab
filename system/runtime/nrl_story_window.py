@@ -14,7 +14,8 @@ import jsonschema
 
 from nrl_paths import ROOT, runtime_path
 from nrl_model_router import route_model
-from nrl_projects import active_project_title
+from nrl_projects import active_project_id, active_project_title
+from nrl_project_production import volume1_chapter_count, volume1_windows
 
 
 VERSION = "1.0"
@@ -88,8 +89,12 @@ def validate_story_window(payload: dict[str, Any]) -> dict[str, Any]:
         return {"valid": False, "errors": errors}
     start = int(payload["window"]["start"])
     end = int(payload["window"]["end"])
-    if end - start != 9:
-        errors.append("story window must contain exactly ten consecutive chapters")
+    chapter_count = volume1_chapter_count()
+    window_length = end - start + 1
+    if not 1 <= window_length <= 10 or len(payload["chapters"]) != window_length:
+        errors.append("story window must contain one to ten consecutive chapters")
+    if window_length < 10 and end != chapter_count:
+        errors.append("only the final Volume 1 window may contain fewer than ten chapters")
     chapters = payload["chapters"]
     expected_ids = [f"chapter-{number:04d}" for number in range(start, end + 1)]
     if [item["chapter_id"] for item in chapters] != expected_ids:
@@ -115,8 +120,9 @@ def validate_story_window(payload: dict[str, Any]) -> dict[str, Any]:
                 "future story-window chapters may use at most 12 writer assets: "
                 + ", ".join(overwide)
             )
-    if len({item["scene_anchor"].split("，")[0] for item in chapters}) < 5:
-        errors.append("story window requires at least five distinct scene anchors")
+    required_scene_diversity = min(5, len(chapters))
+    if len({item["scene_anchor"].split("，")[0] for item in chapters}) < required_scene_diversity:
+        errors.append(f"story window requires at least {required_scene_diversity} distinct scene anchors")
     known_assets = {
         item.get("asset_id") for item in _read_json(ASSET_STORE_PATH).get("assets", [])
     }
@@ -153,11 +159,14 @@ def validate_story_window(payload: dict[str, Any]) -> dict[str, Any]:
             errors.append(
                 f"start_snapshot contradicts accepted acquisition state for {asset_id}"
             )
-    if any(
-        item.get("source_status") != ("accepted_calibration" if int(item["chapter_id"][-4:]) <= 15 else "planned")
-        for item in chapters
-    ):
-        errors.append("source_status must distinguish accepted calibration from planned chapters")
+    if active_project_id() == "borrowed-heaven":
+        if any(
+            item.get("source_status") != ("accepted_calibration" if int(item["chapter_id"][-4:]) <= 15 else "planned")
+            for item in chapters
+        ):
+            errors.append("source_status must distinguish accepted calibration from planned chapters")
+    elif any(item.get("source_status") != "formal_plan" for item in chapters):
+        errors.append("project-isolated formal windows must use source_status=formal_plan")
     return {
         "valid": not errors,
         "errors": errors,
@@ -199,10 +208,17 @@ def build_story_window_status() -> dict[str, Any]:
             "status": payload.get("status"),
             **validation,
         })
+    expected = {
+        f"{start:03d}-{end:03d}" for start, end in volume1_windows()
+    }
+    actual = {str(item.get("window")) for item in windows}
     return {
         "version": VERSION,
-        "valid": bool(windows) and all(item["valid"] for item in windows),
+        "valid": bool(windows) and actual == expected and all(item["valid"] for item in windows),
         "window_count": len(windows),
+        "expected_window_count": len(expected),
+        "missing_windows": sorted(expected - actual),
+        "unexpected_windows": sorted(actual - expected),
         "windows": windows,
     }
 

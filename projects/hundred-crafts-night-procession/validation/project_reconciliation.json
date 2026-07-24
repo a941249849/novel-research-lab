@@ -1,0 +1,53 @@
+{
+  "version": "1.0",
+  "project_id": "hundred-crafts-night-procession",
+  "valid": true,
+  "verdict": "ACCEPT_WITH_WARNINGS",
+  "resolved": [
+    "controlled samples are calibration evidence only",
+    "formal production starts at chapter-0001",
+    "volume1 uses 66 chapters and seven project-isolated windows",
+    "maintenance team remains seed until chapter-0033"
+  ],
+  "remaining_warnings": [
+    "formal prose remains blocked until final dual review and bounded Owner decision"
+  ],
+  "conflict_resolutions": [
+    {
+      "conflict_id": "samples-vs-formal-canon",
+      "sources": [
+        "validation/continuity_validation.v0.1.json",
+        "design/production_blueprint.md"
+      ],
+      "decision": "samples are calibration evidence only; formal production starts at chapter-0001",
+      "applied_to": [
+        "production_runtime/plans/volume1_production_manifest.v1.json",
+        "production_runtime/chapter_registry.v0.20.json"
+      ]
+    },
+    {
+      "conflict_id": "regional-and-medical-debt",
+      "sources": [
+        "design/story_bible.md",
+        "design/production_blueprint.md"
+      ],
+      "decision": "P1 regional evidence is sufficient for Volume 1; medical signature gate remains Volume 9 only",
+      "applied_to": [
+        "design/story_bible.md",
+        "design/production_blueprint.md"
+      ]
+    },
+    {
+      "conflict_id": "maintenance-team-lifecycle",
+      "sources": [
+        "creation_assets/project_assets.json",
+        "production_runtime/plans/volume1_outline.v1.json"
+      ],
+      "decision": "team remains seed until chapter-0033 records seed-to-active settlement",
+      "applied_to": [
+        "creation_assets/project_assets.json",
+        "production_runtime/plans/volume1_production_manifest.v1.json"
+      ]
+    }
+  ]
+}

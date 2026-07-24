@@ -2,11 +2,11 @@
   "version": "0.8",
   "mode": "cli",
   "binary_path": "/Users/liuneng/.local/bin/agy",
-  "request_file": ".agent-handoff/antigravity/requests/nrl-v021-direct-writer-calibration-routing-decision.md",
-  "output_file": ".agent-handoff/antigravity/responses/nrl-v021-direct-writer-calibration-routing-decision-opus.md",
+  "request_file": ".agent-handoff/antigravity/requests/hundred-crafts-literary-semantic-v029.md",
+  "output_file": ".agent-handoff/antigravity/responses/hundred-crafts-literary-semantic-v029.md",
   "returncode": 0,
-  "model": "Claude Opus 4.6 (Thinking)",
-  "started_at": "2026-07-13T22:22:43+08:00",
-  "finished_at": "2026-07-13T22:23:37+08:00",
+  "model": "Gemini 3.5 Flash (High)",
+  "started_at": "2026-07-24T18:09:30+08:00",
+  "finished_at": "2026-07-24T18:13:01+08:00",
   "bridge_log_path": "system/agent_ops/antigravity_bridge_last_run.v0.8.json"
 }

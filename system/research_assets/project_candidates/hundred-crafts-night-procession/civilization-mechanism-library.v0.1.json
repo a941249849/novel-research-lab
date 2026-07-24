@@ -1,0 +1,157 @@
+{
+  "version": "0.1",
+  "candidate_id": "hundred-crafts-night-procession",
+  "status": "candidate_compiled_from_research",
+  "project_initialized": true,
+  "prose_authorized": false,
+  "core_law": "文明不能消灭损伤，只能识别、分担、隔离、转化、记录并为未来维护保留退出条件。",
+  "mechanisms": [
+    {
+      "mechanism_id": "load_distribution",
+      "craft_domain_id": "timber_architecture",
+      "operation": "沿真实结构关系重新分配荷载，并标明新增承重点。",
+      "required_knowledge": ["构件关系", "受力路径", "旧修痕迹", "材料可逆性"],
+      "failure_mode": "表面复位但暗载转入桥台、地基、邻接建筑或无知情承重者。",
+      "responsibility_cost": "每次分载必须登记新增承重者、复核期限和解除办法。",
+      "source_refs": ["timber-unesco-00223", "timber-icomos-2017", "zy-carpenter-oral-history-04"],
+      "fiction_boundary": "不得把榫卯或鲁班传统写成无条件万能法术。"
+    },
+    {
+      "mechanism_id": "thermal_phase_commit",
+      "craft_domain_id": "metal_forging",
+      "operation": "通过受控加热、锻打、冷却和连接改变材料状态。",
+      "required_knowledge": ["材料成分", "温度区间", "锻打次序", "热处理后果"],
+      "failure_mode": "外形合格但内应力、脆性或连接缺陷在后续载荷中爆发。",
+      "responsibility_cost": "不可逆转性越高，试样、见证和报废权越重要。",
+      "source_refs": ["metal-sword-ihchina", "metal-silver-ihchina"],
+      "fiction_boundary": "不把特定族群银饰纹样、祭祀金工或兵器传说当作通用能力。"
+    },
+    {
+      "mechanism_id": "kiln_irreversibility",
+      "craft_domain_id": "ceramic_firing",
+      "operation": "在有限观察条件下共同管理窑内不可逆变化。",
+      "required_knowledge": ["坯釉关系", "装窑位置", "火候", "窑变与废品判断"],
+      "failure_mode": "追求单件奇迹导致整窑损失，或把偶然窑变误写成稳定配方。",
+      "responsibility_cost": "开窑结果由备料、装窑、烧成和判断者共同承担。",
+      "source_refs": ["ceramic-longquan-ihchina", "ceramic-rejuvenation-catalogue"],
+      "fiction_boundary": "窑火不能成为随心炼物能力，必须保留批次风险和不可逆失败。"
+    },
+    {
+      "mechanism_id": "record_repair_and_versioning",
+      "craft_domain_id": "paper_and_book_repair",
+      "operation": "保留原层、修补层、异议与读取权限，使后人能辨认变化。",
+      "required_knowledge": ["纤维与纸性", "旧修层", "可逆材料", "版本与来源"],
+      "failure_mode": "修得过新、伪造连续性，或通过档案修订让责任人消失。",
+      "responsibility_cost": "修复记录必须可追溯、可复核，并让受影响者知道删改了什么。",
+      "source_refs": ["paper-xuan-ihchina", "paper-tools-ihchina", "nw-paper-gazetteer-01", "sw-paper-household-03"],
+      "fiction_boundary": "不得把真实宗教用纸、经文或地方祭祀纸直接转成法器系统。"
+    },
+    {
+      "mechanism_id": "distributed_pattern_memory",
+      "craft_domain_id": "textile_dye_embroidery",
+      "operation": "通过经纬、染色和多人分工把分散信息组织为可读取结构。",
+      "required_knowledge": ["纤维", "染料", "张力", "纹样语境", "分工次序"],
+      "failure_mode": "局部抽取纹样导致意义错置，或让无署名劳动从成品中消失。",
+      "responsibility_cost": "每次复制都要保留来源社区、作者、使用边界和变体说明。",
+      "source_refs": ["textile-yunjin-unesco", "textile-costume-nmc", "sw-batik-fieldstudy-01", "sw-maple-dye-practitioner-02"],
+      "fiction_boundary": "社区纹样、婚丧服饰和神圣符号未经授权不得转译。"
+    },
+    {
+      "mechanism_id": "role_authorization",
+      "craft_domain_id": "opera_costume_props",
+      "operation": "在规定场景内赋予角色权限、义务和卸装程序。",
+      "required_knowledge": ["剧本", "行当", "服装程式", "身体动作", "盔箱管理"],
+      "failure_mode": "角色吞没真实的人，或复制品保留权限却丢失义务和退出条件。",
+      "responsibility_cost": "授权、使用、保管、修补和卸装均由不同岗位签名。",
+      "source_refs": ["opera-peking-unesco", "opera-headgear-ihchina", "ln-opera-costume-02", "ln-opera-wardrobe-master-03"],
+      "fiction_boundary": "不同剧种程式不得混写，不用真实神祇或戏班祖师承担虚构邪术。"
+    },
+    {
+      "mechanism_id": "temporary_frame_assembly",
+      "craft_domain_id": "paper_frame_ritual_craft",
+      "operation": "以轻质骨架、覆盖和节点快速建立可撤除的临时公共结构。",
+      "required_knowledge": ["骨架比例", "风载", "连接", "场地", "拆除回收"],
+      "failure_mode": "临时结构被当成永久设施，或仪式结束后责任和废弃材料无人处理。",
+      "responsibility_cost": "搭建权必须绑定使用时限、天气阈值、撤场人和材料去向。",
+      "source_refs": ["paper-frame-fenghuang", "paper-frame-kite", "jn-opera-archive-02"],
+      "fiction_boundary": "纸扎丧俗和彩扎信仰只研究结构与社区组织，不抽取亡灵设定。"
+    },
+    {
+      "mechanism_id": "time_calibration",
+      "craft_domain_id": "clock_mechanical_repair",
+      "operation": "拆解、清洁、校准和复装相互依赖的时序系统。",
+      "required_knowledge": ["传动链", "磨损", "基准时间", "拆解记录", "润滑周期"],
+      "failure_mode": "局部走准掩盖整体磨损，或多个地区采用不同基准导致协作错位。",
+      "responsibility_cost": "准确度必须附带校准环境、误差范围和下一维护时间。",
+      "source_refs": ["clock-ihchina", "clock-palace-museum"],
+      "fiction_boundary": "只能校准节奏与协议，不允许无代价倒流时间。"
+    },
+    {
+      "mechanism_id": "risk_compartmentalization",
+      "craft_domain_id": "shipbuilding_waterworks",
+      "operation": "把局部故障隔离在可管理空间，为整体争取处置时间。",
+      "required_knowledge": ["船型或水网", "舱区", "艌缝", "载荷", "开启与转运条件"],
+      "failure_mode": "隔离被误认为消除，危险长期滞留并外移给下游或未来维护者。",
+      "responsibility_cost": "封舱必须登记内容、载重、期限、开启人和最终清偿路径。",
+      "source_refs": ["ship-bulkhead-unesco", "ship-fuchuan-ihchina", "fj-ship-practitioner-04", "jc-boat-practitioner-04", "ln-dragonboat-workshop-01"],
+      "fiction_boundary": "不能把航海信俗和海难传说混写成统一海神系统。"
+    },
+    {
+      "mechanism_id": "subtractive_conservation",
+      "craft_domain_id": "stone_carving_masonry",
+      "operation": "通过检测、最小减材、替换或支护阻止损伤扩散。",
+      "required_knowledge": ["石性", "裂隙", "盐害", "工具痕", "环境"],
+      "failure_mode": "为恢复完整外观永久删除历史层，或保留危险部分让整体继续失稳。",
+      "responsibility_cost": "每次去除必须记录为何不可保留、谁同意以及失去什么信息。",
+      "source_refs": ["stone-qingtian-ihchina", "stone-restoration-palace"],
+      "fiction_boundary": "不把真实石窟、墓葬或宗教造像改写为怪物资源。"
+    },
+    {
+      "mechanism_id": "controlled_transformation",
+      "craft_domain_id": "medicine_processing",
+      "operation": "通过受控处理改变材料效用、刺激性、毒性或保存性质。",
+      "required_knowledge": ["原料鉴别", "剂量", "炮制条件", "配伍", "禁忌"],
+      "failure_mode": "只保留效用叙事而忽略剂量、个体差异和处理失败。",
+      "responsibility_cost": "使用者、处理者、批次和不良结果都必须进入记录。",
+      "source_refs": ["medicine-processing-ihchina", "medicine-museum-archive"],
+      "fiction_boundary": "现实药效只作材料转性研究，不形成医疗建议，也不把民族医药神秘化。"
+    },
+    {
+      "mechanism_id": "shared_measurement_protocol",
+      "craft_domain_id": "measurement_orientation_calculation",
+      "operation": "建立跨岗位可复核的尺度、方向、数量和误差协议。",
+      "required_knowledge": ["基准", "误差", "换算", "现场放样", "记录"],
+      "failure_mode": "标准扩大协作的同时，把无法量化的地方风险和少数意见排除。",
+      "responsibility_cost": "标准必须保留版本、适用范围、例外和地方异议入口。",
+      "source_refs": ["measure-compass-ihchina", "measure-zhusuan-unesco", "fj-ship-reconstruction-02", "ne-forest-oral-02"],
+      "fiction_boundary": "不把风水、历算或宗教时间体系压平成万能导航术。"
+    }
+  ],
+  "cross_mechanism_protocols": [
+    {"protocol_id": "inspect_before_act", "rule": "先识材验损，再讨论能力；未知材料不得靠试错推进。"},
+    {"protocol_id": "minimum_reversible_intervention", "rule": "优先选择可复核、可拆除、可返修的动作；不可逆操作提高授权等级。"},
+    {"protocol_id": "named_burden", "rule": "任何代价都必须有名称、承受者、期限和解除条件，禁止无名献祭。"},
+    {"protocol_id": "multi_role_signoff", "rule": "重大工程至少由材料、工序、使用者和未来维护者四方复核。"},
+    {"protocol_id": "regional_adapter", "rule": "跨区域只共享接口，不默认共享材料、术语、仪式或知识所有权。"},
+    {"protocol_id": "retirement_and_exit", "rule": "每项设施、角色和责任都必须允许拒绝、替换、复核与到期退出。"}
+  ],
+  "regional_adapters": [
+    {"regional_lens_id": "north_china_plain", "primary_pressure": "平原灾害、庙会与城乡行业网络", "evidence_route": "p0-central-plain"},
+    {"regional_lens_id": "shanxi_shaanxi_gansu", "primary_pressure": "原料季节、商路与跨区匠人迁移", "evidence_route": "p1-northwest-corridor"},
+    {"regional_lens_id": "jiangnan_huizhou", "primary_pressure": "水网维护、作坊账与地方协作", "evidence_route": "p0-jiangnan-water"},
+    {"regional_lens_id": "fujian_taiwan_maritime", "primary_pressure": "海损隔离、船型与侨乡责任网络", "evidence_route": "p0-fujian-maritime"},
+    {"regional_lens_id": "lingnan_pearl_river", "primary_pressure": "完整班组、湿热河海环境与演出现场", "evidence_route": "p1-lingnan-river-sea"},
+    {"regional_lens_id": "jingchu_southwest_rivers", "primary_pressure": "水势、码头岗位与灾害同步协议", "evidence_route": "p0-jingchu-river"},
+    {"regional_lens_id": "southwest_highlands", "primary_pressure": "家庭劳动、集市交换与社区知识边界", "evidence_route": "p1-southwest-highlands"},
+    {"regional_lens_id": "northeast_forests", "primary_pressure": "严寒工业、道路工具、家庭岗位与生态转型", "evidence_route": "p1-northeast-forest-industry"},
+    {"regional_lens_id": "plateau_oasis_frontier", "primary_pressure": "跨语言维修网络与神圣知识边界", "evidence_route": "p1-plateau-oasis-boundaries"}
+  ],
+  "gate_result": {
+    "all_twelve_domains_compiled": true,
+    "all_nine_regional_lenses_addressable": true,
+    "fiction_and_evidence_separated": true,
+    "story_bible_ready": false,
+    "prose_ready": false,
+    "next_action": "以文明机制母库修订十五卷因果脉络、人物独立目标和每卷研究债务。"
+  }
+}

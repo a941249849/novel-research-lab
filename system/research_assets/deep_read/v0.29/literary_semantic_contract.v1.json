@@ -1,0 +1,34 @@
+{
+  "version": "0.29",
+  "contract_id": "literary-semantic-integrity-v1",
+  "dimensions": [
+    "narrative_spine",
+    "character_highlight_architecture",
+    "progression_and_thresholds",
+    "world_map_and_scale",
+    "embedded_history_and_lore",
+    "faction_and_resource_game",
+    "relationship_and_emotional_cost",
+    "foreshadowing_and_payoff",
+    "climax_convergence",
+    "reader_feedback_rhythm",
+    "style_and_life_force",
+    "failure_modes_and_negative_lessons"
+  ],
+  "allowed_dimension_status": [
+    "explicit",
+    "implicit",
+    "not_dominant"
+  ],
+  "retention_lanes": {
+    "cross_book_common": "Mechanisms supported by multiple books may be abstracted.",
+    "protected_signature_lane": "Single-book signatures remain queryable even when no peer mechanism exists."
+  },
+  "hard_gates": {
+    "all_verified_books_profiled": true,
+    "all_dimensions_declared": true,
+    "synthesis_hashes_current": true,
+    "not_dominant_requires_explicit_gap": true,
+    "project_application_required": true
+  }
+}

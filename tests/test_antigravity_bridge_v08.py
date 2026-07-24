@@ -139,6 +139,23 @@ printf 'FAKE_ANTIGRAVITY_RESPONSE:%s\\n' "$prompt"
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("request file does not exist", result.stderr)
 
+    def test_bridge_ask_rejects_headless_permission_failure_even_with_zero_exit(self):
+        self.fake_agy.write_text(
+            "#!/bin/sh\nprintf 'jetski: no output produced - read_file permission auto-denied\\n'\nexit 0\n",
+            encoding="utf-8",
+        )
+        self.fake_agy.chmod(self.fake_agy.stat().st_mode | stat.S_IXUSR)
+        request_path = self.root / ".agent-handoff/antigravity/requests/review.md"
+        request_path.parent.mkdir(parents=True, exist_ok=True)
+        request_path.write_text("Review files.", encoding="utf-8")
+        result = self.run_cli(
+            "antigravity-bridge-ask",
+            "--request-file",
+            str(request_path.relative_to(self.root)),
+        )
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("agy bridge call failed", result.stderr)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -23,6 +23,7 @@ from nrl_production_operator import build_operator_status
 from nrl_paths import runtime_path
 from nrl_system_status import build_system_status
 from nrl_projects import active_project_id
+from nrl_literary_semantics import build_literary_semantic_status
 
 
 DASHBOARD_SECTION_KEYS = (
@@ -83,7 +84,7 @@ def build_studio_data(
     system_status = build_system_status(state, adapters)
     project_status = system_status["active_project"]
     project_id = active_project_id()
-    project_arg = f" --project {project_id}"
+    project_cli = f"python3 system/runtime/nrl.py --project {project_id}"
     latest_mission = _latest_registry_mission(registry)
     current_mission_name = state.get("next_recommended_mission", "UNKNOWN_MISSION")
     current_agent = str(state.get("allowed_next_agents", ["codex"])[0]).lower()
@@ -97,6 +98,9 @@ def build_studio_data(
     research_assets = build_research_asset_catalog()
     full_corpus_proof = build_proof_status()
     deep_read_status = build_deep_read_status()
+    literary_semantic_status = build_literary_semantic_status(
+        project_id if project_id != "borrowed-heaven" else None
+    )
     creation_schemas = build_creation_schema_registry()
     corpus_pipeline = build_pipeline_status(state, adapters)
     corpus_pipeline["next_plan"] = build_pipeline_plan(
@@ -142,16 +146,18 @@ def build_studio_data(
         else {
             "recommended": state.get("next_recommended_mission", "Resume governed production."),
             "runtime_command": (
-                f"{production_operator['resume_command']}{project_arg}"
+                production_operator["resume_command"].replace(
+                    "python3 system/runtime/nrl.py", project_cli, 1
+                )
                 if production_operator["resume_command"]
-                else f"python3 system/runtime/nrl.py production-status{project_arg}"
+                else f"{project_cli} production-status"
             ),
             "blocked_next_action": "Publishing remains blocked until all 100 chapters pass volume review.",
             "safe_commands": [
-                f"python3 system/runtime/nrl.py production-status{project_arg}",
-                f"python3 system/runtime/nrl.py produce --until 100{project_arg}",
-                f"python3 system/runtime/nrl.py system-check{project_arg}",
-                f"python3 system/runtime/nrl.py production-preflight{project_arg}",
+                f"{project_cli} production-status",
+                f"{project_cli} produce --until 66",
+                f"{project_cli} system-check",
+                f"{project_cli} production-preflight",
             ],
         }
     )
@@ -169,6 +175,7 @@ def build_studio_data(
         "research_asset_catalog": research_assets,
         "full_corpus_proof": full_corpus_proof,
         "verifiable_deep_reading": deep_read_status,
+        "literary_semantic_integrity": literary_semantic_status,
         "creation_schema_registry": creation_schemas,
         "safe_action_catalog": {
             "actions": [
@@ -282,7 +289,7 @@ def build_studio_data(
         "artifact_map": {
             "items": [
                 {"area": "Corpus", "status": "asset_layer_present", "note": "raw corpus remains off-limits for Studio v0.1"},
-                {"area": "Mechanisms", "status": "partial_engine", "note": "mechanism library exists but is not yet a queryable engine"},
+                {"area": "Mechanisms", "status": literary_semantic_status["status"], "note": "cross-book mechanisms and protected single-book signatures remain separately queryable"},
                 {"area": "Grand Synthesis", "status": "research_asset", "note": "research synthesis supports Corpus-to-Creation positioning"},
                 {"area": "Story Bible", "status": _artifact_status(state, "Bible"), "note": "current project bible asset"},
                 {"area": "Outline Tree", "status": _artifact_status(state, "Outline Tree"), "note": "Phase 2D outline tree asset"},
@@ -328,7 +335,7 @@ def build_studio_data(
         "next_safe_action": next_safe_action,
         "owner_gate": {
             "required": owner_gate_required,
-            "status": state.get("owner_gate_status", "UNKNOWN"),
+            "status": system_status.get("owner_gate_status", "UNKNOWN"),
             "review_status": state.get("review_status", "UNKNOWN"),
             "authorization_scope": (
                 ["status read", "studio build", "runtime validation", "system hardening"]

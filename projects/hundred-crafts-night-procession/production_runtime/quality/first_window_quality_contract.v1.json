@@ -1,0 +1,37 @@
+{
+  "version": "1.0",
+  "project_id": "hundred-crafts-night-procession",
+  "window": [
+    1,
+    10
+  ],
+  "status": "contract_ready_no_formal_prose",
+  "per_chapter_required": [
+    "revision_sha256",
+    "chinese_character_count",
+    "dialogue_ratio",
+    "transition_word_hits",
+    "rhetorical_template_hits",
+    "abstract_word_hits",
+    "sensory_word_hits",
+    "semantic_final_audit_sha256",
+    "writer_execution",
+    "observer_execution",
+    "reviewer_execution"
+  ],
+  "hard_gates": {
+    "chinese_character_count": [
+      3000,
+      4200
+    ],
+    "blocking_or_major_final_issue_count": 0,
+    "prompt_or_runtime_leak_count": 0,
+    "same_model_self_certification_allowed": false
+  },
+  "window_review": {
+    "sol_required": true,
+    "independent_antigravity_required": true,
+    "any_failed_chapter_blocks_window_accept": true
+  },
+  "publish_authorized": false
+}

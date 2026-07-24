@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://nrl.local/schemas/v1/foreshadowing.schema.json",
+  "title": "Generic Foreshadowing Asset v1",
+  "allOf": [
+    {"$ref": "https://nrl.local/schemas/v1/common.schema.json"},
+    {
+      "required": ["foreshadowing"],
+      "properties": {
+        "family": {"const": "foreshadowing"},
+        "foreshadowing": {
+          "type": "object",
+          "required": ["surface_presentation", "concealed_question", "setup_window", "payoff_window", "reveal_conditions"],
+          "properties": {
+            "surface_presentation": {"type": "string", "minLength": 1},
+            "concealed_question": {"type": "string", "minLength": 1},
+            "setup_window": {"type": "string", "minLength": 1},
+            "payoff_window": {"type": "string", "minLength": 1},
+            "reveal_conditions": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+            "related_asset_ids": {"type": "array", "items": {"type": "string", "minLength": 1}}
+          },
+          "additionalProperties": false
+        }
+      }
+    }
+  ]
+}

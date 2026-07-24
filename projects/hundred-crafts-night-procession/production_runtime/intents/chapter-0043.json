@@ -1,0 +1,30 @@
+{
+  "chapter_id": "chapter-0043",
+  "dramatic_purpose": "暴雨提前，原定施工窗口缩短。",
+  "must_keep": [
+    "团队放弃一次完成，转为两阶段合拢。",
+    "POV 固定为林岱"
+  ],
+  "must_avoid": [
+    "不得引入未登记资产或用旁白代替物质行动",
+    "不得回滚已接受状态"
+  ],
+  "expected_state_deltas": [
+    {
+      "state_id": "v1.ch043.outcome",
+      "asset_id": "char_lin_dai",
+      "field_path": "character.current_state",
+      "after": "团队放弃一次完成，转为两阶段合拢。",
+      "before": "发现一处登记空舱实际仍有人居住。"
+    }
+  ],
+  "required_asset_ids": [
+    "char_lin_dai",
+    "ledger_water_level",
+    "technique_compartment_transfer"
+  ],
+  "active_hook_ids": [],
+  "scene_constraints": [
+    "冲突必须落在具体工艺现场、物证或受影响者选择上"
+  ]
+}

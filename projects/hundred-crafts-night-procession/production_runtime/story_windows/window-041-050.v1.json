@@ -1,0 +1,321 @@
+{
+  "version": "1.0",
+  "project": "《百工夜行录》",
+  "volume": 1,
+  "window": {
+    "start": 41,
+    "end": 50,
+    "name": "正式生产窗口 041-050"
+  },
+  "status": "production_ready",
+  "review_policy": {
+    "sol_window_review_required": true,
+    "independent_antigravity_required": true,
+    "publish_authorized": false
+  },
+  "start_snapshot": [
+    "第41章开始前只承认 canonical initial state 与已接受结算。",
+    "受影响者异议、专业复核和物质后果均不得被摘要覆盖。",
+    "未登记资产、能力、关系和状态变化一律禁止进入正文。"
+  ],
+  "end_target": [
+    "第50章必须完成本窗口不可逆因果链并保留卷级矛盾。",
+    "所有状态变化必须由观察、终审和结算三方绑定同一修订稿。",
+    "下一窗口不得在本窗口审查接受前启动正文。"
+  ],
+  "chapters": [
+    {
+      "chapter_id": "chapter-0041",
+      "working_title": "父亲的删线",
+      "event": "围绕父亲的删线发生可验证事件：复原周永直只拆本地执行线、却留下远端旁路与残件的真实顺序。",
+      "scene_anchor": "第41章的具体工艺现场与物证位置",
+      "conflict": "在《父亲的删线》现场，周砺必须在专业判断、受影响者异议与现实后果之间作出不可回避的选择。",
+      "character_choice": "面对《父亲的删线》的具体后果，周砺选择以可复核的现场行动承担代价，而不是用口头承诺绕过程序。",
+      "irreversible_change": "确认他先救过无登记住户，也留下了可被他人重接的自动代偿旁路。",
+      "emotional_turn": "本章选择改变了周砺与共同体之间的信任方向。",
+      "hook_out": "已发生的后果把下一步压力推向《不接受英雄》，且不能回到本章开始状态。",
+      "expected_state_deltas": [
+        "v1.ch041.outcome:artifact_responsibility_ledger:artifact.condition"
+      ],
+      "required_asset_ids": [
+        "char_zhou_li",
+        "npc_zhou_yongzhi",
+        "foreshadow_second_record",
+        "artifact_responsibility_ledger"
+      ],
+      "evidence_refs": [
+        "series-blueprint.v0.3:zhou-li",
+        "concept-stress-test.v0.1:father-record",
+        "concept-stress-test.v0.1:chapter8",
+        "civilization-mechanism-library.v0.1:record-repair"
+      ],
+      "cultural_safety_checks": [
+        "只使用证据卡支持的工艺事实，不把地方知识改写为万能异术",
+        "知识所有权、署名、拒绝和退出必须保留在人物行动中"
+      ],
+      "source_status": "formal_plan"
+    },
+    {
+      "chapter_id": "chapter-0042",
+      "working_title": "不接受英雄",
+      "event": "围绕不接受英雄发生可验证事件：居民拒绝把复杂责任改写成父子英雄故事。",
+      "scene_anchor": "第42章的具体工艺现场与物证位置",
+      "conflict": "在《不接受英雄》现场，程雪青必须在专业判断、受影响者异议与现实后果之间作出不可回避的选择。",
+      "character_choice": "面对《不接受英雄》的具体后果，程雪青选择以可复核的现场行动承担代价，而不是用口头承诺绕过程序。",
+      "irreversible_change": "公开说明必须同时列出受益者与受损者。",
+      "emotional_turn": "本章选择改变了程雪青与共同体之间的信任方向。",
+      "hook_out": "已发生的后果把下一步压力推向《雨线升高》，且不能回到本章开始状态。",
+      "expected_state_deltas": [
+        "v1.ch042.outcome:char_cheng_xueqing:character.current_state"
+      ],
+      "required_asset_ids": [
+        "char_cheng_xueqing",
+        "bond_zhou_father",
+        "ledger_public_dissent"
+      ],
+      "evidence_refs": [
+        "series-blueprint.v0.3:cheng-xueqing",
+        "series-blueprint.v0.3:zhou-li",
+        "series-blueprint.v0.3:institutional-gain"
+      ],
+      "cultural_safety_checks": [
+        "只使用证据卡支持的工艺事实，不把地方知识改写为万能异术",
+        "知识所有权、署名、拒绝和退出必须保留在人物行动中"
+      ],
+      "source_status": "formal_plan"
+    },
+    {
+      "chapter_id": "chapter-0043",
+      "working_title": "雨线升高",
+      "event": "围绕雨线升高发生可验证事件：暴雨提前，原定施工窗口缩短。",
+      "scene_anchor": "第43章的具体工艺现场与物证位置",
+      "conflict": "在《雨线升高》现场，林岱必须在专业判断、受影响者异议与现实后果之间作出不可回避的选择。",
+      "character_choice": "面对《雨线升高》的具体后果，林岱选择以可复核的现场行动承担代价，而不是用口头承诺绕过程序。",
+      "irreversible_change": "团队放弃一次完成，转为两阶段合拢。",
+      "emotional_turn": "本章选择改变了林岱与共同体之间的信任方向。",
+      "hook_out": "已发生的后果把下一步压力推向《五方签验》，且不能回到本章开始状态。",
+      "expected_state_deltas": [
+        "v1.ch043.outcome:char_lin_dai:character.current_state"
+      ],
+      "required_asset_ids": [
+        "char_lin_dai",
+        "ledger_water_level",
+        "technique_compartment_transfer"
+      ],
+      "evidence_refs": [
+        "series-blueprint.v0.3:lin-dai",
+        "civilization-mechanism-library.v0.1:risk-compartmentalization"
+      ],
+      "cultural_safety_checks": [
+        "只使用证据卡支持的工艺事实，不把地方知识改写为万能异术",
+        "知识所有权、署名、拒绝和退出必须保留在人物行动中"
+      ],
+      "source_status": "formal_plan"
+    },
+    {
+      "chapter_id": "chapter-0044",
+      "working_title": "五方签验",
+      "event": "围绕五方签验发生可验证事件：冻结最终施工意图与叫停条件。",
+      "scene_anchor": "第44章的具体工艺现场与物证位置",
+      "conflict": "在《五方签验》现场，马小满必须在专业判断、受影响者异议与现实后果之间作出不可回避的选择。",
+      "character_choice": "面对《五方签验》的具体后果，马小满选择以可复核的现场行动承担代价，而不是用口头承诺绕过程序。",
+      "irreversible_change": "结构、排洪、角色、记录、居民五方均获叫停权。",
+      "emotional_turn": "本章选择改变了马小满与共同体之间的信任方向。",
+      "hook_out": "已发生的后果把下一步压力推向《第一夜》，且不能回到本章开始状态。",
+      "expected_state_deltas": [
+        "v1.ch044.outcome:char_ma_xiaoman:character.current_state"
+      ],
+      "required_asset_ids": [
+        "char_ma_xiaoman",
+        "technique_joint_signoff",
+        "ledger_team_authority"
+      ],
+      "evidence_refs": [
+        "series-blueprint.v0.3:ma-xiaoman",
+        "civilization-mechanism-library.v0.1:multi-role-signoff",
+        "series-blueprint.v0.3:ensemble-authority"
+      ],
+      "cultural_safety_checks": [
+        "只使用证据卡支持的工艺事实，不把地方知识改写为万能异术",
+        "知识所有权、署名、拒绝和退出必须保留在人物行动中"
+      ],
+      "source_status": "formal_plan"
+    },
+    {
+      "chapter_id": "chapter-0045",
+      "working_title": "第一夜",
+      "event": "围绕第一夜发生可验证事件：拆除错误加固并保持旧梁临时受力。",
+      "scene_anchor": "第45章的具体工艺现场与物证位置",
+      "conflict": "在《第一夜》现场，周砺必须在专业判断、受影响者异议与现实后果之间作出不可回避的选择。",
+      "character_choice": "面对《第一夜》的具体后果，周砺选择以可复核的现场行动承担代价，而不是用口头承诺绕过程序。",
+      "irreversible_change": "原建设方案彻底失去恢复可能。",
+      "emotional_turn": "本章选择改变了周砺与共同体之间的信任方向。",
+      "hook_out": "已发生的后果把下一步压力推向《卸装窗口》，且不能回到本章开始状态。",
+      "expected_state_deltas": [
+        "v1.ch045.outcome:char_zhou_li:character.current_state"
+      ],
+      "required_asset_ids": [
+        "char_zhou_li",
+        "artifact_unnamed_beam",
+        "ledger_structural_load"
+      ],
+      "evidence_refs": [
+        "series-blueprint.v0.3:zhou-li",
+        "series-blueprint.v0.3:volume1",
+        "p0-central-plain",
+        "civilization-mechanism-library.v0.1:load-distribution"
+      ],
+      "cultural_safety_checks": [
+        "只使用证据卡支持的工艺事实，不把地方知识改写为万能异术",
+        "知识所有权、署名、拒绝和退出必须保留在人物行动中"
+      ],
+      "source_status": "formal_plan"
+    },
+    {
+      "chapter_id": "chapter-0046",
+      "working_title": "卸装窗口",
+      "event": "围绕卸装窗口发生可验证事件：用低载演出调动角色系统后及时卸装。",
+      "scene_anchor": "第46章的具体工艺现场与物证位置",
+      "conflict": "在《卸装窗口》现场，杜承礼必须在专业判断、受影响者异议与现实后果之间作出不可回避的选择。",
+      "character_choice": "面对《卸装窗口》的具体后果，杜承礼选择以可复核的现场行动承担代价，而不是用口头承诺绕过程序。",
+      "irreversible_change": "杜承礼成功保留自我记忆，但守门残留转入盔头。",
+      "emotional_turn": "本章选择改变了杜承礼与共同体之间的信任方向。",
+      "hook_out": "已发生的后果把下一步压力推向《水先走哪边》，且不能回到本章开始状态。",
+      "expected_state_deltas": [
+        "v1.ch046.outcome:char_du_chengli:character.current_state"
+      ],
+      "required_asset_ids": [
+        "char_du_chengli",
+        "artifact_role_helmet",
+        "technique_role_unloading"
+      ],
+      "evidence_refs": [
+        "series-blueprint.v0.3:du-chengli",
+        "ln-opera-costume-02",
+        "ln-opera-wardrobe-master-03",
+        "project-original:role-helmet-rule-freeze-v0.1",
+        "civilization-mechanism-library.v0.1:role-authorization"
+      ],
+      "cultural_safety_checks": [
+        "只使用证据卡支持的工艺事实，不把地方知识改写为万能异术",
+        "知识所有权、署名、拒绝和退出必须保留在人物行动中"
+      ],
+      "source_status": "formal_plan"
+    },
+    {
+      "chapter_id": "chapter-0047",
+      "working_title": "水先走哪边",
+      "event": "围绕水先走哪边发生可验证事件：启动第一批风险转舱。",
+      "scene_anchor": "第47章的具体工艺现场与物证位置",
+      "conflict": "在《水先走哪边》现场，林岱必须在专业判断、受影响者异议与现实后果之间作出不可回避的选择。",
+      "character_choice": "面对《水先走哪边》的具体后果，林岱选择以可复核的现场行动承担代价，而不是用口头承诺绕过程序。",
+      "irreversible_change": "上游水位下降，下游一条巷道必须撤离。",
+      "emotional_turn": "本章选择改变了林岱与共同体之间的信任方向。",
+      "hook_out": "已发生的后果把下一步压力推向《撤离名单》，且不能回到本章开始状态。",
+      "expected_state_deltas": [
+        "v1.ch047.outcome:char_lin_dai:character.current_state"
+      ],
+      "required_asset_ids": [
+        "char_lin_dai",
+        "technique_compartment_transfer",
+        "bond_upstream_downstream"
+      ],
+      "evidence_refs": [
+        "series-blueprint.v0.3:lin-dai",
+        "civilization-mechanism-library.v0.1:risk-compartmentalization",
+        "series-blueprint.v0.3:volume1"
+      ],
+      "cultural_safety_checks": [
+        "只使用证据卡支持的工艺事实，不把地方知识改写为万能异术",
+        "知识所有权、署名、拒绝和退出必须保留在人物行动中"
+      ],
+      "source_status": "formal_plan"
+    },
+    {
+      "chapter_id": "chapter-0048",
+      "working_title": "撤离名单",
+      "event": "围绕撤离名单发生可验证事件：核对纸面名单与实际住户。",
+      "scene_anchor": "第48章的具体工艺现场与物证位置",
+      "conflict": "在《撤离名单》现场，马小满必须在专业判断、受影响者异议与现实后果之间作出不可回避的选择。",
+      "character_choice": "面对《撤离名单》的具体后果，马小满选择以可复核的现场行动承担代价，而不是用口头承诺绕过程序。",
+      "irreversible_change": "三户无登记家庭获得同等安置资格。",
+      "emotional_turn": "本章选择改变了马小满与共同体之间的信任方向。",
+      "hook_out": "已发生的后果把下一步压力推向《误差一指》，且不能回到本章开始状态。",
+      "expected_state_deltas": [
+        "v1.ch048.outcome:char_ma_xiaoman:character.current_state"
+      ],
+      "required_asset_ids": [
+        "char_ma_xiaoman",
+        "npc_he_ning",
+        "artifact_responsibility_ledger"
+      ],
+      "evidence_refs": [
+        "series-blueprint.v0.3:ma-xiaoman",
+        "regional-evidence-cards.p0:community-oral-history",
+        "civilization-mechanism-library.v0.1:record-repair"
+      ],
+      "cultural_safety_checks": [
+        "只使用证据卡支持的工艺事实，不把地方知识改写为万能异术",
+        "知识所有权、署名、拒绝和退出必须保留在人物行动中"
+      ],
+      "source_status": "formal_plan"
+    },
+    {
+      "chapter_id": "chapter-0049",
+      "working_title": "误差一指",
+      "event": "围绕误差一指发生可验证事件：发现替代件与旧梁存在累积偏差。",
+      "scene_anchor": "第49章的具体工艺现场与物证位置",
+      "conflict": "在《误差一指》现场，程雪青必须在专业判断、受影响者异议与现实后果之间作出不可回避的选择。",
+      "character_choice": "面对《误差一指》的具体后果，程雪青选择以可复核的现场行动承担代价，而不是用口头承诺绕过程序。",
+      "irreversible_change": "程雪青主动叫停并废弃已完成构件。",
+      "emotional_turn": "本章选择改变了程雪青与共同体之间的信任方向。",
+      "hook_out": "已发生的后果把下一步压力推向《废件有名》，且不能回到本章开始状态。",
+      "expected_state_deltas": [
+        "v1.ch049.outcome:char_cheng_xueqing:character.current_state"
+      ],
+      "required_asset_ids": [
+        "char_cheng_xueqing",
+        "artifact_detachable_joint",
+        "technique_load_reading"
+      ],
+      "evidence_refs": [
+        "series-blueprint.v0.3:cheng-xueqing",
+        "civilization-mechanism-library.v0.1:load-distribution"
+      ],
+      "cultural_safety_checks": [
+        "只使用证据卡支持的工艺事实，不把地方知识改写为万能异术",
+        "知识所有权、署名、拒绝和退出必须保留在人物行动中"
+      ],
+      "source_status": "formal_plan"
+    },
+    {
+      "chapter_id": "chapter-0050",
+      "working_title": "废件有名",
+      "event": "围绕废件有名发生可验证事件：公开废件、原因与责任，抵抗赶工压力。",
+      "scene_anchor": "第50章的具体工艺现场与物证位置",
+      "conflict": "在《废件有名》现场，周砺必须在专业判断、受影响者异议与现实后果之间作出不可回避的选择。",
+      "character_choice": "面对《废件有名》的具体后果，周砺选择以可复核的现场行动承担代价，而不是用口头承诺绕过程序。",
+      "irreversible_change": "报废被纳入成功标准，工期再缩短一夜。",
+      "emotional_turn": "本章选择改变了周砺与共同体之间的信任方向。",
+      "hook_out": "已发生的后果把下一步压力推向《失窃盔头》，且不能回到本章开始状态。",
+      "expected_state_deltas": [
+        "v1.ch050.outcome:char_zhou_li:character.current_state"
+      ],
+      "required_asset_ids": [
+        "char_zhou_li",
+        "artifact_detachable_joint",
+        "faction_renewal_bureau"
+      ],
+      "evidence_refs": [
+        "series-blueprint.v0.3:zhou-li",
+        "civilization-mechanism-library.v0.1:load-distribution",
+        "series-blueprint.v0.3:volume1"
+      ],
+      "cultural_safety_checks": [
+        "只使用证据卡支持的工艺事实，不把地方知识改写为万能异术",
+        "知识所有权、署名、拒绝和退出必须保留在人物行动中"
+      ],
+      "source_status": "formal_plan"
+    }
+  ]
+}

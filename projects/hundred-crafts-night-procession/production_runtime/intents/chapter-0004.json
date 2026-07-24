@@ -1,0 +1,30 @@
+{
+  "chapter_id": "chapter-0004",
+  "dramatic_purpose": "盔箱自行开启，无登记盔头试图选择承重者。",
+  "must_keep": [
+    "戏楼封存清单被证明不完整。",
+    "POV 固定为杜承礼"
+  ],
+  "must_avoid": [
+    "不得引入未登记资产或用旁白代替物质行动",
+    "不得回滚已接受状态"
+  ],
+  "expected_state_deltas": [
+    {
+      "state_id": "v1.ch004.outcome",
+      "asset_id": "char_du_chengli",
+      "field_path": "character.current_state",
+      "after": "戏楼封存清单被证明不完整。",
+      "before": "active"
+    }
+  ],
+  "required_asset_ids": [
+    "char_du_chengli",
+    "artifact_role_helmet",
+    "ledger_role_residue"
+  ],
+  "active_hook_ids": [],
+  "scene_constraints": [
+    "冲突必须落在具体工艺现场、物证或受影响者选择上"
+  ]
+}

@@ -434,5 +434,135 @@
     "expires_after_mission": "borrowed-heaven-volume1-v025",
     "owner_note": "Correction: valid four-digit chapter scopes for the Owner-authorized Volume 1 prose range, chapters 11-100; all runtime quality gates remain mandatory.",
     "created_at": "2026-07-13T23:40:52+08:00"
+  },
+  {
+    "decision_id": "owner_hundred_crafts_volume1_controlled_samples_20260718",
+    "decision_type": "authorize_controlled_prose_test",
+    "authorized_scope": [
+      "hundred-crafts-night-procession:volume1:sample-window-008-010",
+      "hundred-crafts-night-procession:volume1:sample-window-024-026",
+      "hundred-crafts-night-procession:volume1:sample-window-049-051"
+    ],
+    "forbidden_scope": [
+      "hundred-crafts-night-procession:continuous-prose",
+      "hundred-crafts-night-procession:chapter-outside-approved-samples",
+      "hundred-crafts-night-procession:publish"
+    ],
+    "expires_after_mission": "hundred-crafts-volume1-controlled-sample-v0.1",
+    "owner_note": "Owner authorized only the three Antigravity-recommended non-contiguous sample windows; continuous prose and publication remain prohibited.",
+    "bound_response_sha256": "685d3d0ac380639e463d62286163b570a6f89d3804ba0eed9b148d717867283e",
+    "created_at": "2026-07-18T20:31:51+08:00"
+  },
+  {
+    "decision_id": "owner_hundred_crafts_continuity_validation_20260719",
+    "decision_type": "authorize_controlled_prose_test",
+    "authorized_scope": [
+      "hundred-crafts-night-procession:volume1:continuity-validation-010-027",
+      "hundred-crafts-night-procession:chapter-011",
+      "hundred-crafts-night-procession:chapter-012",
+      "hundred-crafts-night-procession:chapter-013",
+      "hundred-crafts-night-procession:chapter-014",
+      "hundred-crafts-night-procession:chapter-015",
+      "hundred-crafts-night-procession:chapter-016",
+      "hundred-crafts-night-procession:chapter-017",
+      "hundred-crafts-night-procession:chapter-018",
+      "hundred-crafts-night-procession:chapter-019",
+      "hundred-crafts-night-procession:chapter-020",
+      "hundred-crafts-night-procession:chapter-021",
+      "hundred-crafts-night-procession:chapter-022",
+      "hundred-crafts-night-procession:chapter-023",
+      "hundred-crafts-night-procession:chapter-027"
+    ],
+    "forbidden_scope": [
+      "hundred-crafts-night-procession:chapter-001-010-new-generation",
+      "hundred-crafts-night-procession:chapter-024-026-regeneration",
+      "hundred-crafts-night-procession:chapter-028-or-later",
+      "hundred-crafts-night-procession:continuous-production",
+      "hundred-crafts-night-procession:publish"
+    ],
+    "expires_after_mission": "hundred-crafts-volume1-continuity-validation-v0.1",
+    "owner_note": "Owner authorized the bounded continuity validation requested after the accepted controlled sample test. Existing chapters 10 and 24-26 are read-only anchors; no production or publication authorization.",
+    "bound_response_sha256": "c24826a55634106dd1ea467b241b415ec2b158696dea0e50135a379a4abf23ad",
+    "created_at": "2026-07-19T07:21:39+08:00"
+  },
+  {
+    "decision_id": "owner_hundred_crafts_formal_window_001_010_intent_20260719",
+    "decision_type": "authorize_next_phase",
+    "project_id": "hundred-crafts-night-procession",
+    "authorized_scope": [
+      "project_volume1_v1:hundred-crafts-night-procession:chapter-0001",
+      "project_volume1_v1:hundred-crafts-night-procession:chapter-0002",
+      "project_volume1_v1:hundred-crafts-night-procession:chapter-0003",
+      "project_volume1_v1:hundred-crafts-night-procession:chapter-0004",
+      "project_volume1_v1:hundred-crafts-night-procession:chapter-0005",
+      "project_volume1_v1:hundred-crafts-night-procession:chapter-0006",
+      "project_volume1_v1:hundred-crafts-night-procession:chapter-0007",
+      "project_volume1_v1:hundred-crafts-night-procession:chapter-0008",
+      "project_volume1_v1:hundred-crafts-night-procession:chapter-0009",
+      "project_volume1_v1:hundred-crafts-night-procession:chapter-0010"
+    ],
+    "forbidden_scope": [
+      "hundred-crafts-night-procession:chapter-0011-or-later",
+      "hundred-crafts-night-procession:bulk-or-continuous-production",
+      "hundred-crafts-night-procession:release-package",
+      "hundred-crafts-night-procession:upload",
+      "hundred-crafts-night-procession:publish"
+    ],
+    "expires_after_mission": "hundred-crafts-night-procession-volume1-window-001-010-v1",
+    "bound_baseline_sha256": "f0b015e7e1aa688243769bbeed5377173c729682f43ad25b2881128012865f7e",
+    "bound_sol_review_sha256": "5ac413058df30fbbb1e572e3ce3ddb74c35ee461171fcd86515af77d9be9dea2",
+    "bound_antigravity_review_sha256": "23d3a7a7531f87e49b02ca487cdc585bf743c7e3cf3557a6375434242e8c1782",
+    "owner_note": "Owner authorized proceeding only after a deep all-around review confirmed no blocking or major defects. Codex Sol v0.8 and Antigravity independently accepted the current disk state; this decision opens intent initialization for chapters 1-10 only.",
+    "created_at": "2026-07-19T10:06:42+08:00"
+  },
+  {
+    "decision_id": "owner_hundred_crafts_formal_window_001_010_prose_20260719",
+    "decision_type": "authorize_controlled_prose_test",
+    "project_id": "hundred-crafts-night-procession",
+    "authorized_scope": [
+      "project_volume1_v1:hundred-crafts-night-procession:chapter-0001",
+      "project_volume1_v1:hundred-crafts-night-procession:chapter-0002",
+      "project_volume1_v1:hundred-crafts-night-procession:chapter-0003",
+      "project_volume1_v1:hundred-crafts-night-procession:chapter-0004",
+      "project_volume1_v1:hundred-crafts-night-procession:chapter-0005",
+      "project_volume1_v1:hundred-crafts-night-procession:chapter-0006",
+      "project_volume1_v1:hundred-crafts-night-procession:chapter-0007",
+      "project_volume1_v1:hundred-crafts-night-procession:chapter-0008",
+      "project_volume1_v1:hundred-crafts-night-procession:chapter-0009",
+      "project_volume1_v1:hundred-crafts-night-procession:chapter-0010"
+    ],
+    "forbidden_scope": [
+      "hundred-crafts-night-procession:chapter-0011-or-later",
+      "hundred-crafts-night-procession:bulk-or-continuous-production",
+      "hundred-crafts-night-procession:release-package",
+      "hundred-crafts-night-procession:upload",
+      "hundred-crafts-night-procession:publish"
+    ],
+    "expires_after_mission": "hundred-crafts-night-procession-volume1-window-001-010-v1",
+    "bound_baseline_sha256": "f0b015e7e1aa688243769bbeed5377173c729682f43ad25b2881128012865f7e",
+    "bound_sol_review_sha256": "5ac413058df30fbbb1e572e3ce3ddb74c35ee461171fcd86515af77d9be9dea2",
+    "bound_antigravity_review_sha256": "23d3a7a7531f87e49b02ca487cdc585bf743c7e3cf3557a6375434242e8c1782",
+    "owner_note": "Owner authorized proceeding only after a deep all-around review confirmed no blocking or major defects. Formal prose production is bounded to chapters 1-10; no bulk production, release, upload, or publication is authorized.",
+    "created_at": "2026-07-19T10:06:42+08:00"
+  },
+  {
+    "decision_id": "owner_hundred_crafts_literary_semantic_rework_20260724",
+    "decision_type": "request_rework",
+    "project_id": "hundred-crafts-night-procession",
+    "authorized_scope": [
+      "build_literary_semantic_integrity_v029",
+      "reconcile_hundred_crafts_semantic_contracts",
+      "run_independent_preproduction_reviews"
+    ],
+    "forbidden_scope": [
+      "hundred-crafts-night-procession:generate-formal-prose",
+      "hundred-crafts-night-procession:reuse-old-baseline-authorization",
+      "hundred-crafts-night-procession:release-package",
+      "hundred-crafts-night-procession:upload",
+      "hundred-crafts-night-procession:publish"
+    ],
+    "expires_after_mission": "hundred-crafts-literary-semantic-integrity-v029",
+    "owner_note": "Owner identified that full-text coverage did not guarantee complete literary distillation and authorized a deeper system-wide remediation. Formal prose is paused until a new baseline, dual review, and fresh Owner authorization.",
+    "created_at": "2026-07-24T00:00:00+08:00"
   }
 ]

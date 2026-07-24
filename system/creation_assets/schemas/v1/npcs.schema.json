@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://nrl.local/schemas/v1/npcs.schema.json",
+  "title": "Generic NPC Asset v1",
+  "allOf": [
+    {"$ref": "https://nrl.local/schemas/v1/common.schema.json"},
+    {
+      "required": ["npc"],
+      "properties": {
+        "family": {"const": "npcs"},
+        "npc": {
+          "type": "object",
+          "required": ["narrative_role", "agenda", "recurrence", "knowledge_state"],
+          "properties": {
+            "narrative_role": {"type": "string", "minLength": 1},
+            "agenda": {"type": "string", "minLength": 1},
+            "recurrence": {
+              "type": "object",
+              "required": ["entry_condition", "return_condition", "exit_condition"],
+              "properties": {
+                "entry_condition": {"type": "string", "minLength": 1},
+                "return_condition": {"type": "string", "minLength": 1},
+                "exit_condition": {"type": "string", "minLength": 1}
+              },
+              "additionalProperties": false
+            },
+            "knowledge_state": {"type": "string", "minLength": 1},
+            "related_asset_ids": {"type": "array", "items": {"type": "string", "minLength": 1}}
+          },
+          "additionalProperties": false
+        }
+      }
+    }
+  ]
+}

@@ -20,9 +20,13 @@ ACTIVE_BLUEPRINT_PATH = runtime_path(
 
 
 def content_progression_for(state: dict[str, Any]) -> str:
-    if state.get("owner_gate_required", False):
+    project = build_project_status()
+    if (
+        state.get("owner_gate_required", False)
+        or project.get("status") == "owner_gate"
+    ):
         return "FROZEN_AT_OWNER_GATE"
-    if not build_project_status()["ready_for_prose"]:
+    if not project["ready_for_prose"]:
         return "BLOCKED_AT_PROJECT_SETUP"
     if "write novel prose" in state.get("blocked_actions", []):
         return "BLOCKED_FROM_PROSE"
@@ -95,7 +99,11 @@ def build_system_status(state: dict[str, Any], adapters: dict[str, Any]) -> dict
         "owner_gate_status": (
             state.get("owner_gate_status")
             if project_status["content_authorized"]
-            else "PROJECT_SETUP_REQUIRED"
+            else (
+                "OWNER_REVIEW_REQUIRED"
+                if project_status.get("status") == "owner_gate"
+                else "PROJECT_SETUP_REQUIRED"
+            )
         ),
         "agent_roles": {
             "codex": "three_model_runtime_planning_writing_review_observation",

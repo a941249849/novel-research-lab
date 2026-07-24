@@ -1,0 +1,32 @@
+{
+  "chapter_id": "chapter-0057",
+  "dramatic_purpose": "面对官方要求修改验收措辞。",
+  "must_keep": [
+    "验收文件明确写入三年期限、例外与失效条件。",
+    "POV 固定为程雪青"
+  ],
+  "must_avoid": [
+    "不得引入未登记资产或用旁白代替物质行动",
+    "不得回滚已接受状态"
+  ],
+  "expected_state_deltas": [
+    {
+      "state_id": "v1.ch057.outcome",
+      "asset_id": "char_cheng_xueqing",
+      "field_path": "character.current_state",
+      "after": "验收文件明确写入三年期限、例外与失效条件。",
+      "before": "可拆节点通过首次实载，但维护倒计时立即开始。"
+    }
+  ],
+  "required_asset_ids": [
+    "char_cheng_xueqing",
+    "faction_renewal_bureau",
+    "foreshadow_three_year_limit"
+  ],
+  "active_hook_ids": [
+    "foreshadow_three_year_limit"
+  ],
+  "scene_constraints": [
+    "冲突必须落在具体工艺现场、物证或受影响者选择上"
+  ]
+}

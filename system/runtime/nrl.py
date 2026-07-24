@@ -70,6 +70,8 @@ from nrl_creation_schemas import (
     build_creation_schema_registry,
     validate_creation_asset_store,
 )
+from nrl_controlled_samples import validate_controlled_samples
+from nrl_continuity_validation import validate_continuity_contract
 from nrl_corpus_pipeline import (
     build_evidence_pack,
     build_evidence_pack_matrix,
@@ -114,8 +116,19 @@ from nrl_full_corpus_proof import (
 from nrl_final_assets import promote_final_asset_bundle, validate_final_asset_bundle
 from nrl_handoff_packet import write_antigravity_packet
 from nrl_hermes_controlled_prose import validate_controlled_prose_text
+from nrl_literary_semantics import (
+    build_literary_semantic_assets,
+    build_literary_semantic_status,
+    validate_literary_semantic_assets,
+    validate_project_semantic_contracts,
+)
 from nrl_paths import ROOT, runtime_path
 from nrl_projects import build_project_status, initialize_project, list_projects, validate_project_isolation
+from nrl_project_production import (
+    prepare_project_production,
+    relock_project_baseline,
+    validate_project_production,
+)
 from nrl_owner_gate import DECISION_TYPES, load_decisions, record_owner_decision
 from nrl_phase2e import (
     latest_phase2e_acceptance,
@@ -184,7 +197,7 @@ from nrl_longform_plan import (
 )
 from nrl_longform_cluster1 import write_cluster1_intents
 from nrl_volume1_longform import write_volume1_intents, build_volume1_manifest, validate_volume1_manifest
-from nrl_volume1_release import build_release_readiness, build_fanqie_upload_package, build_review_manuscript, build_window_review_packet, record_window_review, dispatch_window_review, dispatch_release_edit, record_external_release_edit
+from nrl_volume1_release import build_release_readiness, build_fanqie_upload_package, build_review_manuscript, build_window_review_packet, record_window_review, dispatch_window_review, dispatch_independent_window_review, dispatch_release_edit, record_external_release_edit
 from nrl_story_window import (
     build_story_window_status,
     generate_story_window,
@@ -462,6 +475,44 @@ def cmd_creation_schemas(_: argparse.Namespace) -> int:
 def cmd_validate_creation_assets(_: argparse.Namespace) -> int:
     result = validate_creation_asset_store()
     print_json(result)
+    return 0 if result["valid"] else 1
+
+
+def cmd_controlled_sample_validate(_: argparse.Namespace) -> int:
+    result = validate_controlled_samples()
+    report_path = (
+        ROOT
+        / "projects"
+        / str(result["project_id"])
+        / "validation"
+        / "controlled_sample_validation.v0.1.json"
+    )
+    report_path.parent.mkdir(parents=True, exist_ok=True)
+    report_path.write_text(
+        json.dumps(result, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    result["report_path"] = str(report_path.relative_to(ROOT))
+    print_json(result)
+    return 0 if result["valid"] else 1
+
+
+def cmd_continuity_validate(args: argparse.Namespace) -> int:
+    result = validate_continuity_contract(
+        args.project_id, require_prose=not args.contract_only
+    )
+    if not args.contract_only:
+        report_path = (
+            ROOT
+            / "projects"
+            / args.project_id
+            / "validation/continuity_validation.v0.1.json"
+        )
+        report_path.parent.mkdir(parents=True, exist_ok=True)
+        report_path.write_text(
+            json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+        )
+    print(json.dumps(result, ensure_ascii=False, indent=2))
     return 0 if result["valid"] else 1
 
 
@@ -857,6 +908,40 @@ def cmd_deep_read_cross_validate(_: argparse.Namespace) -> int:
     return 0 if result["valid"] else 1
 
 
+def cmd_literary_semantic_build(_: argparse.Namespace) -> int:
+    result = build_literary_semantic_assets()
+    print_json(result)
+    return 0 if result["valid"] else 1
+
+
+def cmd_literary_semantic_validate(_: argparse.Namespace) -> int:
+    result = validate_literary_semantic_assets()
+    print_json(result)
+    return 0 if result["valid"] else 1
+
+
+def cmd_literary_semantic_status(_: argparse.Namespace) -> int:
+    result = build_literary_semantic_status(BOOTSTRAP_PROJECT_ID)
+    print_json(result)
+    return 0 if result["valid"] else 1
+
+
+def cmd_project_semantic_validate(_: argparse.Namespace) -> int:
+    if not BOOTSTRAP_PROJECT_ID:
+        raise RuntimeError("project-semantic-validate requires --project")
+    result = validate_project_semantic_contracts(BOOTSTRAP_PROJECT_ID)
+    print_json(result)
+    return 0 if result["valid"] else 1
+
+
+def cmd_project_production_relock(_: argparse.Namespace) -> int:
+    if not BOOTSTRAP_PROJECT_ID:
+        raise RuntimeError("project-production-relock requires --project")
+    result = relock_project_baseline(BOOTSTRAP_PROJECT_ID)
+    print_json(result)
+    return 0
+
+
 def cmd_project_reconciliation_pack(_: argparse.Namespace) -> int:
     print_json(build_project_reconciliation_packet())
     return 0
@@ -883,6 +968,18 @@ def cmd_production_readiness(_: argparse.Namespace) -> int:
     result = build_production_readiness()
     print_json(result)
     return 0 if result["ready"] else 1
+
+
+def cmd_project_production_prepare(_: argparse.Namespace) -> int:
+    result = prepare_project_production()
+    print_json(result)
+    return 0 if result["valid"] else 1
+
+
+def cmd_project_production_validate(_: argparse.Namespace) -> int:
+    result = validate_project_production()
+    print_json(result)
+    return 0 if result["valid"] else 1
 
 
 def cmd_chapter_runtime_status(_: argparse.Namespace) -> int:
@@ -1024,6 +1121,12 @@ def cmd_volume1_window_review_record(args: argparse.Namespace) -> int:
 
 def cmd_volume1_window_review(args: argparse.Namespace) -> int:
     result = dispatch_window_review(args.start, args.end, model=args.model)
+    print_json(result)
+    return 0 if result["valid"] else 1
+
+
+def cmd_volume1_window_independent_review(args: argparse.Namespace) -> int:
+    result = dispatch_independent_window_review(args.start, args.end, model=args.model)
     print_json(result)
     return 0 if result["valid"] else 1
 
@@ -1642,6 +1745,15 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("validate-creation-assets").set_defaults(
         func=cmd_validate_creation_assets
     )
+    sub.add_parser("controlled-sample-validate").set_defaults(
+        func=cmd_controlled_sample_validate
+    )
+    continuity_parser = sub.add_parser("continuity-validate")
+    continuity_parser.add_argument(
+        "--project-id", default="hundred-crafts-night-procession"
+    )
+    continuity_parser.add_argument("--contract-only", action="store_true")
+    continuity_parser.set_defaults(func=cmd_continuity_validate)
     final_assets_validate = sub.add_parser("final-assets-validate")
     final_assets_validate.add_argument("--file", required=True)
     final_assets_validate.set_defaults(func=cmd_final_assets_validate)
@@ -1803,6 +1915,10 @@ def build_parser() -> argparse.ArgumentParser:
     deep_read_cross_dispatch.add_argument("--print-timeout", default="15m0s")
     deep_read_cross_dispatch.set_defaults(func=cmd_deep_read_cross_dispatch)
     sub.add_parser("deep-read-cross-validate").set_defaults(func=cmd_deep_read_cross_validate)
+    sub.add_parser("literary-semantic-build").set_defaults(func=cmd_literary_semantic_build)
+    sub.add_parser("literary-semantic-validate").set_defaults(func=cmd_literary_semantic_validate)
+    sub.add_parser("literary-semantic-status").set_defaults(func=cmd_literary_semantic_status)
+    sub.add_parser("project-semantic-validate").set_defaults(func=cmd_project_semantic_validate)
     sub.add_parser("project-reconciliation-pack").set_defaults(func=cmd_project_reconciliation_pack)
     project_reconciliation_dispatch = sub.add_parser("project-reconciliation-dispatch")
     project_reconciliation_dispatch.add_argument("--model", default="Gemini 3.5 Flash (High)")
@@ -1811,6 +1927,9 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("project-reconciliation-validate").set_defaults(func=cmd_project_reconciliation_validate)
     sub.add_parser("project-reconciliation-apply").set_defaults(func=cmd_project_reconciliation_apply)
     sub.add_parser("production-readiness").set_defaults(func=cmd_production_readiness)
+    sub.add_parser("project-production-prepare").set_defaults(func=cmd_project_production_prepare)
+    sub.add_parser("project-production-relock").set_defaults(func=cmd_project_production_relock)
+    sub.add_parser("project-production-validate").set_defaults(func=cmd_project_production_validate)
     sub.add_parser("chapter-runtime-status").set_defaults(func=cmd_chapter_runtime_status)
     sub.add_parser("production-preflight").set_defaults(func=cmd_production_preflight)
     sub.add_parser("volume1-plan-build").set_defaults(func=cmd_volume1_plan_build)
@@ -1851,6 +1970,11 @@ def build_parser() -> argparse.ArgumentParser:
     window_review.add_argument("--end", type=int, required=True)
     window_review.add_argument("--model", default="Gemini 3.5 Flash (High)")
     window_review.set_defaults(func=cmd_volume1_window_review)
+    independent_window_review = sub.add_parser("volume1-window-independent-review")
+    independent_window_review.add_argument("--start", type=int, required=True)
+    independent_window_review.add_argument("--end", type=int, required=True)
+    independent_window_review.add_argument("--model")
+    independent_window_review.set_defaults(func=cmd_volume1_window_independent_review)
     release_edit = sub.add_parser("volume1-release-edit")
     release_edit.add_argument("--chapter-id", required=True)
     release_edit.add_argument("--repair-direction", required=True)

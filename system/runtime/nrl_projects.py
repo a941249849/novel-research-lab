@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import hashlib
 import re
 from datetime import datetime, timezone
 from pathlib import Path
@@ -232,6 +233,81 @@ def build_project_status(project_id: str | None = None) -> dict[str, Any]:
             path.is_file() and "待生成" not in path.read_text(encoding="utf-8")
             for path in design_paths
         )
+    preprose_review_path = workspace / "validation/preprose_independent_review.v0.1.json"
+    preprose_review = _read_json(preprose_review_path) if preprose_review_path.is_file() else {}
+    controlled_sample_ready = bool(
+        assets
+        and design_ready
+        and preprose_review.get("valid") is True
+        and preprose_review.get("verdict") == "ACCEPT_FOR_CONTROLLED_SAMPLE_TEST"
+    )
+    expected_sample_scopes = {
+        f"{project['project_id']}:volume1:sample-window-008-010",
+        f"{project['project_id']}:volume1:sample-window-024-026",
+        f"{project['project_id']}:volume1:sample-window-049-051",
+    }
+    expected_forbidden = {
+        f"{project['project_id']}:continuous-prose",
+        f"{project['project_id']}:chapter-outside-approved-samples",
+        f"{project['project_id']}:publish",
+    }
+    decisions_path = ROOT / "system/runtime/owner_gate_decisions.json"
+    decisions: list[dict[str, Any]] = []
+    if decisions_path.is_file():
+        raw_decisions = json.loads(decisions_path.read_text(encoding="utf-8"))
+        decisions = raw_decisions if isinstance(raw_decisions, list) else []
+    review_response_path = ROOT / str(preprose_review.get("response_path", ""))
+    review_sha = (
+        hashlib.sha256(review_response_path.read_bytes()).hexdigest()
+        if review_response_path.is_file()
+        else ""
+    )
+    matching_sample_decision = next(
+        (
+            item
+            for item in reversed(decisions)
+            if item.get("decision_type") == "authorize_controlled_prose_test"
+            and set(item.get("authorized_scope", [])) == expected_sample_scopes
+            and expected_forbidden <= set(item.get("forbidden_scope", []))
+            and item.get("expires_after_mission") == "hundred-crafts-volume1-controlled-sample-v0.1"
+            and item.get("bound_response_sha256") == review_sha
+        ),
+        None,
+    )
+    sample_test_authorized = bool(
+        project.get("sample_test_authorized")
+        and controlled_sample_ready
+        and matching_sample_decision
+    )
+    sample_run_path = workspace / "production_runtime/plans/controlled_sample_run.v0.1.json"
+    sample_run = _read_json(sample_run_path) if sample_run_path.is_file() else {}
+    controlled_sample_status = str(sample_run.get("status", "not_started"))
+    sample_test_passed = bool(
+        sample_test_authorized
+        and controlled_sample_status == "sample_test_passed"
+        and sample_run.get("continuous_prose_authorized") is False
+        and sample_run.get("publish_authorized") is False
+    )
+    continuity_path = workspace / "production_runtime/plans/continuity_validation.v0.1.json"
+    continuity_contract = _read_json(continuity_path) if continuity_path.is_file() else {}
+    continuity_status = str(continuity_contract.get("status", "not_started"))
+    continuity_validation: dict[str, Any] = {"valid": False}
+    if continuity_path.is_file():
+        from nrl_continuity_validation import validate_continuity_contract
+
+        continuity_validation = validate_continuity_contract(str(project["project_id"]))
+    continuity_test_authorized = bool(
+        sample_test_passed
+        and continuity_status in {"authorized", "continuity_test_passed"}
+        and continuity_validation.get("valid") is True
+    )
+    continuity_test_passed = bool(
+        continuity_test_authorized
+        and continuity_status == "continuity_test_passed"
+        and continuity_validation.get("review_verdict") == "ACCEPT_CONTINUITY_TEST"
+        and continuity_contract.get("continuous_prose_authorized") is False
+        and continuity_contract.get("publish_authorized") is False
+    )
     return {
         "project_id": project["project_id"],
         "title": project["title"],
@@ -239,6 +315,19 @@ def build_project_status(project_id: str | None = None) -> dict[str, Any]:
         "workspace": project["workspace"],
         "storage_mode": project.get("storage_mode", "isolated_v1"),
         "content_authorized": bool(project.get("content_authorized")),
+        "sample_test_authorized": sample_test_authorized,
+        "sample_test_passed": sample_test_passed,
+        "controlled_sample_status": controlled_sample_status,
+        "controlled_sample_ready": controlled_sample_ready,
+        "sample_owner_decision_id": (
+            matching_sample_decision.get("decision_id")
+            if matching_sample_decision
+            else None
+        ),
+        "continuity_test_authorized": continuity_test_authorized,
+        "continuity_test_passed": continuity_test_passed,
+        "continuity_status": continuity_status,
+        "continuity_owner_decision_id": continuity_contract.get("owner_decision_id"),
         "assets": len(assets),
         "chapters": len(chapters),
         "accepted_chapters": len(accepted),
@@ -247,7 +336,19 @@ def build_project_status(project_id: str | None = None) -> dict[str, Any]:
         "next_action": (
             "continue governed production"
             if bool(project.get("content_authorized")) and bool(assets) and design_ready
-            else "select an original concept and produce project-specific design contracts"
+            else "await explicit production readiness decision"
+            if continuity_test_passed
+            else "await explicit controlled continuity validation authorization"
+            if sample_test_passed
+            else "run authorized controlled sample test"
+            if controlled_sample_ready and sample_test_authorized
+            else "await explicit controlled sample authorization"
+            if controlled_sample_ready
+            else "await explicit prose authorization"
+            if bool(assets) and design_ready
+            else "build project-specific creation assets"
+            if design_ready
+            else "produce project-specific design contracts"
         ),
     }
 
@@ -256,6 +357,7 @@ def validate_project_isolation(project_id: str | None = None) -> dict[str, Any]:
     project = load_project(project_id)
     selected = str(project["project_id"])
     errors: list[str] = []
+    checks: dict[str, Any] = {}
     workspace = (ROOT / str(project["workspace"])).resolve()
     expected_root = (ROOT / "projects" / selected).resolve()
     if workspace != expected_root:
@@ -276,8 +378,90 @@ def validate_project_isolation(project_id: str | None = None) -> dict[str, Any]:
                     errors.append(f"{label} project_id mismatch")
                 if payload.get("project") != project.get("title"):
                     errors.append(f"{label} title mismatch")
+            from nrl_creation_schemas import validate_creation_asset_store
+
+            asset_validation = validate_creation_asset_store(assets)
+            checks["creation_assets"] = asset_validation
+            if not asset_validation["valid"]:
+                errors.append("project creation assets failed schema validation")
+
+            volume_plan_path = workspace / "production_runtime/plans/volume1_outline.v1.json"
+            if volume_plan_path.is_file():
+                import jsonschema
+
+                schema_path = ROOT / "system/production_runtime/schemas/volume_outline.schema.json"
+                try:
+                    outline = _read_json(volume_plan_path)
+                    schema = _read_json(schema_path)
+                    jsonschema.Draft7Validator.check_schema(schema)
+                    jsonschema.validate(outline, schema)
+                    chapter_numbers = [row.get("chapter") for row in outline.get("chapters", [])]
+                    plan_errors = []
+                    if chapter_numbers != list(range(1, len(chapter_numbers) + 1)):
+                        plan_errors.append("chapter numbers must be contiguous from 1")
+                    known_asset_ids = {str(row.get("asset_id")) for row in assets.get("assets", [])}
+                    unresolved = sorted({
+                        ref
+                        for row in outline.get("chapters", [])
+                        for ref in row.get("asset_refs", [])
+                        if ref not in known_asset_ids
+                    })
+                    if unresolved:
+                        plan_errors.append(f"unresolved volume plan asset refs: {unresolved}")
+                    checks["volume_plan"] = {
+                        "valid": not plan_errors,
+                        "status": "validated" if not plan_errors else "invalid",
+                        "chapter_count": len(chapter_numbers),
+                        "errors": plan_errors,
+                    }
+                    errors.extend(plan_errors)
+                except (jsonschema.SchemaError, jsonschema.ValidationError) as exc:
+                    checks["volume_plan"] = {
+                        "valid": False,
+                        "status": "invalid",
+                        "chapter_count": 0,
+                        "errors": [exc.message],
+                    }
+                    errors.append("project volume plan failed schema validation")
+            else:
+                checks["volume_plan"] = {
+                    "valid": True,
+                    "status": "not_present",
+                    "chapter_count": 0,
+                    "errors": [],
+                }
+
+            continuity_path = workspace / "production_runtime/plans/continuity_validation.v0.1.json"
+            if continuity_path.is_file():
+                from nrl_continuity_validation import validate_continuity_contract
+
+                continuity_validation = validate_continuity_contract(selected)
+                checks["continuity_validation"] = {
+                    key: value
+                    for key, value in continuity_validation.items()
+                    if key != "prose_chapters"
+                }
+                checks["continuity_validation"]["generated_prose_count"] = len(
+                    continuity_validation.get("prose_chapters", [])
+                )
+                if not continuity_validation["valid"]:
+                    errors.append("project continuity validation failed")
         forbidden = ("《借天改命账》", "borrowed-heaven")
-        for path in workspace.rglob("*") if workspace.is_dir() else []:
+        canonical_roots = (
+            workspace / "design",
+            workspace / "creation_assets",
+            workspace / "production_runtime/intents",
+            workspace / "production_runtime/plans",
+            workspace / "production_runtime/state",
+            workspace / "production_runtime/story_windows",
+        )
+        canonical_paths = (
+            path
+            for root in canonical_roots
+            if root.is_dir()
+            for path in root.rglob("*")
+        )
+        for path in canonical_paths:
             if path.is_file() and path.suffix in {".json", ".md", ".txt"}:
                 text = path.read_text(encoding="utf-8")
                 if any(marker in text for marker in forbidden):
@@ -287,5 +471,6 @@ def validate_project_isolation(project_id: str | None = None) -> dict[str, Any]:
         "project_id": selected,
         "workspace": str(workspace.relative_to(ROOT)) if workspace.is_relative_to(ROOT) else str(workspace),
         "storage_mode": project.get("storage_mode", "isolated_v1"),
+        "checks": checks,
         "errors": errors,
     }

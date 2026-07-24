@@ -1,0 +1,463 @@
+{
+  "version": "1.0",
+  "project_id": "hundred-crafts-night-procession",
+  "status": "canonical_initial_state",
+  "fields": [
+    {
+      "asset_id": "char_zhou_li",
+      "field_path": "character.current_state",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "char_zhou_li",
+      "field_path": "lifecycle_state",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "char_cheng_xueqing",
+      "field_path": "character.current_state",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "char_cheng_xueqing",
+      "field_path": "lifecycle_state",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "char_du_chengli",
+      "field_path": "character.current_state",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "char_du_chengli",
+      "field_path": "lifecycle_state",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "char_lin_dai",
+      "field_path": "character.current_state",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "char_lin_dai",
+      "field_path": "lifecycle_state",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "char_ma_xiaoman",
+      "field_path": "character.current_state",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "char_ma_xiaoman",
+      "field_path": "lifecycle_state",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "npc_zhou_yongzhi",
+      "field_path": "npc.current_agenda",
+      "value": "dormant",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "npc_zhou_yongzhi",
+      "field_path": "lifecycle_state",
+      "value": "dormant",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "npc_yan_shifu",
+      "field_path": "npc.current_agenda",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "npc_yan_shifu",
+      "field_path": "lifecycle_state",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "npc_he_ning",
+      "field_path": "npc.current_agenda",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "npc_he_ning",
+      "field_path": "lifecycle_state",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "npc_gao_yuan",
+      "field_path": "npc.current_agenda",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "npc_gao_yuan",
+      "field_path": "lifecycle_state",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "npc_xiao_bei",
+      "field_path": "npc.current_agenda",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "npc_xiao_bei",
+      "field_path": "lifecycle_state",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "faction_renewal_bureau",
+      "field_path": "faction.status",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "faction_renewal_bureau",
+      "field_path": "lifecycle_state",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "faction_old_street_residents",
+      "field_path": "faction.status",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "faction_old_street_residents",
+      "field_path": "lifecycle_state",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "faction_opera_troupe",
+      "field_path": "faction.status",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "faction_opera_troupe",
+      "field_path": "lifecycle_state",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "faction_maintenance_team",
+      "field_path": "faction.status",
+      "value": "候选协作关系，尚未成立",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "faction_maintenance_team",
+      "field_path": "lifecycle_state",
+      "value": "seed",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "artifact_unnamed_beam",
+      "field_path": "artifact.condition",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "artifact_unnamed_beam",
+      "field_path": "lifecycle_state",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "artifact_role_helmet",
+      "field_path": "artifact.condition",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "artifact_role_helmet",
+      "field_path": "lifecycle_state",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "artifact_responsibility_ledger",
+      "field_path": "artifact.condition",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "artifact_responsibility_ledger",
+      "field_path": "lifecycle_state",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "artifact_underground_hull",
+      "field_path": "artifact.condition",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "artifact_underground_hull",
+      "field_path": "lifecycle_state",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "artifact_detachable_joint",
+      "field_path": "artifact.condition",
+      "value": "seed",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "artifact_detachable_joint",
+      "field_path": "lifecycle_state",
+      "value": "seed",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "technique_load_reading",
+      "field_path": "technique.availability",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "technique_load_reading",
+      "field_path": "lifecycle_state",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "technique_role_unloading",
+      "field_path": "technique.availability",
+      "value": "seed",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "technique_role_unloading",
+      "field_path": "lifecycle_state",
+      "value": "seed",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "technique_compartment_transfer",
+      "field_path": "technique.availability",
+      "value": "seed",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "technique_compartment_transfer",
+      "field_path": "lifecycle_state",
+      "value": "seed",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "technique_oral_waterline",
+      "field_path": "technique.availability",
+      "value": "seed",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "technique_oral_waterline",
+      "field_path": "lifecycle_state",
+      "value": "seed",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "technique_joint_signoff",
+      "field_path": "technique.availability",
+      "value": "seed",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "technique_joint_signoff",
+      "field_path": "lifecycle_state",
+      "value": "seed",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "naming_civic_craft_lexicon",
+      "field_path": "naming.adoption",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "naming_civic_craft_lexicon",
+      "field_path": "lifecycle_state",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "bond_zhou_father",
+      "field_path": "emotional_bond.trust",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "bond_zhou_father",
+      "field_path": "lifecycle_state",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "bond_team_mutual_audit",
+      "field_path": "emotional_bond.trust",
+      "value": "seed",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "bond_team_mutual_audit",
+      "field_path": "lifecycle_state",
+      "value": "seed",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "bond_upstream_downstream",
+      "field_path": "emotional_bond.trust",
+      "value": "seed",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "bond_upstream_downstream",
+      "field_path": "lifecycle_state",
+      "value": "seed",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "foreshadow_second_record",
+      "field_path": "foreshadowing.status",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "foreshadow_second_record",
+      "field_path": "lifecycle_state",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "foreshadow_twelve_nodes",
+      "field_path": "foreshadowing.status",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "foreshadow_twelve_nodes",
+      "field_path": "lifecycle_state",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "foreshadow_nonexistent_node",
+      "field_path": "foreshadowing.status",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "foreshadow_nonexistent_node",
+      "field_path": "lifecycle_state",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "foreshadow_three_year_limit",
+      "field_path": "foreshadowing.status",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "foreshadow_three_year_limit",
+      "field_path": "lifecycle_state",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "ledger_structural_load",
+      "field_path": "state_ledger.value",
+      "value": "旧梁连接异常，未知荷载尚未验明",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "ledger_structural_load",
+      "field_path": "lifecycle_state",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "ledger_role_residue",
+      "field_path": "state_ledger.value",
+      "value": "角色残留未激活",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "ledger_role_residue",
+      "field_path": "lifecycle_state",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "ledger_water_level",
+      "field_path": "state_ledger.value",
+      "value": "风险尚未分舱",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "ledger_water_level",
+      "field_path": "lifecycle_state",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "ledger_public_dissent",
+      "field_path": "state_ledger.value",
+      "value": "居民尚未成为正式异议方",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "ledger_public_dissent",
+      "field_path": "lifecycle_state",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "ledger_team_authority",
+      "field_path": "state_ledger.value",
+      "value": "事故协作规则尚未建立",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "ledger_team_authority",
+      "field_path": "lifecycle_state",
+      "value": "active",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "ledger_maintenance_deadline",
+      "field_path": "state_ledger.value",
+      "value": "三年维护期限尚未启动",
+      "source": "canonical_project_asset"
+    },
+    {
+      "asset_id": "ledger_maintenance_deadline",
+      "field_path": "lifecycle_state",
+      "value": "seed",
+      "source": "canonical_project_asset"
+    }
+  ]
+}

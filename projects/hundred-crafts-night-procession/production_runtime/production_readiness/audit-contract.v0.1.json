@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "project_id": "hundred-crafts-night-procession",
+  "gate": "volume1_formal_production_readiness",
+  "owner_instruction": "正式开放之前再进行一轮深层次的全方面审查，确保没问题的话就进行",
+  "review_dimensions": [
+    "project_isolation",
+    "canonical_input_binding",
+    "volume_outline_causality",
+    "chapter_001_027_continuity",
+    "creation_asset_coverage",
+    "state_ledger_coverage",
+    "chapter_runtime_compatibility",
+    "model_route_and_fallback",
+    "ai_style_quality_controls",
+    "cultural_and_medical_safety",
+    "authorization_and_release_boundaries"
+  ],
+  "formal_production_policy": {
+    "canonical_start_chapter": 1,
+    "volume_chapter_range": [1, 66],
+    "first_authorized_window": [1, 10],
+    "window_review_required": true,
+    "preproduction_samples_are_canonical": false,
+    "preproduction_samples_are_calibration_evidence": true,
+    "publish_authorized": false
+  },
+  "required_verdict": "ACCEPT_FORMAL_PRODUCTION",
+  "status": "audit_in_progress"
+}

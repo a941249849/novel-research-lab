@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "nrl://schemas/volume-outline.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "project_id", "volume", "title", "prose_authorized", "chapters"],
+  "properties": {
+    "version": {"const": "1.0"},
+    "project_id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+    "volume": {"type": "integer", "minimum": 1},
+    "title": {"type": "string", "minLength": 1},
+    "prose_authorized": {"const": false},
+    "chapters": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["chapter", "title", "act", "pov", "purpose", "irreversible_change", "asset_refs"],
+        "properties": {
+          "chapter": {"type": "integer", "minimum": 1},
+          "title": {"type": "string", "minLength": 1},
+          "act": {"type": "string", "pattern": "^A[1-9][0-9]*$"},
+          "pov": {"type": "string", "minLength": 1},
+          "purpose": {"type": "string", "minLength": 1},
+          "irreversible_change": {"type": "string", "minLength": 1},
+          "asset_refs": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^[a-z0-9_-]+$"}}
+        }
+      }
+    }
+  }
+}

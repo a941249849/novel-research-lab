@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "project_id": "hundred-crafts-night-procession",
+  "stage": "controlled_continuity_passed",
+  "artifacts": {
+    "concept_decision": "system/research_assets/project_candidates/hundred-crafts-night-procession/series-blueprint.v0.3.json",
+    "story_bible": "design/story_bible.md",
+    "creation_assets": "creation_assets/project_assets.json",
+    "longform_contract": "design/production_blueprint.md",
+    "volume_plan": "production_runtime/plans/volume1_outline.v1.json",
+    "medical_adviser_contract": "system/research_assets/project_candidates/hundred-crafts-night-procession/medical-adviser-contract.v0.1.json",
+    "independent_review": ".agent-handoff/antigravity/responses/hundred-crafts-volume1-preprose-review-v01.md",
+    "continuity_contract": "production_runtime/plans/continuity_validation.v0.1.json",
+    "continuity_validation": "validation/continuity_validation.v0.1.json",
+    "continuity_review": "production_runtime/continuity_validation/reviews/sol-final-review.v0.3.md"
+  },
+  "owner_gate": "required_before_production_readiness_decision"
+}

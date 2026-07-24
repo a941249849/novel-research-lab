@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "nrl://schemas/candidate-regional-evidence-cards.v0.1",
+  "title": "NRL Candidate Regional Evidence Cards",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "candidate_id", "status", "prose_authorized", "routes"],
+  "properties": {
+    "version": {"const": "0.1"},
+    "candidate_id": {"type": "string", "minLength": 1},
+    "status": {"const": "p0_seed_collection"},
+    "prose_authorized": {"const": false},
+    "routes": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["route_id", "regional_lens_id", "status", "cards", "route_synthesis"],
+        "properties": {
+          "route_id": {"type": "string", "pattern": "^[a-z0-9_-]+$"},
+          "regional_lens_id": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+          "status": {"enum": ["seeded", "triangulation_pending", "triangulated"]},
+          "cards": {
+            "type": "array",
+            "minItems": 3,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["card_id", "source_tier", "claim_status", "title", "publisher_or_author", "url", "location", "period", "domain_ids", "observation", "limitations", "story_value", "cross_validation_next"],
+              "properties": {
+                "card_id": {"type": "string", "pattern": "^[a-z0-9_-]+$"},
+                "source_tier": {"enum": ["A", "B", "C", "D", "E"]},
+                "claim_status": {"enum": ["verified_baseline", "candidate_observation", "discovery_lead"]},
+                "title": {"type": "string", "minLength": 1},
+                "publisher_or_author": {"type": "string", "minLength": 1},
+                "url": {"type": "string", "pattern": "^https://"},
+                "location": {"type": "string", "minLength": 1},
+                "period": {"type": "string", "minLength": 1},
+                "domain_ids": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^[a-z0-9_]+$"}},
+                "observation": {"type": "string", "minLength": 1},
+                "limitations": {"type": "string", "minLength": 1},
+                "story_value": {"type": "string", "minLength": 1},
+                "cross_validation_next": {"type": "string", "minLength": 1}
+              }
+            }
+          },
+          "route_synthesis": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["mechanism_gain", "human_conflict", "remaining_debt"],
+            "properties": {
+              "mechanism_gain": {"type": "string", "minLength": 1},
+              "human_conflict": {"type": "string", "minLength": 1},
+              "remaining_debt": {"type": "string", "minLength": 1}
+            }
+          }
+        }
+      }
+    }
+  }
+}

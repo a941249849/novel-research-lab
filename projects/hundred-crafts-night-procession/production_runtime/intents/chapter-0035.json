@@ -1,0 +1,30 @@
+{
+  "chapter_id": "chapter-0035",
+  "dramatic_purpose": "暴雨前核对所有舱位与撤离路线。",
+  "must_keep": [
+    "发现一处登记空舱实际仍有人居住。",
+    "POV 固定为林岱"
+  ],
+  "must_avoid": [
+    "不得引入未登记资产或用旁白代替物质行动",
+    "不得回滚已接受状态"
+  ],
+  "expected_state_deltas": [
+    {
+      "state_id": "v1.ch035.outcome",
+      "asset_id": "char_lin_dai",
+      "field_path": "character.current_state",
+      "after": "发现一处登记空舱实际仍有人居住。",
+      "before": "每个风险舱必须记录开启期限与最终清偿人。"
+    }
+  ],
+  "required_asset_ids": [
+    "char_lin_dai",
+    "npc_he_ning",
+    "ledger_water_level"
+  ],
+  "active_hook_ids": [],
+  "scene_constraints": [
+    "冲突必须落在具体工艺现场、物证或受影响者选择上"
+  ]
+}

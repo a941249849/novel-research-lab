@@ -36,10 +36,13 @@ def build_hardening_status(
     live_runtime = roadmap is None and evidence_root is None
     roadmap = deepcopy(roadmap) if roadmap is not None else _load_roadmap()
     deep_read = None
+    literary_semantics = None
     if live_runtime:
         from nrl_deep_read import build_deep_read_status
+        from nrl_literary_semantics import validate_literary_semantic_assets
 
         deep_read = build_deep_read_status()
+        literary_semantics = validate_literary_semantic_assets()
     capabilities = roadmap.get("capabilities", [])
     seen: set[str] = set()
     dependency_ready: set[str] = set()
@@ -94,6 +97,11 @@ def build_hardening_status(
                 status = "missing"
             elif capability_id == "cross_book_mechanism_distillation" and not deep_read.get(
                 "deep_read_verified"
+            ):
+                status = "missing" if not blocked_dependencies else "blocked"
+            elif (
+                capability_id == "cross_book_mechanism_distillation"
+                and not literary_semantics.get("valid")
             ):
                 status = "missing" if not blocked_dependencies else "blocked"
         capability["declared_status"] = declared_status

@@ -11,8 +11,21 @@
     "verdict": {"enum": ["ACCEPT", "ACCEPT_WITH_WARNINGS", "REWORK_REQUIRED"]},
     "dimensions": {
       "type": "object",
-      "required": ["canon", "character", "state", "causality", "pacing", "life_force", "anti_ai_taste", "originality"],
-      "additionalProperties": {"type": "array"}
+      "required": ["canon", "character", "state", "causality", "pacing", "life_force", "anti_ai_taste", "originality", "semantic_realization", "progression_permissions", "history_coherence"],
+      "properties": {
+        "canon": {"$ref": "#/definitions/evidence"},
+        "character": {"$ref": "#/definitions/evidence"},
+        "state": {"$ref": "#/definitions/evidence"},
+        "causality": {"$ref": "#/definitions/evidence"},
+        "pacing": {"$ref": "#/definitions/evidence"},
+        "life_force": {"$ref": "#/definitions/evidence"},
+        "anti_ai_taste": {"$ref": "#/definitions/evidence"},
+        "originality": {"$ref": "#/definitions/evidence"},
+        "semantic_realization": {"$ref": "#/definitions/evidence"},
+        "progression_permissions": {"$ref": "#/definitions/evidence"},
+        "history_coherence": {"$ref": "#/definitions/evidence"}
+      },
+      "additionalProperties": false
     },
     "issues": {
       "type": "array",
@@ -27,6 +40,18 @@
         },
         "additionalProperties": false
       }
+    },
+    "resolved_prior_issue_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    }
+  },
+  "definitions": {
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1, "pattern": "\\S"}
     }
   },
   "additionalProperties": false

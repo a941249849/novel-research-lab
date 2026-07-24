@@ -7,6 +7,7 @@ import shutil
 import statistics
 import subprocess
 import math
+import unicodedata
 from datetime import datetime, timezone
 from collections import Counter
 from pathlib import Path
@@ -30,11 +31,18 @@ from nrl_production_calibration import build_direct_writer_calibration_status, b
 from nrl_owner_gate import load_decisions
 from nrl_paths import ROOT, runtime_path
 from nrl_projects import active_project, active_project_id, active_project_scope, active_project_title
+from nrl_project_production import (
+    project_workspace,
+    validate_project_production,
+    volume1_chapter_count,
+    volume1_windows,
+)
 from nrl_volume1_plan import build_volume1_dry_run
 from nrl_volume1_longform import build_volume1_manifest as build_longform_volume1_manifest, validate_volume1_manifest as validate_longform_volume1_manifest
 from nrl_volume1_release import prior_window_review_required
 from nrl_story_window import story_beat_for
 from nrl_longform_plan import ACTIVE_BLUEPRINT_PATH, build_longform_first100_dry_run, build_longform_readiness
+from nrl_literary_semantics import validate_project_semantic_contracts
 
 
 VERSION = "0.23"
@@ -103,6 +111,75 @@ def _sha256_text(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
+def _write_role_execution(
+    chapter_id: str,
+    role: str,
+    artifact_path: Path,
+    *,
+    provider: str,
+    model: str,
+    bindings: dict[str, Any] | None = None,
+) -> str:
+    target = runtime_path(
+        f"system/production_runtime/chapters/{chapter_id}/{role}.execution.json"
+    )
+    payload = {
+        "version": "0.28",
+        "chapter_id": chapter_id,
+        "role": role,
+        "artifact": str(artifact_path.relative_to(ROOT)),
+        "artifact_sha256": _sha256(artifact_path),
+        "provider": provider,
+        "model": model,
+        **(bindings or {}),
+    }
+    _write_json(target, payload)
+    return str(target.relative_to(ROOT))
+
+
+def validate_role_execution(
+    record: dict[str, Any], role: str, artifact_path: Path
+) -> dict[str, Any]:
+    errors: list[str] = []
+    execution_ref = record.get("artifacts", {}).get(f"{role}_execution", "")
+    execution_path = runtime_path(execution_ref)
+    if not execution_path.is_file():
+        return {"valid": False, "errors": [f"missing {role} execution evidence"]}
+    execution = _read_json(execution_path)
+    expected_models = {
+        "writer": "gpt-5.6-terra",
+        "observer": "gpt-5.6-luna",
+        "reviewer": "gpt-5.6-sol",
+    }
+    if execution.get("chapter_id") != record.get("chapter_id"):
+        errors.append(f"{role} execution chapter mismatch")
+    if execution.get("role") != role:
+        errors.append(f"{role} execution role mismatch")
+    if execution.get("artifact") != str(artifact_path.relative_to(ROOT)):
+        errors.append(f"{role} execution artifact path mismatch")
+    if execution.get("artifact_sha256") != _sha256(artifact_path):
+        errors.append(f"{role} execution artifact hash mismatch")
+    if active_project_id() != "borrowed-heaven" and (
+        execution.get("provider") != "codex"
+        or execution.get("model") != expected_models[role]
+    ):
+        errors.append(f"{role} execution must use Codex {expected_models[role]}")
+    if role == "observer":
+        revision = runtime_path(record.get("artifacts", {}).get("revision", ""))
+        if not revision.is_file() or execution.get("revision_sha256") != _sha256(revision):
+            errors.append("observer execution revision hash mismatch")
+    if role == "reviewer":
+        audit = _read_json(artifact_path)
+        revision = runtime_path(record.get("artifacts", {}).get("revision", ""))
+        if execution.get("audit_artifact_sha256") != _sha256(artifact_path):
+            errors.append("reviewer execution audit hash mismatch")
+        if not revision.is_file() or execution.get("revision_sha256") != _sha256(revision):
+            errors.append("reviewer execution revision hash mismatch")
+        if audit.get("artifact_sha256") != execution.get("revision_sha256"):
+            errors.append("reviewer execution is not bound to audited revision")
+    return {"valid": not errors, "errors": errors, "execution": execution}
+
+
 def validate_stage_transition(
     record: dict[str, Any], target_stage: str, artifact_path: str
 ) -> dict[str, Any]:
@@ -139,7 +216,7 @@ def validate_settlement_payload(
     blocking = {
         str(issue.get("issue_id"))
         for issue in audit.get("issues", [])
-        if issue.get("severity") == "blocking"
+        if issue.get("severity") in {"blocking", "major"}
     }
     missing = sorted(blocking - resolved)
     if missing:
@@ -156,6 +233,74 @@ def validate_settlement_payload(
             comparable = ("asset_id", "field_path", "before", "after")
             if not fact or any(delta.get(key) != fact.get(key) for key in comparable):
                 errors.append(f"state delta does not match observed fact: {delta.get('fact_id')}")
+    if active_project_id() != "borrowed-heaven":
+        workspace = project_workspace()
+        store_path = workspace / "creation_assets/project_assets.json"
+        initial_path = workspace / "production_runtime/state/canonical_initial_state.v1.json"
+        assets = {
+            str(item.get("asset_id")): item
+            for item in _read_json(store_path).get("assets", [])
+            if item.get("asset_id")
+        }
+        current = {
+            (str(item.get("asset_id")), str(item.get("field_path"))): item.get("value")
+            for item in _read_json(initial_path).get("fields", [])
+            if item.get("asset_id") and item.get("field_path")
+        } if initial_path.is_file() else {}
+        registry = _load_registry()
+        ordinal = int(chapter_id.removeprefix("chapter-"))
+        for record in registry.get("chapters", []):
+            if int(str(record.get("chapter_id", "chapter-0000"))[-4:]) >= ordinal:
+                continue
+            settlement_path = record.get("artifacts", {}).get("settlement")
+            if settlement_path and record.get("stage") == "chapter_accepted":
+                for delta in _read_json(runtime_path(settlement_path)).get("state_deltas", []):
+                    current[(str(delta.get("asset_id")), str(delta.get("field_path")))] = delta.get("after")
+        allowed_fields = {key for key in current}
+        expected: dict[tuple[str, str], dict[str, Any]] = {}
+        chapter_record = next(
+            (item for item in registry.get("chapters", []) if item.get("chapter_id") == chapter_id),
+            None,
+        )
+        if chapter_record and chapter_record.get("artifacts", {}).get("intent"):
+            intent = _read_json(runtime_path(chapter_record["artifacts"]["intent"]))
+            expected = {
+                (str(item.get("asset_id")), str(item.get("field_path"))): item
+                for item in intent.get("expected_state_deltas", [])
+            }
+        for delta in settlement.get("state_deltas", []):
+            asset_id = str(delta.get("asset_id", ""))
+            field_path = str(delta.get("field_path", ""))
+            key = (asset_id, field_path)
+            if asset_id not in assets:
+                errors.append(f"unknown settlement asset: {asset_id}")
+                continue
+            if key not in allowed_fields:
+                errors.append(f"unregistered settlement field: {asset_id}:{field_path}")
+                continue
+            contract = expected.get(key)
+            if not contract:
+                errors.append(f"state delta is not declared by chapter intent: {asset_id}:{field_path}")
+                continue
+            if delta.get("before") != current.get(key):
+                errors.append(f"stale settlement before value: {asset_id}:{field_path}")
+            if contract.get("before") != current.get(key) or delta.get("after") != contract.get("after"):
+                errors.append(f"state delta violates frozen intent: {asset_id}:{field_path}")
+            if delta.get("after") == current.get(key):
+                errors.append(f"state delta repeats the current value: {asset_id}:{field_path}")
+            if field_path == "lifecycle_state":
+                before, after = delta.get("before"), delta.get("after")
+                allowed = (before, after) == (contract.get("before"), contract.get("after"))
+                if not allowed:
+                    errors.append(f"illegal lifecycle transition: {asset_id}:{before}->{after}")
+                if asset_id == "faction_maintenance_team" and after == "active" and chapter_id != "chapter-0033":
+                    errors.append("maintenance team may become active only in chapter-0033")
+        observed_keys = {
+            (str(item.get("asset_id", "")), str(item.get("field_path", "")))
+            for item in settlement.get("state_deltas", [])
+        }
+        for asset_id, field_path in sorted(set(expected) - observed_keys):
+            errors.append(f"missing frozen intent state delta: {asset_id}:{field_path}")
     return {"valid": not errors, "errors": errors}
 
 
@@ -317,7 +462,14 @@ def compile_chapter_context_payload(
     prior_settlements: list[dict[str, Any]],
     canonical_baseline: dict[str, str] | None = None,
     story_beat: dict[str, Any] | None = None,
+    initial_state: dict[str, Any] | None = None,
+    literary_semantic_contract: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
+    if active_project_id() != "borrowed-heaven" and not literary_semantic_contract:
+        return {
+            "valid": False,
+            "errors": ["project chapter context requires a literary semantic contract"],
+        }
     asset_map = {
         str(asset.get("asset_id")): asset
         for asset in assets
@@ -358,7 +510,7 @@ def compile_chapter_context_payload(
     selected = [asset_map[asset_id] for asset_id in selected_ids]
     baseline_metadata = dict(canonical_baseline or {})
     packet_version = baseline_metadata.get("version", CONTEXT_PACKET_VERSION)
-    rolling_state = build_rolling_state_snapshot(prior_settlements)
+    rolling_state = build_rolling_state_snapshot(prior_settlements, initial_state=initial_state)
     context = {
         "version": packet_version,
         "chapter_id": intent.get("chapter_id"),
@@ -367,12 +519,14 @@ def compile_chapter_context_payload(
         "must_avoid": list(intent.get("must_avoid", [])),
         "scene_constraints": list(intent.get("scene_constraints", [])),
         "active_hook_ids": list(intent.get("active_hook_ids", [])),
+        "expected_state_deltas": list(intent.get("expected_state_deltas", [])),
         "assets": selected,
         "writer_asset_ids": requested,
         "story_beat": story_beat,
         "rolling_state": rolling_state,
         "canonical_hashes": canonical_hashes,
         "canonical_baseline": baseline_metadata,
+        "literary_semantic_contract": literary_semantic_contract,
     }
     trace = {
         "version": packet_version,
@@ -388,6 +542,11 @@ def compile_chapter_context_payload(
         "prior_settlement_count": len(prior_settlements),
         "rolling_state_field_count": len(rolling_state["latest_fields"]),
         "story_window_contract": story_beat.get("contract_path") if story_beat else None,
+        "literary_semantic_sources": (
+            literary_semantic_contract.get("source_bindings", [])
+            if literary_semantic_contract
+            else []
+        ),
     }
     rule_stack = {
         "version": packet_version,
@@ -399,6 +558,7 @@ def compile_chapter_context_payload(
             "volume_outline",
             "accepted_state_settlements",
             "creation_asset_constraints",
+            "literary_semantic_contract",
             "chapter_must_keep_and_must_avoid",
             "anti_ai_style_evidence",
         ],
@@ -407,6 +567,11 @@ def compile_chapter_context_payload(
             "no untracked power, relationship, location, item, or timeline changes",
             "all benefits carry an embodied, relational, or systemic cost",
             "reader-facing prose contains no runtime or database vocabulary",
+            *(
+                [str(item) for item in literary_semantic_contract.get("enforced_rules", [])]
+                if literary_semantic_contract
+                else []
+            ),
             *[str(item) for item in intent.get("must_avoid", [])],
         ],
         "chapter_rules": [str(item) for item in intent.get("must_keep", [])],
@@ -415,11 +580,209 @@ def compile_chapter_context_payload(
     return {"valid": True, "errors": [], "context": context, "trace": trace, "rule_stack": rule_stack}
 
 
+def build_chapter_literary_semantic_contract(
+    chapter_id: str, canonical_baseline: dict[str, Any]
+) -> dict[str, Any] | None:
+    """Compile project semantics into chapter-sized, hash-bound writing constraints."""
+    if active_project_id() == "borrowed-heaven":
+        return None
+    project_id = active_project_id()
+    validation = validate_project_semantic_contracts(project_id)
+    if not validation.get("valid"):
+        raise RuntimeError(
+            "literary semantic contract is blocked: "
+            + "; ".join(validation.get("errors", []))
+        )
+    workspace = project_workspace(project_id)
+    sources = {
+        "character_highlights": workspace / "design/character_highlight_matrix.v1.json",
+        "world_progression": workspace / "design/world_progression_atlas.v1.json",
+        "embedded_history": workspace / "design/embedded_history_engine.v1.json",
+        "chapter_semantic_beats": workspace / "production_runtime/plans/volume1_semantic_beat_contract.v1.json",
+        "semantic_application": workspace / "validation/literary_semantic_application.v1.json",
+    }
+    baseline_hashes = {
+        str(item.get("path")): str(item.get("sha256"))
+        for item in canonical_baseline.get("canonical_inputs", [])
+    }
+    bindings = []
+    for label, path in sources.items():
+        relative = str(path.relative_to(ROOT))
+        digest = _sha256(path)
+        if baseline_hashes.get(relative) != digest:
+            raise RuntimeError(f"semantic source is not current in canonical baseline: {relative}")
+        bindings.append({"kind": label, "path": relative, "sha256": digest})
+    chapter_number = int(chapter_id.removeprefix("chapter-"))
+    if not 1 <= chapter_number <= 66:
+        raise RuntimeError(f"Volume 1 semantic contract does not cover {chapter_id}")
+    highlights = _read_json(sources["character_highlights"])
+    atlas = _read_json(sources["world_progression"])
+    history = _read_json(sources["embedded_history"])
+    beats = _read_json(sources["chapter_semantic_beats"])
+    application = _read_json(sources["semantic_application"])
+    volume_highlight = next(
+        item for item in highlights["volumes"] if item.get("volume") == 1
+    )
+    volume_atlas = next(item for item in atlas["volumes"] if item.get("volume") == 1)
+    history_dossier = next(
+        item for item in history["dossiers"] if item.get("volume") == 1
+    )
+    chapter_beat = next(
+        (
+            item
+            for item in beats["chapters"]
+            if item.get("chapter_id") == chapter_id
+        ),
+        None,
+    )
+    if not chapter_beat:
+        raise RuntimeError(f"missing literary semantic beat for {chapter_id}")
+    character_id_by_name = {
+        item["name"]: item["character_id"] for item in highlights["characters"]
+    }
+    pov_character_id = character_id_by_name.get(chapter_beat.get("pov"))
+    current_pov_agency = (
+        volume_highlight["agency"].get(pov_character_id)
+        if pov_character_id
+        else None
+    )
+    return {
+        "version": "0.29",
+        "project_id": project_id,
+        "chapter_id": chapter_id,
+        "source_bindings": bindings,
+        "chapter_beat": chapter_beat,
+        "volume_character_contract": {
+            "primary_spotlight": volume_highlight["primary_spotlight"],
+            "pov_character_id": pov_character_id,
+            "pov_agency": current_pov_agency,
+            "signature_highlights": [
+                item
+                for item in volume_highlight["signature_highlights"]
+                if item.get("character_id") == pov_character_id
+            ],
+        },
+        "volume_progression_contract": {
+            "progression_rule": atlas["progression_rule"],
+            "competency_names": [item["name"] for item in atlas["competencies"]],
+            "authority_rank_names": [item["rank"] for item in atlas["authority_ranks"]],
+            "volume_scope": volume_atlas,
+        },
+        "embedded_history_contract": {
+            "engine_name": history["engine_name"],
+            "narrative_rule": history["narrative_rule"],
+            "form_rule": history["form_rule"],
+            "dossier": history_dossier,
+        },
+        "application_summary": {
+            "semantic_dimensions_decided": len(application["dimension_decisions"]),
+            "source_books_decided": len(
+                {
+                    item["source_book"]
+                    for item in application["signature_dimension_dispositions"]
+                }
+            ),
+            "allowed_operation": "functional transformation only",
+        },
+        "dimension_contracts": application["dimension_decisions"],
+        "protected_function_transforms": [
+            {
+                "source_dimension": item["source_dimension"],
+                "decision": item["decision"],
+                "functional_rationale": item["rationale"],
+                "originality_transformation": item["originality_transformation"],
+            }
+            for item in application["signature_decisions"]
+            if item["decision"] != "defer"
+        ],
+        "enforced_rules": [
+            "the chapter semantic beat must affect an on-page choice and consequence",
+            "the POV character must exercise independent professional agency",
+            "progression changes permissions and liability, never grants cost-free dominance",
+            "embedded history must alter present judgment or action, never become decorative exposition",
+            "source-book material may only survive as transformed narrative function",
+        ],
+    }
+
+
+def validate_compiled_literary_semantic_payload(
+    context: dict[str, Any],
+    rules: dict[str, Any],
+    trace: dict[str, Any],
+    expected: dict[str, Any],
+    chapter_id: str,
+    baseline_metadata: dict[str, str],
+) -> dict[str, Any]:
+    errors: list[str] = []
+    if context.get("chapter_id") != chapter_id:
+        errors.append("compiled context chapter identity mismatch")
+    if context.get("canonical_baseline") != baseline_metadata:
+        errors.append("compiled context canonical baseline binding mismatch")
+    if context.get("literary_semantic_contract") != expected:
+        errors.append("compiled literary semantic contract is stale or mutated")
+    if trace.get("literary_semantic_sources") != expected.get("source_bindings"):
+        errors.append("compiled semantic trace bindings are stale or mutated")
+    if "literary_semantic_contract" not in rules.get("priority_order", []):
+        errors.append("literary semantic priority rule is missing")
+    hard_rules = set(str(item) for item in rules.get("hard_rules", []))
+    required_rules = set(str(item) for item in expected.get("enforced_rules", []))
+    if not required_rules <= hard_rules:
+        errors.append("compiled literary semantic hard rules are incomplete")
+    return {"valid": not errors, "errors": errors}
+
+
+def validate_compiled_literary_semantic_context(
+    record: dict[str, Any], chapter_id: str
+) -> dict[str, Any]:
+    if active_project_id() == "borrowed-heaven":
+        return {"valid": True, "errors": []}
+    artifacts = record.get("artifacts", {})
+    required = {
+        name: runtime_path(artifacts.get(name, ""))
+        for name in ("context", "rule_stack", "trace")
+    }
+    missing = [name for name, path in required.items() if not path.is_file()]
+    if missing:
+        return {
+            "valid": False,
+            "errors": ["missing compiled semantic artifacts: " + ", ".join(missing)],
+        }
+    baseline = _read_json(CANONICAL_BASELINE_PATH)
+    baseline_metadata = {
+        "path": str(CANONICAL_BASELINE_PATH.relative_to(ROOT)),
+        "version": str(baseline["version"]),
+        "sha256": _sha256(CANONICAL_BASELINE_PATH),
+    }
+    expected = build_chapter_literary_semantic_contract(chapter_id, baseline)
+    return validate_compiled_literary_semantic_payload(
+        _read_json(required["context"]),
+        _read_json(required["rule_stack"]),
+        _read_json(required["trace"]),
+        expected,
+        chapter_id,
+        baseline_metadata,
+    )
+
+
 def build_rolling_state_snapshot(
-    settlements: list[dict[str, Any]], recent_limit: int = 2
+    settlements: list[dict[str, Any]], recent_limit: int = 2,
+    initial_state: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Reduce immutable history to current fields plus a short causal tail."""
     latest: dict[str, dict[str, Any]] = {}
+    for field in (initial_state or {}).get("fields", []):
+        if not isinstance(field, dict):
+            continue
+        asset_id = str(field.get("asset_id", ""))
+        field_path = str(field.get("field_path", ""))
+        if asset_id and field_path:
+            latest[f"{asset_id}:{field_path}"] = {
+                "asset_id": asset_id,
+                "field_path": field_path,
+                "value": field.get("value"),
+                "chapter_id": "canonical-initial-state",
+                "evidence": field.get("source"),
+            }
     for settlement in settlements:
         chapter_id = str(settlement.get("chapter_id", "unknown"))
         for delta in settlement.get("state_deltas", []):
@@ -517,7 +880,7 @@ def build_production_preflight(
     adapters: dict[str, Any], allowed_pending_chapter_id: str | None = None
 ) -> dict[str, Any]:
     registry = _load_registry()
-    readiness = build_production_readiness()
+    readiness = build_production_readiness(allowed_pending_chapter_id)
     pending = [item["chapter_id"] for item in registry["chapters"] if item["stage"] != "chapter_accepted"]
     blocking_pending = [item for item in pending if item != allowed_pending_chapter_id]
     project = active_project()
@@ -545,6 +908,26 @@ def build_production_preflight(
     model_team_attestation = build_model_team_attestation_status()
     model_team = validate_model_team_contract()
     antigravity = adapters.get("antigravity", {})
+    if active_project_id() != "borrowed-heaven":
+        checks = {
+            "project_production_contract_valid": readiness["checks"].get("project_production_contract_valid", False),
+            "canonical_runtime_ready": readiness["ready"],
+            "bounded_owner_authorization_current": readiness["checks"].get("bounded_prose_authorized", False),
+            "no_unaccepted_chapters": not blocking_pending,
+            "creation_assets_valid": validate_creation_asset_store()["valid"],
+            "codex_direct_writer_available": bool(adapters.get("codex", {}).get("can_execute")) and bool(find_codex_binary()),
+            "antigravity_backup_configured": antigravity.get("execution_policy") == "independent_review_and_provider_fallback_only",
+        }
+        return {
+            "valid": all(checks.values()),
+            "project_id": active_project_id(),
+            "checks": checks,
+            "project_production": validate_project_production(),
+            "legacy_volume1_dry_run": {"deprecated": True, "reason": "project-isolated production contract is active"},
+            "pending_chapters": pending,
+            "allowed_pending_chapter_id": allowed_pending_chapter_id,
+            "accepted_chapters": [item["chapter_id"] for item in registry["chapters"] if item["stage"] == "chapter_accepted"],
+        }
     checks = {
         "canonical_runtime_ready": readiness["ready"],
         "codex_model_team_contract_valid": model_team["valid"],
@@ -582,7 +965,7 @@ def initialize_chapter(intent_file: str) -> dict[str, Any]:
     chapter_id = str(intent["chapter_id"])
     if not has_bounded_intent_authorization(load_decisions(), chapter_id):
         raise RuntimeError(f"bounded chapter intent gate is blocked for {chapter_id}")
-    readiness = build_production_readiness()
+    readiness = build_production_readiness(chapter_id)
     registry = _load_registry()
     if any(item.get("chapter_id") == chapter_id for item in registry["chapters"]):
         raise RuntimeError(f"chapter already exists: {chapter_id}")
@@ -631,9 +1014,14 @@ def compile_chapter_context(chapter_id: str) -> dict[str, Any]:
         "version": str(baseline["version"]),
         "sha256": _sha256(CANONICAL_BASELINE_PATH),
     }
+    literary_semantic_contract = build_chapter_literary_semantic_contract(
+        chapter_id, baseline
+    )
     story_beat = story_beat_for(chapter_id)
     if chapter_ordinal >= 11 and not story_beat:
         raise RuntimeError(f"story window contract is missing for {chapter_id}")
+    initial_state_path = runtime_path("system/production_runtime/state/canonical_initial_state.v1.json")
+    initial_state = _read_json(initial_state_path) if initial_state_path.is_file() else None
     compiled = compile_chapter_context_payload(
         intent,
         store.get("assets", []),
@@ -641,6 +1029,8 @@ def compile_chapter_context(chapter_id: str) -> dict[str, Any]:
         prior,
         baseline_metadata,
         story_beat,
+        initial_state,
+        literary_semantic_contract,
     )
     if not compiled["valid"]:
         raise RuntimeError("; ".join(compiled["errors"]))
@@ -671,7 +1061,7 @@ def build_chapter_writer_prompt(chapter_id: str) -> str:
     if not preflight["valid"]:
         blocked = [name for name, passed in preflight["checks"].items() if not passed]
         raise RuntimeError("production preflight is blocked: " + ", ".join(blocked))
-    readiness = build_production_readiness()
+    readiness = build_production_readiness(chapter_id)
     if not readiness["ready"]:
         raise RuntimeError("production readiness gate is blocked")
     if not has_bounded_prose_authorization(load_decisions(), chapter_id):
@@ -682,6 +1072,14 @@ def build_chapter_writer_prompt(chapter_id: str) -> str:
     record = _chapter_record(registry, chapter_id)
     if record["stage"] != "context_compiled":
         raise RuntimeError("chapter must be context_compiled before writing")
+    semantic_integrity = validate_compiled_literary_semantic_context(
+        record, chapter_id
+    )
+    if not semantic_integrity["valid"]:
+        raise RuntimeError(
+            "compiled literary semantic context is blocked: "
+            + "; ".join(semantic_integrity["errors"])
+        )
     context = _read_json(runtime_path(record["artifacts"]["context"]))
     rules = _read_json(runtime_path(record["artifacts"]["rule_stack"]))
     writer_context = _compact_chapter_context(context)
@@ -721,6 +1119,27 @@ def build_chapter_writer_prompt(chapter_id: str) -> str:
     return prompt
 
 
+def validate_prose_entry_gate(chapter_id: str) -> dict[str, Any]:
+    """Recheck live authorization before every route that creates or ingests prose."""
+    adapters = _read_json(runtime_path("system/runtime/agent_adapters.json"))
+    preflight = build_production_preflight(
+        adapters, allowed_pending_chapter_id=chapter_id
+    )
+    readiness = build_production_readiness(chapter_id)
+    checks = {
+        "production_preflight": preflight.get("valid") is True,
+        "production_readiness": readiness.get("ready") is True,
+        "bounded_prose_authorization": has_bounded_prose_authorization(
+            load_decisions(), chapter_id
+        ),
+    }
+    return {
+        "valid": all(checks.values()),
+        "checks": checks,
+        "errors": [name for name, passed in checks.items() if not passed],
+    }
+
+
 def _compact_chapter_context(context: dict[str, Any]) -> dict[str, Any]:
     """Keep model prompts bounded while retaining every enforceable asset constraint."""
     writer_asset_ids = {
@@ -730,15 +1149,7 @@ def _compact_chapter_context(context: dict[str, Any]) -> dict[str, Any]:
     for asset in context.get("assets", []):
         if str(asset.get("asset_id")) not in writer_asset_ids:
             continue
-        compact_assets.append(
-            {
-                "asset_id": asset.get("asset_id"),
-                "display_name": asset.get("display_name"),
-                "family": asset.get("family"),
-                "lifecycle_state": asset.get("lifecycle_state"),
-                "constraints": asset.get("constraints", []),
-            }
-        )
+        compact_assets.append(dict(asset))
     selected_ids = {str(item.get("asset_id")) for item in compact_assets}
     rolling = context.get("rolling_state", {})
     latest_by_asset: dict[str, list[dict[str, Any]]] = {}
@@ -792,9 +1203,11 @@ def _compact_chapter_context(context: dict[str, Any]) -> dict[str, Any]:
         "chapter_id": context.get("chapter_id"),
         "dramatic_purpose": context.get("dramatic_purpose"),
         "story_beat": context.get("story_beat"),
+        "literary_semantic_contract": context.get("literary_semantic_contract"),
         "must_keep": context.get("must_keep", []),
         "must_avoid": context.get("must_avoid", []),
         "scene_constraints": context.get("scene_constraints", []),
+        "expected_state_deltas": context.get("expected_state_deltas", []),
         "assets": compact_assets,
         "rolling_state": compact_rolling,
     }
@@ -813,6 +1226,7 @@ def _compact_observer_context(context: dict[str, Any]) -> dict[str, Any]:
     return {
         "chapter_id": compact.get("chapter_id"),
         "story_beat": compact.get("story_beat"),
+        "expected_state_deltas": compact.get("expected_state_deltas", []),
         "assets": [
             {
                 "asset_id": item.get("asset_id"),
@@ -1171,7 +1585,17 @@ def dispatch_chapter_draft(chapter_id: str) -> dict[str, Any]:
                 break
         metrics = analyze_prose_metrics(text)
         errors = _generated_prose_errors(text, metrics)
-        attempts.append({"model": route_model("writer")["model"], "generation": "length_recovery", "valid": not errors, "metrics": metrics, "recoveries": recoveries})
+        successful_recovery = next(
+            (item for item in reversed(recoveries) if item.get("valid")), {}
+        )
+        attempts.append({
+            "model": successful_recovery.get("model", route_model("writer")["model"]),
+            "provider": successful_recovery.get("provider"),
+            "generation": "length_recovery",
+            "valid": not errors,
+            "metrics": metrics,
+            "recoveries": recoveries,
+        })
         if not errors:
             selected_model = route_model("writer")["model"]
     if errors:
@@ -1189,6 +1613,34 @@ def dispatch_chapter_draft(chapter_id: str) -> dict[str, Any]:
             },
         )
         return {"valid": False, "errors": errors, "metrics": metrics, "attempts": attempts, "attempt_path": attempt_path}
+    valid_attempt = next(
+        (
+            item for item in reversed(attempts)
+            if item.get("valid") and item.get("provider") and item.get("model")
+        ),
+        None,
+    )
+    if active_project_id() != "borrowed-heaven" and (
+        valid_attempt is None
+        or valid_attempt.get("provider") != "codex"
+        or valid_attempt.get("model") != "gpt-5.6-terra"
+    ):
+        attempt_path = _record_writer_attempt(
+            chapter_id,
+            {
+                "chapter_id": chapter_id,
+                "status": "formal_terra_execution_required",
+                "errors": ["formal draft must be executed by Codex gpt-5.6-terra"],
+                "attempts": attempts,
+            },
+        )
+        return {
+            "valid": False,
+            "errors": ["formal draft must be executed by Codex gpt-5.6-terra"],
+            "metrics": metrics,
+            "attempts": attempts,
+            "attempt_path": attempt_path,
+        }
     registry = _load_registry()
     record = _chapter_record(registry, chapter_id)
     transition = validate_stage_transition(record, "draft_generated", "draft.md")
@@ -1214,6 +1666,14 @@ def dispatch_chapter_draft(chapter_id: str) -> dict[str, Any]:
         "draft_metrics": str(metrics_path.relative_to(ROOT)),
         "generation_cost": str(cost_path.relative_to(ROOT)),
     })
+    if valid_attempt is not None:
+        record["artifacts"]["draft_writer_execution"] = _write_role_execution(
+            chapter_id,
+            "draft_writer",
+            draft_path,
+            provider=str(valid_attempt["provider"]),
+            model=str(valid_attempt["model"]),
+        )
     record["stage"] = "draft_generated"
     _save_registry(registry)
     return {
@@ -1372,6 +1832,8 @@ def dispatch_chapter_observation(chapter_id: str) -> dict[str, Any]:
             if "usage limit" not in result.stderr.lower() and "hit your usage" not in result.stderr.lower():
                 raise RuntimeError(f"Codex observer failed: {result.stderr.strip()}")
     if not output.is_file():
+        if active_project_id() != "borrowed-heaven":
+            raise RuntimeError("formal observation requires an independent Codex Luna execution")
         provider = "antigravity"
         response = ask_antigravity_writer(
             prompt + "\n只返回一个 JSON 对象，所有 required 字段都必须存在，空类别使用空数组。",
@@ -1392,11 +1854,24 @@ def dispatch_chapter_observation(chapter_id: str) -> dict[str, Any]:
         jsonschema.validate(payload, _read_json(schema))
         _write_json(output, payload)
     ingested = ingest_chapter_observation(chapter_id, str(output))
+    registry = _load_registry()
+    record = _chapter_record(registry, chapter_id)
+    observation_path = runtime_path(record["artifacts"]["observation"])
+    observer_model = observer["model"] if provider == "codex" else observer["fallback_model"]
+    record["artifacts"]["observer_execution"] = _write_role_execution(
+        chapter_id,
+        "observer",
+        observation_path,
+        provider=provider,
+        model=observer_model,
+        bindings={"revision_sha256": _sha256(final_text)},
+    )
+    _save_registry(registry)
     output.unlink(missing_ok=True)
     return {
         **ingested,
         "observer_provider": provider,
-        "observer_model": observer["model"] if provider == "codex" else observer["fallback_model"],
+        "observer_model": observer_model,
     }
 
 
@@ -1421,25 +1896,52 @@ def build_chapter_audit_packet(chapter_id: str) -> dict[str, Any]:
         "artifact_sha256": _sha256(prose_path),
         "context_sha256": _sha256(context_path),
         "verdict": "ACCEPT_WITH_WARNINGS",
-        "dimensions": {key: [] for key in ("canon", "character", "state", "causality", "pacing", "life_force", "anti_ai_taste", "originality")},
+        "dimensions": {
+            key: []
+            for key in (
+                "canon",
+                "character",
+                "state",
+                "causality",
+                "pacing",
+                "life_force",
+                "anti_ai_taste",
+                "originality",
+                "semantic_realization",
+                "progression_permissions",
+                "history_coherence",
+            )
+        },
         "issues": [],
+        "resolved_prior_issue_ids": [],
     }
     context = _read_json(context_path)
     rules = _read_json(runtime_path(record["artifacts"]["rule_stack"]))
     trace = _read_json(runtime_path(record["artifacts"]["trace"]))
     prose = prose_path.read_text(encoding="utf-8")
+    prior_audit = None
+    if audit_kind == "final" and record.get("artifacts", {}).get("continuity_audit"):
+        prior_audit = _read_json(runtime_path(record["artifacts"]["continuity_audit"]))
+        template["resolved_prior_issue_ids"] = [
+            str(item.get("issue_id"))
+            for item in prior_audit.get("issues", [])
+            if item.get("severity") in {"blocking", "major"}
+        ]
     audit_context = _compact_chapter_context(context)
     packet = runtime_path(f"system/production_runtime/chapters/{chapter_id}/{artifact_kind}_audit_packet.md")
     packet.write_text(
         "\n".join([
             "# NRL Chapter Audit v0.27", "",
             "Judge continuity, causality, long-form vitality and AI-taste independently from the inline, hash-bound artifacts below.",
+            "Explicitly verify that the prose realizes its chapter semantic beat, keeps every action within current progression permissions and liabilities, and uses only historical evidence available in this chapter.",
             "Do not use terminal tools, inspect files, run tests, make a plan, or wait for background work. The complete review packet is inline.",
             "Do not rewrite prose. Return one JSON object only using the exact binding hashes, with no Markdown fence or surrounding text.", "",
             "## Compact Context", json.dumps(audit_context, ensure_ascii=False), "",
             "## Rule Stack", json.dumps(rules, ensure_ascii=False), "",
             "## Compilation Trace", json.dumps(trace, ensure_ascii=False), "",
             "## Observed Facts", json.dumps(observation, ensure_ascii=False) if observation else "Initial audit: no final-text observations exist yet.", "",
+            "## Initial Audit To Close", json.dumps(prior_audit, ensure_ascii=False) if prior_audit else "Not applicable.", "",
+            "For a final audit, verify every prior blocking or major issue is actually absent from the revision. If any remains, return REWORK_REQUIRED and repeat its issue_id.", "",
             "## Prose", prose, "", "## Required JSON", "```json",
             json.dumps(template, ensure_ascii=False, indent=2), "```", "",
         ]), encoding="utf-8"
@@ -1495,9 +1997,58 @@ def normalize_continuity_audit_payload(data: dict[str, Any]) -> dict[str, Any]:
     return normalized
 
 
+AUDIT_EVIDENCE_DIMENSIONS = (
+    "canon",
+    "character",
+    "state",
+    "causality",
+    "pacing",
+    "life_force",
+    "anti_ai_taste",
+    "originality",
+    "semantic_realization",
+    "progression_permissions",
+    "history_coherence",
+)
+
+
+def validate_literary_audit_evidence(data: dict[str, Any]) -> dict[str, Any]:
+    """Require substantive evidence on every literary audit route."""
+    dimensions = data.get("dimensions", {})
+    def has_visible_semantic_content(value: Any) -> bool:
+        if not isinstance(value, str):
+            return False
+        normalized = unicodedata.normalize("NFKC", value)
+        return any(
+            unicodedata.category(character)[0] in {"L", "N"}
+            for character in normalized
+        )
+
+    missing = [
+        key
+        for key in AUDIT_EVIDENCE_DIMENSIONS
+        if not isinstance(dimensions.get(key), list)
+        or not dimensions.get(key)
+        or any(
+            not has_visible_semantic_content(item)
+            for item in dimensions.get(key, [])
+        )
+    ]
+    return {
+        "valid": not missing,
+        "errors": (
+            []
+            if not missing
+            else ["literary audit omitted substantive evidence: " + ", ".join(missing)]
+        ),
+    }
+
+
 def requires_external_chapter_audit(chapter_id: str, audit_kind: str) -> bool:
-    """Reserve expensive literary review for five-chapter checkpoints."""
+    """Every formal project chapter gets a model literary audit."""
     ordinal = int(chapter_id.removeprefix("chapter-"))
+    if active_project_id() != "borrowed-heaven":
+        return audit_kind in {"initial", "final"}
     return audit_kind == "initial" and ordinal % 5 == 0
 
 
@@ -1543,6 +2094,10 @@ def _metric_audit_issues(metrics: dict[str, Any]) -> list[dict[str, str]]:
 
 def record_deterministic_chapter_audit(chapter_id: str) -> dict[str, Any]:
     """Advance a hash-bound audit using local checks, without an external model call."""
+    if active_project_id() != "borrowed-heaven":
+        raise RuntimeError(
+            "deterministic chapter audit is legacy-only; project chapters require model review"
+        )
     registry = _load_registry()
     record = _chapter_record(registry, chapter_id)
     if record["stage"] == "draft_generated":
@@ -1577,6 +2132,15 @@ def record_deterministic_chapter_audit(chapter_id: str) -> dict[str, Any]:
             "life_force": [f"sensory_hits={metrics['sensory_word_hits']}"],
             "anti_ai_taste": list(metrics.get("flags", [])),
             "originality": ["no raw corpus is available to the chapter writer"],
+            "semantic_realization": [
+                "deterministic audit cannot establish literary realization"
+            ],
+            "progression_permissions": [
+                "deterministic audit cannot establish permission compliance"
+            ],
+            "history_coherence": [
+                "deterministic audit cannot establish historical access timing"
+            ],
         },
         "issues": issues,
     }
@@ -1622,7 +2186,8 @@ def dispatch_chapter_audit(chapter_id: str, model: str | None = None) -> dict[st
     packet_path = runtime_path(packet["packet_path"])
     artifact_key = "final_audit" if packet.get("audit_kind", "initial") == "final" else "continuity_audit"
     schema_path = runtime_path("system/production_runtime/schemas/continuity_audit.schema.json")
-    reviewer = route_model("reviewer")
+    is_final = packet.get("audit_kind", "initial") == "final"
+    reviewer = route_model("reviewer" if is_final else "editor")
     provider = "codex"
     used_model = reviewer["model"]
     errors = []
@@ -1635,6 +2200,20 @@ def dispatch_chapter_audit(chapter_id: str, model: str | None = None) -> dict[st
         )
     except RuntimeError as error:
         errors.append(f"{used_model}: {error}")
+        if is_final and active_project_id() != "borrowed-heaven":
+            attempt_path = _record_audit_attempt(
+                chapter_id,
+                artifact_key,
+                {
+                    "chapter_id": chapter_id,
+                    "audit_kind": "final",
+                    "provider": "codex",
+                    "model": used_model,
+                    "status": "required_sol_provider_failed",
+                    "errors": errors,
+                },
+            )
+            return {"valid": False, "errors": errors, "attempt_path": attempt_path}
         provider = "antigravity"
         used_model = model or reviewer["fallback_model"]
         try:
@@ -1674,10 +2253,18 @@ def dispatch_chapter_audit(chapter_id: str, model: str | None = None) -> dict[st
             },
         )
         return {"valid": False, "errors": [str(error)], "attempt_path": attempt_path}
+    evidence = validate_literary_audit_evidence(data)
+    if not evidence["valid"]:
+        return evidence
     expected = packet["template"]
     if data["artifact_kind"] != expected["artifact_kind"] or data["artifact_sha256"] != expected["artifact_sha256"] or data["context_sha256"] != expected["context_sha256"]:
         return {"valid": False, "errors": ["audit binding hash mismatch"]}
-    is_final = packet.get("audit_kind", "initial") == "final"
+    if is_final:
+        required_resolved = set(expected.get("resolved_prior_issue_ids", []))
+        if set(data.get("resolved_prior_issue_ids", [])) != required_resolved:
+            return {"valid": False, "errors": ["final audit did not explicitly close every prior blocking or major issue"]}
+        if any(item.get("severity") in {"blocking", "major"} for item in data.get("issues", [])):
+            return {"valid": False, "errors": ["final audit contains unresolved blocking or major issues"], "verdict": data.get("verdict")}
     if is_final and data["verdict"] == "REWORK_REQUIRED":
         return {"valid": False, "errors": ["audit requires rework and cannot advance chapter state"], "verdict": data["verdict"]}
     registry = _load_registry()
@@ -1689,21 +2276,27 @@ def dispatch_chapter_audit(chapter_id: str, model: str | None = None) -> dict[st
         raise RuntimeError("; ".join(transition["errors"]))
     target = runtime_path(f"system/production_runtime/chapters/{chapter_id}/{artifact_key}.json")
     _write_json(target, data)
+    audit_sha256 = _sha256_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n")
     execution_target = runtime_path(
         f"system/production_runtime/chapters/{chapter_id}/{artifact_key}.execution.json"
     )
+    revision_path = runtime_path(record.get("artifacts", {}).get("revision", ""))
     _write_json(execution_target, {
         "version": "0.27",
         "chapter_id": chapter_id,
-        "audit_artifact_sha256": _sha256_text(
-            json.dumps(data, ensure_ascii=False, indent=2) + "\n"
-        ),
+        "role": "reviewer" if is_final else "initial_reviewer",
+        "artifact": str(target.relative_to(ROOT)),
+        "artifact_sha256": audit_sha256,
+        "audit_artifact_sha256": audit_sha256,
+        "revision_sha256": _sha256(revision_path) if is_final and revision_path.is_file() else None,
         "provider": provider,
         "model": used_model,
         "fallback_used": provider == "antigravity",
     })
     record["artifacts"][artifact_key] = str(target.relative_to(ROOT))
     record["artifacts"][f"{artifact_key}_execution"] = str(execution_target.relative_to(ROOT))
+    if is_final:
+        record["artifacts"]["reviewer_execution"] = str(execution_target.relative_to(ROOT))
     record["stage"] = target_stage
     _save_registry(registry)
     return {"valid": True, "chapter_id": chapter_id, "stage": record["stage"], "verdict": data["verdict"], "review_provider": provider, "review_model": used_model}
@@ -1718,6 +2311,9 @@ def ingest_chapter_audit(chapter_id: str, file_arg: str) -> dict[str, Any]:
     data = normalize_continuity_audit_payload(_read_json(source))
     schema = _read_json(runtime_path("system/production_runtime/schemas/continuity_audit.schema.json"))
     jsonschema.validate(data, schema)
+    evidence = validate_literary_audit_evidence(data)
+    if not evidence["valid"]:
+        raise RuntimeError("; ".join(evidence["errors"]))
     expected = packet["template"]
     if (
         data["artifact_kind"] != expected["artifact_kind"]
@@ -1726,6 +2322,12 @@ def ingest_chapter_audit(chapter_id: str, file_arg: str) -> dict[str, Any]:
     ):
         raise RuntimeError("audit binding hash mismatch")
     is_final = packet.get("audit_kind", "initial") == "final"
+    if is_final:
+        required_resolved = set(expected.get("resolved_prior_issue_ids", []))
+        if set(data.get("resolved_prior_issue_ids", [])) != required_resolved:
+            raise RuntimeError("final audit did not explicitly close every prior blocking or major issue")
+        if any(item.get("severity") in {"blocking", "major"} for item in data.get("issues", [])):
+            raise RuntimeError("final audit contains unresolved blocking or major issues")
     if is_final and data["verdict"] == "REWORK_REQUIRED":
         raise RuntimeError("audit requires rework and cannot advance chapter state")
     registry = _load_registry()
@@ -1749,6 +2351,20 @@ def ingest_chapter_revision(chapter_id: str, file_arg: str) -> dict[str, Any]:
     transition = validate_stage_transition(record, "revision_generated", file_arg)
     if not transition["valid"]:
         raise RuntimeError("; ".join(transition["errors"]))
+    prose_gate = validate_prose_entry_gate(chapter_id)
+    if not prose_gate["valid"]:
+        raise RuntimeError(
+            "revision ingest prose gate is blocked: "
+            + ", ".join(prose_gate["errors"])
+        )
+    semantic_integrity = validate_compiled_literary_semantic_context(
+        record, chapter_id
+    )
+    if not semantic_integrity["valid"]:
+        raise RuntimeError(
+            "compiled literary semantic context is blocked before revision ingest: "
+            + "; ".join(semantic_integrity["errors"])
+        )
     source = Path(file_arg)
     if not source.is_absolute():
         source = ROOT / source
@@ -1771,6 +2387,19 @@ def dispatch_chapter_revision(chapter_id: str) -> dict[str, Any]:
     record = _chapter_record(registry, chapter_id)
     if record["stage"] != "continuity_audited":
         raise RuntimeError("chapter must be continuity_audited before revision")
+    prose_gate = validate_prose_entry_gate(chapter_id)
+    if not prose_gate["valid"]:
+        raise RuntimeError(
+            "revision prose gate is blocked: " + ", ".join(prose_gate["errors"])
+        )
+    semantic_integrity = validate_compiled_literary_semantic_context(
+        record, chapter_id
+    )
+    if not semantic_integrity["valid"]:
+        raise RuntimeError(
+            "compiled literary semantic context is blocked before revision: "
+            + "; ".join(semantic_integrity["errors"])
+        )
     draft = runtime_path(record["artifacts"]["draft"])
     audit = _read_json(runtime_path(record["artifacts"]["continuity_audit"]))
     substantive_issues = [
@@ -1778,10 +2407,33 @@ def dispatch_chapter_revision(chapter_id: str) -> dict[str, Any]:
         if issue.get("severity") in {"blocking", "major"}
     ]
     if not substantive_issues:
+        draft_execution_path = runtime_path(record.get("artifacts", {}).get("draft_writer_execution", ""))
+        draft_execution = _read_json(draft_execution_path) if draft_execution_path.is_file() else {}
+        if active_project_id() != "borrowed-heaven" and (
+            draft_execution.get("provider") != "codex"
+            or draft_execution.get("model") != "gpt-5.6-terra"
+        ):
+            return {
+                "valid": False,
+                "errors": ["reused formal draft lacks Codex gpt-5.6-terra writer execution"],
+            }
         candidate = runtime_path(f"system/production_runtime/chapters/{chapter_id}/revision.candidate.md")
         candidate.write_text(draft.read_text(encoding="utf-8"), encoding="utf-8")
         result = ingest_chapter_revision(chapter_id, str(candidate))
         candidate.unlink(missing_ok=True)
+        registry = _load_registry()
+        record = _chapter_record(registry, chapter_id)
+        if draft_execution_path.is_file():
+            revision_path = runtime_path(record["artifacts"]["revision"])
+            record["artifacts"]["writer_execution"] = _write_role_execution(
+                chapter_id,
+                "writer",
+                revision_path,
+                provider=str(draft_execution.get("provider", "")),
+                model=str(draft_execution.get("model", "")),
+                bindings={"source_draft_sha256": draft_execution.get("artifact_sha256")},
+            )
+            _save_registry(registry)
         return {"valid": True, **result, "reused_draft": True, "writer_model": None, "attempts": []}
     context = _read_json(runtime_path(record["artifacts"]["context"]))
     writer_context = {
@@ -1854,8 +2506,12 @@ def dispatch_chapter_revision(chapter_id: str) -> dict[str, Any]:
                 break
         metrics = analyze_prose_metrics(text)
         revision_errors = _generated_prose_errors(text, metrics)
+        successful_recovery = next(
+            (item for item in reversed(recoveries) if item.get("valid")), {}
+        )
         attempts.append({
-            "model": route_model("writer")["model"],
+            "model": successful_recovery.get("model", route_model("writer")["model"]),
+            "provider": successful_recovery.get("provider"),
             "generation": "revision_length_recovery",
             "valid": not revision_errors,
             "metrics": metrics,
@@ -1867,9 +2523,39 @@ def dispatch_chapter_revision(chapter_id: str) -> dict[str, Any]:
         }:
             recovery_path.write_text(text, encoding="utf-8")
         return {"valid": False, "errors": revision_errors, "metrics": metrics, "attempts": attempts}
+    valid_attempt = next(
+        (
+            item for item in reversed(attempts)
+            if item.get("valid") and item.get("provider") and item.get("model")
+        ),
+        None,
+    )
+    if active_project_id() != "borrowed-heaven" and (
+        valid_attempt is None
+        or valid_attempt.get("provider") != "codex"
+        or valid_attempt.get("model") != "gpt-5.6-terra"
+    ):
+        return {
+            "valid": False,
+            "errors": ["formal revision must be executed by Codex gpt-5.6-terra"],
+            "metrics": metrics,
+            "attempts": attempts,
+        }
     candidate = runtime_path(f"system/production_runtime/chapters/{chapter_id}/revision.candidate.md")
     candidate.write_text(text, encoding="utf-8")
     result = ingest_chapter_revision(chapter_id, str(candidate))
+    registry = _load_registry()
+    record = _chapter_record(registry, chapter_id)
+    if valid_attempt is not None:
+        revision_path = runtime_path(record["artifacts"]["revision"])
+        record["artifacts"]["writer_execution"] = _write_role_execution(
+            chapter_id,
+            "writer",
+            revision_path,
+            provider=str(valid_attempt["provider"]),
+            model=str(valid_attempt["model"]),
+        )
+        _save_registry(registry)
     candidate.unlink(missing_ok=True)
     recovery_path.unlink(missing_ok=True)
     return {"valid": True, **result, "metrics": metrics, "writer_model": attempts[-1]["model"], "attempts": attempts}
@@ -1913,6 +2599,16 @@ def build_observed_settlement_candidate(chapter_id: str) -> dict[str, Any]:
         raise RuntimeError("chapter must be final_audited before settlement candidate generation")
     observation = _read_json(runtime_path(record["artifacts"]["observation"]))
     revision = runtime_path(record["artifacts"]["revision"])
+    final_audit = (
+        _read_json(runtime_path(record["artifacts"]["final_audit"]))
+        if record.get("artifacts", {}).get("final_audit")
+        else {"verdict": None}
+    )
+    initial_audit = (
+        _read_json(runtime_path(record["artifacts"]["continuity_audit"]))
+        if record.get("artifacts", {}).get("continuity_audit")
+        else {"issues": []}
+    )
     deltas = []
     for facts in observation.get("facts", {}).values():
         if not isinstance(facts, list):
@@ -1934,7 +2630,9 @@ def build_observed_settlement_candidate(chapter_id: str) -> dict[str, Any]:
         "chapter_id": chapter_id,
         "accepted_revision_sha256": _sha256(revision),
         "state_deltas": deltas,
-        "resolved_audit_ids": [],
+        "resolved_audit_ids": list(final_audit.get("resolved_prior_issue_ids", []))
+        if final_audit.get("verdict") in {"ACCEPT", "ACCEPT_WITH_WARNINGS"}
+        else [],
     }
     target = runtime_path(f"system/production_runtime/chapters/{chapter_id}/settlement.candidate.json")
     _write_json(target, candidate)
@@ -1985,13 +2683,20 @@ def run_controlled_chapter_pipeline(
         completed.append("revision_generated")
         record = _chapter_record(_load_registry(), chapter_id)
     if record["stage"] == "revision_generated":
-        bundled = ingest_bundled_observation(chapter_id)
-        if not bundled["valid"]:
+        if active_project_id() != "borrowed-heaven":
             dispatch_chapter_observation(chapter_id)
+        else:
+            bundled = ingest_bundled_observation(chapter_id)
+            if not bundled["valid"]:
+                dispatch_chapter_observation(chapter_id)
         completed.append("final_observed")
         record = _chapter_record(_load_registry(), chapter_id)
     if record["stage"] == "final_observed":
-        result = record_deterministic_chapter_audit(chapter_id)
+        result = (
+            dispatch_chapter_audit(chapter_id, model=audit_model)
+            if requires_external_chapter_audit(chapter_id, "final")
+            else record_deterministic_chapter_audit(chapter_id)
+        )
         if not result["valid"]:
             return {"valid": False, "chapter_id": chapter_id, "completed": completed, "errors": result.get("errors", [])}
         completed.append("final_audited")
@@ -2016,10 +2721,48 @@ def run_controlled_chapter_pipeline(
 def accept_chapter(chapter_id: str) -> dict[str, Any]:
     registry = _load_registry()
     record = _chapter_record(registry, chapter_id)
+    prose_gate = validate_prose_entry_gate(chapter_id)
+    if not prose_gate["valid"]:
+        raise RuntimeError(
+            "acceptance prose gate is blocked: "
+            + ", ".join(prose_gate["errors"])
+        )
+    semantic_integrity = validate_compiled_literary_semantic_context(
+        record, chapter_id
+    )
+    if not semantic_integrity["valid"]:
+        raise RuntimeError(
+            "compiled literary semantic context is blocked before acceptance: "
+            + "; ".join(semantic_integrity["errors"])
+        )
     revision = runtime_path(record.get("artifacts", {}).get("revision", ""))
     settlement_path = runtime_path(record.get("artifacts", {}).get("settlement", ""))
     settlement = _read_json(settlement_path) if settlement_path.is_file() else {}
     validation = validate_acceptance(record, settlement, _sha256(revision) if revision.is_file() else "")
+    if active_project_id() != "borrowed-heaven":
+        final_audit_path = runtime_path(record.get("artifacts", {}).get("final_audit", ""))
+        execution_path = runtime_path(record.get("artifacts", {}).get("final_audit_execution", ""))
+        if not final_audit_path.is_file() or not execution_path.is_file():
+            validation["errors"].append("project acceptance requires semantic final audit and execution evidence")
+        else:
+            final_audit = _read_json(final_audit_path)
+            evidence = validate_literary_audit_evidence(final_audit)
+            validation["errors"].extend(evidence["errors"])
+            if (
+                final_audit.get("artifact_kind") != "revision"
+                or final_audit.get("artifact_sha256") != _sha256(revision)
+                or final_audit.get("verdict") not in {"ACCEPT", "ACCEPT_WITH_WARNINGS"}
+                or any(item.get("severity") in {"blocking", "major"} for item in final_audit.get("issues", []))
+            ):
+                validation["errors"].append("semantic final audit is stale or contains unresolved substantive issues")
+            for role, path in (
+                ("writer", revision),
+                ("observer", runtime_path(record.get("artifacts", {}).get("observation", ""))),
+                ("reviewer", final_audit_path),
+            ):
+                evidence = validate_role_execution(record, role, path)
+                validation["errors"].extend(evidence["errors"])
+        validation["valid"] = not validation["errors"]
     if not validation["valid"]:
         raise RuntimeError("; ".join(validation["errors"]))
     manifest = {
@@ -2044,6 +2787,7 @@ def _has_bounded_chapter_scope(
     chapter_scope = f"{scope_prefix}:{chapter_id}"
     return any(
         item.get("decision_type") == decision_type
+        and _legacy_authorization_binding_valid(item)
         and (
             chapter_scope in item.get("authorized_scope", [])
             or (
@@ -2059,6 +2803,10 @@ def has_bounded_prose_authorization(
     decisions: list[dict[str, Any]], chapter_id: str = "chapter-0001"
 ) -> bool:
     """Keep the prose gate independent from asset and reconciliation approvals."""
+    if active_project_id() != "borrowed-heaven":
+        return _has_project_volume1_scope(
+            decisions, "authorize_controlled_prose_test", chapter_id
+        )
     return _has_bounded_chapter_scope(
         decisions, "authorize_controlled_prose_test", "bounded_chapter_runtime_v0.20", chapter_id
     ) or _has_longform_cluster1_scope(decisions, "authorize_controlled_prose_test", chapter_id)
@@ -2068,6 +2816,8 @@ def has_bounded_intent_authorization(
     decisions: list[dict[str, Any]], chapter_id: str = "chapter-0001"
 ) -> bool:
     """Intent creation is non-prose and has its own chapter-bound Owner scope."""
+    if active_project_id() != "borrowed-heaven":
+        return _has_project_volume1_scope(decisions, "authorize_next_phase", chapter_id)
     return _has_bounded_chapter_scope(
         decisions, "authorize_next_phase", "bounded_chapter_intent_v0.20", chapter_id
     ) or _has_longform_cluster1_scope(decisions, "authorize_next_phase", chapter_id)
@@ -2087,13 +2837,190 @@ def _has_longform_cluster1_scope(
     return any(
         start <= ordinal <= end
         and item.get("decision_type") == decision_type
+        and _legacy_authorization_binding_valid(item)
         and f"{prefix}:{chapter_id}" in item.get("authorized_scope", [])
         for prefix, start, end in scope_ranges
         for item in decisions
     )
 
 
-def build_production_readiness() -> dict[str, Any]:
+def _legacy_authorization_binding_valid(decision: dict[str, Any]) -> bool:
+    """Retire pre-v0.29 unbound Borrowed Heaven authorizations."""
+    if not CANONICAL_BASELINE_PATH.is_file():
+        return False
+    return (
+        decision.get("project_id") == "borrowed-heaven"
+        and decision.get("authorization_contract_version") == "0.29"
+        and decision.get("bound_baseline_sha256")
+        == _sha256(CANONICAL_BASELINE_PATH)
+        and {
+            "borrowed-heaven:raw-corpus-read",
+            "borrowed-heaven:publish",
+        }
+        <= set(decision.get("forbidden_scope", []))
+    )
+
+
+def _has_project_volume1_scope(
+    decisions: list[dict[str, Any]], decision_type: str, chapter_id: str
+) -> bool:
+    """Require project identity, current baseline, dual review, and one chapter scope."""
+    try:
+        ordinal = int(chapter_id.removeprefix("chapter-"))
+    except ValueError:
+        return False
+    window = next(
+        (
+            (start, end)
+            for start, end in volume1_windows(active_project_id())
+            if start <= ordinal <= end
+        ),
+        None,
+    )
+    if window is None:
+        return False
+    start, end = window
+    project_id = active_project_id()
+    baseline_path = project_workspace(project_id) / "creation_assets/canonical_baseline.json"
+    if not baseline_path.is_file():
+        return False
+    baseline_sha = _sha256(baseline_path)
+    review_index_path = project_workspace(project_id) / "production_runtime/production_readiness/final-review-index.v0.1.json"
+    if not review_index_path.is_file():
+        return False
+    review_index = _read_json(review_index_path)
+    if (
+        review_index.get("valid") is not True
+        or review_index.get("bound_baseline_sha256") != baseline_sha
+        or review_index.get("sol_verdict") != "ACCEPT"
+        or review_index.get("antigravity_verdict") not in {"ACCEPT", "ACCEPT_WITH_WARNINGS"}
+    ):
+        return False
+    sol_path = ROOT / str(review_index.get("sol_review_path", ""))
+    antigravity_path = ROOT / str(review_index.get("antigravity_review_path", ""))
+    if not sol_path.is_file() or not antigravity_path.is_file():
+        return False
+    sol_sha = _sha256(sol_path)
+    antigravity_sha = _sha256(antigravity_path)
+    if (
+        review_index.get("sol_review_sha256") != sol_sha
+        or review_index.get("antigravity_review_sha256") != antigravity_sha
+    ):
+        return False
+    required_forbidden = {
+        f"{project_id}:outside-window-{start:03d}-{end:03d}",
+        f"{project_id}:bulk-or-continuous-production",
+        f"{project_id}:raw-corpus-read",
+        f"{project_id}:publish",
+    }
+    scope = f"project_volume1_v1:{project_id}:{chapter_id}"
+    return any(
+        item.get("decision_type") == decision_type
+        and item.get("project_id") == project_id
+        and scope in item.get("authorized_scope", [])
+        and required_forbidden <= set(item.get("forbidden_scope", []))
+        and item.get("expires_after_mission")
+        == f"{project_id}-volume1-window-{start:03d}-{end:03d}-v1"
+        and item.get("bound_baseline_sha256") == baseline_sha
+        and item.get("bound_sol_review_sha256") == sol_sha
+        and item.get("bound_antigravity_review_sha256") == antigravity_sha
+        for item in decisions
+    )
+
+
+def _next_project_production_chapter_id() -> str:
+    workspace = project_workspace()
+    registry_path = workspace / "production_runtime/chapter_registry.v0.20.json"
+    registry = _read_json(registry_path) if registry_path.is_file() else {"chapters": []}
+    records = {
+        str(item.get("chapter_id")): item
+        for item in registry.get("chapters", [])
+    }
+    count = volume1_chapter_count(active_project_id())
+    for ordinal in range(1, count + 1):
+        chapter_id = f"chapter-{ordinal:04d}"
+        record = records.get(chapter_id)
+        if record is None or record.get("stage") != "chapter_accepted":
+            return chapter_id
+    return f"chapter-{count:04d}"
+
+
+def build_production_readiness(chapter_id: str | None = None) -> dict[str, Any]:
+    if active_project_id() != "borrowed-heaven":
+        target_chapter_id = chapter_id or _next_project_production_chapter_id()
+        target_ordinal = int(target_chapter_id.removeprefix("chapter-"))
+        target_window = next(
+            (
+                (start, end)
+                for start, end in volume1_windows(active_project_id())
+                if start <= target_ordinal <= end
+            ),
+            None,
+        )
+        project = active_project()
+        validation = validate_project_production()
+        workspace = project_workspace()
+        review_index_path = workspace / "production_runtime/production_readiness/final-review-index.v0.1.json"
+        review_index = _read_json(review_index_path) if review_index_path.is_file() else {}
+        baseline_path = workspace / "creation_assets/canonical_baseline.json"
+        baseline_sha = _sha256(baseline_path) if baseline_path.is_file() else None
+        sol_path = ROOT / str(review_index.get("sol_review_path", ""))
+        antigravity_path = ROOT / str(review_index.get("antigravity_review_path", ""))
+        dual_review = bool(
+            review_index.get("valid") is True
+            and review_index.get("sol_verdict") == "ACCEPT"
+            and review_index.get("antigravity_verdict") in {"ACCEPT", "ACCEPT_WITH_WARNINGS"}
+            and review_index.get("bound_baseline_sha256") == baseline_sha
+            and sol_path.is_file()
+            and antigravity_path.is_file()
+            and review_index.get("sol_review_sha256") == _sha256(sol_path)
+            and review_index.get("antigravity_review_sha256") == _sha256(antigravity_path)
+        )
+        decisions = load_decisions()
+        checks = {
+            "project_production_contract_valid": validation.get("valid") is True,
+            "dual_final_review_accepted": dual_review,
+            "project_content_authorized": bool(project.get("content_authorized")),
+            "bounded_intent_authorized": has_bounded_intent_authorization(
+                decisions, target_chapter_id
+            ),
+            "bounded_prose_authorized": has_bounded_prose_authorization(
+                decisions, target_chapter_id
+            ),
+        }
+        ready = all(checks.values())
+        window_label = (
+            f"{target_window[0]:03d}_{target_window[1]:03d}"
+            if target_window
+            else "outside_volume"
+        )
+        return {
+            "version": VERSION,
+            "project_id": active_project_id(),
+            "target_chapter_id": target_chapter_id,
+            "target_window": list(target_window) if target_window else None,
+            "status": (
+                f"ready_for_formal_window_{window_label}"
+                if ready
+                else "blocked_before_formal_prose"
+            ),
+            "ready": ready,
+            "bounded_intent_ready": validation.get("valid") is True and dual_review,
+            "checks": checks,
+            "canonical_inputs": validation.get("canonical_inputs", []),
+            "schema_checks": [],
+            "stage_order": list(STAGES),
+            "blocked_actions": [] if ready else ["generate_chapter_draft", "bulk_prose", "publish"],
+            "next_action": (
+                f"Initialize formal {target_chapter_id} intent."
+                if ready
+                else (
+                    "Complete project-isolated final review and bounded Owner "
+                    f"authorization for {target_chapter_id}."
+                )
+            ),
+            "validation_errors": validation.get("errors", []),
+        }
     deep_read = build_deep_read_status()
     if PROJECT_RECONCILIATION_VALIDATION.exists():
         reconciliation = _read_json(PROJECT_RECONCILIATION_VALIDATION)

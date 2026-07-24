@@ -1,0 +1,153 @@
+{
+  "version": "0.1",
+  "candidate_id": "hundred-crafts-night-procession",
+  "status": "fictional_world_history_candidate",
+  "historical_claim": false,
+  "prose_authorized": false,
+  "foundational_axioms": [
+    "一切建造都会把材料、劳动与环境中的损伤重新分配，而不是让损伤消失。",
+    "被共同看见并自愿承担的代价称为公载；被隐瞒并转嫁给无名者的代价称为暗载。",
+    "工艺权能来自可复现的劳动、协作和责任链，不来自血统、签到或无条件赐予。",
+    "标准化能够扩大公共服务，也可能隐藏标准之外的人；地方经验能够修正标准，也可能保护封闭利益。",
+    "传统和现代都只是工具，判断标准是它们如何记录、分配和修复损伤。"
+  ],
+  "fictional_physics": {
+    "work_trace": "有目的、可复核的劳动会在材料中留下工痕；工痕记录谁改变了什么、用了什么方法以及把风险转移到了哪里。",
+    "damage_tide": "长期无人记录或被故意抹去的暗载会汇成损潮，使器物、建筑和社会关系退回到尚未被建成或修复的状态。",
+    "repair": "修复者只能识别、分载、隔离、替换或重新协商损伤，不能无代价抹除损伤。",
+    "authorization": "重大修复必须同时取得材料条件、工序条件和受影响者同意；缺一项就会产生新的暗载。",
+    "ledger": "每次超凡修复都生成责任账，记录受益者、承重者、延期风险、维护期限和退出条件。"
+  },
+  "eras": [
+    {
+      "era_id": "era-01-local-making",
+      "name": "散作纪",
+      "public_story": "各地匠人分别发现异常材料和工序，没有统一力量体系。",
+      "actual_change": "不同社区在洪水、火灾、迁徙和战争中形成分载损伤的地方方法，工艺与生活尚未分离。",
+      "institutional_gain": "地方知识高度适应环境，受益者和承重者彼此可见。",
+      "hidden_cost": "知识依赖少数传承链，跨地区协作困难，灾难可能随传承中断而失控。",
+      "transition_cause": "跨区域灾害迫使不同工种交换尺度、术语和责任规则。"
+    },
+    {
+      "era_id": "era-02-public-works",
+      "name": "合枢纪",
+      "public_story": "百工共同建成连接城镇、河道和道路的公共维护节点。",
+      "actual_change": "木构的分载、戏装的授权、舟船的隔离等地方方法被组合成百工枢；节点既是设施，也是公开议事和维护场所。",
+      "institutional_gain": "维修从私人技艺变成公共能力，跨地域灾害可以协同处理。",
+      "hidden_cost": "共同协议需要标准，无法进入标准的地方工艺逐渐失去话语权。",
+      "transition_cause": "节点规模扩大后，临时协作无法承担长期预算、人员和问责，管理权开始集中。"
+    },
+    {
+      "era_id": "era-03-registered-burden",
+      "name": "官造纪",
+      "public_story": "统一机构登记工匠、制定尺度并保障天下工程。",
+      "actual_change": "标准化显著扩大供水、交通、防灾和信息传递，但管理者为维持低成本，建立不公开的代偿名册，把超额损伤转给缺乏身份和申诉权的人。",
+      "institutional_gain": "公共设施覆盖范围和可靠性达到高峰，工艺可以跨区域复制。",
+      "hidden_cost": "公载逐渐变成暗载；维护成功越显著，无名承重者越难被社会看见。",
+      "transition_cause": "一次覆盖多地的异常事故暴露代偿名册，百工内部因保系统还是保人发生分裂。"
+    },
+    {
+      "era_id": "era-04-dual-infrastructure",
+      "name": "并机纪",
+      "public_story": "新材料、新能源和自动化设施替代旧式手艺，社会进入高效率时代。",
+      "actual_change": "现代工程解决了大量真实问题，并非文明退步；但新设施仍依赖被封存的百工枢承担极端故障，旧责任账没有随设备更新而结清。",
+      "institutional_gain": "生产效率、安全监测和普惠服务大幅提高，个人不再必须依附封闭师承。",
+      "hidden_cost": "维护链被拆分到不同组织，使用者看不到全生命周期损伤；旧节点无人维护却继续承担兜底风险。",
+      "transition_cause": "城市更新连续切断旧节点，累积暗载开始形成可观测的损潮。"
+    },
+    {
+      "era_id": "era-05-structural-reversion",
+      "name": "退构纪",
+      "public_story": "建筑、器物和身份关系出现无法解释的倒退与失效。",
+      "actual_change": "损潮让事物退回被建成之前：建筑失去连接、道路失去方向、职业失去社会承认、亲密关系失去共同记忆。",
+      "institutional_gain": "无；危机迫使被隐藏的维护链和承重者重新进入公共视野。",
+      "hidden_cost": "不同群体争夺解释权，有人试图恢复旧系统，有人主张彻底归零，也有人借危机重新垄断工艺。",
+      "transition_cause": "故事现在时。主角父亲拆除的城市节点成为第一处能够证明暗载制度存在的现场。"
+    }
+  ],
+  "civilization_systems": [
+    {
+      "system_id": "load_distribution",
+      "pilot_origin": "timber_architecture",
+      "role": "在结构、组织和人物之间重新分配可承受荷载",
+      "abuse": "把无法反抗的人永久定义为桥台和承重墙"
+    },
+    {
+      "system_id": "role_authorization",
+      "pilot_origin": "opera_costume_props",
+      "role": "让维护者取得临时身份、权限和相应义务",
+      "abuse": "用角色遮蔽真实的人，让牺牲被解释为本分"
+    },
+    {
+      "system_id": "risk_compartmentalization",
+      "pilot_origin": "shipbuilding_waterworks",
+      "role": "隔离局部故障，为整体争取修复时间",
+      "abuse": "把问题封入无人查看的舱室，直到隔离本身成为遗忘"
+    },
+    {
+      "system_id": "record_and_audit",
+      "pilot_origin": "paper_and_book_repair",
+      "role": "保存责任账、修复记录和异议",
+      "abuse": "通过修订档案把暗载伪装成自愿公载"
+    },
+    {
+      "system_id": "measure_and_standardize",
+      "pilot_origin": "measurement_orientation_calculation",
+      "role": "建立跨区域协作的尺度、方向和计量",
+      "abuse": "把无法计量的地方经验和个体损伤排除在制度之外"
+    }
+  ],
+  "central_conflict": {
+    "surface": "修复失效的百工枢，阻止损潮让城市和文明持续退构。",
+    "structural": "旧系统依赖暗载才能低成本运行，简单恢复等于恢复不公；彻底拆除又会让数以百万计的人失去公共保护。",
+    "personal": "主角想恢复父亲名誉，却必须承认父亲确实破坏了城市安全；父亲的正确在于拒绝暗载，错误在于替所有人决定了风险。",
+    "endgame_question": "能否建立一种让受益者看见代价、让承重者拥有拒绝权、又能维持大规模公共服务的维修制度。"
+  },
+  "expansion_layers": [
+    {
+      "layer": 1,
+      "scope": "一栋建筑与一个街区",
+      "question": "修好具体事物时，谁承担眼前损伤"
+    },
+    {
+      "layer": 2,
+      "scope": "一座城市的百工节点",
+      "question": "不同职业如何共享标准、预算与责任"
+    },
+    {
+      "layer": 3,
+      "scope": "区域工谱与水陆网络",
+      "question": "地方经验如何进入跨区域系统而不被抹平"
+    },
+    {
+      "layer": 4,
+      "scope": "全国公共工程与历史责任账",
+      "question": "当繁荣建立在历史暗载上，后人如何偿还"
+    },
+    {
+      "layer": 5,
+      "scope": "文明是否重置",
+      "question": "人类的不完美制度值得维修，还是应被归零重建"
+    }
+  ],
+  "guardrails": [
+    "不把现代工程写成破坏传统的单一反派。",
+    "不把师徒制、家族传承和地方禁忌天然美化。",
+    "不借用真实族群承担虚构世界的邪术、献祭或落后象征。",
+    "不把非遗名录当成技能清单，不复刻现实项目专名作为招式。",
+    "不允许任何能力绕过材料、工序、协作和责任账。",
+    "最终解决方案不能是主角一人承担全世界代价。"
+  ],
+  "next_gate": {
+    "stage": "power_rules_and_core_ensemble_stress_test",
+    "required_outputs": [
+      "非等级化的能力成长路径",
+      "五名核心人物的欲望-恐惧-责任冲突",
+      "反派方案的真实公共收益",
+      "十五卷扩张中的机制变化而非地图换皮",
+      "前三十章只做节奏摘要，不写正文"
+    ],
+    "project_initialization_allowed": false,
+    "prose_allowed": false
+  }
+}

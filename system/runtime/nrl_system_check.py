@@ -21,6 +21,8 @@ from nrl_story_window import build_story_window_status
 from nrl_system_status import build_system_status
 from nrl_rag_index import load_or_build_creation_context_index
 from nrl_research_assets import build_research_asset_catalog
+from nrl_literary_semantics import build_literary_semantic_status
+from nrl_projects import active_project_id
 
 
 STATE_PATH = runtime_path("system/mission_controller/current_phase_state.json")
@@ -65,6 +67,9 @@ def run_system_check() -> dict[str, Any]:
         pipeline_status=pipeline,
     )
     deep_read = build_deep_read_status()
+    literary_semantics = build_literary_semantic_status(
+        active_project_id() if active_project_id() != "borrowed-heaven" else None
+    )
     production_runtime = build_production_readiness()
     model_team_attestation = build_model_team_attestation_status()
     system_status = build_system_status(state, adapters)
@@ -75,14 +80,29 @@ def run_system_check() -> dict[str, Any]:
     )
     ownership_domains = [item.get("domain") for item in source_ownership.get("domains", [])]
     architecture_payload = json.dumps(architecture, ensure_ascii=False)
+    chapter_runtime_contract_ready = production_runtime["checks"].get(
+        "chapter_runtime_contract_ready",
+        production_runtime["checks"].get("project_production_contract_valid", False),
+    )
+    authorization_state_consistent = (
+        (
+            not architecture["production_readiness"]["owner_gate_required"]
+            and architecture["production_readiness"]["content_generation_allowed"]
+        )
+        if active_project_id() == "borrowed-heaven"
+        else (
+            architecture["production_readiness"]["owner_gate_required"]
+            and not architecture["production_readiness"]["content_generation_allowed"]
+            and not production_runtime["ready"]
+        )
+    )
     architecture_passed = (
         architecture["version"] == "0.4"
         and len(architecture["architecture_layers"]) == 10
         and architecture["architecture_layers"][6]["layer_id"] == "planning_pipeline"
         and architecture["architecture_layers"][6]["child_implementation"]
         == "corpus_pipeline_v0.3"
-        and not architecture["production_readiness"]["owner_gate_required"]
-        and architecture["production_readiness"]["content_generation_allowed"]
+        and authorization_state_consistent
         and architecture["production_readiness"]["codex_model_team_contract_valid"]
         and "novel_training_set/" not in architecture_payload
     )
@@ -179,7 +199,7 @@ def run_system_check() -> dict[str, Any]:
         {
             "check_id": "production_chapter_runtime",
             "passed": (
-                production_runtime["checks"]["chapter_runtime_contract_ready"]
+                chapter_runtime_contract_ready
                 and story_windows["valid"]
             ),
             "detail": {
@@ -187,6 +207,16 @@ def run_system_check() -> dict[str, Any]:
                 "ready": production_runtime["ready"],
                 "stage_count": len(production_runtime["stage_order"]),
                 "story_windows": story_windows,
+            },
+        },
+        {
+            "check_id": "owner_authorization_gate",
+            "passed": production_runtime["ready"],
+            "blocking_scope": "production_readiness",
+            "detail": {
+                "status": production_runtime["status"],
+                "checks": production_runtime["checks"],
+                "next_action": production_runtime.get("next_action"),
             },
         },
         {
@@ -209,10 +239,14 @@ def run_system_check() -> dict[str, Any]:
         {
             "check_id": "cross_domain_invariants",
             "passed": (
-                system_status["production_ready"]
-                and not system_status["production_blockers"]
-                and state.get("owner_gate_required") is False
-                and "write novel prose" not in state.get("blocked_actions", [])
+                (
+                    (
+                        system_status["production_ready"]
+                        and not system_status["production_blockers"]
+                    )
+                    if active_project_id() == "borrowed-heaven"
+                    else chapter_runtime_contract_ready
+                )
                 and story_windows["valid"]
             ),
             "detail": {
@@ -231,6 +265,18 @@ def run_system_check() -> dict[str, Any]:
                 "legacy_v08_effective_status": deep_read["legacy_v08_effective_status"],
                 "required_chunk_count": deep_read["required_chunk_count"],
             },
+        },
+        {
+            "check_id": "literary_semantic_integrity",
+            "passed": (
+                literary_semantics["research_semantics"]["valid"]
+                and (
+                    active_project_id() == "borrowed-heaven"
+                    or literary_semantics["project_semantics"]["valid"]
+                )
+            ),
+            "blocking_scope": "production_readiness",
+            "detail": literary_semantics,
         },
         {
             "check_id": "architecture_reconciliation",

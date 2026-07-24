@@ -1,0 +1,30 @@
+{
+  "chapter_id": "chapter-0042",
+  "dramatic_purpose": "居民拒绝把复杂责任改写成父子英雄故事。",
+  "must_keep": [
+    "公开说明必须同时列出受益者与受损者。",
+    "POV 固定为程雪青"
+  ],
+  "must_avoid": [
+    "不得引入未登记资产或用旁白代替物质行动",
+    "不得回滚已接受状态"
+  ],
+  "expected_state_deltas": [
+    {
+      "state_id": "v1.ch042.outcome",
+      "asset_id": "char_cheng_xueqing",
+      "field_path": "character.current_state",
+      "after": "公开说明必须同时列出受益者与受损者。",
+      "before": "换算表必须保留原始读数和误差来源。"
+    }
+  ],
+  "required_asset_ids": [
+    "char_cheng_xueqing",
+    "bond_zhou_father",
+    "ledger_public_dissent"
+  ],
+  "active_hook_ids": [],
+  "scene_constraints": [
+    "冲突必须落在具体工艺现场、物证或受影响者选择上"
+  ]
+}

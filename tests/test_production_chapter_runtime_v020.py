@@ -119,7 +119,7 @@ class ProductionChapterRuntimeV020Tests(unittest.TestCase):
 
     def test_sol_reviewer_accepts_schema_bound_audit(self):
         record = {"stage": "draft_generated", "artifacts": {"context": "context.json", "rule_stack": "rules.json", "trace": "trace.json", "draft": "draft.md"}}
-        audit = {"chapter_id": "chapter-0001", "artifact_kind": "draft", "artifact_sha256": "a" * 64, "context_sha256": "b" * 64, "verdict": "ACCEPT", "dimensions": {key: [] for key in ("canon", "character", "state", "causality", "pacing", "life_force", "anti_ai_taste", "originality")}, "issues": []}
+        audit = {"chapter_id": "chapter-0001", "artifact_kind": "draft", "artifact_sha256": "a" * 64, "context_sha256": "b" * 64, "verdict": "ACCEPT", "dimensions": {key: ["checked"] for key in ("canon", "character", "state", "causality", "pacing", "life_force", "anti_ai_taste", "originality", "semantic_realization", "progression_permissions", "history_coherence")}, "issues": []}
         packet = REPO_ROOT / "system/production_runtime/chapters/chapter-0001/test-audit-packet.md"
         packet.write_text("packet", encoding="utf-8")
         with mock.patch.object(runtime, "build_chapter_audit_packet", return_value={"template": audit, "packet_path": str(packet.relative_to(REPO_ROOT))}), mock.patch.object(runtime, "ask_codex_structured", return_value=audit), mock.patch.object(runtime, "_load_registry", return_value={"chapters": [record]}), mock.patch.object(runtime, "_chapter_record", return_value=record), mock.patch.object(runtime, "validate_stage_transition", return_value={"valid": True, "errors": []}), mock.patch.object(runtime, "_save_registry"), mock.patch.object(runtime, "_write_json"):
@@ -127,7 +127,7 @@ class ProductionChapterRuntimeV020Tests(unittest.TestCase):
         packet.unlink()
         self.assertTrue(result["valid"])
         self.assertEqual(result["review_provider"], "codex")
-        self.assertEqual(result["review_model"], "gpt-5.6-sol")
+        self.assertEqual(result["review_model"], "gpt-5.6-terra")
         self.assertIn("continuity_audit_execution", record["artifacts"])
 
     def test_failed_external_audit_persists_a_recoverable_attempt_record(self):
@@ -151,9 +151,11 @@ class ProductionChapterRuntimeV020Tests(unittest.TestCase):
         audit = {
             "chapter_id": "chapter-0005", "artifact_kind": "draft",
             "artifact_sha256": "a" * 64, "context_sha256": "b" * 64,
-            "verdict": "ACCEPT", "dimensions": {key: [] for key in (
+            "verdict": "ACCEPT", "dimensions": {key: ["checked"] for key in (
                 "canon", "character", "state", "causality", "pacing",
                 "life_force", "anti_ai_taste", "originality",
+                "semantic_realization", "progression_permissions",
+                "history_coherence",
             )}, "issues": [],
         }
         packet = REPO_ROOT / "system/production_runtime/chapters/chapter-0001/test-fallback-audit-packet.md"
@@ -163,7 +165,7 @@ class ProductionChapterRuntimeV020Tests(unittest.TestCase):
         packet.unlink()
         self.assertTrue(result["valid"])
         self.assertEqual(result["review_provider"], "antigravity")
-        self.assertEqual(result["review_model"], "Claude Opus 4.6 (Thinking)")
+        self.assertEqual(result["review_model"], "Gemini 3.5 Flash (High)")
 
     def test_audit_normalizer_maps_compatible_agent_issue_labels(self):
         import nrl_production_runtime as runtime

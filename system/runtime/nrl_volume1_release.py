@@ -13,16 +13,31 @@ from nrl_paths import ROOT, runtime_path
 from nrl_codex_writer import ask_antigravity_writer, ask_codex_writer, codex_usage_limited, extract_json_object
 from nrl_model_router import route_model
 from nrl_projects import active_project_id, active_project_title
+from nrl_project_production import volume1_chapter_count, volume1_windows
 
 
 VERSION = "0.26"
 MIN_RELEASE_CHINESE_CHARS = 3000
 MAX_RELEASE_CHINESE_CHARS = 4200
-CHAPTER_IDS = tuple(f"chapter-{number:04d}" for number in range(1, 101))
-WINDOWS = tuple((start, start + 9) for start in range(1, 101, 10))
+def _chapter_ids() -> tuple[str, ...]:
+    return tuple(
+        f"chapter-{number:04d}" for number in range(1, volume1_chapter_count() + 1)
+    )
+
+
+def _windows() -> tuple[tuple[int, int], ...]:
+    return volume1_windows()
+
+
+# Compatibility snapshots for callers that import the active project module once.
+# Runtime functions still derive these values dynamically for project-scoped CLI use.
+CHAPTER_IDS = _chapter_ids()
+WINDOWS = _windows()
+
+
 REGISTRY_PATH = runtime_path("system/production_runtime/chapter_registry.v0.20.json")
 REVIEW_ROOT = runtime_path("system/production_runtime/window_reviews")
-RELEASE_ROOT = runtime_path("system/releases/fanqie/borrowed-heaven-volume1")
+RELEASE_ROOT = runtime_path(f"system/releases/fanqie/{active_project_id()}-volume1")
 MANUSCRIPT_REVIEW_ROOT = runtime_path("system/releases/review")
 EDIT_ROOT = runtime_path("system/production_runtime/release_edits")
 TITLE_REGISTRY_PATH = runtime_path("system/production_runtime/chapter_titles.volume1.json")
@@ -40,13 +55,44 @@ def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def _formal_execution_errors(
+    record: dict[str, Any], role: str, artifact_path: Path
+) -> list[str]:
+    ref = record.get("artifacts", {}).get(f"{role}_execution", "")
+    path = runtime_path(ref)
+    if not path.is_file():
+        return [f"missing {role} execution"]
+    payload = _read_json(path)
+    expected_model = {
+        "writer": "gpt-5.6-terra",
+        "observer": "gpt-5.6-luna",
+        "reviewer": "gpt-5.6-sol",
+    }[role]
+    errors = []
+    if payload.get("chapter_id") != record.get("chapter_id") or payload.get("role") != role:
+        errors.append(f"invalid {role} execution identity")
+    if payload.get("provider") != "codex" or payload.get("model") != expected_model:
+        errors.append(f"{role} execution must use Codex {expected_model}")
+    if payload.get("artifact") != str(artifact_path.relative_to(ROOT)) or payload.get("artifact_sha256") != _sha256(artifact_path):
+        errors.append(f"stale {role} execution artifact")
+    revision = runtime_path(record.get("artifacts", {}).get("revision", ""))
+    if role in {"observer", "reviewer"} and (
+        not revision.is_file() or payload.get("revision_sha256") != _sha256(revision)
+    ):
+        errors.append(f"stale {role} revision binding")
+    if role == "reviewer" and payload.get("audit_artifact_sha256") != _sha256(artifact_path):
+        errors.append("stale reviewer audit binding")
+    return errors
+
+
 def load_volume1_titles() -> dict[str, str]:
     payload = _read_json(TITLE_REGISTRY_PATH)
     entries = payload.get("chapters", [])
     titles = {str(item.get("chapter_id", "")): str(item.get("title", "")).strip() for item in entries}
-    if set(titles) != set(CHAPTER_IDS) or len(entries) != len(CHAPTER_IDS):
+    chapter_ids = _chapter_ids()
+    if set(titles) != set(chapter_ids) or len(entries) != len(chapter_ids):
         raise RuntimeError("Volume 1 title registry must contain each chapter exactly once")
-    if len(set(titles.values())) != len(CHAPTER_IDS):
+    if len(set(titles.values())) != len(chapter_ids):
         raise RuntimeError("Volume 1 chapter titles must be unique")
     invalid = [chapter_id for chapter_id, title in titles.items() if not 2 <= len(title) <= 16 or re.search(r"第\s*\d+\s*章", title)]
     if invalid:
@@ -60,6 +106,69 @@ def _window_id(start: int, end: int) -> str:
 
 def _window_path(start: int, end: int) -> Path:
     return REVIEW_ROOT / f"window-{_window_id(start, end)}.json"
+
+
+def _independent_window_path(start: int, end: int) -> Path:
+    return REVIEW_ROOT / f"window-{_window_id(start, end)}.independent.json"
+
+
+def _window_execution_path(start: int, end: int, *, independent: bool = False) -> Path:
+    suffix = ".independent.execution.json" if independent else ".execution.json"
+    return REVIEW_ROOT / f"window-{_window_id(start, end)}{suffix}"
+
+
+def _payload_sha256(payload: dict[str, Any]) -> str:
+    return hashlib.sha256(
+        (json.dumps(payload, ensure_ascii=False, indent=2) + "\n").encode("utf-8")
+    ).hexdigest()
+
+
+def _window_execution_valid(
+    start: int,
+    end: int,
+    review: dict[str, Any],
+    expected_ids: list[str],
+    expected_hashes: dict[str, str],
+    *,
+    independent: bool = False,
+) -> bool:
+    review_path = _independent_window_path(start, end) if independent else _window_path(start, end)
+    execution_path = _window_execution_path(start, end, independent=independent)
+    if not review_path.is_file() or not execution_path.is_file():
+        return False
+    execution = _read_json(execution_path)
+    expected_provider = "antigravity" if independent else "codex"
+    expected_model = None if independent else "gpt-5.6-sol"
+    return bool(
+        execution.get("window") == _window_id(start, end)
+        and execution.get("role") == (
+            "independent_window_reviewer" if independent else "primary_window_reviewer"
+        )
+        and execution.get("review_artifact") == str(review_path.relative_to(ROOT))
+        and execution.get("review_artifact_sha256") == _sha256(review_path)
+        and execution.get("review_payload_sha256") == _payload_sha256(review)
+        and execution.get("chapter_ids") == expected_ids
+        and execution.get("revision_hashes") == expected_hashes
+        and execution.get("provider") == expected_provider
+        and (independent or execution.get("model") == expected_model)
+        and (not independent or bool(execution.get("model")))
+        and review.get("review_provider") == expected_provider
+        and (independent or review.get("review_model") == expected_model)
+        and (not independent or review.get("review_model") == execution.get("model"))
+        and (independent or review.get("fallback_used") is False)
+    )
+
+
+def _window_requires_independent_review(start: int, end: int) -> bool:
+    if active_project_id() == "borrowed-heaven":
+        return False
+    contract = runtime_path(
+        f"system/production_runtime/story_windows/window-{start:03d}-{end:03d}.v1.json"
+    )
+    return bool(
+        contract.is_file()
+        and _read_json(contract).get("review_policy", {}).get("independent_antigravity_required")
+    )
 
 
 def _edit_manifest_path(chapter_id: str) -> Path:
@@ -81,8 +190,8 @@ def _effective_revision(record: dict[str, Any]) -> tuple[Path, str]:
 
 
 def build_window_review_packet(start: int, end: int) -> dict[str, Any]:
-    if (start, end) not in WINDOWS:
-        raise ValueError("window must be one of the canonical ten-chapter Volume 1 windows")
+    if (start, end) not in _windows():
+        raise ValueError("window must be one of the canonical Volume 1 windows")
     registry = _read_json(REGISTRY_PATH)
     records = {item["chapter_id"]: item for item in registry.get("chapters", [])}
     chapter_ids = [f"chapter-{number:04d}" for number in range(start, end + 1)]
@@ -95,13 +204,37 @@ def build_window_review_packet(start: int, end: int) -> dict[str, Any]:
         revision, source_kind = _effective_revision(record)
         audit_key = "final_audit" if "final_audit" in record["artifacts"] else "revision_audit"
         audit = runtime_path(record["artifacts"][audit_key])
+        metrics_path = runtime_path(record["artifacts"].get("revision_metrics", ""))
+        execution_path = runtime_path(record["artifacts"].get("final_audit_execution", ""))
+        if active_project_id() != "borrowed-heaven" and (not metrics_path.is_file() or not execution_path.is_file()):
+            return {"valid": False, "errors": [f"window quality evidence is incomplete: {chapter_id}"]}
+        metrics = _read_json(metrics_path) if metrics_path.is_file() else {}
+        final_audit = _read_json(audit)
+        if active_project_id() != "borrowed-heaven":
+            execution_errors = []
+            execution_errors.extend(_formal_execution_errors(record, "writer", revision))
+            observation_path = runtime_path(record["artifacts"].get("observation", ""))
+            if not observation_path.is_file():
+                execution_errors.append("missing observation artifact")
+            else:
+                execution_errors.extend(_formal_execution_errors(record, "observer", observation_path))
+            execution_errors.extend(_formal_execution_errors(record, "reviewer", audit))
+            if execution_errors:
+                return {"valid": False, "errors": [f"window quality execution failed: {chapter_id}: " + "; ".join(execution_errors)]}
+        if active_project_id() != "borrowed-heaven" and (
+            not MIN_RELEASE_CHINESE_CHARS <= int(metrics.get("chinese_character_count", 0)) <= MAX_RELEASE_CHINESE_CHARS
+            or any(item.get("severity") in {"blocking", "major"} for item in final_audit.get("issues", []))
+        ):
+            return {"valid": False, "errors": [f"window quality gate failed: {chapter_id}"]}
         entries.append({
             "chapter_id": chapter_id,
             "revision": str(revision.relative_to(ROOT)),
             "source_kind": source_kind,
             "revision_sha256": _sha256(revision),
             "final_audit": str(audit.relative_to(ROOT)),
-            "final_verdict": _read_json(audit).get("verdict"),
+            "final_verdict": final_audit.get("verdict"),
+            "quality_metrics": metrics,
+            "final_audit_execution": str(execution_path.relative_to(ROOT)) if execution_path.is_file() else None,
         })
     packet = {
         "version": VERSION,
@@ -259,7 +392,9 @@ def record_external_release_edit(
     return {"valid": True, "chapter_id": chapter_id, "release_edit": manifest["release_edit"], "chinese_character_count": chinese_count, "provider": provider}
 
 
-def record_window_review(payload: dict[str, Any]) -> dict[str, Any]:
+def record_window_review(
+    payload: dict[str, Any], execution: dict[str, Any] | None = None
+) -> dict[str, Any]:
     window = str(payload.get("window", ""))
     try:
         start, end = (int(part) for part in window.split("-"))
@@ -278,9 +413,38 @@ def record_window_review(payload: dict[str, Any]) -> dict[str, Any]:
         raise RuntimeError("window review verdict is invalid")
     if not isinstance(payload.get("findings"), list):
         raise RuntimeError("window review findings must be a list")
+    if active_project_id() != "borrowed-heaven" and (
+        payload.get("review_provider") != "codex"
+        or payload.get("review_model") != "gpt-5.6-sol"
+        or payload.get("fallback_used") is not False
+    ):
+        raise RuntimeError("formal primary window review must be executed by Codex gpt-5.6-sol")
+    if active_project_id() != "borrowed-heaven" and (
+        not execution
+        or execution.get("role") != "primary_window_reviewer"
+        or execution.get("window") != _window_id(start, end)
+        or execution.get("chapter_ids") != packet["chapter_ids"]
+        or execution.get("revision_hashes") != expected_hashes
+        or execution.get("provider") != "codex"
+        or execution.get("model") != "gpt-5.6-sol"
+    ):
+        raise RuntimeError("formal primary window review requires runtime-bound Sol execution evidence")
     target = _window_path(start, end)
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    execution_target = _window_execution_path(start, end)
+    if execution is not None:
+        execution_payload = {
+            "version": "0.28",
+            **execution,
+            "review_artifact": str(target.relative_to(ROOT)),
+            "review_artifact_sha256": _sha256(target),
+            "review_payload_sha256": _payload_sha256(payload),
+        }
+        execution_target.write_text(
+            json.dumps(execution_payload, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
     for chapter in packet["chapters"]:
         if chapter["source_kind"] != "release_edit":
             continue
@@ -299,7 +463,111 @@ def record_window_review(payload: dict[str, Any]) -> dict[str, Any]:
             json.dumps(manifest, ensure_ascii=False, indent=2) + "\n",
             encoding="utf-8",
         )
-    return {"valid": payload["verdict"] == "ACCEPT", "path": str(target.relative_to(ROOT)), "verdict": payload["verdict"]}
+    return {
+        "valid": payload["verdict"] == "ACCEPT",
+        "path": str(target.relative_to(ROOT)),
+        "execution": str(execution_target.relative_to(ROOT)) if execution is not None else None,
+        "verdict": payload["verdict"],
+    }
+
+
+def record_independent_window_review(
+    payload: dict[str, Any], execution: dict[str, Any] | None = None
+) -> dict[str, Any]:
+    window = str(payload.get("window", ""))
+    try:
+        start, end = (int(part) for part in window.split("-"))
+    except ValueError as error:
+        raise RuntimeError("independent review must use a canonical window ID") from error
+    packet_result = build_window_review_packet(start, end)
+    if not packet_result["valid"]:
+        raise RuntimeError("; ".join(packet_result["errors"]))
+    packet = packet_result["packet"]
+    expected_hashes = {item["chapter_id"]: item["revision_sha256"] for item in packet["chapters"]}
+    if payload.get("review_provider") != "antigravity":
+        raise RuntimeError("independent window review must be produced by Antigravity")
+    if payload.get("chapter_ids") != packet["chapter_ids"] or payload.get("revision_hashes") != expected_hashes:
+        raise RuntimeError("independent window review is stale or bound to different revisions")
+    if payload.get("verdict") not in {"ACCEPT", "REWORK_REQUIRED"} or not isinstance(payload.get("findings"), list):
+        raise RuntimeError("independent window review verdict or findings are invalid")
+    if not payload.get("review_model"):
+        raise RuntimeError("independent window review must declare its review model")
+    if execution is not None and payload.get("review_model") != execution.get("model"):
+        raise RuntimeError("independent window review model does not match execution evidence")
+    if active_project_id() != "borrowed-heaven" and (
+        not execution
+        or execution.get("role") != "independent_window_reviewer"
+        or execution.get("window") != _window_id(start, end)
+        or execution.get("chapter_ids") != packet["chapter_ids"]
+        or execution.get("revision_hashes") != expected_hashes
+        or execution.get("provider") != "antigravity"
+        or not execution.get("model")
+    ):
+        raise RuntimeError("formal independent window review requires runtime-bound Antigravity execution evidence")
+    target = _independent_window_path(start, end)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    execution_target = _window_execution_path(start, end, independent=True)
+    if execution is not None:
+        execution_payload = {
+            "version": "0.28",
+            **execution,
+            "review_artifact": str(target.relative_to(ROOT)),
+            "review_artifact_sha256": _sha256(target),
+            "review_payload_sha256": _payload_sha256(payload),
+        }
+        execution_target.write_text(
+            json.dumps(execution_payload, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+    return {
+        "valid": payload["verdict"] == "ACCEPT",
+        "path": str(target.relative_to(ROOT)),
+        "execution": str(execution_target.relative_to(ROOT)) if execution is not None else None,
+        "verdict": payload["verdict"],
+    }
+
+
+def dispatch_independent_window_review(start: int, end: int, model: str | None = None) -> dict[str, Any]:
+    packet_result = build_window_review_packet(start, end)
+    if not packet_result["valid"]:
+        return packet_result
+    packet = packet_result["packet"]
+    prose = []
+    for chapter in packet["chapters"]:
+        prose.extend([f"## {chapter['chapter_id']}", (ROOT / chapter["revision"]).read_text(encoding="utf-8").strip(), ""])
+    template = {
+        "window": packet["window"],
+        "chapter_ids": packet["chapter_ids"],
+        "revision_hashes": {item["chapter_id"]: item["revision_sha256"] for item in packet["chapters"]},
+        "verdict": "ACCEPT",
+        "findings": [],
+        "review_provider": "antigravity",
+        "review_model": model or route_model("reviewer")["fallback_model"],
+    }
+    prompt = "\n".join([
+        "你是独立于 Codex Sol 的 Antigravity 卷内终审者。只返回一个 JSON 对象，不改写正文。",
+        "独立判断连续因果、人物生命力、文化边界、AI 味和状态一致性；任何实质问题必须 REWORK_REQUIRED。",
+        "窗口契约：", json.dumps(packet, ensure_ascii=False), "章节终稿：", "\n".join(prose),
+        "输出模板：", json.dumps(template, ensure_ascii=False),
+    ])
+    used_model = model or route_model("reviewer")["fallback_model"]
+    try:
+        payload = extract_json_object(ask_antigravity_writer(prompt, model=used_model, timeout_seconds=900))
+        payload.update({"review_provider": "antigravity", "review_model": used_model})
+        return record_independent_window_review(
+            payload,
+            execution={
+                "role": "independent_window_reviewer",
+                "window": packet["window"],
+                "chapter_ids": packet["chapter_ids"],
+                "revision_hashes": template["revision_hashes"],
+                "provider": "antigravity",
+                "model": used_model,
+            },
+        )
+    except RuntimeError as error:
+        return {"valid": False, "errors": [str(error)], "review_provider": "antigravity", "review_model": used_model}
 
 
 def dispatch_window_review(start: int, end: int, model: str | None = None) -> dict[str, Any]:
@@ -331,6 +599,13 @@ def dispatch_window_review(start: int, end: int, model: str | None = None) -> di
         response = ask_codex_writer(prompt, model=used_model, timeout_seconds=600)
         payload = extract_json_object(response)
     except RuntimeError as primary_error:
+        if active_project_id() != "borrowed-heaven":
+            return {
+                "valid": False,
+                "errors": [str(primary_error)],
+                "review_provider": "codex",
+                "review_model": used_model,
+            }
         provider = "antigravity"
         used_model = model or reviewer["fallback_model"]
         try:
@@ -350,7 +625,17 @@ def dispatch_window_review(start: int, end: int, model: str | None = None) -> di
             "review_model": used_model,
             "fallback_used": provider == "antigravity",
         }
-        result = record_window_review(payload)
+        result = record_window_review(
+            payload,
+            execution={
+                "role": "primary_window_reviewer",
+                "window": packet["window"],
+                "chapter_ids": packet["chapter_ids"],
+                "revision_hashes": template["revision_hashes"],
+                "provider": provider,
+                "model": used_model,
+            },
+        )
         return {**result, "review_provider": provider, "review_model": used_model}
     except RuntimeError as error:
         return {"valid": False, "errors": [str(error)]}
@@ -361,7 +646,9 @@ def prior_window_review_required(chapter_id: str) -> bool:
         ordinal = int(chapter_id.removeprefix("chapter-"))
     except ValueError:
         return False
-    if ordinal <= 20 or ordinal > 100 or (ordinal - 1) % 10:
+    chapter_count = volume1_chapter_count()
+    minimum_gated = 20 if active_project_id() == "borrowed-heaven" else 10
+    if ordinal <= minimum_gated or ordinal > chapter_count or (ordinal - 1) % 10:
         return False
     start, end = ordinal - 10, ordinal - 1
     path = _window_path(start, end)
@@ -375,23 +662,53 @@ def prior_window_review_required(chapter_id: str) -> bool:
         for item in packet["packet"]["chapters"]
     }
     review = _read_json(path)
-    return (
+    sol_blocked = (
         review.get("verdict") != "ACCEPT"
         or review.get("chapter_ids") != packet["packet"]["chapter_ids"]
         or review.get("revision_hashes") != expected_hashes
+        or (
+            active_project_id() != "borrowed-heaven"
+            and not _window_execution_valid(
+                start, end, review, packet["packet"]["chapter_ids"], expected_hashes
+            )
+        )
     )
+    if sol_blocked:
+        return True
+    if _window_requires_independent_review(start, end):
+        independent_path = _independent_window_path(start, end)
+        if not independent_path.is_file():
+            return True
+        independent = _read_json(independent_path)
+        return (
+            independent.get("verdict") != "ACCEPT"
+            or independent.get("review_provider") != "antigravity"
+            or independent.get("chapter_ids") != packet["packet"]["chapter_ids"]
+            or independent.get("revision_hashes") != expected_hashes
+            or not _window_execution_valid(
+                start,
+                end,
+                independent,
+                packet["packet"]["chapter_ids"],
+                expected_hashes,
+                independent=True,
+            )
+        )
+    return False
 
 
 def build_release_readiness() -> dict[str, Any]:
     registry = _read_json(REGISTRY_PATH)
     records = {item["chapter_id"]: item for item in registry.get("chapters", [])}
     chapter_errors: list[str] = []
+    chapter_ids = _chapter_ids()
+    windows = _windows()
     accepted_registry_count = sum(
-        1 for chapter_id in CHAPTER_IDS if records.get(chapter_id, {}).get("stage") == "chapter_accepted"
+        1 for chapter_id in chapter_ids if records.get(chapter_id, {}).get("stage") == "chapter_accepted"
     )
     character_total = 0
     accepted_character_total = 0
-    for chapter_id in CHAPTER_IDS:
+    for chapter_id in chapter_ids:
         record = records.get(chapter_id, {})
         artifacts = record.get("artifacts", {})
         required = ("revision", "revision_metrics", "observation", "settlement", "acceptance")
@@ -415,10 +732,13 @@ def build_release_readiness() -> dict[str, Any]:
             continue
         character_total += count
     window_errors = []
-    for start, end in WINDOWS:
+    independent_window_errors = []
+    for start, end in windows:
         path = _window_path(start, end)
         if not path.is_file():
             window_errors.append(_window_id(start, end))
+            if _window_requires_independent_review(start, end):
+                independent_window_errors.append(_window_id(start, end))
             continue
         review = _read_json(path)
         expected_ids = [f"chapter-{number:04d}" for number in range(start, end + 1)]
@@ -437,17 +757,41 @@ def build_release_readiness() -> dict[str, Any]:
             review.get("verdict") != "ACCEPT"
             or review.get("chapter_ids") != expected_ids
             or review.get("revision_hashes") != expected_hashes
+            or (
+                active_project_id() != "borrowed-heaven"
+                and not _window_execution_valid(start, end, review, expected_ids, expected_hashes)
+            )
         ):
             window_errors.append(_window_id(start, end))
+        if _window_requires_independent_review(start, end):
+            independent_path = _independent_window_path(start, end)
+            independent = _read_json(independent_path) if independent_path.is_file() else {}
+            if (
+                independent.get("verdict") != "ACCEPT"
+                or independent.get("review_provider") != "antigravity"
+                or independent.get("chapter_ids") != expected_ids
+                or independent.get("revision_hashes") != expected_hashes
+                or not _window_execution_valid(
+                    start,
+                    end,
+                    independent,
+                    expected_ids,
+                    expected_hashes,
+                    independent=True,
+                )
+            ):
+                independent_window_errors.append(_window_id(start, end))
     try:
         titles = load_volume1_titles()
-        titles_complete = len(titles) == len(CHAPTER_IDS)
+        titles_complete = len(titles) == len(chapter_ids)
     except (OSError, RuntimeError, ValueError, json.JSONDecodeError):
         titles_complete = False
+    accepted_key = "all_100_chapters_accepted" if active_project_id() == "borrowed-heaven" else "all_volume_chapters_accepted"
     checks = {
-        "all_100_chapters_accepted": not chapter_errors,
+        accepted_key: not chapter_errors,
         "all_window_reviews_accepted": not window_errors,
-        "volume_character_count_plausible": 300000 <= character_total <= 420000 if not chapter_errors else False,
+        "all_required_independent_window_reviews_accepted": not independent_window_errors,
+        "volume_character_count_plausible": len(chapter_ids) * 3000 <= character_total <= len(chapter_ids) * 4200 if not chapter_errors else False,
         "chapter_titles_complete": titles_complete,
     }
     return {
@@ -455,19 +799,21 @@ def build_release_readiness() -> dict[str, Any]:
         "valid": all(checks.values()),
         "checks": checks,
         "accepted_chapter_count": accepted_registry_count,
-        "release_ready_chapter_count": 100 - len(chapter_errors),
+        "release_ready_chapter_count": len(chapter_ids) - len(chapter_errors),
         "character_total": accepted_character_total,
         "release_ready_character_total": character_total,
         "missing_or_invalid_chapters": chapter_errors,
         "missing_or_rejected_windows": window_errors,
+        "missing_or_rejected_independent_windows": independent_window_errors,
         "release_root": str(RELEASE_ROOT.relative_to(ROOT)),
     }
 
 
 def build_review_manuscript(end: int = 20) -> dict[str, Any]:
     """Materialize accepted chapters for human reading without claiming release readiness."""
-    if not 1 <= end <= 100:
-        raise ValueError("review manuscript end must be within 1-100")
+    chapter_count = volume1_chapter_count()
+    if not 1 <= end <= chapter_count:
+        raise ValueError(f"review manuscript end must be within 1-{chapter_count}")
     registry = _read_json(REGISTRY_PATH)
     records = {item["chapter_id"]: item for item in registry.get("chapters", [])}
     sections = [f"# {active_project_title()}第 1-{end} 章审阅稿", ""]
@@ -514,7 +860,7 @@ def build_fanqie_upload_package() -> dict[str, Any]:
     titles = load_volume1_titles()
     combined: list[str] = []
     manifest_chapters = []
-    for ordinal, chapter_id in enumerate(CHAPTER_IDS, start=1):
+    for ordinal, chapter_id in enumerate(_chapter_ids(), start=1):
         revision, _ = _effective_revision(records[chapter_id])
         text = revision.read_text(encoding="utf-8").strip()
         title = titles[chapter_id]

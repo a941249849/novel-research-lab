@@ -18,8 +18,15 @@ RETAINED_ARTIFACT_KEYS = frozenset({
     "revision",
     "revision_metrics",
     "observation",
+    "continuity_audit",
     "final_audit",
     "revision_audit",
+    "draft_writer_execution",
+    "writer_execution",
+    "observer_execution",
+    "continuity_audit_execution",
+    "final_audit_execution",
+    "reviewer_execution",
     "settlement",
     "acceptance",
     "generation_cost",
@@ -63,9 +70,16 @@ def build_compaction_plan(root: Path, registry_path: Path) -> dict[str, Any]:
             errors.append(f"{chapter_id}: missing durable files: {', '.join(missing_files)}")
             continue
         compact_artifacts[chapter_id] = retained
-        chapter_dir = root / "system/production_runtime/chapters" / chapter_id
+        chapter_dir = registry_path.parent / "chapters" / chapter_id
         retained_paths = {(root / value).resolve() for value in retained.values()}
-        removable.extend(path for path in chapter_dir.iterdir() if path.is_file() and path.resolve() not in retained_paths)
+        if not chapter_dir.is_dir():
+            errors.append(f"{chapter_id}: chapter artifact directory is missing")
+            continue
+        removable.extend(
+            path
+            for path in chapter_dir.iterdir()
+            if path.is_file() and path.resolve() not in retained_paths
+        )
 
     return {
         "valid": not errors,

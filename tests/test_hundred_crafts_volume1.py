@@ -104,7 +104,7 @@ class HundredCraftsVolumeOneTests(unittest.TestCase):
         self.assertEqual(payload["checks"]["continuity_validation"]["generated_prose_count"], 14)
         self.assertNotIn("prose_chapters", payload["checks"]["continuity_validation"])
 
-    def test_project_is_ready_only_for_owner_authorized_sample_test(self) -> None:
+    def test_project_preserves_sample_evidence_after_formal_authorization(self) -> None:
         result = subprocess.run(
             ["python3", "system/runtime/nrl.py", "--project", "hundred-crafts-night-procession", "project-status"],
             cwd=ROOT,
@@ -121,8 +121,8 @@ class HundredCraftsVolumeOneTests(unittest.TestCase):
             payload["sample_owner_decision_id"],
             "owner_hundred_crafts_volume1_controlled_samples_20260718",
         )
-        self.assertFalse(payload["content_authorized"])
-        self.assertFalse(payload["ready_for_prose"])
+        self.assertTrue(payload["content_authorized"])
+        self.assertTrue(payload["ready_for_prose"])
         self.assertTrue(payload["continuity_test_authorized"])
         self.assertTrue(payload["continuity_test_passed"])
         self.assertEqual(payload["continuity_status"], "continuity_test_passed")
@@ -130,7 +130,8 @@ class HundredCraftsVolumeOneTests(unittest.TestCase):
             payload["continuity_owner_decision_id"],
             "owner_hundred_crafts_continuity_validation_20260719",
         )
-        self.assertEqual(payload["next_action"], "await explicit production readiness decision")
+        self.assertEqual(payload["accepted_chapters"], 7)
+        self.assertEqual(payload["next_action"], "continue governed production")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,28 @@
+{
+  "chapter_id": "chapter-0003",
+  "draft_sha256": "86675002d71c4837d956b7d8fe02eda11cb6b9afd7295d9ff2592870d2f54d97",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "fact-ch0003-001",
+        "asset_id": "char_cheng_xueqing",
+        "field_path": "character.current_state",
+        "before": "戏楼成为新的受损节点，工程不能按原计划复工。",
+        "after": "程雪青公开承认模型缺失旧节点并承担补测责任。",
+        "evidence": "程雪青写明原模型未纳入旧检修槽、排水路径与梁底墨书，公开说明“数据没有错，范围错了”，并在停工说明中签名承担补测及相关损失责任。"
+      }
+    ],
+    "npcs": [],
+    "locations": [],
+    "factions": [],
+    "artifacts": [],
+    "techniques": [],
+    "relationships": [],
+    "emotions": [],
+    "information": [],
+    "hooks": [],
+    "timeline": [],
+    "physical_state": [],
+    "naming": []
+  }
+}

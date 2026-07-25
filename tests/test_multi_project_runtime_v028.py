@@ -48,7 +48,7 @@ class MultiProjectRuntimeV028Tests(unittest.TestCase):
         self.assertEqual(set(projects), {"borrowed-heaven", "hundred-crafts-night-procession"})
         self.assertEqual(projects["borrowed-heaven"]["title"], "《借天改命账》")
         self.assertEqual(projects["borrowed-heaven"]["status"], "active_production")
-        self.assertEqual(projects["hundred-crafts-night-procession"]["status"], "owner_gate")
+        self.assertEqual(projects["hundred-crafts-night-procession"]["status"], "active_production")
 
     def test_new_project_is_initialized_in_an_isolated_workspace(self) -> None:
         with tempfile.TemporaryDirectory(prefix="nrl-multiproject-") as temp:

@@ -5,6 +5,7 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -12,7 +13,15 @@ import jsonschema
 
 from nrl_paths import ROOT
 from nrl_literary_semantics import validate_project_semantic_contracts
-from nrl_projects import load_project, validate_project_isolation
+from nrl_owner_gate import load_decisions, save_decisions
+from nrl_projects import (
+    PROJECT_SCHEMA_PATH,
+    REGISTRY_PATH,
+    load_project,
+    load_project_registry,
+    project_config_path,
+    validate_project_isolation,
+)
 
 
 VERSION = "1.1"
@@ -38,13 +47,19 @@ CANONICAL_SOURCES = (
     "validation/project_reconciliation_application.json",
     "validation/literary_semantic_application.v1.json",
 )
-CANONICAL_RUNTIME_SOURCES = (
-    "system/runtime/nrl_literary_semantics.py",
-    "system/runtime/nrl_production_runtime.py",
-    "system/runtime/nrl_project_production.py",
-    "system/runtime/nrl_model_router.py",
+CANONICAL_RUNTIME_SOURCES = tuple(
+    f"system/runtime/{path.name}"
+    for path in sorted((ROOT / "system/runtime").glob("*.py"))
+) + (
+    "system/runtime/opencode_direct.mjs",
+    "system/production_runtime/schemas/chapter_generation.schema.json",
+    "system/production_runtime/schemas/chapter_intent.schema.json",
+    "system/production_runtime/schemas/chapter_observation.schema.json",
+    "system/production_runtime/schemas/chapter_registry.schema.json",
+    "system/production_runtime/schemas/chapter_settlement.schema.json",
     "system/production_runtime/schemas/continuity_audit.schema.json",
     "system/production_runtime/schemas/story_window.schema.json",
+    "system/production_runtime/schemas/volume_outline.schema.json",
 )
 
 
@@ -63,6 +78,136 @@ def _write_json(path: Path, payload: Any) -> None:
 
 def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def _review_document_accepts(
+    path: Path, baseline_sha256: str, allowed_verdicts: set[str]
+) -> bool:
+    if not path.is_file():
+        return False
+    text = path.read_text(encoding="utf-8")
+    verdicts = re.findall(r"(?m)^\s*VERDICT:\s*([A-Z_]+)\s*$", text)
+    baseline_lines = re.findall(r"(?m)^\s*BASELINE:\s*([0-9a-f]{64})\s*$", text)
+    return (
+        len(verdicts) == 1
+        and verdicts[0] in allowed_verdicts
+        and baseline_lines == [baseline_sha256]
+    )
+
+
+def validate_provider_unavailable_evidence(
+    payload: dict[str, Any], baseline_sha256: str
+) -> bool:
+    """Validate a baseline-bound failed attempt against the preferred provider."""
+    preferred = payload.get("preferred_provider")
+    attempts = payload.get("attempts")
+    if (
+        preferred != "antigravity"
+        or payload.get("status") != "unavailable"
+        or payload.get("bound_baseline_sha256") != baseline_sha256
+        or not isinstance(attempts, list)
+        or not attempts
+    ):
+        return False
+    allowed_results = {
+        "provider_error",
+        "quota_exhausted",
+        "rate_limited",
+        "nonzero_exit",
+        "timeout",
+    }
+    for attempt in attempts:
+        if (
+            not isinstance(attempt, dict)
+            or attempt.get("provider") != preferred
+            or not isinstance(attempt.get("returncode"), int)
+            or attempt.get("returncode") == 0
+            or attempt.get("result") not in allowed_results
+            or not attempt.get("started_at")
+            or not attempt.get("finished_at")
+        ):
+            return False
+        request_path = ROOT / str(attempt.get("request_artifact", ""))
+        log_path = ROOT / str(attempt.get("log_artifact", ""))
+        if (
+            not request_path.is_file()
+            or attempt.get("request_artifact_sha256") != _sha256(request_path)
+            or not log_path.is_file()
+            or attempt.get("log_artifact_sha256") != _sha256(log_path)
+        ):
+            return False
+    return True
+
+
+def resolve_independent_review_binding(
+    review_index: dict[str, Any], baseline_sha256: str
+) -> dict[str, Any] | None:
+    """Validate a provider-aware independent review and its execution evidence."""
+    relative = review_index.get("independent_review_path")
+    if not relative:
+        return None
+    provider = str(review_index.get("independent_review_provider", ""))
+    model = str(review_index.get("independent_review_model", ""))
+    path = ROOT / str(relative)
+    execution_path = ROOT / str(
+        review_index.get("independent_review_execution_path", "")
+    )
+    if (
+        provider not in {"antigravity", "opencode-go"}
+        or not model
+        or review_index.get("independent_review_verdict")
+        not in {"ACCEPT", "ACCEPT_WITH_WARNINGS"}
+        or not path.is_file()
+        or review_index.get("independent_review_sha256") != _sha256(path)
+        or not _review_document_accepts(
+            path, baseline_sha256, {"ACCEPT", "ACCEPT_WITH_WARNINGS"}
+        )
+        or not execution_path.is_file()
+        or review_index.get("independent_review_execution_sha256")
+        != _sha256(execution_path)
+    ):
+        return None
+    execution = _read_json(execution_path)
+    if (
+        execution.get("provider") != provider
+        or execution.get("model") != model
+        or execution.get("returncode") != 0
+        or execution.get("bound_baseline_sha256") != baseline_sha256
+        or execution.get("review_artifact") != str(path.relative_to(ROOT))
+        or execution.get("review_artifact_sha256") != _sha256(path)
+        or not execution.get("started_at")
+        or not execution.get("finished_at")
+    ):
+        return None
+    request_path = ROOT / str(execution.get("request_artifact", ""))
+    if (
+        not request_path.is_file()
+        or execution.get("request_artifact_sha256") != _sha256(request_path)
+    ):
+        return None
+    if provider == "opencode-go":
+        unavailable_path = ROOT / str(
+            review_index.get("preferred_provider_unavailable_evidence_path", "")
+        )
+        if (
+            not review_index.get("degradation_reason")
+            or not unavailable_path.is_file()
+            or review_index.get("preferred_provider_unavailable_evidence_sha256")
+            != _sha256(unavailable_path)
+        ):
+            return None
+        unavailable = _read_json(unavailable_path)
+        if not validate_provider_unavailable_evidence(
+            unavailable, baseline_sha256
+        ):
+            return None
+    return {
+        "provider": provider,
+        "model": model,
+        "path": path,
+        "sha256": _sha256(path),
+        "execution_path": execution_path,
+    }
 
 
 def project_workspace(project_id: str | None = None) -> Path:
@@ -87,6 +232,215 @@ def volume1_windows(project_id: str | None = None) -> tuple[tuple[int, int], ...
         (start, min(start + WINDOW_SIZE - 1, count))
         for start in range(1, count + 1, WINDOW_SIZE)
     )
+
+
+def build_production_batch_plan(
+    start: int, end: int, project_id: str | None = None
+) -> dict[str, Any]:
+    """Resolve a bounded batch against the active project's own Volume 1."""
+    project = load_project(project_id)
+    selected = str(project["project_id"])
+    count = volume1_chapter_count(selected)
+    minimum = 12 if project.get("storage_mode") == "legacy_v0" else 1
+    if not minimum <= start <= end <= count:
+        raise RuntimeError(
+            f"Volume 1 batch range must be within chapters {minimum}-{count}"
+        )
+    window = next(
+        (
+            (window_start, window_end)
+            for window_start, window_end in volume1_windows(selected)
+            if window_start <= start <= end <= window_end
+        ),
+        None,
+    )
+    if window is None:
+        raise RuntimeError("production batch cannot cross a canonical story window")
+    workspace = project_workspace(selected)
+    intent_paths = []
+    for ordinal in range(start, end + 1):
+        if project.get("storage_mode") == "legacy_v0":
+            path = (
+                ROOT
+                / "system/production_runtime/intents/longform_volume1_v025"
+                / f"chapter-{ordinal:04d}.v0.25.json"
+            )
+        else:
+            path = (
+                workspace
+                / "production_runtime/intents"
+                / f"chapter-{ordinal:04d}.json"
+            )
+        if not path.is_file():
+            raise RuntimeError(f"production intent is missing: {path.relative_to(ROOT)}")
+        intent_paths.append(str(path.relative_to(ROOT)))
+    window_start, window_end = window
+    independent_required = False
+    if project.get("storage_mode") != "legacy_v0":
+        contract = (
+            workspace
+            / "production_runtime/story_windows"
+            / f"window-{window_start:03d}-{window_end:03d}.v1.json"
+        )
+        if not contract.is_file():
+            raise RuntimeError(
+                f"story window contract is missing: {contract.relative_to(ROOT)}"
+            )
+        independent_required = bool(
+            _read_json(contract)
+            .get("review_policy", {})
+            .get("independent_review_required")
+        )
+    return {
+        "project_id": selected,
+        "start": start,
+        "end": end,
+        "window": [window_start, window_end],
+        "intent_paths": intent_paths,
+        "review_after_batch": end == window_end,
+        "independent_review_required": independent_required,
+    }
+
+
+def build_project_window_authorization(
+    start: int,
+    end: int,
+    decision_id: str,
+    owner_note: str,
+    *,
+    project_id: str | None = None,
+    created_at: str | None = None,
+) -> dict[str, Any]:
+    """Build two hash-bound Owner decisions without mutating project state."""
+    project = load_project(project_id)
+    selected = str(project["project_id"])
+    if project.get("storage_mode") == "legacy_v0":
+        raise RuntimeError("project window authorization requires an isolated project")
+    if (start, end) not in volume1_windows(selected):
+        raise RuntimeError("Owner authorization must match one canonical story window")
+    validation = validate_project_production(selected)
+    if validation.get("valid") is not True:
+        raise RuntimeError(
+            "project production contract is invalid: "
+            + "; ".join(validation.get("errors", []))
+        )
+    workspace = project_workspace(selected)
+    baseline_path = workspace / "creation_assets/canonical_baseline.json"
+    review_index_path = (
+        workspace
+        / "production_runtime/production_readiness/final-review-index.v0.1.json"
+    )
+    review_index = _read_json(review_index_path)
+    baseline_sha = _sha256(baseline_path)
+    sol_path = ROOT / str(review_index.get("sol_review_path", ""))
+    independent = resolve_independent_review_binding(review_index, baseline_sha)
+    if (
+        review_index.get("valid") is not True
+        or review_index.get("bound_baseline_sha256") != baseline_sha
+        or review_index.get("sol_verdict") != "ACCEPT"
+        or not sol_path.is_file()
+        or not _review_document_accepts(sol_path, baseline_sha, {"ACCEPT"})
+        or review_index.get("sol_review_sha256") != _sha256(sol_path)
+        or independent is None
+    ):
+        raise RuntimeError("dual final review is missing, stale, or rejected")
+    timestamp = created_at or datetime.now(timezone.utc).astimezone().replace(
+        microsecond=0
+    ).isoformat()
+    scopes = [
+        f"project_volume1_v1:{selected}:chapter-{ordinal:04d}"
+        for ordinal in range(start, end + 1)
+    ]
+    forbidden = [
+        f"{selected}:outside-window-{start:03d}-{end:03d}",
+        f"{selected}:bulk-or-continuous-production",
+        f"{selected}:raw-corpus-read",
+        f"{selected}:publish",
+    ]
+    common = {
+        "project_id": selected,
+        "authorization_contract_version": "0.29",
+        "authorized_scope": scopes,
+        "forbidden_scope": forbidden,
+        "expires_after_mission": (
+            f"{selected}-volume1-window-{start:03d}-{end:03d}-v1"
+        ),
+        "bound_baseline_sha256": baseline_sha,
+        "bound_sol_review_sha256": _sha256(sol_path),
+        "bound_independent_review_sha256": independent["sha256"],
+        "bound_independent_review_provider": independent["provider"],
+        "bound_independent_review_model": independent["model"],
+        "owner_note": owner_note,
+        "created_at": timestamp,
+    }
+    return {
+        "project_id": selected,
+        "window": [start, end],
+        "baseline_sha256": baseline_sha,
+        "decisions": [
+            {
+                "decision_id": f"{decision_id}_intent",
+                "decision_type": "authorize_next_phase",
+                **common,
+            },
+            {
+                "decision_id": f"{decision_id}_prose",
+                "decision_type": "authorize_controlled_prose_test",
+                **common,
+            },
+        ],
+    }
+
+
+def authorize_project_production_window(
+    start: int,
+    end: int,
+    decision_id: str,
+    owner_note: str,
+    *,
+    project_id: str | None = None,
+    created_at: str | None = None,
+) -> dict[str, Any]:
+    """Stage authorization records and make project config the activation commit."""
+    authorization = build_project_window_authorization(
+        start,
+        end,
+        decision_id,
+        owner_note,
+        project_id=project_id,
+        created_at=created_at,
+    )
+    existing = load_decisions()
+    new_ids = {
+        str(item["decision_id"]) for item in authorization["decisions"]
+    }
+    if new_ids & {str(item.get("decision_id")) for item in existing}:
+        raise RuntimeError("Owner production authorization decision already exists")
+    selected = str(authorization["project_id"])
+    project = load_project(selected)
+    project["content_authorized"] = True
+    project["status"] = "active_production"
+    jsonschema.validate(project, _read_json(PROJECT_SCHEMA_PATH))
+
+    registry = load_project_registry()
+    matched = None
+    for item in registry.get("projects", []):
+        if item.get("project_id") == selected:
+            item["status"] = "active_production"
+            matched = item
+    if matched is None:
+        raise RuntimeError("project registry entry is missing")
+
+    # Registry and decisions cannot activate prose while project.json remains
+    # false. Write project.json last so any earlier failure stays fail-closed.
+    _write_json(REGISTRY_PATH, registry)
+    save_decisions([*existing, *authorization["decisions"]])
+    _write_json(project_config_path(selected), project)
+    return {
+        **authorization,
+        "content_authorized": True,
+        "project_status": "active_production",
+    }
 
 
 def _family_field(asset: dict[str, Any]) -> str:
@@ -301,7 +655,7 @@ def _build_story_window(
         "status": "production_ready",
         "review_policy": {
             "sol_window_review_required": True,
-            "independent_antigravity_required": start in {1, 41, 61},
+            "independent_review_required": start in {1, 41, 61},
             "publish_authorized": False,
         },
         "start_snapshot": [
@@ -392,7 +746,13 @@ def _build_quality_contract(project_id: str) -> dict[str, Any]:
         },
         "window_review": {
             "sol_required": True,
-            "independent_antigravity_required": True,
+            "independent_review_required": True,
+            "independent_review_policy": {
+                "preferred_provider": "antigravity",
+                "allowed_degradation_providers": ["opencode-go"],
+                "owner_authorization_required": True,
+                "execution_evidence_required": True,
+            },
             "any_failed_chapter_blocks_window_accept": True,
         },
         "publish_authorized": False,
@@ -673,8 +1033,17 @@ def validate_project_production(project_id: str | None = None) -> dict[str, Any]
     quality_contract = _read_json(workspace / "production_runtime/quality/first_window_quality_contract.v1.json")
     if quality_contract.get("hard_gates", {}).get("blocking_or_major_final_issue_count") != 0:
         errors.append("formal quality contract must reject every final blocking or major issue")
-    if quality_contract.get("window_review", {}).get("independent_antigravity_required") is not True:
-        errors.append("first formal window must require independent Antigravity review")
+    review_policy = quality_contract.get("window_review", {})
+    if review_policy.get("independent_review_required") is not True:
+        errors.append("first formal window must require independent external review")
+    independent_policy = review_policy.get("independent_review_policy", {})
+    if (
+        independent_policy.get("preferred_provider") != "antigravity"
+        or independent_policy.get("allowed_degradation_providers") != ["opencode-go"]
+        or independent_policy.get("owner_authorization_required") is not True
+        or independent_policy.get("execution_evidence_required") is not True
+    ):
+        errors.append("formal quality contract has an invalid independent review policy")
     checks = {
         "project_isolated": isolation.get("valid") is True,
         "literary_semantic_integrity": semantic.get("valid") is True,

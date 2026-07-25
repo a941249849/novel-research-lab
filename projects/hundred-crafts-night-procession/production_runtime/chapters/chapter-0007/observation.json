@@ -1,0 +1,141 @@
+{
+  "chapter_id": "chapter-0007",
+  "draft_sha256": "eb792d0d89e6401a596dc9b4d27de44aa5de43cecb2c78f3a5cbc23c140908f2",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "f-ch7-001",
+        "asset_id": "char_du_chengli",
+        "field_path": "character.current_state",
+        "before": "戏楼封存清单被证明不完整。",
+        "after": "守门角色残留进入杜承礼的日常判断。",
+        "evidence": "杜承礼戴上旧盔后不由自主守住标线；脱盔后仍按守门逻辑替每个人安排位置，最终停下并让众人自行决定是否留下。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "f-ch7-002",
+        "asset_id": "npc_xiao_bei",
+        "field_path": "npc.current_agenda",
+        "before": "active",
+        "after": "主动协助现场取证并保留拒绝替角色补全信息的边界。",
+        "evidence": "肖北在安全线外勾出木牌、拓下梁底墨书，拒绝补全木牌上被刮去的半个‘杜’字，并要求杜承礼亲自说停。"
+      }
+    ],
+    "locations": [],
+    "factions": [],
+    "artifacts": [
+      {
+        "fact_id": "f-ch7-003",
+        "asset_id": "artifact_role_helmet",
+        "field_path": "artifact.condition",
+        "before": "active",
+        "after": "旧系带被剪断，旧盔停止使用并重新收回箱内。",
+        "evidence": "杜承礼剪开一条旧带并佩戴旧盔守住台口；他说‘我不守了’后，肖北剪断余下系带，周砺将盔收回箱中。"
+      },
+      {
+        "fact_id": "f-ch7-004",
+        "asset_id": "artifact_role_helmet",
+        "field_path": "lifecycle_state",
+        "before": "active",
+        "after": "暂不启用",
+        "evidence": "戏楼今晚不开演，班里的人围在后台，谁也没有再碰那顶盔。"
+      }
+    ],
+    "techniques": [],
+    "relationships": [
+      {
+        "fact_id": "f-ch7-005",
+        "asset_id": "char_du_chengli",
+        "field_path": "relationship_with:npc_xiao_bei",
+        "before": "杜承礼承担现场判断，肖北可能被推回‘替着站’的位置。",
+        "after": "杜承礼拒绝让肖北独自承担守门后果，并接受肖北要求其亲自停止。",
+        "evidence": "杜承礼指出肖北的点头可能受停演和评价压力影响；肖北随后要求他自己说‘停’，杜承礼照做。"
+      }
+    ],
+    "emotions": [
+      {
+        "fact_id": "f-ch7-006",
+        "asset_id": "char_du_chengli",
+        "field_path": "emotion.current",
+        "before": "面对台口险情保持专业判断。",
+        "after": "短暂依赖守门状态带来的踏实感，随后主动中止。",
+        "evidence": "杜承礼感到只要站稳所有乱处都会排开，但在肖北提醒后闭眼说‘我不守了’。"
+      },
+      {
+        "fact_id": "f-ch7-007",
+        "asset_id": "npc_xiao_bei",
+        "field_path": "emotion.current",
+        "before": "坚持承担台口风险。",
+        "after": "接受杜承礼停止守门并转向记录、保全证据。",
+        "evidence": "肖北从试图让杜承礼继续守门，转为记录时间、摆放剪下的系带和木牌。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "f-ch7-008",
+        "asset_id": "artifact_role_helmet",
+        "field_path": "artifact.restrictions",
+        "before": "旧盔用途与限制未明确。",
+        "after": "只能约束佩戴者守住站位和口令，不能堵水、替人下去或成为救命能力；佩戴者可自行停止。",
+        "evidence": "杜承礼明确说明旧行头只能逼住穿的人，不能堵水、替人下去；他离线并剪断系带后作用停止。"
+      },
+      {
+        "fact_id": "f-ch7-009",
+        "asset_id": "ledger_role_residue",
+        "field_path": "state_ledger.value",
+        "before": "角色残留未激活",
+        "after": "角色残留影响杜承礼的站位判断与人员调度冲动，但可被主动中止。",
+        "evidence": "脱盔后杜承礼仍自动为众人排站位，随后一一抹掉这些安排并让周砺逐个询问。"
+      },
+      {
+        "fact_id": "f-ch7-010",
+        "asset_id": "artifact_role_helmet",
+        "field_path": "evidence_record",
+        "before": "旧盔与相关记录未完成现场绑定。",
+        "after": "旧盔、系带、木牌、清单和梁底拓片被分开留存，未重新合箱。",
+        "evidence": "杜承礼要求木牌、清单、拓片留在外头；肖北记录时间并将木牌置于压角尺旁。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "f-ch7-011",
+        "asset_id": "ledger_role_residue",
+        "field_path": "next_record_reference",
+        "before": null,
+        "after": "梁底墨书另有一页，存处见《第二份记录》。",
+        "evidence": "门外送来的湿牛皮纸袋内薄纸明确写下该信息。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "f-ch7-012",
+        "asset_id": "artifact_role_helmet",
+        "field_path": "chapter_event",
+        "before": "旧盔未在本章现场启用。",
+        "after": "杜承礼为维持台口安全违规启用旧盔，随后主动停止并拆除系带。",
+        "evidence": "杜承礼将旧盔托到头上，在白漆标线外沿守门；险情缓解后自行说‘我不守了’并拆除系带。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "f-ch7-013",
+        "asset_id": "artifact_role_helmet",
+        "field_path": "physical_state",
+        "before": "旧盔完整，旧系带处于打结状态。",
+        "after": "一条旧带被剪开，余下系带被剪断，盔从杜承礼头上取下。",
+        "evidence": "杜承礼先剪开一条已打结旧带，之后肖北用剪子剪断余下系带。"
+      }
+    ],
+    "naming": [
+      {
+        "fact_id": "f-ch7-014",
+        "asset_id": "ledger_role_residue",
+        "field_path": "state_ledger.evidence_name",
+        "before": null,
+        "after": "《第二份记录》",
+        "evidence": "送来的薄纸写明梁底墨书另有一页，存处见《第二份记录》。"
+      }
+    ]
+  }
+}

@@ -125,9 +125,12 @@ from nrl_literary_semantics import (
 from nrl_paths import ROOT, runtime_path
 from nrl_projects import build_project_status, initialize_project, list_projects, validate_project_isolation
 from nrl_project_production import (
+    authorize_project_production_window,
+    build_production_batch_plan,
     prepare_project_production,
     relock_project_baseline,
     validate_project_production,
+    volume1_chapter_count,
 )
 from nrl_owner_gate import DECISION_TYPES, load_decisions, record_owner_decision
 from nrl_phase2e import (
@@ -197,7 +200,7 @@ from nrl_longform_plan import (
 )
 from nrl_longform_cluster1 import write_cluster1_intents
 from nrl_volume1_longform import write_volume1_intents, build_volume1_manifest, validate_volume1_manifest
-from nrl_volume1_release import build_release_readiness, build_fanqie_upload_package, build_review_manuscript, build_window_review_packet, record_window_review, dispatch_window_review, dispatch_independent_window_review, dispatch_release_edit, record_external_release_edit
+from nrl_volume1_release import build_release_readiness, build_fanqie_upload_package, build_review_manuscript, build_window_review_packet, record_window_review, dispatch_window_review, dispatch_independent_window_review, dispatch_release_edit, record_external_release_edit, window_requires_independent_review
 from nrl_story_window import (
     build_story_window_status,
     generate_story_window,
@@ -982,6 +985,20 @@ def cmd_project_production_validate(_: argparse.Namespace) -> int:
     return 0 if result["valid"] else 1
 
 
+def cmd_project_production_authorize(args: argparse.Namespace) -> int:
+    if not BOOTSTRAP_PROJECT_ID:
+        raise RuntimeError("project-production-authorize requires --project")
+    result = authorize_project_production_window(
+        args.start,
+        args.end,
+        args.decision_id,
+        args.owner_note,
+        created_at=now_iso(),
+    )
+    print_json(result)
+    return 0
+
+
 def cmd_chapter_runtime_status(_: argparse.Namespace) -> int:
     print_json(load_chapter_runtime_status())
     return 0
@@ -1145,15 +1162,21 @@ def cmd_volume1_release_edit_record(args: argparse.Namespace) -> int:
 
 
 def cmd_volume1_batch_run(args: argparse.Namespace) -> int:
-    if not 12 <= args.start <= args.end <= 100:
-        raise RuntimeError("Volume 1 batch range must be within chapters 12-100")
+    plan = build_production_batch_plan(args.start, args.end)
     completed = []
-    for ordinal in range(args.start, args.end + 1):
+    for ordinal, intent in zip(
+        range(args.start, args.end + 1),
+        plan["intent_paths"],
+        strict=True,
+    ):
         chapter_id = f"chapter-{ordinal:04d}"
-        if ordinal >= 21 and story_beat_for(chapter_id) is None:
+        if (
+            plan["project_id"] == "borrowed-heaven"
+            and ordinal >= 21
+            and story_beat_for(chapter_id) is None
+        ):
             generated = generate_story_window(((ordinal - 1) // 10) * 10 + 1)
             completed.append({"story_window": generated})
-        intent = f"system/production_runtime/intents/longform_volume1_v025/chapter-{ordinal:04d}.v0.25.json"
         result = run_controlled_chapter_pipeline(intent, audit_model=args.audit_model)
         completed.append(result)
         if not result["valid"]:
@@ -1163,18 +1186,39 @@ def cmd_volume1_batch_run(args: argparse.Namespace) -> int:
         # prompts, draft packets and compiled context from accumulating across
         # a long volume while preserving every release and state artifact.
         compact_accepted_chapters(ROOT, PRODUCTION_REGISTRY_PATH)
-        if ordinal % 10 == 0:
-            review = dispatch_window_review(ordinal - 9, ordinal, model=args.audit_model)
+        if ordinal == plan["window"][1] and plan["review_after_batch"]:
+            review = dispatch_window_review(
+                plan["window"][0], plan["window"][1], model=args.audit_model
+            )
             completed.append({"window_review": review})
             if not review["valid"]:
                 print_json({"valid": False, "completed": completed, "window_review": review})
                 return 1
+            if window_requires_independent_review(
+                plan["window"][0], plan["window"][1]
+            ):
+                independent = dispatch_independent_window_review(
+                    plan["window"][0],
+                    plan["window"][1],
+                    model=args.audit_model,
+                )
+                completed.append({"independent_window_review": independent})
+                if not independent["valid"]:
+                    print_json(
+                        {
+                            "valid": False,
+                            "completed": completed,
+                            "independent_window_review": independent,
+                        }
+                    )
+                    return 1
     print_json({"valid": True, "completed": completed})
     return 0
 
 
 def cmd_production_status(args: argparse.Namespace) -> int:
-    result = build_operator_status(PRODUCTION_REGISTRY_PATH, target=args.until)
+    target = args.until or volume1_chapter_count()
+    result = build_operator_status(PRODUCTION_REGISTRY_PATH, target=target)
     print_json(result)
     return 0 if result["valid"] else 1
 
@@ -1190,9 +1234,26 @@ def cmd_production_compact(args: argparse.Namespace) -> int:
 
 
 def cmd_produce(args: argparse.Namespace) -> int:
-    if not 1 <= args.until <= 100:
-        raise RuntimeError("produce target must be within Volume 1 chapters 1-100")
-    status = build_operator_status(PRODUCTION_REGISTRY_PATH, target=args.until)
+    chapter_count = volume1_chapter_count()
+    full_status = build_operator_status(
+        PRODUCTION_REGISTRY_PATH, target=chapter_count
+    )
+    active_window = str(full_status.get("active_window") or "")
+    default_target = (
+        int(active_window.split("-")[1])
+        if active_window
+        else chapter_count
+    )
+    target = args.until or default_target
+    if not 1 <= target <= chapter_count:
+        raise RuntimeError(
+            f"produce target must be within Volume 1 chapters 1-{chapter_count}"
+        )
+    status = (
+        full_status
+        if target == chapter_count
+        else build_operator_status(PRODUCTION_REGISTRY_PATH, target=target)
+    )
     if not status["valid"]:
         print_json(status)
         return 1
@@ -1206,7 +1267,9 @@ def cmd_produce(args: argparse.Namespace) -> int:
         print_json({"valid": False, "status": status, "preflight": preflight})
         return 1
     start = int(status["next_chapter"].removeprefix("chapter-"))
-    batch_args = argparse.Namespace(start=start, end=args.until, audit_model=args.audit_model)
+    batch_args = argparse.Namespace(
+        start=start, end=target, audit_model=args.audit_model
+    )
     return cmd_volume1_batch_run(batch_args)
 
 
@@ -1930,6 +1993,14 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("project-production-prepare").set_defaults(func=cmd_project_production_prepare)
     sub.add_parser("project-production-relock").set_defaults(func=cmd_project_production_relock)
     sub.add_parser("project-production-validate").set_defaults(func=cmd_project_production_validate)
+    project_production_authorize = sub.add_parser("project-production-authorize")
+    project_production_authorize.add_argument("--start", type=int, required=True)
+    project_production_authorize.add_argument("--end", type=int, required=True)
+    project_production_authorize.add_argument("--decision-id", required=True)
+    project_production_authorize.add_argument("--owner-note", required=True)
+    project_production_authorize.set_defaults(
+        func=cmd_project_production_authorize
+    )
     sub.add_parser("chapter-runtime-status").set_defaults(func=cmd_chapter_runtime_status)
     sub.add_parser("production-preflight").set_defaults(func=cmd_production_preflight)
     sub.add_parser("volume1-plan-build").set_defaults(func=cmd_volume1_plan_build)
@@ -1991,13 +2062,13 @@ def build_parser() -> argparse.ArgumentParser:
     batch_run.add_argument("--audit-model", default=None, help="Antigravity fallback model override")
     batch_run.set_defaults(func=cmd_volume1_batch_run)
     production_status = sub.add_parser("production-status")
-    production_status.add_argument("--until", type=int, default=100)
+    production_status.add_argument("--until", type=int)
     production_status.set_defaults(func=cmd_production_status)
     production_compact = sub.add_parser("production-compact")
     production_compact.add_argument("--apply", action="store_true")
     production_compact.set_defaults(func=cmd_production_compact)
     produce = sub.add_parser("produce")
-    produce.add_argument("--until", type=int, default=100)
+    produce.add_argument("--until", type=int)
     produce.add_argument("--audit-model", default=None, help="Antigravity fallback model override")
     produce.set_defaults(func=cmd_produce)
     sub.add_parser("volume1-fanqie-package").set_defaults(func=cmd_volume1_fanqie_package)

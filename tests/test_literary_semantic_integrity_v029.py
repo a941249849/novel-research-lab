@@ -507,11 +507,8 @@ class LiterarySemanticIntegrityV029Tests(unittest.TestCase):
                         "valid": True,
                         "bound_baseline_sha256": baseline_sha,
                         "sol_verdict": "ACCEPT",
-                        "antigravity_verdict": "ACCEPT",
                         "sol_review_path": sol_relative,
-                        "antigravity_review_path": antigravity_relative,
                         "sol_review_sha256": sol_sha,
-                        "antigravity_review_sha256": antigravity_sha,
                     }
                 ),
                 encoding="utf-8",
@@ -533,7 +530,9 @@ class LiterarySemanticIntegrityV029Tests(unittest.TestCase):
                 ),
                 "bound_baseline_sha256": baseline_sha,
                 "bound_sol_review_sha256": sol_sha,
-                "bound_antigravity_review_sha256": antigravity_sha,
+                "bound_independent_review_sha256": antigravity_sha,
+                "bound_independent_review_provider": "antigravity",
+                "bound_independent_review_model": "test-model",
             }
             intent_decision = {
                 **decision,
@@ -563,6 +562,14 @@ class LiterarySemanticIntegrityV029Tests(unittest.TestCase):
                 production_runtime,
                 "volume1_windows",
                 return_value=((1, 10), (11, 20), (21, 30), (31, 40), (41, 50), (51, 60), (61, 66)),
+            ), mock.patch.object(
+                production_runtime,
+                "resolve_independent_review_binding",
+                return_value={
+                    "provider": "antigravity",
+                    "model": "test-model",
+                    "sha256": antigravity_sha,
+                },
             ):
                 self.assertTrue(
                     production_runtime.has_bounded_prose_authorization(

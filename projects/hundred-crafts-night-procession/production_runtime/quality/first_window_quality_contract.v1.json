@@ -1,5 +1,5 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "project_id": "hundred-crafts-night-procession",
   "window": [
     1,
@@ -30,7 +30,15 @@
   },
   "window_review": {
     "sol_required": true,
-    "independent_antigravity_required": true,
+    "independent_review_required": true,
+    "independent_review_policy": {
+      "preferred_provider": "antigravity",
+      "allowed_degradation_providers": [
+        "opencode-go"
+      ],
+      "owner_authorization_required": true,
+      "execution_evidence_required": true
+    },
     "any_failed_chapter_blocks_window_accept": true
   },
   "publish_authorized": false

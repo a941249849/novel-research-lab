@@ -10,7 +10,7 @@
   "status": "production_ready",
   "review_policy": {
     "sol_window_review_required": true,
-    "independent_antigravity_required": false,
+    "independent_review_required": false,
     "publish_authorized": false
   },
   "start_snapshot": [

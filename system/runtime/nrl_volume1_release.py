@@ -6,14 +6,26 @@ import hashlib
 import json
 import re
 import shutil
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 from nrl_paths import ROOT, runtime_path
-from nrl_codex_writer import ask_antigravity_writer, ask_codex_writer, codex_usage_limited, extract_json_object
+from nrl_codex_writer import (
+    ask_antigravity_writer,
+    ask_codex_writer,
+    ask_opencode_writer,
+    codex_usage_limited,
+    extract_json_object,
+)
 from nrl_model_router import route_model
 from nrl_projects import active_project_id, active_project_title
-from nrl_project_production import volume1_chapter_count, volume1_windows
+from nrl_project_production import (
+    project_workspace,
+    validate_provider_unavailable_evidence,
+    volume1_chapter_count,
+    volume1_windows,
+)
 
 
 VERSION = "0.26"
@@ -117,6 +129,26 @@ def _window_execution_path(start: int, end: int, *, independent: bool = False) -
     return REVIEW_ROOT / f"window-{_window_id(start, end)}{suffix}"
 
 
+def _independent_request_path(start: int, end: int) -> Path:
+    return REVIEW_ROOT / f"window-{_window_id(start, end)}.independent.request.md"
+
+
+def _provider_attempt_path(start: int, end: int) -> Path:
+    return REVIEW_ROOT / f"window-{_window_id(start, end)}.antigravity-attempt.json"
+
+
+def _provider_unavailable_path(start: int, end: int) -> Path:
+    return REVIEW_ROOT / f"window-{_window_id(start, end)}.antigravity-unavailable.json"
+
+
+def _current_baseline_sha256() -> str:
+    return _sha256(project_workspace() / "creation_assets/canonical_baseline.json")
+
+
+def _timestamp() -> str:
+    return datetime.now(timezone.utc).astimezone().replace(microsecond=0).isoformat()
+
+
 def _payload_sha256(payload: dict[str, Any]) -> str:
     return hashlib.sha256(
         (json.dumps(payload, ensure_ascii=False, indent=2) + "\n").encode("utf-8")
@@ -137,8 +169,32 @@ def _window_execution_valid(
     if not review_path.is_file() or not execution_path.is_file():
         return False
     execution = _read_json(execution_path)
-    expected_provider = "antigravity" if independent else "codex"
+    expected_provider = execution.get("provider") if independent else "codex"
     expected_model = None if independent else "gpt-5.6-sol"
+    if independent:
+        request_path = runtime_path(execution.get("request_artifact", ""))
+        if (
+            execution.get("returncode") != 0
+            or not execution.get("started_at")
+            or not execution.get("finished_at")
+            or execution.get("bound_baseline_sha256") != _current_baseline_sha256()
+            or not request_path.is_file()
+            or execution.get("request_artifact_sha256") != _sha256(request_path)
+        ):
+            return False
+        if expected_provider == "opencode-go":
+            unavailable_path = runtime_path(
+                execution.get("preferred_provider_unavailable_evidence", "")
+            )
+            if (
+                not unavailable_path.is_file()
+                or execution.get("preferred_provider_unavailable_evidence_sha256")
+                != _sha256(unavailable_path)
+                or not validate_provider_unavailable_evidence(
+                    _read_json(unavailable_path), _current_baseline_sha256()
+                )
+            ):
+                return False
     return bool(
         execution.get("window") == _window_id(start, end)
         and execution.get("role") == (
@@ -150,6 +206,7 @@ def _window_execution_valid(
         and execution.get("chapter_ids") == expected_ids
         and execution.get("revision_hashes") == expected_hashes
         and execution.get("provider") == expected_provider
+        and (not independent or expected_provider in {"antigravity", "opencode-go"})
         and (independent or execution.get("model") == expected_model)
         and (not independent or bool(execution.get("model")))
         and review.get("review_provider") == expected_provider
@@ -167,8 +224,13 @@ def _window_requires_independent_review(start: int, end: int) -> bool:
     )
     return bool(
         contract.is_file()
-        and _read_json(contract).get("review_policy", {}).get("independent_antigravity_required")
+        and _read_json(contract).get("review_policy", {}).get("independent_review_required")
     )
+
+
+def window_requires_independent_review(start: int, end: int) -> bool:
+    """Expose the canonical window review policy to the top-level orchestrator."""
+    return _window_requires_independent_review(start, end)
 
 
 def _edit_manifest_path(chapter_id: str) -> Path:
@@ -484,26 +546,59 @@ def record_independent_window_review(
         raise RuntimeError("; ".join(packet_result["errors"]))
     packet = packet_result["packet"]
     expected_hashes = {item["chapter_id"]: item["revision_sha256"] for item in packet["chapters"]}
-    if payload.get("review_provider") != "antigravity":
-        raise RuntimeError("independent window review must be produced by Antigravity")
+    provider = payload.get("review_provider")
+    if provider not in {"antigravity", "opencode-go"}:
+        raise RuntimeError("independent window review must use an approved external provider")
     if payload.get("chapter_ids") != packet["chapter_ids"] or payload.get("revision_hashes") != expected_hashes:
         raise RuntimeError("independent window review is stale or bound to different revisions")
     if payload.get("verdict") not in {"ACCEPT", "REWORK_REQUIRED"} or not isinstance(payload.get("findings"), list):
         raise RuntimeError("independent window review verdict or findings are invalid")
     if not payload.get("review_model"):
         raise RuntimeError("independent window review must declare its review model")
-    if execution is not None and payload.get("review_model") != execution.get("model"):
-        raise RuntimeError("independent window review model does not match execution evidence")
+    if execution is not None and (
+        payload.get("review_model") != execution.get("model")
+        or provider != execution.get("provider")
+    ):
+        raise RuntimeError("independent window review identity does not match execution evidence")
     if active_project_id() != "borrowed-heaven" and (
         not execution
         or execution.get("role") != "independent_window_reviewer"
         or execution.get("window") != _window_id(start, end)
         or execution.get("chapter_ids") != packet["chapter_ids"]
         or execution.get("revision_hashes") != expected_hashes
-        or execution.get("provider") != "antigravity"
+        or execution.get("provider") not in {"antigravity", "opencode-go"}
         or not execution.get("model")
     ):
-        raise RuntimeError("formal independent window review requires runtime-bound Antigravity execution evidence")
+        raise RuntimeError("formal independent window review requires runtime-bound external execution evidence")
+    if execution is not None:
+        request_path = runtime_path(execution.get("request_artifact", ""))
+        if (
+            execution.get("returncode") != 0
+            or not execution.get("started_at")
+            or not execution.get("finished_at")
+            or execution.get("bound_baseline_sha256")
+            != _current_baseline_sha256()
+            or not request_path.is_file()
+            or execution.get("request_artifact_sha256") != _sha256(request_path)
+        ):
+            raise RuntimeError(
+                "independent window review requires a baseline-bound successful request execution"
+            )
+        if provider == "opencode-go":
+            unavailable_path = runtime_path(
+                execution.get("preferred_provider_unavailable_evidence", "")
+            )
+            if (
+                not unavailable_path.is_file()
+                or execution.get("preferred_provider_unavailable_evidence_sha256")
+                != _sha256(unavailable_path)
+                or not validate_provider_unavailable_evidence(
+                    _read_json(unavailable_path), _current_baseline_sha256()
+                )
+            ):
+                raise RuntimeError(
+                    "OpenCode window review requires validated Antigravity unavailable evidence"
+                )
     target = _independent_window_path(start, end)
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -536,6 +631,7 @@ def dispatch_independent_window_review(start: int, end: int, model: str | None =
     prose = []
     for chapter in packet["chapters"]:
         prose.extend([f"## {chapter['chapter_id']}", (ROOT / chapter["revision"]).read_text(encoding="utf-8").strip(), ""])
+    preferred_model = model or route_model("reviewer")["fallback_model"]
     template = {
         "window": packet["window"],
         "chapter_ids": packet["chapter_ids"],
@@ -543,7 +639,7 @@ def dispatch_independent_window_review(start: int, end: int, model: str | None =
         "verdict": "ACCEPT",
         "findings": [],
         "review_provider": "antigravity",
-        "review_model": model or route_model("reviewer")["fallback_model"],
+        "review_model": preferred_model,
     }
     prompt = "\n".join([
         "你是独立于 Codex Sol 的 Antigravity 卷内终审者。只返回一个 JSON 对象，不改写正文。",
@@ -551,10 +647,77 @@ def dispatch_independent_window_review(start: int, end: int, model: str | None =
         "窗口契约：", json.dumps(packet, ensure_ascii=False), "章节终稿：", "\n".join(prose),
         "输出模板：", json.dumps(template, ensure_ascii=False),
     ])
-    used_model = model or route_model("reviewer")["fallback_model"]
+    provider = "antigravity"
+    used_model = preferred_model
+    preferred_provider_error = ""
+    request_target = _independent_request_path(start, end)
+    request_target.parent.mkdir(parents=True, exist_ok=True)
+    request_target.write_text(prompt + "\n", encoding="utf-8")
+    baseline_sha256 = _current_baseline_sha256()
+    started_at = _timestamp()
+    unavailable_target: Path | None = None
     try:
-        payload = extract_json_object(ask_antigravity_writer(prompt, model=used_model, timeout_seconds=900))
-        payload.update({"review_provider": "antigravity", "review_model": used_model})
+        response = ask_antigravity_writer(prompt, model=used_model, timeout_seconds=900)
+        finished_at = _timestamp()
+    except RuntimeError as error:
+        preferred_provider_error = str(error)
+        failed_at = _timestamp()
+        attempt_target = _provider_attempt_path(start, end)
+        attempt_payload = {
+            "version": "0.31",
+            "provider": "antigravity",
+            "model": preferred_model,
+            "bound_baseline_sha256": baseline_sha256,
+            "request_artifact": str(request_target.relative_to(ROOT)),
+            "request_artifact_sha256": _sha256(request_target),
+            "started_at": started_at,
+            "finished_at": failed_at,
+            "returncode": 1,
+            "result": "provider_error",
+            "detail": preferred_provider_error,
+        }
+        attempt_target.write_text(
+            json.dumps(attempt_payload, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+        unavailable_target = _provider_unavailable_path(start, end)
+        unavailable_payload = {
+            "version": "0.31",
+            "project_id": active_project_id(),
+            "preferred_provider": "antigravity",
+            "status": "unavailable",
+            "bound_baseline_sha256": baseline_sha256,
+            "attempts": [
+                {
+                    **attempt_payload,
+                    "log_artifact": str(attempt_target.relative_to(ROOT)),
+                    "log_artifact_sha256": _sha256(attempt_target),
+                }
+            ],
+        }
+        unavailable_target.write_text(
+            json.dumps(unavailable_payload, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+        provider = "opencode-go"
+        used_model = "qwen3.7-max"
+        started_at = _timestamp()
+        try:
+            response = ask_opencode_writer(prompt, model=used_model, timeout_seconds=900)
+            finished_at = _timestamp()
+        except RuntimeError as fallback_error:
+            return {
+                "valid": False,
+                "errors": [
+                    f"Antigravity unavailable: {preferred_provider_error}",
+                    f"OpenCode Go unavailable: {fallback_error}",
+                ],
+                "review_provider": provider,
+                "review_model": used_model,
+            }
+    try:
+        payload = extract_json_object(response)
+        payload.update({"review_provider": provider, "review_model": used_model})
         return record_independent_window_review(
             payload,
             execution={
@@ -562,12 +725,32 @@ def dispatch_independent_window_review(start: int, end: int, model: str | None =
                 "window": packet["window"],
                 "chapter_ids": packet["chapter_ids"],
                 "revision_hashes": template["revision_hashes"],
-                "provider": "antigravity",
+                "provider": provider,
                 "model": used_model,
+                "returncode": 0,
+                "started_at": started_at,
+                "finished_at": finished_at,
+                "bound_baseline_sha256": baseline_sha256,
+                "request_artifact": str(request_target.relative_to(ROOT)),
+                "request_artifact_sha256": _sha256(request_target),
+                "preferred_provider": "antigravity",
+                "preferred_provider_error": preferred_provider_error,
+                **(
+                    {
+                        "preferred_provider_unavailable_evidence": str(
+                            unavailable_target.relative_to(ROOT)
+                        ),
+                        "preferred_provider_unavailable_evidence_sha256": _sha256(
+                            unavailable_target
+                        ),
+                    }
+                    if unavailable_target is not None
+                    else {}
+                ),
             },
         )
     except RuntimeError as error:
-        return {"valid": False, "errors": [str(error)], "review_provider": "antigravity", "review_model": used_model}
+        return {"valid": False, "errors": [str(error)], "review_provider": provider, "review_model": used_model}
 
 
 def dispatch_window_review(start: int, end: int, model: str | None = None) -> dict[str, Any]:
@@ -682,7 +865,7 @@ def prior_window_review_required(chapter_id: str) -> bool:
         independent = _read_json(independent_path)
         return (
             independent.get("verdict") != "ACCEPT"
-            or independent.get("review_provider") != "antigravity"
+            or independent.get("review_provider") not in {"antigravity", "opencode-go"}
             or independent.get("chapter_ids") != packet["packet"]["chapter_ids"]
             or independent.get("revision_hashes") != expected_hashes
             or not _window_execution_valid(
@@ -768,7 +951,7 @@ def build_release_readiness() -> dict[str, Any]:
             independent = _read_json(independent_path) if independent_path.is_file() else {}
             if (
                 independent.get("verdict") != "ACCEPT"
-                or independent.get("review_provider") != "antigravity"
+                or independent.get("review_provider") not in {"antigravity", "opencode-go"}
                 or independent.get("chapter_ids") != expected_ids
                 or independent.get("revision_hashes") != expected_hashes
                 or not _window_execution_valid(

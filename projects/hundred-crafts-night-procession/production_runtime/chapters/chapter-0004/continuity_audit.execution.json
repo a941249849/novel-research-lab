@@ -1,0 +1,12 @@
+{
+  "version": "0.27",
+  "chapter_id": "chapter-0004",
+  "role": "initial_reviewer",
+  "artifact": "projects/hundred-crafts-night-procession/production_runtime/chapters/chapter-0004/continuity_audit.json",
+  "artifact_sha256": "3c2827f1ef92ca440ca08b4918da742b3a627f16d7afe74eeff45043da132db6",
+  "audit_artifact_sha256": "3c2827f1ef92ca440ca08b4918da742b3a627f16d7afe74eeff45043da132db6",
+  "revision_sha256": null,
+  "provider": "codex",
+  "model": "gpt-5.6-terra",
+  "fallback_used": false
+}

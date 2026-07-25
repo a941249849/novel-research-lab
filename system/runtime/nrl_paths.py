@@ -48,6 +48,11 @@ def _project_relative_path(relative: str) -> str | None:
     }
     if relative in exact:
         return exact[relative]
+    if relative.startswith("system/releases/fanqie/"):
+        return f"{workspace}/releases/fanqie/volume1"
+    if relative.startswith("system/releases/review/"):
+        suffix = relative.removeprefix("system/releases/review/")
+        return f"{workspace}/releases/review/{suffix}"
     if relative.startswith("system/production_runtime/"):
         suffix = relative.removeprefix("system/production_runtime/")
         if suffix.startswith(("schemas/", "calibration/", "canaries/")):

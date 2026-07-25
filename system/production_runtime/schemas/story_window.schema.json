@@ -20,10 +20,10 @@
     "status": {"type": "string", "enum": ["candidate", "reviewed", "production_ready", "frozen"]},
     "review_policy": {
       "type": "object",
-      "required": ["sol_window_review_required", "independent_antigravity_required", "publish_authorized"],
+      "required": ["sol_window_review_required", "independent_review_required", "publish_authorized"],
       "properties": {
         "sol_window_review_required": {"type": "boolean"},
-        "independent_antigravity_required": {"type": "boolean"},
+        "independent_review_required": {"type": "boolean"},
         "publish_authorized": {"const": false}
       },
       "additionalProperties": false

@@ -1,0 +1,80 @@
+{
+  "chapter_id": "chapter-0001",
+  "draft_sha256": "065abb91457c880c3c66d1d83ba4e2990824458db80c78608afec48544e3a174",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "fact-ch001-char-zhou-li-state-001",
+        "asset_id": "char_zhou_li",
+        "field_path": "character.current_state",
+        "before": "active",
+        "after": "事故记录出现周砺父亲周永直的签名。",
+        "evidence": "周砺在事故记录册中认出签名为“周永直”，随后将事故记录压在膝上并继续现场处置。"
+      }
+    ],
+    "npcs": [],
+    "locations": [],
+    "factions": [],
+    "artifacts": [
+      {
+        "fact_id": "fact-ch001-beam-condition-001",
+        "asset_id": "artifact_unnamed_beam",
+        "field_path": "artifact.condition",
+        "before": "active",
+        "after": "连接失效并导致周边结构受力变化",
+        "evidence": "旧梁周围旧砖缝全张开，梁端榫口没有木楔或铁件；抽水后墙体裂缝扩大、钢管柱脚找平板滑移，梁腹传出闷裂声。"
+      },
+      {
+        "fact_id": "fact-ch001-beam-lifecycle-001",
+        "asset_id": "artifact_unnamed_beam",
+        "field_path": "lifecycle_state",
+        "before": "active",
+        "after": "现场被停止深挖并实施临时加固处置",
+        "evidence": "周砺拔下盾构辅助设备临时电闸，划出禁入线，要求东侧停止深抽水，并安排斜撑替换临时柱。"
+      }
+    ],
+    "techniques": [],
+    "relationships": [],
+    "emotions": [],
+    "information": [
+      {
+        "fact_id": "fact-ch001-second-record-reveal-001",
+        "asset_id": "foreshadow_second_record",
+        "field_path": "foreshadowing.status",
+        "before": "active",
+        "after": "revealed",
+        "evidence": "项目部取出二十多年前的事故记录册，记录写明东侧旧构件连接失效并建议停止深挖、分段卸载；签名为周永直。"
+      },
+      {
+        "fact_id": "fact-ch001-second-record-content-001",
+        "asset_id": "foreshadow_second_record",
+        "field_path": "foreshadowing.content",
+        "before": null,
+        "after": "二十多年前已有东侧旧构件连接失效记录，建议停止深挖、分段卸载并共同复验；附页曾被抽走。",
+        "evidence": "事故记录册中写有“东侧旧构件连接失效，建议停止深挖，改为分段卸载，待责任人共同复验”，复写纸下方附页被撕去半截。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "fact-ch001-beam-hook-001",
+        "asset_id": "artifact_unnamed_beam",
+        "field_path": "artifact.next_pressure",
+        "before": null,
+        "after": "浑水沿红线向另一侧爬行，旧梁荷载继续转移",
+        "evidence": "结尾处麻绳绷直，旧梁底下渗出浑水并沿红线向另一侧爬行。"
+      }
+    ],
+    "timeline": [],
+    "physical_state": [],
+    "naming": [
+      {
+        "fact_id": "fact-ch001-naming-zhou-yong-zhi-001",
+        "asset_id": "char_zhou_li",
+        "field_path": "family_name_reference",
+        "before": null,
+        "after": "周永直",
+        "evidence": "周砺认出事故记录册末行被描过的签名为“周永直”。"
+      }
+    ]
+  }
+}

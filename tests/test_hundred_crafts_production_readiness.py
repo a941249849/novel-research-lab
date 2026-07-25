@@ -8,11 +8,17 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 
 ROOT = Path(__file__).resolve().parents[1]
 PROJECT_ID = "hundred-crafts-night-procession"
 WORKSPACE = ROOT / "projects" / PROJECT_ID
+sys.path.insert(0, str(ROOT / "system/runtime"))
+
+import nrl_project_production as project_production  # noqa: E402
+import nrl_volume1_release as volume_release  # noqa: E402
+from nrl_project_production import build_production_batch_plan  # noqa: E402
 
 
 class HundredCraftsProductionReadinessTests(unittest.TestCase):
@@ -49,6 +55,26 @@ class HundredCraftsProductionReadinessTests(unittest.TestCase):
         payload = json.loads(last.read_text(encoding="utf-8"))
         self.assertEqual(payload["window"]["end"], 66)
         self.assertEqual(len(payload["chapters"]), 6)
+
+    def test_formal_batch_plan_uses_project_intents_and_one_window(self) -> None:
+        plan = build_production_batch_plan(1, 10, PROJECT_ID)
+        self.assertEqual(plan["project_id"], PROJECT_ID)
+        self.assertEqual(plan["window"], [1, 10])
+        self.assertTrue(plan["review_after_batch"])
+        self.assertTrue(plan["independent_review_required"])
+        self.assertEqual(len(plan["intent_paths"]), 10)
+        self.assertTrue(
+            all(
+                path.startswith(
+                    f"projects/{PROJECT_ID}/production_runtime/intents/"
+                )
+                and path.endswith(".json")
+                and "longform_volume1_v025" not in path
+                for path in plan["intent_paths"]
+            )
+        )
+        with self.assertRaisesRegex(RuntimeError, "cannot cross"):
+            build_production_batch_plan(10, 11, PROJECT_ID)
 
     def test_causal_repairs_are_explicit_and_distinct(self) -> None:
         manifest = json.loads(
@@ -134,6 +160,25 @@ class HundredCraftsProductionReadinessTests(unittest.TestCase):
             "print(json.dumps(prior_window_review_required('chapter-0011')))"
         )
         self.assertTrue(result)
+
+    def test_first_window_requires_independent_review(self) -> None:
+        result = self.run_runtime_expression(
+            "import json,sys;sys.path.insert(0,'system/runtime');"
+            "from nrl_volume1_release import window_requires_independent_review;"
+            "print(json.dumps(window_requires_independent_review(1,10)))"
+        )
+        self.assertTrue(result)
+
+    def test_release_root_is_project_isolated(self) -> None:
+        result = self.run_runtime_expression(
+            "import json,sys;sys.path.insert(0,'system/runtime');"
+            "from nrl_volume1_release import RELEASE_ROOT,ROOT;"
+            "print(json.dumps(str(RELEASE_ROOT.relative_to(ROOT))))"
+        )
+        self.assertEqual(
+            result,
+            f"projects/{PROJECT_ID}/releases/fanqie/volume1",
+        )
 
     def test_settlement_rejects_unknown_stale_undeclared_and_illegal_state(self) -> None:
         source = (
@@ -274,6 +319,44 @@ class HundredCraftsProductionReadinessTests(unittest.TestCase):
         result = self.run_runtime_expression(source)
         self.assertEqual(result["calls"], ["observer"])
 
+    def test_formal_audit_packet_forbids_empty_dimension_evidence(self) -> None:
+        source = (
+            "import inspect,json,sys;sys.path.insert(0,'system/runtime');"
+            "import nrl_production_runtime as r;"
+            "text=inspect.getsource(r.build_chapter_audit_packet);"
+            "print(json.dumps({'guard':"
+            "'Every array under dimensions must contain at least one specific evidence sentence' in text}))"
+        )
+        result = self.run_runtime_expression(source)
+        self.assertTrue(result["guard"])
+
+    def test_formal_audit_evidence_rejects_generic_and_duplicate_claims(self) -> None:
+        keys = project_production.AUDIT_EVIDENCE_DIMENSIONS if hasattr(
+            project_production, "AUDIT_EVIDENCE_DIMENSIONS"
+        ) else (
+            "canon", "character", "state", "causality", "pacing",
+            "life_force", "anti_ai_taste", "originality",
+            "semantic_realization", "progression_permissions",
+            "history_coherence",
+        )
+        source = (
+            "import json,sys;sys.path.insert(0,'system/runtime');"
+            "import nrl_production_runtime as r;"
+            f"keys={keys!r};"
+            "ground='周砺查看旧梁，在签认页发现父亲名字，并要求住户见证复核。';"
+            "good={'dimensions':{k:[f'周砺在旧梁现场留下第{i}项可核对判断'] for i,k in enumerate(keys)}};"
+            "generic={'dimensions':{k:['checked'] for k in keys}};"
+            "duplicate={'dimensions':{k:['周砺查看旧梁并要求现场复核'] for k in keys}};"
+            "print(json.dumps({"
+            "'good':r.validate_grounded_literary_audit_evidence(good,ground)['valid'],"
+            "'generic':r.validate_grounded_literary_audit_evidence(generic,ground)['valid'],"
+            "'duplicate':r.validate_grounded_literary_audit_evidence(duplicate,ground)['valid']}))"
+        )
+        result = self.run_runtime_expression(source)
+        self.assertTrue(result["good"])
+        self.assertFalse(result["generic"])
+        self.assertFalse(result["duplicate"])
+
     def test_chapter_33_carries_the_only_team_activation_contract(self) -> None:
         manifest = json.loads(
             (WORKSPACE / "production_runtime/plans/volume1_production_manifest.v1.json").read_text(encoding="utf-8")
@@ -310,16 +393,400 @@ class HundredCraftsProductionReadinessTests(unittest.TestCase):
             paths,
         )
         self.assertIn("system/runtime/nrl_production_runtime.py", paths)
+        self.assertIn("system/runtime/nrl_antigravity_bridge.py", paths)
+        self.assertIn("system/runtime/nrl_owner_gate.py", paths)
         self.assertIn(
             "system/production_runtime/schemas/continuity_audit.schema.json",
             paths,
         )
+        runtime_sources = {
+            f"system/runtime/{path.name}"
+            for path in (ROOT / "system/runtime").glob("*.py")
+        }
+        self.assertTrue(runtime_sources.issubset(paths))
+
+    def test_authorization_validates_registry_before_any_write(self) -> None:
+        authorization = {
+            "project_id": PROJECT_ID,
+            "decisions": [
+                {"decision_id": "owner_window_intent"},
+                {"decision_id": "owner_window_prose"},
+            ],
+        }
+        project = json.loads(
+            (ROOT / "system/projects" / PROJECT_ID / "project.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        with mock.patch.object(
+            project_production,
+            "build_project_window_authorization",
+            return_value=authorization,
+        ), mock.patch.object(
+            project_production, "load_decisions", return_value=[]
+        ), mock.patch.object(
+            project_production, "load_project", return_value=project
+        ), mock.patch.object(
+            project_production,
+            "load_project_registry",
+            return_value={"projects": []},
+        ), mock.patch.object(
+            project_production, "_write_json"
+        ) as write_json, mock.patch.object(
+            project_production, "save_decisions"
+        ) as save_decisions:
+            with self.assertRaisesRegex(RuntimeError, "registry entry is missing"):
+                project_production.authorize_project_production_window(
+                    1, 10, "owner_window", "approved"
+                )
+        write_json.assert_not_called()
+        save_decisions.assert_not_called()
+
+    def test_review_document_must_bind_verdict_and_baseline_text(self) -> None:
+        baseline = "a" * 64
+        with tempfile.TemporaryDirectory() as directory:
+            review = Path(directory) / "review.md"
+            review.write_text(
+                f"# Review\n\nBASELINE: {baseline}\n\nVERDICT: ACCEPT\n",
+                encoding="utf-8",
+            )
+            self.assertTrue(
+                project_production._review_document_accepts(
+                    review, baseline, {"ACCEPT"}
+                )
+            )
+            self.assertFalse(
+                project_production._review_document_accepts(
+                    review, "b" * 64, {"ACCEPT"}
+                )
+            )
+            review.write_text(
+                f"# Review\n\nBASELINE: {baseline}f\n\nVERDICT: ACCEPT\n",
+                encoding="utf-8",
+            )
+            self.assertFalse(
+                project_production._review_document_accepts(
+                    review, baseline, {"ACCEPT"}
+                )
+            )
+            review.write_text(
+                f"# Review\n\nBASELINE: {baseline}\n\n"
+                "VERDICT: ACCEPT\nVERDICT: ACCEPT\n",
+                encoding="utf-8",
+            )
+            self.assertFalse(
+                project_production._review_document_accepts(
+                    review, baseline, {"ACCEPT"}
+                )
+            )
+
+    def test_provider_aware_independent_review_requires_execution_and_degradation_evidence(self) -> None:
+        baseline = "a" * 64
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            review = root / "review.md"
+            request = root / "request.md"
+            provider_log = root / "provider-attempt.json"
+            unavailable = root / "unavailable.json"
+            execution = root / "execution.json"
+            review.write_text(
+                f"BASELINE: {baseline}\n\nVERDICT: ACCEPT\n", encoding="utf-8"
+            )
+            request.write_text("independent review request", encoding="utf-8")
+            provider_log.write_text(
+                '{"returncode":1,"error":"provider unavailable"}\n',
+                encoding="utf-8",
+            )
+            unavailable.write_text(
+                json.dumps(
+                    {
+                        "preferred_provider": "antigravity",
+                        "status": "unavailable",
+                        "bound_baseline_sha256": baseline,
+                        "attempts": [
+                            {
+                                "provider": "antigravity",
+                                "returncode": 1,
+                                "result": "quota_exhausted",
+                                "started_at": "2026-07-25T00:00:00+08:00",
+                                "finished_at": "2026-07-25T00:00:05+08:00",
+                                "request_artifact": str(request),
+                                "request_artifact_sha256": hashlib.sha256(
+                                    request.read_bytes()
+                                ).hexdigest(),
+                                "log_artifact": "provider-attempt.json",
+                                "log_artifact_sha256": hashlib.sha256(
+                                    provider_log.read_bytes()
+                                ).hexdigest(),
+                            }
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            execution.write_text(
+                json.dumps(
+                    {
+                        "provider": "opencode-go",
+                        "model": "qwen3.7-max",
+                        "returncode": 0,
+                        "started_at": "2026-07-25T00:00:00+08:00",
+                        "finished_at": "2026-07-25T00:01:00+08:00",
+                        "bound_baseline_sha256": baseline,
+                        "request_artifact": "request.md",
+                        "request_artifact_sha256": hashlib.sha256(
+                            request.read_bytes()
+                        ).hexdigest(),
+                        "review_artifact": "review.md",
+                        "review_artifact_sha256": hashlib.sha256(
+                            review.read_bytes()
+                        ).hexdigest(),
+                    }
+                ),
+                encoding="utf-8",
+            )
+            index = {
+                "independent_review_provider": "opencode-go",
+                "independent_review_model": "qwen3.7-max",
+                "independent_review_verdict": "ACCEPT",
+                "independent_review_path": "review.md",
+                "independent_review_sha256": hashlib.sha256(
+                    review.read_bytes()
+                ).hexdigest(),
+                "independent_review_execution_path": "execution.json",
+                "independent_review_execution_sha256": hashlib.sha256(
+                    execution.read_bytes()
+                ).hexdigest(),
+                "degradation_reason": "Antigravity quota exhausted",
+                "preferred_provider_unavailable_evidence_path": "unavailable.json",
+                "preferred_provider_unavailable_evidence_sha256": hashlib.sha256(
+                    unavailable.read_bytes()
+                ).hexdigest(),
+            }
+            with mock.patch.object(project_production, "ROOT", root):
+                binding = project_production.resolve_independent_review_binding(
+                    index, baseline
+                )
+                self.assertEqual(binding["provider"], "opencode-go")
+                impersonated = dict(index, independent_review_provider="antigravity")
+                self.assertIsNone(
+                    project_production.resolve_independent_review_binding(
+                        impersonated, baseline
+                    )
+                )
+                stale = dict(index, independent_review_execution_sha256="0" * 64)
+                self.assertIsNone(
+                    project_production.resolve_independent_review_binding(
+                        stale, baseline
+                    )
+                )
+                invalid_unavailable = json.loads(
+                    unavailable.read_text(encoding="utf-8")
+                )
+                invalid_unavailable["attempts"][0]["returncode"] = 0
+                invalid_unavailable["attempts"][0]["result"] = "success"
+                self.assertFalse(
+                    project_production.validate_provider_unavailable_evidence(
+                        invalid_unavailable, baseline
+                    )
+                )
+
+    def test_independent_window_review_rejects_unknown_provider(self) -> None:
+        source = (
+            "import json,sys;sys.path.insert(0,'system/runtime');import nrl_volume1_release as r;"
+            "r.build_window_review_packet=lambda s,e:{'valid':True,'packet':{'chapter_ids':['chapter-0001'],'chapters':[{'chapter_id':'chapter-0001','revision_sha256':'a'*64,'source_kind':'accepted_revision'}]}};"
+            "p={'window':'1-10','chapter_ids':['chapter-0001'],'revision_hashes':{'chapter-0001':'a'*64},'verdict':'ACCEPT','findings':[],'review_provider':'codex','review_model':'gpt-5.6-sol'};"
+            "e={'role':'independent_window_reviewer','window':'001-010','chapter_ids':['chapter-0001'],'revision_hashes':{'chapter-0001':'a'*64},'provider':'codex','model':'gpt-5.6-sol'};"
+            "\ntry:\n r.record_independent_window_review(p,e);print(json.dumps({'accepted':True}))\nexcept RuntimeError as error:\n print(json.dumps({'accepted':False,'error':str(error)}))"
+        )
+        result = self.run_runtime_expression(source)
+        self.assertFalse(result["accepted"])
+        self.assertIn("approved external provider", result["error"])
+
+    def test_opencode_window_review_requires_unavailable_evidence(self) -> None:
+        source = (
+            "import json,sys;sys.path.insert(0,'system/runtime');import nrl_volume1_release as r;"
+            "request=r.ROOT/'projects/hundred-crafts-night-procession/production_runtime/quality/first_window_quality_contract.v1.json';"
+            "r.build_window_review_packet=lambda s,e:{'valid':True,'packet':{'chapter_ids':['chapter-0001'],'chapters':[{'chapter_id':'chapter-0001','revision_sha256':'a'*64,'source_kind':'accepted_revision'}]}};"
+            "r._independent_window_path=lambda s,e:(_ for _ in ()).throw(AssertionError('write path reached'));"
+            "p={'window':'1-10','chapter_ids':['chapter-0001'],'revision_hashes':{'chapter-0001':'a'*64},'verdict':'ACCEPT','findings':[],'review_provider':'opencode-go','review_model':'qwen3.7-max'};"
+            "e={'role':'independent_window_reviewer','window':'001-010','chapter_ids':['chapter-0001'],'revision_hashes':{'chapter-0001':'a'*64},'provider':'opencode-go','model':'qwen3.7-max','returncode':0,'started_at':'2026-07-25T00:00:00+08:00','finished_at':'2026-07-25T00:01:00+08:00','bound_baseline_sha256':r._current_baseline_sha256(),'request_artifact':str(request.relative_to(r.ROOT)),'request_artifact_sha256':r._sha256(request)};"
+            "\ntry:\n r.record_independent_window_review(p,e);print(json.dumps({'accepted':True}))\nexcept RuntimeError as error:\n print(json.dumps({'accepted':False,'error':str(error)}))"
+        )
+        result = self.run_runtime_expression(source)
+        self.assertFalse(result["accepted"])
+        self.assertIn("unavailable evidence", result["error"])
+
+    def test_opencode_window_review_accepts_complete_execution_chain(self) -> None:
+        baseline = "b" * 64
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            review_root = root / "reviews"
+            review_root.mkdir()
+            request = root / "request.md"
+            provider_log = root / "provider-log.json"
+            unavailable = root / "unavailable.json"
+            request.write_text("window review request", encoding="utf-8")
+            provider_log.write_text('{"returncode":1}\n', encoding="utf-8")
+            unavailable.write_text(
+                json.dumps(
+                    {
+                        "preferred_provider": "antigravity",
+                        "status": "unavailable",
+                        "bound_baseline_sha256": baseline,
+                        "attempts": [
+                            {
+                                "provider": "antigravity",
+                                "returncode": 1,
+                                "result": "provider_error",
+                                "started_at": "2026-07-25T00:00:00+08:00",
+                                "finished_at": "2026-07-25T00:00:05+08:00",
+                                "request_artifact": str(request),
+                                "request_artifact_sha256": hashlib.sha256(
+                                    request.read_bytes()
+                                ).hexdigest(),
+                                "log_artifact": str(provider_log),
+                                "log_artifact_sha256": hashlib.sha256(
+                                    provider_log.read_bytes()
+                                ).hexdigest(),
+                            }
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            payload = {
+                "window": "1-10",
+                "chapter_ids": ["chapter-0001"],
+                "revision_hashes": {"chapter-0001": "a" * 64},
+                "verdict": "ACCEPT",
+                "findings": [],
+                "review_provider": "opencode-go",
+                "review_model": "qwen3.7-max",
+            }
+            execution = {
+                "role": "independent_window_reviewer",
+                "window": "001-010",
+                "chapter_ids": ["chapter-0001"],
+                "revision_hashes": {"chapter-0001": "a" * 64},
+                "provider": "opencode-go",
+                "model": "qwen3.7-max",
+                "returncode": 0,
+                "started_at": "2026-07-25T00:01:00+08:00",
+                "finished_at": "2026-07-25T00:02:00+08:00",
+                "bound_baseline_sha256": baseline,
+                "request_artifact": str(request),
+                "request_artifact_sha256": hashlib.sha256(
+                    request.read_bytes()
+                ).hexdigest(),
+                "preferred_provider_unavailable_evidence": str(unavailable),
+                "preferred_provider_unavailable_evidence_sha256": hashlib.sha256(
+                    unavailable.read_bytes()
+                ).hexdigest(),
+            }
+            packet = {
+                "valid": True,
+                "packet": {
+                    "chapter_ids": ["chapter-0001"],
+                    "chapters": [
+                        {
+                            "chapter_id": "chapter-0001",
+                            "revision_sha256": "a" * 64,
+                            "source_kind": "accepted_revision",
+                        }
+                    ],
+                },
+            }
+            with mock.patch.object(
+                volume_release, "ROOT", root
+            ), mock.patch.object(
+                volume_release, "REVIEW_ROOT", review_root
+            ), mock.patch.object(
+                volume_release, "runtime_path", side_effect=lambda value: root / value
+            ), mock.patch.object(
+                volume_release, "_current_baseline_sha256", return_value=baseline
+            ), mock.patch.object(
+                volume_release, "build_window_review_packet", return_value=packet
+            ):
+                result = volume_release.record_independent_window_review(
+                    payload, execution
+                )
+            self.assertTrue(result["valid"])
+            self.assertTrue((review_root / "window-001-010.independent.json").is_file())
+            self.assertTrue(
+                (review_root / "window-001-010.independent.execution.json").is_file()
+            )
+
+    def test_authorization_failure_before_activation_stays_fail_closed(self) -> None:
+        authorization = {
+            "project_id": PROJECT_ID,
+            "decisions": [
+                {"decision_id": "owner_window_intent"},
+                {"decision_id": "owner_window_prose"},
+            ],
+        }
+        project = json.loads(
+            (ROOT / "system/projects" / PROJECT_ID / "project.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        original_authorized = project["content_authorized"]
+        events: list[str] = []
+
+        def staged_write(path: Path, payload: object) -> None:
+            if path == project_production.project_config_path(PROJECT_ID):
+                raise OSError("injected activation write failure")
+            events.append(f"write:{path.name}")
+
+        with mock.patch.object(
+            project_production,
+            "build_project_window_authorization",
+            return_value=authorization,
+        ), mock.patch.object(
+            project_production, "load_decisions", return_value=[]
+        ), mock.patch.object(
+            project_production, "load_project", return_value=dict(project)
+        ), mock.patch.object(
+            project_production,
+            "load_project_registry",
+            return_value={"projects": [{"project_id": PROJECT_ID, "status": "owner_gate"}]},
+        ), mock.patch.object(
+            project_production, "_write_json", side_effect=staged_write
+        ), mock.patch.object(
+            project_production,
+            "save_decisions",
+            side_effect=lambda decisions: events.append("write:decisions"),
+        ):
+            with self.assertRaisesRegex(OSError, "activation write failure"):
+                project_production.authorize_project_production_window(
+                    1, 10, "owner_window", "approved"
+                )
+        self.assertEqual(events, ["write:registry.v1.json", "write:decisions"])
+        persisted = json.loads(
+            (ROOT / "system/projects" / PROJECT_ID / "project.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        self.assertEqual(persisted["content_authorized"], original_authorized)
 
     def test_samples_are_not_formal_registry_entries(self) -> None:
         registry = json.loads(
             (WORKSPACE / "production_runtime/chapter_registry.v0.20.json").read_text(encoding="utf-8")
         )
-        self.assertEqual(registry["chapters"], [])
+        self.assertEqual(
+            [entry["chapter_id"] for entry in registry["chapters"]],
+            [f"chapter-{number:04d}" for number in range(1, 8)],
+        )
+        self.assertTrue(
+            all(entry["stage"] == "chapter_accepted" for entry in registry["chapters"])
+        )
+        self.assertTrue(
+            all(
+                "controlled_samples" not in artifact_path
+                for entry in registry["chapters"]
+                for artifact_path in entry["artifacts"].values()
+            )
+        )
         manifest = json.loads(
             (WORKSPACE / "production_runtime/plans/volume1_production_manifest.v1.json").read_text(encoding="utf-8")
         )

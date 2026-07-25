@@ -1,0 +1,10 @@
+{
+  "chapter_id": "chapter-0001",
+  "audit_kind": "final",
+  "provider": "codex",
+  "model": "gpt-5.6-sol",
+  "status": "required_sol_provider_failed",
+  "errors": [
+    "gpt-5.6-sol: Codex structured call failed with exit code 1: ERROR: { | ERROR: {"
+  ]
+}

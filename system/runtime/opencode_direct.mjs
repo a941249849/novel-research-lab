@@ -4,8 +4,8 @@ import os from "node:os";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 
-const [requestPath, sourcePath, model = "glm-5.2"] = process.argv.slice(2);
-if (!requestPath || !sourcePath) process.exit(2);
+const [requestPath, sourcePath, model] = process.argv.slice(2);
+if (!requestPath || !sourcePath || !model) process.exit(2);
 const sdkPath = path.join(os.homedir(), ".config/opencode/node_modules/@opencode-ai/sdk/dist/index.js");
 const { createOpencode } = await import(pathToFileURL(sdkPath).href);
 const directory = process.cwd();

@@ -55,6 +55,74 @@ class ArtifactRetentionTests(unittest.TestCase):
             second = compact_accepted_chapters(root, registry)
             self.assertEqual(second["removed_file_count"], 0)
 
+    def test_project_compaction_keeps_model_execution_evidence(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            chapter = (
+                root
+                / "projects/example/production_runtime/chapters/chapter-0001"
+            )
+            chapter.mkdir(parents=True)
+            durable = {
+                "intent": "intent.json",
+                "revision": "revision.md",
+                "revision_metrics": "revision.metrics.json",
+                "observation": "observation.json",
+                "final_audit": "final_audit.json",
+                "writer_execution": "writer.execution.json",
+                "observer_execution": "observer.execution.json",
+                "final_audit_execution": "final_audit.execution.json",
+                "reviewer_execution": "final_audit.execution.json",
+                "settlement": "settlement.json",
+                "acceptance": "acceptance.json",
+            }
+            artifacts = {}
+            for key, name in durable.items():
+                path = chapter / name
+                path.write_text(
+                    "正文" if path.suffix == ".md" else "{}",
+                    encoding="utf-8",
+                )
+                artifacts[key] = str(path.relative_to(root))
+            (chapter / "context.json").write_text("{}", encoding="utf-8")
+            (chapter / "draft.md").write_text("草稿", encoding="utf-8")
+            registry = (
+                root
+                / "projects/example/production_runtime/chapter_registry.v0.20.json"
+            )
+            registry.write_text(
+                json.dumps(
+                    {
+                        "chapters": [
+                            {
+                                "chapter_id": "chapter-0001",
+                                "stage": "chapter_accepted",
+                                "artifacts": {
+                                    **artifacts,
+                                    "context": str(
+                                        (chapter / "context.json").relative_to(root)
+                                    ),
+                                    "draft": str(
+                                        (chapter / "draft.md").relative_to(root)
+                                    ),
+                                },
+                            }
+                        ]
+                    }
+                ),
+                encoding="utf-8",
+            )
+            result = compact_accepted_chapters(root, registry)
+            remaining = json.loads(registry.read_text(encoding="utf-8"))[
+                "chapters"
+            ][0]["artifacts"]
+        self.assertTrue(result["valid"], result)
+        self.assertIn("writer_execution", remaining)
+        self.assertIn("observer_execution", remaining)
+        self.assertIn("reviewer_execution", remaining)
+        self.assertNotIn("context", remaining)
+        self.assertNotIn("draft", remaining)
+
 
 if __name__ == "__main__":
     unittest.main()

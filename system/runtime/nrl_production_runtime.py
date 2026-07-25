@@ -33,6 +33,7 @@ from nrl_paths import ROOT, runtime_path
 from nrl_projects import active_project, active_project_id, active_project_scope, active_project_title
 from nrl_project_production import (
     project_workspace,
+    resolve_independent_review_binding,
     validate_project_production,
     volume1_chapter_count,
     volume1_windows,
@@ -228,7 +229,14 @@ def validate_settlement_payload(
                 for fact in facts:
                     if isinstance(fact, dict) and fact.get("fact_id"):
                         observed[str(fact["fact_id"])] = fact
+        settlement_keys: set[tuple[str, str]] = set()
         for delta in settlement.get("state_deltas", []):
+            key = (str(delta.get("asset_id")), str(delta.get("field_path")))
+            if key in settlement_keys:
+                errors.append(
+                    f"duplicate settlement state key: {key[0]}:{key[1]}"
+                )
+            settlement_keys.add(key)
             fact = observed.get(str(delta.get("fact_id")))
             comparable = ("asset_id", "field_path", "before", "after")
             if not fact or any(delta.get(key) != fact.get(key) for key in comparable):
@@ -1398,7 +1406,8 @@ def _recover_short_draft(chapter_id: str, prompt: str, draft: str) -> tuple[str,
     closing = "\n\n".join(part for part in draft.strip().split("\n\n")[-3:] if part.strip())
     recovery_prompt = "\n".join([
         f"你是{active_project_title()}{chapter_id} 的受控编辑。只输出一段 {requested_min}-{requested_max} 个中文字符的场景桥段，不要标题、解释或总结。",
-        "这段将插入既有正文的结尾前，必须保持人物、资产、时间和状态约束；用动作、感官和选择补足冲突，不能解决结尾悬念或新增事实。",
+        "这段将插入既有正文的结尾前，必须保持人物、资产、时间和状态约束；用尚未发生的动作、感官和选择补足冲突，不能解决结尾悬念或新增事实。",
+        "不得复述既有结尾中的发现、物件交接、人物站位、对白、判断或收束动作；桥段最后必须自然接回既有结尾第一句。",
         "原有写作规则：", prompt[-5000:],
         "既有结尾前的片段：", closing,
     ])
@@ -1897,7 +1906,7 @@ def build_chapter_audit_packet(chapter_id: str) -> dict[str, Any]:
         "context_sha256": _sha256(context_path),
         "verdict": "ACCEPT_WITH_WARNINGS",
         "dimensions": {
-            key: []
+            key: [f"必须替换为针对 {key} 的正文或上下文具体证据"]
             for key in (
                 "canon",
                 "character",
@@ -1936,6 +1945,7 @@ def build_chapter_audit_packet(chapter_id: str) -> dict[str, Any]:
             "Explicitly verify that the prose realizes its chapter semantic beat, keeps every action within current progression permissions and liabilities, and uses only historical evidence available in this chapter.",
             "Do not use terminal tools, inspect files, run tests, make a plan, or wait for background work. The complete review packet is inline.",
             "Do not rewrite prose. Return one JSON object only using the exact binding hashes, with no Markdown fence or surrounding text.", "",
+            "Every array under dimensions must contain at least one specific evidence sentence grounded in the supplied prose/context. Empty arrays, generic placeholders, and copied instructions are invalid.", "",
             "## Compact Context", json.dumps(audit_context, ensure_ascii=False), "",
             "## Rule Stack", json.dumps(rules, ensure_ascii=False), "",
             "## Compilation Trace", json.dumps(trace, ensure_ascii=False), "",
@@ -2013,9 +2023,10 @@ AUDIT_EVIDENCE_DIMENSIONS = (
 
 
 def validate_literary_audit_evidence(data: dict[str, Any]) -> dict[str, Any]:
-    """Require substantive evidence on every literary audit route."""
+    """Require visible evidence on every literary audit dimension."""
     dimensions = data.get("dimensions", {})
-    def has_visible_semantic_content(value: Any) -> bool:
+
+    def visible(value: Any) -> bool:
         if not isinstance(value, str):
             return False
         normalized = unicodedata.normalize("NFKC", value)
@@ -2029,10 +2040,7 @@ def validate_literary_audit_evidence(data: dict[str, Any]) -> dict[str, Any]:
         for key in AUDIT_EVIDENCE_DIMENSIONS
         if not isinstance(dimensions.get(key), list)
         or not dimensions.get(key)
-        or any(
-            not has_visible_semantic_content(item)
-            for item in dimensions.get(key, [])
-        )
+        or any(not visible(item) for item in dimensions.get(key, []))
     ]
     return {
         "valid": not missing,
@@ -2042,6 +2050,147 @@ def validate_literary_audit_evidence(data: dict[str, Any]) -> dict[str, Any]:
             else ["literary audit omitted substantive evidence: " + ", ".join(missing)]
         ),
     }
+
+
+def validate_grounded_literary_audit_evidence(
+    data: dict[str, Any], grounding_text: str | None = None
+) -> dict[str, Any]:
+    dimensions = data.get("dimensions", {})
+    base = validate_literary_audit_evidence(data)
+
+    def evidence_tokens(value: str) -> set[str]:
+        normalized = unicodedata.normalize("NFKC", value)
+        tokens: set[str] = set()
+        for run in re.findall(r"[\u4e00-\u9fff]{2,}", normalized):
+            for size in (2, 3, 4):
+                tokens.update(
+                    run[index : index + size]
+                    for index in range(max(len(run) - size + 1, 0))
+                )
+        tokens.update(
+            token.lower()
+            for token in re.findall(r"[A-Za-z0-9_]{4,}", normalized)
+        )
+        return tokens
+
+    placeholder_markers = (
+        "必须替换",
+        "具体证据",
+        "checked",
+        "check passed",
+        "无问题",
+        "未发现问题",
+        "符合要求",
+        "通过审查",
+        "hash-bound context retained",
+        "state observation remains mandatory",
+    )
+    grounding_tokens = evidence_tokens(grounding_text or "") if grounding_text else set()
+    seen_evidence: set[str] = set()
+    missing = [
+        key
+        for key in AUDIT_EVIDENCE_DIMENSIONS
+        if not isinstance(dimensions.get(key), list)
+        or not dimensions.get(key)
+        or any(
+            len(unicodedata.normalize("NFKC", str(item)).strip()) < 8
+            or any(
+                marker in unicodedata.normalize("NFKC", str(item)).lower()
+                for marker in placeholder_markers
+            )
+            or (
+                grounding_text is not None
+                and not (evidence_tokens(str(item)) & grounding_tokens)
+            )
+            for item in dimensions.get(key, [])
+        )
+    ]
+    duplicates = []
+    for key in AUDIT_EVIDENCE_DIMENSIONS:
+        for item in dimensions.get(key, []) if isinstance(dimensions.get(key), list) else []:
+            normalized = unicodedata.normalize("NFKC", str(item)).strip()
+            if normalized in seen_evidence:
+                duplicates.append(key)
+            seen_evidence.add(normalized)
+    return {
+        "valid": base["valid"] and not missing and not duplicates,
+        "errors": (
+            []
+            if base["valid"] and not missing and not duplicates
+            else [
+                *base["errors"],
+                *(
+                    ["literary audit omitted substantive grounded evidence: " + ", ".join(missing)]
+                    if missing
+                    else []
+                ),
+                *(
+                    ["literary audit repeated evidence across dimensions: " + ", ".join(duplicates)]
+                    if duplicates
+                    else []
+                ),
+            ]
+        ),
+    }
+
+
+def validate_final_audit_issue_closure(
+    data: dict[str, Any], prior_audit: dict[str, Any]
+) -> dict[str, Any]:
+    """Require substantive closures while allowing known minor closures."""
+    severity_rank = {"minor": 1, "major": 2, "blocking": 3}
+    prior_issues: dict[str, str] = {}
+    for item in prior_audit.get("issues", []):
+        issue_id = str(item.get("issue_id", ""))
+        severity = str(item.get("severity", ""))
+        if not issue_id:
+            continue
+        previous = prior_issues.get(issue_id, "")
+        if severity_rank.get(severity, 0) > severity_rank.get(previous, 0):
+            prior_issues[issue_id] = severity
+    resolved = {str(item) for item in data.get("resolved_prior_issue_ids", [])}
+    required = {
+        issue_id
+        for issue_id, severity in prior_issues.items()
+        if severity in {"blocking", "major"}
+    }
+    missing = sorted(required - resolved)
+    unknown = sorted(resolved - set(prior_issues))
+    errors = []
+    if missing:
+        errors.append(
+            "final audit did not explicitly close required prior issues: "
+            + ", ".join(missing)
+        )
+    if unknown:
+        errors.append(
+            "final audit claimed unknown prior issue closures: " + ", ".join(unknown)
+        )
+    return {"valid": not errors, "errors": errors}
+
+
+def _chapter_audit_grounding_text(
+    record: dict[str, Any], artifact_kind: str
+) -> str:
+    artifacts = record.get("artifacts", {})
+    parts = []
+    prose_path = runtime_path(artifacts.get(artifact_kind, ""))
+    if prose_path.is_file():
+        parts.append(prose_path.read_text(encoding="utf-8"))
+    for key in ("context", "rule_stack", "trace"):
+        path = runtime_path(artifacts.get(key, ""))
+        if not path.is_file():
+            continue
+        payload = _read_json(path)
+        if key == "context":
+            payload = _compact_chapter_context(payload)
+        parts.append(json.dumps(payload, ensure_ascii=False))
+    observation = record.get("artifacts", {}).get("observation")
+    if observation:
+        parts.append(
+            json.dumps(_read_json(runtime_path(observation)), ensure_ascii=False)
+        )
+    return "\n".join(parts)
 
 
 def requires_external_chapter_audit(chapter_id: str, audit_kind: str) -> bool:
@@ -2253,22 +2402,29 @@ def dispatch_chapter_audit(chapter_id: str, model: str | None = None) -> dict[st
             },
         )
         return {"valid": False, "errors": [str(error)], "attempt_path": attempt_path}
-    evidence = validate_literary_audit_evidence(data)
+    registry = _load_registry()
+    record = _chapter_record(registry, chapter_id)
+    expected = packet["template"]
+    evidence = validate_grounded_literary_audit_evidence(
+        data,
+        _chapter_audit_grounding_text(record, expected["artifact_kind"]),
+    )
     if not evidence["valid"]:
         return evidence
-    expected = packet["template"]
     if data["artifact_kind"] != expected["artifact_kind"] or data["artifact_sha256"] != expected["artifact_sha256"] or data["context_sha256"] != expected["context_sha256"]:
         return {"valid": False, "errors": ["audit binding hash mismatch"]}
     if is_final:
-        required_resolved = set(expected.get("resolved_prior_issue_ids", []))
-        if set(data.get("resolved_prior_issue_ids", [])) != required_resolved:
-            return {"valid": False, "errors": ["final audit did not explicitly close every prior blocking or major issue"]}
+        prior_path = runtime_path(
+            record.get("artifacts", {}).get("continuity_audit", "")
+        )
+        prior_audit = _read_json(prior_path) if prior_path.is_file() else {"issues": []}
+        closure = validate_final_audit_issue_closure(data, prior_audit)
+        if not closure["valid"]:
+            return closure
         if any(item.get("severity") in {"blocking", "major"} for item in data.get("issues", [])):
             return {"valid": False, "errors": ["final audit contains unresolved blocking or major issues"], "verdict": data.get("verdict")}
     if is_final and data["verdict"] == "REWORK_REQUIRED":
         return {"valid": False, "errors": ["audit requires rework and cannot advance chapter state"], "verdict": data["verdict"]}
-    registry = _load_registry()
-    record = _chapter_record(registry, chapter_id)
     artifact_key = "final_audit" if is_final else "continuity_audit"
     target_stage = "final_audited" if is_final else "continuity_audited"
     transition = validate_stage_transition(record, target_stage, f"{artifact_key}.json")
@@ -2311,7 +2467,12 @@ def ingest_chapter_audit(chapter_id: str, file_arg: str) -> dict[str, Any]:
     data = normalize_continuity_audit_payload(_read_json(source))
     schema = _read_json(runtime_path("system/production_runtime/schemas/continuity_audit.schema.json"))
     jsonschema.validate(data, schema)
-    evidence = validate_literary_audit_evidence(data)
+    registry = _load_registry()
+    record = _chapter_record(registry, chapter_id)
+    evidence = validate_grounded_literary_audit_evidence(
+        data,
+        _chapter_audit_grounding_text(record, packet["template"]["artifact_kind"]),
+    )
     if not evidence["valid"]:
         raise RuntimeError("; ".join(evidence["errors"]))
     expected = packet["template"]
@@ -2323,15 +2484,17 @@ def ingest_chapter_audit(chapter_id: str, file_arg: str) -> dict[str, Any]:
         raise RuntimeError("audit binding hash mismatch")
     is_final = packet.get("audit_kind", "initial") == "final"
     if is_final:
-        required_resolved = set(expected.get("resolved_prior_issue_ids", []))
-        if set(data.get("resolved_prior_issue_ids", [])) != required_resolved:
-            raise RuntimeError("final audit did not explicitly close every prior blocking or major issue")
+        prior_path = runtime_path(
+            record.get("artifacts", {}).get("continuity_audit", "")
+        )
+        prior_audit = _read_json(prior_path) if prior_path.is_file() else {"issues": []}
+        closure = validate_final_audit_issue_closure(data, prior_audit)
+        if not closure["valid"]:
+            raise RuntimeError("; ".join(closure["errors"]))
         if any(item.get("severity") in {"blocking", "major"} for item in data.get("issues", [])):
             raise RuntimeError("final audit contains unresolved blocking or major issues")
     if is_final and data["verdict"] == "REWORK_REQUIRED":
         raise RuntimeError("audit requires rework and cannot advance chapter state")
-    registry = _load_registry()
-    record = _chapter_record(registry, chapter_id)
     artifact_key = "final_audit" if is_final else "continuity_audit"
     target_stage = "final_audited" if is_final else "continuity_audited"
     transition = validate_stage_transition(record, target_stage, f"{artifact_key}.json")
@@ -2382,6 +2545,65 @@ def ingest_chapter_revision(chapter_id: str, file_arg: str) -> dict[str, Any]:
     return {"chapter_id": chapter_id, "stage": record["stage"], "revision_sha256": _sha256(target)}
 
 
+def _audit_requires_revision(audit: dict[str, Any]) -> bool:
+    return any(isinstance(issue, dict) for issue in audit.get("issues", []))
+
+
+def _remove_repeated_suffix_paragraph_block(text: str, *, max_block: int = 6) -> str:
+    paragraphs = text.split("\n\n")
+    changed = True
+    while changed:
+        changed = False
+        for size in range(min(max_block, len(paragraphs) // 2), 0, -1):
+            if paragraphs[-2 * size : -size] == paragraphs[-size:]:
+                del paragraphs[-size:]
+                changed = True
+                break
+    return "\n\n".join(paragraphs)
+
+
+def _issues_are_exact_repetition_only(audit: dict[str, Any]) -> bool:
+    issues = [item for item in audit.get("issues", []) if isinstance(item, dict)]
+    if not issues:
+        return False
+    repetition_markers = ("重复", "复述", "duplicate", "repeat")
+    removal_markers = ("删除", "去重", "合并", "remove", "delete", "deduplic")
+    mixed_semantic_markers = (
+        "因果", "动机", "状态", "补足", "新增", "重构", "causal", "motivation",
+        "state", "add", "expand", "rewrite",
+    )
+    return all(
+        any(marker in str(issue.get("evidence", "")).lower() for marker in repetition_markers)
+        and any(marker in str(issue.get("required_fix", "")).lower() for marker in removal_markers)
+        and not any(
+            marker in str(issue.get("required_fix", "")).lower()
+            for marker in mixed_semantic_markers
+        )
+        for issue in issues
+    )
+
+
+def _build_revision_generation_prompt(
+    base_prompt: str,
+    generation: int,
+    previous_text: str,
+    previous_metrics: dict[str, Any],
+) -> str:
+    if generation <= 1:
+        return base_prompt
+    previous_count = int(previous_metrics.get("chinese_character_count", 0))
+    return (
+        base_prompt
+        + "\n\n上一版修订只有 "
+        + str(previous_count)
+        + " 个中文字符，未达到门禁。请从头完整重写为 3800-4000 个中文字符，"
+        "只保留小说正文。必须保留上一版已经修正的单一事件链，并用新的中段行动、"
+        "现场阻力、人物反应和可验证后果扩展；不得用追加尾段补字数，必须实际删除或"
+        "合并审查指出的重复场景。以下上一版仅作为重写素材，不得原样拼接到原稿末尾：\n"
+        + previous_text
+    )
+
+
 def dispatch_chapter_revision(chapter_id: str) -> dict[str, Any]:
     registry = _load_registry()
     record = _chapter_record(registry, chapter_id)
@@ -2402,11 +2624,61 @@ def dispatch_chapter_revision(chapter_id: str) -> dict[str, Any]:
         )
     draft = runtime_path(record["artifacts"]["draft"])
     audit = _read_json(runtime_path(record["artifacts"]["continuity_audit"]))
-    substantive_issues = [
-        issue for issue in audit.get("issues", [])
-        if issue.get("severity") in {"blocking", "major"}
-    ]
-    if not substantive_issues:
+    if _issues_are_exact_repetition_only(audit):
+        draft_text = draft.read_text(encoding="utf-8")
+        deduplicated = _remove_repeated_suffix_paragraph_block(draft_text)
+        metrics = analyze_prose_metrics(deduplicated)
+        if deduplicated != draft_text and not _generated_prose_errors(
+            deduplicated, metrics
+        ):
+            draft_execution_path = runtime_path(
+                record.get("artifacts", {}).get("draft_writer_execution", "")
+            )
+            draft_execution = (
+                _read_json(draft_execution_path)
+                if draft_execution_path.is_file()
+                else {}
+            )
+            if (
+                draft_execution.get("provider") != "codex"
+                or draft_execution.get("model") != "gpt-5.6-terra"
+            ):
+                return {
+                    "valid": False,
+                    "errors": [
+                        "deterministic revision lacks Codex gpt-5.6-terra source execution"
+                    ],
+                }
+            candidate = runtime_path(
+                f"system/production_runtime/chapters/{chapter_id}/revision.candidate.md"
+            )
+            candidate.write_text(deduplicated, encoding="utf-8")
+            result = ingest_chapter_revision(chapter_id, str(candidate))
+            registry = _load_registry()
+            record = _chapter_record(registry, chapter_id)
+            revision_path = runtime_path(record["artifacts"]["revision"])
+            record["artifacts"]["writer_execution"] = _write_role_execution(
+                chapter_id,
+                "writer",
+                revision_path,
+                provider="codex",
+                model="gpt-5.6-terra",
+                bindings={
+                    "source_draft_sha256": _sha256(draft),
+                    "deterministic_transform": "remove_repeated_suffix_paragraph_block",
+                },
+            )
+            _save_registry(registry)
+            candidate.unlink(missing_ok=True)
+            return {
+                "valid": True,
+                **result,
+                "metrics": metrics,
+                "writer_model": "gpt-5.6-terra",
+                "attempts": [],
+                "deterministic_transform": "remove_repeated_suffix_paragraph_block",
+            }
+    if not _audit_requires_revision(audit):
         draft_execution_path = runtime_path(record.get("artifacts", {}).get("draft_writer_execution", ""))
         draft_execution = _read_json(draft_execution_path) if draft_execution_path.is_file() else {}
         if active_project_id() != "borrowed-heaven" and (
@@ -2450,7 +2722,9 @@ def dispatch_chapter_revision(chapter_id: str) -> dict[str, Any]:
             "你是 Novel Research Lab 的 Codex 受控修订写手。直接输出修订后的完整正文，不加标题、确认或说明。",
             "本次授权仅覆盖非正文意图阶段留下的临时正文禁令；其余约束保持生效。",
             "解决审查问题但不得改变章节意图、引入未登记资产或无观察依据的状态变化。",
-            "目标 3200-3800 个中文字符，硬性范围为 3000-4200；不要为求简洁压缩关键行动、感官与后果。减少模板化转折、抽象总结和 AI 腔。",
+            "逐项执行审查 issues 中的 required_fix。若问题涉及重复、顺序覆盖或尾段重写，必须先删除或合并原有问题段，再重建一条连续事件链；禁止在原稿末尾追加另一版同义场景来声称修复。",
+            "输出前逐项核对每个 issue 的 evidence 已从正文中消失；正文中同一发现、物件交接、人物站位、对白和收束动作只能发生一次。",
+            "目标 3600-4000 个中文字符，硬性范围为 3000-4200；不要为求简洁压缩关键行动、感官与后果。减少模板化转折、抽象总结和 AI 腔。",
             "只输出读者正文；禁止工程字段、完成日志、凑字提示、重复结束词、超长粘连段或重复文本块。",
             "审查：", json.dumps(audit, ensure_ascii=False),
             "上下文：", json.dumps(writer_context, ensure_ascii=False),
@@ -2469,10 +2743,10 @@ def dispatch_chapter_revision(chapter_id: str) -> dict[str, Any]:
         metrics = analyze_prose_metrics(text)
         revision_errors = _generated_prose_errors(text, metrics)
     for model in (route_model("writer")["model"],):
-        for generation in (() if not revision_errors else range(1, 3)):
-            revision_prompt = prompt
-            if generation == 2:
-                revision_prompt += "\n\n上一版未通过长度或质量门禁。请从头完整重写为 3200-3800 个中文字符，只保留小说正文。"
+        for generation in (() if not revision_errors else range(1, 4)):
+            revision_prompt = _build_revision_generation_prompt(
+                prompt, generation, text, metrics
+            )
             try:
                 raw_text, provider, used_model = _ask_prose_writer(revision_prompt, model)
                 text = _strip_leading_chapter_heading(raw_text)
@@ -2490,33 +2764,6 @@ def dispatch_chapter_revision(chapter_id: str) -> dict[str, Any]:
                 break
         if not revision_errors:
             break
-    recoveries = []
-    if (
-        revision_errors
-        and text
-        and analyze_prose_metrics(text).get("chinese_character_count", 0)
-        < MIN_CHAPTER_CHINESE_CHARS
-    ):
-        for _ in range(3):
-            if analyze_prose_metrics(text).get("chinese_character_count", 0) >= MIN_CHAPTER_CHINESE_CHARS:
-                break
-            text, recovery = _recover_short_draft(chapter_id, prompt, text)
-            recoveries.append(recovery)
-            if not recovery or not recovery.get("valid"):
-                break
-        metrics = analyze_prose_metrics(text)
-        revision_errors = _generated_prose_errors(text, metrics)
-        successful_recovery = next(
-            (item for item in reversed(recoveries) if item.get("valid")), {}
-        )
-        attempts.append({
-            "model": successful_recovery.get("model", route_model("writer")["model"]),
-            "provider": successful_recovery.get("provider"),
-            "generation": "revision_length_recovery",
-            "valid": not revision_errors,
-            "metrics": metrics,
-            "recoveries": recoveries,
-        })
     if revision_errors:
         if text and not set(metrics.get("flags", [])) & {
             "prompt_context_leak", "generation_meta_leak", "termination_token_loop",
@@ -2609,13 +2856,34 @@ def build_observed_settlement_candidate(chapter_id: str) -> dict[str, Any]:
         if record.get("artifacts", {}).get("continuity_audit")
         else {"issues": []}
     )
+    intent_ref = record.get("artifacts", {}).get("intent")
+    expected: dict[tuple[str, str], dict[str, Any]] | None = None
+    if intent_ref:
+        intent = _read_json(runtime_path(intent_ref))
+        expected = {
+            (str(item.get("asset_id")), str(item.get("field_path"))): item
+            for item in intent.get("expected_state_deltas", [])
+            if item.get("asset_id") and item.get("field_path")
+        }
     deltas = []
+    selected_keys: set[tuple[str, str]] = set()
     for facts in observation.get("facts", {}).values():
         if not isinstance(facts, list):
             continue
         for fact in facts:
             if not isinstance(fact, dict):
                 continue
+            key = (str(fact.get("asset_id")), str(fact.get("field_path")))
+            if expected is not None:
+                contract = expected.get(key)
+                if (
+                    contract is None
+                    or fact.get("before") != contract.get("before")
+                    or fact.get("after") != contract.get("after")
+                    or key in selected_keys
+                ):
+                    continue
+                selected_keys.add(key)
             deltas.append(
                 {
                     "fact_id": fact["fact_id"],
@@ -2746,7 +3014,10 @@ def accept_chapter(chapter_id: str) -> dict[str, Any]:
             validation["errors"].append("project acceptance requires semantic final audit and execution evidence")
         else:
             final_audit = _read_json(final_audit_path)
-            evidence = validate_literary_audit_evidence(final_audit)
+            evidence = validate_grounded_literary_audit_evidence(
+                final_audit,
+                _chapter_audit_grounding_text(record, "revision"),
+            )
             validation["errors"].extend(evidence["errors"])
             if (
                 final_audit.get("artifact_kind") != "revision"
@@ -2893,18 +3164,15 @@ def _has_project_volume1_scope(
         review_index.get("valid") is not True
         or review_index.get("bound_baseline_sha256") != baseline_sha
         or review_index.get("sol_verdict") != "ACCEPT"
-        or review_index.get("antigravity_verdict") not in {"ACCEPT", "ACCEPT_WITH_WARNINGS"}
     ):
         return False
     sol_path = ROOT / str(review_index.get("sol_review_path", ""))
-    antigravity_path = ROOT / str(review_index.get("antigravity_review_path", ""))
-    if not sol_path.is_file() or not antigravity_path.is_file():
+    independent = resolve_independent_review_binding(review_index, baseline_sha)
+    if not sol_path.is_file() or independent is None:
         return False
     sol_sha = _sha256(sol_path)
-    antigravity_sha = _sha256(antigravity_path)
     if (
         review_index.get("sol_review_sha256") != sol_sha
-        or review_index.get("antigravity_review_sha256") != antigravity_sha
     ):
         return False
     required_forbidden = {
@@ -2923,7 +3191,12 @@ def _has_project_volume1_scope(
         == f"{project_id}-volume1-window-{start:03d}-{end:03d}-v1"
         and item.get("bound_baseline_sha256") == baseline_sha
         and item.get("bound_sol_review_sha256") == sol_sha
-        and item.get("bound_antigravity_review_sha256") == antigravity_sha
+        and item.get("bound_independent_review_sha256")
+        == independent["sha256"]
+        and item.get("bound_independent_review_provider")
+        == independent["provider"]
+        and item.get("bound_independent_review_model")
+        == independent["model"]
         for item in decisions
     )
 
@@ -2965,16 +3238,18 @@ def build_production_readiness(chapter_id: str | None = None) -> dict[str, Any]:
         baseline_path = workspace / "creation_assets/canonical_baseline.json"
         baseline_sha = _sha256(baseline_path) if baseline_path.is_file() else None
         sol_path = ROOT / str(review_index.get("sol_review_path", ""))
-        antigravity_path = ROOT / str(review_index.get("antigravity_review_path", ""))
+        independent = (
+            resolve_independent_review_binding(review_index, baseline_sha)
+            if baseline_sha
+            else None
+        )
         dual_review = bool(
             review_index.get("valid") is True
             and review_index.get("sol_verdict") == "ACCEPT"
-            and review_index.get("antigravity_verdict") in {"ACCEPT", "ACCEPT_WITH_WARNINGS"}
             and review_index.get("bound_baseline_sha256") == baseline_sha
             and sol_path.is_file()
-            and antigravity_path.is_file()
             and review_index.get("sol_review_sha256") == _sha256(sol_path)
-            and review_index.get("antigravity_review_sha256") == _sha256(antigravity_path)
+            and independent is not None
         )
         decisions = load_decisions()
         checks = {

@@ -1,0 +1,126 @@
+{
+  "chapter_id": "chapter-0001",
+  "draft_sha256": "239ebde7a126ea590bc0664d40e446eb2734a87fb42b26645f0769a82fb7b881",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "fact-0001",
+        "asset_id": "char_zhou_li",
+        "field_path": "character.current_state",
+        "before": "active",
+        "after": "事故记录出现其父亲周永直的签名，且周砺采取现场取证与停工复核行动",
+        "evidence": "周砺签发关联作业停工单，拒绝擅自加固并记录梁体与档案证据；最终在事故记录签验栏发现签名“周永直”。"
+      }
+    ],
+    "npcs": [],
+    "locations": [
+      {
+        "fact_id": "fact-0002",
+        "asset_id": "artifact_unnamed_beam",
+        "field_path": "location.current_site",
+        "before": "旧戏楼地基与地铁施工口之间的现场状态未显露异常",
+        "after": "旧戏楼东侧地铁施工口内，梁体连接脱离并影响后巷院墙基础受力",
+        "evidence": "正文写明无名梁横在旧戏楼地基和新挖联络通道之间，缝隙连接分向戏楼砖墙、通道土面及后巷院墙基础。"
+      }
+    ],
+    "factions": [],
+    "artifacts": [
+      {
+        "fact_id": "fact-0003",
+        "asset_id": "artifact_unnamed_beam",
+        "field_path": "artifact.condition",
+        "before": "active",
+        "after": "与两侧墙体连接脱离，梁端无断裂但原榫口被削平，存在受力改道风险",
+        "evidence": "梁端露出一圈窄缝，原有榫肩消失；透明片显示三股连接线，且后文确认梁端原榫口被人削平。"
+      },
+      {
+        "fact_id": "fact-0004",
+        "asset_id": "artifact_unnamed_beam",
+        "field_path": "lifecycle_state",
+        "before": "active",
+        "after": "进入停工、卸载、现场复核状态",
+        "evidence": "周砺要求撤人、停吊机停泵、停止补焊，随后安排两边卸载、转移材料并等待复核。"
+      }
+    ],
+    "techniques": [
+      {
+        "fact_id": "fact-0005",
+        "asset_id": "char_zhou_li",
+        "field_path": "character.field_action",
+        "before": "未采取现场处置行动",
+        "after": "以可复核方式停工、取证并安排卸载",
+        "evidence": "周砺填写“东侧旧梁异常脱离”全停工单，使用透明片、标尺和软刷记录梁底墨书，并要求现场人员署名见证。"
+      }
+    ],
+    "relationships": [
+      {
+        "fact_id": "fact-0006",
+        "asset_id": "char_zhou_li",
+        "field_path": "relationship.with_affected_community",
+        "before": "施工方与后巷居民存在通道争议",
+        "after": "周砺承认居民拒绝开后巷的决定权，并接受居民自行交付钥匙、记录进出",
+        "evidence": "周砺明确表示不同意开后巷时谁也不能开；居民将钥匙交给登记人员并要求记录进院者。"
+      }
+    ],
+    "emotions": [
+      {
+        "fact_id": "fact-0007",
+        "asset_id": "char_zhou_li",
+        "field_path": "emotional_state",
+        "before": "面对梁体异常进行专业判断",
+        "after": "因梁底出现与父亲档案相同的页码线索而意识到旧事故记录关联",
+        "evidence": "梁底页码从七跳到九后，周砺想到父亲遗物中的事故记录校时页，并在档案中确认同样的页码跳跃。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "fact-0008",
+        "asset_id": "char_zhou_li",
+        "field_path": "known_information",
+        "before": "仅观察到梁体连接异常",
+        "after": "确认梁体受力关联三处结构，并发现事故档案存在缺页迹象",
+        "evidence": "透明片显示三股连接线；档案页码从七跳到九，周砺据此说“我怀疑它少了一页”。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "fact-0009",
+        "asset_id": "foreshadow_second_record",
+        "field_path": "foreshadowing.status",
+        "before": "active",
+        "after": "已触发：现场发现与旧事故记录对应的缺页线索及周永直签名",
+        "evidence": "项目部送来旧事故档，页码七跳九，签验栏最后一行署名“周永直”。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "fact-0010",
+        "asset_id": "artifact_unnamed_beam",
+        "field_path": "event.sequence",
+        "before": "凌晨四点前未记录异常",
+        "after": "凌晨四点发生连接脱离；天亮时缝隙继续扩大一指，随后发现对应旧事故档案",
+        "evidence": "正文先写凌晨四点梁体失去连接，天亮时记载缝比凌晨宽一指，之后档案袋被送到现场。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "fact-0011",
+        "asset_id": "char_zhou_li",
+        "field_path": "physical_state",
+        "before": "正常现场作业状态",
+        "after": "左脚旧伤被湿滑垫板震得发麻，胃里空得发紧",
+        "evidence": "周砺下梁旁时左脚踩在湿滑垫板上，脚踝旧伤发麻；天亮后靠围挡喝水，胃里空得发紧。"
+      }
+    ],
+    "naming": [
+      {
+        "fact_id": "fact-0012",
+        "asset_id": "char_zhou_li",
+        "field_path": "discovered_name",
+        "before": null,
+        "after": "周永直",
+        "evidence": "事故记录签验栏最后一行的签名明确写着“周永直”。"
+      }
+    ]
+  }
+}

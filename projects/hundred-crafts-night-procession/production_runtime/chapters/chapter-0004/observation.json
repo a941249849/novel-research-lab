@@ -1,0 +1,149 @@
+{
+  "chapter_id": "chapter-0004",
+  "draft_sha256": "0af325e8422ff0c48585df2af64c03be9db872ef3fc6396bf07d15982105a747",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "f001",
+        "asset_id": "char_du_chengli",
+        "field_path": "character.current_state",
+        "before": "active",
+        "after": "戏楼封存清单被证明不完整。",
+        "evidence": "杜承礼发现盔箱内有清册未列入的无名盔，并确认梁底与清册均存在缺失，决定停止按旧册清点。"
+      }
+    ],
+    "npcs": [],
+    "locations": [],
+    "factions": [],
+    "artifacts": [
+      {
+        "fact_id": "f002",
+        "asset_id": "artifact_role_helmet",
+        "field_path": "artifact.condition",
+        "before": "active",
+        "after": "盔箱自行开启，露出一顶未列入封存清册的无名盔，暂不授权使用。",
+        "evidence": "铜扣自行弹开，盔头从箱内抬起；清册记载物品中没有该盔，杜承礼在发现物一栏注明暂不授权使用。"
+      },
+      {
+        "fact_id": "f003",
+        "asset_id": "artifact_role_helmet",
+        "field_path": "lifecycle_state",
+        "before": "active",
+        "after": "已被现场封锁观察，未被持取或使用。",
+        "evidence": "现场无人持盔、无人接受指定；杜承礼将梯子横放在门槛前阻挡旧站位，但保留旁侧通行。"
+      }
+    ],
+    "techniques": [
+      {
+        "fact_id": "f004",
+        "asset_id": "artifact_role_helmet",
+        "field_path": "handling.protocol",
+        "before": null,
+        "after": "不得持取试戴；系带贴肤时由现场人员立即剪断；相关情况留档复核。",
+        "evidence": "杜承礼明确要求不拿盔头试验，并让何嫂在系带贴肤时直接剪断两根系带。"
+      }
+    ],
+    "relationships": [
+      {
+        "fact_id": "f005",
+        "asset_id": "char_du_chengli",
+        "field_path": "relationship.with_阿照",
+        "before": "active",
+        "after": "明确承认阿照的拒绝并保障其不承担未同意的位置。",
+        "evidence": "杜承礼让阿照离开门槛，并在修补单中记录其明确不同意守门、拒绝过。"
+      },
+      {
+        "fact_id": "f006",
+        "asset_id": "char_du_chengli",
+        "field_path": "relationship.with_何嫂",
+        "before": "active",
+        "after": "何嫂获得现场剪断系带和共同见证记录的职责。",
+        "evidence": "杜承礼把小剪交给何嫂，要求她无需等待指示即可剪断贴肤系带，并让她与阿照查看修补单。"
+      }
+    ],
+    "emotions": [
+      {
+        "fact_id": "f007",
+        "asset_id": "char_du_chengli",
+        "field_path": "emotion.current",
+        "before": null,
+        "after": "面对父亲签名与清册缺失，杜承礼承认无法断定责任，但拒绝以父亲签名维护清册完整性。",
+        "evidence": "他回答不知道是谁盖掉梁底文字，同时明确不能因父亲签名就把清册当作完整。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "f008",
+        "asset_id": "ledger_role_residue",
+        "field_path": "state_ledger.value",
+        "before": "角色残留未激活",
+        "after": "角色残留已在现场显现：无名盔指向门槛位置，但未完成持盔、指定或贴肤。",
+        "evidence": "盔头朝侧门偏移，系带向门槛摆动；现场无人持盔、无人指定阿照，系带未贴肤。"
+      },
+      {
+        "fact_id": "f009",
+        "asset_id": "ledger_role_residue",
+        "field_path": "evidence_record",
+        "before": null,
+        "after": "修补单记录了无名盔、箱体自行开启、无人持盔、无人接受指定、无系带贴肤及阿照明确拒绝守门。",
+        "evidence": "杜承礼逐项写入现场情况，并让阿照自行填写姓名。"
+      },
+      {
+        "fact_id": "f010",
+        "asset_id": "ledger_role_residue",
+        "field_path": "next_investigation",
+        "before": null,
+        "after": "复核梁底被灰覆盖的“承”“门”字样、清册缺失及父亲签名下的撕痕，并邀请街坊作证。",
+        "evidence": "杜承礼要求梁底文字和清册从头核查，周砺去请愿意作证的街坊。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "f011",
+        "asset_id": "ledger_role_residue",
+        "field_path": "hook_out",
+        "before": null,
+        "after": "调查压力转向无名盔来源及戏楼中被揭走的人员名字。",
+        "evidence": "杜承礼在结尾提出下一步不仅查盔如何进入箱中，还要查有多少人的名字被从应记录处揭走。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "f012",
+        "asset_id": "char_du_chengli",
+        "field_path": "chapter.event",
+        "before": "chapter_start",
+        "after": "盔箱自行开启并引发现场处置、记录与封存清点暂停。",
+        "evidence": "正文依次写明铜扣响、箱盖弹开、无名盔出现、阿照撤离、现场记录及停止按旧册清点。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "f013",
+        "asset_id": "char_du_chengli",
+        "field_path": "physical_state",
+        "before": null,
+        "after": "右肩旧伤在拖梯子时被牵动，踩下梯子后鞋跟落地发麻。",
+        "evidence": "杜承礼拖出梯子时右肩旧伤牵动，下来时鞋跟落地麻了一下。"
+      },
+      {
+        "fact_id": "f014",
+        "asset_id": "artifact_role_helmet",
+        "field_path": "physical_state",
+        "before": "箱体关闭",
+        "after": "盔箱保持一道缝开启，无名盔回落，系带贴在箱沿。",
+        "evidence": "结尾明确写盔箱开着一道缝，盔没有再抬起，系带贴在箱沿。"
+      }
+    ],
+    "naming": [
+      {
+        "fact_id": "f015",
+        "asset_id": "ledger_role_residue",
+        "field_path": "recorded_name",
+        "before": null,
+        "after": "阿照自行在修补单上填写自己的名字。",
+        "evidence": "杜承礼把笔递给阿照，阿照随后一笔一画写下自己的名字。"
+      }
+    ]
+  }
+}

@@ -28,6 +28,78 @@ class ProductionChapterRuntimeV020Tests(unittest.TestCase):
         self.assertIn("同一章‘残印’和‘封布’各不超过三次", source)
         self.assertIn("失能肢体和既有伤势不得在无明确治疗事件时恢复", source)
 
+    def test_revision_rewrites_reviewed_defects_instead_of_appending_tail(self):
+        source = (REPO_ROOT / "system/runtime/nrl_production_runtime.py").read_text(encoding="utf-8")
+        self.assertIn("必须先删除或合并原有问题段", source)
+        self.assertIn("禁止在原稿末尾追加另一版同义场景", source)
+        self.assertIn("if not _audit_requires_revision(audit):", source)
+        self.assertIn("逐项核对每个 issue", source)
+        self.assertNotIn("revision_length_recovery", source)
+
+    def test_minor_audit_issue_requires_revision(self):
+        audit = {
+            "issues": [{
+                "issue_id": "MINOR-TAIL-001",
+                "severity": "minor",
+                "evidence": "结尾同一动作以近义表达重复两次。",
+                "required_fix": "合并为一次不可逆的收束动作。",
+            }]
+        }
+        self.assertTrue(runtime._audit_requires_revision(audit))
+        self.assertFalse(runtime._audit_requires_revision({"issues": []}))
+
+    def test_short_revision_retry_carries_prior_fix_into_complete_rewrite(self):
+        prior = "已删除重复尾段的单一事件链"
+        prompt = runtime._build_revision_generation_prompt(
+            "基础修订要求",
+            2,
+            prior,
+            {"chinese_character_count": 2480},
+        )
+        self.assertIn("2480 个中文字符", prompt)
+        self.assertIn("从头完整重写为 3800-4000", prompt)
+        self.assertIn(prior, prompt)
+        self.assertIn("仅作为重写素材", prompt)
+        self.assertIn("不得用追加尾段补字数", prompt)
+
+    def test_exact_repeated_suffix_is_removed_without_rewriting_good_prose(self):
+        text = "开端\n\n推进\n\n周永直。\n\n父亲的名字落在纸上。\n\n周永直。\n\n父亲的名字落在纸上。"
+        cleaned = runtime._remove_repeated_suffix_paragraph_block(text)
+        self.assertEqual(cleaned, "开端\n\n推进\n\n周永直。\n\n父亲的名字落在纸上。")
+        self.assertTrue(runtime._issues_are_exact_repetition_only({"issues": [{
+            "severity": "major",
+            "evidence": "结尾重复两遍",
+            "required_fix": "删除重复签名揭示",
+        }]}))
+        self.assertFalse(runtime._issues_are_exact_repetition_only({"issues": [{
+            "severity": "major",
+            "evidence": "人物动机缺失",
+            "required_fix": "补足因果",
+        }]}))
+        self.assertFalse(runtime._issues_are_exact_repetition_only({"issues": [{
+            "severity": "major",
+            "evidence": "结尾重复两遍且人物动机缺失",
+            "required_fix": "删除重复段并补足因果",
+        }]}))
+        byte_different = "开端\n\n结尾 \n\n结尾"
+        self.assertEqual(
+            runtime._remove_repeated_suffix_paragraph_block(byte_different),
+            byte_different,
+        )
+
+    def test_deterministic_revision_checks_terra_before_ingest(self):
+        source = (REPO_ROOT / "system/runtime/nrl_production_runtime.py").read_text(
+            encoding="utf-8"
+        )
+        block = source[
+            source.index("if _issues_are_exact_repetition_only(audit):"):
+            source.index("if not _audit_requires_revision(audit):")
+        ]
+        self.assertLess(
+            block.index('draft_execution.get("provider")'),
+            block.index("ingest_chapter_revision"),
+        )
+
     def test_flat_observer_facts_are_grouped_before_schema_validation(self):
         payload = runtime.normalize_observation_payload(
             {
@@ -119,16 +191,48 @@ class ProductionChapterRuntimeV020Tests(unittest.TestCase):
 
     def test_sol_reviewer_accepts_schema_bound_audit(self):
         record = {"stage": "draft_generated", "artifacts": {"context": "context.json", "rule_stack": "rules.json", "trace": "trace.json", "draft": "draft.md"}}
-        audit = {"chapter_id": "chapter-0001", "artifact_kind": "draft", "artifact_sha256": "a" * 64, "context_sha256": "b" * 64, "verdict": "ACCEPT", "dimensions": {key: ["checked"] for key in ("canon", "character", "state", "causality", "pacing", "life_force", "anti_ai_taste", "originality", "semantic_realization", "progression_permissions", "history_coherence")}, "issues": []}
+        audit = {"chapter_id": "chapter-0001", "artifact_kind": "draft", "artifact_sha256": "a" * 64, "context_sha256": "b" * 64, "verdict": "ACCEPT", "dimensions": {key: [f"周砺查看旧梁后留下第{index}项现场判断"] for index, key in enumerate(("canon", "character", "state", "causality", "pacing", "life_force", "anti_ai_taste", "originality", "semantic_realization", "progression_permissions", "history_coherence"))}, "issues": []}
         packet = REPO_ROOT / "system/production_runtime/chapters/chapter-0001/test-audit-packet.md"
         packet.write_text("packet", encoding="utf-8")
-        with mock.patch.object(runtime, "build_chapter_audit_packet", return_value={"template": audit, "packet_path": str(packet.relative_to(REPO_ROOT))}), mock.patch.object(runtime, "ask_codex_structured", return_value=audit), mock.patch.object(runtime, "_load_registry", return_value={"chapters": [record]}), mock.patch.object(runtime, "_chapter_record", return_value=record), mock.patch.object(runtime, "validate_stage_transition", return_value={"valid": True, "errors": []}), mock.patch.object(runtime, "_save_registry"), mock.patch.object(runtime, "_write_json"):
+        with mock.patch.object(runtime, "build_chapter_audit_packet", return_value={"template": audit, "packet_path": str(packet.relative_to(REPO_ROOT))}), mock.patch.object(runtime, "ask_codex_structured", return_value=audit), mock.patch.object(runtime, "_load_registry", return_value={"chapters": [record]}), mock.patch.object(runtime, "_chapter_record", return_value=record), mock.patch.object(runtime, "_chapter_audit_grounding_text", return_value="周砺查看旧梁并留下现场判断"), mock.patch.object(runtime, "validate_stage_transition", return_value={"valid": True, "errors": []}), mock.patch.object(runtime, "_save_registry"), mock.patch.object(runtime, "_write_json"):
             result = runtime.dispatch_chapter_audit("chapter-0001")
         packet.unlink()
         self.assertTrue(result["valid"])
         self.assertEqual(result["review_provider"], "codex")
         self.assertEqual(result["review_model"], "gpt-5.6-terra")
         self.assertIn("continuity_audit_execution", record["artifacts"])
+
+    def test_final_audit_closure_allows_known_minor_but_rejects_unknown_ids(self):
+        prior = {
+            "issues": [
+                {"issue_id": "major-1", "severity": "major"},
+                {"issue_id": "minor-1", "severity": "minor"},
+            ]
+        }
+
+        accepted = runtime.validate_final_audit_issue_closure(
+            {"resolved_prior_issue_ids": ["major-1", "minor-1"]}, prior
+        )
+        missing = runtime.validate_final_audit_issue_closure(
+            {"resolved_prior_issue_ids": ["minor-1"]}, prior
+        )
+        unknown = runtime.validate_final_audit_issue_closure(
+            {"resolved_prior_issue_ids": ["major-1", "invented"]}, prior
+        )
+        duplicate_downgrade = runtime.validate_final_audit_issue_closure(
+            {"resolved_prior_issue_ids": []},
+            {
+                "issues": [
+                    {"issue_id": "same-id", "severity": "blocking"},
+                    {"issue_id": "same-id", "severity": "minor"},
+                ]
+            },
+        )
+
+        self.assertTrue(accepted["valid"])
+        self.assertIn("major-1", missing["errors"][0])
+        self.assertIn("invented", unknown["errors"][0])
+        self.assertIn("same-id", duplicate_downgrade["errors"][0])
 
     def test_failed_external_audit_persists_a_recoverable_attempt_record(self):
         import nrl_production_runtime as runtime
@@ -151,16 +255,16 @@ class ProductionChapterRuntimeV020Tests(unittest.TestCase):
         audit = {
             "chapter_id": "chapter-0005", "artifact_kind": "draft",
             "artifact_sha256": "a" * 64, "context_sha256": "b" * 64,
-            "verdict": "ACCEPT", "dimensions": {key: ["checked"] for key in (
+            "verdict": "ACCEPT", "dimensions": {key: [f"周砺查看旧梁后留下第{index}项现场判断"] for index, key in enumerate((
                 "canon", "character", "state", "causality", "pacing",
                 "life_force", "anti_ai_taste", "originality",
                 "semantic_realization", "progression_permissions",
                 "history_coherence",
-            )}, "issues": [],
+            ))}, "issues": [],
         }
         packet = REPO_ROOT / "system/production_runtime/chapters/chapter-0001/test-fallback-audit-packet.md"
         packet.write_text("packet", encoding="utf-8")
-        with mock.patch.object(runtime, "build_chapter_audit_packet", return_value={"template": audit, "packet_path": str(packet.relative_to(REPO_ROOT))}), mock.patch.object(runtime, "ask_codex_structured", side_effect=RuntimeError("usage limit")), mock.patch.object(runtime, "ask_antigravity_writer", return_value=json.dumps(audit)), mock.patch.object(runtime, "_load_registry", return_value={"chapters": [record]}), mock.patch.object(runtime, "_chapter_record", return_value=record), mock.patch.object(runtime, "validate_stage_transition", return_value={"valid": True, "errors": []}), mock.patch.object(runtime, "_save_registry"), mock.patch.object(runtime, "_write_json"):
+        with mock.patch.object(runtime, "build_chapter_audit_packet", return_value={"template": audit, "packet_path": str(packet.relative_to(REPO_ROOT))}), mock.patch.object(runtime, "ask_codex_structured", side_effect=RuntimeError("usage limit")), mock.patch.object(runtime, "ask_antigravity_writer", return_value=json.dumps(audit)), mock.patch.object(runtime, "_load_registry", return_value={"chapters": [record]}), mock.patch.object(runtime, "_chapter_record", return_value=record), mock.patch.object(runtime, "_chapter_audit_grounding_text", return_value="周砺查看旧梁并留下现场判断"), mock.patch.object(runtime, "validate_stage_transition", return_value={"valid": True, "errors": []}), mock.patch.object(runtime, "_save_registry"), mock.patch.object(runtime, "_write_json"):
             result = runtime.dispatch_chapter_audit("chapter-0005")
         packet.unlink()
         self.assertTrue(result["valid"])
@@ -632,6 +736,35 @@ class ProductionChapterRuntimeV020Tests(unittest.TestCase):
             )["valid"]
         )
 
+    def test_settlement_rejects_duplicate_asset_field_key(self):
+        audit = {"verdict": "ACCEPT", "issues": []}
+        delta = {
+            "fact_id": "fact-1",
+            "asset_id": "character-a",
+            "field_path": "character.status",
+            "operation": "set",
+            "before": "before",
+            "after": "after",
+        }
+        settlement = {
+            "chapter_id": "chapter-0001",
+            "accepted_revision_sha256": "a" * 64,
+            "state_deltas": [delta, {**delta, "fact_id": "fact-2"}],
+            "resolved_audit_ids": [],
+        }
+        observation = {"facts": {"characters": [
+            {**delta, "evidence": "first"},
+            {**delta, "fact_id": "fact-2", "evidence": "duplicate"},
+        ]}}
+        result = validate_settlement_payload(
+            settlement, "chapter-0001", "a" * 64, audit, observation=observation
+        )
+        self.assertFalse(result["valid"])
+        self.assertIn(
+            "duplicate settlement state key: character-a:character.status",
+            result["errors"],
+        )
+
     def test_observed_settlement_candidate_uses_only_observed_facts(self):
         import nrl_production_runtime as runtime
 
@@ -649,6 +782,66 @@ class ProductionChapterRuntimeV020Tests(unittest.TestCase):
         self.assertEqual(result["state_delta_count"], 1)
         self.assertEqual(candidate["state_deltas"][0]["fact_id"], "fact-1")
         self.assertEqual(candidate["state_deltas"][0]["after"], "after")
+
+    def test_observed_settlement_candidate_filters_to_exact_frozen_intent(self):
+        record = {
+            "stage": "final_audited",
+            "artifacts": {
+                "intent": "intent.json",
+                "observation": "observation.json",
+                "revision": "revision.md",
+            },
+        }
+        intent = {"expected_state_deltas": [{
+            "asset_id": "character-a",
+            "field_path": "character.status",
+            "before": "before",
+            "after": "declared",
+        }]}
+        observation = {"facts": {
+            "characters": [
+                {
+                    "fact_id": "fact-declared",
+                    "asset_id": "character-a",
+                    "field_path": "character.status",
+                    "before": "before",
+                    "after": "declared",
+                    "evidence": "text",
+                },
+                {
+                    "fact_id": "fact-conflict",
+                    "asset_id": "character-a",
+                    "field_path": "character.status",
+                    "before": "before",
+                    "after": "undeclared",
+                    "evidence": "text",
+                },
+            ],
+            "artifacts": [{
+                "fact_id": "fact-extra",
+                "asset_id": "artifact-b",
+                "field_path": "artifact.condition",
+                "before": "old",
+                "after": "new",
+                "evidence": "text",
+            }],
+        }}
+
+        def read_payload(path):
+            return intent if str(path).endswith("intent.json") else observation
+
+        with mock.patch.object(runtime, "_load_registry", return_value={"chapters": [record]}), \
+             mock.patch.object(runtime, "_chapter_record", return_value=record), \
+             mock.patch.object(runtime, "_read_json", side_effect=read_payload), \
+             mock.patch.object(runtime, "_sha256", return_value="a" * 64), \
+             mock.patch.object(runtime, "_write_json") as write_json:
+            result = runtime.build_observed_settlement_candidate("chapter-0001")
+        candidate = write_json.call_args.args[1]
+        self.assertEqual(result["state_delta_count"], 1)
+        self.assertEqual(
+            [item["fact_id"] for item in candidate["state_deltas"]],
+            ["fact-declared"],
+        )
 
     def test_controlled_pipeline_is_idempotent_for_an_accepted_chapter(self):
         import nrl_production_runtime as runtime

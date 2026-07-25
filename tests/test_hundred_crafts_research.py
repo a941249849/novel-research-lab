@@ -307,15 +307,16 @@ class HundredCraftsResearchTests(unittest.TestCase):
         self.assertTrue(blueprint["project_initialization_authorized"])
         self.assertFalse(blueprint["prose_authorized"])
 
-    def test_project_returns_to_owner_gate_during_semantic_rework(self) -> None:
+    def test_project_reports_current_bounded_formal_production_state(self) -> None:
         status = build_project_status("hundred-crafts-night-procession")
-        self.assertEqual(status["status"], "owner_gate")
+        self.assertEqual(status["status"], "active_production")
         self.assertTrue(status["design_contracts_present"])
         self.assertEqual(status["assets"], 38)
-        self.assertFalse(status["content_authorized"])
-        self.assertFalse(status["ready_for_prose"])
+        self.assertTrue(status["content_authorized"])
+        self.assertTrue(status["ready_for_prose"])
         self.assertTrue(status["continuity_test_passed"])
-        self.assertEqual(status["next_action"], "await explicit production readiness decision")
+        self.assertEqual(status["accepted_chapters"], 7)
+        self.assertEqual(status["next_action"], "continue governed production")
 
     def test_candidate_assets_do_not_reference_raw_novel_corpus(self) -> None:
         for path in CANDIDATE_ROOT.glob("*.json"):

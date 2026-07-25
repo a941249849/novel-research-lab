@@ -1,4 +1,5 @@
 import os
+import json
 import stat
 import sys
 import tempfile
@@ -11,7 +12,14 @@ from unittest.mock import patch
 REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT / "system/runtime"))
 
-from nrl_codex_writer import ask_antigravity_writer, ask_codex_structured, ask_codex_writer, extract_json_object
+from nrl_codex_writer import (
+    _codex_response_schema,
+    ask_antigravity_writer,
+    ask_codex_structured,
+    ask_codex_writer,
+    ask_opencode_writer,
+    extract_json_object,
+)
 from nrl_model_router import build_model_routing_status, route_model
 
 
@@ -76,6 +84,19 @@ class CodexDirectWriterTests(unittest.TestCase):
             self.assertEqual(result, "备用正文")
             self.assertNotEqual(cwd_path.read_text(encoding="utf-8").strip(), str(REPO_ROOT))
 
+    def test_opencode_writer_uses_isolated_direct_adapter(self):
+        completed = subprocess.CompletedProcess(
+            args=["node"], returncode=0, stdout="独立审查结果\n", stderr=""
+        )
+        with patch("nrl_codex_writer.shutil.which", return_value="/usr/bin/node"), patch(
+            "nrl_codex_writer.subprocess.run", return_value=completed
+        ) as run:
+            result = ask_opencode_writer("review prompt", model="qwen3.7-max")
+        self.assertEqual(result, "独立审查结果")
+        args, kwargs = run.call_args
+        self.assertEqual(args[0][-1], "qwen3.7-max")
+        self.assertNotEqual(Path(kwargs["cwd"]), REPO_ROOT)
+
     def test_extract_json_object_accepts_fenced_payload(self):
         self.assertEqual(extract_json_object('```json\n{"ok": true}\n```'), {"ok": True})
 
@@ -88,6 +109,30 @@ class CodexDirectWriterTests(unittest.TestCase):
                 ask_codex_structured(
                     "prompt", model="gpt-5.6-sol", schema_path=REPO_ROOT / "missing.json", timeout_seconds=1
                 )
+
+    def test_codex_response_schema_removes_provider_unsupported_keywords(self):
+        original = {
+            "type": "object",
+            "required": [],
+            "properties": {
+                "ids": {
+                    "type": "array",
+                    "uniqueItems": True,
+                    "items": {"type": "string"},
+                }
+            },
+        }
+
+        compatible = _codex_response_schema(original)
+
+        self.assertNotIn("uniqueItems", compatible["properties"]["ids"])
+        self.assertEqual(compatible["required"], ["ids"])
+        self.assertTrue(original["properties"]["ids"]["uniqueItems"])
+        self.assertEqual(original["required"], [])
+        self.assertEqual(
+            json.dumps(compatible, sort_keys=True),
+            json.dumps(_codex_response_schema(compatible), sort_keys=True),
+        )
 
     def test_provider_failure_does_not_persist_prompt_or_warning_flood(self):
         stderr = "\n".join([

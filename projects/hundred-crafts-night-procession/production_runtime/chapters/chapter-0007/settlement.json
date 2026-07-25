@@ -1,0 +1,18 @@
+{
+  "chapter_id": "chapter-0007",
+  "accepted_revision_sha256": "eb792d0d89e6401a596dc9b4d27de44aa5de43cecb2c78f3a5cbc23c140908f2",
+  "state_deltas": [
+    {
+      "fact_id": "f-ch7-001",
+      "asset_id": "char_du_chengli",
+      "field_path": "character.current_state",
+      "operation": "set",
+      "before": "戏楼封存清单被证明不完整。",
+      "after": "守门角色残留进入杜承礼的日常判断。"
+    }
+  ],
+  "resolved_audit_ids": [
+    "HIST-CH007-001",
+    "PACING-CH007-002"
+  ]
+}

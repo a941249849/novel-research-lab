@@ -1,0 +1,107 @@
+{
+  "chapter_id": "chapter-0001",
+  "draft_sha256": "4d9bdc643df2d1f0922654a834614fd67163f8bf01ce506afff157de01caa27b",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "fact-0001",
+        "asset_id": "char_zhou_li",
+        "field_path": "character.current_state",
+        "before": "active",
+        "after": "事故记录出现周砺父亲周永直的签名。",
+        "evidence": "周砺在签验页上确认最下一处签名为“周永直”，并将其纳入封存与复核记录。"
+      }
+    ],
+    "npcs": [],
+    "locations": [],
+    "factions": [],
+    "artifacts": [
+      {
+        "fact_id": "fact-0002",
+        "asset_id": "artifact_unnamed_beam",
+        "field_path": "artifact.condition",
+        "before": "active",
+        "after": "梁两端与砖墙均无连接，处于悬空状态；现场完成封控并设置可拆托架。",
+        "evidence": "铁丝穿过两端缝隙且无榫头、砂浆或胶料；周砺坚持不回填、不灌浆、不重新接死，后续托架未碰梁端。"
+      },
+      {
+        "fact_id": "fact-0003",
+        "asset_id": "artifact_unnamed_beam",
+        "field_path": "lifecycle_state",
+        "before": "active",
+        "after": "封控待复核",
+        "evidence": "停工单要求铝牌、墨书和两端空隙一起封存，明日复核，施工与抽排暂停。"
+      }
+    ],
+    "techniques": [],
+    "relationships": [],
+    "emotions": [
+      {
+        "fact_id": "fact-0004",
+        "asset_id": "char_zhou_li",
+        "field_path": "character.current_state",
+        "before": "active",
+        "after": "确认父亲签名与现场物证相互印证但不等同于责任结论",
+        "evidence": "周砺表示记录证明周永直知道替位期限，却不能据此确定全部责任；他仍坚持封控。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "fact-0005",
+        "asset_id": "artifact_unnamed_beam",
+        "field_path": "artifact.condition",
+        "before": "未知内部连接状态",
+        "after": "确认梁端无榫头、砂浆或胶料，梁底有“临时承重，替位一”和“拆回原连接前，禁覆灰”字样",
+        "evidence": "周砺用铁丝验证两端为空，并通过镜面读取梁侧铝牌文字。"
+      },
+      {
+        "fact_id": "fact-0006",
+        "asset_id": "char_zhou_li",
+        "field_path": "character.current_state",
+        "before": "未知父亲签名是否存在于现场记录",
+        "after": "现场签验页确认存在“周永直”签名，且与铝牌文字、刻痕日期相互印证",
+        "evidence": "监理核验签验页、铝牌拍摄编号和日期，并说明仍需档案复核。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "fact-0007",
+        "asset_id": "foreshadow_second_record",
+        "field_path": "foreshadowing.status",
+        "before": "active",
+        "after": "已调取并封存待档案复核的第二份事故记录",
+        "evidence": "小徐从地下库调出旧戏楼后场临时处置事故记录，签验页被现场拆封、登记并暂存于封控区。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "fact-0008",
+        "asset_id": "foreshadow_second_record",
+        "field_path": "foreshadowing.status",
+        "before": "未调取",
+        "after": "于当晚21:47从地下库B架三层调取",
+        "evidence": "调取登记簿记录小徐于二十一点四十七分调取该档案，值班保管员共同签字。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "fact-0009",
+        "asset_id": "artifact_unnamed_beam",
+        "field_path": "artifact.condition",
+        "before": "现场尚未封控",
+        "after": "抽排降至低档、通信线另搭托架、旧梁保持悬空，设备沟进水且掘进整夜停止",
+        "evidence": "停工单由负责人、监理和周砺签署；正文末尾明确设备沟进水、临电停用、掘进机整夜未再响。"
+      }
+    ],
+    "naming": [
+      {
+        "fact_id": "fact-0010",
+        "asset_id": "foreshadow_second_record",
+        "field_path": "foreshadowing.status",
+        "before": "未知",
+        "after": "确定为“旧戏楼后场临时处置事故记录，原件移交，附页三”",
+        "evidence": "牛皮纸袋袋面标注该名称，内含事故记录首页、附页目录和签验页。"
+      }
+    ]
+  }
+}

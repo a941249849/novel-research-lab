@@ -1,0 +1,103 @@
+{
+  "chapter_id": "chapter-0001",
+  "status": "writer_failed",
+  "errors": [
+    "prose must contain 3000-4200 Chinese characters"
+  ],
+  "attempts": [
+    {
+      "model": "gpt-5.6-terra",
+      "provider": "codex",
+      "generation": 1,
+      "valid": false,
+      "metrics": {
+        "chinese_character_count": 2981,
+        "sentence_count": 184,
+        "paragraph_count": 90,
+        "average_sentence_length": 16.2,
+        "sentence_length_stddev": 10.43,
+        "average_paragraph_length": 33.12,
+        "paragraph_length_stddev": 27.59,
+        "dialogue_ratio": 0.3341,
+        "transition_word_hits": 0,
+        "rhetorical_template_hits": 0,
+        "abstract_word_hits": 1,
+        "sensory_word_hits": 35,
+        "repeated_sentence_starters": [],
+        "tail_short_paragraph_ratio": 0.4333,
+        "tail_dialogue_paragraph_ratio": 0.3,
+        "prompt_leak_markers": [],
+        "generation_meta_markers": [],
+        "latin_token_markers": [],
+        "termination_word_hits": 1,
+        "max_paragraph_length": 112,
+        "repeated_text_span_preview": null,
+        "flags": [],
+        "policy": "metrics_are_audit_evidence_not_a_literary_verdict"
+      },
+      "response_preview": "凌晨四点多，地铁围挡里的灯还没熄。雨在夜里停过一阵，钢板路面留着一层薄水，搅拌车的轮胎从上头碾过去，水纹里浮起细碎的石灰。\n\n周砺站在基坑东侧，手电压得很低，光只照到脚边三步。他先看排水沟，又看沟边一排临时支撑。支撑上贴着昨晚的检验签，边角都被潮气卷起来了。\n\n老戏楼的后墙就在围挡外，墙根挨着一串早点摊。这个钟点，卖胡辣汤的女人已经把炉子点上，白气穿过铁网，在工地灯下散开。她看见周砺，隔着网问：“今天还得震？”\n\n“先不动。”周砺说。\n\n女人没听懂，勺子悬在锅上：“不动，地铁还修不修？”\n\n周砺没有答。他蹲下来，摸了摸一根支撑底座旁的混凝土。表面是硬的，指缝里却有一圈刚裂开的细砂。他把手电移向基坑深处。\n\n那根旧梁横在新挖开的断面里，灰黑色，梁身被土和旧砖包着，只露出中间一截。它不像施工图上标出的任何构件，原本接在什么地方、替谁受力，谁也说不清。前天挖机碰到它，监理让停过一次；昨天下午又说工期压着，先把旁边的土清出来，找个位置加支撑，等资料。\n\n周砺昨晚回去前，在梁底擦出一行被覆灰压住的墨书。字还没认全，坑壁就开始渗水，他只好把湿布塞回原处，叫人别碰。\n\n现在，那块湿布掉在泥里。\n\n梁"
+    },
+    {
+      "model": "gpt-5.6-terra",
+      "provider": null,
+      "generation": "length_recovery",
+      "valid": false,
+      "metrics": {
+        "chinese_character_count": 2981,
+        "sentence_count": 184,
+        "paragraph_count": 90,
+        "average_sentence_length": 16.2,
+        "sentence_length_stddev": 10.43,
+        "average_paragraph_length": 33.12,
+        "paragraph_length_stddev": 27.59,
+        "dialogue_ratio": 0.3341,
+        "transition_word_hits": 0,
+        "rhetorical_template_hits": 0,
+        "abstract_word_hits": 1,
+        "sensory_word_hits": 35,
+        "repeated_sentence_starters": [],
+        "tail_short_paragraph_ratio": 0.4333,
+        "tail_dialogue_paragraph_ratio": 0.3,
+        "prompt_leak_markers": [],
+        "generation_meta_markers": [],
+        "latin_token_markers": [],
+        "termination_word_hits": 1,
+        "max_paragraph_length": 112,
+        "repeated_text_span_preview": null,
+        "flags": [],
+        "policy": "metrics_are_audit_evidence_not_a_literary_verdict"
+      },
+      "recoveries": [
+        {
+          "valid": false,
+          "metrics": {
+            "chinese_character_count": 176,
+            "sentence_count": 6,
+            "paragraph_count": 1,
+            "average_sentence_length": 29.33,
+            "sentence_length_stddev": 10.43,
+            "average_paragraph_length": 176,
+            "paragraph_length_stddev": 0.0,
+            "dialogue_ratio": 0.0,
+            "transition_word_hits": 0,
+            "rhetorical_template_hits": 0,
+            "abstract_word_hits": 0,
+            "sensory_word_hits": 1,
+            "repeated_sentence_starters": [],
+            "tail_short_paragraph_ratio": 0.0,
+            "tail_dialogue_paragraph_ratio": 0.0,
+            "prompt_leak_markers": [],
+            "generation_meta_markers": [],
+            "latin_token_markers": [],
+            "termination_word_hits": 0,
+            "max_paragraph_length": 176,
+            "repeated_text_span_preview": null,
+            "flags": [],
+            "policy": "metrics_are_audit_evidence_not_a_literary_verdict"
+          },
+          "error": "length recovery bridge out of range"
+        }
+      ]
+    }
+  ]
+}

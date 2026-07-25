@@ -1,0 +1,2 @@
+# Quarantined model artifacts are immutable hash-bound evidence.
+projects/*/production_runtime/quarantine/** -diff

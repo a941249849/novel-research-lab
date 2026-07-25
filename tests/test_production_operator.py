@@ -1,4 +1,6 @@
 import json
+import os
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -34,7 +36,7 @@ class ProductionOperatorTests(unittest.TestCase):
                 if start == 1:
                     payload["revision_hashes"]["chapter-0001"] = "stale"
                 (reviews / f"window-{start:03d}-{end:03d}.json").write_text(json.dumps(payload), encoding="utf-8")
-            status = build_operator_status(registry, target=100)
+            status = build_operator_status(registry, target=100, root=root)
         self.assertEqual(status["blocking_window_review"], "001-010")
         self.assertEqual(status["blocking_window_verdict"], "STALE")
         self.assertIsNone(status["resume_command"])
@@ -65,8 +67,97 @@ class ProductionOperatorTests(unittest.TestCase):
             status = build_operator_status(registry, target=100)
         self.assertEqual(status["accepted_contiguous"], 2)
         self.assertEqual(status["next_chapter"], "chapter-0003")
-        self.assertEqual(status["resume_command"], "python3 system/runtime/nrl.py produce --until 100")
+        self.assertEqual(
+            status["resume_command"],
+            "python3 system/runtime/nrl.py --project borrowed-heaven produce --until 10",
+        )
         self.assertEqual(status["accepted_chapters_requiring_release_edit"], ["chapter-0001", "chapter-0002"])
+
+    def test_project_registry_uses_project_runtime_review_directory(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            runtime = (
+                root
+                / "projects/hundred-crafts-night-procession/production_runtime"
+            )
+            registry = runtime / "chapter_registry.v0.20.json"
+            reviews = runtime / "window_reviews"
+            registry.parent.mkdir(parents=True)
+            reviews.mkdir(parents=True)
+            chapters = []
+            hashes = {}
+            import hashlib
+
+            for ordinal in range(1, 11):
+                chapter_id = f"chapter-{ordinal:04d}"
+                revision = runtime / "chapters" / chapter_id / "revision.md"
+                revision.parent.mkdir(parents=True)
+                revision.write_text("字" * 3200, encoding="utf-8")
+                relative = str(revision.relative_to(root))
+                chapters.append(
+                    {
+                        "chapter_id": chapter_id,
+                        "stage": "chapter_accepted",
+                        "artifacts": {"revision": relative},
+                    }
+                )
+                hashes[chapter_id] = hashlib.sha256(
+                    revision.read_bytes()
+                ).hexdigest()
+            registry.write_text(
+                json.dumps({"chapters": chapters}), encoding="utf-8"
+            )
+            ids = [f"chapter-{number:04d}" for number in range(1, 11)]
+            (reviews / "window-001-010.json").write_text(
+                json.dumps(
+                    {
+                        "verdict": "ACCEPT",
+                        "chapter_ids": ids,
+                        "revision_hashes": hashes,
+                    }
+                ),
+                encoding="utf-8",
+            )
+            status = build_operator_status(registry, target=66, root=root)
+        self.assertIsNone(status["blocking_window_review"])
+        self.assertEqual(status["next_chapter"], "chapter-0011")
+        self.assertEqual(status["active_window"], "011-020")
+        self.assertEqual(
+            status["resume_command"],
+            "python3 system/runtime/nrl.py --project borrowed-heaven produce --until 20",
+        )
+
+    def test_project_resume_command_keeps_identity_without_environment(self):
+        root = Path(__file__).resolve().parents[1]
+        env = {key: value for key, value in os.environ.items() if key != "NRL_PROJECT_ID"}
+        result = subprocess.run(
+            [
+                sys.executable,
+                "system/runtime/nrl.py",
+                "--project",
+                "hundred-crafts-night-procession",
+                "production-status",
+            ],
+            cwd=root,
+            env=env,
+            text=True,
+            capture_output=True,
+            check=True,
+        )
+        status = json.loads(result.stdout)
+        self.assertEqual(status["project_id"], "hundred-crafts-night-procession")
+        self.assertIn(
+            "--project hundred-crafts-night-procession produce --until 10",
+            status["resume_command"],
+        )
+
+    def test_raw_produce_defaults_to_the_active_window_boundary(self):
+        source = (
+            Path(__file__).resolve().parents[1]
+            / "system/runtime/nrl.py"
+        ).read_text(encoding="utf-8")
+        self.assertIn("default_target = (", source)
+        self.assertIn('int(active_window.split("-")[1])', source)
 
     def test_status_reports_registry_gaps(self):
         with tempfile.TemporaryDirectory() as tmp:

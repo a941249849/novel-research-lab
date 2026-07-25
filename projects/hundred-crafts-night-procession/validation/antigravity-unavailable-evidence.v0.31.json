@@ -1,0 +1,24 @@
+{
+  "version": "0.31",
+  "project_id": "hundred-crafts-night-procession",
+  "preferred_provider": "antigravity",
+  "status": "unavailable",
+  "bound_baseline_sha256": "472623f8bad0caa2283329c575fd9906149a4b2c44659da63212c0cfe44bf7a0",
+  "attempts": [
+    {
+      "provider": "antigravity",
+      "model": "Gemini 3.5 Flash (High)",
+      "request_artifact": ".agent-handoff/antigravity/requests/hundred-crafts-production-orchestration-v030.md",
+      "request_artifact_sha256": "9e7dc197cbdc44467bd32678599674ba5b4f1dc3b983c3f19bb445c5488c811f",
+      "response_artifact": ".agent-handoff/antigravity/responses/hundred-crafts-production-orchestration-v030.md",
+      "response_artifact_sha256": "e8ee408e7e6422966d9975874ce568aa7d44fc57a5d38af747b885cd620db8d1",
+      "log_artifact": "system/agent_ops/antigravity_bridge_last_run.v0.8.json",
+      "log_artifact_sha256": "039dac37f183698dae969ee722e705236423ba3d1684121523a2bd9e9b28b556",
+      "started_at": "2026-07-25T11:45:14+08:00",
+      "finished_at": "2026-07-25T11:45:32+08:00",
+      "returncode": 1,
+      "result": "provider_error",
+      "detail": "Antigravity bridge returned a nonzero exit code and no review report."
+    }
+  ]
+}

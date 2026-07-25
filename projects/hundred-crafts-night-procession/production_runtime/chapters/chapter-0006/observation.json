@@ -1,0 +1,90 @@
+{
+  "chapter_id": "chapter-0006",
+  "draft_sha256": "d8bdb997c281c9d81a29360db6e0c59c1033883af8a77b161f84132886a4d26b",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "f-ch006-001",
+        "asset_id": "char_ma_xiaoman",
+        "field_path": "character.current_state",
+        "before": "active",
+        "after": "维修班组被停职，居民被迫进入临时安置。",
+        "evidence": "夜里正文明确写道：维修班被停职，居民进入临时安置。"
+      }
+    ],
+    "npcs": [],
+    "locations": [],
+    "factions": [
+      {
+        "fact_id": "f-ch006-002",
+        "asset_id": "faction_old_street_residents",
+        "field_path": "faction.status",
+        "before": "active",
+        "after": "居民进入临时安置，部分居民对安置条件提出异议。",
+        "evidence": "居民开始搬离并登上临时安置车辆，卖粉面的女人登记不接受只给床位，其他居民登记老人、摊位和居住风险等事项。"
+      }
+    ],
+    "artifacts": [],
+    "techniques": [],
+    "relationships": [],
+    "emotions": [
+      {
+        "fact_id": "f-ch006-003",
+        "asset_id": "faction_old_street_residents",
+        "field_path": "faction.emotional_state",
+        "before": null,
+        "after": "对维修施工及临时安置产生公开异议和不信任",
+        "evidence": "居民质问修戏楼为何封住住人的街，拒绝只提供床位，并要求风险解释与摊位、灶具安排。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "f-ch006-004",
+        "asset_id": "ledger_public_dissent",
+        "field_path": "state_ledger.value",
+        "before": "居民尚未成为正式异议方",
+        "after": "居民异议已登记，未回应项不得结案",
+        "evidence": "马小满在物证记录后写下：居民异议已登记，未回应项不得结案。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "f-ch006-005",
+        "asset_id": "ledger_public_dissent",
+        "field_path": "state_ledger.open_items",
+        "before": null,
+        "after": "临时安置中的床位、摊位、灶具、返住时间及风险解释仍未有准话",
+        "evidence": "居民反复询问灶具、摊位和回返安排，正文明确写道没人能给出准话。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "f-ch006-006",
+        "asset_id": "char_ma_xiaoman",
+        "field_path": "chapter_events",
+        "before": null,
+        "after": "维修班组全员即刻停职，钥匙、工牌和工具箱交回，未经复核不得进入毛坯街施工面",
+        "evidence": "站长在麻绳外宣读处理决定，领头人交回钥匙和工牌，工具被留在塌沟旁。"
+      },
+      {
+        "fact_id": "f-ch006-007",
+        "asset_id": "faction_old_street_residents",
+        "field_path": "chapter_events",
+        "before": null,
+        "after": "居民分批搬入临时安置车辆",
+        "evidence": "傍晚后居民搬出塑料盆、折叠桌、药罐和被褥；临时安置车辆驶入，部分居民登车离开。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "f-ch006-008",
+        "asset_id": "char_ma_xiaoman",
+        "field_path": "observed_evidence",
+        "before": null,
+        "after": "发现带有“临代梁”残字且存在三次覆灰的旧黑木构件，施工图未载",
+        "evidence": "马小满在沟壁清理出黑木及残存墨字，并记录梁底有三次覆灰、施工图未载。"
+      }
+    ],
+    "naming": []
+  }
+}

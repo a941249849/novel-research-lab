@@ -3,13 +3,13 @@
   "project_id": "hundred-crafts-night-procession",
   "title": "《百工夜行录》",
   "genre": "近现代东方幻想·工艺悬疑·群像文明史诗",
-  "status": "owner_gate",
+  "status": "active_production",
   "workspace": "projects/hundred-crafts-night-procession",
   "created_at": "2026-07-18T19:34:00+08:00",
   "engine": "nrl-corpus-to-creation",
   "shared_research_catalog": "system/research_assets",
   "model_team": "codex-three-model-team-v0.27",
   "planning_profile": "generic_v1",
-  "content_authorized": false,
+  "content_authorized": true,
   "sample_test_authorized": true
 }

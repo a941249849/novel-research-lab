@@ -1,0 +1,91 @@
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "chunk_id": "book-06-b1b7934bf892-chunk-007",
+  "source_file": "novel_training_set/《圣墟》（校对版全本+番外）作者：辰东.txt",
+  "source_file_sha256": "b1b7934bf892c65804db4974dc1f1bc15e12b4ff31fcda87a7a092be44518478",
+  "start_byte": 9000422,
+  "end_byte": 10500465,
+  "chunk_sha256": "1e67460e6166d3083de5a4674e77337764f80ca11e77fdabcbcf8fc671002554",
+  "source_encoding": "gb18030",
+  "bounded_chunk_utf8_sha256": "7efcfbdd803905529efb3e67654a6abcd361af4816d2d004dbfed8583f3f30c1",
+  "analysis": {
+    "chapter_span": [
+      1183,
+      1397
+    ],
+    "major_events": [
+      "Cao De fights in gold-body level battles on the border battlefield (三方战场) under various battlefield rules. [第1183章 潜规则]",
+      "Cao De attends the assembly of various major sects and meets Qing Yin Xianzi (青音仙子), disrupting matchmaking attempts. [第1213章 青音仙子]",
+      "Cao De competes for the sacred Rongdao Grass (融道草) at the Dao-Refining Field. [第1218章 轮回路上的刻字]",
+      "Cao De uses characters from the reincarnation path's stone millstone to engrave his virtual weapon, accelerating Rongdao Grass absorption. [第1218章 轮回路上的刻字]",
+      "Chu Feng undergoes a dangerous self-refinement breakthrough under the principle 'body as cauldron, soul as medicine' (身为鼎，魂为药). [第1227章 身为鼎，魂为药]",
+      "Chu Feng successfully undergoes tribulation and breaks through to the Great Saint (大圣) realm. [第1233章 渡劫]",
+      "Chu Feng sweeps the Saints of all major enemy camps alone on the battlefield, establishing his invincible title. [第1248章 只身扫诸圣]",
+      "Chu Feng duels with Li Chentian (厉沉天) from Wu Fengzi's lineage, countering his Time Technique using stone canister symbols. [第1258章 妙术惊天]",
+      "Nine (九号) from First Mountain tears off and carries away the thighs of Wu Fengzi's Second Ancestor, who failed his breakthrough. [第1283章 二祖肉真香]",
+      "Chu Feng and Nine roast and eat the Second Ancestor's thighs on the battlefield, causing public outrage and shock. [第1283章 二祖肉真香]",
+      "Wu Fengzi (武疯子) awakens from his ancient deep slumber and projects his power across states to avenge his lineage. [第1285章 举世瞩目，武疯子复苏！]",
+      "Nine battles Wu Fengzi's weapon projection in the outer void, accidentally biting the bronze weapon and crying over his teeth. [第1289章 9号笑了]",
+      "Multiple human-skin protectors (二号, 三号, 六号 etc.) rise from First Mountain to confront the alliance of various forbidden lands. [第1295章 当传说中那人已被遗忘时]",
+      "The activation of First Mountain's tattered flag triggers a remnant sword strike left by the forgotten Emperor, erasing all invaders. [第1299章 一剑斩断万古]",
+      "The big black dog (大黑狗) attempts to revive Ye Fan with supreme medicine but uses the bronze coffin to contain a dark mutation. [第1320章 问世间究竟有没有轮回]",
+      "The big black dog tasks Chu Feng with finding the Three Life Emperor Medicine and the Empress before sending him back to Yang Realm. [第1321章 天上掉下个天帝]",
+      "Chu Feng falls out of the sky and lands directly in the bathing barrel of the Ten-tailed Sky Fox girl. [第1321章 天上掉下个天帝]",
+      "Chu Feng travels to the Tai Shang Eight Trigrams Furnace (太上八卦炉) to seek breakthrough and supreme flames. [第1369章 太上]",
+      "The white-clothed female (Ruthless Empress) appears in the collapsed mountain at Tai Shang, triggering Chu Feng's sealed memories. [第1381章 女帝]",
+      "A spatial-temporal anomaly reveals the past battle of the Shrouding the Heavens trio crossing back to the 'Ran Gu' (乱古) era. [第1389章 乱古]"
+    ],
+    "character_state_transitions": [
+      "Chu Feng (Cao De): Transitions from a quasi-saint (亚圣) to a Great Saint (大圣) after undergoing a high-risk refinement. [第1234章 大圣]",
+      "Chu Feng: Shift in identity and appearance after being sent back to the Yang Realm, adopting the pseudonym Zhou Zhengde (周正德). [第1388章 逆乱了古今时空]",
+      "Nine (九号): From a seemingly eccentric protector to a fierce fighter engaged in high-level void combat with Wu Fengzi. [第1286章 九号VS武疯子！]",
+      "Nine: Shift from solitary guarding to joint defense alongside other emerged skins (二号, 三号 etc.) of First Mountain. [第1295章 当传说中那人已被遗忘时]",
+      "Nine: Moves from belligerent confidence to deep emotional grief and hope upon witnessing the forgotten Emperor's sword strike. [第1299章 一剑斩断万古]",
+      "Second Ancestor (二祖): Transitions from an emerging supreme powerhouse to a crippled failure whose limbs are torn off and eaten. [第1283章 二祖肉真香]",
+      "Wu Fengzi (武疯子): Transitions from an ancient deep slumber to an active, awakened state protecting his lineage's honor. [第1285章 举世瞩目，武疯子复苏！]",
+      "Big Black Dog: From despair at the suspected dark awakening of his Emperor to active intervention using the bronze coffin's seals. [第1320章 问世间究竟有没有轮回]",
+      "Mitian (六耳猕猴): From a gold-body level combatant on the battlefield to undergoing agonizing body refinement in the Tai Shang companion furnace. [第1389章 乱古]",
+      "Qing Yin Xianzi (青音仙子): From a distant goddess targeted for matchmaking to an active cultivator re-encountering Chu Feng. [第1213章 青音仙子]"
+    ],
+    "long_form_mechanisms": [
+      "Rongdao Grass (融道草) Refining: A highly competitive cultivation catalyst that grants Dao fragments. Cultivators can use special virtual weapons or ancient inscriptions to exponentially accelerate its absorption. [第1218章 轮回路上的刻字]",
+      "Body as Cauldron, Soul as Medicine (身为鼎，魂为药): A dangerous refining technique where the body acts as the vessel and the soul acts as the material being smelted, purging impurities at the risk of sudden death. [第1227章 身为鼎，魂为药]",
+      "The Theoretical 'Road of No Life' (无生路): A speculative path where extreme Yin and extreme Yang Dao fruits are forced to collide. The resulting energy explosion shatters major cultivation barriers but carries an extreme risk of self-destruction. [第1225章 理论中的无生路]",
+      "Time Technique (时光术) Manipulation: A top-tier technique of Wu Fengzi's lineage that manifests a Time Wheel (时光轮), utilizing the laws of time to age, weaken, and destroy opponents. [第1286章 九号VS武疯子！]",
+      "First Mountain Shed Skins (人皮) Mechanism: The guardians of First Mountain (Nine, Two, Three etc.) are sheets of skin shed by a supreme being. They possess independent wills, consume powerful flesh to sustain themselves, and guard the cross-section world. [第1295章 当传说中那人已被遗忘时]",
+      "One Sword to Cut Off Eternity (一剑斩断万古) Resonance: A passive cosmic barrier left by a legendary Emperor. When triggered by the tattered flag of First Mountain, it unleashes a sword strike that cuts across time to erase invaders. [第1299章 一剑斩断万古]",
+      "Three-World Bronze Coffin (三世铜棺) Stabilization: A mysterious cosmic object whose spatial projection can be summoned by ancient entities to suppress spatial anomalies or stabilize decaying/mutating bodies. [第1320章 问世间究竟有没有轮回]",
+      "Tai Shang Eight Trigrams Furnace (太上八卦炉) Geomantic Field: A human-shaped mountain formation producing layers of supreme flames (such as Samadhi Fire) that can be harnessed to temper bodies or upgrade techniques. [第1369章 太上]"
+    ],
+    "continuity_observations": [
+      "Reincarnation Millstone Characters: Chu Feng's engraving of millstone characters onto his virtual weapon directly refers to his prior exploration of the reincarnation path and the Bright Dead City. [第1218章 轮回路上的刻字]",
+      "Stone Canister and Seeds Tracking: Chu Feng's constant concealment of the stone canister and the three seeds remains a consistent thread, preventing cosmic entities like the big black dog from detecting them. [第1227章 身为鼎，魂为药]",
+      "Stone Fox Lineage Continuity: Chu Feng's recognition of the Ten-tailed Sky Fox girl is linked to his Earth-era association with Shihu Tianzun, showing consistency in character history. [第1321章 天上掉下个天帝]",
+      "Big Black Dog and Ye Fan: The big black dog's frantic efforts to revive its former leader Ye Fan continues the lore of Chen Dong's prior work Shrouding the Heavens. [第1319章 是你回来了吗？]",
+      "Forgotten Emperor (Shi Hao) Sword Mark: The remnant sword mark in the cross-section world continues the ending of Perfect World, where Shi Hao cut off eternity to isolate the mortal realm. [第1299章 一剑斩断万古]",
+      "First Mountain's Secrets: The explanation that First Mountain's protectors are shed skins explains their bizarre cannibalistic nature and links back to the mountain's introduction. [第1295章 当传说中那人已被遗忘时]",
+      "Search for the Empress: The search for the white-clothed female using the big black dog's map continues the overarching plot of gathering ancient guardians to fight the encroaching darkness. [第1321章 天上掉下个天帝]",
+      "Seven Treasures Divine Technique Progression: Chu Feng's collection of rare flames in the Tai Shang furnace is a direct continuation of his ongoing quest to complete the elemental requirements of his primary technique. [第1369章 太上]"
+    ],
+    "style_observations": [
+      "Pacing and Dramatic Scaling: Transitioning from tactical gold-body level battlefield matches to grand, universe-threatening battles involving ancient projections and world-cleaving strikes. [第1286章 九号VS武疯子！]",
+      "Defusing Tension with Absurdist Humor: High-stakes battles are frequently cut with comedic elements, such as Nine crying over hurting his teeth on a bronze weapon, or Chu Feng landing in a bath barrel claiming to be an Emperor. [第1289章 9号笑了]",
+      "Repetitive Cultivation Tropes (Agonizing Smelting): Utilizing dangerous, furnace-like environments where the protagonist suffers extreme physical trauma to achieve a cultivation breakthrough. [第1397章 八卦炉中争雄]",
+      "Vague, Grandiose Cosmic Jargon: Recurrent use of terms like '不祥' (ominous), '大劫' (great tribulation), and '古今' (ancient and modern) to establish a sense of epic scale and ancient mystery. [第1295章 当传说中那人已被遗忘时]",
+      "Animated and Vocal Supporting Cast: The monkey Mitian and the dragon Long Dayu serve as loud commentators, reacting in shock or offering comical suggestions to frame the protagonist's actions. [第1183章 潜规则]",
+      "Shameless Pseudonyms and Deception: The protagonist's constant adoption of names like Cao De, Ji Dade, and Zhou Zhengde to deceive factions, leading to comedic situations and dramatic reveals. [第1388章 逆乱了古今时空]"
+    ],
+    "creation_family_evidence": {
+      "textual_serialization_cleanup": "The text lacks any real-time web serialization messages, author notes, or requests for tickets/subscriptions, showing it is a cleaned compiled ebook edition. [第1192章 世界如此美好]",
+      "consistent_chapter_formatting": "The chapter headings are uniformly formatted using standard Chinese numerals with consistent spacing, reflecting post-serialization sorting and formatting for reader communities. [第1202章 肯定被绿了]",
+      "narrative_lifecycle_placement": "The narrative represents the mid-late phase of the Yang Realm arc, transitioning from regional battlefield trials to integrating key characters and artifacts from previous trilogies (Perfect World, Shrouding the Heavens) to build towards the cosmic climax. [第1313章 举世同祭]"
+    },
+    "originality_risks": [
+      "Sun Wukong and Eight Trigrams Furnace Adaptation: The Tai Shang Eight Trigrams Furnace, where the protagonist is tempered by divine flames in a companion furnace while others watch, closely mirrors the classic Journey to the West story. [第1390章 欲成霸主，炉中先行]",
+      "Heavy Reliance on Sequel Crossover Nostalgia: The plot depends heavily on characters, items, and events from the author's previous novels Shrouding the Heavens and Perfect World, risking the current novel feeling derivative rather than standalone. [第1320章 问世间究竟有没有轮回]",
+      "Shameless Protagonist Archetype Stereotype: Chu Feng's archetype as a shameless, mouthy, and deceptive cultivator who mocks opponents and wins through sudden power fits a highly repetitive xianxia protagonist stereotype. [第1228章 大善人楚]",
+      "Repetitive Crisis-Breakthrough Loop: The continuous cycle of entering a lethally hazardous environment that has supposedly killed all previous geniuses, only for the protagonist to emerge stronger, repeats a standard, predictable cultivation formula. [第1225章 理论中的无生路]"
+    ]
+  }
+}

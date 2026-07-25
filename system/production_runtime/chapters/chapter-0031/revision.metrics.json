@@ -1,0 +1,17 @@
+{
+  "chinese_character_count": 3096,
+  "sentence_count": 185,
+  "paragraph_count": 88,
+  "average_sentence_length": 16.74,
+  "sentence_length_stddev": 8.28,
+  "average_paragraph_length": 35.18,
+  "paragraph_length_stddev": 24.81,
+  "dialogue_ratio": 0.27,
+  "transition_word_hits": 1,
+  "rhetorical_template_hits": 0,
+  "abstract_word_hits": 0,
+  "sensory_word_hits": 88,
+  "repeated_sentence_starters": [],
+  "flags": [],
+  "policy": "metrics_are_audit_evidence_not_a_literary_verdict"
+}

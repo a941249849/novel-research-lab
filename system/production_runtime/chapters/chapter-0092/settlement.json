@@ -1,0 +1,135 @@
+{
+  "chapter_id": "chapter-0092",
+  "accepted_revision_sha256": "732efa7a36ce30de3569a6e4c3c265f0ed82c4ec0611a7c80cb8728658b011ca",
+  "state_deltas": [
+    {
+      "fact_id": "chapter-0092-character-001",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_physical_state",
+      "operation": "set",
+      "before": "左腿失稳，右臂失去知觉，掌心裂口出血",
+      "after": "左腿最后一点支撑力散尽，无法久站；右臂仍无知觉；掌心伤口被震力与石沿再次划深并大量出血"
+    },
+    {
+      "fact_id": "chapter-0092-character-002",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_procedural_status",
+      "operation": "set",
+      "before": "原始交接申请已立项并接受原始交接锁纹",
+      "after": "残印进入可核验的争议共持位，封布不入黑槽，未经两侧留痕不得单方收走"
+    },
+    {
+      "fact_id": "chapter-0092-character-003",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "emotion.current_responsibility_orientation",
+      "operation": "set",
+      "before": "承认持印、到场及申请复核所生责任由自己承担",
+      "after": "主动要求闻照微承担共持责任，使回收动作留下她的影印与程序痕迹"
+    },
+    {
+      "fact_id": "chapter-0092-npc-001",
+      "asset_id": "npc_prefecture_shadow_envoy",
+      "field_path": "npc.current_permission_state",
+      "operation": "set",
+      "before": "作为外层见证完成立项，允许核验但未承担残印共持责任",
+      "after": "边缘权限写入共持责任；其影印成为回收前置条件，并因此接受权限复核"
+    },
+    {
+      "fact_id": "chapter-0092-npc-002",
+      "asset_id": "npc_prefecture_shadow_envoy",
+      "field_path": "npc.current_recovery_strategy",
+      "operation": "set",
+      "before": "接受核验与回收分列，不直接夺取持有",
+      "after": "以影手按住封布另一侧参与共持，未立即回收残印"
+    },
+    {
+      "fact_id": "chapter-0092-npc-003",
+      "asset_id": "npc_prefecture_shadow_envoy",
+      "field_path": "relationship.with_character_lu_chenyuan",
+      "operation": "set",
+      "before": "双方形成有限可议价关系，闻照微提出继续候验或交印换退路",
+      "after": "双方通过实际按压形成彼此受约束的争议共持关系"
+    },
+    {
+      "fact_id": "chapter-0092-artifact-001",
+      "asset_id": "artifact_prefecture_transit_registry_seal",
+      "field_path": "artifact.current_holder",
+      "operation": "set",
+      "before": "陆沉渊单独持有残印",
+      "after": "陆沉渊与州府外层程序形成争议共持，未完成移交"
+    },
+    {
+      "fact_id": "chapter-0092-artifact-002",
+      "asset_id": "artifact_prefecture_transit_registry_seal",
+      "field_path": "artifact.current_effect",
+      "operation": "set",
+      "before": "残印未被送入黑槽，等待送出端及接收响应",
+      "after": "残印在封布下稳定于核验位，可验送出端但未进入黑槽；接收端无回应"
+    },
+    {
+      "fact_id": "chapter-0092-artifact-003",
+      "asset_id": "artifact_prefecture_transit_registry_seal",
+      "field_path": "artifact.current_visible_trace",
+      "operation": "set",
+      "before": "银灰印屑悬停在交接缺口上方",
+      "after": "银灰印屑沿石沿形成仅亮至缺口正中的送出端半圈旧光，接收端保持黑暗"
+    },
+    {
+      "fact_id": "chapter-0092-emotion-001",
+      "asset_id": "npc_prefecture_shadow_envoy",
+      "field_path": "emotion.current_permission_risk",
+      "operation": "set",
+      "before": "尚未实际承担未立即回收残印的权限风险",
+      "after": "因按下影手参与共持而承担权限复核风险，面色出现变化但未撤手"
+    },
+    {
+      "fact_id": "chapter-0092-information-001",
+      "asset_id": "artifact_prefecture_transit_registry_seal",
+      "field_path": "information.latest_instruction",
+      "operation": "set",
+      "before": "先验送出端，再候接收响应",
+      "after": "仅验送出端留下的回应，封布不入槽，等待接收端自行回话"
+    },
+    {
+      "fact_id": "chapter-0092-information-002",
+      "asset_id": "artifact_prefecture_transit_registry_seal",
+      "field_path": "information.receiving_end_response",
+      "operation": "set",
+      "before": "尚未出现接收端响应",
+      "after": "接收端仍无光、无回应，未补写具名接收方"
+    },
+    {
+      "fact_id": "chapter-0092-hook-001",
+      "asset_id": "foreshadowing_cinder_seal_rain",
+      "field_path": "hook.current_direction",
+      "operation": "set",
+      "before": "原始交接复核先追验送出端，再等待接收响应",
+      "after": "送出端半圈旧光已亮起但接收端持续黑暗，后续仍需等待未知回应"
+    },
+    {
+      "fact_id": "chapter-0092-timeline-001",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "timeline.chapter_event",
+      "operation": "set",
+      "before": "陆沉渊拒绝交印并启动原始转运交接复核",
+      "after": "陆沉渊与闻照微完成不移交所有权的临时共持，残印进入核验位但未移交"
+    },
+    {
+      "fact_id": "chapter-0092-physical-001",
+      "asset_id": "state_ledger_protagonist_strain",
+      "field_path": "state_ledger.bone_fissure_severity",
+      "operation": "set",
+      "before": "胸口旧裂存在，左腿已失稳",
+      "after": "胸口旧裂被震力进一步撬裂，左腿彻底失去承重能力"
+    },
+    {
+      "fact_id": "chapter-0092-physical-002",
+      "asset_id": "state_ledger_protagonist_strain",
+      "field_path": "state_ledger.current_visible_condition",
+      "operation": "set",
+      "before": "左眼无法辨清纹路，左腿失稳，右臂失去知觉，掌心出血并咳出带血灰沫",
+      "after": "左眼光线更暗并灼痛，左腿无法支撑，右臂仍无知觉，掌心持续渗血，咳出的灰沫带更明显血丝"
+    }
+  ],
+  "resolved_audit_ids": []
+}

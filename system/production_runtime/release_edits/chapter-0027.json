@@ -1,0 +1,14 @@
+{
+  "version": "0.25",
+  "chapter_id": "chapter-0027",
+  "source_revision": "system/production_runtime/chapters/chapter-0027/revision.md",
+  "source_sha256": "06589819adfed5b681c678f77611660d14ca11114a528891ab2ed7b995724b1b",
+  "release_edit": "system/production_runtime/release_edits/chapter-0027.md",
+  "release_edit_sha256": "2a8228bb0f0cfaeec394736ec5f8fc7bcb5ad1871c214c25852ab9a1e0bc1403",
+  "repair_direction": "减少连续窗口中反复出现的胸骨旧裂闷响、左腿或左膝麻木、手腕冷痕、咳冷灰等固定组合；伤病状态仍须保留，但每章只选与现场动作直接相关的一两项后果，以呼吸受限、重心选择、触觉失真、动作失败或环境交互等不同方式呈现，不得新增伤势或状态变化。保持三户先救人、临街屋失用、护阵完整度下降、残命灯盏压在可追溯屋基下、银灰木屑进入次日复核不变。",
+  "provider": "antigravity",
+  "model": "Claude Opus 4.6 (Thinking)",
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-021-030.json",
+  "reviewed_release_edit_sha256": "2a8228bb0f0cfaeec394736ec5f8fc7bcb5ad1871c214c25852ab9a1e0bc1403"
+}

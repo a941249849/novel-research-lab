@@ -1,0 +1,160 @@
+I will list the files in the workspace directory to verify the location of the bounded chunk file and understand the project structure.
+I will list the contents of the `.nrl-work/deep_read_v0.18/chunks/` directory to locate our targeted chunk file.
+I will read the script `scratch_verify_data_v018.py` to see if there are any existing helper scripts or routines for extracting headings or validating files in this workspace.
+I will write a python script to parse and print all chapter headings present in our bounded chunk file `.nrl-work/deep_read_v0.18/chunks/book-08-322e84872b22-chunk-010.txt` to verify the exact chapter span and headings.
+I will run the inspection script inside the terminal sandbox to list all the chapter headings and their line numbers from the bounded chunk file.
+I will view the beginning of the bounded chunk file to see the text before the first heading and confirm the exact start chapter.
+I will view the end of the bounded chunk file to check the final chapter and see if there are any post-finale lines, author notes, or text.
+I will write a python script to extract the first 3 lines of each chapter to understand the context and flow of the major events in the bounded chunk.
+I will run the chapter sampling script to get a comprehensive view of the beginning of every chapter in this final chunk of the novel.
+I will write a python script to extract the previews for the chapters from `第1948章 战三大仙王` up to `第1993章 三帝出击` to ensure we have a complete grasp of the entire narrative arc in this chunk.
+I will run the first-half chapter preview script to get details about the early chapters of the chunk.
+I will write another script to specifically print the previews for the first 30 chapters (Chapter 1948 to Chapter 1977) to ensure we capture the details of the initial battle with the three Immortal Kings, the journey into the burial ground, and the breakthrough.
+I will run the early chapter listing script to inspect the contents of chapters 1948 to 1977.
+I will write a script to extract the previews for the first 8 chapters (Chapters 1948 to 1955) of the chunk to have the complete picture of this part of the novel.
+I will run the early chapter preview script to inspect the contents of chapters 1948 to 1955.
+I will write a python script to search for specific key plot points (e.g. the sacrifice of Shi Yi and Qin Hao, the identity of the World-Destroying Elder, the opening of the Burial Land's Origin Artifact, the Corpse Immortal Emperor battle, and the final sword slash) to extract exact details from the text.
+I will run the query script to inspect the text snippets regarding the character sacrifices (Shi Yi, Qin Hao, Little Stone) and the World-Destroying Elder.
+I will write a python script to search specifically for the details of the sacrifices of Shi Yi, Qin Hao, and Little Stone in chapters 2001-2003 to make sure we accurately capture how and why they sacrificed themselves.
+I will run the script to query the exact lines containing references to the sacrifices of Shi Yi, Qin Hao, Little Stone, and the blood sacrifices in Chapters 2001 to 2003.
+I will write a python script to validate the final JSON format to ensure there are no syntax errors, all required keys exist, and the array lengths meet the contract requirements.
+I will run the validation script to verify the format of the outputted JSON structure.
+```json
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "chunk_id": "book-08-322e84872b22-chunk-010",
+  "source_file": "novel_training_set/《完美世界》（校对版全本）作者：辰东.txt",
+  "source_file_sha256": "322e84872b2259d9210f84de63efd70d901a412dfefbe9bb9d52168eea56d481",
+  "start_byte": 13500405,
+  "end_byte": 14053175,
+  "chunk_sha256": "c34e729583fc32c9401ad9723f41d0619803050492561a412182e99458293945",
+  "source_encoding": "gb18030",
+  "bounded_chunk_utf8_sha256": "3f1f8937070fe161741b51f7fb5cfe9005b0e211d016dca113b62de0628158c7",
+  "analysis": {
+    "chapter_span": [
+      "第1948章 战三大仙王",
+      "第2015章 独断万古（大结局）"
+    ],
+    "major_events": [
+      "In [第1948章 战三大仙王], Shi Hao returns after a 500,000-year absence, revealing to the Immortal Realm that he is alive and has attained the Immortal King level, and immediately challenges his adversaries Ao Sheng, Taishi, and Yuanchu.",
+      "In [第1949章 镇压三王], Shi Hao exhibits absolute dominance by suppressing the three Immortal Kings, severing their physical bodies, and refusing to grant them mercy despite their status.",
+      "In [第1950章 六大仙王], other Immortal Kings intervene, while Shi Hao's followers, who had been hunted by the three kings' clans, gather to welcome him and recount their decades of hiding under Pan Wang's protection.",
+      "In [第1952章 大因果], Shi Hao leaves the Immortal Realm to seek vengeance in the Foreign Realm, aiming to fulfill his vow of killing a third king to complete his tally.",
+      "In [第1953章 曾于岁月长河中见], Shi Hao encounters the giant Chi Wang in the Foreign Realm, recalling how they previously crossed paths in the River of Time.",
+      "In [第1954章 杀出异域], Shi Hao faces a massive pursuit by eight or more Unyielding Kings (不朽之王) as he battles his way out of the Foreign Realm.",
+      "In [第1955章 谁敢一战], Shi Hao stands at the border gate, defiantly challenging the Foreign Realm's kings, including Anlan and Yutuo, after killing two of their kings.",
+      "In [第1960章 古丹复活仙王], Shi Hao uses the furnace of Hunyuan Xianwang to refine an ancient pill in the Foreign Realm, triggering resonance and visions across universes.",
+      "In [第1961章 目瞪口呆], the refined pill successfully resurrects the ancient Immortal Kings Tianxia Di'er (bird爷) and Xianjin Daoren (jingbi大爷).",
+      "In [第1967章 异域起源古器], Kundi leads Shi Hao into a trap by activating the Foreign Realm's Origin Ancient Artifact, which threatens to melt his soul and body.",
+      "In [第1968章 只身杀出], Shi Hao successfully breaks through the melting light of the Origin Ancient Artifact and escapes the trap.",
+      "In [第1976章 冠], Shi Hao and the Burial Ground lords open the Burial Ground's Origin Ancient Artifact, and a blinding, highly lethal crown emerges, severely wounding Shi Hao.",
+      "In [第1980章 杀到世上无人敢称尊], Shi Hao undergoes a breakthrough to the Quasi-Immortal Emperor realm while under attack by multiple giants, sweeps the enemies, and wounds Kundi.",
+      "In [第1981章 一战平异域], Shi Hao single-handedly defeats and pacifies the Foreign Realm, causing Kundi to flee and other Unyielding Kings to scatter.",
+      "In [第1982章 慑天下], Gu Zu (蛄祖), who had lived as a double agent under immense infamy, sacrifices his life to assist Shi Hao, dying with his honor restored.",
+      "In [第1986章 一行淡淡的脚印], Shi Hao's close friends Tuogu Yulong and his wife die, and Shi Hao finds a line of faint footprints left by a predecessor on the dam.",
+      "In [第1991章 准仙帝战], Shi Hao crosses the Boundary Sea and encounters Emperor Cang, initiating the clash of Quasi-Immortal Emperors.",
+      "In [第1993章 三帝出击], two more Quasi-Immortal Emperors, Emperor Hong and Emperor Yu, join Emperor Cang to besiege Shi Hao.",
+      "In [第1998章 最后的柳神], the Dark Liu Shen and the charred willow trunk sacrifice themselves to buy time for Shi Hao by fighting Emperor Yu.",
+      "In [第2001章 石氏兄弟], during a critical moment in the 30,000-year battle, Qin Hao and Shi Yi decide to sacrifice their blood to restore Shi Hao's vitality, as they both contain a piece of Shi Hao's original blood.",
+      "In [第2003章 极尽蜕变], Shi Hao's son (Little Stone) sacrifices his life and soul-blood to rejuvenate Shi Hao, triggering his final extreme breakthrough.",
+      "In [第2004章 灭世老人], the oldest Quasi-Immortal Emperor, the World-Destroying Elder, awakens and joins the siege against Shi Hao.",
+      "In [第2014章 平定黑祸], Shi Hao successfully slays the Corpse Immortal Emperor using the Hehua Zizai method, ending the eternal threat of dark corruption.",
+      "In [第2015章 独断万古（大结局）], Shi Hao returns to the Immortal Realm, revives some of his friends, takes Huo Ling'er and Willow Shen with him, and slashes the Boundary Sea with his sword to isolate the lower realms from the battles in '上苍之上', '独断万古'."
+    ],
+    "character_state_transitions": [
+      "Shi Hao: Dead or dormant ex-prodigy in the memories of others -> Restored to life as an Immortal King who dominates his enemies in [第1948章 战三大仙王] and [第1949章 镇压三王].",
+      "Shi Hao: Immortal King struggling to survive against the Foreign Realm giants -> Quasi-Immortal Emperor who sweeps the Foreign Realm in [第1980章 杀到世上无人敢称尊] and [第1981章 一战平异域].",
+      "Shi Hao: Quasi-Immortal Emperor who is besieged and exhausted -> Absolute Immortal Emperor (荒天帝) who defeats the Corpse Immortal Emperor in [第2013章 不属于这片古史] and [第2014章 平定黑祸].",
+      "Ao Sheng: Domineering and arrogant Immortal King in the Immortal Realm -> Suppressed, broken, and helpless captive of Shi Hao in [第1949章 镇压三王].",
+      "Tianxia Di'er (Bird爷): A shattered, amnesic residual soul in the Void God Realm -> A fully resurrected and restored Immortal King in [第1961章 目瞪口呆].",
+      "Xianjin Daoren (Jingbi大爷): A shattered, amnesic residual soul in the Void God Realm -> A fully resurrected and restored Immortal King in [第1961章 目瞪口呆].",
+      "Gu Zu (蛄祖): A 'traitor' hated by the 9 Heavens and 10 Earths -> A redeemed hero who dies for the cause after killing enemies in [第1982章 慑天下].",
+      "Qin Hao: An ambitious youth struggling under his brother's shadow -> A selfless martyr who sacrifices his blood to restore Shi Hao's life force in [第2001章 石氏兄弟].",
+      "Shi Yi: The proud rival and cousin who once fought Shi Hao for the 至尊骨 -> A noble ally who returns his blood-indebtedness by sacrificing himself in [第2002章 异变].",
+      "Little Stone (小石头): A promising young cultivator protected by the 800 soldiers -> A self-sacrificing son who blood-sacrifices himself to help his father win the war in [第2003章 极尽蜕变].",
+      "Huo Ling'er: A lost, dark-corrupted captive of the foreign forces -> Rescued companion who returns to her senses and joins Shi Hao in [第1994章 庇护] and [第2015章 独断万古（大结局）].",
+      "Cang Emperor (苍帝): An absolute ruler who treats the universes as his sacrifices -> A suppressed and sealed soul inside Shi Hao's Law Pool in [第2007章 镇压准仙帝] and [第2009章 无法绝情]."
+    ],
+    "long_form_mechanisms": [
+      {
+        "name": "Hehua Zizai Method (他化自在法)",
+        "description": "The ultimate technique used by Shi Hao to project past, present, and future clones of himself and other supreme beings to fight simultaneously, which allows him to overcome multiple Quasi-Immortal Emperors and the Corpse Immortal Emperor. [第2012章 他化自在者], [第2013章 不属于这片古史]"
+      },
+      {
+        "name": "Origin Ancient Artifact (起源古器)",
+        "description": "Extremely powerful chests (like the one in the Foreign Realm and the one in the Burial Land) containing artifacts left by supreme beings. When opened, they release a blinding, corrosive light (like the crown) that can assimilate, corrupt, or destroy Immortal Kings, but also catalyze their evolution under extreme circumstances. [第1967章 异域起源古器], [第1976章 冠]"
+      },
+      {
+        "name": "Blood Sacrifice for Restoration (真血献祭)",
+        "description": "A mechanism by which individuals who carry a portion of the protagonist's original blood (or close descendants) can blood-sacrifice their own lives and souls to feed back into the protagonist, instantly restoring his depleted life force and enabling a combat breakthrough. [第2001章 石氏兄弟], [第2003章 极尽蜕变]"
+      },
+      {
+        "name": "The Law Pool and Emperor Sword (法则池与仙帝剑)",
+        "description": "Shi Hao's custom-refined weapons. The Law Pool is used to capture and refine the souls of Quasi-Immortal Emperors, while the Emperor Sword is reinforced by melting other Quasi-Immortal Emperor weapons and the Daluo Sword Embryo. [第1983章 荒的兵器], [第2009章 无法绝情], [第2015章 独断万古（大结局）]"
+      },
+      {
+        "name": "Above the Heavens (上苍之上)",
+        "description": "A higher plane of existence beyond the Boundary Sea, from which the dark corruption (black blood) originally dripped down, corrupting the Corpse Immortal Emperor. It represents the ultimate battlefield and source of all karma. [第2011章 黑暗源头], [第2015章 独断万古（大结局）]"
+      },
+      {
+        "name": "The Boundary Sea (界海)",
+        "description": "A vast ocean composed of countless destroyed worlds and timelines, through which cultivators must cross to reach the ultimate ancient land, experiencing time-dilation and hostile forces. [第1963章 最可怕大动乱的成因], [第1988章 界海尽头]"
+      },
+      {
+        "name": "Quasi-Immortal Emperor / Immortal Emperor Breakthrough (准仙帝/仙帝蜕变)",
+        "description": "The process of breaking through to the Quasi-Immortal Emperor and Immortal Emperor realms, which requires an absolute refinement of one's system (e.g. 'body as a seed'), extreme combat pressure, and often a process of self-immolation and rebirth from ashes. [第1977章 忍而突破], [第2003章 极尽蜕变]"
+      },
+      {
+        "name": "Ancient Pill Resurrection (古丹复活)",
+        "description": "The method of refining supreme materials using the Hunyuan furnace to create a pill capable of reconstructing the physical body and gathering the scattered souls of fallen Immortal Kings, restoring them to full life. [第1960章 古丹复活仙王], [第1961章 目瞪口呆]"
+      },
+      {
+        "name": "Daluo Sword Embryo (大罗剑胎)",
+        "description": "A mysterious sword embryo that contains a small casket and has a history of bringing misfortune to its owners, as it originally belonged to the Corpse Immortal Emperor and reflects the scenes of the bloody sunset and graves. [第2013章 不属于这片古史], [第2015章 独断万古（大结局）]"
+      }
+    ],
+    "continuity_observations": [
+      "The mystery of the Origin Ancient Artifacts, which were introduced early in the novel as the source of the Foreign Realm's power and the cause of the war against 九天十地, is resolved when they are opened and shown to contain the items (the crown, etc.) that corrupted the kings. [第1967章 异域起源古器], [第1975章 开启起源古器], [第1976章 冠]",
+      "The long-standing conflict between Shi Hao and the three Immortal Kings of the Immortal Realm (Ao Sheng, Taishi, Yuanchu), who originally assassinated him when he tried to break through, is resolved right at the beginning of the chunk when Shi Hao returns and suppresses them. [第1948章 战三大仙王], [第1949章 镇压三王]",
+      "The true identities of Bird爷 (鳥爺) and Jingbi大爷 (精璧大爺) from the Void God Realm, who were introduced as comic relief amnesiacs in the lower realm, are confirmed to be the fallen Immortal Kings Tianxia Di'er and Xianjin Daoren, who are subsequently resurrected. [第1961章 目瞪口呆], [第1962章 荒的强大]",
+      "The destiny of Gu Zu (蛄祖), who was reviled as a traitor for defecting to the Foreign Realm, is completed when he reveals his loyalty, kills the foreign king, and dies in battle under Shi Hao's witness. [第1982章 慑天下]",
+      "The Daluo Sword Embryo (大罗剑胎), which Shi Hao carried throughout his journey and which had ominous portents of showing a coffin and blood, is revealed to be linked to the Corpse Immortal Emperor and the third coffin of the Three-Life Bronze Coffin. [第2013章 不属于这片古史], [第2015章 独断万古（大结局）]",
+      "The connection between Shi Hao, his brother Qin Hao, and his cousin Shi Yi, who competed fiercely for the 至尊骨 in their youth, culminates in the brothers returning the blood and bones to Shi Hao to save him during the Quasi-Immortal Emperor battle. [第2001章 石氏兄弟], [第2002章 异变]",
+      "Huo Ling'er's fate, who was captured by Anlan during the destruction of Sin Province (罪州) and corrupted by the dark force, is resolved when Shi Hao purifies and rescues her from the dark cage. [第1994章 庇护], [第2015章 独断万古（大结局）]",
+      "The foreshadowing of the footprints on the dam, which Shi Hao first noticed early in his journey to the Boundary Sea, is explained as the path taken by the first Quasi-Immortal Emperor who died in his attempt to stop the dark corruption. [第1986章 一行淡淡的脚印], [第1993章 三帝出击]",
+      "The character of Cao Yusheng (曹雨生), who was buried in the burial earth to survive into the future era (as Duan De in Shading the Heavens), is shown to have completed his burial process with the help of the Burial Ground and Shi Hao. [第1957章 进葬地], [第2015章 独断万古（大结局）]"
+    ],
+    "style_observations": [
+      "Hyperbolic Combat Imagery: The author routinely uses extreme scale descriptors during battles, such as worlds being born and destroyed within waves of the Boundary Sea, or stars falling like dust, to emphasize the god-like power of the Quasi-Immortal Emperors. [第1991章 准仙帝战], [第2013章 不属于这片古史]",
+      "Emotional Leitmotif of Loneliness: There is a heavy repetition of the theme of 'one person's battle' and the tragedy of achieving supreme power only to find all friends and family dead, creating a melancholic tone that contrasts with standard power-fantasy tropes. [第1985章 一个人的天庭], [第2003章 极尽蜕变], [第2015章 独断万古（大结局）]",
+      "Multi-Phase Battle Escalation: The grand battles are structured in phases lasting tens of thousands of years, describing the physical and spiritual degradation of the combatants (resembling skeletons, running out of blood) to emphasize the grueling nature of the conflict. [第1999章 三万年大战], [第2000章 荒天帝]",
+      "Echoing past events via River of Time: The narrative uses the River of Time to allow characters from future novels (such as Ye Fan, Wu Shi, and Ruthless Empress) to appear, establishing a grand cross-novel continuity and providing stylistic links to the author's other works. [第1992章 跨过黑暗], [第2006章 逆乱岁月]",
+      "Contrast between public awe and protagonist's silent grief: The narrative alternates between scenes of the entire world cheering for the 'Huang Heavenly Emperor' and Shi Hao's silent mourning at the graves of his child, brother, and friends, highlighting the cost of victory. [第2015章 独断万古（大结局）]",
+      "Serialized suspense tags in chapter titles: The author uses dramatic, declarative phrases for chapter titles that foreshadow supreme achievements or tragic sacrifices, maintaining reader excitement for the serialization format. [第1980章 杀到世上无人敢称尊], [第2015章 独断万古（大结局）]",
+      "Rhetorical questioning in combat prose: The narrator frequently inserts philosophical questions about invincibility and defeat directly into the combat descriptions to elevate the psychological weight of the battle. [第2014章 平定黑祸]"
+    ],
+    "creation_family_evidence": {
+      "author": "辰东 (Chen Dong)",
+      "protagonist": "石昊 (Shi Hao / 荒)",
+      "key_concepts": [
+        "他化自在大法 (Hehua Zizai Technique)",
+        "界海 (Boundary Sea)",
+        "起源古器 (Origin Ancient Artifact)",
+        "上苍之上 (Above the Heavens)",
+        "荒天帝 (Huang Heavenly Emperor)",
+        "至尊骨 (Supreme Bone)"
+      ],
+      "stylistic_signature": "Features the grand cosmic scale, tragic sacrifices of friends and family, appearance of characters from future books (Ye Fan, Wu Shi, Ruthless Empress) via time travel, and high-stakes serial action characteristic of Chen Dong's Shading the Heavens (遮天) trilogy.",
+      "compilation_indicators": "The chapter headers utilize uniform Chinese numbering format followed by a space and the title (e.g., '第1948章 战三大仙王', '第2015章 独断万古（大结局）') and standard Zhi Xuan Cang Shu (知轩藏书) compilation markings (e.g., '更多精校小说尽在知轩藏书下载：https://zxcs.zip/'), indicating standard web serialization compilation formatting."
+    },
+    "originality_risks": [
+      "Relentless Power Creep: The progression from Immortal Kings to Quasi-Immortal Emperors, and finally to the Corpse Immortal Emperor and the realm of '上苍之上', creates an endless ladder of power scaling that can trivialize previous struggles and achievements. [第1980章 杀到世上无人敢称尊], [第2012章 他化自在者], [第2015章 独断万古（大结局）]",
+      "The Sacrifice-for-Power Trope: Having the protagonist's brother, cousin, and child all sacrifice their blood and lives in succession to restore the protagonist's power and trigger a breakthrough is a highly emotional but formulaic plot device used to resolve otherwise unwinnable battles. [第2001章 石氏兄弟], [第2003章 极尽蜕变]",
+      "Deus ex Machina of Time Travel: The intervention of characters from a future timeline (Ye Fan, Wu Shi, Ruthless Empress) to block future enemies and balance the battlefield introduces temporal paradoxes and can feel like a convenience to resolve the protagonist's isolation. [第1992章 跨过黑暗], [第2005章 从未来杀至], [第2006章 逆乱岁月]",
+      "The Eternal 'Lone Hero' Ending: Ending the epic by having the protagonist leave all his revived companions behind to fight alone in a higher, more dangerous realm ('上苍之上') is a standard xianxia trope that leaves the narrative open-ended but repeats the cycle of isolation. [第2015章 独断万古（大结局）]",
+      "Repetitive Combat Mechanics: Battles between Quasi-Immortal Emperors lasting tens of thousands of years are described using similar nouns (chaos, world-creation, blood, bone destruction) repeatedly, which can lead to fatigue for readers. [第1999章 三万年大战], [第2000章 荒天帝]"
+    ]
+  }
+}
+```

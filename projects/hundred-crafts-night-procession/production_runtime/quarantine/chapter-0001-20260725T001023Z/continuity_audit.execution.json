@@ -1,0 +1,12 @@
+{
+  "version": "0.27",
+  "chapter_id": "chapter-0001",
+  "role": "initial_reviewer",
+  "artifact": "projects/hundred-crafts-night-procession/production_runtime/chapters/chapter-0001/continuity_audit.json",
+  "artifact_sha256": "f9c3d51a10a5434c67392a15f0540ad568f98b4c15518d712d7fe8b845310c8a",
+  "audit_artifact_sha256": "f9c3d51a10a5434c67392a15f0540ad568f98b4c15518d712d7fe8b845310c8a",
+  "revision_sha256": null,
+  "provider": "antigravity",
+  "model": "Gemini 3.5 Flash (High)",
+  "fallback_used": true
+}

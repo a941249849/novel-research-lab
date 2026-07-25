@@ -1,0 +1,80 @@
+{
+  "chapter_id": "chapter-0007",
+  "artifact_kind": "revision",
+  "artifact_sha256": "098bda98b2f595429a2166fe690978a14324a3cb362c27c11138e8c3f1062f4a",
+  "context_sha256": "9d8e5db9fddcde2d205997b10a07e266907837128da6263075ebce51e1b4e101",
+  "verdict": "ACCEPT_WITH_WARNINGS",
+  "dimensions": {
+    "canon": [
+      "All must_keep constraints satisfied: 陆沉渊 remains at 燃命境初成 and explicitly refrains from 识账, using only 肉眼 observation throughout.",
+      "残命灯盏 absent; 州府命库 referenced only as distant pressure through 仇慎's fear of accountability — no full appearance, personnel, or map expansion.",
+      "No must_avoid violations: no public trial, no high-level combat, no permanent settlement, no level-skipping victory; evidence covers only the local segment.",
+      "Scene constraints respected: stage confined to 泥灯巷; ending advances only to next local procedure (明日午前到命籍衙) with 仇慎's return footsteps as immediate forward pressure.",
+      "Minor concern: unnamed 衙役 accompanies 仇慎 — functionally silent set dressing with no dialogue or action, but technically an unregistered figure."
+    ],
+    "character": [
+      "陆沉渊 acts strictly within 燃命境初成 limits: refuses 识账 due to physical deterioration, explicitly states '我只能看这么多', bears visible bodily evidence (焦纹, 黑屑, 掌骨疼痛), and does not transfer life-cost to any uninvolved party.",
+      "苏晚 is a fully active moral agent: refuses lamp inspection ('我不验灯'), demands community lamps be left alone ('别动巷里人的灯'), physically intervenes to support her son without crossing procedural or evidence lines. Sensory consequences (暗冷光 on paper contact) rendered through bodily detail.",
+      "仇慎 motivated by self-preservation — protecting stamp authority, fearing 州府 accountability if local pages prove sequentially unsound — rather than arbitrary malice. His fear dramatized through the blood-groove on his thumb, the unfinished stamp pause, and the admission '我怕它落不到该落的人手里'. Not auto-whitewashed: he still attempts to coerce 莫井兰's testimony into a fourth sentence.",
+      "莫井兰's testimony boundary ('听见不等于看见') is the chapter's pivotal constraint: partial oral memory, never omniscient, exposure to collection acknowledged through her continued possession of the 陶片.",
+      "顾婶 maintains consistent prior presence from ch1–ch6, limits recognition to what she personally witnessed ('谁若让我认别的，我不认'), and echoes 仇慎's self-interest back at him without gaining unearned moral authority."
+    ],
+    "state": [
+      "protagonist_strain: eye burn progresses logically from ch6 (焦纹至颧骨 → 烧到眉骨, 持续流落黑屑, 半边脸麻); bone fissure continues (胸骨裂口感, 掌骨疼痛沿骨上钻); cold_ash_cough notably absent — replaced by eye-shedding as primary visible cost. Valid symptom-presentation shift, not a silent recovery.",
+      "half_life_registry_exposure: 掌纹暗红印线 continues from ch6; new paper contact triggers 暗红细线绕指根结圈, consistent deepening without unauthorized sole-writer violation.",
+      "mother_life_lamp_countdown: 苏晚's 暗冷光 manifests upon paper contact, consistent with ch6 裂口渗出暗冷光; no healing, crack cancellation, or debt relief occurs.",
+      "mudlamp_array_integrity: lamp remains at fire-spark level from ch6; 黑点 拖出第二道细线 toward 灯座裂口 then retracts — degradation trajectory continues without repair or emergency power grant.",
+      "resident_lifefire_reserve: no resident life-fire consumed; residents explicitly protect own lamps (摘灯罩退回屋内, 抱孩子, 撤下灯罩); named consent and refusal rights preserved throughout.",
+      "revealed_account_errors: evidence advances incrementally — 陆沉渊's three-trace observation layered with 莫井兰's two-trace confirmation creates a gap that prevents the combined testimony from crossing the 改账 threshold. 'Incomplete error chain' status matches dramatic purpose. No implicit credit or debit created.",
+      "poorcity_returnfire: no return-fire event in this chapter; consistent with scene where no 识账 or 归火术 is performed.",
+      "faction_pressure: procedural pressure maintained through 仇慎's escalating demands (陶片入封 → 缺一续记 → 折返巷口); no new faction or location introduced to justify pressure change.",
+      "No sole-writer violations detected across any ledger asset."
+    ],
+    "causality": [
+      "陆沉渊's three-trace肉眼 observation costs: continued physical deterioration (eye burn extending to brow, black flakes shedding visibly, palm-bone pain with 暗红线 deepening), procedural exposure (在场认痕 persists, new paper binds further), and the gain is explicitly bounded ('我只能看这么多', '不能说明是谁落的').",
+      "莫井兰 retains 陶片 → must appear tomorrow with it at 命籍衙, increasing her exposure to collection; her refusal to add a fourth sentence costs the local record a complete three-party confirmation.",
+      "Community gains procedural delay (today is only delivery, 陶片 not confiscated) → cost is tighter deadline (明日午前), 仇慎's ominous return to lane entrance, and the 无证护阵 charge hanging over the lane.",
+      "苏晚 accepts the paper → her 暗冷光 manifests on contact, physical cost immediately visible; her refusal to undergo lamp inspection will be recorded as续记.",
+      "Every gain is bound to a return-object (陶片), a named bearer (陆沉渊/莫井兰/顾婶), and an observable consequence (缺一按拒验续记, 仇慎折返)."
+    ],
+    "pacing": [
+      "Dramatic purpose fully achieved: local executor and residents each expose distinct, individually motivated fears; protagonist obtains a verifiable but incomplete error chain that stops at '陶片在场'.",
+      "Tension escalates through dialogue negotiation and procedural maneuvering — appropriate for a chapter whose purpose is exposing fears and interests rather than resolving them.",
+      "Ending advances precisely to next local procedure (明日午前到命籍衙) without changing map; 仇慎's returning footsteps and the un-posted追缴纸 create immediate forward pressure without premature resolution.",
+      "No dead scenes; each exchange (莫井兰 vs 仇慎 on陶片, residents' 记/认 distinction, 顾婶's counter-mirror) shifts procedural stakes and reveals character position."
+    ],
+    "life_force": [
+      "No community trust, child life-fire, resident life-fire, or third-party life-fire consumed as resource anywhere in the chapter.",
+      "Residents exercise explicit refusal rights throughout: removing lamp covers, distinguishing 记 from 认, refusing to 认灰, and limiting testimony to personal observation.",
+      "苏晚's moral boundary actively enforced: '别动巷里人的灯' directly constrains 仇慎's options.",
+      "Physical costs embodied through sensory detail (焦纹烧到眉骨, 黑屑冒烟, 暗冷光透布, 拇指血口被印缝暗红吸住) rather than abstract health-bar descriptions."
+    ],
+    "anti_ai_taste": [
+      "Dialogue is distinct per character: 莫井兰's flat declaratives ('那便不入'), 仇慎's procedural escalation ('缺物续拒验；拒交毁证'), 苏晚's compressed directives ('别蹲了', '拿好'), residents' fearful pragmatism ('记的是我说过，认的是我担着').",
+      "The 记/认 distinction is a genuine dramatic insight arising from the community's survival logic, not a manufactured wisdom-aphorism.",
+      "Thematic resonance ('两种害怕挤在同一条窄巷里') is earned through accumulated scene tension across the full exchange rather than dropped in as narrator commentary.",
+      "Sensory specifics (木片结冷霜, 黑屑落旧砖冒细烟, 纸纤维向两侧起翘) ground the supernatural in tactile observation and avoid abstraction.",
+      "Ending image (错账链停在'陶片在场'旁) integrates metaphor with plot mechanics without overstatement; the chain is literally a line of cold ash on paper, not a narrator's philosophical remark.",
+      "No three-beat rhetorical lists, no 'weight of' constructions, no narrator-omniscient emotional declarations."
+    ],
+    "originality": [
+      "No source-work names, scenes, signature systems, or prose imitation detected.",
+      "The procedural negotiation structure (记 vs 认, 听见 vs 看见, 入封 vs 携带在场) is internally generated from the world's bureaucratic logic and the characters' survival calculus.",
+      "Supernatural residue behavior (灰避开印落点, 木片结霜, 黑线回缩) consistent with established system mechanics from prior chapters."
+    ]
+  },
+  "issues": [
+    {
+      "issue_id": "ch7-warn-001",
+      "severity": "minor",
+      "evidence": "仇慎 arrives with '一名衙役模样的本地执行者' — an unnamed, non-speaking, non-acting figure absent from the asset roster. This person performs no action, speaks no line, and influences no state, functioning as pure set dressing. Technically violates '不得引入未登记人物' at the most literal reading. Recommend either removing or registering as background staff of 命籍衙 in the faction asset if retained in future chapters.",
+      "required_fix": "No corrective action supplied; retain as a non-blocking review note."
+    },
+    {
+      "issue_id": "ch7-warn-002",
+      "severity": "minor",
+      "evidence": "The 木片 frost effect (木片边缘结出冷霜) when touching 灯座灰痕 sits at the boundary between passive sensory observation and active technique engagement. The text clearly establishes 陆沉渊 does not invoke 识账 — the frost is presented as the ash's inherent supernatural property rather than his technique output. Narratively sound for this chapter, but future installments should not escalate this into a cost-free diagnostic substitute for 识账 or it risks circumventing the 燃命境初成 scope lock.",
+      "required_fix": "No corrective action supplied; retain as a non-blocking review note."
+    }
+  ]
+}

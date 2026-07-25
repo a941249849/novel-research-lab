@@ -1,0 +1,13 @@
+{
+  "version": "0.24",
+  "project": "《借天改命账》",
+  "status": "active_production_governed",
+  "contract_path": "system/production_runtime/plans/borrowed_heaven_longform_contract.v0.1.json",
+  "first100_manifest_path": "system/production_runtime/plans/borrowed_heaven_first100_manifest.v0.1.json",
+  "owner_scope": "borrowed-heaven-longform-v024",
+  "prose_allowed": true,
+  "authorized_chapter_range": [11, 100],
+  "accepted_chapter_range": [1, 20],
+  "story_window_contract_required": true,
+  "next_required_gate": "story_window_021_030_compilation"
+}

@@ -1,0 +1,30 @@
+{
+  "chapter_id": "chapter-0002",
+  "dramatic_purpose": "现代加固看似成功，却把暗载转移到相邻戏楼。",
+  "must_keep": [
+    "戏楼成为新的受损节点，工程不能按原计划复工。",
+    "POV 固定为程雪青"
+  ],
+  "must_avoid": [
+    "不得引入未登记资产或用旁白代替物质行动",
+    "不得回滚已接受状态"
+  ],
+  "expected_state_deltas": [
+    {
+      "state_id": "v1.ch002.outcome",
+      "asset_id": "char_cheng_xueqing",
+      "field_path": "character.current_state",
+      "after": "戏楼成为新的受损节点，工程不能按原计划复工。",
+      "before": "active"
+    }
+  ],
+  "required_asset_ids": [
+    "char_cheng_xueqing",
+    "artifact_unnamed_beam",
+    "ledger_structural_load"
+  ],
+  "active_hook_ids": [],
+  "scene_constraints": [
+    "冲突必须落在具体工艺现场、物证或受影响者选择上"
+  ]
+}

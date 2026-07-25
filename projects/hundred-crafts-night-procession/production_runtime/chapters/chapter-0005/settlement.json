@@ -1,0 +1,17 @@
+{
+  "chapter_id": "chapter-0005",
+  "accepted_revision_sha256": "990c891716e06a24f0a119d52f555dc3e5302baff46646d00c2c03541be77c45",
+  "state_deltas": [
+    {
+      "fact_id": "fact-ch005-001",
+      "asset_id": "char_zhou_li",
+      "field_path": "character.current_state",
+      "operation": "set",
+      "before": "事故记录出现周砺父亲周永直的签名。",
+      "after": "团队错过第一次封闭窗口，但保住周砺的身份自主权。"
+    }
+  ],
+  "resolved_audit_ids": [
+    "CH005-TEMPORAL-CAUSALITY-001"
+  ]
+}

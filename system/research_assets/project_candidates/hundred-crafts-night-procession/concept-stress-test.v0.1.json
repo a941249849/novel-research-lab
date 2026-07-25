@@ -1,0 +1,223 @@
+{
+  "version": "0.1",
+  "candidate_id": "hundred-crafts-night-procession",
+  "status": "concept_stress_test",
+  "prose_authorized": false,
+  "power_system": {
+    "name": "百工维修律",
+    "design_rule": "能力不按境界直线上升，而按能否完成真实工序、协调更多责任主体并留下可追责结果来增长。",
+    "competency_axes": [
+      {
+        "axis": "识材",
+        "meaning": "判断材料来源、结构、损伤与可逆性",
+        "failure": "认错材料会把表面修复变成深层破坏"
+      },
+      {
+        "axis": "验损",
+        "meaning": "区分原始损伤、历史修补和仍在扩散的风险",
+        "failure": "只修可见部分会让暗载继续累积"
+      },
+      {
+        "axis": "成序",
+        "meaning": "完整执行工序并理解每一步为何存在",
+        "failure": "跳步会让权能短暂成功但不可维护"
+      },
+      {
+        "axis": "合手",
+        "meaning": "让不同工种、工具和受影响者在同一责任链协作",
+        "failure": "单人强行修复会把他人变成无知情承重者"
+      },
+      {
+        "axis": "分载",
+        "meaning": "在结构、人和时间之间重新分配损伤",
+        "failure": "超出承受范围会产生新的暗载"
+      },
+      {
+        "axis": "留档",
+        "meaning": "记录改动、代价、维护期限、异议和退出条件",
+        "failure": "没有档案的成功修复会成为下一代无法解释的灾难"
+      }
+    ],
+    "work_roles": [
+      {
+        "role": "见习",
+        "fictional_term": true,
+        "authority": "在监督下处理单一材料和可逆损伤"
+      },
+      {
+        "role": "成手",
+        "fictional_term": true,
+        "authority": "独立完成一套工序并承担返修责任"
+      },
+      {
+        "role": "主作",
+        "fictional_term": true,
+        "authority": "协调跨工种修复并签署责任账"
+      },
+      {
+        "role": "总验",
+        "fictional_term": true,
+        "authority": "有权叫停公共工程、公开暗载并组织复核"
+      }
+    ],
+    "hard_constraints": [
+      "材料、工序、知情同意三项缺一不可。",
+      "修复不能凭空增加总承载能力，只能重组、补充或延期。",
+      "任何隔离都必须标明开启条件和最终处理人。",
+      "任何身份授权都同时附带角色义务和卸装程序。",
+      "主角不能兼通所有工艺，关键修复必须依赖他人。",
+      "身体代价不是唯一代价，时间、信用、材料、关系和公共风险同样入账。"
+    ]
+  },
+  "core_ensemble": [
+    {
+      "character_id": "zhou-li",
+      "name": "周砺",
+      "role": "古建修复见习，第一视角核心",
+      "desire": "证明父亲拆毁城市节点不是单纯失职，并保住即将解散的修复班组。",
+      "fear": "自己终有一天也会以大局为名替别人决定牺牲。",
+      "false_belief": "只要修复结果正确，过程中的隐瞒可以以后解释。",
+      "craft_strength": "对结构受力和旧修痕迹异常敏感，能发现损伤被转嫁的方向。",
+      "craft_limit": "缺乏独立主作经验，不能单独决定公共建筑修复。",
+      "responsibility_conflict": "恢复父亲名誉与公开父亲造成的现实危险不可兼得。",
+      "independent_arc": "从寻找无罪证据，转向公开完整责任账并承担父亲错误的一部分，但拒绝继承父亲替所有人决断的方式。"
+    },
+    {
+      "character_id": "cheng-xueqing",
+      "name": "程雪青",
+      "role": "材料检测工程师，城市更新项目技术负责人",
+      "desire": "建立任何人经过训练都能复核的维修标准，摆脱靠秘传和经验垄断安全的行业。",
+      "fear": "无法量化的经验再次导致事故，却无人能够问责。",
+      "false_belief": "不能进入仪器和标准的数据，就不应进入公共决策。",
+      "craft_strength": "材料检测、失效分析和现代工程档案。",
+      "craft_limit": "仪器能看见物理损伤，却暂时无法识别由关系和承诺形成的暗载。",
+      "responsibility_conflict": "她负责的新工程确实更安全，却在施工中切断旧节点的兜底链。",
+      "independent_arc": "不是放弃科学，而是推动标准增加异议、地方经验和全生命周期责任字段。"
+    },
+    {
+      "character_id": "du-chengli",
+      "name": "杜承礼",
+      "role": "盔头制作第五代传人，兼任剧团盔箱师傅",
+      "desire": "让剧装制作脱离廉价道具供应链，重新成为有署名、有维护费用的专业。",
+      "fear": "技艺只能靠表演苦难和家族牺牲换取关注。",
+      "false_belief": "守住全部旧规矩，行业就不会消失。",
+      "craft_strength": "能识别角色残留并完成授权、卸装和盔箱隔离。",
+      "craft_limit": "无法替演员承担角色义务，也不能跨剧种擅自解释程式。",
+      "responsibility_conflict": "为了保住剧团，他长期默许用无署名复制品替代真正行头。",
+      "independent_arc": "建立跨院团的剧装维护档案和合理复制制度，承认传承可以改变但不能抹掉作者与责任。"
+    },
+    {
+      "character_id": "lin-dai",
+      "name": "林岱",
+      "role": "停业木船厂的放样师，兼做内河应急船维修",
+      "desire": "证明水密隔舱和木船经验仍能服务现代应急，而不是只剩文旅表演。",
+      "fear": "自己的全部技能只适合制造纪念品。",
+      "false_belief": "只要船还能浮，封住的问题可以等靠岸再说。",
+      "craft_strength": "船型放样、舱区判断和复杂现场下的风险隔离。",
+      "craft_limit": "擅长争取时间，不擅长处理被隔离后的长期后果。",
+      "responsibility_conflict": "一次成功封舱救了全船，却把危险货物和责任永远留给下游小港。",
+      "independent_arc": "从只保证整体不沉，转向建立每个封舱风险的开启、转运与最终清偿制度。"
+    },
+    {
+      "character_id": "ma-xiaoman",
+      "name": "马小满",
+      "role": "古钟表修复师与责任账复核员",
+      "desire": "让修复行业接受完整记录、同行复核和失败公开。",
+      "fear": "公开失误会摧毁本已脆弱的传承信誉。",
+      "false_belief": "只要档案足够完整，责任就会自然得到公正处理。",
+      "craft_strength": "拆解记录、机械时序和跨年代修补层识别。",
+      "craft_limit": "可以还原过程，却无法替社会决定什么代价是公平的。",
+      "responsibility_conflict": "她保存着周砺父亲事故的完整记录，却受保密责任约束。",
+      "independent_arc": "推动责任账从内部技术文档变成受影响者可访问、可申诉的公共机制。"
+    }
+  ],
+  "competing_solutions": [
+    {
+      "solution_id": "restore-and-compensate",
+      "advocate": "城市公共维护署",
+      "proposal": "恢复旧百工枢，同时建立合法的有偿承重制度和保险基金。",
+      "real_public_benefit": "能最快恢复城市防灾能力，并让部分过去无偿的牺牲获得补偿。",
+      "structural_risk": "经济压力会把同一批人反复推入承重市场，自愿可能只是贫困的另一种表达。"
+    },
+    {
+      "solution_id": "phase-out-and-redundancy",
+      "advocate": "新工程联合体",
+      "proposal": "逐步关闭百工枢，以现代材料、监测和多重冗余替代旧超凡系统。",
+      "real_public_benefit": "减少秘传垄断，提升可复制性、透明度和日常安全。",
+      "structural_risk": "极端灾害兜底能力尚未成熟，停用期间的风险仍会落到边缘社区。"
+    },
+    {
+      "solution_id": "local-craft-sovereignty",
+      "advocate": "地方工社联盟",
+      "proposal": "把节点控制权归还地方社区，各地自行决定工艺、代价和准入。",
+      "real_public_benefit": "保护地域知识，让承重者与受益者重新彼此可见。",
+      "structural_risk": "地方权威可能重新形成封闭家族、排外规则和跨区域协作失败。"
+    },
+    {
+      "solution_id": "total-reset",
+      "advocate": "归零议会",
+      "proposal": "利用损潮一次性解除全部历史责任账，让文明从无暗载状态重新开始。",
+      "real_public_benefit": "可以终止无法偿还、无法追责的继承性债务。",
+      "structural_risk": "重置也会抹去现有关系、公共设施、技能记忆和弱者仅存的权利凭证。"
+    }
+  ],
+  "fifteen_volume_mechanism_evolution": [
+    {"volume": 1, "mechanism": "识别暗载", "change": "从修物转为追踪损伤被转嫁的方向"},
+    {"volume": 2, "mechanism": "身份授权", "change": "权能必须同时授予角色义务和卸装条件"},
+    {"volume": 3, "mechanism": "风险隔舱", "change": "解决眼前灾害但生成必须清偿的封舱债"},
+    {"volume": 4, "mechanism": "责任留档", "change": "修复结果首次允许受影响者异议和复核"},
+    {"volume": 5, "mechanism": "尺度冲突", "change": "统一标准与地方经验第一次正面碰撞"},
+    {"volume": 6, "mechanism": "窑变与不可逆", "change": "团队必须接受某些材料变化无法恢复原状"},
+    {"volume": 7, "mechanism": "减材选择", "change": "石作证明修复有时必须永久去除一部分历史"},
+    {"volume": 8, "mechanism": "纹样协作", "change": "织造把多人记忆编入同一结构，也暴露谁被排除"},
+    {"volume": 9, "mechanism": "材料转性", "change": "医药炮制引入效用与毒性同源的制度代价"},
+    {"volume": 10, "mechanism": "时间校准", "change": "不同地区责任账的维护期限开始互相冲突"},
+    {"volume": 11, "mechanism": "区域互认", "change": "地方工谱建立可互操作但可保留差异的协议"},
+    {"volume": 12, "mechanism": "材料供应链", "change": "修复所需资源本身制造新的环境和劳动暗载"},
+    {"volume": 13, "mechanism": "公共授权", "change": "受益者、承重者和未来维护者共同决定重大修复"},
+    {"volume": 14, "mechanism": "历史审计", "change": "全国旧账公开，偿还不再等于追究个人血债"},
+    {"volume": 15, "mechanism": "可退出的文明维护", "change": "新制度允许拒绝、复核、替换和定期失效，不再追求永恒无损"}
+  ],
+  "first_thirty_chapter_summary": [
+    {"chapter": 1, "function": "午夜退构", "irreversible_change": "地铁工地一根古梁失去所有连接，周砺在事故记录中看见父亲签名"},
+    {"chapter": 2, "function": "错误修复", "irreversible_change": "临时加固把损伤转移到邻近老戏楼"},
+    {"chapter": 3, "function": "责任追踪", "irreversible_change": "程雪青确认新工程数据无误，却承认模型没有旧节点"},
+    {"chapter": 4, "function": "角色出现", "irreversible_change": "戏楼盔箱自行开启，一顶无角色登记的盔头选择周砺"},
+    {"chapter": 5, "function": "拒绝捷径", "irreversible_change": "周砺拒绝直接戴盔，错过第一次封闭异常的机会"},
+    {"chapter": 6, "function": "小高潮一", "irreversible_change": "街区部分建筑退回毛坯状态，维修班组被停职调查"},
+    {"chapter": 7, "function": "盔箱规则", "irreversible_change": "杜承礼为救演员违规启用旧行头并承担角色残留"},
+    {"chapter": 8, "function": "父亲旧档", "irreversible_change": "马小满确认父亲事故存在被封存的第二份修复记录"},
+    {"chapter": 9, "function": "工序合作", "irreversible_change": "现代支撑与旧榫卯首次联合，但需要一名知情承重者"},
+    {"chapter": 10, "function": "代价选择", "irreversible_change": "周砺试图独自承重时被团队叫停，五人首次建立双人复核和强制卸载规则"},
+    {"chapter": 11, "function": "虚假稳定", "irreversible_change": "建筑恢复，戏楼地下却出现持续上涨的封舱水位"},
+    {"chapter": 12, "function": "小高潮二", "irreversible_change": "杜承礼卸装失败，白天仍被城市系统识别成古代守门人"},
+    {"chapter": 13, "function": "引入舟船", "irreversible_change": "林岱判断地下空间不是地窖，而是一艘被建筑包住的旧船体"},
+    {"chapter": 14, "function": "隔舱救险", "irreversible_change": "团队封闭进水舱，保护街区但切断一条地下排洪路"},
+    {"chapter": 15, "function": "利益显形", "irreversible_change": "下游旧社区开始积水，证明局部修复正在外移风险"},
+    {"chapter": 16, "function": "第一次分裂", "irreversible_change": "程雪青要求开启封舱，林岱坚持当前开启会拖垮整个节点"},
+    {"chapter": 17, "function": "公开异议", "irreversible_change": "马小满把居民异议写入责任账，旧系统首次拒绝自动执行"},
+    {"chapter": 18, "function": "中段反转", "irreversible_change": "系统显示周砺父亲当年拆除的正是自动代偿装置"},
+    {"chapter": 19, "function": "父亲非无罪", "irreversible_change": "第二份记录证明父亲知道拆除会扩大现实洪灾"},
+    {"chapter": 20, "function": "公共冲突", "irreversible_change": "上游新城区与下游旧社区同时要求优先保护"},
+    {"chapter": 21, "function": "无完美方案", "irreversible_change": "四种修复方案都被证明会让一方承担不可接受的代价"},
+    {"chapter": 22, "function": "角色重写", "irreversible_change": "杜承礼修改盔头程式，让守门人第一次获得开门权限"},
+    {"chapter": 23, "function": "标准扩容", "irreversible_change": "程雪青把居民口述的旧水线纳入工程模型"},
+    {"chapter": 24, "function": "封舱转运", "irreversible_change": "林岱提出把封舱风险分批转移到可维护的空舱，而非一次排放"},
+    {"chapter": 25, "function": "共同承重", "irreversible_change": "街区居民自主选择短时承重，责任账记录拒绝者不受惩罚"},
+    {"chapter": 26, "function": "主角犯错", "irreversible_change": "周砺隐瞒自身承载上限，团队在新榫受损前截断流程并暂停其签验权限"},
+    {"chapter": 27, "function": "团队纠错", "irreversible_change": "其他四人叫停主角，第一次证明系统不能依赖个人献祭"},
+    {"chapter": 28, "function": "卷首案解法", "irreversible_change": "新旧工程共同形成可拆卸节点，街区获得三年维护期而非永久安全"},
+    {"chapter": 29, "function": "责任公开", "irreversible_change": "父亲完整记录向居民公开，周砺放弃为父亲申请无责认定"},
+    {"chapter": 30, "function": "长线钩子", "irreversible_change": "全国地图同时亮起十二处退构节点，其中一处已被官方标记为不存在"}
+  ],
+  "gate_result": {
+    "power_system_coherent": true,
+    "ensemble_independence_present": true,
+    "antagonistic_solutions_have_real_benefits": true,
+    "fifteen_volume_mechanism_growth_present": true,
+    "first_thirty_chapters_have_irreversible_state_changes": true,
+    "fieldwork_debt_blocks_project_initialization": true,
+    "prose_allowed": false,
+    "next_stage": "fieldwork_and_expert_source_enrichment"
+  }
+}

@@ -2,8 +2,28 @@ from __future__ import annotations
 
 from typing import Any
 
+from nrl_architecture import build_architecture_reconciliation
+from nrl_agent_ops import build_production_runtime_status
+from nrl_asset_producers import build_producer_status
+from nrl_capabilities import build_hardening_status
 from nrl_creation_assets import load_creation_asset_registry
+from nrl_creation_schemas import build_creation_schema_registry
+from nrl_corpus_pipeline import (
+    build_evidence_pack,
+    build_evidence_pack_matrix,
+    build_pipeline_plan,
+    build_pipeline_status,
+)
+from nrl_deep_read import build_deep_read_status
+from nrl_full_corpus_proof import build_proof_status
+from nrl_rag_index import load_or_build_creation_context_index
+from nrl_research_assets import build_research_asset_catalog
+from nrl_production_runtime import load_chapter_runtime_status
+from nrl_production_operator import build_operator_status
+from nrl_paths import runtime_path
 from nrl_system_status import build_system_status
+from nrl_projects import active_project_id
+from nrl_literary_semantics import build_literary_semantic_status
 
 
 DASHBOARD_SECTION_KEYS = (
@@ -62,6 +82,9 @@ def build_studio_data(
     adapters: dict[str, Any],
 ) -> dict[str, Any]:
     system_status = build_system_status(state, adapters)
+    project_status = system_status["active_project"]
+    project_id = active_project_id()
+    project_cli = f"python3 system/runtime/nrl.py --project {project_id}"
     latest_mission = _latest_registry_mission(registry)
     current_mission_name = state.get("next_recommended_mission", "UNKNOWN_MISSION")
     current_agent = str(state.get("allowed_next_agents", ["codex"])[0]).lower()
@@ -71,8 +94,113 @@ def build_studio_data(
         str(state.get("selected_project", "UNKNOWN_PROJECT")),
         str(system_status["operating_mode"]),
     )
+    hardening_status = build_hardening_status(state, adapters)
+    research_assets = build_research_asset_catalog()
+    full_corpus_proof = build_proof_status()
+    deep_read_status = build_deep_read_status()
+    literary_semantic_status = build_literary_semantic_status(
+        project_id if project_id != "borrowed-heaven" else None
+    )
+    creation_schemas = build_creation_schema_registry()
+    corpus_pipeline = build_pipeline_status(state, adapters)
+    corpus_pipeline["next_plan"] = build_pipeline_plan(
+        state,
+        adapters,
+        next_only=True,
+    )
+    corpus_pipeline["next_evidence_pack"] = build_evidence_pack(
+        state,
+        adapters,
+        next_only=True,
+    )
+    corpus_pipeline["evidence_pack_matrix"] = build_evidence_pack_matrix(
+        state,
+        adapters,
+    )
+    architecture_reconciliation = build_architecture_reconciliation(
+        state,
+        adapters,
+        pipeline_status=corpus_pipeline,
+    )
+    dna_production_runtime = build_production_runtime_status(state, adapters)
+    asset_producers = build_producer_status(state, adapters)
+    creation_context_index = load_or_build_creation_context_index(state, adapters)
+    chapter_runtime = load_chapter_runtime_status()
+    production_operator = build_operator_status(
+        runtime_path("system/production_runtime/chapter_registry.v0.20.json")
+    )
+    owner_gate_required = bool(system_status.get("owner_gate_required", False))
+    next_safe_action = (
+        {
+            "recommended": "Keep content progression frozen and continue Studio/system hardening.",
+            "runtime_command": "python3 system/runtime/nrl.py system-status",
+            "blocked_next_action": "Do not advance story content while Owner Gate is pending.",
+            "safe_commands": [
+                "python3 system/runtime/nrl.py system-status",
+                "python3 system/runtime/nrl.py studio-data",
+                "python3 system/runtime/nrl.py studio-build",
+                "python3 system/runtime/nrl.py validate-state",
+            ],
+        }
+        if owner_gate_required
+        else {
+            "recommended": state.get("next_recommended_mission", "Resume governed production."),
+            "runtime_command": (
+                production_operator["resume_command"].replace(
+                    "python3 system/runtime/nrl.py", project_cli, 1
+                )
+                if production_operator["resume_command"]
+                else f"{project_cli} production-status"
+            ),
+            "blocked_next_action": "Publishing remains blocked until all 100 chapters pass volume review.",
+            "safe_commands": [
+                f"{project_cli} production-status",
+                f"{project_cli} produce --until 66",
+                f"{project_cli} system-check",
+                f"{project_cli} production-preflight",
+            ],
+        }
+    )
 
     return {
+        "control_plane": {
+            "version": "0.2",
+            "locale": "zh-CN",
+            "mode": system_status["operating_mode"],
+            "content_progression": system_status["content_progression"],
+            "live_server_command": "python3 system/runtime/nrl.py studio-serve --port 4173",
+        },
+        "antigravity_execution": system_status["antigravity_execution"],
+        "capability_roadmap": hardening_status,
+        "research_asset_catalog": research_assets,
+        "full_corpus_proof": full_corpus_proof,
+        "verifiable_deep_reading": deep_read_status,
+        "literary_semantic_integrity": literary_semantic_status,
+        "creation_schema_registry": creation_schemas,
+        "safe_action_catalog": {
+            "actions": [
+                {
+                    "action_id": "system-check",
+                    "label_zh": "运行系统体检",
+                    "method": "POST",
+                    "path": "/api/actions/system-check",
+                },
+                {
+                    "action_id": "validate-state",
+                    "label_zh": "验证运行状态",
+                    "method": "POST",
+                    "path": "/api/actions/validate-state",
+                },
+            ],
+            "forbidden_actions": ["advance", "direct-external-agent-execution"],
+        },
+        "architecture_reconciliation": architecture_reconciliation,
+        "corpus_pipeline": corpus_pipeline,
+        "dna_production_runtime": dna_production_runtime,
+        "asset_producers": asset_producers,
+        "creation_context_index": creation_context_index,
+        "chapter_runtime": chapter_runtime,
+        "production_operator": production_operator,
         "system_identity": {
             "name": "Novel Research Lab",
             "positioning": "Corpus-to-Creation engine for Chinese long-form web novel creation.",
@@ -95,8 +223,12 @@ def build_studio_data(
             ],
         },
         "current_project": {
-            "project_name": state.get("project_name", "Novel Research Lab"),
-            "selected_project": state.get("selected_project", "UNKNOWN_PROJECT"),
+            "project_name": project_status["title"],
+            "selected_project": project_status["project_id"],
+            "workspace": project_status["workspace"],
+            "storage_mode": project_status["storage_mode"],
+            "ready_for_prose": project_status["ready_for_prose"],
+            "available_projects": system_status["project_registry"]["projects"],
             "current_phase": state.get("current_phase", "UNKNOWN_PHASE"),
             "current_subphase": state.get("current_subphase", "UNKNOWN_SUBPHASE"),
             "phase_status": state.get("phase_status", "UNKNOWN_STATUS"),
@@ -107,26 +239,36 @@ def build_studio_data(
         "agent_panel": {
             "items": [
                 {
-                    "agent": "Codex",
-                    "status": "local_runtime_host",
-                    "mode": _adapter_mode(adapters, "codex"),
+                    "agent": "Codex Sol",
+                    "status": "showrunner_reviewer",
+                    "display_status": "gpt-5.6-sol",
+                    "mode": "model_route",
                     "can_execute": _adapter_can_execute(adapters, "codex"),
-                    "role": "local runtime host / engineering / validation / orchestration",
+                    "role": "long-range planning, causal review, and window adjudication",
+                },
+                {
+                    "agent": "Codex Terra",
+                    "status": "primary_writer_editor",
+                    "display_status": "gpt-5.6-terra",
+                    "mode": "model_route",
+                    "can_execute": _adapter_can_execute(adapters, "codex"),
+                    "role": "chapter drafting, bounded revision, and scene bridging",
+                },
+                {
+                    "agent": "Codex Luna",
+                    "status": "structured_observer",
+                    "display_status": "gpt-5.6-luna",
+                    "mode": "model_route",
+                    "can_execute": _adapter_can_execute(adapters, "codex"),
+                    "role": "fact observation, state extraction, and mechanical checks",
                 },
                 {
                     "agent": "Antigravity",
-                    "status": "manual_external_literary_review",
+                    "status": "backup",
+                    "display_status": system_status["antigravity_execution"]["effective_state"],
                     "mode": _adapter_mode(adapters, "antigravity"),
-                    "can_execute": _adapter_can_execute(adapters, "antigravity"),
-                    "role": "manual external literary review",
-                },
-                {
-                    "agent": "Hermes",
-                    "status": system_status["hermes_execution_status"],
-                    "display_status": f"Hermes: {system_status['hermes_execution_status']}",
-                    "mode": _adapter_mode(adapters, "hermes"),
-                    "can_execute": _adapter_can_execute(adapters, "hermes"),
-                    "role": "paused, not removed; later writer / literary enrichment after explicit authorization",
+                    "can_execute": system_status["antigravity_execution"]["can_dispatch_registered_reviews"],
+                    "role": "independent review and provider fallback only",
                 },
                 {
                     "agent": "Web GPT",
@@ -147,7 +289,7 @@ def build_studio_data(
         "artifact_map": {
             "items": [
                 {"area": "Corpus", "status": "asset_layer_present", "note": "raw corpus remains off-limits for Studio v0.1"},
-                {"area": "Mechanisms", "status": "partial_engine", "note": "mechanism library exists but is not yet a queryable engine"},
+                {"area": "Mechanisms", "status": literary_semantic_status["status"], "note": "cross-book mechanisms and protected single-book signatures remain separately queryable"},
                 {"area": "Grand Synthesis", "status": "research_asset", "note": "research synthesis supports Corpus-to-Creation positioning"},
                 {"area": "Story Bible", "status": _artifact_status(state, "Bible"), "note": "current project bible asset"},
                 {"area": "Outline Tree", "status": _artifact_status(state, "Outline Tree"), "note": "Phase 2D outline tree asset"},
@@ -167,9 +309,17 @@ def build_studio_data(
                 "python3 system/runtime/nrl.py doctor",
                 "python3 system/runtime/nrl.py system-status",
                 "python3 system/runtime/nrl.py studio-data",
-                "python3 system/runtime/nrl.py advance",
-                "python3 system/runtime/nrl.py check-inputs",
+                "python3 system/runtime/nrl.py hardening-status",
+                "python3 system/runtime/nrl.py research-assets",
+                "python3 system/runtime/nrl.py creation-schemas",
+                "python3 system/runtime/nrl.py validate-creation-assets",
+                "python3 system/runtime/nrl.py pipeline-status",
+                "python3 system/runtime/nrl.py pipeline-plan --next",
+                "python3 system/runtime/nrl.py evidence-pack --next",
+                "python3 system/runtime/nrl.py evidence-pack-validate --next",
+                "python3 system/runtime/nrl.py system-check",
                 "python3 system/runtime/nrl.py validate-state",
+                "python3 system/runtime/nrl.py production-status",
             ],
             "state_validity_command": "python3 system/runtime/nrl.py validate-state",
             "status_command": "python3 system/runtime/nrl.py system-status",
@@ -182,22 +332,16 @@ def build_studio_data(
             "expected_outputs": expected_outputs,
             "blocked_actions": state.get("blocked_actions", []),
         },
-        "next_safe_action": {
-            "recommended": "Keep content progression frozen and continue Studio/system hardening.",
-            "runtime_command": "python3 system/runtime/nrl.py system-status",
-            "blocked_next_action": "Do not advance story content while Owner Gate is pending.",
-            "safe_commands": [
-                "python3 system/runtime/nrl.py system-status",
-                "python3 system/runtime/nrl.py studio-data",
-                "python3 system/runtime/nrl.py studio-build",
-                "python3 system/runtime/nrl.py validate-state",
-            ],
-        },
+        "next_safe_action": next_safe_action,
         "owner_gate": {
-            "required": bool(state.get("owner_gate_required", False)),
-            "status": state.get("owner_gate_status", "UNKNOWN"),
+            "required": owner_gate_required,
+            "status": system_status.get("owner_gate_status", "UNKNOWN"),
             "review_status": state.get("review_status", "UNKNOWN"),
-            "authorization_scope": ["status read", "studio build", "runtime validation", "system hardening"],
+            "authorization_scope": (
+                ["status read", "studio build", "runtime validation", "system hardening"]
+                if owner_gate_required
+                else ["governed Volume 1 production through chapter-0100", "runtime validation", "literary review"]
+            ),
             "forbidden_scope": state.get("blocked_actions", []),
             "decision_boundary": "No stale Owner Gate decision may authorize a later gate.",
             "expires_after_mission": "current Owner Gate only",

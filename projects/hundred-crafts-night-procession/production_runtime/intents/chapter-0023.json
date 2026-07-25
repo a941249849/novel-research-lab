@@ -1,0 +1,30 @@
+{
+  "chapter_id": "chapter-0023",
+  "dramatic_purpose": "把居民口述与墙面水痕转为可质疑的数据层。",
+  "must_keep": [
+    "地方证据获得模型中的独立来源等级。",
+    "POV 固定为程雪青"
+  ],
+  "must_avoid": [
+    "不得引入未登记资产或用旁白代替物质行动",
+    "不得回滚已接受状态"
+  ],
+  "expected_state_deltas": [
+    {
+      "state_id": "v1.ch023.outcome",
+      "asset_id": "char_cheng_xueqing",
+      "field_path": "character.current_state",
+      "after": "地方证据获得模型中的独立来源等级。",
+      "before": "永久安全被正式排除为卷一目标。"
+    }
+  ],
+  "required_asset_ids": [
+    "char_cheng_xueqing",
+    "npc_he_ning",
+    "technique_oral_waterline"
+  ],
+  "active_hook_ids": [],
+  "scene_constraints": [
+    "冲突必须落在具体工艺现场、物证或受影响者选择上"
+  ]
+}

@@ -1,0 +1,298 @@
+{
+  "version": "1.0",
+  "project": "借天改命账",
+  "volume": 1,
+  "window": {
+    "start": 51,
+    "end": 60,
+    "name": "连额拆链"
+  },
+  "status": "production_ready",
+  "start_snapshot": [
+    "首批受封户的户灯已经解除封槽并恢复现实占有，后加来源覆印对应的灯源补报被限定暂停；既往失温、寿裂与护阵损耗均未恢复。",
+    "闻照微已把压力改为逐巷配额连坐，泥灯巷与首批解封穷巷被接入同一条配额线，线上存在必须共同填补的空额。",
+    "州府转运残印仍是限期回收异物，陆沉渊已被明确登记为持印者，半寿残籍暴露在上一窗口精确上升十个百分点且不得自动下降。",
+    "弃命旧址外沿原路已经封存，内槽、深处方向、古债双方与数额仍未解锁；本窗口不得再次进入旧址或补全古债答案。",
+    "苏晚的命灯裂纹倒计时持续恶化，泥灯巷安置空间与护阵完整度承受长期压力，住户命火仍不得被自动调用。",
+    "陆沉渊当前只能用识账术辨认眼前普通寿印和局部抄录灰痕差异；右眼辨痕能力受损，继续施术必须产生可见承压与追踪风险。"
+  ],
+  "end_target": [
+    "命审台撤销泥灯巷与解封穷巷之间没有具名归属的共同空额，解除连额冷线及其对共用灯位的锁定，完成本窗口局部兑现；已经发生的护阵裂损、失温和迁位损失不被抹除。",
+    "两份重复占用同一配额位的执行令被正式退回并失去追缴效力，逐巷连坐从可直接执行的共同欠额改为必须拆成具名、可核验归属的单户命令。",
+    "顾巡依其独立义务暂停并退回错误归属命令，但没有倒戈；命籍衙仍可继续执行归属清楚的旧追缴令。",
+    "泥灯巷居民通过保留撤回权、拒绝交出替罪户并共同承受安置收缩，形成比上一窗口更明确的共灯边界；住户命火没有被调用或扣减。",
+    "陆沉渊再次公开绑定半寿身份与残印持有记录，识账后短期失去辨痕能力，半寿残籍暴露不下降，州府追踪压力继续存在。",
+    "连额压力解除后，顾巡接收到归属清楚且不属于本次裁定范围的苏晚旧寿债追缴令；局部反打兑现，同时下一窗口转入母债有效性、裂纹期限与拒绝交人的更高压力。"
+  ],
+  "chapters": [
+    {
+      "chapter_id": "chapter-0051",
+      "working_title": "两巷一线",
+      "event": "命籍衙把逐巷连坐化为可见的银冷配额线，横接泥灯巷与首批解封穷巷，并在交界灯位钉下一格无具名户主的共同空额。",
+      "scene_anchor": "两巷交界的石沟与刚刚恢复持有人占有的三盏户灯前，冷线贴地延伸，沿途灯焰同时向空额方向偏斜。",
+      "conflict": "若任一巷自行割断冷线，三盏解封户灯会被重新列为拒履；若接受空额，两巷就必须推举一个家庭承担没有明确归属的寿额。",
+      "character_choice": "陆沉渊不越权破线，也不替任何住户填名，只要求众人先标出冷线影响的灯位、暖墙和通行范围，承担空额落地后的现实损失。",
+      "irreversible_change": "逐巷连坐由纸面威胁变成实际限制两巷灯位与余温流向的执行状态，共同空额开始计时，三盏解封户灯第一次被纳入同一条后续追缴链。",
+      "emotional_turn": "解封户对泥灯巷的感激转为戒惧，担心自己再次成为拖累；陆沉渊公开拒绝替他们承诺，使关系从施恩与受助转入必须共同决策的紧张平等。",
+      "hook_out": "空额计时亮起后，第一道可执行刻度没有指向泥灯巷，却落在一盏刚解除封槽的户灯上。",
+      "expected_state_deltas": [
+        "state_ledger_faction_pressure：逐巷配额连坐进入实体执行阶段，共同空额获得期限与灯位限制。",
+        "state_ledger_public_reputation：旁观者开始区分解除旧封槽与免除新连坐并非同一结果。",
+        "bond_mudlamp_lane_trust：两巷互信受到替罪户风险的直接考验，但尚未发生强制服从。"
+      ],
+      "required_asset_ids": [
+        "character_lu_chenyuan",
+        "faction_life_registry_office",
+        "faction_mudlamp_lane",
+        "bond_mudlamp_lane_trust",
+        "state_ledger_faction_pressure",
+        "state_ledger_public_reputation"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0052",
+      "working_title": "无人填空",
+      "event": "两巷在泥灯巷暖墙前完成一次逐户选择，不选替罪户、不抽住户命火，改以缩减安置范围和轮换灶位承受冷线期限。",
+      "scene_anchor": "暖墙前的柴凳、铺板与住户自行摆放的灯位木牌之间，受助户可以当场留下、拒绝或撤回自己的选择。",
+      "conflict": "部分住户主张交出一户即可保住整片暖区，另一些人认为一旦允许无归属空额落到个人身上，下一轮所有人都可能被同样填名。",
+      "character_choice": "陆沉渊把决定权留给两巷住户；多数住户拒绝推举替罪户，自愿撤去两处临时铺位并重新排定灶位，但明确不把命火交给陆沉渊或泥灯巷统一调用。",
+      "irreversible_change": "两处安置铺位被拆除，避寒容量永久缩减；护阵外沿因热源重新分布新增可见裂口，而共同空额仍未被填补。",
+      "emotional_turn": "解封户第一次不是以受助者身份接受安排，而是与泥灯巷共同承担失去铺位的后果；仍有三户保留退出权，使团结带着真实裂缝而非整齐表态。",
+      "hook_out": "当最后一块铺板撤走，冷线绕过空着的住户灯位，转而缠上泥灯巷三处共用灯龛。",
+      "expected_state_deltas": [
+        "bond_mudlamp_lane_trust：形成不以替罪户填补无归属空额的共同边界，同时保留拒绝与退出权。",
+        "state_ledger_mudlamp_array_integrity：外沿裂口加深，完整度不得因共同承担而回升。",
+        "state_ledger_resident_lifefire_reserve：住户命火未被调用、转移或扣减。",
+        "state_ledger_faction_pressure：连坐限制由个别户灯扩展到共用灯位。"
+      ],
+      "required_asset_ids": [
+        "character_lu_chenyuan",
+        "faction_mudlamp_lane",
+        "bond_mudlamp_lane_trust",
+        "state_ledger_mudlamp_array_integrity",
+        "state_ledger_resident_lifefire_reserve",
+        "state_ledger_faction_pressure"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0053",
+      "working_title": "断链止扣",
+      "event": "顾巡依第一份连坐追缴令在解封户灯前落下债链，链节尚未闭合便显出断续灰痕，证明当前命令的归属无法完整承接共同空额。",
+      "scene_anchor": "解封户亲手扶住的命灯旁，债链冷铁气味压低灯焰，顾巡僵硬的左腕被回弹铁环再次扯紧。",
+      "conflict": "额度期限要求顾巡立即完成追缴，但继续扣取会让错误归属通过寿算盘反噬到执行者；停手则会留下未完成额度并招致命籍衙复核。",
+      "character_choice": "顾巡按自身义务在链节闭合前暂停，不替错误归属承受反噬，将命令和断痕一并退回核验；陆沉渊则克制住夺链冲动，没有把程序停顿误当成顾巡倒戈。",
+      "irreversible_change": "第一份连坐追缴令留下正式的执行中止痕，解封户当场未被夺寿，但共同空额期限没有停止；顾巡的左腕伤势加重，无法再掩盖命令断痕。",
+      "emotional_turn": "解封户对顾巡的恐惧出现一道有限区别：他仍是收债者，却不是会替任何错误命令送命的工具；陆沉渊也接受敌手可能有可利用但不可美化的程序边界。",
+      "hook_out": "退回的命令尚未离巷，命籍衙便把一枚“共同担保物”寿印悬到了泥灯巷护阵外沿。",
+      "expected_state_deltas": [
+        "npc_debt_collector_gu_xun：暂停首份显出断续灰痕的追缴令并申请重新核验，立场仍服从有效命令与额度。",
+        "state_ledger_faction_pressure：个别追缴受阻后，压力转向共同担保物。",
+        "state_ledger_protagonist_strain：陆沉渊未施术、未夺链，既有伤势没有恢复。"
+      ],
+      "required_asset_ids": [
+        "character_lu_chenyuan",
+        "npc_debt_collector_gu_xun",
+        "faction_life_registry_office",
+        "state_ledger_faction_pressure",
+        "state_ledger_protagonist_strain"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0054",
+      "working_title": "灯出暖界",
+      "event": "共同担保寿印压住护阵外沿的共用灯龛，暖墙末段迅速失温；苏晚亲手把自己的裂灯移到更冷的外侧，为仍在发热的灯位腾出照护距离。",
+      "scene_anchor": "泥灯巷暖墙末端，霜白沿砖缝推进，苏晚掌背失温发青，命灯裂隙向外透出暗冷光。",
+      "conflict": "陆沉渊想让苏晚留在较暖的位置，但那会挤走两名已出现骨节发僵的住户；若移灯，苏晚的裂纹期限将继续恶化。",
+      "character_choice": "苏晚拒绝被儿子代为安置，自行将命灯移出暖界，同时禁止任何人以邻里命火补偿她；陆沉渊停止争抢灯位，改为亲自守在外侧照看。",
+      "irreversible_change": "苏晚命灯新增一条不能在本窗口恢复的细裂，掌背持续散出冷灰；暖墙末段失去稳定照护能力，两名住户虽保住体温却无法回到原铺位。",
+      "emotional_turn": "母子冲突从“是否救她”转为“谁有权决定代价落在哪里”；陆沉渊第一次在连坐压力下完整服从苏晚的拒绝，而不是把保护变成替她作主。",
+      "hook_out": "夜深后，共同担保寿印没有吞下空额，反而裂成三枚带相同尾灰的具名令牌。",
+      "expected_state_deltas": [
+        "state_ledger_mother_life_lamp_countdown：命灯裂纹与失温后果进一步恶化，不得由后续胜诉自动修复。",
+        "bond_mother_su_wan：陆沉渊再次确认苏晚对自身灯位与救法拥有决定权。",
+        "state_ledger_mudlamp_array_integrity：共用灯龛受压，暖墙末段稳定性继续下降。",
+        "state_ledger_resident_lifefire_reserve：未调用任何邻里命火为苏晚补偿。"
+      ],
+      "required_asset_ids": [
+        "character_lu_chenyuan",
+        "npc_su_wan",
+        "bond_mother_su_wan",
+        "faction_mudlamp_lane",
+        "state_ledger_mother_life_lamp_countdown",
+        "state_ledger_mudlamp_array_integrity",
+        "state_ledger_resident_lifefire_reserve",
+        "state_ledger_faction_pressure"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0055",
+      "working_title": "逼令具名",
+      "event": "陆沉渊携三枚令牌到命籍衙前槽，不要求免除配额，而是提交拆令申请，要求每一笔追缴都写明具体归属、执行对象和所占配额位。",
+      "scene_anchor": "命籍衙前槽的悬印石下，三枚令牌分别落入窄槽，陆沉渊袖上的十道冷金锁痕被登记火照亮。",
+      "conflict": "命籍衙坚持逐巷连坐只需总额成立，无须说明空额落到哪一户；若陆沉渊拒绝领回模糊令牌，便会被登记为阻碍配额执行。",
+      "character_choice": "陆沉渊以自己的半寿身份和残印持有记录担保拆令申请进入命审程序，但拒绝把苏晚寿债、邻里命火或任何未同意的住户写进申请。",
+      "irreversible_change": "陆沉渊与本轮连额争议被永久并入同一追踪记录，拆令要求获得不可抹除的前槽时刻；命籍衙则把他标为拒领共同令的直接责任人。",
+      "emotional_turn": "巷民看见陆沉渊承担的是暴露而非替众人献寿，对他的信任上升；同时也有人担忧他的半寿身份会把更重追踪带回泥灯巷。",
+      "hook_out": "前槽吐回三份拆开的执行令，三令户名不同，底部却压着完全相同的一枚配额位号。",
+      "expected_state_deltas": [
+        "state_ledger_half_life_registry_exposure：既有暴露不下降，并新增与连额拆令申请的明确追踪关联。",
+        "state_ledger_faction_pressure：命籍衙把共同空额拆为三份具名执行令，但保留总额期限。",
+        "state_ledger_public_reputation：公开认知开始转向“总额成立不等于每份执行归属成立”。",
+        "bond_mudlamp_lane_trust：信任因陆沉渊自担暴露而提升，但追踪风险引发新的保留意见。"
+      ],
+      "required_asset_ids": [
+        "character_lu_chenyuan",
+        "faction_life_registry_office",
+        "bond_mudlamp_lane_trust",
+        "state_ledger_half_life_registry_exposure",
+        "state_ledger_faction_pressure",
+        "state_ledger_public_reputation"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0056",
+      "working_title": "三令同位",
+      "event": "陆沉渊在三名令牌持有人各自到场的情况下施展一次局部识账术，只辨认三份现行执行令的位号压痕与尾部灰层，确认它们是同一配额位的三次抄压，而非三个独立空额。",
+      "scene_anchor": "泥灯巷入口的白昼石面上，三份执行令彼此分开摆放，持有人各自按住自己的纸角，谁也不替他人作证。",
+      "conflict": "若不能在眼纹承受极限前完成肉眼可复核的对应，三令仍会分别执行；若强行追读来源链，陆沉渊将越过当前境界并可能失去判断能力。",
+      "character_choice": "陆沉渊止步于可见的同位号、同尾灰和相同压痕缺口，只说明三令不能同时代表三笔独立欠额，不追索州府起点或令牌背后的完整转运链。",
+      "irreversible_change": "同一配额位被重复拆成三份具名执行令的错误完成现场核实并进入已揭示错账；陆沉渊右眼焦纹重新灼起，当日失去继续辨痕的能力。",
+      "emotional_turn": "持有人不再只能相信陆沉渊的判断，因为三处压痕可由他们亲手对齐；陆沉渊主动停术也让众人看见他没有用越界能力替他们夺取结论。",
+      "hook_out": "三名持有人收回各自执行令时，其中一人当场声明：他愿意拒扣，却不愿把自己的名字带上命审台。",
+      "expected_state_deltas": [
+        "state_ledger_revealed_account_errors：新增一项经三令实物与持有人在场复核的同配额位重复执行错误。",
+        "technique_ledger_recognition：完成一次局部抄录灰痕辨认，结论严格止于现行三令同位，不读取个人命页或完整链路。",
+        "state_ledger_protagonist_strain：右眼焦纹灼伤并在当日失去辨痕窗口，追踪风险增加。",
+        "state_ledger_public_reputation：可复核方法从来源覆印先后扩展到执行令配额位的实物对齐。"
+      ],
+      "required_asset_ids": [
+        "character_lu_chenyuan",
+        "technique_ledger_recognition",
+        "state_ledger_revealed_account_errors",
+        "state_ledger_protagonist_strain",
+        "state_ledger_public_reputation",
+        "bond_mudlamp_lane_trust"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0057",
+      "working_title": "两纸一退",
+      "event": "三名持令人分别决定是否把自己的执行令用于公开反打：两人同意留纸，一人撤回并带走令牌，泥灯巷依约不追问、不代证。",
+      "scene_anchor": "暖墙已经停热的末段，三只独立木匣并排放置，每名持令人只接触自己的令牌与留印木片。",
+      "conflict": "少一份令牌会削弱“三令同位”的完整展示，但强留第三人即可迅速凑齐证据；共同体必须在胜算与个人撤回权之间作出实际选择。",
+      "character_choice": "陆沉渊将第三份令牌原样交还，不抄录其户名，只以两名自愿持有人的重复位号发动反打；两巷也接受可能因此败诉的风险。",
+      "irreversible_change": "第三名持令人永久退出本轮公开程序，其姓名与令牌不得再被泥灯巷调用；两份自愿公开的执行令则成为后续唯一可用的具名材料。",
+      "emotional_turn": "撤回者没有被视作背叛，两名留下者因此确认自己的同意不是被共同体逼迫；共灯之信从一致行动转为能够容纳拒绝的实际规则。",
+      "hook_out": "顾巡带着重新核验后的债链抵达时，两名留下者没有躲灯，而是各自把执行令放到自己命灯之前。",
+      "expected_state_deltas": [
+        "bond_mudlamp_lane_trust：撤回权得到实际执行，信任因承担证据减少的代价而提升。",
+        "faction_mudlamp_lane：本轮公开材料边界锁定为两份自愿留存执行令，不得调用第三份。",
+        "state_ledger_public_reputation：旁观者确认公开反照不以强迫所有受令者留名为前提。",
+        "state_ledger_faction_pressure：两份具名令即将进入实际追缴复验，期限继续逼近。"
+      ],
+      "required_asset_ids": [
+        "character_lu_chenyuan",
+        "faction_mudlamp_lane",
+        "bond_mudlamp_lane_trust",
+        "npc_debt_collector_gu_xun",
+        "state_ledger_public_reputation",
+        "state_ledger_faction_pressure"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0058",
+      "working_title": "当链退令",
+      "event": "顾巡分别尝试让两份执行令承接债链，两条链却同时咬向同一配额位；两名持令人依次展示位号，迫使他在公开执行现场退回重复命令。",
+      "scene_anchor": "两盏持有人亲自看守的命灯之间，债链被刻意分开落下，却在石面上汇入同一道冷灰槽。",
+      "conflict": "顾巡若完成任一扣取，另一份令仍会继续索取同一空额；若两份都退回，他将留下未完成额度并承担命籍衙追责。",
+      "character_choice": "顾巡依“不替错误归属承受寿算盘反噬”的义务逐份封链退令，并刻下重复占位的执行失败记录；陆沉渊选择让持令人自己陈述，只承担此前识痕结论。",
+      "irreversible_change": "两份重复执行令均失去现场追缴效力，命籍衙不能再把它们记成住户拒缴；顾巡的退令记录成为必须由命审台处理的程序事实。",
+      "emotional_turn": "两名持令人第一次在债链面前保住了自己的发言次序，陆沉渊也从替穷巷出头的人退到可被复核的辅助位置；顾巡与众人的关系仍是对立，却不再能被简化为私人仇杀。",
+      "hook_out": "退令记录送出后，共同担保寿印立即转黑，宣布在命审台裁定前锁死三处共用灯龛。",
+      "expected_state_deltas": [
+        "npc_debt_collector_gu_xun：正式退回两份重复占位令并留下执行失败刻录，未转为泥灯巷盟友。",
+        "state_ledger_revealed_account_errors：同位重复从实物观察升级为执行失败事实。",
+        "state_ledger_faction_pressure：个别错误命令被退回，压力转为命审前的共同担保锁定。",
+        "state_ledger_public_reputation：公开认知转向执行者也必须核对具体归属，而非只服从总额。"
+      ],
+      "required_asset_ids": [
+        "character_lu_chenyuan",
+        "npc_debt_collector_gu_xun",
+        "faction_life_registry_office",
+        "state_ledger_revealed_account_errors",
+        "state_ledger_faction_pressure",
+        "state_ledger_public_reputation"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0059",
+      "working_title": "封龛过夜",
+      "event": "命审前夜，共同担保寿印完成锁龛，泥灯巷三处共用灯位全部熄暗；两巷被迫收缩安置区并让最外侧房间停用。",
+      "scene_anchor": "泥灯巷最外侧安置屋内，冷铁气味从空灯龛渗出，墙面护阵裂纹在黑暗中逐段发白。",
+      "conflict": "只要任意一户承认共同空额并填入寿印，锁龛就能提前解除；继续拒填则必须承受整夜失温、安置缩减和命审失败风险。",
+      "character_choice": "两名留令者与泥灯巷多数住户拒绝以一户认额换取复灯，陆沉渊也不启用残命灯盏、不抽住户命火，只组织撤出最冷房间并亲自留在外沿看护。",
+      "irreversible_change": "最外侧安置屋因冻裂暂时失去使用条件，护阵裂损进一步扩大；锁龛造成的物质损失不会因次日裁定自动恢复，残命灯盏继续休眠。",
+      "emotional_turn": "部分住户因失去床位公开责怪陆沉渊，两名留令者没有要求众人原谅，只承诺共同承担迁位；共同体从原则选择进入必须支付现实代价的低谷。",
+      "hook_out": "命审台开门前送来的受理边界只有一句：可以裁连额归属，不得顺带免除任何归属清楚的旧寿债。",
+      "expected_state_deltas": [
+        "state_ledger_mudlamp_array_integrity：锁龛与寒夜造成新增裂损，后续解锁不能自动恢复。",
+        "state_ledger_resident_lifefire_reserve：即使安置收缩也未调用住户命火。",
+        "artifact_ashlight_cup：继续保持休眠、封存与未使用状态。",
+        "bond_mudlamp_lane_trust：共同体出现公开责难，但留令者与陆沉渊承担迁位后果，没有压制异议。",
+        "state_ledger_faction_pressure：命审范围被限定为连额归属，归属清楚的旧债继续有效。"
+      ],
+      "required_asset_ids": [
+        "character_lu_chenyuan",
+        "faction_mudlamp_lane",
+        "bond_mudlamp_lane_trust",
+        "artifact_ashlight_cup",
+        "state_ledger_mudlamp_array_integrity",
+        "state_ledger_resident_lifefire_reserve",
+        "state_ledger_faction_pressure"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0060",
+      "working_title": "拆线见旧债",
+      "event": "命审台依据两份自愿留存的执行令、顾巡退令刻录和可见的同位压痕，裁定无具名归属的共同空额不得跨巷执行，撤销两份重复令并切断连额冷线。",
+      "scene_anchor": "命审台外侧执行槽与两巷交界同步显影，裁定落下时银冷线从共同空额处断开，三处锁死灯龛重新允许原持有人接触。",
+      "conflict": "陆沉渊若要求同时免除苏晚或其他住户旧债，裁定将越出受理边界并可能整体退回；若接受窄裁，两巷只能解除错误连额，仍须面对各自真实存在的旧追缴。",
+      "character_choice": "陆沉渊与两名持令人共同选择窄裁，只请求撤销无归属空额、重复执行令与锁龛，不把苏晚母债包装成同一错账；苏晚亲自确认这一边界。",
+      "irreversible_change": "泥灯巷与解封穷巷之间的共同空额被撤销，逐巷连坐此后必须拆成具名且可核验归属的单户命令；锁龛解除，但安置屋冻裂、护阵损伤与苏晚新增灯裂全部保留。",
+      "emotional_turn": "两巷获得第一次不靠交出某户换来的公开反打，陆沉渊与苏晚也因共同守住“母债另审”的边界恢复有限信任；胜利随即被尚未解决的真实旧债压住。",
+      "hook_out": "连额冷线完全熄灭后，顾巡的债链没有离开贫城，而是接住一份归属清楚的旧追缴令；令牌上写着苏晚的名字和已经逼近的裂灯期限。",
+      "expected_state_deltas": [
+        "state_ledger_faction_pressure：无具名跨巷共同空额与锁龛执行被撤销，压力转向归属清楚的单户旧追缴。",
+        "state_ledger_revealed_account_errors：两份同位重复执行令完成程序性纠正，不产生额外寿火返还。",
+        "state_ledger_public_reputation：贫城公开反照形成新规则——共同总额不能替代具名归属与可执行核验。",
+        "state_ledger_mudlamp_array_integrity：灯龛恢复接触，但既有护阵裂损不回升。",
+        "state_ledger_mother_life_lamp_countdown：苏晚裂纹不因连额胜诉修复，旧寿债期限进入下一层压力。",
+        "npc_debt_collector_gu_xun：接收归属清楚的苏晚旧追缴令，继续履行有效追缴职责。",
+        "bond_mother_su_wan：母子共同确认不以错误连额裁定偷换母债问题。"
+      ],
+      "required_asset_ids": [
+        "character_lu_chenyuan",
+        "npc_su_wan",
+        "bond_mother_su_wan",
+        "npc_debt_collector_gu_xun",
+        "faction_life_registry_office",
+        "faction_mudlamp_lane",
+        "state_ledger_faction_pressure",
+        "state_ledger_revealed_account_errors",
+        "state_ledger_public_reputation",
+        "state_ledger_mudlamp_array_integrity",
+        "state_ledger_mother_life_lamp_countdown"
+      ],
+      "source_status": "planned"
+    }
+  ]
+}

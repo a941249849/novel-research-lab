@@ -1,0 +1,154 @@
+import json
+import os
+import subprocess
+import sys
+import unittest
+from pathlib import Path
+
+
+REPO_ROOT = Path(__file__).resolve().parents[1]
+RUNTIME_DIR = REPO_ROOT / "system/runtime"
+NRL = RUNTIME_DIR / "nrl.py"
+sys.path.insert(0, str(RUNTIME_DIR))
+
+
+class ArchitectureReconciliationCliTests(unittest.TestCase):
+    def run_cli(self, *args):
+        env = os.environ.copy()
+        env["NRL_AGY_BIN"] = "/definitely/missing/agy"
+        return subprocess.run(
+            [sys.executable, str(NRL), *args],
+            cwd=REPO_ROOT,
+            text=True,
+            capture_output=True,
+            check=False,
+            env=env,
+        )
+
+    def test_architecture_status_returns_v04_contract_without_raw_corpus(self):
+        result = self.run_cli("architecture-status")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        data = json.loads(result.stdout)
+        self.assertEqual(data["version"], "0.4")
+        self.assertEqual(data["fixed_identity"]["short_name"], "Novel Research Lab")
+        self.assertEqual(data["fixed_identity"]["principle"], "Corpus-to-Creation")
+        self.assertEqual(len(data["architecture_layers"]), 10)
+        self.assertEqual(data["architecture_layers"][6]["layer_id"], "planning_pipeline")
+        self.assertEqual(
+            data["architecture_layers"][6]["child_implementation"],
+            "corpus_pipeline_v0.3",
+        )
+        self.assertIn("Core7 小批量试验", data["experiment_calibration"]["label_zh"])
+        self.assertIn(
+            "control_plane_split_brain",
+            {item["mismatch_id"] for item in data["current_mismatch_report"]},
+        )
+        self.assertEqual(
+            {item["agent"] for item in data["agent_role_contract"] if item.get("agent_family") == "Codex"},
+            {"Codex Sol", "Codex Terra", "Codex Luna"},
+        )
+        self.assertNotIn("Hermes", {item["agent"] for item in data["agent_role_contract"]})
+        antigravity = next(item for item in data["agent_role_contract"] if item["agent"] == "Antigravity")
+        self.assertEqual(antigravity["status"], "backup")
+        self.assertEqual(antigravity["runtime_status"], "blocked_bridge_unavailable")
+        self.assertNotIn("novel_training_set/", json.dumps(data, ensure_ascii=False))
+
+
+class ArchitectureReconciliationContractTests(unittest.TestCase):
+    def setUp(self):
+        from nrl import load_adapters, load_state
+        from nrl_architecture import build_architecture_reconciliation
+
+        self.state = load_state()
+        self.adapters = load_adapters()
+        self.build_architecture = build_architecture_reconciliation
+
+    def test_architecture_status_is_deterministic_and_reflects_authorized_runtime(self):
+        first = self.build_architecture(self.state, self.adapters)
+        second = self.build_architecture(self.state, self.adapters)
+        self.assertEqual(first, second)
+        self.assertEqual(first["production_readiness"]["system_mode"], "CONTROLLED_RUNTIME")
+        self.assertEqual(
+            first["production_readiness"]["content_progression"],
+            "RUNTIME_CONTROLLED",
+        )
+        self.assertFalse(first["production_readiness"]["owner_gate_required"])
+        self.assertTrue(first["production_readiness"]["content_generation_allowed"])
+        self.assertTrue(first["production_readiness"]["production_ready"])
+        self.assertEqual(
+            first["production_readiness"]["release_ready"],
+            first["production_readiness"]["accepted_release_ready_count"] == 100
+            and first["production_readiness"]["blocking_window_review"] is None,
+        )
+        self.assertIsNone(first["production_readiness"]["blocking_window_review"])
+
+
+class ArchitectureReconciliationIntegrationTests(unittest.TestCase):
+    def run_cli(self, *args):
+        return subprocess.run(
+            [sys.executable, str(NRL), *args],
+            cwd=REPO_ROOT,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+
+    def test_studio_data_contains_architecture_reconciliation(self):
+        result = self.run_cli("studio-data")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        data = json.loads(result.stdout)
+        self.assertIn("architecture_reconciliation", data)
+        architecture = data["architecture_reconciliation"]
+        self.assertEqual(architecture["version"], "0.4")
+        self.assertEqual(
+            architecture["implementation_alignment"]["pipeline_layer"],
+            "planning_pipeline",
+        )
+        self.assertEqual(len(architecture["architecture_layers"]), 10)
+
+    def test_system_check_includes_architecture_reconciliation(self):
+        result = self.run_cli("system-check")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        data = json.loads(result.stdout)
+        self.assertTrue(data["passed"])
+        check_ids = {check["check_id"] for check in data["checks"]}
+        self.assertIn("architecture_reconciliation", check_ids)
+        check = next(
+            item
+            for item in data["checks"]
+            if item["check_id"] == "architecture_reconciliation"
+        )
+        self.assertEqual(check["detail"]["version"], "0.4")
+        self.assertEqual(check["detail"]["layer_count"], 10)
+
+
+class ArchitectureReconciliationStudioTests(unittest.TestCase):
+    def run_cli(self, *args):
+        return subprocess.run(
+            [sys.executable, str(NRL), *args],
+            cwd=REPO_ROOT,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+
+    def test_studio_build_contains_architecture_view_labels(self):
+        result = self.run_cli("studio-build")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        html = (REPO_ROOT / "system/runtime/studio/index.html").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("系统架构", html)
+        self.assertIn("#architecture", html)
+        self.assertIn("Corpus-to-Creation", html)
+        self.assertIn("Core7 小批量试验", html)
+        self.assertIn("Codex Sol / Terra / Luna", html)
+        self.assertIn("Antigravity 备用复核", html)
+        self.assertNotIn("Hermes: ready", html)
+        self.assertNotIn("人工外部文学审查", html)
+        self.assertIn("Owner Gate", html)
+        self.assertNotIn("/api/actions/execute-hermes", html)
+
+
+if __name__ == "__main__":
+    unittest.main()

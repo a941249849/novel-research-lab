@@ -1,0 +1,30 @@
+{
+  "chapter_id": "chapter-0039",
+  "dramatic_purpose": "戏班要求在修复期间保留一场募资演出。",
+  "must_keep": [
+    "演出被改为低载版本，收入用于下游临时排水。",
+    "POV 固定为杜承礼"
+  ],
+  "must_avoid": [
+    "不得引入未登记资产或用旁白代替物质行动",
+    "不得回滚已接受状态"
+  ],
+  "expected_state_deltas": [
+    {
+      "state_id": "v1.ch039.outcome",
+      "asset_id": "char_du_chengli",
+      "field_path": "character.current_state",
+      "after": "演出被改为低载版本，收入用于下游临时排水。",
+      "before": "严师傅同意只提供判断，不替团队签字。"
+    }
+  ],
+  "required_asset_ids": [
+    "char_du_chengli",
+    "npc_xiao_bei",
+    "faction_opera_troupe"
+  ],
+  "active_hook_ids": [],
+  "scene_constraints": [
+    "冲突必须落在具体工艺现场、物证或受影响者选择上"
+  ]
+}

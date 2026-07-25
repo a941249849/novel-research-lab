@@ -1,0 +1,174 @@
+{
+  "chapter_id": "chapter-0077",
+  "draft_sha256": "35f5cf517ccadf2fb1a1dba8902650f43d11b51ec1de6de8b89549bf95948f64",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "chapter-0077-character-001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_procedural_choice",
+        "before": "将识账限定为灰印外层与白裂内层，确认来向差异后立即停术，并接受现场见证记录",
+        "after": "拒绝替巷民决定是否切阵；仅凭霜落位置辨认取段风险，提供“左边是空的”等操作提醒，并未接触或压住灰印",
+        "evidence": "陆沉渊明确说自己不能替任何人答应，也没有替苏晚压住灰印；断阵后仍未碰阵砖。"
+      },
+      {
+        "fact_id": "chapter-0077-character-002",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_public_statement",
+        "before": "公开承认只能证明两层痕来向不同，不能指出改动者，也未查看封档内容",
+        "after": "确认断下的阵段只能提交受压方向与断裂位置，不能证明写入者、封档内容或任何人的命",
+        "evidence": "他说明“交它从哪边受过压，交它断在这里”，并明确交不了写入者、封档内容和谁的命。"
+      },
+      {
+        "fact_id": "chapter-0077-character-003",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_visible_condition",
+        "before": "施术后左眼出现银灰残屑并当日失去辨痕能力，咳出带血丝灰沫，左腿发软并胸口收紧",
+        "after": "左眼仍受银灰残屑影响而辨不出旧痕，右眼被强光刺痛，胸口持续发紧并咳出带血丝灰沫；未获得灯火援助",
+        "evidence": "正文写明他只剩右眼聚光、辨不出旧痕，胸口发紧并咳灰沫，苏晚没有向他递灯。"
+      }
+    ],
+    "npcs": [],
+    "locations": [
+      {
+        "fact_id": "chapter-0077-location-001",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_chapter_step",
+        "before": "窄通道继续保留，巷民各守自灯并共同观察三次脉冲顺序。",
+        "after": "巷民逐户表态后切下无人命火附着的灰印跨界阵段，并将阵段置于石面供自愿者查看记录",
+        "evidence": "苏晚逐个听取留下、退出和不按手印者的意见；阵砖断开后，她把阵段推到众人都能看见的地方。"
+      }
+    ],
+    "factions": [
+      {
+        "fact_id": "chapter-0077-faction-001",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_communal_response",
+        "before": "泥灯巷拒绝调用住户命火补阵，以不接触灰印和阵纹的旧门板在裂口外挡风，并公开要求记录禁修造成的寒损。",
+        "after": "泥灯巷允许反对者离开操作范围，留下者只切取无人命火附着的跨界阵段，并继续拒绝以私人灯火或姓名补入阵段",
+        "evidence": "反对者被允许带灯离开；留下者声明不写姓名、不计入家灯，操作中没有任何灯递向裂口。"
+      },
+      {
+        "fact_id": "chapter-0077-faction-002",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_witness_boundary",
+        "before": "共同体明确守住“没动阵、没交火、没替人续寿”的边界，并允许记录寒损但不替任何人背账。",
+        "after": "共同体形成“可交公共阵痕，不交住户命火、私人姓名与寿命；不愿认领者不按手印”的见证边界",
+        "evidence": "正文反复要求只记亲眼所见、不得替人添写；离开者不被代为作证，留下者也可只看不按手印。"
+      }
+    ],
+    "artifacts": [
+      {
+        "fact_id": "chapter-0077-artifact-001",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "hook.current_physical_state",
+        "before": "银灰火屑仍贴在裂缝深处，未向封档回流，也未转移至陆沉渊或苏晚命灯。",
+        "after": "一段跨越灰印内外的阵砖实体断裂并被移至石面，断面露出暗红旧阵线，银屑仍贴在断面且未飞向任何灯",
+        "evidence": "阵砖断开后落到苏晚膝前，断面露出暗红旧阵线，银屑贴在断面，没有飞向任何一盏灯。"
+      }
+    ],
+    "techniques": [],
+    "relationships": [
+      {
+        "fact_id": "chapter-0077-relationship-001",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_collective_choice",
+        "before": "住户继续拒绝提供命火，并自愿按各自实际看见的内容见证和记录，不替他人补全结论",
+        "after": "住户在知晓缺口扩大与寒损后，自主选择留下或退出；留下者承担公共阵痕的记录责任，但不提供命火、不代他人作证",
+        "evidence": "巷民逐户表态，有人退出操作范围，有人留下观察，有人只看不按手印；无人递灯或补写他人结论。"
+      },
+      {
+        "fact_id": "chapter-0077-relationship-002",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_collective_emotion",
+        "before": "共同体在不提供命火的前提下接受局部识账结果，同时拒绝把局部识账当成完整答案",
+        "after": "共同体在明确知晓寒损和护阵永久缺口后，仍共同承担公开保存公共痕迹的后果，同时保留退出与不认领的权利",
+        "evidence": "留下者明知墙会再开一指半仍选择留下；反对者可离开且无人阻拦，众人继续隔着各自灯火等待记录。"
+      }
+    ],
+    "emotions": [
+      {
+        "fact_id": "chapter-0077-emotion-001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_emotional_posture",
+        "before": "接受现场见证记录，公开承认局部识账的限制",
+        "after": "保持克制并拒绝替巷民作出牺牲决定，只提供有限判断和风险提醒",
+        "evidence": "他说明不能替任何人答应，也没有在断阵时向前施术或替苏晚压住灰印。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "chapter-0077-information-001",
+        "asset_id": "state_ledger_faction_pressure",
+        "field_path": "state_ledger.current_evidentiary_status",
+        "before": "局部来向结果需提交州府复核，且复核要求保留跨越灰印内外的真实阵纹，禁修印禁止整片取下",
+        "after": "可提交的证物被确定为实体断下的跨界阵段；其证据范围限于受压方向与断裂位置，不指认写入者或封档内容",
+        "evidence": "陆沉渊和苏晚共同限定阵段只能交受压方向与断点，明确不能交写入者、封档内容或住户命数。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "chapter-0077-hook-001",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "hook.current_direction",
+        "before": "限域识账将外层受力方向具名为从封档投印方向压入，内层仍未向外写出；停术后内侧银灰慢半拍亮起",
+        "after": "断阵后巷内侧半条断纹彻底熄灭，封档侧灰印隔着新断缺口持续一下一下冷亮",
+        "evidence": "结尾明确写出巷内侧断纹熄灭，而封档侧灰印隔着断口继续冷亮。"
+      },
+      {
+        "fact_id": "chapter-0077-hook-002",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "hook.current_unresolved_scope",
+        "before": "州府复核仍受限于无法整片取下禁修灰印，必须保留一段跨印内外的真实阵纹",
+        "after": "跨印内外的真实阵纹已被切下并保留为公共证物，原地断口扩大，封档侧灰印仍在断口对面发亮",
+        "evidence": "阵段被实体切离并置于石面；墙脚缺口比一只手还宽，封档侧灰印随后持续冷亮。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "chapter-0077-timeline-001",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "timeline.chapter_event",
+        "before": "完成一次限域识账并形成‘外层由封档方向压入、内层未向外写出’的局部结果，随后停术",
+        "after": "巷民公开表态并切下跨越灰印内外的阵砖段，完成公共阵痕留存后等待封档侧继续显现",
+        "evidence": "正文从逐户表态、避开命火，到阵砖断裂、置于石面并等待封档侧动静，形成完整事件过程。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "chapter-0077-physical-001",
+        "asset_id": "state_ledger_mudlamp_array_integrity",
+        "field_path": "state_ledger.current_visible_integrity_consequence",
+        "before": "禁修期间白裂继续裸露，寒气和霜沿裂隙向巷内扩展，护阵没有因门板挡风或余火而恢复。",
+        "after": "实体切离阵段后护阵缺口永久扩大，暖墙余温熄退，冷气直接灌入巷内；后续返火不会自动补回该段",
+        "evidence": "阵砖断开后墙脚缺口比一只手还宽，暖墙红意缩退并沉入砖缝，风直扑巷内，正文未出现护阵自行恢复。"
+      },
+      {
+        "fact_id": "chapter-0077-physical-002",
+        "asset_id": "state_ledger_resident_lifefire_reserve",
+        "field_path": "state_ledger.current_transaction_debit",
+        "before": "本章禁修期间住户命火仍未调用、转移或扣减，各户继续自行持有自己的灯火。",
+        "after": "断阵取证过程中住户命火仍未调用、转移或扣减，各户灯火继续由各自持有且未递向缺口",
+        "evidence": "正文明确没人提命火、没有灯递向裂口；板后各户灯火仍隔在门缝里各自守着。"
+      },
+      {
+        "fact_id": "chapter-0077-physical-003",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_visible_condition",
+        "before": "施术后左眼出现银灰残屑并当日失去辨痕能力，咳出带血丝灰沫，左腿发软并胸口收紧",
+        "after": "断阵过程中左眼残屑与眩晕、胸口紧缩和带血灰沫持续存在，未因公共取证而恢复",
+        "evidence": "断阵前后他仍左眼闭合或辨不出旧痕，胸口发紧并咳出带血丝灰沫，且需等待眩晕退去。"
+      }
+    ],
+    "naming": [
+      {
+        "fact_id": "chapter-0077-naming-001",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_witness_boundary",
+        "before": "共同体明确守住“没动阵、没交火、没替人续寿”的边界，并允许记录寒损但不替任何人背账。",
+        "after": "公共阵段被定义为“只代表留下它的人愿意承受缺口”，不代表退出者或任何人的命灯",
+        "evidence": "陆沉渊明确说明阵段不代表离开的人，也不代表谁的命灯；苏晚随后要求只按所见记录。"
+      }
+    ]
+  }
+}

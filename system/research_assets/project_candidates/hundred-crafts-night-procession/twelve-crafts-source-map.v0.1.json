@@ -1,0 +1,360 @@
+{
+  "version": "0.1",
+  "candidate_id": "hundred-crafts-night-procession",
+  "status": "research_candidate",
+  "project_initialization_authorized": false,
+  "prose_authorized": false,
+  "research_rules": [
+    "事实与幻想推演分栏记录",
+    "每类至少两个权威来源",
+    "记录材料、工序、工具和失效模式",
+    "记录师承、行业、社区和现实处境",
+    "进入正文前补足传承人口述或田野材料"
+  ],
+  "domains": [
+    {
+      "domain_id": "timber_architecture",
+      "label": "木作与古建营造",
+      "research_status": "deep_ready",
+      "material_scope": ["木材选择与构件", "榫卯与模数", "大木作和桥梁编木"],
+      "social_scope": ["主墨木匠与协作工匠", "师徒传承", "桥梁作为社区公共空间"],
+      "narrative_questions": ["共同承重如何转化为超凡伦理", "修复是否应恢复原状", "谁为公共建筑的安全负责"],
+      "sources": [
+        {
+          "source_id": "timber-unesco-00223",
+          "title": "Chinese traditional architectural craftsmanship for timber-framed structures",
+          "publisher": "UNESCO",
+          "url": "https://www.unesco.org/en/intangible-cultural-heritage/chinese-traditional-architectural-craftsmanship-timber-framed-structures",
+          "quality": "primary_institution",
+          "supports": ["柱梁檩枋和斗拱构件", "榫卯连接", "预制组装", "师徒传承"]
+        },
+        {
+          "source_id": "timber-ihchina-overview",
+          "title": "中国传统木结构建筑营造技艺",
+          "publisher": "中国非物质文化遗产网",
+          "url": "https://www.ihchina.cn/mujiegou.html",
+          "quality": "official_catalogue",
+          "supports": ["木材为主材", "榫卯结合", "模数制", "设计和施工统一"]
+        },
+        {
+          "source_id": "timber-bridge-study",
+          "title": "中国木拱桥传统营造技艺的文化表征与传承实践",
+          "publisher": "中国非物质文化遗产网",
+          "url": "https://www.ihchina.cn/Article/Index/detail?id=30828",
+          "quality": "scholarly",
+          "supports": ["编木结构分担荷载", "选址条件", "公共文化空间", "社区协作"]
+        },
+        {
+          "source_id": "timber-icomos-2017",
+          "title": "Principles for the Conservation of Wooden Built Heritage",
+          "publisher": "ICOMOS",
+          "url": "https://www.icomos.org/images/DOCUMENTS/Charters/GA2017_6-3-4_WoodPrinciples_EN_adopted-15122017.pdf",
+          "quality": "primary_institution",
+          "supports": ["最小必要干预", "尽可能可逆", "保留现有构件", "替换构件可识别"]
+        }
+      ]
+    },
+    {
+      "domain_id": "metal_forging",
+      "label": "铸造与锻造",
+      "research_status": "mapped",
+      "material_scope": ["冶炼与锻打", "热处理", "錾刻、焊接与表面处理"],
+      "social_scope": ["家庭作坊与师徒", "兵器和生活器物", "材料资源与地域审美"],
+      "narrative_questions": ["火候能否成为判断而非能量条", "反复锻打如何对应人格塑形", "器物用途由谁决定"],
+      "sources": [
+        {
+          "source_id": "metal-sword-ihchina",
+          "title": "宝剑锻制技艺（棠溪宝剑锻制技艺）",
+          "publisher": "中国非物质文化遗产网",
+          "url": "https://www.ihchina.cn/project_details/14326/",
+          "quality": "official_catalogue",
+          "supports": ["冶炼", "冷热锻", "正火回火退火", "研磨和组装"]
+        },
+        {
+          "source_id": "metal-silver-ihchina",
+          "title": "银饰锻制技艺（苗族银饰锻制技艺）",
+          "publisher": "中国非物质文化遗产网",
+          "url": "https://www.ihchina.cn/project_details/14335.html",
+          "quality": "official_catalogue",
+          "supports": ["熔炼铸造捶打", "制花编结焊接", "纹样与族群记忆", "家庭作坊"]
+        }
+      ]
+    },
+    {
+      "domain_id": "ceramic_firing",
+      "label": "陶瓷与窑火",
+      "research_status": "mapped",
+      "material_scope": ["瓷土与釉料", "拉坯修坯", "装匣装窑与温度控制"],
+      "social_scope": ["家族、师徒与学院传承", "窑场协作", "地方原料和外销网络"],
+      "narrative_questions": ["不可逆窑变如何制造选择", "共同烧窑如何形成利益共同体", "失败器物是否也保存价值"],
+      "sources": [
+        {
+          "source_id": "ceramic-longquan-ihchina",
+          "title": "龙泉青瓷传统烧制技艺",
+          "publisher": "中国非物质文化遗产网",
+          "url": "https://www.ihchina.cn/longquanyao.html",
+          "quality": "official_catalogue",
+          "supports": ["原料处理", "成型修坯", "上釉装窑", "柴烧温控"]
+        },
+        {
+          "source_id": "ceramic-rejuvenation-catalogue",
+          "title": "传统工艺振兴计划项目目录",
+          "publisher": "中国非物质文化遗产网",
+          "url": "https://www.ihchina.cn/rejuvenation.html",
+          "quality": "official_catalogue",
+          "supports": ["龙泉、越窑、景德镇、德化等地域体系", "陶瓷烧造分类"]
+        }
+      ]
+    },
+    {
+      "domain_id": "paper_and_book_repair",
+      "label": "造纸、装裱与古籍修复",
+      "research_status": "mapped",
+      "material_scope": ["青檀皮与稻草纤维", "制浆捞纸晒纸", "纸病、装裱与保存"],
+      "social_scope": ["水土环境和产地", "多人分工", "记录、书画与文化保存"],
+      "narrative_questions": ["载体是否会改变被记录之事", "修复文本与篡改文本的界线在哪里", "纸张寿命由材料还是记忆决定"],
+      "sources": [
+        {
+          "source_id": "paper-xuan-ihchina",
+          "title": "宣纸传统制作技艺",
+          "publisher": "中国非物质文化遗产网",
+          "url": "https://www.ihchina.cn/xuanzhi.html",
+          "quality": "official_catalogue",
+          "supports": ["青檀皮和沙田稻草", "百余道工序", "水质和原料约束", "文化载体"]
+        },
+        {
+          "source_id": "paper-tools-ihchina",
+          "title": "宣纸传统制作技艺专题·工具篇",
+          "publisher": "中国非物质文化遗产网",
+          "url": "https://www.ihchina.cn/news_1_details/25141.html",
+          "quality": "museum_research",
+          "supports": ["碓碾纸槽纸帘纸焙", "纤维分解", "工具与工序耦合"]
+        }
+      ]
+    },
+    {
+      "domain_id": "textile_dye_embroidery",
+      "label": "织造、染色与刺绣",
+      "research_status": "mapped",
+      "material_scope": ["丝、金线和羽线", "纹样设计与挑花结本", "织机和上下手协作"],
+      "social_scope": ["双人及多人协作", "服饰制度", "博物馆复制和活态传承"],
+      "narrative_questions": ["图案是否是一种可执行记忆", "上下手如何共享权力", "身份服饰能否脱离制度存在"],
+      "sources": [
+        {
+          "source_id": "textile-yunjin-unesco",
+          "title": "Craftsmanship of Nanjing Yunjin brocade",
+          "publisher": "UNESCO",
+          "url": "https://ich.unesco.org/en/RL/craftsmanship-of-nanjing-yunjin-brocade-00200",
+          "quality": "primary_institution",
+          "supports": ["上下机协作", "百余道工序", "纹样程序", "古织物复制"]
+        },
+        {
+          "source_id": "textile-costume-nmc",
+          "title": "Ancient Chinese Culture: Costume and Adornment",
+          "publisher": "中国国家博物馆",
+          "url": "https://en.chnmuseum.cn/exhibition/exhibition_series/special_exhibitions/202102/t20210207_248962.html",
+          "quality": "museum_research",
+          "supports": ["服饰与身份制度", "织染刺绣关系", "历代变化和文化交流"]
+        }
+      ]
+    },
+    {
+      "domain_id": "opera_costume_props",
+      "label": "戏曲、戏装与戏具",
+      "research_status": "deep_ready",
+      "material_scope": ["戏衣、盔头和切末", "软硬胎制作", "程式化动作与舞台符号"],
+      "social_scope": ["演员、盔箱师傅和制作匠人", "角色行当", "师徒训练与院团制度"],
+      "narrative_questions": ["穿戴角色是否反向塑造人", "戏里身份和现实身份如何隔离", "谁负责保管角色的历史债务"],
+      "sources": [
+        {
+          "source_id": "opera-peking-unesco",
+          "title": "Peking opera",
+          "publisher": "UNESCO",
+          "url": "https://ich.unesco.org/en/RL/peking-opera-00418",
+          "quality": "primary_institution",
+          "supports": ["唱念做打", "程式化象征", "服装脸谱标示身份", "师徒训练"]
+        },
+        {
+          "source_id": "opera-headgear-ihchina",
+          "title": "剧装戏具制作技艺（戏曲盔头制作技艺）",
+          "publisher": "中国非物质文化遗产网",
+          "url": "https://www.ihchina.cn/project_details/23753.html",
+          "quality": "official_catalogue",
+          "supports": ["软硬盔工序", "切末与盔箱", "古代冠帽转译", "家族师徒谱系"]
+        },
+        {
+          "source_id": "opera-headgear-study",
+          "title": "戏曲盔头制作技艺的现状、传承与发展",
+          "publisher": "中国非物质文化遗产网",
+          "url": "https://www.ihchina.cn/luntan_details/31094.html",
+          "quality": "scholarly",
+          "supports": ["戏中不用真物的行业观念", "行头与身份区分", "定制和传承困境"]
+        }
+      ]
+    },
+    {
+      "domain_id": "paper_frame_ritual_craft",
+      "label": "彩扎、纸扎与轻质骨架",
+      "research_status": "mapped",
+      "material_scope": ["竹篾或秸秆骨架", "裱糊和彩绘", "灯彩、纸扎、风筝和仪式物"],
+      "social_scope": ["祭祈、节庆和礼仪", "地域材料差异", "民间作坊与季节性生产"],
+      "narrative_questions": ["短暂器物为何承载长久愿望", "轻质骨架如何借环境成形", "仪式物能否脱离原社区使用"],
+      "sources": [
+        {
+          "source_id": "paper-frame-fenghuang",
+          "title": "彩扎（凤凰纸扎）",
+          "publisher": "中国非物质文化遗产网",
+          "url": "https://www.ihchina.cn/project_details/14165/",
+          "quality": "official_catalogue",
+          "supports": ["篾骨纸裱", "彩绘", "祭祈节庆礼仪", "地域材料差异"]
+        },
+        {
+          "source_id": "paper-frame-kite",
+          "title": "风筝制作技艺（北京风筝哈制作技艺）",
+          "publisher": "中国非物质文化遗产网",
+          "url": "https://www.ihchina.cn/project_details/14436.html",
+          "quality": "official_catalogue",
+          "supports": ["扎糊绘放", "骨架决定受力", "软硬翅分类", "材料和防潮"]
+        }
+      ]
+    },
+    {
+      "domain_id": "clock_mechanical_repair",
+      "label": "钟表与机械修复",
+      "research_status": "mapped",
+      "material_scope": ["传动结构和机芯", "拆洗补齿与调试", "多材料装饰修复"],
+      "social_scope": ["清宫做钟处谱系", "中西技术交流", "保护性修复伦理"],
+      "narrative_questions": ["恢复功能是否等于恢复原貌", "时间误差如何成为人物代价", "拆解记录能否保存器物身份"],
+      "sources": [
+        {
+          "source_id": "clock-ihchina",
+          "title": "古代钟表修复技艺",
+          "publisher": "中国非物质文化遗产网",
+          "url": "https://www.ihchina.cn/project_details/14746",
+          "quality": "official_catalogue",
+          "supports": ["结构调查", "拆卸清洗补齿", "组装调试", "多工种结合"]
+        },
+        {
+          "source_id": "clock-palace-museum",
+          "title": "图说故宫藏钟表修复",
+          "publisher": "故宫博物院",
+          "url": "https://www.dpm.org.cn/forum_detail/100140.html",
+          "quality": "museum_research",
+          "supports": ["验伤和修复档案", "结构分析", "逐步拆卸记录", "保护性修复"]
+        }
+      ]
+    },
+    {
+      "domain_id": "shipbuilding_waterworks",
+      "label": "舟船、航路与水利",
+      "research_status": "deep_ready",
+      "material_scope": ["水密隔舱", "樟松杉选材", "榫接艌缝和船型放样", "运河与水系管理"],
+      "social_scope": ["师傅头和协作船工", "港口社区和下水仪式", "航运、漕运与公共治理"],
+      "narrative_questions": ["风险如何被隔离而不被遗忘", "航路信誉如何成为公共资产", "局部进水时谁决定牺牲哪一舱"],
+      "sources": [
+        {
+          "source_id": "ship-bulkhead-unesco",
+          "title": "Watertight-bulkhead technology of Chinese junks",
+          "publisher": "UNESCO",
+          "url": "https://ich.unesco.org/en/USL/watertight-bulkhead-technology-of-chinese-junks-00321",
+          "quality": "primary_institution",
+          "supports": ["水密隔舱抗沉", "榫接与艌缝", "材料选择", "主匠协作和仪式"]
+        },
+        {
+          "source_id": "ship-fuchuan-ihchina",
+          "title": "水密隔舱福船制造技艺",
+          "publisher": "中国非物质文化遗产网",
+          "url": "https://www.ihchina.cn/project_details/14576.html",
+          "quality": "official_catalogue",
+          "supports": ["模型放样", "船壳法和结构法", "舱位标记", "起工树龙骨和下水仪式"]
+        },
+        {
+          "source_id": "water-grand-canal-unesco",
+          "title": "The Grand Canal",
+          "publisher": "UNESCO World Heritage Centre",
+          "url": "https://whc.unesco.org/en/list/1443/",
+          "quality": "primary_institution",
+          "supports": ["跨流域水路网络", "水利工程", "漕运管理", "长期适应性治理"]
+        }
+      ]
+    },
+    {
+      "domain_id": "stone_carving_masonry",
+      "label": "石作、雕刻与材料修复",
+      "research_status": "mapped",
+      "material_scope": ["相石和开坯", "圆雕浮雕镂雕线刻", "裂隙、纹理和巧色"],
+      "social_scope": ["产地资源", "工匠审美", "建筑、印章和公共纪念物"],
+      "narrative_questions": ["顺应材料是否意味着接受缺陷", "不可逆减材如何约束能力", "资源枯竭如何改变传承"],
+      "sources": [
+        {
+          "source_id": "stone-qingtian-ihchina",
+          "title": "青田石雕",
+          "publisher": "中国非物质文化遗产网",
+          "url": "https://www.ihchina.cn/project_details/14010/",
+          "quality": "official_catalogue",
+          "supports": ["因材施艺因色取巧", "相石开坯雕琢", "多种雕刻技法", "资源约束"]
+        },
+        {
+          "source_id": "stone-restoration-palace",
+          "title": "镶嵌文物的修复保护技艺",
+          "publisher": "故宫博物院",
+          "url": "https://www.dpm.org.cn/gugongforum/detail/246448.html",
+          "quality": "museum_research",
+          "supports": ["多材料雕刻", "适度干预", "传统工艺与现代检测", "修复胶粘剂"]
+        }
+      ]
+    },
+    {
+      "domain_id": "medicine_processing",
+      "label": "医药炮制与材料转性",
+      "research_status": "mapped",
+      "material_scope": ["药材鉴别", "炮炙修治", "生熟异治和毒副作用控制"],
+      "social_scope": ["医者、药工与患者", "处方责任", "地域药材和存储流通"],
+      "narrative_questions": ["改变材料性质是否等于消除代价", "药效与毒性如何同源", "谁承担错误炮制的后果"],
+      "sources": [
+        {
+          "source_id": "medicine-processing-ihchina",
+          "title": "中药炮制技术",
+          "publisher": "中国非物质文化遗产网",
+          "url": "https://www.ihchina.cn/project_details/14788.html",
+          "quality": "official_catalogue",
+          "supports": ["炮炙修治", "提高药效", "降低毒副作用", "储存和饮片入药"]
+        },
+        {
+          "source_id": "medicine-museum-archive",
+          "title": "中国珠算图集中的中药铺运用场景",
+          "publisher": "UNESCO",
+          "url": "https://ich.unesco.org/en/8-representative-list-00665?call=slideshow&id=00853&include=slideshow_inc.php&mode=scroll&width=620",
+          "quality": "primary_institution",
+          "supports": ["药铺配方与计算", "医药生产和账目联系", "日常职业场景"]
+        }
+      ]
+    },
+    {
+      "domain_id": "measurement_orientation_calculation",
+      "label": "测量、定向与计算",
+      "research_status": "mapped",
+      "material_scope": ["罗盘制作", "珠算口诀", "尺度、方向和时间观测"],
+      "social_scope": ["航海、建筑、商业和教育", "口传公式", "标准与地方经验"],
+      "narrative_questions": ["测量是否会改变被测之物", "标准如何成为权力", "误差由谁承担"],
+      "sources": [
+        {
+          "source_id": "measure-compass-ihchina",
+          "title": "万安罗盘制作技艺",
+          "publisher": "中国非物质文化遗产网",
+          "url": "https://www.ihchina.cn/project_details/14356.html",
+          "quality": "official_catalogue",
+          "supports": ["天文地理军事航海用途", "传统手工制作", "严格流程"]
+        },
+        {
+          "source_id": "measure-zhusuan-unesco",
+          "title": "Chinese Zhusuan, knowledge and practices of mathematical calculation through the abacus",
+          "publisher": "UNESCO",
+          "url": "https://ich.unesco.org/en/RL/chinese-zhusuan-knowledge-and-practices-of-mathematical-calculation-through-the-abacus-00853",
+          "quality": "primary_institution",
+          "supports": ["算法和口诀", "复杂运算", "口传和自学", "商业建筑等应用"]
+        }
+      ]
+    }
+  ]
+}

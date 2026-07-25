@@ -1,0 +1,149 @@
+{
+  "chapter_id": "chapter-0076",
+  "draft_sha256": "69ec0335b512233eb01b579cce4105a671de2ec67212fb4a6cc259f096bb0467",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "chapter-0076-character-001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_procedural_choice",
+        "before": "仅对局部灰痕进行识账，不读取个人命页或完整来源链",
+        "after": "将识账限定为灰印外层与白裂内层，确认来向差异后立即停术，并接受现场见证记录",
+        "evidence": "陆沉渊明确只认两层灰及受力方向，术后按巷民要求停术，并要求记录限定为现场可见火屑。"
+      },
+      {
+        "fact_id": "chapter-0076-character-002",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_public_statement",
+        "before": "该顺序被记为待验现场疑点，不能直接证明主动写入",
+        "after": "公开承认只能证明两层痕来向不同，不能指出改动者，也未查看封档内容",
+        "evidence": "他回答‘不知道’谁施压、谁将其弄到这里，并说自己没有看封档。"
+      },
+      {
+        "fact_id": "chapter-0076-character-003",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_visible_condition",
+        "before": "失温和支撑困难加重，左腿失稳，冷灰咳嗽伴血丝，右臂追缠纹收紧并渗血",
+        "after": "施术后左眼出现银灰残屑并当日失去辨痕能力，咳出带血丝灰沫，左腿发软并胸口收紧",
+        "evidence": "停术后银灰残屑贴在左眼眼角；他眼前沉黑、咳出带血丝灰沫，退开时左腿发软。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "chapter-0076-npc-001",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_collective_choice",
+        "before": "住户共同以公开见证寒损、挡风和保持空地承担禁修后果，不提供命火",
+        "after": "住户继续拒绝提供命火，并自愿按各自实际看见的内容见证和记录，不替他人补全结论",
+        "evidence": "街坊有人按下指印，有人只报时辰，有人声明看不懂灰，不替陆沉渊认方向。"
+      }
+    ],
+    "locations": [],
+    "factions": [
+      {
+        "fact_id": "chapter-0076-faction-001",
+        "asset_id": "state_ledger_faction_pressure",
+        "field_path": "state_ledger.faction_pressure",
+        "before": "命籍衙禁修登记、临时协助隐匿审查与寒损复核共同结算，泥灯巷和陆沉渊均被留验",
+        "after": "局部来向结果需提交州府复核，且复核要求保留跨越灰印内外的真实阵纹，禁修印禁止整片取下",
+        "evidence": "持灯人说明整片禁修印不能动，送入州府必须留下一段同时跨过灰印内外的真纹。"
+      }
+    ],
+    "artifacts": [],
+    "techniques": [
+      {
+        "fact_id": "chapter-0076-technique-001",
+        "asset_id": "technique_ledger_recognition",
+        "field_path": "technique.current_use_status",
+        "before": "局部识账确认两层灰痕并非同时压成，未读取完整来源链",
+        "after": "合规限域识账确认外层火屑从封档投印方向压入，白裂内层未见向外写出；术式覆盖止于现场两层火屑",
+        "evidence": "陆沉渊施术时限制视线在灰印两侧巴掌大的石面，随后明确说外层从封档投印方向压入、里层没有往外写。"
+      }
+    ],
+    "relationships": [],
+    "emotions": [
+      {
+        "fact_id": "chapter-0076-emotion-001",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_collective_emotion",
+        "before": "共同体承认陆沉渊应记录并承担禁修实际寒损，但不为他续火或取暖",
+        "after": "共同体在不提供命火的前提下接受局部识账结果，同时拒绝把局部识账当成完整答案",
+        "evidence": "巷民追问这能证明什么、谁压的和谁改动，并分别只记录自己实际见到的内容。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "chapter-0076-information-001",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_local_direction_result",
+        "before": "灰印内外火屑方向相反，仍为待验现场疑点",
+        "after": "具名局部识账结果：现场可见外层火屑从封档投印方向压入；白裂边缘内层火屑未见向外写出、未向封档回流",
+        "evidence": "持灯人最终按陆沉渊要求在湿木上记录了‘封档投印方向压入护阵’并补充‘现场可见外层火屑’和‘白裂内层未见向外写出’。"
+      },
+      {
+        "fact_id": "chapter-0076-information-002",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_procedure_scope",
+        "before": "尚无可提交州府的局部来向记录",
+        "after": "现场记录可提交复核，但不包含改动者身份、封档内容或完整转运链",
+        "evidence": "陆沉渊要求补限定语，明确不能把一句话当整条链；持灯人也记录各人只能见到的内容。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "chapter-0076-hook-001",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "hook.current_direction",
+        "before": "外层火屑被风压向泥灯巷，内层银灰贴在裂缝深处未向封档回流",
+        "after": "限域识账将外层受力方向具名为从封档投印方向压入，内层仍未向外写出；停术后内侧银灰慢半拍亮起",
+        "evidence": "识账时外层拖痕显示压入巷口一侧，内层无回吐细屑；后续咳血时内侧银灰慢半拍亮起。"
+      },
+      {
+        "fact_id": "chapter-0076-hook-002",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "hook.current_unresolved_scope",
+        "before": "写入者、银灰来源及灰印来处未确认",
+        "after": "州府复核仍受限于无法整片取下禁修灰印，必须保留一段跨印内外的真实阵纹",
+        "evidence": "灰印压住跨内外旧线，持灯人说明整片不能动，只能设法留下一段跨灰印内外的真纹。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "chapter-0076-timeline-001",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "timeline.chapter_event",
+        "before": "寒风中灰印内外火屑呈相反方向，来源未形成具名结论",
+        "after": "完成一次限域识账并形成‘外层由封档方向压入、内层未向外写出’的局部结果，随后停术",
+        "evidence": "正文先约束识账范围，施术观察两层灰，陆沉渊说出局部结论后在左眼失辨、咳血时停止术式。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "chapter-0076-physical-001",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.eye_pattern_burn",
+        "before": "右眼几乎完全失去视物能力，右眼焦黑纹路持续扩张",
+        "after": "左眼施术后灼痛加重并出现银灰残屑，停术后当日无法继续辨认灰印纹路",
+        "evidence": "左眼深处涩痛、焦黑纹路向外烧；停术后银灰残屑贴住眼角，无法再分出一根纹路。"
+      },
+      {
+        "fact_id": "chapter-0076-physical-002",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.current_visible_condition",
+        "before": "胸口旧裂震痛、左腿失稳、冷灰咳嗽伴血丝",
+        "after": "识账承压后胸口被攥紧，咳出带血丝灰沫，左腿发软，左眼当日停术",
+        "evidence": "陆沉渊在施术后骤然沉黑并弯腰咳出带血丝灰沫，退开时左腿发软。"
+      }
+    ],
+    "naming": [
+      {
+        "fact_id": "chapter-0076-naming-001",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.named_local_result",
+        "before": null,
+        "after": "封档投印方向压入护阵；白裂内层未见向外写出",
+        "evidence": "持灯人按陆沉渊要求将限定后的两句局部识账结果刻写在湿木片上。"
+      }
+    ]
+  }
+}

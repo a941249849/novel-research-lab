@@ -1,0 +1,10 @@
+{
+  "version": "0.28",
+  "chapter_id": "chapter-0004",
+  "role": "observer",
+  "artifact": "projects/hundred-crafts-night-procession/production_runtime/chapters/chapter-0004/observation.json",
+  "artifact_sha256": "efb9b5be9fb1e746ce011cf63f7618da01cd3d54e712e59d07292e6e0bf866d9",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "revision_sha256": "0af325e8422ff0c48585df2af64c03be9db872ef3fc6396bf07d15982105a747"
+}

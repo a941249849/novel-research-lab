@@ -1,0 +1,17 @@
+{
+  "chapter_id": "chapter-0006",
+  "accepted_revision_sha256": "d8bdb997c281c9d81a29360db6e0c59c1033883af8a77b161f84132886a4d26b",
+  "state_deltas": [
+    {
+      "fact_id": "f-ch006-001",
+      "asset_id": "char_ma_xiaoman",
+      "field_path": "character.current_state",
+      "operation": "set",
+      "before": "active",
+      "after": "维修班组被停职，居民被迫进入临时安置。"
+    }
+  ],
+  "resolved_audit_ids": [
+    "CH006-STATE-001"
+  ]
+}

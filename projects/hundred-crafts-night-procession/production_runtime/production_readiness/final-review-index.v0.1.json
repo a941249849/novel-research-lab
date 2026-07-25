@@ -1,0 +1,33 @@
+{
+  "version": "0.31",
+  "project_id": "hundred-crafts-night-procession",
+  "valid": true,
+  "bound_baseline_sha256": "397559ead2903aa8c0c31ff04050d74f3a045e2d20a66d08d60e3e570cc8aabc",
+  "sol_verdict": "ACCEPT",
+  "sol_review_path": "projects/hundred-crafts-night-procession/validation/production-orchestration-sol-review.v0.30.md",
+  "sol_review_sha256": "d8baac51715255130a0d4b61269b108b6485fc136764ffe9211885575c1d4608",
+  "independent_review_provider": "antigravity",
+  "independent_review_model": "Gemini 3.5 Flash (High)",
+  "independent_review_verdict": "ACCEPT",
+  "independent_review_path": ".agent-handoff/antigravity/responses/hundred-crafts-production-orchestration-v030.md",
+  "independent_review_sha256": "a469d3e50916218fd2acdae5470cb80b9a0c3e6f52701a46b3b8b1a5ab1234ca",
+  "independent_review_execution_path": "projects/hundred-crafts-night-procession/validation/antigravity-independent-review-execution.v0.31.json",
+  "independent_review_execution_sha256": "66161fb29c601183f34ad47104071603e9198934efffb512cb4ce43fa98a00e4",
+  "review_scope": {
+    "volume": 1,
+    "start_chapter": 1,
+    "end_chapter": 66,
+    "formal_window_count": 7
+  },
+  "authorized_recommendation": {
+    "start_chapter": 1,
+    "end_chapter": 10
+  },
+  "forbidden": [
+    "chapter-0011-or-later",
+    "bulk-or-continuous-production",
+    "release-package",
+    "upload",
+    "publish"
+  ]
+}

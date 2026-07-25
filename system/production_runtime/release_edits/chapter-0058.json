@@ -1,0 +1,14 @@
+{
+  "version": "0.25",
+  "chapter_id": "chapter-0058",
+  "source_revision": "system/production_runtime/chapters/chapter-0058/revision.md",
+  "source_sha256": "fae839b7a0bff2931261bed6f7efcb46d4ea62a47cec25162a09565057699866",
+  "release_edit": "system/production_runtime/release_edits/chapter-0058.md",
+  "release_edit_sha256": "edf3af307d344c4c2d243c21315deeff0bdd93ea080f4a1ffd19d8352ec77c3c",
+  "repair_direction": "修复两份执行令原纸流转：顾巡现场验链并在原纸上加盖退令/待审印后，将两份原纸分别交还具名持令人；他送往命审台的仅是债链刻录、同位压痕拓印和现场复核记录。两名持令人自行把原纸带回泥灯巷，后续可撤回或亲自送审。保持重复命令退回、冷线转锁灯龛、旧债未解除。删除元评论，减少否定排比。",
+  "provider": "codex",
+  "model": "gpt-5.6-sol",
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-051-060.json",
+  "reviewed_release_edit_sha256": "edf3af307d344c4c2d243c21315deeff0bdd93ea080f4a1ffd19d8352ec77c3c"
+}

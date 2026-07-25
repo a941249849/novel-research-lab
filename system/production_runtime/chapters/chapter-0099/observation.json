@@ -1,0 +1,172 @@
+{
+  "chapter_id": "chapter-0099",
+  "draft_sha256": "4cef93848f03cca4bf3b72fd5a9e989a3ff66b527b5c5c78c154e34a64625120",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "c0099-f001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_procedural_status",
+        "before": "以时间顺序确认自动填栏据此提人构成程序性错征，并提出局部更正",
+        "after": "公开登记到案姓名为陆沉渊，并公开承担到案；公开更正自动填栏错误及不得据此提人的范围",
+        "evidence": "陆沉渊填写“陆沉渊”，承担“到案”，并将姓名、来由和更正范围沿灰线公开回传。"
+      },
+      {
+        "fact_id": "c0099-f002",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "physical_state.current_condition",
+        "before": "左腿失去知觉、掌心留下压痕，寒意沿腕骨加重",
+        "after": "左腿仍完全失去知觉，寒白越过腕骨，撞伤处疼痛加重，掌心压痕被寒意顶得发白",
+        "evidence": "正文写明左腿早已没了知觉，寒白彻底越过腕骨，撞伤处如被钝锤重击，掌心压痕发白。"
+      },
+      {
+        "fact_id": "c0099-f003",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "emotion.current_responsibility_orientation",
+        "before": "将有限证据转化为保护具体人的局部更正结论，不追索未显示的完整答案",
+        "after": "公开承担自己的到案姓名与责任，同时明确不替苏晚认债、不替住户补写未见事实",
+        "evidence": "他公开填写到案姓名，并声明只认看见的填栏与提验，其余空白留在原处。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "c0099-f004",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_emotional_state",
+        "before": "在共同拒交形成后仍未松懈，继续坚持由记录责任人认领",
+        "after": "确认陆沉渊未替她认债、她也不隐藏在其到案姓名之后，继续独立承担旧债与分期",
+        "evidence": "苏晚回传称“旧债是我的，分期也是我的”，并说陆沉渊未替她认债，她不藏在他的姓名后头。"
+      },
+      {
+        "fact_id": "c0099-f005",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_procedural_boundary",
+        "before": "明确要求所有人只陈述亲眼所见，并共同执行“无具名接收落处，不交人”",
+        "after": "在公开更正回传后再次确认“无具名落处，不交人”，并要求只认已看见的事实",
+        "evidence": "苏晚公开答复“泥灯巷答复：无具名落处，不交人”，并再次要求未看见具名接收就不补写。"
+      },
+      {
+        "fact_id": "c0099-f006",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_physical_state",
+        "before": "裂纹逼近灯腹，针尖火苗持续受压；掌背血珠滴落但未越过门槛",
+        "after": "灯腹裂纹继续下游，针尖火苗几乎伏平但未熄，血珠落在门槛内或自己脚下",
+        "evidence": "正文写明裂纹又往下游了一丝，火苗仍未熄，掌背血珠落在门槛内侧及脚下青砖。"
+      }
+    ],
+    "locations": [],
+    "factions": [
+      {
+        "fact_id": "c0099-f007",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_boundary_terms",
+        "before": "留下者只陈述亲眼所见，拒绝替旁户作证、替苏晚承认债或补写接收事实",
+        "after": "贫城在公开更正回传后再次共同执行“无具名落处，不交人”，不替苏晚或任何人补认具名接收",
+        "evidence": "苏晚代表泥灯巷公开回传拒绝交人，巷民收回旧纸、退回门内，并保持只陈述所见的共同边界。"
+      }
+    ],
+    "artifacts": [],
+    "techniques": [],
+    "relationships": [
+      {
+        "fact_id": "c0099-f008",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_emotional_turn",
+        "before": "苏晚以自身行动执行自主边界，与陆沉渊分别拒绝代持、代答和牵连住户命火",
+        "after": "母子公开确认各自承担责任、互不代认；陆沉渊不替苏晚认债，苏晚不隐藏在他的到案姓名之后",
+        "evidence": "苏晚明确区分自己的旧债与陆沉渊的到案，并公开说明双方没有互相代认。"
+      },
+      {
+        "fact_id": "c0099-f009",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "relationship.with_character_su_wan",
+        "before": "陆沉渊以更正结论保护苏晚不被自动填入的接收身份牵连，苏晚仍独立承担旧债与分期",
+        "after": "陆沉渊以公开署名和到案承担保护苏晚，双方在公开回传中分别认领自己的责任",
+        "evidence": "陆沉渊公开承担到案与填栏错误，苏晚随后公开认领旧债和分期并拒绝藏在其姓名之后。"
+      }
+    ],
+    "emotions": [],
+    "information": [
+      {
+        "fact_id": "c0099-f010",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_verified_result",
+        "before": "确认州府自动填入本地接收栏并据此提人，构成无具名接收响应的程序性错征",
+        "after": "该程序性错征被以陆沉渊公开署名的方式回传，确认自动填入本地接收并据此提人属于错误",
+        "evidence": "公开更正三栏写明原始交接送出响应已见、本地接收栏未见具名响应，以及自动填入并据此提人为错。"
+      },
+      {
+        "fact_id": "c0099-f011",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "timeline.chapter_event",
+        "before": "完成一次局部改账：自动填入本地接收不得据此提人，苏晚提验被撤回",
+        "after": "局部更正连同陆沉渊到案姓名和承担记录公开回传，并被贫城接收为再次拒交依据",
+        "evidence": "影字沿灰线传入贫城，苏晚据此公开答复“无具名落处，不交人”。"
+      },
+      {
+        "fact_id": "c0099-f012",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "naming.current_record_labels",
+        "before": "“疑接者苏晚”被化灰，保留“未见具名接收，不得提人”及原始交接提交方未完成字样",
+        "after": "公开记录新增“到案人自认姓名：陆沉渊”及其对自动填栏错误和更正范围的承担；“疑接者苏晚”仍未恢复",
+        "evidence": "正文明确浮出到案人姓名、来由、更正范围三栏，且陆沉渊未碰已化灰的“疑接者”字样。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "c0099-f013",
+        "asset_id": "state_ledger_public_reputation",
+        "field_path": "state_ledger.current_public_rule",
+        "before": "现场公开形成母子债务与泥灯巷承接责任必须分列核验的规则",
+        "after": "公开认知绑定为：州府在未见具名接收时自动填栏并据此提人，泥灯巷可据此拒交",
+        "evidence": "公开更正说明自动填栏错误，苏晚和泥灯巷随即按“无具名落处，不交人”回传。"
+      },
+      {
+        "fact_id": "c0099-f014",
+        "asset_id": "state_ledger_half_life_registry_exposure",
+        "field_path": "state_ledger.current_exchange_exposure_delta",
+        "before": "暴露记录继续照实递入，未因苏晚拒绝附加承接而下降",
+        "after": "公开更正未降低暴露，且残印持有人与陆沉渊的关联更容易被锁定",
+        "evidence": "闻照微明确警告残印持有人会更容易被锁到陆沉渊身上，寒白随即越过其腕骨。"
+      },
+      {
+        "fact_id": "c0099-f015",
+        "asset_id": "state_ledger_half_life_registry_exposure",
+        "field_path": "hook.current_direction",
+        "before": "提验压力越过外层入口，转向追问残印对应的原始交接提交方；失温影字向贫城落下但未获承认",
+        "after": "公开回传完成后，外层复核槽落下裁定位，要求在撤回提验与否认填栏来源之间当场答复",
+        "evidence": "贫城“不交人”回传完成后，黑面露出窄暗，裁定位浮出并写明“命籍衙限当场答覆：”；末段明确两种答复选项。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "c0099-f016",
+        "asset_id": "state_ledger_public_reputation",
+        "field_path": "timeline.chapter_event",
+        "before": "贫城公开形成母子债务与泥灯巷承接责任必须分列核验的规则",
+        "after": "陆沉渊署名承担到案与程序错误，公开更正送达贫城，贫城据此完成再次拒交",
+        "evidence": "影字公开回传陆沉渊姓名及三条更正，苏晚随后代表泥灯巷答复无具名落处、不交人。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "c0099-f017",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "physical_state.current_lock_sign",
+        "before": "封布下残印持续震动，冷光沿陆沉渊手背攀至手腕并与影门到案文字同步加压",
+        "after": "到案与公开回传后，寒白越过腕骨，候验锁纹继续收紧并将陆沉渊固定在外层复核槽",
+        "evidence": "正文写明闻照微的见证线延至肘侧，陆沉渊手背寒白越过腕骨，复核槽未给喘息。"
+      }
+    ],
+    "naming": [
+      {
+        "fact_id": "c0099-f018",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "naming.public_correction_fields",
+        "before": null,
+        "after": "到案人自认姓名：陆沉渊；来由：本地接收栏未见具名响应却被自动填入并据此提人；更正范围：撤回对苏晚的本次提验，不得以未具名接收向泥灯巷重复征收",
+        "evidence": "正文逐项填写并公开回传复核槽中的“到案人姓名”“来由”“更正范围”三栏。"
+      }
+    ]
+  }
+}

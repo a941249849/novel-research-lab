@@ -1,0 +1,11 @@
+{
+  "version": "0.23",
+  "chapter_id": "chapter-0051",
+  "revision_sha256": "94e9b205fd0cd80532d44d1beb34c6a589b1d9f3e541ec35d273a6bce192a68c",
+  "settlement_sha256": "04603f768e938603544ebbda8a42c9ad03707a4a224e29402ecf5c8bcb87b69c",
+  "source_hashes": {
+    "borrowed_heaven_life_account_bible": "81575478a441852f18d451e9967245bbfce11d60cddd3af24e9b6565955e0604",
+    "borrowed_heaven_volume1_outline_tree": "1f12fe8ad3262876eb533d40c94ad02abb90b95b38de387d339917fce9184648",
+    "project_assets.v0.2": "90dbcf17d769e8a985fc87880a4382018c30133a2a53f82c3826636c8ed1dc61"
+  }
+}

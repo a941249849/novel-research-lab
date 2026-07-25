@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "default_project_id": "borrowed-heaven",
+  "projects": [
+    {
+      "project_id": "borrowed-heaven",
+      "title": "《借天改命账》",
+      "status": "active_production",
+      "workspace": "projects/borrowed-heaven"
+    },
+    {
+      "project_id": "hundred-crafts-night-procession",
+      "title": "《百工夜行录》",
+      "status": "active_production",
+      "workspace": "projects/hundred-crafts-night-procession"
+    }
+  ]
+}

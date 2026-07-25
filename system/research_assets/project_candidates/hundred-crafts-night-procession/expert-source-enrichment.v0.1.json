@@ -1,0 +1,94 @@
+{
+  "version": "0.1",
+  "candidate_id": "hundred-crafts-night-procession",
+  "status": "desk_enriched_field_validation_pending",
+  "prose_authorized": false,
+  "evidence_rule": "机构资料和公开视频可用于形成问题与核对术语；未取得可追溯转录、出版物或从业者确认的内容不得升级为事实。",
+  "tracks": [
+    {
+      "domain_id": "timber_architecture",
+      "desk_validation": "strengthened",
+      "authoritative_addition": {
+        "source_id": "timber-icomos-2017",
+        "finding": "最小干预、可逆性、保留现有构件与标识替换构件，为小说中的修复伦理提供专业边界。"
+      },
+      "audiovisual_leads": [
+        {
+          "title": "偷梁换柱——修缮和保护古建筑的一种方法",
+          "publisher_or_uploader": "故宫古建守护人周乾",
+          "url": "https://www.bilibili.com/video/BV1Ru411M7E5",
+          "subtitle_available": false,
+          "evidence_status": "lead_only"
+        }
+      ],
+      "questions_for_practitioner": [
+        "现场如何区分必须替换的构件与可以保留的旧伤",
+        "新旧材料含水率、纹理和加工方式不匹配时最常见的失败是什么",
+        "多工种意见冲突时由谁叫停，记录如何形成",
+        "哪些行业术语只适用于特定地域或作法"
+      ],
+      "blocking_debt": "至少一份可追溯的中国古建修复案例全文或从业者核对"
+    },
+    {
+      "domain_id": "opera_costume_props",
+      "desk_validation": "strengthened",
+      "authoritative_addition": {
+        "source_id": "opera-headgear-study",
+        "finding": "盔头、行头、盔箱和戏里戏外边界已得到专业文章支撑，但不同剧种程式仍不可混用。"
+      },
+      "audiovisual_leads": [
+        {
+          "title": "京剧相关《如何制作盔头》",
+          "publisher_or_uploader": "会炸毛的小雷",
+          "url": "https://www.bilibili.com/video/BV1Qs411u7PP",
+          "subtitle_available": false,
+          "evidence_status": "lead_only"
+        }
+      ],
+      "questions_for_practitioner": [
+        "硬盔和软盔中哪些工序最依赖手感而难以标准化",
+        "演员、盔箱师傅和制作匠人如何划分穿戴安全责任",
+        "同一角色在不同剧种、流派和演员身上如何调整",
+        "复制、修复与重新设计的行业边界分别是什么"
+      ],
+      "blocking_debt": "京剧之外至少一个剧种的服装程式对照和一份盔箱工作口述"
+    },
+    {
+      "domain_id": "shipbuilding_waterworks",
+      "desk_validation": "strengthened",
+      "authoritative_addition": {
+        "source_id": "ship-bulkhead-unesco",
+        "finding": "水密隔舱降低局部进水拖垮整船的风险，但不能支持永不沉没或半船进水仍安全等夸张结论。"
+      },
+      "audiovisual_leads": [
+        {
+          "title": "福船解构",
+          "publisher_or_uploader": "中国航海博物馆",
+          "url": "https://www.bilibili.com/video/BV1Ze4y1E7W8",
+          "subtitle_available": false,
+          "evidence_status": "institutional_lead_only"
+        },
+        {
+          "title": "品识泉州非遗-水密隔舱福船制造技艺第一集",
+          "publisher_or_uploader": "泉州开放大学",
+          "url": "https://www.bilibili.com/video/BV1KcMJ6XEZT",
+          "subtitle_available": false,
+          "evidence_status": "institutional_lead_only"
+        }
+      ],
+      "questions_for_practitioner": [
+        "隔舱进水后的真实排水、堵漏、货物转移和人员分工",
+        "放样时哪些尺寸依赖船型、用途和当地水域",
+        "艌缝、木材老化和维修中最常见的失效模式",
+        "下水仪式与实际施工管理应如何分别记录"
+      ],
+      "blocking_debt": "木船操船、货舱管理和海损处置的一手或博物馆技术材料"
+    }
+  ],
+  "gate_result": {
+    "desk_research_sufficient_for_worldbuilding": true,
+    "sufficient_for_final_story_bible": false,
+    "sufficient_for_prose": false,
+    "next_action": "补足三类阻断债务，再决定是否初始化项目"
+  }
+}

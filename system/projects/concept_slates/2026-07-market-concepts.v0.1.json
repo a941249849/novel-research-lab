@@ -1,0 +1,125 @@
+{
+  "version": "0.1",
+  "slate_id": "market-concepts-2026-07-v01",
+  "researched_at": "2026-07-18",
+  "status": "candidate_only",
+  "project_initialization_authorized": false,
+  "prose_authorized": false,
+  "market_signals": [
+    "都市玄幻、末世高武与游戏化探索保持强入口",
+    "玄幻、仙侠、历史仍有基本盘，但需要机制融合",
+    "民俗、非遗、地域文化可形成有效差异化",
+    "平台治理低质与同质化，快节奏不能替代人物和逻辑"
+  ],
+  "source_urls": [
+    "https://www.cssn.cn/skgz/bwyc/202604/t20260420_5981165.shtml",
+    "https://www.nppa.gov.cn/xxfb/ywdt/202505/t20250512_894767.html",
+    "https://fanqienovel.com/rank/all",
+    "https://fanqienovel.com/",
+    "https://www.zongheng.com/rank",
+    "https://wyb.chinawriter.com.cn/attachment/202602/06/ff93dfb8-e7d0-4fb2-a19f-f805357b0c84.pdf"
+  ],
+  "candidates": [
+    {
+      "rank": 1,
+      "concept_id": "hundred-crafts-night-procession",
+      "title": "《百工夜行录》",
+      "tier": "A",
+      "lane": ["都市高武", "非遗职业", "群像成长", "东方幻想"],
+      "premise": "灵气复苏后，濒临消失的手艺成为超凡力量；古建修复学徒每修复一件超凡造物，就必须替它承担一次历史损伤。",
+      "longform_engine": "城市工程事故到全国百工谱系，再到文明级巨构维护与公共责任冲突。",
+      "opening_hook": "地铁贯穿无名古墓，全城建筑在午夜退回建造前，主角必须在天亮前补完一根被历史抹去的梁。",
+      "mechanism_ids": ["CB-M2", "CB-M6", "CB-M7", "CB-M11", "CB-M12"],
+      "target_words": "300-450万",
+      "target_volumes": 15,
+      "recommended_action": "concept_stress_test"
+    },
+    {
+      "rank": 2,
+      "concept_id": "doomsday-county-gazetteer",
+      "title": "《末日写进县志以后》",
+      "tier": "A",
+      "lane": ["民俗志怪", "灾难求生", "县域群像", "规则悬疑"],
+      "premise": "县志会提前七天出现灾难；想删掉灾难，必须找回被地方历史删掉的人，但每次修史都会改写主角的私人记忆。",
+      "longform_engine": "村志、县志、山河地理志、省级志书到全国失落地名网络。",
+      "opening_hook": "县志出现七日后全县无人记得母亲的记录，而主角母亲已失踪十年。",
+      "mechanism_ids": ["CB-M3", "CB-M4", "CB-M7", "CB-M9", "CB-M10"],
+      "target_words": "220-320万",
+      "target_volumes": 12,
+      "recommended_action": "concept_stress_test"
+    },
+    {
+      "rank": 3,
+      "concept_id": "mountains-rivers-offline",
+      "title": "《山河停服之后》",
+      "tier": "A",
+      "lane": ["末世高武", "文明维护", "游戏化探索", "多线群像"],
+      "premise": "现实每晚有一个地区停服回滚，主角能读懂维护日志，却发现系统只是上一代文明延缓世界崩溃的工单平台。",
+      "longform_engine": "校园维护区到城市、省域、旧文明运维者与世界迭代选择，副本结果持续回写现实。",
+      "opening_hook": "高考考场回滚到三十年前，所有人都成了父母年轻时认识的人，只有一个不该出生的同学保持原样。",
+      "mechanism_ids": ["CB-M3", "CB-M4", "CB-M5", "CB-M8", "CB-M9"],
+      "target_words": "250-360万",
+      "target_volumes": 12,
+      "recommended_action": "concept_stress_test"
+    },
+    {
+      "rank": 4,
+      "concept_id": "cultivation-infrastructure-manual",
+      "title": "《仙门基础设施维护手册》",
+      "tier": "B",
+      "lane": ["仙侠经营", "技术职业", "宗门群像", "灾害治理"],
+      "premise": "主角继承一家维护灵脉、飞舟航道和护山大阵的破产工坊，每修好一处设施，都会恢复一份数百年前无人履行的契约。",
+      "longform_engine": "乡镇灵井到跨州交通、上界基础设施垄断与修真文明公共品战争。",
+      "opening_hook": "主角修好全镇唯一灵井后，井底送来三百年前的第一张催债单。",
+      "mechanism_ids": ["CB-M2", "CB-M4", "CB-M6", "CB-M7", "CB-M12"],
+      "target_words": "300-500万",
+      "target_volumes": 16,
+      "recommended_action": "retain"
+    },
+    {
+      "rank": 5,
+      "concept_id": "after-the-tide-god-vanished",
+      "title": "《潮神失踪以后》",
+      "tier": "B",
+      "lane": ["海洋东方幻想", "港口经营", "民俗冒险", "商路群像"],
+      "premise": "潮汐突然晚到一小时，破产船厂继承人能修复海与人的旧约，但每恢复一条航路就会唤醒一种被贸易史掩埋的灾害。",
+      "longform_engine": "小渔港、沿海港盟、群岛商路、远洋文明到全球潮汐契约。",
+      "opening_hook": "全城退潮后，海底露出一条只允许失踪者回家的街。",
+      "mechanism_ids": ["CB-M3", "CB-M6", "CB-M7", "CB-M9", "CB-M12"],
+      "target_words": "260-380万",
+      "target_volumes": 13,
+      "recommended_action": "retain"
+    },
+    {
+      "rank": 6,
+      "concept_id": "ming-disaster-courier",
+      "title": "《大明报灾人》",
+      "tier": "B",
+      "lane": ["历史架空", "灾害治理", "官场博弈", "技术成长"],
+      "premise": "驿站小吏能听见灾民尚未写出的报灾文书，却无法证明消息来源，只能重建一套不会被权力截断的灾情网络。",
+      "longform_engine": "县域水患、漕运仓政、边地军粮、全国灾情网络到连续极端气候下的制度选择。",
+      "opening_hook": "暴雨未至，驿站却收到一封被洪水泡烂、落款日期在七天后的报灾文书。",
+      "mechanism_ids": ["CB-M3", "CB-M4", "CB-M6", "CB-M7", "CB-M8"],
+      "target_words": "220-320万",
+      "target_volumes": 12,
+      "recommended_action": "retain"
+    }
+  ],
+  "next_gate": {
+    "name": "concept_stress_test",
+    "eligible_concepts": [
+      "hundred-crafts-night-procession",
+      "doomsday-county-gazetteer",
+      "mountains-rivers-offline"
+    ],
+    "outputs": [
+      "三种开篇承诺",
+      "主角欲望-恐惧-代价三角",
+      "世界规则反例",
+      "前三十章节奏摘要",
+      "九类创作资产缺口",
+      "番茄与起点双版本标题简介"
+    ],
+    "forbidden_outputs": ["完整Story Bible", "完整创作资产", "章节正文"]
+  }
+}

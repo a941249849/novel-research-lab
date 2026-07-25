@@ -1,0 +1,88 @@
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "chunk_id": "book-06-b1b7934bf892-chunk-004",
+  "source_file": "novel_training_set/《圣墟》（校对版全本+番外）作者：辰东.txt",
+  "source_file_sha256": "b1b7934bf892c65804db4974dc1f1bc15e12b4ff31fcda87a7a092be44518478",
+  "start_byte": 4500213,
+  "end_byte": 6000283,
+  "chunk_sha256": "e7ef71cb530b09a3ff2a86151ebce3ee5e3d89e3f459e443895272e882bf53de",
+  "source_encoding": "gb18030",
+  "bounded_chunk_utf8_sha256": "20ce50953578a46936552ec668831ddfa4875fced2600f80bdd591ad9a7ff1a7",
+  "analysis": {
+    "chapter_span": [
+      "第0576章 那个人归来",
+      "第0768章 新世界"
+    ],
+    "major_events": [
+      "The legendary Sage Master makes a high-profile cosmic return driving a rusty bronze coffin, triggering alarms across the solar system in 第0576章 那个人归来.",
+      "The ancient God-slaying field on Earth is activated, repelling and wounding a giant attacking hand from the Heavenly God Clan in 第0577章 圣师再现.",
+      "Chu Feng holds low-key public auctions of captured extraterrestrial geniuses on Mount Longhu, demanding ransoms from their parent clans in 第0582章 低调的卖.",
+      "Qin Luoyin of the Great Dream Pure Land sends a public declaration of war to Chu Feng, scheduling a duel at Mount Kunlun in 第0584章 山雨欲来风满楼.",
+      "During the duel at Mount Kunlun, Chu Feng drags Qin Luoyin down into a massive black spatial fissure, entering the Purgatory together in 第0593章 血洗昆仑.",
+      "Chu Feng utilizes his mysterious stone box and black talismans to traverse the dangerous, soul-grinding pathways of reincarnation in 第0598章 往生之地走一遭.",
+      "Qin Luoyin successfully escapes from the Purgatory first, but secretly carries Chu Feng's child, who is a reincarnated Taoist with past memories, in 第0611章 楚风的孩子.",
+      "The reincarnated Taoist fetus develops self-awareness in the womb, complaining about his parents and struggling for survival against refining attempts in 第0613章 楚风与儿子.",
+      "Chu Feng escapes the Purgatory, teaming up with the Yang-realm traveler Girl Xi who mocks his delicate appearance by calling him 'Chu Loli' in 第0665章 大盗楚萝莉.",
+      "Chu Feng and Girl Xi execute a high-stakes heist on the ancestral planet of the Shadypeck Clan, plundering their sacred pools in 第0666章 洗劫一空.",
+      "Chu Feng targets and systematically eliminates the younger generation of the traitorous Xilin Clan in the cosmos in 第0679章 杀到西林无天才.",
+      "Chu Feng meets Yao Yao's grandfather, the Chu Overlord, who is a half-insane, hairy powerhouse trapped in the Taishang furnace in 第0690章 妖妖的爷爷楚霸王.",
+      "Chu Feng launches a solo assault that demolishes the strongholds of the ancient assassin guild Ci Tian Qiong in 第0714章 只身挑翻黑暗之地.",
+      "Yao Yao's grandfather unleashes a massive assault in the cosmos, slaughtering saints and devouring the ancestor of the Heavenly God Clan in 第0728章 妖爷战大天神.",
+      "Earth's ranking on the cosmic tables is restored, causing a massive planetary revival and triggering the blue death flower defenses in 第0736章 地球排位回归.",
+      "The old protectors of Earth carry out a destructive raid on the Heavenly God Clan homeworld, causing a massive cosmic shockwave in 第0743章 血洗天神族母星.",
+      "Chu Feng cross-dresses as a female cultivator to infiltrate the genius gathering of the Great Dream Pure Land in order to save his son in 第0763章 女装大佬.",
+      "The cosmic travelers prepare for the transition into a completely new cosmic realm in 第0768章 新世界."
+    ],
+    "character_state_transitions": [
+      "Sage Master (圣师) transitions from a long-lost myth to a returning vanguard, driving the bronze coffin and acting as a cosmic strategic deterrent for Earth.",
+      "Qin Luoyin (秦珞音) transitions from a highly respected, pure goddess of the Great Dream Pure Land to a pregnant mother in crisis carrying the child of her sworn enemy.",
+      "Chu Feng (楚风) transitions from a trapped native cultivator on Earth to a cosmic thief ('Chu Loli'), expanding his path to the sun-eating stage and youngest super-star.",
+      "Reincarnated Taoist (小道士) transitions from a powerful deceased expert to an unborn fetus struggling for survival in the womb and seeking bloodline resonance with Chu Feng.",
+      "Yao Yao's Grandfather (楚霸王) transitions from being trapped in the Taishang Eight Trigrams Furnace to emerging as an insane Reflecting the Heavens warrior who eats gods.",
+      "Yao Yao (妖妖) transitions from a static soul remnant to an active protector, temporarily possessing Chu Feng's body to learn Yang-realm techniques.",
+      "Girl Xi (少女曦) transitions from a mysterious visitor from the Yang Realm to Chu Feng's partner-in-crime, helping him raid stars and teaching him Yang-realm breathing.",
+      "Yin Jiuque (阴九雀) transitions from an arrogant Half-Saint preparing to break through to Saint status to having his homeworld looted and his schemes ruined.",
+      "Tianshen Clan Ancestor (大天神) transitions from a supreme cosmic ruler to being beaten, killed, and eaten by Yao Yao's grandfather.",
+      "Uncle Ming (明叔) transitions from a hidden guardian to a leader of the new coalition, raiding enemy worlds and helping restore Earth's cosmic standing."
+    ],
+    "long_form_mechanisms": [
+      "Reflecting the Heavens (映照诸天) power state allowing top-tier cultivators to project their deeds across the cosmos and rewrite rules.",
+      "Reincarnation Cycle (轮回路与磨盘) which functions as a soul-cleansing system in Purgatory that grinds spirits, bypassed only by special talismans and the Stone Box.",
+      "Stone Box and Passport Talismans (石盒与符纸) which function as ancient artifacts that protect the soul and allow safe passage through the reincarnation cycles.",
+      "Yang-Realm breathing techniques (阳间呼吸法与神技) which rely on hot, active Yang-realm energy, granting far superior power compared to the standard Yin-realm arts.",
+      "God-Slaying Fields (诛神场域) which function as systemic defense grids built across planetary orbits that harness cosmic bodies to incinerate invading Saints.",
+      "Sacred Pools & Evolutionary Nourishment (圣池与造化液) which act as high-concentration energy wells used to refine physical bodies and nurture unique evolutionary fetuses.",
+      "Primal Beast Platform Broadcast (原兽平台/天眼) which functions as a galaxy-wide streaming network that acts as a public ledger, marketplace, and broadcast system.",
+      "Three Divine Seeds (三颗神种) which function as unique evolutionary seeds that mutate and enable special transformations, such as the Fourth Shape of the Divine King."
+    ],
+    "continuity_observations": [
+      "The reincarnated Taoist fetus develops a fully conscious mind and gains cultivation levels while still in the womb, stretching standard biological rules.",
+      "The God-slaying field is capable of blasting Reflecting the Heavens giants but is selective enough not to destroy low-level invaders, allowing local duels.",
+      "While Chu Feng undergoes multiple long galactic adventures, Qin Luoyin's pregnancy progress is stretched/compressed in parallel, keeping the baby in the womb.",
+      "Chu Feng passes through advanced galactic checkposts using simple facial/body adjustments, while highly sophisticated cosmic scanners fail to identify him.",
+      "The Taishang Eight Trigrams Furnace (a classic Chinese mythological element) is integrated as a physical installation on the alien Bumie Mountain.",
+      "The young Taoist's memories are intact, but he is bound by the 'fetal maze' rule (胎中迷), which creates a ticking clock before he loses his memories.",
+      "The sudden manifestation of the blue spider lily in Earth's desert to trap An Sheng acts as a selective self-defense mechanism that activates only when top-tier giants try to interfere.",
+      "The universe's major sects repeatedly pay massive ransoms to buy back their geniuses rather than using their vast cosmic forces to wipe out Longhu mountain."
+    ],
+    "style_observations": [
+      "Frequent blending of contemporary internet slang (like '女装大佬', '卧槽') inside high-fantasy cosmic dialogues.",
+      "Using massive scales (e.g. hair hundreds of millions of feet long, fingers larger than planets) to hype up the Reflecting the Heavens combatants.",
+      "The use of persistent comedic nicknames, such as Chu Feng being called 'Chu Loli' by Girl Xi, and the young Taoist complaining in the womb.",
+      "Interrupting grim cosmic battles with humorous scenes, such as Yao Yao's grandfather eating a god and spitting out fish bones.",
+      "Using the Primal Beast Platform chat comments and viewers' reactions to validate the protagonist's achievements and explain lore.",
+      "A serialization-friendly loop of 'protagonist raids -> cosmic outrage -> ransom/sale -> cultivation level-up' to keep weekly readers engaged."
+    ],
+    "creation_family_evidence": {
+      "author_identity": "辰东 (Chen Dong)",
+      "serial_publication_indicators": "The chapter endings contain promotional plugs to the author's WeChat public account to view character illustrations. For example, at the end of Chapter 0720, the text explicitly asks readers to search for '辰东' on WeChat and follow his official account, then send '三人行' to see character art for Huang Niu, Chu Feng, and Ouyang Feng."
+    },
+    "originality_risks": [
+      "The stone box acts as an ultimate shield that resolves all metaphysical hazards, mirroring standard Xianxia progression cheats.",
+      "A humorous, complaining old soul reincarnated in the womb is a very common trope in Chinese comedy-fantasy novels.",
+      "The cliché of the male protagonist cross-dressing to sneak into a sacred, female-dominated assembly (Great Dream Pure Land).",
+      "The trope of Earth being a ruined supreme cultivation center that is now undergoing revival with hidden ancient arrays and gods."
+    ]
+  }
+}

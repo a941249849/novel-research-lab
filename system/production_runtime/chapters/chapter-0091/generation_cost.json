@@ -1,0 +1,9 @@
+{
+  "version": "0.23",
+  "chapter_id": "chapter-0091",
+  "prompt_bytes": 21873,
+  "writer_asset_count": 6,
+  "provider_calls": 2,
+  "used_length_recovery": true,
+  "writer_model": "gpt-5.6-terra"
+}

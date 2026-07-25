@@ -1,0 +1,31 @@
+{
+  "chapter_id": "chapter-0060",
+  "dramatic_purpose": "把父亲的受益者、受损者和未识别对象共同写入公开责任结算。",
+  "must_keep": [
+    "父亲旧案由私人名誉争议转为可追索但尚未清偿的公共责任。",
+    "POV 固定为周砺"
+  ],
+  "must_avoid": [
+    "不得引入未登记资产或用旁白代替物质行动",
+    "不得回滚已接受状态"
+  ],
+  "expected_state_deltas": [
+    {
+      "state_id": "v1.ch060.outcome",
+      "asset_id": "artifact_responsibility_ledger",
+      "field_path": "artifact.condition",
+      "after": "父亲旧案成为可追索但未清偿的公共责任",
+      "before": "远端旁路已物理断开，重接责任已公开"
+    }
+  ],
+  "required_asset_ids": [
+    "char_zhou_li",
+    "npc_zhou_yongzhi",
+    "bond_zhou_father",
+    "artifact_responsibility_ledger"
+  ],
+  "active_hook_ids": [],
+  "scene_constraints": [
+    "冲突必须落在具体工艺现场、物证或受影响者选择上"
+  ]
+}

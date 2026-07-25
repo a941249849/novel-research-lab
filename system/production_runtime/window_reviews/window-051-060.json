@@ -1,0 +1,29 @@
+{
+  "window": "051-060",
+  "chapter_ids": [
+    "chapter-0051",
+    "chapter-0052",
+    "chapter-0053",
+    "chapter-0054",
+    "chapter-0055",
+    "chapter-0056",
+    "chapter-0057",
+    "chapter-0058",
+    "chapter-0059",
+    "chapter-0060"
+  ],
+  "revision_hashes": {
+    "chapter-0051": "3c7e0c399a61598e5f7079699a5e39c4033cd7552d5349d0c7a3d84adae434d5",
+    "chapter-0052": "b7c4e2dba2cab0221a93ddf25683f2d64d62df70f459fcbd8557e80363b91ac6",
+    "chapter-0053": "f25320e1983f5f322c70ccc168f799364b88bbac1e86ac59d5b87a89fae5f194",
+    "chapter-0054": "410b6a37c966314bf8c83ac90696cb2a7b08e01397cddc9bd9d9c3ba6d112cdd",
+    "chapter-0055": "158e87a0be436db3e0af4a497aca56a3a0d9663f321bc51dc9bc893f752f3de5",
+    "chapter-0056": "7f6d2320414012bc3a751ac60d64736756bda64713d594cfbb53657c08a493a5",
+    "chapter-0057": "72030660e74807cb7e8499404b792ed06449d1c9afef0cc0d705c6df59f88d10",
+    "chapter-0058": "edf3af307d344c4c2d243c21315deeff0bdd93ea080f4a1ffd19d8352ec77c3c",
+    "chapter-0059": "ff3494d1e7ea01c99ff2592a5a3419bee2c6db87295951cf691e86cd38204822",
+    "chapter-0060": "c5427201b17def50a98fe3b08aa538325e8e9e35c5217564fe6f12d236c827f3"
+  },
+  "verdict": "ACCEPT",
+  "findings": []
+}

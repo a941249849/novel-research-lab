@@ -1,0 +1,13 @@
+{
+  "version": "0.25",
+  "chapter_id": "chapter-0091",
+  "source_revision": "system/production_runtime/chapters/chapter-0091/revision.md",
+  "source_sha256": "358a5ed758bdaa7f3e65537c606ac8257cb01d29533fbef1b6d2ed05484a8493",
+  "release_edit": "system/production_runtime/release_edits/chapter-0091.md",
+  "release_edit_sha256": "83da26ea24f4f94ad6bb7b3c20c322efe1cab4dc0a562ef65453720f691553c6",
+  "repair_direction": "清除抉择回退，前置分列边界，锁纹落档后只向送出端核验推进。",
+  "provider": "codex-gpt-5.6-terra",
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-091-100.json",
+  "reviewed_release_edit_sha256": "83da26ea24f4f94ad6bb7b3c20c322efe1cab4dc0a562ef65453720f691553c6"
+}

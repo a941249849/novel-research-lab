@@ -1,0 +1,158 @@
+{
+  "chapter_id": "chapter-0086",
+  "draft_sha256": "9833f52f713db40824dd83914f076c4bb89418f8891ad6d46d1b3d80c35ab7a5",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "fact-0086-001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_choice",
+        "before": "要求本人承担到案记录并进入外层候验",
+        "after": "拒绝追读残印去向，只指出两道表层灰痕断差并要求校时台重复比对",
+        "evidence": "陆沉渊明确表示不能认定来源或残印扰台，要求台子再比一次并坚持第三轮。"
+      },
+      {
+        "fact_id": "fact-0086-002",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_procedural_status",
+        "before": "仅获准进入外层候验",
+        "after": "完成三轮外层校时比对，结论暂止于两份表层记录不相合，仍留在台内候验",
+        "evidence": "第三轮后他仍站在校时台内，台面重复显示两道灰痕之间的空隙。"
+      },
+      {
+        "fact_id": "fact-0086-003",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_public_statement",
+        "before": "公开限定记录只包含陆沉渊本人",
+        "after": "再次要求校时台只记录本人，不并入苏晚的独立追缴",
+        "evidence": "面对台面浮出“苏晚”“独立追缴”，陆沉渊抬起下巴说：“只记我。”"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "fact-0086-004",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_procedural_boundary",
+        "before": "拒绝登记为随行债户，不并入陆沉渊到案记录",
+        "after": "仍未被陆沉渊或校时台取得合并承接，独立追缴字样被单独显示但遭到拒绝合并",
+        "evidence": "台面将“苏晚”与“独立追缴”投到到案记录旁，陆沉渊要求只记自己；苏晚未开口。"
+      }
+    ],
+    "locations": [],
+    "factions": [
+      {
+        "fact_id": "fact-0086-005",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_enforcement_record",
+        "before": "持有并锁定陆沉渊的到案记录",
+        "after": "命籍衙要求把投影偏转记为持印干扰，并试图将苏晚独立追缴与到案记录自动合并",
+        "evidence": "石壁后的声音要求记载“持印在场，投影受其影响”，第三轮后冷白线向“苏晚”与“独立追缴”卷起。"
+      },
+      {
+        "fact_id": "fact-0086-006",
+        "asset_id": "state_ledger_faction_pressure",
+        "field_path": "state_ledger.faction_pressure",
+        "before": "州府外层持续持有并锁定陆沉渊的到案记录",
+        "after": "三轮复验后到案记录进一步固定，且出现继续合并苏晚独立追缴的程序压力",
+        "evidence": "三轮校时均在封布未解、陆沉渊原位停术时偏转，第三轮台面试图把苏晚独立追缴并入其记录。"
+      }
+    ],
+    "artifacts": [
+      {
+        "fact_id": "fact-0086-007",
+        "asset_id": "artifact_prefecture_transit_registry_seal",
+        "field_path": "artifact.current_visible_trace",
+        "before": "封布下残印剧烈震动并散出铁锈冷香",
+        "after": "残印在旧灯回声中持续撞击封布，冷香加重并使银灰痕迹重复偏转",
+        "evidence": "正文多次写到封布鼓动、旧灯回声传出，残印撞布声越来越沉，银灰光向封布方向偏转。"
+      },
+      {
+        "fact_id": "fact-0086-008",
+        "asset_id": "artifact_prefecture_transit_registry_seal",
+        "field_path": "artifact.current_procedural_relation",
+        "before": "未交出残印，校时光线偏向残印",
+        "after": "残印仍未交接，且其表层灰痕在三轮校时中与到案投影足印保持错位",
+        "evidence": "封布始终未解，陆沉渊未掀布；每轮均出现自封布方向浮出的外侧灰痕。"
+      }
+    ],
+    "techniques": [
+      {
+        "fact_id": "fact-0086-009",
+        "asset_id": "technique_ledger_recognition",
+        "field_path": "technique.current_use_status",
+        "before": "合规限域识账覆盖止于现场两层火屑",
+        "after": "新增一次合规限域观察，仅确认到案投影与残印表层灰痕存在副本级错位，未追读来源",
+        "evidence": "陆沉渊停术并只用尚能承受的局部视野观察，明确说自己只看见两道表层灰痕且不能认定来源。"
+      }
+    ],
+    "relationships": [],
+    "emotions": [
+      {
+        "fact_id": "fact-0086-010",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_emotional_state",
+        "before": "保持不退让的候验状态",
+        "after": "从急于证明转为接受程序重复验证有限结论，并拒绝替苏晚背账",
+        "evidence": "他明知重复比对会使自身到案痕更清楚，仍要求第三次复验，并想到不能拿自己看不清的东西替苏晚背账。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "fact-0086-011",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_verified_result",
+        "before": "州府确认追时信号由封档转运记录一侧传入，本地三方未向记录内写入",
+        "after": "新增可复验事实：封布未解、陆沉渊原位停术时，三轮校时均出现两道表层灰痕错位；错账结论仍未裁定",
+        "evidence": "第一、第二、第三轮均记录封布未开、陆沉渊未移步或停术，且两层灰痕之间的干净石色空隙始终存在。"
+      },
+      {
+        "fact_id": "fact-0086-012",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "information.current_record_scope",
+        "before": "记录仅包含陆沉渊从泥灯巷至城界外沿的行迹",
+        "after": "校时台尝试在其到案记录旁加入“苏晚”“独立追缴”两项字样，但陆沉渊拒绝合并",
+        "evidence": "第三轮结束后两行字浮现在他的到案投影附近，冷白线朝字边缘卷起；他要求“只记我”。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "fact-0086-013",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "hook.current_direction",
+        "before": "校时台银灰光偏向封布内未交出的残印",
+        "after": "第三次偏转后，校时台把苏晚的独立追缴字样投到陆沉渊到案记录旁并试图合并",
+        "evidence": "第三轮结束时台面浮出“苏晚”“独立追缴”，冷白线从陆沉渊足印旁伸向字迹边缘。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "fact-0086-014",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "timeline.chapter_event",
+        "before": "本人到案记录完成并进入外层校时台",
+        "after": "在外层校时台完成三轮重复比对，三次均在原位停术状态下观察偏转",
+        "evidence": "正文依次明确写出第一轮、第二轮、第三轮比对，且陆沉渊始终未移步并停止施术。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "fact-0086-015",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.current_visible_condition",
+        "before": "胸口旧裂、左腿失稳、咳血丝灰沫、左眼灼痛并停止辨认纹路",
+        "after": "左眼灼痛与银灰残屑加重，冷灰咳嗽带血丝，左腿发颤，右臂仍无知觉，继续追读被其主动停止",
+        "evidence": "正文写到左眼像塞入火屑、视野被压住，第三轮咳出带血丝灰沫，左腿疼得发颤，右臂仍隔冰无感。"
+      }
+    ],
+    "naming": [
+      {
+        "fact_id": "fact-0086-016",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_name_confirmation",
+        "before": "苏晚已在城界分界线上自行报出姓名",
+        "after": "校时台将“苏晚”姓名与“独立追缴”字样投到陆沉渊到案记录旁",
+        "evidence": "第三轮后台面先浮出“苏晚”，紧接着浮出“独立追缴”。"
+      }
+    ]
+  }
+}

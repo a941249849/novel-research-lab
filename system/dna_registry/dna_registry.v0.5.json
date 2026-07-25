@@ -1,0 +1,1488 @@
+{
+  "registry_name": "NRL DNA Registry",
+  "version": "0.5",
+  "source_of_truth": [
+    "phase1/05_review/phase1C_asset_manifest.json",
+    "phase1/04_mechanism_library/category_manifest.json",
+    "system/mission_controller/current_phase_state.json"
+  ],
+  "entries": [
+    {
+      "dna_id": "dna-v05-book_dna-phase1-book-dna-001",
+      "family": "book_dna",
+      "title": "遮天",
+      "source_path": "phase1/02_book_dna/遮天_dna.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "book_dna",
+        "formal",
+        "promoted"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-book_dna-phase1-book-dna-005",
+      "family": "book_dna",
+      "title": "蛊真人",
+      "source_path": "phase1/02_book_dna/蛊真人_dna.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "book_dna",
+        "formal",
+        "promoted"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-book_dna-phase1-book-dna-009",
+      "family": "book_dna",
+      "title": "人道至尊",
+      "source_path": "phase1/02_book_dna/人道至尊_dna.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "book_dna",
+        "formal",
+        "promoted"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-book_dna-phase1-book-dna-013",
+      "family": "book_dna",
+      "title": "凡人修仙传",
+      "source_path": "phase1/02_book_dna/凡人修仙传_dna.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "book_dna",
+        "formal",
+        "promoted"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-book_dna-phase1-book-dna-017",
+      "family": "book_dna",
+      "title": "斗破苍穹",
+      "source_path": "phase1/02_book_dna/斗破苍穹_dna.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "book_dna",
+        "formal",
+        "promoted"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-book_dna-phase1-book-dna-021",
+      "family": "book_dna",
+      "title": "诡秘之主",
+      "source_path": "phase1/02_book_dna/诡秘之主_dna.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "book_dna",
+        "formal",
+        "promoted"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-book_dna-phase1-book-dna-025",
+      "family": "book_dna",
+      "title": "求魔",
+      "source_path": "phase1/02_book_dna/求魔_dna.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "book_dna",
+        "formal",
+        "promoted"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-book_dna-phase1-book-dna-036",
+      "family": "book_dna",
+      "title": "一念永恒",
+      "source_path": "phase1/02_book_dna/一念永恒_dna.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "promotion_state": "stub",
+      "evidence_tags": [
+        "book_dna",
+        "stub"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-book_dna-phase1-book-dna-039",
+      "family": "book_dna",
+      "title": "不死不灭",
+      "source_path": "phase1/02_book_dna/不死不灭_dna.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "promotion_state": "stub",
+      "evidence_tags": [
+        "book_dna",
+        "stub"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-book_dna-phase1-book-dna-042",
+      "family": "book_dna",
+      "title": "仙逆",
+      "source_path": "phase1/02_book_dna/仙逆_dna.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "promotion_state": "stub",
+      "evidence_tags": [
+        "book_dna",
+        "stub"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-book_dna-phase1-book-dna-045",
+      "family": "book_dna",
+      "title": "圣墟",
+      "source_path": "phase1/02_book_dna/圣墟_dna.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "promotion_state": "stub",
+      "evidence_tags": [
+        "book_dna",
+        "stub"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-book_dna-phase1-book-dna-048",
+      "family": "book_dna",
+      "title": "大主宰",
+      "source_path": "phase1/02_book_dna/大主宰_dna.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "promotion_state": "stub",
+      "evidence_tags": [
+        "book_dna",
+        "stub"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-book_dna-phase1-book-dna-051",
+      "family": "book_dna",
+      "title": "完美世界",
+      "source_path": "phase1/02_book_dna/完美世界_dna.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "promotion_state": "stub",
+      "evidence_tags": [
+        "book_dna",
+        "stub"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-book_dna-phase1-book-dna-054",
+      "family": "book_dna",
+      "title": "将夜",
+      "source_path": "phase1/02_book_dna/将夜_dna.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "promotion_state": "stub",
+      "evidence_tags": [
+        "book_dna",
+        "stub"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-book_dna-phase1-book-dna-057",
+      "family": "book_dna",
+      "title": "武动乾坤",
+      "source_path": "phase1/02_book_dna/武动乾坤_dna.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "promotion_state": "stub",
+      "evidence_tags": [
+        "book_dna",
+        "stub"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-book_dna-phase1-book-dna-060",
+      "family": "book_dna",
+      "title": "永生",
+      "source_path": "phase1/02_book_dna/永生_dna.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "promotion_state": "stub",
+      "evidence_tags": [
+        "book_dna",
+        "stub"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-book_dna-phase1-book-dna-063",
+      "family": "book_dna",
+      "title": "牧神记",
+      "source_path": "phase1/02_book_dna/牧神记_dna.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "promotion_state": "stub",
+      "evidence_tags": [
+        "book_dna",
+        "stub"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-book_dna-phase1-book-dna-066",
+      "family": "book_dna",
+      "title": "雪中悍刀行",
+      "source_path": "phase1/02_book_dna/雪中悍刀行_dna.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "promotion_state": "stub",
+      "evidence_tags": [
+        "book_dna",
+        "stub"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-mechanism-dpcq-m1",
+      "family": "mechanism_dna",
+      "title": "斗破苍穹",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism",
+        "promoted",
+        "压迫与释放机制"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-mechanism-dpcq-m2",
+      "family": "mechanism_dna",
+      "title": "斗破苍穹",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism",
+        "promoted",
+        "压迫与释放机制"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-mechanism-dpcq-m3",
+      "family": "mechanism_dna",
+      "title": "斗破苍穹",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism",
+        "promoted",
+        "资源与资产机制"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-mechanism-dpcq-m4",
+      "family": "mechanism_dna",
+      "title": "斗破苍穹",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism",
+        "promoted",
+        "升级与境界机制"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-mechanism-dpcq-m5",
+      "family": "mechanism_dna",
+      "title": "斗破苍穹",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism",
+        "promoted",
+        "升级与境界机制"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-mechanism-frxxz-m1",
+      "family": "mechanism_dna",
+      "title": "凡人修仙传",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism",
+        "promoted",
+        "避战与风险控制机制"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-mechanism-frxxz-m2",
+      "family": "mechanism_dna",
+      "title": "凡人修仙传",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism",
+        "promoted",
+        "资源与资产机制"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-mechanism-frxxz-m3",
+      "family": "mechanism_dna",
+      "title": "凡人修仙传",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism",
+        "promoted",
+        "避战与风险控制机制"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-mechanism-frxxz-m4",
+      "family": "mechanism_dna",
+      "title": "凡人修仙传",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism",
+        "promoted",
+        "避战与风险控制机制"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-mechanism-frxxz-m5",
+      "family": "mechanism_dna",
+      "title": "凡人修仙传",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism",
+        "promoted",
+        "升级与境界机制"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-mechanism-gmzz-m1",
+      "family": "mechanism_dna",
+      "title": "诡秘之主",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism",
+        "promoted",
+        "探索/谜团/知识机制"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-mechanism-gmzz-m2",
+      "family": "mechanism_dna",
+      "title": "诡秘之主",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism",
+        "promoted",
+        "升级与境界机制"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-mechanism-gmzz-m3",
+      "family": "mechanism_dna",
+      "title": "诡秘之主",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism",
+        "promoted",
+        "升级与境界机制"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-mechanism-gmzz-m4",
+      "family": "mechanism_dna",
+      "title": "诡秘之主",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism",
+        "promoted",
+        "隐藏实力与信息差机制"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-mechanism-gmzz-m5",
+      "family": "mechanism_dna",
+      "title": "诡秘之主",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism",
+        "promoted",
+        "探索/谜团/知识机制"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-mechanism-gzr-m1",
+      "family": "mechanism_dna",
+      "title": "蛊真人",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism",
+        "promoted",
+        "隐藏实力与信息差机制"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-mechanism-gzr-m2",
+      "family": "mechanism_dna",
+      "title": "蛊真人",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism",
+        "promoted",
+        "隐藏实力与信息差机制"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-mechanism-gzr-m3",
+      "family": "mechanism_dna",
+      "title": "蛊真人",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism",
+        "promoted",
+        "宿命/情绪/哲学机制"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-mechanism-gzr-m4",
+      "family": "mechanism_dna",
+      "title": "蛊真人",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism",
+        "promoted",
+        "反噬/代价/污染机制"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-mechanism-gzr-m5",
+      "family": "mechanism_dna",
+      "title": "蛊真人",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism",
+        "promoted",
+        "探索/谜团/知识机制"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-mechanism-qm-m1",
+      "family": "mechanism_dna",
+      "title": "求魔",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism",
+        "promoted",
+        "压迫与释放机制"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-mechanism-qm-m2",
+      "family": "mechanism_dna",
+      "title": "求魔",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism",
+        "promoted",
+        "反噬/代价/污染机制"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-mechanism-qm-m3",
+      "family": "mechanism_dna",
+      "title": "求魔",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism",
+        "promoted",
+        "资源与资产机制"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-mechanism-qm-m4",
+      "family": "mechanism_dna",
+      "title": "求魔",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism",
+        "promoted",
+        "组织/阵营/声望机制"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-mechanism-qm-m5",
+      "family": "mechanism_dna",
+      "title": "求魔",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism",
+        "promoted",
+        "宿命/情绪/哲学机制"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-mechanism-rdzz-m1",
+      "family": "mechanism_dna",
+      "title": "人道至尊",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism",
+        "promoted",
+        "压迫与释放机制"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-mechanism-rdzz-m2",
+      "family": "mechanism_dna",
+      "title": "人道至尊",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism",
+        "promoted",
+        "资源与资产机制"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-mechanism-rdzz-m3",
+      "family": "mechanism_dna",
+      "title": "人道至尊",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism",
+        "promoted",
+        "升级与境界机制"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-mechanism-rdzz-m4",
+      "family": "mechanism_dna",
+      "title": "人道至尊",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism",
+        "promoted",
+        "组织/阵营/声望机制"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-mechanism-rdzz-m5",
+      "family": "mechanism_dna",
+      "title": "人道至尊",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism",
+        "promoted",
+        "宿命/情绪/哲学机制"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-mechanism-zt-m1",
+      "family": "mechanism_dna",
+      "title": "遮天",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism",
+        "promoted",
+        "探索/谜团/知识机制"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-mechanism-zt-m2",
+      "family": "mechanism_dna",
+      "title": "遮天",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism",
+        "promoted",
+        "资源与资产机制"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-mechanism-zt-m3",
+      "family": "mechanism_dna",
+      "title": "遮天",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism",
+        "promoted",
+        "压迫与释放机制"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-mechanism-zt-m4",
+      "family": "mechanism_dna",
+      "title": "遮天",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism",
+        "promoted",
+        "升级与境界机制"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-mechanism-zt-m5",
+      "family": "mechanism_dna",
+      "title": "遮天",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism",
+        "promoted",
+        "宿命/情绪/哲学机制"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-phase1-mechanism-notes-004",
+      "family": "mechanism_dna",
+      "title": "遮天",
+      "source_path": "phase1/04_mechanism_library/core7_notes/遮天_mechanism_notes.md",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism_notes",
+        "promoted"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-phase1-mechanism-notes-008",
+      "family": "mechanism_dna",
+      "title": "蛊真人",
+      "source_path": "phase1/04_mechanism_library/core7_notes/蛊真人_mechanism_notes.md",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism_notes",
+        "promoted"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-phase1-mechanism-notes-012",
+      "family": "mechanism_dna",
+      "title": "人道至尊",
+      "source_path": "phase1/04_mechanism_library/core7_notes/人道至尊_mechanism_notes.md",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism_notes",
+        "promoted"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-phase1-mechanism-notes-016",
+      "family": "mechanism_dna",
+      "title": "凡人修仙传",
+      "source_path": "phase1/04_mechanism_library/core7_notes/凡人修仙传_mechanism_notes.md",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism_notes",
+        "promoted"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-phase1-mechanism-notes-020",
+      "family": "mechanism_dna",
+      "title": "斗破苍穹",
+      "source_path": "phase1/04_mechanism_library/core7_notes/斗破苍穹_mechanism_notes.md",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism_notes",
+        "promoted"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-phase1-mechanism-notes-024",
+      "family": "mechanism_dna",
+      "title": "诡秘之主",
+      "source_path": "phase1/04_mechanism_library/core7_notes/诡秘之主_mechanism_notes.md",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism_notes",
+        "promoted"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-mechanism_dna-phase1-mechanism-notes-028",
+      "family": "mechanism_dna",
+      "title": "求魔",
+      "source_path": "phase1/04_mechanism_library/core7_notes/求魔_mechanism_notes.md",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "mechanism_notes",
+        "promoted"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-narrative_dna-phase1-narrative-dna-002",
+      "family": "narrative_dna",
+      "title": "遮天",
+      "source_path": "phase1/02_narrative_dna/遮天_narrative.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "narrative_dna",
+        "promoted"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-narrative_dna-phase1-narrative-dna-006",
+      "family": "narrative_dna",
+      "title": "蛊真人",
+      "source_path": "phase1/02_narrative_dna/蛊真人_narrative.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "narrative_dna",
+        "promoted"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-narrative_dna-phase1-narrative-dna-010",
+      "family": "narrative_dna",
+      "title": "人道至尊",
+      "source_path": "phase1/02_narrative_dna/人道至尊_narrative.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "narrative_dna",
+        "promoted"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-narrative_dna-phase1-narrative-dna-014",
+      "family": "narrative_dna",
+      "title": "凡人修仙传",
+      "source_path": "phase1/02_narrative_dna/凡人修仙传_narrative.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "narrative_dna",
+        "promoted"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-narrative_dna-phase1-narrative-dna-018",
+      "family": "narrative_dna",
+      "title": "斗破苍穹",
+      "source_path": "phase1/02_narrative_dna/斗破苍穹_narrative.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "narrative_dna",
+        "promoted"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-narrative_dna-phase1-narrative-dna-022",
+      "family": "narrative_dna",
+      "title": "诡秘之主",
+      "source_path": "phase1/02_narrative_dna/诡秘之主_narrative.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "narrative_dna",
+        "promoted"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-narrative_dna-phase1-narrative-dna-026",
+      "family": "narrative_dna",
+      "title": "求魔",
+      "source_path": "phase1/02_narrative_dna/求魔_narrative.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "narrative_dna",
+        "promoted"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-narrative_dna-phase1-narrative-dna-037",
+      "family": "narrative_dna",
+      "title": "一念永恒",
+      "source_path": "phase1/02_narrative_dna/一念永恒_narrative.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "promotion_state": "stub",
+      "evidence_tags": [
+        "narrative_dna",
+        "stub"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-narrative_dna-phase1-narrative-dna-040",
+      "family": "narrative_dna",
+      "title": "不死不灭",
+      "source_path": "phase1/02_narrative_dna/不死不灭_narrative.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "promotion_state": "stub",
+      "evidence_tags": [
+        "narrative_dna",
+        "stub"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-narrative_dna-phase1-narrative-dna-043",
+      "family": "narrative_dna",
+      "title": "仙逆",
+      "source_path": "phase1/02_narrative_dna/仙逆_narrative.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "promotion_state": "stub",
+      "evidence_tags": [
+        "narrative_dna",
+        "stub"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-narrative_dna-phase1-narrative-dna-046",
+      "family": "narrative_dna",
+      "title": "圣墟",
+      "source_path": "phase1/02_narrative_dna/圣墟_narrative.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "promotion_state": "stub",
+      "evidence_tags": [
+        "narrative_dna",
+        "stub"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-narrative_dna-phase1-narrative-dna-049",
+      "family": "narrative_dna",
+      "title": "大主宰",
+      "source_path": "phase1/02_narrative_dna/大主宰_narrative.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "promotion_state": "stub",
+      "evidence_tags": [
+        "narrative_dna",
+        "stub"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-narrative_dna-phase1-narrative-dna-052",
+      "family": "narrative_dna",
+      "title": "完美世界",
+      "source_path": "phase1/02_narrative_dna/完美世界_narrative.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "promotion_state": "stub",
+      "evidence_tags": [
+        "narrative_dna",
+        "stub"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-narrative_dna-phase1-narrative-dna-055",
+      "family": "narrative_dna",
+      "title": "将夜",
+      "source_path": "phase1/02_narrative_dna/将夜_narrative.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "promotion_state": "stub",
+      "evidence_tags": [
+        "narrative_dna",
+        "stub"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-narrative_dna-phase1-narrative-dna-058",
+      "family": "narrative_dna",
+      "title": "武动乾坤",
+      "source_path": "phase1/02_narrative_dna/武动乾坤_narrative.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "promotion_state": "stub",
+      "evidence_tags": [
+        "narrative_dna",
+        "stub"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-narrative_dna-phase1-narrative-dna-061",
+      "family": "narrative_dna",
+      "title": "永生",
+      "source_path": "phase1/02_narrative_dna/永生_narrative.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "promotion_state": "stub",
+      "evidence_tags": [
+        "narrative_dna",
+        "stub"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-narrative_dna-phase1-narrative-dna-064",
+      "family": "narrative_dna",
+      "title": "牧神记",
+      "source_path": "phase1/02_narrative_dna/牧神记_narrative.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "promotion_state": "stub",
+      "evidence_tags": [
+        "narrative_dna",
+        "stub"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-narrative_dna-phase1-narrative-dna-067",
+      "family": "narrative_dna",
+      "title": "雪中悍刀行",
+      "source_path": "phase1/02_narrative_dna/雪中悍刀行_narrative.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "promotion_state": "stub",
+      "evidence_tags": [
+        "narrative_dna",
+        "stub"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-project-current",
+      "family": "project_dna",
+      "title": "《借天改命账》",
+      "source_path": "system/mission_controller/current_phase_state.json",
+      "review_state": "production_authorized_window_021_030_accepted",
+      "provenance": "runtime_state",
+      "promotion_state": "production_authorized",
+      "evidence_tags": [
+        "current_project",
+        "Production v1",
+        "production_authorized_window_021_030_accepted"
+      ],
+      "blocked_for_generation": false
+    },
+    {
+      "dna_id": "dna-v05-state_dna-phase1-state-ledger-003",
+      "family": "state_dna",
+      "title": "遮天",
+      "source_path": "phase1/02_state_ledgers/遮天_ledger.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "promoted",
+        "state_ledger"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-state_dna-phase1-state-ledger-007",
+      "family": "state_dna",
+      "title": "蛊真人",
+      "source_path": "phase1/02_state_ledgers/蛊真人_ledger.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "promoted",
+        "state_ledger"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-state_dna-phase1-state-ledger-011",
+      "family": "state_dna",
+      "title": "人道至尊",
+      "source_path": "phase1/02_state_ledgers/人道至尊_ledger.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "promoted",
+        "state_ledger"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-state_dna-phase1-state-ledger-015",
+      "family": "state_dna",
+      "title": "凡人修仙传",
+      "source_path": "phase1/02_state_ledgers/凡人修仙传_ledger.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "promoted",
+        "state_ledger"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-state_dna-phase1-state-ledger-019",
+      "family": "state_dna",
+      "title": "斗破苍穹",
+      "source_path": "phase1/02_state_ledgers/斗破苍穹_ledger.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "promoted",
+        "state_ledger"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-state_dna-phase1-state-ledger-023",
+      "family": "state_dna",
+      "title": "诡秘之主",
+      "source_path": "phase1/02_state_ledgers/诡秘之主_ledger.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "promoted",
+        "state_ledger"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-state_dna-phase1-state-ledger-027",
+      "family": "state_dna",
+      "title": "求魔",
+      "source_path": "phase1/02_state_ledgers/求魔_ledger.json",
+      "review_state": "formal",
+      "provenance": "promoted",
+      "promotion_state": "promoted",
+      "evidence_tags": [
+        "formal",
+        "promoted",
+        "state_ledger"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-state_dna-phase1-state-ledger-038",
+      "family": "state_dna",
+      "title": "一念永恒",
+      "source_path": "phase1/02_state_ledgers/一念永恒_ledger.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "promotion_state": "stub",
+      "evidence_tags": [
+        "state_ledger",
+        "stub"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-state_dna-phase1-state-ledger-041",
+      "family": "state_dna",
+      "title": "不死不灭",
+      "source_path": "phase1/02_state_ledgers/不死不灭_ledger.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "promotion_state": "stub",
+      "evidence_tags": [
+        "state_ledger",
+        "stub"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-state_dna-phase1-state-ledger-044",
+      "family": "state_dna",
+      "title": "仙逆",
+      "source_path": "phase1/02_state_ledgers/仙逆_ledger.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "promotion_state": "stub",
+      "evidence_tags": [
+        "state_ledger",
+        "stub"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-state_dna-phase1-state-ledger-047",
+      "family": "state_dna",
+      "title": "圣墟",
+      "source_path": "phase1/02_state_ledgers/圣墟_ledger.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "promotion_state": "stub",
+      "evidence_tags": [
+        "state_ledger",
+        "stub"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-state_dna-phase1-state-ledger-050",
+      "family": "state_dna",
+      "title": "大主宰",
+      "source_path": "phase1/02_state_ledgers/大主宰_ledger.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "promotion_state": "stub",
+      "evidence_tags": [
+        "state_ledger",
+        "stub"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-state_dna-phase1-state-ledger-053",
+      "family": "state_dna",
+      "title": "完美世界",
+      "source_path": "phase1/02_state_ledgers/完美世界_ledger.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "promotion_state": "stub",
+      "evidence_tags": [
+        "state_ledger",
+        "stub"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-state_dna-phase1-state-ledger-056",
+      "family": "state_dna",
+      "title": "将夜",
+      "source_path": "phase1/02_state_ledgers/将夜_ledger.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "promotion_state": "stub",
+      "evidence_tags": [
+        "state_ledger",
+        "stub"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-state_dna-phase1-state-ledger-059",
+      "family": "state_dna",
+      "title": "武动乾坤",
+      "source_path": "phase1/02_state_ledgers/武动乾坤_ledger.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "promotion_state": "stub",
+      "evidence_tags": [
+        "state_ledger",
+        "stub"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-state_dna-phase1-state-ledger-062",
+      "family": "state_dna",
+      "title": "永生",
+      "source_path": "phase1/02_state_ledgers/永生_ledger.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "promotion_state": "stub",
+      "evidence_tags": [
+        "state_ledger",
+        "stub"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-state_dna-phase1-state-ledger-065",
+      "family": "state_dna",
+      "title": "牧神记",
+      "source_path": "phase1/02_state_ledgers/牧神记_ledger.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "promotion_state": "stub",
+      "evidence_tags": [
+        "state_ledger",
+        "stub"
+      ],
+      "blocked_for_generation": true
+    },
+    {
+      "dna_id": "dna-v05-state_dna-phase1-state-ledger-068",
+      "family": "state_dna",
+      "title": "雪中悍刀行",
+      "source_path": "phase1/02_state_ledgers/雪中悍刀行_ledger.json",
+      "review_state": "stub",
+      "provenance": "stub",
+      "promotion_state": "stub",
+      "evidence_tags": [
+        "state_ledger",
+        "stub"
+      ],
+      "blocked_for_generation": true
+    }
+  ],
+  "summary": {
+    "total_entries": 97,
+    "by_family": {
+      "book_dna": 18,
+      "mechanism_dna": 42,
+      "narrative_dna": 18,
+      "project_dna": 1,
+      "state_dna": 18
+    },
+    "by_promotion_state": {
+      "production_authorized": 1,
+      "promoted": 63,
+      "stub": 33
+    }
+  },
+  "guardrails": [
+    "Structured derivatives only",
+    "No raw corpus reads",
+    "Research DNA is evidence-only; only an Owner-authorized project DNA entry may drive generation"
+  ]
+}

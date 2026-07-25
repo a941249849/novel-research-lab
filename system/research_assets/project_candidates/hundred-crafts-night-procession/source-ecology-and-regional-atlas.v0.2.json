@@ -1,0 +1,252 @@
+{
+  "version": "0.2",
+  "candidate_id": "hundred-crafts-night-procession",
+  "status": "expanded_research_active",
+  "project_initialization_authorized": false,
+  "prose_authorized": false,
+  "source_tiers": [
+    {
+      "tier": "A",
+      "label": "档案与专业基准",
+      "source_types": ["地方志与历史文献", "博物馆档案", "学术论文", "专业保护准则"],
+      "allowed_uses": ["技术事实", "历史时间线", "制度和地域边界"],
+      "promotion_rule": "可作为事实主证据，但涉及活态实践时仍需C级材料校正。"
+    },
+    {
+      "tier": "B",
+      "label": "地方机构与系统调查",
+      "source_types": ["地方文史资料", "传统村落档案", "地方媒体深度报道", "县市非遗中心资料"],
+      "allowed_uses": ["地方差异", "人物和社区关系", "近现代变迁"],
+      "promotion_rule": "核对作者、时间和地域后可进入候选事实；关键结论需要A或C交叉验证。"
+    },
+    {
+      "tier": "C",
+      "label": "从业者与亲历者材料",
+      "source_types": ["传承人口述", "工匠长访谈", "完整工序影像", "行业回忆录"],
+      "allowed_uses": ["手感和术语", "失败模式", "行业关系", "劳动节奏"],
+      "promotion_rule": "必须保存讲述者、地点、日期和上下文；个人经验不得直接代表整个地区。"
+    },
+    {
+      "tier": "D",
+      "label": "社区记忆与论坛线索",
+      "source_types": ["论坛帖子", "评论区", "豆瓣书评", "知乎回答", "贴吧地方故事"],
+      "allowed_uses": ["发现关键词", "寻找地方异说", "生活细节假设", "检索下一手资料"],
+      "promotion_rule": "不得单独成为事实；至少找到独立A/B来源或两名可追溯C级讲述者后才能升级。"
+    },
+    {
+      "tier": "E",
+      "label": "传闻与二次创作",
+      "source_types": ["无出处怪谈", "营销文案", "短视频演绎", "网络小说和影视改编"],
+      "allowed_uses": ["观察当代想象", "识别陈词滥调", "生成待验证问题"],
+      "promotion_rule": "永不升级为历史或民俗事实；只能提炼抽象叙事问题，禁止复制表达。"
+    }
+  ],
+  "source_channels": [
+    {
+      "channel_id": "china-local-gazetteers",
+      "name": "中国方志网",
+      "tier": "A",
+      "url": "https://www.difangzhi.cn/",
+      "collection_role": "检索地区沿革、行业志、水利志、建筑志、人物与灾害记录。",
+      "limitations": "方志是编纂文本，需记录版本、年代和编纂立场，不能视为无偏见原始记录。"
+    },
+    {
+      "channel_id": "nlc-memory",
+      "name": "国家图书馆中国记忆项目",
+      "tier": "A",
+      "url": "https://memory.nlc.cn/",
+      "collection_role": "获取非遗传承人、代表人物口述史与影音文献。",
+      "limitations": "专题覆盖不均，公开片段不能替代完整访谈语境。"
+    },
+    {
+      "channel_id": "ncpssd",
+      "name": "国家哲学社会科学文献中心",
+      "tier": "A",
+      "url": "https://www.ncpssd.org/",
+      "collection_role": "检索民俗学、地方社会史、传统工艺和艺术人类学研究。",
+      "limitations": "论文结论需要检查样本、田野年份与地域适用范围。"
+    },
+    {
+      "channel_id": "china-folklore",
+      "name": "中国民俗学网",
+      "tier": "A",
+      "url": "https://www.chinesefolklore.org.cn/",
+      "collection_role": "获取民间文学、田野方法、故事类型与地方信仰研究。",
+      "limitations": "学术转述不能覆盖讲述现场、方言语气和社区内部解释。"
+    },
+    {
+      "channel_id": "traditional-village-museum",
+      "name": "中国传统村落数字博物馆",
+      "tier": "B",
+      "url": "https://dmctv.cn/",
+      "collection_role": "建立村落空间、建筑、物产、节俗和工艺的地理关联。",
+      "limitations": "展示材料以保护和介绍为目的，冲突、失败与现实生计可能呈现不足。"
+    },
+    {
+      "channel_id": "china-ich",
+      "name": "中国非物质文化遗产网",
+      "tier": "B",
+      "url": "https://www.ihchina.cn/",
+      "collection_role": "定位项目、地区、代表性传承人和基础工序。",
+      "limitations": "名录是入口，不等于完整行业史或唯一正统版本。"
+    },
+    {
+      "channel_id": "bilibili-practitioner-video",
+      "name": "哔哩哔哩从业者与机构影像",
+      "tier": "C",
+      "url": "https://www.bilibili.com/",
+      "collection_role": "观察连续操作、工具声音、多人配合、空间尺度和从业者自述。",
+      "limitations": "剪辑、摆拍和无字幕内容只作线索；事实摘录必须绑定时间码和可追溯讲述者。"
+    },
+    {
+      "channel_id": "douban-books-reviews",
+      "name": "豆瓣图书与书评",
+      "tier": "D",
+      "url": "https://book.douban.com/",
+      "collection_role": "发现田野著作、地方故事集、行业回忆和读者生活联想。",
+      "limitations": "书评是读者解释；必须回到原书、出版信息或作者田野材料。"
+    },
+    {
+      "channel_id": "zhihu-community",
+      "name": "知乎",
+      "tier": "D",
+      "url": "https://www.zhihu.com/",
+      "collection_role": "发现职业经验、地方术语、争议和可继续追问的从业者。",
+      "limitations": "身份与专业性需要单独核验，赞同数不是证据等级。"
+    },
+    {
+      "channel_id": "baidu-tieba-local-memory",
+      "name": "百度贴吧地方与行业社区",
+      "tier": "D",
+      "url": "https://tieba.baidu.com/",
+      "collection_role": "发现地方异说、旧地名、行业绰号、节俗记忆和失传线索。",
+      "limitations": "帖子可删除、转述链不明，只能形成线索卡，不能直接写入世界事实。"
+    },
+    {
+      "channel_id": "douyin-kuaishou-field-leads",
+      "name": "抖音与快手地方从业者影像",
+      "tier": "D",
+      "url": "https://www.douyin.com/",
+      "collection_role": "寻找仍在工作的手艺人、地方集市、修造现场和当代生计。",
+      "limitations": "短视频高度剪辑且受流量激励，只登记账号、地点和待核问题。"
+    },
+    {
+      "channel_id": "oral-literature-catalogue",
+      "name": "中国口头文学遗产相关目录与出版物",
+      "tier": "A",
+      "url": "https://www.cflas.com.cn/",
+      "collection_role": "按地区寻找神话、传说、故事、歌谣、谚语与讲述者信息。",
+      "limitations": "需确认具体卷册、采集年代、讲述者与流传地区，不能只引用二次介绍。"
+    }
+  ],
+  "regional_lenses": [
+    {
+      "lens_id": "north_china_plain",
+      "label": "燕赵齐鲁与中原平原",
+      "places": ["河北", "河南", "山东", "京津周边"],
+      "craft_domain_ids": ["timber_architecture", "metal_forging", "opera_costume_props", "paper_frame_ritual_craft"],
+      "research_targets": ["庙会、集市和行会如何连接城乡", "平原水患、旱灾与修造秩序如何改变社区"],
+      "story_reservoirs": ["鲁班与地方工匠传说的异文", "上梁、镇物、社火和戏班的地方记忆"],
+      "anti_flattening_rule": "不得把京城规制、山东村落、豫剧或河北梆子混写成统一北方传统。"
+    },
+    {
+      "lens_id": "shanxi_shaanxi_gansu",
+      "label": "晋陕关中与河西走廊",
+      "places": ["山西", "陕西", "甘肃", "宁夏"],
+      "craft_domain_ids": ["timber_architecture", "metal_forging", "stone_carving_masonry", "measurement_orientation_calculation"],
+      "research_targets": ["堡寨、窑洞、寺观和商路中的材料选择", "票号、会馆、驿路与工匠迁移的关系"],
+      "story_reservoirs": ["黄河渡口和商旅传说", "社火、皮影、鼓乐与地方神祇叙事"],
+      "anti_flattening_rule": "黄土高原、关中盆地与河西绿洲必须分别处理生态和交通条件。"
+    },
+    {
+      "lens_id": "jiangnan_huizhou",
+      "label": "江南水网与徽州山地",
+      "places": ["江苏", "浙江", "安徽南部", "上海周边"],
+      "craft_domain_ids": ["shipbuilding_waterworks", "paper_and_book_repair", "textile_dye_embroidery", "timber_architecture", "ceramic_firing", "clock_mechanical_repair"],
+      "research_targets": ["水网、圩田、桥市和手工业城镇如何协作", "商帮、宗族、女工和作坊账簿如何共同塑造技艺"],
+      "story_reservoirs": ["桥、井、塔、湖荡的地方传说", "蚕桑、织造、纸墨和徽商旅途故事"],
+      "anti_flattening_rule": "苏杭城市工艺、浙南山地、皖南宗族村落和上海近代工业经验不得互相替代。"
+    },
+    {
+      "lens_id": "fujian_taiwan_maritime",
+      "label": "闽台海洋与侨乡网络",
+      "places": ["福建沿海", "闽西山地", "台湾海峡两岸相关历史社区", "南洋侨乡"],
+      "craft_domain_ids": ["shipbuilding_waterworks", "timber_architecture", "paper_frame_ritual_craft", "medicine_processing"],
+      "research_targets": ["船型、港口、海神信俗和跨海迁徙如何互相影响", "宗族、侨批、庙宇营造和地方行业如何协作"],
+      "story_reservoirs": ["海难、航路、造船与护航传说", "迎神赛会、傀儡戏和侨乡家书记忆"],
+      "anti_flattening_rule": "闽南、莆仙、闽东、客家与台湾地方实践必须明确来源社区，不能拼贴。"
+    },
+    {
+      "lens_id": "lingnan_pearl_river",
+      "label": "岭南与珠江水系",
+      "places": ["广东", "广西东部", "海南", "港澳历史社区"],
+      "craft_domain_ids": ["shipbuilding_waterworks", "textile_dye_embroidery", "metal_forging", "medicine_processing"],
+      "research_targets": ["河海交通、墟市、宗族与外贸如何改变工艺", "湿热、台风、虫害和盐雾如何形成材料经验"],
+      "story_reservoirs": ["龙舟、南海神与商船故事", "醒狮、粤剧行当、凉茶和骑楼行业记忆"],
+      "anti_flattening_rule": "广府、客家、潮汕、壮乡、海南岛和港澳经验必须分源记录。"
+    },
+    {
+      "lens_id": "jingchu_southwest_rivers",
+      "label": "荆楚、巴蜀与长江上游",
+      "places": ["湖北", "湖南", "重庆", "四川盆地"],
+      "craft_domain_ids": ["shipbuilding_waterworks", "paper_frame_ritual_craft", "opera_costume_props", "medicine_processing"],
+      "research_targets": ["江河、码头、山城与湖区如何形成不同职业共同体", "巫傩、戏曲、会馆和药市如何在日常秩序中共存"],
+      "story_reservoirs": ["纤夫、船帮、洪水和镇水传说", "傩愿戏、地方戏、药王和山川精怪异文"],
+      "anti_flattening_rule": "土家、苗、汉及其他社区的讲述必须标明讲述者和地方语境，不以楚文化笼统覆盖。"
+    },
+    {
+      "lens_id": "southwest_highlands",
+      "label": "云贵高原与横断山地",
+      "places": ["云南", "贵州", "川西南", "桂西"],
+      "craft_domain_ids": ["textile_dye_embroidery", "paper_and_book_repair", "metal_forging", "medicine_processing"],
+      "research_targets": ["山地交通、集市与跨族群交换如何改变材料和纹样", "口传知识、仪式专家与家庭劳动如何共同维持技艺"],
+      "story_reservoirs": ["创世史诗、迁徙歌和祖先故事", "蜡染、银饰、造纸、梯田与山林禁忌的地方叙事"],
+      "anti_flattening_rule": "任何族群知识、纹样或仪式都需社区来源与使用边界；禁止用西南少数民族作为统一标签。"
+    },
+    {
+      "lens_id": "northeast_forests",
+      "label": "东北平原、林海与边地河流",
+      "places": ["辽宁", "吉林", "黑龙江", "内蒙古东部"],
+      "craft_domain_ids": ["timber_architecture", "metal_forging", "medicine_processing", "shipbuilding_waterworks"],
+      "research_targets": ["森林、冰雪、江河和近代工业如何重塑工具与住房", "移民、渔猎、铁路和林场记忆如何交叠"],
+      "story_reservoirs": ["山神、河神、采参和狩猎禁忌故事", "木帮、排工、渔猎和工业维修口述"],
+      "anti_flattening_rule": "关东移民叙事、满族、赫哲、鄂伦春等社区传统和近代工业史必须分开取证。"
+    },
+    {
+      "lens_id": "plateau_oasis_frontier",
+      "label": "高原、草原与西北绿洲通道",
+      "places": ["青藏高原", "新疆绿洲", "内蒙古草原", "青海河湟"],
+      "craft_domain_ids": ["textile_dye_embroidery", "metal_forging", "medicine_processing", "measurement_orientation_calculation"],
+      "research_targets": ["游牧、农耕、绿洲和商路如何影响器物生命周期", "语言、宗教、市场与跨区域匠人如何形成知识边界"],
+      "story_reservoirs": ["史诗、迁徙、商旅和地景传说", "毡作、金工、药材、历算和乐器制作记忆"],
+      "anti_flattening_rule": "宗教仪式、民族名称、神圣图像和口头史诗不得脱离具体社区授权进行幻想化。"
+    }
+  ],
+  "triangulation_rules": [
+    "技术事实至少需要一个A/B级来源；涉及实际操作时再由一个独立C级来源校正。",
+    "论坛、评论和短视频发现的术语必须反向检索出处，未找到时保留为D级线索。",
+    "同名习俗在不同地区默认视为不同实践，不因名称相同自动合并。",
+    "民间故事必须记录讲述者或整理者、采集时间、流传地区和版本；缺项时不得标为地方共识。",
+    "涉及族群、宗教、祭祀、禁忌和神圣纹样时，需要社区内来源或专业民族志校正。",
+    "任何来源都只提炼机制、冲突、生活细节和研究问题，不复制受版权保护的独特表达或完整情节。",
+    "反常识材料优先保留分歧，不以多数网页数量替代证据质量。",
+    "当代从业者的生计、平台营销与政策身份需要和历史技艺分别记录。"
+  ],
+  "acquisition_queue": [
+    {"queue_id": "q-north-01", "regional_lens_id": "north_china_plain", "query_template": "县志 行业志 木匠 上梁 庙会 戏班 口述", "target_evidence": "营造协作、仪式异说与戏班流动的可追溯案例", "priority": "P0"},
+    {"queue_id": "q-northwest-01", "regional_lens_id": "shanxi_shaanxi_gansu", "query_template": "会馆 工匠 商路 窑洞 石匠 社火 地方志", "target_evidence": "商路、会馆和修造行业之间的责任网络", "priority": "P1"},
+    {"queue_id": "q-jiangnan-01", "regional_lens_id": "jiangnan_huizhou", "query_template": "水利志 圩田 桥匠 织造 作坊账簿 徽州 口述", "target_evidence": "水网维护、作坊分工和账簿责任细节", "priority": "P0"},
+    {"queue_id": "q-fujian-01", "regional_lens_id": "fujian_taiwan_maritime", "query_template": "福船 艌缝 船工 海难 侨批 庙宇 营造 口述史", "target_evidence": "船舶维修、海损处置与跨海社区记忆", "priority": "P0"},
+    {"queue_id": "q-lingnan-01", "regional_lens_id": "lingnan_pearl_river", "query_template": "台风 盐雾 木作 船厂 粤剧 盔箱 凉茶 行业口述", "target_evidence": "湿热环境下的材料失效与行业适应", "priority": "P1"},
+    {"queue_id": "q-jingchu-01", "regional_lens_id": "jingchu_southwest_rivers", "query_template": "码头 船帮 纤夫 洪水 傩戏 药市 民间故事 田野", "target_evidence": "江河职业共同体、灾害记忆和仪式边界", "priority": "P0"},
+    {"queue_id": "q-southwest-01", "regional_lens_id": "southwest_highlands", "query_template": "村寨 蜡染 银饰 造纸 传承人 迁徙歌 田野调查", "target_evidence": "材料交换、家庭劳动和社区知识授权", "priority": "P1"},
+    {"queue_id": "q-northeast-01", "regional_lens_id": "northeast_forests", "query_template": "木帮 排工 采参 船厂 铁路维修 口述史 地方故事", "target_evidence": "林海、江河和工业维修之间的历史连续与断裂", "priority": "P1"},
+    {"queue_id": "q-plateau-01", "regional_lens_id": "plateau_oasis_frontier", "query_template": "地方志 史诗 毡作 金工 历算 药材 工匠 口述", "target_evidence": "跨语言知识、商路技术与神圣边界", "priority": "P2"}
+  ],
+  "gate_result": {
+    "broad_source_ecology_ready": true,
+    "regional_story_bible_ready": false,
+    "prose_ready": false,
+    "next_action": "按P0队列采集可追溯个案，形成首批地域-技艺-故事证据卡并完成交叉核验。"
+  }
+}

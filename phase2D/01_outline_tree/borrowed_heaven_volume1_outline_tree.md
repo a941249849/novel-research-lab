@@ -40,6 +40,7 @@
 - cost / backlash: 主角命火变暗，半寿身份被命籍衙记录为“异常残籍”。
 - new mystery opened: 为什么母亲寿债的旧印与贫城百年前旧账同色。
 - next cluster hook: 旧账老人提示贫城护阵下藏有一批未入库的错账残火。
+- asset transition metadata: `artifact_ashlight_cup` 在 Arc Cluster 1 内、Chapter 1 之后登记为从 `faction_mudlamp_lane` 阵基掉落，并仅以自愿守夜残火完成唤醒；该取得与唤醒事务必须先于 Arc Cluster 2 的任何使用完成验证，Chapter 1 的生命周期固定为 `dormant`。
 
 ### Arc Cluster 2: 护阵寿裂与贫城互保
 
@@ -86,10 +87,11 @@
 - narrative function: 打开第一卷后段地图边界，把本地错账推向州府命库。
 - pressure: 寿库以“护世平账”为名封存旧档，贫城被要求缴纳更高额度以补公开反转造成的账序波动。
 - protagonist action: 主角通过黑市命商/逃命者功能位获取进入城外废命地的线索，寻找能对抗寿库封档的残账凭证。
+- transaction contract metadata: `npc_cluster5_black_market_transaction_role` 仅登记主角自有证据记录或研究记录的有界交换，并由 `state_ledger_half_life_registry_exposure` 原子增加 10 个百分点（总边界 0–100）；孩童命火、住户命火及任何第三方寿火均为拒绝项；此项只授权证据交换记录，不授权场景、对白或扩写，交换完成或拒绝后功能位立即退役且不得复现。
 - fantasy conflict: 废命地中旧命灯影、寿骨残音、假命页风险同时压迫主角，命器承受器债裂痕。
 - emotional beat: 主角看见被注销贫籍的残影，确认贫城若不翻账也会走向同样结局。
 - satisfaction release: 主角取得一枚指向州府命库的转运残印，证明本地错账背后有更高账路。
-- cost / backlash: 主角进入短暂空寿状态，战力提升但寿数流失，母亲命灯同步震荡。
+- cost / backlash: 主角进入短暂空寿状态，施术与认知窗口锁闭且不产生战力增益；预付寿火损失继续记账，必须停术并依赖外部照护恢复，母亲命灯同步震荡。
 - new mystery opened: 转运残印上的古债符号与天庭收命的官方解释不完全一致。
 - next cluster hook: 州府命库派来的影子人物要求贫城交出主角与残命灯盏。
 
@@ -188,11 +190,10 @@
 
 ### 黑市命商 / 逃命者
 
-- function: 禁区线索、假命页风险、逆命诱惑来源。
-- relationship to protagonist: 临时交易对象和道德试探。
-- conflict value: 提供帮助但引诱主角把无辜寿数当筹码。
-- emotional value: 显示逃离命账也会伤人，不是简单自由出口。
-- future use: 连接废命地、古债残印和更高黑账网络。
+- function: 仅作为 Arc Cluster 5 的有界证据记录交换功能位；不授权场景或后续扩写。
+- relationship to protagonist: 无名、无背景、无阵营的单次交易对手方。
+- price domain: 仅接受主角自有证据记录或研究记录，并原子增加 10 个百分点的 `half_life_registry_exposure`；孩童命火、住户命火及第三方寿火均无效。
+- retirement contract: 交换完成或拒绝后立即退役，不得复现。
 
 ### 州府命库影子人物
 

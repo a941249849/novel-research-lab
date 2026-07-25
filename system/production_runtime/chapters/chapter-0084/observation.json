@@ -1,0 +1,175 @@
+{
+  "chapter_id": "chapter-0084",
+  "draft_sha256": "309d151558c7b6b7a569f703a53af062e9be86fa675495cd395282e368933d7c",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "fact-0084-001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_choice",
+        "before": "坚持空灯离巷，拒绝以他人灯火减轻冷压",
+        "after": "在明知亲缘补项可降低入门缺项的情况下，仍公开拒绝苏晚随行，并不替她签署或承担其债务",
+        "evidence": "陆沉渊对影门明确说“不随行”，并声明不替苏晚签、苏晚也不替他补。"
+      },
+      {
+        "fact_id": "fact-0084-002",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_procedural_status",
+        "before": "停在城界外沿，尚未跨过白裂",
+        "after": "亲缘校时项被删除，入门可接受的代价改为本人半寿到案",
+        "evidence": "影门依次显示“亲缘校时项，删除”和“入门可受：本人半寿到案”。"
+      },
+      {
+        "fact_id": "fact-0084-003",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_public_statement",
+        "before": "公开要求同行者只送路、不替他守灯或答话，并允许灯火变暗者立即回门",
+        "after": "继续禁止同行者扶持、递灯或替他应答，并以手势让试图靠近者停下",
+        "evidence": "有人向前半步时，陆沉渊没有回头，只抬手示意其停下；送路者始终未递灯或代答。"
+      },
+      {
+        "fact_id": "fact-0084-004",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "timeline.current_progress",
+        "before": "抵达城界外沿并停在白裂与影门前",
+        "after": "苏晚退出后，陆沉渊独自滞留影门前，左腿仍受石缝限制，等待本人承担下一笔到案记录",
+        "evidence": "苏晚返回巷中后，影门前只剩陆沉渊；他拔出左腿但未能站直，半寿到案冷光仍停在面前。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "fact-0084-005",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_procedural_boundary",
+        "before": "公开拒绝替陆沉渊作债线切断陈述，并要求其不以她的债或巷民命火换取通行宽限",
+        "after": "明确拒绝登记为随行债户，声明旧债与命灯由自己认领，不补陆沉渊的校时，也不并入他的到案记录",
+        "evidence": "苏晚站在城内外分界线上报出姓名，并说“我来，是送路，不是随行。我的债，不补他的时。他的到案，也不并我的灯。”"
+      },
+      {
+        "fact_id": "fact-0084-006",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_physical_state",
+        "before": "命灯短暂失温、灯焰发白并出现细微绷裂声，原有裂纹未修复",
+        "after": "掌背失温灰痕蔓延至腕侧，命灯再次发出清晰绷裂声，裂损与冷白痕迹仍未消退",
+        "evidence": "正文描写灰色从旧伤边缘爬向腕侧，灯匣先后两次传出绷响，影门冷光退开后掌背灰仍凝在腕骨下方。"
+      }
+    ],
+    "locations": [
+      {
+        "fact_id": "fact-0084-007",
+        "asset_id": "state_ledger_faction_pressure",
+        "field_path": "location.boundary_state",
+        "before": "陆沉渊停在白裂与影门前，未跨入城界",
+        "after": "城内外分界线成为母子正式分开的站位边界，苏晚退回城内侧并独自返回巷中",
+        "evidence": "苏晚站在石缝正中拒绝随行，随后退回城内一侧转身回巷；陆沉渊留在影门前。"
+      }
+    ],
+    "factions": [
+      {
+        "fact_id": "fact-0084-008",
+        "asset_id": "state_ledger_faction_pressure",
+        "field_path": "state_ledger.faction_pressure",
+        "before": "泥灯巷整体协助隐匿登记转为悬置中止，州府压力转向陆沉渊活体校时",
+        "after": "亲缘补项路径被正式删除，州府入门压力集中为陆沉渊本人承担半寿到案",
+        "evidence": "影门删除亲缘校时项，并将唯一显示的入门代价改为“本人半寿到案”；巷民未替他承担。"
+      }
+    ],
+    "artifacts": [
+      {
+        "fact_id": "fact-0084-009",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "artifact.current_effect",
+        "before": "残印冷意持续收紧，影门尚未开启",
+        "after": "封布下残印持续震动，冷光沿陆沉渊手背攀至手腕并与影门到案文字同步加压",
+        "evidence": "残印多次隔着封布震动，冷光沿手背上行；末段“半寿到案”四字随残印震动压亮。"
+      }
+    ],
+    "techniques": [],
+    "relationships": [
+      {
+        "fact_id": "fact-0084-010",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_autonomy_boundary",
+        "before": "苏晚拒绝陆沉渊替她承担债务，也拒绝让自己的话和巷灯并入他的到案记录",
+        "after": "母子到案路径正式分离，苏晚要求下一期独自承担旧债，陆沉渊不得以亲缘或代签替她补项",
+        "evidence": "陆沉渊确认不随行、不代签；苏晚离开时留下“等下一期自己来。别替我填。”"
+      },
+      {
+        "fact_id": "fact-0084-011",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_emotional_turn",
+        "before": "母子仍共同面对程序压力，但边界已明确",
+        "after": "陆沉渊在自身风险增加时尊重苏晚拒绝，苏晚通过退出并让他独自承担下一步表达有限信任",
+        "evidence": "陆沉渊放弃挽留与代签，苏晚转身回巷并未让任何人替陆沉渊应答或扶持。"
+      }
+    ],
+    "emotions": [
+      {
+        "fact_id": "fact-0084-012",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_emotional_state",
+        "before": "面对母子共同到案压力并承受身体痛苦",
+        "after": "在亲缘补项被删除、半寿代价落到本人身上后，压下求助冲动，接受独自候验",
+        "evidence": "他没有再次看门中文字，也没有呼唤苏晚或向送行者求灯，只继续扶壁处理受困的左腿。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "fact-0084-013",
+        "asset_id": "state_ledger_faction_pressure",
+        "field_path": "information.known_procedural_cost",
+        "before": "影门要求亲缘校时补项，具体替代代价未显示",
+        "after": "陆沉渊与苏晚确认：拒绝亲缘补项后，影门要求陆沉渊本人以半寿到案",
+        "evidence": "影门公开显示“入门可受：本人半寿到案”，陆沉渊理解门未保留其他补项。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "fact-0084-014",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "hook.current_direction",
+        "before": "冷字要求陆沉渊亲自交出下一步到案记录",
+        "after": "苏晚退出后，影门将后续选择收束为陆沉渊独自承担半寿到案，下一笔记录尚未落下",
+        "evidence": "苏晚回巷后，影门前只剩陆沉渊；冷光把“半寿到案”压亮，像等待他亲手落下下一笔。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "fact-0084-015",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "timeline.chapter_event",
+        "before": "陆沉渊抵达城界外沿，同行者仅送路不代答",
+        "after": "苏晚独立退出并返回巷中，陆沉渊留在影门前承担本人到案压力，同行者未越界介入",
+        "evidence": "苏晚转身离开冷光回巷；送行者保持原位，陆沉渊独自留在影门前。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "fact-0084-016",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_visible_condition",
+        "before": "左腿反复失稳，胸口旧裂震痛并咳出带血丝灰沫，左眼灼痛",
+        "after": "左腿卡入石缝后仍无法稳定站立，胸口旧裂持续抽紧并咳出带血灰沫，左眼因灰印浮雾而停止辨认",
+        "evidence": "他多次膝弯失力、撞击影壁，咳出带血丝灰沫；左眼灼痛后闭眼，再睁开时不再辨认灰印。"
+      },
+      {
+        "fact_id": "fact-0084-017",
+        "asset_id": "state_ledger_mother_life_lamp_countdown",
+        "field_path": "state_ledger.current_countdown_state",
+        "before": "命灯裂纹、旧债与倒计时均未修复或暂停",
+        "after": "苏晚退出后仍由本人独立承担追缴，命灯裂损与倒计时继续运行，未因陆沉渊到案而暂停",
+        "evidence": "苏晚明确说“等下一期自己来”，并带着仍有裂纹与失温痕的灯匣返回巷中。"
+      }
+    ],
+    "naming": [
+      {
+        "fact_id": "fact-0084-018",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_name_confirmation",
+        "before": "苏晚此前坚持由自己承担姓名确认，陆沉渊不代签",
+        "after": "苏晚在城界分界线上自行报出“苏晚”，并以本人名义拒绝随行债户登记",
+        "evidence": "正文写明她走到石缝正中，开口先报出自己的姓名：“苏晚。”"
+      }
+    ]
+  }
+}

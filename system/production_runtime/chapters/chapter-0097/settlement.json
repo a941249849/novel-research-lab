@@ -1,0 +1,127 @@
+{
+  "chapter_id": "chapter-0097",
+  "accepted_revision_sha256": "37a543af42a2a4b9c4cc8745bb33ef731767e2216308dea1317d7562cc6ee571",
+  "state_deltas": [
+    {
+      "fact_id": "fact-0097-001",
+      "asset_id": "npc_su_wan",
+      "field_path": "npc.current_procedural_boundary",
+      "operation": "set",
+      "before": "只开放既有旧债分期记录的回应，拒绝他人代答",
+      "after": "明确要求所有人只陈述亲眼所见，并共同执行“无具名接收落处，不交人”"
+    },
+    {
+      "fact_id": "fact-0097-002",
+      "asset_id": "npc_su_wan",
+      "field_path": "npc.current_physical_state",
+      "operation": "set",
+      "before": "命灯进一步失温，掌背有暗红血点",
+      "after": "裂纹逼近灯腹，针尖火苗持续受压；掌背血珠滴落但未越过门槛"
+    },
+    {
+      "fact_id": "fact-0097-003",
+      "asset_id": "npc_su_wan",
+      "field_path": "npc.current_emotional_state",
+      "operation": "set",
+      "before": "保持自主、克制与坚决",
+      "after": "在共同拒交形成后仍未松懈，继续坚持由记录责任人认领"
+    },
+    {
+      "fact_id": "fact-0097-004",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_operational_rule",
+      "operation": "set",
+      "before": "未形成统一的可执行拒交口令",
+      "after": "形成并执行“无具名接收落处，不交人”的共同规则，退出者可关门退出且不记欠火"
+    },
+    {
+      "fact_id": "fact-0097-005",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_witness_boundary",
+      "operation": "set",
+      "before": "未提供具名接收回应，未交出苏晚",
+      "after": "留下者只陈述亲眼所见，拒绝替旁户作证、替苏晚承认债或补写接收事实"
+    },
+    {
+      "fact_id": "fact-0097-006",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_visible_condition",
+      "operation": "set",
+      "before": "护阵残存微光并维持稳定",
+      "after": "白裂爬到巷口，护阵最后余光熄灭，巷内失去阵火遮护"
+    },
+    {
+      "fact_id": "fact-0097-007",
+      "asset_id": "state_ledger_mudlamp_array_integrity",
+      "field_path": "state_ledger.current_visible_integrity_consequence",
+      "operation": "set",
+      "before": "永久缺口边缘剥落，白裂延伸至巷口，仍有残存暖意",
+      "after": "护阵跌破安全线并停用，白裂继续前窜，残存暖意再次被抽走"
+    },
+    {
+      "fact_id": "fact-0097-008",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_trust_state",
+      "operation": "set",
+      "before": "留下者继续站定但不越界，不替苏晚接话",
+      "after": "信任表现为非代证式共同拒交：即使恐惧，也守住不交人的边界"
+    },
+    {
+      "fact_id": "fact-0097-009",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "information.current_request_state",
+      "operation": "set",
+      "before": "提验申请因缺少接收行暂不得据此提人，并施加失去阵火遮护的压力",
+      "after": "拒交答复被送复核，疑接者标签仍在，但接收栏继续空缺"
+    },
+    {
+      "fact_id": "fact-0097-010",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "information.current_record_scope",
+      "operation": "set",
+      "before": "已确认转运入账、具名接收和相关抵扣均未见",
+      "after": "正文再次确认泥灯巷未接收、无人替苏晚垫账，拒交依据未被扩写"
+    },
+    {
+      "fact_id": "fact-0097-011",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "hook.current_direction",
+      "operation": "set",
+      "before": "提验文书缺口未闭合，压力转向拒交后果",
+      "after": "拒交答复抵达州府入口方向，接收栏映出州府内侧早已干透的灰痕"
+    },
+    {
+      "fact_id": "fact-0097-012",
+      "asset_id": "foreshadowing_cinder_seal_rain",
+      "field_path": "hook.current_unresolved_scope",
+      "operation": "set",
+      "before": "银灰印屑停在交接缺口边缘，等待后续核验",
+      "after": "接收栏仍未填入苏晚，州府入口处浮现新的内侧灰痕，原始交接责任仍未确认"
+    },
+    {
+      "fact_id": "fact-0097-013",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "timeline.chapter_event",
+      "operation": "set",
+      "before": "泥灯巷处于限期交人或共承拒交后果的压力下",
+      "after": "护阵熄灭后，留下者完成首次共同执行的公开拒交并将答复送复核"
+    },
+    {
+      "fact_id": "fact-0097-014",
+      "asset_id": "state_ledger_resident_lifefire_reserve",
+      "field_path": "state_ledger.current_transaction_debit",
+      "operation": "set",
+      "before": "零调用、零扣减；住户灯火未越过门槛",
+      "after": "仍为零调用、零扣减；护阵停用后也没有一盏住户灯递出"
+    },
+    {
+      "fact_id": "fact-0097-015",
+      "asset_id": "state_ledger_faction_pressure",
+      "field_path": "state_ledger.faction_pressure",
+      "operation": "set",
+      "before": "命籍衙施加限期交人或共承失护后果的压力",
+      "after": "公开拒交被记录并送复核，压力沿灰绳延伸至州府入口"
+    }
+  ],
+  "resolved_audit_ids": []
+}

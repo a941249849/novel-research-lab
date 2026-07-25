@@ -1,0 +1,344 @@
+```json
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "chunk_id": "book-05-11dd686b8b15-chunk-009",
+  "source_file": "novel_training_set/《凡人修仙传》（校对版全本+番外）作者：忘语.txt",
+  "source_file_sha256": "11dd686b8b151694b37460b52991a4f00eda8f5fabe86b507e74f321e10a7428",
+  "start_byte": 12000492,
+  "end_byte": 13500494,
+  "chunk_sha256": "9903922b66550ddafbedb65d21077597eaaf459aba0e6479e55afaedf9cb619c",
+  "source_encoding": "gb18030",
+  "bounded_chunk_utf8_sha256": "5860296eddb9ea28c3fa2e57921c53fab8962c9287ab8781e7975d609bea99ea",
+  "analysis": {
+    "chapter_span": [
+      "第一千九百七十六章 威逼",
+      "第两千两百零七章 灵鼎之秘"
+    ],
+    "major_events": [
+      {
+        "event": "Rescue of Bing Feng from Coercion",
+        "chapter_anchor": "第一千九百七十六章 威逼",
+        "description": "Han Li returns to Tianyuan City and discovers that Qing Long Shangren, assisted by Xiao Hong of the Black Phoenix Clan, is forcing Bing Feng into dual cultivation. Han Li intervenes at Douyuan Pavilion to protect her."
+      },
+      {
+        "event": "Establishing the Three Strikes Agreement",
+        "chapter_anchor": "第一千九百七十八章 三击",
+        "description": "Under the mediation of Zen Master Jin Yue and Elder Gu, Han Li agrees to settle the grievance by having Qing Long Shangren endure three of his direct attacks in a private spatial arena."
+      },
+      {
+        "event": "Overwhelming Qing Long Shangren in Battle",
+        "chapter_anchor": "第一千九百八十章 力压青龙",
+        "description": "Han Li utilizes his Giant Sword and Giant Ape transformation to severely wound Qing Long Shangren, and secretly injects a dormant poison (Lingxuan Xieguang) into his ear during the third strike."
+      },
+      {
+        "event": "Assassination of Qing Long Shangren by Leopard Kirin Beast",
+        "chapter_anchor": "第一千九百八十三章 青龙陨落",
+        "description": "Qing Long Shangren flees Tianyuan City toward Holy Emperor City. The Leopard Kirin Beast (in early Body Integration stage) tracks him through a teleportation portal, triggers the poison, and devours his Nascent Soul."
+      },
+      {
+        "event": "Secluded Breakthrough to Late Body Integration Stage",
+        "chapter_anchor": "第一千九百八十六章 合体后期（二）",
+        "description": "Han Li utilizes Bing Feng's pristine Yin energy (天凤元阴) to assist in his breakthrough, successfully overcoming a massive Heavenly Tribulation consisting of 81 thunder dragons."
+      },
+      {
+        "event": "Demon Venerable Xiong's Alliance with Xue Guang",
+        "chapter_anchor": "第一千九百八十九章 第一魔尊",
+        "description": "The Demon Realm's top cultivator below the Holy Ancestors, Xiong-surnamed Demon Venerable, is invited by Xue Guang's incarnation to deal with Han Li during the Siege of Tianyuan City."
+      },
+      {
+        "event": "Clash with Demon Venerable Xiong at Tianyuan City",
+        "chapter_anchor": "第一千九百九十七章 七焰扇和同心环",
+        "description": "Han Li engages in a direct duel with the Xiong-surnamed Demon Venerable. They clash using physical transformations and powerful spiritual treasures, including the Seven Flame Fan and Concentric Rings used by Elder Gu."
+      },
+      {
+        "event": "Defeat of Demon Venerable Xiong",
+        "chapter_anchor": "第一千九百九十九章 黑日",
+        "description": "Han Li utilizes his Golden Body avatar and a powerful golden energy vortex (resembling a black sun) to crush Demon Venerable Xiong, winning the crucial duel."
+      },
+      {
+        "event": "Han Li Enters the Demon Realm",
+        "chapter_anchor": "第两千一十八章 魔源海",
+        "description": "Following the battle of Tianyuan City, Han Li exploits the spatial passage opened by the Demon Race and enters the Demon Realm to seek opportunities."
+      },
+      {
+        "event": "Acquisition of Daoist Crab",
+        "chapter_anchor": "第两千一百一十章 蟹道人",
+        "description": "In the Magic Source Sea, Han Li obtains the Golden Crab, a powerful pseudo-immortal puppet who transforms into a green-robed white-faced youth named Daoist Crab."
+      },
+      {
+        "event": "Fall of Holy Ancestor Xue Guang",
+        "chapter_anchor": "第两千一百一十二章 血光之陨",
+        "description": "Han Li assists Bao Hua in the Demon Realm, resulting in the death of the Holy Ancestor Xue Guang, and Han Li obtains the valuable Pseudo-Immortal Dew."
+      },
+      {
+        "event": "Encountering and Rescuing Zi Ling",
+        "chapter_anchor": "第两千一百二十三章 紫灵之劫",
+        "description": "Han Li encounters his former romantic partner Zi Ling in the Demon Realm and discovers she is captive to the Holy Ancestor Six Extremes (六极), working to rescue her."
+      },
+      {
+        "event": "Manifesting the Spiritual Domain",
+        "chapter_anchor": "第两千一百三十七章 灵域再现",
+        "description": "During a desperate battle in the Demon Realm, Han Li manifests his Spiritual Domain, shocking all present opponents and allies."
+      },
+      {
+        "event": "Return to the Wood Tribe and Silver Moon Reunion",
+        "chapter_anchor": "第两千一百四十七章 忘情诀",
+        "description": "Han Li returns to the Wood Tribe, reunites with Ao Xiao and Silver Moon, and discovers she is forced to cultivate the Forget Emotion Art due to soul integration issues."
+      },
+      {
+        "event": "Seclusion for Mahayana Breakthrough",
+        "chapter_anchor": "第两千一百七十二章 宝诀大成",
+        "description": "Han Li enters deep seclusion, completes his primary cultivation arts to great success, and prepares for the Mahayana heavenly tribulation."
+      },
+      {
+        "event": "Surmounting the Mahayana Heavenly Tribulation",
+        "chapter_anchor": "第两千一百七推章 天劫之威",
+        "description": "Han Li undergoes his Mahayana Tribulation, facing the Five Elements Tribulation, the True Thunder Tribulation, and the Heart Demon Tribulation."
+      },
+      {
+        "event": "Confronting Cave Heaven Mouse King",
+        "chapter_anchor": "第两千一百八十八章 霜蚣踪讯",
+        "description": "Han Li confronts the Cave Heaven Mouse King (the true body of the Tianlan Holy Beast) and forces him to surrender the life tablet of the escaped Six-Winged Frost Centipede."
+      },
+      {
+        "event": "Ascending to Mahayana Stage",
+        "chapter_anchor": "第两千一百八十六章 进阶大乘",
+        "description": "Han Li successfully breaks through his bottleneck and ascends to the Mahayana stage, becoming the third Mahayana ancestor of the Human and Demon races."
+      },
+      {
+        "event": "Grand Celebration and Slaughters of Black Owl King",
+        "chapter_anchor": "第两千两百零四章 斩大乘",
+        "description": "At Han Li's Mahayana ascension ceremony, the Night叉 Clan's hidden Mahayana Black Owl King tries to disrupt the event. Han Li slays him easily to demonstrate absolute power."
+      },
+      {
+        "event": "Xu Family's Gift and Xue Hun's Poisoning",
+        "chapter_anchor": "第两千两百零七章 灵鼎之秘",
+        "description": "Xu Qianyu presents the Xutian Cauldron (虚天鼎) on behalf of the poisoned clone Xue Hun. Han Li travels to the Xu Family and diagnoses her poisoning by Blood Gu Insects from the Xuetian Continent."
+      }
+    ],
+    "character_state_transitions": [
+      {
+        "character": "Han Li",
+        "transition": "From Mid-Body Integration to Late Body Integration stage",
+        "chapter_anchor": "第一千九百八十六章 合体后期（二）",
+        "description": "Han Li utilizes Bing Feng's pristine Yin energy to break through his bottleneck during secluded cultivation in Tianyuan City."
+      },
+      {
+        "character": "Qing Long Shangren",
+        "transition": "From arrogant elder to a fleeing refugee, and then to deceased",
+        "chapter_anchor": "第一千九百八十三章 青龙陨落",
+        "description": "Defeated and poisoned by Han Li, he flees Tianyuan City but is tracked and assassinated by the Leopard Kirin Beast."
+      },
+      {
+        "character": "Leopard Kirin Beast",
+        "transition": "From a hidden spirit beast to an early Body Integration stage humanoid cultivator",
+        "chapter_anchor": "第一千九百八十二章 斩草除根",
+        "description": "Successfully advances to the Body Integration stage, inheriting Kirin blood and gaining the ability to transform into a young girl."
+      },
+      {
+        "character": "Bing Feng",
+        "transition": "From a coerced refinery cultivator to a protected ally of Han Li",
+        "chapter_anchor": "第一千九百七十六章 威逼",
+        "description": "Saved from the coercion of local sect elders by Han Li, she later provides her Yin energy to assist in his breakthrough."
+      },
+      {
+        "character": "Han Li",
+        "transition": "From Late Body Integration stage to Mahayana stage ancestor",
+        "chapter_anchor": "第两千一百八十六章 进阶大乘",
+        "description": "Successfully endures the multi-stage heavenly and heart demon tribulations to become the third Mahayana powerhouse of the human-demon races."
+      },
+      {
+        "character": "Silver Moon",
+        "transition": "From a split soul companion to a unified wolf clan cultivator bound by Forget Emotion Art",
+        "chapter_anchor": "第两千一百四十七章 忘情诀",
+        "description": "Reunites with Han Li, struggling with emotional detachment required by her clan's cultivation technique."
+      },
+      {
+        "character": "Cave Heaven Mouse King",
+        "transition": "From independent Demon King to subservient source of centipede clues",
+        "chapter_anchor": "第两千一百八十八章 霜蚣踪讯",
+        "description": "Identified as the Tianlan Holy Beast, he yields his life tablet to Han Li to resolve old human-world grudges."
+      },
+      {
+        "character": "Zi Ling",
+        "transition": "From missing lover to captive of Six Extremes, then to rescued companion",
+        "chapter_anchor": "第两千一百二十三章 紫灵之劫",
+        "description": "Discovered in the Demon Realm and freed by Han Li from the control of the Holy Ancestor Six Extremes."
+      },
+      {
+        "character": "Xue Guang",
+        "transition": "From invading Holy Ancestor to completely annihilated soul",
+        "chapter_anchor": "第两千一百一十二章 血光之陨",
+        "description": "Defeated and slain by Bao Hua and Han Li in the Demon Realm, leaving his treasures to the protagonist."
+      },
+      {
+        "character": "Xue Hun",
+        "transition": "From active clone of Bing Po to critically poisoned and comatose patient",
+        "chapter_anchor": "第两千两百零五章 血魂之讯",
+        "description": "Attacked by Blood Gu Insects in Xuetian Continent, she falls into a coma until Han Li arrives to cure her."
+      }
+    ],
+    "long_form_mechanisms": [
+      {
+        "mechanism": "Three Strikes Arena Settlement (三击之约)",
+        "chapter_anchor": "第一千九百七十八章 三击",
+        "description": "A formalized conflict resolution method where an offender agrees to receive three attacks from the victim in a pocket arena, avoiding citywide damage."
+      },
+      {
+        "mechanism": "Ice Phoenix Pristine Yin Energy (天凤元阴)",
+        "chapter_anchor": "第一千九百八十二章 斩草除根",
+        "description": "A cultivation booster where the Ice Phoenix yields her primal Yin energy to help a cultivator purify their spiritual power and break through high-level bottlenecks."
+      },
+      {
+        "mechanism": "Lingxuan Xieguang Poison (灵漩邪光)",
+        "chapter_anchor": "第一千九百八十三章 青龙陨落",
+        "description": "A latent poison derived from the Shiling True Fire. It remains dormant unless the victim mobilizes full magical power, which triggers instant paralysis and mana dissolution."
+      },
+      {
+        "mechanism": "Pseudo-Immortal Puppet Activation (伪仙儡)",
+        "chapter_anchor": "第两千一百一十章 蟹道人",
+        "description": "The operational system of Daoist Crab, requiring highly refined energy sources (like Pseudo-Immortal Dew) to power combat transformations and intelligence."
+      },
+      {
+        "mechanism": "Forget Emotion Art (忘情诀) Detachment",
+        "chapter_anchor": "第两千一百四十七章 忘情诀",
+        "description": "A mental technique of the Silver Wolf clan requiring absolute severing of emotions, which causes memory and soul instability if former emotional triggers are met."
+      },
+      {
+        "mechanism": "Multi-Phase Mahayana Tribulation (五行之劫 & 真雷劫)",
+        "chapter_anchor": "第两千一百七十七章 天劫之威",
+        "description": "The progression of the ascension tribulation, moving from elemental crystallization (Five Elements) to physical body refining (True Thunder) and soul tests (Heart Demon)."
+      },
+      {
+        "mechanism": "Reverse Spirit True Yin Art (逆灵真阴大法)",
+        "chapter_anchor": "第两千一百八十八章 霜蚣踪讯",
+        "description": "A secret method from the Jinque Yushu that allows spiritual beasts to reverse their innate beast limitations and refine their bodies toward Mahayana capability."
+      },
+      {
+        "mechanism": "Blood Gu Insect Poisoning (血蛊虫)",
+        "chapter_anchor": "第两千两百零五章 血魂之讯",
+        "description": "A parasite native to the Xuetian Continent that feeds on spiritual essence, putting the host into a deep coma and slowly dissolving their body."
+      }
+    ],
+    "continuity_observations": [
+      {
+        "observation": "Tianlan Holy Beast True Identity",
+        "chapter_anchor": "第两千一百八十八章 霜蚣踪讯",
+        "description": "Reveals that the Cave Heaven Mouse King is the true body of the Tianlan Holy Beast, whose projection and split soul Han Li fought and bonded with in the human world."
+      },
+      {
+        "observation": "Six-Winged Frost Centipede Escape Tracking",
+        "chapter_anchor": "第两千一百八十八章 霜蚣踪讯",
+        "description": "Han Li traces the escaped centipede (which broke its contract in the human world) through the residual aura on the Cave Heaven Mouse King, securing its life tablet."
+      },
+      {
+        "observation": "Ice Phoenix Shared Spatial Escape",
+        "chapter_anchor": "第一千九百七十六章 威逼",
+        "description": "Recalls Han Li and Bing Feng's joint escape from Kunwu Mountain in the human world, which led to their teleportation and subsequent separation in the Spirit Realm."
+      },
+      {
+        "observation": "Xutian Cauldron Inheritance",
+        "chapter_anchor": "第两千两百零五章 血魂之讯",
+        "description": "Callbacks the Xutian Cauldron (obtained in the Star Seas in the human world), which is presented to Han Li as a token and key to saving Xue Hun."
+      },
+      {
+        "observation": "Zi Ling's Search and Reunion",
+        "chapter_anchor": "第两千一百二十三章 紫灵之劫",
+        "description": "Resumes the search for Zi Ling, Han Li's close companion from the human world, who was captured and forced to serve the Demon Realm's Holy Ancestor."
+      },
+      {
+        "observation": "Pseudo-Immortal Dew (Green Dew) Identity",
+        "chapter_anchor": "第两千一百零七章 再见伪仙露",
+        "description": "Links Han Li's primary cheat (the green bottle's liquid) to the legendary Pseudo-Immortal Dew sought by high-level cultivators and Holy Ancestors in the Demon Realm."
+      },
+      {
+        "observation": "Xiao Hong's Long-term Factional Presence",
+        "chapter_anchor": "第一千九百七十六章 威逼",
+        "description": "Xiao Hong of the Black Phoenix Clan continues her role as an opportunist, first helping coerce Bing Feng and later appearing as a key demon king."
+      },
+      {
+        "observation": "Bing Po and Xu Family Origins",
+        "chapter_anchor": "第两千两百零五章 血魂之讯",
+        "description": "Develops the lore of Ancestor Bing Po, one of the first human flight cultivators, whose split soul clone Xue Hun links Han Li back to the Xu family."
+      }
+    ],
+    "style_observations": [
+      {
+        "observation": "Highly Structured Breakthrough Arcs",
+        "chapter_anchor": "第两千一百七十七章 天劫之威",
+        "description": "The author meticulously categorizes breakthrough phases (elemental defense, physical lightning defense, mental illusion), creating a step-by-step build-up of tension."
+      },
+      {
+        "observation": "Cautious Pragmatism in Conflict Resolution",
+        "chapter_anchor": "第一千九百八十三章 青龙陨落",
+        "description": "Protagonist avoids killing enemies publicly inside a protected city to prevent political alienation, opting for secret poisoning and letting pet beasts execute the target outside."
+      },
+      {
+        "observation": "Heavy Use of Color and Scale Coding in Combat",
+        "chapter_anchor": "第一千九百八十章 力压青龙",
+        "description": "Battles are described with prominent color keywords (golden light, blue lighting, purple flame) and rapid scaling of sizes (hundred-zhang swords, giant avatars)."
+      },
+      {
+        "observation": "Euphemistic and Pragmatic Factional Dialogue",
+        "chapter_anchor": "第一千九百八十四章 余波",
+        "description": "The dialog between elders in the council emphasizes collective defense over personal grudges, employing polite and realistic political reasoning."
+      },
+      {
+        "observation": "Lighthearted Humor via Ruthless Companions",
+        "chapter_anchor": "第一千九百八十二章 斩草除根",
+        "description": "Inserts comic relief through the cute, child-like appearance of the Leopard Kirin Beast, contrasting sharply with its cold-blooded assassination capabilities."
+      },
+      {
+        "observation": "Repetitive Epistemic and Behavioral Phrases",
+        "chapter_anchor": "第两千一百八十八章 霜蚣踪讯",
+        "description": "Frequent repetition of specific phrases like '不加思索' (without thinking), '大有深意' (deep meaning), and '面无表情' (expressionless) to describe high-level cultivators."
+      }
+    ],
+    "originality_risks": [
+      {
+        "risk": "Dual Cultivation Bottleneck Bypass Cliché",
+        "chapter_anchor": "第一千九百八十二章 斩草除根",
+        "description": "Using a female character's pristine energy (天凤元阴) to bypass a major breakthrough bottleneck is a very common xianxia trope that risks treating female characters as functional items."
+      },
+      {
+        "risk": "Hidden Clan Powerhouse Disruptor Trope",
+        "chapter_anchor": "第两千两百零四章 斩大乘",
+        "description": "The sudden arrival of a previously unmentioned, hidden Mahayana enemy (Black Owl King) to disrupt a ceremony and serve as a showcase for the protagonist's new strength is highly formulaic."
+      },
+      {
+        "risk": "Convenient Cross-Realm Siege Passages",
+        "chapter_anchor": "第两千一十八章 魔源海",
+        "description": "Han Li entering the Demon Realm by simply exploiting the enemy's portal during a siege reduces the expected difficulty of inter-realm travel, making barriers feel porous."
+      },
+      {
+        "risk": "Protagonist-Centric Speed and Spectator Stagnation",
+        "chapter_anchor": "第一千九百八十六章 合体后期（二）",
+        "description": "The protagonist progresses at lightspeed while ancient powerhouses who have lived for thousands of years remain completely stagnant, existing primarily to express shock."
+      }
+    ],
+    "creation_family_evidence": {
+      "author": "忘语 (Wang Yu)",
+      "protagonist": "韩立 (Han Li)",
+      "setting": "天渊城 (Tianyuan City), 魔界 (Demon Realm), 木族 (Wood Tribe)",
+      "stage_markers": [
+        "合体后期",
+        "大乘期",
+        "化神",
+        "炼虚"
+      ],
+      "naming_conventions": [
+        "器灵子",
+        "银月",
+        "蟹道人",
+        "冰凤",
+        "豹麟兽"
+      ],
+      "textual_formatting": {
+        "paragraph_indentation": "Double-byte spaces typical of Chinese web novels",
+        "chapter_prefix": "Traditional Chinese numerals (第一千九百七十六章 etc.)"
+      }
+    }
+  }
+}
+```

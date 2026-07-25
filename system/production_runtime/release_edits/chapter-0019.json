@@ -1,0 +1,14 @@
+{
+  "version": "0.25",
+  "chapter_id": "chapter-0019",
+  "source_revision": "system/production_runtime/chapters/chapter-0019/revision.md",
+  "source_sha256": "cae97de0053c2b76c51b03d9479818f22a7459fc2be831ccdaae94bd65600555",
+  "release_edit": "system/production_runtime/release_edits/chapter-0019.md",
+  "release_edit_sha256": "01c40c4218e5a17307223b21c35f8b5eba14fc98fe069db167ee5005d295c66b",
+  "repair_direction": "必须输出3400至3800中文字符的完整发布修订稿。保持原章全部事件、状态结算、人物决定和结尾钩子，不新增人物、能力、线索或胜负。重点扩展既有场景中人物的行动阻力、对话停顿、空间调度与可见后果，不能以总结说明凑字，不得续写到下一章；减少模板排比和重复伤势描写。",
+  "provider": "codex",
+  "model": "gpt-5.6-terra",
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-011-020.json",
+  "reviewed_release_edit_sha256": "01c40c4218e5a17307223b21c35f8b5eba14fc98fe069db167ee5005d295c66b"
+}

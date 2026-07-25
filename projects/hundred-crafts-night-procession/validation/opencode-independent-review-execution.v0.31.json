@@ -1,0 +1,16 @@
+{
+  "version": "0.31",
+  "role": "independent_production_reviewer",
+  "project_id": "hundred-crafts-night-procession",
+  "provider": "opencode-go",
+  "model": "qwen3.7-max",
+  "bound_baseline_sha256": "472623f8bad0caa2283329c575fd9906149a4b2c44659da63212c0cfe44bf7a0",
+  "request_artifact": ".agent-handoff/opencode-go/requests/hundred-crafts-production-delta-v031.md",
+  "request_artifact_sha256": "21f15cafaacdb20de781c37e50f857271b89886f75587bbf0ea66e6ec764d7e0",
+  "review_artifact": ".agent-handoff/opencode-go/responses/hundred-crafts-production-delta-v031.md",
+  "review_artifact_sha256": "2d4d113bd5b2eb2a2d7303abba3422a2515cf4513a0c11aa001fa430dc3b4c3d",
+  "command": "opencode run --pure --model opencode-go/qwen3.7-max --agent plan --file .agent-handoff/opencode-go/requests/hundred-crafts-production-delta-v031.md -- <bounded-review-instruction>",
+  "started_at": "2026-07-25T11:45:46+08:00",
+  "finished_at": "2026-07-25T11:48:15+08:00",
+  "returncode": 0
+}

@@ -1,0 +1,199 @@
+{
+  "chapter_id": "chapter-0094",
+  "draft_sha256": "699f0162e99b02dd0e8e5414dfa99f96fb9239ad44f2798c40fa19773470be17",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "fact-0094-001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_physical_state",
+        "before": "左腿膝弯彻底失力，右臂仍无助力，掌心被石沿再次擦裂并继续出血",
+        "after": "左腿仍失去支撑，掌心血液与霜屑渗入封布，肩背撞上石沿，身体不适加重",
+        "evidence": "陆沉渊左膝在石沿上滑动，掌心血被霜屑刺激，冷意钻至腕骨，肩背撞在石沿。"
+      },
+      {
+        "fact_id": "fact-0094-002",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_procedural_status",
+        "before": "停止继续辨痕，要求苏晚独立追缴列与泥灯巷非承接列分槽复验，不同意将两列并成待查接收方",
+        "after": "继续坚持分列记录，阻止苏晚替任何一列落印或认领提验字迹",
+        "evidence": "他要求“巷口一列，封档一列”，并示意苏晚先别替任何一列落印。"
+      },
+      {
+        "fact_id": "fact-0094-003",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "emotion.current_responsibility_orientation",
+        "before": "接受自己不能读出答案，转而坚持由分列记录保留苏晚与泥灯巷的边界",
+        "after": "继续拒绝让苏晚或泥灯巷替未具名接收响应作出承认",
+        "evidence": "他对苏晚说“别认”，并在灰字等待名字时坚持不让她接印。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "fact-0094-004",
+        "asset_id": "npc_prefecture_shadow_envoy",
+        "field_path": "npc.current_permission_state",
+        "before": "边缘权限写入共持责任；其影印成为回收前置条件，并因此接受权限复核",
+        "after": "即时回收权限暂缓，新增争议转运物保全与待补接收响应责任；回收迟延责任记在其影印上",
+        "evidence": "闻照微将残印定为“争议转运物，待补接收响应”，并明确“回收暂缓”；影印裂线继续上窜。"
+      },
+      {
+        "fact_id": "fact-0094-005",
+        "asset_id": "npc_prefecture_shadow_envoy",
+        "field_path": "npc.current_recovery_strategy",
+        "before": "以影手按住封布另一侧参与共持，未立即回收残印",
+        "after": "放弃立即回收，继续按住封布参与共持，并保留核验完成后的回收意图",
+        "evidence": "她没有移开影手，宣布“回收暂缓”，并表示核验完成后仍会收走该收的东西。"
+      },
+      {
+        "fact_id": "fact-0094-006",
+        "asset_id": "npc_prefecture_shadow_envoy",
+        "field_path": "npc.current_visible_state",
+        "before": "影手边缘存在但未记录进一步淡化",
+        "after": "影手边缘多次淡化，指尖几乎不可见，影印裂线延入袖口，面色近乎失血",
+        "evidence": "正文多次写明影手边缘又淡一层、指尖几乎看不清，腕间裂线窜入袖口。"
+      }
+    ],
+    "locations": [
+      {
+        "fact_id": "fact-0094-007",
+        "asset_id": "state_ledger_faction_pressure",
+        "field_path": "location.boundary_state",
+        "before": "城内外分界线成为母子正式分开的站位边界，苏晚退回城内侧并独自返回巷中",
+        "after": "苏晚退后半步守住城内旧缝，贫城方向的失温字迹越过入口但未获城内承认",
+        "evidence": "苏晚用肩背挡住旧缝，抱紧分列册退守城内；灰白字迹越过外层入口向贫城落下。"
+      }
+    ],
+    "factions": [
+      {
+        "fact_id": "fact-0094-008",
+        "asset_id": "state_ledger_faction_pressure",
+        "field_path": "state_ledger.faction_pressure",
+        "before": "合并压力撤回，但陆沉渊继续受候验锁纹限制，闻照微仍追收残印",
+        "after": "闻照微因回收迟延承担程序压力，命籍衙提验申请继续存在并转入复核，残印对应的原始交接提交方成为后续追问",
+        "evidence": "立即回收字样褪去但留下暗痕，苏晚提验字样未散；闻照微说明后续会追问谁把这一段送出城。"
+      }
+    ],
+    "artifacts": [
+      {
+        "fact_id": "fact-0094-009",
+        "asset_id": "artifact_prefecture_transit_registry_seal",
+        "field_path": "artifact.lifecycle_state",
+        "before": "active，与陆沉渊及闻照微共持",
+        "after": "维持active与共持，标记为争议转运物，待补接收响应，回收暂缓",
+        "evidence": "闻照微以锁纹将布下旧印固定在石台与二人之间，并作出“争议转运物。待补接收响应。回收暂缓”的判断。"
+      },
+      {
+        "fact_id": "fact-0094-010",
+        "asset_id": "artifact_prefecture_transit_registry_seal",
+        "field_path": "artifact.current_visible_trace",
+        "before": "银灰碎屑沿缺口堆积，接收端短暂显光后重新沉黑，送出端最终暗下并停在缺口前",
+        "after": "锁纹绕过缺口固定残印；银灰碎屑受血、影手与风影响持续移动并附着伤口，接收端短暂浮出灰白光后再次未形成具名响应",
+        "evidence": "锁纹绕过缺口延展并固定旧印；碎屑贴到陆沉渊掌心形成霜层，接收端仅浮出灰白光，字迹迟迟未落定。"
+      },
+      {
+        "fact_id": "fact-0094-011",
+        "asset_id": "artifact_prefecture_transit_registry_seal",
+        "field_path": "artifact.current_effect_risk",
+        "before": "铁锈冷香增强，银灰印屑接触陆沉渊血后结霜并加重身体不适",
+        "after": "霜屑继续沿陆沉渊血线向腕骨攀爬，封布绷紧并出现细微裂响，身体寒意加重",
+        "evidence": "霜屑沿血线往腕上爬，寒意直钻腕骨，封布边缘发出极细的裂响。"
+      }
+    ],
+    "techniques": [],
+    "relationships": [
+      {
+        "fact_id": "fact-0094-012",
+        "asset_id": "npc_prefecture_shadow_envoy",
+        "field_path": "relationship.with_character_lu_chenyuan",
+        "before": "双方通过实际按压形成彼此受约束的争议共持关系",
+        "after": "共持被锁纹正式固定，双方共同承担后续核验与程序责任，但仍保持追缴与不信任关系",
+        "evidence": "锁纹绕过陆沉渊染血的手背，将残印固定在石台与二人之间；闻照微说明她仍会在核验后回收。"
+      }
+    ],
+    "emotions": [
+      {
+        "fact_id": "fact-0094-013",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "emotion.current_attitude_toward_npc_prefecture_shadow_envoy",
+        "before": "双方敌对关系中出现可利用但不能信任的责任缝隙",
+        "after": "陆沉渊确认闻照微也被锁纹留在石台边，但未因此请求她担保或转移责任",
+        "evidence": "他看见她没有把自己放在影门之后，却没有把血抹向她，也没有求她替谁担保。"
+      },
+      {
+        "fact_id": "fact-0094-014",
+        "asset_id": "npc_prefecture_shadow_envoy",
+        "field_path": "emotion.current_state",
+        "before": "保持冷静并执行共持",
+        "after": "在立即回收命令压迫下短暂显露动摇，随后恢复克制并主动承担选择代价",
+        "evidence": "立即回收字样出现时她脸色短暂变化，随后说明“哪一笔先挂在我身上”并选择暂不回收。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "fact-0094-015",
+        "asset_id": "state_ledger_faction_pressure",
+        "field_path": "information.current_procedural_finding",
+        "before": "三次复验确认送出响应存在，但苏晚与泥灯巷均无具名接收回应",
+        "after": "程序上明确送出有痕、接收无名，疑似接收不得越过无名，提验须先补接收响应",
+        "evidence": "闻照微公开说明“送出有痕，接收无名，疑似不得越过无名。提验请求若要往前，先补接收响应”。"
+      },
+      {
+        "fact_id": "fact-0094-016",
+        "asset_id": "state_ledger_faction_pressure",
+        "field_path": "information.current_request_state",
+        "before": "命籍衙将未能排除接收改写为苏晚提验请求",
+        "after": "苏晚提验请求未被立即撤销，前半截被锁纹截断，后半截继续闪烁并转送复核",
+        "evidence": "“请提验苏晚”没有散去，被锁纹截在中间，后半截仍在闪；闻照微称其会被送去复核。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "fact-0094-017",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "hook.current_direction",
+        "before": "接收端第三次熄灭后，命籍衙将未能排除接收改写为苏晚提验请求",
+        "after": "提验压力越过外层入口，转向追问残印对应的原始交接提交方；失温影字向贫城落下但未获承认",
+        "evidence": "闻照微指出下一笔会追问谁把这一段送出城；结尾写明几笔字越过外层入口向贫城方向落下。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "fact-0094-018",
+        "asset_id": "state_ledger_faction_pressure",
+        "field_path": "timeline.chapter_event",
+        "before": "通过三次分列及并列复验确认送出响应存在、两列均无具名接收回应，但未能阻止命籍衙继续送审",
+        "after": "闻照微以共持锁纹将残印标记为待补接收响应的争议转运物，暂缓回收，苏晚提验转入复核并向贫城发出失温字迹",
+        "evidence": "本章完成残印状态改记与共持固定；提验请求未落人，灰白字迹随后向贫城方向落下。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "fact-0094-019",
+        "asset_id": "npc_prefecture_shadow_envoy",
+        "field_path": "npc.current_permission_physical_cost",
+        "before": "边缘权限写入共持责任，并因此接受权限复核",
+        "after": "影印出现裂线并持续向袖口上窜，影手淡化，承担回收迟延的实际权限代价",
+        "evidence": "闻照微腕间影印先亮后暗，随后裂出细线并窜入袖口，影手边缘不断淡去。"
+      },
+      {
+        "fact_id": "fact-0094-020",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_lock_state",
+        "before": "继续受候验锁纹限制",
+        "after": "候验锁纹未解，且新锁纹将残印固定在石台与陆沉渊、闻照微之间",
+        "evidence": "闻照微说明陆沉渊候验锁纹未解；新锁纹绕过缺口与其染血手背，将残印固定在二人之间。"
+      }
+    ],
+    "naming": [
+      {
+        "fact_id": "fact-0094-021",
+        "asset_id": "artifact_prefecture_transit_registry_seal",
+        "field_path": "artifact.current_designation",
+        "before": "州府转运残印",
+        "after": "争议转运物；待补接收响应",
+        "evidence": "闻照微在锁纹落定时明确宣告“争议转运物。待补接收响应”。"
+      }
+    ]
+  }
+}

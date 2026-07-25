@@ -1,0 +1,137 @@
+{
+  "chapter_id": "chapter-0064",
+  "draft_sha256": "740e50bbe6883b395836c5af151bc9fbb7c4a64367f1954c9931201252fea83d",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "fact-0064-005",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_procedural_choice",
+        "before": "拒绝越界判断迁籍来源，以自身的半寿登记绑定局部识账观察，对迁籍附条留下具名程序异议",
+        "after": "撤回代管要求，以自身半寿登记痕为抵押将具名异议木片推入回执槽，成为迁籍异议的唯一认痕责任人",
+        "evidence": "既然不能代管命灯，陆沉渊便只能将自己作为唯一的楔子钉入这场审查...他成为了迁籍附条异议的唯一认痕责任人。木片被他推入回执槽。"
+      },
+      {
+        "fact_id": "fact-0064-006",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_procedural_statement",
+        "before": "陈述“原债印先成、迁籍附条后压”，拒绝推断添加者、转运来源和旧债全链",
+        "after": "右手拇指重按“原债印先成、迁籍附条后压”字迹异议木片并提交，锁定局部事实陈述",
+        "evidence": "刻下他仅限于本地查阅权限所能做出的陈述：“原债印先成、迁籍附条后压”...他将带有暗青色追缠纹的右手拇指，重重地按在这些字迹之上。"
+      },
+      {
+        "fact_id": "fact-0064-007",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_visible_condition",
+        "before": "右眼焦纹再现且几近失明，面部抽搐，咳出带血丝灰沫，身体战栗但仍强撑着维持站立",
+        "after": "右眼视线被银灰色完全淹没而失明，且暗青色追缠纹连接锁定至右眼焦黑纹路",
+        "evidence": "右眼周围的焦黑纹路不仅重新浮现...更令人心悸的，是一道暗青色的追缠纹正从他的手腕处浮现...最终与右眼那片焦黑的纹路死死连接在一起...他右眼的视线彻底被银灰色淹没...银灰色的斑驳正在迅速侵蚀一切正常的色彩，他知道，这只眼睛即将陷入彻底的盲区。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "fact-0064-001",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_physical_state",
+        "before": "掌背红点彻底裂开向外渗出幽暗冷光，皮肤近乎透明，极其僵硬地托举命灯，滴落的冷光在青砖结冰",
+        "after": "掌背红点化为无法愈合的创口，冷光如实质黏液拉丝滴落，且命灯因冷热交替冲击新增一条从灯腹蜿蜒至灯口的裂纹",
+        "evidence": "苏晚掌背上的红点彻底化作一个无法愈合的创口，冷光像是有实质的黏液一样，拉着细长的丝线滴落。命灯表面那些蛛网般交错的裂纹不仅没有愈合，反而因为冷热交替的瞬间冲击，发出一声极其细微的崩裂声，一条新的裂纹从灯腹边缘蜿蜒而上，直逼灯口。"
+      },
+      {
+        "fact_id": "fact-0064-002",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_procedural_boundary",
+        "before": "首次认可陆沉渊宁可少说也不拿她的债冒险定案的克制，收回部分命灯直射，接受在已知事实范围内定案",
+        "after": "收回灯匣拒绝代管要求以物理阻隔将母债主体与陆沉渊证据责任正式分开，独自持灯应审",
+        "evidence": "她没有说话，只是极其坚决地将灯匣向自己的方向收回了三寸。这三寸的距离，让命灯散发出的最核心的直射冷光，从陆沉渊的胸口彻底撤离。她用一种不容置疑的物理阻隔，进一步明确了两人之间的边界...母债的主体与他的证据责任，在这一刻被物理上、绝对地分开了。"
+      }
+    ],
+    "locations": [],
+    "factions": [
+      {
+        "fact_id": "fact-0064-010",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_enforcement_record",
+        "before": "命籍衙将苏晚归属清楚的旧追缴由送达转入封档与限期执行，封档压住命档和调取入口但不扣押命灯",
+        "after": "当期寿火位被确认已经执行过，当前追缴令因此失效，退还错取余火至苏晚命灯，但既往损耗不予恢复",
+        "evidence": "当期寿火位被确认已经执行过，当前追缴令因此失效...一团极其微弱、呈现出病态苍白色的火焰，从活门里被吐了出来...被错误抽离的苏晚的余火...退回了本次错误执行所占据的当期寿火位，既往的损耗根本不予追溯恢复。"
+      },
+      {
+        "fact_id": "fact-0064-011",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_enforcement_scope",
+        "before": "苏晚旧寿债被从连额裁定中切出，债名与原始债印仍有效，独立追缴继续执行",
+        "after": "苏晚旧寿债的债名与原始债印仍有效，但命籍衙不得再以本次无效迁籍附条转移命档，亦不得重新执行已冲突的当期寿火位",
+        "evidence": "苏晚旧寿债的债名、原始的债印，仍然被死死地钉在本地的账册上，认定为绝对有效。命籍衙不得再以本次无效迁籍附条转移苏晚命档，也不得重新执行已经冲突的当期寿火位"
+      },
+      {
+        "fact_id": "fact-0064-012",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_local_access_restriction",
+        "before": "封档落定后，陆沉渊无法按原有本地识账权限继续调取命档深处内容",
+        "after": "陆沉渊原有本地识账权限的流转虚线全部崩解，被彻底排除在封档后的本地查阅之外",
+        "evidence": "随着回执槽发出那声脆响，所有这些暗金色的虚线在他眼中瞬间崩解成毫无意义的灰烬。命籍衙本地对他的大门轰然关闭。他再也无法像过去那样，利用识账的边缘权限去规避风险或提前预判。"
+      }
+    ],
+    "artifacts": [],
+    "techniques": [],
+    "relationships": [
+      {
+        "fact_id": "fact-0064-003",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_autonomy_boundary",
+        "before": "苏晚进一步明确陆沉渊不得替她收讫、答复、交火或用半寿替她猜测，陆沉渊只在她站不稳时扶持",
+        "after": "母子代管与代债边界永久收紧，陆沉渊不得替苏晚收讫/答复/交火/代偿，仅允许其虚虚扶住手肘提供物理支撑",
+        "evidence": "陆沉渊不得替她收讫，不得替她答复，不得替她交火，更不得用那残缺的半寿去替她猜测...她允许他将手掌向下，虚虚地扶住自己的手肘。在极致的寒冷与虚弱中，她需要这部分物理上的支撑，但也仅仅是支撑。"
+      },
+      {
+        "fact_id": "fact-0064-004",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_trust_state",
+        "before": "苏晚主动允许陆沉渊扶住手肘，但在收讫和决策上保持独立；陆沉渊压住代偿冲动并承认由她先决定",
+        "after": "收回灯匣并非拒绝而是将陆沉渊定位为可信但有限的协助者，信任提升，但代管与代债边界永久收紧",
+        "evidence": "苏晚收回灯匣不是拒绝儿子，而是把他从替死位置推到可信但有限的协助者位置。"
+      }
+    ],
+    "emotions": [],
+    "information": [
+      {
+        "fact_id": "fact-0064-008",
+        "asset_id": "state_ledger_half_life_registry_exposure",
+        "field_path": "state_ledger.current_exchange_exposure_delta",
+        "before": "新增一次主动认痕记录，半寿残籍暴露程度急剧上升",
+        "after": "因具名程序异议，暴露继续上升，成为本地程序视野中挂着红标、处于极高暴露状态下的被追踪物",
+        "evidence": "在本地程序的视野里，他不再是一个可以钻空子的查阅者，而是一个身上挂着刺眼红标的、处于极高暴露状态下的被追踪物。"
+      },
+      {
+        "fact_id": "fact-0064-009",
+        "asset_id": "state_ledger_half_life_registry_exposure",
+        "field_path": "state_ledger.registry_locking_sign",
+        "before": "暗青色追缠纹自手腕浮现并向上蔓延至眼部，与右眼焦黑纹路连接锁定",
+        "after": "暗青色追缠纹作为无形枷锁锁定并随脉搏发送位置状态，且右眼视线被银灰色完全淹没而失明",
+        "evidence": "暗青色追缠纹正从他的手腕处浮现...与右眼那片焦黑的纹路死死连接在一起，完成了一种残忍的锁定。右眼的视线里，银灰色的斑驳正在迅速侵蚀一切正常的色彩，他知道，这只眼睛即将陷入彻底的盲区...那条从手腕蔓延到右眼的暗青色追缠纹，就是他戴上的无形枷锁，每一次脉搏的跳动，都在向未知的深渊发送着他的位置和状态。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "fact-0064-013",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "foreshadowing.current_manifestation",
+        "before": "苏晚拒迁且新冷纹越过灯腹后，迁籍附条贴合处浮出一圈比原债印更新的灰边",
+        "after": "在命审台挤压下贴合边缘浮出比原债印更新且带灼烧感的灰边（“灼位灰”），证实为后加覆印",
+        "evidence": "就在那张引发争议的迁籍附条与原债印贴合的边缘，在命审台齿轮的强力挤压下，极其缓慢地浮出了一圈刺眼的灰边。那是一种比原债印更新、带着某种奇异灼烧感的灰色痕迹。这圈“灼位灰”的出现...证明了这不仅是两次执行，而且是带着明显时间差的、后加的覆印。"
+      },
+      {
+        "fact_id": "fact-0064-014",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "hook.unread_migration_clause",
+        "before": "期限耗尽前可通过迁籍换取暂缓裂灯",
+        "after": "命审台警告选错争点的一方将在最后一格耗尽前失去所有再次申辩机会，且最后一格液体开始加速沸腾下降走刻",
+        "evidence": "两人的身份刚被分开，命审台便宣布：选错争点的一方，将在最后一格耗尽前失去再次申辩机会。...警告：选错争点的一方，将在最后一格耗尽前，失去所有再次申辩机会。代表着当前期限的最后一格液体，突然开始加速沸腾、下降。走刻正式开始。"
+      }
+    ],
+    "timeline": [],
+    "physical_state": [],
+    "naming": []
+  }
+}

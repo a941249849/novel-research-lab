@@ -1,0 +1,377 @@
+{
+  "version": "0.29",
+  "source_cross_book_path": "system/agent_ops/inbox/deep_read_v0.18/cross_book_distillation.json",
+  "source_cross_book_sha256": "981ccf2ceebaa4616e6a3c29896e525100981813fcc5d0aaf27d0684997ed87b",
+  "source_signature_profiles_path": "system/research_assets/deep_read/v0.29/signature_profiles.v1.json",
+  "source_signature_profiles_sha256": "2ff185fcb10804d667157021c254647ef1e35cce7c5e41e94cbaa32a7c0cc066",
+  "cross_book_mechanism_count": 16,
+  "cross_book_mechanism_ids": [
+    "CB18-M01",
+    "CB18-M02",
+    "CB18-M03",
+    "CB18-M04",
+    "CB18-M05",
+    "CB18-M06",
+    "CB18-M07",
+    "CB18-M08",
+    "CB18-M09",
+    "CB18-M10",
+    "CB18-M11",
+    "CB18-M12",
+    "CB18-M13",
+    "CB18-M14",
+    "CB18-M15",
+    "CB18-M16"
+  ],
+  "protected_signature_profiles": [
+    {
+      "profile_id": "signature-book-01-45bcee82acba",
+      "book_id": "book-01-45bcee82acba",
+      "book_title": "一念永恒",
+      "dimensions": {
+        "narrative_spine": "explicit",
+        "character_highlight_architecture": "explicit",
+        "progression_and_thresholds": "explicit",
+        "world_map_and_scale": "explicit",
+        "embedded_history_and_lore": "not_dominant",
+        "faction_and_resource_game": "explicit",
+        "relationship_and_emotional_cost": "explicit",
+        "foreshadowing_and_payoff": "explicit",
+        "climax_convergence": "explicit",
+        "reader_feedback_rhythm": "explicit",
+        "style_and_life_force": "explicit",
+        "failure_modes_and_negative_lessons": "explicit"
+      }
+    },
+    {
+      "profile_id": "signature-book-02-7624374abf2e",
+      "book_id": "book-02-7624374abf2e",
+      "book_title": "不死不灭",
+      "dimensions": {
+        "narrative_spine": "explicit",
+        "character_highlight_architecture": "explicit",
+        "progression_and_thresholds": "explicit",
+        "world_map_and_scale": "explicit",
+        "embedded_history_and_lore": "not_dominant",
+        "faction_and_resource_game": "explicit",
+        "relationship_and_emotional_cost": "explicit",
+        "foreshadowing_and_payoff": "explicit",
+        "climax_convergence": "explicit",
+        "reader_feedback_rhythm": "explicit",
+        "style_and_life_force": "explicit",
+        "failure_modes_and_negative_lessons": "explicit"
+      }
+    },
+    {
+      "profile_id": "signature-book-03-0bc4648bf63c",
+      "book_id": "book-03-0bc4648bf63c",
+      "book_title": "人道至尊",
+      "dimensions": {
+        "narrative_spine": "explicit",
+        "character_highlight_architecture": "explicit",
+        "progression_and_thresholds": "explicit",
+        "world_map_and_scale": "explicit",
+        "embedded_history_and_lore": "not_dominant",
+        "faction_and_resource_game": "explicit",
+        "relationship_and_emotional_cost": "explicit",
+        "foreshadowing_and_payoff": "explicit",
+        "climax_convergence": "explicit",
+        "reader_feedback_rhythm": "explicit",
+        "style_and_life_force": "explicit",
+        "failure_modes_and_negative_lessons": "explicit"
+      }
+    },
+    {
+      "profile_id": "signature-book-04-bfe08b74de74",
+      "book_id": "book-04-bfe08b74de74",
+      "book_title": "仙逆",
+      "dimensions": {
+        "narrative_spine": "explicit",
+        "character_highlight_architecture": "explicit",
+        "progression_and_thresholds": "explicit",
+        "world_map_and_scale": "explicit",
+        "embedded_history_and_lore": "not_dominant",
+        "faction_and_resource_game": "explicit",
+        "relationship_and_emotional_cost": "explicit",
+        "foreshadowing_and_payoff": "explicit",
+        "climax_convergence": "explicit",
+        "reader_feedback_rhythm": "explicit",
+        "style_and_life_force": "explicit",
+        "failure_modes_and_negative_lessons": "explicit"
+      }
+    },
+    {
+      "profile_id": "signature-book-05-11dd686b8b15",
+      "book_id": "book-05-11dd686b8b15",
+      "book_title": "凡人修仙传",
+      "dimensions": {
+        "narrative_spine": "explicit",
+        "character_highlight_architecture": "explicit",
+        "progression_and_thresholds": "explicit",
+        "world_map_and_scale": "explicit",
+        "embedded_history_and_lore": "not_dominant",
+        "faction_and_resource_game": "explicit",
+        "relationship_and_emotional_cost": "explicit",
+        "foreshadowing_and_payoff": "explicit",
+        "climax_convergence": "explicit",
+        "reader_feedback_rhythm": "explicit",
+        "style_and_life_force": "explicit",
+        "failure_modes_and_negative_lessons": "explicit"
+      }
+    },
+    {
+      "profile_id": "signature-book-06-b1b7934bf892",
+      "book_id": "book-06-b1b7934bf892",
+      "book_title": "圣墟",
+      "dimensions": {
+        "narrative_spine": "explicit",
+        "character_highlight_architecture": "explicit",
+        "progression_and_thresholds": "explicit",
+        "world_map_and_scale": "explicit",
+        "embedded_history_and_lore": "not_dominant",
+        "faction_and_resource_game": "explicit",
+        "relationship_and_emotional_cost": "explicit",
+        "foreshadowing_and_payoff": "explicit",
+        "climax_convergence": "explicit",
+        "reader_feedback_rhythm": "explicit",
+        "style_and_life_force": "explicit",
+        "failure_modes_and_negative_lessons": "explicit"
+      }
+    },
+    {
+      "profile_id": "signature-book-07-f82ccdb9a2b3",
+      "book_id": "book-07-f82ccdb9a2b3",
+      "book_title": "大主宰",
+      "dimensions": {
+        "narrative_spine": "explicit",
+        "character_highlight_architecture": "explicit",
+        "progression_and_thresholds": "explicit",
+        "world_map_and_scale": "explicit",
+        "embedded_history_and_lore": "explicit",
+        "faction_and_resource_game": "explicit",
+        "relationship_and_emotional_cost": "explicit",
+        "foreshadowing_and_payoff": "explicit",
+        "climax_convergence": "explicit",
+        "reader_feedback_rhythm": "explicit",
+        "style_and_life_force": "explicit",
+        "failure_modes_and_negative_lessons": "explicit"
+      }
+    },
+    {
+      "profile_id": "signature-book-08-322e84872b22",
+      "book_id": "book-08-322e84872b22",
+      "book_title": "完美世界",
+      "dimensions": {
+        "narrative_spine": "explicit",
+        "character_highlight_architecture": "explicit",
+        "progression_and_thresholds": "explicit",
+        "world_map_and_scale": "explicit",
+        "embedded_history_and_lore": "not_dominant",
+        "faction_and_resource_game": "explicit",
+        "relationship_and_emotional_cost": "explicit",
+        "foreshadowing_and_payoff": "explicit",
+        "climax_convergence": "explicit",
+        "reader_feedback_rhythm": "explicit",
+        "style_and_life_force": "explicit",
+        "failure_modes_and_negative_lessons": "explicit"
+      }
+    },
+    {
+      "profile_id": "signature-book-09-4f463d84ee63",
+      "book_id": "book-09-4f463d84ee63",
+      "book_title": "将夜",
+      "dimensions": {
+        "narrative_spine": "explicit",
+        "character_highlight_architecture": "explicit",
+        "progression_and_thresholds": "explicit",
+        "world_map_and_scale": "explicit",
+        "embedded_history_and_lore": "not_dominant",
+        "faction_and_resource_game": "explicit",
+        "relationship_and_emotional_cost": "explicit",
+        "foreshadowing_and_payoff": "explicit",
+        "climax_convergence": "explicit",
+        "reader_feedback_rhythm": "explicit",
+        "style_and_life_force": "explicit",
+        "failure_modes_and_negative_lessons": "explicit"
+      }
+    },
+    {
+      "profile_id": "signature-book-10-e27891938d93",
+      "book_id": "book-10-e27891938d93",
+      "book_title": "斗破苍穹",
+      "dimensions": {
+        "narrative_spine": "explicit",
+        "character_highlight_architecture": "explicit",
+        "progression_and_thresholds": "explicit",
+        "world_map_and_scale": "explicit",
+        "embedded_history_and_lore": "not_dominant",
+        "faction_and_resource_game": "explicit",
+        "relationship_and_emotional_cost": "explicit",
+        "foreshadowing_and_payoff": "explicit",
+        "climax_convergence": "explicit",
+        "reader_feedback_rhythm": "explicit",
+        "style_and_life_force": "explicit",
+        "failure_modes_and_negative_lessons": "explicit"
+      }
+    },
+    {
+      "profile_id": "signature-book-11-61b03727048f",
+      "book_id": "book-11-61b03727048f",
+      "book_title": "武动乾坤",
+      "dimensions": {
+        "narrative_spine": "explicit",
+        "character_highlight_architecture": "explicit",
+        "progression_and_thresholds": "explicit",
+        "world_map_and_scale": "explicit",
+        "embedded_history_and_lore": "not_dominant",
+        "faction_and_resource_game": "explicit",
+        "relationship_and_emotional_cost": "explicit",
+        "foreshadowing_and_payoff": "explicit",
+        "climax_convergence": "explicit",
+        "reader_feedback_rhythm": "explicit",
+        "style_and_life_force": "explicit",
+        "failure_modes_and_negative_lessons": "explicit"
+      }
+    },
+    {
+      "profile_id": "signature-book-12-7dd95a828fbe",
+      "book_id": "book-12-7dd95a828fbe",
+      "book_title": "永生",
+      "dimensions": {
+        "narrative_spine": "explicit",
+        "character_highlight_architecture": "explicit",
+        "progression_and_thresholds": "explicit",
+        "world_map_and_scale": "explicit",
+        "embedded_history_and_lore": "not_dominant",
+        "faction_and_resource_game": "explicit",
+        "relationship_and_emotional_cost": "explicit",
+        "foreshadowing_and_payoff": "explicit",
+        "climax_convergence": "explicit",
+        "reader_feedback_rhythm": "explicit",
+        "style_and_life_force": "explicit",
+        "failure_modes_and_negative_lessons": "explicit"
+      }
+    },
+    {
+      "profile_id": "signature-book-13-210acebeef12",
+      "book_id": "book-13-210acebeef12",
+      "book_title": "求魔",
+      "dimensions": {
+        "narrative_spine": "explicit",
+        "character_highlight_architecture": "explicit",
+        "progression_and_thresholds": "explicit",
+        "world_map_and_scale": "explicit",
+        "embedded_history_and_lore": "not_dominant",
+        "faction_and_resource_game": "explicit",
+        "relationship_and_emotional_cost": "explicit",
+        "foreshadowing_and_payoff": "explicit",
+        "climax_convergence": "explicit",
+        "reader_feedback_rhythm": "explicit",
+        "style_and_life_force": "explicit",
+        "failure_modes_and_negative_lessons": "explicit"
+      }
+    },
+    {
+      "profile_id": "signature-book-14-1ba978345f70",
+      "book_id": "book-14-1ba978345f70",
+      "book_title": "牧神记",
+      "dimensions": {
+        "narrative_spine": "explicit",
+        "character_highlight_architecture": "explicit",
+        "progression_and_thresholds": "explicit",
+        "world_map_and_scale": "explicit",
+        "embedded_history_and_lore": "explicit",
+        "faction_and_resource_game": "explicit",
+        "relationship_and_emotional_cost": "explicit",
+        "foreshadowing_and_payoff": "explicit",
+        "climax_convergence": "explicit",
+        "reader_feedback_rhythm": "explicit",
+        "style_and_life_force": "explicit",
+        "failure_modes_and_negative_lessons": "explicit"
+      }
+    },
+    {
+      "profile_id": "signature-book-15-04e1a336e29d",
+      "book_id": "book-15-04e1a336e29d",
+      "book_title": "诡秘之主",
+      "dimensions": {
+        "narrative_spine": "explicit",
+        "character_highlight_architecture": "explicit",
+        "progression_and_thresholds": "explicit",
+        "world_map_and_scale": "explicit",
+        "embedded_history_and_lore": "not_dominant",
+        "faction_and_resource_game": "explicit",
+        "relationship_and_emotional_cost": "explicit",
+        "foreshadowing_and_payoff": "explicit",
+        "climax_convergence": "explicit",
+        "reader_feedback_rhythm": "explicit",
+        "style_and_life_force": "explicit",
+        "failure_modes_and_negative_lessons": "explicit"
+      }
+    },
+    {
+      "profile_id": "signature-book-16-9cbf8da97dac",
+      "book_id": "book-16-9cbf8da97dac",
+      "book_title": "遮天",
+      "dimensions": {
+        "narrative_spine": "explicit",
+        "character_highlight_architecture": "explicit",
+        "progression_and_thresholds": "explicit",
+        "world_map_and_scale": "explicit",
+        "embedded_history_and_lore": "not_dominant",
+        "faction_and_resource_game": "explicit",
+        "relationship_and_emotional_cost": "explicit",
+        "foreshadowing_and_payoff": "explicit",
+        "climax_convergence": "explicit",
+        "reader_feedback_rhythm": "explicit",
+        "style_and_life_force": "explicit",
+        "failure_modes_and_negative_lessons": "explicit"
+      }
+    },
+    {
+      "profile_id": "signature-book-17-3089d9aab05c",
+      "book_id": "book-17-3089d9aab05c",
+      "book_title": "雪中悍刀行",
+      "dimensions": {
+        "narrative_spine": "explicit",
+        "character_highlight_architecture": "explicit",
+        "progression_and_thresholds": "explicit",
+        "world_map_and_scale": "explicit",
+        "embedded_history_and_lore": "not_dominant",
+        "faction_and_resource_game": "explicit",
+        "relationship_and_emotional_cost": "explicit",
+        "foreshadowing_and_payoff": "explicit",
+        "climax_convergence": "explicit",
+        "reader_feedback_rhythm": "explicit",
+        "style_and_life_force": "explicit",
+        "failure_modes_and_negative_lessons": "explicit"
+      }
+    },
+    {
+      "profile_id": "signature-book-18-d53c5cc79ddd",
+      "book_id": "book-18-d53c5cc79ddd",
+      "book_title": "蛊真人",
+      "dimensions": {
+        "narrative_spine": "explicit",
+        "character_highlight_architecture": "explicit",
+        "progression_and_thresholds": "explicit",
+        "world_map_and_scale": "explicit",
+        "embedded_history_and_lore": "explicit",
+        "faction_and_resource_game": "explicit",
+        "relationship_and_emotional_cost": "explicit",
+        "foreshadowing_and_payoff": "explicit",
+        "climax_convergence": "explicit",
+        "reader_feedback_rhythm": "explicit",
+        "style_and_life_force": "explicit",
+        "failure_modes_and_negative_lessons": "explicit"
+      }
+    }
+  ],
+  "loss_prevention_rules": [
+    "A mechanism does not need a second source book to remain queryable.",
+    "Cross-book abstraction cannot replace a protected signature profile.",
+    "Project reconciliation must record adopt, transform, defer, or reject decisions.",
+    "Originality boundaries remain attached to every source profile.",
+    "Semantic gaps are preserved as gaps instead of being filled by generic language."
+  ]
+}

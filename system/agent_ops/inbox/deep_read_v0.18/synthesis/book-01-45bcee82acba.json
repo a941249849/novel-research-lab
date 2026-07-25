@@ -1,0 +1,100 @@
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "book_id": "book-01-45bcee82acba",
+  "book_title": "《一念永恒》（校对版全本）作者：耳根",
+  "covered_chunk_ids": [
+    "book-01-45bcee82acba-chunk-001",
+    "book-01-45bcee82acba-chunk-002",
+    "book-01-45bcee82acba-chunk-003",
+    "book-01-45bcee82acba-chunk-004",
+    "book-01-45bcee82acba-chunk-005",
+    "book-01-45bcee82acba-chunk-006"
+  ],
+  "covered_chunk_hashes": [
+    { "chunk_id": "book-01-45bcee82acba-chunk-001", "response_sha256": "7ae575b08be84988bea725ca488be0aac17bb1619f65e8498b781b971a6684b0" },
+    { "chunk_id": "book-01-45bcee82acba-chunk-002", "response_sha256": "11fb59fb7cb78446e20e5b1753031dd5711f7e8813f659b5db346144eaf6b4b7" },
+    { "chunk_id": "book-01-45bcee82acba-chunk-003", "response_sha256": "b5f909d528067b7179e8817c1c855f584693c88693f238e9f9844e25867b9cb8" },
+    { "chunk_id": "book-01-45bcee82acba-chunk-004", "response_sha256": "8ff9801b64cc6a12eaa45d853788855c32a7649e17a6ac3916489f833eb9795d" },
+    { "chunk_id": "book-01-45bcee82acba-chunk-005", "response_sha256": "070c60ea4671c95d820ca9b191d22ead7e1f5c968d60658c822aca593f710228" },
+    { "chunk_id": "book-01-45bcee82acba-chunk-006", "response_sha256": "614bcc6ab02128e89c45f7eedf37cc4c1070445fe48a50365b86d5b97aed66a3" }
+  ],
+  "synthesis": {
+    "narrative_spine": [
+      "The book begins with Bai Xiaochun entering Lingxi Sect to escape mortality, where low-status sect life supplies the comic survival engine and his first exceptional tools.",
+      "Early sect contests, a rebellion, Fallen Sword Abyss, and the Night Crypt infiltration repeatedly convert local advancement into faction-scale consequences.",
+      "His dual authority over Xuexi bloodlines and Lingxi beasts enables a merger into Nihe Sect; subsequent ascents move through a superior sect, the Great Wall, and the Wildlands while resetting social rank and expanding the political map.",
+      "The Wildlands identity of Bai Hao turns alchemy and flame refining into political leverage, culminating in returns to defend Nihe Sect and successive Deva and flesh demi-god breakthroughs.",
+      "After Tongtian World collapses into the Eternal Immortal Domain, the conflict broadens from dynastic reconstruction to cosmic sealing, autonomous Sovereign power, creation, and an intentionally choice-shaped ending."
+    ],
+    "character_arcs": [
+      "Bai Xiaochun develops from a death-fearing village youth into a sect junior ancestor, commander, disguised soul refiner, Deva, Sovereign, and finally a life-seeding cosmic will; fear remains a comic counterpoint to responsibility.",
+      "Du Lingfei progresses from distant senior sister to Blood Plum and then Celestial-linked partner; the final material preserves her unresolved cost through a reincarnated temple life.",
+      "Song Que moves from hostile benchmark to repeatedly humbled subordinate, later sacrifice, then resurrection through the Life-and-Death Dao source and independent cosmic departure.",
+      "Bai Hao changes from a wronged wandering soul into Bai Xiaochun's formula-making disciple, Underworld Emperor, and eventually a resurrected collaborator, making their bond a durable emotional and technical axis.",
+      "Allies and patrons such as Tiedan, Giant Ghost King, and the Saint Emperor change from resources, rulers, or rivals into reciprocal supports as Bai Xiaochun's scale overtakes theirs."
+    ],
+    "mechanism_evolution": [
+      "The turtle-pattern wok and spirit refining establish an early reliable advantage; body cultivation advances through the Undying sequence from skin through bones and into flesh demi-god power.",
+      "Cultivation milestones stack exceptional Heaven-Dao forms—Foundation Establishment, Golden Dan, Nascent Soul, and Deva—so each realm transition also enlarges the political arena.",
+      "Alchemy moves from comic pill accidents to battlefield Soul-Gathering Pills, then to multi-color flame refinement and formula-based high-color fire as an economic, military, and resurrection technology.",
+      "Authority systems scale from King Beast and Blood Demon suppression to sect formations, True Spirit obligations, Underworld imperial succession, and celestial/dynastic governance.",
+      "The finale replaces localized cultivation with world-recognition, autonomous Dao bodies, time techniques, cosmic origin, and a law of tribulations authored by Bai Xiaochun."
+    ],
+    "world_expansion": [
+      "The geography expands from Lingxi Sect's peaks and rival lower-stream sects to the unified Nihe Sect, middle reaches, Starry Sky Dao Polarity Sect, Great Wall, and Wildlands.",
+      "The Wildlands introduces soul refining, flame markets, aristocratic-clan politics, the Underworld River, and the relationship between the living eastern continent and the dead.",
+      "The later collapse of Tongtian World exposes the Eternal Continent's competing sovereign powers, damaged fan trials, external cosmic threats, and an eventual universe-scale conflict.",
+      "The ending explicitly positions the setting inside a broader Luo Tian / Eternal Spirit Realm cosmology, with the Time-Space River and Weiyang threat reframing prior local lore."
+    ],
+    "long_term_reader_hooks": [
+      "The turtle-pattern wok, Little Turtle identity, ghost-face threat, and Undying inheritance are planted early and repeatedly upgraded or recontextualized.",
+      "Disguises—Night Crypt and Bai Hao—create extended dramatic irony while allowing old relationships to reappear under altered power arrangements.",
+      "Mysteries around Du Lingfei, Gongsun Wan'er, the Gravekeeper, the True Spirit, and the decaying world architecture continually defer explanatory payoff.",
+      "Bai Hao's soul and Song Que's fate create long-horizon rescue and resurrection commitments, while the final choice returns the reader to the story's village-scale origin."
+    ],
+    "style_and_life_force": [
+      "A cowardly, self-aggrandizing internal voice is repeatedly set against genuine action under danger, allowing fear and courage to coexist without abandoning the comic persona.",
+      "Alchemy and refining produce both progression and disaster: absurd pills, explosions, hallucinations, and relationship chaos keep high-power escalation materially playful.",
+      "Crowd shock, rhetorical questions, rapid cliffhanger continuations, and onomatopoeic combat make achievements immediately legible in a serialized rhythm.",
+      "Identity irony, humiliating reversals, and side-character reactions sustain comedic pressure; later cosmic tragedy is regularly interrupted by deliberately absurd visual relief.",
+      "The final volumes pair repetitive, emphatic creation language with intimate memory and regret, shifting the emotional register without discarding the earlier comic motifs."
+    ],
+    "continuity_failures": [
+      "Chunk 002 calls the early Little Turtle a cultivation artifact that releases spiritual aroma, whereas chunk 001 identifies the enduring cheat item as the turtle-pattern wok. The synthesis preserves both as a terminology/identity ambiguity rather than treating them as independently verified objects.",
+      "Chunks 003 and 005 contain non-JSON execution-log text before their fenced JSON payloads. Their packet-required response hashes match, but the files are not strict standalone JSON documents.",
+      "Chunk 004 says 21-color fire is the Tongtian World's absolute limit, while chunk 005 later reports 22-color and 30-color fire after the setting transition. This is consistent only if the stated limit is local to Tongtian World, not global.",
+      "The source responses alternate between English names and transliterations (for example, Bai/White Xiaochun and Nihe/River-Defying); this synthesis normalizes the principal names but does not infer a new canonical translation."
+    ],
+    "evidence_map": [
+      { "claim": "Early sect entry, Heaven-Dao foundation, and Night Crypt establish the first trajectory turn.", "chunk_id": "book-01-45bcee82acba-chunk-001", "chapter_heading": "第185章 血溪宗秘" },
+      { "claim": "Nihe Sect formation and Heaven-Dao Golden Dan convert individual advancement into middle-stream expansion.", "chunk_id": "book-01-45bcee82acba-chunk-002", "chapter_heading": "第338章 天道金丹！" },
+      { "claim": "The five-Deva-Soul route culminates in Heaven-Dao Nascent Soul.", "chunk_id": "book-01-45bcee82acba-chunk-003", "chapter_heading": "第669章 天道元婴！" },
+      { "claim": "Bai Hao's succession and Bai Xiaochun's Deva breakthrough join emotional and political expansion.", "chunk_id": "book-01-45bcee82acba-chunk-004", "chapter_heading": "第887章 天人！" },
+      { "claim": "The Eternal Domain transition opens the cosmic endgame and resolves the Bai Hao promise.", "chunk_id": "book-01-45bcee82acba-chunk-005", "chapter_heading": "第1252章 白浩复活！" },
+      { "claim": "Autonomous Sovereign power, cosmic creation, and the final reader-facing choice close the book.", "chunk_id": "book-01-45bcee82acba-chunk-006", "chapter_heading": "第1314章 你的选择（终）" },
+      { "claim": "The serial's enduring comic voice relies on dangerous alchemy and identity-driven reversals.", "chunk_id": "book-01-45bcee82acba-chunk-004", "chapter_heading": "第909章 分手丹……" },
+      { "claim": "The source-package construction evidence includes explicitly merged chapter formatting.", "chunk_id": "book-01-45bcee82acba-chunk-005", "chapter_heading": "第1037章—第1038章 合章" },
+      { "claim": "The final shared-universe material creates a derivative-risk boundary for any new work.", "chunk_id": "book-01-45bcee82acba-chunk-006", "chapter_heading": "第1299章 罗天再造" }
+    ],
+    "creation_family_evidence": {
+      "characters": ["Bai Xiaochun's fear-to-responsibility arc and Bai Hao's disciple-to-Underworld-Emperor arc provide source-bound character evidence."],
+      "npcs": ["Du Lingfei, Song Que, Tiedan, Giant Ghost King, and the Saint Emperor demonstrate supporting-character role changes across escalating arcs."],
+      "factions": ["Lingxi, Xuexi, Nihe, Wildlands powers, the Saint Emperor dynasty, and Eternal Domain sovereigns provide factional progression evidence."],
+      "artifacts": ["The turtle-pattern wok, Soul-Gathering Pills, multi-color flame refining, formations, and cosmic sealing tools drive repeatable plot constraints."],
+      "techniques": ["Undying body cultivation, Heaven-Dao realm steps, spirit refining, alchemy, flame refinement, and temporal techniques form the technique ladder."],
+      "naming": ["Sequential chapter headings, color-coded cultivation terms, and recurring comic-alchemy terminology establish naming conventions."],
+      "emotional_bonds": ["Bai Xiaochun's bonds with Bai Hao, Du Lingfei, Song Que, and allied patrons create recurring obligation, loss, and return payoffs."],
+      "foreshadowing": ["Early sect tools, shared-universe markers, and later cosmic references demonstrate long-range setup and payoff structure."],
+      "state_ledger": ["Identity, realm, faction position, artifact ownership, and world-scale authority all change in traceable stages across the synthesis." ]
+    },
+    "originality_red_lines": [
+      "Do not reproduce the turtle-pattern refining cheat, Heaven-Dao ladder, or a protagonist whose exceptional advancement is guaranteed by a single artifact; design constrained, reversible advantages with real costs.",
+      "Do not reuse the underdog-sect merger, higher-sect hostage reset, hidden-identity rise, or crowd-shock tournament sequence as a plot skeleton; change the social engine and consequence structure.",
+      "Do not transplant the Blood Stream, Wildlands soul-refining, Underworld River, multi-color flame grading, Undying cultivation, or named cosmology; create independent institutions, metaphysics, and terminology.",
+      "Avoid direct historical-policy reskins such as Zhong En Ling / Tui En Ling and generic ghost-vessel, weakened-ruler-bodyguard, or resurrection-by-legacy beats unless materially transformed.",
+      "Do not depend on Luo Tian, Weiyang, Daochen, Nifan, Miesheng, or franchise-level cultivation steps; a new ending must be self-contained rather than borrowing shared-universe payoff.",
+      "Retain no recognizable character names, relationship configurations, chapter titles, signature catchphrases, or source prose; use only abstract craft lessons such as escalation, recurring props, and tonal contrast."
+    ]
+  }
+}

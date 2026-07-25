@@ -1,0 +1,13 @@
+{
+  "version": "0.25",
+  "chapter_id": "chapter-0090",
+  "source_revision": "system/production_runtime/chapters/chapter-0090/revision.md",
+  "source_sha256": "5b6aab5e4b1f37317b3e6c9d1969519417f2cec98320f03582d9af13b54aae00",
+  "release_edit": "system/production_runtime/release_edits/chapter-0090.md",
+  "release_edit_sha256": "0b254944f8dbc22354ad81343c3c7d5cf2ea9269e5af1ebe67d521e2b82241fc",
+  "repair_direction": "统一右臂失能和已撤离见证者的空间状态。",
+  "provider": "codex-window-repair",
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-081-090.json",
+  "reviewed_release_edit_sha256": "0b254944f8dbc22354ad81343c3c7d5cf2ea9269e5af1ebe67d521e2b82241fc"
+}

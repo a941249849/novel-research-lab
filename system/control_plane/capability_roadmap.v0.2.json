@@ -1,0 +1,77 @@
+{
+  "version": "0.2",
+  "capabilities": [
+    {
+      "capability_id": "corpus_engineering",
+      "label_zh": "语料工程",
+      "status": "data_ready",
+      "dependencies": [],
+      "evidence": [
+        "phase0A/00_manifest/novel_manifest.csv",
+        "system/agent_ops/inbox/full_corpus_proof_v0.8/master.md",
+        "system/agent_ops/validation/full_corpus_proof_v0.8.json"
+      ],
+      "next_action": "保持原文隔离，仅消费结构化衍生资产。"
+    },
+    {
+      "capability_id": "single_book_decomposition",
+      "label_zh": "单书拆解",
+      "status": "data_ready",
+      "dependencies": ["corpus_engineering"],
+      "evidence": ["phase1/02_book_dna", "phase1/02_narrative_dna", "phase1/02_state_ledgers"],
+      "next_action": "完成 v0.18 的 143 个连续全文分块、18 本单书综合及哈希验证。"
+    },
+    {
+      "capability_id": "cross_book_mechanism_distillation",
+      "label_zh": "跨书机制蒸馏",
+      "status": "data_ready",
+      "dependencies": ["single_book_decomposition"],
+      "evidence": ["phase1/04_mechanism_library/core7_mechanism_inventory.json"],
+      "next_action": "在 18 本单书综合通过后完成跨书机制蒸馏，并绑定全部输入哈希。"
+    },
+    {
+      "capability_id": "research_asset_retrieval",
+      "label_zh": "研究资产检索",
+      "status": "runnable",
+      "dependencies": ["cross_book_mechanism_distillation"],
+      "evidence": ["phase1/05_review/phase1C_asset_manifest.json", "system/runtime/nrl_research_assets.py"],
+      "next_action": "使用 research-assets 查询结构化研究资产。"
+    },
+    {
+      "capability_id": "creation_asset_contracts",
+      "label_zh": "创作资产契约",
+      "status": "data_ready",
+      "dependencies": ["research_asset_retrieval"],
+      "evidence": ["system/creation_assets/schemas", "system/creation_assets/project_assets.v0.2.json"],
+      "next_action": "维持九类创作资产的 Schema、引用和生命周期校验。"
+    },
+    {
+      "capability_id": "consistency_validation",
+      "label_zh": "一致性检查",
+      "status": "runnable",
+      "dependencies": ["creation_asset_contracts"],
+      "evidence": ["system/runtime/nrl_creation_schemas.py"],
+      "next_action": "运行 validate-creation-assets。"
+    },
+    {
+      "capability_id": "agent_orchestration",
+      "label_zh": "Agent 编排",
+      "status": "runnable",
+      "dependencies": ["consistency_validation"],
+      "evidence": ["system/runtime/agent_adapters.json", "system/runtime/mission_registry.json"],
+      "next_action": "按风险分层调用 Codex Sol/Terra/Luna；仅在独立复核或提供方故障时启用 Antigravity。"
+    },
+    {
+      "capability_id": "prose_production",
+      "label_zh": "正文生产",
+      "status": "runnable",
+      "dependencies": ["agent_orchestration"],
+      "evidence": [
+        "system/mission_controller/current_phase_state.json",
+        "system/production_runtime/story_windows/window-011-020.v1.json",
+        "system/production_runtime/chapter_registry.v0.20.json"
+      ],
+      "next_action": "根据章节注册表、十章故事窗口与窗口审查结果恢复下一章受控正文生产。"
+    }
+  ]
+}

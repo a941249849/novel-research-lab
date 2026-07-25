@@ -1,0 +1,32 @@
+{
+  "chapter_id": "chapter-0008",
+  "dramatic_purpose": "从钟表作坊的校时差中找出档案版本断点。",
+  "must_keep": [
+    "确认父亲事故存在被封存的第二份修复记录。",
+    "POV 固定为马小满"
+  ],
+  "must_avoid": [
+    "不得引入未登记资产或用旁白代替物质行动",
+    "不得回滚已接受状态"
+  ],
+  "expected_state_deltas": [
+    {
+      "state_id": "v1.ch008.outcome",
+      "asset_id": "char_ma_xiaoman",
+      "field_path": "character.current_state",
+      "after": "确认父亲事故存在被封存的第二份修复记录。",
+      "before": "维修班组被停职，居民被迫进入临时安置。"
+    }
+  ],
+  "required_asset_ids": [
+    "char_ma_xiaoman",
+    "foreshadow_second_record",
+    "artifact_responsibility_ledger"
+  ],
+  "active_hook_ids": [
+    "foreshadow_second_record"
+  ],
+  "scene_constraints": [
+    "冲突必须落在具体工艺现场、物证或受影响者选择上"
+  ]
+}

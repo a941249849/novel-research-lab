@@ -1,0 +1,180 @@
+{
+  "chapter_id": "chapter-0006",
+  "draft_sha256": "fbd98d4e786e91923d703b47eef9fa8f45b718916af68a336ef1582fb5db28e1",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "chapter-0006-character-lu-chenyuan-001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_procedural_status",
+        "before": "已到场完成本地复核，并被要求午后护阵旁观重验继续在场；凡本地残页复核不得缺席",
+        "after": "午后重验中以自身在场认痕换取陶片不入衙封；明日卯前新的监督追缴仍须在场",
+        "evidence": "陆沉渊提出“陶片不入封”，仇慎随后称“暂由守灯者携带”；末尾通知“陆沉渊须在”。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "chapter-0006-npc-registrar-qiu-shen-001",
+        "asset_id": "npc_registrar_qiu_shen",
+        "field_path": "npc.local_review_decision",
+        "before": "顾家附录继续封存；守灯前三句保留，未知来源不入；护阵旁观追加残页改列次序待核",
+        "after": "本地残页暂不改；护阵旁观落点保留“灰痕不同”记载，顾家附录继续封",
+        "evidence": "仇慎结论为“本地残页暂不改。护阵旁观落点，保留灰痕不同的记载。顾家附录继续封”。"
+      },
+      {
+        "fact_id": "chapter-0006-npc-registrar-qiu-shen-002",
+        "asset_id": "npc_registrar_qiu_shen",
+        "field_path": "npc.current_local_notice",
+        "before": "已发出今日午后泥灯巷护阵旁观落点重验通知，并列明顾家户灯留衙、莫井兰携陶片、陆沉渊到场的条件",
+        "after": "明日卯前送达新的监督追缴纸；陆沉渊与莫井兰携陶片须在，顾家户灯仍留衙，苏晚可拒绝验灯但拒绝续记",
+        "evidence": "仇慎称“明日卯前，命籍衙会送新的追缴纸……陆沉渊须在。莫井兰携陶片在。顾家户灯仍留衙。苏晚可拒绝验灯，拒绝便续记”。"
+      },
+      {
+        "fact_id": "chapter-0006-npc-mo-jinglan-001",
+        "asset_id": "npc_mo_jinglan",
+        "field_path": "npc.current_witness_participation",
+        "before": "已在复核中陈述顾家旧灰、补墨灰凉无油及断纹相反三句；陶片仍暂带，午后须携带在场",
+        "after": "午后仅见证陶片旧墨边浮灰与薄纸新字上压灰；陶片继续由其携带并须在下一次监督到场",
+        "evidence": "莫井兰说“陶片上的灰，我看着是浮在旧墨边。薄纸上的，我看着压着新字”；仇慎规定陶片“暂由守灯者携带，下一次监督仍须到场”。"
+      },
+      {
+        "fact_id": "chapter-0006-npc-su-wan-001",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_procedural_limit",
+        "before": "午后可拒绝验灯，但不得替陆沉渊认灰",
+        "after": "下一次监督仍可拒绝验灯；拒绝将被续记",
+        "evidence": "仇慎通知“苏晚可拒绝验灯，拒绝便续记”。"
+      }
+    ],
+    "locations": [],
+    "factions": [
+      {
+        "fact_id": "chapter-0006-faction-life-registry-office-001",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_local_enforcement_phase",
+        "before": "辰时复核已完成并将护阵旁观追加残页列为次序待核；午后转入泥灯巷重验监督",
+        "after": "午后落点重验结束；本地残页暂不改，程序推进至明日卯前的本地监督追缴",
+        "evidence": "仇慎完成午后记载处理后，明言“明日卯前，命籍衙会送新的追缴纸……不是改账，是监督”。"
+      },
+      {
+        "fact_id": "chapter-0006-faction-life-registry-office-002",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.next_local_review_schedule",
+        "before": "今日午后在泥灯巷重验护阵旁观落点；顾家户灯留衙至验毕，莫井兰携陶片、陆沉渊到场，人或物缺一按拒验续记",
+        "after": "明日卯前送达新的本地监督追缴纸；陆沉渊、莫井兰与陶片须在，顾家户灯仍留衙，苏晚拒绝验灯则续记",
+        "evidence": "仇慎临走前逐项说明明日监督的到场、留衙和拒验续记条件。"
+      },
+      {
+        "fact_id": "chapter-0006-faction-mudlamp-lane-001",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_protection_array_condition",
+        "before": "护阵旁观落点被列为今日午后重验对象，尚未完成复核或修补",
+        "after": "重验后泥灯焰尖缩至几乎只剩火星，灯座旧砖出现细微爆裂声，墙上护阵纹闪后熄回",
+        "evidence": "陆沉渊识账与冷金印落下后，泥灯两度缩焰；末段写旧砖爆裂、护阵纹闪后熄回，泥灯只余火星。"
+      }
+    ],
+    "artifacts": [],
+    "techniques": [
+      {
+        "fact_id": "chapter-0006-technique-ledger-recognition-001",
+        "asset_id": "technique_ledger_recognition",
+        "field_path": "technique.current_local_ash_trace_observation",
+        "before": "顾家附录补墨灰位于冷金印下；护阵旁观残页署时旁灰浮在墨上且被冷金截断，右页存在无法与“昨夜追加”同时自证的局部次序",
+        "after": "泥灯裂缝灰在护阵纹前断开；薄纸署时旁灰压在字墨上；陶片补墨灰浮于旧墨边，三处落灰不同",
+        "evidence": "陆沉渊识账后逐项陈述三处灰痕；莫井兰仅复核陶片灰浮在旧墨边、薄纸灰压着新字。"
+      }
+    ],
+    "relationships": [
+      {
+        "fact_id": "chapter-0006-relationship-mudlamp-lane-trust-001",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_witness_commitment",
+        "before": "莫井兰保留前三句限于所见的陈述，拒绝补入未知来源；午后继续以暂带陶片的限定方式到场",
+        "after": "莫井兰同意只当面观察陆沉渊所认三处灰痕，不替其担保结论；陶片继续由其自行携带",
+        "evidence": "陆沉渊说明她“只需看我说的三处是不是当着你的面”；莫井兰答“我看。我不保你说的对”。"
+      },
+      {
+        "fact_id": "chapter-0006-relationship-mother-su-wan-001",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_visibility_of_lu_chenyuan_backlash",
+        "before": "苏晚在识账反噬中按住陆沉渊腕上发抖的手，未替他认灰或触碰残页",
+        "after": "苏晚再次看见并直接扶住陆沉渊识账后的失衡，但未碰冷金印或陶片",
+        "evidence": "陆沉渊咳灰、眼前发黑后，苏晚按住其后背撑住他；正文明确她“没有碰印，没有碰陶片”。"
+      }
+    ],
+    "emotions": [],
+    "information": [
+      {
+        "fact_id": "chapter-0006-information-revealed-account-errors-001",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_local_evidence_status",
+        "before": "护阵旁观追加残页被确认存在局部次序疑处，列为待核；未被认定为顾家折记错误、护阵追加无效或改时原因的证明",
+        "after": "本地记录保留泥灯裂缝、薄纸署时与陶片补墨三处灰痕不同；仍未作为改账、追加原因或顾家折记处理的证明",
+        "evidence": "陆沉渊明确“三处落灰不同”，并说明“说明不了谁改账，说明不了为什么追加，也说明不了顾家折记该怎么改”；仇慎保留该记载且称本地残页暂不改。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "chapter-0006-hook-cinder-seal-rain-001",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "foreshadowing.current_manifestation",
+        "before": "巷口泥灯罩内壁留下不下沉的黑点；薄纸上的冷灰沿纸纤维聚成空白，避开命籍衙印落点",
+        "after": "灯罩内壁黑点两次拖出细线，第二道落向灯座裂缝；冷金小印缝中的暗红线在巷外方向绷紧后缩回印内",
+        "evidence": "黑点先后拖出两道细线，第二道落向灯座裂缝；仇慎小印印缝暗红线朝巷外绷着，临走时缩回。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "chapter-0006-timeline-local-enforcement-001",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_local_enforcement_phase",
+        "before": "辰时复核后，程序推进至今日午后的泥灯巷护阵旁观落点重验",
+        "after": "午后重验已结，结果附于本地残页；下一阶段为明日卯前送达的本地监督追缴",
+        "evidence": "仇慎将午后结果处理为“午后结果附于本地残页”，并宣布明日卯前的新追缴纸“不是改账，是监督”。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "chapter-0006-physical-state-protagonist-strain-001",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.eye_pattern_burn",
+        "before": "识账时左眼下焦纹沿颧骨再绽开一小截，皮肉现烧焦气味并落下黑屑；银灰火屑未散",
+        "after": "午后再识账时左眼焦黑裂纹绷紧，视野出现银灰火屑，识账后眼前发黑",
+        "evidence": "陆沉渊闭眼再睁，左眼如塞烧红细砂，焦黑裂纹绷紧，银灰火屑黏在裂缝旁；冷金印落后“眼前一黑”。"
+      },
+      {
+        "fact_id": "chapter-0006-physical-state-protagonist-strain-002",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.cold_ash_cough_frequency",
+        "before": "本次识账后咳出冷灰落在命审台角，并被冷金小印压入在场认痕",
+        "after": "午后识账与冷金印压痕后再次咳出冷灰，并被压入湿泥的在场认痕旁",
+        "evidence": "陆沉渊在暗红印线窜出后偏脸咳灰；仇慎用印角把那一小片灰压进“在场认痕”旁。"
+      },
+      {
+        "fact_id": "chapter-0006-physical-state-protagonist-strain-003",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.bone_fissure_severity",
+        "before": "薄纸衙印牵动掌心旧印后掌骨再响，胸口裂口感骤紧，需扶住台沿喘息",
+        "after": "午后胸骨先磨响，末尾扶住泥灯座时掌骨在湿泥与旧砖间再次发出细响，胸口疼至只能称再站一会儿",
+        "evidence": "陆沉渊先听见胸骨磨响；苏晚问能否站住时，他因胸口疼而扶住灯座，掌骨又磨出细响。"
+      },
+      {
+        "fact_id": "chapter-0006-physical-state-registry-exposure-001",
+        "asset_id": "state_ledger_half_life_registry_exposure",
+        "field_path": "state_ledger.registry_locking_sign",
+        "before": "识账所咳冷灰被冷金小印压入在场认痕，薄纸衙印牵出暗红印线锁到陆沉渊掌心旧印",
+        "after": "午后识账后，冷金小印把陆沉渊咳出的冷灰压入湿泥在场认痕旁；其掌纹暗红印线绕冷金边缘打结",
+        "evidence": "仇慎以印压在陆沉渊掌心湿泥旁，暗红印线窜出并绕冷金边缘打结，之后又压入咳出的冷灰。"
+      },
+      {
+        "fact_id": "chapter-0006-physical-state-mother-lamp-001",
+        "asset_id": "state_ledger_mother_life_lamp_countdown",
+        "field_path": "state_ledger.current_visible_lamp_consequence",
+        "before": "灰雨中苏晚命灯验焰缩成细线，手背红点裂开渗出暗冷光；验灯未被暂熄",
+        "after": "小印暗红线现身时，苏晚掌背裂口再次亮起并渗出暗冷光；本次记载未缓解其验灯状态",
+        "evidence": "印缝暗红线出现时，苏晚掌背红点“同时亮了一下”，暗冷光从裂口渗出；仇慎随后称“苏晚验灯，不因这一笔缓”。"
+      }
+    ],
+    "naming": []
+  }
+}

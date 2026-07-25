@@ -1,0 +1,33 @@
+{
+  "chapter_id": "chapter-0063",
+  "dramatic_purpose": "核对全国异常地图的缺口。",
+  "must_keep": [
+    "不存在节点向责任账发送一条带真实校时的求援。",
+    "POV 固定为马小满"
+  ],
+  "must_avoid": [
+    "不得引入未登记资产或用旁白代替物质行动",
+    "不得回滚已接受状态"
+  ],
+  "expected_state_deltas": [
+    {
+      "state_id": "v1.ch063.outcome",
+      "asset_id": "char_ma_xiaoman",
+      "field_path": "character.current_state",
+      "after": "不存在节点向责任账发送一条带真实校时的求援。",
+      "before": "维护班获得一年试任而非永久授权。"
+    }
+  ],
+  "required_asset_ids": [
+    "char_ma_xiaoman",
+    "foreshadow_nonexistent_node",
+    "foreshadow_twelve_nodes"
+  ],
+  "active_hook_ids": [
+    "foreshadow_nonexistent_node",
+    "foreshadow_twelve_nodes"
+  ],
+  "scene_constraints": [
+    "冲突必须落在具体工艺现场、物证或受影响者选择上"
+  ]
+}

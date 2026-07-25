@@ -1,0 +1,96 @@
+{
+  "version": "0.1",
+  "candidate_id": "hundred-crafts-night-procession",
+  "title": "《百工夜行录》",
+  "stage": "initialized_design_foundation",
+  "status": "active_initialized_project_research",
+  "project_initialized": true,
+  "prose_authorized": false,
+  "purpose": "验证真实工艺、社会关系与原创东方超凡体系能否构成可持续长篇，而不是收集传统文化名词。",
+  "research_layers": [
+    "可核验的真实资料",
+    "材料、工具、工序与失效模式",
+    "师承、行业、社区与公共责任",
+    "可复用的叙事机制",
+    "明确标注的幻想转译",
+    "原创世界历史与资产契约"
+  ],
+  "evidence_policy": {
+    "preferred_sources": [
+      "UNESCO或国家级非遗名录",
+      "国家级博物馆与专业保护机构",
+      "政府文化遗产机构",
+      "可追溯作者和出处的学术研究",
+      "地方志、文史资料和传统村落档案",
+      "从业者口述、完整工序影像和行业回忆录",
+      "可反向核验的论坛、评论区和地方社区记忆"
+    ],
+    "source_tier_contract": "source-ecology-and-regional-atlas.v0.2.json",
+    "community_source_rule": "论坛与社区材料用于发现术语、异说、生活肌理和下一手线索；未经独立交叉核验不得写成事实。",
+    "minimum_sources_per_domain": 2,
+    "fact_inference_separation_required": true,
+    "regional_difference_required": true,
+    "living_practitioner_validation_required_before_prose": true,
+    "raw_novel_corpus_allowed": false
+  },
+  "fiction_rules": [
+    "无真实劳动过程，不生成超凡权能。",
+    "不理解材料与失效模式，不允许越级使用。",
+    "每次修复必须产生可记账的代价或责任转移。",
+    "地域工艺不得被压平成统一技能皮肤。",
+    "仪式、信仰和族群实践不得脱离社区语境挪用。",
+    "资料缺口必须标记为未知，不用模型常识补写成事实。"
+  ],
+  "stage_gates": [
+    {
+      "stage": "twelve_domain_map",
+      "required": "十二类资料地图均有至少两个权威来源和研究问题",
+      "status": "passed_v0.1"
+    },
+    {
+      "stage": "three_domain_pilot",
+      "required": "古建木作、戏曲戏装、舟船水利完成事实与幻想转译分离验证",
+      "status": "passed_v0.1_with_fieldwork_debt"
+    },
+    {
+      "stage": "regional_source_ecology",
+      "required": "建立档案、地方、从业者、社区和传闻五级来源体系，并覆盖至少九个地域研究镜头",
+      "status": "passed_v0.2_collection_active"
+    },
+    {
+      "stage": "p0_regional_triangulation",
+      "required": "闽台海洋、江南水网、荆楚长江和中原平原的核心机制至少由A/B与C级材料交叉支撑",
+      "status": "passed_v0.1_with_deeper_case_debt"
+    },
+    {
+      "stage": "p1_regional_seed_collection",
+      "required": "晋陕河西、岭南、西南、东北和高原绿洲均建立可追溯种子证据卡与诚实债务",
+      "status": "passed_v0.1_three_high_risk_routes_triangulated_two_routes_pending"
+    },
+    {
+      "stage": "civilization_mechanism_library",
+      "required": "十二类工艺均编译为可验证操作、失效模式、责任代价、来源引用和幻想边界",
+      "status": "passed_v0.1"
+    },
+    {
+      "stage": "candidate_series_blueprint",
+      "required": "十五卷由机制债务和制度变化因果推进，并绑定九条地域证据路线",
+      "status": "passed_v0.3_independent_review_for_project_initialization"
+    },
+    {
+      "stage": "world_history_skeleton",
+      "required": "三类机制可汇入同一文明历史且不互相冲突",
+      "status": "passed_v0.1"
+    },
+    {
+      "stage": "creation_assets",
+      "required": "世界史、力量规则、核心群像与十五卷扩张均通过压力测试",
+      "status": "project_initialized_assets_not_generated"
+    },
+    {
+      "stage": "prose",
+      "required": "独立 Owner 正文授权",
+      "status": "blocked"
+    }
+  ]
+}

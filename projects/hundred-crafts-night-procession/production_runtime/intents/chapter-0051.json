@@ -1,0 +1,30 @@
+{
+  "chapter_id": "chapter-0051",
+  "dramatic_purpose": "失窃行头试图强制居民承担守门角色。",
+  "must_keep": [
+    "小北公开指认戏班内部协助者，演出中止。",
+    "POV 固定为杜承礼"
+  ],
+  "must_avoid": [
+    "不得引入未登记资产或用旁白代替物质行动",
+    "不得回滚已接受状态"
+  ],
+  "expected_state_deltas": [
+    {
+      "state_id": "v1.ch051.outcome",
+      "asset_id": "char_du_chengli",
+      "field_path": "character.current_state",
+      "after": "小北公开指认戏班内部协助者，演出中止。",
+      "before": "杜承礼成功保留自我记忆，但守门残留转入盔头。"
+    }
+  ],
+  "required_asset_ids": [
+    "char_du_chengli",
+    "npc_xiao_bei",
+    "artifact_role_helmet"
+  ],
+  "active_hook_ids": [],
+  "scene_constraints": [
+    "冲突必须落在具体工艺现场、物证或受影响者选择上"
+  ]
+}

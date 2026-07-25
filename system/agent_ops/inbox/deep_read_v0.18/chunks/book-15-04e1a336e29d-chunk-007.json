@@ -1,0 +1,397 @@
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "chunk_id": "book-15-04e1a336e29d-chunk-007",
+  "source_file": "novel_training_set/《诡秘之主》（精校版全本）作者：爱潜水的乌贼.txt",
+  "source_file_sha256": "04e1a336e29d8437de3f2bd68ffe09f84befebe0748b8750e8f84caeebdd964e",
+  "start_byte": 9000279,
+  "end_byte": 9468472,
+  "chunk_sha256": "554c8b04c17844e578c86c00ff19023da0da0f32377de86f87ff1cd626a44f65",
+  "source_encoding": "gb18030",
+  "bounded_chunk_utf8_sha256": "02c332e74f6b59e7980dd0dc27946ae1cc080a969201a79971ae56209bd2c0fe",
+  "analysis": {
+    "chapter_span": [
+      "第七十章 交互",
+      "第七十一章 连锁反应",
+      "第七十二章 探索",
+      "第七十三章 门后",
+      "第七十四章 游记",
+      "第七十五章 梦中",
+      "第七十六章 同时",
+      "第七十七章 编织噩梦",
+      "第七十八章 人性",
+      "第七十九章 又见面了",
+      "第八十章 “空想家”的特殊",
+      "第八十一章 支柱",
+      "第八十二章 仪式的准备",
+      "第八十三章 “门”",
+      "第八十四章 愿望",
+      "第八十五章 抓住机会",
+      "第八十六章 诡秘侍者",
+      "第八十七章 牺牲者",
+      "第七部总结",
+      "第一章 这一晚",
+      "第二章 事情的收尾",
+      "第三章 紧迫",
+      "第四章 见面",
+      "第五章 对话",
+      "第六章 清晨",
+      "第六章 选择",
+      "第八章 联合行动",
+      "第九章 见证",
+      "第十章 治疗方案",
+      "第十一章 行动派",
+      "第十二章 摧毁",
+      "第十三章 布置",
+      "第十四章 支流",
+      "第十五章 死亡烙印",
+      "第十六章 大手笔",
+      "第十七章 决断",
+      "第十八章 谁是朋友谁是敌人",
+      "第十九章 “许愿神灯”另外的用处",
+      "第二十章 面对",
+      "第二十一章 命运木马",
+      "第二十二章 开始容纳",
+      "第二十三章 半个旧日",
+      "第二十四章 疯狂的呓语",
+      "第二十五章 改变计划",
+      "第二十六章 联手",
+      "第二十七章 一个奇迹",
+      "第二十八章 权柄",
+      "第二十九章 主场“优势”",
+      "第三十章 制定规则",
+      "第三十一章 概念化",
+      "第三十二章 “疯”",
+      "第三十三章 狭路",
+      "第三十四章 办法",
+      "第三十五章 临时的聚会",
+      "第三十六章 “愚者”的委托",
+      "第三十七章 问答",
+      "第三十八章 去面对",
+      "第三十九章 昨日不再",
+      "第四十章 梦开始的地方",
+      "第四十一章 新的旅程",
+      "第二部，我还没想好主角和切入，但我现在脑海里已经出现了一些剧情画面：",
+      "第九个关键词是“细节”。"
+    ],
+    "major_events": [
+      {
+        "event_label": "Audrey Hall meets the mind dragon Ariehogg",
+        "chapter_anchor": "第七十五章 梦中",
+        "description": "Audrey follows rumors of dragon worship in the collective subconscious to Hedrack village. She meets the ancient mind dragon Ariehogg, a Sequence 2 Discerner, who senses the print of liveseyd on her soul."
+      },
+      {
+        "event_label": "Wendel is translocated into Utopia",
+        "chapter_anchor": "第七十六章 同时",
+        "description": "Wendel is suddenly pulled from the bathroom of the MI9 headquarters in Backlund and transported directly into the town hall of Utopia."
+      },
+      {
+        "event_label": "Adam begins his conceptual intervention in Utopia",
+        "chapter_anchor": "第七十七章 编织噩梦",
+        "description": "The town of Utopia experiences strange phenomena, including the projection of a giant white rabbit, signaling the start of Adam's divine interference."
+      },
+      {
+        "event_label": "Gehrman Sparrow stabs Klein Moretti",
+        "chapter_anchor": "第七十八章 人性",
+        "description": "Klein's marionette Gehrman Sparrow stabs him from behind with a blood-stained wooden crucifix, declaring that Adam has granted the marionettes independent humanity."
+      },
+      {
+        "event_label": "Adam confronts Klein in Utopia",
+        "chapter_anchor": "第七十九章 又见面了",
+        "description": "Adam manifests inside the cathedral of Utopia, confronting Klein and explaining his choice to support Amon's rise to Lord of Mysteries."
+      },
+      {
+        "event_label": "Klein makes a wish to the Genie",
+        "chapter_anchor": "第八十五章 抓住机会",
+        "description": "Trapped by Adam's conceptual barriers, Klein makes a wish to the Genie inside the Magic Lamp to disrupt the temporal progression of the return ritual."
+      },
+      {
+        "event_label": "Klein consumes the Attendant of Mysteries potion",
+        "chapter_anchor": "第八十六章 诡秘侍者",
+        "description": "As Mr. Door returns, Klein consumes the Sequence 1 Attendant of Mysteries potion, initiating his rapid ascension in the Spirit World."
+      },
+      {
+        "event_label": "Mr. Door sacrifices himself for Amon",
+        "chapter_anchor": "第八十七章 牺牲者",
+        "description": "Mr. Door (Bethel Abraham) stops his return and sacrifices himself to let Amon steal his pathway characteristics and uniqueness safely, preventing cosmic breach."
+      },
+      {
+        "event_label": "Pure characteristics rain upon the Abraham family",
+        "chapter_anchor": "第一章 这一晚",
+        "description": "Upon Mr. Door's sacrifice, the pure characteristics of the Apprentice pathway fall like rain to Dorian, Fors, and other family members."
+      },
+      {
+        "event_label": "Klein adjusts his state and coordinates Tarot Club",
+        "chapter_anchor": "第三章 紧迫",
+        "description": "Klein adjusts his unstable mental state resulting from Zaratul's residue and coordinates Tarot Club members to prepare for the conflict with Amon."
+      },
+      {
+        "event_label": "Alger Wilson is appointed Sea God Church Pope",
+        "chapter_anchor": "第八章 联合行动",
+        "description": "Through an oracle from The Fool, Alger Wilson is appointed the Pope of the Sea God Church and receives the Silver Mask."
+      },
+      {
+        "event_label": "Klein witnesses Benson's wedding",
+        "chapter_anchor": "第九章 见证",
+        "description": "Klein secretly observes the wedding ceremony of Benson and Luth from a distance, anchoring his remaining human emotions."
+      },
+      {
+        "event_label": "Klein seeks psychological treatment from Audrey",
+        "chapter_anchor": "第十章 治疗方案",
+        "description": "Klein meets Audrey to establish a therapy plan to seal his Sefirah Castle memories under hypnosis to resist the Celestial Worthy."
+      },
+      {
+        "event_label": "Klein enters Adam's Eden",
+        "chapter_anchor": "第十一章 行动派",
+        "description": "Klein puts on the Pride mask and enters the conceptual Eden created by Adam to face the divine challenges."
+      },
+      {
+        "event_label": "Amon steals Klein's anchors",
+        "chapter_anchor": "第二十一章 命运木马",
+        "description": "Amon uses his Error pathway authority to intercept and steal the prayers of The Fool's believers, attempting to cause Klein to lose control."
+      },
+      {
+        "event_label": "Klein begins the Fool accommodation at Hornacis",
+        "chapter_anchor": "第二十二章 开始容纳",
+        "description": "Klein attempts to accommodate the Fool uniqueness at the Hornacis peak, causing doors worldwide to close spontaneously."
+      },
+      {
+        "event_label": "Adam declares Let there be light",
+        "chapter_anchor": "第二十二章 开始容纳",
+        "description": "Adam ascends as a half-Great Old One and declares 'Let there be light', illuminating the Astral World and exposing all hidden domains."
+      },
+      {
+        "event_label": "The Primordial Demoness Cheek attacks the ritual",
+        "chapter_anchor": "第二十三章 半个旧日",
+        "description": "The Primordial Demoness Cheek launches a petrifying attack on the Hornacis palace, trying to disrupt Klein's accommodation."
+      }
+    ],
+    "character_state_transitions": [
+      {
+        "character": "Klein Moretti",
+        "transition_type": "Cultivation Progression",
+        "from_state": "Sequence 2 Miracle Invoker",
+        "to_state": "Sequence 1 Attendant of Mysteries",
+        "chapter_anchor": "第八十六章 诡秘侍者",
+        "details": "Consumes the Attendant of Mysteries potion during the battle in Utopia, transforming his body and spirit in the Spirit World."
+      },
+      {
+        "character": "Amon",
+        "transition_type": "Divine Promotion",
+        "from_state": "Sequence 0 Error",
+        "to_state": "Dual Sequence 0 Error and Door",
+        "chapter_anchor": "第八十七章 牺牲者",
+        "details": "Steals the uniqueness and Sequence 1 characteristics of the Apprentice pathway from Mr. Door, ascending as a double God."
+      },
+      {
+        "character": "Bethel Abraham (Mr. Door)",
+        "transition_type": "Status Demise",
+        "from_state": "Corrupted Angel of the Cosmos",
+        "to_state": "Deceased Sacrifice",
+        "chapter_anchor": "第八十七章 牺牲者",
+        "details": "Halts his physical return and sacrifices himself to let Amon absorb his pathway assets safely to prevent outer corruption."
+      },
+      {
+        "character": "Alger Wilson",
+        "transition_type": "Sect Role Promotion",
+        "from_state": "Tarot Club Member / Sea God Church Clergy",
+        "to_state": "Pope of the Sea God Church",
+        "chapter_anchor": "第八章 联合行动",
+        "details": "Appointed by The Fool as the Pope, receiving the Silver Mask and leadership of the church."
+      },
+      {
+        "character": "Benson Moretti",
+        "transition_type": "Social Role Shift",
+        "from_state": "Single Clerk",
+        "to_state": "Married Husband",
+        "chapter_anchor": "第九章 见证",
+        "details": "Marries Luth in a traditional church ceremony witnessed by his sister Melissa and his hidden brother Klein."
+      },
+      {
+        "character": "Klein Moretti",
+        "transition_type": "Psychological State Shift",
+        "from_state": "Mentally unstable under the Worthy's awakening",
+        "to_state": "Hypnotized and stabilized state with sealed memories",
+        "chapter_anchor": "第十一章 行动派",
+        "details": "Undergoes systematic psychological therapy with Audrey to seal his high-level memories and protect his human anchor."
+      },
+      {
+        "character": "Audrey Hall",
+        "transition_type": "Social and Spiritual Role Shift",
+        "from_state": "Noble Lady of the Hall family in Backlund",
+        "to_state": "Wandering psychologist in the collective subconscious",
+        "chapter_anchor": "第四十章 梦开始的地方",
+        "details": "Leaves her family behind, separating her consciousness from her body to enter the collective subconscious to assist Klein."
+      },
+      {
+        "character": "Azik Eggers",
+        "transition_type": "Consciousness State Shift",
+        "from_state": "Slumbering in a coffin",
+        "to_state": "Awakened traveler",
+        "chapter_anchor": "第四十一章 新的旅程",
+        "details": "Awakens in a coffin within an abandoned castle, reading Klein's letter and preparing for a new journey."
+      },
+      {
+        "character": "Amon",
+        "transition_type": "Status Demise",
+        "from_state": "Dual Sequence 0 Deity (Error + Door)",
+        "to_state": "Defeated entity with scattered clones",
+        "chapter_anchor": "第三十九章 昨日不再",
+        "details": "Defeated by Klein in Sefirah Castle, causing his main body to fall and his clones to disperse."
+      },
+      {
+        "character": "Klein Moretti",
+        "transition_type": "Divine Ascension and Slumber",
+        "from_state": "Sequence 1 Attendant of Mysteries",
+        "to_state": "Slumbering Half-Lord of Mysteries / The Fool",
+        "chapter_anchor": "第三十八章 去面对",
+        "details": "Accommodates the Fool uniqueness, defeats Amon, and enters a deep slumber to battle the Celestial Worthy."
+      }
+    ],
+    "long_form_mechanisms": [
+      {
+        "mechanism_name": "The Fourth Pillar of Sefirah",
+        "chapter_anchor": "第八十一章 支柱",
+        "description": "A cosmological rule where combining certain pathways (Eternal Darkness and Calamity of Destruction) creates the Fourth Pillar representing the absolute end of the universe, leading to immediate collapse and reset of the cosmos."
+      },
+      {
+        "mechanism_name": "Door Pathway Return Ritual",
+        "chapter_anchor": "第八十三章 “门”",
+        "description": "The ritual required for Mr. Door to return to the real world, involving descendants' prayers and a Flesh Gate to align cosmic coordinates and bypass the divine seal."
+      },
+      {
+        "mechanism_name": "Magic Lamp Wish-Making Rules",
+        "chapter_anchor": "第十九章 “许愿神灯”另外的用处",
+        "description": "The Genie inside the lamp grants three wishes but always twists them to harm the wisher, requiring precise phrasing or using them to create local rule distortions."
+      },
+      {
+        "mechanism_name": "Worthy Encroachment and Awakening",
+        "chapter_anchor": "第二章 事情的收尾",
+        "description": "The process where residual mental imprints of the Celestial Worthy inside Sefirot and high-sequence characteristics awaken in the host, requiring humanity and anchors to balance."
+      },
+      {
+        "mechanism_name": "Grafting and Conceptual Separation",
+        "chapter_anchor": "第二十二章 开始容纳",
+        "description": "The authority of the Fool pathway to conceptually link or separate unrelated physical or temporal coordinates, directing attacks or defense across space."
+      },
+      {
+        "mechanism_name": "Concept of Fooling",
+        "chapter_anchor": "第二十五章 改变计划",
+        "description": "The core authority of the Fool to deceive history, time, and logic, allowing the user to create status loopholes or blind opponents' authorities."
+      },
+      {
+        "mechanism_name": "Psychological Memory Sealing",
+        "chapter_anchor": "第十章 治疗方案",
+        "description": "A therapy where the target's memories of high-level secrets and Sefirah Castle are temporarily sealed under hypnosis, preventing the Celestial Worthy from exploiting them."
+      },
+      {
+        "mechanism_name": "Rules of the Trisanzet Brass Book",
+        "chapter_anchor": "第二十一章 命运木马",
+        "description": "A rule-enforcing artifact that writes and executes laws within its domain, which can be manipulated by high-sequence deities to invalidate specific abilities."
+      }
+    ],
+    "continuity_observations": [
+      {
+        "topic": "Duplicated Chapter Numbering in Volume 8",
+        "chapter_anchor": "第六章 选择",
+        "description": "A structural anomaly where the title '第六章' is used twice consecutively (Chapter 6 '清晨' and Chapter 6 '选择'), followed by Chapter 8, skipping Chapter 7."
+      },
+      {
+        "topic": "Azik's Copper Whistle",
+        "chapter_anchor": "第六章 选择",
+        "description": "Klein continues to use Azik's copper whistle to summon the giant bone messenger, maintaining the item's presence since the early volumes."
+      },
+      {
+        "topic": "The Dragon-Worship Custom of Hedrack Village",
+        "chapter_anchor": "第七十四章 游记",
+        "description": "The rumors of dragon-worship in Hedrack village, established in earlier chapters, are followed up by Audrey to locate Ariehogg."
+      },
+      {
+        "topic": "MI9 Bathroom Portal",
+        "chapter_anchor": "第七十七章 编织噩梦",
+        "description": "Wendel is pulled from the MI9 headquarters bathroom into Utopia, showing the town's spatial distortion capabilities."
+      },
+      {
+        "topic": "The Crucifix in Utopia",
+        "chapter_anchor": "第七十八章 人性",
+        "description": "The ancient, blood-stained crucifix used by Gehrman Sparrow to stab Klein represents the cross of the Ancient Sun God, maintaining symbolic continuity."
+      },
+      {
+        "topic": "Benson's Marriage and Family",
+        "chapter_anchor": "第九章 见证",
+        "description": "Benson's marriage to Luth maintains the Moretti family's mundane life progress, which acts as Klein's key human anchor."
+      },
+      {
+        "topic": "The Magic Mirror Arrodes",
+        "chapter_anchor": "第六章 选择",
+        "description": "Klein mentions losing Arrodes to Adam, but hopes it won't be destroyed since it originated from the Chaos Sea."
+      },
+      {
+        "topic": "The Pride Mask in Eden",
+        "chapter_anchor": "第十一章 行动派",
+        "description": "Klein wears the Pride mask to enter Adam's Eden, referencing the mask-based tools of the Spectator pathway."
+      }
+    ],
+    "style_observations": [
+      {
+        "style_element": "Authorial Postscript and Metanarrative Summary",
+        "chapter_anchor": "第八十七章 牺牲者",
+        "description": "The author Cuttlefish includes a personal postscript summarizing Volume 7, discussing subscription numbers, and commenting on the character Zaratul."
+      },
+      {
+        "style_element": "Biblical and Religious Parallels",
+        "chapter_anchor": "第二十二章 开始容纳",
+        "description": "The depiction of Adam declaring 'Let there be light' uses direct biblical phrasing to emphasize the authority of a supreme creator Deity."
+      },
+      {
+        "style_element": "Abstract and Conceptual Combat Imagery",
+        "chapter_anchor": "第二十三章 半个旧日",
+        "description": "High-sequence deity battles are described using abstract, non-physical concepts like rules, declarations, and symbolic representations rather than physical combat."
+      },
+      {
+        "style_element": "Contrasting Mundane Life with Divine Conflict",
+        "chapter_anchor": "第九章 见证",
+        "description": "Juxtaposing Benson's normal wedding ceremony with Klein's impending cosmic struggle highlights the theme of defending normal human life."
+      },
+      {
+        "style_element": "Epistolary Reflections on Past Journeys",
+        "chapter_anchor": "第六章 选择",
+        "description": "Klein's letter to Azik lists his former colleagues at the Black Thorn Security Company, using a reflective and nostalgic tone to anchor his humanity."
+      },
+      {
+        "style_element": "Understated and Restrained Emotional Release",
+        "chapter_anchor": "第四十章 梦开始的地方",
+        "description": "Audrey's final parting with her family is narrated with minimal melodrama (a simple wave of the hand), matching the author's preference for emotional restraint."
+      }
+    ],
+    "creation_family_evidence": {
+      "Fool Pathway Progression": "The progression of the protagonist Klein Moretti through the sequences of the Fool pathway ( Miracle Invoker, Attendant of Mysteries, and accommodating the Fool uniqueness at Hornacis) is unique to 《诡秘之主》, as detailed in Chapters 86 and 22.",
+      "Tarot Club Framing": "The presence of the Tarot Club with members named after Major Arcana (Audrey as Justice, Alger as The Hanged Man, Fors as Magic, Leonard as Star) coordinates the narrative events in Chapters 3, 8, 10, and 35.",
+      "Sefirah Castle Source": "Sefirah Castle (源堡) acts as the central source-substance (源质) which Klein and Amon compete to control, as detailed in Chapters 78, 2, and 20.",
+      "Serialized Qidian Note": "The author's note at the end of Chapter 87 discusses Qidian Chinese Network subscription numbers (均订, 追订) and plans for the next volume, showing the serialized web novel publication context.",
+      "Celestial Worthy Conflict": "The plot resolution revolves around suppressing the awakening of the Celestial Worthy of Heaven and Earth (福生玄黄天尊) inside the Sefirah Castle owner, forcing the protagonist into a dream slumber, as shown in Chapters 2, 25, and 38."
+    },
+    "originality_risks": [
+      {
+        "risk_type": "Lovecraftian Pathway Borrowing",
+        "chapter_anchor": "第八十一章 支柱",
+        "description": "The sequence-based advancement, Sefirot, and sanity-draining Outer Deities borrow heavily from H.P. Lovecraft's Cthulhu Mythos, presenting a risk of derivative system design."
+      },
+      {
+        "risk_type": "Genesis Biblical Borrowing",
+        "chapter_anchor": "第二十二章 开始容纳",
+        "description": "Adam's declaration of 'Let there be light' is a direct copy of the famous biblical verse, representing a low-originality linguistic choice."
+      },
+      {
+        "risk_type": "The Slumbering Deity Trope",
+        "chapter_anchor": "第三十八章 去面对",
+        "description": "The protagonist sacrificing their wakefulness to enter a deep sleep and battle a subconscious entity is a very common fantasy resolution."
+      },
+      {
+        "risk_type": "Sacrificial Mentor Archetype",
+        "chapter_anchor": "第八十七章 牺牲者",
+        "description": "Mr. Door sacrificing himself to let the antagonist Amon safely steal his characteristics to prevent complete outer deity intrusion is a classic tragic helper trope."
+      }
+    ]
+  }
+}

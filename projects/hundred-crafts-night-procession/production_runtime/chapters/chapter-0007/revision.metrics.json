@@ -1,0 +1,32 @@
+{
+  "chinese_character_count": 3427,
+  "sentence_count": 195,
+  "paragraph_count": 89,
+  "average_sentence_length": 17.57,
+  "sentence_length_stddev": 11.33,
+  "average_paragraph_length": 38.51,
+  "paragraph_length_stddev": 30.82,
+  "dialogue_ratio": 0.2451,
+  "transition_word_hits": 1,
+  "rhetorical_template_hits": 0,
+  "abstract_word_hits": 0,
+  "sensory_word_hits": 49,
+  "repeated_sentence_starters": [
+    {
+      "starter": "杜承礼",
+      "count": 28
+    }
+  ],
+  "tail_short_paragraph_ratio": 0.4667,
+  "tail_dialogue_paragraph_ratio": 0.2,
+  "prompt_leak_markers": [],
+  "generation_meta_markers": [],
+  "latin_token_markers": [],
+  "termination_word_hits": 0,
+  "max_paragraph_length": 120,
+  "repeated_text_span_preview": null,
+  "flags": [
+    "sentence_opening_repetition"
+  ],
+  "policy": "metrics_are_audit_evidence_not_a_literary_verdict"
+}

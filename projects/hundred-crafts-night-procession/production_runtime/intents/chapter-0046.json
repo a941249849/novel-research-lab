@@ -1,0 +1,30 @@
+{
+  "chapter_id": "chapter-0046",
+  "dramatic_purpose": "用低载演出调动角色系统后及时卸装。",
+  "must_keep": [
+    "杜承礼成功保留自我记忆，但守门残留转入盔头。",
+    "POV 固定为杜承礼"
+  ],
+  "must_avoid": [
+    "不得引入未登记资产或用旁白代替物质行动",
+    "不得回滚已接受状态"
+  ],
+  "expected_state_deltas": [
+    {
+      "state_id": "v1.ch046.outcome",
+      "asset_id": "char_du_chengli",
+      "field_path": "character.current_state",
+      "after": "杜承礼成功保留自我记忆，但守门残留转入盔头。",
+      "before": "演出被改为低载版本，收入用于下游临时排水。"
+    }
+  ],
+  "required_asset_ids": [
+    "char_du_chengli",
+    "artifact_role_helmet",
+    "technique_role_unloading"
+  ],
+  "active_hook_ids": [],
+  "scene_constraints": [
+    "冲突必须落在具体工艺现场、物证或受影响者选择上"
+  ]
+}

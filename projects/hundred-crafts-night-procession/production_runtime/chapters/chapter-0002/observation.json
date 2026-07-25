@@ -1,0 +1,90 @@
+{
+  "chapter_id": "chapter-0002",
+  "draft_sha256": "2ede46f3b51905fd029e57732eae2be8a9da78b2d62074d0d45f2fad49b0c44c",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "fact-0002-001",
+        "asset_id": "char_cheng_xueqing",
+        "field_path": "character.current_state",
+        "before": "active",
+        "after": "戏楼成为新的受损节点，工程不能按原计划复工。",
+        "evidence": "程雪青签署停工单，并将工单上的“可复工”改为“待验”。"
+      }
+    ],
+    "npcs": [],
+    "locations": [],
+    "factions": [],
+    "artifacts": [
+      {
+        "fact_id": "fact-0002-002",
+        "asset_id": "artifact_unnamed_beam",
+        "field_path": "artifact.condition",
+        "before": "active",
+        "after": "旧梁停止沉降，但其原有荷载去向未明，继续试载被叫停。",
+        "evidence": "仪器曲线显示旧梁下沉停止；程雪青随后要求“断开旧楼试载设备，不再加压”。"
+      }
+    ],
+    "techniques": [],
+    "relationships": [],
+    "emotions": [
+      {
+        "fact_id": "fact-0002-003",
+        "asset_id": "char_cheng_xueqing",
+        "field_path": "relationship_with_community.trust_direction",
+        "before": "active",
+        "after": "因停工与退票受到异议，但通过区分测量、口述和待复核事项保留了可核验的协作基础。",
+        "evidence": "抱菜篮的女人质疑停工损失；看门老人最终收下记录联；门口抱怨声随后不再堵住入口。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "fact-0002-004",
+        "asset_id": "ledger_structural_load",
+        "field_path": "state_ledger.value",
+        "before": "旧梁连接异常，未知荷载尚未验明",
+        "after": "新增证据表明暗载可能转移至相邻戏楼；两楼地下连接仍未查明。",
+        "evidence": "旧连接件方向指向隔壁巷子；相邻戏楼出现七毫米门框高差、墙根裂缝和与旧楼相同方向的铁件。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "fact-0002-005",
+        "asset_id": "ledger_structural_load",
+        "field_path": "unresolved_hook",
+        "before": null,
+        "after": "封死的检修口后传出铁件扣紧声，地下连接状态仍待查明。",
+        "evidence": "记录新数值后，台后封死的检修口里传来“像有一枚埋了很多年的铁件，在砖后缓慢地扣紧”的轻响。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "fact-0002-006",
+        "asset_id": "char_cheng_xueqing",
+        "field_path": "chapter_events",
+        "before": null,
+        "after": "加固后旧楼梁侧停止沉降；发现相邻戏楼异常；停止试载；签署停工单；隔壁裂缝继续扩大。",
+        "evidence": "正文依次记录位移曲线停止下沉、隔壁七毫米高差、暂停试载与增测、停工单签署，以及裂缝继续增加一点八毫米。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "fact-0002-007",
+        "asset_id": "artifact_unnamed_beam",
+        "field_path": "lifecycle_state",
+        "before": "active",
+        "after": "暂停试载，待验",
+        "evidence": "周砺在异议栏写下“暂停试载，增测相邻结构，原计划失效”；工单改为“待验”。"
+      },
+      {
+        "fact_id": "fact-0002-008",
+        "asset_id": "ledger_structural_load",
+        "field_path": "lifecycle_state",
+        "before": "active",
+        "after": "相邻结构仍在下沉，且停止旧楼加压后继续增加",
+        "evidence": "第三次读数显示隔壁裂缝比第一次多出一点八毫米；旧楼停止加压后隔壁仍继续下沉。"
+      }
+    ],
+    "naming": []
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "version": "0.19",
+  "job_id": "job-v019-borrowed-heaven-project-reconciliation",
+  "status": "applied",
+  "response_sha256": "4344828f74d2dadf33f5ce9e8b353451533660c248eb59e46d7293acda441284",
+  "owner_decision_id": "owner-v019-reconciliation-apply-20260713",
+  "applied_asset_ids": [
+    "artifact_ashlight_cup"
+  ],
+  "resulting_asset_store_sha256": "43ded9576e0fb1a9594aef7d141db508aaea9da3c8dd3276d6cb23889986fff4"
+}

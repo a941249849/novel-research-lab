@@ -1,0 +1,16 @@
+{
+  "version": "0.31",
+  "role": "independent_production_reviewer",
+  "project_id": "hundred-crafts-night-procession",
+  "provider": "antigravity",
+  "model": "Gemini 3.5 Flash (High)",
+  "bound_baseline_sha256": "397559ead2903aa8c0c31ff04050d74f3a045e2d20a66d08d60e3e570cc8aabc",
+  "request_artifact": ".agent-handoff/antigravity/requests/hundred-crafts-production-orchestration-v030.md",
+  "request_artifact_sha256": "4311dfa23bdd4769bcaf1fb681e470a25523267a8c54a220c74a29740d810330",
+  "review_artifact": ".agent-handoff/antigravity/responses/hundred-crafts-production-orchestration-v030.md",
+  "review_artifact_sha256": "a469d3e50916218fd2acdae5470cb80b9a0c3e6f52701a46b3b8b1a5ab1234ca",
+  "command": "python3 system/runtime/nrl.py antigravity-bridge-ask --request-file <bounded-request> --output-file <bounded-response> --model Gemini-3.5-Flash-High",
+  "started_at": "2026-07-25T12:05:47+08:00",
+  "finished_at": "2026-07-25T12:07:38+08:00",
+  "returncode": 0
+}

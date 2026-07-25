@@ -1,0 +1,234 @@
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "book_id": "book-03-0bc4648bf63c",
+  "book_title": "《人道至尊》（校对版全本）作者：宅猪",
+  "covered_chunk_ids": [
+    "book-03-0bc4648bf63c-chunk-001",
+    "book-03-0bc4648bf63c-chunk-002",
+    "book-03-0bc4648bf63c-chunk-003",
+    "book-03-0bc4648bf63c-chunk-004",
+    "book-03-0bc4648bf63c-chunk-005",
+    "book-03-0bc4648bf63c-chunk-006",
+    "book-03-0bc4648bf63c-chunk-007"
+  ],
+  "covered_chunk_hashes": [
+    {
+      "chunk_id": "book-03-0bc4648bf63c-chunk-001",
+      "response_sha256": "ffd403dc610863dffd5d2742e0fb2f19cd9feb36b72d4632dc1a8bed03bf2997"
+    },
+    {
+      "chunk_id": "book-03-0bc4648bf63c-chunk-002",
+      "response_sha256": "c415061cdc921335d74859aa786b82bd5c76dc40d07ff8970c0645165dfaf037"
+    },
+    {
+      "chunk_id": "book-03-0bc4648bf63c-chunk-003",
+      "response_sha256": "2988be118c7c34c9bfed0d90479e9f9edf2452184e63198e4c51a051b7166d39"
+    },
+    {
+      "chunk_id": "book-03-0bc4648bf63c-chunk-004",
+      "response_sha256": "5411dc1a73a8bab86ea07eee8213c82a86bc07efe44402df94c94b298cc1d539"
+    },
+    {
+      "chunk_id": "book-03-0bc4648bf63c-chunk-005",
+      "response_sha256": "b253771f43b1a778b4478a6bf06f078754d3738383b75ac8f96deb598d331834"
+    },
+    {
+      "chunk_id": "book-03-0bc4648bf63c-chunk-006",
+      "response_sha256": "1d636d8401a43d2baad82af6914853f11fe73f96c482a2d0a0b73943ec75be01"
+    },
+    {
+      "chunk_id": "book-03-0bc4648bf63c-chunk-007",
+      "response_sha256": "229a4e04a53628dc7db52c1b7f175f55a86ebc5a2079a10ae1742da0d9b26d48"
+    }
+  ],
+  "synthesis": {
+    "narrative_spine": [
+      "Zhong Yue begins as a Jianmen outer disciple, receives Xin Huo's Fuxi inheritance, and builds an early cultivation foundation while entering the wider demon and dragon worlds.",
+      "The Long Yue identity, ancestral-dragon trials, and multiple avatars turn individual advancement into covert access to rival institutions and resources.",
+      "The conflict broadens from sect and racial survival to the suppression of Ancestral Star by Kun forces, celestial containment, and damaged reincarnation systems.",
+      "After recovering Fuxi history and breaking bloodline seals, Zhong Yue becomes Mister Yi, a court strategist who converts private identities and clone tactics into an organized Fuxi-human resistance.",
+      "The resistance becomes imperial war: Zhong Yue develops seven- and then eight-path systems, contests ancient emperors and Dao Gods, and establishes the Tai Huang order.",
+      "The finale converts victory into a temporal-loop question: Zhong Yue transfers authority and Xin Huo's inheritance forward, while the Ancestral Star epilogue leaves the returning father's identity unresolved."
+    ],
+    "character_arcs": [
+      "Zhong Yue evolves from a marginal outer disciple into a Fuxi inheritor, covert operative, strategist, imperial founder, and possible loop-transcending successor-maker; each new identity is operational rather than cosmetic.",
+      "Xin Huo moves from exacting teacher and comic counterweight to the enduring inheritance that Zhong Yue ultimately sends back to the Ancestral Star for a future bearer.",
+      "Qiu Jin'er progresses from a physically constrained practitioner to a recurring high-level partner in exploration, war, and the widening cosmological conflict.",
+      "Feng Xiaozhong remains a clinical seeker of cultivation structure; his discoveries enable breakthroughs, while his later grief-driven extremity makes him a dangerous allied variable.",
+      "Mu Xiantian develops from rival power broker to emperor-level opponent whose divided bodies, alliances, and reversals make survival politics morally unstable rather than binary.",
+      "Siming shifts from pure-blood Fuxi force and hard-edged ally to a traumatized creation-weapon survivor, then shares Zhong Yue's final obligation to sustain the Fuxi line."
+    ],
+    "mechanism_evolution": [
+      "The book starts with visualization, soul cultivation, totems, secret wheels, and bloodline awakening; advancement is repeatedly framed as recovering obstructed Fuxi capacity.",
+      "Avatar construction, disguise, and force fields turn cultivation into a tactical systems layer: Zhong Yue can fight, infiltrate, and create alibis through independently credible bodies.",
+      "Reincarnation becomes the central cosmological infrastructure, moving from the hidden sixth wheel and the Book of Life and Death to seven-path and eight-path redesigns.",
+      "Space-time techniques and future-body summoning make progression inseparable from causality: power gains impose timeline costs and produce loop-dependent consequences.",
+      "Late mechanisms operate at civilizational scale, including heavenly-law techniques, killing arrays, Dao dissolution, spiritual roots, and reverse-refinement into congenital status."
+    ],
+    "world_expansion": [
+      "Jianmen, the Eastern Wilderness, demon territories, dragon rituals, and the Ancestral Star establish a local world whose racial hierarchy hides a Fuxi inheritance conflict.",
+      "Little Void, Gui Xu, Kunlun, and the Prison Realm expand the arena through ranked trials, ruins, underworld bureaucracy, and nonhuman political orders.",
+      "The Technology Tree and Huntian Map recast the Ancestral Star as a deliberately contained civilization rather than an isolated starting world.",
+      "Lei Ze, Huaxu, the Ancient Universe, Heavenly Court, and the Ancestral Court turn mythology into active institutions with bloodline, military, and historical stakes.",
+      "The late-stage Dao Realm, Void Realm, Chaos, and interlinked reincarnation zones establish a multi-era cosmos whose history is altered by the protagonists' own interventions."
+    ],
+    "long_term_reader_hooks": [
+      "Whether Zhong Yue can fully recover Fuxi bloodline and undo the seals placed on human potential.",
+      "Who can trust the Long Yue, Mo Luo, Mister Yi, Gu Yue, and Yi Xiansheng identities, and what each body will cost the original.",
+      "What destroyed or distorted the six-path order, who benefits from celestial containment, and whether reincarnation can be rebuilt without creating a new tyranny.",
+      "Whether Fuxi history, ancestral spirits, and the Ancestral Star can survive the competing projects of Tian, Dao Gods, ancient emperors, and racial alliances.",
+      "Whether the ending's returning father is Zhong Yue, a loop-derived counterpart, or an identity whose continuity is now ideological rather than biological."
+    ],
+    "style_and_life_force": [
+      "Mythic Chinese figures, character etymology, and cosmological lore are repeatedly converted into cultivation explanations and combat logic.",
+      "Combat favors deduction, transformation, named formations, and escalating spatial scale, from body mechanics to star systems and realms used as weapons.",
+      "Recurring banter from Xin Huo, sentient-herb comedy, jinx humor, sleepwalking, and domestic conflict interrupt otherwise severe war and sacrifice arcs.",
+      "Serial momentum is sustained through compact chapter confrontations, chapter-title set pieces, identity reversals, and cliffhanger-adjacent turns.",
+      "The closing register becomes elegiac and reflective, using long time jumps and inheritance transfer to temper the victory narrative with absence and ambiguity."
+    ],
+    "continuity_failures": [
+      "The source analysis flags Shi Buyi's post-ascension relative strength as uneven against his earlier suppressed performance.",
+      "The source analysis flags Zhong Yue's stated remaining lifespan as insufficiently reconciled with later breakthroughs and Fuxi True Spirit development.",
+      "The Book of Life and Death is described as a cosmic registry but is treated as materially editable by Longjiao Scissors, creating a stated artifact-durability tension.",
+      "The final material intentionally leaves multiple identity and bootstrap-loop ambiguities; these function as open continuity questions rather than fully settled causal records."
+    ],
+    "evidence_map": [
+      {
+        "claim": "Narrative spine: Zhong Yue secures the Fuxi inheritance and reaches out-of-body cultivation.",
+        "chunk_id": "book-03-0bc4648bf63c-chunk-001",
+        "chapter_heading": "第0003章 火纪宫燧皇"
+      },
+      {
+        "claim": "Narrative spine: Zhong Yue establishes the Tai Huang order after the war phase.",
+        "chunk_id": "book-03-0bc4648bf63c-chunk-007",
+        "chapter_heading": "第1382章 五十五王时代"
+      },
+      {
+        "claim": "Character arcs: Feng Xiaozhong's grief turns his research drive into an unstable destructive force.",
+        "chunk_id": "book-03-0bc4648bf63c-chunk-006",
+        "chapter_heading": "第1238章 男人"
+      },
+      {
+        "claim": "Mechanism evolution: the eighth secret realm enables future-body summoning at a defined temporal cost.",
+        "chunk_id": "book-03-0bc4648bf63c-chunk-007",
+        "chapter_heading": "第1337章 自斩两百年"
+      },
+      {
+        "claim": "World expansion: the Technology Tree and Huntian Map are a containment system around Ancestral Star civilization.",
+        "chunk_id": "book-03-0bc4648bf63c-chunk-003",
+        "chapter_heading": "第0528章 科技神树"
+      },
+      {
+        "claim": "Long-term reader hooks: the hidden sixth wheel binds longevity and Fuxi potential to the unresolved reincarnation structure.",
+        "chunk_id": "book-03-0bc4648bf63c-chunk-002",
+        "chapter_heading": "第0258章 被锁住的第六轮"
+      },
+      {
+        "claim": "Style and life force: the final movement turns toward farewell, time passage, and ambiguous return.",
+        "chunk_id": "book-03-0bc4648bf63c-chunk-007",
+        "chapter_heading": "第1507章 祖星的风"
+      },
+      {
+        "claim": "Continuity failures: the source analysis identifies an artifact-durability tension in the Book of Life and Death.",
+        "chunk_id": "book-03-0bc4648bf63c-chunk-003",
+        "chapter_heading": "第0633章 伪造生死簿"
+      },
+      {
+        "claim": "Creation evidence, characters: Zhong Yue and Siming jointly commit to continue the Fuxi lineage.",
+        "chunk_id": "book-03-0bc4648bf63c-chunk-006",
+        "chapter_heading": "第1326章 当做大司命"
+      },
+      {
+        "claim": "Creation evidence, NPCs: Feng Xiaozhong's amoral dissection-oriented research is a recurring supporting-character engine.",
+        "chunk_id": "book-03-0bc4648bf63c-chunk-004",
+        "chapter_heading": "第0818章 元神的奥秘"
+      },
+      {
+        "claim": "Creation evidence, factions: hidden Fuxi branches publicly return and consolidate around Zhong Yue.",
+        "chunk_id": "book-03-0bc4648bf63c-chunk-007",
+        "chapter_heading": "第1331章 归宗"
+      },
+      {
+        "claim": "Creation evidence, artifacts: the copper lamp carries Xin Huo from the initial inheritance onward.",
+        "chunk_id": "book-03-0bc4648bf63c-chunk-001",
+        "chapter_heading": "第0002章 薪火传承"
+      },
+      {
+        "claim": "Creation evidence, techniques: reverse opening of secret wheels establishes the book's rule-breaking progression pattern.",
+        "chunk_id": "book-03-0bc4648bf63c-chunk-001",
+        "chapter_heading": "第0173章 逆开五轮"
+      },
+      {
+        "claim": "Creation evidence, naming: the analysis ties the character 易 to the Sun-Moon Fuxi morphology.",
+        "chunk_id": "book-03-0bc4648bf63c-chunk-003",
+        "chapter_heading": "第0548章 问易"
+      },
+      {
+        "claim": "Creation evidence, emotional bonds: Zhong Yue's kneeling response to Nong Huang's death marks acceptance of a human-race burden.",
+        "chunk_id": "book-03-0bc4648bf63c-chunk-004",
+        "chapter_heading": "第0783章 那一跪"
+      },
+      {
+        "claim": "Creation evidence, foreshadowing: the planned movement of Ancestral Star to Ancestral Court sets up the future defensive base.",
+        "chunk_id": "book-03-0bc4648bf63c-chunk-006",
+        "chapter_heading": "第1161章 性命相托"
+      },
+      {
+        "claim": "Creation evidence, state ledger: Yi Xiansheng transfers Fuxi authority to Zhong Huangshen as he can no longer maintain the array.",
+        "chunk_id": "book-03-0bc4648bf63c-chunk-007",
+        "chapter_heading": "第1491章 授权"
+      },
+      {
+        "claim": "Originality red lines: the resolution relies on a bootstrap-loop construction that should be differentiated in derivative work.",
+        "chunk_id": "book-03-0bc4648bf63c-chunk-007",
+        "chapter_heading": "第1437章 光风霁月"
+      }
+    ],
+    "creation_family_evidence": {
+      "characters": [
+        "钟岳: human/Fuxi protagonist whose identities and bodies become separate strategic roles.",
+        "司命: pure-blood Fuxi counterpart whose creation-weapon history complicates the lineage-restoration goal."
+      ],
+      "npcs": [
+        "薪火: inheritance flame, tutor, comedic voice, and succession carrier.",
+        "风孝忠: clinical cultivation researcher whose discoveries and instability drive major mechanism turns."
+      ],
+      "factions": [
+        "剑门 and the human remnant provide the local survival origin.",
+        "伏羲 branches, 天庭, 昆族, and Dao-level powers convert the conflict into multi-faction cosmological war."
+      ],
+      "artifacts": [
+        "铜灯: Xin Huo's enduring vessel and inheritance anchor.",
+        "六道天轮, 万宝道锤, and 六道界珠: escalation artifacts that connect combat to reincarnation and realm-scale governance."
+      ],
+      "techniques": [
+        "火纪宫燧皇观想图 begins the Fuxi path; 逆开五轮, 神魔太极, 七道轮回, and 八道轮回 scale it into a cosmological system.",
+        "宇清宙光 and 大道解 link personal cultivation to time, space, and law-level intervention."
+      ],
+      "naming": [
+        "钟岳/龙岳/摩罗/易风/易先生/泰皇 mark identity as a functional political and tactical grammar.",
+        "伏羲, 雷泽, 华胥, 易, 阴阳, and 六道 convert mythic and etymological references into system names."
+      ],
+      "emotional_bonds": [
+        "钟岳与薪火: demanding teacher-student inheritance bond that ends in deliberate succession.",
+        "钟岳与秋金儿、司命及人族先辈: companionship, lineage duty, and collective survival outweigh private advancement."
+      ],
+      "foreshadowing": [
+        "The copper lamp, Fuxi bloodline seals, sixth-wheel restriction, and Long Yue exposure prepare later inheritance and identity revelations.",
+        "Ancestral Star's containment and planned relocation prepare the final resistance base and postwar return."
+      ],
+      "state_ledger": [
+        "钟岳: outer disciple -> Fuxi inheritor -> covert avatars and Mister Yi -> Tai Huang -> unresolved loop-era return.",
+        "轮回: damaged six-path order -> seventh/eighth-path intervention -> contested cosmological network with unresolved loop effects."
+      ]
+    },
+    "originality_red_lines": [
+      "Do not reproduce the Fuxi/Leize/Huaxu mythological genealogy, the specific Ancestral Star containment premise, or the Xin Huo inheritance-flame configuration.",
+      "Do not reuse Zhong Yue's alias-and-avatar lattice, especially a protagonist staging public alibis by having named bodies fight together.",
+      "Do not replicate the specific progression sequence of hidden sixth wheel, seven-path reincarnation, eight-path future summoning, and Dao-realm loop resolution.",
+      "Avoid direct counterparts to the Book of Life and Death alteration, Queen Mother's Pan Tao material, underworld bureaucracy, and myth-figure naming as major plot engines.",
+      "Avoid resolving a war epic with a prior-loop counterpart, returning-cabin identity ambiguity, and inherited flame sent back to a sealed Earth-like ancestral world."
+    ]
+  }
+}

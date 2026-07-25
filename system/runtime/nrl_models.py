@@ -18,7 +18,7 @@ MISSION_STATUSES = {
     "blocked",
 }
 
-ADAPTER_MODES = {"local", "manual_handoff", "client_handoff", "api", "cli"}
+ADAPTER_MODES = {"local", "manual_handoff", "client_handoff", "api", "cli", "cli_bridge"}
 
 
 def require_mission_status(status: str) -> str:

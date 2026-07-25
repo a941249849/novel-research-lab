@@ -1,0 +1,213 @@
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "book_id": "book-12-7dd95a828fbe",
+  "book_title": "《永生》（校对版全本）作者：梦入神机",
+  "covered_chunk_ids": [
+    "book-12-7dd95a828fbe-chunk-001",
+    "book-12-7dd95a828fbe-chunk-002",
+    "book-12-7dd95a828fbe-chunk-003",
+    "book-12-7dd95a828fbe-chunk-004",
+    "book-12-7dd95a828fbe-chunk-005",
+    "book-12-7dd95a828fbe-chunk-006",
+    "book-12-7dd95a828fbe-chunk-007",
+    "book-12-7dd95a828fbe-chunk-008"
+  ],
+  "covered_chunk_hashes": [
+    {
+      "chunk_id": "book-12-7dd95a828fbe-chunk-001",
+      "response_sha256": "a20805bc36b45cbde2da2090080519339a0d8ac780a61effe81610c0a2192580"
+    },
+    {
+      "chunk_id": "book-12-7dd95a828fbe-chunk-002",
+      "response_sha256": "672c20b93b9f61593743980352c7d44bcb3e7bf1575eef35ee427273eaa358f8"
+    },
+    {
+      "chunk_id": "book-12-7dd95a828fbe-chunk-003",
+      "response_sha256": "d44a0448762db1de0fdac5594d0b7dfe4abcf70d5256c5540a51a7964d406c52"
+    },
+    {
+      "chunk_id": "book-12-7dd95a828fbe-chunk-004",
+      "response_sha256": "22e07f59cb47f9300e928fc95149eccab52a99c0ae8c431a9cc6a7bffc248522"
+    },
+    {
+      "chunk_id": "book-12-7dd95a828fbe-chunk-005",
+      "response_sha256": "de22e0abffe85625fd120c35876074dca2922b4955387baa7d9cd91d266711f8"
+    },
+    {
+      "chunk_id": "book-12-7dd95a828fbe-chunk-006",
+      "response_sha256": "2dbca005ad0de7671e281db28d81cd730e254b1fe57d4061e322357dc5f3c9bf"
+    },
+    {
+      "chunk_id": "book-12-7dd95a828fbe-chunk-007",
+      "response_sha256": "59840651b6353a7f1b071909eba8f75d995d8e87b6c177b8c6c4cf493022bb44"
+    },
+    {
+      "chunk_id": "book-12-7dd95a828fbe-chunk-008",
+      "response_sha256": "6fdca0ae444cc96d7fe568d219140a84b08ead21536a30be6393c31d2d6c0649"
+    }
+  ],
+  "synthesis": {
+    "narrative_spine": [
+      "A servant's acquisition of the Yellow Spring Map and the Nine-Aperture Golden Elixir begins a survival-driven ascent through sect competition, inter-world expansion, and cosmic succession.",
+      "Fang Han repeatedly turns captured enemies, rare materials, and inherited systems into cultivation capital, moving from inner-sect contender to ruler of the Epoch Gate and ultimately beyond Immortal King status.",
+      "The Hua Tiandu rivalry escalates from a sect deadline into a cosmological opposition, ending only when Fang Han resolves the rival's origin and the book's foundational karmic debt."
+    ],
+    "character_arcs": [
+      "Fang Han develops from an excluded servant into a sovereign cultivator whose tactical ruthlessness, collection of allies, and command of destiny determine the final order.",
+      "Fang Qingxue evolves from protector and suspected inheritor into an awakened power whose life costs and breakthroughs bind her fate to Fang Han's progress.",
+      "Hua Tiandu persists as the ascending rival: repeated defeat drives him toward patrons, forbidden power, and finally a terminal confrontation.",
+      "Yan changes from dormant mentor-spirit to independent spy and later returns as a major ally, closing the earliest treasure-line relationship."
+    ],
+    "mechanism_evolution": [
+      "Cultivation expands from bodily stages and supernatural techniques to longevity realms, celestial law, epochs, Immortal Kings, and a final transcendence beyond that hierarchy.",
+      "The cost-bearing Small Destiny Technique turns lifespan into emergency leverage, prediction, rescue, refinement, and decisive breakthrough power.",
+      "Core artifacts evolve through material acquisition, sacrifice, fusion, and captive refinement: the Yellow Spring Map, Eight Parts Pagoda, Thirty-Three Heavens Treasures, and World Tree remain long-running engines.",
+      "The Epoch Book and Epoch Divine Fist convert civilizations, laws, and history into a proprietary combat-and-knowledge framework."
+    ],
+    "world_expansion": [
+      "The setting grows from the Yuhua Sect and the Xuanhuang Great World through rival sect systems, star domains, external great worlds, the Immortal Realm, Heavenly Court, and the Gate of Eternal Life.",
+      "Political stakes broaden from sect status to alliances against the God Race, heavenly institutions, immortal-king factions, and the survival pressures of cosmic destruction.",
+      "New regions function as resource and revelation frontiers, each exposing keys, characters, weapons, legacies, or laws required for the next level of conflict."
+    ],
+    "long_term_reader_hooks": [
+      "The Yellow Spring Map's sealed functions, Yan's fate, and the World Tree's expanding role keep the initial inheritance active through late arcs.",
+      "Fang Qingxue's Electrical Mother identity, destiny costs, and survival establish an intimate long-term uncertainty alongside the main progression.",
+      "Hua Tiandu's recurring reinvention and the unresolved link to Hua Tianjun repeatedly renew the central antagonistic question.",
+      "The identity of Bai Haichan and the significance of the Gate of Eternal Life reframe the opening gift as the final karmic conflict."
+    ],
+    "style_and_life_force": [
+      "The prose relies on decisive conflict resolution, rapid spoils conversion, escalating named techniques, and a recurring rhythm of challenge, reversal, and public recognition.",
+      "Combat and wealth are quantified through power, pills, lifespan, artifacts, multipliers, and later epoch counts, making progression legible at every scale.",
+      "Dialogue and narration sustain a forceful power-fantasy register through hostile boasts, strategic betrayals, astonished observers, and expansive elemental or cosmic imagery."
+    ],
+    "continuity_failures": [
+      "The compilation contains a documented out-of-sequence chapter label: 第1192章 appears after 第1291章.",
+      "A later sequence labels the Yan episode 第1708章 between 第1607章 and 第1609章, despite continuous narrative order.",
+      "The final chunk records a second numbering anomaly in which 第1228章 follows 第1627章 before the sequence resumes.",
+      "The final confrontation is also noted as shifting from eight to ten opposing Immortal Kings in the same closing conflict."
+    ],
+    "evidence_map": [
+      {
+        "claim": "narrative_spine: the foundational inheritance begins Fang Han's ascent.",
+        "chunk_id": "book-12-7dd95a828fbe-chunk-001",
+        "chapter_heading": "第004章 九窍金丹"
+      },
+      {
+        "claim": "character_arcs: Fang Qingxue's early relationship to Fang Han is established as consequential.",
+        "chunk_id": "book-12-7dd95a828fbe-chunk-001",
+        "chapter_heading": "第035章 再遇方清雪"
+      },
+      {
+        "claim": "mechanism_evolution: the longevity progression begins with Fang Han's first major crossing.",
+        "chunk_id": "book-12-7dd95a828fbe-chunk-003",
+        "chapter_heading": "第524章 三万六千年寿命"
+      },
+      {
+        "claim": "world_expansion: sect consolidation becomes the new institutional base.",
+        "chunk_id": "book-12-7dd95a828fbe-chunk-004",
+        "chapter_heading": "第825章 造化门"
+      },
+      {
+        "claim": "long_term_reader_hooks: Fang Qingxue's electrical inheritance is seeded as a durable mystery.",
+        "chunk_id": "book-12-7dd95a828fbe-chunk-001",
+        "chapter_heading": "第141章 电母转世"
+      },
+      {
+        "claim": "style_and_life_force: decisive public combat display is a recurring source of narrative force.",
+        "chunk_id": "book-12-7dd95a828fbe-chunk-002",
+        "chapter_heading": "第445章 一剑就干死"
+      },
+      {
+        "claim": "continuity_failures: the documented out-of-sequence chapter label is present in the synthesis source.",
+        "chunk_id": "book-12-7dd95a828fbe-chunk-006",
+        "chapter_heading": "第1282章 阴谋来了"
+      },
+      {
+        "claim": "originality_red_lines: acceleration by captive refinement and resource conversion risks repetitive progression.",
+        "chunk_id": "book-12-7dd95a828fbe-chunk-005",
+        "chapter_heading": "第1156章 晋升祖仙（下）"
+      },
+      {
+        "claim": "characters: Fang Han reaches the governing status required for the final conflict.",
+        "chunk_id": "book-12-7dd95a828fbe-chunk-007",
+        "chapter_heading": "第1420章 晋升天君"
+      },
+      {
+        "claim": "npcs: Yan's return resolves the dormant mentor-spirit thread.",
+        "chunk_id": "book-12-7dd95a828fbe-chunk-007",
+        "chapter_heading": "第1708章 阎的出现"
+      },
+      {
+        "claim": "factions: the Epoch Gate becomes Fang Han's formal organization.",
+        "chunk_id": "book-12-7dd95a828fbe-chunk-006",
+        "chapter_heading": "第1392章 建立纪元门（下）"
+      },
+      {
+        "claim": "artifacts: the Eight Parts Pagoda receives a decisive late-stage upgrade.",
+        "chunk_id": "book-12-7dd95a828fbe-chunk-007",
+        "chapter_heading": "第1453章 释迦天君，再临！"
+      },
+      {
+        "claim": "techniques: Small Destiny is a breakthrough-enabling technique at a pivotal battle.",
+        "chunk_id": "book-12-7dd95a828fbe-chunk-004",
+        "chapter_heading": "第890章 杀死绝武神"
+      },
+      {
+        "claim": "naming: the standardized chapter-title format persists in the later compilation.",
+        "chunk_id": "book-12-7dd95a828fbe-chunk-003",
+        "chapter_heading": "第705章 隐瞒"
+      },
+      {
+        "claim": "emotional_bonds: Fang Qingxue's rescue and revival are tied directly to Fang Han's commitments.",
+        "chunk_id": "book-12-7dd95a828fbe-chunk-003",
+        "chapter_heading": "第508章 解救方清雪（下）"
+      },
+      {
+        "claim": "foreshadowing: the original patron identity returns as the final karmic revelation.",
+        "chunk_id": "book-12-7dd95a828fbe-chunk-008",
+        "chapter_heading": "第1632章 最后的因缘"
+      },
+      {
+        "claim": "state_ledger: the end state places Fang Han beyond the Immortal King hierarchy.",
+        "chunk_id": "book-12-7dd95a828fbe-chunk-008",
+        "chapter_heading": "第1634章 永生（大结局）"
+      }
+    ],
+    "creation_family_evidence": {
+      "characters": [
+        "Fang Han's servant-to-transcendent-ruler progression is the governing character trajectory, while Fang Qingxue and Hua Tiandu remain the principal relational and antagonistic counterweights."
+      ],
+      "npcs": [
+        "Yan, Bai Haichan, Mibao, Yanshui Tian, Feng Baiyu, and Feng Yaoguang each carry an inherited identity, artifact, or alliance thread that changes Fang Han's options."
+      ],
+      "factions": [
+        "Yuhua Sect, Taiyi Sect, the God Race, Heavenly Court, Truth Sacred Land, and the later Epoch Gate provide the shifting institutional ladder and opposition network."
+      ],
+      "artifacts": [
+        "The Yellow Spring Map, World Tree, Eight Parts Pagoda, Thirty-Three Heavens Treasures, Desolate God Key, and Gate of Eternal Life form a persistent artifact ledger rather than disposable rewards."
+      ],
+      "techniques": [
+        "Body and supernatural stages grow into the Five Emperors system, Small Destiny, the Epoch Book and Divine Fist, heavenly laws, and ancient-character integration."
+      ],
+      "naming": [
+        "Uniform 第XXX章 chapter titles, escalating realm labels, named treasures, and repeated Great-X techniques create a recognizable serial taxonomy."
+      ],
+      "emotional_bonds": [
+        "Fang Han's bonds with Fang Qingxue, Yanshui Tian, Mibao, and Yan combine rescue, sacrifice, protection, dual cultivation, alliance, and reciprocal obligation."
+      ],
+      "foreshadowing": [
+        "The early map, World Tree, Electrical Mother identity, Hua Tiandu rivalry, missing Yan, and Bai Haichan all remain active until the concluding Gate-of-Eternal-Life resolution."
+      ],
+      "state_ledger": [
+        "Fang Han proceeds from servant and body cultivation through supernatural, longevity, celestial, heavenly-monarch, Immortal-King, and post-Immortal-King states; associated allies, factions, and artifacts advance alongside him."
+      ]
+    },
+    "originality_red_lines": [
+      "Avoid reproducing the servant-to-invincible cultivation ladder, exact realm taxonomy, artifact names, sect names, or the Gate-of-Eternal-Life cosmology.",
+      "Do not reuse the Yellow Spring Map mentor-spirit inheritance, World Tree resource engine, destiny-through-lifespan mechanic, or Eight Parts Pagoda captive-refinement engine.",
+      "Avoid a repetitive loop in which every new region produces an ambush, easy reversal, enemy refinement, artifact upgrade, and immediate realm breakthrough.",
+      "Do not imitate the named-technique lexicon, quantified horse-power or epoch scaling, chapter-title formula, or aggressive public-humiliation cadence."
+    ]
+  }
+}

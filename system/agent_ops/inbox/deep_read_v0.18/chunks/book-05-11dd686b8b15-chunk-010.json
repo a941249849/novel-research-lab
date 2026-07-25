@@ -1,0 +1,100 @@
+```json
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "chunk_id": "book-05-11dd686b8b15-chunk-010",
+  "source_file": "novel_training_set/《凡人修仙传》（校对版全本+番外）作者：忘语.txt",
+  "source_file_sha256": "11dd686b8b151694b37460b52991a4f00eda8f5fabe86b507e74f321e10a7428",
+  "start_byte": 13500494,
+  "end_byte": 15000721,
+  "chunk_sha256": "b18d54d0e14d2e0951fc1d03c5036e454392f3afa7911bb4687a0ef479edf861",
+  "source_encoding": "gb18030",
+  "bounded_chunk_utf8_sha256": "5dbb87647d77554259c93d8c59504c2b8449bb243195be0ed7d5060d12eab4ba",
+  "analysis": {
+    "chapter_span": [
+      "第两千两百零八章 天书阁",
+      "第两千四百三十九章 交易、大会"
+    ],
+    "major_events": [
+      "Han Li and Crab Daoist inspect the Chaos Spirit Map on Holy Island and Han Li enters the Tianshu Pavilion to trade foreign race secret arts in 第两千两百零八章 天书阁.",
+      "Baohua presents the replica treasures Falling Star Banner and Lesser Illusionary Heaven Mirror to the allied Grand Primitives in 第两千两百一十八章 落星幡与小幻天镜.",
+      "Han Li uses the Xuantian Slaying Spirit Sword to quickly eliminate人面虫 blockers inside the collapsing underground passage in 第两千两百二十八章 凤灵宝盘.",
+      "The allied forces engage in a desperate battle against the Mother of Devouring Bugs, where Han Li's ape transformation and simulated divine light are countered by her Time Law in 第两千两百三十八章 恶战.",
+      "Han Li returns from the Demon Realm, puts his quasi-king Gold-Devouring Beetles in a beast ring to fight and evolve, and searches for the secret hoard of Qi Ling Ancestor in 第两千两百四十九章 旧敌.",
+      "Han Li refines the newly evolved Gold-Devouring Beetle King and Yinyue captures the combination-stage water cultivator Hua Shi to act as their local guide in 第两千两百五十九章 妖修花石.",
+      "The Holy Island elder plans the refining of a Golden Immortal Soul while in the True Immortal Realm preparations are made for Ma Liang's descent in 第两千两百六十九章 金翰仙宫.",
+      "Han Li uses his Evil-Warding Divine Thunder to rescue Mo Jianli from the beast Cheqizi and they plan to storm the Shura Spider nest together in 第两千两百七十九章 联手.",
+      "Han Li engages the Shura Spider leader Ying'er and Five Light elder Yi in battle, neutralizing their bloodlust and reversion magic in 第两千两百八十九章 修罗之战（八）.",
+      "Han Li meets the Kongyu tribe elder and is offered their sacred relic, the Mountain Sea Bead (a rare spatial cave treasure), in exchange for protection in 第两千两百九十九章 山海珠.",
+      "Han Li agrees to help Yue Long refine wood/gold Extreme Element Crystals based on star movements, and asks about the Five Light elder Yi in 第两千三百零九章 再见金悦.",
+      "Han Li transforms into his Nirvana form and uses the Xuantian Slaying Spirit Sword to crush Huang Yuanzi's clones and pagodas, forcing Sancheng to flee in 第两千三百一十九章 力斩强敌.",
+      "Fuyou elder wins the incomplete Sky-Overturning Flag for a massive price at the Helian Chamber of Commerce auction, followed by the presentation of the Golden Gate Jade Book in 第两千三百三十章 玉书再现.",
+      "Han Li coordinates with Xuepo and uses their respective cauldrons (Void Heaven and Void Emperor) to break the seal and enter Tianding Palace in 第两千三百五十章 进入.",
+      "The Wuling Sages discover the remains of ancient experts trapped inside the iron cages of the Blood Prison in 第两千三百五十九章 铁笼.",
+      "Wugou Laozu kills his wife Huaxi Xianzi to obtain the array disc to remove her curse and flees, while the other sages admit defeat to Han Li in 第两千三百六十九章 退走.",
+      "Han Li and the Beetle King engage Netherworld King Xiusi, overcoming his endless regeneration and ghost claws in 第两千三百七十九章 千鬼之力.",
+      "The Gold-Devouring Beetle King assassinates a sea beast commander, and Han Li locates the entrance coordinates to Little Spirit Heaven in 第两千三百八十九章 小灵天.",
+      "Ming Zun informs Han Li of Ma Liang's massacres on Leiming Continent and warns that the human race is a prime target due to its high population density in 第两千三百九十九章 明尊之议.",
+      "Ming Zun convenes a meeting of elite Grand Primitives, including Han Li and Yin Gangzi, to form an alliance to eliminate the True Immortal Ma Liang in 第两千四百一十章 群强云集.",
+      "Ma Liang breaks his power-limiting lower-realm seal using a golden talisman, releasing immense True Immortal pressure while Xuan Jiuling returns wounded in 第两千四百一十九章 真仙之身（上）.",
+      "Han Li executes Ma Liang using a substitute trick and the Xuantian Slaying Spirit Sword, after which the Outer Heavenly Demon devours Ma Liang's soul and forms a pact in 第两千四百二九章 天魔契约.",
+      "Han Li trades with the True Dragon tribe's Jin Elder and receives seven dragon scales containing records of Ascension Tribulations in 第两千四百三十九章 交易、大会."
+    ],
+    "character_state_transitions": [
+      "Han Li transitions from a newly arrived visitor on Holy Island to an active researcher trading foreign jade slips for restricted secrets in 第两千两百零八章 天书阁.",
+      "Baohua transitions from an isolated strategist to the active commander of the allied forces by presenting specialized replica treasures in 第两千两百一十八章 落星幡与小幻天镜.",
+      "Han Li transitions from careful traversal of the geoglyph to active combat readiness by deploying the Xuantian Slaying Spirit Sword against the人面虫 in 第两千两百二八章 凤灵宝盘.",
+      "Baohua transitions from a stable defensive posture to physical exhaustion under the pressure of the Mother of Devouring Bugs' domain in 第两千两百三八章 恶战.",
+      "The Gold-Devouring Beetles transition from three competing quasi-kings to a single, unified purple-gold child (Beetle King) bound by Han Li's new seals in 第两千两百五十九章 妖修花石.",
+      "Yao cultivator Hua Shi transitions from a vengeful, pill-ruined lord to a cowed and cooperative local guide upon seeing Han Li's giant flying boat in 第两千两百五十九章 妖修花石.",
+      "Sanquan Daoist transitions from combat partner to a terrified deserter who flees the battlefield upon witnessing Huang Yuanzi's swift defeat in 第两千三百一十九章 力斩强敌.",
+      "Wugou Laozu transitions from an enslaved husband bound by a shared-death curse to a free agent after slaying Huaxi Xianzi and taking her array disc in 第两千三百六十九章 退走.",
+      "Ma Liang transitions from a lower-realm restricted entity to an unsealed True Immortal by deploying a golden talisman to break his power seals in 第两千四百一十九章 真仙之身（上）.",
+      "Ma Liang transitions from a proud, lower-realm-destroying True Immortal to a dead soul after being decapitated by Han Li and consumed by the demon in 第两千四百二九章 天魔契约.",
+      "The Outer Heavenly Demon transitions from a bound servant of Ma Liang to Han Li's shadow ally after signing the Heavenly Demon Pact in 第两千四百二九章 天魔契约."
+    ],
+    "long_form_mechanisms": [
+      "Chaos Spirit Map Tracking: The crystal wall on Holy Island tracks all Xuantian treasures across realms and vibrates with pure immortal energy, showing physical resonance with actual wielders of the items in 第两千两百零八章 天书阁.",
+      "Replica Treasure Scaling: Custom replica items like the Falling Star Banner and Lesser Illusionary Heaven Mirror output only 5-6% of the original Xuantian treasures' power but are designed to bypass specific elemental challenges in 第两千两百一十八章 落星幡与小幻天镜.",
+      "Time Law Deterioration: The Mother of Devouring Bugs utilizes Time Law through a black rune to age, decay, and dissolve enemy spells and energy structures rapidly in 第两千两百三十八章 恶战.",
+      "Gold-Devouring Beetle King Consolidation: The evolution requires three quasi-kings to devour one another, and the cultivator must use blood refinement and customized restrictions to control the highly independent purple-gold child in 第两千两百五十九章 妖修花石.",
+      "Thread of Time Alchemy: The Thread of Time from the Small Shura Realm acts as a critical catalyst in refining a Golden Immortal's soul into a Soul Elixir, reducing the required time by more than half in 第两千两百六十九章 金翰仙宫.",
+      "Dual Cauldron Seal-Breaking: Activating and breaking high-level seals requires matching cauldrons (Void Heaven and Void Emperor), combining blood essence projection with gold dharma force amplification in 第两千三百五十章 进入.",
+      "Ascension Boundary Talismans: A True Immortal descending to the lower realm is bound by boundary chains; using a specialized gold talisman temporarily breaks the limit at the cost of triggering massive local thunder tribulation in 第两千四百一十九章 真仙之身（上）.",
+      "Heavenly Demon Pact: A Faustian contract where the Outer Heavenly Demon serves as a shadow assistant in exchange for periodic blood essence, but devours the cultivator's soul if they die during the term in 第两千四百二十九章 天魔契约.",
+      "Ascension Tribulation Recording: The True Dragon tribe uses a unique talent to capture the physical and mental experience of Ascension Tribulations within specialized scales, providing an experiential guide for future ascendees in 第两千四百三十九章 交易、大会."
+    ],
+    "continuity_observations": [
+      "The ranking of the Xuantian Slaying Spirit Sword on the Chaos Spirit Map is a callback to Han Li obtaining it, confirmed by the physical reaction of the mark on his arm in 第两千两百零八章 天书阁.",
+      "The warnings and emergency message of Yuan Yan link directly to his prior entrapment, setting up the allied rescue mission in 第两千两百一十八章 落星幡与小幻天镜.",
+      "Mo Jianli's entrapment by Cheqizi connects to the allied group's entry into the Small Shura Realm to collect the Thread of Time in 第两千两百七十九章 联手.",
+      "Han Li's query to Yue Long about the Five Light elder Yi connects directly to their previous battle in the Small Shura Realm in 第两千三百零九章 再见金悦.",
+      "Han Li checking his green bottle for reactions connects to the artifact's established function of identifying high-level celestial energies in 第两千三百五十九章 铁笼.",
+      "Ming Zun showing the portraits of Bing Feng and Six-Winged is a major callback to Han Li's early companions from the Human Realm in 第两千三百九十九章 明尊之议.",
+      "Yin Gangzi mentioning Xuan Baling changing his name to Xuan Jiuling due to killing his ninth True Spirit serves as a direct character milestone callback in 第两千四百一十章 群强云集.",
+      "The killing of Ma Liang setting up future conflicts with the Jiuyuan Temple is a direct bridge to the future True Immortal Realm arcs in 第两千四百二九章 天魔契约."
+    ],
+    "style_observations": [
+      "Climax Escalation through Title Progression: The chapters utilize systematic numeric labels for battles and multi-part titles to build narrative suspense leading to major conflicts.",
+      "Technique-Oriented Combat Choreography: Combat descriptions prioritize named magical laws, specific physical transformations, and item features over abstract emotional states.",
+      "Macro-Level Dialogue Exposition: Conversations between Grand Primitives are heavily expository, outlining continental politics, race relations, and history to expand the world.",
+      "Third-Person Objective Narration: The narrator details internal cultivation processes, item histories, and restrictions with clinical, dry cultivation terminology.",
+      "Recurring Sound and Visual Onomatopoeia: Phrases like '轰的一声', '噗的一声', and descriptions of golden/silver lights are constantly reused to signal spell activations.",
+      "Detailed Inventory Catalogs: The text dedicates extensive descriptions to the physical forms, lineages, and functions of newly acquired treasures to satisfy progression-fantasy tropes."
+    ],
+    "originality_risks": [
+      "Hostile Guide Capture Trope: Han Li quickly taming and using the defeated local合体期 cultivator Hua Shi as a guide is a standard convenience device to bypass geographic navigation.",
+      "Primordial Sealed Threat Trope: The Mother of Devouring Bugs represents the classic sealed ancient monster that requires a temporary alliance of lower-realm mortals to suppress.",
+      "Auction Bidding Wars: The Helian Chamber of Commerce auction features typical face-saving bidding wars and high-status posturing to build anticipation for later heists.",
+      "Heavenly Demon Contract: The contract proposed by the Outer Heavenly Demon is a classic Faustian pact, offering dangerous assistance in exchange for the protagonist's soul upon failure.",
+      "Ascension Cheat Sheets: Providing Han Li with recordings of successful and failed Ascension Tribulations via True Dragon scales acts as a literal cheat sheet, reducing the mystery of ascension."
+    ],
+    "creation_family_evidence": {
+      "xianxia_jargon_density": "High density of traditional xianxia concepts such as '大乘', '玄天之宝', '法则之力', '本命法宝', showing alignment with the author's established world-building vocabulary.",
+      "chapter_naming_convention": "Uniform and consistent naming convention using standard numbering (第...章) followed by a short summary of key events or treasures, typical of long-running serialized web novels.",
+      "protagonist_pragmatism": "Han Li's decision to avoid bidding on the incomplete Sky-Overturning Flag in 第两千三百三十章 to prevent drawing unwanted attention highlights the signature pragmatism characteristic of the author's protagonist.",
+      "multi_part_fight_structures": "Breaking large fights down into multi-part chapters to structure combat scenes and maintain reader suspense across daily releases."
+    }
+  }
+}
+```

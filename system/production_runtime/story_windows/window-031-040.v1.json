@@ -1,0 +1,310 @@
+{
+  "version": "1.0",
+  "project": "《借天改命账》",
+  "volume": 1,
+  "window": {
+    "start": 31,
+    "end": 40,
+    "name": "冷额反照"
+  },
+  "status": "production_ready",
+  "start_snapshot": [
+    "顾家重复征收已正式改作错征退回，被扣户灯归还，泥灯巷取得首笔局部改账。",
+    "泥灯巷各户已公开拒绝填写交人姓名，州府封档、配额与异物回收压力开始取代本地追缴。",
+    "闻照微留在空白姓名栏旁的三道冷影刻度尚未闭合，第一道将在下一次灯温下降时生效。",
+    "仇慎的本地呈印资格仍被冻结，顾巡已退回一份归属断裂的追缴令，二人均不能替州府解释完整转运链。",
+    "残命灯盏未获自愿守火，被压在失用住屋的受损屋基下继续保持 dormant；泥灯巷护阵安全余量已下降。",
+    "陆沉渊瞳纹、胸骨与掌纹承压未复，半寿残籍暴露与州府追踪风险均处于上升状态；苏晚寿债仍与错征案分离。"
+  ],
+  "end_target": [
+    "闻照微落下的第一道冷额被命审台限定撤销，顾家户灯遭再次截留的一段已核实错征余火获得制度性返还，相邻两户停止继续失温，完成本窗口局部兑现。",
+    "州府配额执行被证明必须承担可见来源与具体归属，贫城第一次形成可复制的公开反照办法，但尚不能推翻封档或州府回收权限。",
+    "仇慎因拒绝越权施印彻底失去本地呈印资格；州府被迫以自身影印直接执行，命籍衙与州府命库之间的责任裂缝公开化。",
+    "泥灯巷以自愿携灯、允许撤回和共同承担暴露完成第一次公开反打，信任提升；一座共用灯架被毁、临时安置空间长期失去原用途，护阵完整度未恢复。",
+    "残命灯盏被进一步压入受损屋基并继续 dormant，未被取出、唤醒或使用；陆沉渊因识账与灰雨灼伤再次失去施术窗口。",
+    "闻照微把单巷冷额改为贫城逐巷封档核额，并限期索取各巷户灯来源，下一窗口转入封档扩散、配额连坐与影使回收压力。"
+  ],
+  "chapters": [
+    {
+      "chapter_id": "chapter-0031",
+      "working_title": "第一影合",
+      "event": "泥灯巷户灯再次降温时，空白姓名栏旁的第一道冷影闭合，顾家刚领回的户灯与相邻两户被同时压入州府冷额，灯芯各失一层可见暖色。",
+      "scene_anchor": "夜半巷口回灯架与闭合的第一道冷影",
+      "conflict": "各户可以补填陆沉渊姓名换取撤去冷额，也可以拒绝交人并立即承担三户失温与全巷封档标记。",
+      "character_choice": "陆沉渊拒绝自行填名夺走共同决定权；三户分别确认继续拒名，其余住户只承诺安置受冷者，不替三户处分户灯。",
+      "irreversible_change": "第一道州府配额完成实体执行，顾家错征退回的户灯遭到第二次截温，三户命火储备下降且泥灯巷正式进入配额执行状态。",
+      "emotional_turn": "归灯后的短暂胜利被冷额夺走，住户的恐惧却第一次从是否交人转向如何共同承担拒名后果。",
+      "hook_out": "失温后的顾家灯芯没有留下均匀冷灰，反而在已撤销的错征位置凝出一道新黑边。",
+      "expected_state_deltas": [
+        "州府第一道冷额闭合并产生具体家庭后果",
+        "顾家与相邻两户命火储备下降",
+        "泥灯巷拒名立场未被个人认领取代",
+        "既有势力压力与半寿残籍暴露同步上升"
+      ],
+      "required_asset_ids": [
+        "character_lu_chenyuan",
+        "faction_mudlamp_lane",
+        "faction_prefecture_life_treasury",
+        "npc_prefecture_shadow_envoy",
+        "bond_mudlamp_lane_trust",
+        "state_ledger_faction_pressure",
+        "state_ledger_resident_lifefire_reserve",
+        "state_ledger_half_life_registry_exposure"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0032",
+      "working_title": "让屋避冷",
+      "event": "三户灯温跌破可独居的安全线后，泥灯巷把尚能住人的一间共用屋改作临时安置处，并拆散原有炊作位置让出暖墙。",
+      "scene_anchor": "清晨共用屋内被腾空的灶边与三盏失温户灯",
+      "conflict": "若按亲疏只安置顾家，可保存有限空间却撕裂共同拒名；若接纳三户，共用屋将长期失去炊作和议事用途，其他住户也要承担生活损失。",
+      "character_choice": "住户逐户确认后接纳全部受冷者，同时保留任何一户日后退出共同安置的权利；陆沉渊只搬梁铺位，不支配住户命火补温。",
+      "irreversible_change": "共用屋长期转为安置空间，原有炊作与议事功能失去，三户避免立即流落但全巷承受新的物质拥挤。",
+      "emotional_turn": "受冷三户的羞惭转为对邻里实际让屋的信任，其余住户也从口头拒名进入真实损失。",
+      "hook_out": "顾家户灯移入暖墙后仍继续结出黑边，证明失温并非由屋冷单独造成。",
+      "expected_state_deltas": [
+        "三户获得不以命火为代价的临时安置",
+        "一处共用空间永久失去原用途",
+        "共同体信任因共同承担物质损失而提升",
+        "住户命火储备停止被临时取暖方案额外抽取"
+      ],
+      "required_asset_ids": [
+        "faction_mudlamp_lane",
+        "bond_mudlamp_lane_trust",
+        "character_lu_chenyuan",
+        "state_ledger_resident_lifefire_reserve",
+        "state_ledger_public_reputation",
+        "state_ledger_mudlamp_array_integrity"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0033",
+      "working_title": "黑边认额",
+      "event": "陆沉渊在顾家许可下辨认户灯表面的新黑边，只确认它与已裁定撤销的错征灰痕占据同一局部位置，而相邻两户的冷灰并无这一重叠。",
+      "scene_anchor": "午后暖墙前的顾家户灯与银灰残屑",
+      "conflict": "继续辨读或可追索冷额来源，却会越过当前识账术能力并加重寿印锁定；只固定局部重叠则无法立刻解除三户失温。",
+      "character_choice": "陆沉渊只完成一次可见灰痕比对，交由顾家亲自确认灯温变化后立即停术，不读取个人命页、不追踪州府债链。",
+      "irreversible_change": "顾家户灯形成“已退错征位置被冷额再次占用”的可复核物证；陆沉渊眼纹再度灼黑，当日失去识账能力。",
+      "emotional_turn": "众人对州府任意夺温的无力感转为抓住一项狭窄但可公开验证的异常。",
+      "hook_out": "闻照微的影印越过巷墙，命令仇慎在这道黑边上补落本地配额印。",
+      "expected_state_deltas": [
+        "一项冷额与既有错征位置重叠的异常进入待核状态",
+        "陆沉渊眼纹灼伤加重并触发停术",
+        "顾家取得对自身户灯异常的确认权",
+        "寿印锁定与半寿残籍暴露继续上升"
+      ],
+      "required_asset_ids": [
+        "character_lu_chenyuan",
+        "technique_ledger_recognition",
+        "state_ledger_revealed_account_errors",
+        "state_ledger_protagonist_strain",
+        "state_ledger_half_life_registry_exposure",
+        "faction_prefecture_life_treasury"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0034",
+      "working_title": "裂灯离证",
+      "event": "苏晚的命灯被冷额余波牵动，她亲手把自己的裂灯移出顾家物证范围，再次声明母债不得被并入冷额异常以放大损害。",
+      "scene_anchor": "黄昏安置屋门槛外失温的掌背与裂灯",
+      "conflict": "陆沉渊若把母亲加深的裂纹列为冷额后果，可提高眼前申诉分量；接受分离则顾家必须仅凭自身物证承担公开反照风险。",
+      "character_choice": "陆沉渊尊重苏晚的分离决定并停止替她解释；苏晚拒绝邻里以命火替她暖灯，只接受外部看护与停留暖墙之外的安全位置。",
+      "irreversible_change": "苏晚命灯不能成为本次冷额裁定的损害证据，裂纹倒计时因失温恶化一格；母子“不以母债吞并他人案件”的边界进一步固定。",
+      "emotional_turn": "陆沉渊急于借一切后果救人的冲动转为承认母亲有权决定自身风险如何被使用。",
+      "hook_out": "仇慎携冷金印来到顾家灯前，却发现自己的呈印资格仍被冻结，落印即会成为可追责的越权。",
+      "expected_state_deltas": [
+        "苏晚寿债继续与冷额异常分离",
+        "苏晚命灯裂纹倒计时恶化",
+        "母子关系的自主边界推进",
+        "住户命火未被用于替苏晚补温"
+      ],
+      "required_asset_ids": [
+        "character_lu_chenyuan",
+        "npc_su_wan",
+        "bond_mother_su_wan",
+        "state_ledger_mother_life_lamp_countdown",
+        "state_ledger_protagonist_strain",
+        "state_ledger_resident_lifefire_reserve"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0035",
+      "working_title": "冻印归州",
+      "event": "仇慎在顾家户灯前公开收回未落下的冷金印，登记自己无权为州府冷额补成本地配额印，迫使闻照微以州府影印直接承担执行痕迹。",
+      "scene_anchor": "次日正午顾家灯前悬停而未落的冷金印",
+      "conflict": "仇慎若越权施印，冷额即可伪装为本地执行并暂时保住职位；若拒绝施印，他将彻底失去呈印资格，却让州府无法再隐藏配额来源。",
+      "character_choice": "仇慎选择不落印并承认此前呈印资格已冻结；陆沉渊不替他洗白，只要求把未落印与直接影印并列记录。",
+      "irreversible_change": "仇慎的本地呈印资格被正式终止，冷额从本地追缴事项反转为州府命库直接执行，州府与命籍衙之间的责任裂缝公开化。",
+      "emotional_turn": "住户对本地施印者的单一敌意转为看清更高压力必须亲自留下痕迹，仇慎则从拖延自保走到承担失职后果。",
+      "hook_out": "失去本地印遮掩后，州府影印骤然收紧巷口回灯架，要把三户灯直接封在冷额之内。",
+      "expected_state_deltas": [
+        "仇慎呈印资格由冻结转为正式终止",
+        "州府冷额的直接来源公开",
+        "本地命籍衙失去代州府完成配额施印的权限",
+        "公开认知与州府势力压力发生结构性反转"
+      ],
+      "required_asset_ids": [
+        "npc_registrar_qiu_shen",
+        "character_lu_chenyuan",
+        "faction_life_registry_office",
+        "faction_prefecture_life_treasury",
+        "npc_prefecture_shadow_envoy",
+        "state_ledger_faction_pressure",
+        "state_ledger_public_reputation"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0036",
+      "working_title": "拆架护灯",
+      "event": "州府影印把巷口回灯架冻成封额载体，住户拆毁自家灯位的木架，将三盏户灯分别移回持有人身边，使影印只能封住空架而不能把共同保管解释为无主异物。",
+      "scene_anchor": "深夜结霜的回灯架与逐段断开的木榫",
+      "conflict": "保留灯架可避免破坏公共设施，却会让三户灯被整体封走；拆架能守住持有人处分权，但会永久失去集中回灯与避风的位置。",
+      "character_choice": "三户各自决定取回户灯，其余住户只拆自己同意拆除的木榫；陆沉渊不触碰顾家灯芯，也不借混乱取掘残命灯盏。",
+      "irreversible_change": "巷口共用回灯架被彻底毁坏，三户保住各自户灯的现实占有，州府直接影印在空架上留下无法抹去的封额轮廓。",
+      "emotional_turn": "即将失去户灯的惊慌转为以损毁公共设施换取各户自主权的沉重决断。",
+      "hook_out": "空架封额轮廓遇夜露后落下灼冷灰雨，雨痕却只朝顾家灯原先的位置聚拢。",
+      "expected_state_deltas": [
+        "共用回灯架永久失用",
+        "三户户灯未被州府作为无主异物封走",
+        "护阵完整度因拆架与影印压迫继续下降",
+        "州府直接执行痕迹获得可见载体"
+      ],
+      "required_asset_ids": [
+        "faction_mudlamp_lane",
+        "bond_mudlamp_lane_trust",
+        "faction_prefecture_life_treasury",
+        "artifact_ashlight_cup",
+        "state_ledger_mudlamp_array_integrity",
+        "state_ledger_faction_pressure",
+        "state_ledger_resident_lifefire_reserve"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0037",
+      "working_title": "各灯自愿",
+      "event": "面对是否把户灯带到命籍衙公开反照，泥灯巷举行逐户选择：愿意者携自己的灯同行，拒绝者留守安置屋，不以共同拒名强迫全巷出面。",
+      "scene_anchor": "黎明拆毁的空灯架旁与分开的两列户灯",
+      "conflict": "强求全体同行能制造更大声势，却会把信任变成征用；允许拒绝则公开行动规模缩小，参与者还会单独暴露给州府寿印。",
+      "character_choice": "顾家与一户受冷邻居自愿携灯，另一户撤回参与并获安排留守保护；陆沉渊接受人数减少，苏晚留在安置屋看护撤回者而不代其发言。",
+      "irreversible_change": "泥灯巷建立高风险行动可逐户拒绝和撤回的公开边界，参与户进入更高追踪状态，留守户不被记作背弃。",
+      "emotional_turn": "共同体内部对公开出面的分歧从互相猜疑转为承认恐惧与选择都具有正当位置。",
+      "hook_out": "莫井兰看见顾家灯上的聚雨黑边，认出空灯被重复占额时才会出现的旧式灼痕，却只能提供残缺口述。",
+      "expected_state_deltas": [
+        "顾家与一户邻居自愿加入公开行动",
+        "一户有效撤回且获得共同体保护",
+        "泥灯巷信任因保障拒绝权而提升",
+        "参与户的州府追踪暴露上升"
+      ],
+      "required_asset_ids": [
+        "faction_mudlamp_lane",
+        "bond_mudlamp_lane_trust",
+        "character_lu_chenyuan",
+        "npc_su_wan",
+        "bond_mother_su_wan",
+        "state_ledger_public_reputation",
+        "state_ledger_half_life_registry_exposure",
+        "state_ledger_resident_lifefire_reserve"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0038",
+      "working_title": "灰雨灼位",
+      "event": "莫井兰只指出灰雨灼痕的旧称与出现条件，陆沉渊随后在空架和顾家灯之间进行一次现场比照，确认冷额把已撤销的错征灯位当成仍可占用的空额。",
+      "scene_anchor": "晨光下的空架封痕、顾家灯影与逆聚灰雨",
+      "conflict": "徒手接触灰雨可固定其感官残迹，却会灼伤调查者并提高追缴暴露；不接触则残迹将在日照后消散，只剩无法定案的口述。",
+      "character_choice": "陆沉渊以自己的掌背承受一次灰雨灼痕，只确认眼前灯位错叠；莫井兰保存口述但拒绝扩称自己知道州府转运或古债来源。",
+      "irreversible_change": "灰雨灼痕与顾家既有错征位置完成现场对应，陆沉渊掌纹裂开、冷灰咳加重并失去后续施术窗口；莫井兰的剩余命火进入追缴视野。",
+      "emotional_turn": "残缺旧闻带来的希望转为必须用身体代价把它压缩成可验证事实，而非神秘答案。",
+      "hook_out": "顾家决定不等书面申诉，把带有灰雨灼位的户灯直接放上命籍衙前厅灯槽接受公开反照。",
+      "expected_state_deltas": [
+        "灰雨印痕由未解感官残迹转为顾家灯位异常的辅助证据",
+        "陆沉渊掌纹与冷灰咳恶化并触发停术",
+        "莫井兰因保存口述而增加追缴暴露",
+        "未解疑点未扩张为州府全貌或古债答案"
+      ],
+      "required_asset_ids": [
+        "character_lu_chenyuan",
+        "npc_mo_jinglan",
+        "foreshadowing_cinder_seal_rain",
+        "technique_ledger_recognition",
+        "state_ledger_protagonist_strain",
+        "state_ledger_half_life_registry_exposure",
+        "state_ledger_revealed_account_errors",
+        "state_ledger_unresolved_mysteries"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0039",
+      "working_title": "前厅反照",
+      "event": "顾家与自愿同行的一户把各自户灯依次置入命籍衙前厅灯槽：邻户灯只显冷额失温，顾家灯却令已封存的错征退回槽同步熄暗，公开显出同一灯位被再次占额。",
+      "scene_anchor": "白昼命籍衙敞开的前厅灯槽与门外围观住户",
+      "conflict": "闻照微要求关闭前厅以免异常扩散，顾家若撤灯可保住剩余灯温；若完成反照，户灯会再失一层暖色且参与者被州府明确标记。",
+      "character_choice": "顾家坚持完成一次灯槽反照后立即收灯，不把邻户差异冒充相同受害；顾巡维持有效送审通道但不以债链替错误冷额锁人，仇慎仅记录自己可见的槽温变化。",
+      "irreversible_change": "冷额重复占用顾家已撤销错征灯位的事实成为公开现场结果，顾家户灯再度受冷，命审台必须在第二道影刻闭合前处理这项直接冲突。",
+      "emotional_turn": "分散承受配额的孤立感转为贫城居民第一次看见州府冷额能够被公开反照，但胜利尚未兑现。",
+      "hook_out": "闻照微撤去前厅投影，却让第二道冷影刻度开始渗入贫城其他巷口。",
+      "expected_state_deltas": [
+        "顾家冷额重复占位获得公开现场验证",
+        "贫城对冷额可反照的认知形成",
+        "顾家户灯承担额外失温代价",
+        "州府压力从单巷事件开始向其他巷口扩散"
+      ],
+      "required_asset_ids": [
+        "character_lu_chenyuan",
+        "npc_debt_collector_gu_xun",
+        "npc_registrar_qiu_shen",
+        "npc_prefecture_shadow_envoy",
+        "faction_life_registry_office",
+        "faction_prefecture_life_treasury",
+        "state_ledger_revealed_account_errors",
+        "state_ledger_public_reputation",
+        "state_ledger_faction_pressure"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0040",
+      "working_title": "撤额开封",
+      "event": "命审台合验既有错征裁定、未落本地印、灰雨灼位与前厅反照结果，限定撤销第一道冷额中对顾家灯位的重复占用，令州府影印返还再次截留的顾家错征余火，并解除相邻两户的继续失温。",
+      "scene_anchor": "第二道影刻闭合前的命审台与泥灯巷三盏回温户灯",
+      "conflict": "泥灯巷可以接受闻照微以撤销单巷封档换取交出残印与陆沉渊，也可以只领取已核实的局部返还，同时承受州府把配额核查扩向贫城。",
+      "character_choice": "顾家只领取属于自己的错征余火，拒绝替全巷或陆沉渊成交；泥灯巷确认不以残命灯盏、住户命火或交人换取额外回温，顾巡按裁定解除当前冷额而不宣布州府封档无效。",
+      "irreversible_change": "顾家被再次截留的一段错征余火制度性返还，第一道冷额对三户的执行终止；闻照微随即将单巷交人冷额改为贫城逐巷封档核额，并限期索取各巷户灯来源。",
+      "emotional_turn": "三盏灯恢复基础温度带来局部兑现，随即被全城巷口逐一浮现的第二道冷影压成更广阔的互保考验。",
+      "hook_out": "贫城各巷的户灯架同时显出第二道冷影，最先被封档的将不是泥灯巷，而是拒绝提交灯源的另一条穷巷。",
+      "expected_state_deltas": [
+        "顾家再次被截留的已核实错征余火完成返还",
+        "相邻两户停止继续失温但既有命火损耗未被抹除",
+        "第一道冷额的单巷执行终止",
+        "泥灯巷完成第一次公开反打并提升贫城声誉",
+        "州府压力升级为贫城逐巷封档核额",
+        "残命灯盏继续 dormant且未参与兑现"
+      ],
+      "required_asset_ids": [
+        "character_lu_chenyuan",
+        "npc_debt_collector_gu_xun",
+        "npc_prefecture_shadow_envoy",
+        "faction_mudlamp_lane",
+        "faction_life_registry_office",
+        "faction_prefecture_life_treasury",
+        "artifact_ashlight_cup",
+        "bond_mudlamp_lane_trust",
+        "state_ledger_poorcity_returnfire",
+        "state_ledger_revealed_account_errors",
+        "state_ledger_public_reputation",
+        "state_ledger_faction_pressure",
+        "state_ledger_resident_lifefire_reserve",
+        "state_ledger_mudlamp_array_integrity"
+      ],
+      "source_status": "planned"
+    }
+  ]
+}

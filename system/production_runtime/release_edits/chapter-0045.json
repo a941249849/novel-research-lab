@@ -1,0 +1,13 @@
+{
+  "version": "0.25",
+  "chapter_id": "chapter-0045",
+  "source_revision": "system/production_runtime/chapters/chapter-0045/revision.md",
+  "source_sha256": "2eb2eedc775f856716ef8e8d6bf115f5207ea7c3d66bd3b9ad39eddc8589e170",
+  "release_edit": "system/production_runtime/release_edits/chapter-0045.md",
+  "release_edit_sha256": "7956b262be3c1bd90aa33f0d0d71447ef782e97c442cae0c1d458430950d0fee",
+  "repair_direction": "统一封存户灯的物理位置：第45章只通过灯绳与投影感知，第47至48章携带源栏见证木片而非实体户灯，第49章由公开封槽移审转入命审台",
+  "provider": "codex-deterministic-editor",
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-041-050.json",
+  "reviewed_release_edit_sha256": "7956b262be3c1bd90aa33f0d0d71447ef782e97c442cae0c1d458430950d0fee"
+}

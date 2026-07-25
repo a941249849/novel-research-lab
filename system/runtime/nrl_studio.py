@@ -13,11 +13,26 @@ from nrl_system_status import build_system_status
 APP_ROOT = Path(__file__).resolve().parents[2] / "apps/studio"
 SECTION_LABELS = [
     "read-only",
+    "系统总览",
+    "系统架构",
+    "#architecture",
+    "研究资产",
+    "创作资产",
+    "生成管线",
+    "Agent 与任务",
+    "运行状态与 Owner Gate",
+    "系统能力路线图",
+    "下一安全动作",
+    "内容推进保持冻结",
     "System Identity",
     "Current Project",
     "Agent Panel",
     "Artifact Map",
     "Creation Coverage Matrix",
+    "Corpus-to-Creation Pipeline",
+    "Core7 小批量试验",
+    "pipeline-status",
+    "pipeline-plan --next",
     "Creation Asset Registry",
     "No family is complete in v0.1",
     "Readiness Score",
@@ -27,6 +42,8 @@ SECTION_LABELS = [
     "Runtime Health",
     "Next Safe Action",
     "Owner Gate",
+    "Codex Sol / Terra / Luna",
+    "Antigravity 备用复核",
 ]
 
 
@@ -86,12 +103,13 @@ def _copy_frontend_dist(app_root: Path, out_dir: Path) -> Path:
     return out
 
 
-def _inject_runtime_data(index_path: Path, data: dict) -> None:
+def _inject_runtime_data(index_path: Path, data: dict | None = None) -> None:
     injection = (
         "\n"
         f"  <script type=\"application/json\" id=\"nrl-studio-labels\">{_json_for_html(SECTION_LABELS)}</script>\n"
-        f"  <script>window.__NRL_STUDIO_DATA__ = {_json_for_html(data)};</script>\n"
     )
+    if data is not None:
+        injection += f"  <script>window.__NRL_STUDIO_DATA__ = {_json_for_html(data)};</script>\n"
     index = index_path.read_text(encoding="utf-8")
     if "</body>" not in index:
         raise RuntimeError(f"Studio frontend index has no closing body tag: {index_path}")
@@ -111,7 +129,7 @@ def _fallback_studio(out_dir: Path, data: dict, state: dict, adapters: dict) -> 
         for item in data["creation_coverage_matrix"]["items"]
     )
     content = f"""<!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <title>Novel Research Lab Studio</title>
@@ -122,8 +140,8 @@ def _fallback_studio(out_dir: Path, data: dict, state: dict, adapters: dict) -> 
   </style>
 </head>
 <body>
-  <h1>Novel Research Lab Studio</h1>
-  <p><strong>read-only Studio v0.1.</strong> Corpus-to-Creation product shell.</p>
+  <h1>Novel Research Lab 控制台</h1>
+  <p><strong>离线静态快照。</strong> Corpus-to-Creation 系统控制面。</p>
   <section>
     <h2>Runtime Health</h2>
     <ul>{runtime_commands}</ul>
@@ -133,7 +151,8 @@ def _fallback_studio(out_dir: Path, data: dict, state: dict, adapters: dict) -> 
     <ul>
       <li>Operating Mode: <code>{html.escape(str(system_status.get("operating_mode", "unknown")))}</code></li>
       <li>Content Progression: <code>{html.escape(str(system_status.get("content_progression", "unknown")))}</code></li>
-      <li>Hermes: {html.escape(str(system_status.get("hermes_execution_status", "unknown")))}</li>
+      <li>Codex Model Team: {html.escape(str(system_status.get("model_team_contract", {}).get("valid", False)))}</li>
+      <li>Antigravity: backup</li>
     </ul>
   </section>
   <section>
@@ -176,8 +195,16 @@ def render_studio() -> Path:
     out_dir = runtime_path("system/runtime/studio")
     if not (APP_ROOT / "package.json").exists():
         return _fallback_studio(out_dir, data, state, adapters)
-    _write_frontend_data(APP_ROOT, data)
+    # Fixture roots must not overwrite the source workspace's static snapshot.
+    is_source_workspace = ROOT == APP_ROOT.parents[1]
+    if is_source_workspace:
+        _write_frontend_data(APP_ROOT, data)
     _run_frontend_build(APP_ROOT)
     out = _copy_frontend_dist(APP_ROOT, out_dir)
-    _inject_runtime_data(out, data)
+    # Fixture builds embed their isolated data. The real Studio loads the one
+    # copied JSON snapshot and does not duplicate it inside index.html.
+    _inject_runtime_data(out, None if is_source_workspace else data)
+    if is_source_workspace:
+        (APP_ROOT / "public/nrl-studio-data.json").unlink(missing_ok=True)
+        shutil.rmtree(APP_ROOT / "dist", ignore_errors=True)
     return out

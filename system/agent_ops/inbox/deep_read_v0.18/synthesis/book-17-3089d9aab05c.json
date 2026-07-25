@@ -1,0 +1,242 @@
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "book_id": "book-17-3089d9aab05c",
+  "book_title": "《雪中悍刀行》（校对版全本）作者：烽火戏诸侯",
+  "covered_chunk_ids": [
+    "book-17-3089d9aab05c-chunk-001",
+    "book-17-3089d9aab05c-chunk-002",
+    "book-17-3089d9aab05c-chunk-003",
+    "book-17-3089d9aab05c-chunk-004",
+    "book-17-3089d9aab05c-chunk-005",
+    "book-17-3089d9aab05c-chunk-006",
+    "book-17-3089d9aab05c-chunk-007"
+  ],
+  "covered_chunk_hashes": [
+    {
+      "chunk_id": "book-17-3089d9aab05c-chunk-001",
+      "response_sha256": "41448ee2ca3e10bebbe4182f2191658e5427bedc3c04ac1468613b07ab7271e6"
+    },
+    {
+      "chunk_id": "book-17-3089d9aab05c-chunk-002",
+      "response_sha256": "ad59eef23632da465d653ad0b18ac10616ce856baf0ff0872e4ada96426af1c3"
+    },
+    {
+      "chunk_id": "book-17-3089d9aab05c-chunk-003",
+      "response_sha256": "69a536feaeb1909a743587b3f505ffe5c5b7bb0c6ad3229f58082021f8b2cf68"
+    },
+    {
+      "chunk_id": "book-17-3089d9aab05c-chunk-004",
+      "response_sha256": "91a08e4d9350d3e100cf52ed8c5e3647c00cc35acc5a9785f3a1277ccca9b28d"
+    },
+    {
+      "chunk_id": "book-17-3089d9aab05c-chunk-005",
+      "response_sha256": "7a63917c883f09fdd00594063d7815502811864e0a53db910429c6d18c2d0e48"
+    },
+    {
+      "chunk_id": "book-17-3089d9aab05c-chunk-006",
+      "response_sha256": "39928642679d175529013f8e0fda92a8ced3d69a69403b73a60de7f575338603"
+    },
+    {
+      "chunk_id": "book-17-3089d9aab05c-chunk-007",
+      "response_sha256": "96744d8b38218062029910ee22cf515c058b7c3fd48d0795bf4ae80fd6f79e52"
+    }
+  ],
+  "synthesis": {
+    "narrative_spine": [
+      "Xu Fengnian's journey begins as a disguised heir returning from a six-thousand-mile exile; Old Huang's death converts private grief into the decision to learn martial arts and accept the burdens surrounding Northern Liang.",
+      "The second journey expands that personal initiation into an inspection of the jianghu and neighboring powers: ambushes, inherited cultivation, Western Chu's restoration, and travel through Northern Mang teach him that martial survival, friendship, and statecraft cannot be separated.",
+      "After exposing disloyal generals and confronting the Liyang court, he moves from heir to sovereign. The defeat of Wang Xianzhi and Zhao Huangchao establishes his martial and political independence, but leaves him carrying damage and obligations rather than uncomplicated supremacy.",
+      "The center of gravity then shifts from individual duels to the Liang-Mang war. Beacon towers, fortress losses, scout attrition, cavalry deployments, and court logistics turn Northern Liang's survival into the book's governing conflict.",
+      "Western Chu's collapse, Cao Changqing's death, and the severing of celestial intervention close alternative dynastic paths. At Jubei City, masters and soldiers jointly absorb the cost of the final defense before Xu Fengnian defeats Tuoba Pusa through accumulated regional fortune.",
+      "The conclusion withdraws the protagonist from throne and supremacy: political succession continues under a new emperor while Xu Fengnian returns to travel, kinship, and tavern-scale life, circularly echoing the opening."
+    ],
+    "character_arcs": [
+      "Xu Fengnian develops through successive forms of inheritance and refusal: he receives power from elders, learns to command armies and institutions, rejects the imperial throne, and finally relinquishes the identity of ruler and peerless master.",
+      "Old Huang, Li Chungang, Wang Chonglou, Longshu, High Shulu, Huang Longshi, and Wang Xianzhi form a chain of elder legacies. Their deaths or dispersals make power inseparable from debt, memory, and the duty to pass benefits onward.",
+      "Jiang Ni moves from hostile maid to Western Chu sovereign and then relinquishes restoration politics; her arc converts an intimate bond into a dynastic conflict and ultimately chooses personal return over an exhausted crown.",
+      "Wen Hua's self-maiming refusal to assassinate his friend provides the clearest counter-arc to advancement: moral choice is represented as leaving the jianghu rather than winning within it.",
+      "Nangong Pushe progresses from protected reader of martial manuals to a peak combatant whose Eighteen Stops save Xu Fengnian at lasting bodily and spiritual cost.",
+      "Xuanyuan Qingfeng, Chen Zhibao, Xu Beizhi, Chen Xiliang, Li Yufu, and Zhao Zhu show different succession models across clan, region, sect, bureaucracy, and empire, keeping generational transfer active beyond the protagonist."
+    ],
+    "mechanism_evolution": [
+      "Early martial mechanisms are concrete and teachable: Da Huang Ting transmission, ranked realms, signature sword and saber techniques, talisman armor, flying swords, and cataloged manuals establish a legible progression system.",
+      "The system broadens into religious exchange and inheritance through golden blood, reincarnated merit, body transfer, scholarly aura, soul travel, and the dispersal of a master's qi, making advancement dependent on ethical and relational transactions.",
+      "At the sovereign scale, cultivation merges with collective fortune: dragons and pythons embody dynastic qi, jade seals channel national power, and regional luck can be assembled into battlefield force.",
+      "The late war grounds high cultivation in institutions and formations: beacon networks, scout screens, fortress depth, the Single-Line Wave, the Twelve Deities Array, and Jubei City's defenses determine whether individual masters can matter.",
+      "Closing the Heaven Gate resolves the tension between mortal agency and celestial interference, while the forecast of declining spiritual yield places a historical limit on future Land Deities and prevents endless escalation."
+    ],
+    "world_expansion": [
+      "The setting expands from the Northern Liang mansion, Tingchao Pavilion, and Wudang into a connected map of sects, rivers, royal houses, fallen kingdoms, Wudi City, Western Chu, Northern Mang, and the Liyang capital.",
+      "Jianghu and court repeatedly interlock: court-backed alliance leadership, imperial hostage rituals, sect patronage, assassins, military mechanism bureaus, and scholar-administrators make supposedly separate social orders mutually dependent.",
+      "The Northern Mang journey supplies a parallel political and martial ecology of grassland clans, Chess Sword Yuefu, Princess Tomb, Daode Sect, border cities, and imperial guards rather than treating the enemy realm as a blank frontier.",
+      "Later volumes turn geography into military systems: Hulukou, Hutou City, Liuzhou, Jibei City, beacon towers, supply depth, and cavalry corridors carry strategic consequences accumulated across campaigns.",
+      "The cosmology remains tied to political history: reincarnated Daoists, Buddhist suppression, Confucian sages, heavenly gates, and dynastic fortune all intervene in who can rule, fight, or preserve a lineage."
+    ],
+    "long_term_reader_hooks": [
+      "Delayed identity revelations and disguised travel repeatedly promise the moment when hidden rank or power will become public, from the opening return to inspections in Northern Mang and Northern Liang.",
+      "Legacy objects and unfinished vows create durable forward pulls: Old Huang's sword box, Jiang Ni's dagger and Daliang Longque, Hong Xixiang's vow, Wen Hua's wooden sword, and Chen Zhibao's spear retain emotional history across long absences.",
+      "Power progression is coupled to visible costs. Each inheritance, breakthrough, or cosmic intervention creates bodily damage, karmic debt, political exposure, or a later obligation, preserving uncertainty after victories.",
+      "The parallel questions of Northern Liang's survival, Western Chu's restoration, Liyang's succession, and celestial interference allow intimate reunions and strategic reversals to pay off on different time scales.",
+      "Rapid scene shifts, titled confrontations, weather-driven climaxes, battlefield casualty ledgers, and chapter-end declarations sustain serial momentum while recurring memories reward long-term recall.",
+      "The circular return to tavern travel pays off the opening image while extras extend the consequences into a lower-powered future, offering closure without erasing historical aftermath."
+    ],
+    "style_and_life_force": [
+      "The dominant tonal engine is the collision of grandeur with ordinary life: river-cutting sword qi, dynastic decisions, and mass warfare are set beside yellow wine, sweet potatoes, dumplings, family quarrels, cheap clothing, and quiet funerary gestures.",
+      "Ballads, classical allusions, pseudo-historical commentary, formal epithets, and parallel sentence structures create an elegiac oral-history register centered on passing eras and remembered dead.",
+      "Combat is cinematic and spatial, moving between minute objects and landscape-scale phenomena, while severe snow, rain, thunder, and autumn winds externalize emotional or historical turns.",
+      "Bystander explanation and multi-perspective scene breaks make technical fights legible and let local soldiers, servants, scholars, and minor officers carry consequences beyond the principal cast.",
+      "Crude humor, vernacular metaphors, and restrained domestic dialogue prevent the mythic register from becoming uniform, especially in father-son, master-servant, and comradeship scenes."
+    ],
+    "continuity_failures": [
+      "The source compilation contains recurring character loss and substitution artifacts, including omitted characters in names, Latin letters or symbols replacing Chinese glyphs, and corrupted poetic quotations.",
+      "Several headings are malformed or inconsistent, including homophonic substitutions, deleted title words, reversed multipart title order, and a missing Chapter 46 in the extra chapters.",
+      "Volume restarts and custom epilogue headings complicate chapter identity, while the final compiler signature confirms that the text passed through an ebook aggregation pipeline.",
+      "One chunk analysis itself records a malformed heading for Xu Beizhi and another malformed twin-blade reference; these should not be treated as canonical evidence bindings.",
+      "Despite textual corruption, major state transitions remain coherent: Wen Hua stays retired, deceased masters remain historical memories, signature weapons recur with their owners, and military losses continue to shape later strategy."
+    ],
+    "evidence_map": [
+      {
+        "claim": "narrative_spine: Old Huang's death initiates Xu Fengnian's acceptance of martial and political burden.",
+        "chunk_id": "book-17-3089d9aab05c-chunk-001",
+        "chapter_heading": "第二十章 杀人赏雪"
+      },
+      {
+        "claim": "character_arcs: Wen Hua chooses friendship and civilian life by breaking his sword and disabling his own martial future.",
+        "chunk_id": "book-17-3089d9aab05c-chunk-003",
+        "chapter_heading": "第十六章 一人想赠剑春秋，一人折剑出江湖"
+      },
+      {
+        "claim": "mechanism_evolution: Closing the Heaven Gate converts the cosmological conflict into a defense of mortal autonomy.",
+        "chunk_id": "book-17-3089d9aab05c-chunk-005",
+        "chapter_heading": "第二百五十五章 大胆吕洞玄"
+      },
+      {
+        "claim": "world_expansion: Northern Liang's war system culminates in planned fortress depth and construction around Jibei City.",
+        "chunk_id": "book-17-3089d9aab05c-chunk-005",
+        "chapter_heading": "第二百七十章 楼外日头正暖"
+      },
+      {
+        "claim": "long_term_reader_hooks: Cao Changqing's restoration and chess motifs resolve in his final approach to the capital.",
+        "chunk_id": "book-17-3089d9aab05c-chunk-006",
+        "chapter_heading": "第三百零五章 西楚霸王（六）"
+      },
+      {
+        "claim": "style_and_life_force: The final master defense joins martial spectacle to named, emotionally individualized sacrifice.",
+        "chunk_id": "book-17-3089d9aab05c-chunk-007",
+        "chapter_heading": "第四百二十五章 中原宗师，慷慨而至，浩然而死！"
+      },
+      {
+        "claim": "continuity_failures: The compilation preserves a chapter-title homophone and missing-name characters around imperial succession.",
+        "chunk_id": "book-17-3089d9aab05c-chunk-004",
+        "chapter_heading": "第一百一十八章 离阳失其鹿（下）"
+      },
+      {
+        "claim": "originality_red_lines: The inherited-body and aura-transfer victory pattern risks substituting bequests for earned progression.",
+        "chunk_id": "book-17-3089d9aab05c-chunk-004",
+        "chapter_heading": "第三十六章 武无第二"
+      },
+      {
+        "claim": "characters: Xu Fengnian's endpoint is a ruler and supreme fighter who chooses withdrawal over throne or permanent dominance.",
+        "chunk_id": "book-17-3089d9aab05c-chunk-007",
+        "chapter_heading": "第一章"
+      },
+      {
+        "claim": "npcs: Minor officers and scout units receive irreversible promotions, deaths, and battlefield consequences.",
+        "chunk_id": "book-17-3089d9aab05c-chunk-006",
+        "chapter_heading": "第三百一十九章 满甲营已满甲"
+      },
+      {
+        "claim": "factions: Northern Liang's resistance depends on coordination among army, sect, scholars, and unaffiliated Central Plains masters.",
+        "chunk_id": "book-17-3089d9aab05c-chunk-007",
+        "chapter_heading": "第四百一十七章 波澜壮阔"
+      },
+      {
+        "claim": "artifacts: Old Huang's sword box converts a servant's hidden identity and death into a persistent legacy object.",
+        "chunk_id": "book-17-3089d9aab05c-chunk-001",
+        "chapter_heading": "第十三章 带刀老魁，背匣老黄"
+      },
+      {
+        "claim": "techniques: The Mount Sealing Talisman synthesizes remembered masters' paths rather than relying on a single school.",
+        "chunk_id": "book-17-3089d9aab05c-chunk-004",
+        "chapter_heading": "第三章 天下分合，我有何忧"
+      },
+      {
+        "claim": "naming: Balanced and reversed titles turn the duel between Xu Fengnian and Tuoba Pusa into a two-state conflict.",
+        "chunk_id": "book-17-3089d9aab05c-chunk-005",
+        "chapter_heading": "第一百八十二章 两国之战，两人之战（一）"
+      },
+      {
+        "claim": "emotional_bonds: Xuanyuan Jingcheng's sacrifice transforms a despised father into the source of his daughter's succession.",
+        "chunk_id": "book-17-3089d9aab05c-chunk-001",
+        "chapter_heading": "第一百八十一章 请老祖宗赴死"
+      },
+      {
+        "claim": "foreshadowing: The imperial luck conflict matures from recurrent fate imagery into the explicit python-swallowing-dragon event.",
+        "chunk_id": "book-17-3089d9aab05c-chunk-004",
+        "chapter_heading": "第一百三十七章 蟒吞龙"
+      },
+      {
+        "claim": "state_ledger: The final defeat of Tuoba Pusa resolves accumulated regional qi, military pressure, and his damaged heart-state.",
+        "chunk_id": "book-17-3089d9aab05c-chunk-007",
+        "chapter_heading": "第四百二十七章 让你终是求不得"
+      }
+    ],
+    "creation_family_evidence": {
+      "characters": [
+        "Track characters through role, cultivation realm, bodily condition, political office, allegiance, and whether they remain active, retired, ascended, or dead.",
+        "Xu Fengnian's usable state sequence is disguised heir, martial learner, Northern Liang successor, wounded sovereign, victorious border defender, then retired traveler.",
+        "Jiang Ni, Nangong Pushe, Wen Hua, Xuanyuan Qingfeng, Li Yufu, Chen Zhibao, and Zhao Zhu provide distinct nonparallel choices about power and succession."
+      ],
+      "npcs": [
+        "Servants, minor officers, scouts, garrison commanders, local scholars, widows, and sect disciples carry persistent names and consequences rather than functioning only as crowd texture.",
+        "Battlefield NPCs should retain unit, rank, place, injury, and death status because later strategic and emotional references depend on those ledgers.",
+        "Domestic NPC detail is a primary scale-control device: maids, tavern workers, soldiers, and family members humanize otherwise mythic conflicts."
+      ],
+      "factions": [
+        "Core factions include Northern Liang, Liyang, Northern Mang, Western Chu, Wudang, Longhu Mountain, Buddhist lineages, martial sects, court bureaucracies, and regional clans.",
+        "Faction identity combines patronage, territory, succession rules, military resources, religious legitimacy, and remembered debts.",
+        "Late-stage conflict works through coalitions across institutional boundaries, especially the convergence of Northern Liang troops and Central Plains grandmasters at Jubei City."
+      ],
+      "artifacts": [
+        "Legacy weapons encode relationships and history: Old Huang's sword box, Daliang Longque, Jiang Ni's Shenfu dagger, Wen Hua's wooden sword, Xiudong and Chunlei, and Chen Zhibao's Meizijiu spear.",
+        "Institutional artifacts such as Tingchao manuals, jade seals, armor, Buddhist bowls, talismans, and beacon tablets connect supernatural mechanics to archives, state power, healing, and logistics.",
+        "An artifact should preserve ownership history, transfer event, current location, damage state, and symbolic debt."
+      ],
+      "techniques": [
+        "Techniques range from named personal forms such as One Sleeve Green Snake and Eighteen Stops to transferable systems such as Da Huang Ting, flying-sword control, golden blood, scholarly aura, and body inheritance.",
+        "High-level mechanisms require explicit costs: depleted life, damaged meridians or soul, karmic transfer, unstable absorption, vulnerability during soul travel, or dependence on collective fortune.",
+        "Military formations and infrastructure are technique-equivalents in the late book, including scout screens, fortress depth, Single-Line Wave, Twelve Deities Array, and Heaven Gate closure."
+      ],
+      "naming": [
+        "Names use epithets, offices, sect titles, place associations, weapons, and poetic chapter phrases to repeatedly re-anchor a very large cast.",
+        "Balanced, mirrored, and reversed chapter titles frame thematic oppositions such as person versus state, heaven versus earth, and old generation versus successor.",
+        "Compilation corruption requires canonical-name normalization while retaining aliases; omitted glyphs and letter substitutions must never silently create new entities."
+      ],
+      "emotional_bonds": [
+        "The durable bond types are master-servant friendship, father-son succession, romantic waiting, sworn or adoptive brotherhood, mentor inheritance, ruler-adviser loyalty, and comradeship under battlefield attrition.",
+        "Strong bonds are proven by costly choices rather than declarations: death journeys, relinquished cultivation, broken meridians, surrendered crowns, inherited weapons, carried bodies, and refusal of political advantage.",
+        "Recurring food, wine, hats, blades, letters, and remembered sayings reactivate bonds after long narrative absences."
+      ],
+      "foreshadowing": [
+        "Long-range setups are attached to objects, vows, prophecies, old debts, hidden identities, sleeper agents, succession plans, and changes in regional or dynastic fortune.",
+        "The strongest payoffs transform an early private motif into a public consequence, as with Old Huang's sword box, Hong Xixiang's vow, Jiang Ni's royal identity, and Northern Liang's destiny python.",
+        "Later recollection should preserve retired or dead characters as motive and history without reversing established exits merely for spectacle."
+      ],
+      "state_ledger": [
+        "Maintain synchronized ledgers for character location, role, realm, wounds, soul condition, allegiance, living status, weapons, debts, and active vows.",
+        "Maintain faction ledgers for ruler, succession, territory, troop strength, fortress status, alliances, court recognition, and accumulated victories or losses.",
+        "Maintain mechanism ledgers for transferred qi, regional fortune, celestial access, inherited bodies, formation prerequisites, and irreversible costs so late resolutions remain earned and auditable."
+      ]
+    },
+    "originality_red_lines": [
+      "Do not reproduce the disguised noble exposing local corruption, hidden ancient master, sacrificial mentor inheritance, or sequential roadblock structure without changing the causal engine and character cost.",
+      "Avoid direct dependence on recognizable Lü Dongbin reincarnation, yellow-crane ascension, Wudang-versus-court Daoism, fallen-dynasty restoration, and Song-versus-northern-empire analogues as ready-made lore.",
+      "Do not use cultivation, body, scholarly aura, golden blood, or regional fortune as unearned protagonist upgrades; each gain needs prior agency, constraints, and consequences that cannot be erased by the next inheritance.",
+      "Do not revive defeated enemies or dead allies merely to refill a battle lineup, because resurrection weakens prior sacrifice and creates state-ledger ambiguity.",
+      "Avoid making women primarily disguised beauties, rescue rewards, harem-list entries, or sacrificial healers; preserve independent political, martial, and ethical objectives.",
+      "Do not let cosmic reincarnation or heavenly intervention predetermine political outcomes; mortal institutions, logistics, and choices must remain causally decisive.",
+      "Do not imitate signature names, epithets, weapon sets, poetic title symmetries, or the exact tavern-return framing; retain only abstract lessons about recurring motifs and scale contrast."
+    ]
+  }
+}

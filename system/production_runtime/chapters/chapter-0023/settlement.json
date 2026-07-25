@@ -1,0 +1,127 @@
+{
+  "chapter_id": "chapter-0023",
+  "accepted_revision_sha256": "e4d004a6ad1e1f829a7fbe91ad9de6ee06cc543c6dc7bb273e37bebb2c383ceb",
+  "state_deltas": [
+    {
+      "fact_id": "chapter-0023-f001",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_observed_choice",
+      "operation": "set",
+      "before": "按住送审木牌接受债链锁定，明确只认自己的到场，不替三户处分撤回或保管选择",
+      "after": "施展一次受限识账，只辨认木牌本地灰痕与州府残印银灰印屑的冲突去向，并让顾巡复核可见断痕；不读人页、不追债链"
+    },
+    {
+      "fact_id": "chapter-0023-f002",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_action_limit",
+      "operation": "set",
+      "before": "行动范围被锁定为前往命审台、核验后按原路返回，中途离线将按拒审记",
+      "after": "当日识账窗口关闭，顾巡按其再次施术为失控送审；陆沉渊只能按原路返回，旧追缴与半寿送审继续"
+    },
+    {
+      "fact_id": "chapter-0023-f003",
+      "asset_id": "npc_debt_collector_gu_xun",
+      "field_path": "npc.current_procedural_decision",
+      "operation": "set",
+      "before": "按断续灰痕暂停居民执行，仅将陆沉渊作为人证与纸证送审对象",
+      "after": "依据木牌内侧本地灰痕与外侧银灰起转痕的可见断口，暂停错误归属并将该项留作待核；不撤州府项、不押泥灯巷居民"
+    },
+    {
+      "fact_id": "chapter-0023-f004",
+      "asset_id": "npc_debt_collector_gu_xun",
+      "field_path": "npc.information_state",
+      "operation": "set",
+      "before": "确认三户共同保管签存在可复核断痕，无法并作陆沉渊私产",
+      "after": "确认送审木牌的本地灰痕止于原位封存，州府残印印屑留下外向起转痕，二者中间存在可见断口，但无法确认物证去向"
+    },
+    {
+      "fact_id": "chapter-0023-f005",
+      "asset_id": "npc_registrar_qiu_shen",
+      "field_path": "npc.local_review_decision",
+      "operation": "set",
+      "before": "当厅公开呈验州府回执原件，将异物封档与半寿送审分列，不再续写共同保管人为送审对象",
+      "after": "在命审台将物证在巷的现有保管记录与已转运的残印记录并列为待核，不改写为异物已返还或州府已接收"
+    },
+    {
+      "fact_id": "chapter-0023-f006",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_procedural_event",
+      "operation": "set",
+      "before": "清晨完成债链核验、陆沉渊送审锁定及居民不押的断痕复核，随后押送方向转向命审台",
+      "after": "命审台完成双痕现场复核；错误归属不撤销，相关物证记录进入待核，旧追缴与半寿送审继续"
+    },
+    {
+      "fact_id": "chapter-0023-f007",
+      "asset_id": "technique_ledger_recognition",
+      "field_path": "technique.current_use_status",
+      "operation": "set",
+      "before": "继续未施展识账术，仅凭肉眼观察债链与保管纸的断痕",
+      "after": "施展一次受限识账，仅辨认本地灰痕与州府残印银灰印屑的局部去向矛盾；因眼部灼伤当日停术"
+    },
+    {
+      "fact_id": "chapter-0023-f008",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_procedural_boundary",
+      "operation": "set",
+      "before": "边界被实际执行为住户可退出、限时见证、只守物不送火不认主",
+      "after": "命审台继续保留保管人拒来、撤回或只认亲见的权利，无人见证部分不得补写"
+    },
+    {
+      "fact_id": "chapter-0023-f009",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_local_evidence_status",
+      "operation": "set",
+      "before": "新增债链与三处保管签断痕的可复核记录，确认不能将共同保管物并作陆沉渊私产",
+      "after": "新增一项待核的转运去向矛盾：木牌本地灰痕止于原位封存，州府残印记录外向起转，二者中间断口可见；未认定去向或接收"
+    },
+    {
+      "fact_id": "chapter-0023-f010",
+      "asset_id": "state_ledger_half_life_registry_exposure",
+      "field_path": "state_ledger.registry_locking_sign",
+      "operation": "set",
+      "before": "陆沉渊过界后暗红线再次骤然绷直，远处完成一次核对，锁定继续增强",
+      "after": "识账后寿印再次核对，暗红线比进台时更稳并沿腕骨上方攀附；暴露继续上升，未因双痕留下而退去"
+    },
+    {
+      "fact_id": "chapter-0023-f011",
+      "asset_id": "foreshadowing_cinder_seal_rain",
+      "field_path": "foreshadowing.next_review_hook",
+      "operation": "set",
+      "before": "送审木牌靠近州府残印时出现与泥圈灯盏位置矛盾的旧灯回响，余颤沿债链传向命审台",
+      "after": "下一次复核从州府残印缺角的铁锈冷香开始，核验泥灯巷现有封口记录与木牌旧灰是否相合；转运去向仍无痕迹"
+    },
+    {
+      "fact_id": "chapter-0023-f012",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_local_procedure_result",
+      "operation": "set",
+      "before": "居民不押、异物封档原项保留，断痕随令复核；陆沉渊单独承担送审",
+      "after": "命审台形成“物证在巷记录”与“残印已转运记录”并列待核的现场留档；不构成退债或清偿"
+    },
+    {
+      "fact_id": "chapter-0023-f013",
+      "asset_id": "state_ledger_protagonist_strain",
+      "field_path": "state_ledger.eye_pattern_burn",
+      "operation": "set",
+      "before": "右眼持续重影并在纸展开后进一步发黑；左眼焦壳下继续掉落碎屑，视力未恢复",
+      "after": "双眼识账灼伤加深，右眼彻底看不清灯槽，焦黑纹路沿眼白爬向眼角，泪水带灰"
+    },
+    {
+      "fact_id": "chapter-0023-f014",
+      "asset_id": "state_ledger_protagonist_strain",
+      "field_path": "state_ledger.current_visible_condition",
+      "operation": "set",
+      "before": "债链锁定后髋骨受冷意、左腿麻木、胸腔气息断裂、眼前分层，血口再裂并咳出冷灰",
+      "after": "识账后双眼灼伤、冷灰泪流，右眼失明式模糊；左腿麻木未退，仍需靠黑石支撑返回"
+    },
+    {
+      "fact_id": "chapter-0023-f015",
+      "asset_id": "state_ledger_protagonist_strain",
+      "field_path": "state_ledger.cold_ash_cough_frequency",
+      "operation": "set",
+      "before": "按印后再次咳出一撮冷灰，灰被陆沉渊包在自己袖内，未波及他人或案面",
+      "after": "识账结束后再次咳出冷灰并与掌中血混成暗黑一团，随后以衣袖包住，未污染灯槽"
+    }
+  ],
+  "resolved_audit_ids": []
+}

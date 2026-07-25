@@ -1,0 +1,30 @@
+{
+  "chapter_id": "chapter-0056",
+  "dramatic_purpose": "检查暴雨后的隐蔽损伤。",
+  "must_keep": [
+    "确认街区只能达到有限稳定，不能恢复原状。",
+    "POV 固定为林岱"
+  ],
+  "must_avoid": [
+    "不得引入未登记资产或用旁白代替物质行动",
+    "不得回滚已接受状态"
+  ],
+  "expected_state_deltas": [
+    {
+      "state_id": "v1.ch056.outcome",
+      "asset_id": "char_lin_dai",
+      "field_path": "character.current_state",
+      "after": "确认街区只能达到有限稳定，不能恢复原状。",
+      "before": "一处封舱超过安全期限，林岱承担公开说明责任。"
+    }
+  ],
+  "required_asset_ids": [
+    "char_lin_dai",
+    "ledger_structural_load",
+    "ledger_water_level"
+  ],
+  "active_hook_ids": [],
+  "scene_constraints": [
+    "冲突必须落在具体工艺现场、物证或受影响者选择上"
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "chapter_id": "chapter-0088",
+  "draft_sha256": "842e235d57ccd4be0d4d6c9342148cd45b7f7f879bbfa5ccd2b5f90abd93fb18",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "chapter-0088-fact-001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_procedural_status",
+        "before": "见证被收窄，苏晚独立追缴与其到案记录保持并列，未完成自动合并",
+        "after": "活体校时与苏晚独立追缴被正式分录，未直接合并；校时期限结束后陆沉渊仅保留外层候验选择",
+        "evidence": "牵引撤除后，记录写明“活体校时，牵引撤后稳定”及“封布未开，残印旧回声仍贴近苏晚独立追缴，未证其由”；影门随后显示校时期限已尽。"
+      },
+      {
+        "fact_id": "chapter-0088-fact-002",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_public_statement",
+        "before": "公开声明拒绝交出残印，要求先逐笔记明断差",
+        "after": "明确要求照实分开记录：苏晚旧债仍在，自己的校时也在，谁都不替谁填",
+        "evidence": "陆沉渊说：“她的旧债还在。我的校时也在。谁都不替谁填。”"
+      },
+      {
+        "fact_id": "chapter-0088-fact-003",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_choice",
+        "before": "拒绝补证和交印，要求先记录断差",
+        "after": "拒绝交印并要求将活体校时、残印回声及苏晚独立追缴保持为分项事实",
+        "evidence": "他指出校时稳定与残印贴近是两项，要求命籍衙写明“并行不是合并”。"
+      },
+      {
+        "fact_id": "chapter-0088-fact-004",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_physical_state",
+        "before": "手背小孔渗血并被掌心挤破，左腿伤口发麻，残印震动使手臂和胸口持续受压",
+        "after": "校时牵引撤除后胸前暗线稳定、半截气息恢复规律，但左腿仍麻，掌心伤口再度裂开，残印震动令手臂发麻",
+        "evidence": "正文分别写明心跳和气息归正、胸口暗线不再收紧，以及校时期限结束时掌心破口再裂、手臂被残印震麻。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "chapter-0088-fact-005",
+        "asset_id": "npc_prefecture_shadow_envoy",
+        "field_path": "npc.current_recovery_strategy",
+        "before": "公开提出交出残印即可撤掉苏晚母子记录的自动合并",
+        "after": "承认活体校时与残印回收可分录，但仍保有独立回收义务，并将压力明确为继续候验或交印换退路",
+        "evidence": "闻照微说明“它们可分录”，同时表示自己仍有回收义务，陆沉渊只能继续候验或交印申请退路。"
+      },
+      {
+        "fact_id": "chapter-0088-fact-006",
+        "asset_id": "npc_prefecture_shadow_envoy",
+        "field_path": "information.current_admission_conditions",
+        "before": "本人到案记录已完成，外层入口开启，但继续向内仍无资格",
+        "after": "校时期限结束，外层影门封住退路；陆沉渊只能等待最后一次裁定或交印申请退路",
+        "evidence": "影门外层缓缓合拢并浮出“校时期限已尽”，闻照微说明外层不能替其向内开门。"
+      },
+      {
+        "fact_id": "chapter-0088-fact-007",
+        "asset_id": "npc_prefecture_shadow_envoy",
+        "field_path": "npc.current_permission_state",
+        "before": "保有州府边缘评估权限",
+        "after": "影手仍可隔开残印旧影，但牵引印持续受压、影手逐渐变薄；回收义务未解除",
+        "evidence": "闻照微的影手隔开两道字影，边缘被磨散；文中明确写出她袖中牵引印仍催促她。"
+      }
+    ],
+    "locations": [
+      {
+        "fact_id": "chapter-0088-fact-008",
+        "asset_id": "npc_prefecture_shadow_envoy",
+        "field_path": "location.boundary_state",
+        "before": "外层入口开启，内部边界仍锁定",
+        "after": "外层影门在校时期限耗尽后缓缓合拢，退路被封，最后裁定保留在门内程序中",
+        "evidence": "正文写明影门外层窄缝缓缓合拢，冷字压住来路与两行记录，并显示“校时期限已尽”。"
+      }
+    ],
+    "factions": [
+      {
+        "fact_id": "chapter-0088-fact-009",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_enforcement_record",
+        "before": "自动合并未落印，苏晚记录与陆沉渊到案记录并列",
+        "after": "命籍衙按分项记录活体校时与苏晚独立追缴，明确不得从陆沉渊校时记录中直接并入",
+        "evidence": "记录吏在闻照微命令下落笔，写出两行分录；闻照微又声明母子合并在最后一次裁定前不得直接落印。"
+      },
+      {
+        "fact_id": "chapter-0088-fact-010",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "information.current_record_scope",
+        "before": "校时台尝试在到案记录旁加入苏晚与独立追缴字样，但陆沉渊拒绝合并",
+        "after": "记录新增牵引撤后活体校时稳定、残印旧回声贴近苏晚独立追缴且来源未证两项事实",
+        "evidence": "黑页先后浮现“活体校时，牵引撤后稳定”和“封布未开，残印旧回声仍贴近苏晚独立追缴，未证其由”。"
+      }
+    ],
+    "artifacts": [
+      {
+        "fact_id": "chapter-0088-fact-011",
+        "asset_id": "artifact_prefecture_transit_registry_seal",
+        "field_path": "artifact.current_procedural_relation",
+        "before": "残印仍未交出，表层灰痕与投影足印错位，要求先记录断差",
+        "after": "残印继续未交出，并被记录为独立回收所见，不再作为校时附物直接扣押",
+        "evidence": "闻照微确认“它本就不是校时附物”；陆沉渊仍以封布包持残印，未交印。"
+      },
+      {
+        "fact_id": "chapter-0088-fact-012",
+        "asset_id": "artifact_prefecture_transit_registry_seal",
+        "field_path": "artifact.current_visible_trace",
+        "before": "残印震动加重，银灰细痕贴近投影足印时偏开半寸，冷香增强",
+        "after": "活体投影足印恢复稳定，但残印旧影继续向苏晚字样贴近，触碰字边时被影手隔开；冷香与震动持续增强",
+        "evidence": "牵引撤除后投影足印稳定，残印旧影仍在半寸外擦过苏晚二字；分录落成后残印猛震并再次逼近字边。"
+      },
+      {
+        "fact_id": "chapter-0088-fact-013",
+        "asset_id": "artifact_prefecture_transit_registry_seal",
+        "field_path": "artifact.current_holder",
+        "before": "由陆沉渊封布持有，未交出",
+        "after": "仍由陆沉渊持有，封口未开，且在校时期限耗尽后被其收紧护住",
+        "evidence": "陆沉渊挪手展示封布暗结未松；期限耗尽时拇指压住残印边缘并将封布往怀里收紧。"
+      }
+    ],
+    "techniques": [],
+    "relationships": [
+      {
+        "fact_id": "chapter-0088-fact-014",
+        "asset_id": "npc_prefecture_shadow_envoy",
+        "field_path": "relationship.with_character_lu_chenyuan",
+        "before": "闻照微以交印换撤销母子记录自动合并作为交换条件",
+        "after": "双方形成有限可议价关系：闻照微接受分录，陆沉渊仍不交印；她提出继续候验或交印换退路",
+        "evidence": "陆沉渊识别闻照微受回收职责约束后继续谈判；闻照微承认分录并重复两条可选路径。"
+      }
+    ],
+    "emotions": [
+      {
+        "fact_id": "chapter-0088-fact-015",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "emotion.current_tone_toward_npc_prefecture_shadow_envoy",
+        "before": "对闻照微提出交印交换保持敌意与戒备",
+        "after": "敌意转为克制的可议价防备，承认其受回收义务约束但仍拒绝交底和交印",
+        "evidence": "陆沉渊观察到闻照微袖中牵引印使其受制，随后继续追问并接受分录方案，同时坚持封布不交。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "chapter-0088-fact-016",
+        "asset_id": "state_ledger_unresolved_mysteries",
+        "field_path": "state_ledger.current_inference_limit",
+        "before": "具体改动者、原始债因和完整链条仍未确定",
+        "after": "新增疑点：残印为何认得并持续贴近苏晚独立追缴仍未确定；正文未能判断其指向债、人或其他关联",
+        "evidence": "陆沉渊明确说自己看不出残印认得的是债、是人还是别的什么。"
+      },
+      {
+        "fact_id": "chapter-0088-fact-017",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_verified_result",
+        "before": "封布未解、停术时三轮校时出现两道表层灰痕错位，错账结论仍未裁定",
+        "after": "新增可复验分项事实：牵引撤除后活体校时稳定；残印旧回声仍贴近苏晚独立追缴，来源未证",
+        "evidence": "两行黑页记录分别确认牵引撤后稳定与残印旧回声贴近独立追缴且未证其由。"
+      },
+      {
+        "fact_id": "chapter-0088-fact-018",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "information.current_record_scope",
+        "before": "校时台存在将苏晚独立追缴并入陆沉渊到案记录的程序压力",
+        "after": "现场形成两行相互隔开的记录，明确活体校时与苏晚独立追缴不得互相填补",
+        "evidence": "黑页两行字之间被补出窄窄空白，陆沉渊要求“谁都不替谁填”。"
+      },
+      {
+        "fact_id": "chapter-0088-fact-019",
+        "asset_id": "state_ledger_faction_pressure",
+        "field_path": "state_ledger.faction_pressure",
+        "before": "三轮复验后存在继续合并苏晚独立追缴的程序压力",
+        "after": "压力被拆为双向选择：闻照微继续要求回收残印，陆沉渊可继续候验或交印换退路；母子是否合并留待最后裁定",
+        "evidence": "闻照微说明自己仍有回收义务，并在校时终结后将继续候验、交印换退路及最后一次合并裁定分别提出。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "chapter-0088-fact-020",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "hook.current_direction",
+        "before": "闻照微将交印与撤销母子记录自动合并公开绑定为交换条件",
+        "after": "自动合并被拆开后，最后一次裁定只剩“是否合并”这一问题，残印回收与活体校时并行处理",
+        "evidence": "闻照微最后明确说：“最后一次裁定，问的只剩一件事——这两行，是否合并。”"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "chapter-0088-fact-021",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "timeline.chapter_event",
+        "before": "第三轮后拒绝补证和交印，闻照微提出交换",
+        "after": "牵引撤除并完成活体校时分录；校时期限耗尽、影门封闭，是否合并母子记录留待最终裁定",
+        "evidence": "正文从牵引印撤离开始，完成两项记录后以“校时期限已尽”和最后一次合并裁定收束。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "chapter-0088-fact-022",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_physical_state",
+        "before": "胸口持续受校时牵引压迫，左腿伤口发麻，掌心破口带血",
+        "after": "胸口牵引压力消退、气息稳定，但校时终结后左腿疼痛加剧，掌心伤口再裂并出血，残印震动持续使手臂发麻",
+        "evidence": "正文写明牵引撤后胸前暗线沉稳、气息归正；期限耗尽时陆沉渊几乎跪倒，伤口撞击、掌心再裂，血滴落地。"
+      }
+    ],
+    "naming": [
+      {
+        "fact_id": "chapter-0088-fact-023",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "naming.current_record_labels",
+        "before": "到案记录旁存在“苏晚”“独立追缴”字样，存在合并风险",
+        "after": "现场正式采用“活体校时，牵引撤后稳定”与“封布未开，残印旧回声仍贴近苏晚独立追缴，未证其由”两项分录标签",
+        "evidence": "记录吏在黑页上依次写下两行字，且两行之间被保留窄空白。"
+      }
+    ]
+  }
+}

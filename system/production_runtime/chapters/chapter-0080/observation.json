@@ -1,0 +1,188 @@
+{
+  "chapter_id": "chapter-0080",
+  "draft_sha256": "cecf996c9c90174a835277162224916601dc761fb8164f0764f9f691f5e3dad3",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "fact-0080-001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_public_statement",
+        "before": "未追加代签或代认，仅保持不替泥灯巷承担集体确认",
+        "after": "确认本地没有向记录里写入，但拒绝将局部洗清说成伤势、债务或其他后果一并撤销",
+        "evidence": "陆沉渊说“本地没有向记录里写。只到这里”，并接受苏晚对边界的重申。"
+      },
+      {
+        "fact_id": "fact-0080-002",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_procedural_choice",
+        "before": "继续停留在边界外，不触碰阵砖、不运转修为压制伤势，也不代替苏晚确认交付",
+        "after": "面对到案校时令仍未自行越过边界，等待凭据先明确落处",
+        "evidence": "他将脚后跟压稳在砖缝中，表示等凭据摆出来再说。"
+      },
+      {
+        "fact_id": "fact-0080-003",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_visible_condition",
+        "before": "右腕被命籍衙金线缠住，尺骨被勒出喀嚓声，承受新增活体校时拘束伤害",
+        "after": "金线分作三根缠住腕骨、肘弯和肩下，右臂失去知觉并持续承受拘束；右眼失明和痛楚仍在",
+        "evidence": "复核印照向右腕后，金线分成三根，袖口被割开，整条右臂如悬在冰水中。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "fact-0080-004",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_procedural_boundary",
+        "before": "以本人姓名确认仅交付公共阵段的物理范围，不代签、不代认、不附送来源解释",
+        "after": "确认只交付阵段上的灰印、白裂和拖痕，不交付巷内人员、灯火或私人命债；陆沉渊的到案事项由其本人承担",
+        "evidence": "苏晚抬手示意公共痕迹可收走，明确说“我的债留在我这里，巷子的灯也留在巷子里”。"
+      },
+      {
+        "fact_id": "fact-0080-005",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_physical_state",
+        "before": "手背血滴冻结成血珠，腕侧霜白加厚，指关节僵硬，仍未调用命灯驱寒",
+        "after": "命灯裂纹未合拢、倒计时继续下坠；扶灯时手背再次被划伤，新增血珠仍被寒风影响",
+        "evidence": "灯火没有回暖，深灰裂纹未合拢，刻度液面又下坠一线；她扶灯时手背被划出血珠。"
+      }
+    ],
+    "locations": [],
+    "factions": [
+      {
+        "fact_id": "fact-0080-006",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_enforcement_record",
+        "before": "泥灯巷的协助隐匿登记转为悬置中止，禁修仍未撤销",
+        "after": "协助隐匿登记被撤销，禁修灰印剥落并失效",
+        "evidence": "灰色印痕裂开，登记被逐层刮去；禁修灰壳脱离阵壁并碎裂。"
+      },
+      {
+        "fact_id": "fact-0080-007",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_visible_condition",
+        "before": "阵段永久离巷后缺口成为无阻挡黑洞，寒风持续长驱直入，护阵仍未恢复",
+        "after": "缺口、白裂和护阵永久损失继续存在，解除禁修未使护阵自动恢复",
+        "evidence": "正文明确写出护阵少掉的段落没有回来，墙根白裂没有长拢，寒风仍穿过缺口。"
+      },
+      {
+        "fact_id": "fact-0080-008",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_witness_boundary",
+        "before": "形成“交公共阵段，不交住户命火、私人寿数、私人姓名及集体担保”的交付边界",
+        "after": "共同体继续只交公共痕迹，不补交巷内人员、灯火、私人命债或集体担保",
+        "evidence": "街坊无人递灯、无人作保；苏晚示意唯独巷内的人不再补任何一笔。"
+      }
+    ],
+    "artifacts": [],
+    "techniques": [],
+    "relationships": [
+      {
+        "fact_id": "fact-0080-009",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_autonomy_boundary",
+        "before": "苏晚独立确认交付范围，陆沉渊不代签、不代认，双方继续各自承担程序后果",
+        "after": "苏晚明确拒绝陆沉渊替她承担债务，也拒绝让自己的话和巷灯被并入他的到案记录；双方各自承担后果",
+        "evidence": "她说“别替我应”，并明确“我的债留在我这里”。"
+      },
+      {
+        "fact_id": "fact-0080-010",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_collective_choice",
+        "before": "共同体公开承担护阵永久缺口代价，精确交付公共痕迹而拒绝交付私人命火、寿数与集体担保",
+        "after": "共同体在局部裁定后仍不替任何人交火，继续保持不作保、不递灯、不替答的边界",
+        "evidence": "街坊没有上前催促、作保或递灯，只各自守住灯火。"
+      }
+    ],
+    "emotions": [
+      {
+        "fact_id": "fact-0080-011",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_emotional_turn",
+        "before": "陆沉渊接受苏晚宁可独立承担程序后果，双方允许彼此承担各自后果",
+        "after": "母子获得局部清白后仍拒绝以清白遮盖旧债、伤势和巷子损失，关系边界进一步明确",
+        "evidence": "苏晚强调撤销的只是这一回罪名，陆沉渊回答“我知道”，双方没有互相代答或代债。"
+      },
+      {
+        "fact_id": "fact-0080-012",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_collective_emotion",
+        "before": "共同体知晓寒损与护阵缺口后仍共同承担公共痕迹的后果，同时保留退出与不认领权利",
+        "after": "共同体面对局部清白仍保持克制，不欢呼、不替人交火，继续守住共同边界",
+        "evidence": "登记撤销后巷里无人欢呼，街坊无人替苏晚或陆沉渊作保。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "fact-0080-013",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_verified_result",
+        "before": "三轮观察确认封档侧先亮、断砖外侧随后亮、巷内侧持续不亮，该单侧响应可送审",
+        "after": "州府据此确认追时信号由封档转运记录一侧传入，本地三方未向记录内写入",
+        "evidence": "复核印重新展示三轮顺序，并撤销泥灯巷相关登记。"
+      },
+      {
+        "fact_id": "fact-0080-014",
+        "asset_id": "state_ledger_public_reputation",
+        "field_path": "state_ledger.current_public_rule",
+        "before": "逐户追缴须可核验，具名追缴不得重复占用已执行过的寿火期位",
+        "after": "公开认知新增规则：追时响应必须先核验输入方向，不能仅凭同步接触认定现场持有人为改动者",
+        "evidence": "复核印以封档外层先亮、巷内断纹不亮的顺序作出局部裁定。"
+      },
+      {
+        "fact_id": "fact-0080-015",
+        "asset_id": "state_ledger_unresolved_mysteries",
+        "field_path": "state_ledger.current_inference_limit",
+        "before": "改动者身份、封档内容、原始债因和完整转运链仍未确定，仅重分类为封档转运记录一侧",
+        "after": "疑点上收至封档之外的原始转运交接层；具体改动者、原始债因和完整链条仍未确定",
+        "evidence": "锁扣同时锁住同一后压时刻的多个远处微光，陆沉渊确认无法用本地识账触及该处。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "fact-0080-016",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "hook.current_direction",
+        "before": "州府复核回执从泥灯巷转向陆沉渊半寿残籍",
+        "after": "复核印越过本地封档方向，同时锁住同一后压时刻涉及的多处转运记录，并向陆沉渊发出到案校时令",
+        "evidence": "雾中多道细线牵住数个微光，随后白印压到陆沉渊胸前，显出“到案。校时。”"
+      },
+      {
+        "fact_id": "fact-0080-017",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "hook.current_physical_state",
+        "before": "阵砖被暗金丝网拖入浓雾，公共阵段脱离泥灯巷视线",
+        "after": "暗金丝网继续向雾外拖行阵砖，并在锁扣声中牵引陆沉渊的活体追缠纹",
+        "evidence": "丝网拖动阵砖留下摩擦声，金线从陆沉渊腕上分作三根并向外绷直。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "fact-0080-018",
+        "asset_id": "state_ledger_faction_pressure",
+        "field_path": "timeline.chapter_event",
+        "before": "泥灯巷登记悬置中止，州府压力转向陆沉渊活体校时",
+        "after": "局部裁定撤销泥灯巷协助隐匿登记与禁修，压力正式转移为州府对陆沉渊的到案校时要求，并继续追查上层转运记录",
+        "evidence": "灰印剥落后，复核印锁住封档方向并向陆沉渊发送“到案。校时。”命令。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "fact-0080-019",
+        "asset_id": "state_ledger_half_life_registry_exposure",
+        "field_path": "state_ledger.current_exchange_exposure_delta",
+        "before": "陆沉渊被州府复核指令锁定为半寿残籍暴露者，并要求提取为活体校时样本",
+        "after": "半寿暴露未下降，陆沉渊被实际施加活体校时拘束并正式要求到案",
+        "evidence": "复核印照向其右腕，三根金线将他钉在原地，胸前显出到案校时命令。"
+      },
+      {
+        "fact_id": "fact-0080-020",
+        "asset_id": "state_ledger_mother_life_lamp_countdown",
+        "field_path": "state_ledger.current_countdown_state",
+        "before": "倒计时未回升，刻度管液面继续向下滑落一线",
+        "after": "倒计时继续下坠，命灯裂纹未修复，苏晚旧债和后续分期压力仍在",
+        "evidence": "液面又往下坠了一线，灯芯虚薄，深灰裂纹没有合拢；苏晚明确说债和下一次应付的日子仍在。"
+      }
+    ],
+    "naming": []
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "chapter_id": "chapter-0012",
+  "dramatic_purpose": "角色残留让杜承礼在街上错误拦人。",
+  "must_keep": [
+    "杜承礼主动交出盔箱钥匙并接受卸装监护。",
+    "POV 固定为杜承礼"
+  ],
+  "must_avoid": [
+    "不得引入未登记资产或用旁白代替物质行动",
+    "不得回滚已接受状态"
+  ],
+  "expected_state_deltas": [
+    {
+      "state_id": "v1.ch012.outcome",
+      "asset_id": "char_du_chengli",
+      "field_path": "character.current_state",
+      "after": "杜承礼主动交出盔箱钥匙并接受卸装监护。",
+      "before": "守门角色残留进入杜承礼的日常判断。"
+    }
+  ],
+  "required_asset_ids": [
+    "char_du_chengli",
+    "artifact_role_helmet",
+    "bond_team_mutual_audit"
+  ],
+  "active_hook_ids": [],
+  "scene_constraints": [
+    "冲突必须落在具体工艺现场、物证或受影响者选择上"
+  ]
+}

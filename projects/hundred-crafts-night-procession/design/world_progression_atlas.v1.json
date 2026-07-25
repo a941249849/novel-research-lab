@@ -1,0 +1,396 @@
+{
+  "version": "1.0",
+  "project_id": "hundred-crafts-night-procession",
+  "progression_rule": "成长提高责任范围、复核能力和叫停权限，不提供无代价战力碾压。",
+  "competencies": [
+    {
+      "competency_id": "material_reading",
+      "name": "识材",
+      "mastery_proof": "能区分材料现状、来源与不可见代价"
+    },
+    {
+      "competency_id": "damage_verification",
+      "name": "验损",
+      "mastery_proof": "能提出可证伪的失效判断"
+    },
+    {
+      "competency_id": "sequence_design",
+      "name": "成序",
+      "mastery_proof": "能说明工序顺序及回滚点"
+    },
+    {
+      "competency_id": "multi_role_coordination",
+      "name": "合手",
+      "mastery_proof": "能让不同岗位保有独立否决"
+    },
+    {
+      "competency_id": "burden_distribution",
+      "name": "分载",
+      "mastery_proof": "能公开受益者、承重者和清偿人"
+    },
+    {
+      "competency_id": "accountable_record",
+      "name": "留档",
+      "mastery_proof": "能保存版本、异议、期限和退出条件"
+    }
+  ],
+  "authority_ranks": [
+    {
+      "rank": "见习",
+      "entry_proof": "在监督下完成单项识材与记录",
+      "permissions": [
+        "标记异常",
+        "请求复核"
+      ],
+      "prohibitions": [
+        "不得改变公共结构",
+        "不得代签授权"
+      ],
+      "liability": "错误由本人和监督者共同复盘"
+    },
+    {
+      "rank": "成手",
+      "entry_proof": "独立完成可逆工序并通过事故复盘",
+      "permissions": [
+        "执行可逆干预",
+        "拒绝超出工种范围的任务"
+      ],
+      "prohibitions": [
+        "不得主持跨工种方案",
+        "不得隐瞒失败"
+      ],
+      "liability": "承担本人操作、记录和及时停工责任"
+    },
+    {
+      "rank": "主作",
+      "entry_proof": "主持一次多岗位工程且完整清偿后续责任",
+      "permissions": [
+        "组织工序",
+        "签署本工种方案",
+        "触发局部叫停"
+      ],
+      "prohibitions": [
+        "不得替受影响者授权",
+        "不得取消异议"
+      ],
+      "liability": "承担本工种方案的期限、交接和失效声明"
+    },
+    {
+      "rank": "总验",
+      "entry_proof": "证明能公开自身方案的失败条件并接受外部否决",
+      "permissions": [
+        "主持验损",
+        "召集多方签验",
+        "叫停重大工程"
+      ],
+      "prohibitions": [
+        "不得决定谁承重",
+        "不得成为终身职位",
+        "不得越过地域知识权"
+      ],
+      "liability": "承担信息完整、程序有效和权力按期退出责任"
+    }
+  ],
+  "volumes": [
+    {
+      "volume": 1,
+      "working_title": "无名梁",
+      "scope": "一座旧戏楼、地下船体与相邻街区",
+      "entry_conditions": [
+        "v1.baseline"
+      ],
+      "new_rule": "居民异议首次能阻止旧系统自动执行。",
+      "irreversible_cost": "团队成为临时维护班组，也背负三年期限和下游封舱债。",
+      "evidence_routes": [
+        "p0-central-plain",
+        "p0-jiangnan-water",
+        "p0-fujian-maritime"
+      ],
+      "blocking_research": [
+        "古建现场最小干预复核",
+        "地下水网与海损应急细节"
+      ]
+    },
+    {
+      "volume": 2,
+      "working_title": "卸装城",
+      "scope": "地方戏班、庙会临时设施与城市公共身份系统",
+      "entry_conditions": [
+        "父亲完整责任账向居民公开，街区只获得三年可维护方案，全国十二处异常显形。",
+        "旧角色承担的公共义务无人接手，城市短期服务能力下降。"
+      ],
+      "new_rule": "剧装署名、维护费和合理复制规则建立。",
+      "irreversible_cost": "旧角色承担的公共义务无人接手，城市短期服务能力下降。",
+      "evidence_routes": [
+        "p0-central-plain",
+        "p1-lingnan-river-sea"
+      ],
+      "blocking_research": [
+        "不同剧种程式分源",
+        "演员、盔箱师与修补岗位口述"
+      ]
+    },
+    {
+      "volume": 3,
+      "working_title": "封舱潮",
+      "scope": "沿海港口、内河应急网络与下游小城",
+      "entry_conditions": [
+        "角色授权与真实身份分离，任何公共角色第一次获得拒绝和卸装期限。",
+        "公开旧舱导致航运停摆和物资价格波动。"
+      ],
+      "new_rule": "应急隔离从个人判断转为多港互认协议。",
+      "irreversible_cost": "公开旧舱导致航运停摆和物资价格波动。",
+      "evidence_routes": [
+        "p0-fujian-maritime",
+        "p0-jingchu-river",
+        "p1-lingnan-river-sea"
+      ],
+      "blocking_research": [
+        "真实海损处置",
+        "船员与货舱管理",
+        "台风盐雾维修"
+      ]
+    },
+    {
+      "volume": 4,
+      "working_title": "纸上无名",
+      "scope": "档案馆、纸坊、修复机构和责任账访问权",
+      "entry_conditions": [
+        "全国封舱必须公开内容、期限、转运和最终清偿人。",
+        "公开不等于补偿，大量旧案重新进入现实。"
+      ],
+      "new_rule": "档案不再只是专家内部真相。",
+      "irreversible_cost": "公开不等于补偿，大量旧案重新进入现实。",
+      "evidence_routes": [
+        "p1-northwest-corridor",
+        "p1-southwest-highlands"
+      ],
+      "blocking_research": [
+        "手工纸生产账与修复伦理",
+        "隐私和口述史授权"
+      ]
+    },
+    {
+      "volume": 5,
+      "working_title": "一尺九法",
+      "scope": "跨区域工程标准与地方工谱",
+      "entry_conditions": [
+        "责任账开放受影响者访问、异议和版本追踪。",
+        "地方组织也利用例外条款保护垄断和排外。"
+      ],
+      "new_rule": "建立只共享接口、不抹平地方材料和术语的工谱协议。",
+      "irreversible_cost": "地方组织也利用例外条款保护垄断和排外。",
+      "evidence_routes": [
+        "p0-central-plain",
+        "p1-northwest-corridor",
+        "p1-plateau-oasis-boundaries"
+      ],
+      "blocking_research": [
+        "跨区尺度换算案例",
+        "地方权威与知识所有权"
+      ]
+    },
+    {
+      "volume": 6,
+      "working_title": "不开的窑",
+      "scope": "陶瓷产区、能源供应与整批不可逆决策",
+      "entry_conditions": [
+        "标准必须标注适用范围、例外、证据等级和地方否决条件。",
+        "停窑使多个城市失去替换构件，临时骨架则开始逼近风载和使用期限。"
+      ],
+      "new_rule": "不可逆工程引入试样、见证和叫停权。",
+      "irreversible_cost": "停窑使多个城市失去替换构件，临时骨架则开始逼近风载和使用期限。",
+      "evidence_routes": [
+        "p0-jiangnan-water"
+      ],
+      "blocking_research": [
+        "装窑岗位与失败批次",
+        "燃料和环境代价"
+      ]
+    },
+    {
+      "volume": 7,
+      "working_title": "减去的城",
+      "scope": "晋陕堡寨、会馆、石作与金属连接",
+      "entry_conditions": [
+        "团队接受无法恢复原状，以公开报废代替伪造成功。",
+        "被减去的社区要求土地、记忆和迁移补偿。"
+      ],
+      "new_rule": "历史价值和现实安全首次进入同一责任账。",
+      "irreversible_cost": "被减去的社区要求土地、记忆和迁移补偿。",
+      "evidence_routes": [
+        "p1-northwest-corridor"
+      ],
+      "blocking_research": [
+        "山西会馆与河西石作",
+        "铸造和连接失效个案"
+      ]
+    },
+    {
+      "volume": 8,
+      "working_title": "无主纹",
+      "scope": "云贵山地、织染网络与城市复制市场",
+      "entry_conditions": [
+        "去除从技术决定升级为公开损失清单与共同授权。",
+        "不同社区对同一变体提出冲突权利。"
+      ],
+      "new_rule": "作者、社区、用途和变体进入复制协议。",
+      "irreversible_cost": "不同社区对同一变体提出冲突权利。",
+      "evidence_routes": [
+        "p1-southwest-highlands"
+      ],
+      "blocking_research": [
+        "社区内纹样使用边界",
+        "女性劳动与跨族群交换"
+      ]
+    },
+    {
+      "volume": 9,
+      "working_title": "药成两面",
+      "scope": "药材产地、炮制网络、公共救治与风险分配",
+      "entry_conditions": [
+        "团队放弃掌握完整纹样库，建立社区可撤回的使用授权。",
+        "停用使急救能力下降，继续使用又无法保证长期安全。"
+      ],
+      "new_rule": "效用、毒性、不良结果和补偿进入同一记录。",
+      "irreversible_cost": "停用使急救能力下降，继续使用又无法保证长期安全。",
+      "evidence_routes": [
+        "p1-southwest-highlands",
+        "p1-plateau-oasis-boundaries"
+      ],
+      "blocking_research": [
+        "专业炮制与药物史校正",
+        "禁止形成现实医疗建议"
+      ]
+    },
+    {
+      "volume": 10,
+      "working_title": "停伐钟",
+      "scope": "东北林场、机械维修、家庭岗位与生态转型",
+      "entry_conditions": [
+        "公共救治承认不确定性、批次差异和拒绝权。",
+        "退出旧系统造成区域能源和材料短缺。"
+      ],
+      "new_rule": "设施退役与人员转岗、旧伤和生态恢复同时记账。",
+      "irreversible_cost": "退出旧系统造成区域能源和材料短缺。",
+      "evidence_routes": [
+        "p1-northeast-forest-industry"
+      ],
+      "blocking_research": [
+        "工业维修和事故档案",
+        "女性家属与转岗职工口述"
+      ]
+    },
+    {
+      "volume": 11,
+      "working_title": "九地同工",
+      "scope": "九个地域工谱的互认与冲突",
+      "entry_conditions": [
+        "一套百年生产系统首次被允许有计划退役，而非修到永远。",
+        "最弱地区无法承担接口成本，平等规则制造新的不平等。"
+      ],
+      "new_rule": "形成联邦式工谱而非中央技能树。",
+      "irreversible_cost": "最弱地区无法承担接口成本，平等规则制造新的不平等。",
+      "evidence_routes": [
+        "p0-central-plain",
+        "p0-jiangnan-water",
+        "p0-fujian-maritime",
+        "p0-jingchu-river",
+        "p1-northwest-corridor",
+        "p1-lingnan-river-sea",
+        "p1-southwest-highlands",
+        "p1-northeast-forest-industry",
+        "p1-plateau-oasis-boundaries"
+      ],
+      "blocking_research": [
+        "九地各一项反例",
+        "跨语言与社区授权机制"
+      ]
+    },
+    {
+      "volume": 12,
+      "working_title": "万物来处",
+      "scope": "木、纸、矿、染料、药材和能源的全国供应链",
+      "entry_conditions": [
+        "互认只覆盖最低公共接口，各地保留解释权和退出权。",
+        "短缺让富裕地区争夺合规材料。"
+      ],
+      "new_rule": "材料来源、环境代价和劳动条件进入公共工程准入。",
+      "irreversible_cost": "短缺让富裕地区争夺合规材料。",
+      "evidence_routes": [
+        "p1-northwest-corridor",
+        "p1-southwest-highlands",
+        "p1-northeast-forest-industry"
+      ],
+      "blocking_research": [
+        "真实供应链与劳动史",
+        "环境影响边界"
+      ]
+    },
+    {
+      "volume": 13,
+      "working_title": "谁准许修复",
+      "scope": "全国重大节点的公共授权实验",
+      "entry_conditions": [
+        "团队承认有些修复因材料来源不正当而不得实施。",
+        "民主程序变慢，危机中的死亡无法完全避免。"
+      ],
+      "new_rule": "公共授权不再由总验或行政机构单独签署。",
+      "irreversible_cost": "民主程序变慢，危机中的死亡无法完全避免。",
+      "evidence_routes": [
+        "p0-jiangnan-water",
+        "p1-lingnan-river-sea"
+      ],
+      "blocking_research": [
+        "灾害治理与参与式决策案例",
+        "弱势群体表达机制"
+      ]
+    },
+    {
+      "volume": 14,
+      "working_title": "天下旧账",
+      "scope": "官造纪以来的全国暗载审计",
+      "entry_conditions": [
+        "紧急权力获得时限、复核和事后补偿，普通人也拥有有成本的否决权。",
+        "归零议会利用公开后的愤怒推动彻底重置。"
+      ],
+      "new_rule": "暗载首次进入公共财政和长期维护。",
+      "irreversible_cost": "归零议会利用公开后的愤怒推动彻底重置。",
+      "evidence_routes": [
+        "p0-central-plain",
+        "p1-northeast-forest-industry",
+        "p1-northwest-corridor"
+      ],
+      "blocking_research": [
+        "历史责任与补偿制度比较",
+        "档案隐私和证言冲突"
+      ]
+    },
+    {
+      "volume": 15,
+      "working_title": "可退出之城",
+      "scope": "文明级损潮与四种公共方案的最终选择",
+      "entry_conditions": [
+        "偿还从寻找单一罪人转为承认制度受益、现实补偿和有限追责。",
+        "终局不消灭损伤，只把未来的人纳入能够看见并重新协商的制度。"
+      ],
+      "new_rule": "文明承认无法一次完成，维护权与退出权同时存在。",
+      "irreversible_cost": "终局不消灭损伤，只把未来的人纳入能够看见并重新协商的制度。",
+      "evidence_routes": [
+        "p0-central-plain",
+        "p0-jiangnan-water",
+        "p0-fujian-maritime",
+        "p0-jingchu-river",
+        "p1-northwest-corridor",
+        "p1-lingnan-river-sea",
+        "p1-southwest-highlands",
+        "p1-northeast-forest-industry",
+        "p1-plateau-oasis-boundaries"
+      ],
+      "blocking_research": [
+        "独立伦理审查",
+        "全书伏笔回收与人物终局压力测试"
+      ]
+    }
+  ]
+}

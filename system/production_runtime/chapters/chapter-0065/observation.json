@@ -1,0 +1,63 @@
+{
+  "chapter_id": "chapter-0065",
+  "draft_sha256": "ab551f78c7496bb4fd10f0708d44666081ecdc8ce1c8b1538670f136d3ff99b5",
+  "facts": {
+    "characters": [],
+    "npcs": [],
+    "locations": [],
+    "factions": [],
+    "artifacts": [],
+    "techniques": [],
+    "relationships": [
+      {
+        "fact_id": "fact-0065-03",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_emotional_turn",
+        "before": "陆沉渊放弃以暂缓替苏晚避险，只扶灯座和她允许交出的身体重量，转为陪她承担拒迁后的风险",
+        "after": "陆沉渊服从苏晚选择，放弃追求一次全胜的翻案机会，通过提供物理支撑陪她承担拒迁风险，苏晚亦虚虚靠其小臂予以回应，体现双方在克制中的亲缘凝聚力",
+        "evidence": "他没有开口劝说，也没有用眼神暗示。他撤回了所有代管要求...平直伸出左臂...苏晚的手臂在半空中停顿了极其微小的半秒。她手肘微沉，虚虚地靠在了陆沉渊冻得僵硬如铁的小臂上。借着这微弱却坚实的支撑，她稳住身形，收回了部分命灯直射，接受在已知事实范围内定案。"
+      }
+    ],
+    "emotions": [],
+    "information": [
+      {
+        "fact_id": "fact-0065-01",
+        "asset_id": "state_ledger_faction_pressure",
+        "field_path": "state_ledger.current_next_procedural_hook",
+        "before": "命审受理范围被限定为裁定连额归属，不得在本次裁定中一并免除归属清楚的旧寿债",
+        "after": "命审程序争点收窄为迁籍附条的形成与执行效力，且程序压力从选择争点转入不可撤回的实物压印检验",
+        "evidence": "右侧迁籍槽骤然亮起刺目白光...左侧原债槽在一阵沉闷的机括声中，被石案内部弹出的厚重黑色石板死死封住。命审程序永久锁定，本轮审查争点收窄为：迁籍附条的形成与执行效力。母债有效性被强行搁置，不发生任何隐性免债。...命审台将程序压力从选择争点直接转入不可撤回的实物压印检验。"
+      },
+      {
+        "fact_id": "fact-0065-02",
+        "asset_id": "state_ledger_faction_pressure",
+        "field_path": "state_ledger.faction_pressure",
+        "before": "无具名共同空额和锁龛执行被撤销，压力转向归属清楚 of 苏晚旧追缴令",
+        "after": "压力转向迁籍附条与重复执行冲突的州府复核，本地局部改账兑现，更高层追查旧债转运记录",
+        "evidence": "本次追缴所占用的当期寿火位，被这道白光确认为在之前的记录中已经执行过，当前追缴令因此彻底失效。...迁籍附条与重复执行的底层冲突被一并打包，化作一道无法拦截的冷硬流光，直接送入州府进行更高级别的复核。...在更高层无法触及的阴影中，州府的核查机制被悄然触发，冷酷地追查究竟是谁触碰了苏晚旧债的转运记录。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "fact-0065-05",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "hook.unread_migration_clause",
+        "before": "命审台警告选错争点的一方将在最后一格耗尽前失去所有再次申辩机会，且最后一格液体开始加速沸腾下降走刻",
+        "after": "命审台限制选择完毕，将程序压力转向原债印与附条在同一块压印石上的重新受压",
+        "evidence": "右侧迁籍槽骤然亮起刺目白光...左侧原债槽在一阵沉闷的机括声中...死死封住。...石案正中央缓缓升起一块平整的方形压印石。命审台将程序压力从选择争点直接转入不可撤回的实物压印检验。它只要求：原债印与附条必须在同一块压印石上重新受压。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "fact-0065-04",
+        "asset_id": "state_ledger_mother_life_lamp_countdown",
+        "field_path": "state_ledger.current_countdown_state",
+        "before": "最后一格继续缩短；旧裂旁新增一道越过灯腹、向灯座延伸且未合拢的冷纹",
+        "after": "最后一格计时液体在沸腾中继续向下滑落",
+        "evidence": "最上方那格沸腾的计时液体停顿片刻后继续向下滑落。"
+      }
+    ],
+    "physical_state": [],
+    "naming": []
+  }
+}

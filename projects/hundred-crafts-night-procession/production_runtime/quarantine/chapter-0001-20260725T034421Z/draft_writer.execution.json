@@ -1,0 +1,9 @@
+{
+  "version": "0.28",
+  "chapter_id": "chapter-0001",
+  "role": "draft_writer",
+  "artifact": "projects/hundred-crafts-night-procession/production_runtime/chapters/chapter-0001/draft.md",
+  "artifact_sha256": "c7b9e0923b3b7d9d52a0ed6a3094fc961ec4603db2282b5e02baba4678bfc588",
+  "provider": "codex",
+  "model": "gpt-5.6-terra"
+}

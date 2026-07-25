@@ -1,0 +1,151 @@
+{
+  "chapter_id": "chapter-0087",
+  "accepted_revision_sha256": "a39bd7466bc1dd74339295178a5bd59b266fa9791a6c0b433604ca56afb2dfbf",
+  "state_deltas": [
+    {
+      "fact_id": "chapter-0087-character-001",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_choice",
+      "operation": "set",
+      "before": "要求校时台只记录本人，不并入苏晚的独立追缴",
+      "after": "要求删去来源、债务、亲缘询问，只保留封布沿途未开、站位及撤回或留下事实，并拒绝替同行者补答"
+    },
+    {
+      "fact_id": "chapter-0087-character-002",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_procedural_status",
+      "operation": "set",
+      "before": "完成三轮外层校时比对，结论暂止于两份表层记录不相合，仍留在台内候验",
+      "after": "见证被收窄，陆沉渊自行承担答验缺口；苏晚独立追缴与其到案记录保持并列，未完成自动合并"
+    },
+    {
+      "fact_id": "chapter-0087-character-003",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_public_statement",
+      "operation": "set",
+      "before": "再次要求校时台只记录本人，不并入苏晚的独立追缴",
+      "after": "公开声明“她那一行，不许算在我到案里”，并拒绝交出残印，要求先逐笔记明断差"
+    },
+    {
+      "fact_id": "chapter-0087-character-004",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_physical_state",
+      "operation": "set",
+      "before": "右手受残印冷光影响，手背有灰白小孔；仍处外层候验",
+      "after": "手背小孔渗血并被掌心挤破，左腿伤口发麻，残印震动使手臂和胸口持续受压"
+    },
+    {
+      "fact_id": "chapter-0087-npc-001",
+      "asset_id": "npc_prefecture_shadow_envoy",
+      "field_path": "npc.current_recovery_strategy",
+      "operation": "set",
+      "before": "后续压力转为继续候验或交印",
+      "after": "闻照微公开提出交出残印即可撤掉苏晚母子记录的自动合并，交换条件明确化"
+    },
+    {
+      "fact_id": "chapter-0087-faction-001",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_operational_rule",
+      "operation": "set",
+      "before": "同行者只送路和观察，不递灯、不替陆沉渊答话；灯火变暗者退回门内且不被阻拦",
+      "after": "同行者逐一声明只确认封布沿途未开及各自站位，部分撤回后续见证并离开，留下者继续不越冷线、不替他答话"
+    },
+    {
+      "fact_id": "chapter-0087-faction-002",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_witness_boundary",
+      "operation": "set",
+      "before": "只看封布、灯火和行进，不跨白裂、不替本人应答",
+      "after": "共同见证永久收窄为封布沿途未开、同行站位及是否有人代答，不确认残印来源、亲缘承接或债务关系"
+    },
+    {
+      "fact_id": "chapter-0087-faction-003",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_visible_condition",
+      "operation": "set",
+      "before": "白裂向城界方向延伸，阵皮与石屑持续脱落",
+      "after": "校时台压迫导致护阵白裂受损加剧，灯火齐暗并出现银灰火屑"
+    },
+    {
+      "fact_id": "chapter-0087-faction-004",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_enforcement_record",
+      "operation": "set",
+      "before": "命籍衙试图将苏晚独立追缴与陆沉渊到案记录自动合并",
+      "after": "自动合并未落印，苏晚记录被隔在陆沉渊到案记录旁，仍作为独立追缴并列"
+    },
+    {
+      "fact_id": "chapter-0087-artifact-001",
+      "asset_id": "artifact_prefecture_transit_registry_seal",
+      "field_path": "artifact.current_procedural_relation",
+      "operation": "set",
+      "before": "残印仍未交接，表层灰痕与到案投影足印保持错位",
+      "after": "残印仍未交出，表层灰痕继续与投影足印错位，陆沉渊要求先记录断差再按规程处置"
+    },
+    {
+      "fact_id": "artifact_prefecture_transit_registry_seal",
+      "asset_id": "artifact_prefecture_transit_registry_seal",
+      "field_path": "artifact.current_visible_trace",
+      "operation": "set",
+      "before": "残印持续撞击封布，冷香加重，银灰痕迹重复偏转",
+      "after": "残印震动加重，银灰细痕仍在贴近投影足印时偏开半寸，冷香继续增强"
+    },
+    {
+      "fact_id": "chapter-0087-relationship-001",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_collective_choice",
+      "operation": "set",
+      "before": "部分同行者退出，剩余者继续低灯、远距同行至城界外沿",
+      "after": "部分同行者依法撤回后续见证并离开，留下者只重述保管路径与站位，不越线代证"
+    },
+    {
+      "fact_id": "chapter-0087-relationship-002",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_trust_state",
+      "operation": "set",
+      "before": "同行者确认“到案是陆沉渊的事、送路是共同体的事”，保持观察与退回权",
+      "after": "陆沉渊主动保护退出权并拒绝替他们补证，留下者因此继续站定但不越界"
+    },
+    {
+      "fact_id": "chapter-0087-relationship-003",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_collective_emotion",
+      "operation": "set",
+      "before": "担忧转为确认陆沉渊把共同边界置于自身便利之前",
+      "after": "信任具体表现为留下者在压力下仍只陈述可核验事实，并共同拒绝被扩写为来源或亲缘见证"
+    },
+    {
+      "fact_id": "chapter-0087-information-001",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "information.current_witness_record",
+      "operation": "set",
+      "before": "同行者可被要求补足封物来源、亲缘承接及债务关系",
+      "after": "现场记录仅保留封布沿途未开、同行者站位、灯火状态、是否代答及撤回情况"
+    },
+    {
+      "fact_id": "chapter-0087-hook-001",
+      "asset_id": "foreshadowing_cinder_seal_rain",
+      "field_path": "hook.current_direction",
+      "operation": "set",
+      "before": "压力集中于继续候验或交印，并试图合并苏晚记录",
+      "after": "闻照微现身，将交印与撤销母子记录自动合并公开绑定为交换条件"
+    },
+    {
+      "fact_id": "chapter-0087-timeline-001",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "timeline.chapter_event",
+      "operation": "set",
+      "before": "在外层校时台完成三轮重复比对并观察偏转",
+      "after": "第三轮后，同行者在外层候验栏逐一撤名或限缩见证；陆沉渊拒绝补证和交印，闻照微现身提出交换"
+    },
+    {
+      "fact_id": "chapter-0087-physical-001",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "state_ledger.faction_pressure",
+      "operation": "set",
+      "before": "三轮复验后出现继续合并苏晚独立追缴的程序压力",
+      "after": "程序压力新增“保管污染，待验禁修”，并压迫泥灯巷护阵与灯火"
+    }
+  ],
+  "resolved_audit_ids": []
+}

@@ -1,0 +1,71 @@
+{
+  "chapter_id": "chapter-0030",
+  "accepted_revision_sha256": "72a540c4ff313cdbf0dfc73b21c538d3ba4d3665250a1038dd11228d0c51c245",
+  "state_deltas": [
+    {
+      "fact_id": "fact-0030-05",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_visible_condition",
+      "operation": "set",
+      "before": "手腕灰白冷痕加深呈骨色苍白，左膝落地闷响且使不上力，胸骨旧裂处持续嘎吱闷响",
+      "after": "手腕冷痕比昨日更白，胸骨旧裂处因咳嗽震动导致冷灰渗进肋骨衣襟留下一片深色洇痕，起身与行走时左膝持续失稳"
+    },
+    {
+      "fact_id": "fact-0030-04",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_local_enforcement_phase",
+      "operation": "set",
+      "before": "州府命库覆核闻照微公开回收目标，封锁影印转为银灰霜花，并在入口墙面显现三日交人期限，逾期全巷户灯永久失温",
+      "after": "本地命审台正式记录泥灯巷均拒绝填写交人姓名并确认无权追加本地追缴，但由闻照微冷影刻度固化的三日期限与霜线依然生效"
+    },
+    {
+      "fact_id": "fact-0030-08",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_boundary_condition",
+      "operation": "set",
+      "before": "全巷户灯在不到两刻钟内全部失温变成无热度的淡青色，且进入三日交人倒计时",
+      "after": "全巷户灯被归还但继续保持无热度淡青色，门槛前与回灯架上均出现闻照微影使霜线，且护阵裂口黑色空洞扩大一指宽"
+    },
+    {
+      "fact_id": "fact-0030-03",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_collective_choice",
+      "operation": "set",
+      "before": "三户公开选择先救受困者、暂不取箱，并共同承担临街屋彻底失用的后果",
+      "after": "到场三户住户在领回顾家户灯后，共同公开拒绝在空白名帖上填写交人姓名"
+    },
+    {
+      "fact_id": "fact-0030-01",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_procedure_result",
+      "operation": "set",
+      "before": "清晨封档前完成一项局部反打：转运记录错误正式留档，但改账与退追缴尚未完成",
+      "after": "顾家一笔重复征收被正式改作错征退回，被扣押的五盏户灯当场归还，完成本窗口的局部改账兑现"
+    },
+    {
+      "fact_id": "fact-0030-02",
+      "asset_id": "state_ledger_poorcity_returnfire",
+      "field_path": "state_ledger.current_return_transaction",
+      "operation": "set",
+      "before": "仍未发生命火转移；顾家余火只被确认尚存，未被调用或归还",
+      "after": "顾家被扣户灯归还，但仍未发生新的命火转移或主动归还"
+    },
+    {
+      "fact_id": "fact-0030-07",
+      "asset_id": "state_ledger_faction_pressure",
+      "field_path": "state_ledger.faction_pressure",
+      "operation": "set",
+      "before": "州府命库覆核闻照微公开回收目标，在废弃命址出口固化影印并显现三日交人期限字样，压力跨越新的可见阈值",
+      "after": "闻照微的冷影刻度在命审台门槛霜线上显现为三道短横，每闭合一道将使户灯进一步失温，逾期未指定交人则全巷永久失温，第一道已隐现合拢趋势"
+    },
+    {
+      "fact_id": "fact-0030-06",
+      "asset_id": "state_ledger_protagonist_strain",
+      "field_path": "state_ledger.current_visible_condition",
+      "operation": "set",
+      "before": "手腕灰白冷痕加深呈骨色苍白，左膝落地闷响且使不上力，胸骨旧裂处持续嘎吱闷响",
+      "after": "手腕冷痕比昨日更白，胸骨旧裂处因咳嗽震动导致冷灰渗进肋骨衣襟留下一片深色洇痕，起身与行走时左膝持续失稳"
+    }
+  ],
+  "resolved_audit_ids": []
+}

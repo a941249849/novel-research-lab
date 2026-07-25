@@ -1,0 +1,675 @@
+{
+  "manifest_version": "0.20",
+  "manifest_id": "borrowed-heaven-asset-graph-remediation-v0.20",
+  "project": "《借天改命账》",
+  "generated_at": "2026-07-13T06:56:24+08:00",
+  "scope": {
+    "mode": "metadata_only_evidence_grounded_remediation",
+    "owned_files": [
+      "system/creation_assets/project_assets.v0.2.json",
+      "system/agent_ops/validation/borrowed_heaven_asset_graph_remediation_v0.20.json"
+    ],
+    "excluded_work": [
+      "novel prose",
+      "chapter plans",
+      "dialogue",
+      "scenes",
+      "Story Bible edits",
+      "outline edits",
+      "unsupported plot events"
+    ]
+  },
+  "source_snapshot": [
+    {
+      "source_id": "asset_graph_review_v020",
+      "path": ".agent-handoff/antigravity/responses/nrl-v020-asset-graph-review.md",
+      "sha256": "4b6ca639ae6bff78e1a8370903877122da7004caffdc534cfcabe034b94e0047"
+    },
+    {
+      "source_id": "cross_book_distillation_v018",
+      "path": "system/agent_ops/inbox/deep_read_v0.18/cross_book_distillation.json",
+      "sha256": "981ccf2ceebaa4616e6a3c29896e525100981813fcc5d0aaf27d0684997ed87b"
+    },
+    {
+      "source_id": "project_reconciliation_v019",
+      "path": "system/agent_ops/inbox/borrowed_heaven_project_reconciliation_v0.19.json",
+      "sha256": "4344828f74d2dadf33f5ce9e8b353451533660c248eb59e46d7293acda441284"
+    },
+    {
+      "source_id": "life_account_bible",
+      "path": "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md",
+      "sha256": "5cab7816be272af5c6a3794092c6387c9b09af521c245c2ce9a3f22f1c02c383"
+    },
+    {
+      "source_id": "volume1_outline_tree",
+      "path": "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md",
+      "sha256": "511b0ab58a48f2f553874075e5fa84be25a815bbf4578ad8a3ccf99a8ae1f48b"
+    },
+    {
+      "source_id": "asset_store_pre_remediation",
+      "path": "system/creation_assets/project_assets.v0.2.json",
+      "sha256": "43ded9576e0fb1a9594aef7d141db508aaea9da3c8dd3276d6cb23889986fff4"
+    }
+  ],
+  "asset_store_transition": {
+    "path": "system/creation_assets/project_assets.v0.2.json",
+    "pre_remediation_sha256": "43ded9576e0fb1a9594aef7d141db508aaea9da3c8dd3276d6cb23889986fff4",
+    "post_remediation_sha256": "87d128be710a53a2c999faa2bb955594bda047aa80c2a1090721ed4e1f188903",
+    "pre_asset_count": 33,
+    "post_asset_count": 38
+  },
+  "changed_assets": [
+    {
+      "asset_id": "artifact_ashlight_cup",
+      "change_types": [
+        "canonical_alias",
+        "lifecycle_gate",
+        "prerequisite_semantics",
+        "provenance"
+      ],
+      "reason": "Made 残命灯盏 the canonical display name, retained 灰烬回灯盏 only as a deprecated alias normalized to the stable asset ID, and moved the artifact to dormant until its outline-missing acquisition, consented watch-fire awakening, and linked ledger transaction validate.",
+      "source_refs": [
+        ".agent-handoff/antigravity/responses/nrl-v020-asset-graph-review.md#L12-L13,L20-L21,L43-L46",
+        "system/agent_ops/inbox/borrowed_heaven_project_reconciliation_v0.19.json#/required_changes/0",
+        "system/agent_ops/inbox/borrowed_heaven_project_reconciliation_v0.19.json#/required_changes/1",
+        "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md#L217",
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md#L44-L54",
+        "system/agent_ops/inbox/deep_read_v0.18/cross_book_distillation.json#/cross_book_mechanisms/0"
+      ],
+      "source_hashes": [
+        "4b6ca639ae6bff78e1a8370903877122da7004caffdc534cfcabe034b94e0047",
+        "4344828f74d2dadf33f5ce9e8b353451533660c248eb59e46d7293acda441284",
+        "5cab7816be272af5c6a3794092c6387c9b09af521c245c2ce9a3f22f1c02c383",
+        "511b0ab58a48f2f553874075e5fa84be25a815bbf4578ad8a3ccf99a8ae1f48b",
+        "981ccf2ceebaa4616e6a3c29896e525100981813fcc5d0aaf27d0684997ed87b"
+      ]
+    },
+    {
+      "asset_id": "artifact_prefecture_transit_registry_seal",
+      "change_types": [
+        "canonical_asset_reference",
+        "provenance"
+      ],
+      "reason": "Replaced the lamp-name dependency with the stable artifact ID and removed unbound v0.17 promotion evidence.",
+      "source_refs": [
+        ".agent-handoff/antigravity/responses/nrl-v020-asset-graph-review.md#L25-L27,L49",
+        "system/agent_ops/inbox/borrowed_heaven_project_reconciliation_v0.19.json#/assessments/asset_and_state_consistency/6",
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md#L83-L94"
+      ],
+      "source_hashes": [
+        "4b6ca639ae6bff78e1a8370903877122da7004caffdc534cfcabe034b94e0047",
+        "4344828f74d2dadf33f5ce9e8b353451533660c248eb59e46d7293acda441284",
+        "511b0ab58a48f2f553874075e5fa84be25a815bbf4578ad8a3ccf99a8ae1f48b"
+      ]
+    },
+    {
+      "asset_id": "bond_mother_su_wan",
+      "change_types": [
+        "state_owner_reference",
+        "provenance"
+      ],
+      "reason": "Redirected mother-lamp deadline ownership from the communal return ledger to the dedicated mother-lamp ledger and removed unbound validation evidence.",
+      "source_refs": [
+        ".agent-handoff/antigravity/responses/nrl-v020-asset-graph-review.md#L17,L23,L44",
+        "system/agent_ops/inbox/borrowed_heaven_project_reconciliation_v0.19.json#/required_changes/3",
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md#L223-L232"
+      ],
+      "source_hashes": [
+        "4b6ca639ae6bff78e1a8370903877122da7004caffdc534cfcabe034b94e0047",
+        "4344828f74d2dadf33f5ce9e8b353451533660c248eb59e46d7293acda441284",
+        "511b0ab58a48f2f553874075e5fa84be25a815bbf4578ad8a3ccf99a8ae1f48b"
+      ]
+    },
+    {
+      "asset_id": "bond_mudlamp_lane_trust",
+      "change_types": [
+        "provenance"
+      ],
+      "reason": "Replaced unbound v0.17 evidence with packet-bound reconciliation, Bible, and outline provenance.",
+      "source_refs": [
+        ".agent-handoff/antigravity/responses/nrl-v020-asset-graph-review.md#L25-L27,L49",
+        "system/agent_ops/inbox/borrowed_heaven_project_reconciliation_v0.19.json#/assessments/asset_and_state_consistency/6"
+      ],
+      "source_hashes": [
+        "4b6ca639ae6bff78e1a8370903877122da7004caffdc534cfcabe034b94e0047",
+        "4344828f74d2dadf33f5ce9e8b353451533660c248eb59e46d7293acda441284"
+      ]
+    },
+    {
+      "asset_id": "character_lu_chenyuan",
+      "change_types": [
+        "progression_gate",
+        "relationship_gate",
+        "provenance"
+      ],
+      "reason": "Kept the starting stage at 燃命境初成, limited active recognition to ordinary life marks and local ash-trace mismatch, and changed lamp/advanced-technique relationships from possession or practice to validated future gates.",
+      "source_refs": [
+        ".agent-handoff/antigravity/responses/nrl-v020-asset-graph-review.md#L9,L13,L22,L45",
+        "system/agent_ops/inbox/borrowed_heaven_project_reconciliation_v0.19.json#/required_changes/4",
+        "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md#L161-L163",
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md#L31-L42"
+      ],
+      "source_hashes": [
+        "4b6ca639ae6bff78e1a8370903877122da7004caffdc534cfcabe034b94e0047",
+        "4344828f74d2dadf33f5ce9e8b353451533660c248eb59e46d7293acda441284",
+        "5cab7816be272af5c6a3794092c6387c9b09af521c245c2ce9a3f22f1c02c383",
+        "511b0ab58a48f2f553874075e5fa84be25a815bbf4578ad8a3ccf99a8ae1f48b"
+      ]
+    },
+    {
+      "asset_id": "faction_life_registry_office",
+      "change_types": [
+        "provenance"
+      ],
+      "reason": "Removed unbound v0.17 promotion evidence and retained only packet-bound project sources.",
+      "source_refs": [
+        ".agent-handoff/antigravity/responses/nrl-v020-asset-graph-review.md#L25-L27,L49",
+        "system/agent_ops/inbox/borrowed_heaven_project_reconciliation_v0.19.json#/assessments/asset_and_state_consistency/6"
+      ],
+      "source_hashes": [
+        "4b6ca639ae6bff78e1a8370903877122da7004caffdc534cfcabe034b94e0047",
+        "4344828f74d2dadf33f5ce9e8b353451533660c248eb59e46d7293acda441284"
+      ]
+    },
+    {
+      "asset_id": "faction_mudlamp_lane",
+      "change_types": [
+        "artifact_acquisition_reference",
+        "provenance"
+      ],
+      "reason": "Changed the lamp relationship from present possession to an acquisition-site boundary and removed unbound Phase 2E evidence.",
+      "source_refs": [
+        ".agent-handoff/antigravity/responses/nrl-v020-asset-graph-review.md#L12,L43-L46,L49",
+        "system/agent_ops/inbox/borrowed_heaven_project_reconciliation_v0.19.json#/required_changes/1",
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md#L42-L54"
+      ],
+      "source_hashes": [
+        "4b6ca639ae6bff78e1a8370903877122da7004caffdc534cfcabe034b94e0047",
+        "4344828f74d2dadf33f5ce9e8b353451533660c248eb59e46d7293acda441284",
+        "511b0ab58a48f2f553874075e5fa84be25a815bbf4578ad8a3ccf99a8ae1f48b"
+      ]
+    },
+    {
+      "asset_id": "faction_prefecture_life_treasury",
+      "change_types": [
+        "provenance"
+      ],
+      "reason": "Removed unbound v0.17 promotion evidence and retained only packet-bound project sources.",
+      "source_refs": [
+        ".agent-handoff/antigravity/responses/nrl-v020-asset-graph-review.md#L25-L27,L49",
+        "system/agent_ops/inbox/borrowed_heaven_project_reconciliation_v0.19.json#/assessments/asset_and_state_consistency/6"
+      ],
+      "source_hashes": [
+        "4b6ca639ae6bff78e1a8370903877122da7004caffdc534cfcabe034b94e0047",
+        "4344828f74d2dadf33f5ce9e8b353451533660c248eb59e46d7293acda441284"
+      ]
+    },
+    {
+      "asset_id": "foreshadowing_ancient_debt_covenant_fragment",
+      "change_types": [
+        "provenance"
+      ],
+      "reason": "Removed unbound v0.17 promotion evidence while preserving the existing Volume 1 reveal ceiling.",
+      "source_refs": [
+        ".agent-handoff/antigravity/responses/nrl-v020-asset-graph-review.md#L16,L25-L27,L49",
+        "system/agent_ops/inbox/borrowed_heaven_project_reconciliation_v0.19.json#/assessments/asset_and_state_consistency/6",
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md#L214-L221"
+      ],
+      "source_hashes": [
+        "4b6ca639ae6bff78e1a8370903877122da7004caffdc534cfcabe034b94e0047",
+        "4344828f74d2dadf33f5ce9e8b353451533660c248eb59e46d7293acda441284",
+        "511b0ab58a48f2f553874075e5fa84be25a815bbf4578ad8a3ccf99a8ae1f48b"
+      ]
+    },
+    {
+      "asset_id": "foreshadowing_cinder_seal_rain",
+      "change_types": [
+        "provenance"
+      ],
+      "reason": "Removed unbound Phase 2E evidence and retained packet-bound reconciliation, Bible, and outline provenance.",
+      "source_refs": [
+        ".agent-handoff/antigravity/responses/nrl-v020-asset-graph-review.md#L25-L27,L49",
+        "system/agent_ops/inbox/borrowed_heaven_project_reconciliation_v0.19.json#/assessments/asset_and_state_consistency/6"
+      ],
+      "source_hashes": [
+        "4b6ca639ae6bff78e1a8370903877122da7004caffdc534cfcabe034b94e0047",
+        "4344828f74d2dadf33f5ce9e8b353451533660c248eb59e46d7293acda441284"
+      ]
+    },
+    {
+      "asset_id": "naming_lifefire_local_style",
+      "change_types": [
+        "self_reference_removal",
+        "provenance"
+      ],
+      "reason": "Removed the asset store's self-referential source path and replaced it with packet-bound reconciliation and canonical project sources.",
+      "source_refs": [
+        ".agent-handoff/antigravity/responses/nrl-v020-asset-graph-review.md#L25,L49",
+        "system/agent_ops/inbox/borrowed_heaven_project_reconciliation_v0.19.json#/assessments/asset_and_state_consistency/6"
+      ],
+      "source_hashes": [
+        "4b6ca639ae6bff78e1a8370903877122da7004caffdc534cfcabe034b94e0047",
+        "4344828f74d2dadf33f5ce9e8b353451533660c248eb59e46d7293acda441284"
+      ]
+    },
+    {
+      "asset_id": "naming_prefecture_celestial_style",
+      "change_types": [
+        "provenance"
+      ],
+      "reason": "Removed unbound v0.17 promotion evidence and retained only packet-bound project sources.",
+      "source_refs": [
+        ".agent-handoff/antigravity/responses/nrl-v020-asset-graph-review.md#L25-L27,L49",
+        "system/agent_ops/inbox/borrowed_heaven_project_reconciliation_v0.19.json#/assessments/asset_and_state_consistency/6"
+      ],
+      "source_hashes": [
+        "4b6ca639ae6bff78e1a8370903877122da7004caffdc534cfcabe034b94e0047",
+        "4344828f74d2dadf33f5ce9e8b353451533660c248eb59e46d7293acda441284"
+      ]
+    },
+    {
+      "asset_id": "npc_debt_collector_gu_xun",
+      "change_types": [
+        "independent_obligation",
+        "divergent_choice_boundary",
+        "provenance"
+      ],
+      "reason": "Added a bounded obligation to execute only valid writs without absorbing false-collection backlash, allowing pause, return, or recheck without automatic defection, and removed unbound v0.17 evidence.",
+      "source_refs": [
+        ".agent-handoff/antigravity/responses/nrl-v020-asset-graph-review.md#L10,L26,L37,L48-L49",
+        "system/agent_ops/inbox/borrowed_heaven_project_reconciliation_v0.19.json#/required_changes/8",
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md#L57-L68"
+      ],
+      "source_hashes": [
+        "4b6ca639ae6bff78e1a8370903877122da7004caffdc534cfcabe034b94e0047",
+        "4344828f74d2dadf33f5ce9e8b353451533660c248eb59e46d7293acda441284",
+        "511b0ab58a48f2f553874075e5fa84be25a815bbf4578ad8a3ccf99a8ae1f48b"
+      ]
+    },
+    {
+      "asset_id": "npc_mo_jinglan",
+      "change_types": [
+        "provenance"
+      ],
+      "reason": "Removed unbound Phase 2C validation evidence and retained packet-bound reconciliation, Bible, and outline provenance.",
+      "source_refs": [
+        ".agent-handoff/antigravity/responses/nrl-v020-asset-graph-review.md#L25-L27,L49",
+        "system/agent_ops/inbox/borrowed_heaven_project_reconciliation_v0.19.json#/assessments/asset_and_state_consistency/6"
+      ],
+      "source_hashes": [
+        "4b6ca639ae6bff78e1a8370903877122da7004caffdc534cfcabe034b94e0047",
+        "4344828f74d2dadf33f5ce9e8b353451533660c248eb59e46d7293acda441284"
+      ]
+    },
+    {
+      "asset_id": "npc_prefecture_shadow_envoy",
+      "change_types": [
+        "independent_obligation",
+        "divergent_choice_boundary",
+        "provenance"
+      ],
+      "reason": "Added a bounded recovery-and-authority obligation supporting negotiation, delay, or projection withdrawal without expanding knowledge, and removed unbound v0.17 evidence.",
+      "source_refs": [
+        ".agent-handoff/antigravity/responses/nrl-v020-asset-graph-review.md#L10,L26,L37-L39,L48-L49",
+        "system/agent_ops/inbox/borrowed_heaven_project_reconciliation_v0.19.json#/required_changes/8",
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md#L94-L107"
+      ],
+      "source_hashes": [
+        "4b6ca639ae6bff78e1a8370903877122da7004caffdc534cfcabe034b94e0047",
+        "4344828f74d2dadf33f5ce9e8b353451533660c248eb59e46d7293acda441284",
+        "511b0ab58a48f2f553874075e5fa84be25a815bbf4578ad8a3ccf99a8ae1f48b"
+      ]
+    },
+    {
+      "asset_id": "npc_registrar_qiu_shen",
+      "change_types": [
+        "independent_obligation",
+        "divergent_choice_boundary",
+        "provenance"
+      ],
+      "reason": "Added a bounded local-authority and accountability obligation supporting delay, bargaining, or writ return without automatic exoneration, and removed unbound v0.17 evidence.",
+      "source_refs": [
+        ".agent-handoff/antigravity/responses/nrl-v020-asset-graph-review.md#L10,L26,L37,L48-L49",
+        "system/agent_ops/inbox/borrowed_heaven_project_reconciliation_v0.19.json#/required_changes/8",
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md#L70-L81"
+      ],
+      "source_hashes": [
+        "4b6ca639ae6bff78e1a8370903877122da7004caffdc534cfcabe034b94e0047",
+        "4344828f74d2dadf33f5ce9e8b353451533660c248eb59e46d7293acda441284",
+        "511b0ab58a48f2f553874075e5fa84be25a815bbf4578ad8a3ccf99a8ae1f48b"
+      ]
+    },
+    {
+      "asset_id": "npc_su_wan",
+      "change_types": [
+        "state_owner_reference",
+        "provenance"
+      ],
+      "reason": "Added the dedicated mother-lamp countdown relationship and removed unbound v0.17 promotion evidence.",
+      "source_refs": [
+        ".agent-handoff/antigravity/responses/nrl-v020-asset-graph-review.md#L17,L23,L44,L49",
+        "system/agent_ops/inbox/borrowed_heaven_project_reconciliation_v0.19.json#/required_changes/3",
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md#L223-L232"
+      ],
+      "source_hashes": [
+        "4b6ca639ae6bff78e1a8370903877122da7004caffdc534cfcabe034b94e0047",
+        "4344828f74d2dadf33f5ce9e8b353451533660c248eb59e46d7293acda441284",
+        "511b0ab58a48f2f553874075e5fa84be25a815bbf4578ad8a3ccf99a8ae1f48b"
+      ]
+    },
+    {
+      "asset_id": "npc_cluster5_black_market_transaction_role",
+      "change_types": [
+        "new_bounded_role",
+        "transaction_boundary",
+        "knowledge_limit",
+        "price_and_exit_guard"
+      ],
+      "reason": "Registered only the canonical Cluster 5 black-market merchant/fugitive function: bounded route knowledge, pre-registered protagonist-owned price plus exposure, an innocent-life red line, refusal rights, and immediate retirement after exchange or refusal; no identity or faction was invented.",
+      "source_refs": [
+        ".agent-handoff/antigravity/responses/nrl-v020-asset-graph-review.md#L10,L24,L46,L48",
+        "system/agent_ops/inbox/borrowed_heaven_project_reconciliation_v0.19.json#/assessments/plot_logic/4",
+        "system/agent_ops/inbox/borrowed_heaven_project_reconciliation_v0.19.json#/required_changes/7",
+        "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md#L271-L276",
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md#L83-L94"
+      ],
+      "source_hashes": [
+        "4b6ca639ae6bff78e1a8370903877122da7004caffdc534cfcabe034b94e0047",
+        "4344828f74d2dadf33f5ce9e8b353451533660c248eb59e46d7293acda441284",
+        "5cab7816be272af5c6a3794092c6387c9b09af521c245c2ce9a3f22f1c02c383",
+        "511b0ab58a48f2f553874075e5fa84be25a815bbf4578ad8a3ccf99a8ae1f48b"
+      ]
+    },
+    {
+      "asset_id": "state_ledger_poorcity_returnfire",
+      "change_types": [
+        "sole_writer",
+        "atomic_transaction",
+        "provenance"
+      ],
+      "reason": "Restricted ownership to returned_miscollected_lifefire and required an atomic peer transaction for caster debit, exposure, array integrity, resident reserve, and any mother-lamp consequence.",
+      "source_refs": [
+        ".agent-handoff/antigravity/responses/nrl-v020-asset-graph-review.md#L17,L23,L44",
+        "system/agent_ops/inbox/borrowed_heaven_project_reconciliation_v0.19.json#/required_changes/3",
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md#L223-L232"
+      ],
+      "source_hashes": [
+        "4b6ca639ae6bff78e1a8370903877122da7004caffdc534cfcabe034b94e0047",
+        "4344828f74d2dadf33f5ce9e8b353451533660c248eb59e46d7293acda441284",
+        "511b0ab58a48f2f553874075e5fa84be25a815bbf4578ad8a3ccf99a8ae1f48b"
+      ]
+    },
+    {
+      "asset_id": "state_ledger_half_life_registry_exposure",
+      "change_types": [
+        "new_sole_writer_ledger",
+        "atomic_transaction"
+      ],
+      "reason": "Created the sole writer for half_life_registry_exposure with explicit threshold consequences and peer-transaction closure.",
+      "source_refs": [
+        ".agent-handoff/antigravity/responses/nrl-v020-asset-graph-review.md#L17,L23,L44",
+        "system/agent_ops/inbox/borrowed_heaven_project_reconciliation_v0.19.json#/required_changes/3",
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md#L223-L232"
+      ],
+      "source_hashes": [
+        "4b6ca639ae6bff78e1a8370903877122da7004caffdc534cfcabe034b94e0047",
+        "4344828f74d2dadf33f5ce9e8b353451533660c248eb59e46d7293acda441284",
+        "511b0ab58a48f2f553874075e5fa84be25a815bbf4578ad8a3ccf99a8ae1f48b"
+      ]
+    },
+    {
+      "asset_id": "state_ledger_mother_life_lamp_countdown",
+      "change_types": [
+        "new_sole_writer_ledger",
+        "atomic_transaction"
+      ],
+      "reason": "Created the sole writer for mother_life_lamp_cracks and the mother-debt countdown, disallowing automatic cancellation by communal returns or protagonist recovery.",
+      "source_refs": [
+        ".agent-handoff/antigravity/responses/nrl-v020-asset-graph-review.md#L17,L23,L44",
+        "system/agent_ops/inbox/borrowed_heaven_project_reconciliation_v0.19.json#/required_changes/3",
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md#L223-L232"
+      ],
+      "source_hashes": [
+        "4b6ca639ae6bff78e1a8370903877122da7004caffdc534cfcabe034b94e0047",
+        "4344828f74d2dadf33f5ce9e8b353451533660c248eb59e46d7293acda441284",
+        "511b0ab58a48f2f553874075e5fa84be25a815bbf4578ad8a3ccf99a8ae1f48b"
+      ]
+    },
+    {
+      "asset_id": "state_ledger_mudlamp_array_integrity",
+      "change_types": [
+        "new_sole_writer_ledger",
+        "threshold_gate",
+        "atomic_transaction"
+      ],
+      "reason": "Created the independent mudlamp_array_integrity writer and made unsafe integrity a fail-closed gate for lamp activation and return-fire casting.",
+      "source_refs": [
+        ".agent-handoff/antigravity/responses/nrl-v020-asset-graph-review.md#L17,L44-L47",
+        "system/agent_ops/inbox/borrowed_heaven_project_reconciliation_v0.19.json#/required_changes/3",
+        "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md#L57-L64",
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md#L223-L232"
+      ],
+      "source_hashes": [
+        "4b6ca639ae6bff78e1a8370903877122da7004caffdc534cfcabe034b94e0047",
+        "4344828f74d2dadf33f5ce9e8b353451533660c248eb59e46d7293acda441284",
+        "5cab7816be272af5c6a3794092c6387c9b09af521c245c2ce9a3f22f1c02c383",
+        "511b0ab58a48f2f553874075e5fa84be25a815bbf4578ad8a3ccf99a8ae1f48b"
+      ]
+    },
+    {
+      "asset_id": "state_ledger_resident_lifefire_reserve",
+      "change_types": [
+        "new_sole_writer_ledger",
+        "consent_gate",
+        "atomic_transaction"
+      ],
+      "reason": "Created the independent resident_lifefire_reserve writer with named consent, refusal, and withdrawal requirements so communal life-fire cannot become protagonist inventory.",
+      "source_refs": [
+        ".agent-handoff/antigravity/responses/nrl-v020-asset-graph-review.md#L17,L44",
+        "system/agent_ops/inbox/borrowed_heaven_project_reconciliation_v0.19.json#/required_changes/3",
+        "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md#L83-L89,L243-L248",
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md#L44-L55"
+      ],
+      "source_hashes": [
+        "4b6ca639ae6bff78e1a8370903877122da7004caffdc534cfcabe034b94e0047",
+        "4344828f74d2dadf33f5ce9e8b353451533660c248eb59e46d7293acda441284",
+        "5cab7816be272af5c6a3794092c6387c9b09af521c245c2ce9a3f22f1c02c383",
+        "511b0ab58a48f2f553874075e5fa84be25a815bbf4578ad8a3ccf99a8ae1f48b"
+      ]
+    },
+    {
+      "asset_id": "state_ledger_protagonist_strain",
+      "change_types": [
+        "sole_writer",
+        "atomic_transaction",
+        "empty_life_gate",
+        "provenance"
+      ],
+      "reason": "Restricted ownership to bodily and cognitive strain metrics, moved exposure and mother-lamp state to dedicated writers, and defined empty-life as a casting/cognition lock with prepaid loss rather than combat amplification.",
+      "source_refs": [
+        ".agent-handoff/antigravity/responses/nrl-v020-asset-graph-review.md#L17,L23,L33,L44,L47",
+        "system/agent_ops/inbox/borrowed_heaven_project_reconciliation_v0.19.json#/required_changes/2",
+        "system/agent_ops/inbox/borrowed_heaven_project_reconciliation_v0.19.json#/required_changes/3",
+        "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md#L194-L197",
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md#L83-L94"
+      ],
+      "source_hashes": [
+        "4b6ca639ae6bff78e1a8370903877122da7004caffdc534cfcabe034b94e0047",
+        "4344828f74d2dadf33f5ce9e8b353451533660c248eb59e46d7293acda441284",
+        "5cab7816be272af5c6a3794092c6387c9b09af521c245c2ce9a3f22f1c02c383",
+        "511b0ab58a48f2f553874075e5fa84be25a815bbf4578ad8a3ccf99a8ae1f48b"
+      ]
+    },
+    {
+      "asset_id": "technique_chain_deflection_seal_breaking",
+      "change_types": [
+        "lifecycle_gate",
+        "prerequisite_semantics",
+        "progression_gate",
+        "provenance"
+      ],
+      "reason": "Moved the seal technique to dormant and required a validated 结印境 transition, confirmed wrong chain, and active canonical lamp prerequisite before use.",
+      "source_refs": [
+        ".agent-handoff/antigravity/responses/nrl-v020-asset-graph-review.md#L13,L22,L45-L46,L49",
+        "system/agent_ops/inbox/borrowed_heaven_project_reconciliation_v0.19.json#/required_changes/4",
+        "system/agent_ops/inbox/borrowed_heaven_project_reconciliation_v0.19.json#/required_changes/5",
+        "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md#L161-L164"
+      ],
+      "source_hashes": [
+        "4b6ca639ae6bff78e1a8370903877122da7004caffdc534cfcabe034b94e0047",
+        "4344828f74d2dadf33f5ce9e8b353451533660c248eb59e46d7293acda441284",
+        "5cab7816be272af5c6a3794092c6387c9b09af521c245c2ce9a3f22f1c02c383"
+      ]
+    },
+    {
+      "asset_id": "technique_embertrace_return",
+      "change_types": [
+        "lifecycle_gate",
+        "prerequisite_semantics",
+        "counter_semantics",
+        "atomic_transaction",
+        "provenance"
+      ],
+      "reason": "Moved return-fire casting to dormant, removed the lamp from counter_ids, registered it as an active prerequisite, added actual enforcement/array/overload counter paths, and required the complete atomic spell transaction.",
+      "source_refs": [
+        ".agent-handoff/antigravity/responses/nrl-v020-asset-graph-review.md#L13,L21-L22,L45-L47,L49",
+        "system/agent_ops/inbox/borrowed_heaven_project_reconciliation_v0.19.json#/required_changes/5",
+        "system/agent_ops/inbox/deep_read_v0.18/cross_book_distillation.json#/cross_book_mechanisms/10",
+        "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md#L237-L239"
+      ],
+      "source_hashes": [
+        "4b6ca639ae6bff78e1a8370903877122da7004caffdc534cfcabe034b94e0047",
+        "4344828f74d2dadf33f5ce9e8b353451533660c248eb59e46d7293acda441284",
+        "981ccf2ceebaa4616e6a3c29896e525100981813fcc5d0aaf27d0684997ed87b",
+        "5cab7816be272af5c6a3794092c6387c9b09af521c245c2ce9a3f22f1c02c383"
+      ]
+    },
+    {
+      "asset_id": "technique_ledger_recognition",
+      "change_types": [
+        "progression_gate",
+        "reveal_gate",
+        "provenance"
+      ],
+      "reason": "Limited the active current-stage scope to ordinary life marks and local copy-level ash traces, and separated personal-page reading, chain tracing, and ancient-covenant glimpses behind distinct validated progression proofs.",
+      "source_refs": [
+        ".agent-handoff/antigravity/responses/nrl-v020-asset-graph-review.md#L13,L22,L45,L49",
+        "system/agent_ops/inbox/borrowed_heaven_project_reconciliation_v0.19.json#/required_changes/4",
+        "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md#L161-L163",
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md#L31-L68"
+      ],
+      "source_hashes": [
+        "4b6ca639ae6bff78e1a8370903877122da7004caffdc534cfcabe034b94e0047",
+        "4344828f74d2dadf33f5ce9e8b353451533660c248eb59e46d7293acda441284",
+        "5cab7816be272af5c6a3794092c6387c9b09af521c245c2ce9a3f22f1c02c383",
+        "511b0ab58a48f2f553874075e5fa84be25a815bbf4578ad8a3ccf99a8ae1f48b"
+      ]
+    }
+  ],
+  "global_invariants": [
+    "Every non-seed asset source_ref is packet-bound to the reconciliation, cross-book distillation, Story Bible, or canonical outline.",
+    "No active state-ledger tracking metric has more than one writer.",
+    "artifact_ashlight_cup, technique_embertrace_return, and technique_chain_deflection_seal_breaking remain dormant until their registered gates validate.",
+    "technique_ledger_recognition is active only at the basic local ash-trace scope allowed by 燃命境初成.",
+    "Any return-fire cast must atomically record evidence, return destination, caster debit, registry exposure, array consequence, resident reserve, and any mother-lamp consequence.",
+    "The Cluster 5 transaction role has no authorized name, backstory, faction, dialogue, or later-map recurrence."
+  ],
+  "remaining_blocked_risks": [
+    {
+      "risk_id": "outline_missing_lamp_acquisition_transition",
+      "status": "blocked",
+      "reason": "The canonical outline first uses the lamp in Arc Cluster 2 without staging acquisition or watch-fire awakening. The asset is therefore dormant and cannot be used until an owner-authorized transition is recorded outside this worker's no-outline-edit scope.",
+      "source_refs": [
+        ".agent-handoff/antigravity/responses/nrl-v020-asset-graph-review.md#L12,L43-L46",
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md#L44-L54"
+      ],
+      "source_hashes": [
+        "4b6ca639ae6bff78e1a8370903877122da7004caffdc534cfcabe034b94e0047",
+        "511b0ab58a48f2f553874075e5fa84be25a815bbf4578ad8a3ccf99a8ae1f48b"
+      ]
+    },
+    {
+      "risk_id": "canonical_empty_life_text_conflict",
+      "status": "blocked",
+      "reason": "The Bible and outline still describe empty-life as increasing combat power. The remediated state graph rejects that interpretation and treats empty-life as a casting/cognition lock, but the canonical text conflict remains until an owner-authorized Bible/outline correction or precedence decision occurs.",
+      "source_refs": [
+        ".agent-handoff/antigravity/responses/nrl-v020-asset-graph-review.md#L33,L47",
+        "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md#L194-L197",
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md#L83-L94"
+      ],
+      "source_hashes": [
+        "4b6ca639ae6bff78e1a8370903877122da7004caffdc534cfcabe034b94e0047",
+        "5cab7816be272af5c6a3794092c6387c9b09af521c245c2ce9a3f22f1c02c383",
+        "511b0ab58a48f2f553874075e5fa84be25a815bbf4578ad8a3ccf99a8ae1f48b"
+      ]
+    },
+    {
+      "risk_id": "cluster5_exact_price_not_canonical",
+      "status": "blocked",
+      "reason": "The outline supports a black-market/fugitive transaction role but does not specify an exact price. The asset limits the price domain and blocks innocent-life payment; any concrete transaction remains blocked until a bounded protagonist-owned debit is separately registered from canonical evidence.",
+      "source_refs": [
+        ".agent-handoff/antigravity/responses/nrl-v020-asset-graph-review.md#L24,L48",
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md#L83-L94"
+      ],
+      "source_hashes": [
+        "4b6ca639ae6bff78e1a8370903877122da7004caffdc534cfcabe034b94e0047",
+        "511b0ab58a48f2f553874075e5fa84be25a815bbf4578ad8a3ccf99a8ae1f48b"
+      ]
+    },
+    {
+      "risk_id": "deferred_state_seed_ownership",
+      "status": "blocked",
+      "reason": "public_reputation, faction_pressure, map_unlock_status, unresolved_mysteries, and revealed_account_errors remain outline-level seeds without independent active writers. Their mutation is blocked; they were not required to resolve the reviewed overlapping variables in this bounded remediation.",
+      "source_refs": [
+        "system/agent_ops/inbox/borrowed_heaven_project_reconciliation_v0.19.json#/assessments/asset_and_state_consistency/5",
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md#L223-L233"
+      ],
+      "source_hashes": [
+        "4344828f74d2dadf33f5ce9e8b353451533660c248eb59e46d7293acda441284",
+        "511b0ab58a48f2f553874075e5fa84be25a815bbf4578ad8a3ccf99a8ae1f48b"
+      ]
+    },
+    {
+      "risk_id": "seed_asset_promotion_provenance",
+      "status": "blocked",
+      "reason": "Seed-only contract assets retain their original pre-v0.20 research references and were not used as active promotion evidence. Any future promotion from seed requires a separate packet-bound provenance audit.",
+      "source_refs": [
+        ".agent-handoff/antigravity/responses/nrl-v020-asset-graph-review.md#L25-L27,L49",
+        "system/agent_ops/inbox/borrowed_heaven_project_reconciliation_v0.19.json#/required_changes/10"
+      ],
+      "source_hashes": [
+        "4b6ca639ae6bff78e1a8370903877122da7004caffdc534cfcabe034b94e0047",
+        "4344828f74d2dadf33f5ce9e8b353451533660c248eb59e46d7293acda441284"
+      ]
+    },
+    {
+      "risk_id": "controlled_prose_authorization",
+      "status": "blocked",
+      "reason": "This remediation does not grant controlled or serial prose authorization. The review's separate prose gate remains blocked until the remaining canonical conflicts and required owner transitions are resolved.",
+      "source_refs": [
+        ".agent-handoff/antigravity/responses/nrl-v020-asset-graph-review.md#L51-L52"
+      ],
+      "source_hashes": [
+        "4b6ca639ae6bff78e1a8370903877122da7004caffdc534cfcabe034b94e0047"
+      ]
+    }
+  ],
+  "validation": {
+    "command": "python3 system/runtime/nrl.py validate-creation-assets",
+    "exit_code": 0,
+    "valid": true,
+    "errors": [],
+    "asset_count": 38,
+    "family_counts": {
+      "artifacts": 3,
+      "characters": 2,
+      "emotional_bonds": 3,
+      "factions": 4,
+      "foreshadowing": 3,
+      "naming": 3,
+      "npcs": 7,
+      "state_ledger": 7,
+      "techniques": 6
+    }
+  }
+}

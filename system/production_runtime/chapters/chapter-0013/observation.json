@@ -1,0 +1,247 @@
+{
+  "chapter_id": "chapter-0013",
+  "draft_sha256": "eed4f093570a9618d255081a599a0cf481daf545339f37c1d529b35cff836e31",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "chapter-0013-character-lu-chenyuan-001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_action_limit",
+        "before": "继续不得识账、不得碰砖；仅在苏晚拆砖时旁观并提供停止判断",
+        "after": "仅以肉眼核对半枚印断边与掌心血口；不得引火、追灰、越过薄纸或碰砖，出现承压即停",
+        "evidence": "仇慎明确禁止识账和越界，陆沉渊只回答半枚印、血口及纸上线的可见范围。"
+      },
+      {
+        "fact_id": "chapter-0013-character-lu-chenyuan-002",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_procedural_status",
+        "before": "明日再核半枚冷金印；陆沉渊须带掌心新血口到场且不得识账、不得碰砖",
+        "after": "今日复核完成；明日只复核今日纸上断处，陆沉渊须带掌心血口到场，见证可来、可拒、可撤",
+        "evidence": "仇慎收回半枚印并宣布明日仅对今日纸上断处复核。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "chapter-0013-npc-registrar-qiu-shen-001",
+        "asset_id": "npc_registrar_qiu_shen",
+        "field_path": "npc.local_review_decision",
+        "before": "确认有限遮掩已撤去但护阵未修；复验未结，明日再核半枚印",
+        "after": "半枚印不合回旧痕，纸与印分别留记；护阵裂口照旧，不作修复，不准再遮",
+        "evidence": "仇慎写下“纸痕较宽，未定缘故”，并明令不修复、不再遮掩。"
+      },
+      {
+        "fact_id": "chapter-0013-npc-registrar_qiu_shen-002",
+        "asset_id": "npc_registrar_qiu_shen",
+        "field_path": "npc.current_local_notice",
+        "before": "明日再核半枚冷金印；莫井兰可到可不来，陆沉渊须带掌心新血口到场且不得识账、不得碰砖",
+        "after": "明日只核今日纸上断处；不得贴印、不得碰阵；莫井兰不到场则今日三句仅限今日所见，不续作明日凭据",
+        "evidence": "仇慎在巷口宣布下一次复核范围与见证可拒可撤的条件。"
+      },
+      {
+        "fact_id": "chapter-0013-npc-registrar_qiu_shen-003",
+        "asset_id": "npc_registrar_qiu_shen",
+        "field_path": "npc.current_seal_condition",
+        "before": "冷金小印断处发乌，剩余光圈薄，半枚印待明日复核",
+        "after": "半枚印断边又向内出现冷金细痕；落印后冷金边缘再次退暗，最终偏开灯座落下",
+        "evidence": "印背断边出现向内延伸的细痕，落印时冷金光退了一线。"
+      },
+      {
+        "fact_id": "chapter-0013-npc_mo_jinglan-001",
+        "asset_id": "npc_mo_jinglan",
+        "field_path": "npc.current_witness_participation",
+        "before": "保留护阵纹未亮；撤回黑点与砖影相连的见证，不承认两日观察可合并",
+        "after": "仅见证半印落点、黑点是否移动及纸上线与掌心血之间有空；拒绝认定同源、宽度、来源或明日延续，陶片不交",
+        "evidence": "莫井兰逐句限定今日所见，并明确可撤回，陶片始终抱在怀中。"
+      },
+      {
+        "fact_id": "chapter-0013-npc_su_wan-001",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_procedural_limit",
+        "before": "拒绝验灯、拒绝献灯、拒绝替陆沉渊碰阵；为撤去昨日遮掩拆砖两次并停止",
+        "after": "拒绝替陆沉渊认灰或让纸靠近护阵；在暗线下沉、陆沉渊再渗血时立即叫停",
+        "evidence": "苏晚踩住纸角阻止继续靠近灯座，并声明不接受以陆沉渊旧印试阵。"
+      }
+    ],
+    "locations": [
+      {
+        "fact_id": "chapter-0013-location-mudlamp-lane-001",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_protection_array_condition",
+        "before": "旧砖已被撤出，裂口全部露出；护阵纹未亮，火星未变亮，护阵仍未修复",
+        "after": "旧砖仍陷在湿泥中，裂口无遮无掩且积冷灰；护阵未修复、火星未变亮，禁止再次遮掩",
+        "evidence": "正文末尾明确旧砖无人扶回裂口，护阵裂口照旧不作修复。"
+      },
+      {
+        "fact_id": "chapter-0013-location-mudlamp-lane-002",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_communal_response",
+        "before": "住户继续保留拒绝与旁观权；无人出灯，部分关门，顾婶仅以门缝作限见证",
+        "after": "住户未出灯；两扇门彻底合上，顾婶继续隔门缝作受限见证，巷中未形成共同出灯行动",
+        "evidence": "仇慎到来后门缝增多、两扇门合上，顾婶只通过门缝发言。"
+      }
+    ],
+    "factions": [
+      {
+        "fact_id": "chapter-0013-faction-life-registry-office-001",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_local_enforcement_phase",
+        "before": "完成拆砖复验但程序未结；推进至明日复核半枚印、掌心新血口及受限见证",
+        "after": "完成监督下半枚印、掌心血口与黑点复核；程序推进至明日仅核今日纸上断处",
+        "evidence": "仇慎逐句记录今日核验结果，并将下一次复核限定为今日纸上断处。"
+      },
+      {
+        "fact_id": "chapter-0013-faction-life-registry-office-002",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.next_local_review_schedule",
+        "before": "明日复核半枚印、掌心新血口及受限见证",
+        "after": "明日复核今日纸上断处；不得贴印、不得碰阵，见证者可到、可拒、可撤",
+        "evidence": "仇慎公布明日复核条件，并保留莫井兰不到场时证言仅限今日的程序边界。"
+      }
+    ],
+    "artifacts": [
+      {
+        "fact_id": "chapter-0013-artifact-ashlight-cup-001",
+        "asset_id": "artifact_ashlight_cup",
+        "field_path": "artifact.current_status",
+        "before": "正文未出现残命灯盏",
+        "after": "正文未出现残命灯盏",
+        "evidence": "本章现场仅出现泥灯、半枚冷金印、薄纸、陶片与旧砖，未发生残命灯盏相关状态变化。"
+      }
+    ],
+    "techniques": [
+      {
+        "fact_id": "chapter-0013-technique-ledger-recognition-001",
+        "asset_id": "technique_ledger_recognition",
+        "field_path": "technique.current_use_status",
+        "before": "本章仍未施展识账；陆沉渊仅凭残余视野观察拆砖后灰痕",
+        "after": "仍未施展识账；仅以肉眼辨认半印断边、暗红、纸上线及断口，明确不能判断来源、同源或关联",
+        "evidence": "陆沉渊在禁令下反复回答“不能”，正文明确其只使用肉眼核对。"
+      }
+    ],
+    "relationships": [
+      {
+        "fact_id": "chapter-0013-relationship-mudlamp-lane-trust-001",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_witness_commitment",
+        "before": "共同体继续拒绝提供命火；莫井兰撤回一项见证，顾婶仅确认两次挪砖与灯火状态，见证边界未合并",
+        "after": "共同体继续拒绝出灯；莫井兰、顾婶与苏晚分别限定今日所见，并保留拒绝或撤回权，未合并为共同结论",
+        "evidence": "三名见证者分别拒绝认定同源、拒绝替认或拒绝让纸靠近护阵。"
+      },
+      {
+        "fact_id": "chapter-0013-relationship-mother-su-wan-001",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_visibility_of_lu_chenyuan_backlash",
+        "before": "苏晚继续公开阻止其施术和碰阵，并亲见其掌心新血、胸骨钝响与无法站稳",
+        "after": "苏晚再次亲见陆沉渊掌心裂口被暗线扯开、胸骨钝响、咳出冷灰，并在两次承压后立即扶住并叫停",
+        "evidence": "苏晚扶住陆沉渊、压住胸骨并阻止仇慎继续将纸靠近灯座。"
+      }
+    ],
+    "emotions": [
+      {
+        "fact_id": "chapter-0013-emotion-mudlamp-lane-001",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_collective_emotion",
+        "before": "住户因复验与可能连坐继续保持退避；有人彻底关门，有人仅留门缝旁观，无人出灯",
+        "after": "退避进一步显形为门缝收窄与闩木落下；共同体仍未提供命火或统一见证",
+        "evidence": "仇慎进巷后两扇门彻底合上，顾婶仅隔门缝发言。"
+      },
+      {
+        "fact_id": "chapter-0013-emotion-registrar-qiu_shen-001",
+        "asset_id": "npc_registrar_qiu_shen",
+        "field_path": "npc.current_visible_fear",
+        "before": "仇慎继续出汗、手指僵硬，并因见证撤回和印痕不完整而延后结案",
+        "after": "仇慎在暗线、印痕与见证边界出现后持续出汗并停止落印，改以逐句留记控制程序风险",
+        "evidence": "仇慎额角出汗，刮去“牵连”并改写为“落印后裂，未有接触”。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "chapter-0013-information-revealed-account-errors-001",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_local_evidence_status",
+        "before": "形成受限拆砖复验记录；裂口仍在、护阵未修，见证边界未合并",
+        "after": "形成今日受限复核记录：半印暗红位于缺口内侧，纸上线与掌心血之间有干净空白，纸痕较半印缺边宽一粒灰，均未定缘故或同源",
+        "evidence": "陆沉渊、莫井兰与仇慎分别记录了印、纸线、血口之间未接与未定缘故。"
+      },
+      {
+        "fact_id": "chapter-0013-information-local-procedure-001",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_local_procedure_result",
+        "before": "遮掩已撤去但复验未结；半枚冷金印及明日复核要求被留存，顾家户灯、拒验与返还附录照旧",
+        "after": "半枚印不合回旧痕，纸与印分别留记；顾家户灯不归、折记不改、返还附录照旧、苏晚原债照追",
+        "evidence": "仇慎明确宣布上述程序结果，未产生改账或返还。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "chapter-0013-hook-cinder-seal-rain-001",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "foreshadowing.current_manifestation",
+        "before": "黑点两段之间留针尖宽空白；未越过空白",
+        "after": "上方黑点两次下滑，均停在中间空白边缘；下方黑点未动，空白仍未被越过",
+        "evidence": "罩壁上方黑点在半印落下及指甲靠近时各下滑半粒灰，始终未越过空白。"
+      },
+      {
+        "fact_id": "chapter-0013-hook-cinder-seal-rain-002",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "foreshadowing.next_review_hook",
+        "before": "明日再核半枚冷金印；黑点两段之间的空白与撤回见证仍待复核",
+        "after": "明日仅复核今日纸上断处；黑点与纸线、半印缺边的关系仍未定，见证可拒或撤回",
+        "evidence": "仇慎将下一次复核限定为今日纸上断处，并未解释黑点来源或关系。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "chapter-0013-timeline-local-enforcement-001",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_local_enforcement_phase",
+        "before": "申前完成拆砖但未结案；下一程序为明日复核半枚印、掌心新血口及受限见证",
+        "after": "申时监督复核完成但未扩展结论；下一程序为明日纸上断处复核",
+        "evidence": "正文从申时现场复核推进到仇慎离巷并留下明日复核薄纸。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "chapter-0013-physical-state-protagonist-strain-001",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.bone_fissure_severity",
+        "before": "苏晚拆砖期间掌心血口被牵动出血，胸骨再次钝响，陆沉渊无法撑起身体并跌回墙边",
+        "after": "暗线再次扯开掌心血口，胸骨连续钝响，呼吸卡住并需苏晚扶持",
+        "evidence": "半印落纸和纸靠近灯座时，掌根血口被扯开，胸骨发响，陆沉渊撞回墙面。"
+      },
+      {
+        "fact_id": "chapter-0013-physical-state-protagonist-strain-002",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.eye_pattern_burn",
+        "before": "左眼闭死，右眼仅余残余视野",
+        "after": "右眼承压后只能看见重影与银灰火屑，最终闭眼，未恢复视力",
+        "evidence": "正文写明右眼只能分辨明暗，复核后半枚印散成重影并在回答后闭眼。"
+      },
+      {
+        "fact_id": "chapter-0013-physical-state-protagonist-strain-003",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.cold_ash_cough_frequency",
+        "before": "再次咳出一小撮冷灰，落在鞋边，未向灯座爬且未沾监督纸",
+        "after": "再次咳出一小撮冷灰，落在膝前和衣摆附近，未靠近纸张或灯座",
+        "evidence": "陆沉渊回答第三个“不能”后咳出冷灰，正文明确灰未靠近纸或灯座。"
+      },
+      {
+        "fact_id": "chapter-0013-physical-state-registry-exposure-001",
+        "asset_id": "state_ledger_half_life_registry_exposure",
+        "field_path": "state_ledger.registry_locking_sign",
+        "before": "拆砖过程中掌心暗红线再次勒紧，裂口渗血并成为明日必须携带到场的在场证据",
+        "after": "半印暗线再次牵动掌心血口，血口与今日纸上断处一并成为明日复核对象；旧追缴未解除",
+        "evidence": "仇慎要求明日复核今日纸上断处，陆沉渊的血口仍被保留为在场痕。"
+      },
+      {
+        "fact_id": "chapter-0013-physical-state-mother-lamp-001",
+        "asset_id": "state_ledger_mother_life_lamp_countdown",
+        "field_path": "state_ledger.current_visible_lamp_consequence",
+        "before": "苏晚拆砖时掌背裂纹漫至腕骨；结束后暗冷光退回裂口，裂纹仍未合拢",
+        "after": "苏晚掌背暗冷光再次漫至腕骨，未获得温度或裂纹缓解",
+        "evidence": "苏晚叫停时掌背冷光从裂纹漫到腕骨，随后正文未显示裂纹消退。"
+      }
+    ],
+    "naming": []
+  }
+}

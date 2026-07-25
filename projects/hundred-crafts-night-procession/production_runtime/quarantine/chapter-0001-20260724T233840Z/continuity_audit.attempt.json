@@ -1,0 +1,8 @@
+{
+  "chapter_id": "chapter-0001",
+  "audit_kind": "initial",
+  "provider": "antigravity",
+  "model": "Gemini 3.5 Flash (High)",
+  "status": "invalid_response",
+  "error": "[] should be non-empty\n\nFailed validating 'minItems' in schema['properties']['dimensions']['properties']['state']:\n    {'type': 'array',\n     'minItems': 1,\n     'items': {'type': 'string', 'minLength': 1, 'pattern': '\\\\S'}}\n\nOn instance['dimensions']['state']:\n    []"
+}

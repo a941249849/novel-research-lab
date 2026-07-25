@@ -1,0 +1,256 @@
+{
+  "chapter_id": "chapter-0036",
+  "draft_sha256": "47c2c97ca8f6a761b2a0669765c1978cd472f4d93afd02c4da485cba439f6260",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "chapter-0036-character-lu-chenyuan-001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_visible_condition",
+        "before": "咳出夹细血丝的灰沫，胸骨再次发出钝响，并靠门框借力",
+        "after": "左膝落地时向内错开，胸骨旧裂闷响，掌中血口被粗木蹭开，冷灰与血一同渗出；仍咳出夹血灰沫",
+        "evidence": "拆顾家木榫时陆沉渊下意识前移，左膝失稳并扶住门框，随后咳出夹血灰沫。"
+      },
+      {
+        "fact_id": "chapter-0036-character-lu-chenyuan-002",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_observed_choice",
+        "before": "未再催动识账术，只要求分开记录本地印与州府影印",
+        "after": "不触碰三盏户灯、不替任何持有人决定拆架，并持续要求只记录亲见位置与动作",
+        "evidence": "他明确说谁要取灯自己说、不同意拆的木榫不动，并在灯架倒塌时没有靠近残命灯盏。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "chapter-0036-npc-debt-collector-gu-xun-001",
+        "asset_id": "npc_debt_collector_gu_xun",
+        "field_path": "npc.current_procedural_record",
+        "before": "仅保留顾家局部重叠、陶面微温及相邻两户无温变",
+        "after": "分别确认三户由持有人亲手取灯、各户只拆获许可木榫、未许可处无人触碰，且州府影印仍封住空架原位",
+        "evidence": "顾巡在顾家灯离架后要求停下核验，确认记录完成后才允许继续，并最终列出四项亲见内容。"
+      },
+      {
+        "fact_id": "chapter-0036-npc-debt-collector-gu-xun-002",
+        "asset_id": "npc_debt_collector_gu_xun",
+        "field_path": "npc.next_procedural_hook",
+        "before": "已完成三盏灯当前位置标记，后续复核旧位、移入时刻及暖墙前后窄线",
+        "after": "天亮复核旧位、空架封额与三户腕痕；三户可来、可拒、可撤，户灯不得再挂回回灯架",
+        "evidence": "顾巡在空架处划出灰雨界线并宣布次日复核范围与见证撤回权。"
+      },
+      {
+        "fact_id": "chapter-0036-npc_mo-jinglan-001",
+        "asset_id": "npc_mo_jinglan",
+        "field_path": "npc.current_witness_participation",
+        "before": "分开登记三户陈述、右邻拒按及后续撤出见证",
+        "after": "分别记录三户自取户灯、各自许可木榫、腕上白痕及灯离架；按右邻要求划去未亲见内容",
+        "evidence": "莫井兰逐项询问许可范围，分别记录顾家、左邻与右邻的取灯和拆榫事实，并删去右邻撤回的多余空处。"
+      },
+      {
+        "fact_id": "chapter-0036-npc_mo-jinglan-002",
+        "asset_id": "npc_mo_jinglan",
+        "field_path": "npc.current_returnfire_witness",
+        "before": "只确认陶沿内侧亮过一次，未确认取走住户命火或回火来处",
+        "after": "确认灰雨从空架封额落下并向顾家旧位汇聚，但拒绝补写灰雨来源",
+        "evidence": "莫井兰只记录“灰雨落后向顾家旧位汇聚”，并明确不记录它从哪里来。"
+      },
+      {
+        "fact_id": "chapter-0036-npc-su-wan-001",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_visible_support",
+        "before": "只递袖边供陆沉渊自行借力，未把自己的灯送入三户范围",
+        "after": "在陆沉渊受伤和灰雨灼伤时继续只提供袖边借力，并阻止他俯身接近灰雨",
+        "evidence": "苏晚先递出袖边让他自行稳住，灰雨落下后又拽住他的袖边，不许他俯身。"
+      },
+      {
+        "fact_id": "chapter-0036-npc_registrar_qiu_shen-001",
+        "asset_id": "npc_registrar_qiu_shen",
+        "field_path": "npc.current_visible_consequence",
+        "before": "右手五指蜷拢，印面未落成印文",
+        "after": "未靠近户灯，转向众人展示记录石上的断印与空架地面的州府封额",
+        "evidence": "仇慎没有接近三盏灯，只用尚能动的左手将记录石边缘转向众人。"
+      }
+    ],
+    "locations": [
+      {
+        "fact_id": "chapter-0036-location-mudlamp-lane-001",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_chapter_step",
+        "before": "三户户灯位于被州府影印收紧的共用回灯架内",
+        "after": "三户分别抱回各自户灯，回灯架彻底倒塌，三户不再集中悬挂",
+        "evidence": "三户持有人依次拆除获许可木榫并取回户灯，失去承力的横木和立木随后全部倒下。"
+      },
+      {
+        "fact_id": "chapter-0036-location-mudlamp-lane-002",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_boundary_condition",
+        "before": "住户各自持灯守位，拒绝渡火；安置与看护未转化为命火支出",
+        "after": "三户各自护持户灯、未重新集中，也未向苏晚或旁人索火；其余住户只拆自己同意的木榫",
+        "evidence": "顾家、左邻、右邻分别声明只取自己的灯，其他住户绕开未同意的木榫，三户各自在怀中护灯。"
+      },
+      {
+        "fact_id": "chapter-0036-location-mudlamp-lane-003",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_protection_array_condition",
+        "before": "州府影印收紧回灯架，三盏灯焰被压成细线",
+        "after": "共用回灯架毁坏，挡风位置消失，墙脚灰线暗下，夜气从破口持续灌入",
+        "evidence": "架体倒塌后巷口无遮拦，风吹低三盏灯焰，墙脚暖意断裂且灰线变暗。"
+      }
+    ],
+    "factions": [
+      {
+        "fact_id": "chapter-0036-faction-life-registry-001",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_local_enforcement_phase",
+        "before": "州府冷额由州府影印直接接续执行，继续封住三户灯位",
+        "after": "州府影印未追逐已取回的三盏户灯，而是在倒塌空架上保留完整封额轮廓",
+        "evidence": "三盏灯离架后，影印完整留在空架与断木上，未向持灯人追去。"
+      },
+      {
+        "fact_id": "chapter-0036-faction-life-registry-002",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_next_procedural_hook",
+        "before": "州府影印直接封住三户灯位，分别处理三户见证与撤回范围",
+        "after": "空架封额和顾家旧位灰雨聚拢成为下一次旧位、封额与腕痕复核对象",
+        "evidence": "顾巡宣布天亮复核旧位、空架封额和三户腕痕，莫井兰保留灰雨只向顾家旧位汇聚的亲见记录。"
+      }
+    ],
+    "artifacts": [
+      {
+        "fact_id": "chapter-0036-artifact-ashlight-001",
+        "asset_id": "artifact_ashlight_cup",
+        "field_path": "artifact.current_custody_status",
+        "before": "残命灯盏随共同保管箱压在塌陷屋基下，封口未启，未点火或移动",
+        "after": "共同保管箱仍被旧梁与碎壁遮住，残命灯盏未取出、未开启、未移动或使用",
+        "evidence": "陆沉渊望向塌陷屋基时确认压在屋基下的共同保管箱没有动静，手也没有借架倒塌靠近。"
+      }
+    ],
+    "techniques": [
+      {
+        "fact_id": "chapter-0036-technique-recognition-001",
+        "asset_id": "technique_ledger_recognition",
+        "field_path": "technique.current_use_status",
+        "before": "本章未再次施展识账术，改由分项位置、印痕与亲见记录承接复核",
+        "after": "仍未施展识账术，陆沉渊仅凭可见木格受力、灯柄空隙与现场亲见记录发言",
+        "evidence": "正文明确其右眼闭着、左眼只有暗灰，看不清冷额内部账痕，只观察木格受力和灯位变化。"
+      }
+    ],
+    "relationships": [
+      {
+        "fact_id": "chapter-0036-bond-mudlamp-trust-001",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_collective_choice",
+        "before": "三户分别限定见证范围，右邻撤出后续亲见并保留先前口述",
+        "after": "三户分别选择取回户灯并只承担自家木榫拆除；未同意的木榫与他人灯位不被代拆或代证",
+        "evidence": "顾家、左邻、右邻逐一声明只拆自己的木榫、只取自己的灯，其他住户不得替其拆除。"
+      },
+      {
+        "fact_id": "chapter-0036-bond-mudlamp-trust-002",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_refusal_boundary",
+        "before": "共同体保留拒绝渡火、拒绝记欠火和带灯退出权",
+        "after": "拆架过程中继续保留个人拒绝权；有人拒绝拆木榫即被绕开，有人伸手扶助也因未获同意而撤回",
+        "evidence": "一名住户拒绝拆某段木榫，众人绕开；左邻拒绝他人代拆后，伸出的手立即退开。"
+      },
+      {
+        "fact_id": "chapter-0036-bond-mother-su-wan-001",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_visible_support",
+        "before": "苏晚只递袖边供陆沉渊自行借力，不把命灯送入三户范围",
+        "after": "苏晚继续不转移自己的命火，只在陆沉渊膝伤和灰雨灼伤时提供袖边借力并限制其靠近",
+        "evidence": "她的命灯始终在三户位置之外，且两次只以袖边协助，没有把灯或命火送入现场。"
+      }
+    ],
+    "emotions": [
+      {
+        "fact_id": "chapter-0036-emotion-community-001",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_collective_emotion",
+        "before": "住户警惕州府直接影印并拒绝替仇慎补证",
+        "after": "住户在保灯与毁架之间作出沉重的自主选择，接受失去巷口挡风位置的共同后果",
+        "evidence": "左邻询问拆架后灯往哪儿回，众人无人回答；最终三户仍选择各自取灯，架毁后共同承受风口消失。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "chapter-0036-information-001",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_inference_limit",
+        "before": "已能亲见州府影印位于顾家黑边并向相邻旧位展开，不能认定完整来源或因果链",
+        "after": "新增可验证事实：州府影印在三盏灯离架后仍完整留在空架原位；仍未认定其来源、为何压灯或架毁责任",
+        "evidence": "顾巡明确只认空架封额和灯离架事实，不判断是谁令架毁或影印为何压灯。"
+      },
+      {
+        "fact_id": "chapter-0036-information-002",
+        "asset_id": "state_ledger_public_reputation",
+        "field_path": "state_ledger.current_audience_direction",
+        "before": "公开见证已区分本地断印与州府直接影印",
+        "after": "公开可见范围新增：三户自主取灯、州府影印留在空架、空架封额与仇慎未落本地印并列可见",
+        "evidence": "仇慎展示记录石断印，地面同时留下方正封额轮廓；顾巡和莫井兰分别记录三户取灯事实。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "chapter-0036-hook-001",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "foreshadowing.current_manifestation",
+        "before": "灰雨线索表现为灰痕与旧错征痕缺口的局部叠合",
+        "after": "夜露触发空架封额落下细碎冷灰雨，灰雨避开三盏已取回的灯，持续向顾家旧灯位聚拢",
+        "evidence": "夜露第一滴在封额上灼出黑点，随后冷灰沿封额边缘滚动并聚向顾家旧位。"
+      },
+      {
+        "fact_id": "chapter-0036-hook-002",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "foreshadowing.next_review_hook",
+        "before": "等待对灰痕、旧位与影线进行分项复核",
+        "after": "天亮复核旧位、空架封额、三户腕痕及灰雨向顾家旧位汇聚的亲见记录",
+        "evidence": "顾巡宣布次日复核项目，莫井兰确认三户是否保留各自见证并划去右邻撤回内容。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "chapter-0036-timeline-001",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_event_sequence",
+        "before": "州府影印收紧回灯架并压低三户灯焰",
+        "after": "三户逐一取得户灯；共用回灯架因失去承力彻底倒塌；空架封额在夜露后落下灰雨并聚向顾家旧位",
+        "evidence": "正文按霜冻收紧、分户拆榫取灯、架体倒塌、夜露落灰的顺序呈现。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "chapter-0036-physical-array-001",
+        "asset_id": "state_ledger_mudlamp_array_integrity",
+        "field_path": "state_ledger.current_visible_integrity_consequence",
+        "before": "护阵裂口熄去一段，夜气从新缺口进入，完整度已进一步下降",
+        "after": "回灯架彻底毁坏，挡风位置消失，墙脚灰线继续暗下，护阵未恢复",
+        "evidence": "断木倒下后夜气无遮拦穿过巷口，墙脚微弱暖意断裂，灰线随之暗下。"
+      },
+      {
+        "fact_id": "chapter-0036-physical-array-002",
+        "asset_id": "state_ledger_resident_lifefire_reserve",
+        "field_path": "state_ledger.current_resident_lifefire_callability",
+        "before": "州府影印压低三户灯焰，但未发生住户命火转移或代扣",
+        "after": "拆架与取灯过程中仍未发生住户命火转移、代扣或向他人渡火",
+        "evidence": "正文多次写明三户各自护灯、无人从灯中取火，也未向苏晚或旁人索火。"
+      },
+      {
+        "fact_id": "chapter-0036-physical-strain-001",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.current_visible_condition",
+        "before": "咳出夹细血丝的灰沫，胸骨钝响并靠门框借力",
+        "after": "木刺蹭开掌中血口；灰雨接触伤口后出现灼白，胸口再次钝痛，施术窗口仍未恢复",
+        "evidence": "灰雨触到掌边后血口泛白并灼痛，陆沉渊未俯身识账或接近封额。"
+      }
+    ],
+    "naming": [
+      {
+        "fact_id": "chapter-0036-naming-001",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_observation_label",
+        "before": "州府影印与本地断印已被分列",
+        "after": "空架上的方正封额轮廓被现场明确区分为州府影印，不再被称为仇慎未落成的本地印",
+        "evidence": "地面封额轮廓与记录石断印同时展示，正文明确其清楚得不能说是仇慎未落成的本地印。"
+      }
+    ]
+  }
+}

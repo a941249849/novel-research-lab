@@ -1,0 +1,79 @@
+{
+  "chapter_id": "chapter-0054",
+  "draft_sha256": "1017af27279ac4cb1582629fc3dfeab93a8fa9fc7ea42cf3a2fa3a65d67f2495",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "chapter0054_fact_03",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_observed_choice",
+        "before": "陆沉渊克制夺链与施术，只限定亲见断痕及归属缺口",
+        "after": "陆沉渊停止替苏晚争抢暖位，不碰她的裂灯，不向住户命灯开口，转而在暖界外侧以自身挡冷照看",
+        "evidence": "苏晚移灯后，陆沉渊只清路、垫衣、托肘并坐在迎风处，明确不再推她回墙内。"
+      }
+    ],
+    "npcs": [],
+    "locations": [],
+    "factions": [
+      {
+        "fact_id": "chapter0054_fact_05",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_chapter_step",
+        "before": "两巷撤销两处临时铺位并重排灶位，暖墙安置容量已缩减",
+        "after": "暖墙末段进一步失去照护能力；两名住户保住体温与指节活动，却只能挤坐末端窄位，无法回到已被霜封的原铺位",
+        "evidence": "两名住户在苏晚让出的铺板上恢复少许活动，原先两块铺板被霜封后收起靠墙。"
+      }
+    ],
+    "artifacts": [],
+    "techniques": [],
+    "relationships": [
+      {
+        "fact_id": "chapter0054_fact_02",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_autonomy_boundary",
+        "before": "苏晚决定自身寿债与裂灯是否进入交换，陆沉渊接受其拒绝被并入他案",
+        "after": "苏晚亲自决定将自己的裂灯移出余暖，并明确陆沉渊只能扶她、不能替她决定灯位；陆沉渊完整服从",
+        "evidence": "苏晚说“我的灯放哪儿，我自己拿”“你可以扶我，不能替我答”，陆沉渊让开墙根，此后不再推灯回暖墙。"
+      }
+    ],
+    "emotions": [],
+    "information": [
+      {
+        "fact_id": "chapter0054_fact_01",
+        "asset_id": "state_ledger_mother_life_lamp_countdown",
+        "field_path": "state_ledger.current_visible_lamp_consequence",
+        "before": "苏晚命灯旧裂未合，冷灰与暗冷光持续外透",
+        "after": "苏晚将命灯移至更冷外侧后，旧裂旁新增一条斜落灯底、当场吃入陶胎且未能恢复的细裂，掌背持续散出冷灰",
+        "evidence": "灯在外侧湿砖落定时发出细响，旧裂旁出现新纹并吃入陶胎，冷灰沿纹渗出，苏晚掌背继续散冷。"
+      },
+      {
+        "fact_id": "chapter0054_fact_04",
+        "asset_id": "state_ledger_mudlamp_array_integrity",
+        "field_path": "state_ledger.current_visible_integrity_consequence",
+        "before": "护阵外沿已有折向撤空铺位的裂口，持续吐出冷雾与冰刺",
+        "after": "共同担保寿印压住三处共用灯龛，暖墙末段完全失去稳定送暖能力，龛沿裂纹继续张开并封去大半安置位置",
+        "evidence": "末段热气断绝，共灯只能护住各自灯芯周围一圈，龛沿裂纹交错张开，霜白封住原有安置区域。"
+      },
+      {
+        "fact_id": "chapter0054_fact_06",
+        "asset_id": "state_ledger_resident_lifefire_reserve",
+        "field_path": "state_ledger.current_resident_lifefire_callability",
+        "before": "住户命火未被调用、转移或扣减，且不可由陆沉渊或泥灯巷统一调用",
+        "after": "本次移灯与暖墙失温期间仍未调用、转移或扣减任何住户命火；住户继续各自持灯并保留拒绝权",
+        "evidence": "递出的户灯被苏晚要求收回，灯绳始终留在原主腕上，其余住户也未交灯或分出命火。"
+      },
+      {
+        "fact_id": "chapter0054_fact_07",
+        "asset_id": "state_ledger_faction_pressure",
+        "field_path": "state_ledger.faction_pressure",
+        "before": "共同空额期限继续，共同担保物寿印悬在护阵外沿并向裂口垂线",
+        "after": "共同担保寿印未吞下命火补额，转而裂成三枚带相同尾灰的令牌，分别显出陆沉渊、苏晚与泥灯巷，其中泥灯巷名下归属仍空缺并指向下一次复核",
+        "evidence": "夜深后寿印沿三道冷线分裂，三枚令牌显字且带同样尾灰，第三枚在“泥灯巷”下保留空白，尾灰同时外折。"
+      }
+    ],
+    "hooks": [],
+    "timeline": [],
+    "physical_state": [],
+    "naming": []
+  }
+}

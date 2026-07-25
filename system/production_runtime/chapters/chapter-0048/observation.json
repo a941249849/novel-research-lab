@@ -1,0 +1,98 @@
+{
+  "chapter_id": "chapter-0048",
+  "draft_sha256": "b5f361e9c28df6ee74f284fa7f4efde68e362f44f94f5ed0a06c73a89a08b168",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "chapter-0048-lu-choice",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_observed_choice",
+        "before": "只施展一次局部识账术确认残印与户灯缺角的同类咬合，立即停术，不进入内槽、不追索完整链条",
+        "after": "未再次施术，只以身体承受残缺旧誓回声，并在无法确认归属时撤离残印与持灯人，拒绝把古债碎影解释为当前封源案答案",
+        "evidence": "陆沉渊没有催动焦纹或结印；他要求持灯人“只退”，撤下残印，并连续回答古债双方、欠项及与当前封源关系均“不知道”或“不能认作一笔”。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "chapter-0048-shadow-strategy",
+        "asset_id": "npc_prefecture_shadow_envoy",
+        "field_path": "npc.current_recovery_strategy",
+        "before": "以影印压力追索州府转运残印，并要求下一次复核核验持印触路与见证记录",
+        "after": "停止在旧槽现场直接验收，封存原路，将残印交验与受封户灯源栏亲自指认并入下一次核验门槛",
+        "evidence": "闻照微通过影印宣布“异物不再就地验收”，封闭旧路，并要求下次由持印者交验残印、持灯人亲自指认源栏。"
+      }
+    ],
+    "locations": [],
+    "factions": [
+      {
+        "fact_id": "chapter-0048-life-treasury-action",
+        "asset_id": "faction_prefecture_life_treasury",
+        "field_path": "faction.current_visible_action",
+        "before": "外槽封锁持续，残印列为限期回收异物",
+        "after": "州府边缘回收程序封存弃命旧址外沿原路，并把异物回收与受封户灯源栏核验捆绑执行",
+        "evidence": "三层影印依次压平槽口痕迹并封死通路，随后留下残印与户灯须同到、缺一则源栏续封的可见程序条件。"
+      }
+    ],
+    "artifacts": [
+      {
+        "fact_id": "chapter-0048-seal-trace",
+        "asset_id": "artifact_prefecture_transit_registry_seal",
+        "field_path": "artifact.current_visible_trace",
+        "before": "残印与外沿封源缺角形成可见同类银灰咬合痕，未交出且在槽闭合前被收回封布",
+        "after": "残印在州府影印与旧槽双重压力下放出倒流银灰火和残缺旧誓，撤离后仍由陆沉渊封布持有；其咬合痕在受封户灯源栏顶开一层后加州府覆印",
+        "evidence": "封布内残印放出铁锈冷香、银灰印屑与倒流火；陆沉渊将其压回怀中，随后持灯人户灯源栏的咬合痕顶起带州府边线的薄灰覆印。"
+      }
+    ],
+    "techniques": [],
+    "relationships": [],
+    "emotions": [],
+    "information": [
+      {
+        "fact_id": "chapter-0048-mystery-ledger",
+        "asset_id": "state_ledger_unresolved_mysteries",
+        "field_path": "state_ledger.current_inference_limit",
+        "before": "新增断裂手印形现场线索，但其归属、时间、来源与内槽去向继续未解",
+        "after": "断裂手印与倒流银灰火被限定为古债契约碎影；残誓仅保留三个不完整音节，其双方、数额、所欠之物及与当前封源案的关系继续未解",
+        "evidence": "陆沉渊只复述可听见的残字与出现顺序，并明确说不知道立誓者、欠项，且不能认作与持灯人的封源同一笔。"
+      },
+      {
+        "fact_id": "chapter-0048-map-boundary",
+        "asset_id": "state_ledger_map_unlock_status",
+        "field_path": "state_ledger.current_boundary_status",
+        "before": "外沿转运槽完成一次开启、局部识账与闭合，内槽未开启",
+        "after": "弃命旧址外沿原路被州府影印封存，无法再次从该路进入；内槽、深处方向与完整地图仍未解锁",
+        "evidence": "影印逐层覆盖外沿，原有侧身缝隙闭成无缝灰黑封面；陆沉渊摸不到可再辨读的缝或边角，也未尝试破封。"
+      },
+      {
+        "fact_id": "chapter-0048-pressure",
+        "asset_id": "state_ledger_faction_pressure",
+        "field_path": "state_ledger.current_next_procedural_hook",
+        "before": "外沿开启与残印响应已发生，十道冷金锁痕持续发亮，下一次复核将直接核验持印触路与见证记录",
+        "after": "旧址原路封存后，下一次核验改为残印交验与受封户灯源栏亲自指认同时到场；逾限将触发源栏续封处置",
+        "evidence": "闻照微的影印两次宣告新的核验条件，并以细冷印边同时对准户灯覆印翘角和陆沉渊怀中的残印。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "chapter-0048-ancient-fragment",
+        "asset_id": "foreshadowing_ancient_debt_covenant_fragment",
+        "field_path": "foreshadowing.current_manifestation",
+        "before": null,
+        "after": "古债碎影在残印受压现场显出断裂手印、倒流银灰火及仅含“以”“执”和疑似“还”音的残缺旧誓，双方、数额与全貌均未确认",
+        "evidence": "槽面出现缺损手印和两道相对手印的瞬影，誓音中间断失；陆沉渊明确拒绝确认立誓者、所欠之物及其与当前封源案的关系。"
+      }
+    ],
+    "timeline": [],
+    "physical_state": [
+      {
+        "fact_id": "chapter-0048-strain",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.current_visible_condition",
+        "before": "识账后右眼焦纹烧至太阳穴并流血，咳出夹血灰沫，胸骨旧裂加重，左腿失力且需借人扶住",
+        "after": "承受残缺旧誓后冷灰咳加剧并带暗红血丝，出现持灯人重影、短暂失明与补全誓音的心魄恍惚；撤离后恍惚消退，但右眼仍不能辨痕",
+        "evidence": "陆沉渊连续咳出冷灰和血丝，眼前持灯人一度分成两道并短暂全黑；退离后重影消失，右眼仍是一团浑灰。"
+      }
+    ],
+    "naming": []
+  }
+}

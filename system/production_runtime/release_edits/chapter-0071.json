@@ -1,0 +1,14 @@
+{
+  "version": "0.25",
+  "chapter_id": "chapter-0071",
+  "source_revision": "system/production_runtime/chapters/chapter-0071/revision.md",
+  "source_sha256": "bdb1921c047e259ec117dab3a5f55700d47c623b6d64fa8a947a952014f16b04",
+  "release_edit": "system/production_runtime/release_edits/chapter-0071.md",
+  "release_edit_sha256": "19c929fb1b955887251750889254c9a65b1f7ed2a2ccd578115b582d12797c34",
+  "repair_direction": "删除章节内部重复的结尾文本块，只保留一次封档冷意扑向墙面并使护阵白裂亮起的结尾；保持既有因果、状态和钩子不变，修订后仍须是完整章节且达到发布字数。",
+  "provider": "antigravity",
+  "model": "Gemini 3.5 Flash (High)",
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-071-080.json",
+  "reviewed_release_edit_sha256": "19c929fb1b955887251750889254c9a65b1f7ed2a2ccd578115b582d12797c34"
+}

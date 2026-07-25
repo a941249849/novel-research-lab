@@ -74,6 +74,7 @@ class RuntimeFixture(unittest.TestCase):
         self.assertEqual(data["adapters"]["antigravity"]["mode"], "manual_handoff")
         self.assertEqual(data["gates"]["review_status"], "PENDING")
         self.assertEqual(data["recommended_next_command"], "python3 system/runtime/nrl.py advance")
+        self.assertIsNone(data["active_operation"])
         after = state_path.read_text(encoding="utf-8")
         self.assertEqual(after, before)
 
@@ -330,14 +331,14 @@ class RuntimeFixture(unittest.TestCase):
         self.assertEqual(data["operating_mode"], "SYSTEM_HARDENING")
         self.assertEqual(data["content_progression"], "FROZEN_AT_OWNER_GATE")
         self.assertIn("do not advance story phase", data["hard_rules"])
-        self.assertEqual(data["hermes_role"], "later_writer_or_literary_enrichment")
+        self.assertNotIn("hermes_role", data)
+        self.assertTrue(data["model_team_contract"]["valid"])
 
     def test_studio_data_returns_required_dashboard_sections(self):
         result = self.run_cli("studio-data")
         self.assertEqual(result.returncode, 0, result.stderr)
         data = json.loads(result.stdout)
-        self.assertEqual(
-            set(data),
+        self.assertTrue(
             {
                 "system_identity",
                 "current_project",
@@ -348,7 +349,7 @@ class RuntimeFixture(unittest.TestCase):
                 "runtime_status",
                 "next_safe_action",
                 "owner_gate",
-            },
+            }.issubset(data),
         )
         self.assertEqual(data["system_identity"]["name"], "Novel Research Lab")
         self.assertIn("Corpus-to-Creation", data["system_identity"]["positioning"])
@@ -362,7 +363,7 @@ class RuntimeFixture(unittest.TestCase):
         self.assertEqual(matrix["NPCs"], "missing")
         self.assertEqual(matrix["Factions"], "partial")
         self.assertEqual(matrix["Artifacts"], "seed")
-        self.assertEqual(matrix["Techniques"], "missing")
+        self.assertEqual(matrix["Techniques"], "seed")
         self.assertEqual(matrix["Naming"], "missing")
         self.assertEqual(matrix["Emotional Bonds"], "partial")
         self.assertEqual(matrix["Foreshadowing"], "partial")
@@ -391,7 +392,7 @@ class RuntimeFixture(unittest.TestCase):
             },
         )
         self.assertNotIn("complete", {item["status"] for item in families.values()})
-        self.assertEqual(families["techniques"]["status"], "missing")
+        self.assertEqual(families["techniques"]["status"], "seed")
         self.assertEqual(families["naming"]["status"], "missing")
 
     def test_creation_assets_summary_matches_status_counts(self):
@@ -470,6 +471,27 @@ class RuntimeFixture(unittest.TestCase):
         self.assertEqual(data["decisions"][0]["decision_id"], "owner_gate_phase2d_review_acceptance_001")
         self.assertEqual(data["decisions"][0]["forbidden_scope"], ["write_novel_prose"])
 
+    def test_owner_gate_records_final_asset_generation_authorization(self):
+        record = self.run_cli(
+            "owner-gate",
+            "record",
+            "--decision-id",
+            "owner_gate_final_assets_001",
+            "--decision-type",
+            "authorize_final_asset_generation",
+            "--authorized-scope",
+            "generate_final_creation_assets",
+            "--forbidden-scope",
+            "generate_novel_prose",
+            "--expires-after-mission",
+            "phase2f_final_asset_generation",
+            "--owner-note",
+            "authorize final assets only",
+        )
+        self.assertEqual(record.returncode, 0, record.stderr)
+        data = json.loads(record.stdout)
+        self.assertEqual(data["decision_type"], "authorize_final_asset_generation")
+
     def test_compile_context_writes_compact_packet(self):
         result = self.run_cli("compile-context", "--agent", "antigravity")
         self.assertEqual(result.returncode, 0, result.stderr)
@@ -504,6 +526,16 @@ class RuntimeFixture(unittest.TestCase):
         self.assertIn("write novel prose", html)
         self.assertIn("read-only", html)
 
+    def test_studio_build_does_not_write_fixture_data_to_workspace_public_snapshot(self):
+        public_snapshot = REPO_ROOT / "apps/studio/public/nrl-studio-data.json"
+        before = public_snapshot.read_text(encoding="utf-8") if public_snapshot.exists() else None
+
+        result = self.run_cli("studio-build")
+
+        self.assertEqual(result.returncode, 0, result.stderr)
+        after = public_snapshot.read_text(encoding="utf-8") if public_snapshot.exists() else None
+        self.assertEqual(after, before)
+
     def test_studio_build_includes_doctor_command(self):
         result = self.run_cli("studio-build")
         self.assertEqual(result.returncode, 0, result.stderr)
@@ -512,7 +544,8 @@ class RuntimeFixture(unittest.TestCase):
         self.assertIn("python3 system/runtime/nrl.py doctor", html)
         self.assertIn("python3 system/runtime/nrl.py system-status", html)
         self.assertIn("python3 system/runtime/nrl.py studio-data", html)
-        self.assertIn("python3 system/runtime/nrl.py advance", html)
+        self.assertIn("python3 system/runtime/nrl.py system-check", html)
+        self.assertNotIn("python3 system/runtime/nrl.py advance", html)
 
     def test_studio_build_shows_system_hardening_mode(self):
         state_path = self.root / "system/mission_controller/current_phase_state.json"
@@ -527,7 +560,7 @@ class RuntimeFixture(unittest.TestCase):
         self.assertIn("Current Project", html)
         self.assertIn("SYSTEM_HARDENING", html)
         self.assertIn("FROZEN_AT_OWNER_GATE", html)
-        self.assertIn("Hermes: paused_not_removed", html)
+        self.assertIn("Codex Sol / Terra / Luna", html)
 
     def test_readme_documents_sys3_commands(self):
         readme = (REPO_ROOT / "system/runtime/README.md").read_text(encoding="utf-8")

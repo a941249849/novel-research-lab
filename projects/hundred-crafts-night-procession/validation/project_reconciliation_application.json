@@ -1,0 +1,27 @@
+{
+  "version": "1.1",
+  "project_id": "hundred-crafts-night-procession",
+  "status": "applied_after_semantic_reconciliation",
+  "resulting_asset_store_sha256": "3f6f8cf6af4442b4492a3e7fab0a4bdb98ba95c983da477848f3e56977ce8582",
+  "resulting_manifest_sha256": "8a3df3683edc850553e00ce9224eeae1b0d92e68afcc771c01c0ed695995dc3c",
+  "applied_input_hashes": {
+    "projects/hundred-crafts-night-procession/project_state.json": "48546fca0353f676e310cce71d311e1220bae782282010c667b3f364c0feb685",
+    "projects/hundred-crafts-night-procession/design/story_bible.md": "eaa47f68551d8982eba2566000a2e1046070562ebd683acc79719fe23d2f4a70",
+    "projects/hundred-crafts-night-procession/design/outline_tree.md": "f4890b7b8a300deb97fd2ec470e8ed205fbdd4de0fe231d7dee4fac7a4923e43",
+    "projects/hundred-crafts-night-procession/design/production_blueprint.md": "2788196e317f44b745faa14e78f7e429ce2da863616541e7292eea2baeedfebe",
+    "projects/hundred-crafts-night-procession/design/character_highlight_matrix.v1.json": "b9a85484f89a10fa4dbeb3e087e24013756149a205f08985aa55a3420e20d42f",
+    "projects/hundred-crafts-night-procession/design/world_progression_atlas.v1.json": "84eddb0e476c3fa3e46ca6f3cdb72d22806e1e580416e1b33f6d4c08fbfa12ec",
+    "projects/hundred-crafts-night-procession/design/embedded_history_engine.v1.json": "edeb003983340d3c0502d93cdf55c57da1af8b69e3ac4492f7ecb0f67c2eb65a",
+    "projects/hundred-crafts-night-procession/production_runtime/plans/volume1_semantic_beat_contract.v1.json": "faba9f6b0dd9ed96e91582b0e5a8fe3f42e9a6a277de127d58c73bddf01d8e05",
+    "projects/hundred-crafts-night-procession/creation_assets/project_assets.json": "3f6f8cf6af4442b4492a3e7fab0a4bdb98ba95c983da477848f3e56977ce8582",
+    "projects/hundred-crafts-night-procession/production_runtime/plans/volume1_outline.v1.json": "7b2813efec593d4f12a3cdf567eaf440e35b9325e32a7b87e2a56fc54f9cf19a",
+    "projects/hundred-crafts-night-procession/production_runtime/plans/volume1_production_manifest.v1.json": "8a3df3683edc850553e00ce9224eeae1b0d92e68afcc771c01c0ed695995dc3c",
+    "projects/hundred-crafts-night-procession/production_runtime/state/canonical_initial_state.v1.json": "163720128d7313f6ccb5e852844de5c266d75b1cf599b6224ec3449a8ac5569d",
+    "projects/hundred-crafts-night-procession/production_runtime/chapter_titles.volume1.json": "185bea0164b78b9abcb26f6e056de210bae8cf9504e48dff27b8116516bd7649",
+    "projects/hundred-crafts-night-procession/production_runtime/production_readiness/audit-contract.v0.1.json": "fef5c5d5cc67af88addf6a898c3b910cbdc586dc46c43ab593617cbf61969609",
+    "projects/hundred-crafts-night-procession/production_runtime/quality/first_window_quality_contract.v1.json": "c6d6185c5a9f16380f96aa8cd1ba15b8b7f3637f10b85dd363c5f81d76fda709",
+    "projects/hundred-crafts-night-procession/production_runtime/quality/calibration_quality_evidence.v1.json": "fc3366e5867c9ee6fb10689ffec3b59f124e43f16a12553dc0d3168a54dc96de",
+    "projects/hundred-crafts-night-procession/validation/project_reconciliation.json": "e6ccbcb0dd2fc0019a01a2c587806e63bd85825fec08a0aacfe15f0c2c10b69c",
+    "projects/hundred-crafts-night-procession/validation/literary_semantic_application.v1.json": "63a3a13e91597143bab8cdebf2fc5c6443e9fe70c2d9793930e3d0ea23e68297"
+  }
+}

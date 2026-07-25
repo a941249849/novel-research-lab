@@ -1,0 +1,30 @@
+{
+  "chapter_id": "chapter-0025",
+  "dramatic_purpose": "居民自愿选择短时承重岗位。",
+  "must_keep": [
+    "拒绝者被明确记录为不受惩罚。",
+    "POV 固定为周砺"
+  ],
+  "must_avoid": [
+    "不得引入未登记资产或用旁白代替物质行动",
+    "不得回滚已接受状态"
+  ],
+  "expected_state_deltas": [
+    {
+      "state_id": "v1.ch025.outcome",
+      "asset_id": "char_zhou_li",
+      "field_path": "character.current_state",
+      "after": "拒绝者被明确记录为不受惩罚。",
+      "before": "周砺撤回单方无责目标，旧案转入行为与后果核查。"
+    }
+  ],
+  "required_asset_ids": [
+    "char_zhou_li",
+    "faction_old_street_residents",
+    "artifact_responsibility_ledger"
+  ],
+  "active_hook_ids": [],
+  "scene_constraints": [
+    "冲突必须落在具体工艺现场、物证或受影响者选择上"
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "chapter_id": "chapter-0026",
+  "draft_sha256": "08e278745761b4f6b284af43aba63f453ba352e4424becf0ab3b5806e6dd1fe8",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "chapter-0026-character-001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_personal_research_record",
+        "before": "陆沉渊仍持有完整的个人灰痕方向研究记录",
+        "after": "研究记录已交出且不可追回，仅剩被割下的封面纸角",
+        "evidence": "陆沉渊松手后，整叠记录被黑线收走；对方明确表示今后拿不回全本，陆沉渊也未捡回纸角。"
+      },
+      {
+        "fact_id": "chapter-0026-character-002",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_observed_choice",
+        "before": "等待以实物压痕复核转运起点",
+        "after": "交出自己的研究记录，换取有限路线与假命页风险提示",
+        "evidence": "他明确拒绝使用住户见证、命火或苏晚命页，并将自己的全本记录缚在线上完成交易。"
+      },
+      {
+        "fact_id": "chapter-0026-character-003",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_visible_condition",
+        "before": "左膝麻木、胸骨旧裂、咳出冷灰与掌血混合物",
+        "after": "左膝撞地后支撑失稳，膝侧新增十段暗红细纹，并咳出夹血冷灰",
+        "evidence": "交易落定后他膝盖撞地、胸口旧裂震开，膝侧浮出整整十段新纹；起身后又咳出夹细血丝的冷灰。"
+      }
+    ],
+    "npcs": [],
+    "locations": [],
+    "factions": [
+      {
+        "fact_id": "chapter-0026-faction-001",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_next_procedural_hook",
+        "before": "两日内围绕缺角残印、旧灰和现有见证复核转运起点",
+        "after": "下一次复核需提交入口缺角的实物尺寸与不得越界、不得拾取假命页的有限路线",
+        "evidence": "陆沉渊离开时明确将这两项作为下一次站到命审台前要交出的材料。"
+      }
+    ],
+    "artifacts": [],
+    "techniques": [],
+    "relationships": [],
+    "emotions": [],
+    "information": [
+      {
+        "fact_id": "chapter-0026-information-001",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_next_review_hook",
+        "before": "须以缺角残印最初落下时的实物压痕复核转运起点",
+        "after": "获得一条指向废弃命址外沿的有限路线，并取得入口标记与州府残印缺角尺寸相合的可复核线索",
+        "evidence": "路线纸允许走到废弃命址外沿；入口轮廓与残印缺角的斜边长度、内收角度和底部崩痕均相合。"
+      },
+      {
+        "fact_id": "chapter-0026-information-002",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_inference_limit",
+        "before": "不能确定州府残印从何处起压、压过何物或完整获利链",
+        "after": "仍不能认定入口由州府残印所留、残印曾在那里起压，或废弃命址内存有泥灯巷被记作转运的东西",
+        "evidence": "陆沉渊在确认尺寸相合后，明确保留上述三项不能认定的边界。"
+      },
+      {
+        "fact_id": "chapter-0026-information-003",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "foreshadowing.next_review_hook",
+        "before": "复核焦点为残印背面旧灰中的实物压痕及其起点",
+        "after": "新增入口缺角尺寸与残印缺角尺寸相合的待复核线索，来源与转运事实仍未确认",
+        "evidence": "正文只确认两处缺角尺寸和崩痕相合，并要求由入口本身作证。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "chapter-0026-hook-001",
+        "asset_id": "state_ledger_map_unlock_status",
+        "field_path": "state_ledger.current_boundary_status",
+        "before": "废弃命址边界尚未取得可用路线",
+        "after": "废弃命址外沿获得有限路线解锁；第一处断口、路线外范围及入口之后仍未解锁",
+        "evidence": "路线纸明确只允许走到废弃命址外沿，三道压痕显示路线范围有限，且交易者拒绝提供入口之后的信息。"
+      },
+      {
+        "fact_id": "chapter-0026-hook-002",
+        "asset_id": "npc_debt_collector_gu_xun",
+        "field_path": "npc.next_procedural_hook",
+        "before": "以缺角残印背面的旧灰实物压痕复核转运起点",
+        "after": "下一次复核将面对入口缺角尺寸与残印缺角相合的证据，同时旧追缴继续存在",
+        "evidence": "陆沉渊确认尺寸相合后，远处债链声变得更近；正文结尾仍保留命审台复核与旧追缴压力。"
+      }
+    ],
+    "timeline": [],
+    "physical_state": [
+      {
+        "fact_id": "chapter-0026-physical-001",
+        "asset_id": "state_ledger_half_life_registry_exposure",
+        "field_path": "state_ledger.registry_locking_sign",
+        "before": "暗红寿印已绷紧，追缴约束持续加重",
+        "after": "交易落定后半寿残籍显露精确增加十个百分点，膝侧出现十段可见新纹，债链声更近",
+        "evidence": "交易条件写明增加整十个点并在越沟后落定；随后十段暗纹浮出，远处债链声比先前更近。"
+      },
+      {
+        "fact_id": "chapter-0026-physical-002",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.bone_fissure_severity",
+        "before": "胸骨旧裂，左膝麻木且行动受限",
+        "after": "膝盖撞地并使胸口旧裂震开，起身时左腿再次失稳",
+        "evidence": "陆沉渊松手后半边身体失去支撑，膝盖撞上硬地；起身时左膝第一次用力便软下去。"
+      },
+      {
+        "fact_id": "chapter-0026-physical-003",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.cold_ash_cough_frequency",
+        "before": "此前已出现咳出冷灰与掌血混合物",
+        "after": "交易后再次咳出夹细血丝的冷灰",
+        "evidence": "他扶柱起身后弯腰咳出一团冷灰，灰中夹有细细血丝。"
+      }
+    ],
+    "naming": []
+  }
+}

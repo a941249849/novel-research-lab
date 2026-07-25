@@ -1,0 +1,199 @@
+{
+  "chapter_id": "chapter-0025",
+  "accepted_revision_sha256": "cfb623545ea575a048a677e6e4385ab0d76eb5a2872232beb5bcd63983a60bdb",
+  "state_deltas": [
+    {
+      "fact_id": "chapter-0025-character-001",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_observed_choice",
+      "operation": "set",
+      "before": "继续停术，不再辨认两道留档",
+      "after": "拒绝再次识账，只要求命审台同时记录两份互斥事实"
+    },
+    {
+      "fact_id": "chapter-0025-character-002",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_action_limit",
+      "operation": "set",
+      "before": "两日内需补交转运起点实证",
+      "after": "仍不得识账，只能等待以缺角残印最初落下时的实物压痕复核转运起点"
+    },
+    {
+      "fact_id": "chapter-0025-npc-001",
+      "asset_id": "npc_registrar_qiu_shen",
+      "field_path": "npc.current_local_record_action",
+      "operation": "set",
+      "before": "原件已呈验并由本地半印接收，转运矛盾待核",
+      "after": "确认连续保管原件此前一直由本地留存，并将封口、交接、退出与拒验分别登记"
+    },
+    {
+      "fact_id": "chapter-0025-npc-002",
+      "asset_id": "npc_registrar_qiu_shen",
+      "field_path": "npc.current_seal_condition",
+      "operation": "set",
+      "before": "半印未露面，左腕与左手持续僵硬",
+      "after": "半印被冻结在封档槽旁，左手指尖彻底蜷住，冷金暗纹反扣在石槽上"
+    },
+    {
+      "fact_id": "chapter-0025-npc-003",
+      "asset_id": "npc_registrar_qiu_shen",
+      "field_path": "npc.current_authority_status",
+      "operation": "set",
+      "before": "仍保有本地呈印资格",
+      "after": "本地呈印资格暂停，原件不得撤、不得补写、不得再施印转送"
+    },
+    {
+      "fact_id": "chapter-0025-npc-004",
+      "asset_id": "npc_debt_collector_gu_xun",
+      "field_path": "npc.current_procedural_decision",
+      "operation": "set",
+      "before": "将转运冲突留作待核，不撤州府项",
+      "after": "拒绝按泥灯巷伪造收档，同时保留州府转运残印、旧追缴与半寿送审"
+    },
+    {
+      "fact_id": "chapter-0025-npc-005",
+      "asset_id": "npc_debt_collector_gu_xun",
+      "field_path": "npc.next_procedural_hook",
+      "operation": "set",
+      "before": "围绕缺角残印、旧灰和现有见证复核",
+      "after": "以缺角残印背面的旧灰实物压痕复核转运起点；无实物则只留错误记录、不退追缴"
+    },
+    {
+      "fact_id": "chapter-0025-location-001",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_witness_boundary",
+      "operation": "set",
+      "before": "保管人可来、可拒、可撤，只认亲见",
+      "after": "本地原件继续由分项亲见记录支撑，退出、拒按和缺席均未被补写为同意"
+    },
+    {
+      "fact_id": "chapter-0025-faction-001",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_procedural_event",
+      "operation": "set",
+      "before": "两道记录并列待核，错误归属未撤销",
+      "after": "命审台正式留档“本地无转运”“州府记已转运”“两项不得并真”，泥灯巷伪造归属被排除"
+    },
+    {
+      "fact_id": "chapter-0025-faction-002",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_enforcement_phase",
+      "operation": "set",
+      "before": "旧追缴、半寿送审与异物封档继续",
+      "after": "旧追缴与半寿送审继续，但核查方向转向州府转运记录来源，仇慎本地停印"
+    },
+    {
+      "fact_id": "chapter-0025-technique-001",
+      "asset_id": "technique_ledger_recognition",
+      "field_path": "technique.current_use_status",
+      "operation": "set",
+      "before": "继续停术，明确不再辨认两道留档",
+      "after": "本章全程未再次施展识账，陆沉渊仅用左眼观察旧灰压痕"
+    },
+    {
+      "fact_id": "chapter-0025-relationship-001",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_procedural_boundary",
+      "operation": "set",
+      "before": "保管人可来、可拒、可撤，只认亲见",
+      "after": "见证边界实际被保留：退出者未被补证，拒按者未被代按，缺席者无人代保"
+    },
+    {
+      "fact_id": "chapter-0025-relationship-002",
+      "asset_id": "bond_mother_su_wan",
+      "field_path": "emotional_bond.current_visible_support",
+      "operation": "set",
+      "before": "苏晚仅在陆沉渊失稳时提供可自行选择的肘部支撑",
+      "after": "苏晚继续不代按、不替证，只在陆沉渊再次失衡时把肘部送近，由他自行决定是否借力"
+    },
+    {
+      "fact_id": "chapter-0025-emotion-001",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_collective_emotion",
+      "operation": "set",
+      "before": "住户在恐惧中坚持见证边界",
+      "after": "共同体从争取自证转为拒绝代证，保持各自见证和退出边界"
+    },
+    {
+      "fact_id": "chapter-0025-emotion-002",
+      "asset_id": "npc_registrar_qiu_shen",
+      "field_path": "npc.current_visible_fear",
+      "operation": "set",
+      "before": "公开原件后左腕青紫、左手僵硬",
+      "after": "面对停印与失察后果，仇慎仍确认保管链但未被写成倒戈或清白"
+    },
+    {
+      "fact_id": "chapter-0025-information-001",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_local_evidence_status",
+      "operation": "set",
+      "before": "转运去向矛盾待核，未认定记录错误",
+      "after": "首项转运记录错误被验证：泥灯巷本地无转运，而州府记录为已转运，两项不能同时成立"
+    },
+    {
+      "fact_id": "chapter-0025-information-002",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_inference_limit",
+      "operation": "set",
+      "before": "不能证明谁转、从何处转，也不能证明残印所记之物就是现存之物",
+      "after": "仍不能确定州府残印从何处起压、压过何物或完整获利链"
+    },
+    {
+      "fact_id": "chapter-0025-information-003",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_next_review_hook",
+      "operation": "set",
+      "before": "两日内补交转运起点实证，否则按伪造封档",
+      "after": "两日内须以缺角残印最初落下时的实物压痕复核；无实物则错误只留档，不退追缴"
+    },
+    {
+      "fact_id": "chapter-0025-information-004",
+      "asset_id": "state_ledger_public_reputation",
+      "field_path": "state_ledger.current_audience_direction",
+      "operation": "set",
+      "before": "问句主要追向泥灯巷与陆沉渊",
+      "after": "公开核查方向首次转向州府转运记录来源"
+    },
+    {
+      "fact_id": "chapter-0025-hook-001",
+      "asset_id": "foreshadowing_cinder_seal_rain",
+      "field_path": "foreshadowing.next_review_hook",
+      "operation": "set",
+      "before": "从州府残印缺角铁锈冷香复核封口记录与木牌旧灰",
+      "after": "复核焦点收束为残印背面旧灰中的实物压痕及其起点，转运去向仍未揭开"
+    },
+    {
+      "fact_id": "chapter-0025-timeline-001",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_procedure_result",
+      "operation": "set",
+      "before": "两案分开留档，转运起点缺失",
+      "after": "清晨封档前完成一项局部反打：转运记录错误正式留档，但改账与退追缴尚未完成"
+    },
+    {
+      "fact_id": "chapter-0025-physical-001",
+      "asset_id": "state_ledger_protagonist_strain",
+      "field_path": "state_ledger.current_visible_condition",
+      "operation": "set",
+      "before": "左膝骤沉、胸骨钝响、掌心血重新洇出",
+      "after": "债链再次收紧后左膝麻木加重、胸骨再响，并咳出冷灰与掌血混成暗黑一团"
+    },
+    {
+      "fact_id": "chapter-0025-physical-002",
+      "asset_id": "state_ledger_protagonist_strain",
+      "field_path": "state_ledger.eye_pattern_burn",
+      "operation": "set",
+      "before": "右眼看不清灯槽，焦黑纹路与灰泪持续",
+      "after": "右眼仍仅见浑光并最终闭眼，陆沉渊放弃主动辨认以避免追加施术风险"
+    },
+    {
+      "fact_id": "chapter-0025-physical-003",
+      "asset_id": "state_ledger_mother_life_lamp_countdown",
+      "field_path": "state_ledger.current_visible_lamp_consequence",
+      "operation": "set",
+      "before": "苏晚命灯裂纹已新增且母债未撤销",
+      "after": "苏晚掌背分岔暗光继续贴着新裂一格跳动，母债仍未并入泥灯巷物证"
+    }
+  ],
+  "resolved_audit_ids": []
+}

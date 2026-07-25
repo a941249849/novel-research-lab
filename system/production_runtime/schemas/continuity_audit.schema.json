@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "nrl://production/continuity-audit-v0.20",
+  "type": "object",
+  "required": ["chapter_id", "artifact_kind", "artifact_sha256", "context_sha256", "verdict", "dimensions", "issues"],
+  "properties": {
+    "chapter_id": {"type": "string", "pattern": "^chapter-[0-9]{4}$"},
+    "artifact_kind": {"enum": ["draft", "revision"]},
+    "artifact_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "context_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "verdict": {"enum": ["ACCEPT", "ACCEPT_WITH_WARNINGS", "REWORK_REQUIRED"]},
+    "dimensions": {
+      "type": "object",
+      "required": ["canon", "character", "state", "causality", "pacing", "life_force", "anti_ai_taste", "originality", "semantic_realization", "progression_permissions", "history_coherence"],
+      "properties": {
+        "canon": {"$ref": "#/definitions/evidence"},
+        "character": {"$ref": "#/definitions/evidence"},
+        "state": {"$ref": "#/definitions/evidence"},
+        "causality": {"$ref": "#/definitions/evidence"},
+        "pacing": {"$ref": "#/definitions/evidence"},
+        "life_force": {"$ref": "#/definitions/evidence"},
+        "anti_ai_taste": {"$ref": "#/definitions/evidence"},
+        "originality": {"$ref": "#/definitions/evidence"},
+        "semantic_realization": {"$ref": "#/definitions/evidence"},
+        "progression_permissions": {"$ref": "#/definitions/evidence"},
+        "history_coherence": {"$ref": "#/definitions/evidence"}
+      },
+      "additionalProperties": false
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["issue_id", "severity", "evidence", "required_fix"],
+        "properties": {
+          "issue_id": {"type": "string"},
+          "severity": {"enum": ["blocking", "major", "minor"]},
+          "evidence": {"type": "string"},
+          "required_fix": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "resolved_prior_issue_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    }
+  },
+  "definitions": {
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1, "pattern": "\\S"}
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,18 @@
+{
+  "version": "0.18",
+  "job_id": "job-v018-verifiable-deep-reading",
+  "status": "chunk_coverage_verified",
+  "deep_read_verified": false,
+  "book_count": 18,
+  "validated_chunk_count": 143,
+  "required_chunk_count": 143,
+  "validated_bytes": 197294465,
+  "required_bytes": 197294465,
+  "validated_byte_ratio": 1.0,
+  "invalid_chunks": [],
+  "plan_integrity": {
+    "valid": true,
+    "errors": []
+  },
+  "validated_at": "2026-07-17T15:00:42+08:00"
+}

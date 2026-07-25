@@ -1,0 +1,165 @@
+{
+  "chapter_id": "chapter-0081",
+  "draft_sha256": "5f17842e8d330a0e5ebdf5feb3d34de9217487e1333694e1a7d37a25ce5cc8ce",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "chapter-0081-fact-001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_procedural_choice",
+        "before": "面对到案校时令仍未自行越过边界，等待凭据先明确落处",
+        "after": "公开接受到案校时，决定自行前往州府复核入口，不交残印、不借命火、不将苏晚或泥灯巷并入到案代价",
+        "evidence": "陆沉渊明确说“我到案”，并重申自己去校时，不交残印、不借命火、不拿苏晚的债或巷子背路。"
+      },
+      {
+        "fact_id": "chapter-0081-fact-002",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_public_statement",
+        "before": "确认本地没有向记录里写入，但拒绝将局部洗清说成伤势、债务或其他后果一并撤销",
+        "after": "当众声明其到案、残印来源及个人令由自己承担，不使苏晚、泥灯巷住户、灯火和债务承担连带代价",
+        "evidence": "他在巷中重申“我走，是我自己去校时”，并说巷民的灯、债、名字及苏晚的债都不跟随他出巷。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "chapter-0081-fact-003",
+        "asset_id": "npc_prefecture_shadow_envoy",
+        "field_path": "npc.current_recovery_strategy",
+        "before": "以限期回收残印换取单巷暂缓首轮配额，并在两巷共同空额上留下回收刻痕",
+        "after": "通过影令同时推进陆沉渊外层活体校时与残印回收；未直接收走残印，改以逾期冻结通行记录及交印换取暂缓作为压力",
+        "evidence": "闻照微宣告影印熄灭前到达，逾期冻结外层通行记录，并明确残印仍在回收范围且交印可另议暂缓。"
+      },
+      {
+        "fact_id": "chapter-0081-fact-004",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_procedural_boundary",
+        "before": "只交付阵段公共痕迹，不交付巷内人员、灯火或私人命债；陆沉渊到案事项由其本人承担",
+        "after": "公开拒绝替陆沉渊作债线切断陈述，并要求其重申不以她的债或巷民命火换取通行宽限",
+        "evidence": "苏晚拒绝“债线切断陈述”，坚持自己的债自己认，并要求陆沉渊再说一遍不把巷内灯火、债和名字带出巷。"
+      },
+      {
+        "fact_id": "chapter-0081-fact-005",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_physical_state",
+        "before": "命灯裂纹未合拢、倒计时继续下坠；扶灯时手背再次被划伤，新增血珠仍被寒风影响",
+        "after": "影印宣读期间命灯短暂失温、灯焰发白并出现细微绷裂声；原有深灰裂纹未修复，手背伤口仍受寒风影响",
+        "evidence": "巷中命灯同时矮下、火苗褪白；苏晚的命灯在失温中发出绷裂声，深灰裂纹仍在，手背血珠被风吹冷。"
+      }
+    ],
+    "locations": [],
+    "factions": [
+      {
+        "fact_id": "chapter-0081-fact-006",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_communal_response",
+        "before": "共同体只交公共痕迹，不补交巷内人员、灯火、私人命债或集体担保",
+        "after": "共同体未替陆沉渊担保或提供命火，街坊保持沉默并将各自灯火留在原处；同行是否作保仍未决定",
+        "evidence": "门后街坊没有出来替他答话，也没有把灯凑来照路或交出灯绳；影令末条要求同行者自行选择只送路或为残印来源作保。"
+      },
+      {
+        "fact_id": "chapter-0081-fact-007",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_visible_condition",
+        "before": "缺口、白裂和护阵永久损失继续存在，解除禁修未使护阵自动恢复",
+        "after": "永久缺口和护阵白裂继续存在，影印冷光沿白裂外探，护阵未被修复",
+        "evidence": "正文反复写明缺口漏风、白裂横在断阵上，影印边缘冷光向白裂处探行。"
+      }
+    ],
+    "artifacts": [
+      {
+        "fact_id": "chapter-0081-fact-008",
+        "asset_id": "artifact_prefecture_transit_registry_seal",
+        "field_path": "artifact.current_procedural_relation",
+        "before": "残印被闻照微列入限期回收，陆沉渊仍封布持有且拒绝交出",
+        "after": "残印仍被列为待验并处于回收范围；陆沉渊继续持有且明确拒绝交出，若自行启用将沿路留痕",
+        "evidence": "影令规定身上残印列为待验物；闻照微确认残印仍在回收范围，陆沉渊回答“不交残印”。"
+      },
+      {
+        "fact_id": "chapter-0081-fact-009",
+        "asset_id": "artifact_prefecture_transit_registry_seal",
+        "field_path": "artifact.current_visible_trace",
+        "before": "残印封布持有，曾在州府影印与旧槽压力下放出倒流银灰火和残缺旧誓",
+        "after": "残印在受令时渗出银灰印屑并被影印吸住，仍未交出",
+        "evidence": "陆沉渊按住影印旁断砖时，残印散出银灰印屑，印屑落砖后被影印吸住。"
+      }
+    ],
+    "techniques": [],
+    "relationships": [],
+    "emotions": [
+      {
+        "fact_id": "chapter-0081-fact-010",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_emotional_position",
+        "before": "等待凭据明确落处，尚未自行越过到案边界",
+        "after": "在苏晚要求下公开重申独自承担到案与残印来源，完成母子各自承担的分行",
+        "evidence": "苏晚要求他“再说一遍”，陆沉渊随后当众重申不让母亲、巷民或巷灯承担他的令与残印来源。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "chapter-0081-fact-011",
+        "asset_id": "npc_prefecture_shadow_envoy",
+        "field_path": "information.current_order_terms",
+        "before": "已发出到案校时令，但具体逾期后果与到案边界尚未在正文中明确",
+        "after": "到案期限为影印熄灭前抵达州府复核入口；逾期冻结外层通行记录，校时未结则冻结不解，并按拒到处置",
+        "evidence": "闻照微逐项说明抵达地点、影印熄灭前的期限、外层通行冻结及冻结持续条件。"
+      },
+      {
+        "fact_id": "chapter-0081-fact-012",
+        "asset_id": "npc_prefecture_shadow_envoy",
+        "field_path": "information.current_admission_conditions",
+        "before": "到案校时所需个人记录与同行者责任尚未完整宣读",
+        "after": "须携本人生时痕接受外层校时，不得用假命页遮蔽；同行者出巷前须选择只送路或为残印来源作保",
+        "evidence": "影印先宣读携本人生时痕和接受外层校时的条件，结尾显出同行者须自行定名的附加条件。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "chapter-0081-fact-013",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "hook.current_unresolved_scope",
+        "before": "复核印锁住转运记录并向陆沉渊发出到案校时令",
+        "after": "影令末尾新增同行者责任分岔：只送路，或为残印来源作保；苏晚尚未落名决定",
+        "evidence": "影印最后显出“同行者出巷之前，须自行定名：只送路，或为残印来源作保”，苏晚停手未按下。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "chapter-0081-fact-014",
+        "asset_id": "state_ledger_faction_pressure",
+        "field_path": "timeline.chapter_event",
+        "before": "压力转移为州府对陆沉渊的到案校时要求，并继续追查上层转运记录",
+        "after": "闻照微公开宣读限时到案令，陆沉渊接受后到案期限开始实际计时，逾期将转为外层通行冻结与拒到强制追索",
+        "evidence": "闻照微宣告“公开受令，即刻起计时”，陆沉渊随后确认接受到案。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "chapter-0081-fact-015",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_visible_condition",
+        "before": "金线分作三根缠住腕骨、肘弯和肩下，右臂失去知觉并持续承受拘束；右眼失明和痛楚仍在",
+        "after": "三根暗金线在影令与残印反应下进一步收紧，右臂仍失去知觉；右眼失明和既有痛楚未改变",
+        "evidence": "影令宣读时金线勒进腕骨，残印显痕后再次收紧，正文仍明确右臂垂着并失去知觉。"
+      },
+      {
+        "fact_id": "chapter-0081-fact-016",
+        "asset_id": "state_ledger_mother_life_lamp_countdown",
+        "field_path": "state_ledger.current_countdown_state",
+        "before": "倒计时继续下坠，命灯裂纹未修复，苏晚旧债和后续分期压力仍在",
+        "after": "命灯在影印压力下短暂失温并出现绷裂反应；裂纹、旧债与倒计时均未修复或暂停",
+        "evidence": "苏晚命灯灯焰退入灯芯、灯壁发出绷裂声，但正文明确裂纹未收拢，旧债也未被改变。"
+      }
+    ],
+    "naming": [
+      {
+        "fact_id": "chapter-0081-fact-017",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_witness_boundary",
+        "before": "共同体继续只交公共痕迹，不补交巷内人员、灯火、私人命债或集体担保",
+        "after": "共同体未对同行者责任作名或作保；苏晚保留自行决定“只送路”或“为残印来源作保”的选择",
+        "evidence": "影令附加条件出现后，没有街坊替苏晚应声或划去“作保”，苏晚明确说“我自己定”并停手未落名。"
+      }
+    ]
+  }
+}

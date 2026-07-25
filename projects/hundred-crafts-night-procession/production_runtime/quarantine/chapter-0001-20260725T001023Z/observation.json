@@ -1,0 +1,107 @@
+{
+  "chapter_id": "chapter-0001",
+  "draft_sha256": "364e9f1c5d619e5660e9b47cc2f5e316c77d3e7a4f32f96b5eb89d59b759befd",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "fact-ch001-char-001",
+        "asset_id": "char_zhou_li",
+        "field_path": "character.current_state",
+        "before": "active",
+        "after": "事故记录出现周砺父亲周永直的签名；周砺决定封路并坚持复核结束前不复位旧梁。",
+        "evidence": "周砺将事故补记与今晨观察记录并排展示，确认签名为“周永直”，并说“先封到复核结束”。"
+      }
+    ],
+    "npcs": [],
+    "locations": [],
+    "factions": [],
+    "artifacts": [
+      {
+        "fact_id": "fact-ch001-artifact-001",
+        "asset_id": "artifact_unnamed_beam",
+        "field_path": "artifact.condition",
+        "before": "active",
+        "after": "原有连接全部松脱，梁端露出四个空坑，梁身新露出裂纹并继续处于待复核状态。",
+        "evidence": "正文写明“所有原本挨着它的东西，一齐松开了”，梁端出现四个没有连接物的浅坑，后文又写到梁腹新露出的裂纹。"
+      },
+      {
+        "fact_id": "fact-ch001-artifact-002",
+        "asset_id": "artifact_unnamed_beam",
+        "field_path": "lifecycle_state",
+        "before": "active",
+        "after": "被现场隔离，禁止顶回、切除或刷掉灰面，等待梁、旧砌体和支护联合复核。",
+        "evidence": "周砺要求“西侧不回填，不切梁，不把灰面刷掉”，并在结尾将顶杆移开，未让其碰到梁端。"
+      }
+    ],
+    "techniques": [],
+    "relationships": [],
+    "emotions": [
+      {
+        "fact_id": "fact-ch001-emotion-001",
+        "asset_id": "char_zhou_li",
+        "field_path": "emotion.state",
+        "before": null,
+        "after": "面对父亲签名与责任压力仍坚持现场封闭和复核。",
+        "evidence": "总工指出父亲曾把名字留在记录里并提示责任将追到周砺，周砺仍回答“知道”，并拒绝提前复位旧梁。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "fact-ch001-info-001",
+        "asset_id": "foreshadow_second_record",
+        "field_path": "foreshadowing.status",
+        "before": "active",
+        "after": "已揭示为十七年前戏楼旧址抢险事故补记，记录涉及临时排水沟和被列作旧料的承重梁。",
+        "evidence": "周砺翻到第三册夹出的早年事故补记，确认其内容涉及戏楼旧址抢险、临时改线排水沟和一根旧料承重梁。"
+      },
+      {
+        "fact_id": "fact-ch001-info-002",
+        "asset_id": "foreshadow_second_record",
+        "field_path": "lifecycle_state",
+        "before": "active",
+        "after": "已与今晨观察记录并置，形成待复核的历史记录物证；补记中间缺页且责任栏第三处签名为周永直。",
+        "evidence": "正文写明页码从一百零七跳到一百零九，中间少了一页；周砺将补记和今晨记录并排放置，并确认第三处签名为“周永直”。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "fact-ch001-hook-001",
+        "asset_id": "foreshadow_second_record",
+        "field_path": "hook.status",
+        "before": null,
+        "after": "缺失页、被覆盖的旧墨及周永直签名将后续压力推向事故旧档与梁的来源复核。",
+        "evidence": "周砺没有翻找缺失页，而是按住补记并要求调取旧戏楼拆改记录、联合编号复核。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "fact-ch001-timeline-001",
+        "asset_id": "artifact_unnamed_beam",
+        "field_path": "timeline.event",
+        "before": "旧梁仍被临时垫置在坑边",
+        "after": "凌晨发生连接脱离并引发支护受力转移，现场封闭至复核结束。",
+        "evidence": "正文先写梁被放回坑边、两头垫钢楔，随后写明钢楔、斜撑和相关构件相继松开，最终决定封路等待复核。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "fact-ch001-physical-001",
+        "asset_id": "artifact_unnamed_beam",
+        "field_path": "physical_state.connection",
+        "before": "两端由钢楔及原有连接关系临时承托",
+        "after": "梁端连接物消失，仅剩被磨平的旧灰面和四个空坑；不得被顶回原位。",
+        "evidence": "梁端没有断茬，旧灰面上有四个浅坑，周砺最后将顶杆移开半寸，禁止其碰到梁端。"
+      }
+    ],
+    "naming": [
+      {
+        "fact_id": "fact-ch001-naming-001",
+        "asset_id": "foreshadow_second_record",
+        "field_path": "naming.record_signature",
+        "before": null,
+        "after": "周永直",
+        "evidence": "事故补记责任栏第三处签名字迹与周砺记忆中的父亲笔迹一致，正文明确写出“周永直”。"
+      }
+    ]
+  }
+}

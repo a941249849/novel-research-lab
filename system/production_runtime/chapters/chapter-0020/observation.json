@@ -1,0 +1,232 @@
+{
+  "chapter_id": "chapter-0020",
+  "draft_sha256": "12abf720130f664ff48f2ae7dee23e7597cbd37c40162df0465544450d87dc60",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "chapter-0020-character-001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_action_limit",
+        "before": "接受本轮无法继续借守火显现更多灰痕",
+        "after": "未施展识账术，接受残命灯盏继续不得点火，且不替三户补验未亲见事项",
+        "evidence": "陆沉渊明确没有动用识账术，只认纸角、封口与眼前缺口，并接受不启灯且不把责任记到三户名下。"
+      },
+      {
+        "fact_id": "chapter-0020-character-002",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_observed_choice",
+        "before": "亲手封住灯盏点火口，并规定重新开启必须召集三户重新询问同意",
+        "after": "接受本地封存暂停、残命灯盏留原圈，并在自己的纸上承担不启灯选择",
+        "evidence": "他表示接受不启灯，并要求该选择记在自己的纸上，不记到三户名下。"
+      },
+      {
+        "fact_id": "chapter-0020-character-003",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_visible_condition",
+        "before": "封口时胸骨猛然收缩，旧血口再次张开并沿掌纹流至腕内；身体代价继续存在",
+        "after": "半印悬起时旧血口骤然收紧、胸骨钝响；按指印后旧布被血浸透，仍需苏晚扶至站直",
+        "evidence": "半印出现后掌中旧血口收紧、胸骨钝响；按指印时血浸透旧布，苏晚托住他站直。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "chapter-0020-npc-001",
+        "asset_id": "npc_registrar_qiu_shen",
+        "field_path": "npc.local_review_decision",
+        "before": "暂停带回封存，改记原位取出、三户轮守、随时退还，并登记未点火、未认主、住户命灯不列调用",
+        "after": "宣布本地封存暂停，残命灯盏留原圈，由现愿保管户继续守物；十张纸分记亲见与拒绝，不并作全验",
+        "evidence": "仇慎收回半印后逐字写下并宣读“本地封存暂停”、留原圈、不得点火移出或毁封，以及分记亲见与拒绝。"
+      },
+      {
+        "fact_id": "chapter-0020-npc-002",
+        "asset_id": "npc_registrar_qiu_shen",
+        "field_path": "npc.current_report_status",
+        "before": "仇慎将异常上报州府",
+        "after": "已整理包含封口、轮守次序、拒验范围和护阵裂口的上报纸，但州府命库回执位尚未落印",
+        "evidence": "他抽出上报纸，列明上述项目，末尾留有“州府命库回执”空位，半印比对后未留下印迹。"
+      },
+      {
+        "fact_id": "chapter-0020-npc-003",
+        "asset_id": "npc_mo_jinglan",
+        "field_path": "npc.current_witness_participation",
+        "before": "逐项记录三户拒绝守火，并确认封口完整作为后续交接依据",
+        "after": "逐字复述各页页首和拒绝处，记录可撤回、限今日和仅亲见的见证边界",
+        "evidence": "莫井兰逐项念回三户陈述；有人撤回过宽表述，她继续按修订后的拒绝范围复述。"
+      },
+      {
+        "fact_id": "chapter-0020-npc-004",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_procedural_limit",
+        "before": "与陆沉渊共同遮住仇慎袖口冷金印光一息，未越泥圈且未代他承担全部重量",
+        "after": "自行选择站位并只验住户命灯未列调用，随后托住陆沉渊站直，未以自身命火替代承担",
+        "evidence": "苏晚推开陆沉渊说明站位由自己选择，只验住户命灯未被调用；结尾仅托他站直便松手。"
+      }
+    ],
+    "locations": [
+      {
+        "fact_id": "chapter-0020-location-001",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_protection_array_condition",
+        "before": "取盏后灯座裂口向下塌了半指，仅剩两截微弱红痕，时明时灭",
+        "after": "护阵裂口中一截暗红火痕再次缩短并落下一撮干灰，两截红痕仍未接上",
+        "evidence": "封存争议中，裂口内一截暗红火痕忽然缩短，砖缝落下干灰，后文确认两截红痕仍未接上。"
+      }
+    ],
+    "factions": [
+      {
+        "fact_id": "chapter-0020-faction-001",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_local_enforcement_phase",
+        "before": "旧追缴暂停至复核结束但不撤销，仇慎将异常上报州府",
+        "after": "本地封存程序正式暂停，残命灯盏留在原圈；旧追缴仍未撤销，等待州府复核",
+        "evidence": "仇慎宣读本地封存暂停，并明确“候州府复核”；对旧追缴的询问回答为“未撤”。"
+      },
+      {
+        "fact_id": "chapter-0020-faction-002",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_communal_response",
+        "before": "三户逐一公开拒绝守火，但仍接受器物轮守；共同体把器物保管与命火提供明确分开",
+        "after": "三户及见证者以分立指印和可撤回陈述共同证明交接链，同时拒绝承认未亲见事项",
+        "evidence": "十张纸被推到中间，分别记录退出、不验盏底、仅认交还和不作长久应允，形成有空缺但可追溯的共同证据。"
+      }
+    ],
+    "artifacts": [
+      {
+        "fact_id": "chapter-0020-artifact-001",
+        "asset_id": "artifact_ashlight_cup",
+        "field_path": "artifact.current_chapter_step",
+        "before": "雨停后在三户公开监督圈内取出残命灯盏，并转入三户轮守",
+        "after": "清晨在三户泥圈内完成封口与交接复验，继续留在原圈且不得点火、移出或毁封",
+        "evidence": "灯盏位于三户围出的泥圈内；仇慎宣布留原圈并禁止点火、移出泥灯巷或毁封。"
+      },
+      {
+        "fact_id": "chapter-0020-artifact-002",
+        "asset_id": "artifact_ashlight_cup",
+        "field_path": "artifact.current_awakening_status",
+        "before": "三户拒绝提供守火，残命灯盏继续保持未唤醒状态",
+        "after": "复验仍未获得开口或守火同意，残命灯盏继续保持未唤醒且不得用于照余火或识账",
+        "evidence": "陆沉渊说明藏火须开口或借守火照见，但两样都没有同意；他随后接受不启灯。"
+      },
+      {
+        "fact_id": "chapter-0020-artifact-003",
+        "asset_id": "artifact_ashlight_cup",
+        "field_path": "artifact.current_seal_status",
+        "before": "点火口被湿泥与轮守纸角封死，封口完整成为交接记录条件",
+        "after": "清晨复验确认湿泥发白、轮守纸角未翘起，封口继续完整",
+        "evidence": "莫井兰以纸角纹路、湿泥未断作为可确认事项；第一户和第三户也只确认封口未破。"
+      }
+    ],
+    "techniques": [
+      {
+        "fact_id": "chapter-0020-technique-001",
+        "asset_id": "technique_ledger_recognition",
+        "field_path": "technique.current_use_status",
+        "before": "仍未施展识账；仅以模糊肉眼观察灰流、刻痕和回火，不形成来源、用途或归属判断",
+        "after": "本章继续未施展识账术，仅凭肉眼辨认半印缺角未覆盖见证位，不形成来源、用途或归属判断",
+        "evidence": "陆沉渊明确没有动用识账术，并说明自己只看见半印缺角与见证线的形状。"
+      }
+    ],
+    "relationships": [
+      {
+        "fact_id": "chapter-0020-relationship-001",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_witness_commitment",
+        "before": "见证被拆分为各户亲见范围；第三户撤回未看清的第二步，三户分别保留后续撤回或退出权",
+        "after": "见证被落实为十张纸上的分项亲见与拒绝记录；撤回、限今和不验范围均被保留，未合并为全程无缺证明",
+        "evidence": "各户分别声明自己不验、退出或仅认某一步，莫井兰逐字复述，仇慎最终写明不并作全验。"
+      },
+      {
+        "fact_id": "chapter-0020-relationship-002",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_collective_emotion",
+        "before": "住户将对守火的拒绝公开化，陆沉渊因守住拒绝权而失去继续追查的兴奋",
+        "after": "零散拒绝汇成共同体的程序性站立：无人献火、无人抢灯，并共同保留拒验与撤回权",
+        "evidence": "十张纸被推到桌心，住户各自按印或拒绝按印；全程无人献火、抢灯或替他人补写见证。"
+      },
+      {
+        "fact_id": "chapter-0020-relationship-003",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_visible_support",
+        "before": "苏晚只压稳桌面阻止陆沉渊继续取泥，未扶他本人，也未让自己的命火承担点火代价",
+        "after": "苏晚坚持自行选择站位，并在陆沉渊按印后仅以自身力气托他站直，未把命火或程序责任转给住户",
+        "evidence": "她推开挡路的陆沉渊，表明站位自选；结尾托他站直后松手，且未使用住户命火。"
+      }
+    ],
+    "emotions": [
+      {
+        "fact_id": "chapter-0020-emotion-001",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_procedural_boundary",
+        "before": "共同体公开形成“接物、不接火”的拒绝边界，并要求未来开启重新征询三户",
+        "after": "共同体将边界扩展为“接物但不替他人补验”，并要求每次新询问重新取得具名同意",
+        "evidence": "第三户拒绝替昨夜补看，明确以后再问须重新询问；第一户、第二户也分别限定退出和交还范围。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "chapter-0020-information-001",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_local_evidence_status",
+        "before": "顾婶仅同意核对顾家余火仍在；记录明确未点、未认归属、未作调用",
+        "after": "新增十张拒验纸对残命灯盏封口、轮守次序、拒验范围及护阵裂口形成分项记录，但仍未确认藏火、归属或来源",
+        "evidence": "仇慎上报纸列明这些项目；陆沉渊和各户反复声明不能补验盏底、藏火、归属或来处。"
+      },
+      {
+        "fact_id": "chapter-0020-information-002",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_report_scope",
+        "before": "异常上报内容集中于异物、阵裂和住户拒绝",
+        "after": "上报内容明确包括本地封存权限不足、封口、轮守次序、拒验范围和护阵裂口，并等待州府命库回执",
+        "evidence": "仇慎书写上报纸，纸首记本地封存权限不足，中段列出封口、轮守、拒验和裂口，末尾留回执印位。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "chapter-0020-hook-001",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "foreshadowing.next_review_hook",
+        "before": "下一次程序复核扩展为顾家余火口述、三户拒绝是否维持及封口完整性",
+        "after": "下一窗口增加州府命库复核：上报纸已列本地权限不足，回执印位出现但尚未落印",
+        "evidence": "上报纸末尾出现“州府命库回执”五字及空白印位，半枚印比对后未留下印迹。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "chapter-0020-timeline-001",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_procedural_event",
+        "before": "旧追缴暂停至复核结束，等待本地复核",
+        "after": "清晨本地封存程序暂停并转入州府复核等待阶段",
+        "evidence": "清晨封存桌上完成三户复验后，仇慎收回半印并书写“本地封存暂停”“候州府复核”。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "chapter-0020-physical-001",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.current_visible_condition",
+        "before": "封口时胸骨猛然收缩，旧血口再次张开并沿掌纹流至腕内；身体代价继续存在",
+        "after": "半印施压和按印后，胸骨钝响、旧伤出血浸透布条，陆沉渊需苏晚托扶站直",
+        "evidence": "半印离袖后陆沉渊掌中血口收紧、胸骨钝响；按指印时血浸透旧布，随后由苏晚托住。"
+      },
+      {
+        "fact_id": "chapter-0020-physical-002",
+        "asset_id": "state_ledger_mother_life_lamp_countdown",
+        "field_path": "state_ledger.current_visible_lamp_consequence",
+        "before": "掌背暗冷光仍在皮下明灭并贴近腕骨；正文未显示裂纹合拢、命债解除或命灯缓解",
+        "after": "半印悬起时暗冷光猛跳并贴向腕骨，收印后仍未退回，命灯裂纹与寿债仍未缓解",
+        "evidence": "半印出现时苏晚腕骨下暗冷光猛地一跳；收印后暗冷光仍贴着腕骨明灭。"
+      }
+    ],
+    "naming": [
+      {
+        "fact_id": "chapter-0020-naming-001",
+        "asset_id": "artifact_ashlight_cup",
+        "field_path": "artifact.reader_facing_name",
+        "before": "正文首次出现“残命灯盏”这一登记资产名，但未发生认主或唤醒",
+        "after": "本章继续统一使用登记名“残命灯盏”，并在封存记录中作为留原圈、不得点火的对象",
+        "evidence": "封存桌与仇慎书面决定均使用“残命灯盏”这一名称，未出现废弃别名或新名称。"
+      }
+    ]
+  }
+}

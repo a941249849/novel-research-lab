@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://nrl.local/schemas/v1/naming.schema.json",
+  "title": "Generic Naming Asset v1",
+  "allOf": [
+    {"$ref": "https://nrl.local/schemas/v1/common.schema.json"},
+    {
+      "required": ["naming"],
+      "properties": {
+        "family": {"const": "naming"},
+        "naming": {
+          "type": "object",
+          "required": ["semantic_domains", "formation_rules", "prohibited_collisions", "examples"],
+          "properties": {
+            "semantic_domains": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+            "formation_rules": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+            "prohibited_collisions": {"type": "array", "items": {"type": "string", "minLength": 1}},
+            "examples": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+          },
+          "additionalProperties": false
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+```json
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "chunk_id": "book-05-11dd686b8b15-chunk-006",
+  "source_file": "novel_training_set/《凡人修仙传》（校对版全本+番外）作者：忘语.txt",
+  "source_file_sha256": "11dd686b8b151694b37460b52991a4f00eda8f5fabe86b507e74f321e10a7428",
+  "start_byte": 7500346,
+  "end_byte": 9000386,
+  "chunk_sha256": "2159d946a2fe7cded429d8245f38ecc86fec39e9a87ebc01e261428772f02bf7",
+  "source_encoding": "gb18030",
+  "bounded_chunk_utf8_sha256": "d66b679c99abff14c9932e355c8452b0997439155224457e2992e6c5764273a2",
+  "analysis": {
+    "chapter_span": [
+      "第一千二百八十五章 狂兽之潮（六）",
+      "第一千五百一十五章 罗T之谜"
+    ],
+    "major_events": [
+      "Anyuan City Beast Tide Crisis: In 第一千二百八十五章 狂兽之潮（六）, Anyuan City is destroyed by a joint attack of beasts, forcing Han Li to defend the wall as a body refiner.",
+      "Rescuing the Black Phoenix Half-Demon: In 第一千二百八十六章 女童, Han Li rescues a young girl named Dai'er who holds the Black Phoenix bloodline from the ruins of Anyuan City.",
+      "Receiving the Phoenix Inheritance Bead: In 第一千二百九十一章 传承珠, Han Li receives a Black Phoenix inheritance bead from Dai'er before she is retrieved by her family.",
+      "Acquiring Silver Core Stone & Heavenly Heart Pill: In 第一千二百九十七章 银芯石与天心丹, Han Li searches Sunset City (落日城) and obtains these rare materials.",
+      "Reunion with the Flame Devouring Beast: In 第一千三百零二章 再见小兽 and 第一千三百零三章 噬炎, Han Li recovers his lost Flame-eating beast (噬炎兽) in the Zhiguang Pool (炙光潭).",
+      "First Void Refinement Stage Battle: In 第一千三百一十一章 初战炼虚 and 第一千三百一十二章 噬灵之威, Han Li fights a Void Refinement stage cultivator and uses his Devouring Spirit Heavenly Fire to win.",
+      "Arrival at Tianyuan City: In 第一千三百一十五章 金庭舟与天渊卫, Han Li travels on the Golden Pavilion Boat (金庭舟) to Tianyuan City (天渊城) and registers as a Qingmin Guard (青冥卫).",
+      "Spiritual Land Fight for Cuilong Mountain: In 第一千三百二十章 灵地之争 to 第一千三百二十五章 夺得灵地, Han Li wins challenges to secure Cuilong Mountain (翠泷山) as his spiritual land.",
+      "Creation of the Gold-Silver Thunder Robe: In 第一千三百四十五章 雷袍现世, Han Li successfully refines the Gold-Silver Thunder Robe using his Evil-Warding Divine Thunder (辟邪神雷).",
+      "Maturation of the Xuantian Fruit: In 第一千三百二十七章 玄天果实 and 第一千三百二十八章 混沌万灵榜, Han Li uses green liquid on the fruit, causing the Chaos Myriad Spirit Board to register the Xuantian Slaying Spirit Sword.",
+      "Flying Spirit Holy Son Agreement: In 第一千四百一十八章 天鹏圣子与鲲鹏真血, Han Li agrees to represent the Tianpeng race in the Earth Abyss trial in exchange for Kunpeng True Blood and relic.",
+      "Defeating the Chirong Holy Son: In 第一千四百一十五章 力退赤融, Han Li defeats the Chirong race Holy Son in a trial duel.",
+      "Mastering the Jingzhe Transformations: In 第一千四百二十五章 惊蛰十二变, Han Li integrates Kunpeng True Blood and learns the Jingzhe Twelve Transformations (鲲鹏变).",
+      "Coerced by Wood Demon King Mu Qing: In 第一千四百五十五章 血傀儡, Han Li is captured by Mu Qing in the Earth Abyss and forced to help open the Styx Land restrictions.",
+      "Reunion with Yuan Yao and Yan Li: In 第一千四百六十四章 再见元瑶, Han Li meets Yuan Yao and Yan Li, who are coerced disciples of the Ghost Hag (鬼婆子 / 蓝道友).",
+      "Breaking the Styx Land Restrictions: In 第一千四百八十章 冥河禁制和八门引雷阵, the four Earth Abyss demon kings and helpers use the Eight Gate Thunder Array to open a portal.",
+      "Clash with Styx Thunder Beast: In 第一千四百九十七章 大战冥雷兽, the group battles the beast, and Han Li uses the Five Dragon Guillotine (五龙铡).",
+      "Escaping and Purging the Soul Marks: In 第一千五百零五章 意外迭起 and 第一千五百零七章 转轮聚阴阵, Han Li escapes control, rescues the girls, and uses a yin array to remove the demon kings' soul tracking marks."
+    ],
+    "character_state_transitions": [
+      "Han Li's cultivation level advances from 化神中期 to 化神后期 in 第一千四百二十五章 惊蛰十二变 after integrating Kunpeng True Blood.",
+      "Han Li transitions from a rogue body refiner to an official Qingmin Guard (青冥卫) of Tianyuan City in 第一千三百一十六章 青冥卫.",
+      "Han Li restores his lost magic power and returns to his active Deity Stage status in the early chapters of the Sunset City arc.",
+      "Dai'er is identified as a half-demon with Black Phoenix bloodline and retrieved by her aunt in 第一千二百八十八章 黑凤族.",
+      "Han Li's Flame Devouring Beast is recovered and returns to his collection in 第一千三百零三章 噬炎.",
+      "The Weeping Soul Beast (啼魂兽) transitions into an evolutionary cocoon state after devouring a high-level ghost king in 第一千三百二十七章 玄天果实.",
+      "Yuan Yao and Yan Li transition from being bound servants of the Ghost Hag (鬼婆子) to being free under Han Li's protection in 第一千五百零八章 施法除患.",
+      "Ye Ying of the Black Phoenix race transitions from an arrogant challenger to a defeated competitor after fighting Han Li in 第一千三百八十四章 力压黑凤.",
+      "Mu Qing transitions from a powerful controller to a deceased/struggling entity during the Styx Land conflict, losing control over Han Li.",
+      "Han Li's Leopard Kirin Beast is housed in a cultivation chamber for self-development in 第一千三百二十六章 洞府."
+    ],
+    "long_form_mechanisms": [
+      "Jingzhe Twelve Transformations (惊蛰十二变): A supreme shape-shifting art allowing the user to transform into twelve different true spirits (like Kunpeng, Five-color Peacock, Gold Ape) by integrating their true blood, gaining their natural abilities.",
+      "Maturation of the Xuantian Fruit: Using the green liquid from the mysterious bottle to nurture the white core of the strange flat wooden stick, eventually allowing it to mature and register as the third ranked Xuantian Slaying Spirit Sword on the Chaos Myriad Spirit Board.",
+      "Gold-Silver Thunder Robe (雷袍): A defensive magical armor refined from Evil-Warding Divine Thunder, gold-silver lightning, and thunder runes, capable of absorbing and reflecting massive electrical attacks.",
+      "Tianyuan City Spiritual Land allocation matches: A system where cultivators challenge existing occupants or other applicants in direct duels to win rights to cultivate on premium mountains like Cuilong Mountain.",
+      "Eight Gate Thunder Array (八门引雷阵): A high-level restriction-breaking spell that channels different types of thunder (including Evil-Warding Divine Thunder) into eight spatial coordinates to tear open a passage to the Styx Land.",
+      "Purging Soul Marks via Reincarnation Gathering Yin Array (转轮聚阴阵): A specialized yin-attribute formation that aggregates thick yin energy to safely extract and dissolve tracking marks placed on the souls of cultivators.",
+      "Flying Spirit Holy Son Selection Trial: A dangerous Earth Abyss trial where Holy Sons from 72 branches must collect items and tokens. Success preserves the independence of their branch, while failure leads to forced mergers.",
+      "Styx Divine Milk (冥河神乳): A rare liquid of the Styx Land that contains extreme spiritual essence, used by high-level cultivators to break bottlenecks, refine magic, or rebuild physical bodies."
+    ],
+    "continuity_observations": [
+      "Yuan Yao and Yan Li's appearance in the Earth Abyss is a direct continuation of their ascension from the Human World via the ghost mist (鬼雾) in the Umbra Realm.",
+      "Han Li's golden Evil-Warding Divine Thunder (辟邪神雷) remains his primary leverage, explaining why the four demon kings need his assistance to break yin-attribute seals.",
+      "The Green Bamboo Bee Cloud Swords (青竹蜂云剑) continue to serve as Han Li's lifebound weapon, mentioned in battles and refinement processes.",
+      "Han Li compares the patterns on the Xuantian Fruit to his mysterious green bottle, suggesting a shared high-level origin.",
+      "The dormant and cocooned state of the Gold-Devouring Beetles (噬金虫) is noted, showing their progress since leaving the Human World.",
+      "Chapter 1515 discusses the reappearances of the ghost mist and the beast Luo Wu (罗T), referencing the spatial storm that swept Han Li and Yuan Yao in the Human World.",
+      "Han Li relies on his Jin Gang Jue (金刚诀) body-refining technique to survive physical clashes when his spiritual magic is temporarily suppressed.",
+      "The character '睺' in Luo Hou is consistently transcribed as 'T' ('罗T') throughout the text, identifying the specific digital text family of the source file."
+    ],
+    "style_observations": [
+      "Chapter Title Structure: All chapters consistently follow the format '第一千xxx章 [Title]' (e.g., 第一千三百零五章 各现神通).",
+      "Repetitive Cultivation Clichés: Frequent use of standard phrases like '喜出望外', '倒吸一口凉气', and '面无表情' to describe characters' reactions.",
+      "Strict Power Hierarchy: Combat details focus heavily on power stage differences (化神 vs 炼虚 vs 合体), illustrating how special elemental counters or items are required to bridge gaps.",
+      "Detailed Item Design: The text devotes long descriptive passages to the appearance, textures, and properties of refined objects (e.g. Yuantian Martial Armor, Thunder Robe).",
+      "Expository Narrative Paragraphs: Frequent use of '原来' or '据说' to explain the background lore of races, techniques, or locations directly to the reader.",
+      "Pacing of Large Arcs: Arcs like the Flying Spirit trial or Styx Land mission follow a set progression of preparation, team-up, sudden external conflict (Fuyou race), and chaotic retreat."
+    ],
+    "creation_family_evidence": {
+      "file_name_metadata": "《凡人修仙传》（校对版全本+番外）作者：忘语.txt",
+      "text_formatting": "Uses double-byte spaces (　　) at paragraph starts, standard Simplified Chinese quotation marks (“ and ”), and contains typical digital OCR/encoding corruptions (like '罗T' for '罗睺').",
+      "cleanliness": "Lacks modern online ads or web bookmarks, indicating a compiled, proofread offline text edition."
+    },
+    "originality_risks": [
+      "Coerced Quest Trope: Han Li is repeatedly forced by much stronger cultivators (the four demon kings) to go to a dangerous secret realm (Styx Land) to help them find treasures.",
+      "Underdog Defeats Genius Rival: In the Flying Spirit trial, Han Li acts as a guest helper and easily defeats the arrogant rival Holy Son of the Chirong race.",
+      "Auction Acquisition Cliché: Han Li participates in an auction in Sunset City/Tianyuan City to obtain critical materials (like True Spirit scales) by outbidding or outsmarting others.",
+      "Purging Tracking Marks: The common trope where high-level enemies place a soul mark on the protagonist to track them, which the protagonist subsequently removes using a secret formation."
+    ]
+  }
+}
+```

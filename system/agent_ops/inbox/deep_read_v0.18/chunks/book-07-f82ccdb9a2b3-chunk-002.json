@@ -1,0 +1,112 @@
+```json
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "chunk_id": "book-07-f82ccdb9a2b3-chunk-002",
+  "source_file": "novel_training_set/《大主宰》（校对版全本）作者：天蚕土豆.txt",
+  "source_file_sha256": "f82ccdb9a2b36141b806691150a118cddfbc5db40f1c81a70df79a4786aeeceb",
+  "start_byte": 1500181,
+  "end_byte": 3000229,
+  "chunk_sha256": "be75286a04a081c7aa3430d90ec8d698a03344fe0aaa11201a63910ee15cea95",
+  "source_encoding": "gb18030",
+  "bounded_chunk_utf8_sha256": "c285582767440caa6d66559e2fffc9d3ba459a5b39f782819c38c041c7233855",
+  "analysis": {
+    "chapter_span": [
+      "第两百三十二章 白龙之丘",
+      "第四百五十九章 老对头"
+    ],
+    "major_events": [
+      "Mu Chen and his team (Su Xuan, Luo Li, Su Ling'er, and Guo Xiong) arrive at White Dragon Hill to search for the Supreme Being's Spiritual Treasury, noticing the harsh ambient energy and numerous rogue adventure teams. [第两百三十二章 白龙之丘]",
+      "During their overnight stay in the forest, Mu Chen's team is ambushed by four mysterious black-robed men, prompting a swift defensive engagement. [第两百三十三章 夜袭]",
+      "Mu Chen's team successfully counter-attacks, slaying three of the black-robed attackers and capturing the leader to interrogate him. [第两百三十四章 反杀]",
+      "The captured assassin is revealed to be an agent of the Dragon Demon Palace, and he is executed after providing critical information about the treasury. [第两百三十五章 一个不留]",
+      "Mu Chen and Su Xuan discuss the ancient history of the Dragon Demon Palace, realizing they are competing with a powerful and ruthless force. [第两百三十六章 龙魔宫]",
+      "The team encounters and observes the Lion-Tiger Group, a notorious local bandit faction also searching for the treasury. [第两百三十七章 狮虎团]",
+      "A massive earthquake triggers the physical emergence of the Supreme Being's Spiritual Treasury, drawing all nearby teams to converge. [第两百三十八章 灵藏出世]",
+      "Mu Chen's team discovers a volcanic lake containing the Fire Spirit Immortal Lotus and encounters the residual spiritual projection of the White Dragon Supreme. [第两百三十九章 火炎灵莲]",
+      "Mu Chen refines the lotus seeds from the Fire Spirit Immortal Lotus to significantly boost his spiritual energy and prepare for a cultivation breakthrough. [第两百四十二章 炼化莲子]",
+      "Mu Chen battles Cheng Hu and Cheng Bao of the Lion-Tiger Group, using his dual-dragon spiritual energy and acquiring the Dragon-Dragon Spiritual Ring. [第两百四十五章 双龙镇压]",
+      "Bai Xuan, the son of the city lord, reveals his hidden Fusion Heaven Stage cultivation and attempts to slaughter Mu Chen's team to reclaim the treasury's main key. [第两百五十六章 白轩的真正实力]",
+      "Mu Chen utilizes the Nine Netherworld Bird's power and the mysterious black page to summon the ancient demonic weapon, the Great Meru Demonic Pillar, to crush Bai Xuan. [第两百五十八章 太古凶器]",
+      "The spatial collapse of the treasury is halted as the Northern Heavens Academy's dean and elders intervene to rescue the team from the Dragon Demon Palace's elders. [第两百五十九章 镇压]",
+      "Mu Chen returns to the Northern Heavens Spiritual Academy and is challenged by He Yao, the leader of the Demon Gate, for the third position on the Heaven Board. [第两百七十章 十道灵阵]",
+      "Mu Chen defeats He Yao in a public duel, successfully breaking through He Yao's Crane God Descent technique and establishing his authority. [第两百八十二章 秃头老人]",
+      "The Academy opens the Northern Heavens Hunting Ground, and Mu Chen's team enters the Spiritual Light Realm to hunt Spiritual Kings for crystals. [第两百九十二章 灵光界]",
+      "Mu Chen tracks and slays a high-level Spiritual King under extreme danger, obtaining a high-grade Spiritual Crystal that shocks the academy. [第三百一十五章 斩杀灵王]",
+      "Mu Chen battles Gu Tianyan, one of the three academy generals, utilizing a dual-array formation (including the Spirit Array Sub-core) to secure a draw. [第三百二十七章 双阵齐出]",
+      "The hunting tournament concludes, and Mu Chen receives the Spiritual Light Initiation, elevating his cultivation base. [第三百四十一章 接受灵光灌顶]",
+      "Mu Chen meets Ling Xi, a mysterious spiritual array master in the academy, who agrees to guide his training in spiritual arrays and Heart Eye state. [第三百五十一章 灵溪]",
+      "Ling Xi discovers a painting of Mu Chen's mother, Jing Yi, in his possession, revealing her past relationship as Jing Yi's foster daughter. [第三百五十七章 画卷]",
+      "Shen Cangsheng and Li Xuantong are ambushed and captured by Mo Longzi of the Dragon Demon Palace, prompting the academy to send a rescue party. [第三百五十九章 血鸣钟]",
+      "Mu Chen's rescue team enters the Western Desolate Territory to confront Mo Longzi's bounty hunters. [第三百六十一章 西荒境]",
+      "Mu Chen defeats the enemy array master Wu Jia, using his Heart Eye to locate and destroy the Nine Layer Mountain Array. [第三百七十三章 心眼破阵]",
+      "Mu Chen summons the Great Meru Demonic Pillar to fight Mo Longzi, rescuing the seniors and forcing the Dragon Demon Palace forces to retreat. [第三百八十章 魔柱之威]",
+      "During the battle, Mu Chen experiences a manifestation of his mother Jing Yi, who warns him of his family's dangerous background and noble lineage. [第三百八十六章 静姨]",
+      "Mu Chen and the team enter the North Heavens Gate for a special spatial training camp to prepare for the Great Spiritual Academy Tournament. [第三百九十五章 北苍门]",
+      "Mu Chen participates in the Saint Spiritual Mountain trial and encounters Mo Xingtian, the top youth of the Dragon Demon Palace. [第三百九十九章 魔刑天]",
+      "Mu Chen obtains the Heavenly Supreme Being's bone and blood, finding clues about the Sovereign Celestial Body: Undying Mysterious Body. [第四百一十章 万古不朽身]",
+      "Mu Chen battles Mo Xingtian on the Nine Heavens Steps, utilizing the Undying Fire to destroy his physical body and soul. [第四百二十章 孰胜孰败]",
+      "The Black Dragon Sovereign attacks Mu Chen in retaliation, but Mu Chen's mother, Jing Yi, projects her clone to easily defeat the Sovereign. [第四百三十章 静姨]",
+      "The Northern Heavens Academy and its allies launch a counter-offensive, successfully destroying the Dragon Demon Palace. [第四百三十五章 灭龙魔宫]",
+      "Mu Chen refines his physical body through intense training in the North Heavens Gate, achieving the Four-Mark Thunder Body (四纹雷体). [第四百四十二章 四纹雷体]",
+      "Mu Chen refines the Great Pagoda Art's Yin Scroll to balance his internal energies and control the demonic pillar. [第四百四十六章 修炼大浮屠诀阴卷]",
+      "The Great Spiritual Academy Tournament officially begins, with Mu Chen, Luo Li, and their teammates entering the shattered ruins of the ancient battlefield. [第四百五十四章 灵院大赛，开启！]",
+      "Mu Chen's team targets the team from Huang Spirit Academy led by Ji Qingtian as their first major opponent in the tournament. [第四百五十八章 挑选目标]"
+    ],
+    "character_state_transitions": [
+      "Mu Chen: Fusion Heaven Stage (融天境) cultivator in [第两百三十二章 白龙之丘] -> Successfully breaks through to the Heavenly Pass Stage (通天境) after the special training camp in the North Heavens Gate in [第四百四十一章 厚积薄发].",
+      "Mu Chen: Lacks a powerful physical combat body in [第两百三十二章 白龙之丘] -> Cultivates the Thunder God Body to master the Four-Mark Thunder Body (四纹雷体) in [第四百四十二章 四纹雷体].",
+      "Nine Netherworld Bird: Dormant beast spirit resting inside Mu Chen's body in [第两百三十二章] -> Undergoes transformation through the Black God Thunder and Undying Fire, entering a deep evolutionary slumber in [第两百八⑧章 沉睡].",
+      "Ling Xi: Cold and reclusive spiritual array master who ignores academy students in [第三百五十一章 灵溪] -> Loyal protector and sister figure who recognizes Mu Chen's mother and supports his growth in [第三百五十八章 关系].",
+      "He Yao: Proud and domineering leader of the Demon Gate ranked third on the Heaven Board in [第两百六十七章 车轮] -> Defeated rival who loses his rank and standing after his duel with Mu Chen in [第两百八十二章 秃头老人].",
+      "Shen Cangsheng: Dominant first-ranker on the Heaven Board and protector of the academy in [第三百五十章] -> Severely injured captive needing rescue in [第三百五十九章 血鸣钟] -> Rescued and fully recovered leader preparing for the Great Tournament in [第四百三十九章 特训].",
+      "Bai Xuan: Pretends to be a minor city lord's son searching for treasury treasures in [第两百三十二章 白龙之丘] -> Revealed as a high-level Fusion Heaven Stage Dragon Demon Palace agent who is vaporized by the demonic pillar in [第两百五十八章 太古凶器].",
+      "Mo Longzi: Domineering top bounty hunter of the Dragon Demon Palace who captures the academy's elite in [第三百七十四章 强悍的魔龙子] -> Defeated combatant forced to retreat under the demonic pillar's power in [第三百八十章 魔柱之威].",
+      "Mo Xingtian: The legendary top youth of the Dragon Demon Palace, feared across the continent in [第三百九十九章 魔刑天] -> Executed corpse destroyed by Mu Chen on the Nine Heavens Steps in [第四百二十一章 抹杀].",
+      "Jing Yi: A distant, mysterious mother figure in Mu Chen's memory in [第三百八十七章 记忆] -> Revealed as a supreme powerhouse capable of easily crushing a Sovereign from distance in [第四百三十二章 惊退落幕].",
+      "Luo Li: Solitary companion supporting Mu Chen in localized academy events in [第两百三十二章 白龙之丘] -> Renowned co-leader of the academy's tournament team using her Luoshen Sword to deter enemies in [第四百五十四章 灵院大赛，开启！]."
+    ],
+    "long_form_mechanisms": [
+      "The Great Meru Demonic Pillar (大须弥魔柱): A legendary ancient demonic weapon containing massive murderous aura. Sealed within the mysterious black page in Mu Chen's body, he can tap into its power to fight stronger enemies, but risks physical and mental corrosion. [第两百五十八章 太古凶器]",
+      "Heart Eye State (心眼状态): A sensory level in spiritual array mastery where the master senses energy lines and nodes with their heart rather than physical eyes, allowing them to locate array vulnerabilities and break them. [第三百一十三章 心眼]",
+      "Thunder God Body (雷神体 / 四纹雷体): A physical tempering art that utilizes thunder energy (like Black Deity Thunder) to form thunder marks on the chest, exponentially increasing the cultivator's physical strength with each mark. [第三百章 雷神体之威]",
+      "Spiritual Light Initiation (灵光灌顶): A reward ceremony where the accumulated pure energy of the Spiritual Light Mountain is used to cleanse and purify the top students' bodies, enabling rapid cultivation breakthroughs. [第三百四十一章 接受灵光灌顶]",
+      "Great Pagoda Art Yin Scroll (大浮屠诀阴卷): The Yin counterpart of the Great Pagoda Art. Cultivating it allows Mu Chen to balance his internal spiritual energies, which is crucial for suppressing the demonic energy of the pillar. [第四百四十六章 修炼大浮屠诀阴卷]",
+      "Undying Fire (不死火): The primary flame of the Undying Bird / Nine Netherworld Bird's evolved form. Possessing eternal recovery properties, Mu Chen refines a strand of it to enhance his combat power and regeneration. [第四百二十章 孰胜孰败]",
+      "至尊小三难 (Sovereign Small Three Tribulations): The intermediate bottleneck stages before achieving the Sovereign Stage, consisting of the Body Disaster (肉身难), Spiritual Energy Disaster (灵力难), and Divine Soul Disaster (神魄难). [第三百八十二章 至尊小三难]",
+      "Undying Mysterious Body (万古不朽身): One of the five primitive celestial bodies, known for its eternal durability and absolute defense, clues of which are obtained on Saint Spiritual Mountain. [第四百一十章 万古不朽身]"
+    ],
+    "continuity_observations": [
+      "Mu Chen's cultivation method, the Great Pagoda Art, is developed further when he trains the Yin Scroll in Chapter 446, balancing his father's yang energy with his mother's yin legacy. [第四百四十六章 修炼大浮屠诀阴卷]",
+      "The Nine Netherworld Bird's evolution path remains active as it absorbs the Black God Thunder and enters a deep slumber to prepare for its rebirth. [第两百八十六章 黑神雷劫再现]",
+      "The black page Mu Chen obtained in the academy's Spiritual Art Hall is revealed to be the key artifact containing and sealing the Great Meru Demonic Pillar. [第两百五十八章 太古凶器]",
+      "The mystery of Mu Chen's mother's background is resolved as she is revealed to belong to a powerful ancient clan that forced her to leave him. [第三百八十六章 静姨]",
+      "The historical conflict between the Northern Heavens Academy and the Dragon Demon Palace culminates in a full-scale war and the destruction of the palace. [第四百三十五章 灭龙魔宫]",
+      "Luo Li's responsibilities to the declining Luoshen Clan drive her to use her inherited sword arts to defend her companions on Saint Spiritual Mountain. [第四百一十四章 斗柳影]",
+      "Mu Chen's expulsion from the Spiritual Road is linked to Ji Xuan, who engineered the incident and is set up as his final rival in the tournament. [第四百五十八章 挑选目标]",
+      "The Thunder God Body's numerical progression continues from the initial runes to the complete version and the four-mark stage in the special training. [第四百四十二章 四纹雷体]"
+    ],
+    "style_observations": [
+      "Contrast between Protagonist's Sarcasm and Crowds' Shock: The narrative balances high-stakes conflict by showing enemies boasting of their power, only for Mu Chen to respond calmly while the crowd stands in disbelief. [第四百二十章 孰胜孰败]",
+      "Vibrant Energy Metaphors: Frequent use of grandiose descriptors depicting spiritual energy as rolling oceans, volcanic eruptions, or natural disasters to convey combat power. [第三百七十二章 九重山岳阵]",
+      "Structured Spatial Escalation: The combat environments expand systematically from local ruins to school arenas, then to regional wildernesses, and finally to massive extra-dimensional battlegrounds. [第四百五十四章 灵院大赛，开启！]",
+      "Tactical Combat Pauses: The author halts the action mid-fight to explain the strategic calculations, energy management, and psychological states of the combatants. [第三百二十七章 双阵齐出]",
+      "Traditional Mythological Naming: Incorporating names of Chinese mythological creatures and deities to add historical depth to the cultivation techniques. [第三百二十一章 鹤神降]",
+      "Cliffhanger Chapter Endings: Standardized serialized pacing where chapters end at the climax of a clash or the sudden appearance of a new threat to maintain suspense. [第四百自动 危机]"
+    ],
+    "creation_family_evidence": {
+      "title_and_edition": "The source file name '《大主宰》（校对版全本）作者：天蚕土豆.txt' indicates it is a proofread ('校对版') and completed edition of the web novel by author Tiancan Tudou ('天蚕土豆').",
+      "chapter_heading_regularity": "The text features uniform chapter division formatting using Chinese numerals ('第两百三十二章' to '第四百五十九章') followed by a space and a title (except Chapter 350 which lacks a title). This represents the typical structure of a cleaned web novel compilation.",
+      "textual_content_and_universe": "The story revolves around Mu Chen ('牧尘') and specific unique terminology created by Tiancan Tudou, such as the Great Meru Demonic Pillar ('大须弥魔柱'), Thunder God Body ('雷神体'), Great Pagoda Art ('大浮屠诀'), and the Northern Heavens Spiritual Academy ('北苍灵院') setting.",
+      "compilation_formatting": "The paragraphs in the text consistently start with double-byte full-width spaces (\\u3000\\u3000), confirming standard Zhi Xuan Cang Shu web serialization formatting.",
+      "serialization_anomaly": "Chapter 350 ('第三百五十章') is formatted without a chapter title, followed immediately by a newline and paragraph content, reflecting a minor serialization error or copy-paste artifact preserved during compiling."
+    },
+    "originality_risks": [
+      "The Ultimate Cheat Weapon: The Great Meru Demonic Pillar acts as an absolute panic button that allows the protagonist to bypass cultivation gaps and defeat far stronger enemies, reducing narrative tension. [第两百五十八章 太古凶器]",
+      "The Overpowered Mother Intervention: Having the protagonist's mother project her god-like power to easily defeat a Sovereign-level antagonist diminishes the protagonist's self-reliance. [第四百三十章 静姨]",
+      "Standard Academy Tournament Setting: The school-based progression, Heaven Board rankings, and inter-academy tournament follow a highly standardized template common in popular xianxia. [第四百五十四章 灵院大赛，开启！]",
+      "Damsel Clan in Distress: Luo Li's character motivation is heavily tied to saving her declining clan, fitting the predictable trope of the hero needing to grow strong enough to save the heroine's family. [第四百一十四章 斗柳影]"
+    ]
+  }
+}
+```

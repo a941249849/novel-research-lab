@@ -1,0 +1,159 @@
+{
+  "chapter_id": "chapter-0078",
+  "accepted_revision_sha256": "0d3b416bf7ee995d8d1f6726ef2fb06a49fd32a5e12b14847ad26cee533adb2c",
+  "state_deltas": [
+    {
+      "fact_id": "fact-0078-001",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_procedural_choice",
+      "operation": "set",
+      "before": "拒绝替巷民决定是否切阵；仅凭霜落位置辨认取段风险，提供操作提醒，并未接触或压住灰印",
+      "after": "遵守停术限制，三轮单侧响应期间未再查看或触碰阵段；仅陈述亲眼见到的来向边界"
+    },
+    {
+      "fact_id": "fact-0078-002",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_public_statement",
+      "operation": "set",
+      "before": "确认断下的阵段只能提交受压方向与断裂位置，不能证明写入者、封档内容或任何人的命",
+      "after": "确认外层火屑从封档投印方向压进，白裂内侧未向外写出、未向封档回流，并再次声明不构成对改动者的指认"
+    },
+    {
+      "fact_id": "fact-0078-003",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_visible_condition",
+      "operation": "set",
+      "before": "断阵过程中左眼残屑与眩晕、胸口紧缩和带血灰沫持续存在，未因公共取证而恢复",
+      "after": "左眼彻底辨不出旧痕，右眼被冷亮刺至流泪，胸口发紧、咳出带血丝灰沫，膝弯发软，右臂追缠纹勒出发紫痕"
+    },
+    {
+      "fact_id": "fact-0078-004",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_emotional_posture",
+      "operation": "set",
+      "before": "保持克制并拒绝替巷民作出牺牲决定，只提供有限判断和风险提醒",
+      "after": "在证据出现时接受共同体独立观察，不再以能力补足答案，但仍坚持限制证词边界"
+    },
+    {
+      "fact_id": "fact-0078-005",
+      "asset_id": "npc_su_wan",
+      "field_path": "npc.current_procedural_boundary",
+      "operation": "set",
+      "before": "亲自按下姓名，仅陈述肉眼确认的响应顺序，并明确不替陆沉渊答复半寿、承认或否认债务",
+      "after": "撤开灯火并主持三轮现场观察，只记录封档先亮、断砖外侧跟亮、巷内侧不亮及陆沉渊未触碰；不替他补充证词"
+    },
+    {
+      "fact_id": "fact-0078-006",
+      "asset_id": "npc_su_wan",
+      "field_path": "npc.current_physical_state",
+      "operation": "set",
+      "before": "掌背霜白未退并沿腕侧铺开，命灯深灰裂纹未减少，身体失温继续加深",
+      "after": "掌背受木刺裂开细口并渗出暗色后冻结，腕侧霜白更深，仍处于寒冷失温状态"
+    },
+    {
+      "fact_id": "fact-0078-007",
+      "asset_id": "npc_su_wan",
+      "field_path": "relationship.with_character_lu_chenyuan",
+      "operation": "set",
+      "before": "允许陆沉渊提供站立和挡风等有限协助，但坚持由各自承担自己的陈述、伤势与债务后果",
+      "after": "在陆沉渊失稳时短暂扶住并将其拖离阵段，随后保持半步距离，不替他擦拭、续灯或代为作证"
+    },
+    {
+      "fact_id": "fact-0078-008",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_communal_response",
+      "operation": "set",
+      "before": "允许反对者离开操作范围，留下者只切取无人命火附着的跨界阵段，并继续拒绝以私人灯火或姓名补入阵段",
+      "after": "撤开所有灯火和人员触碰，接受断阵段在寒风中完成三轮独立响应，继续不以私人命火、姓名或见证印干预"
+    },
+    {
+      "fact_id": "fact-0078-009",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_witness_boundary",
+      "operation": "set",
+      "before": "公共阵段只代表留下它的人愿意承受缺口，不代表退出者或任何人的命灯",
+      "after": "共同体将“撤灯、撤人、让阵段自行响应”纳入公共见证边界，保留可交公共痕迹而不交住户命火与私人寿数"
+    },
+    {
+      "fact_id": "fact-0078-010",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_visible_condition",
+      "operation": "set",
+      "before": "护阵缺口扩大，暖墙余温熄退，冷气直接灌入巷内",
+      "after": "护阵缺口仍未缩小，暖墙余温进一步退尽，冷意持续灌入巷内；断阵响应未修复阵体"
+    },
+    {
+      "fact_id": "fact-0078-011",
+      "asset_id": "npc_su_wan",
+      "field_path": "emotion.toward_character_lu_chenyuan",
+      "operation": "set",
+      "before": null,
+      "after": "因陆沉渊在证据出现时退后并让共同体独立观察而感到鼻尖发酸，但未改变程序性克制"
+    },
+    {
+      "fact_id": "fact-0078-012",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_verified_result",
+      "operation": "set",
+      "before": "现场可提交复核，局部结果为封档投印方向压入护阵、白裂内层未向外写出",
+      "after": "三轮无灯无接触观察确认封档侧先亮，断砖外侧随之亮，巷内侧持续不亮；该单侧响应可送审"
+    },
+    {
+      "fact_id": "fact-0078-013",
+      "asset_id": "state_ledger_unresolved_mysteries",
+      "field_path": "state_ledger.current_inference_limit",
+      "operation": "set",
+      "before": "古债双方、数额、旧址内槽、所欠之物及完整转运归属继续未解",
+      "after": "未解范围仅重分类为封档转运记录一侧；改动者身份、封档内容、原始债因和完整转运链仍未确定"
+    },
+    {
+      "fact_id": "fact-0078-014",
+      "asset_id": "state_ledger_faction_pressure",
+      "field_path": "state_ledger.faction_pressure",
+      "operation": "set",
+      "before": "局部来向结果需提交州府复核，泥灯巷处于临时协助隐匿审查，禁修未撤",
+      "after": "命籍衙承认单侧响应可以送审，但要求天明前交出断阵段；逾时协助隐匿登记仍有效"
+    },
+    {
+      "fact_id": "fact-0078-015",
+      "asset_id": "state_ledger_mudlamp_array_integrity",
+      "field_path": "state_ledger.current_visible_integrity_consequence",
+      "operation": "set",
+      "before": "实体切离阵段后护阵缺口永久扩大，后续返火不会自动补回该段",
+      "after": "三轮单侧响应后缺口仍保持扩大且未自动修复，暖墙余温退尽，断阵段仍为分离状态"
+    },
+    {
+      "fact_id": "fact-0078-016",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "hook.current_direction",
+      "operation": "set",
+      "before": "断阵后封档侧灰印隔着新断缺口持续冷亮，巷内侧半条断纹熄灭",
+      "after": "封档侧连续三轮先行冷亮并推动断砖外侧响应，巷内侧半条断纹始终不亮；信号未因陆沉渊追缠纹而反向"
+    },
+    {
+      "fact_id": "fact-0078-017",
+      "asset_id": "state_ledger_faction_pressure",
+      "field_path": "timeline.chapter_event",
+      "operation": "set",
+      "before": "巷民完成公共阵痕留存并等待封档侧继续显现",
+      "after": "撤灯后完成三轮无接触单侧响应复核，并收到命籍衙限时交出断阵段的压力"
+    },
+    {
+      "fact_id": "fact-0078-018",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "timeline.chapter_event",
+      "operation": "set",
+      "before": "实体跨界阵段已切下并等待封档侧继续显现",
+      "after": "现场在无人命火接入、无人触碰且陆沉渊停术的条件下完成三轮单侧响应，形成可送审的复核事实"
+    },
+    {
+      "fact_id": "fact-0078-019",
+      "asset_id": "state_ledger_mudlamp_array_integrity",
+      "field_path": "state_ledger.current_visible_integrity_consequence",
+      "operation": "set",
+      "before": "断阵段被移至石面，原地断口扩大，护阵不会自动补回",
+      "after": "断阵段仍未修复或回接，原地白裂持续敞开，冷气进一步进入巷内"
+    }
+  ],
+  "resolved_audit_ids": []
+}

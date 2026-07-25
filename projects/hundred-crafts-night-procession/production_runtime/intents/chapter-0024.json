@@ -1,0 +1,30 @@
+{
+  "chapter_id": "chapter-0024",
+  "dramatic_purpose": "提出风险分批进入可维护空舱。",
+  "must_keep": [
+    "每个风险舱必须记录开启期限与最终清偿人。",
+    "POV 固定为林岱"
+  ],
+  "must_avoid": [
+    "不得引入未登记资产或用旁白代替物质行动",
+    "不得回滚已接受状态"
+  ],
+  "expected_state_deltas": [
+    {
+      "state_id": "v1.ch024.outcome",
+      "asset_id": "char_lin_dai",
+      "field_path": "character.current_state",
+      "after": "每个风险舱必须记录开启期限与最终清偿人。",
+      "before": "上游街区暂时获救，下游排洪能力永久下降一档。"
+    }
+  ],
+  "required_asset_ids": [
+    "char_lin_dai",
+    "technique_compartment_transfer",
+    "ledger_water_level"
+  ],
+  "active_hook_ids": [],
+  "scene_constraints": [
+    "冲突必须落在具体工艺现场、物证或受影响者选择上"
+  ]
+}

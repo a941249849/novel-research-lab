@@ -1,0 +1,55 @@
+{
+  "chapter_id": "chapter-0057",
+  "accepted_revision_sha256": "099cf0670034937497c11f94db59ea386ec977614c5c725aec3652568ab80f30",
+  "state_deltas": [
+    {
+      "fact_id": "chapter-0057-lu-return-third-order",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_procedural_choice",
+      "operation": "set",
+      "before": "陆沉渊主动止步于三令同位、同尾灰与同一处压缺，不追索抄压先后、来源链或第四张令",
+      "after": "陆沉渊实际执行第三名持令人的撤回权，原样交还其令牌、执行令与留印木片，不抄录户名，也不以旁观者记忆补证"
+    },
+    {
+      "fact_id": "chapter-0057-gu-arrives-recheck",
+      "asset_id": "npc_debt_collector_gu_xun",
+      "field_path": "npc.current_procedural_arrival",
+      "operation": "set",
+      "before": "将后续核验改为命籍衙前厅灯槽公开反照，要求顾家户灯入槽后在结果出来前不得带走",
+      "after": "顾巡携重新核验、仍显断续灰痕的债链抵达泥灯巷，只对现场两份自愿留下的具名执行令启动归属复验"
+    },
+    {
+      "fact_id": "chapter-0057-lane-two-orders-only",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_witness_boundary",
+      "operation": "set",
+      "before": "现场继续维持不代证、不合并担保的边界，三份令分别归还持有人，未形成共同担保",
+      "after": "本轮公开反照的材料边界锁定为两份持有人自愿留下的具名执行令；第三份永久撤回，泥灯巷不追人、不抄名、不补证"
+    },
+    {
+      "fact_id": "chapter-0057-trust-honors-withdrawal",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_trust_state",
+      "operation": "set",
+      "before": "部分住户因陆沉渊拒绝推出具体户名而承认其未把任何人推出去，但信任同时保留对追踪进巷和后续见证的明确保留",
+      "after": "撤回权在会削弱反打胜算的情况下仍获实际执行；两名留下者确认其同意可随时撤回，并各自承担少一份证据可能败诉和续追的风险"
+    },
+    {
+      "fact_id": "chapter-0057-public-sees-voluntary-proof",
+      "asset_id": "state_ledger_public_reputation",
+      "field_path": "state_ledger.current_audience_direction",
+      "operation": "set",
+      "before": "公开认知进一步转为：三令同位可由持有人各自触摸压痕并以原纸复核，不依赖陆沉渊单方面判断",
+      "after": "在场者亲见公开反照不以强迫全部持令人留名为前提；撤回者可带走原纸且不被代证，留下的材料只代表各持有人自己的同意"
+    },
+    {
+      "fact_id": "chapter-0057-pressure-enters-two-order-review",
+      "asset_id": "state_ledger_faction_pressure",
+      "field_path": "state_ledger.current_next_procedural_hook",
+      "operation": "set",
+      "before": "下一次复核仍需三张原纸重新到场，但愿意把姓名带上命审台的持有人当场少了一人",
+      "after": "三令完整展示缩减为两份具名原纸；两份执行令已进入顾巡的实际追缴复验，第三份不得补入，归属核定压力直接落到两名自愿持有人"
+    }
+  ],
+  "resolved_audit_ids": []
+}

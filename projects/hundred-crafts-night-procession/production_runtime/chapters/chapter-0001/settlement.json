@@ -1,0 +1,18 @@
+{
+  "chapter_id": "chapter-0001",
+  "accepted_revision_sha256": "53454405f24e35284ef730209e086ce354a146257a727b17c1c12118eadbe9d5",
+  "state_deltas": [
+    {
+      "fact_id": "fact-0001",
+      "asset_id": "char_zhou_li",
+      "field_path": "character.current_state",
+      "operation": "set",
+      "before": "active",
+      "after": "事故记录出现周砺父亲周永直的签名。"
+    }
+  ],
+  "resolved_audit_ids": [
+    "CH001-STATE-INCIDENT-RECORD",
+    "CH001-DUPLICATED-CRISIS-SEQUENCE"
+  ]
+}

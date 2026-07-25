@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "project_id": "hundred-crafts-night-procession",
+  "valid": true,
+  "reviewer": "antigravity:Gemini 3.5 Flash (High)",
+  "reviewed_at": "2026-07-18T20:21:25+08:00",
+  "verdict": "ACCEPT_FOR_CONTROLLED_SAMPLE_TEST",
+  "response_path": ".agent-handoff/antigravity/responses/hundred-crafts-volume1-preprose-review-v01.md",
+  "required_remediations": [],
+  "approved_sample_windows": [
+    {"chapters": [8, 9, 10], "purpose": "档案悬疑、联合加固与团队强制卸载"},
+    {"chapters": [24, 25, 26], "purpose": "风险转舱、居民选择与权限暂停"},
+    {"chapters": [49, 50, 51], "purpose": "暴雨抢修、公开报废与盔头悬疑"}
+  ],
+  "sample_test_authorized": true,
+  "sample_owner_decision_id": "owner_hundred_crafts_volume1_controlled_samples_20260718",
+  "continuous_prose_authorized": false
+}

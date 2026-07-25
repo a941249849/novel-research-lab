@@ -1,0 +1,40 @@
+{
+  "chinese_character_count": 3149,
+  "sentence_count": 197,
+  "paragraph_count": 133,
+  "average_sentence_length": 15.98,
+  "sentence_length_stddev": 8.81,
+  "average_paragraph_length": 23.68,
+  "paragraph_length_stddev": 20.46,
+  "dialogue_ratio": 0.1404,
+  "transition_word_hits": 2,
+  "rhetorical_template_hits": 0,
+  "abstract_word_hits": 0,
+  "sensory_word_hits": 161,
+  "repeated_sentence_starters": [
+    {
+      "starter": "”\n",
+      "count": 36
+    },
+    {
+      "starter": "陆沉",
+      "count": 6
+    },
+    {
+      "starter": "顾婶",
+      "count": 6
+    },
+    {
+      "starter": "苏晚",
+      "count": 5
+    },
+    {
+      "starter": "仇慎",
+      "count": 3
+    }
+  ],
+  "flags": [
+    "sentence_opening_repetition"
+  ],
+  "policy": "metrics_are_audit_evidence_not_a_literary_verdict"
+}

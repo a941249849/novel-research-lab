@@ -1,0 +1,151 @@
+{
+  "chapter_id": "chapter-0098",
+  "accepted_revision_sha256": "a883e8ce9468934a517414b2f73b5c22ec00c8da670b479595d91b10d72a3877",
+  "state_deltas": [
+    {
+      "fact_id": "chapter-0098-fact-001",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_technique_use",
+      "operation": "set",
+      "before": "未施展识账术",
+      "after": "继续未施展识账术"
+    },
+    {
+      "fact_id": "chapter-0098-fact-002",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "physical_state.current_condition",
+      "operation": "set",
+      "before": "左腿支撑困难，掌心旧裂口受霜屑影响",
+      "after": "左腿失去知觉、掌心留下压痕，寒意沿腕骨加重"
+    },
+    {
+      "fact_id": "chapter-0098-fact-003",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_procedural_status",
+      "operation": "set",
+      "before": "坚持分列记录并阻止苏晚认领提验",
+      "after": "以时间顺序确认自动填栏据此提人构成程序性错征，并提出局部更正"
+    },
+    {
+      "fact_id": "chapter-0098-fact-004",
+      "asset_id": "npc_prefecture_shadow_envoy",
+      "field_path": "npc.current_visible_state",
+      "operation": "set",
+      "before": "影手边缘淡化，影印已有裂线",
+      "after": "影印新增第二道裂线，影手从石台剥离后又被锁纹拽回"
+    },
+    {
+      "fact_id": "chapter-0098-fact-005",
+      "asset_id": "npc_prefecture_shadow_envoy",
+      "field_path": "npc.current_recovery_strategy",
+      "operation": "set",
+      "before": "放弃立即回收并继续参与共持",
+      "after": "继续共持并接受边缘见证权限复核，等待原始交接提交方追缴"
+    },
+    {
+      "fact_id": "chapter-0098-fact-006",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "location.boundary_state",
+      "operation": "set",
+      "before": "接收栏空缺，拒交答复停在入口方向",
+      "after": "门槛霜线退回半寸，但干灰痕沿门槛向外浮出新笔"
+    },
+    {
+      "fact_id": "chapter-0098-fact-007",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "information.current_request_state",
+      "operation": "set",
+      "before": "拒交答复已送复核，疑接者标签仍在，接收栏空缺",
+      "after": "公开更正成立，苏晚提验被撤回并改为追问原始交接提交方"
+    },
+    {
+      "fact_id": "chapter-0098-fact-008",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "information.current_record_scope",
+      "operation": "set",
+      "before": "已确认泥灯巷未接收、无人替苏晚垫账",
+      "after": "进一步确认无具名接收回应，自动填入的本地接收不得用于提人或向泥灯巷追缴"
+    },
+    {
+      "fact_id": "chapter-0098-fact-009",
+      "asset_id": "artifact_prefecture_transit_registry_seal",
+      "field_path": "artifact.current_visible_trace",
+      "operation": "set",
+      "before": "接收端短暂浮出灰白光后未形成具名响应",
+      "after": "残印记录显示送出端先亮，随后州府内侧自动填入“本地接收待查”，始终未出现具名接收响应"
+    },
+    {
+      "fact_id": "chapter-0098-fact-010",
+      "asset_id": "artifact_prefecture_transit_registry_seal",
+      "field_path": "artifact.lifecycle_state",
+      "operation": "set",
+      "before": "维持active与共持，回收暂缓",
+      "after": "继续active与共持，进入公开更正后的保全复核"
+    },
+    {
+      "fact_id": "chapter-0098-fact-011",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "relationship.with_character_su_wan",
+      "operation": "set",
+      "before": "陆沉渊阻止苏晚替未具名接收响应作出承认",
+      "after": "陆沉渊以更正结论保护苏晚不被自动填入的接收身份牵连，苏晚仍独立承担旧债与分期"
+    },
+    {
+      "fact_id": "chapter-0098-fact-012",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "emotion.current_responsibility_orientation",
+      "operation": "set",
+      "before": "拒绝让苏晚或泥灯巷替未具名接收响应作出承认",
+      "after": "将有限证据转化为保护具体人的局部更正结论，不追索未显示的完整答案"
+    },
+    {
+      "fact_id": "chapter-0098-fact-013",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_verified_result",
+      "operation": "set",
+      "before": "送出曾发生但未证明苏晚或泥灯巷接收",
+      "after": "确认州府自动填入本地接收栏并据此提人，构成无具名接收响应的程序性错征"
+    },
+    {
+      "fact_id": "chapter-0098-fact-014",
+      "asset_id": "state_ledger_unresolved_mysteries",
+      "field_path": "state_ledger.current_inference_limit",
+      "operation": "set",
+      "before": "残印送出来源、为何贴近苏晚、原始交接责任未解释",
+      "after": "疑点重分类为原始接收落处及原始交接提交方缺失，未延伸至完整债链"
+    },
+    {
+      "fact_id": "chapter-0098-fact-015",
+      "asset_id": "state_ledger_faction_pressure",
+      "field_path": "state_ledger.faction_pressure",
+      "operation": "set",
+      "before": "公开拒交已送复核，压力沿灰绳延伸至州府入口",
+      "after": "命籍衙承受撤回提验与公开更正压力，持印者和边缘见证者被留在入口等待追缴"
+    },
+    {
+      "fact_id": "chapter-0098-fact-016",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "timeline.chapter_event",
+      "operation": "set",
+      "before": "接收栏继续空缺，拒交答复待复核",
+      "after": "完成一次局部改账：自动填入本地接收不得据此提人，苏晚提验被撤回"
+    },
+    {
+      "fact_id": "chapter-0098-fact-017",
+      "asset_id": "artifact_prefecture_transit_registry_seal",
+      "field_path": "artifact.current_effect_risk",
+      "operation": "set",
+      "before": "霜屑沿陆沉渊血线向腕骨攀爬，封布绷紧",
+      "after": "锁纹在腕骨缩紧，寒意加重，残印共持与入口核验继续施压"
+    },
+    {
+      "fact_id": "chapter-0098-fact-018",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "naming.current_record_labels",
+      "operation": "set",
+      "before": "苏晚疑似接收标签仍在，未形成具名接收",
+      "after": "“疑接者苏晚”被化灰，保留“未见具名接收，不得提人”及原始交接提交方未完成字样"
+    }
+  ],
+  "resolved_audit_ids": []
+}

@@ -1,0 +1,120 @@
+```json
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "chunk_id": "book-09-4f463d84ee63-chunk-006",
+  "source_file": "novel_training_set/《将夜》（校对版全本）作者：猫腻.txt",
+  "source_file_sha256": "4f463d84ee639ec618bf9be58e568791a07849f7b2048fc7281d2c56d84c3494",
+  "start_byte": 7500253,
+  "end_byte": 7904060,
+  "chunk_sha256": "3ad651c08bdf7665db3e4f9412a4a92f25adafd45b6c417d19aa1bedccc3d886",
+  "source_encoding": "gb18030",
+  "bounded_chunk_utf8_sha256": "18651daa607c762d6ea0fec44d9bbcf235500ee33e085b1ac3c5b296dfad1715",
+  "analysis": {
+    "chapter_span": [
+      "第七十八章 溪边的人",
+      "第一百三十章 结尾"
+    ],
+    "major_events": [
+      "Ning Que battles the Golden Horde's State Master in the carriage array, successfully breaking through and splitting his head with a full-force blow (第七十八章 溪边的人, 第八十章 书院的力量，金帐的灭亡).",
+      "Yu Lian meets a Golden Horde cavalryman near a stream and kills him, while in the east, she supports the campaign against the Horde (第七十九章 东一刀，西一刀, 第八十章 书院的力量，金帐的灭亡).",
+      "The Golden Horde is completely annihilated with the aid of the wolfpack led by the young snow wolf (第八十章 书院的力量，金帐的灭亡).",
+      "Ning Que bids farewell to Situ Yilan as the Tang army prepares to charge further into Xiling territories (第八十一章 这是我应该做的事情, 第八十二章 符与树与桥及上面系着的人).",
+      "Hengmu Liren, 'Haotian's Son,' is introduced as a powerful new representative of the Xiling divine forces (第八十二章 符与树与桥及上面系着的人, 第八十三章 又见青峡).",
+      "Ning Que meets Wang Jinglue, who offers to reveal Hengmu Liren's position so Ning Que can shoot him, despite the high risk to Wang's own life (第八十三章 又见青峡, 第八十四章 下阳州（上）).",
+      "Ning Que infiltrates Yangzhou on the black horse, confronting Hengmu Liren in the middle of the street (第八十五章 下阳州（下）, 第八十六章 一点浩然气).",
+      "Ning Que kills Hengmu Liren in Yangzhou using the 'Haoran Qi' (浩然气) to survive Hengmu's divine punch, and the Tang army captures Yangzhou (第八十七章 千里快哉风).",
+      "Ning Que meets the Butcher in a small town butcher shop, debating immortality, human existence, and the path to Xiling (第八十九章 小镇、肉铺和刀, 第九十章 灭佛（上）).",
+      "Jun Mo confronts Qi Nian and the Buddhist monk army in the Western Wilderness, representing the Academy's absolute secular stance (第九十章 灭佛（上）, 第九十一章 灭佛（中）, 第九十二章 灭佛（下）).",
+      "Ning Que duels and defeats Long Qing at the Helan riverbank in a series of chapters called the 'Feast' (盛宴), ending with Long Qing's death (第九十九章 盛宴（一）, 第一百章 盛宴（二）, 第一百零一章 盛宴（三）, 第一百零二章 盛宴（四）).",
+      "Ning Que travels to the northern snow sea and reunites with a pregnant Sang Sang (第一百零四章 一心安处, 第一百零五章 一夜，有话).",
+      "The Abbey Dean catches up with Ning Que and Sang Sang at a cold pool, planning to kill Sang Sang to choose a new Haotian (第一百零七章 在潭边（下）, 第一百零八章 敢教日月换新天).",
+      "Eldest Brother Li Manman arrives to fight the Abbey Dean to protect Ning Que and Sang Sang, but is sneak-attacked and severely injured by Jiu Tu (第一百一十章 一山齐天，一棍齐眉, 第一百一十一章 红了眼).",
+      "Sang Sang gives birth to twins (a boy and a girl) in a temple, protected by the black horse and green lion (第一百一十四章 天生一对（上）, 第一百一十五章 天生一对（下）).",
+      "Chao Xiaoshu uses the sword intent from Liu Bai hidden in his body to trap Jiu Tu, allowing Ning Que to kill Jiu Tu by shooting him through the forehead (第一百一十八章 一把剑（上）, 第一百一十九章 一把剑（下）).",
+      "Yu Lian rejects Xiling's surrender at Peach Mountain ('不准降') and completely destroys Xiling's power base in a single morning (第一百--三章 西陵之夕（上）, 第一百二十四章 西陵之夕（下）).",
+      "Ning Que writes the ultimate human talisman '人' (Human) in the sky of Chang'an, breaking the absolute divine barrier and transforming the world into a round planet with a moon (第一百二十八章 辟地（上）, 第一百二十九章 辟地（下）, 第一百三十章 结尾)."
+    ],
+    "character_state_transitions": [
+      "Ning Que: From a vengeful cultivator hunting enemies in the battlefield to the ultimate creator who writes the '人' character to shatter the world of Haotian (第八十章 书院的力量，金帐的灭亡 -> 第一百三十章 结尾).",
+      "Sang Sang: From the supreme deity Haotian gradually losing her divine status due to the rise of the New Doctrine to a weak, pregnant human woman who experiences human fears and gives birth to twins (第一百零五章 一夜，有话 -> 第一百一十四章 天生一对（上）).",
+      "Chao Xiaoshu: From a legendary gang leader who was thought to have retired to a self-sacrificing trap host carrying Liu Bai's sword intent, who is eventually saved and healed by Sang Sang (第一百一十九章 一把剑（下） -> 第一百二十章 明月当空（上）).",
+      "Jiu Tu (酒徒): From an immortal legendary cultivator hiding from the Eternal Night for millennia to a defeated coward killed by Ning Que's arrow (第一百一十一章 红了眼 -> 第一百一十九章 一把剑（下）).",
+      "Hengmu Liren (横木立人): From the celebrated 'Son of Haotian' and peerless new Xiling genius to a defeated dead man in Yangzhou (第八十二章 -> 第八十七章 千里快哉风).",
+      "Long Qing (隆庆): From a powerful fallen prince who absorbed countless souls to achieve his peak confidence to a dead competitor who flinched in the face of death and was killed by Ning Que (第九十九章 盛宴（一） -> 第一百零二章 盛宴（四）).",
+      "Li Manman (大师兄): From a scholar who is traditionally slow in actions to an incredibly fast, self-sacrificing warrior who uses the '无距' realm to block the Abbey Dean (第一百一十章 一山齐天，一棍齐眉 -> 第一百二章 明月当空（上）).",
+      "Abbey Dean (观主): From the ultimate leader of the Taoist faction attempting to kill Sang Sang and establish a new Haotian to a powerless fallen figure who loses connection to the divine kingdom (第一百零八章 -> 第一百三十章 结尾).",
+      "Yu Lian (余帘): From the quiet Third Senior Sister reading in the library to the ruthless destroyer of Peach Mountain who rejects Xiling's surrender and wipes them out in a morning (第七十九章 -> 第一百二十四章 西陵之夕（下）).",
+      "Situ Yilan (司徒依兰): From a general fighting alongside Ning Que to a final conqueror leading cavalry into the grassland to complete the annihilation of the Golden Horde (第八十一章 -> 第八十二章)."
+    ],
+    "long_form_mechanisms": [
+      "The '人' (Human) Talisman / 人字符: The ultimate divine rune written by Ning Que, utilizing all the ink and letters from human books in Chang'an, representing the collective history and civilization of humanity to break the rules of Haotian's world and transform it (第一百二十九章 辟地（下）).",
+      "The '无距' (Distance-less) Realm / 无距境界: The state of cultivation that allows an individual to move instantaneously across vast distances by ignoring physical space, used extensively by the Abbey Dean, Li Manman, and Jiu Tu (第一百零七章 在潭边（下）, 第一百二十五章 开天（上）).",
+      "The Replacement of Haotian / 换天: The Taoist contingency mechanism explained by the Abbey Dean where, if the existing Haotian becomes weak or tainted by human emotions, she can be killed and replaced by a new Haotian through the power of the Heavenly Books (第一百零八章 敢教日月换新天).",
+      "Chao Xiaoshu's Body Sword Trap / 身体里的剑: A mechanism designed by the Academy where Chao Xiaoshu harbors the extremely sharp sword intent of Liu Bai inside his body/meridians, allowing him to release it all at once to form an absolute spatial cage that locks down even a '无距' cultivator like Jiu Tu (第一百一十九章 一把剑（下）).",
+      "The '杀魂' (Killing Soul) and '浩然气' Integration: The combat technique used by Ning Que where he integrates the battlefield killing intent accumulated since Shubihu and Weicheng with the Academy's Haoran Qi to unleash a slash that can break through Buddhist and divine defenses (第八十章 书院的力量，金帐的灭亡, 第八十六章 一点浩然气).",
+      "The Degraded Deity and Believer Feedback Loop: The mechanism of Haotian's power where her strength is directly proportional to the faith of her believers. As the Xiling church declines and the New Doctrine rises, she loses divinity, experiences physical vulnerability, human pregnancy, and the need to feed children (第一百一十章 一山齐天，一棍齐眉, 第一百一十六章 一碗面).",
+      "The Golden Horde Carriage Array / 车阵: A military defensive array used by the Golden Horde's State Master that concentrates blood and killing intent to deter intruders and protect the core command (第七十八章 溪边的人).",
+      "The Heavenly Books / 天书: Ancient relics that contain the ultimate rules of the world. The Abbey Dean uses them (such as the Ming book) to access the divine kingdom's power, while Li Manman hides the book to prevent it from falling into his hands (第一百二十五章 开天（上）).",
+      "The Transformation of the Planet (Round Earth and Moon) / 开天辟地: The physical mechanism by which the world transitions from an absolute flat plane under Haotian's canopy to a round celestial body with a real moon orbiting it, ending the rule of absolute divinity (第一百三十章 结尾)."
+    ],
+    "continuity_observations": [
+      "The fate of the Golden Horde: The conflict between Tang/荒人 and the Golden Horde, which was a major theme in earlier volumes, is resolved here with the Horde's complete destruction and the State Master's death (第八十章 书院的力量，金帐的灭亡).",
+      "Chao Xiaoshu's fate and relationship with Ning Que: Chao Xiaoshu, Ning Que's first cultivation-related friend from the Spring Breeze Pavilion battle, returns to play a crucial role in trapping Jiu Tu, and his life is saved by Sang Sang's stitching, mirroring their early domestic bond (第一百一十九章 一把剑（下）, 第一百二十章 明月当空（上）).",
+      "Sang Sang's domestic skills: Sang Sang's concern about her sewing skills ('女红') from Volume 1 is recalled when she uses a needle and thread to sew up Chao Xiaoshu's wound, demonstrating how mundane skills are elevated to miracles (第一百二十章 明月当空（上）).",
+      "The ultimate resolution of the Ning Que vs Long Qing rivalry: Their rivalry, starting from the climbing of the Back Hill, is finalized here in the Helan riverbank duel where Ning Que kills Long Qing once and for all (第一百零二章 盛宴（四）).",
+      "Eldest Brother's slowness vs speed: The irony of Li Manman's name (slow) is continuously referenced; although he was slow to cultivate, he is the fastest in combat, holding off the Abbey Dean (第一百二十一章 明月当空（中）).",
+      "The Great Black Horse's loyalty: The horse, which has been Ning Que's companion since early volumes, remains active, carrying him into Yangzhou and guarding Sang Sang during childbirth (第八十六章 一点浩然气, 第一百一十五章 天生一对（下）).",
+      "The role of the Butcher and Wine Drinker: These two legendary figures, who have run from the Eternal Night for thousands of years, face different fates: Jiu Tu is killed by Ning Que, and Butcher's cleaver is blocked by Jun Mo, resolving their long-standing evasion of destiny (第一百一十九章 一把剑（下）, 第一百二十二章 明月当空（下）).",
+      "The destruction of the giant Buddha statue's aftermath: The debris of the giant Buddha statue of Washan, which Jun Mo sliced in earlier volumes, is described as having become a local scenery and a source of stone-carving income for the town, linking historical destruction to present-day mundane economy (第九十四章 石像与鸡汤).",
+      "The transition to the '庆余年' reference: Ning Que's combat method in Yangzhou references a story called '庆余年' (Joy of Life, the author's previous book), showing the continuity of Mao Ni's self-referential writing style and in-universe meta-jokes (第八十六章 一点浩然气)."
+    ],
+    "style_observations": [
+      "Contrast between Mundane Realism and Cosmic Scale: The narrative consistently contrasts high-stakes magical conflicts (Peach Mountain's destruction, the Abbey Dean's ascension) with mundane, everyday details, such as cooking chicken soup, eating sweet potatoes, and stitching wounds with sewing needles (第九十四章 石像与鸡汤, 第一百二十章 明月当空（上）).",
+      "Meta-Narrative Commentary (Author Notes): The text features direct authorial intrusions and self-praises in the footnotes/parentheses (e.g., '(这章牛逼... 我就是照抄的...)', '(我没写过悲剧结局，对吧？)'), breaking the fourth wall and adding a conversational tone (第九十二章 灭佛（下）, 第一百零五章 一夜，有话).",
+      "Rhythmic, Poetic Repetition: The prose uses repeating structures and rhythms to emphasize themes of persistence, such as the back-and-forth movement of Ning Que ('离开又回来，回来又要离去') or Yu Lian's barefoot march ('赤足踏在微漾 hometown... 踩出一道道抹不掉的痕迹') (第一百一十二章 来来去去, 第一百二十五章 开天（上）).",
+      "Philosophical and Moral Pragmatism: The characters reject abstract cosmic dogmas in favor of simple, human relations. Ning Que explicitly states he is not a martyr or a moral saint; he fights because 'Sang Sang is his home' and refuses to sacrifice her for the world (第一百零四章 一心安处, 第一百二十八章 辟地（上）).",
+      "Deconstruction of Epic Battles into Anti-Climaxes: Major fights, like the death of Jiu Tu or the battle at Yangzhou, are often resolved through quick, brutal, or highly pragmatic tricks rather than elaborate spellcasting duels, emphasizing survival skills over raw magical aesthetics (第八十六章 一点浩然气, 第一百一十九章 一把剑（下）).",
+      "Cinematic Visual Contrast: The narrative makes heavy use of high-contrast color imagery (Yu Lian's yellow skirt against mud/snow, Peach Mountain turning blood-red under the morning sun) to create memorable, iconic scenes (第一百二十四章 西陵之夕（下）, 第一百二十五章 开天（上）)."
+    ],
+    "creation_family_evidence": {
+      "author": "猫腻 (Mao Ni)",
+      "protagonist": "宁缺 (Ning Que)",
+      "key_concepts": [
+        "人字符 (Human Talisman)",
+        "无距境界 (Distance-less Realm)",
+        "天书 (Heavenly Books)",
+        "书院后山 (Academy Back Hill)",
+        "昊天与永夜 (Haotian and Eternal Night)",
+        "桃山 (Peach Mountain)"
+      ],
+      "stylistic_signature": "Blending high-stakes epic fantasy with cozy domestic realism, meta-narrative footnotes, and secular humanist philosophies over divine absolute order.",
+      "compilation_indicators": "The chapter headers utilize uniform Chinese numbering format followed by a space and the title (e.g., '第七十八章 溪边的人', '第一百三十章 结尾') and double-byte spacing at paragraph starts, indicating standard web serialization compilation formatting.",
+      "secular_humanism_vs_divinity": {
+        "concept": "Secular Humanism vs Divine Absolutism",
+        "details": "The core thematic conflict of the ending is the triumph of secular human relationships (Ning Que's love for Sang Sang, the Academy's defense of human choice) over the absolute, cold order of the divine kingdom (the Abbey Dean's attempt to restore a pure Haotian). This is shown through the writing of the '人' (Human) character.",
+        "chapters": [
+          "第一百零八章 敢教日月换新天",
+          "第一百二十九章 辟地（下）",
+          "第一百三十章 结尾"
+        ]
+      },
+      "domestic_realism_in_conflict": {
+        "concept": "Domestic Realism within Epic Climax",
+        "details": "Even during the final struggle for the world's fate, the narrative focuses heavily on domestic elements like Sang Sang giving birth, feeding milk to twins, cooking soup, and sewing up Chao Xiaoshu's stomach with a needle and thread.",
+        "chapters": [
+          "第九十四章 石像与鸡汤",
+          "第一百一十五章 天生一对（下）",
+          "第一百二十章 明月当空（上）"
+        ]
+      }
+    },
+    "originality_risks": [
+      "The 'Rival Defeated by Cowardice' Trope: The final battle between Ning Que and Long Qing is resolved because Long Qing, despite being stronger, is ultimately afraid to die, whereas the protagonist is fearless. This is a very common xianxia/wuxia trope where the villain's lack of 'guts' leads to their downfall (第一百零二章 盛宴（四）).",
+      "The 'World-Shattering Character' Symbolism: Writing a literal character (the '人' character) in the sky to reshape the world is a highly conceptual but common trope in Chinese fantasy (e.g., drawing power from human script or history to defeat absolute divine will), which can feel overly convenient or abstract (第一百二十九章 辟地（下）).",
+      "The 'Sudden Domestic Twins' Trope: Having the heroine give birth to twins (a boy and a girl) right before the final conflict serves as a strong emotional anchor, but it is a classic domestic fantasy trope used to humanize a god-like character and raise the stakes of the final battle (第一百一十四章 天生一对（上）).",
+      "The 'Vast and Empty Divine Kingdom' Concept: The idea of a cold, mechanical, rule-based divine kingdom (Haotian) that lacks true life, which must be overthrown so humanity can live 'freely,' is a standard trope in anti-religious xianxia, echoing themes from other works where absolute deities are depicted as parasitic or restrictive (第一百二十七章 开天（下）, 第一百三十章 结尾)."
+    ]
+  }
+}
+```

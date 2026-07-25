@@ -1,0 +1,14 @@
+{
+  "version": "0.25",
+  "chapter_id": "chapter-0004",
+  "source_revision": "system/production_runtime/chapters/chapter-0004/revision.md",
+  "source_sha256": "e3ed91078715d2b3540da38987cb7db63bcd559ea1e320fb0b07a550d091b6f7",
+  "release_edit": "system/production_runtime/release_edits/chapter-0004.md",
+  "release_edit_sha256": "33004b531fb8a422659df8a3beaa1ac158e533cf53514ee3614cf640d04d73a8",
+  "repair_direction": "发布版篇幅与文气修订：保持本章既有事件、状态结算、人物决定和结尾钩子不变，将正文扩充到3200-3800中文字符。新增内容只能深化已有场景动作、人物互动、环境阻力和具体感官，不得新增人物、能力、线索、胜负或状态变化；减少制度说明、模板排比和重复伤势描写。",
+  "provider": "codex",
+  "model": "gpt-5.6-terra",
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-001-010.json",
+  "reviewed_release_edit_sha256": "33004b531fb8a422659df8a3beaa1ac158e533cf53514ee3614cf640d04d73a8"
+}

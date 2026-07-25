@@ -1,0 +1,47 @@
+{
+  "chapter_id": "chapter-0065",
+  "accepted_revision_sha256": "ab551f78c7496bb4fd10f0708d44666081ecdc8ce1c8b1538670f136d3ff99b5",
+  "state_deltas": [
+    {
+      "fact_id": "fact-0065-03",
+      "asset_id": "bond_mother_su_wan",
+      "field_path": "emotional_bond.current_emotional_turn",
+      "operation": "set",
+      "before": "陆沉渊放弃以暂缓替苏晚避险，只扶灯座和她允许交出的身体重量，转为陪她承担拒迁后的风险",
+      "after": "陆沉渊服从苏晚选择，放弃追求一次全胜的翻案机会，通过提供物理支撑陪她承担拒迁风险，苏晚亦虚虚靠其小臂予以回应，体现双方在克制中的亲缘凝聚力"
+    },
+    {
+      "fact_id": "fact-0065-01",
+      "asset_id": "state_ledger_faction_pressure",
+      "field_path": "state_ledger.current_next_procedural_hook",
+      "operation": "set",
+      "before": "命审受理范围被限定为裁定连额归属，不得在本次裁定中一并免除归属清楚的旧寿债",
+      "after": "命审程序争点收窄为迁籍附条的形成与执行效力，且程序压力从选择争点转入不可撤回的实物压印检验"
+    },
+    {
+      "fact_id": "fact-0065-02",
+      "asset_id": "state_ledger_faction_pressure",
+      "field_path": "state_ledger.faction_pressure",
+      "operation": "set",
+      "before": "无具名共同空额和锁龛执行被撤销，压力转向归属清楚 of 苏晚旧追缴令",
+      "after": "压力转向迁籍附条与重复执行冲突的州府复核，本地局部改账兑现，更高层追查旧债转运记录"
+    },
+    {
+      "fact_id": "fact-0065-05",
+      "asset_id": "foreshadowing_cinder_seal_rain",
+      "field_path": "hook.unread_migration_clause",
+      "operation": "set",
+      "before": "命审台警告选错争点的一方将在最后一格耗尽前失去所有再次申辩机会，且最后一格液体开始加速沸腾下降走刻",
+      "after": "命审台限制选择完毕，将程序压力转向原债印与附条在同一块压印石上的重新受压"
+    },
+    {
+      "fact_id": "fact-0065-04",
+      "asset_id": "state_ledger_mother_life_lamp_countdown",
+      "field_path": "state_ledger.current_countdown_state",
+      "operation": "set",
+      "before": "最后一格继续缩短；旧裂旁新增一道越过灯腹、向灯座延伸且未合拢的冷纹",
+      "after": "最后一格计时液体在沸腾中继续向下滑落"
+    }
+  ],
+  "resolved_audit_ids": []
+}

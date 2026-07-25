@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://nrl.local/schemas/foreshadowing.schema.json",
+  "title": "Foreshadowing Asset",
+  "allOf": [
+    {"$ref": "https://nrl.local/schemas/common.schema.json"},
+    {
+      "properties": {
+        "family": {"type": "string", "const": "foreshadowing"},
+        "foreshadowing": {
+          "type": "object",
+          "required": [
+            "surface_explanation",
+            "payoff_stage",
+            "hidden_logic_key",
+            "payoff_condition_ledger_state",
+            "clue_exposure_risk",
+            "lifecycle_policy",
+            "originality_policy"
+          ],
+          "properties": {
+            "surface_explanation": {"type": "string", "minLength": 1},
+            "payoff_stage": {"type": "string", "minLength": 1},
+            "hidden_logic_key": {"type": "string", "minLength": 1},
+            "payoff_condition_ledger_state": {"type": "string", "minLength": 1},
+            "clue_exposure_risk": {"type": "number", "minimum": 0},
+            "lifecycle_policy": {
+              "type": "object",
+              "required": ["setup", "misdirection", "reveal", "retirement"],
+              "properties": {
+                "setup": {"type": "string", "minLength": 1},
+                "misdirection": {"type": "string", "minLength": 1},
+                "reveal": {"type": "string", "minLength": 1},
+                "retirement": {"type": "string", "minLength": 1}
+              },
+              "additionalProperties": false
+            },
+            "originality_policy": {"type": "string", "minLength": 1}
+          },
+          "additionalProperties": false
+        }
+      }
+    }
+  ]
+}

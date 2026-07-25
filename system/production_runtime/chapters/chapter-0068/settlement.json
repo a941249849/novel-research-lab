@@ -1,0 +1,55 @@
+{
+  "chapter_id": "chapter-0068",
+  "accepted_revision_sha256": "1abfac30697ca1e2589f4f4646d3cf7e4417c0c27114861c831a345a162f679e",
+  "state_deltas": [
+    {
+      "fact_id": "fact-0068-3",
+      "asset_id": "npc_su_wan",
+      "field_path": "npc.current_visible_lamp_consequence",
+      "operation": "set",
+      "before": "错取余火倒卷回灯芯且短暂亮起，但既往损耗不予恢复，新增裂损与掌背冷光创口依然保留",
+      "after": "苏晚命灯没有痊愈，新增裂损与掌背失温保留；母债余额、原始成债原因和后续合法分期仍未解决。"
+    },
+    {
+      "fact_id": "fact-0068-4",
+      "asset_id": "npc_su_wan",
+      "field_path": "npc.current_procedural_boundary",
+      "operation": "set",
+      "before": "苏晚通过物理阻隔将债务主体与陆沉渊的证据留档责任正式分开，促成泥灯巷“不代债、不交人、允许各户撤守”的共同边界，部分住户退出后护阵裂损进一步固定，但住户命火未被调用",
+      "after": "泥灯巷形成“不代债、不交人、允许各户撤守”的共同边界；部分住户退出外沿守护后，护阵裂损进一步固定，但住户命火仍未被调用。"
+    },
+    {
+      "fact_id": "fact-0068-1",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_enforcement_record",
+      "operation": "set",
+      "before": "当期寿火位被确认已经执行过，当前追缴令因此失效，退还错取余火至苏晚命灯，但既往损耗不予恢复",
+      "after": "苏晚旧寿债的债名与原始债印仍被认定有效，但本次追缴所占用的当期寿火位被确认已经执行过，当前追缴令因此失效。"
+    },
+    {
+      "fact_id": "fact-0068-2",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_enforcement_scope",
+      "operation": "set",
+      "before": "命籍衙不得再以本次无效迁籍附条转移苏晚命档，也不得重新执行已冲突的当期寿火位，且刚被抽离的错取余火返还，但在附条被判定失效后转为申请在泥灯巷原地执行针对苏晚的具名旧债",
+      "after": "命籍衙不得再以本次无效迁籍附条转移苏晚命档，也不得重新执行已经冲突的当期寿火位；刚被抽离的错取余火完成返还，既往损耗不追溯恢复。"
+    },
+    {
+      "fact_id": "fact-0068-5",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_local_access_restriction",
+      "operation": "set",
+      "before": "陆沉渊原有本地识账权限的流转虚线全部崩解，被彻底排除在封档后的本地查阅之外",
+      "after": "陆沉渊以自己的半寿识账记录承担证据留档代价，暴露继续上升，且被排除在封档后的本地查阅之外。"
+    },
+    {
+      "fact_id": "fact-0068-6",
+      "asset_id": "state_ledger_faction_pressure",
+      "field_path": "state_ledger.faction_pressure",
+      "operation": "set",
+      "before": "迁籍附条与重复执行冲突送往州府复核，本地局部改账兑现，更高层开始追查是谁触碰了苏晚旧债的转运记录",
+      "after": "迁籍附条与重复执行冲突被一并送入州府复核，本地局部改账兑现，同时更高层开始追查是谁触碰了苏晚旧债的转运记录。"
+    }
+  ],
+  "resolved_audit_ids": []
+}

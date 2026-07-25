@@ -1,0 +1,107 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "nrl://schemas/candidate-source-ecology.v0.2",
+  "title": "NRL Candidate Source Ecology",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "candidate_id",
+    "status",
+    "project_initialization_authorized",
+    "prose_authorized",
+    "source_tiers",
+    "source_channels",
+    "regional_lenses",
+    "triangulation_rules",
+    "acquisition_queue",
+    "gate_result"
+  ],
+  "properties": {
+    "version": {"const": "0.2"},
+    "candidate_id": {"type": "string", "minLength": 1},
+    "status": {"const": "expanded_research_active"},
+    "project_initialization_authorized": {"const": false},
+    "prose_authorized": {"const": false},
+    "source_tiers": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["tier", "label", "source_types", "allowed_uses", "promotion_rule"],
+        "properties": {
+          "tier": {"enum": ["A", "B", "C", "D", "E"]},
+          "label": {"type": "string", "minLength": 1},
+          "source_types": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+          "allowed_uses": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+          "promotion_rule": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "source_channels": {
+      "type": "array",
+      "minItems": 10,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["channel_id", "name", "tier", "url", "collection_role", "limitations"],
+        "properties": {
+          "channel_id": {"type": "string", "pattern": "^[a-z0-9_-]+$"},
+          "name": {"type": "string", "minLength": 1},
+          "tier": {"enum": ["A", "B", "C", "D", "E"]},
+          "url": {"type": "string", "pattern": "^https://"},
+          "collection_role": {"type": "string", "minLength": 1},
+          "limitations": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "regional_lenses": {
+      "type": "array",
+      "minItems": 9,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["lens_id", "label", "places", "craft_domain_ids", "research_targets", "story_reservoirs", "anti_flattening_rule"],
+        "properties": {
+          "lens_id": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+          "label": {"type": "string", "minLength": 1},
+          "places": {"type": "array", "minItems": 2, "items": {"type": "string", "minLength": 1}},
+          "craft_domain_ids": {"type": "array", "minItems": 2, "items": {"type": "string", "pattern": "^[a-z0-9_]+$"}},
+          "research_targets": {"type": "array", "minItems": 2, "items": {"type": "string", "minLength": 1}},
+          "story_reservoirs": {"type": "array", "minItems": 2, "items": {"type": "string", "minLength": 1}},
+          "anti_flattening_rule": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "triangulation_rules": {"type": "array", "minItems": 6, "items": {"type": "string", "minLength": 1}},
+    "acquisition_queue": {
+      "type": "array",
+      "minItems": 9,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["queue_id", "regional_lens_id", "query_template", "target_evidence", "priority"],
+        "properties": {
+          "queue_id": {"type": "string", "pattern": "^[a-z0-9_-]+$"},
+          "regional_lens_id": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+          "query_template": {"type": "string", "minLength": 1},
+          "target_evidence": {"type": "string", "minLength": 1},
+          "priority": {"enum": ["P0", "P1", "P2"]}
+        }
+      }
+    },
+    "gate_result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["broad_source_ecology_ready", "regional_story_bible_ready", "prose_ready", "next_action"],
+      "properties": {
+        "broad_source_ecology_ready": {"const": true},
+        "regional_story_bible_ready": {"const": false},
+        "prose_ready": {"const": false},
+        "next_action": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

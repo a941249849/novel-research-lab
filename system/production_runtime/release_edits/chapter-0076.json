@@ -1,0 +1,14 @@
+{
+  "version": "0.25",
+  "chapter_id": "chapter-0076",
+  "source_revision": "system/production_runtime/chapters/chapter-0076/revision.md",
+  "source_sha256": "69ec0335b512233eb01b579cce4105a671de2ec67212fb4a6cc259f096bb0467",
+  "release_edit": "system/production_runtime/release_edits/chapter-0076.md",
+  "release_edit_sha256": "6cbc80d82fad7de7f84d5737205e65f8ba582f91ccb8e3e3fbabb816689e6c22",
+  "repair_direction": "彻底清理本章多重复制文本：闭眼银灰至“不许松开的手”段落只能出现一次，扶门板、旧线怎么留的整组互动也只能发生一次。重新梳理为线性因果和完整发布长度，保持旧线跨灰印、无人接火、银灰火屑慢半拍亮起及结尾压力不变。既定身体状态为右眼失明、左眼可视但受损。",
+  "provider": "antigravity",
+  "model": "Gemini 3.5 Flash (High)",
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-071-080.json",
+  "reviewed_release_edit_sha256": "6cbc80d82fad7de7f84d5737205e65f8ba582f91ccb8e3e3fbabb816689e6c22"
+}

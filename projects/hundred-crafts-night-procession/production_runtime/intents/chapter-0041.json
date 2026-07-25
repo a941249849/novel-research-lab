@@ -1,0 +1,33 @@
+{
+  "chapter_id": "chapter-0041",
+  "dramatic_purpose": "复原周永直只拆本地执行线、却留下远端旁路与残件的真实顺序。",
+  "must_keep": [
+    "确认他先救过无登记住户，也留下了可被他人重接的自动代偿旁路。",
+    "POV 固定为周砺"
+  ],
+  "must_avoid": [
+    "不得引入未登记资产或用旁白代替物质行动",
+    "不得回滚已接受状态"
+  ],
+  "expected_state_deltas": [
+    {
+      "state_id": "v1.ch041.outcome",
+      "asset_id": "artifact_responsibility_ledger",
+      "field_path": "artifact.condition",
+      "after": "远端自动代偿旁路与可重接残件已登记",
+      "before": "未识别受影响者进入旧案核查与补偿对象范围"
+    }
+  ],
+  "required_asset_ids": [
+    "char_zhou_li",
+    "npc_zhou_yongzhi",
+    "foreshadow_second_record",
+    "artifact_responsibility_ledger"
+  ],
+  "active_hook_ids": [
+    "foreshadow_second_record"
+  ],
+  "scene_constraints": [
+    "冲突必须落在具体工艺现场、物证或受影响者选择上"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "chinese_character_count": 3377,
+  "sentence_count": 219,
+  "paragraph_count": 65,
+  "average_sentence_length": 15.42,
+  "sentence_length_stddev": 11.59,
+  "average_paragraph_length": 51.95,
+  "paragraph_length_stddev": 57.46,
+  "dialogue_ratio": 0.1253,
+  "transition_word_hits": 5,
+  "rhetorical_template_hits": 0,
+  "abstract_word_hits": 0,
+  "sensory_word_hits": 99,
+  "repeated_sentence_starters": [],
+  "tail_short_paragraph_ratio": 0.2333,
+  "tail_dialogue_paragraph_ratio": 0.2,
+  "prompt_leak_markers": [],
+  "generation_meta_markers": [],
+  "flags": [],
+  "policy": "metrics_are_audit_evidence_not_a_literary_verdict"
+}

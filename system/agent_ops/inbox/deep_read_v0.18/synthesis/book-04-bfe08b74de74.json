@@ -1,0 +1,106 @@
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "book_id": "book-04-bfe08b74de74",
+  "book_title": "《仙逆》（校对版全本）作者：耳根",
+  "covered_chunk_ids": [
+    "book-04-bfe08b74de74-chunk-001",
+    "book-04-bfe08b74de74-chunk-002",
+    "book-04-bfe08b74de74-chunk-003",
+    "book-04-bfe08b74de74-chunk-004",
+    "book-04-bfe08b74de74-chunk-005",
+    "book-04-bfe08b74de74-chunk-006",
+    "book-04-bfe08b74de74-chunk-007",
+    "book-04-bfe08b74de74-chunk-008",
+    "book-04-bfe08b74de74-chunk-009",
+    "book-04-bfe08b74de74-chunk-010"
+  ],
+  "covered_chunk_hashes": [
+    {"chunk_id": "book-04-bfe08b74de74-chunk-001", "response_sha256": "11ea28bf5307e10c57eb96868f2eb63009eef5268866a015524bbfe84fb8bf69"},
+    {"chunk_id": "book-04-bfe08b74de74-chunk-002", "response_sha256": "f2aea579f39384a8a2afb47116a1579edd2fef0c0fa6ba12574528dc504d9fac"},
+    {"chunk_id": "book-04-bfe08b74de74-chunk-003", "response_sha256": "7f6e60a4f960da23e913260a891ef9e6cb2ba71d66d9f5073a6066b9fc007af4"},
+    {"chunk_id": "book-04-bfe08b74de74-chunk-004", "response_sha256": "1227561512b6c7ebdf156f05c1c9e464e0ba900fdfbdddcf0a2f2e0d5c725016"},
+    {"chunk_id": "book-04-bfe08b74de74-chunk-005", "response_sha256": "9c0394f870937951ec7fe082b1eb061bf4f392e98abc2fe4674e38bcb0b2b393"},
+    {"chunk_id": "book-04-bfe08b74de74-chunk-006", "response_sha256": "ce3af20a1b6df14516680124055cdcb033b8184358ecb73da6048a21f7cac829"},
+    {"chunk_id": "book-04-bfe08b74de74-chunk-007", "response_sha256": "33b58048e91598fe32ac774d29b1c9a399f34a5ea6d56e48cabbc3e58cb9d76b"},
+    {"chunk_id": "book-04-bfe08b74de74-chunk-008", "response_sha256": "c0b460afbd3ded555712b9f003c908ea609f794544c11d62f81db709e600122f"},
+    {"chunk_id": "book-04-bfe08b74de74-chunk-009", "response_sha256": "d1e7d7cc6f7bf4fcc9312b7e1a288116a34ff631246c49df961a3e0164fc3746"},
+    {"chunk_id": "book-04-bfe08b74de74-chunk-010", "response_sha256": "f30d712575741e3e29f6bcb261a188373da1fefdb17614d3fa9187846cf4cc58"}
+  ],
+  "synthesis": {
+    "narrative_spine": [
+      {"phase": "mortal grievance to foundational ascent", "summary": "Wang Lin moves from failed sect entrant through family-loss revenge, death and possession, then builds a Dao, body, avatar, and Nascent Soul base.", "anchors": ["第八章 石珠", "第一百一十七章 王林身亡", "第224章 结婴"]},
+      {"phase": "revenge closure to Dao formation", "summary": "The Teng conflict ends; mortal transformation and life-death comprehension convert private grief into the Soul Transformation path while Li Muwan's soul becomes the central deferred objective.", "anchors": ["第246章 灭藤（终）", "第283章 顿悟", "第339章 转世重生"]},
+      {"phase": "cosmic expansion and split selves", "summary": "Suzaku gives way to Luotian and the Demon Spirit Land; main body, avatar, companions, inherited lineages, and competing Dao paths scale the conflict beyond one planet.", "anchors": ["第477章 初入天运", "第599章 问鼎初期", "第681章 王平"]},
+      {"phase": "ancient inheritance to third-step threshold", "summary": "Ancient-race identity, origins, tribulations, and incense requirements turn cultivation into a cosmological contest with Tian Yunzi, Tuo Sen, and the sealed boundary.", "anchors": ["第940章 四星王族古神", "第1280章 三道本源！！！", "第1618章 轰开门，就是大能"]},
+      {"phase": "war, Xiangang, and closure", "summary": "Third-step breakthrough resolves the outer invasion, enters Xiangang, settles imperial and ancient-clan conflicts, then uses the Definer Compass resolution to restore Li Muwan and close major bonds.", "anchors": ["第1655章 掌尊现！", "第2032章 冲冠一怒！（11）", "第2088章 蓦然回首"]}
+    ],
+    "character_arcs": [
+      {"character": "王林", "arc": "ordinary youth -> revenge-driven survivor -> Dao-comprehending cultivator -> third-step protector -> reunion-seeking finisher", "anchors": ["第一章 离乡", "第283章 顿悟", "第1621章 万空骨门", "第2087章 婉儿，醒来吧"]},
+      {"character": "李慕婉", "arc": "companion and alchemist -> preserved soul -> long-duration revival objective -> restored partner", "anchors": ["第一百二十八章 焚金山脉", "第339章 转世重生", "第451章 婉儿命魂", "第2087章 婉儿，醒来吧"]},
+      {"character": "司徒南", "arc": "sealed mentor -> revived ally -> final drinking companion and surviving old friend", "anchors": ["第四十六章 老怪", "第424章 司徒南", "第1646章 与司徒一醉", "第2081章 临海"]},
+      {"character": "柳眉与王平", "arc": "Thousand Illusion rupture produces the resentment infant; Wang Lin converts the weaponized child into a mortal son and later preserves the family connection.", "anchors": ["第450章 千幻道", "第681章 王平", "第704章 一世轮回，结束……", "第2088章 蓦然回首"]},
+      {"character": "李倩梅", "arc": "Dao-questioning counterpart -> self-sacrificing protector -> Dong Mei reunion, resolving the bird-and-fish separation motif.", "anchors": ["第1164章 三个问题", "第1292章 红芒下的白衣身影", "第2088章 蓦然回首"]}
+    ],
+    "mechanism_evolution": [
+      {"mechanism": "天逆珠/定界罗盘", "evolution": "elemental accumulation -> internal third-step vision -> deep fusion -> magnetic compass revelation -> restored cosmic compass", "anchors": ["第720章 天逆圆满", "第1268章 天逆消失！", "第1413章 天逆之变！", "第2088章 蓦然回首"]},
+      {"mechanism": "cultivation progression", "evolution": "realm accumulation is repeatedly gated by mental Dao, bodily reconstruction, sources, Empty Gates, incense, and Heaven-Treading conditions.", "anchors": ["第283章 顿悟", "第767章 阴虚！", "第1280章 三道本源！！！", "第1621章 万空骨门", "第2087章 婉儿，醒来吧"]},
+      {"mechanism": "ancient-race body", "evolution": "Tu Si inheritance -> star growth -> loss tribulations -> seven/eight-star reconstruction -> counter-force and bloodline power.", "anchors": ["第一百八十七章 古神传承（一）", "第940章 四星王族古神", "第1157章 一损两劫", "第1471章 传承", "第1706章 古脉苍穹血"]},
+      {"mechanism": "soul, avatar, and reincarnation", "evolution": "possession and soul banners become avatars, dream paths, reincarnated bonds, and a time-loop slaughter clone that returns to the whole.", "anchors": ["第一百一十九章 神识苏醒", "第210章 凝练分身", "第1614章 因果印", "第2088章 蓦然回首"]}
+    ],
+    "world_expansion": [
+      {"scope": "Zhao/Chu and cultivation countries", "change": "sect and family feuds establish graded nations, outer battlefields, and planet-bound constraints.", "anchors": ["第一百零六章 等级", "第226章 离开楚国"]},
+      {"scope": "Suzaku to Luotian", "change": "cultivation-star crystals, star discs, Tianyun Sect, Demon Spirit Land, and regional factions turn planetary travel into the main frame.", "anchors": ["第248章 修星之晶", "第477章 初入天运", "第521章 山谷"]},
+      {"scope": "sealed boundary and outer war", "change": "ancient three races, third-step systems, incense worlds, and the Outer Realm replace local sect politics.", "anchors": ["第1065章 古之三族重聚", "第1421章 香火一拜！", "第1655章 掌尊现！"]},
+      {"scope": "Xiangang and Taigu", "change": "Grand Heavenly Venerables, ancient and immortal clans, the Taigu Shenjing, and Daochen-linked cosmology become the terminal scale.", "anchors": ["第1790章 龙皇一现仙罡开", "第1997章 大天尊之阳！！", "第2087章 婉儿，醒来吧"]}
+    ],
+    "long_term_reader_hooks": [
+      {"hook": "Li Muwan revival", "payoff": "soul preservation, extraction constraints, and final boundary-origin revival sustain the longest emotional objective.", "anchors": ["第339章 转世重生", "第451章 婉儿命魂", "第2087章 婉儿，醒来吧"]},
+      {"hook": "Tian Ni origin", "payoff": "the early bead is reclassified as the core of the Definer Compass at the ending.", "anchors": ["第八章 石珠", "第1413章 天逆之变！", "第2088章 蓦然回首"]},
+      {"hook": "Tian Yunzi and Heavenly Way", "payoff": "the sect-master threat becomes a split Heavenly Way/artifact-spirit conflict and closes in the Taigu Shenjing.", "anchors": ["第484章 天运子", "第1716章 算天运！", "第2086章 轮回就在那里"]},
+      {"hook": "ancient inheritance and Tuo Sen", "payoff": "Tu Si's inheritance produces a multi-stage bodily and cosmological conflict rather than a single tomb reward.", "anchors": ["第一百八十七章 古神传承（一）", "第1308章 拓森！！", "第2081章 临海"]},
+      {"hook": "reincarnated bonds", "payoff": "Wang Ping, Zhou Yi/Qing Shuang, Xie Qing, and Li Qianmei/Dong Mei return old relations in altered identities.", "anchors": ["第704章 一世轮回，结束……", "第1747章 第三魂，是他！！", "第1923章 相见", "第2088章 蓦然回首"]}
+    ],
+    "style_and_life_force": [
+      {"trait": "ruthless tactical serial momentum", "evidence": "combat favors resource accounting, formations, named techniques, reaction beats, and explicit risk thresholds.", "anchors": ["第一百二十五章 极境神识", "第1154章 一触即发！"]},
+      {"trait": "Dao through mortal contrast", "evidence": "extended mortal phases and natural metaphors turn grief, rain, fire, and ordinary aging into breakthroughs.", "anchors": ["第249章 化凡", "第283章 顿悟", "第1614章 因果印"]},
+      {"trait": "cosmic escalation with intimate residues", "evidence": "planetary and boundary destruction is repeatedly followed by quiet grief, drinking, filial conduct, or reunion.", "anchors": ["第1413章 天逆之变！", "第1646章 与司徒一醉", "第2088章 蓦然回首"]},
+      {"trait": "serialization texture", "evidence": "multi-part chapter titles, repeated shock rhetoric, direct author notes, and occasional numbering corrections remain visible in the supplied analyses.", "anchors": ["第1472章 七星古神！！", "第1614章 因果印", "第1952章 一鸣惊人（2）"]}
+    ],
+    "continuity_failures": [
+      {"issue": "duplicate or skipped chapter numbering", "details": "Two Chapter 1362 entries, two Chapter 1373 entries, and duplicate Chapter 1264 labels are reported.", "anchor": "第1362章 天道使者再现！", "chunk_id": "book-04-bfe08b74de74-chunk-006"},
+      {"issue": "additional duplicate chapter label", "details": "Two consecutive Chapter 1688 entries are reported.", "anchor": "第1688章 滚出去！", "chunk_id": "book-04-bfe08b74de74-chunk-008"},
+      {"issue": "explicit author correction", "details": "Tuosen's ancient-god star count is corrected from nine to eight in authorial notes.", "anchor": "第1472章 七星古神！！", "chunk_id": "book-04-bfe08b74de74-chunk-007"},
+      {"issue": "response-format contamination", "details": "The chunk-008 and chunk-009 response files contain procedural preambles before their JSON payloads; their supplied response hashes nevertheless match the packet.", "anchor": "第1614章 因果印", "chunk_id": "book-04-bfe08b74de74-chunk-008"}
+    ],
+    "evidence_map": [
+      {"claim": "The book trajectory moves from local grievance to cosmic closure and final reunion.", "chunk_id": "book-04-bfe08b74de74-chunk-010", "chapter_heading": "第2088章 蓦然回首"},
+      {"claim": "Li Muwan's preservation and revival define the central emotional arc.", "chunk_id": "book-04-bfe08b74de74-chunk-010", "chapter_heading": "第2087章 婉儿，醒来吧"},
+      {"claim": "The Tian Ni Bead becomes the Definer Compass core.", "chunk_id": "book-04-bfe08b74de74-chunk-010", "chapter_heading": "第2088章 蓦然回首"},
+      {"claim": "The narrative expands from planet-scale factions to Xiangang and Taigu systems.", "chunk_id": "book-04-bfe08b74de74-chunk-008", "chapter_heading": "第1790章 龙皇一现仙罡开"},
+      {"claim": "Tian Yunzi's identity is a long-range mystery resolved as the compass artifact spirit.", "chunk_id": "book-04-bfe08b74de74-chunk-010", "chapter_heading": "第2086章 轮回就在那里"},
+      {"claim": "Mortal transformation and Dao comprehension remain a core stylistic and progression device.", "chunk_id": "book-04-bfe08b74de74-chunk-002", "chapter_heading": "第283章 顿悟"},
+      {"claim": "The supplied analyses identify chapter-number continuity defects.", "chunk_id": "book-04-bfe08b74de74-chunk-006", "chapter_heading": "第1362章 天道使者再现！"},
+      {"claim": "Creation-family evidence includes shared-universe and authorial serialization signals.", "chunk_id": "book-04-bfe08b74de74-chunk-010", "chapter_heading": "第2087章 婉儿，醒来吧"},
+      {"claim": "The ending uses resurrection, reincarnation, and chessboard fate structures that require originality guardrails.", "chunk_id": "book-04-bfe08b74de74-chunk-010", "chapter_heading": "第2088章 蓦然回首"}
+    ],
+    "creation_family_evidence": {
+      "characters": ["王林/铁柱", "李慕婉", "司徒南", "柳眉", "王平", "李倩梅/东梅", "天运子"],
+      "npcs": ["滕化元", "红蝶", "贪狼", "清水", "玄罗", "周佚", "青霜"],
+      "factions": ["恒岳派", "炼魂宗", "天运宗", "朱雀一族", "闪雷族", "古族", "仙族", "大魂门"],
+      "artifacts": ["天逆珠", "射神车", "十亿尊魂幡", "李广弓", "避天棺", "定界罗盘"],
+      "techniques": ["极境神识", "黄泉升窍诀", "呼风", "残夜", "流月", "梦道", "因果印", "撒豆成兵"],
+      "naming": ["顺则凡，逆则仙", "三损七劫", "三步修道", "空门", "本源", "香火界", "踏天境"],
+      "emotional_bonds": ["王林-李慕婉的复生承诺", "王林-司徒南的师友情", "王林-王平的父子重塑", "王林-李倩梅/东梅的未竟与重逢", "王林-玄罗的师徒礼"],
+      "foreshadowing": ["天逆珠从早期石珠到定界罗盘核心", "修星之晶和天运子之谜", "古神涂司传承与拓森追猎", "怨婴到王平的人生轮回", "苏道/谢青第三魂身份"],
+      "state_ledger": ["王林：凡人->结丹->元婴->婴变/问鼎->第三步->踏天资格", "李慕婉：活人->封魂->苏醒", "司徒南：封魂->复体->自由游历", "天运子：宗主/天道分身->罗盘器灵->消散", "天逆珠：灵液宝珠->五行圆满->深度融合->定界罗盘"]
+    },
+    "originality_red_lines": [
+      "Do not reproduce the zero-talent protagonist plus time-dilation supreme artifact opening.",
+      "Do not use clan extermination as the default engine for a long revenge arc.",
+      "Do not resolve major power gaps through unearned ancient-artifact inheritance, body possession, or compliant devouring beasts.",
+      "Do not treat mortal-life enlightenment, disguised sect-ranking, arrogant-local humiliation, or ruin-betrayal loops as primary arc structures.",
+      "Do not use a terminal cosmic-origin resurrection or chessboard-of-fate reveal without independent causal costs and alternatives."
+    ]
+  }
+}

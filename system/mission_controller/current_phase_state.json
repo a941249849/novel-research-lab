@@ -1,137 +1,72 @@
 {
   "project_name": "Novel Research Lab",
-  "current_phase": "Phase 2E",
-  "current_subphase": "Controlled Planning Validation",
-  "previous_story_phase": "Phase 2D",
+  "current_phase": "Production v1",
+  "current_subphase": "第一卷 031-040 章窗口规划边界",
+  "previous_story_phase": "Phase 2E",
   "selected_project": "《借天改命账》",
-  "phase_status": "review_received_pending_owner_gate",
-  "last_completed_mission": "Phase 2E Controlled Planning Validation",
-  "next_recommended_mission": "Phase 2E Antigravity Controlled Planning Review",
-  "owner_gate_required": true,
-  "owner_gate_status": "REQUIRED_PENDING_ACKNOWLEDGEMENT",
+  "phase_status": "production_authorized_window_021_030_accepted",
+  "last_completed_mission": "第一卷第 21-30 章已验收，021-030 窗口复审通过",
+  "next_recommended_mission": "编译 031-040 故事窗口并从第 31 章恢复受控生产",
+  "owner_gate_required": false,
+  "owner_gate_status": "AUTHORIZED_VOLUME1_V025",
   "allowed_next_agents": [
+    "Codex",
     "Antigravity"
   ],
   "blocked_actions": [
-    "write novel prose",
-    "write first chapter",
-    "generate full character cards",
-    "bypass Phase 2E planning constraints",
-    "ignore Antigravity required fixes",
-    "freely read novel_training_set"
+    "publish prose before Volume 1 release acceptance",
+    "produce prose without a validated story window contract",
+    "read novel_training_set from the chapter production runtime",
+    "advance beyond chapter-0100 without a new Owner authorization"
   ],
   "key_artifacts": [
     {
-      "name": "Phase 2C Hermes Bible",
-      "path": "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md",
-      "status": "completed",
-      "notes": "Treat as completed artifact; do not modify during SYS-1."
+      "name": "Verified Corpus Distillation v0.18",
+      "path": "system/research_assets/deep_read/v0.18/",
+      "status": "deep_read_verified"
     },
     {
-      "name": "Phase 2C Codex Bible Validation",
-      "path": "phase2C/03_codex_validation/phase2C_bible_validation_report.md",
-      "status": "PASS_WITH_WARNINGS"
+      "name": "Project Creation Assets",
+      "path": "system/creation_assets/project_assets.v0.2.json",
+      "status": "schema_validated"
     },
     {
-      "name": "Phase 2C Antigravity Bible Review",
-      "path": "phase2C/03_codex_validation/phase2C_antigravity_bible_review_report.md",
-      "status": "ACCEPT_BIBLE_FOR_NEXT_PHASE",
-      "notes": "Actual local path. User-mentioned possible path phase2C/04_antigravity_review/phase2C_bible_review_report.md was not present; mirror exists at phase2/05_review/phase2C_bible_review_report.md."
+      "name": "Long-form Contract",
+      "path": "system/production_runtime/plans/borrowed_heaven_longform_contract.v0.1.json",
+      "status": "owner_accepted_active"
     },
     {
-      "name": "Phase 2C Bible Output Contract",
-      "path": "phase2C/01_prompt/phase2C_bible_output_contract.md",
-      "status": "completed"
+      "name": "Story Window 021-030",
+      "path": "system/production_runtime/story_windows/window-021-030.v1.json",
+      "status": "production_ready"
     },
     {
-      "name": "Phase 2D Owner Gate Acknowledgement",
-      "path": "phase2D/00_owner_gate/phase2D_owner_gate_acknowledgement.md",
-      "status": "ACCEPTED_FOR_PHASE2D_ENTRY_PREPARATION"
+      "name": "Chapter Registry",
+      "path": "system/production_runtime/chapter_registry.v0.20.json",
+      "status": "chapters_001-030_accepted"
     },
     {
-      "name": "Phase 2D Entry Manifest",
-      "path": "phase2D/00_entry/phase2D_entry_manifest.md",
-      "status": "completed"
+      "name": "Owner Decisions",
+      "path": "system/runtime/owner_gate_decisions.json",
+      "status": "volume1_chapters_011-100_intent_and_prose_authorized"
     },
     {
-      "name": "Phase 2D Input Manifest",
-      "path": "phase2D/00_entry/phase2D_input_manifest.md",
-      "status": "locked"
-    },
-    {
-      "name": "Phase 2D Outline Tree Requirements",
-      "path": "phase2D/00_entry/phase2D_outline_tree_requirements.md",
-      "status": "completed"
-    },
-    {
-      "name": "Phase 2D Output Contract",
-      "path": "phase2D/00_entry/phase2D_output_contract.md",
-      "status": "completed"
-    },
-    {
-      "name": "Phase 2D Launch Readiness Report",
-      "path": "phase2D/00_entry/phase2D_launch_readiness_report.md",
-      "status": "READY_FOR_PHASE2D_PROMPT_PREPARATION"
-    },
-    {
-      "name": "Phase 2D Volume 1 Outline Tree",
-      "path": "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md",
-      "status": "completed"
-    },
-    {
-      "name": "Phase 2D Codex Outline Tree Validation",
-      "path": "phase2D/02_codex_validation/phase2D_outline_tree_validation_report.md",
-      "status": "PASS_WITH_WARNINGS"
-    },
-    {
-      "name": "Phase 2D Antigravity Outline Tree Review",
-      "path": "handoff/antigravity/outputs/phase2D_antigravity_outline_tree_review.md",
-      "status": "PASS_WITH_WARNINGS_ACCEPTED_BY_OWNER"
-    },
-    {
-      "name": "Phase 2E Entry Manifest",
-      "path": "phase2E/00_entry/phase2E_entry_manifest.md",
-      "status": "prepared"
-    },
-    {
-      "name": "Phase 2E Chapter Plan Control Pack",
-      "path": "phase2E/01_planning_package/phase2E_chapter_plan_control_pack.md",
-      "status": "prepared"
-    },
-    {
-      "name": "Phase 2E Controlled Chapter Planning Output",
-      "path": "system/runtime/phase2e_controlled_chapter_planning_codex_output.md",
-      "status": "prepared"
-    },
-    {
-      "name": "Phase 2E Controlled Planning Validation",
-      "path": "system/runtime/phase2e_controlled_planning_validation_codex_output.md",
-      "status": "PASS"
+      "name": "Window Review 021-030",
+      "path": "system/production_runtime/window_reviews/window-021-030.json",
+      "status": "ACCEPT"
     }
   ],
   "validation_status": "PASS",
-  "review_status": "REVIEW_RECEIVED_PENDING_OWNER_GATE",
-  "drive_sync_status": "synced_to_drive",
+  "review_status": "PRODUCTION_AUTHORIZED",
+  "drive_sync_status": "local_source_of_truth",
   "notes": [
-    "Phase 2C Hermes Bible completed.",
-    "Codex Validation: PASS_WITH_WARNINGS.",
-    "Antigravity Bible Review: ACCEPT_BIBLE_FOR_NEXT_PHASE.",
-    "Owner Gate acknowledged in current conversation with '继续'.",
-    "Phase 2D Entry Preparation completed without generating Outline Tree, prose, first chapter, detailed chapter outline, or complete character cards.",
-    "Phase 2D Outline Tree produced directly under Mission-level authorization.",
-    "Codex Outline Tree Validation completed: PASS_WITH_WARNINGS.",
-    "Next mission should be Phase 2D Antigravity Outline Tree Review.",
-    "Mission Controller v0 has entered runtime MVP implementation.",
-    "Runtime adapter status: Codex adapter local.",
-    "Runtime adapter status: Hermes adapter manual_handoff.",
-    "Runtime adapter status: Antigravity adapter manual_handoff.",
-    "system_status: runtime_mvp_available",
-    "Runtime ingest: antigravity external output registered at handoff/antigravity/outputs/phase2D_antigravity_outline_tree_review.md.",
-    "Owner Gate accepted Antigravity review with warnings via owner_gate_phase2d_antigravity_review_accept_with_warnings_001.",
-    "Phase 2E chapter planning control pack prepared; prose remains blocked.",
-    "Phase 2E controlled planning output prepared; validation remains required before any chapter-facing plan.",
-    "Phase 2E controlled planning validation passed; Antigravity review is the next manual gate.",
-    "Runtime ingest: antigravity external output registered at handoff/antigravity/outputs/phase2e_antigravity_controlled_planning_review.md."
+    "Phase 2E is historical and no longer the active production gate.",
+    "Owner decisions authorize bounded intent and prose for chapters 11-100.",
+    "Chapters 1-15 are calibration output, not a release-ready volume.",
+    "Chapter 16 was quarantined because it was generated before the story-window and bounded-context corrections.",
+    "Every new chapter from chapter 11 onward requires a validated ten-chapter story window.",
+    "Window 021-030 completed with ten governed chapters, release edits, and an ACCEPT window review.",
+    "Publication remains blocked until Volume 1 release acceptance."
   ],
-  "updated_at": "2026-07-09T02:12:15+08:00"
+  "updated_at": "2026-07-14T00:00:00+08:00"
 }

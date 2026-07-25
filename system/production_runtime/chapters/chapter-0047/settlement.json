@@ -1,0 +1,135 @@
+{
+  "chapter_id": "chapter-0047",
+  "accepted_revision_sha256": "d70be7e653301863be55951202c177aada9f1872da144f6d6416d748fd1210c7",
+  "state_deltas": [
+    {
+      "fact_id": "chapter-0047-fact-001",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_observed_choice",
+      "operation": "set",
+      "before": "仅确认外沿转运槽的既有进入次序，尚未使用识账术",
+      "after": "只施展一次局部识账术确认残印与户灯缺角的同类咬合，立即停术，不进入内槽、不追索完整链条"
+    },
+    {
+      "fact_id": "chapter-0047-fact-002",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_action_limit",
+      "operation": "set",
+      "before": "当日两眼仅剩暗灰，失去继续辨认任何账痕的能力",
+      "after": "局部识账后右眼无法再分辨户灯缺角与封源缺痕，当日识账窗口关闭"
+    },
+    {
+      "fact_id": "chapter-0047-fact-003",
+      "asset_id": "npc_debt_collector_gu_xun",
+      "field_path": "npc.next_procedural_hook",
+      "operation": "set",
+      "before": "局部裁定完成，后续转入贫城逐巷封档核额",
+      "after": "铁环拖石声沿来路逼近，下一次复核即将到达外沿，须处理残印响应与见证记录"
+    },
+    {
+      "fact_id": "chapter-0047-fact-004",
+      "asset_id": "state_ledger_map_unlock_status",
+      "field_path": "state_ledger.current_boundary_status",
+      "operation": "set",
+      "before": "有限解锁至弃命旧址外沿转运槽的单次进入次序；更深处、通路终点与完整地图仍未解锁",
+      "after": "弃命旧址外沿转运槽完成一次可验证开启并闭合；内槽边界、深处方向与完整地图仍未解锁"
+    },
+    {
+      "fact_id": "chapter-0047-fact-005",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_witness_boundary",
+      "operation": "set",
+      "before": "见证不由泥灯巷代证，持灯人可撤回并自行回答",
+      "after": "持灯人亲自确认外沿对应并保留独立答复权，不替断裂手印补写归属或时间"
+    },
+    {
+      "fact_id": "chapter-0047-fact-006",
+      "asset_id": "artifact_prefecture_transit_registry_seal",
+      "field_path": "artifact.current_visible_trace",
+      "operation": "set",
+      "before": "残印表面响应后留下旧灯回响，冷金细线追缠持印者",
+      "after": "残印与外沿封源缺角形成可见同类银灰咬合痕，未交出且在槽闭合前被收回封布"
+    },
+    {
+      "fact_id": "chapter-0047-fact-007",
+      "asset_id": "technique_ledger_recognition",
+      "field_path": "technique.current_use_status",
+      "operation": "set",
+      "before": "本章交易与路序复核仍未使用识账术",
+      "after": "施展一次局部识账术，仅确认残印与户灯缺角的三处同类咬合，未读取完整印文或转运起点"
+    },
+    {
+      "fact_id": "chapter-0047-fact-008",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_witness_commitment",
+      "operation": "set",
+      "before": "三户分别限定亲见，只确认自身灯源、失温时序或银灰缺角，不替彼此补证",
+      "after": "随行持灯人亲自保留外沿咬合见证，明确不替断裂手印或旁户来源作答"
+    },
+    {
+      "fact_id": "chapter-0047-fact-009",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_collective_emotion",
+      "operation": "set",
+      "before": "受封户接受继续失温，也拒绝把共同体或陆沉渊作为解封筹码",
+      "after": "持灯人面对内槽诱惑仍选择只认外沿，并保留复核时自行回答或撤回的权利"
+    },
+    {
+      "fact_id": "chapter-0047-fact-010",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_procedure_result",
+      "operation": "set",
+      "before": "表面响应只确认旧灯回响至弃命旧址外沿，未确认封批内容、完整印文、转运起点或归属",
+      "after": "确认当前封源印与州府转运残印经过同类转运咬合，但仍未确认封批内容、完整链条、转运起点或归属"
+    },
+    {
+      "fact_id": "chapter-0047-fact-011",
+      "asset_id": "foreshadowing_cinder_seal_rain",
+      "field_path": "foreshadowing.current_manifestation",
+      "operation": "set",
+      "before": "外沿冷边与银灰缺角指向既有转运线索",
+      "after": "槽闭合前浮出不属于当前封批的断裂手印形，银灰火沿断指倒流向内槽"
+    },
+    {
+      "fact_id": "chapter-0047-fact-012",
+      "asset_id": "state_ledger_unresolved_mysteries",
+      "field_path": "state_ledger.current_inference_limit",
+      "operation": "set",
+      "before": "完整转运链、封批归属与古债全貌仍未解",
+      "after": "新增断裂手印形现场线索，但其归属、时间、来源与内槽去向继续未解"
+    },
+    {
+      "fact_id": "chapter-0047-fact-013",
+      "asset_id": "state_ledger_faction_pressure",
+      "field_path": "state_ledger.current_next_procedural_hook",
+      "operation": "set",
+      "before": "残印是否开启外沿转运槽成为下一次程序复核压力",
+      "after": "外沿开启与残印响应已发生，十道冷金锁痕持续发亮，下一次复核将直接核验持印触路与见证记录"
+    },
+    {
+      "fact_id": "chapter-0047-fact-014",
+      "asset_id": "state_ledger_map_unlock_status",
+      "field_path": "state_ledger.current_boundary_status",
+      "operation": "set",
+      "before": "外沿仅有待复核线索，深处未解锁",
+      "after": "外沿转运槽完成一次开启、局部识账与闭合，内槽未开启"
+    },
+    {
+      "fact_id": "chapter-0047-fact-015",
+      "asset_id": "state_ledger_protagonist_strain",
+      "field_path": "state_ledger.current_visible_condition",
+      "operation": "set",
+      "before": "膝盖撞地、胸骨旧裂钝响、右眼焦纹发烫、掌心裂口渗血",
+      "after": "识账后右眼焦纹烧至太阳穴并流血，咳出夹血灰沫，胸骨旧裂加重，左腿失力且需借人扶住"
+    },
+    {
+      "fact_id": "chapter-0047-fact-016",
+      "asset_id": "state_ledger_half_life_registry_exposure",
+      "field_path": "state_ledger.registry_locking_sign",
+      "operation": "set",
+      "before": "交易新增十道冷金锁痕，下一次复核可辨认其在封档外触路",
+      "after": "外沿开启后的追踪沿十道锁痕回攀并在结尾同时绷直，触路暴露继续上升"
+    }
+  ],
+  "resolved_audit_ids": []
+}

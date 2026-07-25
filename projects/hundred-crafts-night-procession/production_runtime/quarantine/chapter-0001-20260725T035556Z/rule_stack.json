@@ -1,0 +1,39 @@
+{
+  "version": "1.1",
+  "chapter_id": "chapter-0001",
+  "canonical_baseline": {
+    "path": "projects/hundred-crafts-night-procession/creation_assets/canonical_baseline.json",
+    "version": "1.1",
+    "sha256": "472623f8bad0caa2283329c575fd9906149a4b2c44659da63212c0cfe44bf7a0"
+  },
+  "priority_order": [
+    "safety_and_originality",
+    "canonical_story_bible",
+    "volume_outline",
+    "accepted_state_settlements",
+    "creation_asset_constraints",
+    "literary_semantic_contract",
+    "chapter_must_keep_and_must_avoid",
+    "anti_ai_style_evidence"
+  ],
+  "hard_rules": [
+    "no source-work names, scenes, signature systems, or prose imitation",
+    "no untracked power, relationship, location, item, or timeline changes",
+    "all benefits carry an embodied, relational, or systemic cost",
+    "reader-facing prose contains no runtime or database vocabulary",
+    "the chapter semantic beat must affect an on-page choice and consequence",
+    "the POV character must exercise independent professional agency",
+    "progression changes permissions and liability, never grants cost-free dominance",
+    "embedded history must alter present judgment or action, never become decorative exposition",
+    "source-book material may only survive as transformed narrative function",
+    "不得引入未登记资产或用旁白代替物质行动",
+    "不得回滚已接受状态"
+  ],
+  "chapter_rules": [
+    "事故记录出现周砺父亲周永直的签名。",
+    "POV 固定为周砺"
+  ],
+  "scene_constraints": [
+    "冲突必须落在具体工艺现场、物证或受影响者选择上"
+  ]
+}

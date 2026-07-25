@@ -1,0 +1,465 @@
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "chunk_id": "book-18-d53c5cc79ddd-chunk-002",
+  "source_file": "novel_training_set/蛊真人.txt",
+  "source_file_sha256": "d53c5cc79ddd02c45ad8e6ad334a3f8feac558c67726486d9f41417cfd718d88",
+  "start_byte": 1500213,
+  "end_byte": 3000282,
+  "chunk_sha256": "38705d7dab34a28227616a927e001784c80eefc82085d5eb942dce6d98d614cf",
+  "source_encoding": "utf-8",
+  "bounded_chunk_utf8_sha256": "38705d7dab34a28227616a927e001784c80eefc82085d5eb942dce6d98d614cf",
+  "analysis": {
+    "chapter_span": [
+      "第一百五十六节：照影秘方，花酒迷离",
+      "第一百五十七节：血月蛊",
+      "第一百五十八节：此一时彼一时",
+      "第一百五十九节：这个方源……",
+      "第一百六十节：满堂叫好",
+      "第一百六十一节：心甘情愿被剥削",
+      "第一百六十二节：天元宝莲",
+      "第一百六十三节：雷冠头狼",
+      "第一百六十四节：激战",
+      "第一百六十五节：血滴子",
+      "第一百六十六节：二战白凝冰",
+      "第一百六十七节：第四头？！",
+      "第一百六十八节：狡电狈",
+      "第一百六十九节：寻路",
+      "第一百七十节：铁面无私血可冷？",
+      "第一百七十一节：骨子里的魔性",
+      "第一百七十二节：非方源莫属！",
+      "第一百七十三节：白相仙蛇",
+      "第一百七十四节：小神捕",
+      "第一百七十五节：压力渐生",
+      "第一百七十六节：牺牲的觉悟",
+      "第一百七十七节：哥哥，你怎么能这样对我？！",
+      "第一百七十八节：黑白灰",
+      "第一百七十九节：历史由人书写",
+      "第一百八十节：再看开窍大典",
+      "第一百八十节：再看开窍大典",
+      "第一百八十一节：阴差阳错（大章 ）",
+      "第一百八十二节：血湖墓地",
+      "第一百八十二节：血湖墓地",
+      "第一百八十三节：血海老祖",
+      "第一百八十四节：五转激战",
+      "第一百八十五节：古月一代，五大飞僵",
+      "第一百八十五节:古月一代，五大飞僵",
+      "第一百八十六节：春秋不出",
+      "第一百八十七节：时间长河唯一条，春秋蝉做舟来渡",
+      "第一百八十八节：前人开道后人跑路",
+      "第一百八十九节：惊变",
+      "第一百九十节：三战白凝冰",
+      "第一百九十一节：鹤灾",
+      "第一百九十二节：扬眉吐气",
+      "第一百九十三节：神捕后手",
+      "第一百九十三节：神捕后手",
+      "第一百九十四节：血幕天华",
+      "第一百九十五节：那就让我成魔",
+      "第一百九十五节：那就让我成魔",
+      "第一百九十六节：再次重生",
+      "第一百九十六节：再次重生",
+      "第一百九十七节：改命！",
+      "第一百九十七节：改命！",
+      "第一百九十八节：杀人放血心狠，因祸得福手辣！",
+      "第一百九十八节：杀人放血心狠，因祸得福手辣！",
+      "第一百九十九节：走向各自的命运",
+      "第一卷",
+      "第一节：黄龙江上竹筏倾",
+      "第一节：黄龙江上竹筏倾",
+      "第二节：浅滩休整借蛊虫",
+      "第二节：浅滩休整借蛊虫",
+      "第三节：鳄杀机少女悲鸣",
+      "第四节：各怀异志",
+      "第五节：背甲蛊和鳄力蛊",
+      "第六节：夜宿树冠",
+      "第六节：夜宿树冠",
+      "第七节：成为主导者",
+      "第八节：轩辕神鸡",
+      "第八节：轩辕神鸡",
+      "第九节：奔逃",
+      "第九节：奔逃",
+      "第十节：遭遇魔道蛊师",
+      "第十节：遭遇魔道蛊师",
+      "第十一节：谋划",
+      "第十二节：路",
+      "第十三节：猴脑美食",
+      "第十四节：坑",
+      "第十五节：轰！(3500字)",
+      "第十六节：方源落泪",
+      "第十七节：青铜舍利蛊",
+      "第十八节：授人以柄（第一更）",
+      "第十九节：演得好一场戏",
+      "第二十节：跋涉白骨山",
+      "第二十一节：原来是魔道贼子！",
+      "第二十二节：欢迎来到白骨山",
+      "第二十三节：白骨传承（上）",
+      "第二十四节：白骨传承（中）",
+      "第二十五节：白骨传承（下）",
+      "第二十六节：玉骨铁骨",
+      "第二十七节：骨肉团圆",
+      "第二十八节：无足鸟啊，振翅高飞吧！",
+      "第二十九节：幽豹殉情（第一更）",
+      "第三十节：村庄休整（第二更）",
+      "第三十一节：合作修行（第三更）",
+      "第三十二节：修行得上瘾了！（第四更）",
+      "第三十三节：换骨剧痛（第五更）",
+      "第三十四节：深深的误会",
+      "第三十五节：通缉令",
+      "第三十六节：商心慈",
+      "第三十七节：好人会有好报？",
+      "第三十八节：揍人",
+      "第三十九节：小姐救命！",
+      "第四十节：匪猴山",
+      "第四十一节：掰手腕",
+      "第四十一节：掰手腕",
+      "第四十二节：黄金山",
+      "第四十三节：聪明人的默契",
+      "第四十四节：送到嘴边的肥肉",
+      "第四十五节：近乎讹诈",
+      "第四十六节：二转高阶：",
+      "第四十七节：被发现",
+      "第四十八节：白羽飞象",
+      "第四十九节：力所能及就可心安理得",
+      "第五十节：滴水之恩，当涌泉相报！",
+      "第五十一节：果然是魔道蛊师！",
+      "第五十二节：子不教父之过!",
+      "第五十三节：唯有实力，才是一切",
+      "第五十四节：死的才干净",
+      "第五十五节：尸群来袭",
+      "第五十六节：丁浩，你给我出来！",
+      "第五十七节：原来你是大师兄",
+      "第五十八节：背后一枪（五千字大章 ）",
+      "第五十九节：计划中的分别",
+      "第六十节：父女相认",
+      "第六十一节：各有算计",
+      "第六十二节：商家内城",
+      "第六十三节：卖不出去",
+      "第六十四节：接见",
+      "第六十五节：糟糕透顶！",
+      "第六十六节：刀光对骨枪",
+      "第六十七节：我名叫方正",
+      "第六十八节：大大低估了方源的无耻",
+      "第六十九节：暴富",
+      "第七十节：家宴",
+      "第七十一节：商燕飞的酬谢",
+      "第七十二节：紫荆令牌",
+      "第七十三节：新盟约",
+      "第七十四节：晋升三转",
+      "第七十五节：活宝门",
+      "第七十六节：力道和冰道",
+      "第七十七节：星辰石",
+      "第七十八节：谨慎和忍耐",
+      "第七十九节：何等天真！",
+      "第八十节：这就动手？!",
+      "第八十一节：剑影蛊（两章 合一）",
+      "第八十二节：熊力虚影",
+      "第八十三节：灵光一闪蛊",
+      "第八十四节：得手",
+      "第八十五节：一，二，五",
+      "第八十六节：全力以赴蛊",
+      "第八十七节：牛刀小试先一场",
+      "第八十八节：名声蛊",
+      "第八十九节：力道修行有玄机",
+      "第九十节：不能阻挡我",
+      "第九十一节：方源vs李好（上）",
+      "第九十二节：方源vs李好（下）",
+      "第九十三节：法则碎片，大道之痕",
+      "第九十四节：苍天无眼啊",
+      "第九十五节：罪犯必要严惩！",
+      "第九十六节：其实，我也是受害者",
+      "第九十七节：拍卖会"
+    ],
+    "major_events": [
+      {
+        "event_label": "The Thunder Crown Head Wolf Attack",
+        "description": "The escalating wolf tide culminates in the assault of the Thunder Crown Head Wolf, forcing the combined resistance of the three local clans.",
+        "evidence_chapter": "第一百六十三节：雷冠头狼"
+      },
+      {
+        "event_label": "Tie Clan Investigators Arrive",
+        "description": "The Divine Investigator Tie Xue Leng and his daughter Tie Ruo Nan arrive at the Gu Yue village to investigate the murder of Jia Jin Sheng, placing Fang Yuan under scrutiny.",
+        "evidence_chapter": "第一百七十节：铁面无私血可冷？"
+      },
+      {
+        "event_label": "Qing Shu Sacrifices Himself",
+        "description": "Gu Yue Qing Shu uses the forbidden Wood Charm Gu to temporarily halt Bai Ning Bing, burning his own life force to death for the clan.",
+        "evidence_chapter": "第一百七十六节：牺牲的觉悟"
+      },
+      {
+        "event_label": "Blood Lake Cemetery Uncovered",
+        "description": "The secret underground cemetery is found, revealing the Gu Yue First Ancestor who has transformed into a flying zombie to plot his longevity scheme.",
+        "evidence_chapter": "第一百八十二节：血湖墓地"
+      },
+      {
+        "event_label": "Sky Crane Shangren Assaults",
+        "description": "Lord Sky Crane arrives on the Iron Beak Flying Crane King to exact vengeance on the First Ancestor, instigating a destructive battle of Rank 5 entities.",
+        "evidence_chapter": "第一百八十五节：古月一代，五大飞僵"
+      },
+      {
+        "event_label": "Time Reversal via Spring Autumn Cicada",
+        "description": "With the village frozen by Bai Ning Bing's self-detonation and facing execution by the Rank 5 powerhouses, Fang Yuan triggers the Spring Autumn Cicada to travel back in time.",
+        "evidence_chapter": "第一百八十七节：时间长河唯一条，春秋蝉做舟来渡"
+      },
+      {
+        "event_label": "Altering History in the Blood Dome",
+        "description": "Reborn in the blood dome, Fang Yuan leverages his future knowledge to kill Tie Ruo Nan and Tie Xue Leng while trapping the two Rank 5 combatants.",
+        "evidence_chapter": "第一百九十七节：改命！"
+      },
+      {
+        "event_label": "The Stealing of Ancestral Gu",
+        "description": "Fang Yuan steals the Blood Skull Gu and Yin Yang Turnaround Gu, uses the Yin Gu to revive the self-detonated Bai Ning Bing as a female, and flees the mountain.",
+        "evidence_chapter": "第一百九十八节：杀人放血心狠，因祸得福手辣！"
+      },
+      {
+        "event_label": "River Escape on Bamboo Raft",
+        "description": "Fang Yuan and the newly gender-swapped Bai Ning Bing escape the ruins of Qing Mao Mountain by drifting down the treacherous Huang Long River.",
+        "evidence_chapter": "第一节：黄龙江上竹筏倾"
+      },
+      {
+        "event_label": "Journey to Bai Gu Mountain",
+        "description": "The duo travels through the wilderness, surviving beast attacks and arriving at the Bai Gu Mountain to seek the White Bone inheritance.",
+        "evidence_chapter": "第二十节：跋涉白骨山"
+      },
+      {
+        "event_label": "Abduction of the Bai Clan Twins",
+        "description": "Fang Yuan abducts Bai Sheng and Bai Hua, the twin heirs of the Bai Clan, utilizing them as keys and materials for the inheritance trials.",
+        "evidence_chapter": "第二十三节：白骨传承（上）"
+      },
+      {
+        "event_label": "Refining Flesh Bone Unity Gu",
+        "description": "Fang Yuan sacrifices the twin children in the refinement flame and combines their flesh with his and Bai Ning Bing's to successfully refine the Flesh Bone Unity Gu.",
+        "evidence_chapter": "第二十七节：骨肉团圆"
+      },
+      {
+        "event_label": "Joining the Shang Caravan",
+        "description": "Posing as the bodyguards 'Hei Tu' and 'Bai Yun', Fang Yuan and Bai Ning Bing secure positions in the Shang Clan merchant caravan under Shang Xin Ci.",
+        "evidence_chapter": "第三十六节：商心慈"
+      },
+      {
+        "event_label": "Zombies and Caravan Betrayal",
+        "description": "Fang Yuan manipulates a zombie beast swarm to eliminate competitors in the caravan and eliminates the rogue demonic cultivator Ding Hao.",
+        "evidence_chapter": "第五十六节：丁浩，你给我出来！"
+      },
+      {
+        "event_label": "Shang Clan City Purple Thorn Handoff",
+        "description": "Shang Yan Fei rewards Fang Yuan and Bai Ning Bing with Purple Thorn Tokens for safely escorting his illegitimate daughter, granting them elite guest status.",
+        "evidence_chapter": "第七十二节：紫荆令牌"
+      },
+      {
+        "event_label": "Strength Path Arena Triumph",
+        "description": "Fang Yuan enters the Battle Arena, refines the legendary All-Out Effort Gu, and defeats the opponent Li Hao to test his new strength-based combat system.",
+        "evidence_chapter": "第九十一节：方源vs李好（上）"
+      }
+    ],
+    "character_state_transitions": [
+      {
+        "character_name": "Gu Yue Qing Shu",
+        "transition": "Rank 2 Genius -> Deceased",
+        "description": "Sacrifices his life by activating the Wood Charm Gu to stop Bai Ning Bing, burning his aperture and body into a tree.",
+        "evidence_chapter": "第一百七十六节：牺牲的觉悟"
+      },
+      {
+        "character_name": "Tie Ruo Nan",
+        "transition": "Investigator Prodigy -> Deceased victim",
+        "description": "Killed by reborn Fang Yuan in the collapsed blood dome chamber to eliminate potential future threats.",
+        "evidence_chapter": "第一百九十七节：改命！"
+      },
+      {
+        "character_name": "Tie Xue Leng",
+        "transition": "Divine Investigator -> Deceased martyr",
+        "description": "Sacrifices himself in the final clash against the zombie First Ancestor, with his remaining life force crushed in the collapsed cavern.",
+        "evidence_chapter": "第一百九十七节：改命！"
+      },
+      {
+        "character_name": "Bai Ning Bing",
+        "transition": "Male Clan Genius -> Female Wanderer",
+        "description": "Self-detonated to freeze the mountain but saved by Fang Yuan using the Yin Gu of the Yin Yang Turnaround Gu, gender-swapping her into a female and dropping her aptitude to 90%.",
+        "evidence_chapter": "第一百九十八节：杀人放血心狠，因祸得福手辣！"
+      },
+      {
+        "character_name": "Fang Yuan (Cultivation)",
+        "transition": "Rank 3 Gu Master -> Rank 1 Reborn",
+        "description": "Cultivation is reset to Rank 1 initial stage due to time travel via the Spring Autumn Cicada, requiring him to rebuild his path.",
+        "evidence_chapter": "第一节：黄龙江上竹筏倾"
+      },
+      {
+        "character_name": "Bai Sheng and Bai Hua",
+        "transition": "Twin Clan Heirs -> Refined Materials",
+        "description": "Thrown alive into the refinement furnace by Fang Yuan to trigger the twin-bloodline resonance required for the Flesh Bone Unity Gu.",
+        "evidence_chapter": "第二十七节：骨肉团圆"
+      },
+      {
+        "character_name": "Shang Xin Ci",
+        "transition": "Ostracized Caravan Leader -> Recognized Clan Daughter",
+        "description": "Enters the inner city with Fang Yuan's protection and officially reunites with her father, Shang Yan Fei, becoming a Shang Clan Young Master candidate.",
+        "evidence_chapter": "第六十节：父年相认"
+      },
+      {
+        "character_name": "Fang Yuan (Disguise)",
+        "transition": "Wanted Demonic Outlaw -> Honored Shang Clan Guest",
+        "description": "Acquires the Purple Thorn Token, giving him immunity to the Bai Clan's bounty while inside Shang Clan City.",
+        "evidence_chapter": "第七十二节：紫荆令牌"
+      },
+      {
+        "character_name": "Fang Yuan (Cultivation Progress)",
+        "transition": "Rank 2 Peak Stage -> Rank 3 Initial Stage",
+        "description": "Reaches Rank 3 cultivation after double-cultivating with Bai Ning Bing using the newly refined Flesh Bone Unity Gu.",
+        "evidence_chapter": "第七十四节：晋升三转"
+      },
+      {
+        "character_name": "Fang Yuan (Combat Path)",
+        "transition": "Moon Path Specialist -> Strength Path Practitioner",
+        "description": "Builds a new combat style in the Shang City Battle Arena around Strength Path Gu, summoning beast strength phantoms.",
+        "evidence_chapter": "第八十六节：全力以赴蛊"
+      }
+    ],
+    "long_form_mechanisms": [
+      {
+        "mechanism_name": "Spring Autumn Cicada Time Reversal",
+        "description": "A Rank 6 Gu containing the concept of time. The Gu Master sacrifices their body and cultivation to propel their consciousness back through the River of Time. The cicada's rapid recovery afterwards places enormous pressure on lower-rank apertures.",
+        "evidence_chapter": "第一百八十七节：时间长河唯一条，春秋蝉做舟来渡"
+      },
+      {
+        "mechanism_name": "Yin Yang Turnaround Gu Gender Shift",
+        "description": "A Rank 4 healing pair (Yin and Yang Gu). Applying the Yin Gu to a male saves their life and transforms them into a female, while dropping their aptitude by 10%. The target requires the corresponding Yang Gu to reverse the effect.",
+        "evidence_chapter": "第一百九十八节：杀人放血心狠，因祸得福手辣！"
+      },
+      {
+        "mechanism_name": "Blood Skull Gu Aptitude Purge",
+        "description": "A Rank 4 demonic Gu designed to extract and purify the blood of slain relatives. The resulting purified blood essence is absorbed into the user's aperture, permanently raising their cultivation talent/aptitude.",
+        "evidence_chapter": "第一百九十五节：那就让我成魔"
+      },
+      {
+        "mechanism_name": "Flesh Bone Unity Gu Dual Cultivation",
+        "description": "A unique cultivation Gu refined from twin bloodlines. Two Gu Masters with blood relations or twin status (or adapted with their own flesh) can transfer primeval essence to each other without leaving foreign aura, accelerating progress.",
+        "evidence_chapter": "第二十七节：骨肉团圆"
+      },
+      {
+        "mechanism_name": "Bone Replacement Transformation",
+        "description": "To withstand the massive physical strain of summoning Strength Path beast phantoms, a Gu Master must replace their organic skeleton with sturdier bones using Jade Bone Gu or Iron Bone Gu to avoid fracturing themselves.",
+        "evidence_chapter": "第三十三节：换骨剧痛（第五更）"
+      },
+      {
+        "mechanism_name": "All-Out Effort Gu Beast Phantom Summoning",
+        "description": "A legendary Rank 3 Strength Path Gu that allows the user to manifest their accumulated beast strength phantoms (e.g. boar, bear, crocodile) with a 100% success rate without wasting physical stamina.",
+        "evidence_chapter": "第八十六节：全力以赴蛊"
+      },
+      {
+        "mechanism_name": "Dao Marks Law Accumulation",
+        "description": "Gu are natural fragments of laws. Repeated usage of Strength Path Gu accumulates Strength Path Dao Marks on the Gu Master's body, permanently raising their physical baseline power but potentially interfering with other paths.",
+        "evidence_chapter": "第九三节：法则碎片，大道之痕"
+      },
+      {
+        "mechanism_name": "Su Shou Physician's Sterile Medical Code",
+        "description": "A Rank 5 healing protocol requiring patients to bathe in incense-scented water and wear clean white robes. Cleanliness is mandatory to prevent external dirt or physical path Dao marks from disrupting delicate healing Gu.",
+        "evidence_chapter": "第七十二节：紫荆令牌"
+      }
+    ],
+    "continuity_observations": [
+      {
+        "observation": "Aperture Pressure of Spring Autumn Cicada",
+        "details": "The narrative consistently references the physical toll and danger that the recovering Rank 6 Spring Autumn Cicada poses to Fang Yuan's lower-rank aperture, creating a ticking time limit.",
+        "evidence_chapter": "第一百七十五节：压力渐生"
+      },
+      {
+        "observation": "Jia Jin Sheng Murder Investigation",
+        "details": "The arrival of Tie Xue Leng resolves the long-standing mystery of Jia Jin Sheng's murder from earlier in Book 1, demonstrating that crimes have lingering consequences.",
+        "evidence_chapter": "第一百七十节：铁面无私血可冷？"
+      },
+      {
+        "observation": "Bai Ning Bing's Ten Extreme Physique Doom",
+        "details": "The ticking time bomb of Bai Ning Bing's Northern Dark Ice Soul Physique reaching 100% fullness culminates in the freezing of Qing Mao Mountain and forces the transition to Book 2.",
+        "evidence_chapter": "第一百九十节：三战白凝冰"
+      },
+      {
+        "observation": "First Ancestor's Scheme",
+        "details": "The First Ancestor's plot as the founder who became a zombie explains the village's deep dark secrets and his ultimate plan of blood purification via descendants.",
+        "evidence_chapter": "第一百八十五节：古月一代，五大飞僵"
+      },
+      {
+        "observation": "Gu Yue Fang Zheng's Rescue",
+        "details": "Fang Zheng is saved by Sky Crane Shangren and taken to Central Continent, preserving him as a crucial future foil and connection to major Sects.",
+        "evidence_chapter": "第一节：黄龙江上竹筏倾"
+      },
+      {
+        "observation": "Empty City Stratagem on Bai Clan",
+        "details": "Fang Yuan's lie that the Gu Yue Clan's main force is marching to Bai Gu Mountain exploits the outside world's ignorance of Qing Mao Mountain's actual survivor count.",
+        "evidence_chapter": "第十六节：方源落泪"
+      },
+      {
+        "observation": "Bounty Immunity via Purple Thorn Token",
+        "details": "The Purple Thorn Token from Shang Yan Fei shields the protagonists from the Bai Clan's wanted posters, illustrating the immense geopolitical dominance of the Shang Clan.",
+        "evidence_chapter": "第七十二节：紫荆令牌"
+      },
+      {
+        "observation": "Dao Mark Interference Laws",
+        "details": "The explanation that Strength Path Dao marks interfere with light/space Gu explains the combat system's emphasis on single-path specialization.",
+        "evidence_chapter": "第九十三节：法则碎片，大道之痕"
+      }
+    ],
+    "style_observations": [
+      {
+        "style_element": "Machiavellian Pragmatism",
+        "description": "Fang Yuan acts with ruthless logic, using the twin children as refinement materials and justifying it purely as a necessary sacrifice for personal power.",
+        "evidence_chapter": "第二十七节：骨肉团圆"
+      },
+      {
+        "style_element": "Deconstruction of Moral Dichotomies",
+        "description": "The novel portrays the righteous path as clan-based self-preservation and the demonic path as individual self-preservation, blurring conventional moral boundaries.",
+        "evidence_chapter": "第一百七十八节：黑白灰"
+      },
+      {
+        "style_element": "Poetic Summary of Philosophy",
+        "description": "Characters frequently recite classical-style poetry during key moments (e.g. Bai Ning Bing's death chant, Fang Yuan's arena poetry) to reflect their core philosophies.",
+        "evidence_chapter": "第一百九十六节：再次重生"
+      },
+      {
+        "style_element": "Kinetic and Tactical Combat",
+        "description": "Battles are detailed as strategic exchanges of Gu combinations, resource management, and elemental counters rather than simple power displays.",
+        "evidence_chapter": "第一百六十四节：激战"
+      },
+      {
+        "style_element": "Psychological Manipulation and Bluffing",
+        "description": "Fang Yuan often uses psychological profiles and dramatic deception (e.g., crying over a roasted lamb leg to manipulate the Bai Clan leader) to secure advantages.",
+        "evidence_chapter": "第十六节：方源落泪"
+      },
+      {
+        "style_element": "Meticulous Resource Economics",
+        "description": "Cultivation progress is tightly linked to economic costs, detailing market transactions, primeval stone values, and auction dynamics in Shang Clan City.",
+        "evidence_chapter": "第九十七节：拍卖会"
+      }
+    ],
+    "creation_family_evidence": {
+      "author_postscripts": {
+        "morality_controversy_response": "The author adds a personal ps note responding to readers displaying 'moral superiority' ('秀道德优越感的喷子', '卫道士们'), reiterating that the novel has been explicitly tagged as '三观不正' (morally unconventional) since the introduction, and declaring that they will not abandon the novel ('太监').",
+        "qingming_festival_hiatus": "The author shares a ps note during the Qingming Festival announcing a three-day holiday break, scheduling the next update for Monday, April 1st."
+      },
+      "web_scraper_watermarks": {
+        "aggregator_domains": "Contains frequent insertions of the aggregator site '138看书网' domain name (e.g. www.１３80０１００.cOm) in standard lines and title lines (e.g., L260, L1623).",
+        "obfuscated_text": "Contains obfuscated texts like '①38看书网' and '44rc。m8 9 阅 138看书网' showing standard crawler defense remnants from online platforms."
+      }
+    },
+    "originality_risks": [
+      {
+        "risk_type": "Regression/Rebirth Cliché",
+        "description": "The mechanism of time travel to rewrite a failed life is a foundational trope of modern Chinese web novels, presenting risks of formulaic storytelling.",
+        "evidence_chapter": "第一百八十七节：时间长河唯一条，春秋蝉做舟来渡"
+      },
+      {
+        "risk_type": "Demonic Blood Sacrifice of Kin",
+        "description": "Sacrificing relatives to improve one's bloodline or cultivation aptitude relies on a long-standing dark fantasy/wuxia trope that could be seen as unoriginal.",
+        "evidence_chapter": "第一百九十五节：那就让我成魔"
+      },
+      {
+        "risk_type": "Sacrificial Twin Refinement",
+        "description": "Throwing twin siblings into a smelting furnace to forge a special item draws heavily from traditional Chinese sword-forging legends (e.g. Gan Jiang and Mo Ye).",
+        "evidence_chapter": "第二十七节：骨肉团圆"
+      },
+      {
+        "risk_type": "Caravan Escort to Arena Colosseum Progression",
+        "description": "Entering a major trade hub as a caravan guard followed by fighting in a structured battle colosseum for money and prestige is a highly standardized fantasy sequence.",
+        "evidence_chapter": "第九十一节：方源vs李好（上）"
+      }
+    ]
+  }
+}

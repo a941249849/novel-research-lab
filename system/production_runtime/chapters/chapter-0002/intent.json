@@ -1,0 +1,49 @@
+{
+  "chapter_id": "chapter-0002",
+  "dramatic_purpose": "承接午后复核：让陆沉渊在保护顾家与母亲的现实压力中取得一段可被共同体见证的错账证词，并让命籍衙把他的异常残籍列入更明确的观察对象。",
+  "must_keep": [
+    "陆沉渊仍固定在燃命境初成，只能使用识账术的普通寿痕辨认与本地灰痕错位识别。",
+    "午后复核必须源自第一章已经结算的顾家折记暂缓，不得重置或绕过该状态。",
+    "苏晚仍是主动的道德边界：不得以邻里、孩童或第三方命火换取缓冲。",
+    "顾巡与州府、古债、黑市、残命灯盏均不得在本章实质登场或被激活。",
+    "本章只形成局部证词与本地压力升级，不得解决母亲寿债或贫城错账。"
+  ],
+  "must_avoid": [
+    "不得取得、唤醒、持有或激活残命灯盏。",
+    "不得使用烬痕归火术、反账命印、锁链偏转或任何高于普通识账的能力。",
+    "不得揭示州府转运、古债契约、空寿状态、黑市交易或 Arc Cluster 2 之后的事件。",
+    "不得进行战斗解决、公开审判、寿火回流或永久性命债清偿。",
+    "不得生成未登记人物、道具、势力或不可结算的状态变化。"
+  ],
+  "expected_state_deltas": [],
+  "required_asset_ids": [
+    "character_lu_chenyuan",
+    "npc_su_wan",
+    "npc_registrar_qiu_shen",
+    "npc_mo_jinglan",
+    "bond_mother_su_wan",
+    "bond_mudlamp_lane_trust",
+    "faction_mudlamp_lane",
+    "faction_life_registry_office",
+    "technique_ledger_recognition",
+    "foreshadowing_cinder_seal_rain",
+    "state_ledger_protagonist_strain",
+    "state_ledger_half_life_registry_exposure",
+    "state_ledger_mother_life_lamp_countdown",
+    "state_ledger_mudlamp_array_integrity",
+    "state_ledger_resident_lifefire_reserve",
+    "state_ledger_revealed_account_errors",
+    "state_ledger_faction_pressure",
+    "state_ledger_unresolved_mysteries"
+  ],
+  "active_hook_ids": [
+    "foreshadowing_cinder_seal_rain"
+  ],
+  "scene_constraints": [
+    "时间必须承接第一章的午后复核，叙事焦点仍限于泥灯巷与命籍衙的本地压力。",
+    "证词必须由可见痕迹、口述或可撤回见证构成，不能由主角独白直接定案。",
+    "至少让一位共同体成员作出自主选择，同时保留其拒绝或退缩的权利。",
+    "任何陆沉渊的识账动作都要以眼纹加重、暴露风险或家庭压力中的至少一种代价落地。",
+    "结尾只能把压力推向下一次本地追缴或对陆沉渊的程序性盯防，不得开启更高地图。"
+  ]
+}

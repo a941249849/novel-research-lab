@@ -1,0 +1,79 @@
+{
+  "version": "1.0",
+  "policy": "one mutable source of truth per runtime domain",
+  "domains": [
+    {
+      "domain": "raw_corpus",
+      "source_of_truth": "novel_training_set/",
+      "owner": "owner",
+      "mode": "protected_input",
+      "consumers": ["verifiable_deep_reading_v0.18"]
+    },
+    {
+      "domain": "corpus_depth",
+      "source_of_truth": "system/research_assets/deep_read/v0.18/",
+      "owner": "codex_runtime",
+      "mode": "validated_materialization",
+      "legacy_provenance": ["system/agent_ops/inbox/full_corpus_proof_v0.8/"]
+    },
+    {
+      "domain": "research_assets",
+      "source_of_truth": "system/research_assets/promotions/",
+      "owner": "codex_runtime",
+      "mode": "immutable_promotions",
+      "legacy_provenance": ["phase1/", "phase1D/"]
+    },
+    {
+      "domain": "project_canon",
+      "source_of_truth": [
+        "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md",
+        "phase2D/01_outline_tree/borrowed_heaven_volume1_outline_tree.md",
+        "system/production_runtime/plans/borrowed_heaven_longform_contract.v0.1.json",
+        "system/production_runtime/story_windows/"
+      ],
+      "owner": "owner_gate",
+      "mode": "hash_locked_inputs"
+    },
+    {
+      "domain": "creation_assets",
+      "source_of_truth": "system/creation_assets/project_assets.v0.2.json",
+      "owner": "codex_runtime",
+      "mode": "schema_validated_store"
+    },
+    {
+      "domain": "story_phase_and_owner_gate",
+      "source_of_truth": [
+        "system/mission_controller/current_phase_state.json",
+        "system/runtime/owner_gate_decisions.json"
+      ],
+      "owner": "owner_gate",
+      "mode": "append_only_decisions"
+    },
+    {
+      "domain": "agent_attempts",
+      "source_of_truth": "system/runtime/mission_registry.json",
+      "owner": "codex_runtime",
+      "mode": "execution_log_not_story_state"
+    },
+    {
+      "domain": "chapter_execution",
+      "source_of_truth": "system/production_runtime/chapter_registry.v0.20.json",
+      "owner": "codex_runtime",
+      "mode": "ordered_state_machine"
+    },
+    {
+      "domain": "studio",
+      "source_of_truth": "runtime_apis",
+      "owner": "generated_view",
+      "mode": "no_independent_state",
+      "generated_snapshot": "system/runtime/studio/"
+    }
+  ],
+  "forbidden_duplication": [
+    "Studio-owned project state",
+    "Agent prose claims used as completion state",
+    "historical proof promoted as current corpus depth",
+    "chapter state written outside validated settlement"
+    ,"chapter prose compiled without a validated story window"
+  ]
+}

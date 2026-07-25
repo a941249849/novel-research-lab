@@ -1,0 +1,9 @@
+{
+  "version": "0.23",
+  "chapter_id": "chapter-0062",
+  "prompt_bytes": 19781,
+  "writer_asset_count": 5,
+  "provider_calls": 4,
+  "used_length_recovery": true,
+  "writer_model": "gpt-5.6-sol"
+}

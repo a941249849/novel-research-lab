@@ -1,0 +1,30 @@
+{
+  "chapter_id": "chapter-0027",
+  "dramatic_purpose": "四人拒绝由个人牺牲换取系统效率。",
+  "must_keep": [
+    "团队决策改为专业签验加受影响者否决。",
+    "POV 固定为马小满"
+  ],
+  "must_avoid": [
+    "不得引入未登记资产或用旁白代替物质行动",
+    "不得回滚已接受状态"
+  ],
+  "expected_state_deltas": [
+    {
+      "state_id": "v1.ch027.outcome",
+      "asset_id": "char_ma_xiaoman",
+      "field_path": "character.current_state",
+      "after": "团队决策改为专业签验加受影响者否决。",
+      "before": "风险分配从技术会议进入公开听证。"
+    }
+  ],
+  "required_asset_ids": [
+    "char_ma_xiaoman",
+    "faction_maintenance_team",
+    "technique_joint_signoff"
+  ],
+  "active_hook_ids": [],
+  "scene_constraints": [
+    "冲突必须落在具体工艺现场、物证或受影响者选择上"
+  ]
+}

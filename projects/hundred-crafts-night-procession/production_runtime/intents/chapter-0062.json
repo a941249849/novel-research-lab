@@ -1,0 +1,32 @@
+{
+  "chapter_id": "chapter-0062",
+  "dramatic_purpose": "冻结巡检周期、预算、退出与替换条件。",
+  "must_keep": [
+    "三年维护期限转为可执行的月度状态表。",
+    "POV 固定为程雪青"
+  ],
+  "must_avoid": [
+    "不得引入未登记资产或用旁白代替物质行动",
+    "不得回滚已接受状态"
+  ],
+  "expected_state_deltas": [
+    {
+      "state_id": "v1.ch062.outcome",
+      "asset_id": "char_cheng_xueqing",
+      "field_path": "character.current_state",
+      "after": "三年维护期限转为可执行的月度状态表。",
+      "before": "验收文件明确写入三年期限、例外与失效条件。"
+    }
+  ],
+  "required_asset_ids": [
+    "char_cheng_xueqing",
+    "foreshadow_three_year_limit",
+    "artifact_detachable_joint"
+  ],
+  "active_hook_ids": [
+    "foreshadow_three_year_limit"
+  ],
+  "scene_constraints": [
+    "冲突必须落在具体工艺现场、物证或受影响者选择上"
+  ]
+}

@@ -1,0 +1,447 @@
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "chunk_id": "book-17-3089d9aab05c-chunk-003",
+  "source_file": "novel_training_set/《雪中悍刀行》（校对版全本）作者：烽火戏诸侯.txt",
+  "source_file_sha256": "3089d9aab05c39e0192a229c41164ecc1b25ef830f29b2d6edfcfdf8dab216c1",
+  "start_byte": 3000736,
+  "end_byte": 4500743,
+  "chunk_sha256": "75e95fdb582df27c0eba18806bfe1b25bf78d6ec1bec5a7eea65ad22002d46cf",
+  "source_encoding": "gb18030",
+  "bounded_chunk_utf8_sha256": "c6c1cb404cb3e12f3251f8c7d02ad0c1eb50f92da6ca349d8d145989f6e58e03",
+  "analysis": {
+    "chapter_span": [
+      "第一百六十七章 亭中三言两语定江湖",
+      "第一百六十八章 娃娃亲",
+      "第一百六十九章 师妹气死师兄",
+      "第一百七十章 一剑刺死你",
+      "第一百七十一章 摘刀撕面",
+      "第一百七十二章 参见世子殿下",
+      "第一百七十三章 两份谋略两颗头颅，贺新凉",
+      "第三卷 贺新凉",
+      "第一章 倒酒七十一颗",
+      "第二章 上下清凉山",
+      "第三章 天大的买卖",
+      "第四章 六王入京",
+      "第五章 木剑温小二，一揖还一揖",
+      "第六章 六百声恭送",
+      "第七章 槐树上有一只鬼",
+      "第八章 问剑答剑",
+      "第九章 李淳罡两愿天下剑士",
+      "第十章 佩凉刀上朝",
+      "第十一章 庙堂丹墀之上七不跪",
+      "第十二章 鼠吃粮",
+      "第十三章 万人挡我，一口唾沫",
+      "第十四章 来一壶北凉酒",
+      "第十五章 一个福字，三说徐凤年",
+      "第十六章 一人想赠剑春秋，一人折剑出江湖",
+      "第十七章 吃剑的老祖宗",
+      "第十八章 挥手和弯腰",
+      "第十九章 教你一剑",
+      "第二十章 火烧云下",
+      "第二十一章 系裙",
+      "第二十二章 家狗姓赵野狗姓徐，姓赵又如何？",
+      "第二十三章 桌上皇帝两字",
+      "第二十四章 新老庙中新老谋士",
+      "第二十五章 一剑直过十八门，西楚观礼太安城",
+      "第二十六章 那一年西楚亡了国",
+      "第二十七章 要债太安城，大袖飘摇",
+      "第二十八章 大好河山骑驴瞧",
+      "第二十九章 故知来和去",
+      "第三十章 我见真武之前斩恶龙",
+      "第三十一章 真武见我",
+      "第三十二章 多事之冬",
+      "第三十三章 说到做到",
+      "第三十四章 马蹄南下",
+      "第三十五章 神仙和凡人",
+      "第三十六章 天上剑仙三百万，遇我一柄北凉刀",
+      "第三十七章 江湖又巍巍乎千百剑来",
+      "第三十八章 我以黑剑杀白雪",
+      "第三十九章 赤脚",
+      "第四十章 何谓天下第十",
+      "第四十一章 杯中龙卷",
+      "第四十二章 卖炭爷孙卖炭妞",
+      "第四十三章 一骑当先，一夫当关",
+      "第四十四章 白衣战黑衣，白头杀白头",
+      "第四十五章 雪中",
+      "第四十六章 过河卒子",
+      "第四十七章 雪停且捧雪",
+      "第四十八章 送炭之后齐卸甲",
+      "第四十九章 白日见鬼",
+      "第五十章 急着投胎",
+      "第五十一章 酒里有杀气",
+      "第五十二章 两锭银，买一春秋名将送一铮铮文臣",
+      "第五十三章 魔高一丈",
+      "第五十四章 乌鸦嘴",
+      "第五十五章 丑八怪",
+      "第五十六章 西佛东魔，白衣逐鹿",
+      "第五十七章 两顾之争",
+      "第五十八章 九十之争",
+      "第五十九章 剑仙晚到一百年",
+      "第六十章 两不负",
+      "第六十一章 晚来天欲雪",
+      "第六十二章 三人禾",
+      "第六十三章 风雪归人",
+      "第六十四章 好",
+      "第六十五章 胃口",
+      "第六十六章 长短术",
+      "第六十七章 庙堂未乱江湖乱",
+      "第六十八章 守不住寡的江湖",
+      "第六十九章 起雾",
+      "第七十章 怎么简单怎么杀",
+      "第七十一章 大雪坪上欠剑",
+      "第七十二章 替天行道，一字三请",
+      "第七十三章 你请神仙我请真武",
+      "第七十四章 少年侠气死江湖",
+      "第七十五章 必死之地必死之人",
+      "第七十六章 雨伞",
+      "第七十七章 猫鼠捕杀",
+      "第七十八章 一波未平一波又起",
+      "第七十九章 马背十四剑",
+      "第八十章 洛阳还剑",
+      "第八十一章 女子何至于如此霸气",
+      "第八十二章 天地之间一线剑",
+      "第八十三章 最后一趟江湖",
+      "第八十四章 大王",
+      "第八十五章 王仙芝前来收官",
+      "第八十六章 天下名剑共主",
+      "第八十七章 去洛阳",
+      "第八十八章 王仙芝退去一千丈",
+      "第八十九章 腐草为萤",
+      "第九十章 逍遥游",
+      "第九十一章 事未了拂衣去",
+      "第九十二章 女侠和钱囊",
+      "第九十三章 白龙鱼服",
+      "第九十四章 武当桃符",
+      "第九十五章 狗刨江湖",
+      "第九十六章 英雄总要迟暮",
+      "第九十七章 到此一游",
+      "第九十八章 灯笼",
+      "第九十九章 书生的意气，先生的背影",
+      "第一百章 父子并行",
+      "第一百零一章 几百顶貂帽",
+      "第一百零二章 要官不成",
+      "第一百零三章 阴风阴雨",
+      "第一百零四章 好鸟好世道",
+      "第一百零五章 卖官鬻爵",
+      "第一百零六章 姓徐的",
+      "第一百零七章 鹰隼游曳",
+      "第一百零八章 念来念去都是情",
+      "第一百零九章 斫琴",
+      "第一百一十章 笼络",
+      "第一百一十一章 捞网漏鱼",
+      "第一百一十二章 风起梧桐院",
+      "第一百一十三章 骤然富贵",
+      "第一百一十四章 暗流",
+      "第一百一十五章 家贼",
+      "第一百一十六章 北凉织造",
+      "第一百一十七章 孤家寡人",
+      "第一百一十八章 徐家年年有余",
+      "第一百一十九章 大奸大恶褚禄山",
+      "第一百二十章 密信自京城来",
+      "第一百二十一章 开门不见山",
+      "第一百二十二章 输赢",
+      "第一百二十三章 退路",
+      "第一百二十四章 为北凉披甲，因世子卸甲",
+      "第一百二十五章 火上浇油和雪上加霜",
+      "第一百二十六章 水落石出的密信",
+      "第一百二十七章 怜子如何不丈夫",
+      "第一百二十八章 与人言一二三",
+      "第一百二十九章 怎么杀一品高手",
+      "第一百三十章 扛刀入北凉",
+      "第一百三十一章 上乘剑术",
+      "第一百三十二章 过河",
+      "第一百三十三章 豆腐北凉",
+      "第一百三十四章 抛人皮",
+      "第一百三十五章 抛过河",
+      "第一百三十六章 北上南下",
+      "第一百三十七章 胭脂评胭脂",
+      "第一百三十八章 两百岁说百年江湖",
+      "第一百三十九章 神仙",
+      "第一百四十章 以北",
+      "第一百四十一章 以南",
+      "第一百四十二章 北凉鼓响",
+      "第一百四十三章 帝王相逢风雪中",
+      "第一百四十四章 睡了",
+      "第一百四十五章 惊蛰",
+      "第一百四十六章 太安城两笑两白衣",
+      "第一百四十七章 龟孙子老王八",
+      "第一百四十八章 麻衣如雪",
+      "第一百四十九章 待客之礼",
+      "第一百五十章 神仙打架",
+      "第一百五十一章 你方唱罢",
+      "第一百五十二章 大王小鬼齐登场",
+      "第一百五十三章 三国",
+      "第一百五十四章 西游",
+      "第一百五十五章 红楼",
+      "第一百五十六章 水浒",
+      "第一百五十七章 天高任鸟飞",
+      "第一百五十八章 北凉要跟北莽离阳讲道理",
+      "第一百五十九章 脚下有山河",
+      "第一百六十章 天下大乱",
+      "第一百六十一章 一钱之约",
+      "第一百六十二章 炉火纯青",
+      "第一百六十三章 春秋是块田，田边有老农",
+      "第一百六十四章 祥符之春，匹夫之勇，国士之风",
+      "第一百六十五章 百足之虫，夫妻之间，强弩之末",
+      "第一百六十六章 回望和回神"
+    ],
+    "major_events": [
+      {
+        "event": "Xu Fengnian reveals his true identity in Longjing County to suppress veteran General Zhong Hongwu and executes corrupt secondary officers.",
+        "anchor_chapter": "第一百七十一章 摘刀撕面"
+      },
+      {
+        "event": "General Zhong Hongwu is intimidated by Xu Fengnian's deadly flying swords and submits to the heir of North Liang.",
+        "anchor_chapter": "第一百七十二章 参见世子殿下"
+      },
+      {
+        "event": "Xu Beizhi publicly announces that Xu Fengnian decapitated enemy leaders Xu Huainan and Diwu He, establishing the new heir's military prestige.",
+        "anchor_chapter": "第一百七十三章 两份谋略两颗头颅，贺新凉"
+      },
+      {
+        "event": "The six feudal kings of the Liyang Dynasty enter Tai'an City to attend court, signaling intense political maneuvers.",
+        "anchor_chapter": "第四章 六王入京"
+      },
+      {
+        "event": "Li Chungang utilizes his remaining sword energy to make two grand wishes for all future sword practitioners before his death.",
+        "anchor_chapter": "第九章 李淳罡两愿天下剑士"
+      },
+      {
+        "event": "Xu Fengnian wears his North Liang saber to the imperial court in Tai'an City and refuses to kneel on the palace steps.",
+        "anchor_chapter": "第十章 佩凉刀上朝"
+      },
+      {
+        "event": "Wen Hua rejects Huang Longshi's scheme to assassinate Xu Fengnian, disabling his own meridians and breaking his wooden sword to leave the martial world.",
+        "anchor_chapter": "第十六章 一人想赠剑春秋，一人折剑出江湖"
+      },
+      {
+        "event": "Xu Fengnian meets Empress Zhao Zhi and First Prince Zhao Wu in Tai'an City, calling her Aunt Zhao due to old family ties.",
+        "anchor_chapter": "第二十三章 桌上皇帝两字"
+      },
+      {
+        "event": "Wudang's new leader Li Yufu and veteran master Wang Xiaopin meet in Tai'an City, returning the sword Shentu and realizing the vision of Zhenwu.",
+        "anchor_chapter": "第三十一章 真武见我"
+      },
+      {
+        "event": "Xu Fengnian fights Nanhai Guanyin Sect practitioners at Spring Shen Lake, condensing millions of snowflakes into flying snow swords.",
+        "anchor_chapter": "第三十八章 我以黑剑杀白雪"
+      },
+      {
+        "event": "Jiang Ni and Cao Changqing overlook the Liyang Dynasty's political layout from the cloud sea, acknowledging their role as pawns.",
+        "anchor_chapter": "第四十六章 过河卒子"
+      },
+      {
+        "event": "Xu Fengnian confronts a bizarre assembly of Demon Sect remnants led by dynamic figures at Longwei slope.",
+        "anchor_chapter": "第五十三章 魔高一丈"
+      },
+      {
+        "event": "Century-old Demon Sect Leader Liu Songtao fights Luo Yang and subsequently returns a sword to Xu Fengnian in the city.",
+        "anchor_chapter": "第六十一章 晚来天欲雪"
+      },
+      {
+        "event": "Xu Fengnian is ambushed in an orchard by North Mang master killers, including Murong Longshui and Yi Jieliu, and tears Yi Jieliu apart.",
+        "anchor_chapter": "第七十六章 雨伞"
+      },
+      {
+        "event": "Song Nianqing from Dongyue Sword Pond perishes in battle against Luo Yang, while imperial helper Liu Haoshi ambushes Luo Yang and blows Xu Fengnian away.",
+        "anchor_chapter": "第八十三章 最后一趟江湖"
+      },
+      {
+        "event": "The old patriarch of the Lu family, Lu Feichi, passes away in Xiangfan City after handing a symbolic lantern to his grandson Lu Dongjiang.",
+        "anchor_chapter": "第九十八章 灯笼"
+      },
+      {
+        "event": "Xu Fengnian promotes and rewards minor officers Wang Yunshu and Jiao Wuyi in Huangnan County.",
+        "anchor_chapter": "第一百一十三章 骤然富贵"
+      },
+      {
+        "event": "Second-generation North Liang King Xu Fengnian and North Mang Empress meet in the snow at the border, recalling their past connection.",
+        "anchor_chapter": "第一百四十三章 帝王相逢风雪中"
+      },
+      {
+        "event": "The second-class maid Huanggua is found dead in Wutong Yard, and Xu Fengnian shifts focus to the military mechanism agency Jizaoju.",
+        "anchor_chapter": "第一百五十八章 北凉要跟北莽离阳讲道理"
+      }
+    ],
+    "character_state_transitions": [
+      {
+        "transition": "Xu Fengnian: From undercover investigator to the intimidating heir of North Liang after removing his face mask.",
+        "anchor_chapter": "第一百七十一章 摘刀撕面"
+      },
+      {
+        "transition": "Zhong Hongwu: From a proud, raging military commander to a terrified, submissive veteran general kneeling before Xu Fengnian.",
+        "anchor_chapter": "第一百七十二章 参见世子殿下"
+      },
+      {
+        "transition": "Wen Hua: From an ambitious, rising wooden-sword martial artist to a retired, crippled civilian who leaves the martial world forever.",
+        "anchor_chapter": "第十六章 一人想赠剑春秋，一人折剑出江湖"
+      },
+      {
+        "transition": "Xu Fengnian: From a junior heir to a recognized military leader in North Liang after his feats of killing enemy leaders are made public.",
+        "anchor_chapter": "第一百七十三章 两份谋略两颗头颅，贺新凉"
+      },
+      {
+        "transition": "Li Yufu: From a humble, tentative young Wudang Leader to a key spiritual leader triggering the manifestation of Zhenwu.",
+        "anchor_chapter": "第三十一章 真武见我"
+      },
+      {
+        "transition": "Lu Feichi: From an influential leader of the Qing faction to a deceased patriarch after transferring family future to his grandson.",
+        "anchor_chapter": "第九十八章 灯笼"
+      },
+      {
+        "transition": "Jiao Wuyi: From an obscure local military officer in Huangnan County to a promoted regional commander in the North Liang military.",
+        "anchor_chapter": "第一百一十三章 骤然富贵"
+      },
+      {
+        "transition": "Xu Fengnian: From a son under the shadow of his father's prestige to the successor who vows to shoulder the heavy burden of North Liang.",
+        "anchor_chapter": "第一百四十三章 帝王相逢风雪中"
+      },
+      {
+        "transition": "Xu Beizhi: From a cynical, homeless North Mang intellectual to the trusted prospective prime minister of North Liang.",
+        "anchor_chapter": "第一百二十一章 开门不见山"
+      },
+      {
+        "transition": "Song Nianqing: From a legendary swordsman of Dongyue Sword Pond to a deceased warrior who unleashes his final sword energy.",
+        "anchor_chapter": "第八十三章 最后一趟江湖"
+      },
+      {
+        "transition": "Huanhua (maid Huanggua): From a lively maid in the Wutong Yard to a deceased victim of internal conflicts in the North Liang Mansion.",
+        "anchor_chapter": "第一百五十八章 北凉要跟北莽离阳讲道理"
+      }
+    ],
+    "long_form_mechanisms": [
+      {
+        "mechanism": "Face-Mask Disguise and Identity Revelation: Protagonist travels in disguise to inspect local administration and execute corrupt officials, creating dramatic tension resolved upon public identity revelation.",
+        "anchor_chapter": "第一百七十一章 摘刀撕面"
+      },
+      {
+        "mechanism": "The Sword-Wish and Legacy Inheritance: The passing of senior sword masters is accompanied by spiritual wishes and legacy inheritances (like returning famous swords), passing the mantle to the next generation.",
+        "anchor_chapter": "第九章 李淳罡两愿天下剑士"
+      },
+      {
+        "mechanism": "Feudal-Imperial Courtyard Politics and Hostage Tactics: The imperial center uses feudal gatherings, court rituals, and marriages of state to neutralize and spy on the powerful regional vassal states.",
+        "anchor_chapter": "第四章 六王入京"
+      },
+      {
+        "mechanism": "Saber/Sword Duality and Martial Synthesis: Protagonist synthesis of different schools of martial arts, using flying swords from the Nanhai Guanyin Sect and classic saber style to create a hybrid combat style.",
+        "anchor_chapter": "第三十八章 我以黑剑杀白雪"
+      },
+      {
+        "mechanism": "Chao-Ye (Court and Martial World) Intersecting Sovereignty: Establishment of a court-backed Martial Arts Alliance Leader (Wulin Mengzhu) as a tool for the imperial court to regulate and recruit the martial world.",
+        "anchor_chapter": "第六十八章 守不住寡的江湖"
+      },
+      {
+        "mechanism": "Dynastic/Factional Decay and Succession Transitions: Transition of power in declining factions (like the Qing party) where old leaders pass symbolic tokens to secure the survival of their lineage.",
+        "anchor_chapter": "第九十八章 灯笼"
+      },
+      {
+        "mechanism": "The Military Mechanism Agency (Jizaoju) and Logistics: Heavy investment of North Liang in the Jizaoju to mass-produce weapons and armor, forming the material basis of defiance against enemies.",
+        "anchor_chapter": "第一百五十八章 北凉要跟北莽离阳讲道理"
+      },
+      {
+        "mechanism": "Imperial Borderland Diplomacy: Personal secret meetings between rulers (North Liang King and North Mang Empress) in remote borderlands, resolving historically complex relations.",
+        "anchor_chapter": "第一百四十三章 帝王相逢风雪中"
+      }
+    ],
+    "continuity_observations": [
+      {
+        "observation": "Li Chungang's famous 'Sword Come' (剑来) phenomenon at Mount Hui Daxue坪 is cited as the historical precedent for Xu Fengnian's mass sword control at Spring Shen Lake.",
+        "anchor_chapter": "第三十八章 我以黑剑杀白雪"
+      },
+      {
+        "observation": "The legacy of Prince Zhao's old friendship with Wu Su is referenced during Xu Fengnian's tense conversation with Empress Zhao Zhi, reflecting the tragic fallout of the Capital White-Clothing Incident.",
+        "anchor_chapter": "第二十三章 桌上皇帝两字"
+      },
+      {
+        "observation": "Wudang's connection to the mythical Emperor Zhenwu is maintained, linking the old stories of Hong Xixiang and Li Yufu's spiritual vision.",
+        "anchor_chapter": "第三十一章 真武见我"
+      },
+      {
+        "observation": "The execution of Fifth貉 (Diwu He) and Xu Huainan is officially disseminated across North Liang to establish the military prestige of the heir, confirming the aftermath of his previous Northern Mang travels.",
+        "anchor_chapter": "第一百七十三章 两份谋略两颗头颅，贺新凉"
+      },
+      {
+        "observation": "The background of dead soldier 'Yin' (寅) is noted as a legendary assassin who participated in the previous plot against imperial tutor Yuan Benxi.",
+        "anchor_chapter": "第四十六章 过河卒子"
+      },
+      {
+        "observation": "The Nanhai Guanyin Sect's signature technique 'Finger Sword' (指剑) is shown to be a rare Daoist cultivation milestone that was previously blocked.",
+        "anchor_chapter": "第三十八章 我以黑剑杀白雪"
+      },
+      {
+        "observation": "The history of the Demon Sect (Mo Jiao) being crushed by Taoist immortal Qi Xuanzhen sixty years ago is cited when the new generation of Demon Sect members attempts to recruit Xu Fengnian.",
+        "anchor_chapter": "第五十三章 魔高一丈"
+      },
+      {
+        "observation": "The presence of character Xu Beizhi as a key advisor is sustained, tracking his escape from Northern Mang and his integration into the North Liang civil administration.",
+        "anchor_chapter": "第一百编制一章 开门不见山"
+      }
+    ],
+    "style_observations": [
+      {
+        "observation_id": "contrast_of_grand_and_miniature_scales",
+        "details": "The narrative frequently juxtaposes grand, earth-shaking martial clashes (such as sword qi covering a lake) with extremely mundane domestic actions (like roasting sweet potatoes or selecting a cheap mink cap).",
+        "anchor_chapter": "第八十三章 最后一趟江湖"
+      },
+      {
+        "observation_id": "rhythmic_dialogue_repetition",
+        "details": "The dialogue between Xu Xiao and Xu Fengnian features a rhythmic pattern of blunt, vulgar retorts followed by quiet, deep emotional nods, highlighting their complex father-son dynamic.",
+        "anchor_chapter": "第一百六十七章 亭中三言两语定江湖"
+      },
+      {
+        "observation_id": "esoteric_martial_arts_nomenclature",
+        "details": "The text employs rich, classically derived Daoist and Buddhist terminology (e.g. 太乙狮子诀, 劾鬼之术, 指剑) to explain the internal mechanisms of energy manipulation.",
+        "anchor_chapter": "第三十一章 真武见我"
+      },
+      {
+        "observation_id": "visual_symbolic_anchoring",
+        "details": "Using specific visual symbols (like the red-fox fur hat, the broken wooden sword, or a single lantern) to anchor the emotional resolution of a scene or character departure.",
+        "anchor_chapter": "第十六章 一人想赠剑春秋，一人折剑出江湖"
+      },
+      {
+        "observation_id": "cinematic_landscape_backdrops",
+        "details": "Important transitions are set against severe weather backdrops, particularly heavy snowfall, which serves to intensify the tragic or historic tone of the meetings and duels.",
+        "anchor_chapter": "第一百四十三章 帝王相逢风雪中"
+      },
+      {
+        "observation_id": "vernacular_metaphors",
+        "details": "Characters use crude, humorous vernacular metaphors (such as comparing the sky's clouds to 'plucking geese' or comparing martial factions to '俏寡妇' / pretty widows) to defuse high-tension political situations.",
+        "anchor_chapter": "第六十八章 守不住寡的江湖"
+      }
+    ],
+    "creation_family_evidence": {
+      "paragraph_indentation": "Every paragraph consistently starts with two full-width Chinese spaces (`　　`).",
+      "chapter_headings_format": "Chapter headings are formatted on their own line with no indentation (e.g., `第一百六十七章 亭中三言两语定江湖`), using Chinese numerals instead of Arabic numerals.",
+      "text_corruption_giggle": "At line 5900, there is a textual typo/corruption `功勋狭摇１境` containing the only digit in the entire text (a full-width digit `１`), likely resulting from a scanning or digitization error in the source novel text.",
+      "no_external_advertisements": "The text is extremely clean and free of web addresses, VIP chapter notices, scan group signatures, or brackets."
+    },
+    "originality_risks": [
+      {
+        "risk_id": "protagonist_hidden_identity_tropes",
+        "details": "The trope of a high-status noble traveling in low-class disguise to expose local corruption is a classic cliché of traditional Chinese wuxia novels.",
+        "anchor_chapter": "第一百七十一章 摘刀撕面"
+      },
+      {
+        "risk_id": "noble_sacrificial_master_figure",
+        "details": "Having a veteran master sacrifice their remaining life force to unleash a spectacular final strike to teach or protect the younger generation is a standard wuxia/xianxia trope.",
+        "anchor_chapter": "第九章 李淳罡两愿天下剑士"
+      },
+      {
+        "risk_id": "meridian_severing_martial_renunciation",
+        "details": "The trope of a character breaking their own meridians, limbs, or weapons to pay back a debt of honor to a master is a well-worn wuxia convention.",
+        "anchor_chapter": "第十六章 一人想赠剑春秋，一人折剑出江湖"
+      },
+      {
+        "risk_id": "dynastic_reincarnation_and_chosen_one_mythos",
+        "details": "Linking characters to the reincarnation of ancient deities (like Emperor Zhenwu) risks overusing the 'Chosen One' trope, where the protagonist's success is pre-ordained by cosmic heritage.",
+        "anchor_chapter": "第三十一章 真武见我"
+      },
+      {
+        "risk_id": "tragic_fate_of_underling_maid_servants",
+        "details": "Killing off minor maids (like Huanggua) to motivate the protagonist or highlight the coldness of political struggles is a common dramatic shorthand.",
+        "anchor_chapter": "第一百五十八章 北凉要跟北莽离阳讲道理"
+      }
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "version": "0.25",
+  "chapter_id": "chapter-0028",
+  "source_revision": "system/production_runtime/chapters/chapter-0028/revision.md",
+  "source_sha256": "0df92be81012160c1ab6b9f8f2cabe6058c5ec1492b9a1aad90abfcff6dcc454",
+  "release_edit": "system/production_runtime/release_edits/chapter-0028.md",
+  "release_edit_sha256": "1f896dc3cb76971c1173d32d97809c286de9e8908d0c40298ef46dff70c55fc7",
+  "repair_direction": "补足第27至28章重新押送因果，固定废弃命址与泥灯巷的距离，并减少重复伤病措辞。",
+  "provider": "deterministic_editor",
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-021-030.json",
+  "reviewed_release_edit_sha256": "1f896dc3cb76971c1173d32d97809c286de9e8908d0c40298ef46dff70c55fc7"
+}

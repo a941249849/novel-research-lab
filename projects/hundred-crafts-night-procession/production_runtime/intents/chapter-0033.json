@@ -1,0 +1,44 @@
+{
+  "chapter_id": "chapter-0033",
+  "dramatic_purpose": "把事故期临时协作转为有预算、班次和退出条款的夜间维护班。",
+  "must_keep": [
+    "夜行临时维护班从候选关系变为正式成立的有限期组织。",
+    "POV 固定为林岱"
+  ],
+  "must_avoid": [
+    "不得引入未登记资产或用旁白代替物质行动",
+    "不得回滚已接受状态"
+  ],
+  "expected_state_deltas": [
+    {
+      "state_id": "v1.ch033.outcome",
+      "asset_id": "faction_maintenance_team",
+      "field_path": "lifecycle_state",
+      "after": "active",
+      "before": "seed"
+    },
+    {
+      "state_id": "v1.ch033.outcome.2",
+      "asset_id": "faction_maintenance_team",
+      "field_path": "faction.status",
+      "after": "有限期夜间维护班已正式成立",
+      "before": "候选协作关系，尚未成立"
+    },
+    {
+      "state_id": "v1.ch033.outcome.3",
+      "asset_id": "ledger_team_authority",
+      "field_path": "state_ledger.value",
+      "after": "双人复核、受影响者否决和退出条款已生效",
+      "before": "事故协作规则尚未建立"
+    }
+  ],
+  "required_asset_ids": [
+    "char_lin_dai",
+    "faction_maintenance_team",
+    "ledger_team_authority"
+  ],
+  "active_hook_ids": [],
+  "scene_constraints": [
+    "冲突必须落在具体工艺现场、物证或受影响者选择上"
+  ]
+}

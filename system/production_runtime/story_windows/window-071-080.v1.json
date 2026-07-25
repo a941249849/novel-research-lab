@@ -1,0 +1,301 @@
+{
+  "version": "1.0",
+  "project": "借天改命账",
+  "volume": 1,
+  "window": {
+    "start": 71,
+    "end": 80,
+    "name": "追时断墙"
+  },
+  "status": "production_ready",
+  "start_snapshot": [
+    "苏晚旧债债名、原始债印与余额继续有效，但具名旧债的当期寿火位已被确认重复执行，本次追缴令失效，错取余火已经返还。",
+    "命籍衙不得再用失效迁籍附条转移苏晚命档，也不得重扣已经冲突的当期寿火位；后续合法分期仍可能到来。",
+    "苏晚命灯裂纹、掌背深度失温与逼近最末一格的倒计时均未恢复。",
+    "泥灯巷坚持“不代债、不交人、允许各户撤守”，住户命火未被调用，但外沿护阵已有固定豁口。",
+    "陆沉渊因将自身半寿识账记录并入封档而右眼失明、暴露极高，并被排除在封档后的本地查阅之外。",
+    "迁籍附条后压与当期寿火位重复执行已经送交州府复核；州府正在追查改动旧债转运记录的人。",
+    "残命灯盏仍在共同保管处保持封闭、未唤醒、未移动且未使用。"
+  ],
+  "end_target": [
+    "州府复核确认追时信号从封档转运记录一侧传入泥灯巷，而非由陆沉渊、苏晚或巷民向记录内写入；陆沉渊不再承担本轮“改动者”嫌疑。",
+    "命籍衙撤销对泥灯巷的协助隐匿登记并解除护阵缺口的待验禁修，但被切下并上交的阵段永久损失，护阵不会自动恢复。",
+    "苏晚旧债余额、原始债印、命灯裂损、掌背失温和下一次合法分期压力全部保留；本窗口不替她消债或疗伤。",
+    "陆沉渊的半寿暴露没有下降；他由被怀疑的改动者转为州府要求到案的活体校时样本，右眼失明与新增承压保留。",
+    "泥灯巷通过公开承担断阵代价守住不代证、不交火的边界，形成“可交公共痕迹，不交住户命火与私人寿数”的新共同规则。",
+    "复核范围从本地后压争议上收至旧债原始转运交接层；本地查阅仍被封闭，更高层开始调取同一后压时刻涉及的转运记录。"
+  ],
+  "chapters": [
+    {
+      "chapter_id": "chapter-0071",
+      "working_title": "追时落印",
+      "event": "州府复核印沿封档回执的后压时刻投下追时封记，将陆沉渊并入“曾接触异议记录者”名册，并要求泥灯巷保持所有受脉冲影响的现场痕迹。",
+      "scene_anchor": "泥灯巷内苏晚封档外层可见记录前",
+      "conflict": "若接受封记，陆沉渊会从高暴露目标进一步变成正式复核对象；若毁去封记，泥灯巷将立即背上破坏州府复核现场的程序责任。",
+      "character_choice": "陆沉渊阻止巷民刮除封记，由自己站到封记响应范围内，但明确不让任何住户替他具名担保。",
+      "irreversible_change": "陆沉渊被正式登记为后压时刻复核的接触对象；追时脉冲开始与他皮肉中的暗青追缠纹同步，泥灯巷现场进入不得擅改状态。",
+      "emotional_turn": "巷民想替他遮住追缠纹时，他第一次主动拒绝共同体替自己承担身份后果。",
+      "hook_out": "第一轮追时脉冲没有从陆沉渊身上返回封档，反而穿过他，继续朝护阵白裂处延伸。",
+      "expected_state_deltas": [
+        "既有势力压力以州府追时封记为来源完成一次上升，并以陆沉渊正式列入复核对象及泥灯巷现场受限为共同后果。",
+        "半寿残籍暴露不下降，追缠纹新增与追时脉冲同步的可见锁定状态。",
+        "泥灯巷不得擅改受脉冲影响痕迹，但住户命火与私人见证均未被征用。"
+      ],
+      "required_asset_ids": [
+        "character_lu_chenyuan",
+        "faction_life_registry_office",
+        "faction_mudlamp_lane",
+        "state_ledger_faction_pressure",
+        "state_ledger_half_life_registry_exposure",
+        "bond_mudlamp_lane_trust"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0072",
+      "working_title": "退出暖墙",
+      "event": "追时脉冲每次经过陆沉渊都会牵动暖墙气机，使护阵豁口边缘反复发白；他必须决定是否继续接受泥灯巷遮护。",
+      "scene_anchor": "泥灯巷外沿白裂缺口与暖墙交界处",
+      "conflict": "留在暖墙内可暂缓陆沉渊的冷灰咳嗽，却会让追时脉冲持续磨损护阵；独自退出则会让失明和胸口旧裂在寒气中恶化。",
+      "character_choice": "陆沉渊越过白裂缺口，停在护阵遮护之外，并请巷民只保留出入通道，不为他额外续火。",
+      "irreversible_change": "陆沉渊失去泥灯巷暖墙的持续遮护，胸口旧裂重新震痛、左腿失稳加重；追时脉冲暂时不再直接牵扯完整阵纹。",
+      "emotional_turn": "苏晚没有命令他回来，只把能否入巷的决定留给他，同时要求他别把自伤说成替她偿债。",
+      "hook_out": "陆沉渊离开暖墙后，白裂中的银灰脉冲仍未消失，证明它并不依赖他的身体留在阵内。",
+      "expected_state_deltas": [
+        "陆沉渊命火与心魄承压新增失去暖墙遮护后的胸裂、腿部失稳和冷灰咳嗽后果。",
+        "泥灯巷共灯之信表现为保留通道但拒绝替陆沉渊续火，关系边界得到执行。",
+        "半寿追踪保持高位，离开护阵没有带来暴露降低。"
+      ],
+      "required_asset_ids": [
+        "character_lu_chenyuan",
+        "npc_su_wan",
+        "bond_mother_su_wan",
+        "bond_mudlamp_lane_trust",
+        "faction_mudlamp_lane",
+        "state_ledger_protagonist_strain",
+        "state_ledger_half_life_registry_exposure"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0073",
+      "working_title": "纹过人身",
+      "event": "巷民在连续三次追时脉冲中观察到相同顺序：封档外层先冷亮，陆沉渊追缠纹随后收紧，护阵白裂最后出现银灰火屑。",
+      "scene_anchor": "白裂缺口外的旧石阶与封档投影之间",
+      "conflict": "命籍衙坚持同步响应足以说明陆沉渊可能向封档写入痕迹；陆沉渊却已无本地查阅权，也不能靠未验证的完整链路推断自证。",
+      "character_choice": "陆沉渊不施展识账术，只让苏晚和在场巷民逐次报出肉眼所见的先后顺序，并接受结论暂时只能叫作现场疑点。",
+      "irreversible_change": "“封档先亮、追缠纹后紧、白裂末响应”的现场顺序被公开固定；它尚不能洗清陆沉渊，却阻止命籍衙把同步响应直接写成他主动改动封档。",
+      "emotional_turn": "陆沉渊被迫承认自己现在既看不全也不能定案，苏晚则第一次代他守住了证据边界而没有代他答辩。",
+      "hook_out": "第三次脉冲熄灭时，苏晚命灯外层的独立追缴字样比白裂早亮了半息。",
+      "expected_state_deltas": [
+        "陆沉渊保持停术状态，未恢复本地查阅权，也未越级读取个人命页或完整来源链。",
+        "既有势力压力因现场顺序无法支持直接定罪而停止在接触复核层级，但不发生下降。",
+        "现场顺序成为待复核疑点，尚不计入已揭示错账。"
+      ],
+      "required_asset_ids": [
+        "character_lu_chenyuan",
+        "npc_su_wan",
+        "faction_life_registry_office",
+        "faction_mudlamp_lane",
+        "state_ledger_faction_pressure",
+        "state_ledger_half_life_registry_exposure"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0074",
+      "working_title": "母名自陈",
+      "event": "苏晚在自己的独立灯位提交限域陈述，只确认命灯外层先于护阵响应，并再次声明陆沉渊不得替她收讫、答复或承认债务。",
+      "scene_anchor": "苏晚命灯所在的独立灯位",
+      "conflict": "若让陆沉渊代答，可以减少苏晚在严寒中站立的时间，却会破坏已经锁定的母子代债边界；若由苏晚亲自完成，失温会继续加深。",
+      "character_choice": "苏晚收回陆沉渊伸向回执的手，亲自按下姓名，只陈述自己看见的响应顺序，不替儿子证明清白。",
+      "irreversible_change": "苏晚成为该段现场顺序的独立陈述者，母子之间“可信协助但不得代答”的边界再次落实；她掌背冰霜蔓至腕侧，身体损耗保留。",
+      "emotional_turn": "陆沉渊接受母亲宁可承受寒痛也不让他越过自主边界，母子信任从保护彼此转为允许彼此承担自己的后果。",
+      "hook_out": "命籍衙接收陈述后没有反驳先后顺序，却给护阵白裂加盖了“保管污染、待验禁修”的灰印。",
+      "expected_state_deltas": [
+        "苏晚与陆沉渊的垫寿亲缘维持信任并进一步落实不得代答、代偿的自主边界。",
+        "苏晚命灯裂纹倒计时不回升，掌背失温扩大为可见身体后果。",
+        "苏晚的陈述仅锁定肉眼顺序，不替陆沉渊消除半寿暴露或改动者嫌疑。"
+      ],
+      "required_asset_ids": [
+        "npc_su_wan",
+        "character_lu_chenyuan",
+        "bond_mother_su_wan",
+        "state_ledger_mother_life_lamp_countdown",
+        "faction_life_registry_office"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0075",
+      "working_title": "禁修灰印",
+      "event": "命籍衙以护阵曾遮蔽高暴露对象为由，将白裂缺口登记为待验现场，禁止泥灯巷修补、覆盖或重新接通该段阵纹。",
+      "scene_anchor": "被灰印圈住的护阵豁口",
+      "conflict": "泥灯巷若服从禁修，夜间寒气会沿豁口进入；若擅自补阵，命籍衙便可申请把共同体列为协助隐匿。",
+      "character_choice": "巷民拒绝动用住户命火强撑豁口，只以不接触阵纹的旧门板挡风，并要求命籍衙把禁修造成的寒损公开记入复核。",
+      "irreversible_change": "护阵豁口在禁修期间继续裸露，阵纹安全余量进一步恶化；泥灯巷被附加临时协助隐匿审查，但住户命火仍未被调用。",
+      "emotional_turn": "共同体没有因陆沉渊退出暖墙便把责任全部推给他，而是把争执转为谁应承担禁修造成的实际寒损。",
+      "hook_out": "寒风第一次穿过禁修缺口时，灰印内外留下方向相反的两层火屑：外层朝巷内压，内层却没有向封档回流。",
+      "expected_state_deltas": [
+        "既有势力压力以命籍衙禁修登记为来源上升，并以临时协助隐匿审查和护阵寒损共同结算。",
+        "泥灯巷护阵完整度继续恶化且不得因挡风或余火自动恢复。",
+        "住户命火储备保持各户所有，禁修期间没有发生调用、转移或扣减。"
+      ],
+      "required_asset_ids": [
+        "faction_life_registry_office",
+        "faction_mudlamp_lane",
+        "bond_mudlamp_lane_trust",
+        "state_ledger_faction_pressure",
+        "state_ledger_mudlamp_array_integrity",
+        "state_ledger_resident_lifefire_reserve"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0076",
+      "working_title": "只辨来向",
+      "event": "陆沉渊在禁修灰印外施展一次限域识账，只辨认灰印与白裂表面的本地火屑来向，不碰苏晚个人命页，也不追索完整转运链。",
+      "scene_anchor": "护阵豁口外侧的灰印边缘",
+      "conflict": "不施术就无法把肉眼所见变成可复核的来向差异；施术则会加重他失明后的心魄承压，并让追时印更牢地锁定半寿特征。",
+      "character_choice": "陆沉渊把术式限定在两层现存火屑，确认外层是从封档投印方向压入、内层没有向外写出的局部不匹配后立即停术。",
+      "irreversible_change": "“追时火屑由封档侧压入护阵、并非由护阵向封档输出”成为具名的局部识账结果；陆沉渊左眼也出现银灰残屑，当日失去再次辨痕能力。",
+      "emotional_turn": "巷民接受他的结果，却拒绝把一次识账当成完整答案，陆沉渊也公开承认自己只能证明来向，不能指出改动者。",
+      "hook_out": "局部结果要进入州府复核，必须保留一段同时跨过灰印内外的真实阵纹，而禁修灰印禁止完整取下。",
+      "expected_state_deltas": [
+        "识账术新增一次合规限域使用，结论仅覆盖现场可见火屑的来向不匹配。",
+        "陆沉渊命火与心魄承压增加左眼银灰残屑和当日停术后果。",
+        "半寿残籍暴露进一步上升，追时印对其半寿特征的锁定增强。",
+        "已揭示错账记录新增待提交的局部来向差异，并与暴露及势力压力后果原子结算。"
+      ],
+      "required_asset_ids": [
+        "character_lu_chenyuan",
+        "technique_ledger_recognition",
+        "state_ledger_protagonist_strain",
+        "state_ledger_half_life_registry_exposure",
+        "state_ledger_revealed_account_errors",
+        "state_ledger_faction_pressure",
+        "bond_mudlamp_lane_trust"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0077",
+      "working_title": "断阵留痕",
+      "event": "泥灯巷必须在保持禁修现场完整与切下一段跨界阵纹之间作出选择；只有后者能让来向差异进入州府复核，却会永久扩大护阵缺口。",
+      "scene_anchor": "暖墙与禁修灰印重叠的断段",
+      "conflict": "保全护阵可减少当夜寒损，却让命籍衙继续掌握唯一可移动证物；切断阵纹能保存公共痕迹，但所有住户都要承受更大的防护缺口。",
+      "character_choice": "巷民逐户表态后决定只切下无人命火附着的灰印跨界段；反对者可以离开操作范围，任何私人灯火和姓名都不得并入阵段。",
+      "irreversible_change": "一段护阵被实体切离，原有豁口永久扩大；泥灯巷取得可提交的公共阵痕，同时明确它不代表未同意住户作证。",
+      "emotional_turn": "陆沉渊没有替巷民决定牺牲护阵，留下的人也不是为他献火，而是在知晓寒损后选择保存共同承受的公共痕迹。",
+      "hook_out": "阵段落上石面后，巷内侧完全熄暗，封档侧的灰印却隔着断口继续一下一下冷亮。",
+      "expected_state_deltas": [
+        "泥灯巷护阵完整度因实体切离跨界阵段而永久下降，后续返火不能自动补回。",
+        "泥灯巷共灯之信通过允许反对、退出及排除私人命火得到推进。",
+        "住户命火储备没有因断阵取证发生调用或扣减。",
+        "既有势力压力因公开违背禁修形式要求继续上升，但阵段作为公共痕迹被保留。"
+      ],
+      "required_asset_ids": [
+        "faction_mudlamp_lane",
+        "bond_mudlamp_lane_trust",
+        "state_ledger_mudlamp_array_integrity",
+        "state_ledger_resident_lifefire_reserve",
+        "state_ledger_faction_pressure",
+        "character_lu_chenyuan"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0078",
+      "working_title": "断口仍亮",
+      "event": "被切离的阵段在无人触碰、没有住户命火接入的情况下，只有朝向封档的一侧持续响应，巷内侧与陆沉渊追缠纹均不能令其反向点亮。",
+      "scene_anchor": "白裂缺口前承放断阵段的裸石面",
+      "conflict": "命籍衙原本把断阵视为污染证物的行为；持续单侧响应却表明真正的信号源仍在封档转运记录一端，使本地协助隐匿指控失去因果方向。",
+      "character_choice": "陆沉渊遵守停术限制不再查看，由苏晚和巷民撤开所有灯火，接受阵段在寒风中自行完成三轮单侧响应。",
+      "irreversible_change": "“追时信号从封档侧输入且断开护阵后仍持续”成为现场复核事实；既有疑点从“泥灯巷是否向内改写”转向“封档转运记录为何持续向外投送”。",
+      "emotional_turn": "苏晚看见儿子终于肯在证据出现时退后，让共同体的观察独立于他的能力成立。",
+      "hook_out": "命籍衙承认单侧响应可以送审，却要求泥灯巷在天明前交出断阵段，否则协助隐匿登记仍然有效。",
+      "expected_state_deltas": [
+        "已揭示错账记录将单侧持续响应确认为可复核现场结果，并与未解疑点转向及势力压力共同结算。",
+        "未解账目疑点仅重分类至封档转运记录一侧，未产生改动者身份、原始债因或完整转运答案。",
+        "陆沉渊遵守停术后果，没有新增越级识账结论。",
+        "泥灯巷护阵缺口保持扩大状态，断阵段的响应不构成阵体修复。"
+      ],
+      "required_asset_ids": [
+        "npc_su_wan",
+        "character_lu_chenyuan",
+        "faction_life_registry_office",
+        "faction_mudlamp_lane",
+        "state_ledger_revealed_account_errors",
+        "state_ledger_unresolved_mysteries",
+        "state_ledger_faction_pressure",
+        "state_ledger_mudlamp_array_integrity"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0079",
+      "working_title": "交痕不交火",
+      "event": "泥灯巷在巷口执行阵段移交：先公开刮除各户临时挡风记号，再让命籍衙只收取带有灰印与白裂的公共断段。",
+      "scene_anchor": "泥灯巷口的禁修边界线",
+      "conflict": "拒交会让协助隐匿登记坐实；整段无条件交出又可能把各户留下的生活痕迹解释成集体具名见证。",
+      "character_choice": "巷民同意交出公共阵痕，但逐户撤回私人标记并拒绝附送命灯、寿火或集体担保；苏晚以自己的姓名确认交付范围，陆沉渊不代签。",
+      "irreversible_change": "断阵段永久离开泥灯巷并进入州府复核，护阵损失无法撤回；“可交公共痕迹，不交住户命火与私人寿数”成为共同体的新执行边界。",
+      "emotional_turn": "苏晚与巷民不再把拒绝一切等同于团结，而是在真实损失中学会精确决定什么可以共同交付。",
+      "hook_out": "阵段被复核印接住后，第一道回执先划掉了“由巷内向封档写入”，却把陆沉渊标为等待活体校时的半寿样本。",
+      "expected_state_deltas": [
+        "泥灯巷共灯之信新增“交公共痕迹、不交私人寿火与寿数”的共同边界。",
+        "泥灯巷护阵完整度确认失去已移交阵段，禁修解除前仍不得修补。",
+        "住户命火储备与私人见证均未随阵段移交。",
+        "既有势力压力从协助隐匿争议转向州府活体校时要求，压力来源和物质代价同步结算。"
+      ],
+      "required_asset_ids": [
+        "faction_mudlamp_lane",
+        "faction_life_registry_office",
+        "npc_su_wan",
+        "character_lu_chenyuan",
+        "bond_mudlamp_lane_trust",
+        "bond_mother_su_wan",
+        "state_ledger_mudlamp_array_integrity",
+        "state_ledger_resident_lifefire_reserve",
+        "state_ledger_faction_pressure",
+        "state_ledger_half_life_registry_exposure"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0080",
+      "working_title": "源在封档",
+      "event": "州府复核印依据断阵段的单侧响应作出局部裁定：追时信号由封档转运记录一侧传入，本地三方不是本轮向记录内写入的改动者；命籍衙随即撤销协助隐匿登记与待验禁修。",
+      "scene_anchor": "命审台投向苏晚独立灯位的州府复核印面",
+      "conflict": "局部裁定可以洗去本轮改动嫌疑，却不消除苏晚旧债、陆沉渊半寿暴露或护阵损失；州府还要求以陆沉渊的活体追缠纹校准原始转运交接时刻。",
+      "character_choice": "陆沉渊接受“不再是改动嫌疑人”但拒绝把结果说成全胜；苏晚则确认本次裁定只处理来向，要求旧债余额、后续分期与身体损耗继续分别记载。",
+      "irreversible_change": "陆沉渊、苏晚和泥灯巷从本轮改动者范围中排除，协助隐匿登记和禁修灰印失效；断阵损失、苏晚旧债与陆沉渊高暴露全部保留，复核范围上收至本地不可查的原始转运交接层，陆沉渊被正式列为必须到案的活体校时样本。",
+      "emotional_turn": "母子与泥灯巷获得了有限清白，却没有用清白掩盖各自损失；共同体接受局部兑现，也拒绝再次替任何人交火。",
+      "hook_out": "禁修灰印剥落后，州府复核印越过本地封档，把同一后压时刻涉及的转运记录同时锁住，并向陆沉渊发出到案校时令。",
+      "expected_state_deltas": [
+        "既有势力压力完成局部回落与上层转移：命籍衙撤销协助隐匿登记和禁修，州府活体校时要求随即生效。",
+        "公开认知状态新增局部规则：追时响应必须先核验输入方向，不能仅凭同步接触把现场持有人认作改动者；该变化与断阵损失及上层压力原子结算。",
+        "已揭示错账记录确认追时信号来自封档转运记录一侧，但不回答具体改动者、原始债因或完整转运链。",
+        "未解账目疑点上收至原始转运交接层，本地边界和既有地图封锁均未解锁。",
+        "半寿残籍暴露不下降，陆沉渊从改动嫌疑人转为必须到案的活体校时样本。",
+        "苏晚命灯裂纹、倒计时、掌背失温、旧债余额与后续合法分期压力全部保留。",
+        "泥灯巷解除禁修后仅取得修补资格，护阵不会因裁定、返火或名誉变化自动恢复。"
+      ],
+      "required_asset_ids": [
+        "character_lu_chenyuan",
+        "npc_su_wan",
+        "faction_life_registry_office",
+        "faction_mudlamp_lane",
+        "bond_mother_su_wan",
+        "bond_mudlamp_lane_trust",
+        "state_ledger_faction_pressure",
+        "state_ledger_half_life_registry_exposure",
+        "state_ledger_public_reputation",
+        "state_ledger_revealed_account_errors",
+        "state_ledger_unresolved_mysteries",
+        "state_ledger_mother_life_lamp_countdown"
+      ],
+      "source_status": "planned"
+    }
+  ]
+}

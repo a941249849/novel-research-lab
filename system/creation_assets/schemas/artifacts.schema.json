@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://nrl.local/schemas/artifacts.schema.json",
+  "title": "Artifact Asset",
+  "allOf": [
+    {"$ref": "https://nrl.local/schemas/common.schema.json"},
+    {
+      "properties": {
+        "family": {"type": "string", "const": "artifacts"},
+        "artifact": {
+          "type": "object",
+          "required": [
+            "cost",
+            "upgrade_stage",
+            "lifecycle_policy",
+            "cost_and_limitation_rules",
+            "upgrade_path",
+            "visual_symbol_ledger",
+            "originality_policy"
+          ],
+          "properties": {
+            "cost": {"type": "string", "minLength": 1},
+            "upgrade_stage": {"type": "string", "minLength": 1},
+            "lifecycle_policy": {
+              "type": "object",
+              "required": ["acquisition", "activation", "dormancy", "retirement"],
+              "properties": {
+                "acquisition": {"type": "string", "minLength": 1},
+                "activation": {"type": "string", "minLength": 1},
+                "dormancy": {"type": "string", "minLength": 1},
+                "retirement": {"type": "string", "minLength": 1}
+              },
+              "additionalProperties": false
+            },
+            "cost_and_limitation_rules": {
+              "type": "object",
+              "required": ["usage_cost", "backlash", "exposure_state_key"],
+              "properties": {
+                "usage_cost": {"type": "string", "minLength": 1},
+                "backlash": {"type": "string", "minLength": 1},
+                "exposure_state_key": {"type": "string", "minLength": 1}
+              },
+              "additionalProperties": false
+            },
+            "upgrade_path": {
+              "type": "object",
+              "required": ["criteria", "materials", "state_transition"],
+              "properties": {
+                "criteria": {"type": "string", "minLength": 1},
+                "materials": {"type": "string", "minLength": 1},
+                "state_transition": {"type": "string", "minLength": 1}
+              },
+              "additionalProperties": false
+            },
+            "visual_symbol_ledger": {"type": "string", "minLength": 1},
+            "originality_policy": {"type": "string", "minLength": 1}
+          },
+          "additionalProperties": false
+        }
+      }
+    }
+  ]
+}

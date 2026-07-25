@@ -1,0 +1,137 @@
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "chunk_id": "book-05-11dd686b8b15-chunk-007",
+  "source_file": "novel_training_set/《凡人修仙传》（校对版全本+番外）作者：忘语.txt",
+  "source_file_sha256": "11dd686b8b151694b37460b52991a4f00eda8f5fabe86b507e74f321e10a7428",
+  "start_byte": 9000386,
+  "end_byte": 10500450,
+  "chunk_sha256": "0f2a2c01fe4b83a420108e10d793dff3a0ac5d1cb9ded1ac2d9a913f7e55ef2c",
+  "source_encoding": "gb18030",
+  "bounded_chunk_utf8_sha256": "158186c45f60d280961bc6e6a2d1d3085e3a97597024d2dd90dc9d3f2ac4208c",
+  "analysis": {
+    "chapter_span": [
+      "第一千五百一十六章 玉台",
+      "第一千七百四十八章 云城之乱"
+    ],
+    "major_events": [
+      "In 第一千五百一十六章 玉台 and 第一千五百一十七章 青元子, Han Li arrives at the jade platform in the Dark River Land and meets Qing Yuanzi.",
+      "In 第一千五百一十八章 天阴之体 and 第一千五百一十九章 分歧, Qing Yuanzi identifies Yuan Yao and Yan Li as having the Tian Yin Body, deciding to teach them while making a pact with Han Li.",
+      "In 第一千五百二十章 新青元剑诀 and 第一千五百二十二章 离开, Qing Yuanzi gives Han Li the New Qing Yuan Sword Formula and tasks him with gathering specific materials before Han Li departs.",
+      "In 第一千五百二十六章 重炼神山 and 第一千五百二十八章 进阶炼虚, Han Li refines his Mountain of Force at his cave dwelling and successfully breaks through to the Refined Void stage.",
+      "In 第一千五百三十七章 玄天之争 and 第一千五百三十九章 大难逃脱, Han Li is caught in a conflict between the Jiao Chi and Sea King tribes over a Xuantian treasure, narrowly escaping the battlefield.",
+      "In 第一千五百四十一章 火阳族 and 第一千五百四十六章 以火化丹, Han Li encounters the Fire Sun tribe, assists their High Priest in refining the Lie Yang Divine Pill using fire techniques, and receives the pill.",
+      "In 第一千五百七十一章 力压合体 and 第一千五百七十五章 退走, Han Li is pursued by a hostile Integration stage cultivator and uses his Sword of Primordial Qi to force the enemy to retreat.",
+      "In 第一千五百八十三章 云城 and 第一千五百九十二章 广寒令, Han Li arrives at Cloud City, meets old acquaintances, and obtains a Guang Han Order through negotiations.",
+      "In 第一千五百九十七章 四族拍卖 and 第一千六百零四章 琉璃天火液, Han Li participates in the four-tribe auction in Cloud City, trading and purchasing rare materials like the Liuli Heavenly Fire Liquid.",
+      "In 第一千六百零七章 惊变 and 第一千六百一十八章 力压九阶, Han Li becomes involved in a chaotic struggle over a Sesame Immortal (Zhi Xian) and subdues a ninth-grade opponent.",
+      "In 第一千六百一十九章 初入魔金 and 第一千六百二十七章 杀戮, Han Li enters the Devil Gold Mountain Range with other cultivators to find materials, battling many devil creatures along the way.",
+      "In 第一千六百三十七章 再现玄天 and 第一千六百四十一章 真麟本源, Han Li encounters a mountain giant true spirit (Demon Ape) and obtains a portion of the True Lin Source.",
+      "In 第一千六百五十七章 三魔 and 第一千六百五十九章 玄天如意刃, Han Li is pursued by projections of the Devil Race's Saint Ancestors and escapes using the Xuantian Ruyi Blade.",
+      "In 第一千六百六十五章 许老怪 and 第一千六百六十八章 修甲, Han Li makes a deal with Old Monster Xu and the Cloud tribe to repair his damaged Heavenly Outer Devil Armor.",
+      "In 第一千六百七十九章 入界 and 第一千六百八十四章 暗兽森林, Han Li enters the Guang Han Realm using the Guang Han Instrument and begins hunting dark beasts.",
+      "In 第一千七百零四章 收山 and 第一千七百零八章 紫电, Han Li collects the spirit mountain inside the Guang Han Realm and explores an ancient palace while overcoming restrictions like purple lightning.",
+      "In 第一千七百一十八章 鼎中取宝 and 第一千七百二十三章 星空图与法诀, Han Li extracts treasures from a golden tripod in the ancient palace, obtaining a Golden Gourd, a Transformed Spiritual Herb, and a star chart.",
+      "In 第一千七百四十章 炼神术 and 第一千七百二十五章 进阶, Han Li and his second nascent soul undergo a forced rapid breakthrough inside the screen cave-heaven, reaching the Refined Void Late Stage.",
+      "In 第一千七百三十章 银尺与金身 and 第一千七百三十六章 混元尺, Han Li defeats pursuing Jiao Chi tribe cultivators using his newly acquired abilities, the giant ape transformation, and the Hun Yuan Ruler.",
+      "In 第一千七百三十七章 戎族 and 第一千七百四十五章 习得灵文, Han Li meets the Rong tribe, defeats their enemies, and studies the ancient spirit characters on a stone wall."
+    ],
+    "character_state_transitions": [
+      "Han Li transitions from the Deity Transformation Late Stage to the Refined Void Early Stage by breaking through his bottleneck in 第一千五百二十八章 进阶炼虚.",
+      "Yuan Yao and Yan Li transition from independent wandering cultivators to becoming disciples of Qing Yuanzi due to their Tian Yin Body in 第一千五百一十八章 天阴之体.",
+      "Ti Hun transitions from standard spirit beast form to manifesting a human clone identical to Han Li to assist him in 第一千五百四十五章 玄剑附臂.",
+      "Han Li's Xuantian Fruit transitions from a separate item in his storage to a yellow sword-shaped mark permanently attached to his arm in 第一千五百四十五章 玄剑附臂.",
+      "Han Li transitions from a heavily injured, depleted state to partial recovery of his magic power by taking the Lie Yang Divine Pill in 第一千五百四十六章 以火化丹.",
+      "Han Li's Spirit Devouring Fire Bird transitions from standard flame form to an upgraded state after absorbing the Liuli Heavenly Fire Liquid in 第一千六百一十一章 噬灵火鸟和琉璃天火.",
+      "Han Li transitions from the Refined Void Early Stage to the Refined Void Late Stage Peak through forced spiritual energy infusion in 第一千七百二十五章 进阶.",
+      "Han Li's second nascent soul transitions from the Deity Transformation Early Stage to the Refined Void Late Stage Peak during the forced breakthrough in 第一千七百二十五章 进阶.",
+      "Yue Xianzi transitions from the Refined Void stage to the Integration stage after returning from the Guang Han Realm in 第一千七百四十八章 云城之乱.",
+      "The Ning-surname cultivator transitions from the Refined Void stage to the Integration stage after returning from the Guang Han Realm in 第一千七百四十八章 云城之乱.",
+      "Han Li transitions from standard physical defense to manifesting the defensive Vanhall Armor early due to energy overflow in 第一千七百二十五章 进阶."
+    ],
+    "long_form_mechanisms": [
+      {
+        "name": "New Qing Yuan Sword Formula (新青元剑诀)",
+        "description": "An advanced sword cultivation technique created by Qing Yuanzi, refining gold and wood energies, which allows Han Li to cultivate the Green Bamboo Bee Cloud Swords, deploy formidable sword arrays, and manifest powerful sword qi domains."
+      },
+      {
+        "name": "Refinement of the Mountain of Force (重炼神山)",
+        "description": "A process where Han Li refines his Mountain of Force (a predecessor to the Yuan He Wu Ji Mountain) using the Yuan Magnetic Divine Light, resulting in a heavy, suppressive treasure that can repel magnetic forces and crush opponents."
+      },
+      {
+        "name": "Xuantian Fruit Arm Attachment (玄剑附臂)",
+        "description": "A phenomenon where the Xuantian Fruit, after being unleashed as a Xuantian Slash Spirit Sword, fuses onto the user's arm as a yellow brand. Activating it requires massive amounts of spirit and life force, posing a severe threat of backfiring on the user."
+      },
+      {
+        "name": "Lie Yang Divine Pill Activation (烈阳神丹/以火化丹)",
+        "description": "A pill-refinement process utilizing ground fire and specialized flame-control techniques to activate the Lie Yang Divine Pill. When consumed, it provides rapid recovery of magic power and vitality for high-level cultivators."
+      },
+      {
+        "name": "Guang Han Order and Teleportation (广寒令与入界)",
+        "description": "A token that allows entrance into the independent pocket world, Guang Han Realm, every ten thousand years. The token is activated using the Guang Han Instrument, teleporting holders to the realm to search for ancient treasures and break through bottlenecks."
+      },
+      {
+        "name": "Forced Cultivation Light Pillar in Screen Cave-Heaven (屏中洞天光柱)",
+        "description": "A mechanism within the ancient palace's screen cave-heaven where a high-density pillar of five-colored light forces spiritual energy and runes into a cultivator and their nascent souls, bypassing normal bottleneck restrictions to force rapid level breakthroughs at the cost of extreme physical pain."
+      },
+      {
+        "name": "Soul Splitting and Yuan Dividing Method (魂体分元大法)",
+        "description": "A secret technique used by certain soul-cultivators or beasts to split their consciousness into multiple separate entities. This is used to control puppets, create clones, or survive otherwise fatal physical damage."
+      },
+      {
+        "name": "Vanhall Armor Manifestation (梵圣甲衣)",
+        "description": "A defensive armor that forms on the body when the Vanhall Sacred True Devil Arts are run to their limits. Normally accessible only at the Integration stage, it is manifested early by Han Li due to the excess spiritual energy during his forced breakthrough."
+      }
+    ],
+    "continuity_observations": [
+      "Yuan Yao and Yan Li's placement under Qing Yuanzi's care in the Dark River Land (第一千五百一十六章 玉台) establishes a long-term goal for Han Li to return and check on them.",
+      "The refinement and upgrade of the Mountain of Force (第一千五百二十六章 重炼神山) progresses continuously, leading to the refinement of a new mountain in the Guang Han Realm (第一千六百九十一章 新元磁山) and its application in battle (第一千七百三十章 银尺与金身).",
+      "The clash over the Xuantian Slash Spirit Sword (第一千五百三十七章 玄天之争) drives the overarching plot, as the Jiao Chi tribe's search for the sword user eventually leads to the siege of Cloud City (第一千七百四十八章 云城之乱).",
+      "Han Li's second nascent soul, cultivated alongside his main body, undergoes parallel forced breakthroughs in the Guang Han Realm (第一千七百二十五章 进阶), maintaining its relevance to his overall power.",
+      "The evolution of the Spirit Devouring Fire Bird is maintained as Han Li feeds it Liuli Heavenly Fire Liquid (第一千六百一十一章 噬灵火鸟和琉璃天火), enabling it to absorb high-level flames to aid in combat.",
+      "Han Li's project to repair the Heavenly Outer Devil Armor is introduced early and developed through deals with Old Monster Xu and the Cloud tribe (第一千六百六十五章 许老怪 to 第一千六百六十八章 修甲) before his entry into the Guang Han Realm.",
+      "The Jiao Chi tribe's aggressive search and dominance are established in the Xuantian battle (第一千五百三十七章 玄天之争), continued during their plotting in the Guang Han Realm (第一千七百三十三章 角蚩图谋), and culminate in their invasion of Cloud City (第一千七百四十八章 云城之乱).",
+      "The ancient stone wall spirit characters found in the Rong tribe's cave (第一千七百四十二章 石壁灵文) are studied and mastered by Han Li (第一千七百四十五章 习得灵文), setting up his future ability to read high-level esoteric techniques."
+    ],
+    "style_observations": [
+      "The narrative features highly detailed descriptions of cultivation breakthroughs, meridian channels, and pill-refining technicalities, treating spiritual energy like a physical substance.",
+      "The pacing alternates strictly between high-tension combat against superior opponents and quiet periods of refinement, auctioning, and negotiation.",
+      "The protagonist is consistently characterized as cautious and pragmatic, constantly evaluating risks, preferring flight or stealth, and preparing multiple contingency plans.",
+      "The text uses vibrant and highly stylized names for techniques, beasts, and magic treasures, drawing inspiration from Daoist and Buddhist mythologies.",
+      "The third-person limited perspective occasionally shifts to external observers (like the Fire Sun tribe leaders or Jiao Chi scouts) to emphasize the protagonist's mysterious strength.",
+      "Combat is written with structured, tactical choreography where the protagonist wins by coordinating various tools (spirit beasts, arrays, and magic treasures) rather than simple power clashes."
+    ],
+    "creation_family_evidence": {
+      "author": "忘语",
+      "protagonist": "韩立",
+      "spirit_beasts": [
+        "啼魂",
+        "豹麟兽",
+        "噬灵火鸟"
+      ],
+      "weapons": [
+        "青竹蜂云剑",
+        "混元尺",
+        "元合五极山"
+      ],
+      "techniques": [
+        "新青元剑诀",
+        "梵圣真魔功",
+        "大衍诀",
+        "炼神术"
+      ],
+      "places": [
+        "冥河之地",
+        "云城",
+        "广寒界",
+        "魔金山脉"
+      ]
+    },
+    "originality_risks": [
+      "The rapid forced breakthrough within the ancient pocket dimension (Guang Han Realm) relies on the classic xianxia trope of skipping long years of cultivation through external ruins.",
+      "The auction house segment where the protagonist identifies and bids on an undervalued item (Liuli Heavenly Fire Liquid) that proves critical to his power is a very common plot device.",
+      "The reliance on unique spirit beasts with absolute immunities (like Ti Hun's soul control or Fire Bird's fire eating) to solve specific crises is a standard fantasy archetype.",
+      "The sudden foreign siege of a main hub city (Cloud City) right after the protagonist finishes a major expedition is a highly common xianxia trope used to force transition to a new setting."
+    ]
+  }
+}

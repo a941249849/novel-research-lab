@@ -1,0 +1,135 @@
+{
+  "chapter_id": "chapter-0085",
+  "accepted_revision_sha256": "25546a373f6766c53b7faa151c63f81f3e0aad86dc035058d9b4a8f55056bba2",
+  "state_deltas": [
+    {
+      "fact_id": "fact-0085-001",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_choice",
+      "operation": "set",
+      "before": "尚未确认是否接受本人到案记录交换",
+      "after": "接受只记录本人行迹的外层校时交换，并拒绝第三方命火替代项"
+    },
+    {
+      "fact_id": "fact-0085-002",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_procedural_status",
+      "operation": "set",
+      "before": "等待本人承担下一笔到案记录",
+      "after": "州府外层已留档，本人到案记录成立，仅获准进入外层候验"
+    },
+    {
+      "fact_id": "fact-0085-003",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_public_statement",
+      "operation": "set",
+      "before": "要求同行者不得替他应答或承担",
+      "after": "公开限定记录只包含陆沉渊本人，不包含苏晚、送行者和泥灯巷住户命灯"
+    },
+    {
+      "fact_id": "fact-0085-004",
+      "asset_id": "npc_prefecture_shadow_envoy",
+      "field_path": "npc.current_recovery_strategy",
+      "operation": "set",
+      "before": "以逾期冻结通行记录及交印换取暂缓施压",
+      "after": "完成陆沉渊外层活体校时与残印回收的并行推进，但残印仍未交出，后续压力转为继续候验或交印"
+    },
+    {
+      "fact_id": "fact-0085-005",
+      "asset_id": "npc_prefecture_shadow_envoy",
+      "field_path": "information.current_admission_conditions",
+      "operation": "set",
+      "before": "须携本人生时痕接受外层校时",
+      "after": "本人到案记录已完成，外层入口开启，但继续向内仍无资格"
+    },
+    {
+      "fact_id": "fact-0085-006",
+      "asset_id": "state_ledger_map_unlock_status",
+      "field_path": "state_ledger.current_boundary_status",
+      "operation": "set",
+      "before": "城界外沿原路被封存，内槽、深处方向与完整地图未解锁",
+      "after": "影门开启，外层校时台获得有限进入权限；州府内部及更深层仍未开放"
+    },
+    {
+      "fact_id": "fact-0085-007",
+      "asset_id": "state_ledger_faction_pressure",
+      "field_path": "state_ledger.faction_pressure",
+      "operation": "set",
+      "before": "州府入门压力集中为陆沉渊本人承担半寿到案",
+      "after": "州府外层持续持有并锁定陆沉渊的到案记录，后续查找可直接循其生时痕"
+    },
+    {
+      "fact_id": "fact-0085-008",
+      "asset_id": "artifact_prefecture_transit_registry_seal",
+      "field_path": "artifact.current_procedural_relation",
+      "operation": "set",
+      "before": "残印由陆沉渊持有，未交给任何人",
+      "after": "陆沉渊进入外层校时台后仍未交出残印，校时光线转而偏向残印"
+    },
+    {
+      "fact_id": "fact-0085-009",
+      "asset_id": "artifact_prefecture_transit_registry_seal",
+      "field_path": "artifact.current_visible_trace",
+      "operation": "set",
+      "before": "残印持续透出银亮与冷意并被封布按住",
+      "after": "封布下残印剧烈震动并散出铁锈冷香，银灰光停在其轮廓外核看"
+    },
+    {
+      "fact_id": "fact-0085-010",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_emotional_state",
+      "operation": "set",
+      "before": "接受独自承担半寿到案，等待下一笔记录",
+      "after": "确认代价归于本人并拒绝转嫁给同行者后，保持不退让的候验状态"
+    },
+    {
+      "fact_id": "fact-0085-011",
+      "asset_id": "state_ledger_half_life_registry_exposure",
+      "field_path": "state_ledger.current_exchange_exposure_delta",
+      "operation": "set",
+      "before": "正文只确认公开到案记录要求，十个百分点交换尚未结算",
+      "after": "半寿残籍暴露增加一成，且不会因后续举证自动下降"
+    },
+    {
+      "fact_id": "fact-0085-012",
+      "asset_id": "artifact_prefecture_transit_registry_seal",
+      "field_path": "information.current_record_scope",
+      "operation": "set",
+      "before": "待确认到案记录是否包含同行者或住户命灯",
+      "after": "记录仅包含陆沉渊从泥灯巷至城界外沿的行迹，不包含苏晚、送行者和住户命灯"
+    },
+    {
+      "fact_id": "fact-0085-013",
+      "asset_id": "npc_prefecture_shadow_envoy",
+      "field_path": "information.current_entry_result",
+      "operation": "set",
+      "before": "拒绝则失去外层校时入口",
+      "after": "外层校时台开启，陆沉渊取得有限候验资格，内部边界仍锁定"
+    },
+    {
+      "fact_id": "fact-0085-014",
+      "asset_id": "foreshadowing_cinder_seal_rain",
+      "field_path": "hook.current_direction",
+      "operation": "set",
+      "before": "后续选择收束为陆沉渊独自承担半寿到案，下一笔记录尚未落下",
+      "after": "影门已开启，但校时台银灰光未先锁定陆沉渊，转而偏向封布内未交出的残印"
+    },
+    {
+      "fact_id": "fact-0085-015",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "timeline.chapter_event",
+      "operation": "set",
+      "before": "陆沉渊独自滞留影门前等待本人到案记录",
+      "after": "本人到案记录完成并进入外层校时台，同行者仍留在界线内未越界"
+    },
+    {
+      "fact_id": "fact-0085-016",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_visible_condition",
+      "operation": "set",
+      "before": "左腿被石缝卡住无法稳定站立，胸口旧裂抽紧并咳出血灰沫，左眼覆灰雾",
+      "after": "左腿脱离石缝但被石棱磨伤且仍难稳定站立；掌心留下灰白孔洞，胸前追缠纹压成铁黑暗线"
+    }
+  ],
+  "resolved_audit_ids": []
+}

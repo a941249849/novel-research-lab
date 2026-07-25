@@ -1,0 +1,151 @@
+{
+  "chapter_id": "chapter-0001",
+  "draft_sha256": "4c62ef6fce197c663771818063f9a04b8697b9497f44ed9173d8d1f742bdfc33",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "fact-0001",
+        "asset_id": "char_zhou_li",
+        "field_path": "character.current_state",
+        "before": "active",
+        "after": "事故记录出现周砺父亲周永直的签名。",
+        "evidence": "拆开壁龛后，梁底露出最早一列签验人中的完整签名“周永直”，周砺确认“是”。"
+      },
+      {
+        "fact_id": "fact-0002",
+        "asset_id": "char_zhou_li",
+        "field_path": "character.role_in_scene",
+        "before": "现场观察者",
+        "after": "以见习验损员身份留场并持续记录位移",
+        "evidence": "复核组同意分段开梁后，周砺以见习验损员身份留在现场，记录每次拆除前后的位移。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "fact-0003",
+        "asset_id": "char_zhou_li",
+        "field_path": "character.action_commitment",
+        "before": "等待专家组复核",
+        "after": "主动叫停吊架、扩大疏散并要求现场记录",
+        "evidence": "周砺发现线锤异常后要求“叫停吊架”，随后清空西侧巷子并要求先记录全部连接与受力变化。"
+      }
+    ],
+    "locations": [
+      {
+        "fact_id": "fact-0004",
+        "asset_id": "artifact_unnamed_beam",
+        "field_path": "location.affected_area",
+        "before": "风险主要位于施工井和旧戏楼后墙",
+        "after": "风险确认延伸至西侧巷子及住户墙体",
+        "evidence": "后墙裂缝向巷内住家延伸，周砺据此要求清空西侧巷子；西巷墙体进入现场受力判断。"
+      }
+    ],
+    "factions": [],
+    "artifacts": [
+      {
+        "fact_id": "fact-0005",
+        "asset_id": "artifact_unnamed_beam",
+        "field_path": "artifact.condition",
+        "before": "active",
+        "after": "失去全部连接并悬空",
+        "evidence": "左侧吊架失去拉力，铁箍从木头上滑落，锚栓接连松脱；旧梁仍悬在半空。"
+      },
+      {
+        "fact_id": "fact-0006",
+        "asset_id": "artifact_unnamed_beam",
+        "field_path": "artifact.support_status",
+        "before": "由旧铁箍、吊架和锚栓共同连接",
+        "after": "由两道临时托架保持位置，未真正受力",
+        "evidence": "复核组到场后，梁下加了两道临时托架，正文明确写明“没有真正受力，只是防它横移”。"
+      },
+      {
+        "fact_id": "fact-0007",
+        "asset_id": "artifact_unnamed_beam",
+        "field_path": "artifact.exposed_evidence",
+        "before": "连接与墨书被修补灰遮蔽",
+        "after": "露出旧木楔、薄铁片、编号、墨书、签验人及周永直签名",
+        "evidence": "分段开梁后发现旧木楔和薄铁片，梁底灰层被洗开并露出日期、加固位置、签验人和完整签名。"
+      }
+    ],
+    "techniques": [
+      {
+        "fact_id": "fact-0008",
+        "asset_id": "artifact_unnamed_beam",
+        "field_path": "inspection.method",
+        "before": "未完成现场复核",
+        "after": "通过线锤、尺、敲击、测线和分段开梁进行复核",
+        "evidence": "周砺两次使用线锤测偏移，以小锤敲击梁体发现声音变空，并要求拆开壁龛、分段开梁和记录位移。"
+      }
+    ],
+    "relationships": [
+      {
+        "fact_id": "fact-0009",
+        "asset_id": "char_zhou_li",
+        "field_path": "relationship.with_affected_residents",
+        "before": "未建立现场协商关系",
+        "after": "居民被纳入记录与加固决策现场",
+        "evidence": "周砺要求居民在场；穿围裙的女人拒绝签字并询问记录能否留下，周砺回答不能由他一人决定。"
+      }
+    ],
+    "emotions": [
+      {
+        "fact_id": "fact-0010",
+        "asset_id": "char_zhou_li",
+        "field_path": "emotion.state",
+        "before": "常态",
+        "after": "面对父亲签名仍保持克制并继续记录",
+        "evidence": "发现“周永直”签名后，周砺没有停刷或抹掉字迹，而是侧开一步让灯光落稳，并在记录板上只写见证、不写结论。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "fact-0011",
+        "asset_id": "artifact_unnamed_beam",
+        "field_path": "information.status",
+        "before": "旧梁被视为未编号旧料",
+        "after": "确认其历史连接、受力路径和旧案签名可被现场记录",
+        "evidence": "周砺展示灰片与墨书，要求记录所有连接、旧基、住户和墙体；后续影像同时记录签名与断页。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "fact-0012",
+        "asset_id": "foreshadow_second_record",
+        "field_path": "foreshadowing.status",
+        "before": "active",
+        "after": "发现一页与当天记录相关的断页旧记录",
+        "evidence": "砖屑下发现一页旧记录，页码从中间断开，校时栏比今天早整整一天，并与梁底签名一同进入现场记录。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "fact-0013",
+        "asset_id": "artifact_unnamed_beam",
+        "field_path": "timeline.event",
+        "before": "计划五点半灌第二段",
+        "after": "灌注暂停并改为拆开壁龛、分段开梁",
+        "evidence": "周砺叫停吊架后坚持“不同意，就不灌”；泵车熄火，复核组最终同意拆开壁龛外层并分段开梁。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "fact-0014",
+        "asset_id": "artifact_unnamed_beam",
+        "field_path": "physical_state.connection",
+        "before": "吊架、铁箍、锚栓仍在承力",
+        "after": "吊架失拉、铁箍滑落、锚栓松脱、混凝土表皮剥落",
+        "evidence": "旧梁发生闷响后，左侧吊架先失拉，右侧铁箍滑落，锚栓接连松脱，混凝土表皮剥落。"
+      }
+    ],
+    "naming": [
+      {
+        "fact_id": "fact-0015",
+        "asset_id": "artifact_unnamed_beam",
+        "field_path": "artifact.naming_status",
+        "before": "清场记录中的未编号旧料",
+        "after": "仍无正式名称，但其“无名”状态成为现场判断的一部分",
+        "evidence": "周砺回望旧梁，称其“像一根被撤销了名字的骨头”；现场记录继续以连接、受力和物证描述它。"
+      }
+    ]
+  }
+}

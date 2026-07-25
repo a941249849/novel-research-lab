@@ -1,0 +1,605 @@
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "covered_book_ids": [
+    "book-01-45bcee82acba",
+    "book-02-7624374abf2e",
+    "book-03-0bc4648bf63c",
+    "book-04-bfe08b74de74",
+    "book-05-11dd686b8b15",
+    "book-06-b1b7934bf892",
+    "book-07-f82ccdb9a2b3",
+    "book-08-322e84872b22",
+    "book-09-4f463d84ee63",
+    "book-10-e27891938d93",
+    "book-11-61b03727048f",
+    "book-12-7dd95a828fbe",
+    "book-13-210acebeef12",
+    "book-14-1ba978345f70",
+    "book-15-04e1a336e29d",
+    "book-16-9cbf8da97dac",
+    "book-17-3089d9aab05c",
+    "book-18-d53c5cc79ddd"
+  ],
+  "book_synthesis_hashes": [
+    {
+      "book_id": "book-01-45bcee82acba",
+      "response_sha256": "80e1246bca7bbbf33523268b4e39c35f66f379a5a455c4b6c449121e05a971a8"
+    },
+    {
+      "book_id": "book-02-7624374abf2e",
+      "response_sha256": "2cbd3a149665f627afb7e305d7be02fef17f908c5dd2268fa155366eadebc754"
+    },
+    {
+      "book_id": "book-03-0bc4648bf63c",
+      "response_sha256": "00101a6cf81d1e51d4a8c9160032f0a6dd93c7adb30f12a8ca59b196e8ddd631"
+    },
+    {
+      "book_id": "book-04-bfe08b74de74",
+      "response_sha256": "44d3a068fa0ac1e866dacc5cc39468bc13f0c71afebfa51804101a03c66453c6"
+    },
+    {
+      "book_id": "book-05-11dd686b8b15",
+      "response_sha256": "06a2aae90130a2acb41d28d69434b3c63ed9563c97c2fafcea5bc7d8ac52f248"
+    },
+    {
+      "book_id": "book-06-b1b7934bf892",
+      "response_sha256": "8763d2c92c9b25397fa677133db6b0ff691fcdb0fd08a8f873dc9ebd3e1be6fe"
+    },
+    {
+      "book_id": "book-07-f82ccdb9a2b3",
+      "response_sha256": "7cefe3b94683cd2fe26ea8be40037e5439377b5747f520d266419851432acc4a"
+    },
+    {
+      "book_id": "book-08-322e84872b22",
+      "response_sha256": "6b750bcdb4140fa7d3e7397de940c38c953f44901a4ef970335387d75c4a74d4"
+    },
+    {
+      "book_id": "book-09-4f463d84ee63",
+      "response_sha256": "8ec85c5788b2c5720eabb0471120611d161d6f4c1b84a705ec803426f54379e3"
+    },
+    {
+      "book_id": "book-10-e27891938d93",
+      "response_sha256": "d1a75715109d4a6c19146542a5254ada81e6c4726acfaae557c98308709149ef"
+    },
+    {
+      "book_id": "book-11-61b03727048f",
+      "response_sha256": "e4704dd9b71139f6968ea34ae9d71d635f666e71765af0bdb56657150cd055ec"
+    },
+    {
+      "book_id": "book-12-7dd95a828fbe",
+      "response_sha256": "092cd7f5e6ef22a28be7e94bd7d274d56f9138ac5d72c5a5637a17bd3d355459"
+    },
+    {
+      "book_id": "book-13-210acebeef12",
+      "response_sha256": "c7acf2acbedf30214dfe4bb57c07bd5aa9ef8f0e5204341fd5f04cfc02d88796"
+    },
+    {
+      "book_id": "book-14-1ba978345f70",
+      "response_sha256": "c7e0744c5c85e7db743f5a37653bcb41ddef0699757b7487536fb0d6f07d5cb6"
+    },
+    {
+      "book_id": "book-15-04e1a336e29d",
+      "response_sha256": "d6d812a05f9ba6717c650f955d1c71feda7db2b7749af6e8071f33fb3baf6551"
+    },
+    {
+      "book_id": "book-16-9cbf8da97dac",
+      "response_sha256": "8c401532a5a1e3e63e14838e89ec10cfcf93c9ad7408626e7d9cd0d3ce85fc41"
+    },
+    {
+      "book_id": "book-17-3089d9aab05c",
+      "response_sha256": "dea00147080a4a068fccae8b2e83139fa5af3fa064fb9d8c4afee2038ed18e85"
+    },
+    {
+      "book_id": "book-18-d53c5cc79ddd",
+      "response_sha256": "3aae35acc42bde99d42c4db0b9c96328331b708f1a56f10392bb26e6af80404c"
+    }
+  ],
+  "cross_book_mechanisms": [
+    {
+      "mechanism_id": "CB18-M01",
+      "name": "Progressive Reclassification of a Persistent Asset",
+      "source_book_ids": [
+        "book-05-11dd686b8b15",
+        "book-11-61b03727048f",
+        "book-15-04e1a336e29d",
+        "book-16-9cbf8da97dac"
+      ],
+      "source_chunk_ids": [
+        "book-05-11dd686b8b15-chunk-005",
+        "book-11-61b03727048f-chunk-001",
+        "book-15-04e1a336e29d-chunk-002",
+        "book-16-9cbf8da97dac-chunk-001"
+      ],
+      "abstract_rule": "Introduce a persistent asset with one narrow, testable function, then reveal additional roles only when new knowledge, materials, permissions, or risks make the reclassification causally necessary.",
+      "variation_pattern": "The asset may evolve from tool to transport, archive, exchange layer, defensive infrastructure, or world-history clue; the constant is a visible usage history that lets later importance feel accumulated rather than retrofitted.",
+      "failure_modes": [
+        "Later capabilities appear without prior friction, evidence, or an upgrade event.",
+        "One object becomes a universal answer and displaces character choice, allies, and institutions.",
+        "Reclassification contradicts earlier limits instead of explaining them."
+      ],
+      "originality_boundary": "Reuse only the staged-disclosure principle. Invent a different object class, function chain, limitation model, provenance, and symbolic role; do not reproduce any source artifact, meeting space, transport, or enhancement engine.",
+      "nrl_relevance": [
+        "Track each asset's current function, known provenance, owners, costs, and unrevealed questions in the state ledger.",
+        "Require every capability increase to cite an earlier clue and a present causal trigger."
+      ]
+    },
+    {
+      "mechanism_id": "CB18-M02",
+      "name": "Advantage as a Debt-Bearing Contract",
+      "source_book_ids": [
+        "book-12-7dd95a828fbe",
+        "book-15-04e1a336e29d",
+        "book-18-d53c5cc79ddd"
+      ],
+      "source_chunk_ids": [
+        "book-12-7dd95a828fbe-chunk-004",
+        "book-15-04e1a336e29d-chunk-006",
+        "book-18-d53c5cc79ddd-chunk-014"
+      ],
+      "abstract_rule": "A strong advantage should create a durable liability in another ledger: lifespan, identity stability, maintenance, exposure, resource debt, bodily vulnerability, or dependence on other people.",
+      "variation_pattern": "The cost can be paid immediately, accumulate as upkeep, activate under a countermeasure, or force a later recovery interval; different costs support different rhythms without changing the core exchange.",
+      "failure_modes": [
+        "The stated cost never changes a decision or outcome.",
+        "The liability is erased by the next upgrade.",
+        "Costs are added only as retrospective explanations after a convenient victory."
+      ],
+      "originality_boundary": "Do not copy any source's lifespan technique, contamination ladder, unique body, resource-feeding cycle, or named contract. Design a new causal exchange whose price follows from the new world's rules.",
+      "nrl_relevance": [
+        "Represent costs as typed state with due conditions and recovery rules.",
+        "Make planning and refusal possible by exposing the cost before commitment."
+      ]
+    },
+    {
+      "mechanism_id": "CB18-M03",
+      "name": "Thresholds That Change the Proof of Mastery",
+      "source_book_ids": [
+        "book-05-11dd686b8b15",
+        "book-11-61b03727048f",
+        "book-15-04e1a336e29d"
+      ],
+      "source_chunk_ids": [
+        "book-05-11dd686b8b15-chunk-008",
+        "book-11-61b03727048f-chunk-003",
+        "book-15-04e1a336e29d-chunk-003"
+      ],
+      "abstract_rule": "Major advancement should require a new category of proof rather than more of the previous resource: bodily integration, simultaneous-system control, enacted role competence, psychological stability, or public responsibility.",
+      "variation_pattern": "A threshold can be a preparation problem, a trial under pressure, an identity performance, a social authorization, or a synthesis of independent tracks; later thresholds should test wider consequences.",
+      "failure_modes": [
+        "Advancement is only a larger number with unchanged tactics and obligations.",
+        "The threshold test is declared but bypassed by an unrelated inheritance.",
+        "Repeated emergency breakthroughs remove the value of preparation."
+      ],
+      "originality_boundary": "Abstract the changing-proof structure only. Do not reuse source realm ladders, rituals, calamities, role titles, or signature advancement sequences.",
+      "nrl_relevance": [
+        "Define a proof type and observable state transition for every major tier.",
+        "Use failed or partial proofs to generate branches instead of automatic success."
+      ]
+    },
+    {
+      "mechanism_id": "CB18-M04",
+      "name": "Scope Expansion Through Constrained Rank Reset",
+      "source_book_ids": [
+        "book-01-45bcee82acba",
+        "book-03-0bc4648bf63c",
+        "book-05-11dd686b8b15",
+        "book-16-9cbf8da97dac"
+      ],
+      "source_chunk_ids": [
+        "book-01-45bcee82acba-chunk-005",
+        "book-03-0bc4648bf63c-chunk-003",
+        "book-05-11dd686b8b15-chunk-005",
+        "book-16-9cbf8da97dac-chunk-004"
+      ],
+      "abstract_rule": "When the setting widens, preserve prior gains but reduce their sufficiency by introducing a new jurisdiction, ecology, history, or coordination problem with distinct access rules.",
+      "variation_pattern": "The reset may follow migration, ascension, political absorption, a containment revelation, or interregional travel; it works best when an old competence remains useful in a narrower role while a new weakness becomes visible.",
+      "failure_modes": [
+        "The new region differs only by larger opponents and renamed ranks.",
+        "Earlier relationships and assets become irrelevant after relocation.",
+        "The reset strips agency so completely that prior mastery feels fraudulent."
+      ],
+      "originality_boundary": "Do not reproduce any source geography, realm transition, containment premise, star route, or cosmological hierarchy. Retain only the principle that wider scope changes the problem type.",
+      "nrl_relevance": [
+        "Record what transfers, what is restricted, and what new authority governs each scope transition.",
+        "Require each new region to change at least one ethical, strategic, and logistical constraint."
+      ]
+    },
+    {
+      "mechanism_id": "CB18-M05",
+      "name": "Private Obligation Becomes Institutional Responsibility",
+      "source_book_ids": [
+        "book-01-45bcee82acba",
+        "book-07-f82ccdb9a2b3",
+        "book-11-61b03727048f",
+        "book-14-1ba978345f70",
+        "book-17-3089d9aab05c"
+      ],
+      "source_chunk_ids": [
+        "book-01-45bcee82acba-chunk-002",
+        "book-07-f82ccdb9a2b3-chunk-007",
+        "book-11-61b03727048f-chunk-005",
+        "book-14-1ba978345f70-chunk-003",
+        "book-17-3089d9aab05c-chunk-007"
+      ],
+      "abstract_rule": "Let an initially personal debt, loss, or promise force the protagonist to build or reform an institution whose survival cannot depend on the protagonist's combat power alone.",
+      "variation_pattern": "The institution may be a coalition, city, school, reform network, defense command, or civic order; maturation is shown through delegated authority, logistics, successors, and disagreement among allies.",
+      "failure_modes": [
+        "The institution is only a prestige label for the protagonist.",
+        "All members agree automatically and contribute no independent capacity.",
+        "Collective problems are resolved by a solitary duel with no institutional consequence."
+      ],
+      "originality_boundary": "Do not reuse source factions, sect mergers, alliances, reform programs, military campaigns, or titles. Build a new organization from the needs and constraints of the original setting.",
+      "nrl_relevance": [
+        "Track offices, resources, doctrine, territory, dissent, and succession separately from protagonist state.",
+        "Make institutional decisions alter later scene options."
+      ]
+    },
+    {
+      "mechanism_id": "CB18-M06",
+      "name": "Operational Identity With Cumulative Exposure",
+      "source_book_ids": [
+        "book-06-b1b7934bf892",
+        "book-13-210acebeef12",
+        "book-15-04e1a336e29d",
+        "book-18-d53c5cc79ddd"
+      ],
+      "source_chunk_ids": [
+        "book-06-b1b7934bf892-chunk-006",
+        "book-13-210acebeef12-chunk-003",
+        "book-15-04e1a336e29d-chunk-003",
+        "book-18-d53c5cc79ddd-chunk-010"
+      ],
+      "abstract_rule": "A cover identity should grant specific access and obligations while accumulating behavioral, relational, and evidentiary traces that make later exposure more dangerous.",
+      "variation_pattern": "Identity change may arise from disguise, migration, reincarnation, possession pressure, social performance, or factional takeover; each identity should have a distinct audience and operational purpose.",
+      "failure_modes": [
+        "Aliases differ only in name and never alter behavior or access.",
+        "Exposure resets without social memory or damaged trust.",
+        "Multiple identities obscure agency because state transitions are not explicit."
+      ],
+      "originality_boundary": "Do not copy any source persona, reincarnation route, mask, avatar lattice, or secret-network role. Create new identity mechanics and audience-specific risks.",
+      "nrl_relevance": [
+        "Maintain identity, audience knowledge, evidence trail, promises, and exposure level as separate fields.",
+        "Require every adopted identity to solve one problem and create another."
+      ]
+    },
+    {
+      "mechanism_id": "CB18-M07",
+      "name": "Deferred Promise as a Structural Spine",
+      "source_book_ids": [
+        "book-04-bfe08b74de74",
+        "book-10-e27891938d93",
+        "book-11-61b03727048f"
+      ],
+      "source_chunk_ids": [
+        "book-04-bfe08b74de74-chunk-010",
+        "book-10-e27891938d93-chunk-004",
+        "book-10-e27891938d93-chunk-006",
+        "book-11-61b03727048f-chunk-006"
+      ],
+      "abstract_rule": "Establish a costly promise early, then let intermediate arcs change what fulfillment requires without allowing the promise to disappear from decisions, resource use, or relationship state.",
+      "variation_pattern": "The promise may concern rescue, restoration, return, protection, truth, or reunion; its progress can be measured through prerequisites, failed attempts, changing consent, and the price paid by both parties.",
+      "failure_modes": [
+        "The promise is recalled only immediately before payoff.",
+        "Fulfillment restores the past exactly and erases intervening change.",
+        "The promised person exists only as a passive reward."
+      ],
+      "originality_boundary": "Do not reuse source relationships, resurrection structures, captured-mentor plots, sacrifice outcomes, or reunion scenes. Use only the long-horizon obligation pattern.",
+      "nrl_relevance": [
+        "Model promise owner, beneficiary, prerequisites, consent, attempts, and irreversible costs.",
+        "Surface dormant promises when current choices threaten or advance them."
+      ]
+    },
+    {
+      "mechanism_id": "CB18-M08",
+      "name": "Early Anomaly Reframed as Systemic History",
+      "source_book_ids": [
+        "book-02-7624374abf2e",
+        "book-03-0bc4648bf63c",
+        "book-09-4f463d84ee63",
+        "book-10-e27891938d93"
+      ],
+      "source_chunk_ids": [
+        "book-02-7624374abf2e-chunk-001",
+        "book-03-0bc4648bf63c-chunk-003",
+        "book-09-4f463d84ee63-chunk-003",
+        "book-10-e27891938d93-chunk-008"
+      ],
+      "abstract_rule": "Plant an anomaly that matters locally, then later reveal it as evidence of an older system, political intervention, or damaged world rule while preserving its original observable facts.",
+      "variation_pattern": "The anomaly may be a restricted place, bodily condition, missing capacity, artifact behavior, or unexplained social taboo; later evidence should widen causality rather than simply relabel it.",
+      "failure_modes": [
+        "The reveal contradicts the original facts or depends on hidden information with no trace.",
+        "Every anomaly points to the same mastermind.",
+        "Historical explanation removes the character-level stakes that made the question compelling."
+      ],
+      "originality_boundary": "Do not reuse source sealed sites, bloodlines, divine identities, containment systems, collectible elements, or ancient wars. Design a new anomaly and historical cause.",
+      "nrl_relevance": [
+        "Store observation separately from interpretation so reclassification remains auditable.",
+        "Require later explanations to account for all earlier evidence and at least one prior mismatch."
+      ]
+    },
+    {
+      "mechanism_id": "CB18-M09",
+      "name": "Relationship State as a Constraint on Victory",
+      "source_book_ids": [
+        "book-08-322e84872b22",
+        "book-09-4f463d84ee63",
+        "book-15-04e1a336e29d",
+        "book-17-3089d9aab05c"
+      ],
+      "source_chunk_ids": [
+        "book-08-322e84872b22-chunk-003",
+        "book-09-4f463d84ee63-chunk-006",
+        "book-15-04e1a336e29d-chunk-007",
+        "book-17-3089d9aab05c-chunk-003"
+      ],
+      "abstract_rule": "Make a bond alter the available definition of success: protection, consent, friendship, family continuity, or preserved humanity rules out efficient but unacceptable victories.",
+      "variation_pattern": "The constraint may demand rescue during crisis, refusal of an order, self-limitation, shared decision, withdrawal from power, or acceptance of recovery rather than triumph.",
+      "failure_modes": [
+        "The bond is invoked rhetorically but never changes tactics.",
+        "One character's agency is erased so another can demonstrate devotion.",
+        "A later revival or reversal nullifies the cost of the relational choice."
+      ],
+      "originality_boundary": "Do not reproduce any source couple, family configuration, sacrifice, slumber, refusal scene, or specific rescue. Carry forward only the principle that relationships constrain optimization.",
+      "nrl_relevance": [
+        "Represent non-negotiable relational boundaries alongside goals.",
+        "Test climactic options against consent, trust, and prior promises before scoring success."
+      ]
+    },
+    {
+      "mechanism_id": "CB18-M10",
+      "name": "Coalition Capability From Independent Arcs",
+      "source_book_ids": [
+        "book-07-f82ccdb9a2b3",
+        "book-11-61b03727048f",
+        "book-17-3089d9aab05c",
+        "book-18-d53c5cc79ddd"
+      ],
+      "source_chunk_ids": [
+        "book-07-f82ccdb9a2b3-chunk-007",
+        "book-11-61b03727048f-chunk-006",
+        "book-17-3089d9aab05c-chunk-007",
+        "book-18-d53c5cc79ddd-chunk-010"
+      ],
+      "abstract_rule": "Build endgame scale by converging characters and factions that developed independent goals, assets, and costs, so the coalition can perform capabilities no single member owns.",
+      "variation_pattern": "Convergence may be formal alliance, temporary alignment, distributed defense, intelligence sharing, economic coordination, or parallel pressure on a stronger institution.",
+      "failure_modes": [
+        "Allies arrive only to witness the protagonist's victory.",
+        "Independent agendas vanish when the coalition forms.",
+        "Coordination has no logistical, informational, or political cost."
+      ],
+      "originality_boundary": "Do not reuse source alliances, armies, sects, regional wars, or inherited organizations. Construct participants from original prior arcs and preserve their reasons for joining or leaving.",
+      "nrl_relevance": [
+        "Track each member's contribution, red lines, command relationship, and exit condition.",
+        "Make coalition success depend on complementary capabilities established earlier."
+      ]
+    },
+    {
+      "mechanism_id": "CB18-M11",
+      "name": "Procedural Counterplay Over Raw Magnitude",
+      "source_book_ids": [
+        "book-14-1ba978345f70",
+        "book-15-04e1a336e29d",
+        "book-18-d53c5cc79ddd"
+      ],
+      "source_chunk_ids": [
+        "book-14-1ba978345f70-chunk-003",
+        "book-15-04e1a336e29d-chunk-002",
+        "book-18-d53c5cc79ddd-chunk-009"
+      ],
+      "abstract_rule": "Resolve high-level conflict through auditable interactions among timing, position, permissions, substitutions, resource flow, and counter-rules rather than by declaring a larger force.",
+      "variation_pattern": "The procedure can take the form of calculation, ritual, formation, investigation, engineering, layered defense, or exploit of a known rule; multiple domains may combine if their interfaces are explicit.",
+      "failure_modes": [
+        "A counter-rule is introduced only after the conflict begins.",
+        "Technical language masks an outcome with no causal steps.",
+        "The protagonist always finds a loophole while opponents never learn."
+      ],
+      "originality_boundary": "Do not copy source rituals, arrays, formulas, named techniques, or power taxonomies. Reuse only the commitment to visible inputs, transformations, limits, and counters.",
+      "nrl_relevance": [
+        "Represent conflict mechanisms as preconditions, operations, outputs, and failure states.",
+        "Validate that every decisive counter was knowable before use."
+      ]
+    },
+    {
+      "mechanism_id": "CB18-M12",
+      "name": "Material and Economic Substrate for Progression",
+      "source_book_ids": [
+        "book-05-11dd686b8b15",
+        "book-14-1ba978345f70",
+        "book-18-d53c5cc79ddd"
+      ],
+      "source_chunk_ids": [
+        "book-05-11dd686b8b15-chunk-002",
+        "book-14-1ba978345f70-chunk-002",
+        "book-18-d53c5cc79ddd-chunk-014"
+      ],
+      "abstract_rule": "Treat capability as the output of supply, production, maintenance, exchange, infrastructure, and labor, allowing economic choices to create strategic options and vulnerabilities.",
+      "variation_pattern": "The substrate may be personal inventory, workshop capacity, transport links, distributed manufacturing, territory, market access, or recurring upkeep; scale changes by reorganizing production, not merely finding rarer treasure.",
+      "failure_modes": [
+        "Resources are counted until the plot needs them, then become unlimited.",
+        "Production has no time, labor, transport, or security constraints.",
+        "Economic detail never affects relationships, institutions, or tactics."
+      ],
+      "originality_boundary": "Do not reuse any source currency, market, cultivation commodity, production device, transport system, or resource ecology. Build an original material chain tied to the new setting.",
+      "nrl_relevance": [
+        "Maintain inventories, rates, dependencies, locations, and maintenance deadlines.",
+        "Use shortages and reallocations as causal plot events rather than decorative accounting."
+      ]
+    },
+    {
+      "mechanism_id": "CB18-M13",
+      "name": "Ordinary-Life Counterpressure on Epic Scale",
+      "source_book_ids": [
+        "book-06-b1b7934bf892",
+        "book-09-4f463d84ee63",
+        "book-17-3089d9aab05c"
+      ],
+      "source_chunk_ids": [
+        "book-06-b1b7934bf892-chunk-008",
+        "book-09-4f463d84ee63-chunk-006",
+        "book-17-3089d9aab05c-chunk-007"
+      ],
+      "abstract_rule": "Alternate large-scale danger with concrete routines, care work, humor, food, repair, grief, or local duty that continues to matter causally rather than serving as disposable relief.",
+      "variation_pattern": "Counterpressure can occur before a crisis to define what is at stake, during it to force divided attention, or after it to reveal damage and altered relationships; tonal contrast should arise from character practice.",
+      "failure_modes": [
+        "Comic beats trivialize injury or sacrifice.",
+        "Domestic material pauses the plot but changes nothing.",
+        "Epic escalation removes all low-scale viewpoints and makes stakes abstract."
+      ],
+      "originality_boundary": "Do not imitate source jokes, foods, sayings, domestic pairings, battle imagery, or prose rhythm. Use original concrete practices appropriate to the new culture and characters.",
+      "nrl_relevance": [
+        "Reserve recurring low-scale motifs for particular relationships and communities.",
+        "Check that every major escalation preserves at least one affected ordinary process."
+      ]
+    },
+    {
+      "mechanism_id": "CB18-M14",
+      "name": "Legacy Transfer as Role Reassignment",
+      "source_book_ids": [
+        "book-10-e27891938d93",
+        "book-14-1ba978345f70",
+        "book-17-3089d9aab05c"
+      ],
+      "source_chunk_ids": [
+        "book-10-e27891938d93-chunk-006",
+        "book-14-1ba978345f70-chunk-007",
+        "book-17-3089d9aab05c-chunk-001"
+      ],
+      "abstract_rule": "When knowledge, authority, or an asset passes between generations or roles, transfer the associated debt and decision burden as well as capability, allowing dependents, mentors, and successors to exchange positions over time.",
+      "variation_pattern": "Transfer may occur through rescue, retirement, sacrifice, appointment, unfinished work, or custody of a legacy object; the recipient can reinterpret or refuse part of the inheritance.",
+      "failure_modes": [
+        "Inheritance functions as an unearned power package.",
+        "The predecessor's unresolved obligations vanish at transfer.",
+        "Successors merely imitate the predecessor and gain no independent direction."
+      ],
+      "originality_boundary": "Do not reuse source mentors, weapons, inheritances, sacrifices, rescues, or succession titles. Design a distinct transfer medium and an original dispute over what must continue.",
+      "nrl_relevance": [
+        "Attach obligations, restrictions, witnesses, and unresolved claims to every transfer event.",
+        "Track how the recipient changes the inherited practice rather than only gaining it."
+      ]
+    },
+    {
+      "mechanism_id": "CB18-M15",
+      "name": "Typed State Transitions for Unstable Identity",
+      "source_book_ids": [
+        "book-06-b1b7934bf892",
+        "book-08-322e84872b22",
+        "book-13-210acebeef12",
+        "book-15-04e1a336e29d",
+        "book-18-d53c5cc79ddd"
+      ],
+      "source_chunk_ids": [
+        "book-06-b1b7934bf892-chunk-006",
+        "book-08-322e84872b22-chunk-004",
+        "book-13-210acebeef12-chunk-003",
+        "book-15-04e1a336e29d-chunk-007",
+        "book-18-d53c5cc79ddd-chunk-014"
+      ],
+      "abstract_rule": "Treat death, apparent death, possession, reincarnation, memory alteration, split embodiment, disguise, corruption, and recovery as distinct states with explicit transition evidence and retained consequences.",
+      "variation_pattern": "A transition can change body, memory, agency, public identity, allegiance, capability, or relationship availability independently; complex arcs become legible when these dimensions are not collapsed into alive/dead or self/other binaries.",
+      "failure_modes": [
+        "Restoration silently returns every field to an earlier state.",
+        "Characters act on knowledge they did not retain across the transition.",
+        "Public identity, bodily identity, and subjective identity are treated as interchangeable."
+      ],
+      "originality_boundary": "Do not copy any source reincarnation system, possession logic, split body, memory seal, pathway, or resurrection. Use a new ontology and specify its transition rules.",
+      "nrl_relevance": [
+        "Maintain separate ledgers for body, memory, agency, identity claims, witnesses, allegiance, and relationship status.",
+        "Reject continuity updates that lack a transition event or evidence source."
+      ]
+    },
+    {
+      "mechanism_id": "CB18-M16",
+      "name": "Climactic Convergence of Previously Independent Systems",
+      "source_book_ids": [
+        "book-10-e27891938d93",
+        "book-11-61b03727048f",
+        "book-14-1ba978345f70",
+        "book-17-3089d9aab05c"
+      ],
+      "source_chunk_ids": [
+        "book-10-e27891938d93-chunk-008",
+        "book-11-61b03727048f-chunk-006",
+        "book-14-1ba978345f70-chunk-008",
+        "book-17-3089d9aab05c-chunk-007"
+      ],
+      "abstract_rule": "Earn a climax by making several established systems converge: personal mastery, an earlier mystery, institutional capacity, a relationship cost, and a known counter-rule should each perform a non-substitutable function.",
+      "variation_pattern": "Convergence can be sequential, simultaneous, distributed across viewpoints, or dependent on sacrifice and succession; the resolution should expose why no single earlier system was sufficient.",
+      "failure_modes": [
+        "A new final-stage power makes prior systems ceremonial.",
+        "The convergence is only a list of callbacks with no interaction.",
+        "A sacrifice substitutes for missing causal setup."
+      ],
+      "originality_boundary": "Do not reproduce any source final battle, seal, alliance, artifact chain, realm, or sacrifice. Compose a new resolution from mechanisms already native to the original project.",
+      "nrl_relevance": [
+        "Require each climactic input to have an earlier state history and a unique function.",
+        "Validate the ending against unresolved promises, costs, and institutional consequences before closure."
+      ]
+    }
+  ],
+  "corpus_level_findings": {
+    "long_form_vitality": [
+      "Long serials remain vital when escalation changes the kind of problem while retaining earlier assets, relationships, promises, and local places as active constraints.",
+      "Durable hooks are usually stateful questions with intermediate consequences: an object's provenance, a person's recoverability, an institution's survival, a concealed identity, or a rule whose origin is unknown.",
+      "Progression stays legible when each threshold changes capability, proof, social position, and responsibility instead of only increasing magnitude.",
+      "Secondary characters sustain breadth when they acquire independent offices, loyalties, costs, and exit conditions that can later converge without becoming extensions of the protagonist.",
+      "Large-scale endings feel earned when they recombine established systems and close the central obligation even if one bounded horizon remains open.",
+      "Tonal variation is structural rather than decorative: ordinary routines, practical humor, grief, care, and institutional work keep cosmic stakes measurable."
+    ],
+    "anti_ai_prose_lessons": [
+      "Do not substitute uniform grandeur, reaction crowds, stacked superlatives, or repeated reversal cadences for changes in causality and character choice.",
+      "Ground abstract systems in concrete operations, sensory consequences, resource limits, and viewpoint-specific misunderstandings instead of generic explanatory summary.",
+      "Preserve asymmetry of voice and attention: different characters should notice different risks, use different metaphors, and leave different matters unsaid.",
+      "Let quiet aftermath, unfinished work, awkward negotiation, and material repair remain on the page; constant climax erases texture and consequence.",
+      "Avoid formulaic emotional labeling. Show bonds through costly choices, changed routines, retained objects, broken permissions, and revised plans.",
+      "Do not imitate any source's diction, title rhythm, jokes, epithets, cultural packages, or signature imagery; abstraction belongs in planning and validation, not in borrowed surface style."
+    ],
+    "continuity_system_lessons": [
+      "Use synchronized ledgers for character body, memory, agency, location, role, allegiance, relationship status, injuries, resources, and unresolved promises.",
+      "Store observations separately from interpretations so a later revelation can reclassify evidence without rewriting what was previously seen.",
+      "Treat aliases, possession, reincarnation, apparent death, recovery, corruption, and split embodiment as typed transitions with explicit evidence and retained costs.",
+      "Track artifact ownership, location, damage, known functions, activation conditions, upgrades, and provenance; reject unrecorded capability growth.",
+      "Track faction rulers, doctrine, territory, logistics, alliances, losses, succession, and member knowledge independently from protagonist power.",
+      "Bind every foreshadowing payoff to a valid prior clue, and distinguish intended ambiguity from unresolved contradiction.",
+      "Separate source-text corruption, numbering anomalies, analysis inference, and world-internal contradiction so editorial defects never become canon.",
+      "After time travel or history alteration, version events by timeline and recalculate who knows what rather than merging incompatible histories."
+    ],
+    "creation_family_findings": {
+      "characters": [
+        "Build protagonists around a productive contradiction that survives scale changes, then make advancement alter duties, relationships, and available choices.",
+        "Give major supporting characters trajectories that can diverge, refuse, retire, govern, betray, or succeed independently."
+      ],
+      "npcs": [
+        "Assign recurring NPCs durable functions, knowledge limits, locations, and state changes so they carry history rather than provide single-use exposition.",
+        "Use low-status and local NPCs to preserve the consequences of institutional and large-scale decisions."
+      ],
+      "factions": [
+        "Differentiate factions through resource base, doctrine, succession, territory, logistics, and internal disagreement rather than power tier alone.",
+        "Let alliances emerge from compatible needs and bounded concessions, with contributions and exit conditions tracked."
+      ],
+      "artifacts": [
+        "Design artifacts with narrow verbs, explicit conditions, ownership history, and staged disclosure; symbolic meaning should grow from use.",
+        "Separate portable tools, institutional infrastructure, archives, and world-rule interfaces so no object becomes a universal solution."
+      ],
+      "techniques": [
+        "Define techniques by inputs, operations, outputs, counters, and costs, then let mastery progress from use to synthesis or authorship.",
+        "Keep parallel technical paths distinct long enough that combining them is a consequential choice rather than automatic accumulation."
+      ],
+      "naming": [
+        "Use names to encode function, culture, social position, or historical layer, while maintaining canonical alias mappings and avoiding title inflation.",
+        "Do not borrow source terminology, myth packages, cadence, or recognizable naming families; generate names from the new world's own institutions and language history."
+      ],
+      "emotional_bonds": [
+        "Represent bonds through obligations, consent, trust, shared practice, changed decisions, and irreversible costs rather than declarations alone.",
+        "Give every participant an independent goal so rescue, reunion, separation, and sacrifice cannot reduce one person to another's reward."
+      ],
+      "foreshadowing": [
+        "Attach long-range setup to portable evidence, repeated constraints, vows, institutional records, or anomalies that can change meaning across contexts.",
+        "A payoff should preserve the original observation, answer the central question, and create consequences proportionate to the waiting time."
+      ],
+      "state_ledger": [
+        "Maintain typed, source-linked state for people, artifacts, factions, promises, timelines, and knowledge distribution.",
+        "Require every major transition to record prior state, trigger, resulting state, retained consequences, witnesses, and unresolved uncertainty."
+      ]
+    }
+  }
+}

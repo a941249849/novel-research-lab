@@ -1,0 +1,138 @@
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "chunk_id": "book-05-11dd686b8b15-chunk-003",
+  "source_file": "novel_training_set/《凡人修仙传》（校对版全本+番外）作者：忘语.txt",
+  "source_file_sha256": "11dd686b8b151694b37460b52991a4f00eda8f5fabe86b507e74f321e10a7428",
+  "start_byte": 3000153,
+  "end_byte": 4500238,
+  "chunk_sha256": "c3711614232b4341f51b1b8d5cd1254a59225e29ee64bf0971d226afadedc0fd",
+  "source_encoding": "gb18030",
+  "bounded_chunk_utf8_sha256": "68441bf3668a77e0687badf1e08bca8ea3fefc5016f04bc4e942fc2b89a85d02",
+  "analysis": {
+    "chapter_span": [
+      "第五百六十七章 天兆",
+      "第八百一十九章 诱伏"
+    ],
+    "major_events": [
+      "Yuan Yao prepares to perform the Resurrection Technique (还魂术) in a secluded valley to save Yan Li, while Han Li sets up array protections and guards the location. (Anchor: 第五百六十七章 天兆)",
+      "Wen Tianren, the successor of the Six Paths (六道传人), detects the spiritual energy fluctuations, resulting in a confrontation and battle with Han Li. (Anchor: 第五百七十章 强敌)",
+      "The battle escalates as Wen Tianren utilizes the Eight Gates Golden Light Mirror (八门金光镜) and Golden Light Divine Flame (金光神焰) to trap Han Li. (Anchor: 第五百七十四章 八门金光镜)",
+      "The spatial anomaly known as the Ghost Mist (鬼雾) suddenly manifests, swallowing Han Li, Wen Tianren, and others into its depths. (Anchor: 第五百七十六章 鬼雾现)",
+      "Han Li wakes up in the Land of Nether (阴冥之地), a magic-less world where all cultivation is blocked, and meets female cultivator Mei Ning. (Anchor: 第五百七十八章 黑暗奇遇)",
+      "Han Li and Mei Ning travel together, eventually seeking shelter in a walled human survivor village. (Anchor: 第五百八十章 高墙村落)",
+      "Han Li uses physical martial arts to fight off Nether beasts (阴兽) and gathers beast crystals (兽晶) and stone talismans (石符). (Anchor: 第五百八十一章 巨兽来袭)",
+      "Mei Ning utilizes her Jade Phoenix Marrow Body (通玉凤髓之身) to transfer connection spiritual energy (通灵之气) to Han Li, temporarily restoring his magic. (Anchor: 第五百八十七章 通灵之气)",
+      "Han Li uses his temporarily restored magic to open his storage bags and lead the survivors to escape the Land of Nether via the Windy Mountain (暴风山). (Anchor: 第五百八十八章 暴风山顶)",
+      "Returning to the Heavenly South, Han Li joins the Luo Yun Sect (落云宗) as a low-profile outer disciple to quietly prepare for his Nascent Soul breakthrough. (Anchor: 第五百九十七章 落云宗)",
+      "Han Li joins other disciples on a mission to Green Trace Swamp (绿踪沼泽) to capture a Snow Cloud Fox (雪云狐), encountering a powerful zombie (尸魈) in an ancient cave. (Anchor: 第六百零七章 绿踪沼泽)",
+      "Han Li represents the sect in the Three Sects Sword Trial (三派试剑) but maintains a low profile during his matches. (Anchor: 第六百二十七章 三派试剑（上）)",
+      "Han Li retreats to Little Stone Mountain (小石山) and successfully breaks through to the Nascent Soul (元婴) stage, triggering massive regional visions. (Anchor: 第六百三十七章 结婴（上）)",
+      "Fulfilling his promise to the deceased Xin Ruyin, Han Li travels to Yuanwu Country and completely wipes out the treacherous Fu Family (付家) fortress. (Anchor: 第六百五十三章 灭族（上）)",
+      "Han Li meets with the Marquis of Nanlong (南陇侯) and other Nascent Soul experts to plan a joint expedition to Devil Fall Valley (坠魔谷). (Anchor: 第六百八十七章 苍坤遗宝)",
+      "Han Li sneaks into the Masking Moon Sect (掩月宗) and meets Nangong Wan, clashing with the sect's Great Elder to resolve her forced marriage. (Anchor: 第七百一十七章 识破与伏击)",
+      "Han Li and the Marquis of Nanlong obtain the two Rings (两仪环), which are key to surviving the restrictions in Devil Fall Valley. (Anchor: 第七百二十章 指环)",
+      "The border war between the Heavenly South Coalition and the Mulan Plains cultivators breaks out, and Han Li joins the conflict. (Anchor: 第七百六十七章 边界之战（一）)",
+      "Han Li excels in the border battles but is chased by the powerful Mulan Divine Master (仲神师), escaping using the Blood Shadow Evading technique (血影遁). (Anchor: 第七百四十七章 名声渐起)",
+      "Han Li and his companions successfully enter the Devil Fall Valley, dodging spatial cracks and ancient traps. (Anchor: 第八百零七章 入谷)",
+      "The party reaches the lava lake in the valley's inner depths, where Han Li uses a white wolf puppet to lure out the Fire Toad ancient beast (火蟾古兽). (Anchor: 第八百一十九章 诱伏)"
+    ],
+    "character_state_transitions": [
+      "Han Li transitions from a Core Formation (结丹) late-stage cultivator to a powerless, magic-blocked prisoner in the Land of Nether. (Anchor: 第五百七十八章 黑暗奇遇)",
+      "Han Li transitions from a magic-blocked state back to a temporarily magic-capable state after receiving Mei Ning's '通灵之气'. (Anchor: 第五百八十七章 通灵之气)",
+      "Han Li transitions from the Core Formation stage to the Nascent Soul (元婴) stage after breaking through at Little Stone Mountain. (Anchor: 第六百三十七章 结婴（上）)",
+      "Han Li transitions from a low-profile guest disciple hiding in the Luo Yun Sect to a famous Nascent Soul elder of the sect. (Anchor: 第七百四十七章 名声渐起)",
+      "Yuan Yao transitions from a Core Formation cultivator to a state of shattered Core (碎丹) after sacrificing her cultivation for the Resurrection Technique. (Anchor: 第五百六十七章 天兆)",
+      "Yuan Yao transitions from a living human cultivator to a half-ghost, half-cultivator entity due to the incomplete spell and Ghost Mist encounter. (Anchor: 第五百七十六章 鬼雾现)",
+      "Mei Ning transitions from a captive in the Ghost Mist to a survivor in the Land of Nether, sacrificing her virginity/marrow energy to help Han Li. (Anchor: 第五百八十七章 通灵之气)",
+      "Nangong Wan transitions from being trapped under a sect restriction and forced into a marriage alliance to being rescued by Han Li and reunited with him. (Anchor: 第七百一十七章 识破与伏击)",
+      "Wen Tianren transitions from the powerful and arrogant successor of the Six Paths to a casualty of the Ghost Mist and later deceased in the Land of Nether. (Anchor: 第五百七十六章 鬼雾现)",
+      "Fu Family Ancestor transitions from a powerful patriarch of the Fu Family to being decapitated by Han Li as vengeance for Xin Ruyin. (Anchor: 第六百五十四章 灭族（下）)",
+      "The Marquis of Nanlong transitions from a solitary cultivator seeking a breakthrough near the end of his lifespan to the leader of the Devil Fall Valley expedition. (Anchor: 第七百二十七章 火蟾古兽)"
+    ],
+    "long_form_mechanisms": [
+      "The Resurrection Technique (还魂术) requires a highly concentrated Yin environment (玄阴之地) and the caster must sacrifice their Golden Core (碎丹) to stabilize a fading soul. (Anchor: 第五百六十七章 天兆)",
+      "The Land of Nether (阴冥之地) acts as a magic-less realm (绝灵之地) where cultivators cannot use spiritual energy or open storage bags, forcing them to rely on physical martial arts and beast crystals. (Anchor: 第五百八十二章 阴冥之地)",
+      "The Jade Phoenix Marrow Body (通玉凤髓之身) is a rare constitution allowing a female cultivator to store and transfer pure connection spiritual energy (通灵之气) to a male partner via dual cultivation, temporarily bypassing magic restrictions. (Anchor: 第五百八十七章 通灵之气)",
+      "The Nine-Curve Spiritual Ginseng (九曲灵参) is cultivated using Han Li's green liquid to endlessly harvest its juice for Nascent Soul pills without killing the sentient plant. (Anchor: 第六百三十七章 结婴（上）)",
+      "The Nascent Soul Breakthrough (结婴) process requires shattering the Golden Core under immense pressure and shaping the energy into a Nascent Soul, which triggers massive weather-like celestial visions (天兆). (Anchor: 第六百三十七章 结婴（上）)",
+      "Geng Metal (庚精) integration into flying swords dramatically increases their sharp properties and structural resilience, allowing the creation of the Geng Metal Sword Formation (庚精剑阵). (Anchor: 第七百八十六章 剑阵初成)",
+      "The Liangyi Rings (两仪环) Yin and Yang pair emits a protective light that shields cultivators from the deadly North Polar Primeval Light (北极元光) in Devil Fall Valley. (Anchor: 第七百二十章 指环)",
+      "The Blood Shadow Evading Technique (血影遁) allows rapid flight over 100 miles at the cost of consuming the user's essence blood, resulting in deep, long-term physical weakness. (Anchor: 第七百四十七章 名声渐起)",
+      "The Forbidden Possession/Attachment Technique (附灵术) allows a cultivator to merge with a spiritual beast for a massive temporary power boost, but permanently mutates their body and blocks reincarnation. (Anchor: 第七百三鸣章 附灵蛇怪)"
+    ],
+    "continuity_observations": [
+      "The Land of Nether's magic-less rules are consistently maintained; even Nascent Soul cultivators cannot bypass it except through rare bodily constitutions like the Jade Phoenix Marrow. (Anchor: 第五百八十二章 阴冥之地)",
+      "The Ghost Mist is originally introduced as a natural spatial fissure disaster, but is later revealed to be the biological feeding mechanism of the colossal beast Luo Hu (罗T). (Anchor: 第五百八十三章 罗T与大晋皇朝)",
+      "Han Li's cautious nature is preserved by waiting until he is a Nascent Soul ancestor before taking revenge on the Fu Family, showing logical progression. (Anchor: 第六百五十三章 灭族（上）)",
+      "Geng Metal is acquired in trade fairs and consistently referenced during the subsequent refining process of the Bamboo Cloud Bee Swarm Swords. (Anchor: 第七百八十六章 剑阵初成)",
+      "Nangong Wan's political value to the Masking Moon Sect aligns with themes of sects treating high-level members as leverage in marriage alliances. (Anchor: 第七百一十七章 识破与伏击)",
+      "The acquisition of the Yin Ring from Nangong Wan's sister logically connects to the subsequent discovery of the Yang Ring by the Marquis of Nanlong. (Anchor: 第七百二十章 指环)",
+      "The scale of the Mulan Plains War is consistently portrayed, highlighting the contrast between the organized tribal structure of Mulan and Tainan's fragmented sects. (Anchor: 第七百六十七章 边界之战（一）)",
+      "The setup of the Fire Toad ancient beast's fire attacks needing Han Li's dry-blue ice flame is introduced by the Marquis of Nanlong and resolved during the actual confrontation. (Anchor: 第八百一十九章 诱伏)"
+    ],
+    "style_observations": [
+      "Narration is highly calculated and resource-oriented, detailing Han Li's risks, benefits, and magic tool consumption in a step-by-step manner. (Anchor: 第五百六十七章 天兆)",
+      "Combat sequences are described with technical precision regarding elemental properties, counters, and array laws rather than abstract poetic prose. (Anchor: 第五百七十四章 八门金光镜)",
+      "Interpersonal relationships are treated as transactional alliances based on mutual safety and benefits rather than pure sentimentality. (Anchor: 第五百九十七章 落云宗)",
+      "Environmental changes are abrupt and driven by spatial disasters or sudden realm crossings to disrupt training arcs and create high-stakes tension. (Anchor: 第五百七十六章 鬼雾现)",
+      "Substantial sections of the text focus on procedural craft-related subplots like refining pills, weapon forging, and herb cultivation. (Anchor: 第六百三十七章 结婴（上）)",
+      "Mass battle scenes are characterized by a focus on troop configurations, uniform equipment discrepancies, and team tactics. (Anchor: 第七百六十七章 边界之战（一）)"
+    ],
+    "creation_family_evidence": {
+      "encoding_artifacts": {
+        "systemic_mojibake_replacement": "A systematic character replacement occurs where the character '光' (light) is corrupted and replaced by the character '鞯' (saddle) across multiple chapters.",
+        "mojibake_examples": [
+          {
+            "corrupted_text": "一张放着蓝鞯挠翊玻",
+            "intended_text": "一张放着蓝光的玉床",
+            "chapter": "第七百章 瓜分"
+          },
+          {
+            "corrupted_text": "一件蓝鞯木Я列《埽",
+            "intended_text": "一件蓝光闪闪的小盾",
+            "chapter": "第七百二五章 初见玉符"
+          },
+          {
+            "corrupted_text": "先拿起那面蓝鞯男《堋",
+            "intended_text": "先拿起那面蓝光闪闪的小盾",
+            "chapter": "第七百二五章 初见玉符"
+          },
+          {
+            "corrupted_text": "随后放出了一口白鞯姆傻斗ū",
+            "intended_text": "随后放出了一口白光的飞刀法宝",
+            "chapter": "第七百零一章 算计"
+          },
+          {
+            "corrupted_text": "而白鞯",
+            "intended_text": "白光",
+            "chapter": "第七百六十八章 边界之战（二）"
+          },
+          {
+            "corrupted_text": "是一把青鞯拿阅",
+            "intended_text": "是一把青光的迷你/模拟",
+            "chapter": "第七百八十六章 剑阵初成"
+          },
+          {
+            "corrupted_text": "一个绿鞯墓牌咏Ｇ",
+            "intended_text": "一个绿光的骨牌与青光",
+            "chapter": "第六百六十三章 噬金灵剑"
+          },
+          {
+            "corrupted_text": "青飨脊饧ど涠出",
+            "intended_text": "青色霞光激射而出",
+            "chapter": "第六百四十五章 颠凤培元功"
+          }
+        ],
+        "byte_shift_analysis": "The corruption is characterized by a byte alignment shift. When the character '光' (GBK: b9e2) is replaced or shifted, it results in the byte f7b5 which maps to '鞯'. The surrounding characters are then read out of alignment, causing successive characters to warp into garbled strings such as '木Я列《埽' (representing '闪闪的小盾'), '姆' ('的'), '傻' ('飞'), '斗' ('刀'), and special symbols like 'ū' (Greek/Cyrillic map ord 363), 'Τ' (ord 932), 'ど' (Japanese hiragana ord 12393), and 'Я' (Cyrillic ord 1071)."
+      }
+    },
+    "originality_risks": [
+      "The 'magic-less realm' trope (Land of Nether) strips the protagonist of all powers to artificially force tension and rely on physical skills. (Anchor: 第五百七十八章 黑暗奇遇)",
+      "The 'special virgin constitution dual cultivation' trope (Mei Ning's Jade Phoenix Marrow) is a highly derivative device used to give the male lead a quick power boost and force a romantic bond. (Anchor: 第五百八十七章 通灵之气)",
+      "The 'disguised low-level disciple hiding in a sect' trope (Luo Yun Sect outer disciple) is a common xianxia cliche used to slow down power creep and create predictable minor conflict scenarios. (Anchor: 第五百九十七章 落云宗)",
+      "The 'total clan extermination' vengeance trope (wiping out the Fu Family fortress) is a standard retribution template in web serials to demonstrate the protagonist's newfound power. (Anchor: 第六百五十三章 灭族（上）)",
+      "The 'coincidental matching key' plot convenience (Yin-Yang Liangyi Rings held by Han Li and Nanlong侯 respectively) serves to force two unrelated storylines to converge. (Anchor: 第七百二十章 指环)"
+    ]
+  }
+}

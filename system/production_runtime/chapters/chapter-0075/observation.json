@@ -1,0 +1,137 @@
+{
+  "chapter_id": "chapter-0075",
+  "draft_sha256": "c92dff1d53450fb54340aa530ac4268a775d56283ceab8c62d30cb522b6f0f04",
+  "facts": {
+    "characters": [],
+    "npcs": [],
+    "locations": [],
+    "factions": [
+      {
+        "fact_id": "fact-0075-001",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_enforcement_record",
+        "before": "命籍衙在白裂处登记“保管污染，待验禁修”，尚未明确禁修期间的具体执行范围。",
+        "after": "命籍衙明确禁止补阵、覆盖和续接白裂段阵纹，并以协助隐匿高暴露对象为由将泥灯巷列入临时协助隐匿审查；禁修未撤。",
+        "evidence": "记录吏宣布此段不得补、不得覆、不得续接，动阵将续记污染，泥灯巷一并列入协助隐匿；最终宣布“临时协助隐匿审查”“泥灯巷留验”“禁修不撤”。"
+      },
+      {
+        "fact_id": "fact-0075-002",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_communal_response",
+        "before": "泥灯巷各户自行守灯，保留公共通道，不替陆沉渊续火。",
+        "after": "泥灯巷拒绝调用住户命火补阵，以不接触灰印和阵纹的旧门板在裂口外挡风，并公开要求记录禁修造成的寒损。",
+        "evidence": "巷民没有送灯靠近裂口，立起距灰印一掌外的旧门板挡风；苏晚要求记录“住户命火未调用”及禁修后寒气入巷。"
+      },
+      {
+        "fact_id": "fact-0075-003",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_witness_boundary",
+        "before": "不为陆沉渊续火，保留公共出入通道，各户自行守灯。",
+        "after": "共同体明确守住“没动阵、没交火、没替人续寿”的边界，并允许记录寒损但不替任何人背账。",
+        "evidence": "苏晚声明谁冻着谁自己说、谁要走自己走，并要求记巷子没动阵、没交火、没替人续寿；夜间无人碰灰印或把灯送到裂口前。"
+      }
+    ],
+    "artifacts": [],
+    "techniques": [],
+    "relationships": [
+      {
+        "fact_id": "fact-0075-004",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_collective_choice",
+        "before": "住户继续各自守灯，不替陆沉渊续火，同时共同保留一条不封闭的出入通道。",
+        "after": "住户共同拒绝为陆沉渊或护阵调用命火，转而以公开见证寒损、旧门板挡风和保持空地来承担禁修后果。",
+        "evidence": "苏晚拒绝让任何住户挪灯并说明不替谁答应；巷民以门板挡风，守灯人保持裂口前空地，陆沉渊也被要求不以自身顶住缺口。"
+      },
+      {
+        "fact_id": "fact-0075-005",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_collective_emotion",
+        "before": "共同体在恐惧与谨慎中维持距离，既未赶走陆沉渊，也未为他增加灯火和伤势照护。",
+        "after": "共同体在寒损压力下未将责任全部推给陆沉渊，而是把争执转为禁修者应记录并承担实际寒损；同时仍未为他续火或提供额外取暖。",
+        "evidence": "苏晚说“谁禁的，谁看着它漏”，又明确裂口不是陆沉渊的债、自己的灯也不该填；陆沉渊始终站在外侧风口。"
+      }
+    ],
+    "emotions": [],
+    "information": [
+      {
+        "fact_id": "fact-0075-006",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "information.current_recorded_sequence",
+        "before": "现场记录锁定为命灯外层先亮“独立追缴”，随后白裂旁暖墙阵纹亮起；灰印在墙先暗后落印。",
+        "after": "记录中新增现场无续接痕，且禁修期间寒损沿白裂进入巷内；命籍衙仍只登记观察，不撤销禁修。",
+        "evidence": "铜盘未出现补纹，记录吏确认“现场无续接痕”；霜沿墙脚和地面向巷内扩展，最终记录吏将相关事项写入小签。"
+      },
+      {
+        "fact_id": "fact-0075-007",
+        "asset_id": "state_ledger_faction_pressure",
+        "field_path": "state_ledger.faction_pressure",
+        "before": "压力停留在接触复核层级；三次同序不足排除主动写入，也不足认定主动写入。",
+        "after": "既有势力压力上升为命籍衙禁修登记、临时协助隐匿审查与寒损复核共同结算，泥灯巷和陆沉渊均被留验。",
+        "evidence": "记录吏宣布泥灯巷列入协助隐匿，随后将“泥灯巷留验、陆沉渊留验、苏晚陈述附卷、禁修不撤”写入记录。"
+      },
+      {
+        "fact_id": "fact-0075-008",
+        "asset_id": "state_ledger_mudlamp_array_integrity",
+        "field_path": "state_ledger.current_visible_integrity_consequence",
+        "before": "白裂固定扩大，阵纹彻底暗去并留下难以弥补的豁口。",
+        "after": "禁修期间白裂继续裸露，寒气和霜沿裂隙向巷内扩展，护阵没有因门板挡风或余火而恢复。",
+        "evidence": "正文反复描写冷气从白裂进入巷内、霜沿缝隙爬开；门板只挡风，裂口未盖、阵纹未接，夜间寒风仍穿过缺口。"
+      },
+      {
+        "fact_id": "fact-0075-009",
+        "asset_id": "state_ledger_resident_lifefire_reserve",
+        "field_path": "state_ledger.current_transaction_debit",
+        "before": "住户命火在此前对峙及撤守过程中未被调用、转移或扣减。",
+        "after": "本章禁修期间住户命火仍未调用、转移或扣减，各户继续自行持有自己的灯火。",
+        "evidence": "苏晚明确要求记录“住户命灯未入阵，没人挪灯，没人给墙续火”；夜深后各户只压低自家灯盏，无灯送至裂口。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "fact-0075-010",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "hook.current_direction",
+        "before": "灰印压在白裂后，银灰沿细缝缩回，未向陆沉渊或苏晚命灯蔓延。",
+        "after": "寒风穿过禁修缺口时，灰印内外出现方向相反的火屑：外层被风压向泥灯巷，内层银灰贴在裂缝深处，未向封档回流。",
+        "evidence": "结尾明确写出外层火屑朝泥灯巷里扑，内层银灰逆风贴住裂缝深处，始终没有向封档方向回流。"
+      },
+      {
+        "fact_id": "fact-0075-011",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "hook.unread_migration_clause",
+        "before": "灰印及银灰停留在白裂细缝和旧压痕之间，没有转移到陆沉渊身体或苏晚命灯。",
+        "after": "银灰火屑仍贴在裂缝深处，未向封档回流，也未转移至陆沉渊或苏晚命灯。",
+        "evidence": "正文写明银灰火屑贴着裂缝内壁颤动；结尾确认其没有向封档方向回流，苏晚命灯始终未递近。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "fact-0075-012",
+        "asset_id": "state_ledger_faction_pressure",
+        "field_path": "timeline.chapter_event",
+        "before": "苏晚完成独立限域陈述；命籍衙在白裂处加盖灰印并暂记禁修污染。",
+        "after": "命籍衙正式执行白裂禁修，泥灯巷以非接触门板挡风并提出寒损见证，最终被登记为临时协助隐匿审查和留验。",
+        "evidence": "记录吏先宣布禁修条件，巷民随后搭设不接触阵纹的门板；小签最终记入临时协助隐匿审查、泥灯巷留验、陆沉渊留验和禁修不撤。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "fact-0075-013",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "character.su_wan.physical_state",
+        "before": "苏晚掌背有旧伤并以旧布包裹。",
+        "after": "苏晚掌背在寒气刺激下渗出一小点暗色，旧伤受寒加重。",
+        "evidence": "她触碰冻冷的破瓦盆后立即收手，正文写明掌背旧伤被冷气一激，布上渗出暗色。"
+      },
+      {
+        "fact_id": "fact-0075-014",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "character.lu_chenyuan.physical_state",
+        "before": "陆沉渊右眼失明，右臂追缠纹持续存在，半寿暴露和待验状态未消除。",
+        "after": "陆沉渊在试图接近封档和观察裂口时追缠纹进一步收紧，右臂旧伤承压、身体虚浮，但未触碰封档或以自身补阵。",
+        "evidence": "追缠纹在他抬手、凝视裂口和承受冷风时反复收紧；他最终收回手、退到边缘，没有碰灰印或封档。"
+      }
+    ],
+    "naming": []
+  }
+}

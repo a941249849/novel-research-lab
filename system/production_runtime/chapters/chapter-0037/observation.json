@@ -1,0 +1,181 @@
+{
+  "chapter_id": "chapter-0037",
+  "draft_sha256": "7f1216bb4b028a483ccd38fa6b9fb79738fc348dd9102b46b3dd31b16448fa45",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "chapter-0037-character-lu-observed-choice-001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_observed_choice",
+        "before": "不触碰三盏户灯、不替任何持有人决定拆架，并持续要求只记录亲见位置与动作",
+        "after": "接受仅两户携灯同行，允许留守户撤回今日同行，并陪同参与户到命审台前",
+        "evidence": "陆沉渊明确把参与者与留守者分列，承认人数减少，并答应护送撤回者返回。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "chapter-0037-npc-su-wan-choice-001",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_emotional_choice",
+        "before": "苏晚主动承受移出后的更冷位置，拒绝让自己的裂纹成为顾家申诉筹码",
+        "after": "苏晚留在安置屋看护撤回户，不替其发言，也不以自己的命火替其承担",
+        "evidence": "苏晚明确表示留守，腾出避风角、挡风并阻止他人代答或代按。"
+      },
+      {
+        "fact_id": "chapter-0037-npc-su-wan-support-001",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_visible_support",
+        "before": "在陆沉渊受伤和灰雨灼伤时继续只提供袖边借力，并阻止他俯身接近灰雨",
+        "after": "苏晚通过拖开柴凳、挡风和守门为留守户提供实际保护，掌背裂纹亮起后仍拒绝转移命火",
+        "evidence": "她为右邻的灯腾出避风角、竖起铺板挡风，并明确不拿自己的命火替对方顶住。"
+      },
+      {
+        "fact_id": "chapter-0037-npc_mo-witness-001",
+        "asset_id": "npc_mo_jinglan",
+        "field_path": "npc.current_witness_participation",
+        "before": "分别记录三户自取户灯、各自许可木榫、腕上白痕及灯离架；按右邻要求划去未亲见内容",
+        "after": "记录顾家与左邻自愿携灯、右邻撤回今日同行及其保留的既有亲见，并将残缺灰痕口述单独留待复核",
+        "evidence": "莫井兰按右邻指甲划线保留撤回边界，只记录能亲见的两盏灯与部分旧灼痕口述。"
+      },
+      {
+        "fact_id": "chapter-0037-npc_mo-injury-001",
+        "asset_id": "npc_mo_jinglan",
+        "field_path": "npc.current_visible_injury",
+        "before": "取盏时手背被旧砖粗边磨开一道口子，流血但未让血落入泥中",
+        "after": "手背旧伤被纸角重新磨开，冒出血珠后被她攥住袖口，未让血落到顾家灯上",
+        "evidence": "她追出记录时手背旧伤被纸角磨开，但及时收住血迹。"
+      }
+    ],
+    "locations": [],
+    "factions": [
+      {
+        "fact_id": "chapter-0037-faction-mudlamp-choice-001",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_chapter_step",
+        "before": "三户分别抱回各自户灯，回灯架彻底倒塌，三户不再集中悬挂",
+        "after": "顾家与左邻携各自户灯前往命审台，右邻携灯留在安置屋，三户不再作为整体同行",
+        "evidence": "正文明确写出原本三户同行变为两户同行，右邻将灯留在安置屋。"
+      },
+      {
+        "fact_id": "chapter-0037-faction-mudlamp-refusal-001",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_boundary_condition",
+        "before": "三户各自护持户灯、未重新集中，也未向苏晚或旁人索火；其余住户只拆自己同意的木榫",
+        "after": "逐户拒绝、临门撤回与留守保护被实际执行；参与户不得替留守户发言或代按",
+        "evidence": "莫井兰把右邻今日之后的见证划掉并写作“留守”，巷民让出通路且无人要求其提供命火。"
+      },
+      {
+        "fact_id": "chapter-0037-faction-registry-pressure-001",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_local_enforcement_phase",
+        "before": "州府影印未追逐已取回的三盏户灯，而是在倒塌空架上保留完整封额轮廓",
+        "after": "州府封额分别照向顾家与左邻两盏参与户灯，未同亮右邻留守的灯",
+        "evidence": "冷金从断木下抬起，先后照过顾家灯和左邻灯，右邻灯留在安置屋没有同亮。"
+      }
+    ],
+    "artifacts": [],
+    "techniques": [
+      {
+        "fact_id": "chapter-0037-technique-recognition-001",
+        "asset_id": "technique_ledger_recognition",
+        "field_path": "technique.current_use_status",
+        "before": "仍未施展识账术，陆沉渊仅凭可见木格受力、灯柄空隙与现场亲见记录发言",
+        "after": "陆沉渊继续未催动识账术，仅依据灯影、封额亮过的两盏灯和亲见记录行动",
+        "evidence": "他眼底只剩暗灰，明确没有催动识账术，只听呼吸并观察两盏灯的反应。"
+      }
+    ],
+    "relationships": [
+      {
+        "fact_id": "chapter-0037-trust-refusal-boundary-001",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_refusal_boundary",
+        "before": "拆架过程中继续保留个人拒绝权；有人拒绝拆木榫即被绕开，有人伸手扶助也因未获同意而撤回",
+        "after": "个人可在命审台前撤回后续见证，撤回不被记作共同拒验或背弃，且留守户获得实际安置保护",
+        "evidence": "右邻明确撤回今日同行，莫井兰写作“留守”而不写“拒”或“背弃”；巷民为其让路并挡风。"
+      },
+      {
+        "fact_id": "chapter-0037-trust-choice-001",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_collective_choice",
+        "before": "三户分别选择取回户灯并只承担自家木榫拆除；未同意的木榫与他人灯位不被代拆或代证",
+        "after": "两户自愿承担单独暴露并携灯同行，另一户保留拒绝并留守，参与者不以人数强迫其同行",
+        "evidence": "顾家与左邻分别确认只带自家灯，右邻撤回后无人劝迫或代替发言。"
+      },
+      {
+        "fact_id": "chapter-0037-mother-boundary-001",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_visible_support",
+        "before": "苏晚继续不转移自己的命火，只在陆沉渊膝伤和灰雨灼伤时提供袖边借力并限制其靠近",
+        "after": "苏晚留在安置屋保护撤回户，继续不转移命火，也不让自己的裂灯替留守户承担追缴",
+        "evidence": "她明确留守、不代发言、不拿自己的命火替对方顶，并将灯安置在避风角。"
+      }
+    ],
+    "emotions": [
+      {
+        "fact_id": "chapter-0037-collective-emotion-001",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_collective_emotion",
+        "before": "住户在保灯与毁架之间作出沉重的自主选择，接受失去巷口挡风位置的共同后果",
+        "after": "共同体承认参与与恐惧都正当，分歧转为允许同行、撤回和留守并存",
+        "evidence": "左邻承认自己也害怕，右邻的恐惧未被否定，巷民随后为其留出通路并承担留守保护。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "chapter-0037-foreshadowing-manifestation-001",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "foreshadowing.current_manifestation",
+        "before": "夜露触发空架封额落下细碎冷灰雨，灰雨避开三盏已取回的灯，持续向顾家旧灯位聚拢",
+        "after": "顾家灯腹出现靠近旧位记号的两层回卷黑边；莫井兰仅确认曾见过相近灼痕，未认定两者同源",
+        "evidence": "莫井兰观察到外层焦细、内层向回卷的黑边，并明确表示不能认定顾家也是同一回事。"
+      },
+      {
+        "fact_id": "chapter-0037-foreshadowing-hook-001",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "foreshadowing.next_review_hook",
+        "before": "天亮复核旧位、空架封额、三户腕痕及灰雨向顾家旧位汇聚的亲见记录",
+        "after": "命审台需复核顾家灯边、空架封额与旧位灰雨，莫井兰的残缺口述待决定是否交出",
+        "evidence": "莫井兰将残缺口述留在新纸上，等待命审台复核后再决定是否提交。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "chapter-0037-hook-withdrawal-001",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_witness_commitment",
+        "before": "三户分别限定见证范围；右邻撤出后续亲见并由莫井兰保留其先前口述",
+        "after": "右邻进一步撤回今日同行及其后见证，保留昨夜以前的亲见；顾家与左邻保留在命审台前撤回的选择",
+        "evidence": "右邻明确划定今日之后不再由他人代认，顾家与左邻也确认到命审台前仍可撤回。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "chapter-0037-timeline-choice-001",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_event_sequence",
+        "before": "三户逐一取得户灯；共用回灯架因失去承力彻底倒塌；空架封额在夜露后落下灰雨并聚向顾家旧位",
+        "after": "黎明逐户分列；顾家与左邻带灯离开断架，右邻转入安置屋留守；州府封额随后分别锁定两户参与灯",
+        "evidence": "正文按顺序呈现三灯分列、右邻撤回、两户出行以及冷金分别照向两灯。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "chapter-0037-exposure-sign-001",
+        "asset_id": "state_ledger_half_life_registry_exposure",
+        "field_path": "state_ledger.registry_locking_sign",
+        "before": "识账灼痕触发新的锁定迹象：陆沉渊掌下浮起冷金色并沿血口爬行半寸，巷门槛冷痕亮起，债链声比上午更近；暴露继续上升，未登记具体百分点",
+        "after": "参与户携灯离开前，顾家与左邻腕上白痕同时收紧并浮出亮边，州府封额分别照定两盏灯；右邻留守灯未同亮",
+        "evidence": "两户腕痕在冷金照射下收紧，顾家与左邻灯焰变矮，右邻灯没有同步反应。"
+      },
+      {
+        "fact_id": "chapter-0037-su-lamp-physical-001",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_visible_lamp_consequence",
+        "before": "掌背暗光分岔并新增一格裂纹，最后一点血色退去，命灯裂纹继续恶化",
+        "after": "苏晚拖动柴凳和竖铺板时掌背裂纹再次亮起，血色变淡，但未发生命火转移",
+        "evidence": "动作稍重时掌背裂纹亮起，她随即用袖口压住，并拒绝以命火替留守户承担。"
+      }
+    ],
+    "naming": []
+  }
+}

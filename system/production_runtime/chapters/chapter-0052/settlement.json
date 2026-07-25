@@ -1,0 +1,55 @@
+{
+  "chapter_id": "chapter-0052",
+  "accepted_revision_sha256": "e71fdfefc71909344f1a1444404731eaf48553d6feb06e7dd8472bb273a47b0c",
+  "state_deltas": [
+    {
+      "fact_id": "chapter-0052-lu-choice",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_observed_choice",
+      "operation": "set",
+      "before": "在共同空额开始实体追缴后，尚未完成暖墙前的逐户处置选择",
+      "after": "公开拒绝替两巷点出代填户，也不接管住户命灯，将留下、拒绝和撤回交还各户当场决定"
+    },
+    {
+      "fact_id": "chapter-0052-lane-capacity",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_chapter_step",
+      "operation": "set",
+      "before": "在不调用住户命火的前提下，按逐户确认后的规则让两户受封者进入共用屋轮换暖墙",
+      "after": "在不调用住户命火且不推举替罪户的前提下，两巷撤销两处临时铺位并重排灶位，暖墙安置容量永久缩减"
+    },
+    {
+      "fact_id": "chapter-0052-community-boundary",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_collective_choice",
+      "operation": "set",
+      "before": "两巷共同拒绝割线或代填户名，先标明现实损失并保留独立见证、沉默与撤回权；三盏户灯仍由原持有人掌握",
+      "after": "两巷逐户拒绝以替罪户填补共同空额，改由答复户共同撤去两处铺位并轮换灶位；三户仍保留沉默、拒绝和撤回权，所有户灯继续由原持有人掌握"
+    },
+    {
+      "fact_id": "chapter-0052-array-crack",
+      "asset_id": "state_ledger_mudlamp_array_integrity",
+      "field_path": "state_ledger.current_visible_integrity_consequence",
+      "operation": "set",
+      "before": "局部返还与相邻灯回温未恢复护阵完整度",
+      "after": "热源重排后护阵外沿新增折向两处撤空铺位的可见裂口，裂口吐出冷雾与冰刺，完整度继续恶化"
+    },
+    {
+      "fact_id": "chapter-0052-lifefire-untouched",
+      "asset_id": "state_ledger_resident_lifefire_reserve",
+      "field_path": "state_ledger.current_resident_lifefire_callability",
+      "operation": "set",
+      "before": "暖墙照护未调用、转移或扣减任何住户命火，受助户获得外部余温看护而不形成欠火",
+      "after": "本次缩减铺位与轮换灶位未调用、转移或扣减任何住户命火；户灯仍不可由陆沉渊或泥灯巷统一调用"
+    },
+    {
+      "fact_id": "chapter-0052-pressure-shift",
+      "asset_id": "state_ledger_faction_pressure",
+      "field_path": "state_ledger.faction_pressure",
+      "operation": "set",
+      "before": "逐巷配额连坐进入实体执行：共同空额开始计时，冷线锁定两巷的暖墙、通行处与三盏解封户灯；首道追缴刻度落在第一盏解封户灯上",
+      "after": "共同空额仍未具名填补，冷线绕过未交出的住户灯位，转而锁住泥灯巷三处共用灯龛并在共用灯龛边沿刻下新刻度"
+    }
+  ],
+  "resolved_audit_ids": []
+}

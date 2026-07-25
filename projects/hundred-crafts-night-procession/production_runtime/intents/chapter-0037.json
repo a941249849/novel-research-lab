@@ -1,0 +1,30 @@
+{
+  "chapter_id": "chapter-0037",
+  "dramatic_purpose": "处理地方旧尺与现代测量的不一致。",
+  "must_keep": [
+    "换算表必须保留原始读数和误差来源。",
+    "POV 固定为程雪青"
+  ],
+  "must_avoid": [
+    "不得引入未登记资产或用旁白代替物质行动",
+    "不得回滚已接受状态"
+  ],
+  "expected_state_deltas": [
+    {
+      "state_id": "v1.ch037.outcome",
+      "asset_id": "char_cheng_xueqing",
+      "field_path": "character.current_state",
+      "after": "换算表必须保留原始读数和误差来源。",
+      "before": "街区获得三年维护可能，而非永久安全承诺。"
+    }
+  ],
+  "required_asset_ids": [
+    "char_cheng_xueqing",
+    "technique_oral_waterline",
+    "naming_civic_craft_lexicon"
+  ],
+  "active_hook_ids": [],
+  "scene_constraints": [
+    "冲突必须落在具体工艺现场、物证或受影响者选择上"
+  ]
+}

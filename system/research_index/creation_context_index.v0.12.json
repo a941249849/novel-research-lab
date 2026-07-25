@@ -1,0 +1,2743 @@
+{
+  "index_name": "NRL Creation Context Index",
+  "version": "0.12",
+  "source_matrix_id": "evidence-pack-matrix-v0.11",
+  "source_of_truth": [
+    "system/research_assets/evidence_packs/manifest.v0.11.json",
+    "system/research_assets/evidence_packs/*.v0.10.json"
+  ],
+  "items": [
+    {
+      "context_id": "creation-context-v012-artifacts-full-review-book-01",
+      "target_family": "artifacts",
+      "evidence_pack_id": "evidence-pack-artifacts-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/artifacts.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/artifacts.schema.json",
+      "source_asset_id": "full-review-book-01",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "一念永恒",
+      "categories": [
+        "characters",
+        "artifacts",
+        "naming"
+      ],
+      "retrieval_text": "artifacts | 一念永恒 | full_corpus_book_review | legacy_unverified | legacy_candidate | characters, artifacts, naming",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-artifacts-full-review-book-04",
+      "target_family": "artifacts",
+      "evidence_pack_id": "evidence-pack-artifacts-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/artifacts.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/artifacts.schema.json",
+      "source_asset_id": "full-review-book-04",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "仙逆",
+      "categories": [
+        "emotional_bonds",
+        "artifacts",
+        "techniques"
+      ],
+      "retrieval_text": "artifacts | 仙逆 | full_corpus_book_review | legacy_unverified | legacy_candidate | emotional_bonds, artifacts, techniques",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-artifacts-full-review-book-05",
+      "target_family": "artifacts",
+      "evidence_pack_id": "evidence-pack-artifacts-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/artifacts.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/artifacts.schema.json",
+      "source_asset_id": "full-review-book-05",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "凡人修仙传",
+      "categories": [
+        "artifacts",
+        "techniques",
+        "naming"
+      ],
+      "retrieval_text": "artifacts | 凡人修仙传 | full_corpus_book_review | legacy_unverified | legacy_candidate | artifacts, techniques, naming",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-artifacts-full-review-book-06",
+      "target_family": "artifacts",
+      "evidence_pack_id": "evidence-pack-artifacts-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/artifacts.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/artifacts.schema.json",
+      "source_asset_id": "full-review-book-06",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "圣墟",
+      "categories": [
+        "artifacts",
+        "foreshadowing",
+        "techniques"
+      ],
+      "retrieval_text": "artifacts | 圣墟 | full_corpus_book_review | legacy_unverified | legacy_candidate | artifacts, foreshadowing, techniques",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-artifacts-full-review-book-11",
+      "target_family": "artifacts",
+      "evidence_pack_id": "evidence-pack-artifacts-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/artifacts.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/artifacts.schema.json",
+      "source_asset_id": "full-review-book-11",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "武动乾坤",
+      "categories": [
+        "artifacts",
+        "factions",
+        "techniques"
+      ],
+      "retrieval_text": "artifacts | 武动乾坤 | full_corpus_book_review | legacy_unverified | legacy_candidate | artifacts, factions, techniques",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-artifacts-full-review-book-12",
+      "target_family": "artifacts",
+      "evidence_pack_id": "evidence-pack-artifacts-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/artifacts.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/artifacts.schema.json",
+      "source_asset_id": "full-review-book-12",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "永生",
+      "categories": [
+        "techniques",
+        "artifacts",
+        "factions"
+      ],
+      "retrieval_text": "artifacts | 永生 | full_corpus_book_review | legacy_unverified | legacy_candidate | techniques, artifacts, factions",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-artifacts-full-review-book-16",
+      "target_family": "artifacts",
+      "evidence_pack_id": "evidence-pack-artifacts-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/artifacts.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/artifacts.schema.json",
+      "source_asset_id": "full-review-book-16",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "诡秘之主",
+      "categories": [
+        "foreshadowing",
+        "artifacts",
+        "state_ledger"
+      ],
+      "retrieval_text": "artifacts | 诡秘之主 | full_corpus_book_review | legacy_unverified | legacy_candidate | foreshadowing, artifacts, state_ledger",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-artifacts-full-review-family-artifacts",
+      "target_family": "artifacts",
+      "evidence_pack_id": "evidence-pack-artifacts-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/artifacts.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/artifacts.schema.json",
+      "source_asset_id": "full-review-family-artifacts",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "creation_family_evidence",
+      "title": "artifacts",
+      "categories": [
+        "artifacts",
+        "创作资产证据"
+      ],
+      "retrieval_text": "artifacts | artifacts | creation_family_evidence | covered | legacy_candidate | artifacts, 创作资产证据",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-artifacts-full-review-mechanism-cb-m1",
+      "target_family": "artifacts",
+      "evidence_pack_id": "evidence-pack-artifacts-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/artifacts.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/artifacts.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m1",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M1",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "artifacts | CB-M1 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-artifacts-full-review-mechanism-cb-m10",
+      "target_family": "artifacts",
+      "evidence_pack_id": "evidence-pack-artifacts-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/artifacts.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/artifacts.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m10",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M10",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "artifacts | CB-M10 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-artifacts-full-review-mechanism-cb-m11",
+      "target_family": "artifacts",
+      "evidence_pack_id": "evidence-pack-artifacts-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/artifacts.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/artifacts.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m11",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M11",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "artifacts | CB-M11 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-artifacts-full-review-mechanism-cb-m12",
+      "target_family": "artifacts",
+      "evidence_pack_id": "evidence-pack-artifacts-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/artifacts.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/artifacts.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m12",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M12",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "artifacts | CB-M12 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-artifacts-full-review-mechanism-cb-m2",
+      "target_family": "artifacts",
+      "evidence_pack_id": "evidence-pack-artifacts-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/artifacts.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/artifacts.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m2",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M2",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "artifacts | CB-M2 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-artifacts-full-review-mechanism-cb-m3",
+      "target_family": "artifacts",
+      "evidence_pack_id": "evidence-pack-artifacts-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/artifacts.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/artifacts.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m3",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M3",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "artifacts | CB-M3 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-artifacts-full-review-mechanism-cb-m4",
+      "target_family": "artifacts",
+      "evidence_pack_id": "evidence-pack-artifacts-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/artifacts.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/artifacts.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m4",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M4",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "artifacts | CB-M4 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-artifacts-full-review-mechanism-cb-m5",
+      "target_family": "artifacts",
+      "evidence_pack_id": "evidence-pack-artifacts-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/artifacts.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/artifacts.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m5",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M5",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "artifacts | CB-M5 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-artifacts-full-review-mechanism-cb-m6",
+      "target_family": "artifacts",
+      "evidence_pack_id": "evidence-pack-artifacts-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/artifacts.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/artifacts.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m6",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M6",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "artifacts | CB-M6 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-artifacts-full-review-mechanism-cb-m7",
+      "target_family": "artifacts",
+      "evidence_pack_id": "evidence-pack-artifacts-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/artifacts.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/artifacts.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m7",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M7",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "artifacts | CB-M7 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-characters-full-review-book-01",
+      "target_family": "characters",
+      "evidence_pack_id": "evidence-pack-characters-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/characters.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/characters.schema.json",
+      "source_asset_id": "full-review-book-01",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "一念永恒",
+      "categories": [
+        "characters",
+        "artifacts",
+        "naming"
+      ],
+      "retrieval_text": "characters | 一念永恒 | full_corpus_book_review | legacy_unverified | legacy_candidate | characters, artifacts, naming",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-characters-full-review-book-08",
+      "target_family": "characters",
+      "evidence_pack_id": "evidence-pack-characters-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/characters.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/characters.schema.json",
+      "source_asset_id": "full-review-book-08",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "完美世界",
+      "categories": [
+        "characters",
+        "emotional_bonds",
+        "techniques"
+      ],
+      "retrieval_text": "characters | 完美世界 | full_corpus_book_review | legacy_unverified | legacy_candidate | characters, emotional_bonds, techniques",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-characters-full-review-book-15",
+      "target_family": "characters",
+      "evidence_pack_id": "evidence-pack-characters-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/characters.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/characters.schema.json",
+      "source_asset_id": "full-review-book-15",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "蛊真人",
+      "categories": [
+        "techniques",
+        "characters",
+        "factions"
+      ],
+      "retrieval_text": "characters | 蛊真人 | full_corpus_book_review | legacy_unverified | legacy_candidate | techniques, characters, factions",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-characters-full-review-family-characters",
+      "target_family": "characters",
+      "evidence_pack_id": "evidence-pack-characters-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/characters.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/characters.schema.json",
+      "source_asset_id": "full-review-family-characters",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "creation_family_evidence",
+      "title": "characters",
+      "categories": [
+        "characters",
+        "创作资产证据"
+      ],
+      "retrieval_text": "characters | characters | creation_family_evidence | covered | legacy_candidate | characters, 创作资产证据",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-characters-full-review-mechanism-cb-m1",
+      "target_family": "characters",
+      "evidence_pack_id": "evidence-pack-characters-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/characters.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/characters.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m1",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M1",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "characters | CB-M1 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-characters-full-review-mechanism-cb-m10",
+      "target_family": "characters",
+      "evidence_pack_id": "evidence-pack-characters-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/characters.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/characters.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m10",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M10",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "characters | CB-M10 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-characters-full-review-mechanism-cb-m11",
+      "target_family": "characters",
+      "evidence_pack_id": "evidence-pack-characters-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/characters.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/characters.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m11",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M11",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "characters | CB-M11 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-characters-full-review-mechanism-cb-m12",
+      "target_family": "characters",
+      "evidence_pack_id": "evidence-pack-characters-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/characters.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/characters.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m12",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M12",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "characters | CB-M12 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-characters-full-review-mechanism-cb-m2",
+      "target_family": "characters",
+      "evidence_pack_id": "evidence-pack-characters-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/characters.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/characters.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m2",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M2",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "characters | CB-M2 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-characters-full-review-mechanism-cb-m3",
+      "target_family": "characters",
+      "evidence_pack_id": "evidence-pack-characters-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/characters.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/characters.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m3",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M3",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "characters | CB-M3 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-characters-full-review-mechanism-cb-m4",
+      "target_family": "characters",
+      "evidence_pack_id": "evidence-pack-characters-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/characters.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/characters.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m4",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M4",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "characters | CB-M4 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-characters-full-review-mechanism-cb-m5",
+      "target_family": "characters",
+      "evidence_pack_id": "evidence-pack-characters-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/characters.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/characters.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m5",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M5",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "characters | CB-M5 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-characters-full-review-mechanism-cb-m6",
+      "target_family": "characters",
+      "evidence_pack_id": "evidence-pack-characters-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/characters.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/characters.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m6",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M6",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "characters | CB-M6 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-characters-full-review-mechanism-cb-m7",
+      "target_family": "characters",
+      "evidence_pack_id": "evidence-pack-characters-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/characters.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/characters.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m7",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M7",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "characters | CB-M7 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-characters-full-review-mechanism-cb-m8",
+      "target_family": "characters",
+      "evidence_pack_id": "evidence-pack-characters-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/characters.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/characters.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m8",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M8",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "characters | CB-M8 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-characters-full-review-mechanism-cb-m9",
+      "target_family": "characters",
+      "evidence_pack_id": "evidence-pack-characters-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/characters.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/characters.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m9",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M9",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "characters | CB-M9 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-characters-mechanism-dpcq-m1",
+      "target_family": "characters",
+      "evidence_pack_id": "evidence-pack-characters-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/characters.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/characters.schema.json",
+      "source_asset_id": "mechanism-dpcq-m1",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "source_asset_type": "mechanism",
+      "title": "斗破苍穹",
+      "categories": [
+        "压迫与释放机制"
+      ],
+      "retrieval_text": "characters | 斗破苍穹 | mechanism | formal | promoted | 压迫与释放机制",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-characters-mechanism-dpcq-m2",
+      "target_family": "characters",
+      "evidence_pack_id": "evidence-pack-characters-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/characters.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/characters.schema.json",
+      "source_asset_id": "mechanism-dpcq-m2",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "source_asset_type": "mechanism",
+      "title": "斗破苍穹",
+      "categories": [
+        "压迫与释放机制"
+      ],
+      "retrieval_text": "characters | 斗破苍穹 | mechanism | formal | promoted | 压迫与释放机制",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-emotional_bonds-full-review-book-03",
+      "target_family": "emotional_bonds",
+      "evidence_pack_id": "evidence-pack-emotional_bonds-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/emotional_bonds.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/emotional_bonds.schema.json",
+      "source_asset_id": "full-review-book-03",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "人道至尊",
+      "categories": [
+        "factions",
+        "npcs",
+        "emotional_bonds"
+      ],
+      "retrieval_text": "emotional_bonds | 人道至尊 | full_corpus_book_review | legacy_unverified | legacy_candidate | factions, npcs, emotional_bonds",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-emotional_bonds-full-review-book-04",
+      "target_family": "emotional_bonds",
+      "evidence_pack_id": "evidence-pack-emotional_bonds-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/emotional_bonds.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/emotional_bonds.schema.json",
+      "source_asset_id": "full-review-book-04",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "仙逆",
+      "categories": [
+        "emotional_bonds",
+        "artifacts",
+        "techniques"
+      ],
+      "retrieval_text": "emotional_bonds | 仙逆 | full_corpus_book_review | legacy_unverified | legacy_candidate | emotional_bonds, artifacts, techniques",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-emotional_bonds-full-review-book-08",
+      "target_family": "emotional_bonds",
+      "evidence_pack_id": "evidence-pack-emotional_bonds-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/emotional_bonds.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/emotional_bonds.schema.json",
+      "source_asset_id": "full-review-book-08",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "完美世界",
+      "categories": [
+        "characters",
+        "emotional_bonds",
+        "techniques"
+      ],
+      "retrieval_text": "emotional_bonds | 完美世界 | full_corpus_book_review | legacy_unverified | legacy_candidate | characters, emotional_bonds, techniques",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-emotional_bonds-full-review-book-09",
+      "target_family": "emotional_bonds",
+      "evidence_pack_id": "evidence-pack-emotional_bonds-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/emotional_bonds.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/emotional_bonds.schema.json",
+      "source_asset_id": "full-review-book-09",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "将夜",
+      "categories": [
+        "foreshadowing",
+        "factions",
+        "emotional_bonds"
+      ],
+      "retrieval_text": "emotional_bonds | 将夜 | full_corpus_book_review | legacy_unverified | legacy_candidate | foreshadowing, factions, emotional_bonds",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-emotional_bonds-full-review-book-13",
+      "target_family": "emotional_bonds",
+      "evidence_pack_id": "evidence-pack-emotional_bonds-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/emotional_bonds.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/emotional_bonds.schema.json",
+      "source_asset_id": "full-review-book-13",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "求魔",
+      "categories": [
+        "emotional_bonds",
+        "npcs",
+        "foreshadowing"
+      ],
+      "retrieval_text": "emotional_bonds | 求魔 | full_corpus_book_review | legacy_unverified | legacy_candidate | emotional_bonds, npcs, foreshadowing",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-emotional_bonds-full-review-book-18",
+      "target_family": "emotional_bonds",
+      "evidence_pack_id": "evidence-pack-emotional_bonds-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/emotional_bonds.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/emotional_bonds.schema.json",
+      "source_asset_id": "full-review-book-18",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "雪中悍刀行",
+      "categories": [
+        "emotional_bonds",
+        "npcs",
+        "factions"
+      ],
+      "retrieval_text": "emotional_bonds | 雪中悍刀行 | full_corpus_book_review | legacy_unverified | legacy_candidate | emotional_bonds, npcs, factions",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-emotional_bonds-full-review-family-emotional_bonds",
+      "target_family": "emotional_bonds",
+      "evidence_pack_id": "evidence-pack-emotional_bonds-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/emotional_bonds.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/emotional_bonds.schema.json",
+      "source_asset_id": "full-review-family-emotional_bonds",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "creation_family_evidence",
+      "title": "emotional_bonds",
+      "categories": [
+        "emotional_bonds",
+        "创作资产证据"
+      ],
+      "retrieval_text": "emotional_bonds | emotional_bonds | creation_family_evidence | covered | legacy_candidate | emotional_bonds, 创作资产证据",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-emotional_bonds-full-review-mechanism-cb-m1",
+      "target_family": "emotional_bonds",
+      "evidence_pack_id": "evidence-pack-emotional_bonds-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/emotional_bonds.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/emotional_bonds.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m1",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M1",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "emotional_bonds | CB-M1 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-emotional_bonds-full-review-mechanism-cb-m10",
+      "target_family": "emotional_bonds",
+      "evidence_pack_id": "evidence-pack-emotional_bonds-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/emotional_bonds.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/emotional_bonds.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m10",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M10",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "emotional_bonds | CB-M10 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-emotional_bonds-full-review-mechanism-cb-m11",
+      "target_family": "emotional_bonds",
+      "evidence_pack_id": "evidence-pack-emotional_bonds-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/emotional_bonds.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/emotional_bonds.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m11",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M11",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "emotional_bonds | CB-M11 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-emotional_bonds-full-review-mechanism-cb-m12",
+      "target_family": "emotional_bonds",
+      "evidence_pack_id": "evidence-pack-emotional_bonds-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/emotional_bonds.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/emotional_bonds.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m12",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M12",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "emotional_bonds | CB-M12 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-emotional_bonds-full-review-mechanism-cb-m2",
+      "target_family": "emotional_bonds",
+      "evidence_pack_id": "evidence-pack-emotional_bonds-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/emotional_bonds.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/emotional_bonds.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m2",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M2",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "emotional_bonds | CB-M2 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-emotional_bonds-full-review-mechanism-cb-m3",
+      "target_family": "emotional_bonds",
+      "evidence_pack_id": "evidence-pack-emotional_bonds-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/emotional_bonds.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/emotional_bonds.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m3",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M3",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "emotional_bonds | CB-M3 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-emotional_bonds-full-review-mechanism-cb-m4",
+      "target_family": "emotional_bonds",
+      "evidence_pack_id": "evidence-pack-emotional_bonds-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/emotional_bonds.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/emotional_bonds.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m4",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M4",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "emotional_bonds | CB-M4 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-emotional_bonds-full-review-mechanism-cb-m5",
+      "target_family": "emotional_bonds",
+      "evidence_pack_id": "evidence-pack-emotional_bonds-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/emotional_bonds.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/emotional_bonds.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m5",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M5",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "emotional_bonds | CB-M5 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-emotional_bonds-full-review-mechanism-cb-m6",
+      "target_family": "emotional_bonds",
+      "evidence_pack_id": "evidence-pack-emotional_bonds-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/emotional_bonds.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/emotional_bonds.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m6",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M6",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "emotional_bonds | CB-M6 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-emotional_bonds-full-review-mechanism-cb-m7",
+      "target_family": "emotional_bonds",
+      "evidence_pack_id": "evidence-pack-emotional_bonds-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/emotional_bonds.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/emotional_bonds.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m7",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M7",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "emotional_bonds | CB-M7 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-emotional_bonds-full-review-mechanism-cb-m8",
+      "target_family": "emotional_bonds",
+      "evidence_pack_id": "evidence-pack-emotional_bonds-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/emotional_bonds.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/emotional_bonds.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m8",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M8",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "emotional_bonds | CB-M8 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-factions-full-review-book-02",
+      "target_family": "factions",
+      "evidence_pack_id": "evidence-pack-factions-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/factions.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/factions.schema.json",
+      "source_asset_id": "full-review-book-02",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "不死不灭",
+      "categories": [
+        "foreshadowing",
+        "factions",
+        "techniques"
+      ],
+      "retrieval_text": "factions | 不死不灭 | full_corpus_book_review | legacy_unverified | legacy_candidate | foreshadowing, factions, techniques",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-factions-full-review-book-03",
+      "target_family": "factions",
+      "evidence_pack_id": "evidence-pack-factions-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/factions.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/factions.schema.json",
+      "source_asset_id": "full-review-book-03",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "人道至尊",
+      "categories": [
+        "factions",
+        "npcs",
+        "emotional_bonds"
+      ],
+      "retrieval_text": "factions | 人道至尊 | full_corpus_book_review | legacy_unverified | legacy_candidate | factions, npcs, emotional_bonds",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-factions-full-review-book-07",
+      "target_family": "factions",
+      "evidence_pack_id": "evidence-pack-factions-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/factions.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/factions.schema.json",
+      "source_asset_id": "full-review-book-07",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "大主宰",
+      "categories": [
+        "factions",
+        "naming",
+        "techniques"
+      ],
+      "retrieval_text": "factions | 大主宰 | full_corpus_book_review | legacy_unverified | legacy_candidate | factions, naming, techniques",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-factions-full-review-book-09",
+      "target_family": "factions",
+      "evidence_pack_id": "evidence-pack-factions-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/factions.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/factions.schema.json",
+      "source_asset_id": "full-review-book-09",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "将夜",
+      "categories": [
+        "foreshadowing",
+        "factions",
+        "emotional_bonds"
+      ],
+      "retrieval_text": "factions | 将夜 | full_corpus_book_review | legacy_unverified | legacy_candidate | foreshadowing, factions, emotional_bonds",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-factions-full-review-book-11",
+      "target_family": "factions",
+      "evidence_pack_id": "evidence-pack-factions-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/factions.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/factions.schema.json",
+      "source_asset_id": "full-review-book-11",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "武动乾坤",
+      "categories": [
+        "artifacts",
+        "factions",
+        "techniques"
+      ],
+      "retrieval_text": "factions | 武动乾坤 | full_corpus_book_review | legacy_unverified | legacy_candidate | artifacts, factions, techniques",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-factions-full-review-book-12",
+      "target_family": "factions",
+      "evidence_pack_id": "evidence-pack-factions-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/factions.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/factions.schema.json",
+      "source_asset_id": "full-review-book-12",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "永生",
+      "categories": [
+        "techniques",
+        "artifacts",
+        "factions"
+      ],
+      "retrieval_text": "factions | 永生 | full_corpus_book_review | legacy_unverified | legacy_candidate | techniques, artifacts, factions",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-factions-full-review-book-14",
+      "target_family": "factions",
+      "evidence_pack_id": "evidence-pack-factions-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/factions.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/factions.schema.json",
+      "source_asset_id": "full-review-book-14",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "牧神记",
+      "categories": [
+        "npcs",
+        "factions",
+        "naming"
+      ],
+      "retrieval_text": "factions | 牧神记 | full_corpus_book_review | legacy_unverified | legacy_candidate | npcs, factions, naming",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-factions-full-review-book-15",
+      "target_family": "factions",
+      "evidence_pack_id": "evidence-pack-factions-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/factions.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/factions.schema.json",
+      "source_asset_id": "full-review-book-15",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "蛊真人",
+      "categories": [
+        "techniques",
+        "characters",
+        "factions"
+      ],
+      "retrieval_text": "factions | 蛊真人 | full_corpus_book_review | legacy_unverified | legacy_candidate | techniques, characters, factions",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-factions-full-review-book-17",
+      "target_family": "factions",
+      "evidence_pack_id": "evidence-pack-factions-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/factions.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/factions.schema.json",
+      "source_asset_id": "full-review-book-17",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "遮天",
+      "categories": [
+        "foreshadowing",
+        "npcs",
+        "factions"
+      ],
+      "retrieval_text": "factions | 遮天 | full_corpus_book_review | legacy_unverified | legacy_candidate | foreshadowing, npcs, factions",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-factions-full-review-book-18",
+      "target_family": "factions",
+      "evidence_pack_id": "evidence-pack-factions-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/factions.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/factions.schema.json",
+      "source_asset_id": "full-review-book-18",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "雪中悍刀行",
+      "categories": [
+        "emotional_bonds",
+        "npcs",
+        "factions"
+      ],
+      "retrieval_text": "factions | 雪中悍刀行 | full_corpus_book_review | legacy_unverified | legacy_candidate | emotional_bonds, npcs, factions",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-factions-full-review-family-factions",
+      "target_family": "factions",
+      "evidence_pack_id": "evidence-pack-factions-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/factions.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/factions.schema.json",
+      "source_asset_id": "full-review-family-factions",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "creation_family_evidence",
+      "title": "factions",
+      "categories": [
+        "factions",
+        "创作资产证据"
+      ],
+      "retrieval_text": "factions | factions | creation_family_evidence | covered | legacy_candidate | factions, 创作资产证据",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-factions-full-review-mechanism-cb-m1",
+      "target_family": "factions",
+      "evidence_pack_id": "evidence-pack-factions-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/factions.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/factions.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m1",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M1",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "factions | CB-M1 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-factions-full-review-mechanism-cb-m10",
+      "target_family": "factions",
+      "evidence_pack_id": "evidence-pack-factions-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/factions.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/factions.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m10",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M10",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "factions | CB-M10 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-factions-full-review-mechanism-cb-m11",
+      "target_family": "factions",
+      "evidence_pack_id": "evidence-pack-factions-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/factions.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/factions.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m11",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M11",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "factions | CB-M11 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-factions-full-review-mechanism-cb-m12",
+      "target_family": "factions",
+      "evidence_pack_id": "evidence-pack-factions-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/factions.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/factions.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m12",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M12",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "factions | CB-M12 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-factions-full-review-mechanism-cb-m2",
+      "target_family": "factions",
+      "evidence_pack_id": "evidence-pack-factions-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/factions.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/factions.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m2",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M2",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "factions | CB-M2 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-factions-full-review-mechanism-cb-m3",
+      "target_family": "factions",
+      "evidence_pack_id": "evidence-pack-factions-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/factions.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/factions.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m3",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M3",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "factions | CB-M3 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-factions-full-review-mechanism-cb-m4",
+      "target_family": "factions",
+      "evidence_pack_id": "evidence-pack-factions-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/factions.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/factions.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m4",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M4",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "factions | CB-M4 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-foreshadowing-full-review-book-02",
+      "target_family": "foreshadowing",
+      "evidence_pack_id": "evidence-pack-foreshadowing-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/foreshadowing.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/foreshadowing.schema.json",
+      "source_asset_id": "full-review-book-02",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "不死不灭",
+      "categories": [
+        "foreshadowing",
+        "factions",
+        "techniques"
+      ],
+      "retrieval_text": "foreshadowing | 不死不灭 | full_corpus_book_review | legacy_unverified | legacy_candidate | foreshadowing, factions, techniques",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-foreshadowing-full-review-book-06",
+      "target_family": "foreshadowing",
+      "evidence_pack_id": "evidence-pack-foreshadowing-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/foreshadowing.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/foreshadowing.schema.json",
+      "source_asset_id": "full-review-book-06",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "圣墟",
+      "categories": [
+        "artifacts",
+        "foreshadowing",
+        "techniques"
+      ],
+      "retrieval_text": "foreshadowing | 圣墟 | full_corpus_book_review | legacy_unverified | legacy_candidate | artifacts, foreshadowing, techniques",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-foreshadowing-full-review-book-09",
+      "target_family": "foreshadowing",
+      "evidence_pack_id": "evidence-pack-foreshadowing-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/foreshadowing.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/foreshadowing.schema.json",
+      "source_asset_id": "full-review-book-09",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "将夜",
+      "categories": [
+        "foreshadowing",
+        "factions",
+        "emotional_bonds"
+      ],
+      "retrieval_text": "foreshadowing | 将夜 | full_corpus_book_review | legacy_unverified | legacy_candidate | foreshadowing, factions, emotional_bonds",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-foreshadowing-full-review-book-13",
+      "target_family": "foreshadowing",
+      "evidence_pack_id": "evidence-pack-foreshadowing-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/foreshadowing.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/foreshadowing.schema.json",
+      "source_asset_id": "full-review-book-13",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "求魔",
+      "categories": [
+        "emotional_bonds",
+        "npcs",
+        "foreshadowing"
+      ],
+      "retrieval_text": "foreshadowing | 求魔 | full_corpus_book_review | legacy_unverified | legacy_candidate | emotional_bonds, npcs, foreshadowing",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-foreshadowing-full-review-book-16",
+      "target_family": "foreshadowing",
+      "evidence_pack_id": "evidence-pack-foreshadowing-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/foreshadowing.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/foreshadowing.schema.json",
+      "source_asset_id": "full-review-book-16",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "诡秘之主",
+      "categories": [
+        "foreshadowing",
+        "artifacts",
+        "state_ledger"
+      ],
+      "retrieval_text": "foreshadowing | 诡秘之主 | full_corpus_book_review | legacy_unverified | legacy_candidate | foreshadowing, artifacts, state_ledger",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-foreshadowing-full-review-book-17",
+      "target_family": "foreshadowing",
+      "evidence_pack_id": "evidence-pack-foreshadowing-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/foreshadowing.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/foreshadowing.schema.json",
+      "source_asset_id": "full-review-book-17",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "遮天",
+      "categories": [
+        "foreshadowing",
+        "npcs",
+        "factions"
+      ],
+      "retrieval_text": "foreshadowing | 遮天 | full_corpus_book_review | legacy_unverified | legacy_candidate | foreshadowing, npcs, factions",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-foreshadowing-full-review-family-foreshadowing",
+      "target_family": "foreshadowing",
+      "evidence_pack_id": "evidence-pack-foreshadowing-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/foreshadowing.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/foreshadowing.schema.json",
+      "source_asset_id": "full-review-family-foreshadowing",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "creation_family_evidence",
+      "title": "foreshadowing",
+      "categories": [
+        "foreshadowing",
+        "创作资产证据"
+      ],
+      "retrieval_text": "foreshadowing | foreshadowing | creation_family_evidence | covered | legacy_candidate | foreshadowing, 创作资产证据",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-foreshadowing-full-review-mechanism-cb-m1",
+      "target_family": "foreshadowing",
+      "evidence_pack_id": "evidence-pack-foreshadowing-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/foreshadowing.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/foreshadowing.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m1",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M1",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "foreshadowing | CB-M1 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-foreshadowing-full-review-mechanism-cb-m10",
+      "target_family": "foreshadowing",
+      "evidence_pack_id": "evidence-pack-foreshadowing-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/foreshadowing.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/foreshadowing.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m10",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M10",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "foreshadowing | CB-M10 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-foreshadowing-full-review-mechanism-cb-m11",
+      "target_family": "foreshadowing",
+      "evidence_pack_id": "evidence-pack-foreshadowing-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/foreshadowing.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/foreshadowing.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m11",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M11",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "foreshadowing | CB-M11 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-foreshadowing-full-review-mechanism-cb-m12",
+      "target_family": "foreshadowing",
+      "evidence_pack_id": "evidence-pack-foreshadowing-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/foreshadowing.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/foreshadowing.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m12",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M12",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "foreshadowing | CB-M12 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-foreshadowing-full-review-mechanism-cb-m2",
+      "target_family": "foreshadowing",
+      "evidence_pack_id": "evidence-pack-foreshadowing-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/foreshadowing.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/foreshadowing.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m2",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M2",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "foreshadowing | CB-M2 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-foreshadowing-full-review-mechanism-cb-m3",
+      "target_family": "foreshadowing",
+      "evidence_pack_id": "evidence-pack-foreshadowing-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/foreshadowing.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/foreshadowing.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m3",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M3",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "foreshadowing | CB-M3 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-foreshadowing-full-review-mechanism-cb-m4",
+      "target_family": "foreshadowing",
+      "evidence_pack_id": "evidence-pack-foreshadowing-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/foreshadowing.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/foreshadowing.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m4",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M4",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "foreshadowing | CB-M4 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-foreshadowing-full-review-mechanism-cb-m5",
+      "target_family": "foreshadowing",
+      "evidence_pack_id": "evidence-pack-foreshadowing-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/foreshadowing.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/foreshadowing.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m5",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M5",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "foreshadowing | CB-M5 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-foreshadowing-full-review-mechanism-cb-m6",
+      "target_family": "foreshadowing",
+      "evidence_pack_id": "evidence-pack-foreshadowing-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/foreshadowing.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/foreshadowing.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m6",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M6",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "foreshadowing | CB-M6 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-foreshadowing-full-review-mechanism-cb-m7",
+      "target_family": "foreshadowing",
+      "evidence_pack_id": "evidence-pack-foreshadowing-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/foreshadowing.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/foreshadowing.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m7",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M7",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "foreshadowing | CB-M7 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-foreshadowing-full-review-mechanism-cb-m8",
+      "target_family": "foreshadowing",
+      "evidence_pack_id": "evidence-pack-foreshadowing-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/foreshadowing.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/foreshadowing.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m8",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M8",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "foreshadowing | CB-M8 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-naming-full-review-book-01",
+      "target_family": "naming",
+      "evidence_pack_id": "evidence-pack-naming-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/naming.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/naming.schema.json",
+      "source_asset_id": "full-review-book-01",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "一念永恒",
+      "categories": [
+        "characters",
+        "artifacts",
+        "naming"
+      ],
+      "retrieval_text": "naming | 一念永恒 | full_corpus_book_review | legacy_unverified | legacy_candidate | characters, artifacts, naming",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-naming-full-review-book-05",
+      "target_family": "naming",
+      "evidence_pack_id": "evidence-pack-naming-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/naming.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/naming.schema.json",
+      "source_asset_id": "full-review-book-05",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "凡人修仙传",
+      "categories": [
+        "artifacts",
+        "techniques",
+        "naming"
+      ],
+      "retrieval_text": "naming | 凡人修仙传 | full_corpus_book_review | legacy_unverified | legacy_candidate | artifacts, techniques, naming",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-naming-full-review-book-07",
+      "target_family": "naming",
+      "evidence_pack_id": "evidence-pack-naming-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/naming.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/naming.schema.json",
+      "source_asset_id": "full-review-book-07",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "大主宰",
+      "categories": [
+        "factions",
+        "naming",
+        "techniques"
+      ],
+      "retrieval_text": "naming | 大主宰 | full_corpus_book_review | legacy_unverified | legacy_candidate | factions, naming, techniques",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-naming-full-review-book-10",
+      "target_family": "naming",
+      "evidence_pack_id": "evidence-pack-naming-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/naming.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/naming.schema.json",
+      "source_asset_id": "full-review-book-10",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "斗破苍穹",
+      "categories": [
+        "npcs",
+        "techniques",
+        "naming"
+      ],
+      "retrieval_text": "naming | 斗破苍穹 | full_corpus_book_review | legacy_unverified | legacy_candidate | npcs, techniques, naming",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-naming-full-review-book-14",
+      "target_family": "naming",
+      "evidence_pack_id": "evidence-pack-naming-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/naming.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/naming.schema.json",
+      "source_asset_id": "full-review-book-14",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "牧神记",
+      "categories": [
+        "npcs",
+        "factions",
+        "naming"
+      ],
+      "retrieval_text": "naming | 牧神记 | full_corpus_book_review | legacy_unverified | legacy_candidate | npcs, factions, naming",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-naming-full-review-family-naming",
+      "target_family": "naming",
+      "evidence_pack_id": "evidence-pack-naming-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/naming.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/naming.schema.json",
+      "source_asset_id": "full-review-family-naming",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "creation_family_evidence",
+      "title": "naming",
+      "categories": [
+        "naming",
+        "创作资产证据"
+      ],
+      "retrieval_text": "naming | naming | creation_family_evidence | covered | legacy_candidate | naming, 创作资产证据",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-naming-full-review-mechanism-cb-m1",
+      "target_family": "naming",
+      "evidence_pack_id": "evidence-pack-naming-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/naming.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/naming.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m1",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M1",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "naming | CB-M1 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-naming-full-review-mechanism-cb-m10",
+      "target_family": "naming",
+      "evidence_pack_id": "evidence-pack-naming-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/naming.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/naming.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m10",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M10",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "naming | CB-M10 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-naming-full-review-mechanism-cb-m11",
+      "target_family": "naming",
+      "evidence_pack_id": "evidence-pack-naming-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/naming.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/naming.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m11",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M11",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "naming | CB-M11 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-naming-full-review-mechanism-cb-m12",
+      "target_family": "naming",
+      "evidence_pack_id": "evidence-pack-naming-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/naming.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/naming.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m12",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M12",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "naming | CB-M12 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-naming-full-review-mechanism-cb-m2",
+      "target_family": "naming",
+      "evidence_pack_id": "evidence-pack-naming-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/naming.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/naming.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m2",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M2",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "naming | CB-M2 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-naming-full-review-mechanism-cb-m3",
+      "target_family": "naming",
+      "evidence_pack_id": "evidence-pack-naming-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/naming.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/naming.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m3",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M3",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "naming | CB-M3 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-naming-full-review-mechanism-cb-m4",
+      "target_family": "naming",
+      "evidence_pack_id": "evidence-pack-naming-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/naming.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/naming.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m4",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M4",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "naming | CB-M4 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-naming-full-review-mechanism-cb-m5",
+      "target_family": "naming",
+      "evidence_pack_id": "evidence-pack-naming-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/naming.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/naming.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m5",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M5",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "naming | CB-M5 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-naming-full-review-mechanism-cb-m6",
+      "target_family": "naming",
+      "evidence_pack_id": "evidence-pack-naming-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/naming.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/naming.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m6",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M6",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "naming | CB-M6 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-naming-full-review-mechanism-cb-m7",
+      "target_family": "naming",
+      "evidence_pack_id": "evidence-pack-naming-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/naming.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/naming.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m7",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M7",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "naming | CB-M7 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-naming-full-review-mechanism-cb-m8",
+      "target_family": "naming",
+      "evidence_pack_id": "evidence-pack-naming-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/naming.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/naming.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m8",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M8",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "naming | CB-M8 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-naming-full-review-mechanism-cb-m9",
+      "target_family": "naming",
+      "evidence_pack_id": "evidence-pack-naming-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/naming.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/naming.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m9",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M9",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "naming | CB-M9 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-npcs-full-review-book-03",
+      "target_family": "npcs",
+      "evidence_pack_id": "evidence-pack-npcs-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/npcs.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/npcs.schema.json",
+      "source_asset_id": "full-review-book-03",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "人道至尊",
+      "categories": [
+        "factions",
+        "npcs",
+        "emotional_bonds"
+      ],
+      "retrieval_text": "npcs | 人道至尊 | full_corpus_book_review | legacy_unverified | legacy_candidate | factions, npcs, emotional_bonds",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-npcs-full-review-book-10",
+      "target_family": "npcs",
+      "evidence_pack_id": "evidence-pack-npcs-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/npcs.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/npcs.schema.json",
+      "source_asset_id": "full-review-book-10",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "斗破苍穹",
+      "categories": [
+        "npcs",
+        "techniques",
+        "naming"
+      ],
+      "retrieval_text": "npcs | 斗破苍穹 | full_corpus_book_review | legacy_unverified | legacy_candidate | npcs, techniques, naming",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-npcs-full-review-book-13",
+      "target_family": "npcs",
+      "evidence_pack_id": "evidence-pack-npcs-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/npcs.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/npcs.schema.json",
+      "source_asset_id": "full-review-book-13",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "求魔",
+      "categories": [
+        "emotional_bonds",
+        "npcs",
+        "foreshadowing"
+      ],
+      "retrieval_text": "npcs | 求魔 | full_corpus_book_review | legacy_unverified | legacy_candidate | emotional_bonds, npcs, foreshadowing",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-npcs-full-review-book-14",
+      "target_family": "npcs",
+      "evidence_pack_id": "evidence-pack-npcs-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/npcs.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/npcs.schema.json",
+      "source_asset_id": "full-review-book-14",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "牧神记",
+      "categories": [
+        "npcs",
+        "factions",
+        "naming"
+      ],
+      "retrieval_text": "npcs | 牧神记 | full_corpus_book_review | legacy_unverified | legacy_candidate | npcs, factions, naming",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-npcs-full-review-book-17",
+      "target_family": "npcs",
+      "evidence_pack_id": "evidence-pack-npcs-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/npcs.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/npcs.schema.json",
+      "source_asset_id": "full-review-book-17",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "遮天",
+      "categories": [
+        "foreshadowing",
+        "npcs",
+        "factions"
+      ],
+      "retrieval_text": "npcs | 遮天 | full_corpus_book_review | legacy_unverified | legacy_candidate | foreshadowing, npcs, factions",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-npcs-full-review-book-18",
+      "target_family": "npcs",
+      "evidence_pack_id": "evidence-pack-npcs-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/npcs.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/npcs.schema.json",
+      "source_asset_id": "full-review-book-18",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "雪中悍刀行",
+      "categories": [
+        "emotional_bonds",
+        "npcs",
+        "factions"
+      ],
+      "retrieval_text": "npcs | 雪中悍刀行 | full_corpus_book_review | legacy_unverified | legacy_candidate | emotional_bonds, npcs, factions",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-npcs-full-review-family-npcs",
+      "target_family": "npcs",
+      "evidence_pack_id": "evidence-pack-npcs-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/npcs.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/npcs.schema.json",
+      "source_asset_id": "full-review-family-npcs",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "creation_family_evidence",
+      "title": "npcs",
+      "categories": [
+        "npcs",
+        "创作资产证据"
+      ],
+      "retrieval_text": "npcs | npcs | creation_family_evidence | covered | legacy_candidate | npcs, 创作资产证据",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-npcs-full-review-mechanism-cb-m1",
+      "target_family": "npcs",
+      "evidence_pack_id": "evidence-pack-npcs-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/npcs.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/npcs.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m1",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M1",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "npcs | CB-M1 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-npcs-full-review-mechanism-cb-m10",
+      "target_family": "npcs",
+      "evidence_pack_id": "evidence-pack-npcs-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/npcs.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/npcs.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m10",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M10",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "npcs | CB-M10 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-npcs-full-review-mechanism-cb-m11",
+      "target_family": "npcs",
+      "evidence_pack_id": "evidence-pack-npcs-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/npcs.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/npcs.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m11",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M11",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "npcs | CB-M11 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-npcs-full-review-mechanism-cb-m12",
+      "target_family": "npcs",
+      "evidence_pack_id": "evidence-pack-npcs-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/npcs.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/npcs.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m12",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M12",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "npcs | CB-M12 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-npcs-full-review-mechanism-cb-m2",
+      "target_family": "npcs",
+      "evidence_pack_id": "evidence-pack-npcs-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/npcs.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/npcs.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m2",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M2",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "npcs | CB-M2 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-npcs-full-review-mechanism-cb-m3",
+      "target_family": "npcs",
+      "evidence_pack_id": "evidence-pack-npcs-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/npcs.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/npcs.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m3",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M3",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "npcs | CB-M3 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-npcs-full-review-mechanism-cb-m4",
+      "target_family": "npcs",
+      "evidence_pack_id": "evidence-pack-npcs-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/npcs.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/npcs.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m4",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M4",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "npcs | CB-M4 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-npcs-full-review-mechanism-cb-m5",
+      "target_family": "npcs",
+      "evidence_pack_id": "evidence-pack-npcs-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/npcs.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/npcs.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m5",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M5",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "npcs | CB-M5 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-npcs-full-review-mechanism-cb-m6",
+      "target_family": "npcs",
+      "evidence_pack_id": "evidence-pack-npcs-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/npcs.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/npcs.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m6",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M6",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "npcs | CB-M6 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-npcs-full-review-mechanism-cb-m7",
+      "target_family": "npcs",
+      "evidence_pack_id": "evidence-pack-npcs-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/npcs.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/npcs.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m7",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M7",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "npcs | CB-M7 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-npcs-full-review-mechanism-cb-m8",
+      "target_family": "npcs",
+      "evidence_pack_id": "evidence-pack-npcs-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/npcs.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/npcs.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m8",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M8",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "npcs | CB-M8 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-state_ledger-full-review-book-16",
+      "target_family": "state_ledger",
+      "evidence_pack_id": "evidence-pack-state_ledger-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/state_ledger.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/state_ledger.schema.json",
+      "source_asset_id": "full-review-book-16",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "诡秘之主",
+      "categories": [
+        "foreshadowing",
+        "artifacts",
+        "state_ledger"
+      ],
+      "retrieval_text": "state_ledger | 诡秘之主 | full_corpus_book_review | legacy_unverified | legacy_candidate | foreshadowing, artifacts, state_ledger",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-state_ledger-full-review-family-state_ledger",
+      "target_family": "state_ledger",
+      "evidence_pack_id": "evidence-pack-state_ledger-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/state_ledger.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/state_ledger.schema.json",
+      "source_asset_id": "full-review-family-state_ledger",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "creation_family_evidence",
+      "title": "state_ledger",
+      "categories": [
+        "state_ledger",
+        "创作资产证据"
+      ],
+      "retrieval_text": "state_ledger | state_ledger | creation_family_evidence | covered | legacy_candidate | state_ledger, 创作资产证据",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-state_ledger-full-review-mechanism-cb-m1",
+      "target_family": "state_ledger",
+      "evidence_pack_id": "evidence-pack-state_ledger-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/state_ledger.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/state_ledger.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m1",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M1",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "state_ledger | CB-M1 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-state_ledger-full-review-mechanism-cb-m10",
+      "target_family": "state_ledger",
+      "evidence_pack_id": "evidence-pack-state_ledger-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/state_ledger.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/state_ledger.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m10",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M10",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "state_ledger | CB-M10 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-state_ledger-full-review-mechanism-cb-m11",
+      "target_family": "state_ledger",
+      "evidence_pack_id": "evidence-pack-state_ledger-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/state_ledger.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/state_ledger.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m11",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M11",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "state_ledger | CB-M11 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-state_ledger-full-review-mechanism-cb-m12",
+      "target_family": "state_ledger",
+      "evidence_pack_id": "evidence-pack-state_ledger-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/state_ledger.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/state_ledger.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m12",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M12",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "state_ledger | CB-M12 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-state_ledger-full-review-mechanism-cb-m2",
+      "target_family": "state_ledger",
+      "evidence_pack_id": "evidence-pack-state_ledger-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/state_ledger.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/state_ledger.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m2",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M2",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "state_ledger | CB-M2 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-state_ledger-full-review-mechanism-cb-m3",
+      "target_family": "state_ledger",
+      "evidence_pack_id": "evidence-pack-state_ledger-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/state_ledger.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/state_ledger.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m3",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M3",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "state_ledger | CB-M3 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-state_ledger-full-review-mechanism-cb-m4",
+      "target_family": "state_ledger",
+      "evidence_pack_id": "evidence-pack-state_ledger-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/state_ledger.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/state_ledger.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m4",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M4",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "state_ledger | CB-M4 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-state_ledger-full-review-mechanism-cb-m5",
+      "target_family": "state_ledger",
+      "evidence_pack_id": "evidence-pack-state_ledger-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/state_ledger.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/state_ledger.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m5",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M5",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "state_ledger | CB-M5 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-state_ledger-full-review-mechanism-cb-m6",
+      "target_family": "state_ledger",
+      "evidence_pack_id": "evidence-pack-state_ledger-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/state_ledger.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/state_ledger.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m6",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M6",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "state_ledger | CB-M6 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-state_ledger-full-review-mechanism-cb-m7",
+      "target_family": "state_ledger",
+      "evidence_pack_id": "evidence-pack-state_ledger-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/state_ledger.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/state_ledger.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m7",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M7",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "state_ledger | CB-M7 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-state_ledger-full-review-mechanism-cb-m8",
+      "target_family": "state_ledger",
+      "evidence_pack_id": "evidence-pack-state_ledger-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/state_ledger.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/state_ledger.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m8",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M8",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "state_ledger | CB-M8 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-state_ledger-full-review-mechanism-cb-m9",
+      "target_family": "state_ledger",
+      "evidence_pack_id": "evidence-pack-state_ledger-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/state_ledger.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/state_ledger.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m9",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M9",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "state_ledger | CB-M9 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-state_ledger-mechanism-dpcq-m3",
+      "target_family": "state_ledger",
+      "evidence_pack_id": "evidence-pack-state_ledger-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/state_ledger.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/state_ledger.schema.json",
+      "source_asset_id": "mechanism-dpcq-m3",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "source_asset_type": "mechanism",
+      "title": "斗破苍穹",
+      "categories": [
+        "资源与资产机制"
+      ],
+      "retrieval_text": "state_ledger | 斗破苍穹 | mechanism | formal | promoted | 资源与资产机制",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-state_ledger-mechanism-frxxz-m2",
+      "target_family": "state_ledger",
+      "evidence_pack_id": "evidence-pack-state_ledger-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/state_ledger.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/state_ledger.schema.json",
+      "source_asset_id": "mechanism-frxxz-m2",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "source_asset_type": "mechanism",
+      "title": "凡人修仙传",
+      "categories": [
+        "资源与资产机制"
+      ],
+      "retrieval_text": "state_ledger | 凡人修仙传 | mechanism | formal | promoted | 资源与资产机制",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-state_ledger-mechanism-gzr-m4",
+      "target_family": "state_ledger",
+      "evidence_pack_id": "evidence-pack-state_ledger-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/state_ledger.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/state_ledger.schema.json",
+      "source_asset_id": "mechanism-gzr-m4",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "source_asset_type": "mechanism",
+      "title": "蛊真人",
+      "categories": [
+        "反噬/代价/污染机制"
+      ],
+      "retrieval_text": "state_ledger | 蛊真人 | mechanism | formal | promoted | 反噬/代价/污染机制",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-state_ledger-mechanism-qm-m2",
+      "target_family": "state_ledger",
+      "evidence_pack_id": "evidence-pack-state_ledger-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/state_ledger.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/state_ledger.schema.json",
+      "source_asset_id": "mechanism-qm-m2",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "source_asset_type": "mechanism",
+      "title": "求魔",
+      "categories": [
+        "反噬/代价/污染机制"
+      ],
+      "retrieval_text": "state_ledger | 求魔 | mechanism | formal | promoted | 反噬/代价/污染机制",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-techniques-full-review-book-02",
+      "target_family": "techniques",
+      "evidence_pack_id": "evidence-pack-techniques-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/techniques.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/techniques.schema.json",
+      "source_asset_id": "full-review-book-02",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "不死不灭",
+      "categories": [
+        "foreshadowing",
+        "factions",
+        "techniques"
+      ],
+      "retrieval_text": "techniques | 不死不灭 | full_corpus_book_review | legacy_unverified | legacy_candidate | foreshadowing, factions, techniques",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-techniques-full-review-book-04",
+      "target_family": "techniques",
+      "evidence_pack_id": "evidence-pack-techniques-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/techniques.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/techniques.schema.json",
+      "source_asset_id": "full-review-book-04",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "仙逆",
+      "categories": [
+        "emotional_bonds",
+        "artifacts",
+        "techniques"
+      ],
+      "retrieval_text": "techniques | 仙逆 | full_corpus_book_review | legacy_unverified | legacy_candidate | emotional_bonds, artifacts, techniques",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-techniques-full-review-book-05",
+      "target_family": "techniques",
+      "evidence_pack_id": "evidence-pack-techniques-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/techniques.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/techniques.schema.json",
+      "source_asset_id": "full-review-book-05",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "凡人修仙传",
+      "categories": [
+        "artifacts",
+        "techniques",
+        "naming"
+      ],
+      "retrieval_text": "techniques | 凡人修仙传 | full_corpus_book_review | legacy_unverified | legacy_candidate | artifacts, techniques, naming",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-techniques-full-review-book-06",
+      "target_family": "techniques",
+      "evidence_pack_id": "evidence-pack-techniques-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/techniques.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/techniques.schema.json",
+      "source_asset_id": "full-review-book-06",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "圣墟",
+      "categories": [
+        "artifacts",
+        "foreshadowing",
+        "techniques"
+      ],
+      "retrieval_text": "techniques | 圣墟 | full_corpus_book_review | legacy_unverified | legacy_candidate | artifacts, foreshadowing, techniques",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-techniques-full-review-book-07",
+      "target_family": "techniques",
+      "evidence_pack_id": "evidence-pack-techniques-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/techniques.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/techniques.schema.json",
+      "source_asset_id": "full-review-book-07",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "大主宰",
+      "categories": [
+        "factions",
+        "naming",
+        "techniques"
+      ],
+      "retrieval_text": "techniques | 大主宰 | full_corpus_book_review | legacy_unverified | legacy_candidate | factions, naming, techniques",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-techniques-full-review-book-08",
+      "target_family": "techniques",
+      "evidence_pack_id": "evidence-pack-techniques-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/techniques.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/techniques.schema.json",
+      "source_asset_id": "full-review-book-08",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "完美世界",
+      "categories": [
+        "characters",
+        "emotional_bonds",
+        "techniques"
+      ],
+      "retrieval_text": "techniques | 完美世界 | full_corpus_book_review | legacy_unverified | legacy_candidate | characters, emotional_bonds, techniques",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-techniques-full-review-book-10",
+      "target_family": "techniques",
+      "evidence_pack_id": "evidence-pack-techniques-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/techniques.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/techniques.schema.json",
+      "source_asset_id": "full-review-book-10",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "斗破苍穹",
+      "categories": [
+        "npcs",
+        "techniques",
+        "naming"
+      ],
+      "retrieval_text": "techniques | 斗破苍穹 | full_corpus_book_review | legacy_unverified | legacy_candidate | npcs, techniques, naming",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-techniques-full-review-book-11",
+      "target_family": "techniques",
+      "evidence_pack_id": "evidence-pack-techniques-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/techniques.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/techniques.schema.json",
+      "source_asset_id": "full-review-book-11",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "武动乾坤",
+      "categories": [
+        "artifacts",
+        "factions",
+        "techniques"
+      ],
+      "retrieval_text": "techniques | 武动乾坤 | full_corpus_book_review | legacy_unverified | legacy_candidate | artifacts, factions, techniques",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-techniques-full-review-book-12",
+      "target_family": "techniques",
+      "evidence_pack_id": "evidence-pack-techniques-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/techniques.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/techniques.schema.json",
+      "source_asset_id": "full-review-book-12",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "永生",
+      "categories": [
+        "techniques",
+        "artifacts",
+        "factions"
+      ],
+      "retrieval_text": "techniques | 永生 | full_corpus_book_review | legacy_unverified | legacy_candidate | techniques, artifacts, factions",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-techniques-full-review-book-15",
+      "target_family": "techniques",
+      "evidence_pack_id": "evidence-pack-techniques-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/techniques.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/techniques.schema.json",
+      "source_asset_id": "full-review-book-15",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "full_corpus_book_review",
+      "title": "蛊真人",
+      "categories": [
+        "techniques",
+        "characters",
+        "factions"
+      ],
+      "retrieval_text": "techniques | 蛊真人 | full_corpus_book_review | legacy_unverified | legacy_candidate | techniques, characters, factions",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-techniques-full-review-family-techniques",
+      "target_family": "techniques",
+      "evidence_pack_id": "evidence-pack-techniques-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/techniques.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/techniques.schema.json",
+      "source_asset_id": "full-review-family-techniques",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "creation_family_evidence",
+      "title": "techniques",
+      "categories": [
+        "techniques",
+        "创作资产证据"
+      ],
+      "retrieval_text": "techniques | techniques | creation_family_evidence | covered | legacy_candidate | techniques, 创作资产证据",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-techniques-full-review-mechanism-cb-m1",
+      "target_family": "techniques",
+      "evidence_pack_id": "evidence-pack-techniques-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/techniques.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/techniques.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m1",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M1",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "techniques | CB-M1 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-techniques-full-review-mechanism-cb-m10",
+      "target_family": "techniques",
+      "evidence_pack_id": "evidence-pack-techniques-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/techniques.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/techniques.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m10",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M10",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "techniques | CB-M10 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-techniques-full-review-mechanism-cb-m11",
+      "target_family": "techniques",
+      "evidence_pack_id": "evidence-pack-techniques-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/techniques.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/techniques.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m11",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M11",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "techniques | CB-M11 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-techniques-full-review-mechanism-cb-m12",
+      "target_family": "techniques",
+      "evidence_pack_id": "evidence-pack-techniques-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/techniques.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/techniques.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m12",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M12",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "techniques | CB-M12 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-techniques-full-review-mechanism-cb-m2",
+      "target_family": "techniques",
+      "evidence_pack_id": "evidence-pack-techniques-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/techniques.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/techniques.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m2",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M2",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "techniques | CB-M2 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-techniques-full-review-mechanism-cb-m3",
+      "target_family": "techniques",
+      "evidence_pack_id": "evidence-pack-techniques-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/techniques.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/techniques.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m3",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M3",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "techniques | CB-M3 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    },
+    {
+      "context_id": "creation-context-v012-techniques-full-review-mechanism-cb-m4",
+      "target_family": "techniques",
+      "evidence_pack_id": "evidence-pack-techniques-v0.10",
+      "evidence_pack_path": "system/research_assets/evidence_packs/techniques.v0.10.json",
+      "schema_path": "system/creation_assets/schemas/techniques.schema.json",
+      "source_asset_id": "full-review-mechanism-cb-m4",
+      "source_path": "system/agent_ops/outbox/job-v07-full-corpus-antigravity-review_validated.md",
+      "source_asset_type": "cross_book_mechanism",
+      "title": "CB-M4",
+      "categories": [
+        "跨书机制蒸馏"
+      ],
+      "retrieval_text": "techniques | CB-M4 | cross_book_mechanism | legacy_unverified | legacy_candidate | 跨书机制蒸馏",
+      "content_generation_allowed": false
+    }
+  ],
+  "summary": {
+    "total_items": 162,
+    "family_count": 9,
+    "by_family": {
+      "artifacts": 18,
+      "characters": 18,
+      "emotional_bonds": 18,
+      "factions": 18,
+      "foreshadowing": 18,
+      "naming": 18,
+      "npcs": 18,
+      "state_ledger": 18,
+      "techniques": 18
+    }
+  },
+  "content_generation_allowed": false,
+  "external_agent_execution_allowed": false,
+  "guardrails": [
+    "Evidence-pack metadata only",
+    "No raw novel prose",
+    "No unregistered writer execution",
+    "No final creative assets"
+  ]
+}

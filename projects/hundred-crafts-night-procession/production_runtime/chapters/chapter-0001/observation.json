@@ -1,0 +1,115 @@
+{
+  "chapter_id": "chapter-0001",
+  "draft_sha256": "53454405f24e35284ef730209e086ce354a146257a727b17c1c12118eadbe9d5",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "fact-0001",
+        "asset_id": "char_zhou_li",
+        "field_path": "character.current_state",
+        "before": "active",
+        "after": "事故记录出现周砺父亲周永直的签名。",
+        "evidence": "周砺确认将“梁底刻痕签名：周永直”写入事故记录，并在物证复核栏签名。"
+      },
+      {
+        "fact_id": "fact-0002",
+        "asset_id": "char_zhou_li",
+        "field_path": "character.action_commitment",
+        "before": "未对现场危险采取正式处置",
+        "after": "申请复核并叫停现场危险作业",
+        "evidence": "周砺要求北侧停机、退三米、不得触碰旧梁，并说明将现场情况写入事故记录交复核。"
+      }
+    ],
+    "npcs": [],
+    "locations": [],
+    "factions": [],
+    "artifacts": [
+      {
+        "fact_id": "fact-0003",
+        "asset_id": "artifact_unnamed_beam",
+        "field_path": "artifact.condition",
+        "before": "active",
+        "after": "与砖券、临时托架、后补钢箍全部脱离并持续退移",
+        "evidence": "正文明确写道梁与既有连接之间各自留出细缝，且临时支点仍需为梁继续退移留出余量。"
+      },
+      {
+        "fact_id": "fact-0004",
+        "asset_id": "artifact_unnamed_beam",
+        "field_path": "artifact.support_state",
+        "before": "原有连接承受作用",
+        "after": "四个彼此不连的临时支点仅支托板、不接触旧梁",
+        "evidence": "周砺要求钢托挪到缝外，设置四个独立临时支点，支点只接托板、不接梁。"
+      },
+      {
+        "fact_id": "fact-0005",
+        "asset_id": "artifact_unnamed_beam",
+        "field_path": "artifact.evidence_state",
+        "before": "覆灰遮蔽，刻痕未被记录",
+        "after": "覆灰层次、梁底刻痕、位置与照片编号进入事故记录附件",
+        "evidence": "记录员拍摄梁底全景、覆灰层次、检修镜位置和刻痕，并逐条记入附件栏。"
+      }
+    ],
+    "techniques": [],
+    "relationships": [],
+    "emotions": [
+      {
+        "fact_id": "fact-0006",
+        "asset_id": "char_zhou_li",
+        "field_path": "character.emotional_state",
+        "before": "未显露与父亲旧案直接相关的情绪",
+        "after": "看到“周永直”刻痕后呼吸停顿并压住记录纸",
+        "evidence": "正文写明周砺看到“周”“永直”后呼吸停了一下，并用掌心压住被风掀起的记录纸。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "fact-0007",
+        "asset_id": "artifact_unnamed_beam",
+        "field_path": "artifact.inscription",
+        "before": "未确认名称或署名信息",
+        "after": "梁底刻痕被记录为“周永直”，并附带早于父亲出事三年的日期线索",
+        "evidence": "检修镜下看见三个字“周永直”，刻痕下方还有日期，年份比父亲出事那年早三年。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "fact-0008",
+        "asset_id": "foreshadow_second_record",
+        "field_path": "foreshadowing.status",
+        "before": "active",
+        "after": "active",
+        "evidence": "正文只形成并存档了当前事故记录，未出现第二份修复记录。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "fact-0009",
+        "asset_id": "artifact_unnamed_beam",
+        "field_path": "timeline.incident",
+        "before": "旧梁处于既有连接状态",
+        "after": "凌晨现场确认梁与砖券、托架、钢箍之间全部出现细缝，随后东侧托板下滑一寸并出现新裂纹",
+        "evidence": "正文先描述全部连接脱离，后明确记录东侧托板下滑一寸、北侧垫层出现新裂纹。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "fact-0010",
+        "asset_id": "artifact_unnamed_beam",
+        "field_path": "physical_state.position",
+        "before": "稳定支承于原临时托架",
+        "after": "旧梁仍悬在原处但未重新接上，东侧托板下滑一寸",
+        "evidence": "结尾写明旧梁仍悬在原处，与砖券、托架、钢箍隔着细缝；东侧托板此前已下滑一寸。"
+      }
+    ],
+    "naming": [
+      {
+        "fact_id": "fact-0011",
+        "asset_id": "artifact_unnamed_beam",
+        "field_path": "naming.recorded_inscription",
+        "before": null,
+        "after": "周永直",
+        "evidence": "周砺要求记录员照物证写下“梁底刻痕签名：周永直”。"
+      }
+    ]
+  }
+}

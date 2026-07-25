@@ -1,0 +1,18 @@
+{
+  "chapter_id": "chapter-0003",
+  "accepted_revision_sha256": "86675002d71c4837d956b7d8fe02eda11cb6b9afd7295d9ff2592870d2f54d97",
+  "state_deltas": [
+    {
+      "fact_id": "fact-ch0003-001",
+      "asset_id": "char_cheng_xueqing",
+      "field_path": "character.current_state",
+      "operation": "set",
+      "before": "戏楼成为新的受损节点，工程不能按原计划复工。",
+      "after": "程雪青公开承认模型缺失旧节点并承担补测责任。"
+    }
+  ],
+  "resolved_audit_ids": [
+    "ISSUE-CH003-ENDING-DUPLICATION",
+    "ISSUE-CH003-ZHOU-NAME-CONTINUITY"
+  ]
+}

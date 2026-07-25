@@ -1,0 +1,13 @@
+{
+  "version": "0.25",
+  "chapter_id": "chapter-0024",
+  "source_revision": "system/production_runtime/chapters/chapter-0024/revision.md",
+  "source_sha256": "7b33ecf3cf92c0dd76528fd8bae20147868df3d1f13cb70c79d0dedbc8a2abdc",
+  "release_edit": "system/production_runtime/release_edits/chapter-0024.md",
+  "release_edit_sha256": "585c217b4ff72ea661972e7ceff9a57f8df0c10198c027eaa64966cf990b32b8",
+  "repair_direction": "以木尺、石栏和声响替代重复托肘互动。",
+  "provider": "deterministic_editor",
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-021-030.json",
+  "reviewed_release_edit_sha256": "585c217b4ff72ea661972e7ceff9a57f8df0c10198c027eaa64966cf990b32b8"
+}

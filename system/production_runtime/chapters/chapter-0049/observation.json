@@ -1,0 +1,104 @@
+{
+  "chapter_id": "chapter-0049",
+  "draft_sha256": "8f95513d691c547ed254ae9c71f56603b9d7d4df6ccb7e2aed32870b14ae431a",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "chapter-0049-fact-03",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_observed_choice",
+        "before": "未再次施术，只以身体承受残缺旧誓回声，并在无法确认归属时撤离残印与持灯人，拒绝把古债碎影解释为当前封源案答案",
+        "after": "公开承认以自有灰雨研究记录换取一次性外沿路线及由此增加的暴露，拒绝伪造合法来源，并把审请严格限定为州府覆印是否后加",
+        "evidence": "陆沉渊当台说明记录交割、路线条件和未使用第三方寿火，接受腕骨闭合纹与十格追踪，仍拒绝交付残印或扩张古债裁定。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "chapter-0049-fact-05",
+        "asset_id": "npc_debt_collector_gu_xun",
+        "field_path": "npc.current_procedural_decision",
+        "before": "确认第一道冷额对顾家灯位存在重复占用，限定撤销该段并停止相邻两户继续失温执行",
+        "after": "只核验受封户灯源覆印、州府转运残印及二者咬合，拒绝把异物回收、旧址或古债并入本次反照",
+        "evidence": "顾巡以断续灰痕的冷链扣住命审台槽环，明确列出三项核验对象，并逐盏完成反照后宣读限定裁句。"
+      },
+      {
+        "fact_id": "chapter-0049-fact-06",
+        "asset_id": "npc_registrar_qiu_shen",
+        "field_path": "npc.current_authority_status",
+        "before": "仇慎正式登记自此不再持有本地呈印资格，命籍衙不得以其印补成本地执行",
+        "after": "仇慎继续保持无呈印资格，不施印、不补正来源，只登记研究记录交割、十个百分点暴露增幅及本次裁定边界",
+        "evidence": "仇慎让呈印凹口保持空置，以左手刻录“无权补正”和“古债不入本次裁定”，全程未施印。"
+      },
+      {
+        "fact_id": "chapter-0049-fact-07",
+        "asset_id": "npc_prefecture_shadow_envoy",
+        "field_path": "npc.current_recovery_strategy",
+        "before": "停止在旧槽现场直接验收，封存原路，将残印交验与受封户灯源栏亲自指认并入下一次核验门槛",
+        "after": "未能在本次限定反照中直接收走残印，转而以回收冷边追踪陆沉渊，并把残印持有者、保管见证及反照所见者列入下一次回收复核压力",
+        "evidence": "闻照微要求按异物回收但被审理边界挡住，裁定后保留追踪并在台外落下限期回收冷边。"
+      }
+    ],
+    "locations": [],
+    "factions": [
+      {
+        "fact_id": "chapter-0049-fact-08",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_next_procedural_hook",
+        "before": "下一次追缴将复核残印持印者、保管见证与本次响应所见；首批灯源申请继续停留外槽",
+        "after": "命审台已接纳来源透明的咬合证据并裁定灯源覆印后加；首批户灯封槽尚未完全解除，下一程序须先复核持印者、保管见证和反照所见者的继续见证或退出选择",
+        "evidence": "记录石落下后加覆印裁句，同时显示下一次复核对象；三盏灯仍在槽中，解扣声中止，持灯人尚未作出继续见证或退出选择。"
+      }
+    ],
+    "artifacts": [
+      {
+        "fact_id": "chapter-0049-fact-04",
+        "asset_id": "artifact_prefecture_transit_registry_seal",
+        "field_path": "artifact.current_procedural_relation",
+        "before": "残印在州府影印与旧槽双重压力下放出倒流银灰火和残缺旧誓，撤离后仍由陆沉渊封布持有；其咬合痕在受封户灯源栏顶开一层后加州府覆印",
+        "after": "残印在命审台被公开用于限定反照，逐一证明三盏户灯覆印与其同类咬合；反照后仍由陆沉渊封布持有，未交给州府影印",
+        "evidence": "陆沉渊将残印置于中央反照位，顾巡以冷链逐灯核验咬合；裁定后陆沉渊重新按住封布，闻照微仅留下回收冷边。"
+      }
+    ],
+    "techniques": [],
+    "relationships": [],
+    "emotions": [],
+    "information": [
+      {
+        "fact_id": "chapter-0049-fact-01",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_procedure_result",
+        "before": "确认当前封源印与州府转运残印经过同类转运咬合，但仍未确认封批内容、完整链条、转运起点或归属",
+        "after": "命审台限定裁定并确认首批受封户灯源栏的州府覆印位于转运旧灰之上，属于州府完成转运后加盖的来源标记；古债与完整转运归属仍不在认定范围",
+        "evidence": "反照剥离三盏户灯痕迹，公开显示转运旧灰在下、灯源覆印在上，残印缺角与覆印逐一咬合，顾巡宣读限定裁句。"
+      },
+      {
+        "fact_id": "chapter-0049-fact-02",
+        "asset_id": "state_ledger_half_life_registry_exposure",
+        "field_path": "state_ledger.current_exchange_exposure_delta",
+        "before": "灰雨研究记录交换造成的精确暴露增幅尚未在命审台公开落定",
+        "after": "研究记录永久失去持有权与半寿残籍暴露增加十个百分点同场登记，陆沉渊同时被明确记录为州府转运残印持有者",
+        "evidence": "空槽验证研究记录交割不可撤回，命审台十格窄光逐格压入半寿残籍追踪栏，仇慎公开登记原值增加十个百分点且不得向第三方补收。"
+      },
+      {
+        "fact_id": "chapter-0049-fact-09",
+        "asset_id": "state_ledger_unresolved_mysteries",
+        "field_path": "state_ledger.current_inference_limit",
+        "before": "断裂手印与倒流银灰火被限定为古债契约碎影；残誓仅保留三个不完整音节，其双方、数额、所欠之物及与当前封源案的关系继续未解",
+        "after": "古债双方、数额、旧址内槽、所欠之物及完整转运归属被明确排除在本次裁定之外，继续保持未解",
+        "evidence": "审请纸、仇慎记录和顾巡裁句均限定只审后加来源标记，并逐项声明古债与旧址内槽不在本次裁定内。"
+      },
+      {
+        "fact_id": "chapter-0049-fact-10",
+        "asset_id": "state_ledger_public_reputation",
+        "field_path": "state_ledger.current_audience_direction",
+        "before": "公开可见范围扩展为泥灯巷公开反照步骤、持灯人自行删停撤及州府影印传播冷边；外巷出现有限协作但未形成统一代证",
+        "after": "陆沉渊以研究记录换路、半寿残籍增加十个百分点暴露及持有州府转运残印的关系进入命审台公开记录；持灯人与见证者仍各自保留继续见证或退出权",
+        "evidence": "陆沉渊在台前完整自曝交换代价，仇慎把相关内容转向众人公开登记；结尾无人替持灯人决定是否认领裁定或继续留场。"
+      }
+    ],
+    "hooks": [],
+    "timeline": [],
+    "physical_state": [],
+    "naming": []
+  }
+}

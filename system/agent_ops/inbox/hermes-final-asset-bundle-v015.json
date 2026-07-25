@@ -1,0 +1,348 @@
+{
+  "version": "0.15",
+  "project": "《借天改命账》",
+  "assets": [
+    {
+      "asset_id": "character_lu_chenyuan",
+      "family": "characters",
+      "display_name": "陆沉渊",
+      "lifecycle_state": "active",
+      "source_refs": [
+        "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md",
+        "phase2E/01_planning_package/phase2E_chapter_plan_control_pack.md"
+      ],
+      "relationships": [
+        {"target_id": "bond_mother_su_wan","relation_type": "son_bound_by_lifespan_debt"},
+        {"target_id": "artifact_ashlight_cup","relation_type": "bearer_of"},
+        {"target_id": "faction_mudlamp_lane","relation_type": "protects_and_is_bound_to"},
+        {"target_id": "technique_embertrace_return","relation_type": "practices"}
+      ],
+      "constraints": [
+        "Does not transfer a life-cost to uninvolved residents.",
+        "Each use leaves bodily evidence or increases pursuit risk.",
+        "His mother debt and the lane protection array remain non-negotiable constraints."
+      ],
+      "character": {
+        "role": "半寿命籍抄录者，先求保住母亲与街坊，后承担翻还错寿的责任。",
+        "growth_stage": "燃命境初成，能辨认被烧成灰屑的寿痕。",
+        "debt_balance": 50,
+        "exposure_rate": 0.35,
+        "sanity_level": 0.72,
+        "identity_masks": {
+          "max_active_masks": 1,
+          "exposure_parameter": "half_life_registry_exposure"
+        },
+        "growth_policy": {
+          "transition_condition": "只有以自身命火承住一次错寿回流、并守住泥灯巷护阵时，才可推进修为。",
+          "forbidden_shortcut": "不得拿贫城孩童、无辜命灯或母亲余寿换取突破。",
+          "audit_resolution": "每次改动寿缘都须留下可见代价：白发蔓延、胸骨灼裂或咳出冷灰，并使追缴气息更清晰。"
+        },
+        "originality_policy": "角色从半寿残籍、贫城互保与自担反噬的世界母机生长，不借用既有作品的人名、身世链或升级路径。"
+      }
+    },
+    {
+      "asset_id": "npc_mo_jinglan",
+      "family": "npcs",
+      "display_name": "莫井兰",
+      "lifecycle_state": "active",
+      "source_refs": [
+        "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md",
+        "phase2C/03_codex_validation/phase2C_antigravity_bible_review_report.md"
+      ],
+      "relationships": [
+        {"target_id": "faction_mudlamp_lane","relation_type": "keeps_its_night_lamps"},
+        {"target_id": "foreshadowing_cinder_seal_rain","relation_type": "witnesses_surface_sign"}
+      ],
+      "constraints": [
+        "Her knowledge is partial oral memory, never omniscient exposition.",
+        "Helping preserve testimony exposes her remaining life-fire to collection."
+      ],
+      "npc": {
+        "role_class": "泥灯巷守灯老妇，保存旧年错征留下的灰烬口述。",
+        "recurrence_policy": {
+          "map_transition": "仅在泥灯巷护阵受损、或其旧口述能改变错寿归属时出现。",
+          "power_scaling": "不以斗法抬升；她的作用来自对街坊命灯与烧灰纹路的辨认。",
+          "retirement_condition": "当她守下的口述被公开见证，且不再需要她燃余寿维持夜灯时退场。"
+        },
+        "faction_id": "faction_mudlamp_lane",
+        "information_state": "知道百年前一场灰雨后，巷民命灯曾被重复点取；不知道篡改者身份。",
+        "ledger_debt_balance": 8,
+        "trust_metric": 0.7,
+        "originality_policy": "以贫城互保中的守灯职责构成，不复刻既有作品的长者身份、秘传关系或牺牲桥段。"
+      }
+    },
+    {
+      "asset_id": "faction_mudlamp_lane",
+      "family": "factions",
+      "display_name": "泥灯巷",
+      "lifecycle_state": "active",
+      "source_refs": [
+        "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md",
+        "phase2E/01_planning_package/phase2E_chapter_plan_control_pack.md"
+      ],
+      "relationships": [
+        {"target_id": "artifact_ashlight_cup","relation_type": "shelters"},
+        {"target_id": "state_ledger_poorcity_returnfire","relation_type": "is_tracked_by"}
+      ],
+      "constraints": [
+        "The mutual-aid network cannot become expendable fuel for a single hero.",
+        "Every communal protection act worsens the protection array's visible lifespan cracks or attracts collectors."
+      ],
+      "faction": {
+        "interest": "让巷中住户熬过本轮征命，补住护阵寿裂，并把被烧掉的年月留作彼此可认的证词。",
+        "pressure_level": 4,
+        "tax_enforcement_role": "被征命的基层互保共同体；以轮守命灯和互垫残寿抵御外来追缴。",
+        "associated_ledger_states": [
+          "mudlamp_array_integrity",
+          "resident_lifefire_reserve",
+          "half_life_registry_exposure"
+        ],
+        "cohort_capacity": 36,
+        "threat_exposure_coefficient": 0.6,
+        "lifecycle_policy": {
+          "establishment": "以共同守灯、修补护阵和互认旧灰痕为持续存在的基础。",
+          "alliance_shift": "只有在外来势力实际返还寿火或公开威胁巷民时，才改变支持立场。",
+          "territorial_expansion": "不得脱离贫城情感锚点扩张；扩大互保范围必先补足护阵裂口。",
+          "retirement": "当巷民不再以自身命火作抵押、且互保关系被更稳妥的命法承接时方可解散。"
+        },
+        "originality_policy": "组织以贫城护阵、命灯互守和寿火压力为核心，不沿用现成门派、帮会或革命组织范式。"
+      }
+    },
+    {
+      "asset_id": "artifact_ashlight_cup",
+      "family": "artifacts",
+      "display_name": "灰烬回灯盏",
+      "lifecycle_state": "active",
+      "source_refs": [
+        "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md",
+        "phase2C/03_codex_validation/phase2C_bible_validation_report.md"
+      ],
+      "relationships": [
+        {"target_id": "technique_embertrace_return","relation_type": "amplifies"},
+        {"target_id": "foreshadowing_cinder_seal_rain","relation_type": "reveals_traces_of"},
+        {"target_id": "state_ledger_poorcity_returnfire","relation_type": "updates"}
+      ],
+      "constraints": [
+        "It stores only mistakenly taken residual fire, never fresh life directly stolen from a person.",
+        "Activation visibly cracks the user's skin with ember lines and alerts pursuit through the lamp's smoke."
+      ],
+      "artifact": {
+        "cost": "每次让错寿残火回照，持盏者心口都会熄暗一瞬；若连续三次，半寿命火将出现不可逆裂纹。",
+        "upgrade_stage": "裂陶初醒",
+        "lifecycle_policy": {
+          "acquisition": "由泥灯巷护阵基座掉落，须以一段自愿守夜的残火唤醒。",
+          "activation": "只在现场有灰化寿痕、且持盏者愿承担回流反噬时启用。",
+          "dormancy": "护阵濒毁或灯盏吸入无辜命火时立即沉寂。",
+          "retirement": "若器内残火全部归还原主或其受益街坊，灯盏化为普通陶盏。"
+        },
+        "cost_and_limitation_rules": {
+          "usage_cost": "消耗持有者的命火稳定度，并在mudlamp_array_integrity低于安全线时加剧护阵裂响。",
+          "backlash": "灯焰会从掌纹钻入胸骨，留下灰红灼纹；其烟味可被收债者循到。",
+          "exposure_state_key": "half_life_registry_exposure"
+        },
+        "upgrade_path": {
+          "criteria": "每一阶段须先返还一组可辨认的错寿残火，并经巷民共同见证。",
+          "materials": "错征灰烬、护阵裂屑与持有者自担的一缕命火，不能以掠夺寿数替代。",
+          "state_transition": "裂陶初醒 -> 铜胎凝光 -> 归火长明"
+        },
+        "visual_symbol_ledger": "粗陶盏腹布满像干涸河床的裂纹，点亮时裂缝流出银灰火屑，照见骨上缠绕的债痕。",
+        "originality_policy": "器物功能围绕错寿回照、共同见证与反噬追踪建立，不借用任何既有标志性器物形态或能力。"
+      }
+    },
+    {
+      "asset_id": "technique_embertrace_return",
+      "family": "techniques",
+      "display_name": "烬痕归火术",
+      "lifecycle_state": "active",
+      "source_refs": [
+        "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md",
+        "phase2E/01_planning_package/phase2E_chapter_plan_control_pack.md"
+      ],
+      "relationships": [
+        {"target_id": "artifact_ashlight_cup","relation_type": "uses"},
+        {"target_id": "state_ledger_poorcity_returnfire","relation_type": "changes"},
+        {"target_id": "faction_mudlamp_lane","relation_type": "can_protect"}
+      ],
+      "constraints": [
+        "Cannot create lifespan or erase debt; it only redirects a verified mistaken extraction.",
+        "The caster's white hair, split skin, and cold-ash cough are immediate visible backlash."
+      ],
+      "technique": {
+        "cost": "以施术者一缕稳定命火为引，强行牵回错征残火；每次施展都会减少其连续作战能力。",
+        "counter_ids": [
+          "artifact_ashlight_cup"
+        ],
+        "ledger_state_cost_key": "caster_lifefire_stability",
+        "measurable_decrement": 1,
+        "backlash_state_modifier": "增加half_life_registry_exposure，并在胸骨留下可被寿印感知的灼裂。",
+        "required_auditing_role": "泥灯巷至少一名受害住户须认出残火来源，防止术法被用来改写无辜者寿缘。",
+        "relic_exposure_coefficient": 0.5,
+        "lifecycle_policy": {
+          "evolution": "仅在一次回火同时护住巷民命灯而未转嫁伤害后，才可扩展可牵引的残火范围。",
+          "decay": "施术者处于空寿状态或护阵裂口未补时，术式会散作伤人的冷灰。",
+          "retirement": "若错征源头已被切断且术式再无返还对象，归入禁术封存。"
+        },
+        "originality_policy": "术法以灰化年月、肉身反噬与共同见证的原创因果构成，不采用既有功法名、境界序列或招式链。"
+      }
+    },
+    {
+      "asset_id": "naming_lifefire_local_style",
+      "family": "naming",
+      "display_name": "命火地名与器术命名法",
+      "lifecycle_state": "active",
+      "source_refs": [
+        "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md",
+        "system/creation_assets/project_assets.v0.2.json"
+      ],
+      "relationships": [],
+      "constraints": [
+        "Names must privilege local objects, bodily traces, and supernatural consequences over bureaucratic abstraction.",
+        "Names must be screened against all forbidden collision and forbidden term lists."
+      ],
+      "naming": {
+        "semantic_field": "寿火余烬、护阵裂纹、贫城巷道、命页血印与归还年月的触感。",
+        "naming_roots": [
+          "烬",
+          "灯",
+          "痕",
+          "裂",
+          "归",
+          "巷",
+          "骨"
+        ],
+        "form_rules": [
+          "人物名使用常见姓氏配沉静双字，避免神祇化头衔和夸张尊号。",
+          "地名以可触摸的贫城材料、光色或阵痕组合，保留居民生活感。",
+          "器物名需指出可见形态或遗留伤痕；术名需指出动作与后果。",
+          "禁用纯流程、表格、审计或现实制度语汇作为读者可见名称。"
+        ],
+        "forbidden_collisions": [
+          "至尊骨",
+          "重瞳",
+          "九秘",
+          "掌天瓶",
+          "春秋蝉",
+          "魂殿"
+        ],
+        "forbidden_terms": [
+          "测名院",
+          "无名者航路",
+          "群岛无名碑",
+          "海图擦除",
+          "旧名碑逻辑"
+        ],
+        "originality_policy": "命名从本项目寿火、贫城护阵与肉身代价的感官逻辑生成，不模仿来源作品的词法模板、称号结构或专名。"
+      }
+    },
+    {
+      "asset_id": "bond_mother_su_wan",
+      "family": "emotional_bonds",
+      "display_name": "苏晚与陆沉渊的垫寿亲缘",
+      "lifecycle_state": "active",
+      "source_refs": [
+        "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md",
+        "phase2C/03_codex_validation/phase2C_antigravity_bible_review_report.md"
+      ],
+      "relationships": [
+        {"target_id": "character_lu_chenyuan","relation_type": "mother_of"},
+        {"target_id": "state_ledger_poorcity_returnfire","relation_type": "deadline_is_tracked_by"}
+      ],
+      "constraints": [
+        "The mother is an active moral presence, not expendable motivation.",
+        "Any attempt to relieve her debt must carry an exposure, bodily, or communal consequence."
+      ],
+      "emotional_bond": {
+        "bond_type": "母亲以自身命火垫住儿子半寿残页所形成的亲缘命债。",
+        "trust_state": "相护而隐忧",
+        "persona_trust_map": [
+          "陆沉渊:不知儿子每次归火都会反灼自身",
+          "泥灯巷守灯人:知晓苏晚拒绝拿邻里寿数救子"
+        ],
+        "lifespan_decay_rate": 0.1,
+        "preservation_deadline": "苏晚命灯的第七道裂纹合拢前，必须找到停止重复征命的办法。",
+        "karmic_debt_modifier": 2,
+        "exposure_backlash_coefficient": 0.8,
+        "transition_policy": "陆沉渊每次施术都使苏晚的命灯投下更短的影子；若他瞒报代价，亲缘信任会转为阻拦，而非无条件支持。"
+        ,"originality_policy": "以垫寿、隐瞒反噬与不牺牲邻里的共同底线建立，不套用既有作品的亲属悲剧链。"
+      }
+    },
+    {
+      "asset_id": "foreshadowing_cinder_seal_rain",
+      "family": "foreshadowing",
+      "display_name": "灰雨印痕",
+      "lifecycle_state": "active",
+      "source_refs": [
+        "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md",
+        "phase2E/01_planning_package/phase2E_chapter_plan_control_pack.md"
+      ],
+      "relationships": [
+        {"target_id": "artifact_ashlight_cup","relation_type": "is_revealed_by"},
+        {"target_id": "npc_mo_jinglan","relation_type": "is_remembered_by"},
+        {"target_id": "state_ledger_poorcity_returnfire","relation_type": "payoff_tracks"}
+      ],
+      "constraints": [
+        "The clue appears as sensory supernatural residue, not paperwork.",
+        "Investigating it burns the investigator and raises collection exposure before any revelation."
+      ],
+      "foreshadowing": {
+        "surface_explanation": "每逢护阵寿裂扩大，巷檐会落下细灰雨；灰粒贴骨即成暗红印，像被谁从骨里擦走了一小段光。",
+        "payoff_stage": "贫城错寿首次回流后揭开其为跨层征命余烬。",
+        "hidden_logic_key": "repeated_extraction_echo",
+        "payoff_condition_ledger_state": "mudlamp_array_integrity恢复至安全线，且returned_miscollected_lifefire出现首次正向结余。",
+        "clue_exposure_risk": 0.55,
+        "lifecycle_policy": {
+          "setup": "在守灯、修阵或救治街坊时以皮肤刺痛、灰味和阵纹颤鸣呈现。",
+          "misdirection": "可被误认作护阵老化或灾年余尘，但不得以无依据的阴谋解释替代。",
+          "reveal": "只有回灯盏照出灰粒中的断续寿痕、并有受害者辨认时，才揭示其与重复征命相关。",
+          "retirement": "确认灰雨来源并使其不再落入泥灯巷后，转为后续古债线索的已解标记。"
+        },
+        "originality_policy": "线索以灰雨、骨上印痕和护阵感官压力构成，不复制既有谜团物件、场景或揭示顺序。"
+      }
+    },
+    {
+      "asset_id": "state_ledger_poorcity_returnfire",
+      "family": "state_ledger",
+      "display_name": "泥灯巷归火余量",
+      "lifecycle_state": "active",
+      "source_refs": [
+        "phase2C/02_hermes_bible/borrowed_heaven_life_account_bible.md",
+        "phase2C/03_codex_validation/phase2C_bible_validation_report.md"
+      ],
+      "relationships": [
+        {"target_id": "faction_mudlamp_lane","relation_type": "measures_survival_pressure_for"},
+        {"target_id": "bond_mother_su_wan","relation_type": "records_deadline_pressure_for"},
+        {"target_id": "technique_embertrace_return","relation_type": "is_changed_by"}
+      ],
+      "constraints": [
+        "A positive return never cancels the mother debt or the protection array burden automatically.",
+        "Every gain must name whose life-fire returned and whose visible backlash or exposure increased."
+      ],
+      "state_ledger": {
+        "state_key": "returned_miscollected_lifefire",
+        "value_type": "bounded_numeric_with_witnessed_source_and_consequence",
+        "audit_policy": {
+          "validation_rule": "每次变化须记录可辨认的灰烬寿痕、受害住户见证、归还去向与施术者肉身反噬。",
+          "transaction_boundary": "一笔归火在护阵获得实际支撑、或原主命灯恢复可见亮度后才算闭合。",
+          "balance_rule": "归还的寿火、陆沉渊命火稳定度下降、半寿暴露提升及护阵裂口变化必须同时对照，禁止凭空抹债。"
+        },
+        "retribution_triggers": [
+          "归火来源无法被受害者或灰痕辨认",
+          "连续施术导致caster_lifefire_stability跌破安全线",
+          "mudlamp_array_integrity下降仍强行抽取回火"
+        ],
+        "tracking_metrics": [
+          "returned_miscollected_lifefire",
+          "mudlamp_array_integrity",
+          "mother_life_lamp_cracks",
+          "half_life_registry_exposure",
+          "caster_lifefire_stability"
+        ],
+        "decay_policy": {
+          "decay_condition": "护阵寿裂扩张、灰雨未止或归火被截走时，余量回落并使街坊命灯变暗。",
+          "restoration_condition": "只有通过烬痕归火术返还经见证的错寿、并由巷民共同修补阵纹时恢复。"
+        },
+        "originality_policy": "追踪的是超自然寿火回流、护阵承压和身体反噬，不使用现成作品的数值体系或专有状态名称。"
+      }
+    }
+  ]
+}

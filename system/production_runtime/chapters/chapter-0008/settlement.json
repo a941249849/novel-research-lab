@@ -1,0 +1,199 @@
+{
+  "chapter_id": "chapter-0008",
+  "accepted_revision_sha256": "679f83c3313973f15f8fc6f6c6f635df836ee40538cf248fd4beb48f06e9cb4f",
+  "state_deltas": [
+    {
+      "fact_id": "chapter-0008-character-lu-chenyuan-001",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_procedural_status",
+      "operation": "set",
+      "before": "明日午前须与莫井兰、顾婶一同到命籍衙，分别携带陶片与各自所见；新的监督追缴纸尚未贴门但已折返巷口",
+      "after": "明日午前须先接受门上追缴纸与自身在场认痕核验，午后仍可能进入泥灯巷逐项监督"
+    },
+    {
+      "fact_id": "chapter-0008-character-lu-chenyuan-002",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_local_evidence_statement",
+      "operation": "set",
+      "before": "以肉眼辨认三处灰痕不同，不能说明落灰者身份",
+      "after": "确认追缴纸灰早于新字和湿泥，绕开本地印位，不能归于陶片或顾家户灯；无法继续追查来源"
+    },
+    {
+      "fact_id": "chapter-0008-npc-registrar-qiu-shen-001",
+      "asset_id": "npc_registrar_qiu_shen",
+      "field_path": "npc.local_review_decision",
+      "operation": "set",
+      "before": "今日不收陶片；明日午前三人须到命籍衙，顾家户灯继续留衙，缺一按拒验续记",
+      "after": "追缴纸继续保留并偏印贴门，旁注“原位灰痕在下，次序待核”；陶片与顾婶仍须到场，陆沉渊认痕列入明日先验"
+    },
+    {
+      "fact_id": "chapter-0008-npc-registrar-qiu-shen-002",
+      "asset_id": "npc_registrar_qiu_shen",
+      "field_path": "npc.current_local_notice",
+      "operation": "set",
+      "before": "新的监督追缴纸已送达并被苏晚接下；尚未贴门，仇慎离开后其人已折返巷口",
+      "after": "追缴纸已偏印贴在门上；明日午前命籍衙先验该纸，午后次序仍不能归属则到巷逐项监督"
+    },
+    {
+      "fact_id": "chapter-0008-npc-mo-jinglan-001",
+      "asset_id": "npc_mo_jinglan",
+      "field_path": "npc.current_witness_participation",
+      "operation": "set",
+      "before": "拒绝交出陶片或把听见的三处不同替换成亲见；明日午前仍由她携带陶片到衙",
+      "after": "继续自行携带陶片，并亲见新咳冷灰停在冷金边外、纸内灰从边下穿过"
+    },
+    {
+      "fact_id": "chapter-0008-npc-su-wan-001",
+      "asset_id": "npc_su_wan",
+      "field_path": "npc.current_procedural_limit",
+      "operation": "set",
+      "before": "明确拒绝验灯，并要求不得动用巷中人的灯；薄纸由她接下后未改变拒验立场",
+      "after": "仍拒绝验灯和动用巷中人的灯，并在陆沉渊识账后阻止其继续抬头"
+    },
+    {
+      "fact_id": "chapter-0008-location-mudlamp-lane-001",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_protection_array_condition",
+      "operation": "set",
+      "before": "泥灯仍仅剩一粒火星；黑点沿旧裂缝拖线并牵向灯座裂口后回缩，护阵纹前灰痕断口仍在",
+      "after": "泥灯火星仍未熄灭也未变亮；灯座裂缝传出爆响，护阵纹未亮，黑点第二道细线抵住裂口"
+    },
+    {
+      "fact_id": "chapter-0008-faction-life-registry-office-001",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_local_enforcement_phase",
+      "operation": "set",
+      "before": "程序推进至明日午前三人到命籍衙的监督追缴，执行者已折返巷口",
+      "after": "追缴纸已贴门并完成偏印旁注；程序推进至明日午前先验追缴纸与认痕、午后可能到巷逐项监督"
+    },
+    {
+      "fact_id": "chapter-0008-faction-life-registry-office-002",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.next_local_review_schedule",
+      "operation": "set",
+      "before": "明日午前陆沉渊、莫井兰、顾婶须到命籍衙；莫井兰带陶片，顾婶带自身所见，顾家户灯仍留衙；缺一按拒验续记",
+      "after": "明日午前先验门上追缴纸、顾家户灯、苏晚拒验记与陆沉渊在场认痕；午后若次序仍不能归属则本地监督到巷"
+    },
+    {
+      "fact_id": "chapter-0008-faction-life-registry-office-003",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_enforcement_record",
+      "operation": "set",
+      "before": null,
+      "after": "追缴纸旁注记录原位灰痕在下、次序待核，未撤销追缴"
+    },
+    {
+      "fact_id": "chapter-0008-technique-ledger-recognition-001",
+      "asset_id": "technique_ledger_recognition",
+      "field_path": "technique.current_local_ash_trace_observation",
+      "operation": "set",
+      "before": "陆沉渊未再施展识账，仅以肉眼复核并公开限定三处灰痕不同，不能说明来源或落灰者",
+      "after": "识账确认追缴纸灰位于新字下，早于湿泥，且绕开未落印的本地印位；判断止于本地次序，未追查来源"
+    },
+    {
+      "fact_id": "chapter-0008-relationship-mudlamp-lane-trust-001",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_witness_commitment",
+      "operation": "set",
+      "before": "莫井兰拒绝交出陶片或把听见的三处不同替换成亲见；巷民分别选择只记灯焰变低、拒绝认灰或继续留门缝旁观",
+      "after": "莫井兰与顾婶各自提供受限亲见：莫井兰确认冷灰与新咳灰的位置，顾婶确认陶片未被打开；未承诺更多"
+    },
+    {
+      "fact_id": "chapter-0008-relationship-mother-su-wan-001",
+      "asset_id": "bond_mother_su_wan",
+      "field_path": "emotional_bond.current_visibility_of_lu_chenyuan_backlash",
+      "operation": "set",
+      "before": "苏晚扶住陆沉渊眼前发黑后的身体，看到其眼睛流黑屑；她接触薄纸后掌背暗冷光透出",
+      "after": "苏晚当场看到陆沉渊左眼失明、半边脸麻和持续掉落焦黑碎屑，并主动阻止其继续施术"
+    },
+    {
+      "fact_id": "chapter-0008-emotion-registrar-qiu-shen-fear-001",
+      "asset_id": "npc_registrar_qiu_shen",
+      "field_path": "npc.current_visible_fear",
+      "operation": "set",
+      "before": "仇慎显露出担心追缴落不到该落之处及本地残页失序后被州府追责的恐惧",
+      "after": "仇慎在发现纸下灰与印位错位后额角出汗、脸色变化，并以偏印和旁注保留程序入口"
+    },
+    {
+      "fact_id": "chapter-0008-emotion-mudlamp-lane-fear-001",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_collective_emotion",
+      "operation": "set",
+      "before": "巷民分别暴露出害怕验灯、害怕被收灯、害怕承担认词和害怕顾家户灯不归的具体恐惧，未形成无条件支持",
+      "after": "巷民继续保持谨慎旁观：莫井兰抱紧陶片，顾婶只开门一掌宽并未承诺更多"
+    },
+    {
+      "fact_id": "chapter-0008-information-revealed-account-errors-001",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_local_evidence_status",
+      "operation": "set",
+      "before": "本地口述进一步分层：陆沉渊陈述三处灰痕不同，莫井兰仅确认其亲见的两类灰痕；空白灰链停在“陶片在场”旁，未越出本地门槛",
+      "after": "追缴纸出现经见证的本地次序疑处：灰先于新字和湿泥并绕开印位；旁注为“次序待核”，仍未改账或归属"
+    },
+    {
+      "fact_id": "chapter-0008-information-local-procedure-001",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_local_procedure_result",
+      "operation": "set",
+      "before": "本次未收陶片，未形成顾家户灯归还或改账结果；明日监督追缴仍待执行",
+      "after": "追缴纸已贴门并保留次序待核；顾家户灯仍不归还，苏晚拒验记与陆沉渊认痕进入下一轮本地监督"
+    },
+    {
+      "fact_id": "chapter-0008-hook-cinder-seal-rain-001",
+      "asset_id": "foreshadowing_cinder_seal_rain",
+      "field_path": "foreshadowing.current_manifestation",
+      "operation": "set",
+      "before": "黑点沿旧裂缝拖出第二道细线并在灯座裂口附近回缩；薄纸冷灰避开仇慎印落点，向“陶片在场”延伸后断裂",
+      "after": "黑点第二道细线抵住灯座裂口；冷金印缝暗红线被牵紧并断在纸外，泥灯黑点随仇慎另纸落印猛然下坠"
+    },
+    {
+      "fact_id": "chapter-0008-timeline-local-enforcement-001",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_local_enforcement_phase",
+      "operation": "set",
+      "before": "卯前送达已发生；仇慎离开后又折返巷口，新的监督追缴纸尚未贴门",
+      "after": "仇慎折返后完成追缴纸贴门与偏印旁注，并将下一次本地监督排定为明日午前及可能的午后到巷"
+    },
+    {
+      "fact_id": "chapter-0008-physical-state-protagonist-strain-001",
+      "asset_id": "state_ledger_protagonist_strain",
+      "field_path": "state_ledger.eye_pattern_burn",
+      "operation": "set",
+      "before": "左眼焦纹已爬至颧骨，灼热烧到眉骨；未施术时仍持续流落黑屑并造成半边脸麻、骤然刺痛",
+      "after": "识账后左眼彻底失明，焦纹爬至眉骨下方，眼皮无法抬起并持续掉落焦黑碎屑"
+    },
+    {
+      "fact_id": "chapter-0008-physical-state-protagonist-strain-002",
+      "asset_id": "state_ledger_protagonist_strain",
+      "field_path": "state_ledger.bone_fissure_severity",
+      "operation": "set",
+      "before": "胸骨裂口感仍未缓解；掌心接触湿泥与薄纸后掌骨疼痛沿骨上钻，暗红线绕指根结圈",
+      "after": "识账时胸骨裂口随吸气产生钝响，掌骨摩擦加剧，随后陆沉渊已无法站稳并滑坐门边"
+    },
+    {
+      "fact_id": "chapter-0008-physical-state-protagonist-strain-003",
+      "asset_id": "state_ledger_protagonist_strain",
+      "field_path": "state_ledger.cold_ash_cough_frequency",
+      "operation": "set",
+      "before": "正文未出现新的咳灰；眼部黑屑成为本次可见身体后果",
+      "after": "识账后咳出一口腥冷，冷灰落在门槛并碎成三片，其中一片沿追缴纸纤维爬向空印位"
+    },
+    {
+      "fact_id": "chapter-0008-physical-state-registry-exposure-001",
+      "asset_id": "state_ledger_half_life_registry_exposure",
+      "field_path": "state_ledger.registry_locking_sign",
+      "operation": "set",
+      "before": "黑屑与暗红线绕指根结圈；新的监督追缴已折返巷口",
+      "after": "冷金印缝暗红线隔空缠上陆沉渊掌心旧印，并将传核纸与湿泥中的既有认痕一齐拽紧；明日先验其认痕"
+    },
+    {
+      "fact_id": "chapter-0008-physical-state-mother-lamp-001",
+      "asset_id": "state_ledger_mother_life_lamp_countdown",
+      "field_path": "state_ledger.current_visible_lamp_consequence",
+      "operation": "set",
+      "before": "薄纸接触后苏晚掌背暗冷光透出",
+      "after": "偏印落下时苏晚掌背裂口随之透亮；正文未显示裂纹消退或命灯状态缓解"
+    }
+  ],
+  "resolved_audit_ids": []
+}

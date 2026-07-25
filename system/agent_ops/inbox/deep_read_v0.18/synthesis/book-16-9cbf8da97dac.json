@@ -1,0 +1,153 @@
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "book_id": "book-16-9cbf8da97dac",
+  "book_title": "《遮天》（精校版全本）作者：辰东",
+  "covered_chunk_ids": [
+    "book-16-9cbf8da97dac-chunk-001",
+    "book-16-9cbf8da97dac-chunk-002",
+    "book-16-9cbf8da97dac-chunk-003",
+    "book-16-9cbf8da97dac-chunk-004",
+    "book-16-9cbf8da97dac-chunk-005",
+    "book-16-9cbf8da97dac-chunk-006",
+    "book-16-9cbf8da97dac-chunk-007",
+    "book-16-9cbf8da97dac-chunk-008",
+    "book-16-9cbf8da97dac-chunk-009"
+  ],
+  "covered_chunk_hashes": [
+    {"chunk_id": "book-16-9cbf8da97dac-chunk-001", "response_sha256": "6478767f3f5fe7c482f892f9a17133b6ba09b6320d1b7cc8e99845ee9362acbb"},
+    {"chunk_id": "book-16-9cbf8da97dac-chunk-002", "response_sha256": "741600f94423bdf914d891a6a99f058c182fe3605d7d439405eb85abfd566e42"},
+    {"chunk_id": "book-16-9cbf8da97dac-chunk-003", "response_sha256": "df8a4aea7a17fd9336816df7a769d61586c35cdb860438fa99795add84db92b5"},
+    {"chunk_id": "book-16-9cbf8da97dac-chunk-004", "response_sha256": "5dffd4dd39a32fc058230e8c1939c883b04203a4c14a3ddc9d5910bf05eaaea6"},
+    {"chunk_id": "book-16-9cbf8da97dac-chunk-005", "response_sha256": "18af9350b5d8c68019fc09de2e007c902f76c2fe582166333a2a5f8faa978b5f"},
+    {"chunk_id": "book-16-9cbf8da97dac-chunk-006", "response_sha256": "cfe0028f17833740f1c5d57f8b063e8ac9b7dac8ef88c73c3f2b74702300d966"},
+    {"chunk_id": "book-16-9cbf8da97dac-chunk-007", "response_sha256": "bd68b6a895ab3fdef43e2e49013fe07988f08944e9947ec3e0600e09e00ea742"},
+    {"chunk_id": "book-16-9cbf8da97dac-chunk-008", "response_sha256": "2ba110b1ecdfcd4f586af3eb307a139679d15d20ef35177cd13d01021e10ae67"},
+    {"chunk_id": "book-16-9cbf8da97dac-chunk-009", "response_sha256": "a1ec0727e6ef9749f4e47658a744e15aac11c40cb165693cac0d30a81f0398ed"}
+  ],
+  "synthesis": {
+    "narrative_spine": [
+      "A Mount Tai reunion becomes a forced cosmic migration through Mars to Beidou, converting Ye Fan from a modern mortal into an outsider whose survival depends on decoding an ancient cultivation world.",
+      "The supposedly obsolete Ancient Sacred Body turns exclusion into propulsion: each resource bottleneck, heavenly rejection, and factional pursuit forces Ye Fan to construct a path that cannot rely on institutional approval.",
+      "Regional adventures around tombs, source mines, holy cities, forbidden zones, and imperial inheritances widen into travel between Earth, Beidou, Ziwei, Eternal, and the human trial road.",
+      "Personal advancement becomes collective responsibility as Ye Fan gathers friends, disciples, and displaced inheritances into Heavenly Court and moves from hunted cultivator to defender of the human race.",
+      "The opening of the Road to Immortality releases the Dark Turmoil, reframing all prior power accumulation around the cost of protecting ordinary life against longevity-seeking Supremes.",
+      "After surviving apparent death, Ye Fan rebuilds across millennia, completes the Sacred Body, becomes emperor under an existing imperial suppression, defeats the old cosmic order, and leads Heavenly Court into the Immortal Realm."
+    ],
+    "character_arcs": [
+      "Ye Fan evolves from pragmatic Earth outsider to self-authored cultivator, then cosmic protector and Ye Heavenly Emperor; the constant is his refusal to exchange human bonds for submission to heaven's rules.",
+      "Pang Bo moves from loyal classmate through demonic possession and separation to recovered agency, imperial inheritance, and enduring companionship on the star road.",
+      "Ji Ziyue develops from wary aristocratic companion into trusted partner, wife, and the emotional center of a family separation whose reunion is deferred until the final ascent.",
+      "Jiang Taixu shifts from dying captive to revived guardian, spends his restored strength to reopen Ye Fan's path, and later returns as a human standard-bearer against the ancient races.",
+      "Li Xiaoman follows a negative mirror arc from Earth acquaintance to practitioner and instrument of the Heaven-Swallowing lineage, ending in estrangement and disappearance rather than reconciliation.",
+      "Hei Huang, Duan De, the Saint Prince, Dragon Horse, Komatsu, and successive disciples turn episodic alliances into a durable found-family and institutional core for Heavenly Court.",
+      "Ancient guardians such as the Old Madman, Gai Jiuyou, Void Emperor, Hengyu Emperor, and the completed Sacred Body convert isolated legends into a lineage of sacrifice that Ye Fan ultimately inherits."
+    ],
+    "mechanism_evolution": [
+      "Cultivation begins as a legible bodily ladder through Wheel-Sea, Dao Palace, Four Extremes, Dragon Transformation, and Immortal Platform, but the Sacred Body makes every threshold unusually resource-intensive and cosmically contested.",
+      "The Nine Secrets, imperial scriptures, visions, Source Arts, and Mother Qi tripod create a modular growth system in which movement, attack, amplification, weapon control, terrain reading, and artifact forging accumulate across arcs.",
+      "Heavenly tribulation evolves from a breakthrough hazard into a tactical weapon, a forging furnace, and finally a confrontation with preserved Dao marks of ancient emperors.",
+      "Source formations and five-colored altars scale local geomancy into planetary extraction and interstellar transit, linking mines, forbidden zones, Kunlun, and the ancient star roads.",
+      "The Eternal Star Field introduces evolution fluid, mecha, and spacecraft as technological equivalents to inherited cultivation resources without replacing the body's Dao-centered progression.",
+      "Late-book longevity systems distinguish self-amputation and life harvesting from red-dust immortality, reincarnation seals, renewed divine embryos, and repeated self-transformation.",
+      "The final power logic moves from borrowing external laws to using the body as furnace, breaking imperial suppression, and establishing an independent imperial Dao capable of confronting world-scale refining schemes."
+    ],
+    "world_expansion": [
+      "The setting expands concentrically from modern Earth and Mars ruins to Beidou sects, ancient families, holy lands, demon courts, and restricted life zones.",
+      "Northern source culture and Holy City politics reveal an economy beneath cultivation, while ancient clans and imperial weapons expose the buried racial history of Beidou.",
+      "Ziwei and the return to Earth establish that Chinese mythic figures, scriptures, and sacred geographies belong to a shared interstellar history rather than isolated folklore.",
+      "The Eternal Star Field and converging racial trial roads add technological civilizations, bureaucratic gate systems, and competing species to the same cosmic hierarchy.",
+      "Myth-era bodies, weapons, and burial zones turn cosmology into archaeology: the universe is repeatedly explored through remains that still structure present conflicts.",
+      "Restricted zones, the Immortal Realm rift, the strange world, and the final two-world conspiracy reveal a layered universe whose political order is built around access to longevity."
+    ],
+    "long_term_reader_hooks": [
+      "The identity, destination, and repeated reactivation of the Nine Dragons pulling the bronze coffin provide a full-book mystery and the final structural return.",
+      "The green copper fragment advances from unexplained shield to Qing Emperor catalyst and fragment of Emperor Zun's cauldron, rewarding long-memory attention.",
+      "Scattered Nine Secrets and imperial scriptures turn cultivation progress into a collectible but narratively consequential quest across regions and eras.",
+      "The fates of Earth classmates, Pang Bo's possession, Little Nannan's identity, Jiang Taixu's survival, and Ji Ziyue's separation keep emotional questions alive beneath power escalation.",
+      "The Sacred Body's broken path, ominous old age, and ability to become emperor are staged as successive impossibilities rather than a single resolved premise.",
+      "Wushi, the Ruthless Emperor, the Undead Emperor, Emperor Zun, and the origin of restricted-zone longevity remain partially offstage until late convergences convert legend into active conflict."
+    ],
+    "style_and_life_force": [
+      "The prose alternates archaeological wonder, cultivation exposition, tournament confrontation, cosmic warfare, and elegiac reflection, keeping a long serial from resting in one tonal register.",
+      "Grand visual motifs such as golden seas, star-breaking fists, emperor silhouettes, bells, coffins, and revived relics translate abstract rank into immediately legible spectacle.",
+      "Onlooker commentary, ranked epithets, and repeated historical explanation make escalation accessible, though they also expose the work's daily-serialization machinery.",
+      "Modern slang, aliases, food jokes, failed teleportations, and companion banter preserve the Earth-born protagonist's irreverence inside an increasingly solemn mythic world.",
+      "The strongest late passages counter cosmic scale with weddings, mentorship, grief, aging, sacrifice, and reunion, making longevity emotionally meaningful rather than merely numerical.",
+      "Chinese Daoist, Buddhist, historical, and literary symbols are not decorative references but the naming and causal grammar through which the cosmos is organized."
+    ],
+    "continuity_failures": [
+      "The nine-layered coffin changes from transport-sized object to a mountain-scale structure without a clearly supplied transformation rule.",
+      "Laozi and Shakyamuni shift from extraordinary historical cultivators toward new consciousnesses born from ancient imperial corpses, creating a retroactive identity adjustment.",
+      "Wushi's parentage strains the stated suppression rule against two emperors emerging from one imperial lineage, with uniqueness serving as the main exception.",
+      "Beidou remains narratively habitable after being shattered into major continental fragments, while the physical restoration or survival conditions receive little explanation.",
+      "Several longevity and resurrection displays, especially prolonged emperor-level reanimation and ancient Great Saints, exceed earlier lifespan or residual-power expectations.",
+      "Highly advertised resources such as God-Demon Liquid and some heirs of restricted-zone Supremes deliver less lasting consequence or threat than their setup implies."
+    ],
+    "evidence_map": [
+      {"family": "narrative_spine", "claim": "The story begins with forced cosmic displacement and ends with the same coffin participating in final ascent.", "chunk_id": "book-16-9cbf8da97dac-chunk-001", "chapter_heading": "第001章 星空中的青铜巨棺"},
+      {"family": "character_arcs", "claim": "Jiang Taixu spends his revived power to reconnect Ye Fan's severed cultivation path.", "chunk_id": "book-16-9cbf8da97dac-chunk-003", "chapter_heading": "第413章 神之序曲逆天改命"},
+      {"family": "mechanism_evolution", "claim": "The Road to Immortality converts cultivation's longevity promise into a universe-level systemic crisis.", "chunk_id": "book-16-9cbf8da97dac-chunk-008", "chapter_heading": "第1573章 成仙路开"},
+      {"family": "world_expansion", "claim": "Arrival on Ziwei confirms that the setting has expanded from regional fantasy into an interstellar network of ancient star fields.", "chunk_id": "book-16-9cbf8da97dac-chunk-004", "chapter_heading": "第695章 降临紫微古星域"},
+      {"family": "long_term_reader_hooks", "claim": "The bronze coffin's renewed launch sustains the opening mystery as an active transport mechanism far into the book.", "chunk_id": "book-16-9cbf8da97dac-chunk-004", "chapter_heading": "第685章 开棺异动"},
+      {"family": "style_and_life_force", "claim": "The Void Emperor sequence joins universe-scale combat to an elegiac language of historical sacrifice.", "chunk_id": "book-16-9cbf8da97dac-chunk-008", "chapter_heading": "第1593章 虚空大帝"},
+      {"family": "continuity_failures", "claim": "Wushi's disclosed lineage creates pressure on the previously stated imperial-bloodline suppression rule.", "chunk_id": "book-16-9cbf8da97dac-chunk-008", "chapter_heading": "第1529章 无始来历"},
+      {"family": "originality_red_lines", "claim": "The Four Swords and array diagram closely reuse an established Investiture of the Gods mythic configuration.", "chunk_id": "book-16-9cbf8da97dac-chunk-008", "chapter_heading": "第1414章 通天教主"},
+      {"family": "characters", "claim": "Ye Fan's imperial breakthrough completes the protagonist's movement from rejected Sacred Body to self-authorized emperor.", "chunk_id": "book-16-9cbf8da97dac-chunk-009", "chapter_heading": "第1790章 成帝"},
+      {"family": "npcs", "claim": "Komatsu's self-sacrifice demonstrates that secondary companions retain consequential agency in the endgame.", "chunk_id": "book-16-9cbf8da97dac-chunk-009", "chapter_heading": "第1818章 天皇来袭"},
+      {"family": "factions", "claim": "The assault on the assassin dynasties shows factions as durable institutions with bases, indoctrination, and inherited enemies.", "chunk_id": "book-16-9cbf8da97dac-chunk-007", "chapter_heading": "第1201章 人世间"},
+      {"family": "artifacts", "claim": "The green copper fragment begins as an unexplained protective object whose identity and function unfold over distant arcs.", "chunk_id": "book-16-9cbf8da97dac-chunk-001", "chapter_heading": "第065章 神秘绿铜"},
+      {"family": "techniques", "claim": "The Bing Secret exemplifies a technique defined by a clear combat domain and integration into the larger Nine Secrets set.", "chunk_id": "book-16-9cbf8da97dac-chunk-004", "chapter_heading": "第628章 兵字秘"},
+      {"family": "naming", "claim": "Titles such as Middle Emperor compress rank, geography, legend, and generational rivalry into memorable names.", "chunk_id": "book-16-9cbf8da97dac-chunk-004", "chapter_heading": "第601章 九千年前中皇再现"},
+      {"family": "emotional_bonds", "claim": "Ye Fan and Ji Ziyue's wedding makes a long-running alliance and affection into an explicit family bond before catastrophe.", "chunk_id": "book-16-9cbf8da97dac-chunk-008", "chapter_heading": "第1561章 大婚"},
+      {"family": "foreshadowing", "claim": "The revealed Heaven-Swallowing Devil Can lid links Duan De, Little Nannan, and the Ruthless Emperor through a delayed artifact clue.", "chunk_id": "book-16-9cbf8da97dac-chunk-003", "chapter_heading": "第592章 吞天魔盖现"},
+      {"family": "state_ledger", "claim": "Ye Fan's status changes to emperor despite an already active imperial Dao, a decisive late-book state transition.", "chunk_id": "book-16-9cbf8da97dac-chunk-009", "chapter_heading": "第1790章 成帝"}
+    ],
+    "creation_family_evidence": {
+      "characters": [
+        "Build major characters around a contradiction that remains productive across scales: Ye Fan is physically privileged by lineage yet institutionally and cosmically rejected.",
+        "Track advancement as changes in duty and relationship, not only rank; each major rise should alter who the character can protect, confront, or outlive."
+      ],
+      "npcs": [
+        "Give recurring companions a specialized narrative function such as formation knowledge, tomb lore, comic friction, sacrifice, or institutional memory.",
+        "Let secondary figures disappear, transform, and return with changed agency so the world does not feel paused outside the protagonist's view."
+      ],
+      "factions": [
+        "Differentiate factions by resource base, inheritance technology, political behavior, and historical grievance rather than by power tier alone.",
+        "Allow alliances to harden into institutions with territory, successors, logistics, and doctrine, as Ye Fan's network becomes Heavenly Court."
+      ],
+      "artifacts": [
+        "Use artifacts as long-duration mysteries whose provenance, capability, and symbolic meaning are disclosed in separate arcs.",
+        "Make signature weapons record character growth through reforging, tribulation, accumulated belief, and changing strategic use."
+      ],
+      "techniques": [
+        "Define supreme techniques by distinct verbs and constraints such as amplify, fight, move, control weapons, read terrain, or cross boundaries.",
+        "Escalate from inherited techniques toward synthesized personal methods so mastery culminates in authorship rather than collection."
+      ],
+      "naming": [
+        "Combine concrete cosmic images with cultural depth: bronze coffin, bitter sea, divine bridge, source book, forbidden land, and dark turmoil are both evocative and functional.",
+        "Reserve superlative titles for social positioning and historical memory, while retaining ordinary personal names to preserve emotional accessibility."
+      ],
+      "emotional_bonds": [
+        "Anchor cosmic distance in recurring bonds among classmates, lovers, mentors, disciples, and found family.",
+        "Use reunion, delayed rescue, wedding, sacrifice, aging, and separation as state changes with consequences rather than isolated sentimental pauses."
+      ],
+      "foreshadowing": [
+        "Plant portable clues early and let them react in new contexts; seeds, copper fragments, jade pieces, coffins, and marks can bridge hundreds of chapters.",
+        "Keep legendary figures partially indirect through bells, weapons, descendants, and aftermath before allowing physical convergence in the endgame."
+      ],
+      "state_ledger": [
+        "Maintain explicit ledgers for cultivation realm, injuries, lifespan, location, allegiance, possession, artifact ownership, relationship status, and unresolved vows.",
+        "Treat apparent death, sealing, reincarnation, corpse consciousness, and renewed lives as separate states with stated transition mechanisms."
+      ]
+    },
+    "originality_red_lines": [
+      "Do not reproduce the Nine Secrets as a one-to-one magic mapping of the Daoist nine-character formula.",
+      "Do not reuse the stone-born staff-wielding sacred monkey, Dragon Horse companion, Four Swords array, Investiture list, or other recognizable mythic packages without fundamental redesign.",
+      "Avoid the repeated arrogant-heir, institutional-bias, public humiliation, clan-eradication cycle as a default conflict engine.",
+      "Do not depend on bloodline or physique labels as sufficient characterization or as automatic proof of moral and combat superiority.",
+      "Avoid solving escalating threats mainly through a newly revived ancient protector, sudden imperial artifact activation, or unexplained exception to a prior rule.",
+      "Do not imitate the exact opening-to-ending bronze-coffin transport loop, the named factions and scriptures, or the final whole-sect ascension resolution."
+    ]
+  }
+}

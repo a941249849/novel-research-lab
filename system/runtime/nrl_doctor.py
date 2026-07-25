@@ -5,7 +5,10 @@ from pathlib import Path
 from typing import Any
 
 from nrl_paths import ROOT
+from nrl_paths import runtime_path
+from nrl_production_operator import build_operator_status, describe_next_production_action
 from nrl_registry import load_registry
+from nrl_system_status import build_system_status
 
 
 def _git(args: list[str], cwd: Path) -> subprocess.CompletedProcess[str]:
@@ -89,6 +92,12 @@ def latest_registry_status(mission_id: str) -> dict[str, Any] | None:
 def run_doctor(state: dict[str, Any], adapters: dict[str, Any], mission: dict[str, Any]) -> dict[str, Any]:
     mission_id = mission["mission_id"]
     registry_status = latest_registry_status(mission_id)
+    system_status = build_system_status(state, adapters)
+    operator = build_operator_status(
+        runtime_path("system/production_runtime/chapter_registry.v0.20.json")
+    )
+    production_action = describe_next_production_action(operator)
+    controlled_production = system_status["content_progression"] == "RUNTIME_CONTROLLED"
 
     return {
         "runtime": "Novel Research Lab",
@@ -100,7 +109,19 @@ def run_doctor(state: dict[str, Any], adapters: dict[str, Any], mission: dict[st
             "phase": mission["phase"],
             "responsible_agent": mission["responsible_agent"],
             "registry": registry_status,
+            "source": "legacy_state_record" if controlled_production else "active_phase_state",
         },
+        "active_operation": (
+            {
+                **production_action,
+                "accepted_contiguous": operator["accepted_contiguous"],
+                "release_ready": operator["release_ready"],
+                "blocking_window_review": operator.get("blocking_window_review"),
+                "blocking_window_verdict": operator.get("blocking_window_verdict"),
+            }
+            if controlled_production
+            else None
+        ),
         "adapters": adapter_summary(adapters),
         "gates": {
             "phase_status": state.get("phase_status"),
@@ -111,5 +132,9 @@ def run_doctor(state: dict[str, Any], adapters: dict[str, Any], mission: dict[st
         },
         "handoff": handoff_summary(mission),
         "blocked_actions": state.get("blocked_actions", []),
-        "recommended_next_command": "python3 system/runtime/nrl.py advance",
+        "recommended_next_command": (
+            production_action["safe_command"]
+            if controlled_production
+            else "python3 system/runtime/nrl.py advance"
+        ),
     }

@@ -1,0 +1,296 @@
+{
+  "version": "0.1",
+  "candidate_id": "hundred-crafts-night-procession",
+  "status": "p0_seed_collection",
+  "prose_authorized": false,
+  "routes": [
+    {
+      "route_id": "p0-fujian-maritime",
+      "regional_lens_id": "fujian_taiwan_maritime",
+      "status": "triangulated",
+      "cards": [
+        {
+          "card_id": "fj-ship-unesco-01",
+          "source_tier": "A",
+          "claim_status": "verified_baseline",
+          "title": "Watertight-bulkhead technology of Chinese junks",
+          "publisher_or_author": "UNESCO",
+          "url": "https://ich.unesco.org/en/USL/watertight-bulkhead-technology-of-chinese-junks-00321",
+          "location": "福建沿海",
+          "period": "活态技艺及历史传承概述",
+          "domain_ids": ["shipbuilding_waterworks"],
+          "observation": "水密隔舱通过独立舱室限制局部进水扩散，是降低整体沉没风险的结构办法。",
+          "limitations": "名录概述不能代替具体船型、海况和维修现场数据。",
+          "story_value": "确认风险隔离不是消灭损伤，而是让损伤被局部承受和持续维护。",
+          "cross_validation_next": "与泉州木船匠人的实际艌缝、堵漏和试水口述核对。"
+        },
+        {
+          "card_id": "fj-ship-reconstruction-02",
+          "source_tier": "B",
+          "claim_status": "candidate_observation",
+          "title": "泉州工匠团队利用泉州古代海船建造技艺复活古沉船",
+          "publisher_or_author": "闽南网",
+          "url": "https://www.mnw.cn/quanzhou/news/1994544.html",
+          "location": "福建泉州",
+          "period": "当代复原工程",
+          "domain_ids": ["shipbuilding_waterworks", "measurement_orientation_calculation"],
+          "observation": "复原过程使用一比一放样，木工铺贴船板后由捻工紧随进行补钉捻缝，工序之间存在明确的前后依赖。",
+          "limitations": "地方媒体报道经过编辑，仍需取得完整采访、项目记录和参与工匠确认。",
+          "story_value": "船不是单一大师的作品；上一工种的误差会成为下一工种必须发现和承担的风险。",
+          "cross_validation_next": "寻找复原项目技术报告，并核对不同船型的放样和舵型差异。"
+        },
+        {
+          "card_id": "fj-ship-community-reading-03",
+          "source_tier": "D",
+          "claim_status": "discovery_lead",
+          "title": "《造舟记》读者书评：行于海上",
+          "publisher_or_author": "豆瓣用户及《造舟记》图书页",
+          "url": "https://book.douban.com/review/14574275/",
+          "location": "中国木帆船工匠寻访路线",
+          "period": "当代记录",
+          "domain_ids": ["shipbuilding_waterworks"],
+          "observation": "读者材料指向一部召集老木帆船工匠参与造船的实地记录，可作为继续寻找完整工序与人物关系的书目线索。",
+          "limitations": "书评不是原始采访，不能据此确认任何具体工艺事实。",
+          "story_value": "提供从成品崇拜转向群体劳动、失传焦虑和代际选择的研究方向。",
+          "cross_validation_next": "取得《造舟记》原书或影像，建立逐章来源卡并核对讲述者。"
+        },
+        {
+          "card_id": "fj-ship-practitioner-04",
+          "source_tier": "C",
+          "claim_status": "candidate_observation",
+          "title": "省级非遗代表性传承人黄振煌：传承濒危技艺 弘扬福船文化",
+          "publisher_or_author": "泉州数字文化网对黄振煌的访谈",
+          "url": "https://www.qzcul.com/whdt/202504/t20250403_214607.htm",
+          "location": "福建泉州泉港区峰尾镇",
+          "period": "当代传承人口述及家族造船记忆",
+          "domain_ids": ["shipbuilding_waterworks", "measurement_orientation_calculation"],
+          "observation": "受访者称福船重要部位以十二生肖暗号对应不同位置，并由专人管理；实船衰退后，部分工艺转入按实际船型比例制作船模。",
+          "limitations": "家族谱系和历史参与叙述仍需文献核验；船模传承不能等同于实船在海况中的操作经验。",
+          "story_value": "船体名称同时是岗位索引和责任语言；当实船消失，知识可能保留外形却失去风险环境。",
+          "cross_validation_next": "继续获取实船船员、修船匠和海损处置者口述，区分船模知识与航行知识。"
+        }
+      ],
+      "route_synthesis": {
+        "mechanism_gain": "隔舱结构之外，放样、铺板、捻缝和试水构成连续责任链，任何环节都不能独立宣称安全。",
+        "human_conflict": "老匠人的经验、复原项目的图纸规范与年轻人离开行业之间存在真实张力。",
+        "remaining_debt": "缺少实际海损处置、货舱管理和船员视角的一手材料。"
+      }
+    },
+    {
+      "route_id": "p0-jiangnan-water",
+      "regional_lens_id": "jiangnan_huizhou",
+      "status": "triangulated",
+      "cards": [
+        {
+          "card_id": "jn-polder-history-01",
+          "source_tier": "A",
+          "claim_status": "candidate_observation",
+          "title": "江南圩田：一个古老而弥新的话题",
+          "publisher_or_author": "中国科学院自然科学史研究所农业史研究团队",
+          "url": "https://agri-history.ihns.ac.cn/scholars/zhfmlh.htm",
+          "location": "太湖流域及江南圩区",
+          "period": "五代至近现代讨论",
+          "domain_ids": ["shipbuilding_waterworks", "measurement_orientation_calculation"],
+          "observation": "塘、浦、堤、圩组成相互依赖的水网；地区各自为政、缺乏协作时，局部破圩会反复造成灾害。",
+          "limitations": "这是历史研究综述，具体责任制度仍需回到地方水利志和圩区个案。",
+          "story_value": "公共安全失败未必来自技术缺失，也可能来自维护单位彼此割裂。",
+          "cross_validation_next": "查找常熟、苏州或湖州具体圩区的水利册、修堤账簿和村落口述。"
+        },
+        {
+          "card_id": "jn-opera-archive-02",
+          "source_tier": "B",
+          "claim_status": "candidate_observation",
+          "title": "节戏与洛社的票友",
+          "publisher_or_author": "无锡市档案史志馆",
+          "url": "https://daj.wuxi.gov.cn/doc/2009/02/17/2425116.shtml",
+          "location": "江苏无锡洛社",
+          "period": "清末民初至20世纪三四十年代回忆",
+          "domain_ids": ["opera_costume_props", "timber_architecture"],
+          "observation": "庙会节场临时搭台，戏班、庙宇、票友、费用和开场仪式共同构成地方演出秩序。",
+          "limitations": "档案史志文章仍需核对其引用来源，不能外推为整个江南的统一戏俗。",
+          "story_value": "戏台是一套临时公共设施和社会合同，不只是表演背景；搭台、点戏、供奉和观众共同激活角色系统。",
+          "cross_validation_next": "查找洛社庙会原始档案、票友回忆和现存戏台测绘资料。"
+        },
+        {
+          "card_id": "jn-water-community-reading-03",
+          "source_tier": "D",
+          "claim_status": "discovery_lead",
+          "title": "《水乡生态与江南社会》图书页与读者笔记",
+          "publisher_or_author": "豆瓣读者社区",
+          "url": "https://book.douban.com/subject/21365817/",
+          "location": "江南水乡",
+          "period": "9至20世纪研究及当代读者讨论",
+          "domain_ids": ["shipbuilding_waterworks"],
+          "observation": "社区笔记指出传统网络水系、现代排水工程和水乡生态之间可能存在复杂得失，是需要回到原书核验的重要争议。",
+          "limitations": "读者摘录可能脱离原书论证，不能作为水利史结论。",
+          "story_value": "避免把现代工程写成反派，也避免把旧水网浪漫化；冲突应落在不同目标和代价分配。",
+          "cross_validation_next": "阅读原书相关章节，并与地方水利志和当代治理资料对照。"
+        },
+        {
+          "card_id": "jn-polder-oral-history-04",
+          "source_tier": "C",
+          "claim_status": "candidate_observation",
+          "title": "《礼诗圩：吾村吾民》村民口述史",
+          "publisher_or_author": "溧阳市委党史工委、常州市口述史研究院及礼诗圩村民",
+          "url": "https://skl.jscz.org.cn/uploadfile/skl/2022/1020/20221020141242_54794.pdf",
+          "location": "江苏溧阳礼诗圩村",
+          "period": "20世纪村落生产与水利记忆",
+          "domain_ids": ["shipbuilding_waterworks", "metal_forging", "timber_architecture"],
+          "observation": "村民口述显示村庄过去按年度在冬季组织加高、加固圩堤；生产队长负责安排劳动，村办建筑站、水利站和小五金厂又把修造能力连接到集体经济。",
+          "limitations": "口述材料反映特定村庄和讲述者记忆，需要与地方水利档案、年代和工程记录互证。",
+          "story_value": "维护不是灾时英雄行为，而是每年重复、容易被忽视的集体劳动；产业变化会重组谁还掌握修造能力。",
+          "cross_validation_next": "核对礼诗圩水利站档案、冬修记录及不同年龄村民对劳动分配的记忆。"
+        }
+      ],
+      "route_synthesis": {
+        "mechanism_gain": "江南路线把承重扩展为水网和公共设施的协同维护，系统失效可以来自行政边界而非单点破坏。",
+        "human_conflict": "维护水网、商业运输、农业灌溉、庙会和地方娱乐会争夺同一空间与资源。",
+        "remaining_debt": "缺少具体修堤账簿、基层水利组织和桥匠从业者口述。"
+      }
+    },
+    {
+      "route_id": "p0-jingchu-river",
+      "regional_lens_id": "jingchu_southwest_rivers",
+      "status": "triangulated",
+      "cards": [
+        {
+          "card_id": "jc-boatworkers-history-01",
+          "source_tier": "A",
+          "claim_status": "candidate_observation",
+          "title": "历史上的川江船工与木船",
+          "publisher_or_author": "赵永康，文史研究文章",
+          "url": "https://yangtze.silkroadinfo.org.cn/2017/3/30/20170330123358.pdf",
+          "location": "宜宾至宜昌及川江支流",
+          "period": "人力木船航运时代",
+          "domain_ids": ["shipbuilding_waterworks", "opera_costume_props"],
+          "observation": "船工按风帆、船具、技术分工和职掌协同，号子承担统一推桡与拉纤动作节奏的劳动功能。",
+          "limitations": "文史文章含亲历闻见与历史考述，需要区分作者记忆、转述和文献证据。",
+          "story_value": "声音可以成为多人同步承担风险的操作协议，而不是单纯法术咒语。",
+          "cross_validation_next": "逐页标注文献出处，并与船工号子传承人和船型技术资料核对。"
+        },
+        {
+          "card_id": "jc-boatwork-rhythm-02",
+          "source_tier": "B",
+          "claim_status": "candidate_observation",
+          "title": "揭秘川江号子：船工劳动口号调节工作节奏",
+          "publisher_or_author": "中国新闻网",
+          "url": "https://www.chinanews.com.cn/cul/2014/10-11/6665500.shtml",
+          "location": "重庆以上、以下及川江支流船帮",
+          "period": "木船航运记忆与当代传承采访",
+          "domain_ids": ["shipbuilding_waterworks"],
+          "observation": "不同水势对应不同号子节奏，前后舵、桡工和纤夫依靠口令配合；船帮内部还存在地域分化。",
+          "limitations": "新闻报道需要回到受访者完整表述，帮派分类不能未经核验写成固定制度。",
+          "story_value": "同一套协作术在不同河段必须变调，错误节奏会把集体力量变成集体事故。",
+          "cross_validation_next": "寻找完整音频、受访者姓名、具体河段和船工岗位表。"
+        },
+        {
+          "card_id": "jc-boat-memory-03",
+          "source_tier": "B",
+          "claim_status": "discovery_lead",
+          "title": "巴东纤夫文化",
+          "publisher_or_author": "湖北日报新闻客户端",
+          "url": "https://news.hubeidaily.net/pc/1165112.html",
+          "location": "湖北巴东神农溪及长江航路记忆",
+          "period": "老人关于木船航运时代的记忆",
+          "domain_ids": ["shipbuilding_waterworks", "opera_costume_props"],
+          "observation": "地方报道把纤夫号子、堂戏、皮影和丧葬歌舞放在同一生活环境中，并保存老人对险滩航行周期的记忆线索。",
+          "limitations": "展示性报道可能浪漫化旅游文化，老人原始访谈和航运数据尚未取得。",
+          "story_value": "职业声音、戏剧和生死礼俗不是分离的文化项目，而是同一社区处理危险与记忆的不同方式。",
+          "cross_validation_next": "取得老人访谈原文，并用航运史和地方志核对航程、季节与岗位。"
+        },
+        {
+          "card_id": "jc-boat-practitioner-04",
+          "source_tier": "C",
+          "claim_status": "candidate_observation",
+          "title": "川江号子 吼出新味道",
+          "publisher_or_author": "任官兴口述，《光明日报》整理",
+          "url": "https://epaper.gmw.cn/gmrb/html/2023-11/28/nw.D110000gmrb_20231128_6-07.htm",
+          "location": "重庆三峡及川江航路",
+          "period": "木船航运时代至机械船转型",
+          "domain_ids": ["shipbuilding_waterworks", "clock_mechanical_repair"],
+          "observation": "五代船工家庭讲述确认，把头根据季节、水域和水情改变号令，同时指挥岸上拉纤与船上摇橹；讲述者后来由木船船工转为金属机械维修工。",
+          "limitations": "一名讲述者不能代表全部川江船帮，具体号令、河段和岗位仍需更多船工互证。",
+          "story_value": "超凡协作协议必须读取环境并同时约束多个岗位；产业转型也能让旧的识水能力迁移为新的维修能力。",
+          "cross_validation_next": "与其他河段把头、桡工和纤夫口述对照，建立水情—号令—动作表。"
+        }
+      ],
+      "route_synthesis": {
+        "mechanism_gain": "号子证明集体能力可以由节奏、岗位和环境共同生成，脱离河段与工序就会失效。",
+        "human_conflict": "领号者拥有调动众人身体的权力，也必须为误判水势和节奏承担责任。",
+        "remaining_debt": "需要真实岗位表、险滩处置案例和非展示性的船工口述。"
+      }
+    },
+    {
+      "route_id": "p0-central-plain",
+      "regional_lens_id": "north_china_plain",
+      "status": "triangulated",
+      "cards": [
+        {
+          "card_id": "zy-opera-gazetteer-01",
+          "source_tier": "A",
+          "claim_status": "candidate_observation",
+          "title": "地方戏曲文献汇编·河南卷相关条目",
+          "publisher_or_author": "国家哲学社会科学文献中心古籍资源及地方戏曲文献",
+          "url": "https://www.sklib.cn/booklib/databasedetail?ID=12400870&LgS=&SiteID=122&Type=literature&fromSubID=729",
+          "location": "河南禹县及周边",
+          "period": "地方志所记近代庙会和班社",
+          "domain_ids": ["opera_costume_props", "medicine_processing"],
+          "observation": "不同职业行业可以组织不同戏曲班社，密集庙会形成持续演出市场，戏班与搬运、货郎、炊事等职业网络相关。",
+          "limitations": "必须回到具体卷册和县志页码，当前数据库摘要不能承担全部细节。",
+          "story_value": "角色系统可由职业共同体供养；谁出钱办班，谁就可能影响演什么、纪念谁。",
+          "cross_validation_next": "提取《禹县志》对应页码并寻找班社后人、庙会会首或地方戏研究者。"
+        },
+        {
+          "card_id": "zy-craft-custom-02",
+          "source_tier": "A",
+          "claim_status": "candidate_observation",
+          "title": "《流动的传统：一条大河的文化印迹》相关田野材料",
+          "publisher_or_author": "中国民俗学网转载山曼研究",
+          "url": "https://www.chinesefolklore.org.cn/web/index.php?NewsID=2183&Page=2",
+          "location": "山东及河南郑州一带",
+          "period": "近现代地方习俗调查",
+          "domain_ids": ["timber_architecture", "stone_carving_masonry", "metal_forging"],
+          "observation": "木匠与顾主之间存在完工和上梁后的馈赠俗规，工匠劳动同时嵌在技术合同与礼俗关系中。",
+          "limitations": "不同地方的馈赠名称和含义不可互换，需要核对调查时间、村落和当事人。",
+          "story_value": "报酬不只是一笔钱；酒、肉、白馍或仪式席位都可能代表责任完成、关系承认或债务未清。",
+          "cross_validation_next": "在郑州周边县志、木匠口述和地方论坛中核对捎包的地区范围与变化。"
+        },
+        {
+          "card_id": "zy-opera-community-reading-03",
+          "source_tier": "D",
+          "claim_status": "discovery_lead",
+          "title": "《中原珍稀剧种整理与研究》图书资料",
+          "publisher_or_author": "豆瓣图书社区",
+          "url": "https://book.douban.com/subject/35459376/",
+          "location": "河南、山东及梆子声腔传播地区",
+          "period": "地方剧种历史与当代整理",
+          "domain_ids": ["opera_costume_props"],
+          "observation": "图书资料提示梆子声腔在地域流动中与地方语音、民间艺术和戏班往来结合，不能把豫剧视为所有中原戏班的统一模板。",
+          "limitations": "豆瓣简介和读者页面只用于书目发现，必须阅读原书并核对作者资料。",
+          "story_value": "同一角色或曲牌跨地区传播后会被重新塑形，身份许可系统应允许地方变体而非中央统一皮肤。",
+          "cross_validation_next": "取得原书中宛梆、靠山黄、陕州梆子章节并建立剧种差异卡。"
+        },
+        {
+          "card_id": "zy-carpenter-oral-history-04",
+          "source_tier": "C",
+          "claim_status": "candidate_observation",
+          "title": "乡村记忆：老家河南豫见乡愁·王油锤口述",
+          "publisher_or_author": "王油锤口述，开封市工艺美术行业协会收录",
+          "url": "https://m.kfgyms.com/nd.jsp?id=726",
+          "location": "河南开封尉氏县门楼任乡郭潘王村",
+          "period": "20世纪后半叶至当代",
+          "domain_ids": ["timber_architecture", "measurement_orientation_calculation"],
+          "observation": "讲述者少年背起祖传木工箱走村修房、做门窗，以规矩和做人准则共同解释木工身份；后来流水线、电脑绘图与激光加工压缩传统作坊生计。",
+          "limitations": "个人生命史不能代表所有河南木匠，鲁班叙述和行业伦理需要与其他师承及地方志互证。",
+          "story_value": "规矩既是测量工具也是职业伦理；现代替代并非简单消灭手艺，而是改变收入、速度、复制和责任的含义。",
+          "cross_validation_next": "补充同县顾主、年轻木工和机械加工从业者口述，核对上梁、完工与报酬习俗。"
+        }
+      ],
+      "route_synthesis": {
+        "mechanism_gain": "营造礼俗和戏班市场说明技术、角色与人情债务可以在庙会这一公共节点汇合。",
+        "human_conflict": "顾主、工匠、会首、行业组织、戏班和观众对完成、报酬、体面与公共记忆有不同解释权。",
+        "remaining_debt": "缺少具体木匠长访谈、庙会合同、剧装后台和地方论坛异说的成组核验。"
+      }
+    }
+  ]
+}

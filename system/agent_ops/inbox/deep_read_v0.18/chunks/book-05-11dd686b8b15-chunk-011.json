@@ -1,0 +1,113 @@
+```json
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "chunk_id": "book-05-11dd686b8b15-chunk-011",
+  "source_file": "novel_training_set/《凡人修仙传》（校对版全本+番外）作者：忘语.txt",
+  "source_file_sha256": "11dd686b8b151694b37460b52991a4f00eda8f5fabe86b507e74f321e10a7428",
+  "start_byte": 15000721,
+  "end_byte": 15072456,
+  "chunk_sha256": "094a64e7c80c8e1fc28b154f1beab643dda698ff70ad4d8e41603c2fff60c508",
+  "source_encoding": "gb18030",
+  "bounded_chunk_utf8_sha256": "05d06fdf0bfda066a1673cb715c81506a98e0db44f6f1e47a6808d9c700b9214",
+  "analysis": {
+    "chapter_span": [
+      "第两千四百四十章 得果",
+      "第两千四百四十一章 人族之变",
+      "第两千四百四十二章 重回人界",
+      "第两千四百四十三章 人界众象",
+      "第两千四百四十四章 北极元晶",
+      "第两千四百四十五章 飞升之劫",
+      "第两千四百四十六章 飞升仙界（大结局）",
+      "凡人外传·仙界篇 一",
+      "凡人外传·仙界篇 二",
+      "凡人外传"
+    ],
+    "major_events": [
+      "Han Li trades his True Soul Pill with the True Dragon Clan's Grand Elder for dragon scales detailing flying ascension tribulation experiences and a bottle of ten-thousand-year Golden Mulberry Liquid in the prologue section prior to 第两千四百四十章 得果.",
+      "Han Li defeats the Buddhist monk Tianxiang in the Dao Fruit Competition using the spatial attraction power of his green liquid bottle, forcing the monk to yield three silver Dao plaques in 第两千四百四十章 得果.",
+      "Han Li defeats a massive insect in a crimson desert by transforming into a three-headed six-armed Golden Giant Ape, obtaining another silver Dao plaque in 第两千四百四十章 得果.",
+      "Han Li confronts a Yellow-robed Elder and a Red-robed Woman over a golden whale, using his mountain treasures and the green liquid bottle to collect all of their Dao plaques in 第两千四百四十章 得果.",
+      "Han Li arrives at the central platform, delivers 108 silver Dao plaques to the Dragon Clan elders, and receives a Guangling Dao Fruit in 第两千四百四十章 得果.",
+      "Han Li immediately swallows the Guangling Dao Fruit on the platform to avoid post-competition theft and plots, surprising the Dragon Clan elders in 第两千四百四十章 得果.",
+      "The Grand Elder of the True Dragon Clan uses a talent secret technique to inspect Han Li's soul and discovers a hidden, life-threatening instability caused by his too-powerful divine sense in 第两千四百四十一章 人族之变.",
+      "Ice Soul Fairy returns to the Human Clan in the Spirit Realm as a Mahayana patriarch, initiating an era of territorial expansion and geopolitical alliances for the human and demon races in 第两千四百四十一章 人族之变.",
+      "Han Li enters a sealed site in the Demon Realm and strikes a deal with a mysterious entity inside a black bowl at a blood altar to acquire the third layer of the Refine Soul Art to cure his soul instability in 第两千四百四十一章 人族之变.",
+      "Han Li's disciple Bai Guo'er returns to the Green Yuan Palace with Haoyin Stones, allowing Han Li to refine the Haoyin Hanpo Mountain in 第两千四百四十二章 重回人界.",
+      "Han Li projects a sliver of his soul back to the Human Realm using a specialized star plate to seek the materials needed for the Northern Pole Yuan Mountain in 第两千四百四十二章 重回人界.",
+      "Han Li's soul strand, inhabiting a deceased scholar's body, easily slays a demonic cultivator in the Dajin empire and searches his soul to assess the state of the Human Realm in 第两千四百四十二章 重回人界.",
+      "Han Li visits the former Kunwu Mountain and banishes it to the void using a massive green projection hand to protect it from lower-realm cultivators in 第两千四百四十三章 人界众象.",
+      "Han Li's soul strand visits the Chaos Star Sea's Star Palace on Ling Yuling's 1000th birthday, learning about the fates of his past disciples and companions in 第两千四百四十三章 人界众象.",
+      "Han Li visits Mirror Province and encounters a young descendant named Han Ming, giving him a magic jade token that eventually guides the boy to join the Falling Cloud Sect in 第两千四百四十四章 北极元晶.",
+      "Han Li extracts all Northern Pole Yuan Crystals from the Falling Devil Valley, causing a massive geographical shift, and returns to the Spirit Realm in 第两千四百四十四章 北极元晶.",
+      "Eight thousand years later, Han Li, having mastered Beihan-tier techniques and the Yuanhe Wuji Mountain, initiates his Flying Ascension Tribulation in 第两千四百四十五章 飞升之劫.",
+      "Han Li successfully overcomes the various phases of the tribulation (Tiangang Wind, Lava Rain, Purple-Gold Lightning, and a Seven-Color Lightning blast from a giant celestial face) in front of his family, disciples, and onlookers in 第两千四百四十六章 飞升仙界（大结局）.",
+      "Han Li ascends to the Beihan Immortal Domain, waking up in an ascension pool where he is greeted and registered by an immortal named Gao Seng in 凡人外传·仙界篇 一 and 凡人外传·仙界篇 二.",
+      "In a flashback side story, a younger Han Li investigates a hidden chamber of the Thousand Bamboo Sect in the Far West, defeats a trap set by Da Yan Shen Jun, and exchanges Nourishing Soul Wood for the remaining layers of the Great Development Technique in 凡人外传."
+    ],
+    "character_state_transitions": [
+      "Han Li (Spirit Realm): Transitions from a Mahayana cultivator to a possessor of the Guangling Dao Body after consuming the Guangling Dao Fruit.",
+      "Han Li (Spirit Realm): Transitions from suffering a life-threatening soul collapse due to the Refine Soul Art to stabilizing his soul after acquiring and cultivating its third layer.",
+      "Han Li (Spirit Realm): Transitions from the strongest Mahayana cultivator in the Spirit Realm to a newly ascended True-grade Immortal (lower-tier真仙) in Beihan Immortal Domain.",
+      "Ling Yuling (Human Realm): Transitions from a Star Palace successor to a Deity-stage (化神初期) cultivator who artificially extends her lifespan to maintain Palace authority.",
+      "Han Ming (Human Realm descendant): Transitions from a rural mortal boy in a declining family to a disciple under a Falling Cloud Sect elder and eventually a famous high cultivator.",
+      "Da Yan Shen Jun (Human Realm): Transitions from a dying soul trapped in a golden puppet in a secret chamber to a stabilized soul residing in Nourishing Soul Wood after a trade with Han Li.",
+      "Tian Qin'er (Han Li's disciple): Transitions from a living cultivator attempting a Deity-stage breakthrough to being destroyed in a tribulation, leaving a sliver of soul for reincarnation.",
+      "Shi Jian (Han Li's disciple): Transitions from the leader of the Thousand Bamboo Sect to dying in battle with a strong enemy while passing down the sect's lineage.",
+      "Mo Jianli (Spirit Realm elder): Transitions from a prominent Mahayana protector of the Human Clan to dying in a major heavenly tribulation.",
+      "Silver Moon (Spirit Realm): Transitions from resolving the backlashes of her Emotion-Forgetting Art to successfully advancing to the Mahayana stage.",
+      "Bai Guo'er (Spirit Realm): Transitions from an ordinary disciple to a combined-stage (合体境界) cultivator with high proficiency in the Ice Soul technique."
+    ],
+    "long_form_mechanisms": [
+      "Guangling Dao Fruit (广灵道果): The ultimate spiritual fruit that grants the consumer the Guangling Dao Body. It can only be consumed once in a lifetime and significantly boosts a cultivator's chances of surviving the Flying Ascension Tribulation.",
+      "Refine Soul Art Side Effects (炼神术弊处): A powerful soul-enhancing technique that causes structural imbalance in the soul. If the practitioner cannot advance to higher layers (like the third layer) in a few centuries, their soul foundation collapses, leading to death.",
+      "Ascension Immortal Plate (飞升仙牌): A special identity card given to self-ascended immortals in Beihan Immortal Domain. It grants free passage into major cities and access to special locations without fees, a privilege not shared by native-born immortals.",
+      "Beihan Immortal Domain Jurisdictional Structure: Governed nominally by the Beihan Immortal Palace, but actual power is decentralized among several massive factions (e.g., Shiji Hall) that can match or exceed the Palace's power, which is permitted by Dao Ancestors to maintain basic order.",
+      "Immortal Realm Cultivation Ranks: Separated into True-grade Immortal (真仙), Virtual Spirit (虚灵), Qingyuan (清元), Dajian/Dalo (大罗), and Dao Ancestor (道祖). Each major rank is split into upper, middle, and lower tiers, requiring millions of years of cultivation to progress.",
+      "Nourishing Soul Wood (养魂木): A rare spiritual wood that prevents the leakage of soul or spirit energy and slowly nourishes and repairs damaged or weak souls, highly valued by remnant spirits.",
+      "Star Plate Boundary Breaking (星盘破界): A high-cost magical mechanism that allows a Mahayana-stage cultivator to project a sliver of their soul down to a lower realm (e.g., the Human Realm), though the projected soul's power is capped at approximately Nascent Soul level.",
+      "Dao Fruit Competition Rules: A competition hosted by the True Dragon Clan where participants must fight to collect silver Dao plaques. A cultivator must gather 108 plaques to exchange for a single Guangling Dao Fruit."
+    ],
+    "continuity_observations": [
+      "Da Yan Shen Jun's fate and the Far West: The side story (凡人外传) connects back to Han Li's early adventures in the Far West (Thousand Bamboo Sect), detailing his acquisition of the later stages of the Great Development Technique (大衍诀) in exchange for the Nourishing Soul Wood.",
+      "The origin and resolution of Han Li's family branch: Han Li returns to Mirror Province to check on the Han Family Ancestral Shrine, verifying their survival over millennia and helping a descendant child (Han Ming) join the Falling Cloud Sect.",
+      "The evolution of Yellow Maple Valley (黄枫谷) and Falling Cloud Sect (落云宗): The text details how both sects, which Han Li belonged to in the Human Realm, fared over the millennia. Yellow Maple Valley experienced a revival due to new genius disciples, while Falling Cloud Sect remained a hegemon in the Yunmeng Mountains.",
+      "The Star Palace (星宫) and Ling Yuling: The Star Palace remains the ruler of the Chaos Star Sea. Ling Yuling reached the Soul Formation (化神) stage and artificially extended her lifespan using secret methods, maintaining Palace stability.",
+      "The fate of Han Li's disciples (Tian Qin'er and Shi Jian): Explains what happened to Tian Qin'er (failed ascension/breakthrough, died but has a sliver of soul remaining for reincarnation) and Shi Jian (died fighting an enemy, but passed down the lineage).",
+      "The disappearance of Kunwu Mountain (昆吾山): Kunwu Mountain, which was a central location in the Dajin arc, is banished to the void by Han Li's projection to prevent it from being desecrated or fought over by lower-realm cultivators.",
+      "The Northern Pole Yuan Crystals (北极元晶) and the Green Jade Bottle: Han Li returns to the Falling Devil Valley (坠魔谷) to collect the Northern Pole Yuan Crystals, which he originally discovered in the Human Realm, to complete his refining of the Yuanhe Wuji Mountain.",
+      "The relationship with Ice Soul Fairy (冰魄仙子) and the human-demon alliance: Ice Soul Fairy, whose legacy Han Li discovered in the human realm (via the Ice Soul technique/items), is now a fellow Mahayana cultivator in the Spirit Realm assisting the Human Clan."
+    ],
+    "style_observations": [
+      "Pragmatic and Cautious Protagonist Tone: Han Li always prioritizes immediate safety and utility over prestige (e.g., eating the Guangling Dao Fruit immediately, rejecting long-term plans for immediate consumption, and hiding his identity when returning to the Human Realm).",
+      "Anti-climactic or Decisive Combat Resolutions: Battles are rarely drawn out; Han Li quickly deploys his ultimate tools (like the green liquid bottle, the three mountains, or transformation) to quickly force opponents to yield or instantly vanquish them.",
+      "Exposition-Heavy Transitions: Time jumps are handled with direct, narrative summaries (e.g., 'Two hundred years passed...', 'Eight thousand years later...'), summarizing large-scale geopolitical and cultivation changes of the human and demon races rather than dramatizing them.",
+      "Awe-Striking and Scaled Magic Imagery: Use of massive dimensions (thousands of feet/miles) to describe magical phenomena (e.g., a giant ape, a thousand-foot whale, a giant projection hand making Kunwu Mountain disappear, and massive lightning storms).",
+      "Elegiac and Reflective Nostalgia: When Han Li returns to the Human Realm, the tone shifts from high-stakes cultivation progression to slow, reflective nostalgia, visiting ruins, remembering old friends (Li Feiyu, Dayan Shenjun, parents), and observing the rise and fall of sects.",
+      "Strict and Hierarchical Power System Terminology: Clear delineation of power brackets (Mahayana, True Immortal, Beihan Xianyu, upper/middle/lower tiers) and the continuous description of how techniques translate to specific numerical or tier advantages."
+    ],
+    "creation_family_evidence": {
+      "novel_universe": "A Record of a Mortal's Journey to Immortality (凡人修仙传) by Wang Yu (忘语)",
+      "protagonist_identity": "Han Li (韩立), transitioning from Spirit Realm Mahayana to Beihan Xianyu True Immortal",
+      "signature_items_and_techniques": [
+        "Heaven-controlling Bottle (掌天瓶 / Green Jade Bottle)",
+        "Refine Soul Art (炼神术)",
+        "Yuanhe Five Polar Mountains (元合五极山)",
+        "Great Development Technique (大衍诀)"
+      ],
+      "iconic_lower_realm_locations": [
+        "Mirror Province, Yue Country (越国镜州)",
+        "Falling Devil Valley (坠魔谷)",
+        "Chaos Star Sea Star Palace (乱星海星宫)"
+      ],
+      "terminological_style": "High-level Chinese Xianxia nomenclature involving Mahayana (大乘), Soul Formation (化神), Nascent Soul (元婴), True Immortal (真仙), and flying ascension (飞升)"
+    },
+    "originality_risks": [
+      "The Overpowered Protagonist Returning to Lower Realm (下界装逼/衣锦还乡): The trope where the protagonist, now an absolute powerhouse in the higher realm, returns to the lower realm with suppressed power but easily defeats local tyrants, shows off, and helps his descendants or old friends.",
+      "Immediate Consumption to Avoid Plot Complications (杀人夺宝/怀璧其罪防范): Han Li eating the Guangling Dao Fruit right in front of the Dragon Clan elders is a direct counter to the common trope of being ambushed or chased for carrying a rare treasure. While subverting one trope, it plays into another of instant-gratification power-ups.",
+      "Decentralized Sect Hegemony Based on Single Protectors: The survival and prosperity of entire sects (Star Palace, Falling Cloud Sect) depend entirely on the presence of a single cultivator (Ling Yuling, Han Li's legacy). Once the protector dies or leaves, the sect is either threatened or experiences a dramatic shift.",
+      "The 'Ascension Registration' Cliché: Waking up in a pool of water/ascension pool and being greeted by an administrative figure (Gao Seng) who issues an identity card and explains the world's basic power structure is a standard, repetitive trope in Chinese xianxia novels (often called the 'Ascension Pool / 飞升池' trope)."
+    ]
+  }
+}
+```

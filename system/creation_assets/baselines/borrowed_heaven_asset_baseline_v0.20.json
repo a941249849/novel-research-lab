@@ -1,0 +1,38 @@
+{
+  "version": "0.20",
+  "baseline_id": "borrowed-heaven-creation-assets-v020",
+  "project": "《借天改命账》",
+  "status": "frozen_asset_baseline",
+  "asset_store": {
+    "path": "system/creation_assets/project_assets.v0.2.json",
+    "sha256": "87d128be710a53a2c999faa2bb955594bda047aa80c2a1090721ed4e1f188903",
+    "asset_count": 38,
+    "family_count": 9,
+    "resolved_reference_count": 113
+  },
+  "evidence": {
+    "deep_read_version": "0.18",
+    "project_reconciliation_version": "0.19",
+    "remediation_manifest": {
+      "path": "system/agent_ops/validation/borrowed_heaven_asset_graph_remediation_v0.20.json",
+      "sha256": "126a3a938c308e7002ceb9589b3cc5d07618ec61e89673fc69ba67f2573de782"
+    },
+    "antigravity_rereview": {
+      "path": ".agent-handoff/antigravity/responses/nrl-v020-asset-graph-rereview.md",
+      "sha256": "9532b5f186bf0d31abbf424a71248df28e36cc21f8f121a64fc27a98f0ca3830",
+      "verdict": "ACCEPT_WITH_WARNINGS"
+    }
+  },
+  "authorization": {
+    "asset_authorization_decision_id": "owner-final-asset-registry-v020-20260713",
+    "prose_generation_allowed": false
+  },
+  "serial_prose_blockers": [
+    "outline_missing_lamp_acquisition_transition",
+    "canonical_empty_life_text_conflict",
+    "cluster5_exact_price_not_canonical",
+    "deferred_state_seed_ownership",
+    "seed_asset_promotion_provenance"
+  ],
+  "next_gate": "A separate Owner authorization is required before any bounded Chapter 1 intent or Hermes prose operation."
+}

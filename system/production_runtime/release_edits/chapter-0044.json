@@ -1,0 +1,13 @@
+{
+  "version": "0.25",
+  "chapter_id": "chapter-0044",
+  "source_revision": "system/production_runtime/chapters/chapter-0044/revision.md",
+  "source_sha256": "709282aa3890309e0e7e673d35400bec5a1c811562e250be8fa5cacef71bcb66",
+  "release_edit": "system/production_runtime/release_edits/chapter-0044.md",
+  "release_edit_sha256": "9c029b3cf61be3f1bb2f0ff1de7e9f8d51fd0a8731a5767d84e1b1118e923651",
+  "repair_direction": "统一持灯人性别并分化伤病表现，消除跨章机械复用的左膝胸骨灰沫焦纹模板，同时保留已验收状态结果",
+  "provider": "codex-deterministic-editor",
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-041-050.json",
+  "reviewed_release_edit_sha256": "9c029b3cf61be3f1bb2f0ff1de7e9f8d51fd0a8731a5767d84e1b1118e923651"
+}

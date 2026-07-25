@@ -1,0 +1,1275 @@
+from __future__ import annotations
+
+import hashlib
+import json
+import re
+import shutil
+import subprocess
+import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any
+
+from nrl_paths import ROOT, runtime_path
+
+
+VERSION = "0.18"
+JOB_ID = "job-v018-verifiable-deep-reading"
+DEFAULT_TARGET_BYTES = 1_500_000
+AGY_RUN_TIMEOUT_SECONDS = 900
+OPENCODE_RUN_TIMEOUT_SECONDS = 900
+OPENCODE_DIRECT_SCRIPT = runtime_path("system/runtime/opencode_direct.mjs")
+CCDAN_ANTHROPIC_DIRECT_SCRIPT = runtime_path("system/runtime/ccdan_anthropic_direct.mjs")
+PLAN_PATH = runtime_path("system/research_assets/deep_read/v0.18/plan.json")
+VALIDATION_PATH = runtime_path("system/research_assets/deep_read/v0.18/validation.json")
+REQUEST_DIR = runtime_path("system/agent_ops/packets/deep_read_v0.18")
+RESPONSE_DIR = runtime_path("system/agent_ops/inbox/deep_read_v0.18/chunks")
+WORK_CHUNK_DIR = runtime_path(".nrl-work/deep_read_v0.18/chunks")
+SYNTHESIS_REQUEST_DIR = runtime_path("system/agent_ops/packets/deep_read_v0.18/synthesis")
+SYNTHESIS_RESPONSE_DIR = runtime_path("system/agent_ops/inbox/deep_read_v0.18/synthesis")
+SYNTHESIS_VALIDATION_PATH = runtime_path("system/research_assets/deep_read/v0.18/synthesis_validation.json")
+CROSS_REQUEST_PATH = runtime_path("system/agent_ops/packets/deep_read_v0.18/cross_book_distillation.md")
+CROSS_RESPONSE_PATH = runtime_path("system/agent_ops/inbox/deep_read_v0.18/cross_book_distillation.json")
+CROSS_VALIDATION_PATH = runtime_path("system/research_assets/deep_read/v0.18/cross_validation.json")
+ATTESTATION_PATH = runtime_path(
+    "system/research_assets/deep_read/v0.18/promotion_attestation.json"
+)
+LEGACY_VALIDATION_PATH = runtime_path(
+    "system/agent_ops/validation/full_corpus_proof_v0.8.json"
+)
+CHAPTER_PATTERN = re.compile(r"(?m)^\s*(第[^\r\n]{1,24}[章节回卷部集][^\r\n]{0,40})\s*$")
+REQUIRED_ANALYSIS_LISTS = (
+    "major_events",
+    "character_state_transitions",
+    "long_form_mechanisms",
+    "continuity_observations",
+    "style_observations",
+    "originality_risks",
+)
+
+
+def _now_iso() -> str:
+    return datetime.now(timezone.utc).astimezone().replace(microsecond=0).isoformat()
+
+
+def _sha256(data: bytes) -> str:
+    return hashlib.sha256(data).hexdigest()
+
+
+def _relative(path: Path) -> str:
+    return str(path.relative_to(ROOT))
+
+
+def _write_json(path: Path, data: Any) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    temporary.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    temporary.replace(path)
+
+
+def _read_json(path: Path) -> dict[str, Any]:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def extract_bound_response_json(transcript: str, chunk_id: str) -> dict[str, Any]:
+    decoder = json.JSONDecoder()
+    matches: list[dict[str, Any]] = []
+    for candidate_start in (match.start() for match in re.finditer(r"\{", transcript)):
+        try:
+            candidate, _ = decoder.raw_decode(transcript[candidate_start:])
+        except json.JSONDecodeError:
+            continue
+        if isinstance(candidate, dict) and candidate.get("chunk_id") == chunk_id:
+            matches.append(candidate)
+    if len(matches) != 1:
+        raise ValueError(
+            f"expected exactly one bound JSON response for {chunk_id}; found {len(matches)}"
+        )
+    return matches[0]
+
+
+def _corpus_files() -> list[Path]:
+    corpus = runtime_path("novel_training_set")
+    return sorted(path for path in corpus.glob("*.txt") if path.is_file()) if corpus.exists() else []
+
+
+def _safe_boundary(data: bytes, proposed: int) -> int:
+    if proposed >= len(data):
+        return len(data)
+    newline = data.find(b"\n", proposed, min(len(data), proposed + 65536))
+    return newline + 1 if newline >= 0 else proposed
+
+
+def _detect_encoding(data: bytes) -> str:
+    try:
+        data.decode("utf-8")
+        return "utf-8"
+    except UnicodeDecodeError:
+        data.decode("gb18030")
+        return "gb18030"
+
+
+def _all_headings(data: bytes, encoding: str) -> list[str]:
+    text = data.decode(encoding)
+    return [match.group(1).strip() for match in CHAPTER_PATTERN.finditer(text)]
+
+
+def _headings(data: bytes, encoding: str) -> list[str]:
+    headings = _all_headings(data, encoding)
+    if len(headings) <= 24:
+        return headings
+    indexes = sorted({round(index * (len(headings) - 1) / 23) for index in range(24)})
+    return [headings[index] for index in indexes]
+
+
+def _request_text(chunk: dict[str, Any]) -> str:
+    binding_template = {
+        "job_id": JOB_ID,
+        "contract_version": VERSION,
+        "chunk_id": chunk["chunk_id"],
+        "source_file": chunk["source_file"],
+        "source_file_sha256": chunk["source_file_sha256"],
+        "start_byte": chunk["start_byte"],
+        "end_byte": chunk["end_byte"],
+        "chunk_sha256": chunk["chunk_sha256"],
+        "source_encoding": chunk["source_encoding"],
+        "bounded_chunk_utf8_sha256": chunk["bounded_chunk_utf8_sha256"],
+        "analysis": {
+            "chapter_span": [],
+            "major_events": [],
+            "character_state_transitions": [],
+            "long_form_mechanisms": [],
+            "continuity_observations": [],
+            "style_observations": [],
+            "creation_family_evidence": {},
+            "originality_risks": [],
+        },
+    }
+    return f"""# NRL Antigravity Deep-Read Chunk v0.18
+
+Read the exact byte range below from the shared local source file. Analyze the
+range itself; do not rely on existing summaries. Do not quote source prose.
+
+- chunk_id: `{chunk['chunk_id']}`
+- source_file: `{chunk['source_file']}`
+- source_file_sha256: `{chunk['source_file_sha256']}`
+- start_byte: {chunk['start_byte']}
+- end_byte: {chunk['end_byte']}
+- chunk_sha256: `{chunk['chunk_sha256']}`
+- source_encoding: `{chunk['source_encoding']}`
+- bounded_chunk_utf8_sha256: `{chunk['bounded_chunk_utf8_sha256']}`
+- sampled_evidence_headings: {json.dumps(chunk['chapter_headings'], ensure_ascii=False)}
+- bounded_chunk_file: `{chunk['bounded_chunk_file']}`
+
+The bounded chunk file contains exactly the bytes identified above. Read that
+entire bounded file before responding. Do not inspect or summarize a different
+range and do not use pre-existing book reports as a substitute.
+
+Return one JSON object only with these binding fields and an `analysis` object.
+The analysis must contain non-empty arrays named `major_events`,
+`character_state_transitions`, `long_form_mechanisms`,
+`continuity_observations`, `style_observations`, and `originality_risks`;
+`chapter_span` as an array; and `creation_family_evidence` as a non-empty object.
+Use chapter titles or abstract event labels as evidence anchors, never raw prose.
+For million-byte chunks, provide at least 16 major events, 10 character-state
+transitions, 8 long-form mechanisms, 8 continuity observations, 6 style
+observations, and 4 originality risks. Cite at least 6 exact chapter headings
+from the bounded UTF-8 file when that many headings exist.
+The job_id is `{JOB_ID}` and contract_version is `{VERSION}`. Copy every
+binding field exactly from this template and replace only the analysis values:
+
+```json
+{json.dumps(binding_template, ensure_ascii=False, indent=2)}
+```
+"""
+
+
+def build_deep_read_plan(target_bytes: int = DEFAULT_TARGET_BYTES) -> dict[str, Any]:
+    if target_bytes < 128:
+        raise RuntimeError("target_bytes must be at least 128")
+    books: list[dict[str, Any]] = []
+    total_size = 0
+    total_chunks = 0
+    REQUEST_DIR.mkdir(parents=True, exist_ok=True)
+    WORK_CHUNK_DIR.mkdir(parents=True, exist_ok=True)
+    for book_index, path in enumerate(_corpus_files(), start=1):
+        data = path.read_bytes()
+        source_encoding = _detect_encoding(data)
+        source_hash = _sha256(data)
+        source_file = _relative(path)
+        chunks: list[dict[str, Any]] = []
+        start = 0
+        ordinal = 1
+        while start < len(data):
+            end = _safe_boundary(data, min(len(data), start + target_bytes))
+            if end <= start:
+                end = len(data)
+            chunk_data = data[start:end]
+            chunk_text = chunk_data.decode(source_encoding)
+            utf8_data = chunk_text.encode("utf-8")
+            chunk_id = f"book-{book_index:02d}-{source_hash[:12]}-chunk-{ordinal:03d}"
+            response_path = RESPONSE_DIR / f"{chunk_id}.json"
+            request_path = REQUEST_DIR / f"{chunk_id}.md"
+            bounded_chunk_path = WORK_CHUNK_DIR / f"{chunk_id}.txt"
+            bounded_chunk_path.write_bytes(utf8_data)
+            chunk = {
+                "chunk_id": chunk_id,
+                "book_index": book_index,
+                "ordinal": ordinal,
+                "source_file": source_file,
+                "source_file_sha256": source_hash,
+                "start_byte": start,
+                "end_byte": end,
+                "size_bytes": end - start,
+                "chunk_sha256": _sha256(chunk_data),
+                "source_encoding": source_encoding,
+                "bounded_chunk_utf8_sha256": _sha256(utf8_data),
+                "chapter_headings": _headings(chunk_data, source_encoding),
+                "bounded_chunk_file": _relative(bounded_chunk_path),
+                "request_path": _relative(request_path),
+                "response_path": _relative(response_path),
+            }
+            request_path.write_text(_request_text(chunk), encoding="utf-8")
+            chunks.append(chunk)
+            start = end
+            ordinal += 1
+        total_size += len(data)
+        total_chunks += len(chunks)
+        books.append(
+            {
+                "book_index": book_index,
+                "book_title": path.stem,
+                "source_file": source_file,
+                "source_file_sha256": source_hash,
+                "source_encoding": source_encoding,
+                "size_bytes": len(data),
+                "chunk_count": len(chunks),
+                "chunks": chunks,
+            }
+        )
+    plan = {
+        "version": VERSION,
+        "job_id": JOB_ID,
+        "status": "planned",
+        "target_bytes": target_bytes,
+        "book_count": len(books),
+        "chunk_count": total_chunks,
+        "total_size_bytes": total_size,
+        "coverage_bytes": sum(chunk["size_bytes"] for book in books for chunk in book["chunks"]),
+        "coverage_ratio": 1.0 if books else 0.0,
+        "books": books,
+        "created_at": _now_iso(),
+    }
+    _write_json(PLAN_PATH, plan)
+    return plan
+
+
+def _legacy_status() -> str:
+    if not LEGACY_VALIDATION_PATH.exists():
+        return "missing"
+    try:
+        legacy = _read_json(LEGACY_VALIDATION_PATH)
+    except (json.JSONDecodeError, OSError):
+        return "invalid"
+    if legacy.get("status") == "proof_verified":
+        return "access_sample_verified"
+    return str(legacy.get("status", "unknown"))
+
+
+def validate_plan_integrity(plan: dict[str, Any]) -> dict[str, Any]:
+    errors = []
+    current_sources = {_relative(path): path for path in _corpus_files()}
+    planned_sources = {str(book["source_file"]) for book in plan.get("books", [])}
+    if set(current_sources) != planned_sources:
+        errors.append("corpus inventory mismatch")
+    for book in plan.get("books", []):
+        source = current_sources.get(str(book["source_file"]))
+        if not source:
+            errors.append(f"source is missing: {book.get('source_file')}")
+            continue
+        source_data = source.read_bytes()
+        if _sha256(source_data) != book.get("source_file_sha256"):
+            errors.append(f"source hash mismatch: {book.get('source_file')}")
+            continue
+        if source.stat().st_size != book.get("size_bytes"):
+            errors.append(f"source size mismatch: {book.get('source_file')}")
+        expected_start = 0
+        for chunk in book.get("chunks", []):
+            if chunk.get("start_byte") != expected_start:
+                errors.append(f"chunk range gap or overlap: {chunk.get('chunk_id')}")
+            expected_start = int(chunk.get("end_byte", 0))
+            raw_slice = source_data[int(chunk["start_byte"]):int(chunk["end_byte"])]
+            if _sha256(raw_slice) != chunk.get("chunk_sha256"):
+                errors.append(f"raw chunk hash mismatch: {chunk.get('chunk_id')}")
+            try:
+                reconstructed_utf8 = raw_slice.decode(str(chunk.get("source_encoding"))).encode("utf-8")
+            except (LookupError, UnicodeDecodeError):
+                errors.append(f"bounded chunk decoding failed: {chunk.get('chunk_id')}")
+                reconstructed_utf8 = b""
+            if _sha256(reconstructed_utf8) != chunk.get("bounded_chunk_utf8_sha256"):
+                errors.append(f"bounded chunk hash mismatch: {chunk.get('chunk_id')}")
+            bounded = runtime_path(str(chunk.get("bounded_chunk_file", "")))
+            # The UTF-8 reading file is a dispatch cache, not a durable fact.
+            # When present it must match; when absent the same bytes are proven
+            # deterministically from the hash-bound source slice above.
+            if bounded.is_file() and _sha256(bounded.read_bytes()) != chunk.get("bounded_chunk_utf8_sha256"):
+                errors.append(f"bounded chunk hash mismatch: {chunk.get('chunk_id')}")
+        if expected_start != book.get("size_bytes"):
+            errors.append(f"chunk coverage mismatch: {book.get('source_file')}")
+    return {"valid": not errors, "errors": errors}
+
+
+def validate_plan_manifest_integrity(plan: dict[str, Any]) -> dict[str, Any]:
+    """Validate plan structure without requiring the protected source corpus."""
+    errors: list[str] = []
+    books = plan.get("books", [])
+    if not isinstance(books, list) or not books:
+        return {"valid": False, "errors": ["plan books are missing"]}
+    if int(plan.get("book_count", -1)) != len(books):
+        errors.append("book_count mismatch")
+    total_bytes = 0
+    chunk_count = 0
+    seen_chunks: set[str] = set()
+    for book in books:
+        chunks = book.get("chunks", [])
+        if not isinstance(chunks, list) or not chunks:
+            errors.append(f"book has no chunks: {book.get('source_file')}")
+            continue
+        expected_start = 0
+        for chunk in chunks:
+            chunk_id = str(chunk.get("chunk_id", ""))
+            if not chunk_id or chunk_id in seen_chunks:
+                errors.append(f"duplicate or missing chunk_id: {chunk_id}")
+            seen_chunks.add(chunk_id)
+            start = int(chunk.get("start_byte", -1))
+            end = int(chunk.get("end_byte", -1))
+            if start != expected_start or end <= start:
+                errors.append(f"chunk range gap, overlap, or empty span: {chunk_id}")
+            expected_start = end
+            if int(chunk.get("size_bytes", end - start)) != end - start:
+                errors.append(f"chunk size mismatch: {chunk_id}")
+            for field in (
+                "source_file_sha256",
+                "chunk_sha256",
+                "bounded_chunk_utf8_sha256",
+            ):
+                value = str(chunk.get(field, ""))
+                if not re.fullmatch(r"[0-9a-f]{64}", value):
+                    errors.append(f"invalid {field}: {chunk_id}")
+            chunk_count += 1
+        size = int(book.get("size_bytes", -1))
+        if expected_start != size:
+            errors.append(f"book chunk coverage mismatch: {book.get('source_file')}")
+        total_bytes += max(size, 0)
+    if int(plan.get("chunk_count", -1)) != chunk_count:
+        errors.append("chunk_count mismatch")
+    if int(plan.get("total_size_bytes", -1)) != total_bytes:
+        errors.append("total_size_bytes mismatch")
+    if int(plan.get("coverage_bytes", -1)) != total_bytes:
+        errors.append("coverage_bytes mismatch")
+    if float(plan.get("coverage_ratio", 0.0)) != 1.0:
+        errors.append("coverage_ratio must be 1.0")
+    return {"valid": not errors, "errors": errors}
+
+
+def attestation_root_hash(artifacts: list[dict[str, str]]) -> str:
+    canonical = json.dumps(
+        sorted(artifacts, key=lambda item: item["path"]),
+        ensure_ascii=False,
+        separators=(",", ":"),
+    ).encode("utf-8")
+    return _sha256(canonical)
+
+
+def _attested_artifact_paths(plan: dict[str, Any]) -> list[Path]:
+    paths = [PLAN_PATH, VALIDATION_PATH, SYNTHESIS_VALIDATION_PATH, CROSS_VALIDATION_PATH]
+    paths.extend(
+        runtime_path(str(chunk["response_path"]))
+        for book in plan.get("books", [])
+        for chunk in book.get("chunks", [])
+    )
+    paths.extend(sorted(SYNTHESIS_RESPONSE_DIR.glob("*.json")))
+    paths.append(CROSS_RESPONSE_PATH)
+    return paths
+
+
+def validate_promotion_attestation(plan: dict[str, Any]) -> dict[str, Any]:
+    errors: list[str] = []
+    manifest_check = validate_plan_manifest_integrity(plan)
+    errors.extend(manifest_check["errors"])
+    try:
+        attestation = _read_json(ATTESTATION_PATH)
+    except (FileNotFoundError, json.JSONDecodeError, OSError) as error:
+        return {"valid": False, "errors": [f"promotion attestation unavailable: {error}"]}
+    if attestation.get("version") != VERSION or attestation.get("job_id") != JOB_ID:
+        errors.append("promotion attestation contract mismatch")
+    if attestation.get("status") != "promoted_deep_read_attestation":
+        errors.append("promotion attestation status mismatch")
+    if int(attestation.get("book_count", -1)) != int(plan.get("book_count", 0)):
+        errors.append("promotion attestation book_count mismatch")
+    if int(attestation.get("chunk_count", -1)) != int(plan.get("chunk_count", 0)):
+        errors.append("promotion attestation chunk_count mismatch")
+    artifacts = attestation.get("artifacts", [])
+    if not isinstance(artifacts, list):
+        return {"valid": False, "errors": errors + ["promotion artifacts must be an array"]}
+    expected_paths = _attested_artifact_paths(plan)
+    expected_relative = {_relative(path) for path in expected_paths}
+    declared_relative = {str(item.get("path", "")) for item in artifacts if isinstance(item, dict)}
+    if expected_relative != declared_relative:
+        errors.append("promotion artifact inventory mismatch")
+    if int(attestation.get("artifact_count", len(artifacts))) != len(artifacts):
+        errors.append("promotion artifact_count mismatch")
+    if len(list(SYNTHESIS_RESPONSE_DIR.glob("*.json"))) != int(plan.get("book_count", 0)):
+        errors.append("promotion synthesis artifact count mismatch")
+    for item in artifacts:
+        if not isinstance(item, dict):
+            errors.append("invalid promotion artifact entry")
+            continue
+        relative = str(item.get("path", ""))
+        path = (ROOT / relative).resolve()
+        try:
+            path.relative_to(ROOT.resolve())
+        except ValueError:
+            errors.append(f"promotion artifact escapes root: {relative}")
+            continue
+        if not path.is_file():
+            errors.append(f"promotion artifact missing: {relative}")
+        elif _sha256(path.read_bytes()) != item.get("sha256"):
+            errors.append(f"artifact hash mismatch: {relative}")
+    if attestation_root_hash(artifacts) != attestation.get("artifact_root_sha256"):
+        errors.append("promotion artifact root hash mismatch")
+    validation = _read_json(VALIDATION_PATH) if VALIDATION_PATH.exists() else {}
+    synthesis = _read_json(SYNTHESIS_VALIDATION_PATH) if SYNTHESIS_VALIDATION_PATH.exists() else {}
+    cross = _read_json(CROSS_VALIDATION_PATH) if CROSS_VALIDATION_PATH.exists() else {}
+    if (
+        validation.get("status") != "chunk_coverage_verified"
+        or int(validation.get("validated_chunk_count", -1)) != int(plan.get("chunk_count", 0))
+    ):
+        errors.append("attested chunk validation is incomplete")
+    if not synthesis.get("valid") or int(synthesis.get("validated_book_count", -1)) != int(plan.get("book_count", 0)):
+        errors.append("attested synthesis validation is incomplete")
+    if not cross.get("valid"):
+        errors.append("attested cross-book validation is incomplete")
+    return {
+        "valid": not errors,
+        "errors": errors,
+        "path": _relative(ATTESTATION_PATH),
+        "artifact_count": len(artifacts),
+        "artifact_root_sha256": attestation.get("artifact_root_sha256"),
+    }
+
+
+def build_promotion_attestation() -> dict[str, Any]:
+    if not PLAN_PATH.exists():
+        raise RuntimeError("deep-read plan is missing")
+    plan = _read_json(PLAN_PATH)
+    source_check = validate_plan_integrity(plan)
+    if not source_check["valid"]:
+        raise RuntimeError("protected corpus must match the plan before attestation")
+    validation = validate_all_chunks()
+    synthesis = validate_book_syntheses()
+    cross = validate_cross_book_distillation()
+    if validation.get("status") != "chunk_coverage_verified" or not synthesis.get("valid") or not cross.get("valid"):
+        raise RuntimeError("all deep-read validation stages must pass before attestation")
+    paths = _attested_artifact_paths(plan)
+    missing = [path for path in paths if not path.is_file()]
+    if missing:
+        raise RuntimeError(f"deep-read promotion artifacts are missing: {_relative(missing[0])}")
+    artifacts = [
+        {"path": _relative(path), "sha256": _sha256(path.read_bytes())}
+        for path in paths
+    ]
+    payload = {
+        "version": VERSION,
+        "job_id": JOB_ID,
+        "status": "promoted_deep_read_attestation",
+        "verification_mode": "protected_source_revalidated",
+        "book_count": int(plan["book_count"]),
+        "chunk_count": int(plan["chunk_count"]),
+        "artifact_count": len(artifacts),
+        "artifacts": artifacts,
+        "artifact_root_sha256": attestation_root_hash(artifacts),
+        "created_at": _now_iso(),
+    }
+    _write_json(ATTESTATION_PATH, payload)
+    return payload
+
+
+_STATUS_CACHE: tuple[float, dict[str, Any]] | None = None
+
+
+def build_deep_read_status() -> dict[str, Any]:
+    global _STATUS_CACHE
+    now = time.monotonic()
+    if _STATUS_CACHE and now - _STATUS_CACHE[0] < 30:
+        return _STATUS_CACHE[1]
+    status = _build_deep_read_status_uncached()
+    _STATUS_CACHE = (now, status)
+    return status
+
+
+def _build_deep_read_status_uncached() -> dict[str, Any]:
+    plan = _read_json(PLAN_PATH) if PLAN_PATH.exists() else None
+    validation = _read_json(VALIDATION_PATH) if VALIDATION_PATH.exists() else None
+    synthesis = _read_json(SYNTHESIS_VALIDATION_PATH) if SYNTHESIS_VALIDATION_PATH.exists() else None
+    cross = _read_json(CROSS_VALIDATION_PATH) if CROSS_VALIDATION_PATH.exists() else None
+    source_files_present = bool(_corpus_files())
+    source_integrity = (
+        validate_plan_integrity(plan)
+        if plan and source_files_present
+        else {"valid": False, "errors": ["protected corpus is not mounted"]}
+    )
+    attestation = (
+        validate_promotion_attestation(plan)
+        if plan
+        else {"valid": False, "errors": ["plan missing"]}
+    )
+    if source_files_present:
+        plan_integrity = {
+            "valid": source_integrity["valid"] and attestation["valid"],
+            "errors": source_integrity["errors"] + attestation["errors"],
+            "source_integrity": source_integrity,
+            "promotion_attestation": attestation,
+        }
+    else:
+        plan_integrity = attestation
+    verification_mode = (
+        "protected_source_revalidated"
+        if source_integrity["valid"] and attestation["valid"]
+        else "promoted_attestation"
+        if attestation["valid"]
+        else "unverified"
+    )
+    if cross and cross.get("valid") and plan_integrity["valid"]:
+        status = "deep_read_verified"
+    elif synthesis and synthesis.get("valid") and plan_integrity["valid"]:
+        status = "book_synthesis_verified"
+    else:
+        status = str(validation.get("status")) if validation else ("planned" if plan else "missing")
+    return {
+        "version": VERSION,
+        "job_id": JOB_ID,
+        "status": status,
+        "deep_read_verified": status == "deep_read_verified",
+        "legacy_v08_effective_status": _legacy_status(),
+        "plan_path": _relative(PLAN_PATH),
+        "validation_path": _relative(VALIDATION_PATH),
+        "book_count": int(plan.get("book_count", 0)) if plan else 0,
+        "required_chunk_count": int(plan.get("chunk_count", 0)) if plan else 0,
+        "validation": validation,
+        "synthesis_validation": synthesis,
+        "cross_validation": cross,
+        "plan_integrity": plan_integrity,
+        "verification_mode": verification_mode,
+        "promotion_attestation": attestation,
+        "next_action": (
+            "Create a contiguous deep-read plan."
+            if not plan
+            else "Complete and validate all planned chunk analyses."
+            if status in {"planned", "in_progress", "blocked"}
+            else "Build and validate all per-book syntheses."
+            if status == "chunk_coverage_verified"
+            else "Build and validate cross-book distillation."
+            if status == "book_synthesis_verified"
+            else "Run project impact review before production promotion."
+        ),
+    }
+
+
+def _find_chunk(plan: dict[str, Any], chunk_id: str) -> dict[str, Any] | None:
+    for book in plan.get("books", []):
+        for chunk in book.get("chunks", []):
+            if chunk.get("chunk_id") == chunk_id:
+                return chunk
+    return None
+
+
+def _load_response(path: Path) -> dict[str, Any]:
+    text = path.read_text(encoding="utf-8").strip()
+    match = re.search(r"```json\s*(.*?)\s*```", text, re.DOTALL)
+    return json.loads(match.group(1) if match else text)
+
+
+def validate_chunk_response(chunk_id: str) -> dict[str, Any]:
+    if not PLAN_PATH.exists():
+        return {"chunk_id": chunk_id, "valid": False, "errors": ["deep-read plan is missing"]}
+    plan = _read_json(PLAN_PATH)
+    chunk = _find_chunk(plan, chunk_id)
+    if not chunk:
+        return {"chunk_id": chunk_id, "valid": False, "errors": ["unknown chunk_id"]}
+    path = runtime_path(str(chunk["response_path"]))
+    if not path.exists():
+        return {"chunk_id": chunk_id, "valid": False, "errors": ["response file is missing"]}
+    try:
+        response = _load_response(path)
+    except (json.JSONDecodeError, OSError) as error:
+        return {"chunk_id": chunk_id, "valid": False, "errors": [f"invalid response JSON: {error}"]}
+    errors: list[str] = []
+    expected_fields = (
+        "chunk_id",
+        "source_file",
+        "source_file_sha256",
+        "start_byte",
+        "end_byte",
+        "chunk_sha256",
+        "source_encoding",
+        "bounded_chunk_utf8_sha256",
+    )
+    for field in expected_fields:
+        if response.get(field) != chunk.get(field):
+            errors.append(f"{field} mismatch")
+    if response.get("job_id") != JOB_ID:
+        errors.append("job_id mismatch")
+    if response.get("contract_version") != VERSION:
+        errors.append("contract_version mismatch")
+    analysis = response.get("analysis")
+    if not isinstance(analysis, dict):
+        errors.append("analysis must be an object")
+    else:
+        if not isinstance(analysis.get("chapter_span"), list):
+            errors.append("analysis.chapter_span must be an array")
+        for field in REQUIRED_ANALYSIS_LISTS:
+            value = analysis.get(field)
+            if not isinstance(value, list) or not value:
+                errors.append(f"analysis.{field} must be a non-empty array")
+        if int(chunk.get("size_bytes", 0)) >= 1_000_000:
+            minimums = {
+                "major_events": 16,
+                "character_state_transitions": 10,
+                "long_form_mechanisms": 8,
+                "continuity_observations": 8,
+                "style_observations": 6,
+                "originality_risks": 4,
+            }
+            for field, minimum in minimums.items():
+                if isinstance(analysis.get(field), list) and len(analysis[field]) < minimum:
+                    errors.append(f"analysis.{field} requires at least {minimum} items")
+        family_evidence = analysis.get("creation_family_evidence")
+        if not isinstance(family_evidence, dict) or not family_evidence:
+            errors.append("analysis.creation_family_evidence must be a non-empty object")
+        bounded_path = runtime_path(str(chunk.get("bounded_chunk_file", "")))
+        known_headings = (
+            _all_headings(bounded_path.read_bytes(), "utf-8")
+            if bounded_path.is_file()
+            else [str(item) for item in chunk.get("chapter_headings", [])]
+        )
+        if known_headings:
+            encoded_analysis = json.dumps(analysis, ensure_ascii=False)
+            heading_matches = sum(1 for heading in known_headings if heading in encoded_analysis)
+            required_matches = min(6, len(known_headings))
+            if heading_matches < required_matches:
+                errors.append(
+                    f"analysis must cite at least {required_matches} detected chapter headings"
+                )
+        else:
+            heading_matches = 0
+    return {
+        "chunk_id": chunk_id,
+        "valid": not errors,
+        "errors": errors,
+        "response_path": chunk["response_path"],
+        "size_bytes": chunk["size_bytes"],
+        "evidence_heading_matches": heading_matches if isinstance(analysis, dict) else 0,
+    }
+
+
+def validate_all_chunks() -> dict[str, Any]:
+    if not PLAN_PATH.exists():
+        result = {
+            "version": VERSION,
+            "job_id": JOB_ID,
+            "status": "missing",
+            "deep_read_verified": False,
+            "errors": ["deep-read plan is missing"],
+            "validated_chunk_count": 0,
+            "required_chunk_count": 0,
+            "validated_byte_ratio": 0.0,
+        }
+        _write_json(VALIDATION_PATH, result)
+        return result
+    plan = _read_json(PLAN_PATH)
+    plan_integrity = validate_plan_integrity(plan)
+    chunks = [chunk for book in plan["books"] for chunk in book["chunks"]]
+    validations = [validate_chunk_response(str(chunk["chunk_id"])) for chunk in chunks]
+    valid_ids = {item["chunk_id"] for item in validations if item["valid"]}
+    validated_bytes = sum(chunk["size_bytes"] for chunk in chunks if chunk["chunk_id"] in valid_ids)
+    required_bytes = int(plan["total_size_bytes"])
+    valid_count = len(valid_ids)
+    all_valid = bool(chunks) and valid_count == len(chunks) and plan_integrity["valid"]
+    result = {
+        "version": VERSION,
+        "job_id": JOB_ID,
+        "status": "chunk_coverage_verified" if all_valid else "in_progress",
+        "deep_read_verified": False,
+        "book_count": int(plan["book_count"]),
+        "validated_chunk_count": valid_count,
+        "required_chunk_count": len(chunks),
+        "validated_bytes": validated_bytes,
+        "required_bytes": required_bytes,
+        "validated_byte_ratio": round(validated_bytes / required_bytes, 6) if required_bytes else 0.0,
+        "invalid_chunks": [item for item in validations if not item["valid"]],
+        "plan_integrity": plan_integrity,
+        "validated_at": _now_iso(),
+    }
+    _write_json(VALIDATION_PATH, result)
+    return result
+
+
+def materialize_bounded_chunk(chunk: dict[str, Any]) -> Path:
+    source = runtime_path(str(chunk["source_file"]))
+    if not source.is_file():
+        raise RuntimeError(f"protected source is missing: {chunk['source_file']}")
+    source_data = source.read_bytes()
+    if _sha256(source_data) != chunk.get("source_file_sha256"):
+        raise RuntimeError(f"protected source hash mismatch: {chunk['source_file']}")
+    raw_slice = source_data[int(chunk["start_byte"]):int(chunk["end_byte"])]
+    if _sha256(raw_slice) != chunk.get("chunk_sha256"):
+        raise RuntimeError(f"raw chunk hash mismatch: {chunk['chunk_id']}")
+    try:
+        utf8_data = raw_slice.decode(str(chunk["source_encoding"])).encode("utf-8")
+    except (LookupError, UnicodeDecodeError) as error:
+        raise RuntimeError(f"bounded chunk decoding failed: {chunk['chunk_id']}: {error}") from error
+    if _sha256(utf8_data) != chunk.get("bounded_chunk_utf8_sha256"):
+        raise RuntimeError(f"bounded chunk UTF-8 hash mismatch: {chunk['chunk_id']}")
+    bounded = runtime_path(str(chunk["bounded_chunk_file"]))
+    bounded.parent.mkdir(parents=True, exist_ok=True)
+    bounded.write_bytes(utf8_data)
+    return bounded
+
+
+def build_agy_deep_read_command(
+    binary: str, model: str, print_timeout: str, prompt: str
+) -> list[str]:
+    return [
+        binary,
+        "--add-dir",
+        str(ROOT),
+        "--model",
+        model,
+        "--mode",
+        "plan",
+        "--sandbox",
+        # Print mode cannot prompt. The sandbox still limits terminal access.
+        "--dangerously-skip-permissions",
+        "--print-timeout",
+        print_timeout,
+        "-p",
+        prompt,
+    ]
+
+
+def _dispatch_one_agy(chunk: dict[str, Any], model: str, print_timeout: str) -> dict[str, Any]:
+    binary = shutil.which("agy") or str(Path.home() / ".local/bin/agy")
+    if not Path(binary).exists():
+        return {"chunk_id": chunk["chunk_id"], "valid": False, "errors": ["agy binary is missing"]}
+    request_path = runtime_path(str(chunk["request_path"]))
+    response_path = runtime_path(str(chunk["response_path"]))
+    response_path.parent.mkdir(parents=True, exist_ok=True)
+    prompt = request_path.read_text(encoding="utf-8")
+    try:
+        materialize_bounded_chunk(chunk)
+    except RuntimeError as error:
+        return {
+            "chunk_id": chunk["chunk_id"],
+            "valid": False,
+            "errors": [str(error)],
+        }
+    try:
+        result = subprocess.run(
+            build_agy_deep_read_command(binary, model, print_timeout, prompt),
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+            check=False,
+            timeout=AGY_RUN_TIMEOUT_SECONDS,
+        )
+    except subprocess.TimeoutExpired:
+        return {"chunk_id": chunk["chunk_id"], "valid": False, "errors": [f"agy timed out after {AGY_RUN_TIMEOUT_SECONDS} seconds"], "returncode": None}
+    if result.returncode == 0:
+        try:
+            transcript = result.stdout
+            if str(chunk["chunk_id"]) not in transcript and result.stderr:
+                transcript += "\n" + result.stderr
+            payload = extract_bound_response_json(transcript, str(chunk["chunk_id"]))
+            _normalize_chapter_span(chunk, payload)
+            _write_json(response_path, payload)
+        except ValueError as error:
+            details = result.stderr.strip()
+            errors = [str(error)]
+            if details:
+                errors.append(details)
+            return {"chunk_id": chunk["chunk_id"], "valid": False, "errors": errors}
+    validation = validate_chunk_response(str(chunk["chunk_id"]))
+    validation["returncode"] = result.returncode
+    if result.returncode != 0:
+        validation["errors"] = list(validation["errors"]) + [
+            (result.stderr.strip() or f"agy exited with {result.returncode}")
+        ]
+        validation["valid"] = False
+    return validation
+
+
+def _dispatch_one_opencode_go(chunk: dict[str, Any], model: str) -> dict[str, Any]:
+    node = shutil.which("node")
+    if not node or not OPENCODE_DIRECT_SCRIPT.is_file():
+        return {"chunk_id": chunk["chunk_id"], "valid": False, "errors": ["OpenCode direct runtime is unavailable"]}
+    response_path = runtime_path(str(chunk["response_path"]))
+    try:
+        result = subprocess.run(
+            [node, str(OPENCODE_DIRECT_SCRIPT), str(runtime_path(chunk["request_path"])), str(runtime_path(chunk["bounded_chunk_file"])), model],
+            cwd=ROOT, text=True, capture_output=True, check=False, timeout=OPENCODE_RUN_TIMEOUT_SECONDS,
+        )
+    except subprocess.TimeoutExpired:
+        response_path.unlink(missing_ok=True)
+        return {"chunk_id": chunk["chunk_id"], "valid": False, "errors": ["OpenCode direct runtime timed out"]}
+    if result.returncode == 0:
+        try:
+            payload = extract_bound_response_json(result.stdout, str(chunk["chunk_id"]))
+            _normalize_chapter_span(chunk, payload)
+            _write_json(response_path, payload)
+        except ValueError as error:
+            response_path.unlink(missing_ok=True)
+            return {"chunk_id": chunk["chunk_id"], "valid": False, "errors": [str(error)]}
+    else:
+        response_path.unlink(missing_ok=True)
+        return {"chunk_id": chunk["chunk_id"], "valid": False, "errors": [result.stderr.strip() or f"OpenCode exited with {result.returncode}"]}
+    return validate_chunk_response(str(chunk["chunk_id"]))
+
+
+def _dispatch_one_ccdan_anthropic(chunk: dict[str, Any], model: str) -> dict[str, Any]:
+    node = shutil.which("node")
+    if not node or not CCDAN_ANTHROPIC_DIRECT_SCRIPT.is_file():
+        return {"chunk_id": chunk["chunk_id"], "valid": False, "errors": ["CCDAN Anthropic runtime is unavailable"]}
+    response_path = runtime_path(str(chunk["response_path"]))
+    try:
+        result = subprocess.run(
+            [node, str(CCDAN_ANTHROPIC_DIRECT_SCRIPT), str(runtime_path(chunk["request_path"])), str(runtime_path(chunk["bounded_chunk_file"])), model],
+            cwd=ROOT, text=True, capture_output=True, check=False, timeout=960,
+        )
+    except subprocess.TimeoutExpired:
+        response_path.unlink(missing_ok=True)
+        return {"chunk_id": chunk["chunk_id"], "valid": False, "errors": ["CCDAN Anthropic runtime timed out"]}
+    if result.returncode != 0:
+        response_path.unlink(missing_ok=True)
+        return {"chunk_id": chunk["chunk_id"], "valid": False, "errors": [result.stderr.strip() or "CCDAN Anthropic exited with an error"]}
+    try:
+        payload = extract_bound_response_json(result.stdout, str(chunk["chunk_id"]))
+        _normalize_chapter_span(chunk, payload)
+        _write_json(response_path, payload)
+    except ValueError as error:
+        response_path.unlink(missing_ok=True)
+        return {"chunk_id": chunk["chunk_id"], "valid": False, "errors": [str(error)]}
+    return validate_chunk_response(str(chunk["chunk_id"]))
+
+
+def _normalize_chapter_span(chunk: dict[str, Any], payload: dict[str, Any]) -> None:
+    """Bind model analysis to the exact headings detected in the hash-bound source."""
+    analysis = payload.get("analysis")
+    bounded = runtime_path(str(chunk["bounded_chunk_file"]))
+    if isinstance(analysis, dict) and bounded.is_file():
+        headings = _all_headings(bounded.read_bytes(), "utf-8")
+        if headings:
+            analysis["chapter_span"] = headings
+
+
+def _dispatch_one(
+    chunk: dict[str, Any], model: str, print_timeout: str, runner: str
+) -> dict[str, Any]:
+    if runner == "agy":
+        return _dispatch_one_agy(chunk, model, print_timeout)
+    if runner == "opencode-go":
+        return _dispatch_one_opencode_go(chunk, model)
+    if runner == "ccdan-anthropic":
+        return _dispatch_one_ccdan_anthropic(chunk, model)
+    raise RuntimeError(f"unknown deep-read runner: {runner}")
+
+
+def validate_dispatch_options(runner: str, workers: int) -> None:
+    if workers < 1 or workers > 8:
+        raise ValueError("workers must be between 1 and 8")
+    if runner in {"opencode-go", "ccdan-anthropic"} and workers != 1:
+        raise ValueError(f"{runner} requires workers=1")
+
+
+def dispatch_pending_chunks(
+    *,
+    limit: int = 0,
+    workers: int = 2,
+    model: str = "Gemini 3.5 Flash (High)",
+    print_timeout: str = "10m0s",
+    runner: str = "agy",
+    skip_chunk_ids: tuple[str, ...] = (),
+) -> dict[str, Any]:
+    if not PLAN_PATH.exists():
+        raise RuntimeError("deep-read plan is missing")
+    validate_dispatch_options(runner, workers)
+    plan = _read_json(PLAN_PATH)
+    chunks = [chunk for book in plan["books"] for chunk in book["chunks"]]
+    skipped = set(skip_chunk_ids)
+    pending = [
+        chunk for chunk in chunks
+        if chunk["chunk_id"] not in skipped
+        and not validate_chunk_response(chunk["chunk_id"])["valid"]
+    ]
+    if limit > 0:
+        pending = pending[:limit]
+    results: list[dict[str, Any]] = []
+    quota_blocked = False
+    if workers == 1:
+        for chunk in pending:
+            try:
+                item = _dispatch_one(chunk, model, print_timeout, runner)
+            except Exception as error:  # keep the batch resumable
+                item = {"chunk_id": chunk["chunk_id"], "valid": False, "errors": [str(error)]}
+            results.append(item)
+            error_text = " ".join(str(error) for error in item.get("errors", []))
+            if _is_quota_error(error_text):
+                quota_blocked = True
+                break
+    else:
+        with ThreadPoolExecutor(max_workers=workers) as executor:
+            futures = {
+                executor.submit(_dispatch_one, chunk, model, print_timeout, runner): chunk
+                for chunk in pending
+            }
+            for future in as_completed(futures):
+                chunk = futures[future]
+                try:
+                    results.append(future.result())
+                except Exception as error:  # keep the batch resumable
+                    results.append(
+                        {"chunk_id": chunk["chunk_id"], "valid": False, "errors": [str(error)]}
+                    )
+        quota_blocked = any(_is_quota_error(" ".join(str(error) for error in item.get("errors", []))) for item in results)
+    coverage = validate_all_chunks()
+    return {
+        "version": VERSION,
+        "job_id": JOB_ID,
+        "runner": runner,
+        "model": model,
+        "requested": len(pending),
+        "dispatched": len(results),
+        "succeeded": sum(1 for item in results if item["valid"]),
+        "failed": [item for item in results if not item["valid"]],
+        "quota_blocked": quota_blocked,
+        "coverage": coverage,
+    }
+
+
+def _is_quota_error(error_text: str) -> bool:
+    normalized = error_text.casefold()
+    return "quota reached" in normalized or "api_key_quota_exhausted" in normalized or "额度已用完" in normalized
+
+
+def _book_id(book: dict[str, Any]) -> str:
+    return f"book-{int(book['book_index']):02d}-{str(book['source_file_sha256'])[:12]}"
+
+
+def build_book_synthesis_packets() -> dict[str, Any]:
+    coverage = validate_all_chunks()
+    if coverage["status"] != "chunk_coverage_verified":
+        raise RuntimeError("all chunk analyses must validate before book synthesis")
+    plan = _read_json(PLAN_PATH)
+    SYNTHESIS_REQUEST_DIR.mkdir(parents=True, exist_ok=True)
+    requests = []
+    for book in plan["books"]:
+        book_id = _book_id(book)
+        chunk_ids = [chunk["chunk_id"] for chunk in book["chunks"]]
+        response_paths = [chunk["response_path"] for chunk in book["chunks"]]
+        chunk_hashes = [
+            {
+                "chunk_id": chunk["chunk_id"],
+                "response_sha256": _sha256(runtime_path(chunk["response_path"]).read_bytes()),
+            }
+            for chunk in book["chunks"]
+        ]
+        output_path = SYNTHESIS_RESPONSE_DIR / f"{book_id}.json"
+        template = {
+            "job_id": JOB_ID,
+            "contract_version": VERSION,
+            "book_id": book_id,
+            "book_title": book["book_title"],
+            "covered_chunk_ids": chunk_ids,
+            "covered_chunk_hashes": chunk_hashes,
+            "synthesis": {
+                "narrative_spine": [],
+                "character_arcs": [],
+                "mechanism_evolution": [],
+                "world_expansion": [],
+                "long_term_reader_hooks": [],
+                "style_and_life_force": [],
+                "continuity_failures": [],
+                "evidence_map": [],
+                "creation_family_evidence": {},
+                "originality_red_lines": [],
+            },
+        }
+        request_path = SYNTHESIS_REQUEST_DIR / f"{book_id}.md"
+        request_path.write_text(
+            "\n".join(
+                [
+                    "# NRL Antigravity Per-Book Synthesis v0.18",
+                    "",
+                    "Read every validated chunk-analysis file listed below and synthesize the complete book trajectory.",
+                    "Do not use pre-existing short reports and do not quote source prose.",
+                    "",
+                    *[f"- `{path}`" for path in response_paths],
+                    "",
+                    "Return one JSON object only. Copy binding fields and covered_chunk_ids exactly.",
+                    "All synthesis arrays and all nine creation-family keys must be non-empty.",
+                    "Add evidence_map entries with claim, chunk_id, and exact chapter_heading for every synthesis family.",
+                    "",
+                    "```json",
+                    json.dumps(template, ensure_ascii=False, indent=2),
+                    "```",
+                    "",
+                ]
+            ),
+            encoding="utf-8",
+        )
+        requests.append(
+            {
+                "book_id": book_id,
+                "request_path": _relative(request_path),
+                "response_path": _relative(output_path),
+                "covered_chunk_ids": chunk_ids,
+                "covered_chunk_hashes": chunk_hashes,
+            }
+        )
+    return {"version": VERSION, "job_id": JOB_ID, "request_count": len(requests), "requests": requests}
+
+
+def _validate_book_synthesis(request: dict[str, Any]) -> dict[str, Any]:
+    path = runtime_path(request["response_path"])
+    if not path.exists():
+        return {"book_id": request["book_id"], "valid": False, "errors": ["response file is missing"]}
+    try:
+        data = _load_response(path)
+    except (json.JSONDecodeError, OSError) as error:
+        return {"book_id": request["book_id"], "valid": False, "errors": [f"invalid response JSON: {error}"]}
+    errors = []
+    if data.get("job_id") != JOB_ID:
+        errors.append("job_id mismatch")
+    if data.get("contract_version") != VERSION:
+        errors.append("contract_version mismatch")
+    if data.get("book_id") != request["book_id"]:
+        errors.append("book_id mismatch")
+    if data.get("covered_chunk_ids") != request["covered_chunk_ids"]:
+        errors.append("covered_chunk_ids mismatch")
+    if data.get("covered_chunk_hashes") != request["covered_chunk_hashes"]:
+        errors.append("covered_chunk_hashes mismatch")
+    synthesis = data.get("synthesis")
+    required = (
+        "narrative_spine", "character_arcs", "mechanism_evolution", "world_expansion",
+        "long_term_reader_hooks", "style_and_life_force", "continuity_failures",
+        "originality_red_lines",
+    )
+    if not isinstance(synthesis, dict):
+        errors.append("synthesis must be an object")
+    else:
+        for field in required:
+            if not isinstance(synthesis.get(field), list) or not synthesis[field]:
+                errors.append(f"synthesis.{field} must be a non-empty array")
+        evidence_map = synthesis.get("evidence_map")
+        plan = _read_json(PLAN_PATH)
+        chunk_headings = {}
+        for book in plan["books"]:
+            for chunk in book["chunks"]:
+                if chunk["chunk_id"] not in request["covered_chunk_ids"]:
+                    continue
+                bounded = runtime_path(chunk["bounded_chunk_file"])
+                if not bounded.is_file() and runtime_path(str(chunk["source_file"])).is_file():
+                    materialize_bounded_chunk(chunk)
+                headings = (
+                    _all_headings(bounded.read_bytes(), "utf-8")
+                    if bounded.is_file()
+                    else [str(item) for item in chunk.get("chapter_headings", [])]
+                )
+                chunk_headings[chunk["chunk_id"]] = set(headings)
+        if not isinstance(evidence_map, list) or not evidence_map:
+            errors.append("synthesis.evidence_map must be a non-empty array")
+        else:
+            for index, evidence in enumerate(evidence_map):
+                if not isinstance(evidence, dict) or not evidence.get("claim"):
+                    errors.append(f"evidence_map[{index}].claim is required")
+                    continue
+                chunk_id = evidence.get("chunk_id")
+                heading = evidence.get("chapter_heading")
+                if chunk_id not in chunk_headings or heading not in chunk_headings[chunk_id]:
+                    errors.append(f"evidence_map[{index}] must bind a valid chunk_id and chapter_heading")
+        families = synthesis.get("creation_family_evidence")
+        expected_families = {
+            "characters", "npcs", "factions", "artifacts", "techniques", "naming",
+            "emotional_bonds", "foreshadowing", "state_ledger",
+        }
+        if not isinstance(families, dict) or set(families) != expected_families:
+            errors.append("synthesis.creation_family_evidence must contain all nine families")
+        elif any(not value for value in families.values()):
+            errors.append("all creation-family evidence must be non-empty")
+    return {"book_id": request["book_id"], "valid": not errors, "errors": errors, "response_path": request["response_path"]}
+
+
+def validate_book_syntheses() -> dict[str, Any]:
+    packet = build_book_synthesis_packets()
+    results = [_validate_book_synthesis(request) for request in packet["requests"]]
+    result = {
+        "version": VERSION,
+        "job_id": JOB_ID,
+        "valid": bool(results) and all(item["valid"] for item in results),
+        "validated_book_count": sum(1 for item in results if item["valid"]),
+        "required_book_count": len(results),
+        "invalid_books": [item for item in results if not item["valid"]],
+        "validated_at": _now_iso(),
+    }
+    _write_json(SYNTHESIS_VALIDATION_PATH, result)
+    return result
+
+
+def dispatch_book_syntheses(
+    *, workers: int = 2, model: str = "Gemini 3.5 Flash (High)", print_timeout: str = "10m0s"
+) -> dict[str, Any]:
+    packet = build_book_synthesis_packets()
+    pending = [item for item in packet["requests"] if not _validate_book_synthesis(item)["valid"]]
+    chunks = [
+        {
+            "chunk_id": item["book_id"],
+            "request_path": item["request_path"],
+            "response_path": item["response_path"],
+        }
+        for item in pending
+    ]
+    results = []
+    with ThreadPoolExecutor(max_workers=workers) as executor:
+        futures = {executor.submit(_dispatch_generic, item, model, print_timeout): item for item in chunks}
+        for future in as_completed(futures):
+            results.append(future.result())
+    validation = validate_book_syntheses()
+    return {"dispatched": len(pending), "results": results, "validation": validation}
+
+
+def _dispatch_generic(item: dict[str, Any], model: str, print_timeout: str) -> dict[str, Any]:
+    binary = shutil.which("agy") or str(Path.home() / ".local/bin/agy")
+    request_path = runtime_path(item["request_path"])
+    response_path = runtime_path(item["response_path"])
+    response_path.parent.mkdir(parents=True, exist_ok=True)
+    result = subprocess.run(
+        [binary, "--add-dir", str(ROOT), "--model", model, "--mode", "plan", "--sandbox", "--print-timeout", print_timeout, "-p", request_path.read_text(encoding="utf-8")],
+        cwd=ROOT, text=True, capture_output=True, check=False,
+    )
+    if result.stdout.strip():
+        response_path.write_text(result.stdout, encoding="utf-8")
+    else:
+        response_path.unlink(missing_ok=True)
+    return {"id": item["chunk_id"], "returncode": result.returncode, "stderr": result.stderr.strip()}
+
+
+def build_cross_book_packet() -> dict[str, Any]:
+    synthesis = validate_book_syntheses()
+    if not synthesis["valid"]:
+        raise RuntimeError("all book syntheses must validate before cross-book distillation")
+    packet = build_book_synthesis_packets()
+    book_ids = [item["book_id"] for item in packet["requests"]]
+    book_synthesis_hashes = [
+        {
+            "book_id": item["book_id"],
+            "response_sha256": _sha256(runtime_path(item["response_path"]).read_bytes()),
+        }
+        for item in packet["requests"]
+    ]
+    all_chunk_ids = [chunk_id for item in packet["requests"] for chunk_id in item["covered_chunk_ids"]]
+    template = {
+        "job_id": JOB_ID,
+        "contract_version": VERSION,
+        "covered_book_ids": book_ids,
+        "book_synthesis_hashes": book_synthesis_hashes,
+        "cross_book_mechanisms": [
+            {
+                "mechanism_id": "CB18-M01",
+                "name": "",
+                "source_book_ids": [],
+                "source_chunk_ids": [],
+                "abstract_rule": "",
+                "variation_pattern": "",
+                "failure_modes": [],
+                "originality_boundary": "",
+                "nrl_relevance": [],
+            }
+        ],
+        "corpus_level_findings": {
+            "long_form_vitality": [],
+            "anti_ai_prose_lessons": [],
+            "continuity_system_lessons": [],
+            "creation_family_findings": {},
+        },
+    }
+    CROSS_REQUEST_PATH.parent.mkdir(parents=True, exist_ok=True)
+    CROSS_REQUEST_PATH.write_text(
+        "\n".join(
+            [
+                "# NRL Antigravity Cross-Book Distillation v0.18", "",
+                "Read all 18 validated per-book synthesis files below.",
+                "Derive at least 12 abstract mechanisms, each supported by at least two books and valid chunk IDs.",
+                "Do not copy names, prose, scenes, proprietary systems, or author-specific style.", "",
+                *[f"- `{item['response_path']}`" for item in packet["requests"]], "",
+                f"Valid chunk IDs are: {json.dumps(all_chunk_ids, ensure_ascii=False)}", "",
+                "Return one JSON object only using this binding template:", "```json",
+                json.dumps(template, ensure_ascii=False, indent=2), "```", "",
+            ]
+        ), encoding="utf-8",
+    )
+    return {
+        "request_path": _relative(CROSS_REQUEST_PATH),
+        "response_path": _relative(CROSS_RESPONSE_PATH),
+        "book_ids": book_ids,
+        "book_synthesis_hashes": book_synthesis_hashes,
+        "chunk_ids": all_chunk_ids,
+    }
+
+
+def validate_cross_book_distillation() -> dict[str, Any]:
+    packet = build_cross_book_packet()
+    errors = []
+    if not CROSS_RESPONSE_PATH.exists():
+        errors.append("cross-book response is missing")
+        data = {}
+    else:
+        try:
+            data = _load_response(CROSS_RESPONSE_PATH)
+        except (json.JSONDecodeError, OSError) as error:
+            data = {}
+            errors.append(f"invalid response JSON: {error}")
+    if data.get("job_id") != JOB_ID:
+        errors.append("job_id mismatch")
+    if data.get("contract_version") != VERSION:
+        errors.append("contract_version mismatch")
+    if data.get("covered_book_ids") != packet["book_ids"]:
+        errors.append("covered_book_ids mismatch")
+    if data.get("book_synthesis_hashes") != packet["book_synthesis_hashes"]:
+        errors.append("book_synthesis_hashes mismatch")
+    mechanisms = data.get("cross_book_mechanisms")
+    if not isinstance(mechanisms, list) or len(mechanisms) < 12:
+        errors.append("at least 12 cross-book mechanisms are required")
+    else:
+        valid_books = set(packet["book_ids"])
+        valid_chunks = set(packet["chunk_ids"])
+        for index, mechanism in enumerate(mechanisms):
+            if len(set(mechanism.get("source_book_ids", []))) < 2 or not set(mechanism.get("source_book_ids", [])) <= valid_books:
+                errors.append(f"mechanism[{index}] has invalid source_book_ids")
+            if not mechanism.get("source_chunk_ids") or not set(mechanism["source_chunk_ids"]) <= valid_chunks:
+                errors.append(f"mechanism[{index}] has invalid source_chunk_ids")
+            for field in ("name", "abstract_rule", "variation_pattern", "originality_boundary"):
+                if not mechanism.get(field):
+                    errors.append(f"mechanism[{index}].{field} is required")
+    findings = data.get("corpus_level_findings")
+    if not isinstance(findings, dict) or any(not findings.get(key) for key in ("long_form_vitality", "anti_ai_prose_lessons", "continuity_system_lessons", "creation_family_findings")):
+        errors.append("corpus_level_findings is incomplete")
+    result = {"version": VERSION, "job_id": JOB_ID, "valid": not errors, "errors": errors, "mechanism_count": len(mechanisms) if isinstance(mechanisms, list) else 0, "validated_at": _now_iso()}
+    _write_json(CROSS_VALIDATION_PATH, result)
+    return result
+
+
+def dispatch_cross_book_distillation(model: str = "Gemini 3.5 Flash (High)", print_timeout: str = "15m0s") -> dict[str, Any]:
+    packet = build_cross_book_packet()
+    execution = _dispatch_generic({"chunk_id": "cross-book", "request_path": packet["request_path"], "response_path": packet["response_path"]}, model, print_timeout)
+    return {"execution": execution, "validation": validate_cross_book_distillation()}

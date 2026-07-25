@@ -1,0 +1,73 @@
+{
+  "chapter_id": "chapter-0001",
+  "draft_sha256": "12317eb7338facd6f1abae677c8bcf5043e152dec9c1788afbf1c55657f9b350",
+  "facts": {
+    "characters": [],
+    "npcs": [
+      {
+        "fact_id": "chapter-0001-npc-registrar-qiu-shen-001",
+        "asset_id": "npc_registrar_qiu_shen",
+        "field_path": "npc.local_review_decision",
+        "before": null,
+        "after": "顾家的折记暂缓，午后再核",
+        "evidence": "仇慎合上册子后明确说道：“暂缓。午后再核。”"
+      }
+    ],
+    "locations": [],
+    "factions": [
+      {
+        "fact_id": "chapter-0001-faction-life-registry-office-001",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.local_enforcement_status",
+        "before": "顾家折记待按册落印核验",
+        "after": "顾家折记暂缓至午后复核",
+        "evidence": "陆沉渊提出灯、册、受印之人三样不合可暂缓复核；仇慎随后决定“暂缓，午后再核”。"
+      }
+    ],
+    "artifacts": [],
+    "techniques": [
+      {
+        "fact_id": "chapter-0001-technique-ledger-recognition-001",
+        "asset_id": "technique_ledger_recognition",
+        "field_path": "technique.current_local_ash_trace_observation",
+        "before": null,
+        "after": "识别出顾家“折三”补墨处的灰痕与顾婶命灯寿痕不属同源，属本地账目错位线索",
+        "evidence": "陆沉渊看见册页灰屑周围的浅痕断在补墨处，且其冷青寿痕“不属于顾婶的命灯”；他仅确认纸上灰与顾家骨上红印均不该落在顾家。"
+      }
+    ],
+    "relationships": [],
+    "emotions": [],
+    "information": [
+      {
+        "fact_id": "chapter-0001-information-foreshadowing-cinder-seal-rain-001",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "foreshadowing.current_manifestation",
+        "before": "灰雨印痕未在本章现场显现",
+        "after": "灰雨落在陆沉渊与顾婶皮肤上，形成暗红骨上印痕，并使旧阵纹残暖缩小",
+        "evidence": "灰粒贴上陆沉渊皮肉后留下暗红印；顾婶腕骨浮出一两道暗红印；灰落入旧阵纹时，残存暖光“缩了一缩”。"
+      }
+    ],
+    "hooks": [],
+    "timeline": [
+      {
+        "fact_id": "chapter-0001-timeline-local-enforcement-001",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_local_enforcement_phase",
+        "before": "寿籍司尚未进入泥灯巷核验",
+        "after": "寿籍司完成本次到巷核验并离开，顾家复核被排至午后",
+        "evidence": "寿籍司差役与仇慎入巷核册；仇慎宣布午后再核后，寿籍司众人离开巷口。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "chapter-0001-physical-state-protagonist-strain-001",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.eye_pattern_burn",
+        "before": "眼尾仅有极淡、藏在睫毛下的焦黑细纹",
+        "after": "眼角焦黑细纹因辨认册页灰痕而加重至无法遮掩",
+        "evidence": "陆沉渊凝视册页灰屑后眼底发涩，焦黑细纹如被火针挑开；他抬头时“眼角那线焦黑再也藏不住”。"
+      }
+    ],
+    "naming": []
+  }
+}

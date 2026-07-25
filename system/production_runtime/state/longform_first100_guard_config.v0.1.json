@@ -1,0 +1,46 @@
+{
+  "version": "0.1",
+  "status": "owner_accepted_active",
+  "benefit_triad": [
+    "return_recipient",
+    "liable_party",
+    "observable_consequence"
+  ],
+  "community_trust": {
+    "resource_pool_forbidden": true
+  },
+  "concealment_period": {
+    "chapter_range": [
+      11,
+      20
+    ],
+    "max_uses": 1,
+    "requires": [
+      "supervision",
+      "action_cost"
+    ],
+    "does_not_reduce_exposure": true
+  },
+  "artifact_ashlight_cup": {
+    "chapter_0001_state": "dormant",
+    "after_chapter_0001": "canonical_acquisition_and_consented_watchfire_transaction_required"
+  },
+  "prefecture_transit_seal": {
+    "before_chapter": 81,
+    "access": "no_full_prefecture_payload",
+    "from_chapter_81": "edge_clue_only"
+  },
+  "ledger_write_topology": [
+    "protagonist_strain",
+    "registry_exposure",
+    "mother_life_lamp",
+    "array_integrity",
+    "resident_reserve",
+    "returnfire",
+    "revealed_errors",
+    "faction_pressure",
+    "public_reputation",
+    "unresolved_mysteries",
+    "map_unlock"
+  ]
+}

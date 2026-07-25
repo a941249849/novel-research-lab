@@ -1,0 +1,140 @@
+{
+  "chapter_id": "chapter-0004",
+  "draft_sha256": "0829554f4c08b74322d9e8cf44cdb7c9164e86f9bc5026b61874807bd16fecb3",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "chapter-0004-character-lu-chenyuan-001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_procedural_intent",
+        "before": "已签传核纸认定在场，并被要求明日辰时携顾家与守灯口述再来",
+        "after": "确认明日辰时到场，但不替任何住户陈述未亲见之事",
+        "evidence": "陆沉渊答“去”，并对顾婶说“所以我不替任何人说没看见的事”。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "chapter-0004-npc-mo-jinglan-001",
+        "asset_id": "npc_mo_jinglan",
+        "field_path": "npc.current_witness_participation",
+        "before": "暂带顾家补墨灰屑陶片作为守灯见证物",
+        "after": "决定携陶片赴明日辰时复核，但不交出陶片；若仇慎索取则不再陈述后半句",
+        "evidence": "莫井兰说“那我去。但我只带这包灰，不把它交出去。若仇慎要收，我就不说后半句”。"
+      },
+      {
+        "fact_id": "chapter-0004-npc-su-wan-001",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_refusal_statement",
+        "before": null,
+        "after": "拒绝以自己抵命，也拒绝以泥灯巷住户命火填补自身裂纹",
+        "evidence": "苏晚说“我不去替谁抵命，也不许谁拿巷里的灯来填我的裂纹”。"
+      },
+      {
+        "fact_id": "chapter-0004-npc-registrar-qiu-shen-001",
+        "asset_id": "npc_registrar_qiu_shen",
+        "field_path": "npc.latest_local_notice",
+        "before": "顾家附录暂封，灰物由莫井兰暂带，三日内随顾家复核再验；苏晚验灯不熄",
+        "after": "以冷金小印薄纸通知明日辰时顾家户灯、守灯口述及泥灯巷护阵旁观均不得缺席",
+        "evidence": "门外推入压着冷金小印的薄纸，并传话“明日辰时，顾家户灯、守灯口述，另加泥灯巷护阵旁观。不得缺席”。"
+      }
+    ],
+    "locations": [
+      {
+        "fact_id": "chapter-0004-location-mudlamp-lane-001",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_protection_array_condition",
+        "before": null,
+        "after": "巷口泥灯焰尖降低、灯座裂为两道，墙上护阵纹短暂亮起后复暗；仅以旧砖和扫帚暂时扶正灯座与灯罩",
+        "evidence": "灯座“裂成两道”；陆沉渊扶正后阵纹“亮了一瞬，随后又暗下”，莫井兰压砖、顾婶撑灯罩。"
+      }
+    ],
+    "factions": [
+      {
+        "fact_id": "chapter-0004-faction-life-registry-office-001",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.next_local_review_schedule",
+        "before": "明日辰时顾家与守灯口述须到场，缺一人按拒验续记；灰物有损视同毁证",
+        "after": "明日辰时顾家户灯、守灯口述与泥灯巷护阵旁观须到场；无人认领旁观则按无证护阵记",
+        "evidence": "门外补充“巷中若无人认领旁观，便按无证护阵记”。"
+      },
+      {
+        "fact_id": "chapter-0004-faction-mudlamp-lane-001",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_communal_response",
+        "before": null,
+        "after": "未有住户命火实际投入巷口泥灯；住户保留各自关门、留缝或守灯的选择",
+        "evidence": "苏晚要求“谁愿意守，就自己站灯下。谁不愿意，回屋关门”，结尾写明“没有人伸手把自己的灯火递出来”。"
+      }
+    ],
+    "artifacts": [],
+    "techniques": [
+      {
+        "fact_id": "chapter-0004-technique-ledger-recognition-001",
+        "asset_id": "technique_ledger_recognition",
+        "field_path": "technique.current_local_ash_trace_observation",
+        "before": "新落灰、顾婶验灯红痕与册角补墨灰痕之间存在半指宽冷灰空白；验灯红痕仅在靠近命籍衙印处留下完整一笔",
+        "after": "巷口泥灯座裂缝灰在靠近命籍衙印痕处折转，留下半指宽冷灰空白，未沿护阵纹延展",
+        "evidence": "陆沉渊识账所见：裂缝灰“没有沿着阵纹走”，在靠近命籍衙印痕处“折了一下，留下半指宽的冷灰空白”。"
+      }
+    ],
+    "relationships": [
+      {
+        "fact_id": "chapter-0004-relationship-mudlamp-lane-trust-001",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_witness_commitment",
+        "before": "顾婶同意莫井兰仅记录其所见；莫井兰确认灰与顾家户灯旧灰同味、补墨灰凉而无油且断纹相反，并保留不知来源的口述边界",
+        "after": "莫井兰与顾婶均决定赴核，但各自限定见证范围；顾婶拒绝让孩童命灯受验，莫井兰拒绝代签未知来源或交出陶片",
+        "evidence": "莫井兰限定“我能说”“我不知道”；顾婶答“我也去。只说我家的灯”，并说“不想让孩子的灯被他们顺手照一遍”。"
+      }
+    ],
+    "emotions": [],
+    "information": [],
+    "hooks": [
+      {
+        "fact_id": "chapter-0004-hook-cinder-seal-rain-001",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "foreshadowing.current_manifestation",
+        "before": "灰雨落入命籍衙后院，并有一粒嵌进冷金小印缝里，随仇慎离开拖出暗红细线",
+        "after": "巷口泥灯罩内壁留下不下沉的黑点；薄纸上的冷灰沿纸纤维聚成空白，避开命籍衙印落点",
+        "evidence": "灯罩黑点“全黏在火光照不到的那一面”；纸背冷灰“聚成一条细细的空白，正好避开命籍衙印落下的位置”。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "chapter-0004-timeline-local-enforcement-001",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_local_enforcement_phase",
+        "before": "午后复核结束，顾家附录及传核纸进入归档/封存程序，下一次本地监督定于明日辰时",
+        "after": "命籍衙已于夜间送达明日辰时的护阵旁观追加通知，下一次本地监督仍定于明日辰时",
+        "evidence": "后半夜仇慎未入巷，仅从门缝下推入通知薄纸，并重复“明日辰时”。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "chapter-0004-physical-state-protagonist-strain-001",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.eye_pattern_burn",
+        "before": "再次识账后左眼下焦纹裂至颧骨，签传核时又向下裂一寸并掉落黑屑",
+        "after": "本次识账后焦黑纹路再向下爬，左眼疼胀并持续掉落黑屑",
+        "evidence": "识账时“焦黑纹路从眼尾再往下爬”；其后左眼疼胀，黑屑又落一片。"
+      },
+      {
+        "fact_id": "chapter-0004-physical-state-protagonist-strain-002",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.cold_ash_cough_frequency",
+        "before": "本次再次识账后先咳出冷灰盖住“未详”，随后又咳出一片冷灰沾住传核纸衙印",
+        "after": "本次夜间识账后再次咳出冷灰，落在巷口泥地",
+        "evidence": "胸骨错裂后，陆沉渊弯腰咳嗽，“冷灰从喉间涌出来，落在泥地上”。"
+      },
+      {
+        "fact_id": "chapter-0004-physical-state-protagonist-strain-003",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.bone_fissure_severity",
+        "before": "冷金小印擦过掌心后，掌骨深处发出细响，胸骨随呼吸摩擦出裂口感",
+        "after": "识账后胸骨裂口感使呼吸受阻，撑灯座时掌骨出现摩擦声",
+        "evidence": "“呼吸撞在裂口上”；陆沉渊撑住灯座时“掌骨里传出细微的摩擦声”。"
+      }
+    ],
+    "naming": []
+  }
+}

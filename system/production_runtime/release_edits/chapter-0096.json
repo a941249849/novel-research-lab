@@ -1,0 +1,13 @@
+{
+  "version": "0.25",
+  "chapter_id": "chapter-0096",
+  "source_revision": "system/production_runtime/chapters/chapter-0096/revision.md",
+  "source_sha256": "0bd91d6e7c6ec5e9abaf7ef7f247f07d7a837ca85db40e398ac1c6990939097f",
+  "release_edit": "system/production_runtime/release_edits/chapter-0096.md",
+  "release_edit_sha256": "45ccda52d70a2f06e54fd49c7ce8653b254c6d20078dd6cb6cce8b103d735075",
+  "repair_direction": "投影不可触物，逐项核定拒交与失阵火遮护的适用边界。",
+  "provider": "codex-gpt-5.6-sol",
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-091-100.json",
+  "reviewed_release_edit_sha256": "45ccda52d70a2f06e54fd49c7ce8653b254c6d20078dd6cb6cce8b103d735075"
+}

@@ -1,0 +1,144 @@
+{
+  "version": "0.1",
+  "candidate_id": "hundred-crafts-night-procession",
+  "status": "pilot_synthesis",
+  "prose_authorized": false,
+  "pilot_domains": [
+    {
+      "domain_id": "timber_architecture",
+      "verified_facts": [
+        {
+          "claim": "传统木结构以柱、梁、檩、枋、斗拱等构件形成框架，常以榫卯连接，并以模数组织设计与加工。",
+          "source_ids": ["timber-unesco-00223", "timber-ihchina-overview"]
+        },
+        {
+          "claim": "木拱桥的编木结构把局部荷载交由整体拱架承担，但会把侧向作用传给桥台，因此选址和两岸基础是结构条件。",
+          "source_ids": ["timber-bridge-study"]
+        },
+        {
+          "claim": "营造不是孤立匠人的表演，而是主墨木匠、不同工种、师徒和社区共同完成的实践。",
+          "source_ids": ["timber-unesco-00223", "timber-bridge-study"]
+        },
+        {
+          "claim": "木构遗产保护应优先采用确保结构长期存续所需的最小干预，尽可能可逆，并保留和标识原有与替换构件。",
+          "source_ids": ["timber-icomos-2017"]
+        }
+      ],
+      "fictional_inferences": [
+        {
+          "inference": "木作权能的本质设为分配荷载，而不是控制木元素。匠人可以把一处结构损伤重新分配给多个自愿承重者。",
+          "derived_from": ["timber-unesco-00223", "timber-bridge-study"],
+          "fiction_status": "invented_for_candidate"
+        },
+        {
+          "inference": "任何超凡榫卯都必须保留伸缩余量；追求绝对刚性的权能会在环境变化时脆断。",
+          "derived_from": ["timber-unesco-00223"],
+          "fiction_status": "invented_for_candidate"
+        }
+      ],
+      "failure_modes": [
+        "把所有木构都写成不用一钉一铆的绝对命题",
+        "忽略地域结构、材料和气候差异",
+        "将榫卯神秘化而不写测量、放样、加工和协作",
+        "让修复恢复外观却不处理结构安全和后续维护"
+      ],
+      "narrative_result": "通过。它能同时承载空间动作、职业协作、公共安全和父子责任冲突。"
+    },
+    {
+      "domain_id": "opera_costume_props",
+      "verified_facts": [
+        {
+          "claim": "京剧以唱念做打、程式化动作和象征性舞台语言组织叙事，服装与脸谱能简明标示人物性格和社会身份。",
+          "source_ids": ["opera-peking-unesco"]
+        },
+        {
+          "claim": "盔头分软硬工艺，涉及熏样、掐丝、合里、使漆、贴金等工序，并与切末、盔箱管理和演员穿戴共同构成行业系统。",
+          "source_ids": ["opera-headgear-ihchina", "opera-headgear-study"]
+        },
+        {
+          "claim": "传统行业强调戏里戏外的边界，舞台器物源自现实却经过程式化改造，用来明确告知观众这是表演。",
+          "source_ids": ["opera-headgear-study"]
+        }
+      ],
+      "fictional_inferences": [
+        {
+          "inference": "戏装权能不是变身，而是暂时取得一个社会角色的行动许可；越符合程式，现实越愿意承认这个身份。",
+          "derived_from": ["opera-peking-unesco", "opera-headgear-study"],
+          "fiction_status": "invented_for_candidate"
+        },
+        {
+          "inference": "盔箱师傅负责封存角色残留的记忆污染；演员卸装不完整，会把角色义务带回现实。",
+          "derived_from": ["opera-headgear-ihchina", "opera-headgear-study"],
+          "fiction_status": "invented_for_candidate"
+        }
+      ],
+      "failure_modes": [
+        "把颜色和脸谱含义写成跨剧种、跨时期完全统一的密码表",
+        "将戏装误当作真实历史服饰复原",
+        "只写华丽外观，不写演员身体训练、盔箱管理和舞台程式",
+        "把身份污染写成无代价的马甲切换"
+      ],
+      "narrative_result": "通过。它提供人物身份、表演与真实、代际传承和群像冲突，能补足木作线偏工程化的问题。"
+    },
+    {
+      "domain_id": "shipbuilding_waterworks",
+      "verified_facts": [
+        {
+          "claim": "水密隔舱把船体划分为相对独立的舱区，局部舱室受损进水时可降低整船沉没风险。",
+          "source_ids": ["ship-bulkhead-unesco", "ship-fuchuan-ihchina"]
+        },
+        {
+          "claim": "福船制造包括船型设计、模型或现场放样、选材、船体建造、艌缝、涂装和下水仪式，并由主匠协调多人完成。",
+          "source_ids": ["ship-bulkhead-unesco", "ship-fuchuan-ihchina"]
+        },
+        {
+          "claim": "中国大运河体现的不只是水道工程，还包括跨流域连接、长期适应和漕运管理制度。",
+          "source_ids": ["water-grand-canal-unesco"]
+        }
+      ],
+      "fictional_inferences": [
+        {
+          "inference": "舟船权能的本质设为隔离风险，但隔离不等于消失；被封舱的灾害会持续占用载重、空间和船员责任。",
+          "derived_from": ["ship-bulkhead-unesco", "ship-fuchuan-ihchina"],
+          "fiction_status": "invented_for_candidate"
+        },
+        {
+          "inference": "航路是一份由港口共同维护的公共契约，信誉决定航标是否显现；单方获利会让下游港口承担淤塞和灾害。",
+          "derived_from": ["water-grand-canal-unesco"],
+          "fiction_status": "invented_for_candidate"
+        }
+      ],
+      "failure_modes": [
+        "把水密隔舱写成绝不沉没",
+        "混淆不同地域、年代和用途的船型",
+        "只写海怪冒险，不写船员分工、货物、维护和港口经济",
+        "把仪式直接当成客观超自然事实"
+      ],
+      "narrative_result": "通过。它能提供地图扩张、群体决策、商业网络和局部牺牲问题。"
+    }
+  ],
+  "convergence": {
+    "shared_axiom": "文明无法消灭全部损伤，只能让损伤被看见、被分担，并阻止局部破坏扩散为整体毁灭。",
+    "mechanism_alignment": [
+      {"domain_id": "timber_architecture", "function": "分配荷载"},
+      {"domain_id": "opera_costume_props", "function": "分配身份与社会义务"},
+      {"domain_id": "shipbuilding_waterworks", "function": "分隔风险并维持整体航行"}
+    ],
+    "story_bridge": "第一座异常建筑并非单纯古建，而是建在废弃戏楼与旧河道交汇处的城市节点。梁架负责承重，戏装负责给维护者分配角色，地下水舱负责隔离历次灾害。父亲当年拆掉其中一部分，不是破坏传统，而是拒绝继续让无名者承担全部代价。",
+    "originality_result": "三条线不是文化陈列，而是同一文明维护系统的三种技术表达；具备独立于现有系统流、高武流和非遗展示文的核心机制。",
+    "longform_result": "可从一栋建筑扩展到城市节点、区域工谱、全国公共工程和文明重置争论，地图扩张与主题升级一致。"
+  },
+  "unresolved_research_debt": [
+    "需要至少三位真实从业者或可靠口述史材料核对劳动细节与行业语言",
+    "需要建筑保护专业资料校正修复原则、结构诊断和最小干预边界",
+    "需要区分京剧、昆曲及地方戏的服装程式，禁止混用成单一体系",
+    "需要补充传统木船实际操船、货舱管理和海损处置材料",
+    "需要法律和伦理审查，避免将活态信仰、族群纹样和仪式任意神秘化"
+  ],
+  "gate_result": {
+    "pilot_valid": true,
+    "eligible_next_stage": "world_history_skeleton",
+    "project_initialization_allowed": false,
+    "prose_allowed": false
+  }
+}

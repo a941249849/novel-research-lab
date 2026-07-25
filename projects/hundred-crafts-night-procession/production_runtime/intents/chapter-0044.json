@@ -1,0 +1,30 @@
+{
+  "chapter_id": "chapter-0044",
+  "dramatic_purpose": "冻结最终施工意图与叫停条件。",
+  "must_keep": [
+    "结构、排洪、角色、记录、居民五方均获叫停权。",
+    "POV 固定为马小满"
+  ],
+  "must_avoid": [
+    "不得引入未登记资产或用旁白代替物质行动",
+    "不得回滚已接受状态"
+  ],
+  "expected_state_deltas": [
+    {
+      "state_id": "v1.ch044.outcome",
+      "asset_id": "char_ma_xiaoman",
+      "field_path": "character.current_state",
+      "after": "结构、排洪、角色、记录、居民五方均获叫停权。",
+      "before": "三年维护费从项目附注进入公开合同。"
+    }
+  ],
+  "required_asset_ids": [
+    "char_ma_xiaoman",
+    "technique_joint_signoff",
+    "ledger_team_authority"
+  ],
+  "active_hook_ids": [],
+  "scene_constraints": [
+    "冲突必须落在具体工艺现场、物证或受影响者选择上"
+  ]
+}

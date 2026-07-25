@@ -1,0 +1,13 @@
+{
+  "version": "0.25",
+  "chapter_id": "chapter-0021",
+  "source_revision": "system/production_runtime/chapters/chapter-0021/revision.md",
+  "source_sha256": "8d51365bab6481ef4a25f23a3dbd088ce4e4f8d310184a86ca9d88bf7b8f1858",
+  "release_edit": "system/production_runtime/release_edits/chapter-0021.md",
+  "release_edit_sha256": "b2cd130a18e53d0460d9be996b0f939add2f477fcdddb32d9fc8736b29d3304b",
+  "repair_direction": "去除托肘和不替代口号，以寿债页与矮凳动作表达边界。",
+  "provider": "deterministic_editor",
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-021-030.json",
+  "reviewed_release_edit_sha256": "b2cd130a18e53d0460d9be996b0f939add2f477fcdddb32d9fc8736b29d3304b"
+}

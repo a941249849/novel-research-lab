@@ -1,0 +1,171 @@
+{
+  "version": "0.21",
+  "status": "accepted_route_restricted",
+  "models": [
+    "gpt-5.6-sol",
+    "gpt-5.6-terra",
+    "gpt-5.6-luna"
+  ],
+  "criteria": [
+    "contract_compliance",
+    "continuity",
+    "causality",
+    "anti_ai_taste",
+    "reviewer_verdict",
+    "latency",
+    "retry_rate"
+  ],
+  "runs": [
+    {
+      "run_id": "candidate-11",
+      "blind_label": "样本 01",
+      "scenario_id": "cause_under_pressure",
+      "model": "gpt-5.6-sol",
+      "candidate_path": "system/production_runtime/calibration/candidates/candidate-11.md",
+      "sha256": "9539d9f65ee4a8dea61a48b24948c0106fa87cbe7f8b776dee8afc940c65495b",
+      "generated_at": "2026-07-13T22:03:00+08:00",
+      "review_status": "accepted"
+    },
+    {
+      "run_id": "candidate-12",
+      "blind_label": "样本 02",
+      "scenario_id": "cause_under_pressure",
+      "model": "gpt-5.6-terra",
+      "candidate_path": "system/production_runtime/calibration/candidates/candidate-12.md",
+      "sha256": "d11f5eb64ea48b134138990adb463aa9a5e94b83cc185536085c1897c11ae924",
+      "generated_at": "2026-07-13T22:03:20+08:00",
+      "review_status": "rejected"
+    },
+    {
+      "run_id": "candidate-13",
+      "blind_label": "样本 03",
+      "scenario_id": "cause_under_pressure",
+      "model": "gpt-5.6-luna",
+      "candidate_path": "system/production_runtime/calibration/candidates/candidate-13.md",
+      "sha256": "55ccd35fcd72c875f8ac08cd29ed745123e55de323b673d031954ae8930d3cc3",
+      "generated_at": "2026-07-13T22:03:39+08:00",
+      "review_status": "conditional"
+    },
+    {
+      "run_id": "candidate-21",
+      "blind_label": "样本 04",
+      "scenario_id": "relationship_reversal",
+      "model": "gpt-5.6-sol",
+      "candidate_path": "system/production_runtime/calibration/candidates/candidate-21.md",
+      "sha256": "9ab1f3eb8dbc365617f7efe7b5f7a3ea0091b1b787d1645fbbf8dc90f06ea8a2",
+      "generated_at": "2026-07-13T22:04:16+08:00",
+      "review_status": "accepted"
+    },
+    {
+      "run_id": "candidate-22",
+      "blind_label": "样本 05",
+      "scenario_id": "relationship_reversal",
+      "model": "gpt-5.6-terra",
+      "candidate_path": "system/production_runtime/calibration/candidates/candidate-22.md",
+      "sha256": "3760060b077892b38439bb83d2b53456d951d1f5ce66f4223b0f44a814e576ab",
+      "generated_at": "2026-07-13T22:04:38+08:00",
+      "review_status": "rejected"
+    },
+    {
+      "run_id": "candidate-23",
+      "blind_label": "样本 06",
+      "scenario_id": "relationship_reversal",
+      "model": "gpt-5.6-luna",
+      "candidate_path": "system/production_runtime/calibration/candidates/candidate-23.md",
+      "sha256": "0f3ea6551e14e79996ca05aba021c08368d8b882bbdad6c40c1d645fb469644d",
+      "generated_at": "2026-07-13T22:04:57+08:00",
+      "review_status": "rejected"
+    },
+    {
+      "run_id": "candidate-31",
+      "blind_label": "样本 07",
+      "scenario_id": "rule_cost",
+      "model": "gpt-5.6-sol",
+      "candidate_path": "system/production_runtime/calibration/candidates/candidate-31.md",
+      "sha256": "16578a0dc6ac23ca9cfd093e538ce0eea78adde0307408941daae678d3714b3b",
+      "generated_at": "2026-07-13T22:05:44+08:00",
+      "review_status": "accepted"
+    },
+    {
+      "run_id": "candidate-32",
+      "blind_label": "样本 08",
+      "scenario_id": "rule_cost",
+      "model": "gpt-5.6-terra",
+      "candidate_path": "system/production_runtime/calibration/candidates/candidate-32.md",
+      "sha256": "6754cbe735ff9e1181dc6864ee4a44b08f274c917925e71515ca47a68519fa76",
+      "generated_at": "2026-07-13T22:06:00+08:00",
+      "review_status": "rejected"
+    },
+    {
+      "run_id": "candidate-33",
+      "blind_label": "样本 09",
+      "scenario_id": "rule_cost",
+      "model": "gpt-5.6-luna",
+      "candidate_path": "system/production_runtime/calibration/candidates/candidate-33.md",
+      "sha256": "5c01b3853354a083714401d76179739ceed9fe9c49532a9ebd9f5ebf831e8c8c",
+      "generated_at": "2026-07-13T22:06:19+08:00",
+      "review_status": "conditional"
+    }
+  ],
+  "connectivity_canary": {
+    "models": [
+      "gpt-5.6-sol",
+      "gpt-5.6-terra",
+      "gpt-5.6-luna"
+    ],
+    "result": "all_returned_exact_OK",
+    "mode": "no_prose",
+    "verified_at": "2026-07-13"
+  },
+  "generated_at": "2026-07-13T22:06:19+08:00",
+  "external_review": {
+    "status": "completed_via_model_override",
+    "model": "Claude Opus 4.6 (Thinking)",
+    "response_path": ".agent-handoff/antigravity/responses/nrl-v021-direct-writer-calibration-routing-decision-opus.md",
+    "note": "The default Gemini route was quota-exhausted; the isolated review completed through the explicit Opus route.",
+    "completed_at": "2026-07-13T22:32:36+08:00"
+  },
+  "internal_screening": {
+    "status": "completed_non_gating",
+    "model": "gpt-5.6-sol",
+    "reviews": [
+      {
+        "packet_path": ".agent-handoff/antigravity/requests/nrl-v021-direct-writer-calibration-review-batch-1.md",
+        "review_path": "system/production_runtime/calibration/internal_screening/batch-1.md"
+      },
+      {
+        "packet_path": ".agent-handoff/antigravity/requests/nrl-v021-direct-writer-calibration-review-batch-2.md",
+        "review_path": "system/production_runtime/calibration/internal_screening/batch-2.md"
+      },
+      {
+        "packet_path": ".agent-handoff/antigravity/requests/nrl-v021-direct-writer-calibration-review-batch-3.md",
+        "review_path": "system/production_runtime/calibration/internal_screening/batch-3.md"
+      }
+    ],
+    "completed_at": "2026-07-13T22:11:06+08:00"
+  },
+  "internal_screening_summary": {
+    "verdict": "RECALIBRATE",
+    "positive_controls": [
+      "candidate-11",
+      "candidate-21",
+      "candidate-31"
+    ],
+    "rejected_candidates": [
+      "candidate-12",
+      "candidate-23",
+      "candidate-33"
+    ],
+    "conditional_candidates": [
+      "candidate-13",
+      "candidate-22",
+      "candidate-32"
+    ],
+    "provisional_routing": "Sol is the only primary prose route; Terra requires a focused causal-coherence recalibration before use; Luna remains observer/mechanical only.",
+    "non_gating": true
+  },
+  "independent_reviewer_verdict": "ACCEPT_SOL_ONLY",
+  "independent_reviewer_response": ".agent-handoff/antigravity/responses/nrl-v021-direct-writer-calibration-routing-decision-opus.md",
+  "routing_decision": "Sol is the only production prose writer; Terra is excluded pending focused recalibration; Luna is observer and mechanical only.",
+  "decision_recorded_at": "2026-07-13T22:32:36+08:00"
+}

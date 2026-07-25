@@ -1,0 +1,35 @@
+{
+  "chapter_id": "chapter-0003",
+  "artifact_kind": "revision",
+  "artifact_sha256": "8167366cd6811f13f63105eb5e0644bccb5c069e6081e29e4a66150554158b3f",
+  "context_sha256": "2f0b64f42c16cecccac386afb8086bff999488fff8f303ddb34fbfed5d494903",
+  "verdict": "ACCEPT_WITH_WARNINGS",
+  "dimensions": {
+    "canon": [],
+    "character": [],
+    "state": [
+      "registrar-decision-time-mismatch"
+    ],
+    "causality": [],
+    "pacing": [],
+    "life_force": [],
+    "anti_ai_taste": [
+      "prose-duplication-typo"
+    ],
+    "originality": []
+  },
+  "issues": [
+    {
+      "issue_id": "prose-duplication-typo",
+      "severity": "minor",
+      "evidence": "没有一粒灰能当场指指认谁动过账",
+      "required_fix": "Change '指指认' to '指认'."
+    },
+    {
+      "issue_id": "registrar-decision-time-mismatch",
+      "severity": "minor",
+      "evidence": "Prose dialogue says '明日辰时随顾家复核再验' while NPC Qiu Shen's observed state delta records '三日内随顾家复核再验'.",
+      "required_fix": "Align the observed fact state or the prose dialogue to either '明日辰时' or '三日内'."
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "version": "0.1",
+  "project": "《借天改命账》",
+  "mode": "non-prose operational state contract",
+  "states": {
+    "state_ledger_protagonist_strain": {
+      "initial": "half_life_unstable",
+      "allowed": [
+        "worsen_with_observed_cost",
+        "recover_with_rest_and_care"
+      ],
+      "evidence": [
+        "visible_bodily_or_cognitive_consequence"
+      ],
+      "peers": [
+        "state_ledger_half_life_registry_exposure",
+        "state_ledger_mother_life_lamp_countdown"
+      ]
+    },
+    "state_ledger_half_life_registry_exposure": {
+      "initial": 0,
+      "bounds": [
+        0,
+        100
+      ],
+      "allowed": [
+        "increase_with_observed_trace",
+        "decrease_only_with_verified_concealment_or_legal_change"
+      ],
+      "evidence": [
+        "trigger_asset",
+        "perceivable_lock_or_trace"
+      ],
+      "peers": [
+        "state_ledger_faction_pressure",
+        "state_ledger_public_reputation"
+      ]
+    },
+    "state_ledger_mother_life_lamp_countdown": {
+      "initial": "countdown_active",
+      "allowed": [
+        "worsen_with_observed_spillover",
+        "buffer_without_debt_erasure"
+      ],
+      "evidence": [
+        "visible_lamp_effect",
+        "trigger_reference"
+      ],
+      "peers": [
+        "state_ledger_protagonist_strain",
+        "state_ledger_poorcity_returnfire"
+      ]
+    },
+    "state_ledger_mudlamp_array_integrity": {
+      "initial": "fractured_but_functioning",
+      "allowed": [
+        "worsen_with_observed_crack",
+        "repair_with_consented_watchfire_and_repair"
+      ],
+      "evidence": [
+        "array_mark_or_repair_observation"
+      ],
+      "peers": [
+        "state_ledger_resident_lifefire_reserve",
+        "state_ledger_poorcity_returnfire"
+      ]
+    },
+    "state_ledger_resident_lifefire_reserve": {
+      "initial": "uncommitted",
+      "allowed": [
+        "change_only_with_named_consent_and_withdrawal_record"
+      ],
+      "evidence": [
+        "named_consent",
+        "actual_transfer_or_refusal"
+      ],
+      "peers": [
+        "state_ledger_mudlamp_array_integrity"
+      ]
+    },
+    "state_ledger_poorcity_returnfire": {
+      "initial": "none_verified",
+      "allowed": [
+        "increase_only_with_witnessed_source_and_return"
+      ],
+      "evidence": [
+        "recognizable_ash_trace",
+        "affected_resident_witness"
+      ],
+      "peers": [
+        "state_ledger_protagonist_strain",
+        "state_ledger_half_life_registry_exposure",
+        "state_ledger_mudlamp_array_integrity",
+        "state_ledger_resident_lifefire_reserve"
+      ]
+    },
+    "state_ledger_revealed_account_errors": {
+      "initial": "none_verified",
+      "allowed": [
+        "add_only_with_verified_record_and_consequence"
+      ],
+      "evidence": [
+        "verified_existing_record",
+        "pressure_or_public_consequence"
+      ],
+      "peers": [
+        "state_ledger_faction_pressure",
+        "state_ledger_public_reputation",
+        "state_ledger_unresolved_mysteries"
+      ]
+    },
+    "state_ledger_faction_pressure": {
+      "initial": "local_registry_pressure",
+      "allowed": [
+        "change_only_with_named_existing_faction_and_consequence"
+      ],
+      "evidence": [
+        "existing_faction_asset",
+        "trigger_and_outcome"
+      ],
+      "peers": [
+        "state_ledger_half_life_registry_exposure",
+        "state_ledger_public_reputation"
+      ]
+    },
+    "state_ledger_public_reputation": {
+      "initial": "unknown_to_public",
+      "allowed": [
+        "change_only_with_witness_scope_and_consequence"
+      ],
+      "evidence": [
+        "witness_scope",
+        "verified_public_event"
+      ],
+      "peers": [
+        "state_ledger_revealed_account_errors",
+        "state_ledger_faction_pressure"
+      ]
+    },
+    "state_ledger_unresolved_mysteries": {
+      "initial": [
+        "mother_debt_source",
+        "poor_city_old_account",
+        "half_life_anomaly"
+      ],
+      "allowed": [
+        "reclassify_only_with_outline_question_and_peer_transaction"
+      ],
+      "evidence": [
+        "canonical_outline_question",
+        "verified_peer_change"
+      ],
+      "peers": [
+        "state_ledger_revealed_account_errors",
+        "state_ledger_map_unlock_status"
+      ]
+    },
+    "state_ledger_map_unlock_status": {
+      "initial": "poor_city_only",
+      "allowed": [
+        "advance_only_along_outline_boundaries"
+      ],
+      "evidence": [
+        "canonical_boundary_credential",
+        "mystery_or_exposure_peer"
+      ],
+      "peers": [
+        "state_ledger_unresolved_mysteries",
+        "state_ledger_half_life_registry_exposure"
+      ]
+    }
+  }
+}

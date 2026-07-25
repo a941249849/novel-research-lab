@@ -1,0 +1,185 @@
+{
+  "version": "1.0",
+  "project_id": "hundred-crafts-night-procession",
+  "status": "calibration_evidence_only_not_formal_acceptance",
+  "source_validation": "projects/hundred-crafts-night-procession/validation/continuity_validation.v0.1.json",
+  "chapters": [
+    {
+      "chapter": 11,
+      "title": "楼下有潮",
+      "body_sha256": "8522edc838478557c599c890f9872b88f272f4175ab2d41552da542dc32096f4",
+      "reported_character_count": 2914,
+      "chinese_character_count": 2582,
+      "dialogue_ratio": 0.0631,
+      "transition_word_hits": 2,
+      "abstract_word_hits": 0,
+      "sensory_word_hits": 22,
+      "formal_quality_verdict": "NOT_APPLICABLE_CALIBRATION_ONLY"
+    },
+    {
+      "chapter": 12,
+      "title": "白日守门人",
+      "body_sha256": "10dd3ab1bee78f1a5947f4f2a2684fe8fc928c0c47777354c1748a783ad8f0fa",
+      "reported_character_count": 2712,
+      "chinese_character_count": 2359,
+      "dialogue_ratio": 0.1297,
+      "transition_word_hits": 0,
+      "abstract_word_hits": 1,
+      "sensory_word_hits": 16,
+      "formal_quality_verdict": "NOT_APPLICABLE_CALIBRATION_ONLY"
+    },
+    {
+      "chapter": 13,
+      "title": "楼中船",
+      "body_sha256": "806d76a1ad5ba3118f213dc0ddd47a0ea4e86b2e3adb12ebc83c128150df1e00",
+      "reported_character_count": 2626,
+      "chinese_character_count": 2354,
+      "dialogue_ratio": 0.0455,
+      "transition_word_hits": 1,
+      "abstract_word_hits": 0,
+      "sensory_word_hits": 10,
+      "formal_quality_verdict": "NOT_APPLICABLE_CALIBRATION_ONLY"
+    },
+    {
+      "chapter": 14,
+      "title": "封一舱",
+      "body_sha256": "564c89a1aeafabffb9771ad7e67ef0287ccb7cdc728087219a7baa7d6994b29a",
+      "reported_character_count": 2623,
+      "chinese_character_count": 2341,
+      "dialogue_ratio": 0.047,
+      "transition_word_hits": 0,
+      "abstract_word_hits": 2,
+      "sensory_word_hits": 13,
+      "formal_quality_verdict": "NOT_APPLICABLE_CALIBRATION_ONLY"
+    },
+    {
+      "chapter": 15,
+      "title": "水到下街",
+      "body_sha256": "4e1f8937832ef01389843427d3e67fc433a9f04d846dc1e8af69c3eb0a7be75a",
+      "reported_character_count": 2611,
+      "chinese_character_count": 2317,
+      "dialogue_ratio": 0.0885,
+      "transition_word_hits": 1,
+      "abstract_word_hits": 2,
+      "sensory_word_hits": 8,
+      "formal_quality_verdict": "NOT_APPLICABLE_CALIBRATION_ONLY"
+    },
+    {
+      "chapter": 16,
+      "title": "开还是封",
+      "body_sha256": "36eedc3bcaf1869edec0530b8afc777b969b2630a195fbaf0b8ec4f5b4031146",
+      "reported_character_count": 2610,
+      "chinese_character_count": 2344,
+      "dialogue_ratio": 0.0512,
+      "transition_word_hits": 0,
+      "abstract_word_hits": 2,
+      "sensory_word_hits": 8,
+      "formal_quality_verdict": "NOT_APPLICABLE_CALIBRATION_ONLY"
+    },
+    {
+      "chapter": 17,
+      "title": "异议入账",
+      "body_sha256": "2f0a95e2ffe7372e3f6d013d233f6abd1558145aac7d79ed7fba6ee395b5c60a",
+      "reported_character_count": 2679,
+      "chinese_character_count": 2397,
+      "dialogue_ratio": 0.0526,
+      "transition_word_hits": 0,
+      "abstract_word_hits": 2,
+      "sensory_word_hits": 12,
+      "formal_quality_verdict": "NOT_APPLICABLE_CALIBRATION_ONLY"
+    },
+    {
+      "chapter": 18,
+      "title": "父亲拆过什么",
+      "body_sha256": "97bbc98a7e15028e75a496b44eca530fe4cab8ac5b7659dae8230cf9dfb3a37e",
+      "reported_character_count": 2619,
+      "chinese_character_count": 2339,
+      "dialogue_ratio": 0.0992,
+      "transition_word_hits": 1,
+      "abstract_word_hits": 2,
+      "sensory_word_hits": 16,
+      "formal_quality_verdict": "NOT_APPLICABLE_CALIBRATION_ONLY"
+    },
+    {
+      "chapter": 19,
+      "title": "并非无罪",
+      "body_sha256": "55bc563c3e1fc0c0f50054221f655d9b4d302430512f88182ad148eed45b30f9",
+      "reported_character_count": 2610,
+      "chinese_character_count": 2298,
+      "dialogue_ratio": 0.1214,
+      "transition_word_hits": 0,
+      "abstract_word_hits": 3,
+      "sensory_word_hits": 16,
+      "formal_quality_verdict": "NOT_APPLICABLE_CALIBRATION_ONLY"
+    },
+    {
+      "chapter": 20,
+      "title": "两边都要活",
+      "body_sha256": "a195da9fd854573fd07a2477c74ab6b803ae4070acfe93b115d90fb6fe5de101",
+      "reported_character_count": 2633,
+      "chinese_character_count": 2362,
+      "dialogue_ratio": 0.0474,
+      "transition_word_hits": 1,
+      "abstract_word_hits": 3,
+      "sensory_word_hits": 8,
+      "formal_quality_verdict": "NOT_APPLICABLE_CALIBRATION_ONLY"
+    },
+    {
+      "chapter": 21,
+      "title": "四个坏办法",
+      "body_sha256": "4063427da241538ef257a09748e1dfab66fb3a9fd5aaddd171aaf5c0fadc0b8f",
+      "reported_character_count": 2628,
+      "chinese_character_count": 2363,
+      "dialogue_ratio": 0.0275,
+      "transition_word_hits": 2,
+      "abstract_word_hits": 1,
+      "sensory_word_hits": 8,
+      "formal_quality_verdict": "NOT_APPLICABLE_CALIBRATION_ONLY"
+    },
+    {
+      "chapter": 22,
+      "title": "守门也能开门",
+      "body_sha256": "e00d6abb9e0c1ad2d2a688195f70bead8e795292fa96360f90bdd68cd0164beb",
+      "reported_character_count": 2635,
+      "chinese_character_count": 2352,
+      "dialogue_ratio": 0.0302,
+      "transition_word_hits": 1,
+      "abstract_word_hits": 0,
+      "sensory_word_hits": 23,
+      "formal_quality_verdict": "NOT_APPLICABLE_CALIBRATION_ONLY"
+    },
+    {
+      "chapter": 23,
+      "title": "旧水线",
+      "body_sha256": "ce69d238392b7d55680c45903b5b6da05dd108d3bdedc170eb53b832d64681ab",
+      "reported_character_count": 2773,
+      "chinese_character_count": 2501,
+      "dialogue_ratio": 0.0452,
+      "transition_word_hits": 2,
+      "abstract_word_hits": 1,
+      "sensory_word_hits": 11,
+      "formal_quality_verdict": "NOT_APPLICABLE_CALIBRATION_ONLY"
+    },
+    {
+      "chapter": 27,
+      "title": "没有总验",
+      "body_sha256": "da9405a973ef3f27817cf54322d80a344f8cf63e818d6af263b2fe4c78abf26c",
+      "reported_character_count": 2755,
+      "chinese_character_count": 2394,
+      "dialogue_ratio": 0.2431,
+      "transition_word_hits": 1,
+      "abstract_word_hits": 2,
+      "sensory_word_hits": 19,
+      "formal_quality_verdict": "NOT_APPLICABLE_CALIBRATION_ONLY"
+    }
+  ],
+  "role_evidence": {
+    "terra": "production_runtime/continuity_validation/prompts/*.terra.md",
+    "luna": "production_runtime/continuity_validation/reviews/luna-state-observation.v0.1.json",
+    "sol": "production_runtime/continuity_validation/reviews/sol-final-review.v0.3.md"
+  },
+  "limitations": [
+    "historical samples do not satisfy formal 3000-character minimum",
+    "formal quality evidence is generated only after authorized chapter production"
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "chapter_id": "chapter-0005",
+  "draft_sha256": "990c891716e06a24f0a119d52f555dc3e5302baff46646d00c2c03541be77c45",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "fact-ch005-001",
+        "asset_id": "char_zhou_li",
+        "field_path": "character.current_state",
+        "before": "事故记录出现周砺父亲周永直的签名。",
+        "after": "团队错过第一次封闭窗口，但保住周砺的身份自主权。",
+        "evidence": "周砺拒绝戴无署名守门盔并拒绝在现场单上签署守门覆盖有效；九点四十后第一次封闭窗口结束。"
+      },
+      {
+        "fact_id": "fact-ch005-002",
+        "asset_id": "char_zhou_li",
+        "field_path": "character.action",
+        "before": "未对现场封闭方案作出最终承担。",
+        "after": "以现场测量、物证封存、住户名单和逐项记录承担现场行动责任。",
+        "evidence": "周砺测量北柱、补丁和斜撑，封存梁底墨书，组织住户按名单取出必要物品，并在现场单逐项记录异常。"
+      },
+      {
+        "fact_id": "fact-ch005-003",
+        "asset_id": "char_zhou_li",
+        "field_path": "character.authorization",
+        "before": "面临以父亲旧签名和未知角色权限替代本人确认。",
+        "after": "明确拒绝未知角色授权，不以守门盔或口头承诺替代本人签字。",
+        "evidence": "现场单下方写入“住户拒绝未知角色授权”，周砺声明“我不签”，并拒绝写替代口令。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "fact-ch005-004",
+        "asset_id": "char_zhou_li",
+        "field_path": "character.relationship_with_community",
+        "before": "住户与现场团队围绕封闭方案存在未解决的不信任。",
+        "after": "住户参与物证查看、名单安排和责任记录，部分共同体行动转向可复核协作。",
+        "evidence": "老太太要求把名字写入反对记录，其他住户报告门牌和取物需求，争执转为名单、顺序和电话安排。"
+      }
+    ],
+    "locations": [
+      {
+        "fact_id": "fact-ch005-005",
+        "asset_id": "artifact_role_helmet",
+        "field_path": "location.access_state",
+        "before": "戏楼存在按计划封闭并允许材料车进场的安排。",
+        "after": "戏楼不进人，北墙一侧不回住，门前设置两道警戒带。",
+        "evidence": "周砺宣布“戏楼不进人”“北墙一侧不回住”，结尾明确门前被两道警戒带隔开。"
+      },
+      {
+        "fact_id": "fact-ch005-006",
+        "asset_id": "artifact_role_helmet",
+        "field_path": "location.production_window",
+        "before": "第一次封闭窗口尚未结束。",
+        "after": "第一次封闭窗口在九点四十后结束，外围脚手架拆除顺序改排，新封闭手续延至明早申报。",
+        "evidence": "电话通知窗口结束、外围脚手架拆除顺序另排，且新封闭手续明早才能申报。"
+      }
+    ],
+    "factions": [],
+    "artifacts": [
+      {
+        "fact_id": "fact-ch005-007",
+        "asset_id": "artifact_role_helmet",
+        "field_path": "artifact.condition",
+        "before": "active",
+        "after": "locked_away",
+        "evidence": "杜成礼将盔箱转向里侧，合上盖子并扣锁；随后正文明确“盔箱锁在旧衣箱上”。"
+      },
+      {
+        "fact_id": "fact-ch005-008",
+        "asset_id": "artifact_role_helmet",
+        "field_path": "artifact.authorization",
+        "before": "可被现场人员提议用于临时守门覆盖。",
+        "after": "未获使用；无署名、无本人同意、无维护复核时不得触碰带子。",
+        "evidence": "杜成礼声明盔不能替人答应，最终说“盔收箱，今晚没人站那个位”，并拒绝街道办人员触碰带子。"
+      }
+    ],
+    "techniques": [
+      {
+        "fact_id": "fact-ch005-009",
+        "asset_id": "technique_role_unloading",
+        "field_path": "technique.availability",
+        "before": "seed",
+        "after": "used_for_field_verification",
+        "evidence": "周砺现场沿灰皮挑取墨迹、使用卷尺测量结构关系、以薄钢尺探测柱脚空腔，并用透明薄膜封存墨书。"
+      },
+      {
+        "fact_id": "fact-ch005-010",
+        "asset_id": "technique_role_unloading",
+        "field_path": "technique.scope",
+        "before": "未在本章现场启用。",
+        "after": "用于卸除未经授权的守门角色压力并转为可复核的物证、测量和记录流程。",
+        "evidence": "周砺拒绝戴盔后组织三处测量、物证封存和现场单记录，未使用口令或角色覆盖。"
+      }
+    ],
+    "relationships": [
+      {
+        "fact_id": "fact-ch005-011",
+        "asset_id": "char_zhou_li",
+        "field_path": "relationship_with_char_zhou_li",
+        "before": "街道办人员试图让周砺戴盔并承担临时守门覆盖。",
+        "after": "街道办人员转为见证第一趟取物并执行巷口警戒，不再要求周砺戴盔。",
+        "evidence": "对方在周砺拒绝后沉默，随后拿起对讲机叫人拉警戒带，并跟随第一趟取物。"
+      }
+    ],
+    "emotions": [],
+    "information": [
+      {
+        "fact_id": "fact-ch005-012",
+        "asset_id": "artifact_role_helmet",
+        "field_path": "artifact.inscription_evidence",
+        "before": "梁底旧字迹未被揭示。",
+        "after": "发现“临承”残字、被刮断的“周”字及“临承二人，名……”残行，并完成局部封存。",
+        "evidence": "周砺剥开旧灰和补漆，发现上述墨字与刮痕，随后用透明薄膜和纸胶封住墨迹四周。"
+      },
+      {
+        "fact_id": "fact-ch005-013",
+        "asset_id": "char_zhou_li",
+        "field_path": "information.structural_risk",
+        "before": "封闭方案将现场视作可由守门站位临时稳定。",
+        "after": "确认梁底临承、柱脚空腔、北墙渗水回路和三处退构位于同一受力风险线上。",
+        "evidence": "周砺指出三处退构向同一条线送力，并以柱脚湿痕、裂缝和积水回路共同记录。"
+      },
+      {
+        "fact_id": "fact-ch005-014",
+        "asset_id": "char_zhou_li",
+        "field_path": "information.next_step",
+        "before": "材料车按原计划进场。",
+        "after": "材料车改道，不再等待本处确认；明早由住户代表、复核人员和盔箱维护者共同到场。",
+        "evidence": "电话通知原定材料车改道；周砺随后明确明早手续开启时三方共同到场。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "fact-ch005-015",
+        "asset_id": "char_zhou_li",
+        "field_path": "hook_out",
+        "before": "下一步压力尚未被本章后果推动。",
+        "after": "封闭延误、手续延期、住户安置和毛坯街方向的异常声响共同把压力推向《毛坯街》。",
+        "evidence": "结尾写明第一次窗口已过、新手续明早申报，周砺又听见毛坯街方向传来空楼重物挪动般的闷响。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "fact-ch005-016",
+        "asset_id": "char_zhou_li",
+        "field_path": "timeline.chapter_event",
+        "before": "第一次封闭窗口尚未触发结果。",
+        "after": "九点四十前周砺完成拒戴、测量、封存和现场记录；九点四十后窗口结束，封闭与材料安排被改排。",
+        "evidence": "正文依次记录周砺拒绝戴盔、完成现场复核和组织取物，随后明确“九点四十到了”并接到窗口结束通知。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "fact-ch005-017",
+        "asset_id": "artifact_role_helmet",
+        "field_path": "artifact.condition",
+        "before": "漆面被潮气熏得发乌，系带垂在箱沿外。",
+        "after": "盔箱合盖扣锁，盔未被佩戴。",
+        "evidence": "正文先描写盔侧卧且系带外垂，后写杜成礼合上盖子扣住锁，并明确“今晚没人站那个位”。"
+      },
+      {
+        "fact_id": "fact-ch005-018",
+        "asset_id": "char_zhou_li",
+        "field_path": "physical_state",
+        "before": "周砺蹲在梁下进行检查。",
+        "after": "周砺膝盖发麻，随后站到巷口并参与第一趟取物。",
+        "evidence": "正文写明他站起时膝盖因久蹲发麻，结尾写他在巷口接过氧气机插头。"
+      }
+    ],
+    "naming": [
+      {
+        "fact_id": "fact-ch005-019",
+        "asset_id": "artifact_role_helmet",
+        "field_path": "naming.authorization_label",
+        "before": "守门盔可被作为现场临时角色使用。",
+        "after": "现场记录新增“住户拒绝未知角色授权”。",
+        "evidence": "周砺在现场单下方逐项列出异常后，添写“住户拒绝未知角色授权”。"
+      }
+    ]
+  }
+}

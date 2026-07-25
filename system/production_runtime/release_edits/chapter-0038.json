@@ -1,0 +1,13 @@
+{
+  "version": "0.25",
+  "chapter_id": "chapter-0038",
+  "source_revision": "system/production_runtime/chapters/chapter-0038/revision.md",
+  "source_sha256": "ce19366590d3e75dacf35f1e8159d0d830b014b1b63ee3e2c3c03767c86b88c4",
+  "release_edit": "system/production_runtime/release_edits/chapter-0038.md",
+  "release_edit_sha256": "e93cea484cdee85a3ceacc1ceb902bac7ae5ac817f10bcb1acc48d4f241590b3",
+  "repair_direction": "将章末动作改为灯座初触槽口且持灯人尚未松手，与下一章完成落槽连续衔接",
+  "provider": "codex-deterministic-editor",
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-031-040.json",
+  "reviewed_release_edit_sha256": "e93cea484cdee85a3ceacc1ceb902bac7ae5ac817f10bcb1acc48d4f241590b3"
+}

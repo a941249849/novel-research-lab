@@ -1,0 +1,278 @@
+{
+  "version": "1.0",
+  "project": "借天改命账",
+  "volume": 1,
+  "window": {
+    "start": 61,
+    "end": 70,
+    "name": "母债拆迁"
+  },
+  "status": "production_ready",
+  "start_snapshot": [
+    "命审台已经撤销两巷共同空额与两份重复执行令，但明确不免除归属清楚的苏晚旧寿债。",
+    "苏晚名下有效旧追缴令已经抵达，命灯裂纹期限逼近最末一格；既有裂纹、掌背失温与冷灰气息均未恢复。",
+    "陆沉渊的半寿登记、拆令申请和拒领共同令责任仍绑定在追踪记录中，暴露没有下降。",
+    "贫城已经形成“共同总额不得越巷落链，逐户追缴必须具名并核验实际落处”的公开规则。",
+    "泥灯巷护阵仍有贯穿外沿的白裂，最外侧安置屋继续停用，住户命火未被调用或扣减。",
+    "残命灯盏仍在共同保管处休眠，未获守火同意，不能用于照火、识账或承接苏晚寿债。"
+  ],
+  "end_target": [
+    "苏晚旧寿债的债名与原始债印仍被认定有效，但本次追缴所占用的当期寿火位被确认已经执行过，当前追缴令因此失效。",
+    "命籍衙不得再以本次无效迁籍附条转移苏晚命档，也不得重新执行已经冲突的当期寿火位；刚被抽离的错取余火完成返还，既往损耗不追溯恢复。",
+    "苏晚命灯没有痊愈，新增裂损与掌背失温保留；母债余额、原始成债原因和后续合法分期仍未解决。",
+    "泥灯巷形成“不代债、不交人、允许各户撤守”的共同边界；部分住户退出外沿守护后，护阵裂损进一步固定，但住户命火仍未被调用。",
+    "陆沉渊以自己的半寿识账记录承担证据留档代价，暴露继续上升，且被排除在封档后的本地查阅之外。",
+    "迁籍附条与重复执行冲突被一并送入州府复核，本地局部改账兑现，同时更高层开始追查是谁触碰了苏晚旧债的转运记录。"
+  ],
+  "chapters": [
+    {
+      "chapter_id": "chapter-0061",
+      "working_title": "旧债封档",
+      "event": "命籍衙依命审台的受理边界启动苏晚旧债的独立执行，将其命档封入本轮追缴状态，并让裂灯期限正式进入最后一格。",
+      "scene_anchor": "命审台散场后的石阶下，苏晚命灯被放在她亲手划定的独立灯位上，封档寿印隔空压住灯影而不夺走灯身。",
+      "conflict": "追缴令姓名和归属清楚，上一轮连额胜利无法阻止封档；若拒绝收讫，命籍衙可直接记为逃避具名追缴。",
+      "character_choice": "苏晚亲手接下封档回执，承认旧债另审，却当众拒绝陆沉渊、邻里或任何住户替她交火。",
+      "irreversible_change": "苏晚命档进入不可撤回的独立追缴程序，最后一格开始走刻；她仍持有命灯，但在裁定前失去对命档内容的常规调取权。",
+      "emotional_turn": "陆沉渊第一次面对母亲主动接下有效追缴，只能压住替她承担的冲动，转而承认她是本案的决定者。",
+      "hook_out": "封档回执翻到背面，露出一行此前未宣读的附条：期限耗尽前，苏晚可以迁籍换取暂缓裂灯。",
+      "expected_state_deltas": [
+        "命籍衙由送达旧追缴转入封档与限期执行。",
+        "苏晚命灯裂纹倒计时正式进入最后一格，但灯身未被扣押。",
+        "苏晚与陆沉渊的亲缘边界进一步明确为不接受代缴或代决。"
+      ],
+      "required_asset_ids": [
+        "faction_life_registry_office",
+        "npc_su_wan",
+        "bond_mother_su_wan",
+        "state_ledger_mother_life_lamp_countdown",
+        "state_ledger_faction_pressure"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0062",
+      "working_title": "不迁续冷",
+      "event": "封档后的稳定权限被锁住，苏晚只能在迁籍暂缓与留在原籍承受裂灯之间作出生存选择。",
+      "scene_anchor": "泥灯巷暖墙外的独立灯位，冷风穿过尚未修复的墙裂，苏晚掌背不断落下细灰。",
+      "conflict": "迁籍可以暂缓最后一格，却会把命灯与本人一并纳入命籍衙控制；留在泥灯巷则无法获得封档期间的灯纹稳定。",
+      "character_choice": "苏晚拒绝迁籍，也拒绝调用住户命火替她保温，只允许陆沉渊扶稳灯座，不许他触碰灯芯。",
+      "irreversible_change": "最后一格继续缩短，命灯旧裂旁新增一道向灯座延伸的冷纹；这道裂损不能因后续程序胜利自动消失。",
+      "emotional_turn": "陆沉渊从“想替母亲避险”转为“陪她承担自己选择的风险”，母子关系由保护与被保护变成有边界的并肩。",
+      "hook_out": "冷纹越过灯腹时，迁籍附条贴合处浮起一圈比原债印更新的灰边。",
+      "expected_state_deltas": [
+        "苏晚明确拒绝以迁籍换取暂缓。",
+        "住户命火继续保持不可调用且零扣减。",
+        "母灯裂损和掌背失温加重，母债本身未被减免。"
+      ],
+      "required_asset_ids": [
+        "npc_su_wan",
+        "bond_mother_su_wan",
+        "state_ledger_mother_life_lamp_countdown",
+        "state_ledger_resident_lifefire_reserve"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0063",
+      "working_title": "附条后压",
+      "event": "陆沉渊在不读取个人命页的前提下，对迁籍附条与原债印交界处进行一次局部识账，只确认两层灰痕并非同时压成。",
+      "scene_anchor": "命审台封档查看槽前，苏晚隔着石槽持灯，陆沉渊只能观察回执附条、印角和灯影共同显出的表层痕迹。",
+      "conflict": "他若越过局部压痕判断迁籍来源，就会超出当前识账能力；若不留下可复核观察，附条将在封档完成后成为默认执行依据。",
+      "character_choice": "陆沉渊只陈述“原债印先成、迁籍附条后压”，拒绝推断添加者、转运来源和旧债全链，并以自己的半寿登记绑定这份观察。",
+      "irreversible_change": "迁籍附条的后压灰边成为封档前留下的具名程序异议；陆沉渊右眼焦纹再现，半寿追踪记录新增一次主动认痕。",
+      "emotional_turn": "苏晚没有因他克制结论而失望，反而首次认可他宁可少说也不拿她的债冒险定案。",
+      "hook_out": "查看槽接受了异议，却只准他们在“债是否有效”与“迁籍是否有效”之间选择一个争点。",
+      "expected_state_deltas": [
+        "识账术新增一次限于本地复制层灰痕的合法使用记录。",
+        "迁籍附条被标记为后压待审事实，不推导完整来源链。",
+        "陆沉渊承压与半寿暴露上升，未获得更高阶识账能力。"
+      ],
+      "required_asset_ids": [
+        "character_lu_chenyuan",
+        "technique_ledger_recognition",
+        "state_ledger_protagonist_strain",
+        "state_ledger_half_life_registry_exposure",
+        "state_ledger_revealed_account_errors",
+        "npc_su_wan"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0064",
+      "working_title": "各守一端",
+      "event": "封档程序要求债主本人保管命灯、异议提出者单独承担认痕责任，母子不能再以同一身份进入后续审查。",
+      "scene_anchor": "泥灯巷门内与命审台回执槽之间，苏晚收回灯匣，陆沉渊留下写有自身半寿登记痕的异议木片。",
+      "conflict": "陆沉渊想把苏晚的灯和自己的异议同时置于自身名下，以便挡住迁籍；苏晚认为这会把她的债变成他的半寿风险。",
+      "character_choice": "苏晚选择独自持灯应审；陆沉渊撤回代管要求，只承担迁籍附条的认痕陈述和由此产生的追踪。",
+      "irreversible_change": "母债主体与陆沉渊的证据责任被正式分开：苏晚不能把债后果转给儿子，陆沉渊也不能撤销已经绑定自身的异议记录。",
+      "emotional_turn": "苏晚收回灯匣不是拒绝儿子，而是把他从替死位置推到可信但有限的协助者位置。",
+      "hook_out": "两人的身份刚被分开，命审台便宣布：选错争点的一方，将在最后一格耗尽前失去再次申辩机会。",
+      "expected_state_deltas": [
+        "苏晚继续保有命灯现实占有与独立决定权。",
+        "陆沉渊成为迁籍异议的唯一认痕责任人，暴露不下降。",
+        "母子信任提升，但代管与代债边界永久收紧。"
+      ],
+      "required_asset_ids": [
+        "npc_su_wan",
+        "character_lu_chenyuan",
+        "bond_mother_su_wan",
+        "state_ledger_half_life_registry_exposure",
+        "faction_life_registry_office"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0065",
+      "working_title": "只争迁籍",
+      "event": "命审台启动窄审，强制苏晚在挑战原债效力和挑战迁籍附条之间择一受理。",
+      "scene_anchor": "命审台双槽石案，一边承接原债印，一边承接迁籍附条，封档寿印只允许其中一槽点亮。",
+      "conflict": "挑战原债可能触及母债核心，却缺少现阶段可读的完整来源；挑战迁籍证据较实，却等于承认本轮不处理原债本身。",
+      "character_choice": "苏晚选择只争迁籍附条，陆沉渊服从她的选择，明确不把后压痕夸大成旧债无效。",
+      "irreversible_change": "本轮审查范围永久限定为迁籍执行方式；苏晚旧债的债名和原始债印在本轮继续有效，无法借附条错误一并抹除。",
+      "emotional_turn": "陆沉渊放弃看似更大的翻案机会，证明他愿意让母亲决定先保住什么，而不是借她的危局追求一次全胜。",
+      "hook_out": "迁籍槽点亮后，命审台没有调取更多账页，只要求原债印与附条在同一块压印石上重新受压。",
+      "expected_state_deltas": [
+        "命审程序争点收窄为迁籍附条的形成与执行效力。",
+        "母债有效性保持未解决，不发生隐性免债。",
+        "程序压力从选择争点转入不可撤回的实物压印检验。"
+      ],
+      "required_asset_ids": [
+        "faction_life_registry_office",
+        "npc_su_wan",
+        "character_lu_chenyuan",
+        "bond_mother_su_wan",
+        "state_ledger_faction_pressure",
+        "state_ledger_mother_life_lamp_countdown"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0066",
+      "working_title": "双印不同炉",
+      "event": "命审台以压印石复验原债印与迁籍附条，原债印保持完整，附条却因灰质不同而从接缝处自行翘裂。",
+      "scene_anchor": "命审台压印石中央，两层寿印同时受热，原印沉入旧槽，附条边缘则吐出冷灰。",
+      "conflict": "命籍衙主张附条只是后续合法执行补充；苏晚一方必须证明其不能继承原债印效力，却不能借机声称原债不存在。",
+      "character_choice": "苏晚要求只记录压印结果，不要求陆沉渊再次施术；陆沉渊停术旁观，避免以身体代价制造超出现场的解释。",
+      "irreversible_change": "“迁籍附条与原债印并非同次压成，且不能共享原印效力”被命审台正式记入已揭示错账；原债印仍然有效。",
+      "emotional_turn": "苏晚主动阻止儿子继续燃眼，第一次以保护他的方式承担自己选择的窄审代价。",
+      "hook_out": "附条刚被判定不能继承原印，命籍衙便申请改为在泥灯巷原地执行具名旧债。",
+      "expected_state_deltas": [
+        "迁籍附条后压且不能继承原债印效力成为正式程序结果。",
+        "已揭示错账增加一项执行附条错误，未产生债额减免。",
+        "陆沉渊本章停止施术，没有用住户命火或残命灯盏补足证据。"
+      ],
+      "required_asset_ids": [
+        "faction_life_registry_office",
+        "npc_su_wan",
+        "state_ledger_revealed_account_errors",
+        "state_ledger_faction_pressure",
+        "state_ledger_protagonist_strain"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0067",
+      "working_title": "撤守不交人",
+      "event": "原地执行申请传回泥灯巷，住户必须决定是否允许苏晚留在巷内应对具名追缴。",
+      "scene_anchor": "泥灯巷冻裂的最外侧安置屋前，各户自行抱灯站在门内，护阵外沿白裂正对即将到来的执行位置。",
+      "conflict": "部分住户担心原地执行继续损伤护阵，要求苏晚迁出；另一些住户拒绝把上一轮建立的具名规则变成主动交人的理由。",
+      "character_choice": "苏晚表示愿意独自站到巷口，却不要求任何人守她；住户最终定下“不代债、不交人、允许撤守”，异议户可退出外沿守护且不被记作背叛。",
+      "irreversible_change": "部分住户撤去外沿守位，护阵一段白裂失去遮护并固定扩大；泥灯巷则第一次以允许退出为前提，仍拒绝代命籍衙交出苏晚。",
+      "emotional_turn": "共同体信任不再表现为所有人同声，而表现为恐惧和退出被承认后，留下者仍愿意承担明确后果。",
+      "hook_out": "最后一户撤守后，原地执行获准的黑字越过巷口，却只锁定苏晚一盏命灯。",
+      "expected_state_deltas": [
+        "泥灯巷形成不代债、不交人、允许撤守的新共同边界。",
+        "住户命火仍由各户持有，未调用、转移或扣减。",
+        "护阵因守位缩减出现不可自动恢复的进一步裂损。"
+      ],
+      "required_asset_ids": [
+        "faction_mudlamp_lane",
+        "bond_mudlamp_lane_trust",
+        "npc_su_wan",
+        "state_ledger_mudlamp_array_integrity",
+        "state_ledger_resident_lifefire_reserve"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0068",
+      "working_title": "迁印撤，扣印来",
+      "event": "命审台撤销迁籍附条，却同时批准命籍衙在泥灯巷对苏晚执行归属清楚的当期追缴。",
+      "scene_anchor": "泥灯巷巷口，作废的迁籍附条化成灰片落地，新落下的执行寿印则停在苏晚命灯上方。",
+      "conflict": "程序胜利保住苏晚不被迁走，却没有消灭有效旧债；若拒绝新印，泥灯巷会被记为阻断具名执行。",
+      "character_choice": "苏晚不离巷、不躲灯，也不让住户挡印；她要求执行严格限于令上当期寿火位，陆沉渊则退到她指定的位置。",
+      "irreversible_change": "命籍衙永久失去以本次附条迁走苏晚命档的路径，但取得一次仅限当期寿火位的原地执行机会。",
+      "emotional_turn": "局部胜利立刻变成更近的威胁，母子仍选择守住刚建立的边界，而非用越界抵抗否定此前程序成果。",
+      "hook_out": "执行寿印落向灯腹时，原本应当空白的当期火位先一步浮出一道已经闭合的旧压痕。",
+      "expected_state_deltas": [
+        "迁籍附条正式失效，苏晚不再因该附条被强制迁籍。",
+        "具名旧债转入仅限当期寿火位的原地执行。",
+        "母灯倒计时未解除，命籍衙压力由迁籍转为即时扣取。"
+      ],
+      "required_asset_ids": [
+        "faction_life_registry_office",
+        "npc_su_wan",
+        "state_ledger_faction_pressure",
+        "state_ledger_revealed_account_errors",
+        "state_ledger_mother_life_lamp_countdown"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0069",
+      "working_title": "一位两扣",
+      "event": "命籍衙启动原地扣取，执行寿印与灯腹旧压痕在同一当期火位发生排斥，仍强行抽出一缕苏晚命火后自行卡死。",
+      "scene_anchor": "泥灯巷巷口的独立灯位，苏晚命灯骤冷，掌背覆霜，寿印与旧压痕在灯腹上重叠成清晰双圈。",
+      "conflict": "陆沉渊若强行碰印可能污染唯一的执行现场；任由扣取继续，则苏晚要承受真实失温和裂损。",
+      "character_choice": "苏晚命令陆沉渊不要碰印，亲自撑到双圈完全显形后才要求终止超出当期火位的扣取；陆沉渊选择服从而非越权救她。",
+      "irreversible_change": "苏晚被实际抽离一缕命火，灯腹裂纹贯穿至灯座，掌背持续失温；与此同时，同一当期火位已经受过执行的双圈冲突成为不可抹除的现场结果。",
+      "emotional_turn": "陆沉渊承受了“能伸手却不能替她决定”的痛苦，苏晚则用自己的后果保住了足以终止重复扣取的边界。",
+      "hook_out": "卡死的寿印没有消散，而是把刚抽出的火悬在灯外，并向命审台发出“期位已占”的强制复核信号。",
+      "expected_state_deltas": [
+        "苏晚命灯新增贯穿裂损和持续失温，既有母债不因受伤消失。",
+        "当期寿火位出现两次执行痕冲突，进入强制复核。",
+        "陆沉渊未施术、未触印，现场没有被其半寿痕污染。"
+      ],
+      "required_asset_ids": [
+        "npc_su_wan",
+        "bond_mother_su_wan",
+        "character_lu_chenyuan",
+        "state_ledger_mother_life_lamp_countdown",
+        "state_ledger_revealed_account_errors",
+        "faction_life_registry_office"
+      ],
+      "source_status": "planned"
+    },
+    {
+      "chapter_id": "chapter-0070",
+      "working_title": "退火封上卷",
+      "event": "命审台依据原地执行产生的双圈冲突，确认苏晚当期寿火位此前已经执行，撤销本次追缴并将悬在灯外的错取余火退回。",
+      "scene_anchor": "泥灯巷巷口与命审台寿印远程相连，卡死寿印先褪黑，再把悬空火丝送回苏晚灯芯；封档石面随即转为州府复核色。",
+      "conflict": "命籍衙承认当期重复执行即可立刻退火，但拒绝因此否定旧债余额；陆沉渊若要求继续开档追源，就必须在母亲刚获喘息时再扩大半寿暴露。",
+      "character_choice": "苏晚接受只撤当期追缴、不虚称全债已清；陆沉渊则以自身半寿认痕记录换取双圈冲突不得被本地销毁，承担记录随封档上送的追踪后果。",
+      "irreversible_change": "苏晚本次当期追缴令失效，刚抽离的错取余火完成返还，命籍衙不得重复执行该期位；旧债余额、灯裂和既往损耗全部保留，迁籍附条与冲突记录被封入州府复核，陆沉渊失去本地继续查阅资格。",
+      "emotional_turn": "母子共同完成一次不靠代命、不牺牲邻里的局部改账；苏晚保住当期命火，陆沉渊则接受胜利不能替母亲治好裂灯，也不能替贫城免除下一轮追查。",
+      "hook_out": "封档最后闭合前，州府复核印没有先问苏晚欠了多少，而是锁住迁籍附条的后压时刻，追问谁曾改动这笔旧债的转运记录。",
+      "expected_state_deltas": [
+        "苏晚当期重复追缴被正式撤销，错取余火返还；旧债余额与命灯裂损不恢复。",
+        "已揭示错账新增“具名旧债当期寿火位重复执行”的正式结果。",
+        "贫城公开规则推进为具名追缴也不得重复占用已经执行的期位。",
+        "迁籍附条与双圈冲突上送州府复核，本地势力压力转向转运记录来源。",
+        "陆沉渊半寿暴露继续上升并失去封档后的本地查阅资格。"
+      ],
+      "required_asset_ids": [
+        "faction_life_registry_office",
+        "npc_su_wan",
+        "bond_mother_su_wan",
+        "character_lu_chenyuan",
+        "state_ledger_revealed_account_errors",
+        "state_ledger_poorcity_returnfire",
+        "state_ledger_public_reputation",
+        "state_ledger_faction_pressure",
+        "state_ledger_half_life_registry_exposure",
+        "state_ledger_mother_life_lamp_countdown"
+      ],
+      "source_status": "planned"
+    }
+  ]
+}

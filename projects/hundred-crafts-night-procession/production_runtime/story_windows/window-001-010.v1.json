@@ -1,0 +1,329 @@
+{
+  "version": "1.0",
+  "project": "《百工夜行录》",
+  "volume": 1,
+  "window": {
+    "start": 1,
+    "end": 10,
+    "name": "正式生产窗口 001-010"
+  },
+  "status": "production_ready",
+  "review_policy": {
+    "sol_window_review_required": true,
+    "independent_review_required": true,
+    "publish_authorized": false
+  },
+  "start_snapshot": [
+    "第1章开始前只承认 canonical initial state 与已接受结算。",
+    "受影响者异议、专业复核和物质后果均不得被摘要覆盖。",
+    "未登记资产、能力、关系和状态变化一律禁止进入正文。"
+  ],
+  "end_target": [
+    "第10章必须完成本窗口不可逆因果链并保留卷级矛盾。",
+    "所有状态变化必须由观察、终审和结算三方绑定同一修订稿。",
+    "下一窗口不得在本窗口审查接受前启动正文。"
+  ],
+  "chapters": [
+    {
+      "chapter_id": "chapter-0001",
+      "working_title": "梁失其名",
+      "event": "围绕梁失其名发生可验证事件：地铁工地的旧梁突然失去全部连接，建立退构灾害与父亲旧案。",
+      "scene_anchor": "第1章的具体工艺现场与物证位置",
+      "conflict": "在《梁失其名》现场，周砺必须在专业判断、受影响者异议与现实后果之间作出不可回避的选择。",
+      "character_choice": "面对《梁失其名》的具体后果，周砺选择以可复核的现场行动承担代价，而不是用口头承诺绕过程序。",
+      "irreversible_change": "事故记录出现周砺父亲周永直的签名。",
+      "emotional_turn": "本章选择改变了周砺与共同体之间的信任方向。",
+      "hook_out": "已发生的后果把下一步压力推向《加固之后》，且不能回到本章开始状态。",
+      "expected_state_deltas": [
+        "v1.ch001.outcome:char_zhou_li:character.current_state"
+      ],
+      "required_asset_ids": [
+        "char_zhou_li",
+        "artifact_unnamed_beam",
+        "foreshadow_second_record"
+      ],
+      "evidence_refs": [
+        "series-blueprint.v0.3:zhou-li",
+        "series-blueprint.v0.3:volume1",
+        "p0-central-plain",
+        "concept-stress-test.v0.1:chapter8"
+      ],
+      "cultural_safety_checks": [
+        "只使用证据卡支持的工艺事实，不把地方知识改写为万能异术",
+        "知识所有权、署名、拒绝和退出必须保留在人物行动中"
+      ],
+      "source_status": "formal_plan"
+    },
+    {
+      "chapter_id": "chapter-0002",
+      "working_title": "加固之后",
+      "event": "围绕加固之后发生可验证事件：现代加固看似成功，却把暗载转移到相邻戏楼。",
+      "scene_anchor": "第2章的具体工艺现场与物证位置",
+      "conflict": "在《加固之后》现场，程雪青必须在专业判断、受影响者异议与现实后果之间作出不可回避的选择。",
+      "character_choice": "面对《加固之后》的具体后果，程雪青选择以可复核的现场行动承担代价，而不是用口头承诺绕过程序。",
+      "irreversible_change": "戏楼成为新的受损节点，工程不能按原计划复工。",
+      "emotional_turn": "本章选择改变了程雪青与共同体之间的信任方向。",
+      "hook_out": "已发生的后果把下一步压力推向《模型之外》，且不能回到本章开始状态。",
+      "expected_state_deltas": [
+        "v1.ch002.outcome:char_cheng_xueqing:character.current_state"
+      ],
+      "required_asset_ids": [
+        "char_cheng_xueqing",
+        "artifact_unnamed_beam",
+        "ledger_structural_load"
+      ],
+      "evidence_refs": [
+        "series-blueprint.v0.3:cheng-xueqing",
+        "series-blueprint.v0.3:volume1",
+        "p0-central-plain",
+        "civilization-mechanism-library.v0.1:load-distribution"
+      ],
+      "cultural_safety_checks": [
+        "只使用证据卡支持的工艺事实，不把地方知识改写为万能异术",
+        "知识所有权、署名、拒绝和退出必须保留在人物行动中"
+      ],
+      "source_status": "formal_plan"
+    },
+    {
+      "chapter_id": "chapter-0003",
+      "working_title": "模型之外",
+      "event": "围绕模型之外发生可验证事件：核对数据无误与现实失效的矛盾。",
+      "scene_anchor": "第3章的具体工艺现场与物证位置",
+      "conflict": "在《模型之外》现场，程雪青必须在专业判断、受影响者异议与现实后果之间作出不可回避的选择。",
+      "character_choice": "面对《模型之外》的具体后果，程雪青选择以可复核的现场行动承担代价，而不是用口头承诺绕过程序。",
+      "irreversible_change": "程雪青公开承认模型缺失旧节点并承担补测责任。",
+      "emotional_turn": "本章选择改变了程雪青与共同体之间的信任方向。",
+      "hook_out": "已发生的后果把下一步压力推向《空角色》，且不能回到本章开始状态。",
+      "expected_state_deltas": [
+        "v1.ch003.outcome:char_cheng_xueqing:character.current_state"
+      ],
+      "required_asset_ids": [
+        "char_cheng_xueqing",
+        "faction_renewal_bureau",
+        "technique_load_reading"
+      ],
+      "evidence_refs": [
+        "series-blueprint.v0.3:cheng-xueqing",
+        "series-blueprint.v0.3:volume1",
+        "civilization-mechanism-library.v0.1:load-distribution"
+      ],
+      "cultural_safety_checks": [
+        "只使用证据卡支持的工艺事实，不把地方知识改写为万能异术",
+        "知识所有权、署名、拒绝和退出必须保留在人物行动中"
+      ],
+      "source_status": "formal_plan"
+    },
+    {
+      "chapter_id": "chapter-0004",
+      "working_title": "空角色",
+      "event": "围绕空角色发生可验证事件：盔箱自行开启，无登记盔头试图选择承重者。",
+      "scene_anchor": "第4章的具体工艺现场与物证位置",
+      "conflict": "在《空角色》现场，杜承礼必须在专业判断、受影响者异议与现实后果之间作出不可回避的选择。",
+      "character_choice": "面对《空角色》的具体后果，杜承礼选择以可复核的现场行动承担代价，而不是用口头承诺绕过程序。",
+      "irreversible_change": "戏楼封存清单被证明不完整。",
+      "emotional_turn": "本章选择改变了杜承礼与共同体之间的信任方向。",
+      "hook_out": "已发生的后果把下一步压力推向《不戴盔》，且不能回到本章开始状态。",
+      "expected_state_deltas": [
+        "v1.ch004.outcome:char_du_chengli:character.current_state"
+      ],
+      "required_asset_ids": [
+        "char_du_chengli",
+        "artifact_role_helmet",
+        "ledger_role_residue"
+      ],
+      "evidence_refs": [
+        "series-blueprint.v0.3:du-chengli",
+        "ln-opera-costume-02",
+        "ln-opera-wardrobe-master-03",
+        "project-original:role-helmet-rule-freeze-v0.1",
+        "civilization-mechanism-library.v0.1:role-authorization"
+      ],
+      "cultural_safety_checks": [
+        "只使用证据卡支持的工艺事实，不把地方知识改写为万能异术",
+        "知识所有权、署名、拒绝和退出必须保留在人物行动中"
+      ],
+      "source_status": "formal_plan"
+    },
+    {
+      "chapter_id": "chapter-0005",
+      "working_title": "不戴盔",
+      "event": "围绕不戴盔发生可验证事件：拒绝以未知角色权限解决异常。",
+      "scene_anchor": "第5章的具体工艺现场与物证位置",
+      "conflict": "在《不戴盔》现场，周砺必须在专业判断、受影响者异议与现实后果之间作出不可回避的选择。",
+      "character_choice": "面对《不戴盔》的具体后果，周砺选择以可复核的现场行动承担代价，而不是用口头承诺绕过程序。",
+      "irreversible_change": "团队错过第一次封闭窗口，但保住周砺的身份自主权。",
+      "emotional_turn": "本章选择改变了周砺与共同体之间的信任方向。",
+      "hook_out": "已发生的后果把下一步压力推向《毛坯街》，且不能回到本章开始状态。",
+      "expected_state_deltas": [
+        "v1.ch005.outcome:char_zhou_li:character.current_state"
+      ],
+      "required_asset_ids": [
+        "char_zhou_li",
+        "artifact_role_helmet",
+        "technique_role_unloading"
+      ],
+      "evidence_refs": [
+        "series-blueprint.v0.3:zhou-li",
+        "ln-opera-costume-02",
+        "ln-opera-wardrobe-master-03",
+        "project-original:role-helmet-rule-freeze-v0.1",
+        "civilization-mechanism-library.v0.1:role-authorization"
+      ],
+      "cultural_safety_checks": [
+        "只使用证据卡支持的工艺事实，不把地方知识改写为万能异术",
+        "知识所有权、署名、拒绝和退出必须保留在人物行动中"
+      ],
+      "source_status": "formal_plan"
+    },
+    {
+      "chapter_id": "chapter-0006",
+      "working_title": "毛坯街",
+      "event": "围绕毛坯街发生可验证事件：退构扩散到住户日常，展示生活后果。",
+      "scene_anchor": "第6章的具体工艺现场与物证位置",
+      "conflict": "在《毛坯街》现场，马小满必须在专业判断、受影响者异议与现实后果之间作出不可回避的选择。",
+      "character_choice": "面对《毛坯街》的具体后果，马小满选择以可复核的现场行动承担代价，而不是用口头承诺绕过程序。",
+      "irreversible_change": "维修班组被停职，居民被迫进入临时安置。",
+      "emotional_turn": "本章选择改变了马小满与共同体之间的信任方向。",
+      "hook_out": "已发生的后果把下一步压力推向《守门余响》，且不能回到本章开始状态。",
+      "expected_state_deltas": [
+        "v1.ch006.outcome:char_ma_xiaoman:character.current_state"
+      ],
+      "required_asset_ids": [
+        "char_ma_xiaoman",
+        "faction_old_street_residents",
+        "ledger_public_dissent"
+      ],
+      "evidence_refs": [
+        "series-blueprint.v0.3:ma-xiaoman",
+        "series-blueprint.v0.3:volume1",
+        "series-blueprint.v0.3:institutional-gain"
+      ],
+      "cultural_safety_checks": [
+        "只使用证据卡支持的工艺事实，不把地方知识改写为万能异术",
+        "知识所有权、署名、拒绝和退出必须保留在人物行动中"
+      ],
+      "source_status": "formal_plan"
+    },
+    {
+      "chapter_id": "chapter-0007",
+      "working_title": "守门余响",
+      "event": "围绕守门余响发生可验证事件：杜承礼为救演员违规启用旧行头。",
+      "scene_anchor": "第7章的具体工艺现场与物证位置",
+      "conflict": "在《守门余响》现场，杜承礼必须在专业判断、受影响者异议与现实后果之间作出不可回避的选择。",
+      "character_choice": "面对《守门余响》的具体后果，杜承礼选择以可复核的现场行动承担代价，而不是用口头承诺绕过程序。",
+      "irreversible_change": "守门角色残留进入杜承礼的日常判断。",
+      "emotional_turn": "本章选择改变了杜承礼与共同体之间的信任方向。",
+      "hook_out": "已发生的后果把下一步压力推向《第二份记录》，且不能回到本章开始状态。",
+      "expected_state_deltas": [
+        "v1.ch007.outcome:char_du_chengli:character.current_state"
+      ],
+      "required_asset_ids": [
+        "char_du_chengli",
+        "npc_xiao_bei",
+        "artifact_role_helmet",
+        "ledger_role_residue"
+      ],
+      "evidence_refs": [
+        "series-blueprint.v0.3:du-chengli",
+        "ln-opera-costume-02",
+        "ln-opera-wardrobe-master-03",
+        "project-original:role-helmet-rule-freeze-v0.1",
+        "civilization-mechanism-library.v0.1:role-authorization"
+      ],
+      "cultural_safety_checks": [
+        "只使用证据卡支持的工艺事实，不把地方知识改写为万能异术",
+        "知识所有权、署名、拒绝和退出必须保留在人物行动中"
+      ],
+      "source_status": "formal_plan"
+    },
+    {
+      "chapter_id": "chapter-0008",
+      "working_title": "第二份记录",
+      "event": "围绕第二份记录发生可验证事件：从钟表作坊的校时差中找出档案版本断点。",
+      "scene_anchor": "第8章的具体工艺现场与物证位置",
+      "conflict": "在《第二份记录》现场，马小满必须在专业判断、受影响者异议与现实后果之间作出不可回避的选择。",
+      "character_choice": "面对《第二份记录》的具体后果，马小满选择以可复核的现场行动承担代价，而不是用口头承诺绕过程序。",
+      "irreversible_change": "确认父亲事故存在被封存的第二份修复记录。",
+      "emotional_turn": "本章选择改变了马小满与共同体之间的信任方向。",
+      "hook_out": "已发生的后果把下一步压力推向《新撑旧榫》，且不能回到本章开始状态。",
+      "expected_state_deltas": [
+        "v1.ch008.outcome:char_ma_xiaoman:character.current_state"
+      ],
+      "required_asset_ids": [
+        "char_ma_xiaoman",
+        "foreshadow_second_record",
+        "artifact_responsibility_ledger"
+      ],
+      "evidence_refs": [
+        "series-blueprint.v0.3:ma-xiaoman",
+        "concept-stress-test.v0.1:chapter8",
+        "civilization-mechanism-library.v0.1:record-repair"
+      ],
+      "cultural_safety_checks": [
+        "只使用证据卡支持的工艺事实，不把地方知识改写为万能异术",
+        "知识所有权、署名、拒绝和退出必须保留在人物行动中"
+      ],
+      "source_status": "formal_plan"
+    },
+    {
+      "chapter_id": "chapter-0009",
+      "working_title": "新撑旧榫",
+      "event": "围绕新撑旧榫发生可验证事件：首次尝试现代支撑与旧榫卯联合。",
+      "scene_anchor": "第9章的具体工艺现场与物证位置",
+      "conflict": "在《新撑旧榫》现场，周砺必须在专业判断、受影响者异议与现实后果之间作出不可回避的选择。",
+      "character_choice": "面对《新撑旧榫》的具体后果，周砺选择以可复核的现场行动承担代价，而不是用口头承诺绕过程序。",
+      "irreversible_change": "联合结构要求知情承重与双人签验，单方施工被禁止。",
+      "emotional_turn": "本章选择改变了周砺与共同体之间的信任方向。",
+      "hook_out": "已发生的后果把下一步压力推向《强制卸载》，且不能回到本章开始状态。",
+      "expected_state_deltas": [
+        "v1.ch009.outcome:char_zhou_li:character.current_state"
+      ],
+      "required_asset_ids": [
+        "char_zhou_li",
+        "char_cheng_xueqing",
+        "technique_joint_signoff"
+      ],
+      "evidence_refs": [
+        "series-blueprint.v0.3:zhou-li",
+        "series-blueprint.v0.3:cheng-xueqing",
+        "civilization-mechanism-library.v0.1:multi-role-signoff"
+      ],
+      "cultural_safety_checks": [
+        "只使用证据卡支持的工艺事实，不把地方知识改写为万能异术",
+        "知识所有权、署名、拒绝和退出必须保留在人物行动中"
+      ],
+      "source_status": "formal_plan"
+    },
+    {
+      "chapter_id": "chapter-0010",
+      "working_title": "强制卸载",
+      "event": "围绕强制卸载发生可验证事件：周砺试图独自承重，其他人以临时协作规则截断风险。",
+      "scene_anchor": "第10章的具体工艺现场与物证位置",
+      "conflict": "在《强制卸载》现场，林岱必须在专业判断、受影响者异议与现实后果之间作出不可回避的选择。",
+      "character_choice": "面对《强制卸载》的具体后果，林岱选择以可复核的现场行动承担代价，而不是用口头承诺绕过程序。",
+      "irreversible_change": "五人建立仅适用于当前事故的双人复核与强制卸载规则。",
+      "emotional_turn": "本章选择改变了林岱与共同体之间的信任方向。",
+      "hook_out": "已发生的后果把下一步压力推向《楼下有潮》，且不能回到本章开始状态。",
+      "expected_state_deltas": [
+        "v1.ch010.outcome:char_lin_dai:character.current_state"
+      ],
+      "required_asset_ids": [
+        "char_lin_dai",
+        "char_zhou_li",
+        "bond_team_mutual_audit",
+        "ledger_team_authority"
+      ],
+      "evidence_refs": [
+        "series-blueprint.v0.3:lin-dai",
+        "series-blueprint.v0.3:zhou-li",
+        "series-blueprint.v0.3:ensemble",
+        "series-blueprint.v0.3:ensemble-authority"
+      ],
+      "cultural_safety_checks": [
+        "只使用证据卡支持的工艺事实，不把地方知识改写为万能异术",
+        "知识所有权、署名、拒绝和退出必须保留在人物行动中"
+      ],
+      "source_status": "formal_plan"
+    }
+  ]
+}

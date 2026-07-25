@@ -1,0 +1,30 @@
+{
+  "chapter_id": "chapter-0032",
+  "dramatic_purpose": "一件无署名行头从封存库消失。",
+  "must_keep": [
+    "戏班内部出现支持恢复强制角色的人。",
+    "POV 固定为杜承礼"
+  ],
+  "must_avoid": [
+    "不得引入未登记资产或用旁白代替物质行动",
+    "不得回滚已接受状态"
+  ],
+  "expected_state_deltas": [
+    {
+      "state_id": "v1.ch032.outcome",
+      "asset_id": "char_du_chengli",
+      "field_path": "character.current_state",
+      "after": "戏班内部出现支持恢复强制角色的人。",
+      "before": "角色授权第一次包含拒绝、卸装和例外权限。"
+    }
+  ],
+  "required_asset_ids": [
+    "char_du_chengli",
+    "faction_opera_troupe",
+    "artifact_role_helmet"
+  ],
+  "active_hook_ids": [],
+  "scene_constraints": [
+    "冲突必须落在具体工艺现场、物证或受影响者选择上"
+  ]
+}

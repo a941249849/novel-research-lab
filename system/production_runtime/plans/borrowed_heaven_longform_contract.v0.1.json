@@ -1,0 +1,298 @@
+{
+  "version": "0.1",
+  "status": "owner_accepted_active",
+  "project": "《借天改命账》",
+  "target_chapters": 1800,
+  "target_chinese_characters": [
+    6000000,
+    6800000
+  ],
+  "chapter_character_target": [
+    3200,
+    3800
+  ],
+  "volumes": [
+    {
+      "volume": 1,
+      "name": "贫城错账",
+      "chapter_target": 100,
+      "core_question": "母亲寿债与贫城重复征收",
+      "irreversible_outcome": "首笔局部改账，贫城拒绝交人",
+      "required_payoff_cadence": {
+        "local_payoff_every_chapters": 10,
+        "structural_reversal_every_chapters": [
+          25,
+          35
+        ]
+      }
+    },
+    {
+      "volume": 2,
+      "name": "州府命库",
+      "chapter_target": 100,
+      "core_question": "转运账路如何把地方错误合法化",
+      "irreversible_outcome": "取得可复核的转运证据",
+      "required_payoff_cadence": {
+        "local_payoff_every_chapters": 10,
+        "structural_reversal_every_chapters": [
+          25,
+          35
+        ]
+      }
+    },
+    {
+      "volume": 3,
+      "name": "迁籍长夜",
+      "chapter_target": 100,
+      "core_question": "被注销者与迁徙人群如何活下来",
+      "irreversible_outcome": "建立跨城见证网络",
+      "required_payoff_cadence": {
+        "local_payoff_every_chapters": 10,
+        "structural_reversal_every_chapters": [
+          25,
+          35
+        ]
+      }
+    },
+    {
+      "volume": 4,
+      "name": "寿库封国",
+      "chapter_target": 100,
+      "core_question": "州府用封档制造无证即有罪",
+      "irreversible_outcome": "打开州级档库公开缺口",
+      "required_payoff_cadence": {
+        "local_payoff_every_chapters": 10,
+        "structural_reversal_every_chapters": [
+          25,
+          35
+        ]
+      }
+    },
+    {
+      "volume": 5,
+      "name": "废命地",
+      "chapter_target": 100,
+      "core_question": "被抹除的人能否成为证人",
+      "irreversible_outcome": "找到古债的第一位活证人",
+      "required_payoff_cadence": {
+        "local_payoff_every_chapters": 10,
+        "structural_reversal_every_chapters": [
+          25,
+          35
+        ]
+      }
+    },
+    {
+      "volume": 6,
+      "name": "命审九城",
+      "chapter_target": 100,
+      "core_question": "九城互保能否承受联合追缴",
+      "irreversible_outcome": "形成有限共同裁决规则",
+      "required_payoff_cadence": {
+        "local_payoff_every_chapters": 10,
+        "structural_reversal_every_chapters": [
+          25,
+          35
+        ]
+      }
+    },
+    {
+      "volume": 7,
+      "name": "仙朝命卷",
+      "chapter_target": 100,
+      "core_question": "上层豁免如何转嫁到底层",
+      "irreversible_outcome": "证实命税结构性例外",
+      "required_payoff_cadence": {
+        "local_payoff_every_chapters": 10,
+        "structural_reversal_every_chapters": [
+          25,
+          35
+        ]
+      }
+    },
+    {
+      "volume": 8,
+      "name": "诸侯借寿",
+      "chapter_target": 100,
+      "core_question": "战争、宗门与商路如何争夺寿命财政",
+      "irreversible_outcome": "撕开跨域借寿链",
+      "required_payoff_cadence": {
+        "local_payoff_every_chapters": 10,
+        "structural_reversal_every_chapters": [
+          25,
+          35
+        ]
+      }
+    },
+    {
+      "volume": 9,
+      "name": "灯海叛证",
+      "chapter_target": 100,
+      "core_question": "见证者如何不被收买或灭口",
+      "irreversible_outcome": "见证网络反向保护主角",
+      "required_payoff_cadence": {
+        "local_payoff_every_chapters": 10,
+        "structural_reversal_every_chapters": [
+          25,
+          35
+        ]
+      }
+    },
+    {
+      "volume": 10,
+      "name": "禁区残账",
+      "chapter_target": 100,
+      "core_question": "古债残页为何不断生成新债",
+      "irreversible_outcome": "确认债源并非单一帝国错误",
+      "required_payoff_cadence": {
+        "local_payoff_every_chapters": 10,
+        "structural_reversal_every_chapters": [
+          25,
+          35
+        ]
+      }
+    },
+    {
+      "volume": 11,
+      "name": "天秤裂谷",
+      "chapter_target": 100,
+      "core_question": "公共裁决能否抵抗超凡暴力",
+      "irreversible_outcome": "建立可复制但脆弱的地方新法",
+      "required_payoff_cadence": {
+        "local_payoff_every_chapters": 10,
+        "structural_reversal_every_chapters": [
+          25,
+          35
+        ]
+      }
+    },
+    {
+      "volume": 12,
+      "name": "无命之城",
+      "chapter_target": 100,
+      "core_question": "无命籍者能否拥有权利",
+      "irreversible_outcome": "新法承认无籍者证词",
+      "required_payoff_cadence": {
+        "local_payoff_every_chapters": 10,
+        "structural_reversal_every_chapters": [
+          25,
+          35
+        ]
+      }
+    },
+    {
+      "volume": 13,
+      "name": "借寿井外",
+      "chapter_target": 100,
+      "core_question": "域外债源与天庭中层的利益",
+      "irreversible_outcome": "找到总账可改边界与代价",
+      "required_payoff_cadence": {
+        "local_payoff_every_chapters": 10,
+        "structural_reversal_every_chapters": [
+          25,
+          35
+        ]
+      }
+    },
+    {
+      "volume": 14,
+      "name": "旧界还账",
+      "chapter_target": 100,
+      "core_question": "旧世界为何把债留给后来者",
+      "irreversible_outcome": "拒绝个人登顶捷径",
+      "required_payoff_cadence": {
+        "local_payoff_every_chapters": 10,
+        "structural_reversal_every_chapters": [
+          25,
+          35
+        ]
+      }
+    },
+    {
+      "volume": 15,
+      "name": "万民持账",
+      "chapter_target": 100,
+      "core_question": "新法如何成为可运作制度",
+      "irreversible_outcome": "多地接入见证账网",
+      "required_payoff_cadence": {
+        "local_payoff_every_chapters": 10,
+        "structural_reversal_every_chapters": [
+          25,
+          35
+        ]
+      }
+    },
+    {
+      "volume": 16,
+      "name": "断账之战",
+      "chapter_target": 100,
+      "core_question": "旧秩序如何清零证人与记录",
+      "irreversible_outcome": "切断一层重复征收总链",
+      "required_payoff_cadence": {
+        "local_payoff_every_chapters": 10,
+        "structural_reversal_every_chapters": [
+          25,
+          35
+        ]
+      }
+    },
+    {
+      "volume": 17,
+      "name": "天庭复核",
+      "chapter_target": 100,
+      "core_question": "谁拥有重写法权的资格",
+      "irreversible_outcome": "把审判权夺回公共程序",
+      "required_payoff_cadence": {
+        "local_payoff_every_chapters": 10,
+        "structural_reversal_every_chapters": [
+          25,
+          35
+        ]
+      }
+    },
+    {
+      "volume": 18,
+      "name": "立命新法",
+      "chapter_target": 100,
+      "core_question": "改账会否制造新的剥夺者",
+      "irreversible_outcome": "完成可申诉、可复核、可约束的新法",
+      "required_payoff_cadence": {
+        "local_payoff_every_chapters": 10,
+        "structural_reversal_every_chapters": [
+          25,
+          35
+        ]
+      }
+    }
+  ],
+  "cross_volume_hooks": [
+    "mother_life_debt",
+    "community_legal_witness",
+    "ancient_debt_origin"
+  ],
+  "price_engine": "cost_conserved_with_verified_liability_migration",
+  "witness_network_evolution": [
+    "local_causal_anchor",
+    "cross_city_reviewability",
+    "public_right_of_appeal"
+  ],
+  "power_law_constraint": "high_rank_power_depends_on_recognized_life_rights_and_cannot_erase_anchored_facts_without_backlash",
+  "mother_debt_stages": [
+    "interest_period_volumes_1_2",
+    "principal_period_volumes_7_9",
+    "origin_period_volumes_14_18"
+  ],
+  "administrative_lens": "structural_laundering_and_exemptions_not_incompetence",
+  "causality_settlement": "beneficiary_liability_consequence_all_required",
+  "cross_city_witness_medium": [
+    "local_trace",
+    "independent_relay",
+    "destination_review_seal"
+  ],
+  "high_rank_backlash": "removes_at_least_one_of_jurisdiction_supply_or_subordinate_contract",
+  "mother_debt_echo_windows": [
+    "volumes_3_6",
+    "volumes_10_13"
+  ],
+  "production_boundary": "No prose authorization. Only Volume 1 chapters 1-100 may receive non-prose planning detail after Owner acceptance."
+}

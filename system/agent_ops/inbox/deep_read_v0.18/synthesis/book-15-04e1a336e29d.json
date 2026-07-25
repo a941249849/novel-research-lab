@@ -1,0 +1,204 @@
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "book_id": "book-15-04e1a336e29d",
+  "book_title": "《诡秘之主》（精校版全本）作者：爱潜水的乌贼",
+  "covered_chunk_ids": [
+    "book-15-04e1a336e29d-chunk-001",
+    "book-15-04e1a336e29d-chunk-002",
+    "book-15-04e1a336e29d-chunk-003",
+    "book-15-04e1a336e29d-chunk-004",
+    "book-15-04e1a336e29d-chunk-005",
+    "book-15-04e1a336e29d-chunk-006",
+    "book-15-04e1a336e29d-chunk-007"
+  ],
+  "covered_chunk_hashes": [
+    {
+      "chunk_id": "book-15-04e1a336e29d-chunk-001",
+      "response_sha256": "e4942572671bd6aa67f17e96f5f327c1927006601eb3e9434c8b6cda44ff9b18"
+    },
+    {
+      "chunk_id": "book-15-04e1a336e29d-chunk-002",
+      "response_sha256": "b30c82a34dcea6b98ac050633ea0bc3f3a8351368c8f8ad85a0a2ed2d99dcf16"
+    },
+    {
+      "chunk_id": "book-15-04e1a336e29d-chunk-003",
+      "response_sha256": "e83f3838307edd652e6b2b4c7b2bcbb1bd29369fc6a9f5c2c2492fcab518f0d2"
+    },
+    {
+      "chunk_id": "book-15-04e1a336e29d-chunk-004",
+      "response_sha256": "0076c416a3b1c01cf3ff596ab9d023b88b5e41f3f978d87dc59b3349a5d69e00"
+    },
+    {
+      "chunk_id": "book-15-04e1a336e29d-chunk-005",
+      "response_sha256": "c5dae94887722af8f95487407a31cfbb55ccff1f38de159f19fba53b26e20536"
+    },
+    {
+      "chunk_id": "book-15-04e1a336e29d-chunk-006",
+      "response_sha256": "841691eda6335034c4f69452c226845a0fd34c651dab7355a2d9bb76c184eda4"
+    },
+    {
+      "chunk_id": "book-15-04e1a336e29d-chunk-007",
+      "response_sha256": "feb06aa883e28964dc9aebc87bc8ada565470ace10f61a39ca2d941963daa1b9"
+    }
+  ],
+  "synthesis": {
+    "narrative_spine": [
+      "A displaced protagonist becomes Klein Moretti, acquires access to the gray-fog domain, and turns an improvised exchange into the Tarot Club.",
+      "The early investigation arc establishes the Nighthawks, sealed-artifact danger, the sequence ladder, and the cost of corruption before Tingen's catastrophe forces Klein into a new identity.",
+      "Backlund expands the personal revenge thread into political conspiracy: detective work, clandestine trade, social inequality, and the Great Smog converge around the same hidden powers.",
+      "The sea journey makes role performance operational: Gehrman Sparrow gains allies, pirate-world leverage, and the Faceless and Marionettist capabilities needed to act at a larger scale.",
+      "The return to Backlund couples a polished upper-class cover with the completion of the Tingen revenge, culminating in Ince Zangwill's defeat and a demigod advancement.",
+      "The Land Abandoned by God sequence turns the Silver City promise into a liberation campaign while Amon makes the ownership of Sefirah Castle an immediate existential contest.",
+      "Late arcs elevate the conflict from organizations and cities to pathway uniqueness, outer-deity pressure, and the compatibility of humanity with godhood.",
+      "The final trajectory has Klein defeat Amon's bid for control, accommodate the Fool uniqueness, and accept protective slumber as the unresolved price of resisting the Celestial Worthy."
+    ],
+    "character_arcs": [
+      "Klein progresses from accidental survivor to Seer, Clown, Magician, Faceless, Marionettist, Bizarro Sorcerer, Scholar of Yore, Miracle Invoker, and Attendant of Mysteries; each promotion is tied to an enacted identity or ritual cost.",
+      "Klein's identities shift from Sherlock to Gehrman to Dwayne, preserving agency while making selfhood, performance, and the danger of losing oneself central conflicts.",
+      "Audrey grows from sheltered observer into a capable Telepath and psychological stabilizer whose care protects Klein's remaining human balance.",
+      "Leonard moves from grieving Nighthawk to Tarot Club member and continuing investigator, connecting official enforcement to the secret network.",
+      "Derrick evolves from a confined Silver City explorer into an Unshadowed demigod and civic leader after the city reaches daylight.",
+      "Azik's fragmented identity becomes progressively legible through memory recovery and sacrifice, while his recurring whistle and messenger keep the bond with Klein active.",
+      "Amon changes from distant parasitic threat to direct captor and rival claimant, then loses the ultimate contest for Sefirah Castle despite reaching dual-pathway divinity.",
+      "Dunn, Old Neil, Daly, Colin, Lovia, and Mr. Door make mortality and chosen sacrifice a continuing counterweight to advancement."
+    ],
+    "mechanism_evolution": [
+      "Potion digestion begins as the Acting Method and grows into ritualized identity management, audience design, historical isolation, wish accumulation, and the stabilization demands of angelhood.",
+      "Gray fog evolves from a private refuge into a communication, exchange, sacrifice, bestowal, divination, resurrection, and anchor infrastructure for the Tarot Club.",
+      "The sequence system develops from low-sequence techniques into conceptual authorities such as spiritual-thread control, bugs, grafting, fooling, rule enforcement, and uniqueness accommodation.",
+      "Sealed artifacts impose legible bargains and hazards: containment grades, 0-08's coincidence-writing, Arrodes' reciprocal questions, and the lamp's twisted wishes make power conditional rather than free.",
+      "Beyonder characteristics, neighboring-pathway aggregation, parasitism, and anchors connect individual advancement to wider social and cosmological systems.",
+      "High-sequence progression explicitly requires humanity-preserving countermeasures: prayers, psychological treatment, memory sealing, and the acceptance of slumber."
+    ],
+    "world_expansion": [
+      "The setting moves from Tingen's church and industrial streets to Backlund's class hierarchy, its criminal economy, official churches, political conspiracy, and public-health disaster.",
+      "The Tarot Club converts isolated regional plotlines into a cross-continent network whose members exchange formulas, intelligence, money, and faith.",
+      "The sea and colonial spaces introduce pirates, admirals, sea gods, ancient ruins, book-bound historical survivors, and competing religious loyalties.",
+      "Fourth-Epoch family histories, angel families, dynasty remnants, and the Ancient Sun God reframe present institutions as consequences of earlier divine violence.",
+      "Silver City, Moon City, the Giant King's Court, and the Land Abandoned by God make the world's past catastrophe a lived civic reality instead of background lore.",
+      "The final cosmology names Sefirot, outer deities, pathway uniqueness, pillars, and the Celestial Worthy, repositioning local mysteries within a threatened cosmos."
+    ],
+    "long_term_reader_hooks": [
+      "The origin and ownership of gray fog and Sefirah Castle remain the structural question behind Klein's apparent advantage.",
+      "Roselle's diaries, the Blasphemy Slates and Cards, and concealed epoch history continually promise revelations beyond the current investigation.",
+      "Amon, Adam, Zaratul, Medici, and the angel-family legacies create antagonistic threads that repeatedly re-enter through different pathways and eras.",
+      "The connection between identity performance and loss of self escalates with every new persona and makes advancement itself a source of suspense.",
+      "The liberation of Silver City resolves a long civic promise but turns its believers into new anchors, extending the consequences of success.",
+      "Klein's final slumber preserves the conflict with the Celestial Worthy after the immediate Amon contest is won."
+    ],
+    "style_and_life_force": [
+      "Pseudo-Victorian material detail, money, clubs, newspapers, pollution, and household routines ground occult escalation in repeatable social life.",
+      "The narrative alternates detective procedure, epistolary exposition, Tarot Club dialogue, theatrical set pieces, and multi-viewpoint campaign chapters to manage a large serial scope.",
+      "Dry internal commentary and bizarre artifact personalities create comic release without removing the threat of corruption or bodily horror.",
+      "Combat is framed as constrained problem-solving through rituals, substitutes, timing, spatial rules, and conceptual counters rather than raw force alone.",
+      "Quiet family scenes, promises kept, letters, and restrained grief are used as human-scale counterpoints to divine-scale conflict.",
+      "Volume summaries and authorial reflections make the serialized construction and pace visible as part of the work's publication texture."
+    ],
+    "continuity_failures": [
+      "A structural anomaly is reported in Volume 8: a duplicated Chapter 6 heading followed by a jump to Chapter 8, with Chapter 7 absent.",
+      "Some chunk analyses contain malformed or inconsistent chapter-anchor text, so synthesis evidence uses only headings verified against each chunk's chapter_span.",
+      "The dense accumulation of identities, artifacts, pathway names, and historical factions increases reader-facing continuity risk even where recurring props and contracts are deliberately maintained.",
+      "The scale shift from detective cases to cosmological authority requires repeated recap mechanisms; without them, the conceptual combat rules can become difficult to audit."
+    ],
+    "evidence_map": [
+      {
+        "claim": "The opening establishes Klein, gray fog, the Tarot Club, the Nighthawks, and the sequence framework that supports the full narrative spine.",
+        "chunk_id": "book-15-04e1a336e29d-chunk-001",
+        "chapter_heading": "第一部 小丑"
+      },
+      {
+        "claim": "The sacrifice ritual and its transfer protocol demonstrate the gray-fog infrastructure that later powers Club exchange and coordination.",
+        "chunk_id": "book-15-04e1a336e29d-chunk-002",
+        "chapter_heading": "第七章 克莱恩的献祭仪式"
+      },
+      {
+        "claim": "Klein's Faceless advancement anchors the role-performance arc and the expansion into the sea narrative.",
+        "chunk_id": "book-15-04e1a336e29d-chunk-003",
+        "chapter_heading": "第二百三十八章 无面人"
+      },
+      {
+        "claim": "Spiritual-thread mastery marks the mechanism shift to marionette control and supports the sea-to-Backlund trajectory.",
+        "chunk_id": "book-15-04e1a336e29d-chunk-004",
+        "chapter_heading": "第一百八十三章 灵体之线"
+      },
+      {
+        "claim": "The conclusion of the Ince confrontation resolves the long-running Tingen vengeance thread and transitions Klein to higher-sequence stakes.",
+        "chunk_id": "book-15-04e1a336e29d-chunk-005",
+        "chapter_heading": "第二百一十三章 故事的尾声"
+      },
+      {
+        "claim": "Amon's capture of Klein makes the Sefirah Castle conflict direct and establishes Error-pathway loopholes as a major late mechanism.",
+        "chunk_id": "book-15-04e1a336e29d-chunk-006",
+        "chapter_heading": "第一章 欺诈"
+      },
+      {
+        "claim": "Klein's Miracle Invoker advancement shows why anchors, wishes, and humanity become indispensable at angel level.",
+        "chunk_id": "book-15-04e1a336e29d-chunk-006",
+        "chapter_heading": "第二章 “奇迹师”"
+      },
+      {
+        "claim": "The Attendant of Mysteries promotion ties the late-stage identity and uniqueness conflict to the protagonist's final pathway climb.",
+        "chunk_id": "book-15-04e1a336e29d-chunk-007",
+        "chapter_heading": "第八十六章 诡秘侍者"
+      },
+      {
+        "claim": "The accommodation attempt exposes the culminating cosmological conflict among the Fool, Amon, Adam, and the outer-deity threat.",
+        "chunk_id": "book-15-04e1a336e29d-chunk-007",
+        "chapter_heading": "第二十二章 开始容纳"
+      }
+    ],
+    "creation_family_evidence": {
+      "characters": [
+        "Klein's layered identities and advancement states",
+        "Tarot Club members with independent civic, professional, and faith roles",
+        "Antagonists whose threats are defined by pathway authority and historical allegiance"
+      ],
+      "npcs": [
+        "Dunn, Old Neil, Daly, Azik, Colin, Lovia, and Mr. Door tie emotional consequence to distinct institutional or historical positions",
+        "Recurring figures such as Arrodes, Frank Lee, and the messenger combine utility, personality, and later payoff"
+      ],
+      "factions": [
+        "Tarot Club",
+        "Official churches and the Nighthawks",
+        "Aurora Order, Rose School, angel families, pirate powers, and city polities"
+      ],
+      "artifacts": [
+        "Sefirah Castle and gray fog",
+        "0-08, Blasphemy Cards and Slates, Azik's copper whistle, Arrodes, the Magic Lamp, and the Trisanzet Brass Book"
+      ],
+      "techniques": [
+        "Acting and potion digestion",
+        "Sacrifice and bestowal rituals",
+        "Divination, paper substitutes, spiritual-thread marionettes, parasitism, grafting, and fooling"
+      ],
+      "naming": [
+        "Tarot Major Arcana codenames",
+        "Sequence titles and pathway vocabulary",
+        "Persona names that signal cover identity and social function"
+      ],
+      "emotional_bonds": [
+        "Klein's debts to the Tingen Nighthawks and the Moretti family",
+        "Klein and Azik's reciprocal protection",
+        "Tarot Club trust developing from trade into belief and mutual rescue"
+      ],
+      "foreshadowing": [
+        "Roselle's diaries and hidden historical records",
+        "Amon's parasitic appearances and the ownership question of Sefirah Castle",
+        "The Great Smog, angel-family history, and the Silver City exit promise"
+      ],
+      "state_ledger": [
+        "Klein's sequence and identity transitions",
+        "Artifact costs, contracts, and containment conditions",
+        "Factional political shifts, deaths, survivals, believer counts, and anchor dependencies"
+      ]
+    },
+    "originality_red_lines": [
+      "Avoid treating Victorian London markers, detective aliases, fog, clubs, and class misery as interchangeable period decoration; preserve the story-specific institutional and occult consequences.",
+      "Avoid reproducing Lovecraftian cosmic-horror language, biblical declarations, or named mythic structures as a substitute for original stakes.",
+      "Avoid turning the sequence ladder into generic LitRPG leveling; its distinctive tension depends on enacted identity, contamination, ritual constraints, and social cost.",
+      "Avoid copying the Tarot Club's codename-exchange architecture, the gray-fog meeting space, sentient-question artifact behavior, or puppet-town construction as wholesale reusable premises.",
+      "Avoid relying on familiar revenge, sacrificial-mentor, parasite-adviser, book-world, wish-granting, or slumbering-deity templates without materially different causality and emotional resolution."
+    ]
+  }
+}

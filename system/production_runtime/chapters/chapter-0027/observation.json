@@ -1,0 +1,215 @@
+{
+  "chapter_id": "chapter-0027",
+  "draft_sha256": "06589819adfed5b681c678f77611660d14ca11114a528891ab2ed7b995724b1b",
+  "facts": {
+    "characters": [
+      {
+        "fact_id": "chapter-0027-f001",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_observed_choice",
+        "before": "交出自己的研究记录，换取有限路线与假命页风险提示",
+        "after": "遵守三户先救人的共同决定，远离共同保管箱并拒绝补写相关见证",
+        "evidence": "陆沉渊明确说不靠近箱，退到泥圈外，并拒绝进入屋内以免碰箱或代补见证。"
+      },
+      {
+        "fact_id": "chapter-0027-f002",
+        "asset_id": "character_lu_chenyuan",
+        "field_path": "character.current_visible_condition",
+        "before": "左膝撞地后支撑失稳，膝侧新增十段暗红细纹，并咳出夹血冷灰",
+        "after": "左膝继续失力，胸骨旧裂再次作响，额头撞门框并咳出夹细血丝的冷灰",
+        "evidence": "他蹲下时左膝失力，随后胸骨响起、额头撞上门框，咳出的冷灰中夹有细血丝。"
+      }
+    ],
+    "npcs": [
+      {
+        "fact_id": "chapter-0027-f003",
+        "asset_id": "npc_debt_collector_gu_xun",
+        "field_path": "npc.current_procedural_decision",
+        "before": "拒绝按泥灯巷伪造收档，同时保留州府转运残印、旧追缴与半寿送审",
+        "after": "以债链支撑斜梁并将链力扣回自身，不抽取住户命火；旧追缴与半寿送审继续有效",
+        "evidence": "顾巡将债链扣在自己臂上，明确表示只借梁的重、不取住户的火，并重申旧追缴和半寿送审不停。"
+      },
+      {
+        "fact_id": "chapter-0027-f004",
+        "asset_id": "npc_debt_collector_gu_xun",
+        "field_path": "npc.current_visible_injury",
+        "before": "正文未记录本章新增伤势",
+        "after": "债链反噬使腕骨僵硬、腕侧灰痕加深并勒入骨节，膝盖撞地",
+        "evidence": "链力下沉时顾巡膝盖撞地，铁环在腕上拧紧，灰痕沿腕骨爬升，收链时腕骨已僵硬。"
+      },
+      {
+        "fact_id": "chapter-0027-f005",
+        "asset_id": "npc_debt_collector_gu_xun",
+        "field_path": "npc.next_procedural_hook",
+        "before": "下一次复核将面对入口缺角尺寸与残印缺角相合的证据，同时旧追缴继续存在",
+        "after": "下一次复核需将断梁带回的银灰压痕与州府转运残印分开比对，且旧追缴继续存在",
+        "evidence": "顾巡将木屑放在轮值桌残角，要求明日与转运残印分开比对，并确认旧追缴不停止。"
+      },
+      {
+        "fact_id": "chapter-0027-f006",
+        "asset_id": "npc_mo_jinglan",
+        "field_path": "npc.current_witness_participation",
+        "before": "公开保留退出住户的退回纸张，并继续将剩余见证限定为各自亲见与限时保管",
+        "after": "确认债链未牵向住户命灯，并只见证木屑从断梁落下，不替银灰压痕认定来源",
+        "evidence": "莫井兰检查链节确认没有支链牵向住户，随后用瓦片承接木屑并声明只认其从断梁落下。"
+      },
+      {
+        "fact_id": "chapter-0027-f007",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_emotional_choice",
+        "before": "以自身手臂和命灯承受持帘负担，同时拒绝用陆沉渊的身体代替自己的承担",
+        "after": "不把自己的命灯送入救援，也不替陆沉渊承担见证，只提供松砖位置并在他失衡时保留可自行借力的肘部",
+        "evidence": "苏晚没有把命灯往前送，只推开松砖；陆沉渊咳灰后她送出肘部但没有抓住他。"
+      }
+    ],
+    "locations": [
+      {
+        "fact_id": "chapter-0027-f008",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_protection_array_condition",
+        "before": "护阵裂口中一截暗红火痕再次缩短并落下一撮干灰，两截红痕仍未接上",
+        "after": "灯座裂成两半，护阵暗红火痕在裂口处熄去一段，沿巷微光断开形成新的黑色缺口",
+        "evidence": "救援结束后灯座裂成两半，暗红火痕熄去一段，沿巷泥灯晃动且原本相连的微光出现缺口。"
+      },
+      {
+        "fact_id": "chapter-0027-f009",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_communal_response",
+        "before": "一户退回，另两户只守物、不送火、不认主",
+        "after": "三户一致先拆梁救人，并分别承担住屋失用或见证边界后果，不调用住户命火",
+        "evidence": "三户先后选择拆梁救人；退出轮守的一户仍只救人不重新接物，莫井兰确认住户命火一缕也不出。"
+      },
+      {
+        "fact_id": "chapter-0027-f010",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_boundary_condition",
+        "before": "一户退出并取回其轮守纸，残命灯盏仍留在泥圈内，由另外两户分开继续守物",
+        "after": "临街屋彻底失用，三户仍保留各自拒绝和亲见边界，并共同承担先救人导致的物质损失",
+        "evidence": "屋基塌陷后无人进入取箱；两户认领屋损失，退出轮守的一户只认眼前屋塌和救人事实。"
+      }
+    ],
+    "factions": [
+      {
+        "fact_id": "chapter-0027-f011",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "faction.current_local_enforcement_phase",
+        "before": "旧追缴与半寿送审继续，但核查方向转向州府转运记录来源，仇慎本地停印",
+        "after": "救援未改变旧追缴与半寿送审；新增断梁银灰压痕进入州府转运记录复核",
+        "evidence": "顾巡明确旧追缴和半寿送审不因救人停止，并把银灰压痕列为次日与州府残印分开比对的材料。"
+      }
+    ],
+    "artifacts": [
+      {
+        "fact_id": "chapter-0027-f012",
+        "asset_id": "artifact_ashlight_cup",
+        "field_path": "artifact.current_custody_status",
+        "before": "残命灯盏继续留在原泥圈共同保管链中，未被债链带走、点火或移动",
+        "after": "残命灯盏随共同保管箱被压在可追溯的塌陷屋基下，封口未启，仍未点火或移动",
+        "evidence": "共同保管箱被木石压入屋基；莫井兰确认灯盏没亮过、没开封，结尾再次确认其留在屋基下。"
+      },
+      {
+        "fact_id": "chapter-0027-f013",
+        "asset_id": "artifact_ashlight_cup",
+        "field_path": "artifact.current_lifecycle_state",
+        "before": "dormant",
+        "after": "dormant",
+        "evidence": "正文明确残命灯盏没有亮、没有烟，且没有获得守火；结尾确认灯火未醒。"
+      }
+    ],
+    "techniques": [
+      {
+        "fact_id": "chapter-0027-f014",
+        "asset_id": "technique_ledger_recognition",
+        "field_path": "technique.current_use_status",
+        "before": "本章全程未再次施展识账，陆沉渊仅用左眼观察旧灰压痕",
+        "after": "继续未施展识账术，仅凭掌下震动和现场可见痕迹参与救援与判断",
+        "evidence": "陆沉渊没有动用识账术，右眼闭着，只凭掌下震动抽出木楔，并以瓦片拨认箱角浅印。"
+      }
+    ],
+    "relationships": [
+      {
+        "fact_id": "chapter-0027-f015",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_collective_choice",
+        "before": "住户拒绝将共同物证并入陆沉渊私产，同时承担各自保管或退出的后果",
+        "after": "三户公开选择先救受困者、暂不取箱，并共同承担临街屋彻底失用的后果",
+        "evidence": "三户一致先拆梁救人；救出受困者后，住户分别承认屋损，未要求以命火或陆沉渊补偿阵缺口。"
+      },
+      {
+        "fact_id": "chapter-0027-f016",
+        "asset_id": "bond_mudlamp_lane_trust",
+        "field_path": "emotional_bond.current_collective_emotion",
+        "before": "共同体从争取自证转为拒绝代证，保持各自见证和退出边界",
+        "after": "共同体在物证受压和住屋失用后确认先保人，继续保持亲见、拒绝和不补证边界",
+        "evidence": "救援后两户声明不补证，退出户不认箱内情形；三户各自扶持受困者，未要求代按或代认。"
+      }
+    ],
+    "emotions": [
+      {
+        "fact_id": "chapter-0027-f017",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_visible_support",
+        "before": "苏晚继续不代按、不替证，只在陆沉渊再次失衡时把肘部送近，由他自行决定是否借力",
+        "after": "苏晚继续不代按、不替证，在陆沉渊因救援失衡时送出肘部，由他自行决定借力后立即要求其退出",
+        "evidence": "陆沉渊咳出冷灰后自行靠上苏晚的肘部；苏晚随后明确要求他退，不让他继续进入屋内。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "chapter-0027-f018",
+        "asset_id": "state_ledger_revealed_account_errors",
+        "field_path": "state_ledger.current_next_review_hook",
+        "before": "获得入口标记与州府残印缺角尺寸相合的可复核线索，来源与转运事实仍未确认",
+        "after": "获得一块由顾巡债链从断梁刮下的银灰压痕木屑；明日需与州府转运残印分开比对，来源和时间仍未确认",
+        "evidence": "顾巡限定该痕只能认作今夜由其债链刮下，不能认定是谁压下或何时留下。"
+      },
+      {
+        "fact_id": "chapter-0027-f019",
+        "asset_id": "foreshadowing_cinder_seal_rain",
+        "field_path": "foreshadowing.next_review_hook",
+        "before": "入口缺角尺寸与残印缺角尺寸相合的待复核线索，来源与转运事实仍未确认",
+        "after": "新增断梁木屑上的银灰压痕与州府转运残印同色但未合一，等待有人到场并按各自亲见复核",
+        "evidence": "银灰压痕与州府残印具有相同冷灰色，但没有自行显出去向；莫井兰和三户均拒绝超出亲见范围认定。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "chapter-0027-f020",
+        "asset_id": "npc_debt_collector_gu_xun",
+        "field_path": "npc.current_procedural_arrival",
+        "before": "顾巡携有效送审令抵达泥灯巷口，追缴核对即将开始",
+        "after": "顾巡在救援现场完成一次以自身承担链力的支撑，并留下需次日复核的梁上压痕证据",
+        "evidence": "顾巡携债链进入歪屋支撑斜梁，救援完成后从断梁上带回银灰压痕并封存待比对。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "chapter-0027-f021",
+        "asset_id": "state_ledger_mudlamp_array_integrity",
+        "field_path": "state_ledger.current_visible_integrity_consequence",
+        "before": "冷铁气压使其中一截暗红火痕更短并落下一撮干灰，护阵仍未修复",
+        "after": "临街屋倒塌并带走灯座承力，护阵裂口熄去一段，夜气持续从新缺口进入，完整度进一步下降",
+        "evidence": "灯座断裂、暗红火痕熄去一段，沿巷泥灯晃动但未完全熄灭，新的黑色缺口持续透入夜气。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "chapter-0027-f022",
+        "asset_id": "state_ledger_protagonist_strain",
+        "field_path": "state_ledger.current_visible_condition",
+        "before": "债链再次收紧后左膝麻木加重、胸骨再响，并咳出冷灰与掌血混成暗黑一团",
+        "after": "救援中左膝再次失力，胸骨旧裂作响，额头撞门框并咳出带细血丝的冷灰；随后退出施术和判断位置",
+        "evidence": "陆沉渊蹲下失力、胸骨作响并撞上门框，咳灰后由苏晚辅助片刻，最终退回泥圈外。"
+      },
+      {
+        "fact_id": "chapter-0027-f023",
+        "asset_id": "state_ledger_resident_lifefire_reserve",
+        "field_path": "state_ledger.current_resident_lifefire_callability",
+        "before": "本案期限内明确禁止调用泥灯巷住户命火",
+        "after": "本次救援中继续未调用任何住户命火，且顾巡主动将债链从住户灯火方向扯回自身",
+        "evidence": "莫井兰确认没有支链牵向住户命灯；正文明确没有哪一户的命火被抽走。"
+      }
+    ],
+    "naming": []
+  }
+}

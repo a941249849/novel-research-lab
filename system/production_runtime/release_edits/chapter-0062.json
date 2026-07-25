@@ -1,0 +1,13 @@
+{
+  "version": "0.25",
+  "chapter_id": "chapter-0062",
+  "source_revision": "system/production_runtime/chapters/chapter-0062/revision.md",
+  "source_sha256": "ca28ae6d2f3be3def597d27cb17ebc16c0adac8da893c224a057c5f50dc2bece",
+  "release_edit": "system/production_runtime/release_edits/chapter-0062.md",
+  "release_edit_sha256": "ac079e9d36c38a3b9dae8df575e4dd04cabb04344032c433735e839eb2171870",
+  "repair_direction": "061-070窗口一致性、材质统一、空间衔接与反模板发布编辑",
+  "provider": "codex-manual-editor",
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-061-070.json",
+  "reviewed_release_edit_sha256": "ac079e9d36c38a3b9dae8df575e4dd04cabb04344032c433735e839eb2171870"
+}

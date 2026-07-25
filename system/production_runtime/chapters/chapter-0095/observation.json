@@ -1,0 +1,173 @@
+{
+  "chapter_id": "chapter-0095",
+  "draft_sha256": "310828f586d5a27823e1d5754ca21bed7929b998c42986d102a649ec81ca6da8",
+  "facts": {
+    "characters": [],
+    "npcs": [
+      {
+        "fact_id": "fact-0095-001",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_public_statement",
+        "before": "公开重申自己的旧债由自己承担，陆沉渊到案另行记录，不接受以接收疑点合并两者",
+        "after": "只承认自己的旧债与合法分期，拒绝承认未具名的转运接收，并要求先写明具名接收落处；不替泥灯巷或其他住户答话",
+        "evidence": "苏晚称旧页是自己的旧债和分期，要求写明谁在何时由谁见证将命火交给她，并多次表示不替巷子和他人回答。"
+      },
+      {
+        "fact_id": "fact-0095-002",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_physical_state",
+        "before": "护住裂灯使其重新稳定，但冷灰继续沿腕骨上爬，裂灯又向自己脚边移动半寸",
+        "after": "掌背冷灰由腕骨漫至掌根，出现血点；裂灯新增一道从原裂口爬至灯肩的细纹并持续失温，仅勉强稳定",
+        "evidence": "裂灯旁新绽开一道发丝粗细纹，苏晚掌背渗出血点，文末明确冷灰已漫到掌根且旧债倒计时未停。"
+      }
+    ],
+    "locations": [
+      {
+        "fact_id": "fact-0095-003",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_visible_condition",
+        "before": "裂灯被压至几乎熄灭后重新稳定，巷口住户仍未越过冷线或递入灯火、砖屑",
+        "after": "裂灯继续被冷压至微光，仅保持稳定；失温白字和霜线转向多道门槛，住户仍未开门、递灯或交名",
+        "evidence": "冷字沿两侧门槛扩散，第一扇门有人伸手后缩回；最终没有人开门、递出门灯或把名字交到冷字底下。"
+      },
+      {
+        "fact_id": "fact-0095-004",
+        "asset_id": "faction_mudlamp_lane",
+        "field_path": "faction.current_witness_boundary",
+        "before": "泥灯巷非承接列经复验仍无具名回应，现场无人越线、代答或提供新的阵火证据",
+        "after": "泥灯巷面对限期交人或共承拒交后果的要求，未提供具名接收回应，未交出苏晚，也未由任何住户代答",
+        "evidence": "巷内没有人开门；苏晚明确要求谁被问谁自己答，文末仍只有一扇扇沉默的门。"
+      }
+    ],
+    "factions": [
+      {
+        "fact_id": "fact-0095-005",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "information.current_request_state",
+        "before": "苏晚提验请求未被立即撤销，前半截被锁纹截断，后半截继续闪烁并转送复核",
+        "after": "命籍衙提验申请仍未撤回，苏晚被列为疑似接收者并限期强制提验；申请继续留在州府外层复核",
+        "evidence": "冷字写明“疑接者苏晚，分期核验改为强制提验”和“限期交验”；闻照微明确申请未撤、文书进入州府外层复核。"
+      },
+      {
+        "fact_id": "fact-0095-006",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "information.current_procedural_finding",
+        "before": "程序上明确送出有痕、接收无名，疑似接收不得越过无名，提验须先补接收响应",
+        "after": "正文再次确认提验文书没有具名接收，未具名接收不得被写成已成立落处；缺失的接收行须保留并追查原始交接提交方",
+        "evidence": "闻照微称提验文书没有具名接收，不能先用苏晚的人补出缺失一行，并指向原始交接提交方。"
+      },
+      {
+        "fact_id": "fact-0095-007",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "timeline.chapter_event",
+        "before": "完成苏晚独立追缴列、泥灯巷非承接列及两列并列的三次复验",
+        "after": "命籍衙以疑似接收为由将苏晚分期核验改为限期强制提验，提验未获具名接收支持并继续进入复核",
+        "evidence": "冷字直接宣布提验、疑接转运命火和限期交验；现场争议集中于缺失的具名接收落处。"
+      }
+    ],
+    "artifacts": [],
+    "techniques": [],
+    "relationships": [
+      {
+        "fact_id": "fact-0095-008",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_autonomy_boundary",
+        "before": "母子以不替对方作认定的方式维持分账，陆沉渊保留候验，苏晚保留旧债与分期",
+        "after": "母子继续严格分账：苏晚只承担并确认自己的旧债与分期，陆沉渊不替她接收或代答，也不把提验压力转给她或巷民",
+        "evidence": "苏晚说“别替我答”，陆沉渊退回旧缝外并明确她已经答了；他未触碰残印或替任何人接下提验。"
+      },
+      {
+        "fact_id": "fact-0095-009",
+        "asset_id": "bond_mother_su_wan",
+        "field_path": "emotional_bond.current_emotional_turn",
+        "before": "双方首次以各自承受代价、不互相遮掩的方式确认分账结果",
+        "after": "苏晚主动以共同守住的分账规则反问州府程序，拒绝用自己的旧债替他人或巷子补写接收关系",
+        "evidence": "她坚持“我的名字在这里，巷子不在这里”，并要求不能拿没说过的话替人写成接收。"
+      }
+    ],
+    "emotions": [
+      {
+        "fact_id": "fact-0095-010",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_emotional_state",
+        "before": null,
+        "after": "在掌背失温和命灯受损下仍保持冷静、坚决，主动承担自己的程序回答并拒绝替他人承受后果",
+        "evidence": "苏晚掌背渗血、手指发颤，却持续压住旧页并反复要求谁被问谁自己答。"
+      }
+    ],
+    "information": [
+      {
+        "fact_id": "fact-0095-011",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "information.current_record_scope",
+        "before": "正式分列记录：苏晚独立追缴列无具名接收回应，泥灯巷非承接列无具名接收回应，并列复验未见接收端存续",
+        "after": "现场再次留下苏晚仅承认旧债与分期、未具名接收不得成立的公开回应；泥灯巷仍无具名接收回应",
+        "evidence": "苏晚公开出示分期旧页并否认接收转运命火，巷内无人递名或开门回应。"
+      },
+      {
+        "fact_id": "fact-0095-012",
+        "asset_id": "state_ledger_faction_pressure",
+        "field_path": "state_ledger.faction_pressure",
+        "before": "闻照微因回收迟延承担程序压力，命籍衙提验申请继续存在并转入复核，残印对应的原始交接提交方成为后续追问",
+        "after": "命籍衙提验申请对苏晚与泥灯巷的压力升级为限期交人或共承拒交后果；追问方向仍转向原始交接提交方",
+        "evidence": "失温白字向门槛扩散并写出“限期前答：交人，或共承拒交后果”；闻照微明确缺失接收行应回原始交接提交方查找。"
+      },
+      {
+        "fact_id": "fact-0095-013",
+        "asset_id": "state_ledger_faction_pressure",
+        "field_path": "location.boundary_state",
+        "before": "苏晚退后半步守住城内旧缝，贫城方向的失温字迹越过入口但未获城内承认",
+        "after": "失温字迹越过入口并停在第一扇门前，沿多道门槛形成霜线，但未落入屋内、未获住户承认",
+        "evidence": "失温笔画停在第一扇门前，霜线沿第二、第三扇门扩散；正文明确没有人开门或回应。"
+      }
+    ],
+    "hooks": [
+      {
+        "fact_id": "fact-0095-014",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "hook.current_direction",
+        "before": "提验压力越过外层入口，转向追问残印对应的原始交接提交方；失温影字向贫城落下但未获承认",
+        "after": "提验余字转向整条泥灯巷，要求期限前选择交人或共承拒交后果；原始交接提交方仍是具名接收核查方向",
+        "evidence": "冷字从苏晚名下撤开并沿门槛扩散，最终写出“限期前答：交人，或共承拒交后果”；闻照微仍要求追查原始交接提交方。"
+      }
+    ],
+    "timeline": [
+      {
+        "fact_id": "fact-0095-015",
+        "asset_id": "state_ledger_faction_pressure",
+        "field_path": "timeline.chapter_event",
+        "before": "闻照微以共持锁纹将残印标记为待补接收响应的争议转运物，暂缓回收，苏晚提验转入复核并向贫城发出失温字迹",
+        "after": "提验申请保持未撤并继续复核，冷字从苏晚的疑似接收标签扩散至泥灯巷门槛，形成限期交人或共同承担拒交后果的压力",
+        "evidence": "闻照微未宣布撤验；冷字沿两侧门槛扩散并在第一扇门前留下限期答复。"
+      }
+    ],
+    "physical_state": [
+      {
+        "fact_id": "fact-0095-016",
+        "asset_id": "state_ledger_mother_life_lamp_countdown",
+        "field_path": "state_ledger.current_visible_lamp_consequence",
+        "before": "命灯裂损进一步加重并持续失温，但独立追缴未被并入陆沉渊记录",
+        "after": "裂灯原裂口旁新增一道细纹，灯火缩至薄弱微光并继续失温；苏晚旧债倒计时持续，未暂停",
+        "evidence": "灯腹新细纹从裂口爬至灯肩，火光持续缩小；结尾明确旧债倒计时没有停。"
+      },
+      {
+        "fact_id": "fact-0095-017",
+        "asset_id": "npc_su_wan",
+        "field_path": "npc.current_procedural_boundary",
+        "before": "同意仅触碰自己的独立追缴列，并明确无回应不替她免债或认领其他债，也不替泥灯巷答话",
+        "after": "在强制提验压力下仍只接受对自己旧债与分期的核验，拒绝确认未具名转运接收，并拒绝替泥灯巷承担共同后果",
+        "evidence": "苏晚要求先写明具名接收落处，并说自己的追缴仍在自己名下，不能替巷子添接收或替旁人承担。"
+      }
+    ],
+    "naming": [
+      {
+        "fact_id": "fact-0095-018",
+        "asset_id": "faction_life_registry_office",
+        "field_path": "naming.current_record_labels",
+        "before": "新增“未能排除接收”与苏晚姓名的提验文书标签，三道复验刻痕仍彼此分开",
+        "after": "现场新增并反复使用“命籍衙提验”“疑接者苏晚”“分期核验改为强制提验”“限期交验”等标签，但具名接收落处仍为空缺",
+        "evidence": "冷字逐项写出上述提验标签；苏晚和闻照微均指出文书没有具名接收。"
+      }
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "chapter_id": "chapter-0065",
+  "dramatic_purpose": "封档余震：把个人危机扩展为共同体可退出的协商冲突，服务于“胜利后果、封档与迁籍追捕”。",
+  "must_keep": [
+    "陆沉渊仍只能在已验证的本地权限内识账；任何收益都必须付出身体、关系、身份或程序代价。",
+    "苏晚、街坊与见证者均有拒绝权，不得把共同体信任、住户命火或第三方寿火作为资源。",
+    "局部胜利必须提高身份暴露与证据保全的现实成本。",
+    "每项可写状态变化必须能由正文观察绑定到既有资产、返还对象、承担方与可观察后果。"
+  ],
+  "must_avoid": [
+    "不得引入未登记人物、势力、器物、地点、能力或地图结论。",
+    "不得将审查建议、推测或叙事解释写成已经发生的状态变化。",
+    "不得以越级胜利、永久清偿、无代价升级或共同体牺牲解决冲突。",
+    "不得复制语料作品的名称、场景、签名系统、情节或语言风格。"
+  ],
+  "expected_state_deltas": [],
+  "required_asset_ids": [
+    "artifact_ashlight_cup",
+    "bond_mother_su_wan",
+    "bond_mudlamp_lane_trust",
+    "character_lu_chenyuan",
+    "faction_life_registry_office",
+    "faction_mudlamp_lane",
+    "faction_prefecture_life_treasury",
+    "foreshadowing_cinder_seal_rain",
+    "npc_debt_collector_gu_xun",
+    "npc_mo_jinglan",
+    "npc_registrar_qiu_shen",
+    "npc_su_wan",
+    "state_ledger_faction_pressure",
+    "state_ledger_half_life_registry_exposure",
+    "state_ledger_map_unlock_status",
+    "state_ledger_mother_life_lamp_countdown",
+    "state_ledger_mudlamp_array_integrity",
+    "state_ledger_poorcity_returnfire",
+    "state_ledger_protagonist_strain",
+    "state_ledger_public_reputation",
+    "state_ledger_resident_lifefire_reserve",
+    "state_ledger_revealed_account_errors",
+    "state_ledger_unresolved_mysteries",
+    "technique_backlash_guard",
+    "technique_ledger_recognition"
+  ],
+  "active_hook_ids": [
+    "foreshadowing_cinder_seal_rain"
+  ],
+  "scene_constraints": [
+    "本章只推进第 61-70 章窗口“胜利后果、封档与迁籍追捕”中的一个可观察步骤。",
+    "至少呈现一项具体动作、感官后果或关系选择；禁止用设定说明替代场景。",
+    "结尾必须留下下一次程序追缴、见证选择或证据复核，不得跳过窗口节奏。"
+  ]
+}

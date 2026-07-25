@@ -1,0 +1,31 @@
+{
+  "version": "0.17",
+  "promotion_state": "promoted_volume1_asset_expansion",
+  "project": "《借天改命账》",
+  "candidate_path": "system/agent_ops/inbox/hermes-volume1-asset-expansion-v017.json",
+  "audit_path": "system/agent_ops/inbox/antigravity-volume1-assets-audit-v017.md",
+  "asset_ids": [
+    "npc_su_wan",
+    "faction_life_registry_office",
+    "npc_registrar_qiu_shen",
+    "technique_ledger_recognition",
+    "npc_debt_collector_gu_xun",
+    "technique_chain_deflection_seal_breaking",
+    "bond_mudlamp_lane_trust",
+    "state_ledger_protagonist_strain",
+    "artifact_prefecture_transit_registry_seal",
+    "npc_prefecture_shadow_envoy",
+    "faction_prefecture_life_treasury",
+    "naming_prefecture_celestial_style",
+    "foreshadowing_ancient_debt_covenant_fragment"
+  ],
+  "state_ledger_ownership": {
+    "state_ledger_protagonist_strain": "individual body, memory, sanity, and technique backlash",
+    "state_ledger_poorcity_returnfire": "Mudlamp Lane community, ward array, and returned life-fire"
+  },
+  "content_generation_allowed": false,
+  "forbidden_actions": [
+    "generate_full_chapter",
+    "generate_serial_prose"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "version": "0.9",
+  "asset_id": "full-corpus-proof-v08",
+  "promotion_state": "promoted_research_asset",
+  "source_proof_state": "proof_verified",
+  "proof_master_path": "system/agent_ops/inbox/full_corpus_proof_v0.8/master.md",
+  "proof_master_sha256": "1b27fa28141bc3a20dee482684c438f8d836bbb486c9c1bbbd7191b8b3d0bd1b",
+  "validation_path": "system/agent_ops/validation/full_corpus_proof_v0.8.json",
+  "validation_sha256": "81979ec7415f3df3ff4325658cd9214eec1152c063951b0f152c1c521bb13dd4",
+  "owner_decision_id": "owner_gate_full_corpus_research_promotion_001",
+  "verified_receipts": 18,
+  "required_receipts": 18,
+  "content_generation_allowed": false,
+  "forbidden_actions": [
+    "execute_hermes",
+    "generate_final_creation_assets",
+    "generate_novel_prose"
+  ],
+  "created_at": "2026-07-10T06:57:04+08:00"
+}

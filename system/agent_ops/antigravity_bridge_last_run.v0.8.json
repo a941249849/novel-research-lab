@@ -1,0 +1,12 @@
+{
+  "version": "0.8",
+  "mode": "cli",
+  "binary_path": "/Users/liuneng/.local/bin/agy",
+  "request_file": ".agent-handoff/antigravity/requests/hundred-crafts-production-orchestration-v030.md",
+  "output_file": ".agent-handoff/antigravity/responses/hundred-crafts-production-orchestration-v030.md",
+  "returncode": 0,
+  "model": "Gemini 3.5 Flash (High)",
+  "started_at": "2026-07-25T12:05:47+08:00",
+  "finished_at": "2026-07-25T12:07:38+08:00",
+  "bridge_log_path": "system/agent_ops/antigravity_bridge_last_run.v0.8.json"
+}

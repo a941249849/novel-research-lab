@@ -1,0 +1,14 @@
+{
+  "version": "0.25",
+  "chapter_id": "chapter-0079",
+  "source_revision": "system/production_runtime/chapters/chapter-0079/revision.md",
+  "source_sha256": "bad914c93317be275b80f513ea4855b4bd0f28b431e08480c6ec76b272764b4e",
+  "release_edit": "system/production_runtime/release_edits/chapter-0079.md",
+  "release_edit_sha256": "9c271be235083dc4d52e6217cce6ff21114db3ece798b38842879126858c7f0e",
+  "repair_direction": "修复核心身体状态硬伤：陆沉渊始终是右眼彻底失明，依靠左眼视物，左眼因连续观察银灰响应而受刺激、出现灰白残影但没有变成右眼可视。全文统一这一设定；保持阵砖交付、泥灯巷见证边界、复核结论和活体校时钩子不变。",
+  "provider": "antigravity",
+  "model": "Gemini 3.5 Flash (High)",
+  "status": "approved_by_window_review",
+  "window_review": "system/production_runtime/window_reviews/window-071-080.json",
+  "reviewed_release_edit_sha256": "9c271be235083dc4d52e6217cce6ff21114db3ece798b38842879126858c7f0e"
+}

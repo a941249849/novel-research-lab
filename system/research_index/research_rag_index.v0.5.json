@@ -1,0 +1,1214 @@
+{
+  "index_name": "NRL Research RAG Index",
+  "version": "0.5",
+  "source_of_truth": [
+    "system/dna_registry/dna_registry.v0.5.json"
+  ],
+  "items": [
+    {
+      "index_id": "rag-v05-dna-v05-book_dna-phase1-book-dna-001",
+      "source_dna_id": "dna-v05-book_dna-phase1-book-dna-001",
+      "source_path": "phase1/02_book_dna/遮天_dna.json",
+      "title": "遮天",
+      "asset_type": "book_dna",
+      "mechanism_categories": [
+        "book_dna"
+      ],
+      "retrieval_text": "book_dna | 遮天 | formal | promoted | book_dna, formal, promoted",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-book_dna-phase1-book-dna-005",
+      "source_dna_id": "dna-v05-book_dna-phase1-book-dna-005",
+      "source_path": "phase1/02_book_dna/蛊真人_dna.json",
+      "title": "蛊真人",
+      "asset_type": "book_dna",
+      "mechanism_categories": [
+        "book_dna"
+      ],
+      "retrieval_text": "book_dna | 蛊真人 | formal | promoted | book_dna, formal, promoted",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-book_dna-phase1-book-dna-009",
+      "source_dna_id": "dna-v05-book_dna-phase1-book-dna-009",
+      "source_path": "phase1/02_book_dna/人道至尊_dna.json",
+      "title": "人道至尊",
+      "asset_type": "book_dna",
+      "mechanism_categories": [
+        "book_dna"
+      ],
+      "retrieval_text": "book_dna | 人道至尊 | formal | promoted | book_dna, formal, promoted",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-book_dna-phase1-book-dna-013",
+      "source_dna_id": "dna-v05-book_dna-phase1-book-dna-013",
+      "source_path": "phase1/02_book_dna/凡人修仙传_dna.json",
+      "title": "凡人修仙传",
+      "asset_type": "book_dna",
+      "mechanism_categories": [
+        "book_dna"
+      ],
+      "retrieval_text": "book_dna | 凡人修仙传 | formal | promoted | book_dna, formal, promoted",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-book_dna-phase1-book-dna-017",
+      "source_dna_id": "dna-v05-book_dna-phase1-book-dna-017",
+      "source_path": "phase1/02_book_dna/斗破苍穹_dna.json",
+      "title": "斗破苍穹",
+      "asset_type": "book_dna",
+      "mechanism_categories": [
+        "book_dna"
+      ],
+      "retrieval_text": "book_dna | 斗破苍穹 | formal | promoted | book_dna, formal, promoted",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-book_dna-phase1-book-dna-021",
+      "source_dna_id": "dna-v05-book_dna-phase1-book-dna-021",
+      "source_path": "phase1/02_book_dna/诡秘之主_dna.json",
+      "title": "诡秘之主",
+      "asset_type": "book_dna",
+      "mechanism_categories": [
+        "book_dna"
+      ],
+      "retrieval_text": "book_dna | 诡秘之主 | formal | promoted | book_dna, formal, promoted",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-book_dna-phase1-book-dna-025",
+      "source_dna_id": "dna-v05-book_dna-phase1-book-dna-025",
+      "source_path": "phase1/02_book_dna/求魔_dna.json",
+      "title": "求魔",
+      "asset_type": "book_dna",
+      "mechanism_categories": [
+        "book_dna"
+      ],
+      "retrieval_text": "book_dna | 求魔 | formal | promoted | book_dna, formal, promoted",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-book_dna-phase1-book-dna-036",
+      "source_dna_id": "dna-v05-book_dna-phase1-book-dna-036",
+      "source_path": "phase1/02_book_dna/一念永恒_dna.json",
+      "title": "一念永恒",
+      "asset_type": "book_dna",
+      "mechanism_categories": [
+        "book_dna"
+      ],
+      "retrieval_text": "book_dna | 一念永恒 | stub | stub | book_dna, stub",
+      "evidence_weight": 1
+    },
+    {
+      "index_id": "rag-v05-dna-v05-book_dna-phase1-book-dna-039",
+      "source_dna_id": "dna-v05-book_dna-phase1-book-dna-039",
+      "source_path": "phase1/02_book_dna/不死不灭_dna.json",
+      "title": "不死不灭",
+      "asset_type": "book_dna",
+      "mechanism_categories": [
+        "book_dna"
+      ],
+      "retrieval_text": "book_dna | 不死不灭 | stub | stub | book_dna, stub",
+      "evidence_weight": 1
+    },
+    {
+      "index_id": "rag-v05-dna-v05-book_dna-phase1-book-dna-042",
+      "source_dna_id": "dna-v05-book_dna-phase1-book-dna-042",
+      "source_path": "phase1/02_book_dna/仙逆_dna.json",
+      "title": "仙逆",
+      "asset_type": "book_dna",
+      "mechanism_categories": [
+        "book_dna"
+      ],
+      "retrieval_text": "book_dna | 仙逆 | stub | stub | book_dna, stub",
+      "evidence_weight": 1
+    },
+    {
+      "index_id": "rag-v05-dna-v05-book_dna-phase1-book-dna-045",
+      "source_dna_id": "dna-v05-book_dna-phase1-book-dna-045",
+      "source_path": "phase1/02_book_dna/圣墟_dna.json",
+      "title": "圣墟",
+      "asset_type": "book_dna",
+      "mechanism_categories": [
+        "book_dna"
+      ],
+      "retrieval_text": "book_dna | 圣墟 | stub | stub | book_dna, stub",
+      "evidence_weight": 1
+    },
+    {
+      "index_id": "rag-v05-dna-v05-book_dna-phase1-book-dna-048",
+      "source_dna_id": "dna-v05-book_dna-phase1-book-dna-048",
+      "source_path": "phase1/02_book_dna/大主宰_dna.json",
+      "title": "大主宰",
+      "asset_type": "book_dna",
+      "mechanism_categories": [
+        "book_dna"
+      ],
+      "retrieval_text": "book_dna | 大主宰 | stub | stub | book_dna, stub",
+      "evidence_weight": 1
+    },
+    {
+      "index_id": "rag-v05-dna-v05-book_dna-phase1-book-dna-051",
+      "source_dna_id": "dna-v05-book_dna-phase1-book-dna-051",
+      "source_path": "phase1/02_book_dna/完美世界_dna.json",
+      "title": "完美世界",
+      "asset_type": "book_dna",
+      "mechanism_categories": [
+        "book_dna"
+      ],
+      "retrieval_text": "book_dna | 完美世界 | stub | stub | book_dna, stub",
+      "evidence_weight": 1
+    },
+    {
+      "index_id": "rag-v05-dna-v05-book_dna-phase1-book-dna-054",
+      "source_dna_id": "dna-v05-book_dna-phase1-book-dna-054",
+      "source_path": "phase1/02_book_dna/将夜_dna.json",
+      "title": "将夜",
+      "asset_type": "book_dna",
+      "mechanism_categories": [
+        "book_dna"
+      ],
+      "retrieval_text": "book_dna | 将夜 | stub | stub | book_dna, stub",
+      "evidence_weight": 1
+    },
+    {
+      "index_id": "rag-v05-dna-v05-book_dna-phase1-book-dna-057",
+      "source_dna_id": "dna-v05-book_dna-phase1-book-dna-057",
+      "source_path": "phase1/02_book_dna/武动乾坤_dna.json",
+      "title": "武动乾坤",
+      "asset_type": "book_dna",
+      "mechanism_categories": [
+        "book_dna"
+      ],
+      "retrieval_text": "book_dna | 武动乾坤 | stub | stub | book_dna, stub",
+      "evidence_weight": 1
+    },
+    {
+      "index_id": "rag-v05-dna-v05-book_dna-phase1-book-dna-060",
+      "source_dna_id": "dna-v05-book_dna-phase1-book-dna-060",
+      "source_path": "phase1/02_book_dna/永生_dna.json",
+      "title": "永生",
+      "asset_type": "book_dna",
+      "mechanism_categories": [
+        "book_dna"
+      ],
+      "retrieval_text": "book_dna | 永生 | stub | stub | book_dna, stub",
+      "evidence_weight": 1
+    },
+    {
+      "index_id": "rag-v05-dna-v05-book_dna-phase1-book-dna-063",
+      "source_dna_id": "dna-v05-book_dna-phase1-book-dna-063",
+      "source_path": "phase1/02_book_dna/牧神记_dna.json",
+      "title": "牧神记",
+      "asset_type": "book_dna",
+      "mechanism_categories": [
+        "book_dna"
+      ],
+      "retrieval_text": "book_dna | 牧神记 | stub | stub | book_dna, stub",
+      "evidence_weight": 1
+    },
+    {
+      "index_id": "rag-v05-dna-v05-book_dna-phase1-book-dna-066",
+      "source_dna_id": "dna-v05-book_dna-phase1-book-dna-066",
+      "source_path": "phase1/02_book_dna/雪中悍刀行_dna.json",
+      "title": "雪中悍刀行",
+      "asset_type": "book_dna",
+      "mechanism_categories": [
+        "book_dna"
+      ],
+      "retrieval_text": "book_dna | 雪中悍刀行 | stub | stub | book_dna, stub",
+      "evidence_weight": 1
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-mechanism-dpcq-m1",
+      "source_dna_id": "dna-v05-mechanism_dna-mechanism-dpcq-m1",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "title": "斗破苍穹",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism",
+        "压迫与释放机制"
+      ],
+      "retrieval_text": "mechanism_dna | 斗破苍穹 | formal | promoted | formal, mechanism, promoted, 压迫与释放机制",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-mechanism-dpcq-m2",
+      "source_dna_id": "dna-v05-mechanism_dna-mechanism-dpcq-m2",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "title": "斗破苍穹",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism",
+        "压迫与释放机制"
+      ],
+      "retrieval_text": "mechanism_dna | 斗破苍穹 | formal | promoted | formal, mechanism, promoted, 压迫与释放机制",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-mechanism-dpcq-m3",
+      "source_dna_id": "dna-v05-mechanism_dna-mechanism-dpcq-m3",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "title": "斗破苍穹",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism",
+        "资源与资产机制"
+      ],
+      "retrieval_text": "mechanism_dna | 斗破苍穹 | formal | promoted | formal, mechanism, promoted, 资源与资产机制",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-mechanism-dpcq-m4",
+      "source_dna_id": "dna-v05-mechanism_dna-mechanism-dpcq-m4",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "title": "斗破苍穹",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism",
+        "升级与境界机制"
+      ],
+      "retrieval_text": "mechanism_dna | 斗破苍穹 | formal | promoted | formal, mechanism, promoted, 升级与境界机制",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-mechanism-dpcq-m5",
+      "source_dna_id": "dna-v05-mechanism_dna-mechanism-dpcq-m5",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "title": "斗破苍穹",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism",
+        "升级与境界机制"
+      ],
+      "retrieval_text": "mechanism_dna | 斗破苍穹 | formal | promoted | formal, mechanism, promoted, 升级与境界机制",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-mechanism-frxxz-m1",
+      "source_dna_id": "dna-v05-mechanism_dna-mechanism-frxxz-m1",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "title": "凡人修仙传",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism",
+        "避战与风险控制机制"
+      ],
+      "retrieval_text": "mechanism_dna | 凡人修仙传 | formal | promoted | formal, mechanism, promoted, 避战与风险控制机制",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-mechanism-frxxz-m2",
+      "source_dna_id": "dna-v05-mechanism_dna-mechanism-frxxz-m2",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "title": "凡人修仙传",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism",
+        "资源与资产机制"
+      ],
+      "retrieval_text": "mechanism_dna | 凡人修仙传 | formal | promoted | formal, mechanism, promoted, 资源与资产机制",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-mechanism-frxxz-m3",
+      "source_dna_id": "dna-v05-mechanism_dna-mechanism-frxxz-m3",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "title": "凡人修仙传",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism",
+        "避战与风险控制机制"
+      ],
+      "retrieval_text": "mechanism_dna | 凡人修仙传 | formal | promoted | formal, mechanism, promoted, 避战与风险控制机制",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-mechanism-frxxz-m4",
+      "source_dna_id": "dna-v05-mechanism_dna-mechanism-frxxz-m4",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "title": "凡人修仙传",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism",
+        "避战与风险控制机制"
+      ],
+      "retrieval_text": "mechanism_dna | 凡人修仙传 | formal | promoted | formal, mechanism, promoted, 避战与风险控制机制",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-mechanism-frxxz-m5",
+      "source_dna_id": "dna-v05-mechanism_dna-mechanism-frxxz-m5",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "title": "凡人修仙传",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism",
+        "升级与境界机制"
+      ],
+      "retrieval_text": "mechanism_dna | 凡人修仙传 | formal | promoted | formal, mechanism, promoted, 升级与境界机制",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-mechanism-gmzz-m1",
+      "source_dna_id": "dna-v05-mechanism_dna-mechanism-gmzz-m1",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "title": "诡秘之主",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism",
+        "探索/谜团/知识机制"
+      ],
+      "retrieval_text": "mechanism_dna | 诡秘之主 | formal | promoted | formal, mechanism, promoted, 探索/谜团/知识机制",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-mechanism-gmzz-m2",
+      "source_dna_id": "dna-v05-mechanism_dna-mechanism-gmzz-m2",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "title": "诡秘之主",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism",
+        "升级与境界机制"
+      ],
+      "retrieval_text": "mechanism_dna | 诡秘之主 | formal | promoted | formal, mechanism, promoted, 升级与境界机制",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-mechanism-gmzz-m3",
+      "source_dna_id": "dna-v05-mechanism_dna-mechanism-gmzz-m3",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "title": "诡秘之主",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism",
+        "升级与境界机制"
+      ],
+      "retrieval_text": "mechanism_dna | 诡秘之主 | formal | promoted | formal, mechanism, promoted, 升级与境界机制",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-mechanism-gmzz-m4",
+      "source_dna_id": "dna-v05-mechanism_dna-mechanism-gmzz-m4",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "title": "诡秘之主",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism",
+        "隐藏实力与信息差机制"
+      ],
+      "retrieval_text": "mechanism_dna | 诡秘之主 | formal | promoted | formal, mechanism, promoted, 隐藏实力与信息差机制",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-mechanism-gmzz-m5",
+      "source_dna_id": "dna-v05-mechanism_dna-mechanism-gmzz-m5",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "title": "诡秘之主",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism",
+        "探索/谜团/知识机制"
+      ],
+      "retrieval_text": "mechanism_dna | 诡秘之主 | formal | promoted | formal, mechanism, promoted, 探索/谜团/知识机制",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-mechanism-gzr-m1",
+      "source_dna_id": "dna-v05-mechanism_dna-mechanism-gzr-m1",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "title": "蛊真人",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism",
+        "隐藏实力与信息差机制"
+      ],
+      "retrieval_text": "mechanism_dna | 蛊真人 | formal | promoted | formal, mechanism, promoted, 隐藏实力与信息差机制",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-mechanism-gzr-m2",
+      "source_dna_id": "dna-v05-mechanism_dna-mechanism-gzr-m2",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "title": "蛊真人",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism",
+        "隐藏实力与信息差机制"
+      ],
+      "retrieval_text": "mechanism_dna | 蛊真人 | formal | promoted | formal, mechanism, promoted, 隐藏实力与信息差机制",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-mechanism-gzr-m3",
+      "source_dna_id": "dna-v05-mechanism_dna-mechanism-gzr-m3",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "title": "蛊真人",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism",
+        "宿命/情绪/哲学机制"
+      ],
+      "retrieval_text": "mechanism_dna | 蛊真人 | formal | promoted | formal, mechanism, promoted, 宿命/情绪/哲学机制",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-mechanism-gzr-m4",
+      "source_dna_id": "dna-v05-mechanism_dna-mechanism-gzr-m4",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "title": "蛊真人",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism",
+        "反噬/代价/污染机制"
+      ],
+      "retrieval_text": "mechanism_dna | 蛊真人 | formal | promoted | formal, mechanism, promoted, 反噬/代价/污染机制",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-mechanism-gzr-m5",
+      "source_dna_id": "dna-v05-mechanism_dna-mechanism-gzr-m5",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "title": "蛊真人",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism",
+        "探索/谜团/知识机制"
+      ],
+      "retrieval_text": "mechanism_dna | 蛊真人 | formal | promoted | formal, mechanism, promoted, 探索/谜团/知识机制",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-mechanism-qm-m1",
+      "source_dna_id": "dna-v05-mechanism_dna-mechanism-qm-m1",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "title": "求魔",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism",
+        "压迫与释放机制"
+      ],
+      "retrieval_text": "mechanism_dna | 求魔 | formal | promoted | formal, mechanism, promoted, 压迫与释放机制",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-mechanism-qm-m2",
+      "source_dna_id": "dna-v05-mechanism_dna-mechanism-qm-m2",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "title": "求魔",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism",
+        "反噬/代价/污染机制"
+      ],
+      "retrieval_text": "mechanism_dna | 求魔 | formal | promoted | formal, mechanism, promoted, 反噬/代价/污染机制",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-mechanism-qm-m3",
+      "source_dna_id": "dna-v05-mechanism_dna-mechanism-qm-m3",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "title": "求魔",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism",
+        "资源与资产机制"
+      ],
+      "retrieval_text": "mechanism_dna | 求魔 | formal | promoted | formal, mechanism, promoted, 资源与资产机制",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-mechanism-qm-m4",
+      "source_dna_id": "dna-v05-mechanism_dna-mechanism-qm-m4",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "title": "求魔",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism",
+        "组织/阵营/声望机制"
+      ],
+      "retrieval_text": "mechanism_dna | 求魔 | formal | promoted | formal, mechanism, promoted, 组织/阵营/声望机制",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-mechanism-qm-m5",
+      "source_dna_id": "dna-v05-mechanism_dna-mechanism-qm-m5",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "title": "求魔",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism",
+        "宿命/情绪/哲学机制"
+      ],
+      "retrieval_text": "mechanism_dna | 求魔 | formal | promoted | formal, mechanism, promoted, 宿命/情绪/哲学机制",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-mechanism-rdzz-m1",
+      "source_dna_id": "dna-v05-mechanism_dna-mechanism-rdzz-m1",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "title": "人道至尊",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism",
+        "压迫与释放机制"
+      ],
+      "retrieval_text": "mechanism_dna | 人道至尊 | formal | promoted | formal, mechanism, promoted, 压迫与释放机制",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-mechanism-rdzz-m2",
+      "source_dna_id": "dna-v05-mechanism_dna-mechanism-rdzz-m2",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "title": "人道至尊",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism",
+        "资源与资产机制"
+      ],
+      "retrieval_text": "mechanism_dna | 人道至尊 | formal | promoted | formal, mechanism, promoted, 资源与资产机制",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-mechanism-rdzz-m3",
+      "source_dna_id": "dna-v05-mechanism_dna-mechanism-rdzz-m3",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "title": "人道至尊",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism",
+        "升级与境界机制"
+      ],
+      "retrieval_text": "mechanism_dna | 人道至尊 | formal | promoted | formal, mechanism, promoted, 升级与境界机制",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-mechanism-rdzz-m4",
+      "source_dna_id": "dna-v05-mechanism_dna-mechanism-rdzz-m4",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "title": "人道至尊",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism",
+        "组织/阵营/声望机制"
+      ],
+      "retrieval_text": "mechanism_dna | 人道至尊 | formal | promoted | formal, mechanism, promoted, 组织/阵营/声望机制",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-mechanism-rdzz-m5",
+      "source_dna_id": "dna-v05-mechanism_dna-mechanism-rdzz-m5",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "title": "人道至尊",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism",
+        "宿命/情绪/哲学机制"
+      ],
+      "retrieval_text": "mechanism_dna | 人道至尊 | formal | promoted | formal, mechanism, promoted, 宿命/情绪/哲学机制",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-mechanism-zt-m1",
+      "source_dna_id": "dna-v05-mechanism_dna-mechanism-zt-m1",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "title": "遮天",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism",
+        "探索/谜团/知识机制"
+      ],
+      "retrieval_text": "mechanism_dna | 遮天 | formal | promoted | formal, mechanism, promoted, 探索/谜团/知识机制",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-mechanism-zt-m2",
+      "source_dna_id": "dna-v05-mechanism_dna-mechanism-zt-m2",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "title": "遮天",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism",
+        "资源与资产机制"
+      ],
+      "retrieval_text": "mechanism_dna | 遮天 | formal | promoted | formal, mechanism, promoted, 资源与资产机制",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-mechanism-zt-m3",
+      "source_dna_id": "dna-v05-mechanism_dna-mechanism-zt-m3",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "title": "遮天",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism",
+        "压迫与释放机制"
+      ],
+      "retrieval_text": "mechanism_dna | 遮天 | formal | promoted | formal, mechanism, promoted, 压迫与释放机制",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-mechanism-zt-m4",
+      "source_dna_id": "dna-v05-mechanism_dna-mechanism-zt-m4",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "title": "遮天",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism",
+        "升级与境界机制"
+      ],
+      "retrieval_text": "mechanism_dna | 遮天 | formal | promoted | formal, mechanism, promoted, 升级与境界机制",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-mechanism-zt-m5",
+      "source_dna_id": "dna-v05-mechanism_dna-mechanism-zt-m5",
+      "source_path": "phase1/04_mechanism_library/core7_mechanism_inventory.json",
+      "title": "遮天",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism",
+        "宿命/情绪/哲学机制"
+      ],
+      "retrieval_text": "mechanism_dna | 遮天 | formal | promoted | formal, mechanism, promoted, 宿命/情绪/哲学机制",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-phase1-mechanism-notes-004",
+      "source_dna_id": "dna-v05-mechanism_dna-phase1-mechanism-notes-004",
+      "source_path": "phase1/04_mechanism_library/core7_notes/遮天_mechanism_notes.md",
+      "title": "遮天",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism_notes"
+      ],
+      "retrieval_text": "mechanism_dna | 遮天 | formal | promoted | formal, mechanism_notes, promoted",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-phase1-mechanism-notes-008",
+      "source_dna_id": "dna-v05-mechanism_dna-phase1-mechanism-notes-008",
+      "source_path": "phase1/04_mechanism_library/core7_notes/蛊真人_mechanism_notes.md",
+      "title": "蛊真人",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism_notes"
+      ],
+      "retrieval_text": "mechanism_dna | 蛊真人 | formal | promoted | formal, mechanism_notes, promoted",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-phase1-mechanism-notes-012",
+      "source_dna_id": "dna-v05-mechanism_dna-phase1-mechanism-notes-012",
+      "source_path": "phase1/04_mechanism_library/core7_notes/人道至尊_mechanism_notes.md",
+      "title": "人道至尊",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism_notes"
+      ],
+      "retrieval_text": "mechanism_dna | 人道至尊 | formal | promoted | formal, mechanism_notes, promoted",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-phase1-mechanism-notes-016",
+      "source_dna_id": "dna-v05-mechanism_dna-phase1-mechanism-notes-016",
+      "source_path": "phase1/04_mechanism_library/core7_notes/凡人修仙传_mechanism_notes.md",
+      "title": "凡人修仙传",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism_notes"
+      ],
+      "retrieval_text": "mechanism_dna | 凡人修仙传 | formal | promoted | formal, mechanism_notes, promoted",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-phase1-mechanism-notes-020",
+      "source_dna_id": "dna-v05-mechanism_dna-phase1-mechanism-notes-020",
+      "source_path": "phase1/04_mechanism_library/core7_notes/斗破苍穹_mechanism_notes.md",
+      "title": "斗破苍穹",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism_notes"
+      ],
+      "retrieval_text": "mechanism_dna | 斗破苍穹 | formal | promoted | formal, mechanism_notes, promoted",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-phase1-mechanism-notes-024",
+      "source_dna_id": "dna-v05-mechanism_dna-phase1-mechanism-notes-024",
+      "source_path": "phase1/04_mechanism_library/core7_notes/诡秘之主_mechanism_notes.md",
+      "title": "诡秘之主",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism_notes"
+      ],
+      "retrieval_text": "mechanism_dna | 诡秘之主 | formal | promoted | formal, mechanism_notes, promoted",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-mechanism_dna-phase1-mechanism-notes-028",
+      "source_dna_id": "dna-v05-mechanism_dna-phase1-mechanism-notes-028",
+      "source_path": "phase1/04_mechanism_library/core7_notes/求魔_mechanism_notes.md",
+      "title": "求魔",
+      "asset_type": "mechanism_dna",
+      "mechanism_categories": [
+        "mechanism_notes"
+      ],
+      "retrieval_text": "mechanism_dna | 求魔 | formal | promoted | formal, mechanism_notes, promoted",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-narrative_dna-phase1-narrative-dna-002",
+      "source_dna_id": "dna-v05-narrative_dna-phase1-narrative-dna-002",
+      "source_path": "phase1/02_narrative_dna/遮天_narrative.json",
+      "title": "遮天",
+      "asset_type": "narrative_dna",
+      "mechanism_categories": [
+        "narrative_dna"
+      ],
+      "retrieval_text": "narrative_dna | 遮天 | formal | promoted | formal, narrative_dna, promoted",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-narrative_dna-phase1-narrative-dna-006",
+      "source_dna_id": "dna-v05-narrative_dna-phase1-narrative-dna-006",
+      "source_path": "phase1/02_narrative_dna/蛊真人_narrative.json",
+      "title": "蛊真人",
+      "asset_type": "narrative_dna",
+      "mechanism_categories": [
+        "narrative_dna"
+      ],
+      "retrieval_text": "narrative_dna | 蛊真人 | formal | promoted | formal, narrative_dna, promoted",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-narrative_dna-phase1-narrative-dna-010",
+      "source_dna_id": "dna-v05-narrative_dna-phase1-narrative-dna-010",
+      "source_path": "phase1/02_narrative_dna/人道至尊_narrative.json",
+      "title": "人道至尊",
+      "asset_type": "narrative_dna",
+      "mechanism_categories": [
+        "narrative_dna"
+      ],
+      "retrieval_text": "narrative_dna | 人道至尊 | formal | promoted | formal, narrative_dna, promoted",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-narrative_dna-phase1-narrative-dna-014",
+      "source_dna_id": "dna-v05-narrative_dna-phase1-narrative-dna-014",
+      "source_path": "phase1/02_narrative_dna/凡人修仙传_narrative.json",
+      "title": "凡人修仙传",
+      "asset_type": "narrative_dna",
+      "mechanism_categories": [
+        "narrative_dna"
+      ],
+      "retrieval_text": "narrative_dna | 凡人修仙传 | formal | promoted | formal, narrative_dna, promoted",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-narrative_dna-phase1-narrative-dna-018",
+      "source_dna_id": "dna-v05-narrative_dna-phase1-narrative-dna-018",
+      "source_path": "phase1/02_narrative_dna/斗破苍穹_narrative.json",
+      "title": "斗破苍穹",
+      "asset_type": "narrative_dna",
+      "mechanism_categories": [
+        "narrative_dna"
+      ],
+      "retrieval_text": "narrative_dna | 斗破苍穹 | formal | promoted | formal, narrative_dna, promoted",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-narrative_dna-phase1-narrative-dna-022",
+      "source_dna_id": "dna-v05-narrative_dna-phase1-narrative-dna-022",
+      "source_path": "phase1/02_narrative_dna/诡秘之主_narrative.json",
+      "title": "诡秘之主",
+      "asset_type": "narrative_dna",
+      "mechanism_categories": [
+        "narrative_dna"
+      ],
+      "retrieval_text": "narrative_dna | 诡秘之主 | formal | promoted | formal, narrative_dna, promoted",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-narrative_dna-phase1-narrative-dna-026",
+      "source_dna_id": "dna-v05-narrative_dna-phase1-narrative-dna-026",
+      "source_path": "phase1/02_narrative_dna/求魔_narrative.json",
+      "title": "求魔",
+      "asset_type": "narrative_dna",
+      "mechanism_categories": [
+        "narrative_dna"
+      ],
+      "retrieval_text": "narrative_dna | 求魔 | formal | promoted | formal, narrative_dna, promoted",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-narrative_dna-phase1-narrative-dna-037",
+      "source_dna_id": "dna-v05-narrative_dna-phase1-narrative-dna-037",
+      "source_path": "phase1/02_narrative_dna/一念永恒_narrative.json",
+      "title": "一念永恒",
+      "asset_type": "narrative_dna",
+      "mechanism_categories": [
+        "narrative_dna"
+      ],
+      "retrieval_text": "narrative_dna | 一念永恒 | stub | stub | narrative_dna, stub",
+      "evidence_weight": 1
+    },
+    {
+      "index_id": "rag-v05-dna-v05-narrative_dna-phase1-narrative-dna-040",
+      "source_dna_id": "dna-v05-narrative_dna-phase1-narrative-dna-040",
+      "source_path": "phase1/02_narrative_dna/不死不灭_narrative.json",
+      "title": "不死不灭",
+      "asset_type": "narrative_dna",
+      "mechanism_categories": [
+        "narrative_dna"
+      ],
+      "retrieval_text": "narrative_dna | 不死不灭 | stub | stub | narrative_dna, stub",
+      "evidence_weight": 1
+    },
+    {
+      "index_id": "rag-v05-dna-v05-narrative_dna-phase1-narrative-dna-043",
+      "source_dna_id": "dna-v05-narrative_dna-phase1-narrative-dna-043",
+      "source_path": "phase1/02_narrative_dna/仙逆_narrative.json",
+      "title": "仙逆",
+      "asset_type": "narrative_dna",
+      "mechanism_categories": [
+        "narrative_dna"
+      ],
+      "retrieval_text": "narrative_dna | 仙逆 | stub | stub | narrative_dna, stub",
+      "evidence_weight": 1
+    },
+    {
+      "index_id": "rag-v05-dna-v05-narrative_dna-phase1-narrative-dna-046",
+      "source_dna_id": "dna-v05-narrative_dna-phase1-narrative-dna-046",
+      "source_path": "phase1/02_narrative_dna/圣墟_narrative.json",
+      "title": "圣墟",
+      "asset_type": "narrative_dna",
+      "mechanism_categories": [
+        "narrative_dna"
+      ],
+      "retrieval_text": "narrative_dna | 圣墟 | stub | stub | narrative_dna, stub",
+      "evidence_weight": 1
+    },
+    {
+      "index_id": "rag-v05-dna-v05-narrative_dna-phase1-narrative-dna-049",
+      "source_dna_id": "dna-v05-narrative_dna-phase1-narrative-dna-049",
+      "source_path": "phase1/02_narrative_dna/大主宰_narrative.json",
+      "title": "大主宰",
+      "asset_type": "narrative_dna",
+      "mechanism_categories": [
+        "narrative_dna"
+      ],
+      "retrieval_text": "narrative_dna | 大主宰 | stub | stub | narrative_dna, stub",
+      "evidence_weight": 1
+    },
+    {
+      "index_id": "rag-v05-dna-v05-narrative_dna-phase1-narrative-dna-052",
+      "source_dna_id": "dna-v05-narrative_dna-phase1-narrative-dna-052",
+      "source_path": "phase1/02_narrative_dna/完美世界_narrative.json",
+      "title": "完美世界",
+      "asset_type": "narrative_dna",
+      "mechanism_categories": [
+        "narrative_dna"
+      ],
+      "retrieval_text": "narrative_dna | 完美世界 | stub | stub | narrative_dna, stub",
+      "evidence_weight": 1
+    },
+    {
+      "index_id": "rag-v05-dna-v05-narrative_dna-phase1-narrative-dna-055",
+      "source_dna_id": "dna-v05-narrative_dna-phase1-narrative-dna-055",
+      "source_path": "phase1/02_narrative_dna/将夜_narrative.json",
+      "title": "将夜",
+      "asset_type": "narrative_dna",
+      "mechanism_categories": [
+        "narrative_dna"
+      ],
+      "retrieval_text": "narrative_dna | 将夜 | stub | stub | narrative_dna, stub",
+      "evidence_weight": 1
+    },
+    {
+      "index_id": "rag-v05-dna-v05-narrative_dna-phase1-narrative-dna-058",
+      "source_dna_id": "dna-v05-narrative_dna-phase1-narrative-dna-058",
+      "source_path": "phase1/02_narrative_dna/武动乾坤_narrative.json",
+      "title": "武动乾坤",
+      "asset_type": "narrative_dna",
+      "mechanism_categories": [
+        "narrative_dna"
+      ],
+      "retrieval_text": "narrative_dna | 武动乾坤 | stub | stub | narrative_dna, stub",
+      "evidence_weight": 1
+    },
+    {
+      "index_id": "rag-v05-dna-v05-narrative_dna-phase1-narrative-dna-061",
+      "source_dna_id": "dna-v05-narrative_dna-phase1-narrative-dna-061",
+      "source_path": "phase1/02_narrative_dna/永生_narrative.json",
+      "title": "永生",
+      "asset_type": "narrative_dna",
+      "mechanism_categories": [
+        "narrative_dna"
+      ],
+      "retrieval_text": "narrative_dna | 永生 | stub | stub | narrative_dna, stub",
+      "evidence_weight": 1
+    },
+    {
+      "index_id": "rag-v05-dna-v05-narrative_dna-phase1-narrative-dna-064",
+      "source_dna_id": "dna-v05-narrative_dna-phase1-narrative-dna-064",
+      "source_path": "phase1/02_narrative_dna/牧神记_narrative.json",
+      "title": "牧神记",
+      "asset_type": "narrative_dna",
+      "mechanism_categories": [
+        "narrative_dna"
+      ],
+      "retrieval_text": "narrative_dna | 牧神记 | stub | stub | narrative_dna, stub",
+      "evidence_weight": 1
+    },
+    {
+      "index_id": "rag-v05-dna-v05-narrative_dna-phase1-narrative-dna-067",
+      "source_dna_id": "dna-v05-narrative_dna-phase1-narrative-dna-067",
+      "source_path": "phase1/02_narrative_dna/雪中悍刀行_narrative.json",
+      "title": "雪中悍刀行",
+      "asset_type": "narrative_dna",
+      "mechanism_categories": [
+        "narrative_dna"
+      ],
+      "retrieval_text": "narrative_dna | 雪中悍刀行 | stub | stub | narrative_dna, stub",
+      "evidence_weight": 1
+    },
+    {
+      "index_id": "rag-v05-dna-v05-state_dna-phase1-state-ledger-003",
+      "source_dna_id": "dna-v05-state_dna-phase1-state-ledger-003",
+      "source_path": "phase1/02_state_ledgers/遮天_ledger.json",
+      "title": "遮天",
+      "asset_type": "state_dna",
+      "mechanism_categories": [
+        "state_ledger"
+      ],
+      "retrieval_text": "state_dna | 遮天 | formal | promoted | formal, promoted, state_ledger",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-state_dna-phase1-state-ledger-007",
+      "source_dna_id": "dna-v05-state_dna-phase1-state-ledger-007",
+      "source_path": "phase1/02_state_ledgers/蛊真人_ledger.json",
+      "title": "蛊真人",
+      "asset_type": "state_dna",
+      "mechanism_categories": [
+        "state_ledger"
+      ],
+      "retrieval_text": "state_dna | 蛊真人 | formal | promoted | formal, promoted, state_ledger",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-state_dna-phase1-state-ledger-011",
+      "source_dna_id": "dna-v05-state_dna-phase1-state-ledger-011",
+      "source_path": "phase1/02_state_ledgers/人道至尊_ledger.json",
+      "title": "人道至尊",
+      "asset_type": "state_dna",
+      "mechanism_categories": [
+        "state_ledger"
+      ],
+      "retrieval_text": "state_dna | 人道至尊 | formal | promoted | formal, promoted, state_ledger",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-state_dna-phase1-state-ledger-015",
+      "source_dna_id": "dna-v05-state_dna-phase1-state-ledger-015",
+      "source_path": "phase1/02_state_ledgers/凡人修仙传_ledger.json",
+      "title": "凡人修仙传",
+      "asset_type": "state_dna",
+      "mechanism_categories": [
+        "state_ledger"
+      ],
+      "retrieval_text": "state_dna | 凡人修仙传 | formal | promoted | formal, promoted, state_ledger",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-state_dna-phase1-state-ledger-019",
+      "source_dna_id": "dna-v05-state_dna-phase1-state-ledger-019",
+      "source_path": "phase1/02_state_ledgers/斗破苍穹_ledger.json",
+      "title": "斗破苍穹",
+      "asset_type": "state_dna",
+      "mechanism_categories": [
+        "state_ledger"
+      ],
+      "retrieval_text": "state_dna | 斗破苍穹 | formal | promoted | formal, promoted, state_ledger",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-state_dna-phase1-state-ledger-023",
+      "source_dna_id": "dna-v05-state_dna-phase1-state-ledger-023",
+      "source_path": "phase1/02_state_ledgers/诡秘之主_ledger.json",
+      "title": "诡秘之主",
+      "asset_type": "state_dna",
+      "mechanism_categories": [
+        "state_ledger"
+      ],
+      "retrieval_text": "state_dna | 诡秘之主 | formal | promoted | formal, promoted, state_ledger",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-state_dna-phase1-state-ledger-027",
+      "source_dna_id": "dna-v05-state_dna-phase1-state-ledger-027",
+      "source_path": "phase1/02_state_ledgers/求魔_ledger.json",
+      "title": "求魔",
+      "asset_type": "state_dna",
+      "mechanism_categories": [
+        "state_ledger"
+      ],
+      "retrieval_text": "state_dna | 求魔 | formal | promoted | formal, promoted, state_ledger",
+      "evidence_weight": 3
+    },
+    {
+      "index_id": "rag-v05-dna-v05-state_dna-phase1-state-ledger-038",
+      "source_dna_id": "dna-v05-state_dna-phase1-state-ledger-038",
+      "source_path": "phase1/02_state_ledgers/一念永恒_ledger.json",
+      "title": "一念永恒",
+      "asset_type": "state_dna",
+      "mechanism_categories": [
+        "state_ledger"
+      ],
+      "retrieval_text": "state_dna | 一念永恒 | stub | stub | state_ledger, stub",
+      "evidence_weight": 1
+    },
+    {
+      "index_id": "rag-v05-dna-v05-state_dna-phase1-state-ledger-041",
+      "source_dna_id": "dna-v05-state_dna-phase1-state-ledger-041",
+      "source_path": "phase1/02_state_ledgers/不死不灭_ledger.json",
+      "title": "不死不灭",
+      "asset_type": "state_dna",
+      "mechanism_categories": [
+        "state_ledger"
+      ],
+      "retrieval_text": "state_dna | 不死不灭 | stub | stub | state_ledger, stub",
+      "evidence_weight": 1
+    },
+    {
+      "index_id": "rag-v05-dna-v05-state_dna-phase1-state-ledger-044",
+      "source_dna_id": "dna-v05-state_dna-phase1-state-ledger-044",
+      "source_path": "phase1/02_state_ledgers/仙逆_ledger.json",
+      "title": "仙逆",
+      "asset_type": "state_dna",
+      "mechanism_categories": [
+        "state_ledger"
+      ],
+      "retrieval_text": "state_dna | 仙逆 | stub | stub | state_ledger, stub",
+      "evidence_weight": 1
+    },
+    {
+      "index_id": "rag-v05-dna-v05-state_dna-phase1-state-ledger-047",
+      "source_dna_id": "dna-v05-state_dna-phase1-state-ledger-047",
+      "source_path": "phase1/02_state_ledgers/圣墟_ledger.json",
+      "title": "圣墟",
+      "asset_type": "state_dna",
+      "mechanism_categories": [
+        "state_ledger"
+      ],
+      "retrieval_text": "state_dna | 圣墟 | stub | stub | state_ledger, stub",
+      "evidence_weight": 1
+    },
+    {
+      "index_id": "rag-v05-dna-v05-state_dna-phase1-state-ledger-050",
+      "source_dna_id": "dna-v05-state_dna-phase1-state-ledger-050",
+      "source_path": "phase1/02_state_ledgers/大主宰_ledger.json",
+      "title": "大主宰",
+      "asset_type": "state_dna",
+      "mechanism_categories": [
+        "state_ledger"
+      ],
+      "retrieval_text": "state_dna | 大主宰 | stub | stub | state_ledger, stub",
+      "evidence_weight": 1
+    },
+    {
+      "index_id": "rag-v05-dna-v05-state_dna-phase1-state-ledger-053",
+      "source_dna_id": "dna-v05-state_dna-phase1-state-ledger-053",
+      "source_path": "phase1/02_state_ledgers/完美世界_ledger.json",
+      "title": "完美世界",
+      "asset_type": "state_dna",
+      "mechanism_categories": [
+        "state_ledger"
+      ],
+      "retrieval_text": "state_dna | 完美世界 | stub | stub | state_ledger, stub",
+      "evidence_weight": 1
+    },
+    {
+      "index_id": "rag-v05-dna-v05-state_dna-phase1-state-ledger-056",
+      "source_dna_id": "dna-v05-state_dna-phase1-state-ledger-056",
+      "source_path": "phase1/02_state_ledgers/将夜_ledger.json",
+      "title": "将夜",
+      "asset_type": "state_dna",
+      "mechanism_categories": [
+        "state_ledger"
+      ],
+      "retrieval_text": "state_dna | 将夜 | stub | stub | state_ledger, stub",
+      "evidence_weight": 1
+    },
+    {
+      "index_id": "rag-v05-dna-v05-state_dna-phase1-state-ledger-059",
+      "source_dna_id": "dna-v05-state_dna-phase1-state-ledger-059",
+      "source_path": "phase1/02_state_ledgers/武动乾坤_ledger.json",
+      "title": "武动乾坤",
+      "asset_type": "state_dna",
+      "mechanism_categories": [
+        "state_ledger"
+      ],
+      "retrieval_text": "state_dna | 武动乾坤 | stub | stub | state_ledger, stub",
+      "evidence_weight": 1
+    },
+    {
+      "index_id": "rag-v05-dna-v05-state_dna-phase1-state-ledger-062",
+      "source_dna_id": "dna-v05-state_dna-phase1-state-ledger-062",
+      "source_path": "phase1/02_state_ledgers/永生_ledger.json",
+      "title": "永生",
+      "asset_type": "state_dna",
+      "mechanism_categories": [
+        "state_ledger"
+      ],
+      "retrieval_text": "state_dna | 永生 | stub | stub | state_ledger, stub",
+      "evidence_weight": 1
+    },
+    {
+      "index_id": "rag-v05-dna-v05-state_dna-phase1-state-ledger-065",
+      "source_dna_id": "dna-v05-state_dna-phase1-state-ledger-065",
+      "source_path": "phase1/02_state_ledgers/牧神记_ledger.json",
+      "title": "牧神记",
+      "asset_type": "state_dna",
+      "mechanism_categories": [
+        "state_ledger"
+      ],
+      "retrieval_text": "state_dna | 牧神记 | stub | stub | state_ledger, stub",
+      "evidence_weight": 1
+    },
+    {
+      "index_id": "rag-v05-dna-v05-state_dna-phase1-state-ledger-068",
+      "source_dna_id": "dna-v05-state_dna-phase1-state-ledger-068",
+      "source_path": "phase1/02_state_ledgers/雪中悍刀行_ledger.json",
+      "title": "雪中悍刀行",
+      "asset_type": "state_dna",
+      "mechanism_categories": [
+        "state_ledger"
+      ],
+      "retrieval_text": "state_dna | 雪中悍刀行 | stub | stub | state_ledger, stub",
+      "evidence_weight": 1
+    }
+  ],
+  "summary": {
+    "total_items": 96,
+    "by_asset_type": {
+      "book_dna": 18,
+      "mechanism_dna": 42,
+      "narrative_dna": 18,
+      "state_dna": 18
+    },
+    "by_evidence_weight": {
+      "1": 33,
+      "3": 63
+    }
+  },
+  "guardrails": [
+    "Structured DNA metadata only",
+    "No raw novel prose",
+    "Evidence weights derive from DNA promotion state"
+  ]
+}

@@ -1,0 +1,148 @@
+```json
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "chunk_id": "book-03-0bc4648bf63c-chunk-002",
+  "source_file": "novel_training_set/《人道至尊》（校对版全本）作者：宅猪.txt",
+  "source_file_sha256": "0bc4648bf63c6efbb17d3932d2642bbd81dac3d90c5ea424c89cdec7698cfc5e",
+  "start_byte": 1500037,
+  "end_byte": 3000088,
+  "chunk_sha256": "afcd0971e2ad1ecc7b617cc19ac8e42c7310d3519e915dec083a8f9a6df97ad9",
+  "source_encoding": "gb18030",
+  "bounded_chunk_utf8_sha256": "22ded40fa91b89a288c1fc2edc0ae9db38b3f01c016a88e7afa0bfb100e2c663",
+  "analysis": {
+    "chapter_span": [
+      "第0222章 只拔一毛",
+      "第0441章 神异果"
+    ],
+    "major_events": [
+      "In 第0222章 只拔一毛, Zhong Yue is guided into the敖氏龙族 Wanbao Temple by Ao Long'an and chooses a Kunpeng feather over standard treasures.",
+      "In 第0223章 目标：圣器, Zhong Yue and Xin Huo plan to locate the Kunpeng Holy Weapon, Shenyi Knife (神翼刀), using the resonance of the feather.",
+      "In 第0224章 祖龙祭, Ao Fenglou gives Zhong Yue a personal token as compensation for the dragon clan's frugality as they prepare for the Ancestral Dragon Sacrifice.",
+      "In 第0230章 解锁第三神眼, Zhong Yue passes the trials in the Ancestral Dragon Temple and uses Ancestral Dragon Blood to fully awaken his Fuxi third eye.",
+      "In 第0232章 月色真美, Zhong Yue (as Long Yue) and Jiao Qingtu hold a mental duel under the moon to determine the strongest of their generation.",
+      "In 第0234章 伏羲真身, Zhong Yue allows Xin Huo to possess his body, temporarily unleashing the Fuxi true form to resolve a dangerous situation.",
+      "In 第0241章 蜕变, Lang Qingyun deduces that Long Yue is actually Zhong Yue based on his possession of the Moon Spirit, exposing his double identity.",
+      "In 第0251章 布阵, Zhong Yue establishes his new territory on Yanming Mountain, setting up the Star-Moon Array to defend the main peak.",
+      "In 第0256章 大凶大恶, Zhong Yue discovers the copper temple housing the crazed genius Feng Xiaozhong, who was sealed for dissecting various clans and human compatriots.",
+      "In 第0258章 被锁住的第六轮, Feng Xiaozhong tells Zhong Yue about the hidden sixth wheel of the soul that acts as a seal on the Fuxi bloodline.",
+      "In 第0260章 夺日, Zhong Yue battles 'Shui Qinyan' (possessed by Tianxiang Mother) to capture a solar essence treasure and refines his physical body.",
+      "In 第0270章 肉身成神, Zhong Yue achieves a state of physical invulnerability equivalent to godhood and decides to challenge the Little Void boards.",
+      "In 第0279章 三绝阵, Zhong Yue, Qiu Jinger, and others explore the Emperor's Forest in the Little Void, surviving an onslaught of parasitic red lanterns.",
+      "In 第0289章 文无第一武无第二, Qiu Jinger accidentally offends the other prodigies on the ranking boards by thanking them for letting Zhong Yue pass them.",
+      "In 第0299章 元神不死, Zhong Yue recovers from severe injuries sustained in a battle against the Leize Divine Dragon in the Little Void using Ancestral Dragon blood.",
+      "In 第0308章 大赢家, Sword God Feng Shang enters the Demon Soul Restricted Area to sacrifice his remaining lifespan, while various foreign clans gather at the border.",
+      "In 第0318章 魂归来兮, the dying headmaster Feng Shang spends his final moments teaching Zhong Yue the Great Liberty Sword Qi and sword fundamentals.",
+      "In 第0327章 性命双修, Zhong Yue refines his Yuan Dan, enabling him to clearly perceive the exact remaining lifespan of both his physical body and his spirit.",
+      "In 第0331章 神魔太极, Zhong Yue develops the God-Demon Taiji diagram to resolve the dangerous conflict between his pure yang Fuxi power and the newly acquired pure yin demon power.",
+      "In 第0337章 大日天魔真经, Zhong Yue boards the solar chariot directly and acquires the core inheritance of the 阿修罗 (Asura) clan's Great Sun Heavenly Demon Sutra.",
+      "In 第0346章 摩罗波旬, Zhong Yue arrives at the demon city as Mo Luo Bo Xun, where he encounters the sea powerhouse Shark Qishan and other competitors.",
+      "In 第0356章 初次交锋, Zhong Yue (as Mo Luo) engages in a crescent moon duel with the Demon Saint (魔圣), matching their dark cultivations.",
+      "In 第0365章 刑天, Zhong Yue adopts the name or creates the entity of Xing Tian to deal with the threat of the demon elites.",
+      "In 第0384章 双岳合璧, Zhong Yue and Long Yue appear together on the arena in Fire City, combining their powers to defeat Kui Zhengshu and other giants.",
+      "In 第0393章 破局之战, Zhong Yue utilizes the tokens gathered by Shui Zian to summon eleven foreign giants to break the heavy blockade set up around him.",
+      "In 第0403章 冰封古城, the Baize clan in the North Barren captures the invading forces of the 重黎 (Zhongli) Divine Clan who pursued Zhong Yue.",
+      "In 第0419章 轩辕出生, Gongsun Xuanyuan is born to Shaodian and Fubao after a two-year pregnancy, possessing a highly refined Fuxi and Leize bloodline.",
+      "In 第0431章 单挑, Zhong Yue is pursued by Kunpeng geniuses Peng Jinyi and Peng Qianqiu in the Kunlun realm and uses water transformation to escape into the sea.",
+      "In 第0441章 神异果, Zhong Yue and Qiu Jinger enter the Reincarnation ruins and meet a talking radish-like divine herb."
+    ],
+    "character_state_transitions": [
+      "Zhong Yue transitions from an unawakened third eye state to fully unlocking his Fuxi third eye (第三神眼) using Ancestral Dragon blood in 第0230章.",
+      "Zhong Yue transitions from the Open Wheel stage to the Spirit-Physical stage (灵体境) in 第0241章.",
+      "Zhong Yue transitions from a standard cultivator's body to achieving the state of 'Physical Body Achieving Godhood' (肉身成神) in 第0270章.",
+      "Zhong Yue transitions from ignorance of his lifespan to being able to accurately perceive the exact remaining days of his body and soul after forming his Yuan Dan in 第0327章.",
+      "Zhong Yue transitions from a purely human cultivator to adopting a dual Fuxi-Demon cultivation by creating the God-Demon Taiji diagram in 第0331章.",
+      "Zhong Yue transitions from his standard Fuxi identity to creating a flawless demon persona, Mo Luo Bo Xun, to infiltrate the Demon Realm in 第0346章.",
+      "Headmaster Feng Shang transitions from a dying old leader to burning his final life force to secure Jianmen's safety, eventually passing away in 第0308章 and 第0318章.",
+      "Jiao Qingtu transitions from an arrogant dragon successor to a respectful competitor after his mental duel with Zhong Yue under the moon in 第0232章.",
+      "Feng Xiaozhong transitions from an imprisoned madman to escaping containment and resuming his horrific research on god-demon bloodlines in 第0379章.",
+      "Shui Qinyan transitions from a human companion to a vessel fully possessed and driven by the ancient demon spirit Tianxiang Mother in 第0260章.",
+      "Gongsun Xuanyuan transitions from an unborn fetus to a blessed baby with exceptionally pure Fuxi and Leize bloodlines upon his birth in 第0419章.",
+      "Shang Qing transitions from a competitive stranger to a cautious explorer proposing an alliance with Zhong Yue in the Reincarnation ruins in 第0436章."
+    ],
+    "long_form_mechanisms": [
+      {
+        "name": "The Sixth Wheel of the Soul (第六轮)",
+        "description": "A hidden, locked reincarnation wheel within the human soul discovered by Feng Xiaozhong. It restricts human longevity and cuts off bloodline potential. Unlocking it triggers Fuxi ancestral power."
+      },
+      {
+        "name": "Perception of Lifespan in Yuan Dan State (性命双修)",
+        "description": "Upon forming the Yuan Dan, a cultivator gains the ability to perceive the exact remaining lifespan of their physical body (命) and soul (性), showing that the soul's lifespan is significantly longer than the body's."
+      },
+      {
+        "name": "God-Demon Taiji Balance (神魔太极)",
+        "description": "A cultivation mechanism developed by Zhong Yue to balance his pure yang Fuxi fire energy with pure yin demon energy, rotating them in a Taiji diagram to prevent them from destroying his body."
+      },
+      {
+        "name": "Little Void Entry and Token Consumption (小虚空丹牌)",
+        "description": "Entering the virtual realm of Little Void requires paying with pills represented by Dan Pai (丹牌). Higher levels of the Void consume pills at a faster rate, and once depleted, the user is ejected."
+      },
+      {
+        "name": "Ancestral Dragon Blood Refinement (祖龙之血/祖血)",
+        "description": "A process of refining the cultivator's body by challenging trials in the Ancestral Dragon temple to obtain drops of pure dragon blood, which stimulates dormant Fuxi bloodline attributes."
+      },
+      {
+        "name": "Transformation and Avatar Creation (化生玄功/变化万千)",
+        "description": "An advanced technique allowing the user to create a complete physical clone with identical cultivation, flesh, and virtual soul waves, enabling perfect identity changes (like Long Yue and Mo Luo)."
+      },
+      {
+        "name": "Curse of the Reincarnation Ruins (归墟诅咒)",
+        "description": "A powerful defensive curse in the Reincarnation ruins (Gui Xu). Gods who enter turn into white bones instantly, while lower-stage cultivators suffer severe physical decay and boundary loss."
+      },
+      {
+        "name": "Holy Weapon Resonance (鹏羽与神翼刀)",
+        "description": "A mechanism where a fragment of a Holy Weapon (like the Kunpeng feather) remains physically tied to the main body (the Shenyi Knife), flying towards it when released to allow tracking."
+      }
+    ],
+    "continuity_observations": [
+      "Shark Qishan (鲨岐山) remains a persistent threat, hunting Zhong Yue and Long Yue from the East Sea (第0223章) to the Demon city (第0346章) and South Barren (第0384章).",
+      "Feng Xiaozhong's (风孝忠) madness and research on the sixth wheel are introduced in the copper temples (第0256章) and continue when he escapes and meets Zhong Yue to trade in 第0379章.",
+      "The identity mystery of Long Yue is sustained as Lang Qingyun and Shark Qishan investigate him, forcing Zhong Yue to stage the 'Double Yue Arena Battle' in Fire City to clear suspicion (第0384章).",
+      "The theme of Fuxi bloodline awakening is developed continuously, from Zhong Yue's Ancestral Dragon trials (第0230章) to the birth of Gongsun Xuanyuan with similarly high purity (第0419章).",
+      "The decline and self-sacrifice of Headmaster Feng Shang is carried over from the border gathering in 第0308章 to his final teachings to Zhong Yue in 第0318章.",
+      "The quest for the Kunpeng Holy Weapon (神翼刀) is initiated in 第0223章 and continues to drive the Kunpeng clan's pursuit of Zhong Yue into Kunlun in 第0431章.",
+      "Bai Canghai's (白沧海) unique jinx ability is introduced in 第0291章 and recurs as a running gag and plot resolver throughout the Little Void and South Barren arcs.",
+      "The Reincarnation ruins (归墟) are built up as a major goal from the myths of the broken six paths to the Millennium Feast invitation and entry in 第0436章 and 第0438章."
+    ],
+    "style_observations": [
+      "Dramatic irony is heavily utilized during the 'Double Yue Battle' where the protagonist plans and executes a duel against his own avatar to fool the world's powerhouses.",
+      "Synthesizes Chinese mythological figures (Fuxi, Xuan Yuan, West King Mother, Xing Tian) with standardized web novel cultivation boundaries and ranking boards.",
+      "Portrays the mad scientist character (Feng Xiaozhong) with detached, logical clinical interest rather than typical emotional villainy.",
+      "Frequent use of humorous banter between Zhong Yue and the Fuxi flame spirit Xin Huo, focusing on rebuilding the Fuxi clan and Fuxi's historical mating preferences.",
+      "Combines cinematic, grand-scale battles (thousands of zhang high avatars, massive ships, planetary elements) with detailed martial arts combat logic.",
+      "Employs name puns and comedic jinx mechanics (like Bai Canghai's bad luck predictions) to break the tension of high-stakes battles."
+    ],
+    "creation_family_evidence": {
+      "author": "宅猪 (Zhaizhu)",
+      "protagonist": "钟岳 (Zhong Yue)",
+      "aliases": [
+        "龙岳 (Long Yue)",
+        "摩罗 (Mo Luo)",
+        "波旬 (Bo Xun)"
+      ],
+      "weapons": [
+        "盘龙剑 (Panlong Sword)",
+        "神翼刀 (Shenyi Knife)",
+        "少昊钟 (Shaohao Bell)"
+      ],
+      "concepts": [
+        "薪火 (Xin Huo)",
+        "伏羲神族 (Fuxi Divine Clan)",
+        "六道轮回 (Six Paths of Reincarnation)"
+      ],
+      "places": [
+        "剑门 (Jianmen)",
+        "孤霞城 (Guxia City)",
+        "小虚空 (Little Void)",
+        "归墟 (Gui Xu)"
+      ]
+    },
+    "originality_risks": [
+      "Heavy reliance on pre-existing Chinese mythological figures (Fuxi, Xuan Yuan, Xing Tian, West King Mother) limits the originality of the core worldbuilding cosmology.",
+      "Follows standard xianxia tropes such as climbing virtual ranking boards (Langya Board, Mythological Board) and entering ancient ruins (Gui Xu) for longevity fruits (Peaches).",
+      "The 'mad genius dissector' character archetype (Feng Xiaozhong) heavily resembles standard fantasy tropes of necromancers or amoral magic researchers.",
+      "The 'jinx mouth' (乌鸦嘴) comedy mechanic used with Bai Canghai is a highly common trope in web novels used to create predictable subversion of predictions."
+    ]
+  }
+}
+```

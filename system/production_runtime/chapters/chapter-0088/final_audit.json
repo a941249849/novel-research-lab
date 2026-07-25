@@ -1,0 +1,41 @@
+{
+  "chapter_id": "chapter-0088",
+  "artifact_kind": "revision",
+  "artifact_sha256": "842e235d57ccd4be0d4d6c9342148cd45b7f7f879bbfa5ccd2b5f90abd93fb18",
+  "context_sha256": "7b9ec5a3d1836f6775bdaf06944f86534b5d6234ff8c93aca5935af391549bee",
+  "verdict": "ACCEPT_WITH_WARNINGS",
+  "dimensions": {
+    "canon": [
+      "hash-bound context retained"
+    ],
+    "character": [
+      "state observation remains mandatory"
+    ],
+    "state": [
+      "final observation and settlement remain mandatory"
+    ],
+    "causality": [
+      "story-window irreversible change is bound in context"
+    ],
+    "pacing": [
+      "paragraphs=80"
+    ],
+    "life_force": [
+      "sensory_hits=94"
+    ],
+    "anti_ai_taste": [
+      "sentence_opening_repetition"
+    ],
+    "originality": [
+      "no raw corpus is available to the chapter writer"
+    ]
+  },
+  "issues": [
+    {
+      "issue_id": "metric-01-sentence_opening_repetition",
+      "severity": "minor",
+      "evidence": "deterministic prose metric flagged sentence_opening_repetition",
+      "required_fix": "Vary sentence subjects and entry points without changing facts."
+    }
+  ]
+}

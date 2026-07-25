@@ -1,0 +1,71 @@
+{
+  "chapter_id": "chapter-0050",
+  "accepted_revision_sha256": "442c30cf39521043e7ea9f3285fd81b0108f49467a1fe6bbe37cb3717024a2f4",
+  "state_deltas": [
+    {
+      "fact_id": "chapter0050_fact_07",
+      "asset_id": "npc_prefecture_shadow_envoy",
+      "field_path": "npc.current_recovery_strategy",
+      "operation": "set",
+      "before": "未能在本次限定反照中直接收走残印，转而以回收冷边追踪陆沉渊，并把残印持有者、保管见证及反照所见者列入下一次回收复核压力",
+      "after": "将逐户补源改为逐巷配额承接，正式以限期回收残印换取单巷暂缓首轮配额，并在两巷共同空额上留下回收刻痕"
+    },
+    {
+      "fact_id": "chapter0050_fact_01",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_next_procedural_hook",
+      "operation": "set",
+      "before": "命审台已接纳来源透明的咬合证据并裁定灯源覆印后加；首批户灯封槽尚未完全解除，下一程序须先复核持印者、保管见证和反照所见者的继续见证或退出选择",
+      "after": "命审台执行限定裁定，首批三盏受封户灯解除墙面封槽并交还持有人现实占有；其灯源补报因来源覆印后加而暂停"
+    },
+    {
+      "fact_id": "chapter0050_fact_02",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_communal_response",
+      "operation": "set",
+      "before": "两户在未交出他人与证物的前提下继续承受失温；各自保留户灯与见证木片，未将拒绝写成泥灯巷代为答应",
+      "after": "泥灯巷拒绝以州府转运残印换取单巷豁免，并保留各见证者独立留印、只认亲见或撤回见证的权利"
+    },
+    {
+      "fact_id": "chapter0050_fact_03",
+      "asset_id": "artifact_prefecture_transit_registry_seal",
+      "field_path": "artifact.current_procedural_relation",
+      "operation": "set",
+      "before": "残印在命审台被公开用于限定反照，逐一证明三盏户灯覆印与其同类咬合；反照后仍由陆沉渊封布持有，未交给州府影印",
+      "after": "残印被闻照微列入限期回收，并被提出作为单巷暂缓首轮配额的交换物；陆沉渊仍封布持有且拒绝交出"
+    },
+    {
+      "fact_id": "chapter0050_fact_08",
+      "asset_id": "bond_mother_su_wan",
+      "field_path": "emotional_bond.current_procedural_boundary",
+      "operation": "set",
+      "before": "母债不得再作为本案证明、交换或追缴临时并入项；苏晚亲自保留拒验权",
+      "after": "面对残印换豁免与逐巷连坐，苏晚再次当面排除自己的寿债、护阵和住户命火，不允许其并入本次交换"
+    },
+    {
+      "fact_id": "chapter0050_fact_04",
+      "asset_id": "state_ledger_faction_pressure",
+      "field_path": "state_ledger.faction_pressure",
+      "operation": "set",
+      "before": "压力新增对泥灯巷公开反照办法的影印标记，并以转运批印补报要求继续约束持灯人",
+      "after": "逐户灯源补报压力转为逐巷配额连坐，州府转运残印进入限期回收；泥灯巷与首批受封户所在巷被接入同一配额线并出现共同空额"
+    },
+    {
+      "fact_id": "chapter0050_fact_05",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_procedure_result",
+      "operation": "set",
+      "before": "命审台限定裁定并确认首批受封户灯源栏的州府覆印位于转运旧灰之上，属于州府完成转运后加盖的来源标记；古债与完整转运归属仍不在认定范围",
+      "after": "后加来源覆印的认定进入实际执行：首批受封户不得再被要求以自述补足该来源，相关灯源补报暂停且封槽解除"
+    },
+    {
+      "fact_id": "chapter0050_fact_06",
+      "asset_id": "state_ledger_public_reputation",
+      "field_path": "state_ledger.current_audience_direction",
+      "operation": "set",
+      "before": "陆沉渊以研究记录换路、半寿残籍增加十个百分点暴露及持有州府转运残印的关系进入命审台公开记录；持灯人与见证者仍各自保留继续见证或退出权",
+      "after": "贫城公开反照办法由核对灯位与封痕扩展到核验来源标记的灰层先后及可接触归属，见证者仍保留拒绝留印或撤回权"
+    }
+  ],
+  "resolved_audit_ids": []
+}

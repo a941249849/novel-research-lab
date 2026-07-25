@@ -1,0 +1,31 @@
+{
+  "chapter_id": "chapter-0051",
+  "accepted_revision_sha256": "94e9b205fd0cd80532d44d1beb34c6a589b1d9f3e541ec35d273a6bce192a68c",
+  "state_deltas": [
+    {
+      "fact_id": "chapter-0051-trust",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_collective_choice",
+      "operation": "set",
+      "before": "泥灯巷与外巷持灯人共同选择公开办法而不集中保管户灯；各持有人保留独立拒绝、删改和撤回权",
+      "after": "两巷在替罪户风险下共同拒绝割线或代填户名，先各自标明现实损失并保留独立见证、沉默与撤回权；三盏户灯仍由原持有人掌握"
+    },
+    {
+      "fact_id": "chapter-0051-faction-pressure",
+      "asset_id": "state_ledger_faction_pressure",
+      "field_path": "state_ledger.faction_pressure",
+      "operation": "set",
+      "before": "逐户灯源补报压力转为逐巷配额连坐，州府转运残印进入限期回收；泥灯巷与首批受封户所在巷被接入同一配额线并出现共同空额",
+      "after": "逐巷配额连坐进入实体执行：共同空额开始计时，冷线锁定两巷的暖墙、通行处与三盏解封户灯；首道追缴刻度落在第一盏解封户灯上"
+    },
+    {
+      "fact_id": "chapter-0051-public-reputation",
+      "asset_id": "state_ledger_public_reputation",
+      "field_path": "state_ledger.current_audience_direction",
+      "operation": "set",
+      "before": "贫城公开反照办法由核对灯位与封痕扩展到核验来源标记的灰层先后及可接触归属，见证者仍保留拒绝留印或撤回权",
+      "after": "两巷在场者公开看见解除旧封槽不等于免除新连坐，并开始以亲自标记灯位、失温墙段和受限通路的方式保留复核依据，见证者仍可拒绝或撤回"
+    }
+  ],
+  "resolved_audit_ids": []
+}

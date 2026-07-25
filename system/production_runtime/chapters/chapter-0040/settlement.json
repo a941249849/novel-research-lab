@@ -1,0 +1,239 @@
+{
+  "chapter_id": "chapter-0040",
+  "accepted_revision_sha256": "28722956089061a4a75ee2c7f34d5fbb4f32f56879d69d6ea08f16b6adc32cab",
+  "state_deltas": [
+    {
+      "fact_id": "chapter-0040-character-001",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_procedural_status",
+      "operation": "set",
+      "before": "本日停术，后续不得继续辨认账痕；仅跟到命籍衙前厅门外",
+      "after": "今日继续不能认痕，仅以已登记的亲见范围发言并返回泥灯巷"
+    },
+    {
+      "fact_id": "chapter-0040-character-002",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_visible_condition",
+      "operation": "set",
+      "before": "掌背三道裂口翻开并持续灼烧，冷灰咳出两缕细血；胸骨旧裂震动、左膝失稳，双眼无法继续辨认账痕，施术窗口关闭",
+      "after": "胸骨裂痛持续，左膝再次向内错开；承受追缴冷痕并咳出夹血灰沫"
+    },
+    {
+      "fact_id": "chapter-0040-character-003",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_observed_choice",
+      "operation": "set",
+      "before": "以自己的掌背接触灰雨固定日照前残痕，仅确认空架封额把顾家已撤销错征灯位当作空额，未追认完整因果",
+      "after": "在命审台只确认掌背灼痕起点、折向和顾家旧位轮廓，不为灯槽当日变化作证"
+    },
+    {
+      "fact_id": "chapter-0040-npc-001",
+      "asset_id": "npc_debt_collector_gu_xun",
+      "field_path": "npc.current_procedural_decision",
+      "operation": "set",
+      "before": "确认局部亲见重合，但不认完整因果，也不撤旧追缴令",
+      "after": "确认第一道冷额对顾家灯位存在重复占用，限定撤销该段并停止相邻两户继续失温执行"
+    },
+    {
+      "fact_id": "chapter-0040-npc-002",
+      "asset_id": "npc_debt_collector_gu_xun",
+      "field_path": "npc.current_visible_consequence",
+      "operation": "set",
+      "before": "左手腕关节僵硬到只能发出干涩摩擦声",
+      "after": "锁链反力使左腕一颤，铁环收紧并勒得皮肉泛白"
+    },
+    {
+      "fact_id": "chapter-0040-npc-003",
+      "asset_id": "npc_debt_collector_gu_xun",
+      "field_path": "npc.next_procedural_hook",
+      "operation": "set",
+      "before": "主持前厅反照，来源格为下一次追缴核验对象",
+      "after": "局部裁定完成，但空额影中的另一股灰痕仍在，后续转入贫城逐巷封档核额"
+    },
+    {
+      "fact_id": "chapter-0040-npc-004",
+      "asset_id": "npc_registrar_qiu_shen",
+      "field_path": "npc.current_record_action",
+      "operation": "set",
+      "before": "将局部相合、退出和未补写来源分别登记",
+      "after": "以左手逐项推动记录石，登记错征撤销、顾家旧位和第一层灰雨灼位的限定认定"
+    },
+    {
+      "fact_id": "chapter-0040-npc-005",
+      "asset_id": "npc_mo_jinglan",
+      "field_path": "npc.current_witness_participation",
+      "operation": "set",
+      "before": "仅保存“灼位灰”旧称与出现条件，明确不知道来源",
+      "after": "仅确认灰雨从空架封额落下并折回顾家旧位，仍不确认更早来源"
+    },
+    {
+      "fact_id": "chapter-0040-npc-006",
+      "asset_id": "npc_su_wan",
+      "field_path": "npc.current_visible_support",
+      "operation": "set",
+      "before": "通过挡风、守门为留守户提供保护，拒绝转移命火",
+      "after": "继续用铺板挡风，并明确不把自己的命火贴向受影响户灯"
+    },
+    {
+      "fact_id": "chapter-0040-location-001",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_chapter_step",
+      "operation": "set",
+      "before": "顾家携灯前往前厅接受反照，左邻撤回后续反照",
+      "after": "顾家领取局部返还后回巷；三户灯恢复基础温度，巷口出现下一道冷影并转向其他穷巷"
+    },
+    {
+      "fact_id": "chapter-0040-location-002",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_boundary_condition",
+      "operation": "set",
+      "before": "逐户拒绝、临门撤回与留守保护被实际执行",
+      "after": "继续执行各自答、不得代答、可拒可撤的见证边界"
+    },
+    {
+      "fact_id": "chapter-0040-location-003",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_protection_array_condition",
+      "operation": "set",
+      "before": "共用回灯架毁坏，墙脚灰线暗下，护阵未恢复",
+      "after": "共用灯架仍毁坏，墙脚灰线仍暗下，三盏灯回温未修复护阵"
+    },
+    {
+      "fact_id": "chapter-0040-faction-001",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_procedural_event",
+      "operation": "set",
+      "before": "以前厅灯槽公开反照核验顾家灯位与来源格",
+      "after": "命审台完成局部裁定：撤销顾家重复冷额段，停止相邻两户继续失温执行，但不裁定州府封档权无效"
+    },
+    {
+      "fact_id": "chapter-0040-faction-002",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_next_procedural_hook",
+      "operation": "set",
+      "before": "先核空额来源再核相邻各户",
+      "after": "贫城逐巷封档核额，各巷限期提交户灯来源，来源不明、拒交或互证不足者依次封档"
+    },
+    {
+      "fact_id": "chapter-0040-artifact-001",
+      "asset_id": "artifact_ashlight_cup",
+      "field_path": "artifact.lifecycle_state",
+      "operation": "set",
+      "before": "dormant",
+      "after": "dormant"
+    },
+    {
+      "fact_id": "chapter-0040-relationship-001",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_collective_choice",
+      "operation": "set",
+      "before": "两户自愿承担单独暴露并携灯同行，另一户保留拒绝并留守",
+      "after": "顾家只领取自身可核实返还，拒绝替全巷交人或以他人命火换取解封；各户继续自行答复"
+    },
+    {
+      "fact_id": "chapter-0040-relationship-002",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_witness_commitment",
+      "operation": "set",
+      "before": "顾家仅认今日灰雨灼位与自家旧位反照，左邻不参与后续反照",
+      "after": "顾家仅认第一层局部返还；相邻两户只获得停止失温，不被写成获得顾家返还"
+    },
+    {
+      "fact_id": "chapter-0040-relationship-003",
+      "asset_id": "bond_mother_su_wan",
+      "field_path": "emotional_bond.current_visible_support",
+      "operation": "set",
+      "before": "苏晚留在安置屋看护撤回户，不替其发言，也不以命火承担",
+      "after": "苏晚继续保护留守户并拒绝以自身命火补灯"
+    },
+    {
+      "fact_id": "chapter-0040-emotion-001",
+      "asset_id": "bond_mudlamp_lane_trust",
+      "field_path": "emotional_bond.current_collective_emotion",
+      "operation": "set",
+      "before": "共同体承认参与与恐惧都正当，分歧允许同行、撤回和留守并存",
+      "after": "局部返还后短暂松弛转为面对逐巷封档的紧张互保"
+    },
+    {
+      "fact_id": "chapter-0040-information-001",
+      "asset_id": "state_ledger_revealed_account_errors",
+      "field_path": "state_ledger.current_procedure_result",
+      "operation": "set",
+      "before": "顾巡与仇慎共同留档三项局部亲见重合，完整因果被排除",
+      "after": "命审台确认三项局部事实并据此裁定顾家重复占用；第二层、来源及既往损耗仍未纳入认定"
+    },
+    {
+      "fact_id": "chapter-0040-information-002",
+      "asset_id": "state_ledger_unresolved_mysteries",
+      "field_path": "state_ledger.current_inference_limit",
+      "operation": "set",
+      "before": "灰雨封痕来源、州府转运链、旧债来处及第二层黑边未解",
+      "after": "上述疑点仍未解；新增可观察程序压力为其他穷巷将先被封档"
+    },
+    {
+      "fact_id": "chapter-0040-information-003",
+      "asset_id": "foreshadowing_cinder_seal_rain",
+      "field_path": "foreshadowing.current_manifestation",
+      "operation": "set",
+      "before": "灰雨灼痕与顾家灯腹第一层黑边局部相合",
+      "after": "灰火从灯座下挤出并沿顾家灯耳、旧裂和灯芯焦痕逐处归位，形成可见局部返还"
+    },
+    {
+      "fact_id": "chapter-0040-hook-001",
+      "asset_id": "state_ledger_faction_pressure",
+      "field_path": "state_ledger.faction_pressure",
+      "operation": "set",
+      "before": "州府影印继续向三户灯位施加封灯压力",
+      "after": "压力扩展为贫城逐巷封档核额，并要求各巷提交户灯来源"
+    },
+    {
+      "fact_id": "chapter-0040-hook-002",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_next_procedural_hook",
+      "operation": "set",
+      "before": "下一次复核分别处理三户见证与撤回范围",
+      "after": "下一轮到场者须亲持户灯、亲述来源；仍保留可拒可撤，但封档次序不因沉默停止"
+    },
+    {
+      "fact_id": "chapter-0040-timeline-001",
+      "asset_id": "state_ledger_poorcity_returnfire",
+      "field_path": "state_ledger.current_return_transaction",
+      "operation": "set",
+      "before": "顾家被扣户灯归还，但未发生新的主动归还",
+      "after": "顾家再次被截留且已核实的一段错征余火完成制度性返还；既往损耗未返还"
+    },
+    {
+      "fact_id": "chapter-0040-timeline-002",
+      "asset_id": "state_ledger_mudlamp_array_integrity",
+      "field_path": "state_ledger.current_visible_integrity_consequence",
+      "operation": "set",
+      "before": "回灯架毁坏，护阵未恢复",
+      "after": "局部返还与相邻灯回温未恢复护阵完整度"
+    },
+    {
+      "fact_id": "chapter-0040-physical-001",
+      "asset_id": "state_ledger_resident_lifefire_reserve",
+      "field_path": "state_ledger.current_resident_lifefire_callability",
+      "operation": "set",
+      "before": "拆架与取灯过程中未发生住户命火转移、代扣或向他人渡火",
+      "after": "本次返还未调用住户命火；相邻两户既有命火损耗仍保留"
+    },
+    {
+      "fact_id": "chapter-0040-physical-002",
+      "asset_id": "state_ledger_mother_life_lamp_countdown",
+      "field_path": "state_ledger.current_visible_lamp_consequence",
+      "operation": "set",
+      "before": "本章未发生苏晚命灯新的裂纹或命火转移",
+      "after": "苏晚未转移命火，正文未显示其命灯新增裂纹"
+    },
+    {
+      "fact_id": "chapter-0040-naming-001",
+      "asset_id": "state_ledger_faction_pressure",
+      "field_path": "state_ledger.current_procedural_label",
+      "operation": "set",
+      "before": "单巷交人冷额",
+      "after": "贫城逐巷封档核额"
+    }
+  ],
+  "resolved_audit_ids": []
+}

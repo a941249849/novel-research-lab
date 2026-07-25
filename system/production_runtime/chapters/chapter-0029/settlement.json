@@ -1,0 +1,79 @@
+{
+  "chapter_id": "chapter-0029",
+  "accepted_revision_sha256": "909ce03481194f06189ed6d7063a05f549fa5f3cb1490a512f06495c55a93d28",
+  "state_deltas": [
+    {
+      "fact_id": "fact-0029-001",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_observed_choice",
+      "operation": "set",
+      "before": "在废弃命址只确认现场压痕纹理方向以复核转运起点，不追索转运终点与完整获利链",
+      "after": "公开拒绝以自身被州府回收为条件换取泥灯巷 and 苏晚的暂缓待遇，声明不替泥灯巷和苏晚做决定"
+    },
+    {
+      "fact_id": "fact-0029-002",
+      "asset_id": "character_lu_chenyuan",
+      "field_path": "character.current_visible_condition",
+      "operation": "set",
+      "before": "左膝在窄缝处磕碰，胸骨再次闷响，咳出冷灰并咽回，手腕留下一圈被冻过的灰白色冷痕",
+      "after": "手腕灰白冷痕加深呈骨色苍白，左膝落地闷响且使不上力，胸骨旧裂处持续嘎吱闷响"
+    },
+    {
+      "fact_id": "fact-0029-003",
+      "asset_id": "npc_su_wan",
+      "field_path": "npc.current_refusal_statement",
+      "operation": "set",
+      "before": "拒绝以自己抵命，也拒绝以泥灯巷住户命火填补自身裂纹",
+      "after": "当面将送审木牌背面贴向掌心以撤回以自身命灯缓冻作为交换陆沉渊回收的可能，声明不以自己换取陆沉渊被收人"
+    },
+    {
+      "fact_id": "fact-0029-004",
+      "asset_id": "faction_mudlamp_lane",
+      "field_path": "faction.current_boundary_condition",
+      "operation": "set",
+      "before": "临街屋彻底失用，三户仍保留各自拒绝 and 亲见边界，并共同承担先救人导致的物质损失",
+      "after": "全巷户灯在不到两刻钟内全部失温变成无热度的淡青色，且进入三日交人倒计时"
+    },
+    {
+      "fact_id": "fact-0029-005",
+      "asset_id": "faction_life_registry_office",
+      "field_path": "faction.current_local_enforcement_phase",
+      "operation": "set",
+      "before": "现行追缴令因归属断裂退回复核，但旧追缴与半寿送审继续，且州府影印从暗金固化为深铜色封锁入口",
+      "after": "州府命库覆核闻照微公开回收目标，封锁影印转为银灰霜花，并在入口墙面显现三日交人期限，逾期全巷户灯永久失温"
+    },
+    {
+      "fact_id": "fact-0029-006",
+      "asset_id": "state_ledger_faction_pressure",
+      "field_path": "state_ledger.faction_pressure",
+      "operation": "set",
+      "before": "seed",
+      "after": "州府命库覆核闻照微公开回收目标，在废弃命址出口固化影印并显现三日交人期限字样，压力跨越新的可见阈值"
+    },
+    {
+      "fact_id": "fact-0029-007",
+      "asset_id": "state_ledger_mother_life_lamp_countdown",
+      "field_path": "state_ledger.current_visible_lamp_consequence",
+      "operation": "set",
+      "before": "苏晚掌背分岔暗光继续贴着新裂一格跳动，母债仍未并入泥灯巷物证",
+      "after": "在巷灯失温中掌背暗光向指尖退缩并停在指根，手背裂纹颤动，继续保持撤回交换状态且未并入物证"
+    },
+    {
+      "fact_id": "fact-0029-008",
+      "asset_id": "state_ledger_public_reputation",
+      "field_path": "state_ledger.current_audience_direction",
+      "operation": "set",
+      "before": "公开核查方向首次转向州府转运记录来源",
+      "after": "见证范围确认陆沉渊和苏晚母子共同拒绝以交人换命，且州府回收需求在废址出口公开"
+    },
+    {
+      "fact_id": "fact-0029-009",
+      "asset_id": "state_ledger_protagonist_strain",
+      "field_path": "state_ledger.current_visible_condition",
+      "operation": "set",
+      "before": "左膝在窄缝处磕碰，胸骨再次闷响，咳出冷灰并咽回，手腕留下一圈被冻过的灰白色冷痕",
+      "after": "手腕灰白冷痕加深呈骨色苍白，左膝落地闷响且使不上力，胸骨旧裂处持续嘎吱闷响"
+    }
+  ],
+  "resolved_audit_ids": []
+}

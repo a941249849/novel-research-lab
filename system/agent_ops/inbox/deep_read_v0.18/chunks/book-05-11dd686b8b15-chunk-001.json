@@ -1,0 +1,97 @@
+```json
+{
+  "job_id": "job-v018-verifiable-deep-reading",
+  "contract_version": "0.18",
+  "chunk_id": "book-05-11dd686b8b15-chunk-001",
+  "source_file": "novel_training_set/《凡人修仙传》（校对版全本+番外）作者：忘语.txt",
+  "source_file_sha256": "11dd686b8b151694b37460b52991a4f00eda8f5fabe86b507e74f321e10a7428",
+  "start_byte": 0,
+  "end_byte": 1500003,
+  "chunk_sha256": "328b272000c0e75cae7b43333a83f9d924985dd104f49e250937206ce103447a",
+  "source_encoding": "gb18030",
+  "bounded_chunk_utf8_sha256": "8968729ae1833cf0691a50352ceb1a9b87d93188bd5cadf1ce0da28da685686d",
+  "analysis": {
+    "chapter_span": [
+      "第一卷 七玄门风云",
+      "第三百零一章 驱毒、解咒"
+    ],
+    "major_events": [
+      "Han Li joins Qi Xuan Sect through his uncle's recommendation as a trial disciple. (第三章 七玄门)",
+      "Han Li and Zhang Tie fail the sect's entry exam but are taken in by Doctor Mo as honorary disciples because of their potential to practice a nameless chant. (第五章 墨大夫)",
+      "Han Li accidentally finds a mysterious small green bottle in the forest that absorbs starlight and speeds up plant growth. (第十章 神秘瓶子)",
+      "Zhang Tie disappears from the sect after failing to practice the nameless chant, having been refined by Doctor Mo into a soulless puppet. (第二十六章 催药生)",
+      "Doctor Mo attempts to snatch Han Li's body using the Seven Soul Bite, but fails and dies due to Han Li's stronger willpower. (第三十七章 搏命)",
+      "Han Li interrogates Yu Zitong's remnant soul, uncovering the secrets of spiritual roots and the cultivation world. (第四十章 秘技渊源)",
+      "Jia Tianlong leads the Feral Wolf Gang to attack Qi Xuan Sect's main hall, cornering the sect leaders. (第七十八章 破门)",
+      "Han Li intervenes in the battle, decapitates the rogue cultivator Jin Guang Shangren, and loots his cultivation items. (第八十二章 金光上人)",
+      "Han Li loots the gold medallion, flying sword, and basic manuals from the deceased Jin Guang Shangren. (第九十一章 抢宝)",
+      "Han Li arrives in Jia Yuan City, fulfills his promise to Doctor Mo, and secures the Mo family's safety. (第一百章 嘉元城)",
+      "Han Li enters the Tainan Valley gathering, meets other rogue cultivators, and trades for magic charms. (第一百三十一章 灵石与灵符)",
+      "Han Li uses the Sheng Xian Command Medallion to join Huang Feng Gu as an outer disciple. (第一百三十八章 入谷)",
+      "Han Li is forced to trade his entry-level Foundation Establishment Pill to an elder, and takes charge of the Hundred Herbal Garden. (第一百四十四章 筑基丹之争)",
+      "Han Li meets the garden manager Senior Brother Ma and takes over the Hundred Herbal Garden. (第一百五十一章 百药园)",
+      "Han Li witnesses Senior Brother Lu betraying and drugging Chen Qiaoqian to steal her pill; Han Li kills Lu and saves Chen. (第一百六十九章 恶斗（下）)",
+      "Han Li enters the dangerous trial in the Forbidden Area to gather rare herbs. (第一百七十二章 选择)",
+      "Han Li collaborates with Nangong Wan to defeat a Black Jiao, resulting in an accidental intimate encounter. (第二百零七章 屠蛟与战利品)",
+      "Han Li returns from the trial and successfully reaches the Foundation Establishment stage. (第二百一十五章 炼丹与筑基)",
+      "The Yan family betrays the Seven Sects, aligning with the invading Ghost Spirit Sect led by Wang Chan. (第二百五十七章 血祭与艳丽男子)",
+      "Han Li escapes Yanbao Castle and evades Ghost Spirit Sect young master Wang Chan's pursuit. (第二百八十二章 重围)",
+      "Han Li participates in defending the sect's spiritual stone mine and encounters cultivators afflicted by the Blood Curse. (第三百零一章 驱毒、解咒)"
+    ],
+    "character_state_transitions": [
+      "Han Li: From a normal mortal boy to a Qi Refining level 8 cultivator, gaining basic spiritual power and heightened senses. (第六章 无名口诀 to 第九十六章 缺陷)",
+      "Han Li: From an outer disciple to a Foundation Establishment cultivator, extending his lifespan to 200 years and gaining flight capabilities. (第二百一十五章 炼丹与筑基)",
+      "Han Li: From a defensive, low-profile cultivator to an active battle survivor evading Wang Chan's pursuit and blood-sacrificing forces. (第二百八十二章 重围 to 第二百八十三章 血遁)",
+      "Zhang Tie: From a mortal disciple practicing martial arts to a brainwashed, soulless zombie puppet named Iron Slave. (第九章 象甲功 to 第二十六章 催药生)",
+      "Doctor Mo: From an elite mortal doctor seeking cure to a deceased soul whose body-snatching attempt failed. (第五章 墨大夫 to 第三十七章 搏命)",
+      "Yu Zitong: From a parasitic soul inside Doctor Mo to an interrogated and eventually eliminated spirit. (第四十章 秘技渊源)",
+      "Nangong Wan: From a Gold Core elder to a temporarily weakened Qi Refining level 12 cultivator, and back to Gold Core after joint cultivation. (第二百零五章 观战 to 第二百零九章 回归)",
+      "Wang Chan: From an arrogant young master of the Ghost Spirit Sect to a frustrated pursuer who acknowledges Han Li's threat. (第二百六十一章 血灵大法 to 第二百八十三章 血遁)",
+      "Yan Ruyu: From the Yan Family's genius with Heaven Root to a collaborator with Ghost Spirit Sect, changing her allegiance to the Devil Dao. (第二百五十四章 燕家老祖 to 第二百六十一章 血灵大法)",
+      "Jin Guang Shangren: From a self-proclaimed immortal master to a headless corpse after being killed and looted by Han Li. (第八十二章 金光上人 to 第九十一章 抢宝)",
+      "Chen Qiaoqian: From an infatuated junior sister to a betrayed, drugged survivor suffering from emotional trauma and partial memory loss. (第一百六十六章 狠毒 to 第一百七十章 战利品与香艳)",
+      "Jia Tianlong: From a powerful gang leader poised to conquer Qi Xuan Sect to a defeated captive whose gang is dismantled. (第七十八章 破门 to 第八十九章 矛与盾)"
+    ],
+    "long_form_mechanisms": [
+      "The Nameless Small Green Bottle: The bottle absorbs moonlight to create a green droplet that accelerates herb growth by centuries overnight, allowing the cultivation of rare spiritual plants. (第十章 神秘瓶子)",
+      "Changchun Gong Cultivation: A wood-attribute foundational manual with 13 Qi Refining levels, requiring a wood spiritual root to generate and manipulate spiritual power. (第六章 无名口诀)",
+      "Xiangjia Gong: A physical training method that hardens the human body through intense pain and exercises, but damages longevity and produces no magic power. (第九章 象甲功)",
+      "Body Snatching (夺舍): A soul takeover process limited to once per lifetime, requiring the target to possess a spiritual root and a lower cultivation level than the snatcher. (第四十章 秘技渊源)",
+      "Sheng Xian Command Medallion: A token distributed to clans that guarantees entry into a major sect and a Foundation Establishment Pill, regardless of the holder's background. (第一百四十一章 升仙令)",
+      "Foundation Establishment (筑基): The process of compressing gaseous spiritual power into liquid, requiring the assistance of a Foundation Establishment Pill to protect meridians. (第二百一十五章 炼丹与筑基)",
+      "The Blood and Fire Trial: A hazardous five-year cycle trial where Qi Refining disciples of the Seven Sects enter a restricted area to harvest ingredients for Foundation Establishment Pills. (第一百七十二章 选择)",
+      "Blood Spirit Art and Blood Sacrifice: The cultivation method of the Ghost Spirit Sect that utilizes blood refining and mass sacrifices of cultivators to boost power. (第二百六十一章 血灵大法)"
+    ],
+    "continuity_observations": [
+      "The naming variation between 'Qin Ye Ridge' (秦叶岭) and 'Qin Ridge' (秦岭) is introduced in chapter 93 and later explained in chapter 136 as a colloquial combination of the place name and the residing family's name.",
+      "Senior Brother Ma is consistently addressed as '马师伯' (Senior Uncle Ma) by Han Li in chapter 151, yet in structural terms Ma is a contemporary of Ye Shishu, meaning their relative generation levels vary in conversation.",
+      "The sword talisman used by Jin Guang Shangren in chapter 82 is later described by Han Li in chapter 96 as having a fading sword pattern and a limited number of charges, though Jin Guang used it repeatedly without decay.",
+      "The Sheng Xian Command Medallion is described in chapter 141 as an absolute guarantee for a Foundation Pill, yet Han Li is easily coerced into trading it away in chapter 144, exposing a loophole in sect protection.",
+      "Nangong Wan's age is over a hundred years in chapter 205, but her physical form and emotional expressions revert to those of a young teenager, creating a contrast in her narrative representation.",
+      "The green bottle is described as extremely heavy when first found in chapter 10, but its weight is never mentioned as a physical burden or hindrance during Han Li's subsequent long flights and escapes.",
+      "Zhang Tie's rapid training speed in Xiangjia Gong in chapter 9 is followed by a sudden, unnatural bottleneck, which is later revealed to be a deliberate constraint by Doctor Mo to prepare him for refinement.",
+      "The rogue cultivators in Tainan Valley are described in chapter 123 as struggling to reach early Qi Refining stages, yet they possess expensive talismans and mid-grade magic items in chapter 131."
+    ],
+    "style_observations": [
+      "Third-Person Limited Point of View: The narrative remains strictly locked to Han Li's perspective, enhancing the sense of mystery and danger surrounding hidden conspiracies. (第一章 山边小村)",
+      "Meticulous Pacing of Cultivation: The author dedicates substantial prose to describing the details of pill refinement and herb growth, making the cultivation process feel laborious and grounded. (第一百五十二章 两年后)",
+      "Signature Gestures for Character Thought: The repeated use of gestures like rubbing or feeling his nose ('揉了揉鼻子') to indicate Han Li's calculating thoughts and risk assessments. (第一百三十六章 燕家)",
+      "Quantified Magic Weapon Systems: The combat system relies on specific physical limits (such as the 30-丈 range limit of the sword talisman) rather than abstract martial descriptions. (第九十六章 缺陷)",
+      "Pragmatic and Skeptical Dialogue: Conversations are written with mutual suspicion and polite deception, illustrating the cold, profit-driven mindset of the cultivation world. (第一百四十四章 筑基丹之争)",
+      "Suspenseful Chapter Endings: Chapters often conclude with transitional phrases highlighting Han Li's next cautious steps or unresolved challenges to maintain readers' interest. (第三百零一章 驱毒、解咒)"
+    ],
+    "creation_family_evidence": {
+      "calibration_signatures": "Contains the '知轩藏书' header and 'https://zxcs.zip/' URL at the beginning of the file, identifying it as a Zhixuan Cangshu calibrated text.",
+      "paragraph_indentation": "93.07% of the lines in the file start with the double full-width space indent ('　　'), typical of digitized Chinese web novels.",
+      "serialization_metrics": "The chapters show a highly consistent length, with a mean of 2498 characters and a median of 2569 characters, reflecting daily serialization constraints.",
+      "encoding_convention": "The raw file utilizes the gb18030 character encoding, standard for early electronic publishing in Mainland China."
+    },
+    "originality_risks": [
+      "The Mysterious Cheat Item: The small green bottle that accelerates plant growth is a classic overpowered helper (金手指) trope that bypasses the cultivation time barrier. (第十章 神秘瓶子)",
+      "The Sinister Master's Betrayal: Doctor Mo raising Han Li as a disciple only to snatch his body is a standard wuxia/xianxia cliché of master-disciple betrayal. (第三十七章 搏命)",
+      "Hermit Cultivation in a Great Sect: The protagonist joining a prestigious sect but choosing a low-profile job in the Hundred Herbal Garden to cultivate in secret is a widely used underdog archetype. (第一百五十一章 百药园)",
+      "Aphrodisiac-Induced Romance: The forced intimacy between Han Li and the high-status Nangong Wan due to the Black Jiao's pink mist is an overused plot device to create romance. (第二百零八章 合欢)"
+    ]
+  }
+}
+```
